@@ -17,3 +17,9 @@ $$(2.23) \quad \langle x_0, x_1, \dots, x_n \rangle_i = \begin{cases} x_i & \tex
 This gives us the method of LAMBDA-defining *finite sequences* (in a quite natural way), and the next step is to consider *infinite sequences*. But these are just the functions $\hat{p}$ where $p : \omega \to \mathbf{P}\omega$ is arbitrary. What we need then is a condition expressible in the language equivalent to saying $u = \hat{p}$ for some $p$. This is the same as
 
 $$u = \lambda x.\, \bigcup \{ u_i \mid i \in x \}.$$
+
+<!-- page 14 -->
+
+**DATA TYPES AS LATTICES**
+
+but the $\cup$- and set-notation is not part of LAMBDA. We are forced into a recursive definition:

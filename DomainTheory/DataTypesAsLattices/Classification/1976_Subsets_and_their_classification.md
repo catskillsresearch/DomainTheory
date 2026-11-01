@@ -8,6 +8,16 @@
 
 @import "1976_Subsets_and_their_classification.english" {code_block=false}
 
+- [Definition (classes)](1976_Definition_classes.md)
+- [Theorem 6.1](1976_Theorem_6_1.md)
+- [Theorem 6.2](1976_Theorem_6_2.md)
+- [Theorem 6.3](1976_Theorem_6_3.md)
+- [Theorem 6.4](1976_Theorem_6_4.md)
+- [Theorem 6.5](1976_Theorem_6_5.md)
+- [Theorem 6.6](1976_Theorem_6_6.md)
+- [Theorem 6.7](1976_Theorem_6_7.md)
+
+
 **[DataTypesAsLattices/Classification/evenPart.lean](evenPart.lean)**
 
 @import "evenPart.lean"

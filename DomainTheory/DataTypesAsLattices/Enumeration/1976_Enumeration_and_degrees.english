@@ -11,11 +11,3 @@ This suggests that we lump all combinators of Theorem 2.4 into this one:
 $$(3.3) \quad \mathbf{G} = \mathbf{cond}(\langle \mathbf{suc}, \mathbf{pred}, \mathbf{cond}, \mathbf{K}, \mathbf{S} \rangle)(0).$$
 
 We can then readily prove:
-
-- [Theorem 3.1](1976_Theorem_3_1.md)
-- [Theorem 3.2](1976_Theorem_3_2.md)
-- [Theorem 3.3](1976_Theorem_3_3.md)
-- [Theorem 3.4](1976_Theorem_3_4.md)
-- [Theorem 3.5](1976_Theorem_3_5.md)
-- [Theorem 3.6](1976_Theorem_3_6.md)
-- [Theorem 3.7](1976_Theorem_3_7.md)

@@ -10,6 +10,10 @@ Note that open sets and continuous functions have a *monotonicity property*:
 
 This gives a precise expression to the “positive” character of our topology. However, note too that openness and continuity mean rather more than just monotonicity. In particular, a continuous function is completely determined by the pairs of integers $n, m$ such that $m \in f(e_n)$, as can be seen from the definition. (Hence, there are only a continuum number of continuous functions, but more than a continuum number of monotonic functions.) This brings us to the definition of the *graph* of a continuous function.
 
+<!-- page 7 -->
+
+**DANA SCOTT**
+
 To formulate the definition, we introduce a standard enumeration $(n, m)$ of all pairs of integers. Specifically we set
 
 $$(n, m) = \tfrac{1}{2}(n + m)(n + m + 1) + m.$$

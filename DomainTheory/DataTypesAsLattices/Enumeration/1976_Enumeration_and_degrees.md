@@ -8,6 +8,15 @@
 
 @import "1976_Enumeration_and_degrees.english" {code_block=false}
 
+- [Theorem 3.1](1976_Theorem_3_1.md)
+- [Theorem 3.2](1976_Theorem_3_2.md)
+- [Theorem 3.3](1976_Theorem_3_3.md)
+- [Theorem 3.4](1976_Theorem_3_4.md)
+- [Theorem 3.5](1976_Theorem_3_5.md)
+- [Theorem 3.6](1976_Theorem_3_6.md)
+- [Theorem 3.7](1976_Theorem_3_7.md)
+
+
 **[DataTypesAsLattices/Enumeration/seq2_left_isScottContinuous.lean](seq2_left_isScottContinuous.lean)**
 
 @import "seq2_left_isScottContinuous.lean"
@@ -554,4 +563,3 @@
 @import "Rcomb.lean"
 
 @import "barComb.lean"
-

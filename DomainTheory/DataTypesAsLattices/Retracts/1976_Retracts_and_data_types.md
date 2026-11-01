@@ -8,6 +8,17 @@
 
 @import "1976_Retracts_and_data_types.english" {code_block=false}
 
+- [Definition (retract)](1976_Definition_retract.md)
+- [Theorem 4.1](1976_Theorem_4_1.md)
+- [Definition (membership)](1976_Definition_membership.md)
+- [Definition (ordering)](1976_Definition_ordering.md)
+- [Theorem 4.2](1976_Theorem_4_2.md)
+- [Theorem 4.3](1976_Theorem_4_3.md)
+- [Theorem 4.4](../Functionality/1976_Theorem_4_4.md)
+- [Theorem 4.5](1976_Theorem_4_5.md)
+- [Theorem 4.6](1976_Theorem_4_6.md)
+
+
 **[DataTypesAsLattices/FixedLattices/DirectedSet.lean](../FixedLattices/DirectedSet.lean)**
 
 @import "../FixedLattices/DirectedSet.lean"

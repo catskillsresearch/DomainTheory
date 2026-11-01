@@ -8,7 +8,13 @@ $$\mathbf{TOT} = \{u \mid u = \mathbf{\$}(u) \text{ and } \forall n \in \omega.\
 
 the space of all graphs of total functions. Then the system $\{\mathbf{Deg}(u) \mid u \in \mathbf{TOT}\}$ is isomorphic to the system of Turing degrees. Now there are many other interesting subsets of $\mathbf{P}\omega$. Whether the degree structure of these various subsets is worth investigation is a question whose answer awaits some new ideas.
 
-Among the subsets of $\mathbf{P}\omega$ with natural mathematical structure, we of course have $\mathbf{FUN}$, which is a semigroup under $\circ = \lambda u \lambda v \lambda x.\, u(v(x))$. It is, however, a rather complicated semigroup. We introduce for its study three new combinators:
+Among the subsets of $\mathbf{P}\omega$ with natural mathematical structure, we of course have $\mathbf{FUN}$, which is a semigroup under $\circ = \lambda u \lambda v \lambda x.\, u(v(x))$. It is, however, a rather
+
+<!-- page 20 -->
+
+**DATA TYPES AS LATTICES**
+
+complicated semigroup. We introduce for its study three new combinators:
 
 $$(3.13) \quad \mathbf{R} = \lambda x.\, \langle 0, x \rangle;$$
 

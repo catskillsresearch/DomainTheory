@@ -6,6 +6,10 @@ where it is understood that such variables as $i, j, k, l, m, n$ range over *int
 
 The domain $\mathbf{P}\omega$ can also be made into a topological space—in many ways. A common method is to match each $x \subseteq \omega$ with the corresponding characteristic function in $\{0, 1\}^\omega$, and to take the induced product topology. In this way $\mathbf{P}\omega$ is a totally disconnected compact Hausdorff space homeomorphic to the Cantor “middle-third” set. This is *not* the topology we want; it is a *positive-and-negative* topology which makes the function $\sim x$ continuous. We want a weaker topology: the topology of positive “information”, which has the advantage that all continuous functions possess fixed points. (The equation $x = \sim x$ is impossible.) The topology that we *do* want is exactly that appropriate to considering $\mathbf{P}\omega$ to be a continuous lattice. But all this terminology of abstract mathematics is quite unnecessary, since the required definitions can be given in very elementary terms.
 
+<!-- page 6 -->
+
+**DATA TYPES AS LATTICES**
+
 To make the topology “visible”, we introduce a standard enumeration $\{e_n \mid n \in \omega\}$ of all *finite* subsets of $\omega$. Specifically we set
 
 $$e_n = \{k_0, k_1, \cdots, k_{m-1}\},$$

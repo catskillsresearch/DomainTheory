@@ -1,5 +1,3 @@
-The $\cup$- and set-notation is not part of LAMBDA. We are forced into a recursive definition:
-
 $$(2.24) \quad \mathbf{\$} = \mathbf{Y}(\lambda s \lambda u \lambda z.\, z \supset u_0,\, s(\lambda t.\, u_{t+1})(z - 1)).$$
 
 This equation generalizes (2.22) and we have:

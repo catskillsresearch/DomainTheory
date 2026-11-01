@@ -1,4 +1,10 @@
-**THEOREM 2.4** (The combinator theorem). *The LAMBDA-definable functions* can be generated (*from variables*) by iterated application with the aid of these six constants:
+**THEOREM 2.4** (The combinator theorem). *The LAMBDA-definable func-*
+
+<!-- page 12 -->
+
+**DATA TYPES AS LATTICES**
+
+...tions can be generated (*from variables*) by iterated application with the aid of these six constants:
 
 $$\mathbf{0} = 0$$
 
@@ -11,7 +17,3 @@ $$\mathbf{cond} = \lambda x \lambda y \lambda z.\, z \supset x, y$$
 $$\mathbf{K} = \lambda x \lambda y.\, x$$
 
 $$\mathbf{S} = \lambda u \lambda v \lambda x.\, u(x)(v(x))$$
-
-But the result that makes all this model building and combinatory logic mathematically interesting concerns the so-called *paradoxical combinator* defined by the equation:
-
-$$(2.8) \quad \mathbf{Y} = \lambda u.\, (\lambda x.\, u(x(x)))(\lambda x.\, u(x(x))).$$

@@ -21,6 +21,9 @@ $$(4.29) \quad \mathbf{outright} = \lambda u.\, u_0 \supset \bot,\, u_1;$$
 $$(4.30) \quad \mathbf{which} = \lambda u.\, u_0;$$
 
 $$(4.31) \quad \mathbf{out} = \lambda u.\, u_1.$$
+
+<!-- page 26 -->
+
 (The last two are the same as **fst** and **snd**, but they will be used differently.) We find:
 
 $$(4.32) \quad (a \oplus b) \circ \mathbf{inleft} \circ a : a \circ\to (a \oplus b);$$

@@ -8,6 +8,13 @@
 
 @import "1976_Total_functions_and_functionality.english" {code_block=false}
 
+- [Definition (equivalence)](1976_Definition_equivalence.md)
+- [Theorem 7.1](1976_Theorem_7_1.md)
+- [Theorem 7.2](1976_Theorem_7_2.md)
+- [Theorem 7.3](1976_Theorem_7_3.md)
+- [Theorem 7.4](1976_Theorem_7_4.md)
+
+
 **[DataTypesAsLattices/Functionality/funOf_e_union_fresh.lean](funOf_e_union_fresh.lean)**
 
 @import "funOf_e_union_fresh.lean"

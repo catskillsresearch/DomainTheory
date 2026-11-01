@@ -2,7 +2,13 @@
 
 There do not seem to be any lattice properties of $\sqsubseteq$ of a general nature. Note, however, that if retracts commute, $a \circ b = b \circ a$, then $a \circ b$ is the greatest lower bound under $\sqsubseteq$ of $a$ and $b$. Also if we have a sequence where both $a_n \sqsubseteq a_{n+1}$ and $a_n \subseteq a_{n+1}$ for all $n \in \omega$, then $\bigcup\{a_n \mid n \in \omega\}$ is the upper bound for the $a_n$ under $\sqsubseteq$, as can easily be argued from the definition by continuity of $\circ$.
 
-Certainly there is no “least” retract under $\sqsubseteq$. One has $\bot = \bot \circ a$ (recall: $\bot = \lambda x.\,\bot$), but not $a \circ \bot = \bot$. This last equation means more simply that $a(\bot) = \bot$; that is, $a$ is *strict*. For retracts strictness is thus equivalent to $\bot \sqsubseteq a$, so we can say that there is a least strict retract. The combinator $\mathbf{I} = \lambda u.\, u$ clearly represents the largest retract (the *whole space*), and it is strict also. In a certain sense strictness can be assumed without loss of generality. For if $a$ is not strict, let
+Certainly there is no “least” retract under $\sqsubseteq$. One has $\bot = \bot \circ a$ (recall: $\bot = \lambda x.\,\bot$), but not $a \circ \bot = \bot$. This last equation means more simply that $a(\bot) = \bot$; that is, $a$ is *strict*. For retracts strictness is thus equivalent to $\bot \sqsubseteq a$, so we can say that there is a least strict retract. The combinator $\mathbf{I} = \lambda u.\, u$ clearly represents the
+
+<!-- page 23 -->
+
+**DANA SCOTT**
+
+largest retract (the *whole space*), and it is strict also. In a certain sense strictness can be assumed without loss of generality. For if $a$ is not strict, let
 
 $$b = \lambda x.\, \{n \mid a(x) \neq a(\bot)\}.$$
 
@@ -43,5 +49,9 @@ $$(4.12) \quad (a \otimes b) \circ (a' \otimes b') = (a \circ a') \otimes (b \ci
 $$(4.13) \quad (a \oplus b) \circ (a' \oplus b') = (a \circ a') \oplus (b \circ b').$$
 
 The reversal of order $(a' \circ a)$ on the right-hand side of (4.11) should be remarked.
+
+<!-- page 24 -->
+
+**DATA TYPES AS LATTICES**
 
 These equations will be used not only for properties of types (ranges of retracts) but also for the mappings between the types.

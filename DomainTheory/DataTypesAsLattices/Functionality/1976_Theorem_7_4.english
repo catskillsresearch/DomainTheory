@@ -37,6 +37,11 @@ $$z(\sigma_j)((j, 0)) = \sigma_j^{n_j}((j, 0)) = (j, n_j)$$
 Take any two $j, j' \in \omega$. We also know there is an $n \in \omega$ where:
 
 $$z(\sigma_j \cup \sigma_{j'})((j, 0) \cup (j', 0)) = (j, n) \cup (j', n).$$
+
+<!-- page 46 -->
+
+**DATA TYPES AS LATTICES**
+
 in view of (7.19). But since $\sigma_j \subseteq \sigma_j \cup \sigma_{j'}$ and $\sigma_{j'} \subseteq \sigma_j \cup \sigma_{j'}$, we have:
 
 $$(j, n_j) \cup (j', n_{j'}) \subseteq (j, n) \cup (j', n).$$
@@ -87,3 +92,7 @@ $$z(\lambda x.\, f(x))(x) = f^n(x).$$
 But then by continuity this equation holds for *all* $f, x$. It follows now that $z = \mathbf{Z}_n$, by the proviso of the theorem.
 
 These results bring up many questions which we leave unanswered here. For example, which combinators (i.e., pure $\lambda$-terms) have functionality as in the examples above, and can we decide when a term is one such? In particular, can the diagonal combinator $\lambda x.\, x(x)$ be typed? (The argument of Hindley, et al. (1972, p. 81) is purely formal and does not apparently apply to the model.) What about terms in LAMBDA beyond the pure $\lambda$-calculus?
+
+<!-- page 47 -->
+
+**DANA SCOTT**

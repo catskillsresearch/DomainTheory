@@ -5,6 +5,9 @@
 *(ii)* $\mathbf{val}(\mathbf{apply}(n)(m)) = \mathbf{val}(n)(\mathbf{val}(m))$.
 
 As a principal application of the Enumeration Theorem we may mention the following: suppose $u$ is given as LAMBDA-definable. We look at its definition and rewrite it in terms of combinators—eventually in terms of $\mathbf{G}$ alone. Then using 0 and $\mathbf{apply}$ we write down the name of an integer corresponding to the combination—say, $n$. By Theorem 3.2 we see that we have *effectively found* from
+
+<!-- page 17 -->
+
 the definition an integer such that $\mathbf{val}\, n = u$. This remark can be strengthened by some numerology.
 
 $$(3.8) \quad \mathbf{apply}(0)(0) = 1 \quad \text{and} \quad \mathbf{val}(1) = 0;$$

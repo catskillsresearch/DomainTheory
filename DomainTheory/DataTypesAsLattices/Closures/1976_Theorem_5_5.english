@@ -1,5 +1,9 @@
 **THEOREM 5.5 (The universe theorem for algebraic lattices).** *The function $\mathbf{V}$ is a closure operation and its fixed points comprise the set of all closure operations.*
 
+<!-- page 33 -->
+
+**DANA SCOTT**
+
 Thus to say $a$ is a closure operation, write $a : \mathbf{V}$. To have a mapping on closure operations, write $f : \mathbf{V} \circ\to \mathbf{V}$. Remark that 5.5 allows us to write $\mathbf{V} : \mathbf{V}$. It all seems rather circular, but it is quite consistent. The category of separate algebraic lattices “contains itself”—if we are careful to work through retracts of $\mathbf{P}\omega$.
 
 The proof of Theorem 5.5 requires a few steps. We note first that for all $x, a \in \mathbf{P}\omega$:

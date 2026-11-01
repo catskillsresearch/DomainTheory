@@ -3,6 +3,9 @@ The purpose of the first section was to introduce in a simple-minded way the bas
 Before looking at the language, a short discussion of the "meaning" of the elements $x \in \mathbf{P}\omega$ will be helpful from the point of view of motivation. Now in itself $x \in \mathbf{P}\omega$ is a set, but this does not reveal its *meaning*. Actually $x$ has no "fixed" meaning, because it can be *used* in strikingly different ways; we look for meaning here solely in terms of use. Nevertheless it is possible to give some coherent guidelines.
 
 In the first place it is convenient to let the singleton subsets $\{n\} \in \mathbf{P}\omega$ stand for the corresponding integers. In fact, we shall enforce by convention the equation $n = \{n\}$ as a way of simplifying notation. In this way, $\omega \subseteq \mathbf{P}\omega$ as a subset. (Note that our convention conflicts with such set-theoretical equations as $5 = \{0, 1, 2, 3, 4\}$. What we have done is to abandon the usual set-theoretical conventions in favor of a slight redefinition of *set of integers* which produces a more helpful convention for present purposes.) So, if we choose, a singleton "means" a single integer. The next
+
+<!-- page 9 -->
+
 question is what a "large" set $x \in \mathbf{P}\omega$ could mean. Here is an answer: if we write:
 
 $$x = \{0, 5, 17\} = 0 \cup 5 \cup 17,$$
@@ -30,6 +33,10 @@ $$(2.2) \quad \hat{p}(x) = \bigcup \{p(n) \mid n \in x\}.$$
 The same formulae work for *all* multiple-valued functions $p : \omega \to \mathbf{P}\omega$. Functions like $f = \hat{p}$ are exactly characterized as being those continuous functions $f : \mathbf{P}\omega \to \mathbf{P}\omega$ which in addition are *distributive* in the sense of these equations:
 
 $$f(x \cup y) = f(x) \cup f(y) \quad \text{and} \quad f(\varnothing) = \varnothing.$$
+
+<!-- page 10 -->
+
+**DATA TYPES AS LATTICES**
 
 The sets $\varnothing$ and $\omega$ play special roles. When we consider them as elements of $\mathbf{P}\omega$ we shall employ the notation:
 

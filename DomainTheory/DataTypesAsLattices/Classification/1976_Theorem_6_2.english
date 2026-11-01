@@ -4,7 +4,13 @@ $$\{x \mid f(x) = \bot\},$$
 
 *where $f : \mathbf{P}\omega \to \mathbf{P}\omega$ is continuous.*
 
-Aside from $\{x \mid x = \bot\}$, we could have used $\{x \mid x \subseteq a\}$ as the typical closed set where $a \in \mathbf{P}\omega$ is any element whatsoever aside from $\top$. This $\top$ has, by the way, a special character. We note:
+Aside from $\{x \mid x = \bot\}$, we could have used $\{x \mid x \subseteq a\}$ as the typical closed set where $a \in \mathbf{P}\omega$ is any element whatsoever aside from $\top$. This $\top$ has, by the way, a
+
+<!-- page 36 -->
+
+**DATA TYPES AS LATTICES**
+
+special character. We note:
 
 $$\{\top\} = \bigcap \{\{x \mid n \in x\} \mid n \in \omega\}.$$
 

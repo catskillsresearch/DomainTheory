@@ -32,6 +32,10 @@ Here $a$ and $b$ are retracts and $f$ and $f'$ are functions. Now suppose $a, b$
 
 $$h = (f \otimes g) \circ \mathbf{diag} \circ c.$$
 
+<!-- page 25 -->
+
+**DANA SCOTT**
+
 We can readily prove that:
 
 $$h : c \circ\to (a \otimes b),$$
