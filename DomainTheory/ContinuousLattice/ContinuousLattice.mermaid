@@ -174,11 +174,11 @@ flowchart TB
     InverseLimits_inverseLimitLT_lean___inverseLimitLT["inverseLimitLT<br/>iff_LE_not_GE"]
     InverseLimits_inverseLimitPartialOrder_lean__inverseLimitPartialOrder["inverseLimitPartialOrder"]
     InverseLimits_inverseLimitSInfCoe_lean__inverseLimitSInfCoe["inverseLimitSInfCoe"]
-    InverseLimits_inverseLimitTopology_lean___inverseLimitTopology["inverseLimitTopology<br/>coconeInf_continuous<br/>embInf_continuous<br/>projInf_continuous"]
+    InverseLimits_inverseLimitTopology_lean___inverseLimitTopology["inverseLimitTopology<br/>coconeInf_continuous<br/>embInf_continuous<br/>limitProjectionToLevel_continuous"]
     InverseLimits_instInfSet_lean__isGLB_sInf_["isGLB_sInf'"]
     InverseLimits_inverseLimitTopology_lean__isInjectiveSpace["isInjectiveSpace"]
     InverseLimits_lemma_4_5_lean__lemma_4_5["lemma_4_5"]
-    InverseLimits_projInf_lean___projInf["projInf<br/>fun<br/>preservesDirectedSup"]
+    InverseLimits_limitProjectionToLevel_lean___limitProjectionToLevel["limitProjectionToLevel<br/>fun<br/>preservesDirectedSup"]
     InverseLimits_projLE_lean___projLE["projLE<br/>compatible<br/>mono<br/>preservesDirectedSup<br/>retr<br/>self<br/>succ"]
     InverseLimits_proposition_4_1_lean__proposition_4_1["proposition_4_1"]
     InverseLimits_proposition_4_2_lean__proposition_4_2["proposition_4_2"]
@@ -385,7 +385,7 @@ flowchart TB
   FunctionSpaces_ScottMap_lean___ScottMap -.-> InverseLimits_embInf_lean___embInf
   FunctionSpaces_ScottMap_lean___ScottMap -.-> InverseLimits_inverseLimitPartialOrder_lean__inverseLimitPartialOrder
   FunctionSpaces_ScottMap_lean___ScottMap -.-> InverseLimits_inverseLimitTopology_lean___inverseLimitTopology
-  FunctionSpaces_ScottMap_lean___ScottMap -.-> InverseLimits_projInf_lean___projInf
+  FunctionSpaces_ScottMap_lean___ScottMap -.-> InverseLimits_limitProjectionToLevel_lean___limitProjectionToLevel
   FunctionSpaces_scottLambda_lean___scottLambda -.-> FunctionSpaces_proposition_3_5_lean__proposition_3_5
   FunctionSpaces_scottMapInducedPiTopology_lean___scottMapInducedPiTopology -.-> FunctionSpaceTower_theorem_4_4_lean___theorem_4_4
   FunctionSpaces_scottMapInducedPiTopology_lean___scottMapInducedPiTopology -.-> FunctionSpaces_theorem_3_3_lean__theorem_3_3
@@ -428,7 +428,7 @@ flowchart TB
   InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_inverseLimitTopology_lean__specializationPreorder_iff
   InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_inverseLimitTopology_lean__t0Space
   InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_lemma_4_5_lean__lemma_4_5
-  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_projInf_lean___projInf
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_limitProjectionToLevel_lean___limitProjectionToLevel
   InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_projLE_lean___projLE
   InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_proposition_4_1_lean__proposition_4_1
   InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_proposition_4_2_lean__proposition_4_2
@@ -477,13 +477,13 @@ flowchart TB
   InverseLimits_inverseLimitTopology_lean___inverseLimitTopology -.-> InverseLimits_inverseLimitTopology_lean__scottTopology_eq_induced_pi
   InverseLimits_inverseLimitTopology_lean___inverseLimitTopology -.-> InverseLimits_inverseLimitTopology_lean__specializationPreorder_iff
   InverseLimits_inverseLimitTopology_lean___inverseLimitTopology -.-> InverseLimits_inverseLimitTopology_lean__t0Space
-  InverseLimits_projInf_lean___projInf -.-> FunctionSpaceTower_conjMap_iSup_lean__conjMap_incl_le_conjMap_succ
-  InverseLimits_projInf_lean___projInf -.-> FunctionSpaceTower_conj_iInfTerm_eq_lean__conj_iInfTerm_eq
-  InverseLimits_projInf_lean___projInf -.-> FunctionSpaceTower_iInfTerm_lean___iInfTerm
-  InverseLimits_projInf_lean___projInf -.-> FunctionSpaceTower_incl_projInf_le_projInf_succ_lean__incl_projInf_le_projInf_succ
-  InverseLimits_projInf_lean___projInf -.-> FunctionSpaceTower_jInfTerm_lean___jInfTerm
-  InverseLimits_projInf_lean___projInf -.-> FunctionSpaceTower_towerProj_retr_conjMap_succ_lean__towerProj_retr_conjMap_succ
-  InverseLimits_projInf_lean___projInf -.-> InverseLimits_inverseLimitTopology_lean___inverseLimitTopology
+  InverseLimits_limitProjectionToLevel_lean___limitProjectionToLevel -.-> FunctionSpaceTower_conjMap_iSup_lean__conjMap_incl_le_conjMap_succ
+  InverseLimits_limitProjectionToLevel_lean___limitProjectionToLevel -.-> FunctionSpaceTower_conj_iInfTerm_eq_lean__conj_iInfTerm_eq
+  InverseLimits_limitProjectionToLevel_lean___limitProjectionToLevel -.-> FunctionSpaceTower_iInfTerm_lean___iInfTerm
+  InverseLimits_limitProjectionToLevel_lean___limitProjectionToLevel -.-> FunctionSpaceTower_incl_projInf_le_projInf_succ_lean__incl_projInf_le_projInf_succ
+  InverseLimits_limitProjectionToLevel_lean___limitProjectionToLevel -.-> FunctionSpaceTower_jInfTerm_lean___jInfTerm
+  InverseLimits_limitProjectionToLevel_lean___limitProjectionToLevel -.-> FunctionSpaceTower_towerProj_retr_conjMap_succ_lean__towerProj_retr_conjMap_succ
+  InverseLimits_limitProjectionToLevel_lean___limitProjectionToLevel -.-> InverseLimits_inverseLimitTopology_lean___inverseLimitTopology
   InverseLimits_projLE_lean___projLE -.-> ContinuousLattices_lemma_3_9_lean__lemma_3_9
   InverseLimits_projLE_lean___projLE -.-> FunctionSpaceTower_functionSpaceInclFun_lean___functionSpaceInclFun
   InverseLimits_projLE_lean___projLE -.-> FunctionSpaceTower_functionSpaceRetrFun_lean___functionSpaceRetrFun
@@ -519,7 +519,7 @@ flowchart TB
   ScottMaps_PreservesDirectedSup_lean___PreservesDirectedSup -.-> InverseLimits_embInf_lean___embInf
   ScottMaps_PreservesDirectedSup_lean___PreservesDirectedSup -.-> InverseLimits_embLE_lean__embLE_preservesDirectedSup
   ScottMaps_PreservesDirectedSup_lean___PreservesDirectedSup -.-> InverseLimits_iComp_lean__iComp_preservesDirectedSup
-  ScottMaps_PreservesDirectedSup_lean___PreservesDirectedSup -.-> InverseLimits_projInf_lean___projInf
+  ScottMaps_PreservesDirectedSup_lean___PreservesDirectedSup -.-> InverseLimits_limitProjectionToLevel_lean___limitProjectionToLevel
   ScottMaps_PreservesDirectedSup_lean___PreservesDirectedSup -.-> InverseLimits_projLE_lean___projLE
   ScottMaps_PreservesDirectedSup_lean___PreservesDirectedSup -.-> ScottMaps_continuous_preservesDirectedSup_lean__continuous_preservesDirectedSup
   ScottMaps_PreservesDirectedSup_lean___PreservesDirectedSup -.-> ScottMaps_meet_preservesDirectedSup_lean__meet_preservesDirectedSup
@@ -1235,7 +1235,7 @@ linkStyle 490 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
   class InverseLimits_inverseLimitLE_lean___inverseLimitLE node
   class InverseLimits_inverseLimitLT_lean___inverseLimitLT node
   class InverseLimits_inverseLimitTopology_lean___inverseLimitTopology node
-  class InverseLimits_projInf_lean___projInf node
+  class InverseLimits_limitProjectionToLevel_lean___limitProjectionToLevel node
   class InverseLimits_projLE_lean___projLE node
   class ScottMaps_PreservesDirectedSup_lean___PreservesDirectedSup node
   class Specialization_SpecializationPreorder_lean___SpecializationPreorder node

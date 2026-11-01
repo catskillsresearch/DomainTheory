@@ -3,9 +3,9 @@
 **[coe_sSup_of_directed.lean](coe_sSup_of_directed.lean)**
 
 @import "coe_sSup_of_directed.lean"
-**[ContinuousLattice/InverseLimits/projInf.lean](projInf.lean)**
+**[ContinuousLattice/InverseLimits/limitProjectionToLevel.lean](limitProjectionToLevel.lean)**
 
-@import "projInf.lean"
+@import "limitProjectionToLevel.lean"
 **[ContinuousLattice/InverseLimits/embInf.lean](embInf.lean)**
 
 @import "embInf.lean"

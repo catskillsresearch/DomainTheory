@@ -6,7 +6,7 @@ public import DomainTheory.ContinuousLattice.InverseLimits.projLE
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp
 public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
-public import DomainTheory.ContinuousLattice.InverseLimits.projInf
+public import DomainTheory.ContinuousLattice.InverseLimits.limitProjectionToLevel
 public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
 public import Mathlib.Data.Set.Basic
 
@@ -78,7 +78,7 @@ theorem coconeInf_preservesDirectedSup (f : ∀ n, ScottMap (D n) D') :
   have key : ∀ n, f n ((sSup S).1 n) = sSup ((fun s : InverseLimit D P => f n (s.1 n)) '' S) := by
     intro n
     have h1 : (sSup S).1 n = sSup ((fun s : InverseLimit D P => s.1 n) '' S) :=
-      projInf.preservesDirectedSup D P n hS hSdir
+      limitProjectionToLevel.preservesDirectedSup D P n hS hSdir
     rw [h1, (f n).preservesDirectedSup_coe _ (hS.image _) (hev n), Set.image_image]
   show (⨆ n, f n ((sSup S).1 n)) = sSup (coconeInf D P f '' S)
   simp_rw [key, sSup_image', coconeInf_apply]

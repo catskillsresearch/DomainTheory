@@ -31,23 +31,23 @@ theorem conjMap_iSup (n : ℕ) (post : ScottMap (DInf D₀ j₀) (towerType D₀
 
 theorem conjMap_incl_le_conjMap_succ (n : ℕ) (f : DInf.fn D₀ j₀) :
     (towerProj D₀ j₀ (n + 1)).incl
-        (conjMap (projInf (towerType D₀) (towerProj D₀ j₀) n)
+        (conjMap (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n)
                  (embInf (towerType D₀) (towerProj D₀ j₀) n) f)
-      ≤ conjMap (projInf (towerType D₀) (towerProj D₀ j₀) (n + 1))
+      ≤ conjMap (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) (n + 1))
                 (embInf (towerType D₀) (towerProj D₀ j₀) (n + 1)) f := by
   refine ScottMap.le_def.mpr fun y => ?_
   calc (towerProj D₀ j₀ n).incl
-          (projInf (towerType D₀) (towerProj D₀ j₀) n
+          (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n
             (f (embInf (towerType D₀) (towerProj D₀ j₀) n ((towerProj D₀ j₀ n).retr y))))
       ≤ (towerProj D₀ j₀ n).incl
-          (projInf (towerType D₀) (towerProj D₀ j₀) n
+          (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n
             (f (embInf (towerType D₀) (towerProj D₀ j₀) (n + 1) y))) := by
         refine (towerProj D₀ j₀ n).incl.monotone
-          ((projInf (towerType D₀) (towerProj D₀ j₀) n).monotone (f.monotone ?_))
+          ((limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n).monotone (f.monotone ?_))
         rw [← embInf_succ (towerType D₀) (towerProj D₀ j₀) n ((towerProj D₀ j₀ n).retr y)]
         exact embInf.monotone (towerType D₀) (towerProj D₀ j₀) (n + 1)
           ((towerProj D₀ j₀ n).incl_retr_le y)
-    _ ≤ projInf (towerType D₀) (towerProj D₀ j₀) (n + 1)
+    _ ≤ limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) (n + 1)
           (f (embInf (towerType D₀) (towerProj D₀ j₀) (n + 1) y)) :=
         incl_projInf_le_projInf_succ D₀ j₀ n
           (f (embInf (towerType D₀) (towerProj D₀ j₀) (n + 1) y))

@@ -6,13 +6,14 @@
 
 - [Compatibility](InverseLimits/1972_Compatibility.md) ✓
 - [InverseLimit](InverseLimits/1972_InverseLimit.md) ✓
+- [Projections from the limit](InverseLimits/1972_Projections_from_the_limit.md) ✓
+- [The mediating map](InverseLimits/1972_Mediating_map.md)
+- [Special inverse systems](InverseLimits/1972_Special_inverse_systems.md)
 - [Projections along the tower](InverseLimits/1972_projLE.md) ✓
 - [Tower step adjunction](InverseLimits/1972_projection.md) ✓
-- [Projections from the limit](InverseLimits/1972_Projections_from_the_limit.md)
 - [Embeddings along the tower](InverseLimits/1972_Embeddings_along_the_tower.md)
 - [Coordinates of an embedding](InverseLimits/1972_Embedding_coordinates.md)
 - [Embeddings into the limit](InverseLimits/1972_Embeddings_into_the_limit.md)
-- [The mediating map](InverseLimits/1972_Mediating_map.md)
 - [inverseLimitLE](InverseLimits/1972_inverseLimitLE.md)
 - [inverseLimitLT](InverseLimits/1972_inverseLimitLT.md)
 - [The limit lattice](InverseLimits/1972_Limit_lattice.md)

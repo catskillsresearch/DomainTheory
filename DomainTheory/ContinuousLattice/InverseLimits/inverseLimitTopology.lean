@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.InverseLimit
 public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
-public import DomainTheory.ContinuousLattice.InverseLimits.projInf
+public import DomainTheory.ContinuousLattice.InverseLimits.limitProjectionToLevel
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf
 public import DomainTheory.ContinuousLattice.Specialization.SpecializationPreorder
@@ -139,9 +139,9 @@ theorem eq_iSup (x : InverseLimit D P) :
 end inverseLimit
 namespace inverseLimitTopology
 
-theorem projInf_continuous (n : ℕ) :
+theorem limitProjectionToLevel_continuous (n : ℕ) :
     @Continuous (InverseLimit D P) (D n) (inverseLimitTopology D P)
-      scottTopologicalSpace (projInf D P n) :=
+      scottTopologicalSpace (limitProjectionToLevel D P n) :=
   inverseLimit.coordinate_continuous D P n
 
 theorem embInf_continuous (hD : ∀ n, ContinuousLattice (D n)) (n : ℕ) :

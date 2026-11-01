@@ -23,7 +23,7 @@ flowchart TB
   N26["inverseLimitSInfCoe"]
   N27["inverseLimitTopology"]
   N75["lemma_4_5"]
-  N73["projInf"]
+  limitProjectionToLevel["limitProjectionToLevel"]
   N33["projLE"]
   N77["proposition_4_1"]
   N78["proposition_4_2"]
@@ -37,7 +37,6 @@ flowchart TB
   N8 -->|"1"| N11
   N8 -->|"1"| N19
   N19 -->|"1"| N23
-  N19 -->|"1"| N25
   N23 -->|"1"| N25
   N8 -->|"1"| N26
   N0 -->|"2"| N27
@@ -47,16 +46,15 @@ flowchart TB
   N58 -->|"1"| N27
   N6 -->|"1"| N27
   N61 -->|"1"| N27
-  N73 -->|"1"| N27
   N8 -->|"1"| N27
   N9 -->|"1"| N27
+  limitProjectionToLevel -->|"1"| N27
   N8 -->|"1"| N33
   N11 -->|"1"| N34
   N33 -->|"1"| N34
   N4 -->|"2"| N34
   N8 -->|"1"| N34
   instInfSet -->|"1"| N58
-  N2 -->|"1"| N59
   N58 -->|"1"| N59
   N11 -->|"1"| N61
   N33 -->|"1"| N61
@@ -70,21 +68,18 @@ flowchart TB
   N61 -->|"1"| N69
   N9 -->|"1"| N69
   N2 -->|"1"| N7
-  N4 -->|"1"| N73
-  N58 -->|"1"| N73
-  N59 -->|"1"| N73
   N2 -->|"1"| N75
   N33 -->|"1"| N75
   N34 -->|"1"| N75
   N61 -->|"2"| N75
-  N73 -->|"1"| N75
+  limitProjectionToLevel -->|"1"| N75
   N1 -->|"1"| N77
   N27 -->|"1"| N77
   N58 -->|"1"| N77
   N6 -->|"1"| N77
   N34 -->|"1"| N78
   N61 -->|"1"| N78
-  N73 -->|"1"| N78
+  limitProjectionToLevel -->|"1"| N78
   N7 -->|"1"| N8
   N11 -->|"1"| N9
   N2 -->|"1"| N9
@@ -93,13 +88,14 @@ flowchart TB
   N4 -->|"1"| N9
   N58 -->|"1"| N9
   N61 -->|"1"| N9
-  N73 -->|"1"| N9
   N8 -->|"1"| N9
-  N2 -->|"1"| instInfSet
+  limitProjectionToLevel -->|"1"| N9
   N25 -->|"1"| instInfSet
   N26 -->|"1"| instInfSet
   tower_step_galoisConnection -->|"1"| instInfSet
-  N2 -->|"2"| tower_step_galoisConnection
+  N58 -->|"1"| limitProjectionToLevel
+  N59 -->|"1"| limitProjectionToLevel
+  N2 -->|"1"| tower_step_galoisConnection
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

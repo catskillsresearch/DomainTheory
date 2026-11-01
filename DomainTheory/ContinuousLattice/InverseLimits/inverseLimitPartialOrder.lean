@@ -1,8 +1,6 @@
 module
 
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLE
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitLT
-public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

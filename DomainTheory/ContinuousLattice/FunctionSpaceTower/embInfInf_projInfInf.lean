@@ -31,10 +31,10 @@ theorem embInfInf_comp_projInfInf :
 
   set r : ℕ → ScottMap (DInf D₀ j₀) (DInf D₀ j₀) :=
     fun n => (embInf (towerType D₀) (towerProj D₀ j₀) n).comp
-              (projInf (towerType D₀) (towerProj D₀ j₀) n) with hr
+              (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n) with hr
   have hrw : ∀ n (w : DInf D₀ j₀), r n w
       = embInf (towerType D₀) (towerProj D₀ j₀) n
-          (projInf (towerType D₀) (towerProj D₀ j₀) n w) := by
+          (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n w) := by
     intro n w
     simp only [hr, ScottMap.comp_apply]
   have hr_mono : ∀ (w : DInf D₀ j₀), Monotone (fun m => r m w) := by
@@ -48,7 +48,7 @@ theorem embInfInf_comp_projInfInf :
     intro w
     have h1 : (⨆ m, r m w)
         = ⨆ m, embInf (towerType D₀) (towerProj D₀ j₀) m
-                (projInf (towerType D₀) (towerProj D₀ j₀) m w) :=
+                (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) m w) :=
       iSup_congr (fun m => hrw m w)
     rw [h1]
     exact inverseLimit.eq_iSup (towerType D₀) (towerProj D₀ j₀) w
@@ -72,18 +72,18 @@ theorem embInfInf_comp_projInfInf :
 
   have hpi : projInfInf D₀ j₀ f
       = ⨆ k, embInf (towerType D₀) (towerProj D₀ j₀) (k + 1)
-          (conjMap (projInf (towerType D₀) (towerProj D₀ j₀) k)
+          (conjMap (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) k)
                    (embInf (towerType D₀) (towerProj D₀ j₀) k) f) := by
     rw [projInfInf.apply]
     exact iSup_congr (fun n => jInfTerm.apply D₀ j₀ n f)
 
   have hcoord : ∀ n, (projInfInf D₀ j₀ f).1 (n + 1)
-      = conjMap (projInf (towerType D₀) (towerProj D₀ j₀) n)
+      = conjMap (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n)
                 (embInf (towerType D₀) (towerProj D₀ j₀) n) f := by
     intro n
     rw [hpi]
     exact lemma_4_5 (towerType D₀) (towerProj D₀ j₀)
-      (fun k => conjMap (projInf (towerType D₀) (towerProj D₀ j₀) k)
+      (fun k => conjMap (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) k)
                         (embInf (towerType D₀) (towerProj D₀ j₀) k) f)
       (fun m => towerProj_retr_conjMap_succ D₀ j₀ m f) n
 

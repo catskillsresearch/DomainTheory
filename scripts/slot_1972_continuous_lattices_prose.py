@@ -109,7 +109,8 @@ def path_for_key(key: str) -> Path:
         "3.12": DT / "ContinuousLattice/FunctionSpaces/proposition_3_12.english",
         "3.13": DT / "ContinuousLattice/FunctionSpaces/proposition_3_13.english",
         "3.14": DT / "ContinuousLattice/FunctionSpaces/1972_Proposition_3_14.english",
-        "sec4": DT / "ContinuousLattice/1972_4_Inverse_limits.english",
+        # §4 hub is a roadmap; review OCR is parceled in bridge_sec4_review.
+        "sec4": TBD / "sec4_review_before_4_1.english",
         "4.1": DT / "ContinuousLattice/InverseLimits/proposition_4_1.english",
         "4.2": DT / "ContinuousLattice/InverseLimits/1972_Proposition_4_2.english",
         "4.3": DT / "ContinuousLattice/InverseLimits/corollary_4_3.english",
@@ -168,6 +169,56 @@ def bridge_sec3_mid(lines: list[str], i_35: int, i_36: int) -> None:
         p.write_text(chunk + "\n", encoding="utf-8")
 
 
+SEC4_HUB_ROADMAP = """\
+Scott’s §4 opens with a review of inverse limits for $T_0$-spaces: an [inverse system and compatible sequences](InverseLimits/1972_Compatibility.md), the formal [inverse limit](InverseLimits/1972_InverseLimit.md) type for $\\langle D_n,P_n\\rangle$, [projections from the limit](InverseLimits/1972_Projections_from_the_limit.md) ($j_{\\infty n}$), the [mediating map](InverseLimits/1972_Mediating_map.md) into $X_\\infty$, and the turn to [special inverse systems](InverseLimits/1972_Special_inverse_systems.md). The notes that follow build the projection tower ($\\mathrm{projLE}$, adjunction at one step), embeddings into the limit, lattice and topology on $D_\\infty$, and Propositions 4.1–4.4.
+"""
+
+COMPATIBILITY_LIBRARY_TAIL = """
+For the continuous-lattice tower $\\langle D_n, P_n \\rangle$, $j_n$ is **`(P n).retr`**.
+
+**Definition (`Compatible`).** **`Compatible D P x`** holds when $\\forall n,\\; (P\\,n).\\mathrm{retr}\\,(x\\,(n+1)) = x\\,n$ for **`x : ∀ n, D n`**.
+"""
+
+INVERSELIMIT_LIBRARY = """\
+The preceding paragraphs describe $X_\\infty$ as the subspace of compatible sequences. For $\\langle D_n, P_n \\rangle$ the library name is **`InverseLimit D P`**.
+
+**Definition (`InverseLimit`).** **`InverseLimit D P`** is the subtype of tuples **`x : ∀ n, D n`** that satisfy [**`Compatible`**](1972_Compatibility.md) (Scott’s $D_\\infty$ before topology and lattice structure are imposed).
+"""
+
+PROJINF_LIBRARY_TAIL = """
+On **`InverseLimit D P`**, **`limitProjectionToLevel n`** is Scott’s $j_{\\infty n}$: the $n$-th coordinate **`y.1 n`**, packaged as a **`ScottMap`** once directed suprema on the limit are available.
+"""
+
+
+def bridge_sec4_review(lines: list[str], idx) -> None:
+    """Parcel Scott's §4 review (before 4.1) into InverseLimits note sidecars."""
+    i4 = idx("**4. INVERSE LIMITS.**")
+    i41 = idx("**4.1 Proposition.**")
+    text = "\n".join(lines[i4:i41]).strip()
+    banner = "**4. INVERSE LIMITS.** "
+    if text.startswith(banner):
+        text = text[len(banner) :].strip()
+    text = "\n".join(ln for ln in text.splitlines() if not re.fullmatch(r"\d{2,3}", ln.strip())).strip()
+    p2 = text.index("The space $X_{\\infty}$ is given the product topology")
+    p3 = text.index("Besides this we have the expected extension property")
+    p4 = text.index("So much for a review of inverse limits.")
+    p1, p2_text, p3_text, p4_text = (
+        text[:p2].strip(),
+        text[p2:p3].strip(),
+        text[p3:p4].strip(),
+        text[p4:].strip(),
+    )
+    inv = DT / "ContinuousLattice/InverseLimits"
+    (DT / "ContinuousLattice/1972_4_Inverse_limits.english").write_text(SEC4_HUB_ROADMAP + "\n", encoding="utf-8")
+    (inv / "1972_Compatibility.english").write_text(p1 + COMPATIBILITY_LIBRARY_TAIL + "\n", encoding="utf-8")
+    (inv / "1972_InverseLimit.english").write_text(INVERSELIMIT_LIBRARY + "\n", encoding="utf-8")
+    (inv / "1972_Projections_from_the_limit.english").write_text(
+        p2_text + PROJINF_LIBRARY_TAIL + "\n", encoding="utf-8"
+    )
+    (inv / "1972_Mediating_map.english").write_text(p3_text + "\n", encoding="utf-8")
+    (inv / "1972_Special_inverse_systems.english").write_text(p4_text + "\n", encoding="utf-8")
+
+
 def main() -> None:
     lines = load_body_lines()
     indices = [i for i, line in enumerate(lines) if MARKER.match(line.strip())]
@@ -213,6 +264,7 @@ def main() -> None:
         bridge_sec3_mid(lines, idx("**3.5 Proposition"), idx("**3.6 Definition"))
     except ValueError:
         pass
+    bridge_sec4_review(lines, idx)
 
     # mark unmapped TBD files in index
     tbd_index = TBD / "README.english"

@@ -45,29 +45,29 @@ theorem embInfInf_eq (x : DInf D₀ j₀) :
   rw [apply]
   set g := fun n m =>
     embInf (towerType D₀) (towerProj D₀ j₀) (n + 1)
-      (conjMap (projInf (towerType D₀) (towerProj D₀ j₀) n)
+      (conjMap (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n)
                (embInf (towerType D₀) (towerProj D₀ j₀) n)
                (iInfTerm D₀ j₀ m x)) with hg
   have hmono (n : ℕ) : Monotone (fun m =>
-      conjMap (projInf (towerType D₀) (towerProj D₀ j₀) n)
+      conjMap (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n)
               (embInf (towerType D₀) (towerProj D₀ j₀) n)
               (iInfTerm D₀ j₀ m x)) := fun a b hab =>
-    (conjMap (projInf (towerType D₀) (towerProj D₀ j₀) n)
+    (conjMap (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n)
              (embInf (towerType D₀) (towerProj D₀ j₀) n)).monotone
       (ScottMap.le_def.mpr (iInfTerm_monotone D₀ j₀ x hab))
   have hinner (n : ℕ) : jInfTerm D₀ j₀ n (embInfInf D₀ j₀ x) = ⨆ m, g n m :=
     calc jInfTerm D₀ j₀ n (embInfInf D₀ j₀ x)
         = embInf (towerType D₀) (towerProj D₀ j₀) (n + 1)
-            (⨆ m, conjMap (projInf (towerType D₀) (towerProj D₀ j₀) n)
+            (⨆ m, conjMap (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n)
                           (embInf (towerType D₀) (towerProj D₀ j₀) n)
                           (iInfTerm D₀ j₀ m x)) := by
           rw [jInfTerm.apply, embInfInf.apply,
-            conjMap_iSup D₀ j₀ n (projInf (towerType D₀) (towerProj D₀ j₀) n)
+            conjMap_iSup D₀ j₀ n (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n)
               (embInf (towerType D₀) (towerProj D₀ j₀) n)
               (fun m => iInfTerm D₀ j₀ m x) (iInfTerm_monotone D₀ j₀ x)]
           rfl
       _ = ⨆ m, embInf (towerType D₀) (towerProj D₀ j₀) (n + 1)
-              (conjMap (projInf (towerType D₀) (towerProj D₀ j₀) n)
+              (conjMap (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n)
                        (embInf (towerType D₀) (towerProj D₀ j₀) n)
                        (iInfTerm D₀ j₀ m x)) :=
           embInf_succ_iSup D₀ j₀ n _ (hmono n)
@@ -76,14 +76,14 @@ theorem embInfInf_eq (x : DInf D₀ j₀) :
     intro a b hab
     rw [hg]
     exact (embInf (towerType D₀) (towerProj D₀ j₀) (n + 1)).monotone
-      ((conjMap (projInf (towerType D₀) (towerProj D₀ j₀) n)
+      ((conjMap (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n)
                  (embInf (towerType D₀) (towerProj D₀ j₀) n)).monotone
         (ScottMap.le_def.mpr (iInfTerm_monotone D₀ j₀ x hab)))
   have g_mono_n_succ (m n : ℕ) : g n m ≤ g (n + 1) m := by
     rw [hg]
     dsimp only
     rw [← embInf_succ (towerType D₀) (towerProj D₀ j₀) (n + 1)
-        (conjMap (projInf (towerType D₀) (towerProj D₀ j₀) n)
+        (conjMap (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n)
                  (embInf (towerType D₀) (towerProj D₀ j₀) n)
                  (iInfTerm D₀ j₀ m x))]
     exact embInf.monotone (towerType D₀) (towerProj D₀ j₀) (n + 2)

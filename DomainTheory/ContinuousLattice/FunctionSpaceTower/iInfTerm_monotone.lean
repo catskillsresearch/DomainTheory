@@ -28,26 +28,26 @@ theorem iInfTerm_le_succ (x : DInf D₀ j₀) (m : ℕ) :
   intro z
   rw [iInfTerm.apply, iInfTerm.apply,
     ← embInf_succ (towerType D₀) (towerProj D₀ j₀) m
-      (x.1 (m + 1) (projInf (towerType D₀) (towerProj D₀ j₀) m z))]
+      (x.1 (m + 1) (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) m z))]
   refine embInf.monotone (towerType D₀) (towerProj D₀ j₀) (m + 1) ?_
-  have hab : (towerProj D₀ j₀ m).incl (projInf (towerType D₀) (towerProj D₀ j₀) m z)
-      ≤ projInf (towerType D₀) (towerProj D₀ j₀) (m + 1) z :=
+  have hab : (towerProj D₀ j₀ m).incl (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) m z)
+      ≤ limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) (m + 1) z :=
     incl_projInf_le_projInf_succ D₀ j₀ m z
   calc (towerProj D₀ j₀ m).incl
-          (x.1 (m + 1) (projInf (towerType D₀) (towerProj D₀ j₀) m z))
+          (x.1 (m + 1) (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) m z))
       = (towerProj D₀ j₀ m).incl
           (((towerProj D₀ j₀ (m + 1)).retr (x.1 (m + 2)))
-            (projInf (towerType D₀) (towerProj D₀ j₀) m z)) := by
+            (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) m z)) := by
         rw [show ((towerProj D₀ j₀ (m + 1)).retr (x.1 (m + 2))) = x.1 (m + 1) from x.2 (m + 1)]
     _ = (towerProj D₀ j₀ m).incl
           ((towerProj D₀ j₀ m).retr
             (x.1 (m + 2) ((towerProj D₀ j₀ m).incl
-              (projInf (towerType D₀) (towerProj D₀ j₀) m z)))) := by
+              (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) m z)))) := by
         rw [towerProj.succ_retr_apply]
     _ ≤ x.1 (m + 2) ((towerProj D₀ j₀ m).incl
-          (projInf (towerType D₀) (towerProj D₀ j₀) m z)) :=
+          (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) m z)) :=
         (towerProj D₀ j₀ m).incl_retr_le _
-    _ ≤ x.1 (m + 2) (projInf (towerType D₀) (towerProj D₀ j₀) (m + 1) z) :=
+    _ ≤ x.1 (m + 2) (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) (m + 1) z) :=
         ScottMap.monotone (x.1 (m + 2)) hab
 
 theorem iInfTerm_monotone (x : DInf D₀ j₀) : Monotone (fun m => iInfTerm D₀ j₀ m x) :=

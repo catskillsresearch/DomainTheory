@@ -1,9 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
-public import Mathlib.Data.Set.Basic
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice

@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
-public import DomainTheory.ContinuousLattice.InverseLimits.projInf
+public import DomainTheory.ContinuousLattice.InverseLimits.limitProjectionToLevel
 public import Mathlib.Data.Set.Basic
 
 @[expose] public section
@@ -22,7 +22,7 @@ variable (P : ∀ n, ContinuousLatticeProjection (D n) (D (n + 1)))
 noncomputable def proposition_4_2 (n : ℕ) :
     ContinuousLatticeProjection (D n) (InverseLimit D P) where
   incl := embInf D P n
-  retr := projInf D P n
+  retr := limitProjectionToLevel D P n
   retr_incl x := iComp_self D P n x
   incl_retr_le y := by
     rw [← Subtype.coe_le_coe]

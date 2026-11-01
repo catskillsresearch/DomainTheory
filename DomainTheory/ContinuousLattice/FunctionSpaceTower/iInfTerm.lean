@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
-public import DomainTheory.ContinuousLattice.InverseLimits.projInf
+public import DomainTheory.ContinuousLattice.InverseLimits.limitProjectionToLevel
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.DInf
 
 @[expose] public section
@@ -17,15 +17,15 @@ variable (D₀ : CLat.{u})
 
 noncomputable def iInfTerm (n : ℕ) : ScottMap (DInf D₀ j₀) (DInf.fn D₀ j₀) :=
   (conjMap (embInf (towerType D₀) (towerProj D₀ j₀) n)
-           (projInf (towerType D₀) (towerProj D₀ j₀) n)).comp
-    (projInf (towerType D₀) (towerProj D₀ j₀) (n + 1))
+           (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n)).comp
+    (limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) (n + 1))
 
 namespace iInfTerm
 
 @[simp] theorem apply (n : ℕ) (x z : DInf D₀ j₀) :
     (iInfTerm D₀ j₀ n x) z
       = embInf (towerType D₀) (towerProj D₀ j₀) n
-          ((x.1 (n + 1)) ((projInf (towerType D₀) (towerProj D₀ j₀) n) z)) := rfl
+          ((x.1 (n + 1)) ((limitProjectionToLevel (towerType D₀) (towerProj D₀ j₀) n) z)) := rfl
 
 end iInfTerm
 

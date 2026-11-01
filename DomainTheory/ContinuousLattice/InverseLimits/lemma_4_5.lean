@@ -3,7 +3,7 @@ module
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp
-public import DomainTheory.ContinuousLattice.InverseLimits.projInf
+public import DomainTheory.ContinuousLattice.InverseLimits.limitProjectionToLevel
 public import DomainTheory.ContinuousLattice.InverseLimits.projLE
 public import Mathlib.Data.Set.Basic
 
@@ -63,11 +63,11 @@ theorem lemma_4_5 (u : ∀ n, D (n + 1))
         exact hprojLE (d + 1) n
   have hdir : DirectedOn (· ≤ ·) (Set.range a) :=
     directedOn_range.2 ha.directed_le
-  have hcont := (projInf D P (n + 1)).preservesDirectedSup_coe
+  have hcont := (limitProjectionToLevel D P (n + 1)).preservesDirectedSup_coe
     (Set.range a) (Set.range_nonempty a) hdir
   rw [show (⨆ k, embInf D P (k + 1) (u k) : InverseLimit D P)
       = sSup (Set.range a) from sSup_range.symm]
-  change (projInf D P (n + 1)) (sSup (Set.range a)) = u n
+  change (limitProjectionToLevel D P (n + 1)) (sSup (Set.range a)) = u n
   rw [hcont, ← Set.range_comp, sSup_range]
   apply le_antisymm
   · exact iSup_le fun m => by

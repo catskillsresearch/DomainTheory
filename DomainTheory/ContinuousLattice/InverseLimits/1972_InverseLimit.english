@@ -1,1 +1,3 @@
-**Definition (`InverseLimit`).** **`InverseLimit D P`** is the subtype of tuples **`x : ∀ n, D n`** that satisfy [**`Compatible`**](1972_Compatibility.md) (Scott's $D_\infty$ before topology).
+The preceding paragraphs describe $X_\infty$ as the subspace of compatible sequences. For $\langle D_n, P_n \rangle$ the library name is **`InverseLimit D P`**.
+
+**Definition (`InverseLimit`).** **`InverseLimit D P`** is the subtype of tuples **`x : ∀ n, D n`** that satisfy [**`Compatible`**](1972_Compatibility.md) (Scott’s $D_\infty$ before topology and lattice structure are imposed).

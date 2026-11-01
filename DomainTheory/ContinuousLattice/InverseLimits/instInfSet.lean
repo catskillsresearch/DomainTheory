@@ -2,9 +2,7 @@ module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitPartialOrder
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitSInfCoe
-public import DomainTheory.ContinuousLattice.InverseLimits.tower_step_galoisConnection
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ContinuousLatticeProjection
-public import Mathlib.Data.Set.Basic
+import DomainTheory.ContinuousLattice.InverseLimits.tower_step_galoisConnection
 
 @[expose] public section
 
