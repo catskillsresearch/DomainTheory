@@ -1,7 +1,6 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Pomega.ePrimrec
-public import DomainTheory.DataTypesAsLattices.Retracts.comp
+public import DomainTheory.DataTypesAsLattices.Pomega.eScan
 
 @[expose] public section
 

@@ -1,0 +1,33 @@
+The relations Scott treats as primitive recursive are evaluated by scanning binary expansions. This note supplies primitive-recursive bit access and the Boolean procedures that decide membership, inclusion, and union-coding for $e_n$.
+
+**Theorem (`primrec_twoPow`).** The function $k \mapsto 2^k$ is primitive recursive.
+
+*Proof.* Primitive recursion on $k$ with constant $1$ and step doubling the accumulator. ∎
+
+**Theorem (`primrec_testBit`).** The function $(n, k) \mapsto n.\mathrm{testBit}(k)$ is primitive recursive.
+
+*Proof.* Write $\mathrm{testBit}(n, k)$ as parity of $\lfloor n / 2^k \rfloor$, using `primrec_twoPow` and division/modulo. ∎
+
+**Lemma (`not_testBit_of_ge`).** If $n \le k$, then $n.\mathrm{testBit}(k) = \mathrm{false}$.
+
+*Proof.* A true bit would place $k \in e_n$, contradicting `e.mem_lt` with $k \nless n$. ∎
+
+**Definition (`e.subsetBool`).** `e.subsetBool n m` iteratively verifies every $1$-bit of $n$ is a $1$-bit of $m$.
+
+**Lemma (`e.subsetBool_iff`).** `e.subsetBool n m = true` iff $n.\mathrm{testBit}(k) \Rightarrow m.\mathrm{testBit}(k)$ for every $k$.
+
+*Proof.* Induction on the scan fuel; bits above $n$ are false by `not_testBit_of_ge`. ∎
+
+**Theorem (`primrec_e_subsetBool`).** `e.subsetBool` is primitive recursive in $(n, m)$.
+
+*Proof.* A primitive recursive loop on the bit index using `primrec_testBit`. ∎
+
+**Definition (`e.eqUnionBool`).** `e.eqUnionBool n m k` checks $n.\mathrm{testBit}(i) = m.\mathrm{testBit}(i) \lor k.\mathrm{testBit}(i)$ for $i \le n + m + k$.
+
+**Theorem (`e.eqUnionBool_iff`).** `e.eqUnionBool n m k = true` iff $e_n = e_m \cup e_k$.
+
+*Proof.* Extensionality on membership, with trivial bits beyond the scan bound. ∎
+
+**Theorem (`primrec_e_eqUnionBool`).** `e.eqUnionBool` is primitive recursive in $(n, m, k)$.
+
+*Proof.* Same iterator pattern as `e.subsetBool`. ∎

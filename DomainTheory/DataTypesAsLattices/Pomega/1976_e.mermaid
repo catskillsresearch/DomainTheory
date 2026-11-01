@@ -4,13 +4,13 @@
 flowchart TB
 
   Definition_of__e_n["Definition of e_n"]
-  Decidable_membership_and["Decidable membership and inclusion"]
+  Bit_tests_and_relation_s["Bit tests and relation scans"]
   Primitive_recursive_stru["Primitive recursive structure"]
   Coding_finite_subsets["Coding finite subsets"]
   Density_of_finite_sets_i["Density of finite sets in Pω"]
 
+  Definition_of__e_n --> Bit_tests_and_relation_s
   Definition_of__e_n --> Coding_finite_subsets
-  Definition_of__e_n --> Decidable_membership_and
   Coding_finite_subsets --> Density_of_finite_sets_i
   Primitive_recursive_stru --> Density_of_finite_sets_i
-  Decidable_membership_and --> Primitive_recursive_stru
+  Bit_tests_and_relation_s --> Primitive_recursive_stru

@@ -30,6 +30,8 @@ Equivalently, $k \in e_n$ iff the binary expansion of $n$ has a $1$ in bit $k$.
 
 *Proof.* By `e.or`, $e_{n \mathbin{|} m} = e_n \cup e_m$; two set inclusions into $x$ imply the union is contained in $x$. ∎
 
+This is a one-to-one enumeration of finite subsets, where $k \in e_n$ always implies $k < n$,
+
 **Lemma (`e.le_two_pow`).** For every $k \in \omega$, $k \le 2^k$.
 
 *Proof.* Induction on $k$. For $k = 0$, both sides are $1$. For the step $k \to k+1$, the induction hypothesis gives $k \le 2^k$, hence $k+1 \le 2^k + 1 \le 2^k + 2^k = 2^{k+1}$. ∎
@@ -49,6 +51,8 @@ Equivalently, $k \in e_n$ iff the binary expansion of $n$ has a $1$ in bit $k$.
 **Theorem (`e.mem_lt`).** If $k \in e_n$, then $k < n$.
 
 *Proof.* By `e.mem_le`, $k \le n$. If $k = n$, then `e.two_pow_le_of_testBit` would give $2^k \le n = k$, while `e.lt_two_pow'` gives $k < 2^k$, a contradiction. So $k \ne n$ and therefore $k < n$. ∎
+
+This is the formal content of Scott’s clause that $k \in e_n$ always implies $k < n$.
 
 **Theorem (`e.finite`).** Every set $e_n$ is finite.
 

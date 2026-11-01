@@ -1,1 +1,23 @@
 The function $\max(e_n)$ is (primitive) recursive in $n$, and the relations $k \in e_n$, $e_n \subseteq e_m$, $e_n = e_m \cup e_k$ are all (primitive) recursive in $k, m, n$.
+
+**Theorem (`primrecRel_mem_e`).** The relation $(n, k) \mapsto k \in e_n$ is primitive recursive.
+
+*Proof.* By `e.mem`, membership is $n.\mathrm{testBit}(k)$; apply `primrec_testBit`. ∎
+
+**Definition (`eMax`).** `eMax n` is the greatest $k \le n$ with $n.\mathrm{testBit}(k) = \mathrm{true}$, or $0$ if none.
+
+**Theorem (`primrec_eMax`).** The function `eMax` is primitive recursive.
+
+*Proof.* `Nat.findGreatest` on the primitive-recursive predicate $n.\mathrm{testBit}(k) = \mathrm{true}$. ∎
+
+**Theorem (`primrecRel_e_subset`).** The relation $(n, m) \mapsto e_n \subseteq e_m$ is primitive recursive.
+
+*Proof.* By `e.subsetBool_iff`, inclusion equals `e.subsetBool n m = true`; apply `primrec_e_subsetBool`. ∎
+
+**Theorem (`primrecPred_e_eq_union`).** The predicate $(n, m, k) \mapsto e_n = e_m \cup e_k$ is primitive recursive.
+
+*Proof.* By `e.eqUnionBool_iff`, apply `primrec_e_eqUnionBool`. ∎
+
+**Theorem (`scott_e_primrec_structure`).** Scott’s bundled claim: membership in $e_n$ is a primitive recursive relation in $(n, k)$; `eMax` is primitive recursive; inclusion $e_n \subseteq e_m$ is a primitive recursive relation in $(n, m)$; and equality $e_n = e_m \cup e_k$ is a primitive recursive predicate in $(n, m, k)$.
+
+*Proof.* Conjunction of the four preceding theorems. ∎
