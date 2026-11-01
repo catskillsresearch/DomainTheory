@@ -64,7 +64,7 @@ bridge theorems relating the lattice, neighbourhood, and information systems pre
 
 ORPHAN_TEX_LINE = re.compile(
     r"^(?:"
-    r"\\(?:bigcap|bigcup|sum|prod|int|frac|left|right|big|Big|mathcal|mathfrak|mathbb|text)"
+    r"\\(?:bigcap|bigcup|sum|prod|int|frac|left|right|big|Big|mathcal|mathfrak|mathbb|text\{)"
     r"|=\s*\\left"
     # Short formula lines like `X \subseteq Y \quad \text{iff} ...` (not prose).
     r"|[A-Za-z][A-Za-z0-9_]*\s*(?:=|\\(?:subseteq|supseteq|in|notin|mid|cup|cap))\b"
@@ -303,12 +303,28 @@ def wrap_orphan_tex_display(text: str) -> str:
             out.append(line)
             i += 1
             continue
-        # Toggle display-math fence; leave the line alone.
-        if not in_code and stripped == "$$":
-            in_math = not in_math
-            out.append(line)
-            i += 1
-            continue
+        # Display-math fences: standalone ``$$``, or ``$$`` opened/closed on partial lines.
+        if not in_code:
+            if stripped == "$$":
+                in_math = not in_math
+                out.append(line)
+                i += 1
+                continue
+            one_line_display = (
+                stripped.startswith("$$")
+                and stripped.endswith("$$")
+                and len(stripped) > 4
+            )
+            open_display = stripped.startswith("$$") and not one_line_display
+            close_display = in_math and stripped.endswith("$$") and stripped != "$$"
+            if in_math or open_display:
+                out.append(line)
+                if open_display:
+                    in_math = True
+                elif close_display:
+                    in_math = False
+                i += 1
+                continue
         if (
             not in_code
             and not in_math
