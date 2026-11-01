@@ -1,0 +1,5 @@
+Topologically speaking the finite sets $e_n$ are *dense* in the space $\mathbf{P}\omega$, for each $x \in \mathbf{P}\omega$ is the “limit” of its finite subsets in the sense that
+
+$$x = \bigcup \{e_n \mid e_n \subseteq x\}.$$
+
+To make this precise we need a rigorous definition of *open subset* of $\mathbf{P}\omega$.

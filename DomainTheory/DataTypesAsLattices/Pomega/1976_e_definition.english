@@ -1,0 +1,5 @@
+To make the topology “visible”, we introduce a standard enumeration $\{e_n \mid n \in \omega\}$ of all *finite* subsets of $\omega$. Specifically we set
+
+$$e_n = \{k_0, k_1, \cdots, k_{m-1}\},$$
+
+provided that $k_0 < k_1 < \cdots < k_{m-1}$ and $n = \sum_{i < m} 2^{k_i}$. Thus $n$ is the code number for $e_n$, and the elements of $e_n$ are the exponents in the binary expansion of the integer $n$.

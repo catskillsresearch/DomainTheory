@@ -3,6 +3,7 @@
 @import "1976_Continuous_functions.mermaid"
 
 - [Introduction](1976_Continuous_functions_Introduction.md)
+- [Domain $\mathbf{P}\omega$](Pomega/1976_Pomega.md)
 - [Finite subsets and the enumeration $e_n$](Pomega/1976_e.md)
 - [Cantor pairing of integer pairs $(n,m)$](Pomega/1976_pair.md)
 - [Basic open sets and continuity on $\mathbf{P}\omega$](Continuous/1976_Continuous.md)

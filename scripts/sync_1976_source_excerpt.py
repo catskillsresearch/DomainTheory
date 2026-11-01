@@ -29,7 +29,9 @@ SLICE_NOTES: list[tuple[str, str | None]] = [
         "1976_Continuous_functions_Introduction.md",
         "1976_Continuous_functions.english",
     ),
-    ("Pomega/1976_e.md", None),
+    ("Pomega/1976_e_definition.md", None),
+    ("Pomega/1976_e_membership.md", None),
+    ("Pomega/1976_e_density.md", None),
     ("1976_Definition_basis.md", "1976_Definition_basis.english"),
     ("1976_Definition_continuous.md", "1976_Definition_continuous.english"),
     ("Continuous/1976_Theorem_1_1.md", None),
@@ -120,7 +122,9 @@ SLICE_NOTES: list[tuple[str, str | None]] = [
 
 ANCHOR_OVERRIDE: dict[str, str] = {
     "1976_Introduction.md": "**Abstract.**",
-    "Pomega/1976_e.md": "To make the topology",
+    "Pomega/1976_e_definition.md": "To make the topology",
+    "Pomega/1976_e_membership.md": "This is a one-to-one enumeration",
+    "Pomega/1976_e_density.md": "Topologically speaking",
     "Pomega/1976_pair.md": "To formulate the definition, we introduce a standard enumeration",
     "Lambda/1976_Computability_and_definability.md": "**2. Computability and definability.**",
     "1976_Appendix_A.md": "**Appendix A.",
@@ -517,7 +521,10 @@ def main() -> None:
             "1976_FixedPoint.md",
             "1976_Embedding.md",
             "1976_Computability_and_definability.md",
-        } or tgt.md.name in LEAN_BARREL_HUBS or tgt.md.parent.name == "Pomega":
+        } or tgt.md.name in LEAN_BARREL_HUBS or (
+            tgt.md.parent.name == "Pomega"
+            and tgt.md.name not in {"1976_Pomega.md", "1976_e.md", "1976_pair.md"}
+        ):
             continue
         lean = preserve_lean_blocks(tgt.md)
         prologue = preserve_prologue(tgt.md)
