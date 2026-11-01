@@ -1,11 +1,8 @@
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
-public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
-public import Mathlib.Data.Set.Basic
 
-public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
+import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 @[expose] public section
 
 namespace DomainTheory.ContinuousLattice
@@ -18,7 +15,6 @@ section InverseLimit
 
 variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 variable (P : ∀ n, ContinuousLatticeProjection (D n) (D (n + 1)))
-
 variable {D' : Type*} [CompleteLattice D']
 
 theorem corollary_4_3 (f : ∀ n, ScottMap (D n) D')
