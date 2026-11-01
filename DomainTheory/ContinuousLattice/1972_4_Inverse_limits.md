@@ -6,7 +6,7 @@
 
 - [Compatibility](InverseLimits/1972_Compatibility.md) ✓
 - [InverseLimit](InverseLimits/1972_InverseLimit.md) ✓
-- [projLE](InverseLimits/1972_projLE.md)
+- [Projections along the tower](InverseLimits/1972_projLE.md) ✓
 - [projection](InverseLimits/1972_projection.md)
 - [Projections from the limit](InverseLimits/1972_Projections_from_the_limit.md)
 - [Embeddings along the tower](InverseLimits/1972_Embeddings_along_the_tower.md)

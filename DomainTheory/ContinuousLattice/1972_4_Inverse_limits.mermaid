@@ -5,7 +5,7 @@ flowchart TD
 
   Compatibility["Compatibility"]
   InverseLimit["InverseLimit"]
-  projLE["projLE"]
+  Projections_along_the_to["Projections along the tower"]
   projection["projection"]
   Projections_from_the_lim["Projections from the limit"]
   Embeddings_along_the_tow["Embeddings along the tower"]
@@ -22,12 +22,13 @@ flowchart TD
   The_function_space_tower["The function space tower"]
 
   Embeddings_along_the_tow --> Coordinates_of_an_embedd
-  projLE --> Coordinates_of_an_embedd
+  Projections_along_the_to --> Coordinates_of_an_embedd
   inverseLimitTopology --> Corollary_4_3
   InverseLimit --> Embeddings_along_the_tow
   Coordinates_of_an_embedd --> Embeddings_into_the_limi
   Projections_from_the_lim --> Embeddings_into_the_limi
   Compatibility --> InverseLimit
+  InverseLimit --> Projections_along_the_to
   InverseLimit --> Projections_from_the_lim
   projection --> Projections_from_the_lim
   inverseLimitTopology --> Proposition_4_1
@@ -39,5 +40,4 @@ flowchart TD
   InverseLimit --> inverseLimitLE
   Projections_from_the_lim --> inverseLimitLT
   The_mediating_map --> inverseLimitTopology
-  InverseLimit --> projLE
   Compatibility --> projection
