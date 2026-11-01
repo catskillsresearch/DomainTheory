@@ -1,0 +1,13 @@
+On $D_\infty = \mathrm{InverseLimit}\,D\,P$, if **`S`** is directed in $\le$, the supremum **`sSup S`** should match taking suprema coordinate by coordinate in each $D_n$.
+
+**Theorem (`coe_sSup_of_directed.directed`).** *If **`S : Set (InverseLimit D P)`** is **nonempty** and **directed** in $\le$, then*
+
+$$\big(\bigsqcup S\big)_n = \bigsqcup \{\, x_n \mid x \in S \,\}$$
+
+in $D_n$ for every **`n`**.
+
+Equivalently: **`(sSup S).1 = sSup (Subtype.val '' S)`** as functions **`ℕ → D n`**.
+
+*Proof.* Build the coordinatewise supremum, prove **`Compatible`**, show it is **`IsLUB S`**, then identify with **`sSup S`**. $\square$
+
+**Use.** **`embInf.preservesDirectedSup`** and **`limitProjectionToLevel`** rewrite directed suprema with this lemma before comparing coordinates.

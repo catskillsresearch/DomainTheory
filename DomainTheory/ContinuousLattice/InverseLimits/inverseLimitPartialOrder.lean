@@ -16,6 +16,7 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
 variable (P : ∀ n, ContinuousLatticeProjection (D n) (D (n + 1)))
 
+/-- Coordinatewise order on `InverseLimit D P` from `inverseLimitLE` / `inverseLimitLT`. -/
 instance inverseLimitPartialOrder : PartialOrder (InverseLimit D P) where
   le := inverseLimitLE D P
   lt := inverseLimitLT D P

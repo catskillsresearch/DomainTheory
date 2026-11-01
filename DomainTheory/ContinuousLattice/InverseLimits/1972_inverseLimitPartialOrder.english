@@ -1,0 +1,8 @@
+Write $D_\infty = \mathrm{InverseLimit}\,D\,P$. The coordinatewise relations [Order on the inverse limit](1972_inverseLimitLE.md) **`inverseLimitLE`** and [Strict order on the inverse limit](1972_inverseLimitLT.md) **`inverseLimitLT`** are the order on $D_\infty$.
+
+**Definition (`inverseLimitPartialOrder`).** **`inverseLimitPartialOrder D P`** is the **`PartialOrder`** instance on **`InverseLimit D P`** with
+
+- **`le := inverseLimitLE D P`**
+- **`lt := inverseLimitLT D P`**
+- **`le_refl`**, **`le_trans`**, **`le_antisymm`** from **`inverseLimitLE.refl`**, **`trans`**, **`antisymm`**
+- **`lt_iff_le_not_ge`** from **`inverseLimitLT.iff_LE_not_GE`**

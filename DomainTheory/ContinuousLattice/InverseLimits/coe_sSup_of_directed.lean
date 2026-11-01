@@ -16,7 +16,10 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
 variable (P : ∀ n, ContinuousLatticeProjection (D n) (D (n + 1)))
 
-theorem coe_sSup_of_directed (S : Set (InverseLimit D P)) (hSne : S.Nonempty)
+namespace coe_sSup_of_directed
+
+/-- Directed suprema in `InverseLimit` agree with coordinatewise suprema in the product. -/
+theorem directed (S : Set (InverseLimit D P)) (hSne : S.Nonempty)
     (hSdir : DirectedOn (· ≤ ·) S) :
     ((sSup S : InverseLimit D P) : ∀ n, D n) = sSup (Subtype.val '' S) := by
   have hcompat : Compatible D P (sSup (Subtype.val '' S)) := by
@@ -44,6 +47,13 @@ theorem coe_sSup_of_directed (S : Set (InverseLimit D P)) (hSne : S.Nonempty)
       rintro _ ⟨x, hx, rfl⟩
       exact Subtype.coe_le_coe.mpr (hb hx)
   rw [(isLUB_sSup S).unique hlub]
+
+end coe_sSup_of_directed
+
+theorem coe_sSup_of_directed (S : Set (InverseLimit D P)) (hSne : S.Nonempty)
+    (hSdir : DirectedOn (· ≤ ·) S) :
+    ((sSup S : InverseLimit D P) : ∀ n, D n) = sSup (Subtype.val '' S) :=
+  coe_sSup_of_directed.directed D P S hSne hSdir
 
 end InverseLimit
 

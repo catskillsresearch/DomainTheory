@@ -18,6 +18,8 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
 variable (P : ∀ n, ContinuousLatticeProjection (D n) (D (n + 1)))
 
+namespace instInfSet
+
 theorem retr_sInf (n : ℕ) (A : Set (D (n + 1))) :
     (P n).retr (sInf A) = sInf ((P n).retr '' A) := by
   rw [(tower_step_galoisConnection D P n).u_sInf, sInf_image]
@@ -30,8 +32,12 @@ theorem compatible_sInf (S : Set (InverseLimit D P)) :
   rw [Set.image_image]
   exact Set.image_congr (by rintro x hx; exact x.2 n)
 
+end instInfSet
+
 noncomputable instance instInfSet : InfSet (InverseLimit D P) :=
-  ⟨fun S => ⟨inverseLimitSInfCoe D P S, compatible_sInf D P S⟩⟩
+  ⟨fun S => ⟨inverseLimitSInfCoe D P S, instInfSet.compatible_sInf D P S⟩⟩
+
+namespace instInfSet
 
 theorem coe_sInf (S : Set (InverseLimit D P)) :
     ((sInf S : InverseLimit D P) : ∀ n, D n) = inverseLimitSInfCoe D P S := rfl
@@ -46,6 +52,8 @@ theorem isGLB_sInf' (S : Set (InverseLimit D P)) :
     refine le_sInf ?_
     rintro _ ⟨x, hx, rfl⟩
     exact hb hx n
+
+end instInfSet
 
 end InverseLimit
 

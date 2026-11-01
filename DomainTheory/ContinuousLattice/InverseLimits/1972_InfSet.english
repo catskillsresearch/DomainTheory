@@ -1,0 +1,27 @@
+For $S \subseteq D_\infty = \mathrm{InverseLimit}\,D\,P$, [Coordinate infima](1972_inverseLimitSInfCoe.md) **`inverseLimitSInfCoe D P S`** is the coordinatewise infimum in each $D_n$. The **set infimum** **`sInf S`** in $D_\infty$ is that tuple, once it is a compatible sequence.
+
+**Definition (`instInfSet`).** **`instInfSet D P`** is the **`InfSet`** instance
+
+$$\texttt{sInf}\,S = \big\langle \texttt{inverseLimitSInfCoe}\,D\,P\,S,\; \text{compatibility proof} \big\rangle.$$
+
+In the namespace **`instInfSet`** we have
+
+**Theorem (`retr_sInf`).** *For **`n`**, **`A : Set (D (n + 1))`**,*
+
+$$(P_n).\mathrm{retr}\,(\inf A) = \inf \big((P_n).\mathrm{retr}\, '' A\big).$$
+
+*Proof.* **`tower_step_galoisConnection`** and **`sInf_image`**. $\square$
+
+**Theorem (`compatible_sInf`).** *For every **`S : Set (InverseLimit D P)`**, **`inverseLimitSInfCoe D P S`** satisfies **`Compatible`***.
+
+*Proof.* At index **`n`**, rewrite with **`retr_sInf`** and compatibility **`x.2 n`** for **`x ∈ S`**. $\square$
+
+**Theorem (`coe_sInf`).** *For all **`S`**, the underlying coordinates of **`sInf S`** are **`inverseLimitSInfCoe D P S`:***
+
+$$((\texttt{sInf}\,S) : \forall n,\, D_n) = \texttt{inverseLimitSInfCoe}\,D\,P\,S.$$
+
+*Proof.* Definition of **`instInfSet`**. $\square$
+
+**Theorem (`isGLB_sInf'`).** *For all **`S`**, **`sInf S`** is the greatest lower bound of **`S`** in the partial order on $D_\infty$.*
+
+*Proof.* Coordinatewise **`sInf_le`** and **`le_sInf`**. $\square$

@@ -1,0 +1,15 @@
+For $S \subseteq D_\infty = \mathrm{InverseLimit}\,D\,P$, a natural candidate for an infimum in $D_\infty$ is built **coordinate by coordinate**: at index $n$, take the infimum in $D_n$ of the $n$-th coordinates of points in $S$.
+
+**Definition (`inverseLimitSInfCoe`).** For **`S : Set (InverseLimit D P)`**,
+
+$$(\texttt{inverseLimitSInfCoe}\,D\,P\,S)_n = \inf \{\, x_n \mid x \in S \,\}$$
+
+in $D_n$ (Lean: **`sInf ((fun x => x.1 n) '' S)`**).
+
+In the namespace **`inverseLimitSInfCoe`** we have
+
+**Theorem (`apply`).** *For all **`S`**, **`n`**, the **`n`‑th coordinate of **`inverseLimitSInfCoe D P S`** is that stage infimum:*
+
+$$\texttt{inverseLimitSInfCoe}\,D\,P\,S\,n = \inf \{\, x_n \mid x \in S \,\}.$$
+
+*Proof.* Definition of **`inverseLimitSInfCoe`**. $\square$

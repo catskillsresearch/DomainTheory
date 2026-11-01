@@ -1,0 +1,7 @@
+On $D_\infty = \mathrm{InverseLimit}\,D\,P$, **`sInf`** gives arbitrary infima. Mathlib’s **`completeLatticeOfInf`** turns that into a **complete lattice** (arbitrary suprema included).
+
+**Definition (`instCompleteLattice`).** **`instCompleteLattice D P`** is the **`CompleteLattice`** instance
+
+```text
+completeLatticeOfInf (InverseLimit D P) (inverseLimitPartialOrder D P) … (instInfSet.isGLB_sInf' D P)
+```
