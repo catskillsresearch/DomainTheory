@@ -28,3 +28,5 @@
 - [Embedding every space](InverseLimits/1972_Embedding_every_space.md) ✓
 - [Other functors](InverseLimits/1972_Other_functors.md) ✓
 - [Subspaces of a limit](InverseLimits/1972_Subspaces_of_a_limit.md) ✓
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-01) — <a href="1972_REVISION.md">1972 revision progress</a></p>
