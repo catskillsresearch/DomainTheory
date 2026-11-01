@@ -18,7 +18,7 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
 variable (P : ∀ n, ContinuousLatticeProjection (D n) (D (n + 1)))
 
-def embInf.fun (n : ℕ) (x : D n) : InverseLimit D P := ⟨iComp D P n x, iComp_compatible D P n x⟩
+def embInf.fun (n : ℕ) (x : D n) : InverseLimit D P := ⟨iComp D P n x, iComp.compatible D P n x⟩
 
 namespace embInf
 
@@ -28,7 +28,7 @@ theorem monotone (n : ℕ) : Monotone (embInf.fun D P n) := by
   intro x x' hxx
   rw [← Subtype.coe_le_coe]
   intro m
-  exact iComp_monotone D P n m hxx
+  exact iComp.monotone D P n m hxx
 
 theorem preservesDirectedSup (n : ℕ) : PreservesDirectedSup (embInf.fun D P n) := by
   intro S hS hSdir
@@ -45,7 +45,7 @@ theorem preservesDirectedSup (n : ℕ) : PreservesDirectedSup (embInf.fun D P n)
       = (fun x => iComp D P n x m) '' S := by
     simp only [Set.image_image, embInf.coe, Function.eval]
   rw [sSup_apply_eq_sSup_image, heq]
-  exact iComp_preservesDirectedSup D P n m hS hSdir
+  exact iComp.preservesDirectedSup D P n m hS hSdir
 
 end embInf
 
@@ -59,14 +59,14 @@ theorem embInf_succ (n : ℕ) (x : D n) :
   show iComp D P (n + 1) ((P n).incl x) m = iComp D P n x m
   by_cases h1 : n ≤ m
   · by_cases h2 : n + 1 ≤ m
-    · rw [iComp_of_le D P h2, iComp_of_le D P h1, embeddingAlongTower.succ_left D P h1 h2]
+    · rw [iComp.of_le D P h2, iComp.of_le D P h1, embeddingAlongTower.succ_left D P h1 h2]
     · have hmn : m = n := le_antisymm (Nat.lt_succ_iff.mp (not_le.mp h2)) h1
       subst hmn
-      rw [iComp_self, iComp_of_ge D P h2,
+      rw [iComp.self, iComp.of_ge D P h2,
         projectionAlongTower.succ D P (le_refl m) (le_of_lt (not_le.mp h2)) ((P m).incl x),
         projectionAlongTower.self, (P m).retr_incl]
   · have h2 : ¬ n + 1 ≤ m := fun h => h1 (le_trans (Nat.le_succ n) h)
-    rw [iComp_of_ge D P h2, iComp_of_ge D P h1,
+    rw [iComp.of_ge D P h2, iComp.of_ge D P h1,
       projectionAlongTower.succ D P (le_of_lt (not_le.mp h1)) (le_of_lt (not_le.mp h2)) ((P n).incl x),
       (P n).retr_incl]
 

@@ -23,11 +23,11 @@ noncomputable def proposition_4_2 (n : ℕ) :
     ContinuousLatticeProjection (D n) (InverseLimit D P) where
   incl := embInf D P n
   retr := limitProjectionToLevel D P n
-  retr_incl x := iComp_self D P n x
+  retr_incl x := iComp.self D P n x
   incl_retr_le y := by
     rw [← Subtype.coe_le_coe]
     intro m
-    exact iComp_incl_le D P n y m
+    exact iComp.incl_le D P n y m
 
 end InverseLimit
 

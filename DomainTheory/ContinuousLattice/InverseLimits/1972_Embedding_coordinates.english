@@ -1,0 +1,44 @@
+A point of the inverse limit $D_\infty = \mathrm{InverseLimit}\,D\,P$ is a compatible family $(y_m)_{m \in \mathbb{N}}$ with $y_m \in D_m$ and $j_m(y_{m+1}) = y_m$. Scott’s embedding $i_{n\infty} : D_n \to D_\infty$ (Prop. 4.2) is built **coordinate by coordinate**: for fixed $n$ and $x \in D_n$, the $m$-th component $i_{n\infty}(x)_m$ must be an element of $D_m$ that fits into such a family.
+
+- When **$m \ge n$**, the only sensible choice is to **climb** from $x$ along the tower of inclusions $i_k = (P\,k).\mathrm{incl}$ — the map [Embeddings along the tower](1972_Embeddings_along_the_tower.md) **`embeddingAlongTower`**.
+- When **$m < n$**, compatibility with higher coordinates forces the value at $m$ to be obtained by **descending** from $x$ along retractions $j_k = (P\,k).\mathrm{retr}$ — [Projections along the tower](1972_Projections_along_the_tower.md) **`projectionAlongTower`**.
+
+**`iComp`** is short for Scott’s **$i_{n\infty}$ component**: **`iComp D P n x m`** is the $m$-th coordinate $(i_{n\infty}(x))_m$ (the **`i`** matches Scott’s embedding $i_{n\infty}$, **`Comp`** = component at index **`m`**). There is no single tower map $D_n \to D_m$ for all **`m`**: the recipe switches at **`n ≤ m`** vs **`n ≰ m`**, and **`iComp`** packages that case split once so **`embInf`** can build **`i_{n\infty}(x)`** as the compatible sequence **`m ↦ iComp D P n x m`**.
+
+**Definition (`iComp`).** For **`n`**, **`x : D n`**, and **`m`**,
+
+$$\texttt{iComp}\,D\,P\,n\,x\,m =
+\begin{cases}
+\texttt{embeddingAlongTower}\,D\,P\,h\,x & \text{if } n \le m,\\
+\texttt{projectionAlongTower}\,D\,P\,h'\,x & \text{if } n \not\le m,
+\end{cases}$$
+
+where **`h`** and **`h'`** are the canonical proofs produced from **`n ≤ m`** or **`¬ n ≤ m`**.
+
+In the namespace **`iComp`** we have
+
+**Theorem (`of_le`).** *If **`h : n ≤ m`**, then **`iComp D P n x m = embeddingAlongTower D P h x`.*
+
+**Theorem (`of_ge`).** *If **`¬ n ≤ m`**, then **`iComp D P n x m = projectionAlongTower D P (le_of_lt (not_le.mp h)) x`.*
+
+**Theorem (`self`).** *For all **`n`**, **`x : D n`**, **`iComp D P n x n = x`.*
+
+*Proof.* **`of_le`** and **`embeddingAlongTower.self`**. $\square$ (This is the identity **`j_{\infty n} ∘ i_{n\infty} = \mathrm{id}`** at the coordinate level.)
+
+**Theorem (`compatible`).** *For every **`n`**, **`x : D n`**, the sequence **`fun m => iComp D P n x m`** satisfies the inverse-limit compatibility laws.*
+
+*Proof.* Case split on **`n ≤ m`**, **`n ≤ m + 1`**, and **`m + 1 ≤ n`**; the delicate middle case **`n = m + 1`** uses **`projectionAlongTower.succ`** and **`self`**, the general descent case uses **`projectionAlongTower.retr`**. $\square$
+
+**Theorem (`incl_le`).** *If **`y : InverseLimit D P`**, then for all **`n`**, **`m`**, **`iComp D P n (y.1 n) m ≤ y.1 m`.*
+
+*Proof.* If **`n ≤ m`**, **`embeddingAlongTower.le`**; if **`n ≰ m`**, the coordinate equals **`y.1 m`** by **`projectionAlongTower.compatible`**. $\square$
+
+**Theorem (`preservesDirectedSup`).** *For fixed **`n`**, **`m`**, **`fun x => iComp D P n x m`** preserves directed suprema.*
+
+*Proof.* **`by_cases`** on **`n ≤ m`**, then rewrite to **`embeddingAlongTower`** or **`projectionAlongTower`**. $\square$
+
+**Theorem (`monotone`).** *For fixed **`n`**, **`m`**, **`fun x => iComp D P n x m`** is monotone.*
+
+*Proof.* From **`preservesDirectedSup`** via **`preservesDirectedSup_monotone`**. $\square$
+
+**Use.** [Embeddings into the limit](1972_Embeddings_into_the_limit.md) packages **`⟨iComp D P n x, iComp.compatible D P n x⟩`** as **`embInf.fun D P n x : InverseLimit D P`** — Scott’s $i_{n\infty}(x)$.

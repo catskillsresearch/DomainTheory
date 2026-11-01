@@ -56,10 +56,10 @@ theorem lemma_4_5 (u : ∀ n, D (n + 1))
     cases d with
     | zero =>
         change iComp D P (n + 1) (u n) (n + 1) = u n
-        exact iComp_self D P (n + 1) (u n)
+        exact iComp.self D P (n + 1) (u n)
     | succ d =>
         change iComp D P (n + (d + 1) + 1) (u (n + (d + 1))) (n + 1) = u n
-        rw [iComp_of_ge D P (by omega)]
+        rw [iComp.of_ge D P (by omega)]
         exact hprojTower (d + 1) n
   have hdir : DirectedOn (· ≤ ·) (Set.range a) :=
     directedOn_range.2 ha.directed_le

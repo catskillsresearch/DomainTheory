@@ -148,14 +148,7 @@ flowchart TB
     InverseLimits_embInf_lean__embInf_le_succ["embInf_le_succ"]
     InverseLimits_embInf_lean__embInf_succ["embInf_succ"]
     InverseLimits_inverseLimitTopology_lean__eq_iSup["eq_iSup"]
-    InverseLimits_iComp_lean__iComp["iComp"]
-    InverseLimits_iComp_lean__iComp_compatible["iComp_compatible"]
-    InverseLimits_iComp_lean__iComp_incl_le["iComp_incl_le"]
-    InverseLimits_iComp_lean__iComp_monotone["iComp_monotone"]
-    InverseLimits_iComp_lean__iComp_of_ge["iComp_of_ge"]
-    InverseLimits_iComp_lean__iComp_of_le["iComp_of_le"]
-    InverseLimits_iComp_lean__iComp_preservesDirectedSup["iComp_preservesDirectedSup"]
-    InverseLimits_iComp_lean__iComp_self["iComp_self"]
+    InverseLimits_iComp_lean___iComp["iComp<br/>compatible<br/>incl_le<br/>monotone<br/>of_ge<br/>of_le<br/>preservesDirectedSup<br/>self"]
     InverseLimits_instCompleteLattice_lean__instCompleteLattice["instCompleteLattice"]
     InverseLimits_instInfSet_lean__instInfSet["instInfSet"]
     InverseLimits_InverseLimit_lean__InverseLimit["InverseLimit"]
@@ -384,7 +377,7 @@ flowchart TB
   Injective_InjectiveSpace_lean__InjectiveSpace -.-> InverseLimits_inverseLimitTopology_lean__isInjectiveSpace
   Injective_RetractSubspace_lean__RetractSubspace -.-> Injective_corollary_1_6_lean__corollary_1_6
   Injective_proposition_1_2_lean__Sierpinski -.-> Injective_proposition_1_2_lean__proposition_1_2
-  InverseLimits_Compatible_lean__Compatible -.-> InverseLimits_iComp_lean__iComp_compatible
+  InverseLimits_Compatible_lean__Compatible -.-> InverseLimits_iComp_lean___iComp
   InverseLimits_Compatible_lean__Compatible -.-> InverseLimits_instInfSet_lean__compatible_sInf
   InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_coconeInf_lean___coconeInf
   InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_coe_sSup_of_directed_lean__coe_sSup_of_directed
@@ -393,7 +386,7 @@ flowchart TB
   InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_embInf_lean__embInf_family_directed
   InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_embInf_lean__embInf_le_succ
   InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_embeddingAlongTower_lean___embeddingAlongTower
-  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_iComp_lean__iComp_incl_le
+  InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_iComp_lean___iComp
   InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_instCompleteLattice_lean__instCompleteLattice
   InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_instInfSet_lean__coe_sInf
   InverseLimits_InverseLimit_lean__InverseLimit -.-> InverseLimits_instInfSet_lean__compatible_sInf
@@ -434,16 +427,9 @@ flowchart TB
   InverseLimits_embeddingAlongTower_lean___embeddingAlongTower -.-> ContinuousLattices_continuousLattice_scottTopology_of_injective_lean__continuousLattice_scottTopology_of_injective
   InverseLimits_embeddingAlongTower_lean___embeddingAlongTower -.-> FunctionSpaces_ScottMap_lean___ScottMap
   InverseLimits_embeddingAlongTower_lean___embeddingAlongTower -.-> InverseLimits_coconeInf_lean___coconeInf
-  InverseLimits_embeddingAlongTower_lean___embeddingAlongTower -.-> InverseLimits_iComp_lean__iComp_of_le
+  InverseLimits_embeddingAlongTower_lean___embeddingAlongTower -.-> InverseLimits_iComp_lean___iComp
   InverseLimits_embeddingAlongTower_lean___embeddingAlongTower -.-> InverseLimits_inverseLimitPartialOrder_lean__inverseLimitPartialOrder
-  InverseLimits_iComp_lean__iComp -.-> InverseLimits_embInf_lean___embInf
-  InverseLimits_iComp_lean__iComp -.-> InverseLimits_iComp_lean__iComp_compatible
-  InverseLimits_iComp_lean__iComp -.-> InverseLimits_iComp_lean__iComp_incl_le
-  InverseLimits_iComp_lean__iComp -.-> InverseLimits_iComp_lean__iComp_monotone
-  InverseLimits_iComp_lean__iComp -.-> InverseLimits_iComp_lean__iComp_of_ge
-  InverseLimits_iComp_lean__iComp -.-> InverseLimits_iComp_lean__iComp_of_le
-  InverseLimits_iComp_lean__iComp -.-> InverseLimits_iComp_lean__iComp_preservesDirectedSup
-  InverseLimits_iComp_lean__iComp -.-> InverseLimits_iComp_lean__iComp_self
+  InverseLimits_iComp_lean___iComp -.-> InverseLimits_embInf_lean___embInf
   InverseLimits_inverseLimitLE_lean___inverseLimitLE -.-> InverseLimits_inverseLimitLT_lean___inverseLimitLT
   InverseLimits_inverseLimitPartialOrder_lean__inverseLimitPartialOrder -.-> InverseLimits_instInfSet_lean__isGLB_sInf_
   InverseLimits_inverseLimitSInfCoe_lean__inverseLimitSInfCoe -.-> InverseLimits_instInfSet_lean__coe_sInf
@@ -473,7 +459,7 @@ flowchart TB
   InverseLimits_projectionAlongTower_lean___projectionAlongTower -.-> FunctionSpaces_proposition_3_10_lean__proposition_3_10
   InverseLimits_projectionAlongTower_lean___projectionAlongTower -.-> FunctionSpaces_scottSubspaceExtend_lean___scottSubspaceExtend
   InverseLimits_projectionAlongTower_lean___projectionAlongTower -.-> InverseLimits_coconeInf_lean___coconeInf
-  InverseLimits_projectionAlongTower_lean___projectionAlongTower -.-> InverseLimits_iComp_lean__iComp_of_ge
+  InverseLimits_projectionAlongTower_lean___projectionAlongTower -.-> InverseLimits_iComp_lean___iComp
   InverseLimits_projectionAlongTower_lean___projectionAlongTower -.-> InverseLimits_instInfSet_lean__retr_sInf
   InverseLimits_projectionAlongTower_lean___projectionAlongTower -.-> InverseLimits_lemma_4_5_lean__lemma_4_5
   InverseLimits_projectionAlongTower_lean___projectionAlongTower -.-> InverseLimits_tower_step_galoisConnection_lean__tower_step_galoisConnection
@@ -495,7 +481,7 @@ flowchart TB
   ScottMaps_PreservesDirectedSup_lean___PreservesDirectedSup -.-> InverseLimits_coconeInf_lean___coconeInf
   ScottMaps_PreservesDirectedSup_lean___PreservesDirectedSup -.-> InverseLimits_embInf_lean___embInf
   ScottMaps_PreservesDirectedSup_lean___PreservesDirectedSup -.-> InverseLimits_embeddingAlongTower_lean___embeddingAlongTower
-  ScottMaps_PreservesDirectedSup_lean___PreservesDirectedSup -.-> InverseLimits_iComp_lean__iComp_preservesDirectedSup
+  ScottMaps_PreservesDirectedSup_lean___PreservesDirectedSup -.-> InverseLimits_iComp_lean___iComp
   ScottMaps_PreservesDirectedSup_lean___PreservesDirectedSup -.-> InverseLimits_limitProjectionToLevel_lean___limitProjectionToLevel
   ScottMaps_PreservesDirectedSup_lean___PreservesDirectedSup -.-> InverseLimits_projectionAlongTower_lean___projectionAlongTower
   ScottMaps_PreservesDirectedSup_lean___PreservesDirectedSup -.-> ScottMaps_continuous_preservesDirectedSup_lean__continuous_preservesDirectedSup
@@ -589,7 +575,7 @@ flowchart TB
   WayBelow_ScottOpen_lean___ScottOpen -.-> ContinuousLattices_proposition_2_4_lean__proposition_2_4
   WayBelow_ScottOpen_lean___ScottOpen -.-> FunctionSpaces_scottMapInducedPiTopology_lean___scottMapInducedPiTopology
   WayBelow_ScottOpen_lean___ScottOpen -.-> FunctionSpaces_scottSubspaceExtend_lean___scottSubspaceExtend
-  WayBelow_ScottOpen_lean___ScottOpen -.-> InverseLimits_iComp_lean__iComp_of_ge
+  WayBelow_ScottOpen_lean___ScottOpen -.-> InverseLimits_iComp_lean___iComp
   WayBelow_ScottOpen_lean___ScottOpen -.-> ScottMaps_PreservesDirectedSup_lean___PreservesDirectedSup
   WayBelow_ScottOpen_lean___ScottOpen -.-> ScottMaps_scottOpen_preimage_lean__scottOpen_preimage
   WayBelow_ScottOpen_lean___ScottOpen -.-> WayBelow_ContinuousLattice_lean___ContinuousLattice
@@ -654,8 +640,6 @@ flowchart TB
   Injective_proposition_1_4_lean__proposition_1_4 --> Injective_corollary_1_6_lean__corollary_1_6
   Injective_proposition_1_5_lean__proposition_1_5 --> Injective_corollary_1_6_lean__corollary_1_6
   InverseLimits_embInf_lean__embInf_family_directed --> InverseLimits_inverseLimitTopology_lean__eq_iSup
-  InverseLimits_iComp_lean__iComp_compatible --> InverseLimits_embInf_lean___embInf
-  InverseLimits_iComp_lean__iComp_monotone --> InverseLimits_embInf_lean___embInf
   InverseLimits_instCompleteLattice_lean__instCompleteLattice --> FunctionSpaces_proposition_3_12_lean__proposition_3_12
   InverseLimits_instInfSet_lean__compatible_sInf --> InverseLimits_instInfSet_lean__instInfSet
   InverseLimits_instInfSet_lean__isGLB_sInf_ --> InverseLimits_instCompleteLattice_lean__instCompleteLattice
@@ -1060,13 +1044,13 @@ linkStyle 380 stroke:#15803d,color:#15803d,stroke-width:2px
 linkStyle 381 stroke:#15803d,color:#15803d,stroke-width:2px
 linkStyle 382 stroke:#15803d,color:#15803d,stroke-width:2px
 linkStyle 383 stroke:#15803d,color:#15803d,stroke-width:2px
-linkStyle 384 stroke:#15803d,color:#15803d,stroke-width:2px
-linkStyle 385 stroke:#15803d,color:#15803d,stroke-width:2px
-linkStyle 386 stroke:#15803d,color:#15803d,stroke-width:2px
-linkStyle 387 stroke:#15803d,color:#15803d,stroke-width:2px
-linkStyle 388 stroke:#15803d,color:#15803d,stroke-width:2px
-linkStyle 389 stroke:#15803d,color:#15803d,stroke-width:2px
-linkStyle 390 stroke:#15803d,color:#15803d,stroke-width:2px
+linkStyle 384 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 385 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 386 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 387 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 388 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 389 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
+linkStyle 390 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
 linkStyle 391 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
 linkStyle 392 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
 linkStyle 393 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
@@ -1132,15 +1116,6 @@ linkStyle 452 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
 linkStyle 453 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
 linkStyle 454 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
 linkStyle 455 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
-linkStyle 456 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
-linkStyle 457 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
-linkStyle 458 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
-linkStyle 459 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
-linkStyle 460 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
-linkStyle 461 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
-linkStyle 462 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
-linkStyle 463 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
-linkStyle 464 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
 
   classDef node fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   class Constructions_proposition_2_9_lean___proposition_2_9 node
@@ -1171,6 +1146,7 @@ linkStyle 464 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
   class InverseLimits_coconeInf_lean___coconeInf node
   class InverseLimits_embInf_lean___embInf node
   class InverseLimits_embeddingAlongTower_lean___embeddingAlongTower node
+  class InverseLimits_iComp_lean___iComp node
   class InverseLimits_inverseLimitLE_lean___inverseLimitLE node
   class InverseLimits_inverseLimitLT_lean___inverseLimitLT node
   class InverseLimits_inverseLimitTopology_lean___inverseLimitTopology node
@@ -1274,14 +1250,6 @@ linkStyle 464 stroke:#1d4ed8,color:#1d4ed8,stroke-width:2px
   class InverseLimits_embInf_lean__embInf_succ node
   class InverseLimits_embInf_lean__embInf_le_succ node
   class InverseLimits_embInf_lean__embInf_family_directed node
-  class InverseLimits_iComp_lean__iComp node
-  class InverseLimits_iComp_lean__iComp_of_le node
-  class InverseLimits_iComp_lean__iComp_of_ge node
-  class InverseLimits_iComp_lean__iComp_self node
-  class InverseLimits_iComp_lean__iComp_incl_le node
-  class InverseLimits_iComp_lean__iComp_preservesDirectedSup node
-  class InverseLimits_iComp_lean__iComp_monotone node
-  class InverseLimits_iComp_lean__iComp_compatible node
   class InverseLimits_instCompleteLattice_lean__instCompleteLattice node
   class InverseLimits_instInfSet_lean__retr_sInf node
   class InverseLimits_instInfSet_lean__compatible_sInf node

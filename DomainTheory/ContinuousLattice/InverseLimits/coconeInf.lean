@@ -59,10 +59,10 @@ theorem comp_embInf (f : ∀ n, ScottMap (D n) D')
     refine iSup_le fun m => ?_
     show f m (iComp D P n x m) ≤ f n x
     by_cases h : n ≤ m
-    · rw [iComp_of_le D P h]; exact le_of_eq (climb D P f hf x h)
-    · rw [iComp_of_ge D P h]; exact descend D P f hf (le_of_lt (not_le.mp h)) x
+    · rw [iComp.of_le D P h]; exact le_of_eq (climb D P f hf x h)
+    · rw [iComp.of_ge D P h]; exact descend D P f hf (le_of_lt (not_le.mp h)) x
   · refine le_trans (le_of_eq ?_) (le_iSup (fun m => f m ((embInf D P n x).1 m)) n)
-    rw [show (embInf D P n x).1 n = x from iComp_self D P n x]
+    rw [show (embInf D P n x).1 n = x from iComp.self D P n x]
 
 theorem preservesDirectedSup (f : ∀ n, ScottMap (D n) D') :
     PreservesDirectedSup (coconeInf D P f) := by

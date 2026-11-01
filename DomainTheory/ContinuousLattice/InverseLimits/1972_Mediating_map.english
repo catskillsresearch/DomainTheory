@@ -78,7 +78,7 @@ $$(f\,m)\,(\mathrm{projectionAlongTower}\,D\,P\,h\,x) \le (f\,n)\,x.$$
 
 $$\texttt{coconeInf}\,D\,P\,f\,(\mathrm{embInf}\,D\,P\,n\,x) = (f\,n)\,x.$$
 
-*Proof.* **`iComp_of_le`** / **`iComp_of_ge`**, **`climb`**, **`descend`**, and **`iComp_self`**. $\square$
+*Proof.* **`iComp.of_le`** / **`iComp.of_ge`**, **`climb`**, **`descend`**, and **`iComp.self`**. $\square$
 
 **Theorem (`coconeInf.preservesDirectedSup`).** *For every **`f`**, **`coconeInf D P f`** preserves directed suprema.*
 

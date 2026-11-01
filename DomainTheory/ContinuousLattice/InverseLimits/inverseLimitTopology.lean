@@ -133,9 +133,9 @@ theorem eq_iSup (x : InverseLimit D P) :
         ∈ Subtype.val '' Set.range (fun n => embInf D P n (x.1 n)) :=
       ⟨embInf D P m (x.1 m), ⟨m, rfl⟩, rfl⟩
     have hle := (le_sSup hmem) m
-    rwa [show (embInf D P m (x.1 m)).1 m = x.1 m from iComp_self D P m (x.1 m)] at hle
+    rwa [show (embInf D P m (x.1 m)).1 m = x.1 m from iComp.self D P m (x.1 m)] at hle
   · exact iSup_le fun n => by
-      rw [← Subtype.coe_le_coe]; intro m; exact iComp_incl_le D P n x m
+      rw [← Subtype.coe_le_coe]; intro m; exact iComp.incl_le D P n x m
 
 end inverseLimit
 namespace inverseLimitTopology
