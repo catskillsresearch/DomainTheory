@@ -17,7 +17,7 @@
 - [Order on the inverse limit](InverseLimits/1972_inverseLimitLE.md) ✓
 - [Strict order on the inverse limit](InverseLimits/1972_inverseLimitLT.md) ✓
 - [The limit lattice](InverseLimits/1972_Limit_lattice.md) ✓
-- [inverseLimitTopology](InverseLimits/1972_inverseLimitTopology.md)
+- [Topology of the inverse limit](InverseLimits/1972_inverseLimitTopology.md) ✓
 - [Proposition 4.1](InverseLimits/1972_Proposition_4_1.md)
 - [Proposition 4.2](InverseLimits/1972_Proposition_4_2.md)
 - [Corollary 4.3](InverseLimits/1972_Corollary_4_3.md)

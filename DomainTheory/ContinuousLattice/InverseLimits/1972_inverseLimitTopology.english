@@ -1,0 +1,51 @@
+Write $D_\infty = \mathrm{InverseLimit}\,D\,P$. Scott topologizes each stage lattice $D_n$; on **all** sequences $(x_n)_{n \in \mathbb{N}}$ the product topology is the Tychonoff product of those Scott topologies. The **inverse limit topology** on $D_\infty$ is the subspace topology inherited from that product: open sets in $D_\infty$ are exactly the intersections of product opens with the set of **compatible** sequences.
+
+**Definition (`inverseLimitTopology`).** **`inverseLimitTopology D P`** is
+
+$$\mathcal{T}_\infty \;=\; \big\{ U \cap D_\infty \;\Big|\; U \text{ open in } \prod_{n \in \mathbb{N}} (D_n,\ \text{Scott}) \,\},$$
+
+implemented as **`TopologicalSpace.induced Subtype.val`** from the Pi topology with **`scottTopologicalSpace`** on each factor.
+
+In the namespace **`inverseLimit`** we have
+
+**Theorem (`coordinate_continuous`).** *For each **`n`**, the coordinate map **`x ↦ x_n`** is continuous from **`inverseLimitTopology`** to Scott on $D_n$.*
+
+*Proof.* Open sets in the product are detected coordinatewise; preimages factor through **`continuous_apply`**. $\square$
+
+**Theorem (`t0Space`).** *$(D_\infty, \mathcal{T}_\infty)$ is $T_0$.*
+
+*Proof.* **`Subtype.val`** is an embedding into a product of $T_0$ spaces. $\square$
+
+**Theorem (`specializationPreorder_iff`).** *For **`x`**, **`y : InverseLimit D P`**, specialization preorder in **`inverseLimitTopology`** agrees with coordinatewise **`≤`:***
+
+$$x \preceq y \;\;\Longleftrightarrow\;\; x \le y.$$
+
+*Proof.* Compare **`specializes`** along the embedding into the product; at each index use Scott specialization on $D_n$. $\square$
+
+**Theorem (`isInjectiveSpace`).** *If each **`D n`** is a continuous lattice, then $(D_\infty, \mathcal{T}_\infty)$ is an **injective space** (Scott’s §1 notion).*
+
+*Proof.* Given a continuous **`f : X → D_\infty`** from a compact Hausdorff **`X`**, read coordinates **`f_n`**, extend each by **`scottExtend`**, check compatibility with **`lemma_3_9`**, assemble the extension map into $D_\infty$, and compare on coordinates with **`scottExtend_eq_of_continuous`**. $\square$
+
+**Theorem (`scottTopology_eq_induced_pi`).** *When each stage is a continuous lattice, the **Scott topology** **`scottTopologicalSpace`** on $D_\infty$ **equals** **`inverseLimitTopology`***.
+
+*Proof.* **`isInjectiveSpace`** and **`specializationPreorder_iff`** pin down the Scott topology on an injective space; apply **`continuousLattice_scottTopology_of_injective`**. $\square$
+
+**Theorem (`eq_iSup`).** *Every **`x : InverseLimit D P`** is the supremum of its approximants along embeddings:*
+
+$$x \;=\; \bigvee_{n \in \mathbb{N}} i_{n\infty}(x_n).$$
+
+*Proof.* The family $\{\, i_{n\infty}(x_n) \mid n \in \mathbb{N}\,\}$ is directed; compare coordinates using **`coe_sSup_of_directed`**, **`embInf.family_directed`**, and **`iComp`**. $\square$
+
+In the namespace **`inverseLimitTopology`** we have
+
+**Theorem (`limitProjectionToLevel`).** *Each **`limitProjectionToLevel n`** ($j_{\infty n}$) is continuous.*
+
+*Proof.* Same as **`coordinate_continuous`**. $\square$
+
+**Theorem (`embInf`).** *If stages are continuous lattices, each **`embInf n`** ($i_{n\infty}$) is continuous into **`inverseLimitTopology`***.
+
+*Proof.* Rewrite with **`scottTopology_eq_induced_pi`**; use the **`ScottMap`** instance on **`embInf`**. $\square$
+
+**Theorem (`coconeInf`).** *Under the same hypothesis, **`coconeInf f`** is continuous from **`inverseLimitTopology`***.
+
+*Proof.* Again identify Scott with **`inverseLimitTopology`**, then **`PreservesDirectedSup.continuous_of`** and **`coconeInf.preservesDirectedSup`**. $\square$

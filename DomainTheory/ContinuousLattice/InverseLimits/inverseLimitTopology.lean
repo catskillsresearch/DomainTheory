@@ -1,20 +1,14 @@
 module
 
-public import DomainTheory.ContinuousLattice.InverseLimits.InverseLimit
-public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.limitProjectionToLevel
 import DomainTheory.ContinuousLattice.InverseLimits.coe_sSup_of_directed
-public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf
 public import DomainTheory.ContinuousLattice.Specialization.SpecializationPreorder
-public import DomainTheory.ContinuousLattice.Specialization.scottTopologicalSpace
-public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
-public import DomainTheory.ContinuousLattice.ContinuousLattices.lemma_3_9
-public import DomainTheory.ContinuousLattice.ContinuousLattices.continuousLattice_scottTopology_of_injective
-public import DomainTheory.ContinuousLattice.Constructions.scottExtend_continuous
-public import DomainTheory.ContinuousLattice.Constructions.scottExtend_eq_of_continuous
 public import DomainTheory.ContinuousLattice.Injective.InjectiveSpace
-public import Mathlib.Data.Set.Basic
+import DomainTheory.ContinuousLattice.Constructions.scottExtend_continuous
+import DomainTheory.ContinuousLattice.Constructions.scottExtend_eq_of_continuous
+import DomainTheory.ContinuousLattice.ContinuousLattices.continuousLattice_scottTopology_of_injective
+import DomainTheory.ContinuousLattice.ContinuousLattices.lemma_3_9
 
 @[expose] public section
 
@@ -140,24 +134,25 @@ theorem eq_iSup (x : InverseLimit D P) :
 end inverseLimit
 namespace inverseLimitTopology
 
-theorem limitProjectionToLevel_continuous (n : ℕ) :
+theorem limitProjectionToLevel (n : ℕ) :
     @Continuous (InverseLimit D P) (D n) (inverseLimitTopology D P)
-      scottTopologicalSpace (limitProjectionToLevel D P n) :=
+      scottTopologicalSpace (DomainTheory.ContinuousLattice.limitProjectionToLevel D P n) :=
   inverseLimit.coordinate_continuous D P n
 
-theorem embInf_continuous (hD : ∀ n, ContinuousLattice (D n)) (n : ℕ) :
+theorem embInf (hD : ∀ n, ContinuousLattice (D n)) (n : ℕ) :
     @Continuous (D n) (InverseLimit D P) scottTopologicalSpace
-      (inverseLimitTopology D P) (embInf D P n) := by
+      (inverseLimitTopology D P) (DomainTheory.ContinuousLattice.embInf D P n) := by
   rw [← inverseLimit.scottTopology_eq_induced_pi D P hD]
-  exact (embInf D P n).continuous
+  exact (DomainTheory.ContinuousLattice.embInf D P n).continuous
 
-theorem coconeInf_continuous (hD : ∀ n, ContinuousLattice (D n))
+theorem coconeInf (hD : ∀ n, ContinuousLattice (D n))
     {D' : Type*} [CompleteLattice D']
     (f : ∀ n, ScottMap (D n) D') :
     @Continuous (InverseLimit D P) D' (inverseLimitTopology D P)
-      scottTopologicalSpace (coconeInf D P f) := by
+      scottTopologicalSpace (DomainTheory.ContinuousLattice.coconeInf D P f) := by
   rw [← inverseLimit.scottTopology_eq_induced_pi D P hD]
-  exact PreservesDirectedSup.continuous_of (coconeInf.preservesDirectedSup D P f)
+  exact PreservesDirectedSup.continuous_of
+    (DomainTheory.ContinuousLattice.coconeInf.preservesDirectedSup D P f)
 
 end inverseLimitTopology
 
