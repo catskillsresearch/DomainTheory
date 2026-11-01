@@ -1,0 +1,35 @@
+For an inverse system of continuous lattices $\langle D_n, P_n \rangle$ with $i_n = (P\,n).\mathrm{incl} : D_n \to D_{n+1}$, Scott iterates the $i_n$ but does not introduce a separate symbol for the composite. When $n \le m$, climbing from level $n$ to $m$ means applying $i_n, i_{n+1}, \ldots, i_{m-1}$ (dually, [Projections along the tower](1972_Projections_along_the_tower.md) descends with $j_k = (P\,k).\mathrm{retr}$). Each $i_n$ is the inclusion half of the [continuous lattice projection](../FunctionSpaces/1972_Continuous_lattice_projection.md) on one **step** of the tower ([Tower step adjunction](1972_projection.md)), not the composite climb defined here.
+
+**Definition (`embeddingAlongTower`).** Given **`h : n ≤ m`**, **`embeddingAlongTower D P h`** is the map $D_n \to D_m$ obtained by recursion on **`h`**, at each successor step applying **`(P k).incl`**.
+
+In the namespace **`embeddingAlongTower`** we have
+
+**Theorem (`self`).** *For **`h : n ≤ n`**, **`embeddingAlongTower D P h`** is the identity on $D_n$.*
+
+*Proof.* The recursion for **`Nat.leRecOn`** at a reflexive proof is **`id`**. $\square$
+
+**Theorem (`succ`).** *If **`h1 : n ≤ m`** and **`h2 : n ≤ m + 1`**, then for all **`x : D n`**,*
+
+$$\mathrm{embeddingAlongTower}\,D\,P\,h_2\,x = i_m\bigl(\mathrm{embeddingAlongTower}\,D\,P\,h_1\,x\bigr).$$
+
+*Proof.* Unfold **`embeddingAlongTower`** and **`Nat.leRecOn_succ`**. $\square$
+
+**Theorem (`succ_left`).** *If **`h1 : n ≤ m`** and **`h2 : n + 1 ≤ m`**, then for all **`x : D n`**,*
+
+$$\mathrm{embeddingAlongTower}\,D\,P\,h_2\,(i_n(x)) = \mathrm{embeddingAlongTower}\,D\,P\,h_1\,x.$$
+
+*Proof.* Unfold **`embeddingAlongTower`** and apply **`Nat.leRecOn_succ_left`**. $\square$
+
+**Theorem (`mono`).** *If **`h : n ≤ m`** and **`x ≤ y`** in $D_n$, then **`embeddingAlongTower D P h x ≤ embeddingAlongTower D P h y`.*
+
+*Proof.* Induct on **`m`** and **`h`** with **`Nat.le_induction`**. The base case is **`self`**. For the successor step, rewrite with **`succ`** and use monotonicity of **`(P k).incl`**. $\square$
+
+**Theorem (`le`).** *If **`y : InverseLimit D P`** and **`h : n ≤ m`**, then*
+
+$$\mathrm{embeddingAlongTower}\,D\,P\,h\,(y\,n) \le y\,m.$$
+
+*Proof.* Induct on **`m`** and **`h`**. The base is **`self`**. For the successor step, use **`succ`**, monotonicity of **`(P k).incl`**, compatibility **`(P k).retr (y (k + 1)) = y k`**, and **`incl_retr_le`**. $\square$
+
+**Theorem (`preservesDirectedSup`).** *If **`h : n ≤ m`**, then **`embeddingAlongTower D P h`** preserves directed suprema.*
+
+*Proof.* Induct on **`h`**. At **`n = m`**, **`self`** gives the identity. For the successor step, **`succ`** expresses **`embeddingAlongTower`** as a composite of **`(P k).incl`** with the lower **`embeddingAlongTower`**; apply **`ScottMap.preservesDirectedSup_comp`** and directed-sup preservation for **`(P k).incl`**. $\square$

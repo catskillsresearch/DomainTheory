@@ -11,7 +11,7 @@
 - [Special inverse systems](InverseLimits/1972_Special_inverse_systems.md) ✓
 - [Projections along the tower](InverseLimits/1972_Projections_along_the_tower.md) ✓
 - [Tower step adjunction](InverseLimits/1972_projection.md) ✓
-- [Embeddings along the tower](InverseLimits/1972_Embeddings_along_the_tower.md)
+- [Embeddings along the tower](InverseLimits/1972_Embeddings_along_the_tower.md) ✓
 - [Coordinates of an embedding](InverseLimits/1972_Embedding_coordinates.md)
 - [Embeddings into the limit](InverseLimits/1972_Embeddings_into_the_limit.md)
 - [inverseLimitLE](InverseLimits/1972_inverseLimitLE.md)
