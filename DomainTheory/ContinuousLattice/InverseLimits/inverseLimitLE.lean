@@ -16,6 +16,7 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
 variable (P : ∀ n, ContinuousLatticeProjection (D n) (D (n + 1)))
 
+/-- Coordinatewise $\le$ on compatible sequences: `x ≤ y` iff `x.1 n ≤ y.1 n` for every `n`. -/
 abbrev inverseLimitLE (x y : InverseLimit D P) : Prop :=
   ∀ n,
     @LE.le (D n)

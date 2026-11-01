@@ -1,0 +1,17 @@
+On the inverse limit $D_\infty = \mathrm{InverseLimit}\,D\,P$, the coordinatewise order [Order on the inverse limit](1972_inverseLimitLE.md) **`inverseLimitLE`** is the natural $\le$. The **strict** comparison is the usual one for a partial order: below in $\le$ but not above.
+
+**Definition (`inverseLimitLT`).** For **`x`**, **`y : InverseLimit D P`**,
+
+$$\texttt{inverseLimitLT}\,D\,P\,x\,y \;\;\Longleftrightarrow\;\;
+\texttt{inverseLimitLE}\,D\,P\,x\,y \;\wedge\; \neg\,\texttt{inverseLimitLE}\,D\,P\,y\,x.$$
+
+Equivalently: $x \le y$ coordinatewise and it is **not** the case that $y \le x$ coordinatewise (so some coordinate is strictly below, or the sequences differ).
+
+In the namespace **`inverseLimitLT`** we have
+
+**Theorem (`iff_LE_not_GE`).** *For all **`x`**, **`y`**,*
+
+$$\texttt{inverseLimitLT}\,D\,P\,x\,y \;\;\Longleftrightarrow\;\;
+\texttt{inverseLimitLE}\,D\,P\,x\,y \;\wedge\; \neg\,\texttt{inverseLimitLE}\,D\,P\,y\,x.$$
+
+*Proof.* Definition of **`inverseLimitLT`**. $\square$

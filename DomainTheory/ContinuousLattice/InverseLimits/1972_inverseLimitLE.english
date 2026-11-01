@@ -1,0 +1,23 @@
+A point of the inverse limit $D_\infty = \mathrm{InverseLimit}\,D\,P$ is a compatible sequence $(x_m)_{m \in \mathbb{N}}$ with $x_m \in D_m$. The **product** order on all sequences $(y_m)$ would declare $x \le y$ when $x_m \le y_m$ at every index; the limit inherits that comparison because $D_\infty$ is a subtype of the product.
+
+**Definition (`inverseLimitLE`).** For **`x`**, **`y : InverseLimit D P`**,
+
+$$\texttt{inverseLimitLE}\,D\,P\,x\,y \;\;\Longleftrightarrow\;\; \forall n,\; x_n \le y_n$$
+
+(coordinatewise $\le$ in each stage lattice $D_n$; in Lean, **`x.1 n ≤ y.1 n`**).
+
+In the namespace **`inverseLimitLE`** we have
+
+**Theorem (`refl`).** *For all **`x`**, **`inverseLimitLE D P x x`.*
+
+*Proof.* **`le_refl`** at each coordinate. $\square$
+
+**Theorem (`trans`).** *If **`inverseLimitLE D P x y`** and **`inverseLimitLE D P y z`**, then **`inverseLimitLE D P x z`.*
+
+*Proof.* **`le_trans`** coordinatewise. $\square$
+
+**Theorem (`antisymm`).** *If **`inverseLimitLE D P x y`** and **`inverseLimitLE D P y x`**, then **`x = y`.*
+
+*Proof.* **`Subtype.ext`** and **`funext`**: equal coordinates give **`le_antisymm`** at each **`n`**. $\square$
+
+**Use.** Proofs that a map into $D_\infty$ is monotone (for example **`embInf.monotone`**) rewrite with **`Subtype.coe_le_coe`** and compare coordinates in $D_m$ at each **`m`**.

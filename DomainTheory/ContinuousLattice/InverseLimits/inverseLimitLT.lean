@@ -16,6 +16,7 @@ variable (D : ℕ → Type u) [∀ n, CompleteLattice (D n)]
 
 variable (P : ∀ n, ContinuousLatticeProjection (D n) (D (n + 1)))
 
+/-- Strict coordinatewise order: `inverseLimitLE` and not the reverse. -/
 abbrev inverseLimitLT (x y : InverseLimit D P) : Prop :=
   inverseLimitLE D P x y ∧ ¬ inverseLimitLE D P y x
 
