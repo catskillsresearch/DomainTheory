@@ -12,8 +12,6 @@ Over the years in work on $\lambda$-calculus and programming language semantics,
 
 <!-- page 58 -->
 
-**DATA TYPES AS LATTICES**
-
 *Section 1.* The relevance of the “positive” or “weak” topology first came to the author’s attention through the work of Nerode (1959). Continuous functionals were studied by Kleene and Platek and many other researchers in recursion theory. Monotonicity was particularly stressed by Platek (1964). The graphs and the definition of application are used in the same way by Plotkin (1972) and Rogers (1967, see p. 147). The fixed-point theorem is very well-known. See, e.g., Tarski (1955). The extension theorem was formulated by the author, but it is very similar to many results in point-set topology; it was used in a prominent way in Scott (1972a) to characterize continuous lattices. The embedding theorem is well-known; see, e.g., Čech (1966).
 
 *Section 2.* The language LAMBDA is due to the author. Note in particular that Plotkin and Rogers do not define $\lambda$-abstraction, even though they know of the existence of many combinators and *could have* defined abstraction if anyone had ever asked them. In particular, they understood about conversion in many instances. The reduction and combinator theorems are well known from combinatory logic and can be found in any reference. The first recursion theorem is basic to all of elementary recursion theory; what is new here is the adaptation of David Park’s proof (Park (1970c), unpublished) to the present model to show that Curry’s “paradoxical” combinator actually does the recursion. The definition of computability and the definability theorem tie up the present theory with the older theory of enumeration operators.

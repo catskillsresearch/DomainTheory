@@ -10,8 +10,6 @@ $$n \cap \mathbf{val}(n) = \bot \quad \text{iff} \quad n \notin \mathbf{val}(n).
 
 <!-- page 18 -->
 
-**DATA TYPES AS LATTICES**
-
 Call the set in question in Theorem 3.4 the set $b$. If it were r.e., then so would be:
 
 $$\{n \in \omega \mid v(n) \in b\} = (\lambda n \in \omega.\, v(n) \cap b \supset n, n)(\top).$$

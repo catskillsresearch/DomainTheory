@@ -30,8 +30,6 @@ $$f\!\left(\bigcup \{x_n \mid n \in \omega\}\right) = \bigcup \{f(x_n) \mid n \i
 
 <!-- page 48 -->
 
-**DATA TYPES AS LATTICES**
-
 *Proof.* By monotonicity, the inclusion holds in one direction. Suppose $e_m \subseteq f(\bigcup \{x_n \mid n \in \omega\})$. Then by Theorem 1.1 we have $e_m \subseteq f(e_k)$ for some $e_k \subseteq \bigcup \{x_n \mid n \in \omega\}$. Because $e_k$ is finite and the sequence is increasing, we can argue that $e_k \subseteq x_n$ for some $n$. But then $f(e_k) \subseteq f(x_n)$. This shows that $e_m \subseteq \bigcup \{f(x_n) \mid n \in \omega\}$ and proves the inclusion in the other direction. (*Exercise:* Does this property characterize continuous functions?)
 
 *Proof of Theorem 1.4 concluded.* Noting that $f^n(\varnothing) \subseteq f^{n+1}(\varnothing)$ holds for all $n$, we can calculate:
@@ -91,8 +89,6 @@ The verification of $(\alpha)$ of Table 1 is obvious as the '$x$' in '$\lambda x
 The verification of $(\beta)$ is just a restatement of Theorem 1.2(i). Let $\tau$ define a function $f$ (of $x$). Then by definition $f(x) = \tau$ and $\lambda x.\,\tau = \mathbf{graph}(f)$. Also $\mathbf{fun}(u)(x)$ in the notation of Theorem 1.2 is the same as the binary operation $u(x)$ in the notation of LAMBDA. Thus in Theorem 1.2(i) if we apply both sides to $y$ we get nothing else than $(\beta)$.
 
 <!-- page 50 -->
-
-**DATA TYPES AS LATTICES**
 
 Half of property $(\xi)$ is already implied by $(\beta)$: the implication from left to right. (Just apply both sides to $x$.) In the other direction, $\forall x.\,\tau = \sigma$ means that $\tau$ and $\sigma$ define the *same* function of $x$; thus, the two graphs must be equal.
 
@@ -163,8 +159,6 @@ because in the last every integer is a (number of a) pair. Suppose now that $a =
 Equations (2.19)–(2.22) are definitions, and (2.23) is proved easily by induction on $i$. Equation (2.24) is also a definition. To prove (2.25) we note that
 
 <!-- page 52 -->
-
-**DATA TYPES AS LATTICES**
 
 $\{ u_i \mid i \in x \}$ is continuous (even: distributive) in $u$ and $x$. Thus, there is a continuous function $\mathbf{seq}(u)(x)$ giving this value. What is required is to prove that it is LAMBDA-definable. We see:
 
@@ -256,8 +250,6 @@ By the choice of $k$, and by the extensionality of $p$, and by the fact that $\m
 
 <!-- page 54 -->
 
-**DATA TYPES AS LATTICES**
-
 By the choice of $k$, and by the extensionality of $p$, and by the fact that $\mathbf{val}(n) \neq e_j$, we have:
 
 $$k \in \mathbf{val}(p(u(m))) \quad \text{iff} \quad t(m) = e_j$$
@@ -327,8 +319,6 @@ We see at once that $a$ is continuous; and, because $\ll$ is transitive and dens
 Note that there are many transitive, dense, irreflexive relations on $\omega$, so there are many nonextensive retracts. These retracts, like $a$ above, are *distributive*.
 
 <!-- page 56 -->
-
-**DATA TYPES AS LATTICES**
 
 A nondistributive example is:
 

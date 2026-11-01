@@ -25,5 +25,3 @@ $$(7.7) \quad A \times B = \{\langle \langle x, x' \rangle, \langle y, y' \rangl
 $$(7.8) \quad A + B = \{\langle \langle 0, x \rangle, \langle 0, y \rangle \rangle \mid x \, A \, y\} \cup \{\langle \langle 1, x' \rangle, \langle 1, y' \rangle \rangle \mid x' \, B \, y'\}.$$
 
 <!-- page 42 -->
-
-**DATA TYPES AS LATTICES**

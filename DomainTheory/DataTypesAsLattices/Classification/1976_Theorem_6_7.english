@@ -14,8 +14,6 @@ That puts the set in the class $(\mathfrak{F} \cup \mathfrak{G})_\delta = \mathf
 
 <!-- page 38 -->
 
-**DATA TYPES AS LATTICES**
-
 On the other hand, we can see that $(\mathfrak{F} \cup \mathfrak{G})_\sigma$ is exactly $\mathfrak{B}_\delta$. Because, in view of Theorem 6.6, $\mathfrak{B}_\sigma$, the class of *countable* unions of $\mathfrak{B}$-sets, is exactly $(\mathfrak{F} \dot{\cap} \mathfrak{G})_\sigma$. The remark we want to make then follows by taking complements.
 
 Now let $S$ be an arbitrary $\mathfrak{B}_\delta$-set. We can write:

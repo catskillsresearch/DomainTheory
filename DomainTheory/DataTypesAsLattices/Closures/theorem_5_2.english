@@ -8,8 +8,6 @@ $$a(x) = \{m \mid d_m \sqsubseteq \sqcup \{d_n \mid n \in x\}\}.$$
 
 <!-- page 32 -->
 
-**DATA TYPES AS LATTICES**
-
 It is an easy exercise to show that from the definition of “isolated” it follows that $a$ is continuous; and from density, it follows that $D$ is in a one-to-one order preserving correspondence with the fixed points of $a$.
 
 In the last section we introduced an algebra of retracts, much of which carries over to closure operations given the proper definitions. Without any change we can use Theorem 4.3 on function spaces, provided we check that the required retracts are closures.

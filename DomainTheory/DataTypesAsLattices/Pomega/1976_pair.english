@@ -1,0 +1,9 @@
+To formulate the definition, we introduce a standard enumeration $(n, m)$ of all pairs of integers. Specifically we set
+
+$$(n, m) = \tfrac{1}{2}(n + m)(n + m + 1) + m.$$
+
+This is the enumeration along the “little diagonals” going from left to right, and it produces the ordering:
+
+$$(0, 0), (1, 0), (0, 1), (2, 0), (1, 1), (0, 2), (3, 0), (2, 1), \dots.$$
+
+Note that $n \leq (n, m)$ and $m \leq (n, m)$ with equality possible only in the cases of $(0, 0)$ and $(1, 0)$. This is a one-to-one enumeration, and the inverse functions are (primitive) recursive—but we do not require at the present any notation for them.

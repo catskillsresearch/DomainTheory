@@ -18,6 +18,10 @@
 - [Theorem 6.7](1976_Theorem_6_7.md)
 
 
+
+
+
+
 **[DataTypesAsLattices/Classification/evenPart.lean](evenPart.lean)**
 
 @import "evenPart.lean"

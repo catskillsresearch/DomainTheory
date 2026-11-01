@@ -8,8 +8,6 @@ $$\mathbf{fix}(f) = \bigcup \{ f^n(\varnothing) \mid n \in \omega \},$$
 
 <!-- page 8 -->
 
-**DATA TYPES AS LATTICES**
-
 Actually **fix** is a *functional* with continuity properties of its own. We shall not give the required definitions here because they can be more easily derived from the construction of the model given in the next section.
 
 For those familiar with the abstract theory of topological spaces we give in conclusion two general facts about continuous functions with values in $\mathbf{P}\omega$ which indicate the scope and generality of our method.

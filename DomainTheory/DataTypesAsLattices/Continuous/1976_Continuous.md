@@ -1,4 +1,4 @@
-# Continuous
+# Basic open sets and continuity on $\mathbf{P}\omega$
 
 - [Definition (basis)](../1976_Definition_basis.md)
 - [Definition (continuous)](../1976_Definition_continuous.md)

@@ -36,8 +36,6 @@ $$f(x \cup y) = f(x) \cup f(y) \quad \text{and} \quad f(\varnothing) = \varnothi
 
 <!-- page 10 -->
 
-**DATA TYPES AS LATTICES**
-
 The sets $\varnothing$ and $\omega$ play special roles. When we consider them as elements of $\mathbf{P}\omega$ we shall employ the notation:
 
 $$\bot = \varnothing \quad \text{and} \quad \top = \omega$$

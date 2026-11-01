@@ -17,6 +17,10 @@
 - [Theorem 3.7](1976_Theorem_3_7.md)
 
 
+
+
+
+
 **[DataTypesAsLattices/Enumeration/seq2_left_isScottContinuous.lean](seq2_left_isScottContinuous.lean)**
 
 @import "seq2_left_isScottContinuous.lean"

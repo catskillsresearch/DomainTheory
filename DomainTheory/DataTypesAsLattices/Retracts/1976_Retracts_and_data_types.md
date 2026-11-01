@@ -19,6 +19,10 @@
 - [Theorem 4.6](1976_Theorem_4_6.md)
 
 
+
+
+
+
 **[DataTypesAsLattices/FixedLattices/DirectedSet.lean](../FixedLattices/DirectedSet.lean)**
 
 @import "../FixedLattices/DirectedSet.lean"

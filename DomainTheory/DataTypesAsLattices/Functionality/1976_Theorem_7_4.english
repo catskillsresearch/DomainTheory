@@ -40,8 +40,6 @@ $$z(\sigma_j \cup \sigma_{j'})((j, 0) \cup (j', 0)) = (j, n) \cup (j', n).$$
 
 <!-- page 46 -->
 
-**DATA TYPES AS LATTICES**
-
 in view of (7.19). But since $\sigma_j \subseteq \sigma_j \cup \sigma_{j'}$ and $\sigma_{j'} \subseteq \sigma_j \cup \sigma_{j'}$, we have:
 
 $$(j, n_j) \cup (j', n_{j'}) \subseteq (j, n) \cup (j', n).$$

@@ -34,8 +34,6 @@ $$\mathbf{S}(f)(g)(x) \, C \, \mathbf{S}(f')(g')(x').$$
 
 <!-- page 44 -->
 
-**DATA TYPES AS LATTICES**
-
 Now by definition of the combinator $\mathbf{S}$ we have:
 
 $$\mathbf{S}(f)(g)(x) = f(x)(g(x)),$$

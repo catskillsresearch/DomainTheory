@@ -8,8 +8,6 @@ $$\bot,\, \mathbf{I},\, \mathbf{I} \circ\to \mathbf{I},\, (\mathbf{I} \circ\to \
 
 <!-- page 34 -->
 
-**DATA TYPES AS LATTICES**
-
 and we see that all these retracts are *strict*. This means $\mathbf{Y}(f)$ is nontrivial in that it has at least *two* fixed points (viz., $\bot$ and $\top$). But $d = \mathbf{Y}(f)$ must be the least closure operation satisfying
 
 $$(5.25) \quad d = d \circ\to d,$$

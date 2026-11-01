@@ -10,8 +10,6 @@ Consider $\mathbf{fun}$. No matter what $u \in \mathbf{P}\omega$ we take, $\math
 
 <!-- page 22 -->
 
-**DATA TYPES AS LATTICES**
-
 coincide satisfies $a = a \circ a$, and conversely. A retract is a mapping which “retracts” the whole space onto its range and which is the identity mapping on its range. That is the import of the equation $a = a \circ a$. Strictly speaking, the range is the retract and the mapping is the retraction, but for us the mapping is more important. (Note, however, that distinct retracts can have the same range.) We let the mapping stand in for the range.
 
 Thus the combinator **fun** represents in itself the concept of a *function* (continuous function on $\mathbf{P}\omega$ into $\mathbf{P}\omega$). Similarly **pair** represents the idea of a *pair* and **bool** the idea of being a boolean value as an element of $\{\bot, 0, 1, \top\}$, since we must think in the multiple-valued mode. What is curious (and, as we shall see, useful) is that all these retracts which are defining subspaces are at the same time elements of $\mathbf{P}\omega$.

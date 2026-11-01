@@ -12,8 +12,6 @@ Among the subsets of $\mathbf{P}\omega$ with natural mathematical structure, we 
 
 <!-- page 20 -->
 
-**DATA TYPES AS LATTICES**
-
 complicated semigroup. We introduce for its study three new combinators:
 
 $$(3.13) \quad \mathbf{R} = \lambda x.\, \langle 0, x \rangle;$$

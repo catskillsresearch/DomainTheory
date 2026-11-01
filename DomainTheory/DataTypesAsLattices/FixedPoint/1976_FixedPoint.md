@@ -1,4 +1,4 @@
-# FixedPoint
+# Fixed points and least fixed points
 
 - [Theorem 1.3](1976_Theorem_1_3.md)
 - [Theorem 1.4](1976_Theorem_1_4.md)

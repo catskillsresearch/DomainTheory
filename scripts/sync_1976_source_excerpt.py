@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """Reslice sources/1976_DataTypes.md into .english files and wire @imports on hub notes.
 
-Preserves existing @import \"*.lean\" blocks on each note. Commentary blocks
-(1976_*_commentary.english) are left untouched when present.
+Preserves existing @import \"*.lean\" blocks on each note.
 """
 
 from __future__ import annotations
@@ -30,9 +29,11 @@ SLICE_NOTES: list[tuple[str, str | None]] = [
         "1976_Continuous_functions_Introduction.md",
         "1976_Continuous_functions.english",
     ),
+    ("Pomega/1976_e.md", None),
     ("1976_Definition_basis.md", "1976_Definition_basis.english"),
     ("1976_Definition_continuous.md", "1976_Definition_continuous.english"),
     ("Continuous/1976_Theorem_1_1.md", None),
+    ("Pomega/1976_pair.md", None),
     ("1976_Definition_graph.md", "1976_Definition_graph.english"),
     ("Graph/1976_Theorem_1_2.md", None),
     ("FixedPoint/1976_Theorem_1_3.md", None),
@@ -119,12 +120,12 @@ SLICE_NOTES: list[tuple[str, str | None]] = [
 
 ANCHOR_OVERRIDE: dict[str, str] = {
     "1976_Introduction.md": "**Abstract.**",
+    "Pomega/1976_e.md": "To make the topology",
+    "Pomega/1976_pair.md": "To formulate the definition, we introduce a standard enumeration",
     "Lambda/1976_Computability_and_definability.md": "**2. Computability and definability.**",
     "1976_Appendix_A.md": "**Appendix A.",
     "1976_Appendix_B.md": "**Appendix B.",
 }
-
-COMMENTARY_ENGLISH = DT / "1976_Continuous_functions_commentary.english"
 
 # Section hubs with large Lean barrels — update .english only, not the .md wrapper.
 LEAN_BARREL_HUBS = {
@@ -281,8 +282,18 @@ def write_note_md(md: Path, english: Path, extra_lines: list[str], lean_tail: li
     md.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
 
 
+PAGE_HEADER_LINE = re.compile(r"^\*\*DATA TYPES AS LATTICES\*\*\s*$", re.MULTILINE)
+
+
 def strip_markdown_links_from_english(text: str) -> str:
     return re.sub(r"^- \[[^\]]+\]\([^)]+\)\s*$", "", text, flags=re.MULTILINE).strip()
+
+
+def clean_english_slice(text: str) -> str:
+    text = strip_markdown_links_from_english(text)
+    text = PAGE_HEADER_LINE.sub("", text)
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    return text.strip() + "\n"
 
 
 def patch_md_toc(md: Path, insert_after_h1: list[str]) -> None:
@@ -490,16 +501,10 @@ def main() -> None:
         targets.append(SliceTarget(md, eng, start))
     targets.sort(key=lambda t: t.start)
 
-    if not args.dry_run and not COMMENTARY_ENGLISH.is_file():
-        old = DT / "1976_Continuous_functions.english"
-        if old.is_file() and "## Motivation" in old.read_text(encoding="utf-8"):
-            part = old.read_text(encoding="utf-8").split("## Motivation", 1)[1]
-            COMMENTARY_ENGLISH.write_text("## Motivation" + part, encoding="utf-8")
-
     for i, tgt in enumerate(targets):
         end = targets[i + 1].start if i + 1 < len(targets) else len(source)
         slice_text = source[tgt.start : end].strip() + "\n"
-        slice_text = strip_markdown_links_from_english(slice_text)
+        slice_text = clean_english_slice(slice_text)
         if args.dry_run:
             print(f"write {tgt.english.relative_to(ROOT)} ({len(slice_text)} chars)")
             continue
@@ -512,7 +517,7 @@ def main() -> None:
             "1976_FixedPoint.md",
             "1976_Embedding.md",
             "1976_Computability_and_definability.md",
-        } or tgt.md.name in LEAN_BARREL_HUBS:
+        } or tgt.md.name in LEAN_BARREL_HUBS or tgt.md.parent.name == "Pomega":
             continue
         lean = preserve_lean_blocks(tgt.md)
         prologue = preserve_prologue(tgt.md)
@@ -547,19 +552,9 @@ def main() -> None:
                 pass  # memorial stays in md only (extra)
 
         cf_intro = DT / "1976_Continuous_functions_Introduction.md"
-        if not COMMENTARY_ENGLISH.is_file():
-            COMMENTARY_ENGLISH.write_text(
-                "## Motivation\n\n(Editorial note for §1.)\n",
-                encoding="utf-8",
-            )
-        cf_lines = [
-            '@import "1976_Continuous_functions.english" {code_block=false}',
-            "",
-            '@import "1976_Continuous_functions_commentary.english" {code_block=false}',
-            "",
-        ]
         cf_intro.write_text(
-            "# Introduction\n\n" + "\n".join(cf_lines),
+            "# Introduction\n\n"
+            '@import "1976_Continuous_functions.english" {code_block=false}\n',
             encoding="utf-8",
         )
 

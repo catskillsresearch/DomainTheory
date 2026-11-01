@@ -1,4 +1,4 @@
-# Embedding
+# Extension and embedding of continuous maps
 
 - [Theorem 1.5](1976_Theorem_1_5.md)
 - [Theorem 1.6](1976_Theorem_1_6.md)

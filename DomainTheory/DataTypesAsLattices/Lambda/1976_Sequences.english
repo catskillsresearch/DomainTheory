@@ -20,6 +20,4 @@ $$u = \lambda x.\, \bigcup \{ u_i \mid i \in x \}.$$
 
 <!-- page 14 -->
 
-**DATA TYPES AS LATTICES**
-
 but the $\cup$- and set-notation is not part of LAMBDA. We are forced into a recursive definition:
