@@ -7,7 +7,7 @@
 - [Compatibility](InverseLimits/1972_Compatibility.md) ✓
 - [InverseLimit](InverseLimits/1972_InverseLimit.md) ✓
 - [Projections from the limit](InverseLimits/1972_Projections_from_the_limit.md) ✓
-- [The mediating map](InverseLimits/1972_Mediating_map.md)
+- [The mediating map](InverseLimits/1972_Mediating_map.md) ✓
 - [Special inverse systems](InverseLimits/1972_Special_inverse_systems.md)
 - [Projections along the tower](InverseLimits/1972_projLE.md) ✓
 - [Tower step adjunction](InverseLimits/1972_projection.md) ✓

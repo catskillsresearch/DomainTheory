@@ -19,3 +19,69 @@ for all $y \in Y$; whence
 $$f_n = j_{\infty n} \circ f_{\infty}$$
 
 holds.
+
+### Category theory (terms)
+
+**Diagram / tower.** For $\langle D_n, P_n \rangle$, write $j_n : D_{n+1} \to D_n$ for $(P\,n).\mathrm{retr}$ and $i_n : D_n \to D_{n+1}$ for $(P\,n).\mathrm{incl}$. This is a diagram indexed by $\mathbb{N}$ (vertices $D_n$, bonds the $j_n$).
+
+**Inverse limit.** A **limit** of that diagram is an object $D_\infty$ together with **projections** $j_{\infty n} : D_\infty \to D_n$ such that $j_{\infty n} = j_n \circ j_{\infty (n+1)}$. In Lean, $D_\infty$ is [**`InverseLimit D P`**](1972_InverseLimit.md) and $j_{\infty n}$ is [**`limitProjectionToLevel n`**](1972_Projections_from_the_limit.md).
+
+**Cone.** A **cone** over the diagram consists of an **apex** object $Y$ and **legs** $u_n : Y \to D_n$ that agree with the tower: $u_n = j_n \circ u_{n+1}$. A **mediating map into the limit** is a morphism $u_\infty : Y \to D_\infty$ with $u_n = j_{\infty n} \circ u_\infty$ for all $n$.
+
+**Cocone.** A **cocone** over the **same** diagram consists of an apex $D'$ and legs $f_n : D_n \to D'$ in the opposite direction, compatible with **inclusions**:
+
+$$f_n = f_{n+1} \circ i_n$$
+
+(in Lean: **`hf : ∀ n x, (f n) x = (f (n + 1)) ((P n).incl x)`** for **`f n : ScottMap (D n) D'`**). A **mediating map out of the limit** is $g : D_\infty \to D'$ with $f_n = g \circ i_{n\infty}$; the library name for $i_{n\infty}$ is [**`embInf`**](1972_embInf.md).
+
+**Name `coconeInf`.** **cocone** + **Inf** means a cocone whose mediating map has **domain the inverse limit** (`Inf` = inverse limit, **not** a meet / infimum $\sqcap$ in the order). The cocone **legs** are the family **`f n`**; the **Inf** part is where $g$ is defined.
+
+**Supremum in the formula.** On continuous lattices, a point $x \in D_\infty$ is determined by its coordinates and by directed suprema of approximants. The mediating value $g(x)$ is expressed as a **supremum** $\bigsqcup_n$ over levels of the leg values $(f\,n)(x_n)$—lattice **sup**, not an infimum over $n$.
+
+### Reading Scott’s symbols in category-theoretic terms
+
+Scott’s $f_n : Y \to X_n$ are the **legs of a cone** with apex $Y$: compatibility is exactly $f_n = j_n \circ f_{n+1}$. His $f_\infty : Y \to X_\infty$ is the **mediating map into the inverse limit**, assembling a compatible sequence $f_\infty(y) = \langle f_n(y)\rangle$, with factorization $f_n = j_{\infty n} \circ f_\infty$. This paragraph is **not** a cocone (all arrows point **into** the stages, not **out of** them).
+
+For $\langle D_n, P_n \rangle$, $X_\infty$ is **`InverseLimit D P`**. The dual **cocone** story—maps $D_n \to D'$, mediating map **out of** the limit, and **`coconeInf`**—is what [Corollary 4.3](1972_Corollary_4_3.md) formalizes; Scott’s displayed $f_n$ are not those legs.
+
+### Definition (`coconeInf`)
+
+Given **`f : ∀ n, ScottMap (D n) D'`** and **`x : InverseLimit D P`**,
+
+$$\texttt{coconeInf}\,D\,P\,f\,x = \bigsqcup_{n=0}^{\infty} (f\,n)\,(x.1\,n).$$
+
+When **`hf`** holds, **`coconeInf D P f`** is the unique mediating **`ScottMap (InverseLimit D P) D'`** (as **`ScottMap`**, via **`preservesDirectedSup`**).
+
+### Theorems in the namespace **`coconeInf`**
+
+The definition **`coconeInf`** sits outside the namespace; the lemmas below are **`coconeInf.apply`**, **`coconeInf.climb`**, and so on.
+
+**Theorem (`coconeInf.apply`).** *For **`f`** and **`x`**,*
+
+$$\texttt{coconeInf}\,D\,P\,f\,x = \bigsqcup_n (f\,n)\,(x.1\,n).$$
+
+*Proof.* Definition of **`coconeInf`**. $\square$
+
+**Theorem (`coconeInf.climb`).** *If **`hf`**, then for **`n`**, **`x : D n`**, and **`h : n ≤ m`**,*
+
+$$(f\,m)\,(\mathrm{embLE}\,D\,P\,h\,x) = (f\,n)\,x.$$
+
+*Proof.* **`Nat.le_induction`**: base **`embLE.self`**, successor **`embLE_succ`** and **`hf`**. $\square$
+
+**Theorem (`coconeInf.descend`).** *If **`hf`**, for **`h : m ≤ n`** and **`x : D n`**,*
+
+$$(f\,m)\,(\mathrm{projLE}\,D\,P\,h\,x) \le (f\,n)\,x.$$
+
+*Proof.* **`Nat.le_induction`**: base **`projLE.self`**, successor **`projLE.succ`**, **`hf`**, **`incl_retr_le`**. $\square$
+
+**Theorem (`coconeInf.comp_embInf`).** *If **`hf`**, for **`n`**, **`x : D n`**,*
+
+$$\texttt{coconeInf}\,D\,P\,f\,(\mathrm{embInf}\,D\,P\,n\,x) = (f\,n)\,x.$$
+
+*Proof.* **`iComp_of_le`** / **`iComp_of_ge`**, **`climb`**, **`descend`**, and **`iComp_self`**. $\square$
+
+**Theorem (`coconeInf.preservesDirectedSup`).** *For every **`f`**, **`coconeInf D P f`** preserves directed suprema.*
+
+*Proof.* Coordinatewise **`limitProjectionToLevel.preservesDirectedSup`**, directed sup for each **`f n`**, **`apply`**, **`iSup_comm`**. $\square$
+
+**Corollary 4.3:** **`coconeInf D P f`** is the unique mediating cocone **`ScottMap`**—existence from **`comp_embInf`**, uniqueness from **`inverseLimit.eq_iSup`**.

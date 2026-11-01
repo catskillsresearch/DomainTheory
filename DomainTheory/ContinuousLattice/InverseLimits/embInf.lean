@@ -1,13 +1,8 @@
 module
 
-public import DomainTheory.ContinuousLattice.InverseLimits.InverseLimit
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp
 public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
-public import DomainTheory.ContinuousLattice.InverseLimits.coe_sSup_of_directed
-public import DomainTheory.ContinuousLattice.InverseLimits.embLE
-public import DomainTheory.ContinuousLattice.InverseLimits.projLE
-public import DomainTheory.ContinuousLattice.ScottMaps.PreservesDirectedSup
-public import Mathlib.Data.Set.Basic
+import DomainTheory.ContinuousLattice.InverseLimits.coe_sSup_of_directed
 
 @[expose] public section
 

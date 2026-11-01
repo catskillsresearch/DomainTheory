@@ -25,8 +25,8 @@ theorem corollary_4_3 (f : ∀ n, ScottMap (D n) D')
     (hf : ∀ n x, f n x = f (n + 1) ((P n).incl x)) :
     ∃! g : ScottMap (InverseLimit D P) D', ∀ n x, f n x = g (embInf D P n x) := by
   refine ⟨⟨coconeInf D P f,
-    PreservesDirectedSup.continuous_of (coconeInf_preservesDirectedSup D P f)⟩, ?_, ?_⟩
-  · exact fun n x => (coconeInf_comp_embInf D P f hf n x).symm
+    PreservesDirectedSup.continuous_of (coconeInf.preservesDirectedSup D P f)⟩, ?_, ?_⟩
+  · exact fun n x => (coconeInf.comp_embInf D P f hf n x).symm
   · intro g hg
     ext x
 

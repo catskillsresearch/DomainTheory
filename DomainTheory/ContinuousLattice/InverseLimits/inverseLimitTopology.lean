@@ -3,6 +3,7 @@ module
 public import DomainTheory.ContinuousLattice.InverseLimits.InverseLimit
 public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.limitProjectionToLevel
+import DomainTheory.ContinuousLattice.InverseLimits.coe_sSup_of_directed
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.coconeInf
 public import DomainTheory.ContinuousLattice.Specialization.SpecializationPreorder
@@ -156,7 +157,7 @@ theorem coconeInf_continuous (hD : ∀ n, ContinuousLattice (D n))
     @Continuous (InverseLimit D P) D' (inverseLimitTopology D P)
       scottTopologicalSpace (coconeInf D P f) := by
   rw [← inverseLimit.scottTopology_eq_induced_pi D P hD]
-  exact PreservesDirectedSup.continuous_of (coconeInf_preservesDirectedSup D P f)
+  exact PreservesDirectedSup.continuous_of (coconeInf.preservesDirectedSup D P f)
 
 end inverseLimitTopology
 
