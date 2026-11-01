@@ -2,4 +2,22 @@ Topologically speaking the finite sets $e_n$ are *dense* in the space $\mathbf{P
 
 $$x = \bigcup \{e_n \mid e_n \subseteq x\}.$$
 
-To make this precise we need a rigorous definition of *open subset* of $\mathbf{P}\omega$.
+The formalization packages each included finite piece $e_n \subseteq x$ as a subset of $\mathbf{P}\omega$ and unions over all codes $n$.
+
+**Definition (`e.below`).** `e.below x n` is $\{k \mid e_n \subseteq x \land k \in e_n\}$ (equivalently $e_n$ when $e_n \subseteq x$, and $\emptyset$ otherwise).
+
+**Lemma (`e.singleton_eq`).** For each $k \in \omega$, the singleton $\{k\}$ equals $e_{2^k}$.
+
+*Proof.* This is `e.pow2`, read backwards. ∎
+
+**Lemma (`e.exists_mem`).** If $k \in x$ for $x \in \mathbf{P}\omega$, then there exists $n$ with $e_n \subseteq x$ and $k \in e_n$.
+
+*Proof.* Witness $n = 2^k$; use `e.singleton_eq` and singleton inclusion. ∎
+
+**Theorem (`e.union_below_eq`).** For every $x \in \mathbf{P}\omega$,
+
+$$\bigcup_n \texttt{e.below}\; x\; n = x.$$
+
+*Proof.* ($\subseteq$) Each $k$ in the union lies in some $e_n \subseteq x$. ($\supseteq$) For $k \in x$, `e.exists_mem` gives $n$ with $k \in \texttt{e.below}\; x\; n$. ∎
+
+This is Scott’s density clause before the definition of open sets in $\mathbf{P}\omega$.
