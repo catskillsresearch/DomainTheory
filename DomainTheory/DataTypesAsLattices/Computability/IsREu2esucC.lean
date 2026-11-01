@@ -3,7 +3,7 @@ module
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Lambda.succSet
 public import DomainTheory.DataTypesAsLattices.Lambda.sucC
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_testBit
 public import DomainTheory.DataTypesAsLattices.Computability.primrecPred_bool
@@ -30,10 +30,10 @@ theorem IsRE.sucC : IsRE sucC := by
       (hp.of_eq fun n m => ?_)).out.of_eq ?_
   · constructor
     · intro ⟨hm0, hbit⟩
-      exact ⟨m.pred, mem_e.mpr hbit, (Nat.succ_pred_eq_of_ne_zero hm0).symm⟩
+      exact ⟨m.pred, e.mem.mpr hbit, (Nat.succ_pred_eq_of_ne_zero hm0).symm⟩
     · intro ⟨k, hk, hm⟩
       subst hm
-      exact ⟨Nat.succ_ne_zero k, mem_e.mp hk⟩
+      exact ⟨Nat.succ_ne_zero k, e.mem.mp hk⟩
   · intro p; rfl
 
 end DomainTheory.DataTypesAsLattices

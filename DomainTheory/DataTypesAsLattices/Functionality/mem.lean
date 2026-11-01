@@ -2,7 +2,7 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Embedding.extend
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 
 @[expose] public section

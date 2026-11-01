@@ -6,7 +6,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.DirectedSubset
 public import DomainTheory.DataTypesAsLattices.Retracts.vals
 public import DomainTheory.DataTypesAsLattices.Retracts.directed_finite_cover
 public import DomainTheory.DataTypesAsLattices.FixedLattices.DirectedSet
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices

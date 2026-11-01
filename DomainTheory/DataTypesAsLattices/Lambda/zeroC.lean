@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 
 @[expose] public section

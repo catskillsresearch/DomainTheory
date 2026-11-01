@@ -8,7 +8,7 @@ public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Closures.Vcomb
 public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_5
 public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_3

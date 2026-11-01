@@ -7,7 +7,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb
 public import DomainTheory.DataTypesAsLattices.Enumeration.unpairComp
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 
@@ -53,7 +53,7 @@ theorem complete :
           have : i ∈ e t := by
             have hmem : i ∈ List.range (t + 1) ∧ t.testBit i = true := by
               simpa [bits, List.mem_filter] using hi
-            exact mem_e.mpr hmem.2
+            exact e.mem.mpr hmem.2
           exact ih _ harg i (htSub this)
       let trRest := trOp ++ trBits
       have hokRest : valTraceOk trRest := valTraceOk.append hokOp hokBits

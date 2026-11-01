@@ -1,7 +1,7 @@
 module
 
 public import Mathlib.Algebra.Ring.Parity
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Closures.Vapply
 public import DomainTheory.DataTypesAsLattices.Closures.VapplyY
 public import DomainTheory.DataTypesAsLattices.Closures.Vapply_more

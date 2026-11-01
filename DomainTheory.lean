@@ -1065,7 +1065,7 @@ import DomainTheory.DataTypesAsLattices.Lambda.triangle_eq_zero
 import DomainTheory.DataTypesAsLattices.Lambda.union_via_cond
 import DomainTheory.DataTypesAsLattices.Lambda.xi_star
 import DomainTheory.DataTypesAsLattices.Lambda.zeroC
-import DomainTheory.DataTypesAsLattices.Pomega.e
+import DomainTheory.DataTypesAsLattices.Pomega.eDense
 import DomainTheory.DataTypesAsLattices.Pomega.pair
 import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55

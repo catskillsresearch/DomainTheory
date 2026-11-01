@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_15
 public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb
 public import DomainTheory.DataTypesAsLattices.Lambda.condC

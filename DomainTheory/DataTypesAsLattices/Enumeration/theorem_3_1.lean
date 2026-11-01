@@ -6,7 +6,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.zeroC
 public import DomainTheory.DataTypesAsLattices.Lambda.sucC
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
 public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_from_G
 public import DomainTheory.DataTypesAsLattices.Enumeration.predC_from_G

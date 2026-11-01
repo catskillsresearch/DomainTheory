@@ -6,7 +6,7 @@ public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import Mathlib.Data.Nat.Bitwise
 
@@ -67,13 +67,13 @@ theorem isScottContinuous_left (x y : Pomega) :
   constructor
   · intro hk
     rcases hk with ⟨hkx, h0⟩ | ⟨hky, ⟨t, ht⟩⟩
-    · have e1 : e 1 = ({0} : Pomega) := by simpa using e_pow2 0
+    · have e1 : e 1 = ({0} : Pomega) := by simpa using e.pow2 0
       refine mem_scottUnion.mpr ⟨1, ?_, Or.inl ⟨hkx, ?_⟩⟩
       · simpa [e1, Set.singleton_subset_iff] using h0
       · simp [e1]
     · refine mem_scottUnion.mpr ⟨2 ^ (t + 1), ?_, Or.inr ⟨hky, t, ?_⟩⟩
-      · simp [e_pow2, Set.singleton_subset_iff, ht]
-      · simp [e_pow2]
+      · simp [e.pow2, Set.singleton_subset_iff, ht]
+      · simp [e.pow2]
   · intro hk
     obtain ⟨m, hm, hkm⟩ := mem_scottUnion.mp hk
     rcases hkm with ⟨hkx, h0⟩ | ⟨hky, ⟨t, ht⟩⟩
@@ -88,9 +88,9 @@ theorem isScottContinuous_mid (z y : Pomega) :
   constructor
   · intro hk
     rcases hk with ⟨hkx, h0⟩ | hky
-    · refine mem_scottUnion.mpr ⟨2 ^ k, by simp [e_pow2, Set.singleton_subset_iff, hkx],
-        Or.inl ⟨by simp [e_pow2], h0⟩⟩
-    · refine mem_scottUnion.mpr ⟨0, by simp [e_zero], Or.inr hky⟩
+    · refine mem_scottUnion.mpr ⟨2 ^ k, by simp [e.pow2, Set.singleton_subset_iff, hkx],
+        Or.inl ⟨by simp [e.pow2], h0⟩⟩
+    · refine mem_scottUnion.mpr ⟨0, by simp [e.zero], Or.inr hky⟩
   · intro hk
     obtain ⟨m, hm, hkm⟩ := mem_scottUnion.mp hk
     rcases hkm with ⟨hkx, h0⟩ | hky
@@ -105,9 +105,9 @@ theorem isScottContinuous_right (z x : Pomega) :
   constructor
   · intro hk
     rcases hk with hzx | ⟨hky, ht⟩
-    · refine mem_scottUnion.mpr ⟨0, by simp [e_zero], Or.inl hzx⟩
-    · refine mem_scottUnion.mpr ⟨2 ^ k, by simp [e_pow2, Set.singleton_subset_iff, hky],
-        Or.inr ⟨by simp [e_pow2], ht⟩⟩
+    · refine mem_scottUnion.mpr ⟨0, by simp [e.zero], Or.inl hzx⟩
+    · refine mem_scottUnion.mpr ⟨2 ^ k, by simp [e.pow2, Set.singleton_subset_iff, hky],
+        Or.inr ⟨by simp [e.pow2], ht⟩⟩
   · intro hk
     obtain ⟨m, hm, hkm⟩ := mem_scottUnion.mp hk
     rcases hkm with hzx | ⟨hky, ht⟩
@@ -144,16 +144,16 @@ theorem e_iff (n0 n1 n2 m : ℕ) :
   constructor
   · intro h
     rcases h with ⟨hm, h0⟩ | ⟨hm, ⟨k, hk⟩⟩
-    · exact Or.inl ⟨mem_e.mp hm, mem_e.mp h0⟩
-    · exact Or.inr ⟨mem_e.mp hm,
+    · exact Or.inl ⟨e.mem.mp hm, e.mem.mp h0⟩
+    · exact Or.inr ⟨e.mem.mp hm,
         (Nat.pow_le_pow_right (by decide : 0 < (2 : ℕ))
           (Nat.le_add_left 1 k) : (2 : ℕ) ^ 1 ≤ 2 ^ (k + 1)).trans
-          (two_pow_le_of_testBit (mem_e.mp hk))⟩
+          (e.two_pow_le_of_testBit (e.mem.mp hk))⟩
   · intro h
     rcases h with ⟨hm, h0⟩ | ⟨hm, hn2⟩
-    · exact Or.inl ⟨mem_e.mpr hm, mem_e.mpr h0⟩
+    · exact Or.inl ⟨e.mem.mpr hm, e.mem.mpr h0⟩
     · obtain ⟨k, hk⟩ := exists_pos_bit hn2
-      exact Or.inr ⟨mem_e.mpr hm, k, mem_e.mpr hk⟩
+      exact Or.inr ⟨e.mem.mpr hm, k, e.mem.mpr hk⟩
 
 end condSet
 

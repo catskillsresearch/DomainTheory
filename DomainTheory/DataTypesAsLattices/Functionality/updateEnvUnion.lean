@@ -11,7 +11,7 @@ public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
 public import DomainTheory.DataTypesAsLattices.Functionality.updateEnv_isScottContinuous_t
 public import DomainTheory.DataTypesAsLattices.Lambda.minExtend
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Retracts.updateEnv
 
 @[expose] public section

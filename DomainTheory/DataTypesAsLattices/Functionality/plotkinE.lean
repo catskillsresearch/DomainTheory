@@ -4,7 +4,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.eraseTag
 public import DomainTheory.DataTypesAsLattices.Functionality.plotkinGood
 public import DomainTheory.DataTypesAsLattices.Functionality.plotkinRel
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 
 @[expose] public section
 

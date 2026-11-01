@@ -1,7 +1,7 @@
 module
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 @[expose] public section
@@ -20,11 +20,11 @@ theorem eSubset_funOf_e_iff (k a b : ℕ) :
   constructor
   · intro h i hi
     by_cases hb : k.testBit i = true
-    · exact Or.inr (h (mem_e.mpr hb))
+    · exact Or.inr (h (e.mem.mpr hb))
     · exact Or.inl (Bool.eq_false_iff.mpr hb)
   · intro h i hi
-    have hlt : i < k := mem_e_lt hi
+    have hlt : i < k := e.mem_lt hi
     exact (h i hlt).resolve_left fun hf =>
-      Bool.eq_false_iff.mp hf (mem_e.mp hi)
+      Bool.eq_false_iff.mp hf (e.mem.mp hi)
 
 end DomainTheory.DataTypesAsLattices

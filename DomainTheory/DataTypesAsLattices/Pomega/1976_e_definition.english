@@ -3,3 +3,53 @@ To make the topology “visible”, we introduce a standard enumeration $\{e_n \
 $$e_n = \{k_0, k_1, \cdots, k_{m-1}\},$$
 
 provided that $k_0 < k_1 < \cdots < k_{m-1}$ and $n = \sum_{i < m} 2^{k_i}$. Thus $n$ is the code number for $e_n$, and the elements of $e_n$ are the exponents in the binary expansion of the integer $n$.
+
+**Definition.** For $n \in \omega$, the finite set $e_n \in \mathbf{P}\omega$ is
+
+$$e_n = \{k \in \omega \mid n.\mathrm{testBit}(k)\}.$$
+
+Equivalently, $k \in e_n$ iff the binary expansion of $n$ has a $1$ in bit $k$.
+
+**Lemma (`e.mem`).** For all $n, k \in \omega$, $k \in e_n \leftrightarrow n.\mathrm{testBit}(k)$.
+
+*Proof.* This is the definition of membership in $\{k \mid n.\mathrm{testBit}(k)\}$. ∎
+
+**Theorem (`e.zero`).** $e_0 = \emptyset$.
+
+*Proof.* A natural number has no $1$-bits iff it is zero, so membership in $e_0$ is impossible. Extensionality gives $e_0 = \emptyset$. ∎
+
+**Theorem (`e.pow2`).** For each $k \in \omega$, $e_{2^k} = \{k\}$.
+
+*Proof.* By `Nat.testBit_two_pow`, $2^k$ has a $1$ in bit $i$ exactly when $i = k$; that is the membership characterization of the singleton $\{k\}$. ∎
+
+**Theorem (`e.or`).** For all $n, m \in \omega$, $e_{n \mathbin{|} m} = e_n \cup e_m$, where $\mathbin{|}$ is bitwise OR on $\omega$.
+
+*Proof.* Bit $k$ is set in $n \mathbin{|} m$ iff it is set in $n$ or in $m$, which is exactly membership in the union $e_n \cup e_m$. ∎
+
+**Lemma (`e.or_of_subset`).** If $e_n \subseteq x$ and $e_m \subseteq x$ for some $x \in \mathbf{P}\omega$, then $e_{n \mathbin{|} m} \subseteq x$.
+
+*Proof.* By `e.or`, $e_{n \mathbin{|} m} = e_n \cup e_m$; two set inclusions into $x$ imply the union is contained in $x$. ∎
+
+**Lemma (`e.le_two_pow`).** For every $k \in \omega$, $k \le 2^k$.
+
+*Proof.* Induction on $k$. For $k = 0$, both sides are $1$. For the step $k \to k+1$, the induction hypothesis gives $k \le 2^k$, hence $k+1 \le 2^k + 1 \le 2^k + 2^k = 2^{k+1}$. ∎
+
+**Lemma (`e.two_pow_le_of_testBit`).** If $n.\mathrm{testBit}(k)$ is true, then $2^k \le n$.
+
+*Proof.* The hypothesis means $(n \gg k) \bmod 2 = 1$, so $n \gg k > 0$. Writing division by $2^k$ as a right shift, $1 \le n / 2^k$; equivalently $2^k \le n$. ∎
+
+**Lemma (`e.lt_two_pow'`).** For every $k \in \omega$, $k < 2^k$.
+
+*Proof.* Induction on $k$. For $k = 0$, $0 < 1$. For the step, $k+1 \le 2^k$ by the induction hypothesis, and $2^k < 2^k + 2^k = 2^{k+1}$ because $2^k > 0$. ∎
+
+**Lemma (`e.mem_le`).** If $k \in e_n$, then $k \le n$.
+
+*Proof.* Membership $k \in e_n$ is $n.\mathrm{testBit}(k)$. By `e.two_pow_le_of_testBit`, $2^k \le n$; by `e.le_two_pow`, $k \le 2^k$. Transitivity gives $k \le n$. ∎
+
+**Theorem (`e.mem_lt`).** If $k \in e_n$, then $k < n$.
+
+*Proof.* By `e.mem_le`, $k \le n$. If $k = n$, then `e.two_pow_le_of_testBit` would give $2^k \le n = k$, while `e.lt_two_pow'` gives $k < 2^k$, a contradiction. So $k \ne n$ and therefore $k < n$. ∎
+
+**Theorem (`e.finite`).** Every set $e_n$ is finite.
+
+*Proof.* If $k \in e_n$, then `e.mem_le` gives $k \le n$, so $e_n \subseteq \{0, \ldots, n\}$. That interval is finite, hence so is $e_n$. ∎

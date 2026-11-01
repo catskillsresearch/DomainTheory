@@ -9,7 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.fstC
 public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
 public import DomainTheory.DataTypesAsLattices.Retracts.dcondSet_bool_idem
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Functionality.whichC
 public import DomainTheory.DataTypesAsLattices.Functionality.plusR_fst
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more

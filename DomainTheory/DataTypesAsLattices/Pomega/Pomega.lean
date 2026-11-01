@@ -1,7 +1,8 @@
 module
 
-public import Mathlib.Data.Set.Basic
-public import Mathlib.Order.SetNotation
+public import Mathlib.Data.Nat.Notation
+public import Mathlib.Data.Set.Defs
+import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

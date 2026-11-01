@@ -3,7 +3,7 @@ module
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 
 @[expose] public section
 
@@ -22,8 +22,8 @@ theorem mem_graph_const_iff (n m : ℕ) :
   constructor
   · intro ⟨a, b, hm, hb⟩
     exact ⟨Nat.pair a b, by simp [Nat.unpair_pair, hm],
-      by simp [Nat.unpair_pair, mem_e.mp hb]⟩
+      by simp [Nat.unpair_pair, e.mem.mp hb]⟩
   · intro ⟨t, ht, hb⟩
-    exact ⟨(Nat.unpair t).1, (Nat.unpair t).2, ht, mem_e.mpr hb⟩
+    exact ⟨(Nat.unpair t).1, (Nat.unpair t).2, ht, e.mem.mpr hb⟩
 
 end DomainTheory.DataTypesAsLattices

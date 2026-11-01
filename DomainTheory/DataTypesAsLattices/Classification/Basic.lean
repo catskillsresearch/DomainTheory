@@ -23,7 +23,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen
 public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.memOpen
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Data.Set.Finite.Powerset
 
 public import DomainTheory.DataTypesAsLattices.Classification.IsBooleanOpen
@@ -531,9 +531,9 @@ theorem union_isScottContinuous_left (y : Pomega) :
   constructor
   · intro hk
     rcases hk with h | h
-    · exact mem_scottUnion.mpr ⟨2 ^ k, by simp [e_pow2, Set.singleton_subset_iff, h],
-        Or.inl (by simp [e_pow2])⟩
-    · exact mem_scottUnion.mpr ⟨0, by simp [e_zero], Or.inr h⟩
+    · exact mem_scottUnion.mpr ⟨2 ^ k, by simp [e.pow2, Set.singleton_subset_iff, h],
+        Or.inl (by simp [e.pow2])⟩
+    · exact mem_scottUnion.mpr ⟨0, by simp [e.zero], Or.inr h⟩
   · intro hk
     obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp hk
     rcases hkn with h | h
@@ -548,9 +548,9 @@ theorem union_isScottContinuous_right (x : Pomega) :
   constructor
   · intro hk
     rcases hk with h | h
-    · exact mem_scottUnion.mpr ⟨0, by simp [e_zero], Or.inl h⟩
-    · exact mem_scottUnion.mpr ⟨2 ^ k, by simp [e_pow2, Set.singleton_subset_iff, h],
-        Or.inr (by simp [e_pow2])⟩
+    · exact mem_scottUnion.mpr ⟨0, by simp [e.zero], Or.inl h⟩
+    · exact mem_scottUnion.mpr ⟨2 ^ k, by simp [e.pow2, Set.singleton_subset_iff, h],
+        Or.inr (by simp [e.pow2])⟩
   · intro hk
     obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp hk
     rcases hkn with h | h
@@ -602,14 +602,14 @@ theorem uvU_isScottContinuous_left (y : Pomega) :
   · intro hk
     rcases hk with ⟨rfl, hne⟩ | ⟨rfl, h1⟩
     · rcases hne with ⟨n, hn⟩ | hy
-      · exact mem_scottUnion.mpr ⟨2 ^ n, by simp [e_pow2, Set.singleton_subset_iff, hn],
-          Or.inl ⟨rfl, Or.inl ⟨n, by simp [e_pow2]⟩⟩⟩
-      · exact mem_scottUnion.mpr ⟨0, by simp [e_zero], Or.inl ⟨rfl, Or.inr hy⟩⟩
+      · exact mem_scottUnion.mpr ⟨2 ^ n, by simp [e.pow2, Set.singleton_subset_iff, hn],
+          Or.inl ⟨rfl, Or.inl ⟨n, by simp [e.pow2]⟩⟩⟩
+      · exact mem_scottUnion.mpr ⟨0, by simp [e.zero], Or.inl ⟨rfl, Or.inr hy⟩⟩
     · rcases h1 with ⟨h0, hp⟩ | ⟨⟨n, hn⟩, h0⟩
       · exact mem_scottUnion.mpr ⟨1, by simp [e_one, h0],
           Or.inr ⟨rfl, Or.inl ⟨by simp [e_one], hp⟩⟩⟩
-      · exact mem_scottUnion.mpr ⟨2 ^ (n + 1), by simp [e_pow2, Set.singleton_subset_iff, hn],
-          Or.inr ⟨rfl, Or.inr ⟨⟨n, by simp [e_pow2]⟩, h0⟩⟩⟩
+      · exact mem_scottUnion.mpr ⟨2 ^ (n + 1), by simp [e.pow2, Set.singleton_subset_iff, hn],
+          Or.inr ⟨rfl, Or.inr ⟨⟨n, by simp [e.pow2]⟩, h0⟩⟩⟩
   · intro hk
     obtain ⟨m, hm, hkm⟩ := mem_scottUnion.mp hk
     exact uvU_mono_left hm hkm
@@ -623,12 +623,12 @@ theorem uvU_isScottContinuous_right (x : Pomega) :
   · intro hk
     rcases hk with ⟨rfl, hne⟩ | ⟨rfl, h1⟩
     · rcases hne with hx | ⟨n, hn⟩
-      · exact mem_scottUnion.mpr ⟨0, by simp [e_zero], Or.inl ⟨rfl, Or.inl hx⟩⟩
-      · exact mem_scottUnion.mpr ⟨2 ^ n, by simp [e_pow2, Set.singleton_subset_iff, hn],
-          Or.inl ⟨rfl, Or.inr ⟨n, by simp [e_pow2]⟩⟩⟩
+      · exact mem_scottUnion.mpr ⟨0, by simp [e.zero], Or.inl ⟨rfl, Or.inl hx⟩⟩
+      · exact mem_scottUnion.mpr ⟨2 ^ n, by simp [e.pow2, Set.singleton_subset_iff, hn],
+          Or.inl ⟨rfl, Or.inr ⟨n, by simp [e.pow2]⟩⟩⟩
     · rcases h1 with ⟨h0, ⟨n, hn⟩⟩ | ⟨hp, h0⟩
-      · exact mem_scottUnion.mpr ⟨2 ^ (n + 1), by simp [e_pow2, Set.singleton_subset_iff, hn],
-          Or.inr ⟨rfl, Or.inl ⟨h0, ⟨n, by simp [e_pow2]⟩⟩⟩⟩
+      · exact mem_scottUnion.mpr ⟨2 ^ (n + 1), by simp [e.pow2, Set.singleton_subset_iff, hn],
+          Or.inr ⟨rfl, Or.inl ⟨h0, ⟨n, by simp [e.pow2]⟩⟩⟩⟩
       · exact mem_scottUnion.mpr ⟨1, by simp [e_one, h0],
           Or.inr ⟨rfl, Or.inr ⟨hp, by simp [e_one]⟩⟩⟩
   · intro hk
@@ -643,18 +643,18 @@ theorem uvV_isScottContinuous_left (y : Pomega) :
   constructor
   · intro hk
     rcases hk with hk0 | ⟨rfl, hpos⟩ | ⟨h0, ⟨n, hn⟩, h0y, hpy⟩
-    · exact mem_scottUnion.mpr ⟨0, by simp [e_zero], Or.inl hk0⟩
+    · exact mem_scottUnion.mpr ⟨0, by simp [e.zero], Or.inl hk0⟩
     · rcases hpos with ⟨n, hn⟩ | hy
-      · exact mem_scottUnion.mpr ⟨2 ^ (n + 1), by simp [e_pow2, Set.singleton_subset_iff, hn],
-          Or.inr (Or.inl ⟨rfl, Or.inl ⟨n, by simp [e_pow2]⟩⟩)⟩
-      · exact mem_scottUnion.mpr ⟨0, by simp [e_zero],
+      · exact mem_scottUnion.mpr ⟨2 ^ (n + 1), by simp [e.pow2, Set.singleton_subset_iff, hn],
+          Or.inr (Or.inl ⟨rfl, Or.inl ⟨n, by simp [e.pow2]⟩⟩)⟩
+      · exact mem_scottUnion.mpr ⟨0, by simp [e.zero],
           Or.inr (Or.inl ⟨rfl, Or.inr hy⟩)⟩
-    · refine mem_scottUnion.mpr ⟨1 ||| 2 ^ (n + 1), e_or_of_subset
+    · refine mem_scottUnion.mpr ⟨1 ||| 2 ^ (n + 1), e.or_of_subset
         (by simp [e_one, Set.singleton_subset_iff, h0])
-        (by simp [e_pow2, Set.singleton_subset_iff, hn]), ?_⟩
+        (by simp [e.pow2, Set.singleton_subset_iff, hn]), ?_⟩
       refine Or.inr (Or.inr ⟨?_, ⟨n, ?_⟩, h0y, hpy⟩)
-      · simp [e_or, e_one]
-      · simp [e_or, e_pow2]
+      · simp [e.or, e_one]
+      · simp [e.or, e.pow2]
   · intro hk
     obtain ⟨m, hm, hkm⟩ := mem_scottUnion.mp hk
     exact uvV_mono_left hm hkm
@@ -667,18 +667,18 @@ theorem uvV_isScottContinuous_right (x : Pomega) :
   constructor
   · intro hk
     rcases hk with hk0 | ⟨rfl, hpos⟩ | ⟨h0, hpx, h0y, ⟨n, hn⟩⟩
-    · exact mem_scottUnion.mpr ⟨0, by simp [e_zero], Or.inl hk0⟩
+    · exact mem_scottUnion.mpr ⟨0, by simp [e.zero], Or.inl hk0⟩
     · rcases hpos with hx | ⟨n, hn⟩
-      · exact mem_scottUnion.mpr ⟨0, by simp [e_zero],
+      · exact mem_scottUnion.mpr ⟨0, by simp [e.zero],
           Or.inr (Or.inl ⟨rfl, Or.inl hx⟩)⟩
-      · exact mem_scottUnion.mpr ⟨2 ^ (n + 1), by simp [e_pow2, Set.singleton_subset_iff, hn],
-          Or.inr (Or.inl ⟨rfl, Or.inr ⟨n, by simp [e_pow2]⟩⟩)⟩
-    · refine mem_scottUnion.mpr ⟨1 ||| 2 ^ (n + 1), e_or_of_subset
+      · exact mem_scottUnion.mpr ⟨2 ^ (n + 1), by simp [e.pow2, Set.singleton_subset_iff, hn],
+          Or.inr (Or.inl ⟨rfl, Or.inr ⟨n, by simp [e.pow2]⟩⟩)⟩
+    · refine mem_scottUnion.mpr ⟨1 ||| 2 ^ (n + 1), e.or_of_subset
         (by simp [e_one, Set.singleton_subset_iff, h0y])
-        (by simp [e_pow2, Set.singleton_subset_iff, hn]), ?_⟩
+        (by simp [e.pow2, Set.singleton_subset_iff, hn]), ?_⟩
       refine Or.inr (Or.inr ⟨h0, hpx, ?_, ⟨n, ?_⟩⟩)
-      · simp [e_or, e_one]
-      · simp [e_or, e_pow2]
+      · simp [e.or, e_one]
+      · simp [e.or, e.pow2]
   · intro hk
     obtain ⟨m, hm, hkm⟩ := mem_scottUnion.mp hk
     exact uvV_mono_right hm hkm

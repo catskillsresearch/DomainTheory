@@ -9,7 +9,7 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.vals
 public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_image
@@ -28,7 +28,7 @@ theorem directed_sUnion_fixed {f : Pomega → Pomega} (hf : IsScottContinuous f)
       rwa [← hf.out (⋃₀ (Fixpoints.vals A))]
     obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp hk'
     obtain ⟨z, hzA, hnz⟩ :=
-      directed_finite_cover hA (e_finite n) hn
+      directed_finite_cover hA (e.finite n) hn
     have : k ∈ f z :=
       IsScottContinuous.monotone hf hnz hkn
     rw [z.property] at this

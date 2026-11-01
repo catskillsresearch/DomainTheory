@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Data.Set.Lattice.Indexed
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 
@@ -24,8 +24,8 @@ theorem isScottContinuous (p : ℕ → Pomega) :
   constructor
   · intro hk
     obtain ⟨n, hn, hkn⟩ := Set.mem_iUnion₂.mp hk
-    exact mem_scottUnion.mpr ⟨2 ^ n, by simp [e_pow2, Set.singleton_subset_iff, hn],
-      by simp [minExtend, e_pow2, hkn]⟩
+    exact mem_scottUnion.mpr ⟨2 ^ n, by simp [e.pow2, Set.singleton_subset_iff, hn],
+      by simp [minExtend, e.pow2, hkn]⟩
   · intro hk
     obtain ⟨m, hm, hkm⟩ := mem_scottUnion.mp hk
     obtain ⟨n, hn, hkn⟩ := Set.mem_iUnion₂.mp hkm

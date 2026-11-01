@@ -1,7 +1,7 @@
 module
 
 public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Enumeration.Deg
 public import DomainTheory.DataTypesAsLattices.Enumeration.packList
 public import DomainTheory.DataTypesAsLattices.Enumeration.singleGenerator

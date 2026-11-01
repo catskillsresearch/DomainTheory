@@ -25,12 +25,15 @@ H1_RE = re.compile(r"^#\s+(.+)$", re.MULTILINE)
 # english None => md.stem + .english beside md
 SLICE_NOTES: list[tuple[str, str | None]] = [
     ("1976_Introduction.md", "1976_Introduction.english"),
+    ("Pomega/1976_Pomega.md", None),
+    ("1976_Introduction_remarks.md", None),
     (
         "1976_Continuous_functions_Introduction.md",
         "1976_Continuous_functions.english",
     ),
     ("Pomega/1976_e_definition.md", None),
-    ("Pomega/1976_e_membership.md", None),
+    ("Pomega/1976_e_bounds.md", None),
+    ("Pomega/1976_e_primrec.md", None),
     ("Pomega/1976_e_density.md", None),
     ("1976_Definition_basis.md", "1976_Definition_basis.english"),
     ("1976_Definition_continuous.md", "1976_Definition_continuous.english"),
@@ -122,8 +125,12 @@ SLICE_NOTES: list[tuple[str, str | None]] = [
 
 ANCHOR_OVERRIDE: dict[str, str] = {
     "1976_Introduction.md": "**Abstract.**",
+    "Pomega/1976_Pomega.md": "The main innovation in this report",
+    "1976_Introduction_remarks.md": "The model $\\mathbf{P}\\omega$ can be intuitively viewed",
+    "1976_Continuous_functions_Introduction.md": "**1. Continuous functions.**",
     "Pomega/1976_e_definition.md": "To make the topology",
-    "Pomega/1976_e_membership.md": "This is a one-to-one enumeration",
+    "Pomega/1976_e_bounds.md": "This is a one-to-one enumeration of finite subsets",
+    "Pomega/1976_e_primrec.md": "the function $\\max(e_n)$ is (primitive) recursive",
     "Pomega/1976_e_density.md": "Topologically speaking",
     "Pomega/1976_pair.md": "To formulate the definition, we introduce a standard enumeration",
     "Lambda/1976_Computability_and_definability.md": "**2. Computability and definability.**",
@@ -549,7 +556,11 @@ def main() -> None:
         intro = DT / "1976_Introduction.md"
         memorial = "*To the Memory of Christopher Strachey, 1916–1975*\n\n"
         intro.write_text(
-            f"# Introduction\n\n{memorial}@import \"1976_Introduction.english\" {{code_block=false}}\n\n",
+            "# Introduction\n\n"
+            f"{memorial}"
+            '@import "1976_Introduction.english" {code_block=false}\n\n'
+            "- [Domain $\\mathbf{P}\\omega$](Pomega/1976_Pomega.md)\n"
+            "- [Multiple-valued integers](1976_Introduction_remarks.md)\n",
             encoding="utf-8",
         )
         intro_eng = DT / "1976_Introduction.english"
@@ -561,7 +572,9 @@ def main() -> None:
         cf_intro = DT / "1976_Continuous_functions_Introduction.md"
         cf_intro.write_text(
             "# Introduction\n\n"
-            '@import "1976_Continuous_functions.english" {code_block=false}\n',
+            '@import "1976_Continuous_functions.english" {code_block=false}\n\n'
+            '<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> '
+            '(2026-11-01) — <a href="1976_REVISION.md">1976 revision progress</a></p>\n',
             encoding="utf-8",
         )
 

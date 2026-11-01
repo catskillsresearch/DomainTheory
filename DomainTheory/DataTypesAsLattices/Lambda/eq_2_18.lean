@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.pair_eq_right
 public import DomainTheory.DataTypesAsLattices.Lambda.exists_least_not_mem
 public import DomainTheory.DataTypesAsLattices.Lambda.exists_least_mem

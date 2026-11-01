@@ -6,7 +6,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.pair_zero_zero
 public import DomainTheory.DataTypesAsLattices.Lambda.condC
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Enumeration.condC_app2
 
 @[expose] public section
@@ -23,6 +23,6 @@ theorem not_mem_zero_cond_graph (x y : Pomega) :
   have : pair n m = pair 0 0 := by
     simpa [pair_zero_zero] using hm.symm
   obtain ⟨rfl, rfl⟩ := pair_inj this
-  simp [e_zero, condSet] at hmem
+  simp [e.zero, condSet] at hmem
 
 end DomainTheory.DataTypesAsLattices

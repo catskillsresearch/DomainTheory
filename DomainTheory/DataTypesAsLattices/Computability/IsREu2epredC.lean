@@ -3,7 +3,7 @@ module
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Lambda.predSet
 public import DomainTheory.DataTypesAsLattices.Lambda.predC
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_testBit
 public import DomainTheory.DataTypesAsLattices.Computability.primrecPred_bool
@@ -27,8 +27,8 @@ theorem IsRE.predC : IsRE predC := by
   refine (IsRE.graph_of_primrecRel (f := DataTypesAsLattices.predSet)
       (hp.of_eq fun n m => ?_)).out.of_eq ?_
   · constructor
-    · intro h; exact mem_e.mpr h
-    · intro h; exact mem_e.mp h
+    · intro h; exact e.mem.mpr h
+    · intro h; exact e.mem.mp h
   · intro p; rfl
 
 end DomainTheory.DataTypesAsLattices

@@ -21,7 +21,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Graph.lam
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Functionality.pairElem
 public import DomainTheory.DataTypesAsLattices.Functionality.sumMed
 public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb
@@ -293,11 +293,11 @@ theorem fin_eq (j : ℕ) : valNat (fin j) = e j :=
   by
     rw [fin, finAux_eq]
     ext n
-    simp only [Set.mem_ofPred_eq, mem_e]
+    simp only [Set.mem_ofPred_eq, e.mem]
     constructor
     · exact fun h => h.2
     · intro h
-      exact ⟨Nat.lt_succ_of_le (mem_e_le (mem_e.mpr h)), h⟩
+      exact ⟨Nat.lt_succ_of_le (e.mem_le (e.mem.mpr h)), h⟩
 
 theorem myhillCase2Code_eq (j n m : ℕ) :
     valNat (myhillCase2Code j n m) =

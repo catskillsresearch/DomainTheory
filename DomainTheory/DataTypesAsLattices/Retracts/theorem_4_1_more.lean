@@ -10,7 +10,7 @@ public import DomainTheory.DataTypesAsLattices.Embedding.extend
 public import DomainTheory.DataTypesAsLattices.Embedding.embed
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.DirectedSubset
@@ -64,7 +64,7 @@ theorem theorem_4_1.continuous {a : Pomega} (ha : Retract a) :
       obtain ⟨w, hw, huw, hvw⟩ := hs.out.2 hu hv
       exact ⟨w, hw, huw, hvw⟩⟩⟩
   obtain ⟨z, hz, hnz⟩ :=
-    directed_finite_cover hs' (e_finite n) (by simpa [Fixpoints.vals] using hen)
+    directed_finite_cover hs' (e.finite n) (by simpa [Fixpoints.vals] using hen)
   refine ⟨z, hz, ?_⟩
   rw [hyn]
   have := IsScottContinuous.monotone (funOf.isScottContinuous a) hnz

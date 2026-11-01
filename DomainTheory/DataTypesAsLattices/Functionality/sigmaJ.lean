@@ -9,7 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Graph.theorem_1_2
 public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 
@@ -29,8 +29,8 @@ theorem isScottContinuous (j : ℕ) : IsScottContinuous (sigmaJ j) := by
   constructor
   · intro ⟨k, heq, hp⟩
     refine mem_scottUnion.mpr ⟨2 ^ pair j k, ?_, k, heq, ?_⟩
-    · simpa [e_pow2, Set.singleton_subset_iff] using hp
-    · simp [e_pow2]
+    · simpa [e.pow2, Set.singleton_subset_iff] using hp
+    · simp [e.pow2]
   · intro hp
     obtain ⟨n, hn, k, heq, hpk⟩ := mem_scottUnion.mp hp
     exact ⟨k, heq, hn hpk⟩

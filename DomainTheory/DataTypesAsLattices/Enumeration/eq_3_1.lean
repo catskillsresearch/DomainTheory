@@ -5,7 +5,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Lambda.condC
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_pos
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Enumeration.not_mem_zero_cond_graph
 public import DomainTheory.DataTypesAsLattices.Enumeration.cond_graph_eq_bot_iff
 public import DomainTheory.DataTypesAsLattices.Lambda.condC_more

@@ -1,7 +1,7 @@
 module
 
 public import Mathlib.Topology.Bases
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Tactic.Continuity.Init
 
 @[expose] public section

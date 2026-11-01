@@ -10,7 +10,7 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
@@ -27,7 +27,7 @@ theorem union_left_isScottContinuous (c : Pomega) :
         rw [← id_isScottContinuous.out x]; exact hk
       obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp this
       exact mem_scottUnion.mpr ⟨n, hn, Or.inl hkn⟩
-    · exact mem_scottUnion.mpr ⟨0, by simp [e_zero], Or.inr hk⟩
+    · exact mem_scottUnion.mpr ⟨0, by simp [e.zero], Or.inr hk⟩
   · intro hk
     obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp hk
     rcases hkn with hkn | hkn

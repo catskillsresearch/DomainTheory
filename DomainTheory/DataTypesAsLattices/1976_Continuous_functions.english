@@ -1,4 +1,4 @@
-The domain $\mathbf{P}\omega$ of all subsets of the set $\omega$ of nonnegative integers is a complete lattice under the partial ordering $\subseteq$ of set inclusion, as is well known. We use the usual symbols $\cup$, $\cap$, $\bigcup$, $\bigcap$ for the finite and infinite lattice operations of union and intersection. $\mathbf{P}\omega$ is of course also a Boolean algebra; and for complements we write
+**1. Continuous functions.** The domain $\mathbf{P}\omega$ of all subsets of the set $\omega$ of nonnegative integers is a complete lattice under the partial ordering $\subseteq$ of set inclusion, as is well known. We use the usual symbols $\cup$, $\cap$, $\bigcup$, $\bigcap$ for the finite and infinite lattice operations of union and intersection. $\mathbf{P}\omega$ is of course also a Boolean algebra; and for complements we write
 
 $$\sim x = \{ n \mid n \notin x \}$$
 

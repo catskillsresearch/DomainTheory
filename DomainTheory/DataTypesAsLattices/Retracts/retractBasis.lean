@@ -8,7 +8,7 @@ public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
@@ -39,23 +39,23 @@ theorem directed {a : Pomega} (ha : Retract a)
   constructor
   · let y : Fixpoints (funOf a) :=
       ⟨funOf a (e 0), retract_app ha (e 0)⟩
-    exact ⟨y, 0, by simp [e_zero], rfl⟩
+    exact ⟨y, 0, by simp [e.zero], rfl⟩
   · intro y hy z hz
     obtain ⟨n, hnx, hyn⟩ := hy
     obtain ⟨m, hmx, hzm⟩ := hz
     let w : Fixpoints (funOf a) :=
       ⟨funOf a (e (n ||| m)), retract_app ha (e (n ||| m))⟩
-    refine ⟨w, ⟨n ||| m, e_or_of_subset hnx hmx, rfl⟩, ?_, ?_⟩
+    refine ⟨w, ⟨n ||| m, e.or_of_subset hnx hmx, rfl⟩, ?_, ?_⟩
     · change (y : Pomega) ⊆ (w : Pomega)
       rw [hyn]
       change funOf a (e n) ⊆ funOf a (e (n ||| m))
-      rw [e_or]
+      rw [e.or]
       exact IsScottContinuous.monotone (funOf.isScottContinuous a)
         Set.subset_union_left
     · change (z : Pomega) ⊆ (w : Pomega)
       rw [hzm]
       change funOf a (e m) ⊆ funOf a (e (n ||| m))
-      rw [e_or]
+      rw [e.or]
       exact IsScottContinuous.monotone (funOf.isScottContinuous a)
         Set.subset_union_right
 
@@ -113,7 +113,7 @@ theorem wayBelow {a : Pomega} (_ha : Retract a)
     rw [← hsup]
     exact hnx.trans hxA
   obtain ⟨z, hzA, hnz⟩ :=
-    directed_finite_cover hA (e_finite n) hfinite
+    directed_finite_cover hA (e.finite n) hfinite
   refine ⟨z, hzA, ?_⟩
   change (y : Pomega) ⊆ z
   rw [hyn]

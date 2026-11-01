@@ -3,7 +3,7 @@ module
 public import Mathlib.Computability.Halting
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Enumeration.ValTrace
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceStruct
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceG
@@ -105,8 +105,8 @@ theorem sound {tr : ValTrace} (hok : valTraceOk tr) :
           ih _ hop' htOp
         have hargMem : e t ⊆ valNat (unpair p).2 := by
           intro i hi
-          have hlt : i < t + 1 := Nat.lt_succ_of_le (mem_e_le hi)
-          have hbit : t.testBit i = true := mem_e.mp hi
+          have hlt : i < t + 1 := Nat.lt_succ_of_le (e.mem_le hi)
+          have hbit : t.testBit i = true := e.mem.mp hi
           have hhas := (hbits i hlt).resolve_left fun hf => by
             simp [hbit] at hf
           obtain ⟨ti, hti⟩ := hhas

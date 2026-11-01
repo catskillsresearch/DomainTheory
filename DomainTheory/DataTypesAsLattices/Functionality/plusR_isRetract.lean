@@ -9,7 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_zero
 public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_one
 public import DomainTheory.DataTypesAsLattices.Functionality.plusR_app

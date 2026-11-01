@@ -1,6 +1,6 @@
 module
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
@@ -61,8 +61,8 @@ theorem isScottContinuous_left (y : Pomega) :
   constructor
   · intro ⟨n, hn, hp⟩
     refine mem_scottUnion.mpr ⟨2 ^ pair n m, ?_, ⟨n, hn, ?_⟩⟩
-    · simp [e_pow2, Set.singleton_subset_iff, hp]
-    · simp [e_pow2]
+    · simp [e.pow2, Set.singleton_subset_iff, hp]
+    · simp [e.pow2]
   · intro hm
     obtain ⟨k, hk, n, hn, hp⟩ := mem_scottUnion.mp hm
     exact ⟨n, hn, hk hp⟩

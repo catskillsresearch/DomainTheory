@@ -13,7 +13,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet
 public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 public import DomainTheory.DataTypesAsLattices.Lambda.predSet
 public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Retracts.plus7
 public import DomainTheory.DataTypesAsLattices.Retracts.plus7Body
 public import DomainTheory.DataTypesAsLattices.Retracts.tagInj

@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Lambda.seqFun
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.seqFunLt
@@ -60,8 +60,8 @@ theorem right_isScottContinuous (u : Pomega) :
   constructor
   · intro hk
     obtain ⟨i, hi, hki⟩ := Set.mem_iUnion₂.mp hk
-    exact mem_scottUnion.mpr ⟨2 ^ i, by simp [e_pow2, Set.singleton_subset_iff, hi],
-      Set.mem_iUnion₂.mpr ⟨i, by simp [e_pow2], hki⟩⟩
+    exact mem_scottUnion.mpr ⟨2 ^ i, by simp [e.pow2, Set.singleton_subset_iff, hi],
+      Set.mem_iUnion₂.mpr ⟨i, by simp [e.pow2], hki⟩⟩
   · intro hk
     obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp hk
     obtain ⟨i, hi, hki⟩ := Set.mem_iUnion₂.mp hkn

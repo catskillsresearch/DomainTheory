@@ -23,6 +23,8 @@
 
 
 
+
+
 **[DataTypesAsLattices/Enumeration/seq2_left_isScottContinuous.lean](seq2_left_isScottContinuous.lean)**
 
 @import "seq2_left_isScottContinuous.lean"

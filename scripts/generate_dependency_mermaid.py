@@ -291,7 +291,23 @@ def parse_preserve_tail(old: str) -> tuple[list[str], dict[str, str], list[str]]
 def mermaid_display_label(text: str) -> str:
     """Outline titles use $...$ for PDF math; Mermaid node labels do not render LaTeX."""
     s = re.sub(r"\$([^$]*)\$", r"\1", text)
-    return s.replace("$", "")
+    s = s.replace("$", "")
+    s = s.replace(r"\mathbf{P}\omega", "Pω")
+    s = re.sub(r"\\mathbf\{([^{}]+)\}", r"\1", s)
+    for src, dst in (
+        (r"\omega", "ω"),
+        (r"\lambda", "λ"),
+        (r"\to", "→"),
+        (r"\cap", "∩"),
+        (r"\cup", "∪"),
+        (r"\subseteq", "⊆"),
+        (r"\in", "∈"),
+        (r"\mathbb{N}", "ℕ"),
+        (r"\leq", "≤"),
+        (r"\geq", "≥"),
+    ):
+        s = s.replace(src, dst)
+    return s
 
 
 def mermaid_id(label: str, used: set[str]) -> str:

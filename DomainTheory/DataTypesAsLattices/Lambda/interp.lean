@@ -3,7 +3,7 @@ module
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Graph.lam
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.Term
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.envSet
@@ -75,22 +75,22 @@ theorem var_isScottContinuous (t : Term) (ρ : ℕ → Pomega) (i : ℕ) :
         have : 0 ∈ scottUnion (fun v => interp z (envSet ρ i v)) w := by
           rw [← (iz ρ i).out w]; exact h0
         obtain ⟨m', hm', h0m⟩ := mem_scottUnion.mp this
-        refine mem_scottUnion.mpr ⟨m ||| m', e_or_of_subset hm hm', Or.inl ⟨?_, ?_⟩⟩
+        refine mem_scottUnion.mpr ⟨m ||| m', e.or_of_subset hm hm', Or.inl ⟨?_, ?_⟩⟩
         · exact IsScottContinuous.monotone (ix ρ i)
-            (by rw [e_or]; exact Set.subset_union_left) hnm
+            (by rw [e.or]; exact Set.subset_union_left) hnm
         · exact IsScottContinuous.monotone (iz ρ i)
-            (by rw [e_or]; exact Set.subset_union_right) h0m
+            (by rw [e.or]; exact Set.subset_union_right) h0m
       · have : n ∈ scottUnion (fun v => interp y (envSet ρ i v)) w := by
           rw [← (iy ρ i).out w]; exact hny
         obtain ⟨m, hm, hnm⟩ := mem_scottUnion.mp this
         have : t + 1 ∈ scottUnion (fun v => interp z (envSet ρ i v)) w := by
           rw [← (iz ρ i).out w]; exact ht
         obtain ⟨m', hm', htm⟩ := mem_scottUnion.mp this
-        refine mem_scottUnion.mpr ⟨m ||| m', e_or_of_subset hm hm', Or.inr ⟨?_, t, ?_⟩⟩
+        refine mem_scottUnion.mpr ⟨m ||| m', e.or_of_subset hm hm', Or.inr ⟨?_, t, ?_⟩⟩
         · exact IsScottContinuous.monotone (iy ρ i)
-            (by rw [e_or]; exact Set.subset_union_left) hnm
+            (by rw [e.or]; exact Set.subset_union_left) hnm
         · exact IsScottContinuous.monotone (iz ρ i)
-            (by rw [e_or]; exact Set.subset_union_right) htm
+            (by rw [e.or]; exact Set.subset_union_right) htm
     · intro hn
       obtain ⟨m, hm, hnm⟩ := mem_scottUnion.mp hn
       rcases hnm with ⟨hnx, h0⟩ | ⟨hny, t, ht⟩
@@ -108,7 +108,7 @@ theorem var_isScottContinuous (t : Term) (ρ : ℕ → Pomega) (i : ℕ) :
       have : pair p n ∈ scottUnion (fun v => interp u (envSet ρ i v)) w := by
         rw [← (iu ρ i).out w]; exact hpair
       obtain ⟨m, hm, hpm⟩ := mem_scottUnion.mp this
-      obtain ⟨s, hs⟩ := (e_finite p).exists_finset_coe
+      obtain ⟨s, hs⟩ := (e.finite p).exists_finset_coe
       have hall : ∀ t ∈ s, ∃ q, e q ⊆ w ∧ t ∈ interp x (envSet ρ i (e q)) := by
         intro t ht
         have ht' : t ∈ e p := by
@@ -119,15 +119,15 @@ theorem var_isScottContinuous (t : Term) (ρ : ℕ → Pomega) (i : ℕ) :
           rwa [← (ix ρ i).out w]
         exact mem_scottUnion.mp this
       obtain ⟨N, hN, hsN⟩ := exists_e_cover_finite (ix ρ i) s hall
-      refine mem_scottUnion.mpr ⟨m ||| N, e_or_of_subset hm hN, p, ?_, ?_⟩
+      refine mem_scottUnion.mpr ⟨m ||| N, e.or_of_subset hm hN, p, ?_, ?_⟩
       · have : e p ⊆ interp x (envSet ρ i (e (m ||| N))) := by
           rw [← hs]
           intro t ht
           exact IsScottContinuous.monotone (ix ρ i)
-            (by rw [e_or]; exact Set.subset_union_right) (hsN ht)
+            (by rw [e.or]; exact Set.subset_union_right) (hsN ht)
         exact this
       · exact IsScottContinuous.monotone (iu ρ i)
-          (by rw [e_or]; exact Set.subset_union_left) hpm
+          (by rw [e.or]; exact Set.subset_union_left) hpm
     · intro hn
       obtain ⟨m, hm, p, hp, hpair⟩ := mem_scottUnion.mp hn
       exact ⟨p, subset_trans hp (IsScottContinuous.monotone (ix ρ i) hm),

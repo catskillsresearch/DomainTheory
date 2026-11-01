@@ -5,7 +5,7 @@ public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Enumeration.applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.num
 public import DomainTheory.DataTypesAsLattices.Lambda.Scomb
@@ -34,8 +34,8 @@ theorem isScottContinuous (u : Pomega) :
   constructor
   · intro hk
     obtain ⟨m, hm, hkm⟩ := Set.mem_iUnion₂.mp hk
-    exact mem_scottUnion.mpr ⟨2 ^ m, by simp [e_pow2, Set.singleton_subset_iff, hm],
-      Set.mem_iUnion₂.mpr ⟨m, by simp [e_pow2], hkm⟩⟩
+    exact mem_scottUnion.mpr ⟨2 ^ m, by simp [e.pow2, Set.singleton_subset_iff, hm],
+      Set.mem_iUnion₂.mpr ⟨m, by simp [e.pow2], hkm⟩⟩
   · intro hk
     obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp hk
     obtain ⟨m, hm, hkm⟩ := Set.mem_iUnion₂.mp hkn

@@ -6,7 +6,7 @@ public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 
 @[expose] public section
 
@@ -19,7 +19,7 @@ theorem const_isScottContinuous (c : Pomega) :
   ext k
   constructor
   · intro hk
-    exact mem_scottUnion.mpr ⟨0, by simp [e_zero], hk⟩
+    exact mem_scottUnion.mpr ⟨0, by simp [e.zero], hk⟩
   · intro hk
     obtain ⟨_, _, hkn⟩ := mem_scottUnion.mp hk
     exact hkn

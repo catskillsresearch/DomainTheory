@@ -7,7 +7,7 @@ public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Order.CompleteLattice.Defs
 @[expose] public section
 
@@ -22,10 +22,10 @@ theorem enumerationUnion_right_isScottContinuous (x : Pomega) :
   ext n
   constructor
   · rintro (hn | hn)
-    · exact mem_scottUnion.mpr ⟨0, by simp [e_zero], Or.inl hn⟩
+    · exact mem_scottUnion.mpr ⟨0, by simp [e.zero], Or.inl hn⟩
     · exact mem_scottUnion.mpr ⟨2 ^ n,
-        by simp [e_pow2, Set.singleton_subset_iff, hn],
-        Or.inr (by simp [e_pow2])⟩
+        by simp [e.pow2, Set.singleton_subset_iff, hn],
+        Or.inr (by simp [e.pow2])⟩
   · intro hn
     obtain ⟨i, hi, hni⟩ := mem_scottUnion.mp hn
     exact hni.elim Or.inl (fun h => Or.inr (hi h))

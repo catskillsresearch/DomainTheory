@@ -3,7 +3,7 @@ module
 public import Mathlib.Topology.Bases
 public import DomainTheory.DataTypesAsLattices.Continuous.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.isOpen_memOpen
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Continuous.memOpen
 public import DomainTheory.DataTypesAsLattices.Continuous.basicNhhd
 
@@ -14,7 +14,7 @@ namespace DomainTheory.DataTypesAsLattices
 open TopologicalSpace
 
 theorem isOpen_basicNhhd (n : ℕ) : IsOpen (basicNhhd n) := by
-  obtain ⟨s, hs⟩ := (e_finite n).exists_finset_coe
+  obtain ⟨s, hs⟩ := (e.finite n).exists_finset_coe
   have h : basicNhhd n = ⋂ k ∈ s, memOpen k := by
     ext x
     constructor

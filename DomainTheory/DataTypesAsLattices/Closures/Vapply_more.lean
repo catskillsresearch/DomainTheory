@@ -4,7 +4,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.Vapply
 public import Mathlib.Algebra.Ring.Parity
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Order.CompleteLattice.Defs
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced

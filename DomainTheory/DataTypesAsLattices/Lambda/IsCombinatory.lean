@@ -2,7 +2,7 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.zeroC
 public import DomainTheory.DataTypesAsLattices.Lambda.sucC
 public import DomainTheory.DataTypesAsLattices.Lambda.predC

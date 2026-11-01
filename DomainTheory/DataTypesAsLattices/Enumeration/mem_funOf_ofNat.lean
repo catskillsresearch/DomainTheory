@@ -4,7 +4,7 @@ public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Enumeration.e_subset_ofNat_iff
 
 @[expose] public section
@@ -26,7 +26,7 @@ theorem mem_funOf_ofNat (u : Pomega) (n m : ℕ) :
     · exact Or.inr hp
   · intro h
     rcases h with hp | hp
-    · exact ⟨0, by simp [e_zero], hp⟩
-    · exact ⟨2 ^ n, by simp [e_pow2, ofNat], hp⟩
+    · exact ⟨0, by simp [e.zero], hp⟩
+    · exact ⟨2 ^ n, by simp [e.pow2, ofNat], hp⟩
 
 end DomainTheory.DataTypesAsLattices

@@ -1,7 +1,7 @@
 module
 
 public import Mathlib.Algebra.Ring.Parity
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Order.CompleteLattice.Defs
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
@@ -29,8 +29,8 @@ theorem isScottContinuous : IsScottContinuous squareFst := by
   constructor
   · intro hn
     refine mem_scottUnion.mpr ⟨2 ^ (2 * n), ?_, ?_⟩
-    · simpa [e_pow2, Set.singleton_subset_iff, squareFst] using hn
-    · simp [squareFst, e_pow2]
+    · simpa [e.pow2, Set.singleton_subset_iff, squareFst] using hn
+    · simp [squareFst, e.pow2]
   · intro hn
     obtain ⟨m, hm, hnm⟩ := mem_scottUnion.mp hn
     exact hm hnm

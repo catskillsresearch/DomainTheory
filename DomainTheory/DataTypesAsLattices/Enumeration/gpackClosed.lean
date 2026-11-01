@@ -8,7 +8,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.predClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.condClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.kClosed
 public import DomainTheory.DataTypesAsLattices.Enumeration.sClosed
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
 public import DomainTheory.DataTypesAsLattices.Enumeration.Avoids
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack

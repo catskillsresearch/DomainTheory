@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Continuous.theorem_1_1
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
 
 @[expose] public section
@@ -20,14 +20,14 @@ theorem theorem_1_3.comp {f g : Pomega → Pomega}
     have hk' : k ∈ f (g x) := hk
     have := (theorem_1_1 f).mp hf (g x) (2 ^ k)
     have hfin : e (2 ^ k) ⊆ f (g x) := by
-      simpa [e_pow2, Set.singleton_subset_iff] using hk'
+      simpa [e.pow2, Set.singleton_subset_iff] using hk'
     obtain ⟨m, hm, hkm⟩ := this.mp hfin
     have := (theorem_1_1 g).mp hg x m
     obtain ⟨n, hn, hmn⟩ := this.mp hm
     refine mem_scottUnion.mpr ⟨n, hn, ?_⟩
     have : e (2 ^ k) ⊆ f (g (e n)) :=
       subset_trans hkm (IsScottContinuous.monotone hf hmn)
-    simpa [e_pow2, Set.singleton_subset_iff] using this
+    simpa [e.pow2, Set.singleton_subset_iff] using this
   · intro hk
     obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp hk
     exact IsScottContinuous.monotone hf (IsScottContinuous.monotone hg hn) hkn
@@ -46,9 +46,9 @@ theorem theorem_1_3.diag {f : Pomega → Pomega → Pomega}
       rw [← (hfy (e n)).out x]; exact hkn
     obtain ⟨m, hm, hkm⟩ := mem_scottUnion.mp this
     refine Set.mem_iUnion.mpr ⟨n ||| m, ?_⟩
-    refine ⟨e_or_of_subset hn hm, ?_⟩
-    have hle : e n ⊆ e (n ||| m) := by rw [e_or]; exact Set.subset_union_left
-    have hre : e m ⊆ e (n ||| m) := by rw [e_or]; exact Set.subset_union_right
+    refine ⟨e.or_of_subset hn hm, ?_⟩
+    have hle : e n ⊆ e (n ||| m) := by rw [e.or]; exact Set.subset_union_left
+    have hre : e m ⊆ e (n ||| m) := by rw [e.or]; exact Set.subset_union_right
     exact IsScottContinuous.monotone (hfy (e (n ||| m))) hre
       (IsScottContinuous.monotone (hfx (e m)) hle hkm)
   · intro k hk

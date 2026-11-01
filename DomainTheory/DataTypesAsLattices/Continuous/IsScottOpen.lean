@@ -2,7 +2,7 @@ module
 
 public import Mathlib.Topology.Bases
 public import DomainTheory.DataTypesAsLattices.Continuous.basicNhhd
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 
 @[expose] public section
 

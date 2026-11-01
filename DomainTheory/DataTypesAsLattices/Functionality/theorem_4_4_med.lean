@@ -13,7 +13,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.diagC
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
 public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Functionality.pairMed
 public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_zero
 public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_one

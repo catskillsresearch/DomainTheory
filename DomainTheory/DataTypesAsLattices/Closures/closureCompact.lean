@@ -12,7 +12,7 @@ public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Graph.theorem_1_2
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Closures.Closure
 public import DomainTheory.DataTypesAsLattices.FixedLattices.IsCompact
 public import DomainTheory.DataTypesAsLattices.Retracts.retractBasis
@@ -49,7 +49,7 @@ theorem isCompactSubset {a : Pomega} (ha : Closure a)
   intro s hs hsub
   have hen : e n ⊆ ⋃₀ (Subtype.val '' s) :=
     (closure_expansive ha (e n)).trans hsub
-  obtain ⟨z, hz, hnz⟩ := directed_finite_cover_subset hs (e_finite n) hen
+  obtain ⟨z, hz, hnz⟩ := directed_finite_cover_subset hs (e.finite n) hen
   refine ⟨z, hz, ?_⟩
   have := IsScottContinuous.monotone (funOf.isScottContinuous a) hnz
   rwa [z.property] at this

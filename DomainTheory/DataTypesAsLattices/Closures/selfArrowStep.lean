@@ -3,7 +3,7 @@ module
 public import Mathlib.Algebra.Ring.Parity
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
 public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Order.CompleteLattice.Defs
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
@@ -30,7 +30,7 @@ theorem isScottContinuous :
   constructor
   · intro hk
     rcases hk with hk | hk
-    · exact mem_scottUnion.mpr ⟨0, by simp [e_zero], Or.inl hk⟩
+    · exact mem_scottUnion.mpr ⟨0, by simp [e.zero], Or.inl hk⟩
     · have : k ∈ scottUnion (fun a => arrowR a a) a := by rwa [← h]
       obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp this
       exact mem_scottUnion.mpr ⟨n, hn, Or.inr hkn⟩

@@ -13,7 +13,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.zeroC
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb_more
 public import DomainTheory.DataTypesAsLattices.Lambda.condC_more
 

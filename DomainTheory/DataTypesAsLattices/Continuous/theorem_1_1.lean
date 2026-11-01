@@ -3,7 +3,7 @@ module
 public import Mathlib.Topology.Bases
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Continuous.exists_e_cover_finite
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
 
 @[expose] public section
@@ -24,7 +24,7 @@ theorem theorem_1_1 (f : Pomega → Pomega) :
         have : k ∈ scottUnion f x := by
           rw [← hf.out x]; exact hmf hk
         exact mem_scottUnion.mp this
-      obtain ⟨s, hs⟩ := (e_finite m).exists_finset_coe
+      obtain ⟨s, hs⟩ := (e.finite m).exists_finset_coe
       obtain ⟨N, hN, hsf⟩ := exists_e_cover_finite hf s (fun k hk =>
         this k (by
           have : k ∈ (s : Set ℕ) := hk
@@ -39,15 +39,15 @@ theorem theorem_1_1 (f : Pomega → Pomega) :
     constructor
     · intro hk
       have : e (2 ^ k) ⊆ f x := by
-        simp [e_pow2, Set.singleton_subset_iff, hk]
+        simp [e.pow2, Set.singleton_subset_iff, hk]
       obtain ⟨n, hn, hkn⟩ := (h x (2 ^ k)).mp this
       refine mem_scottUnion.mpr ⟨n, hn, ?_⟩
-      simpa [e_pow2, Set.singleton_subset_iff] using hkn
+      simpa [e.pow2, Set.singleton_subset_iff] using hkn
     · intro hk
       obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp hk
       have : e (2 ^ k) ⊆ f (e n) := by
-        simp [e_pow2, Set.singleton_subset_iff, hkn]
+        simp [e.pow2, Set.singleton_subset_iff, hkn]
       have : e (2 ^ k) ⊆ f x := (h x (2 ^ k)).mpr ⟨n, hn, this⟩
-      simpa [e_pow2, Set.singleton_subset_iff] using this
+      simpa [e.pow2, Set.singleton_subset_iff] using this
 
 end DomainTheory.DataTypesAsLattices

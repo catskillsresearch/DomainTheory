@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Graph.graph
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.pair_zero_zero
 public import DomainTheory.DataTypesAsLattices.Lambda.pair_one_zero

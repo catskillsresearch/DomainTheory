@@ -2,7 +2,7 @@ module
 
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Computability.precEnv
 public import DomainTheory.DataTypesAsLattices.Computability.precTerm
 public import DomainTheory.DataTypesAsLattices.Graph.beta

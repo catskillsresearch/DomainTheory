@@ -2,7 +2,7 @@ module
 
 public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 @[expose] public section
 
 set_option maxHeartbeats 2000000
@@ -21,7 +21,7 @@ theorem e_subset_ofNat_iff (code n : ℕ) :
     · exact Or.inl hz
     · have hbit : ∀ k, code.testBit k = true → k = n := by
         intro k hk
-        simpa [ofNat] using h (mem_e.mpr hk)
+        simpa [ofNat] using h (e.mem.mpr hk)
       have hn : code.testBit n = true := by
         have hk : code.testBit code.log2 = true := Nat.testBit_log2 hz
         simpa [hbit _ hk] using hk
@@ -35,8 +35,8 @@ theorem e_subset_ofNat_iff (code n : ℕ) :
   · intro h
     rcases h with rfl | rfl
     · intro k hk
-      simp [e_zero] at hk
+      simp [e.zero] at hk
     · intro k hk
-      simpa [e_pow2, ofNat] using hk
+      simpa [e.pow2, ofNat] using hk
 
 end DomainTheory.DataTypesAsLattices

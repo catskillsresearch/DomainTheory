@@ -8,7 +8,7 @@ public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
@@ -20,8 +20,8 @@ theorem openR_map_isScottContinuous :
   ext m
   constructor
   · intro ⟨n, hn, hnu⟩
-    exact mem_scottUnion.mpr ⟨2 ^ n, by simp [e_pow2, Set.singleton_subset_iff, hnu],
-      ⟨n, hn, by simp [e_pow2]⟩⟩
+    exact mem_scottUnion.mpr ⟨2 ^ n, by simp [e.pow2, Set.singleton_subset_iff, hnu],
+      ⟨n, hn, by simp [e.pow2]⟩⟩
   · intro hm
     obtain ⟨k, hk, n, hn, hnk⟩ := mem_scottUnion.mp hm
     exact ⟨n, hn, hk hnk⟩

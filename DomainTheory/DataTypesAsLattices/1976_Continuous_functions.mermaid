@@ -3,18 +3,18 @@
 %% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  E["e"]
-  PAIR["pair"]
-  CONT["Continuous"]
-  GRA["Graph"]
-  FIX["FixedPoint"]
-  EMB["Embedding"]
+  Finite_subsets_and_the_e["Finite subsets and the enumeration e_n"]
+  Cantor_pairing_of_intege["Cantor pairing of integer pairs (n,m)"]
+  Basic_open_sets_and_cont["Basic open sets and continuity on Pω"]
+  Graphs_of_continuous_fun["Graphs of continuous functions"]
+  Fixed_points_and_least_f["Fixed points and least fixed points"]
+  Extension_and_embedding["Extension and embedding of continuous maps"]
 
-  PAIR --> CONT
-  CONT --> EMB
-  CONT --> FIX
-  CONT --> GRA
-  E --> PAIR
+  Cantor_pairing_of_intege --> Basic_open_sets_and_cont
+  Finite_subsets_and_the_e --> Cantor_pairing_of_intege
+  Basic_open_sets_and_cont --> Extension_and_embedding
+  Basic_open_sets_and_cont --> Fixed_points_and_least_f
+  Basic_open_sets_and_cont --> Graphs_of_continuous_fun
 
   classDef c1 fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef c6 fill:#ccfbf1,stroke:#0f766e,color:#134e4a

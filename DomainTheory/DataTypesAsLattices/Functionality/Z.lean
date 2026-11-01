@@ -10,7 +10,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Lambda.const_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 @[expose] public section
 
@@ -36,12 +36,12 @@ theorem finite_bound (p q m : ℕ) :
   induction m with
   | zero =>
       intro k hk
-      exact (mem_e_le hk).trans (Nat.le_max_right p q)
+      exact (e.mem_le hk).trans (Nat.le_max_right p q)
   | succ m ih =>
       intro k hk
       obtain ⟨r, _hr, hpair⟩ := hk
       exact (pair_le_right r k).trans
-        ((mem_e_le hpair).trans (Nat.le_max_left p q))
+        ((e.mem_le hpair).trans (Nat.le_max_left p q))
 
 theorem finite_no_tag (p q m k : ℕ) :
     pair (max p q + 1) k ∉ Z m (e p) (e q) := by

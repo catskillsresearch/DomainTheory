@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.succSet
@@ -21,9 +21,9 @@ theorem isScottContinuous : IsScottContinuous topRec := by
   constructor
   · intro hk
     rcases hk with hk | ⟨n, hn, rfl⟩
-    · exact mem_scottUnion.mpr ⟨0, by simp [e_zero], Or.inl hk⟩
-    · exact mem_scottUnion.mpr ⟨2 ^ n, by simp [e_pow2, Set.singleton_subset_iff, hn],
-        Or.inr ⟨n, by simp [e_pow2], rfl⟩⟩
+    · exact mem_scottUnion.mpr ⟨0, by simp [e.zero], Or.inl hk⟩
+    · exact mem_scottUnion.mpr ⟨2 ^ n, by simp [e.pow2, Set.singleton_subset_iff, hn],
+        Or.inr ⟨n, by simp [e.pow2], rfl⟩⟩
   · intro hk
     obtain ⟨m, hm, hkm⟩ := mem_scottUnion.mp hk
     rcases hkm with hk | ⟨n, hn, rfl⟩

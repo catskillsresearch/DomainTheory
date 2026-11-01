@@ -1,7 +1,7 @@
 module
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 
 @[expose] public section
 
@@ -23,7 +23,7 @@ theorem eSubset_iff_stage {x : Pomega} {c : Code}
       if h : n.testBit k = true then
         ((evaln_complete (x := 0)).1 (by
           rw [hc]
-          exact Part.mem_assert_iff.mpr ⟨hsub (mem_e.mpr h), Part.mem_some_iff.mpr rfl⟩)).choose
+          exact Part.mem_assert_iff.mpr ⟨hsub (e.mem.mpr h), Part.mem_some_iff.mpr rfl⟩)).choose
       else 0
     refine ⟨(Finset.range n).sup stage, fun k hlt => ?_⟩
     by_cases hb : n.testBit k = true
@@ -34,13 +34,13 @@ theorem eSubset_iff_stage {x : Pomega} {c : Code}
         simp only [stage, hb, ↓reduceDIte]
         exact ((evaln_complete (x := 0)).1 (by
           rw [hc]
-          exact Part.mem_assert_iff.mpr ⟨hsub (mem_e.mpr hb), Part.mem_some_iff.mpr rfl⟩)).choose_spec
+          exact Part.mem_assert_iff.mpr ⟨hsub (e.mem.mpr hb), Part.mem_some_iff.mpr rfl⟩)).choose_spec
       exact (Option.isSome_of_mem (evaln_mono hle h0))
     · exact Or.inl (Bool.eq_false_iff.mpr hb)
   · intro ⟨s, hs⟩ k hk
-    have hlt : k < n := mem_e_lt hk
+    have hlt : k < n := e.mem_lt hk
     have hsome : (evaln s c k).isSome = true :=
-      (hs k hlt).resolve_left fun hfalse => Bool.eq_false_iff.mp hfalse (mem_e.mp hk)
+      (hs k hlt).resolve_left fun hfalse => Bool.eq_false_iff.mp hfalse (e.mem.mp hk)
     obtain ⟨val, hval⟩ := Option.isSome_iff_exists.mp hsome
     have : val ∈ Code.eval c k :=
       evaln_sound (by simpa [Option.mem_def] using hval)

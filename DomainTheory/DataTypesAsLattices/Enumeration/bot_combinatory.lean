@@ -6,7 +6,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_6
 public import DomainTheory.DataTypesAsLattices.Lambda.predC
 public import DomainTheory.DataTypesAsLattices.Lambda.zeroC
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.predC_more
 
 @[expose] public section

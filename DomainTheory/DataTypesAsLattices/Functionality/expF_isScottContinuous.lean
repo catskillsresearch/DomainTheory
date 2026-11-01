@@ -10,7 +10,7 @@ public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Functionality.tensorR_diag_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Functionality.tensor4_diag_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Functionality.tensorR_right_isScottContinuous

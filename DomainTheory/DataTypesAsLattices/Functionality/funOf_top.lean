@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 
 @[expose] public section
 
@@ -13,6 +13,6 @@ theorem funOf_top (x : Pomega) : funOf topElem x = topElem := by
   · intro
     trivial
   · intro
-    exact ⟨0, by simp [e_zero], trivial⟩
+    exact ⟨0, by simp [e.zero], trivial⟩
 
 end DomainTheory.DataTypesAsLattices

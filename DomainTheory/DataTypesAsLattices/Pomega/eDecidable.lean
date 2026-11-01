@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Pomega.eBounds
+public import DomainTheory.DataTypesAsLattices.Pomega.e
 
 @[expose] public section
 
@@ -11,7 +11,7 @@ instance (n k : ℕ) : Decidable (k ∈ e n) :=
 
 instance (n m : ℕ) : Decidable (e n ⊆ e m) :=
   decidable_of_iff (∀ k ≤ n, k ∈ e n → k ∈ e m) ⟨
-    fun h k hk => h k (mem_e_le hk) hk,
+    fun h k hk => h k (e.mem_le hk) hk,
     fun h _k _ hk => h hk⟩
 
 end DomainTheory.DataTypesAsLattices

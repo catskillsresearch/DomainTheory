@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Closures.squarePair
 public import Mathlib.Algebra.Ring.Parity
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Order.CompleteLattice.Defs
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
@@ -33,9 +33,9 @@ theorem isScottContinuous_left (y : Pomega) :
   constructor
   · intro hk
     rcases hk with ⟨n, hn, hk⟩ | ⟨m, hm, hk⟩
-    · exact mem_scottUnion.mpr ⟨2 ^ n, by simp [e_pow2, Set.singleton_subset_iff, hn],
-        Or.inl ⟨n, by simp [e_pow2], hk⟩⟩
-    · exact mem_scottUnion.mpr ⟨0, by simp [e_zero], Or.inr ⟨m, hm, hk⟩⟩
+    · exact mem_scottUnion.mpr ⟨2 ^ n, by simp [e.pow2, Set.singleton_subset_iff, hn],
+        Or.inl ⟨n, by simp [e.pow2], hk⟩⟩
+    · exact mem_scottUnion.mpr ⟨0, by simp [e.zero], Or.inr ⟨m, hm, hk⟩⟩
   · intro hk
     obtain ⟨p, hp, hkp⟩ := mem_scottUnion.mp hk
     rcases hkp with ⟨n, hn, hk⟩ | ⟨m, hm, hk⟩
@@ -50,9 +50,9 @@ theorem isScottContinuous_right (x : Pomega) :
   constructor
   · intro hk
     rcases hk with ⟨n, hn, hk⟩ | ⟨m, hm, hk⟩
-    · exact mem_scottUnion.mpr ⟨0, by simp [e_zero], Or.inl ⟨n, hn, hk⟩⟩
-    · exact mem_scottUnion.mpr ⟨2 ^ m, by simp [e_pow2, Set.singleton_subset_iff, hm],
-        Or.inr ⟨m, by simp [e_pow2], hk⟩⟩
+    · exact mem_scottUnion.mpr ⟨0, by simp [e.zero], Or.inl ⟨n, hn, hk⟩⟩
+    · exact mem_scottUnion.mpr ⟨2 ^ m, by simp [e.pow2, Set.singleton_subset_iff, hm],
+        Or.inr ⟨m, by simp [e.pow2], hk⟩⟩
   · intro hk
     obtain ⟨p, hp, hkp⟩ := mem_scottUnion.mp hk
     rcases hkp with ⟨n, hn, hk⟩ | ⟨m, hm, hk⟩

@@ -13,7 +13,7 @@ public import DomainTheory.DataTypesAsLattices.FixedPoint.chain_lemma
 public import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot_mono
 public import DomainTheory.DataTypesAsLattices.Graph.mu_law
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
 public import DomainTheory.DataTypesAsLattices.Retracts.iterates_areRetracts

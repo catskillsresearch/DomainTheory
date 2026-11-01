@@ -4,7 +4,7 @@ public import Mathlib.Topology.Bases
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen
 public import Mathlib.Order.ConditionallyCompleteLattice.Basic
 public import Mathlib.Data.Set.Lattice.Indexed
-public import DomainTheory.DataTypesAsLattices.Pomega.e
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 
 @[expose] public section
 
