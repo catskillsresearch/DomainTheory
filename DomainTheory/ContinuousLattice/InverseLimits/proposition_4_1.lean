@@ -1,10 +1,8 @@
 module
 
-public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.ContinuousLattice.InverseLimits.instCompleteLattice
-public import DomainTheory.ContinuousLattice.ContinuousLattices.continuousLattice_scottTopology_of_injective
-public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
-public import Mathlib.Data.Set.Basic
+import DomainTheory.ContinuousLattice.ContinuousLattices.continuousLattice_scottTopology_of_injective
+import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 
 @[expose] public section
 
