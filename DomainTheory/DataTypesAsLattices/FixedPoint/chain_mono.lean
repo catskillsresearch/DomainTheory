@@ -1,9 +1,6 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot
 public import DomainTheory.DataTypesAsLattices.FixedPoint.fix
-import Mathlib.Order.RelClasses
 
 @[expose] public section
 

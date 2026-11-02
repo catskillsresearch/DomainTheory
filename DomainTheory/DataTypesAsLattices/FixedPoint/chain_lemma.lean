@@ -1,12 +1,7 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Continuous.theorem_1_1
 public import Mathlib.Topology.Bases
-public import Mathlib.Topology.Order
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot
-public import DomainTheory.DataTypesAsLattices.FixedPoint.fix
 public import DomainTheory.DataTypesAsLattices.FixedPoint.exists_index_of_finset
 
 @[expose] public section

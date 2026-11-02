@@ -12,7 +12,7 @@
 - [Theorem 2.2 — the conversion theorem](1976_Theorem_2_2.md) ✓
 - [Theorem 2.3 — the reduction theorem](1976_Theorem_2_3.md) ✓
 - [Theorem 2.4 — the combinator theorem](1976_Theorem_2_4.md) ✓
-- [The combinator Y](1976_Combinator_Y.md)
+- [The combinator Y](1976_Combinator_Y.md) ✓
 - [Theorem 2.5 — the first recursion theorem](1976_Theorem_2_5.md)
 - [The graph model](1976_Graph_model.md)
 - [Sequences](1976_Sequences.md)

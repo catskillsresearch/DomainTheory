@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 
 @[expose] public section
 
