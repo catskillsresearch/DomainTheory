@@ -1,13 +1,11 @@
 
 module
 
-public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Graph.graph
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Graph.IsGraph
-public import DomainTheory.DataTypesAsLattices.Graph.lam
-public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
+import Mathlib.Data.Finset.Attr
+import Mathlib.Tactic.Continuity.Init
+import Mathlib.Tactic.Finiteness.Attr
+import Mathlib.Tactic.SetLike
 
 @[expose] public section
 

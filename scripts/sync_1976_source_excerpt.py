@@ -326,10 +326,10 @@ def update_hub_tocs() -> None:
     patch_md_toc(
         DT / "Graph/1976_Graph.md",
         [
-            "- [Definition (graph)](../1976_Definition_graph.md)",
-            "- [Theorem 1.2](1976_Theorem_1_2.md)",
-            "",
             '@import "Graph.mermaid"',
+            "",
+            "- [Definition (graph)](../1976_Definition_graph.md) ✓",
+            "- [Theorem 1.2](1976_Theorem_1_2.md) ✓",
             "",
         ],
     )

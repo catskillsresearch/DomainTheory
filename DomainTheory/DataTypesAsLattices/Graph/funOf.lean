@@ -1,10 +1,8 @@
 module
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
-public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import Mathlib.Topology.Bases
+import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
+import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 
 @[expose] public section
 

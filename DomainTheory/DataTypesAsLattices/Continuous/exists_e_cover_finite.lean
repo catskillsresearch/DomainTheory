@@ -1,8 +1,6 @@
 module
 
-public import Mathlib.Topology.Bases
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 
 @[expose] public section
 

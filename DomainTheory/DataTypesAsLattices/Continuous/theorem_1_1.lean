@@ -1,8 +1,8 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Continuous.exists_e_cover_finite
 import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
+import DomainTheory.DataTypesAsLattices.Continuous.exists_e_cover_finite
 
 @[expose] public section
 

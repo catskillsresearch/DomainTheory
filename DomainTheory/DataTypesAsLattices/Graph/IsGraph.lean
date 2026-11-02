@@ -2,8 +2,11 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
+public import DomainTheory.DataTypesAsLattices.Pomega.e
+import Mathlib.Data.Finset.Attr
+import Mathlib.Tactic.Continuity.Init
+import Mathlib.Tactic.Finiteness.Attr
+import Mathlib.Tactic.SetLike
 
 @[expose] public section
 
