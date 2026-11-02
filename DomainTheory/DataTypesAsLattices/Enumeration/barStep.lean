@@ -12,7 +12,7 @@ public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import Mathlib.Order.CompleteLattice.Defs
-public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepBody
+public import DomainTheory.DataTypesAsLattices.Lambda.distributive_functions
 
 @[expose] public section
 

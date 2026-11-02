@@ -3,11 +3,10 @@ module
 public import DomainTheory.DataTypesAsLattices.FixedPoint.fix
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Lambda.dollarC
+public import DomainTheory.DataTypesAsLattices.Lambda.distributive_functions
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecVal
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecHat
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStep
-public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_25
 public import Mathlib.Data.Set.Lattice.Indexed
 @[expose] public section
 

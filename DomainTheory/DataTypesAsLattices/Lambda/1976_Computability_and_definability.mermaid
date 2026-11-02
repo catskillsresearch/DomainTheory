@@ -6,6 +6,7 @@ flowchart TB
   EXT["Minimal and maximal extension"]
   MEAN["Meaning"]
   LAM["The language LAMBDA"]
+  Term_avoidance["Term avoidance (α)"]
   Theorem_2_1___the_contin["Theorem 2.1 — the continuity theorem"]
   Theorem_2_2___the_conver["Theorem 2.2 — the conversion theorem"]
   Theorem_2_3___the_reduct["Theorem 2.3 — the reduction theorem"]
@@ -18,16 +19,19 @@ flowchart TB
   DEFTHM["The definability theorem"]
   LY["A law of Y"]
 
-  Theorem_2_2___the_conver --> DEFTHM
+  DOL --> DEFTHM
+  Theorem_2_3___the_reduct --> DEFTHM
+  SEQ --> DOL
   Theorem_2_5___the_first --> DOL
-  LAM --> GRA
+  Theorem_2_2___the_conver --> GRA
   MEAN --> LAM
-  YC --> LY
   EXT --> MEAN
-  Theorem_2_5___the_first --> SEQ
+  Theorem_2_4___the_combin --> SEQ
+  LAM --> Term_avoidance
   LAM --> Theorem_2_1___the_contin
   Theorem_2_1___the_contin --> Theorem_2_2___the_conver
   Theorem_2_2___the_conver --> Theorem_2_3___the_reduct
+  Term_avoidance --> Theorem_2_4___the_combin
   Theorem_2_2___the_conver --> Theorem_2_4___the_combin
   YC --> Theorem_2_5___the_first
   Theorem_2_4___the_combin --> YC

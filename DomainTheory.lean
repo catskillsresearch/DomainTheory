@@ -970,10 +970,7 @@ import DomainTheory.DataTypesAsLattices.Lambda.curryFin
 import DomainTheory.DataTypesAsLattices.Lambda.dcondSet
 import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 import DomainTheory.DataTypesAsLattices.Lambda.diagApp_isScottContinuous
-import DomainTheory.DataTypesAsLattices.Lambda.dollarC
-import DomainTheory.DataTypesAsLattices.Lambda.dollarStep
-import DomainTheory.DataTypesAsLattices.Lambda.dollarStepBody
-import DomainTheory.DataTypesAsLattices.Lambda.dollarStepTerm
+import DomainTheory.DataTypesAsLattices.Lambda.distributive_functions
 import DomainTheory.DataTypesAsLattices.Lambda.graph_model
 import DomainTheory.DataTypesAsLattices.Lambda.eq_2_11
 import DomainTheory.DataTypesAsLattices.Lambda.eq_2_13
@@ -984,8 +981,6 @@ import DomainTheory.DataTypesAsLattices.Lambda.eq_2_17
 import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 import DomainTheory.DataTypesAsLattices.Lambda.Extend
 import DomainTheory.DataTypesAsLattices.Lambda.sequences
-import DomainTheory.DataTypesAsLattices.Lambda.eq_2_24
-import DomainTheory.DataTypesAsLattices.Lambda.eq_2_25
 import DomainTheory.DataTypesAsLattices.Lambda.eq_2_27
 import DomainTheory.DataTypesAsLattices.Lambda.eq_2_28
 import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_bot
@@ -1015,8 +1010,6 @@ import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 import DomainTheory.DataTypesAsLattices.Lambda.primRecVal
 import DomainTheory.DataTypesAsLattices.Lambda.sucC_more
 import DomainTheory.DataTypesAsLattices.Lambda.succSet_more
-import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
-import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_1
 import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_2
 import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_3

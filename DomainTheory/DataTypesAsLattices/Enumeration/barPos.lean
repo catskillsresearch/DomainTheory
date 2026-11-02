@@ -10,7 +10,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_succ
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_zero
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepBody
+public import DomainTheory.DataTypesAsLattices.Lambda.distributive_functions
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 @[expose] public section
 

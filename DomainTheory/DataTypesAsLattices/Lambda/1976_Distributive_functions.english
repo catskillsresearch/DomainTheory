@@ -1,3 +1,9 @@
+Equation 2.23 gives us the method of LAMBDA-defining *finite sequences* (in a quite natural way), and the next step is to consider *infinite sequences*. But these are just the functions $\hat{p}$ where $p : \omega \to \mathbf{P}\omega$ is arbitrary. What we need then is a condition expressible in the language equivalent to saying $u = \hat{p}$ for some $p$. This is the same as
+
+$$u = \lambda x.\, \bigcup \{ u_i \mid i \in x \}.$$
+
+but the $\cup$- and set-notation is not part of LAMBDA. We are forced into a recursive definition:
+
 $$(2.24) \quad \mathbf{\$} = \mathbf{Y}(\lambda s \lambda u \lambda z.\, z \supset u_0,\, s(\lambda t.\, u_{t+1})(z - 1)).$$
 
 This equation generalizes (2.22) and we have:
@@ -9,3 +15,89 @@ Thus the combinator $\mathbf{\$}$ “revalues” an element as a distributive fu
 $$(2.26) \quad \lambda n \in \omega.\, \tau = \mathbf{\$}(\lambda z.\, \tau[z/n]).$$
 
 With all these conventions LAMBDA-notation becomes very much like ordinary mathematical notation without too much strain.
+
+Recall (from minimal extension) that a continuous $f : \mathbf{P}\omega \to \mathbf{P}\omega$ is *distributive* when $f(\varnothing) = \varnothing$ and $f(x \cup y) = f(x) \cup f(y)$. 
+The spread $\hat{p}(x) = \bigcup \{ p(n) \mid n \in x \}$ is the canonical example. `seqFun` in `sequences.lean` is $\hat{p}$ at fixed $u$. The combinator $\mathbf{\$}$ packages that revaluation, and (2.26) expresses ω-indexed $\lambda$-notation in terms of **$**.
+
+**Formalization (`distributive_functions.lean`).** Scott’s (2.24)–(2.26) are split into a **model** step (graphs, `dollarStep`, `dollarC`) and a **language** step (`dollarStepTerm`, `termDollarStep`) linked by `interp` and Theorems 2.4–2.5. Each Lean name is the library entry; proofs in the file are short unless noted.
+
+**Definition (`dollarStepBody`).** For $s,u,z \in \mathbf{P}\omega$,
+$$\texttt{dollarStepBody}(s,u,z) = z \supset \mathrm{funOf}\,u\,0,\; \mathrm{funOf}(\mathrm{funOf}\,s\,(\texttt{seqShift}\,u))(\mathit{predSet}\,z)$$
+— the McCarthy conditional form of the body in (2.24) (head $u_0$, tail from shifted index family at $z-1$).
+
+**Theorem (`dollarStepBody.isScottContinuous_s`, `…_u`, `…_z`).** Each of $s \mapsto \texttt{dollarStepBody}(s,u,z)$, $u \mapsto \texttt{dollarStepBody}(s,u,z)$, and $z \mapsto \texttt{dollarStepBody}(s,u,z)$ is Scott-continuous.
+
+*Proof.* `theorem_1_3` / `theorem_1_3.tuple` from continuity of `condSet`, `funOf`, `seqShift`, and `predSet`. ∎
+
+**Definition (`dollarStep`).** $\texttt{dollarStep}(s) = \mathbf{graph}(\lambda u.\, \mathbf{graph}(\lambda z.\, \texttt{dollarStepBody}(s,u,z)))$ — the graph of Scott’s inner $\lambda u\,\lambda z$ in (2.24) at step parameter $s$.
+
+**Theorem (`dollarStep.isScottContinuous`).** `IsScottContinuous dollarStep`.
+
+*Proof.* `graph_const_isScottContinuous` and the body continuity lemmas. ∎
+
+**Theorem (`dollarStep.app`, `dollarStep.app2`).** 
+$\mathrm{funOf}(\texttt{dollarStep}\,s)\,u = \mathbf{graph}(\lambda z.\, \texttt{dollarStepBody}(s,u,z))$ and 
+$\mathrm{funOf}(\mathrm{funOf}(\texttt{dollarStep}\,s)\,u)\,z = \texttt{dollarStepBody}(s,u,z)$.
+
+*Proof.* $(\beta)$ on nested graphs. ∎
+
+**Theorem (`dollarStep.iterate`).** For all $n,u,z$, $\mathrm{funOf}(\mathrm{funOf}(\mathrm{iterateBot}\,\texttt{dollarStep}\,n)\,u)\,z = \texttt{seqFunLt}\,u\,z\,n$.
+
+*Proof.* Induction on $n$; base is $\bot$; step uses `dollarStep.app2`, unfold `dollarStepBody`, and `seqFunLt.succ` from `sequences.lean`. ∎
+
+**Theorem (`dollarStep.fix_app`).** $\mathrm{funOf}(\mathrm{funOf}(\mathrm{fix}\,\texttt{dollarStep})\,u)\,z = \texttt{seqFun}\,u\,z$.
+
+*Proof.* Unfold `fix` as a directed union of iterates; identify with `seqFun.eq_iUnion_lt`. ∎
+
+**Definition (`termDollarStepBody`, `termDollarStep`).** Same as `dollarStepBody` / `dollarStep`, but `termShift` replaces `seqShift` (for interpreting LAMBDA terms that mention $u_{t+1}$).
+
+**Theorem (`termDollarStep.isScottContinuous`, `termDollarStep.app`, `termDollarStep.app2`, `termDollarStep.iterate`, `termDollarStep.fix_app`).** Parallel to the `dollarStep` namespace; `iterate` uses `seqFunLt.term`.
+
+**Definition (`dollarStepTerm`).** Closed `Term` for (2.24): 
+$$\mathbf{Y}(\lambda s\,\lambda u\,\lambda z.\, z \supset u_0,\, s(\lambda t.\, u_{t+1})(z - 1))$$
+in de Bruijn indices (`Language` / McCarthy conditional).
+
+**Theorem (`dollarStepTerm.interp`).** With $\rho(i) = \bot$ for all $i$,
+$$\mathrm{interp}(\texttt{dollarStepTerm})\,\rho = \mathbf{graph}(\texttt{termDollarStep}).$$
+
+*Proof.* Unfold `interp`, `termDollarStep`, `termShift`, and `condSet`; reflexivity. ∎
+
+**Definition (`dollarC`, combinator **$**).** 
+$$\texttt{dollarC} = \mathbf{graph}(\lambda u.\, \mathbf{graph}(\lambda x.\, \texttt{seqFun}\,u\,x)).$$
+Scott’s (2.25) is $\mathbf{\$}(u) = \lambda x.\, \texttt{seqFun}(u,x)$ in graph form.
+
+**Theorem (`dollarC.app`, equation (2.25)).** For all $u,x \in \mathbf{P}\omega$,
+$$\mathrm{funOf}(\mathrm{funOf}\,\texttt{dollarC}\,u)\,x = \texttt{seqFun}\,u\,x.$$
+
+*Proof.* `dollarC.app` and $(\beta)$ using `seqFun.right_isScottContinuous`. ∎
+
+**Theorem (`dollarC.eq_fix_termDollarStep`).** $\texttt{dollarC} = \mathrm{fix}\,\texttt{termDollarStep}$.
+
+*Proof.* Fixed-point law (Theorem 1.4); show each body value equals `seqFun` on the fixpoint, then re-graph. ∎
+
+**Theorem (`dollarC.combinatory`).** `IsCombinatory dollarC`.
+
+*Proof.* `funOf Ycomb (interp dollarStepTerm …) = dollarC` via `dollarStepTerm.interp`, Theorem 2.5, and `eq_fix_termDollarStep`; combine `Ycomb.combinatory` with Theorem 2.4 on the closed term. ∎
+
+**Theorem (`eq_2_24`, spread recursion).** For all $u,x \in \mathbf{P}\omega$,
+$$\texttt{seqFun}\,u\,x = x \supset \mathrm{funOf}\,u\,0,\; \texttt{seqFun}(\texttt{seqShift}\,u)(\mathit{predSet}\,x).$$
+This is the set-theoretic recursion underlying (2.24), before introducing **$**.
+
+*Proof.* Extensionality on members; split indices $i \in x$ into $i = 0$ vs $i = j+1$; rewrite with `seqShift.app` and `ofNat`. ∎
+
+**Theorem (`eq_2_24.Y`).** $\texttt{dollarC} = \mathrm{fix}\,\texttt{dollarStep}$.
+
+*Proof.* Same pattern as `dollarC.eq_fix_termDollarStep`, using `dollarStep.fix_app`. ∎
+
+**Theorem (`eq_2_24.Ycomb`, equation (2.24) as $Y$).** 
+$$\mathrm{funOf}\,\texttt{Ycomb}\,(\mathbf{graph}\,\texttt{dollarStep}) = \texttt{dollarC}.$$
+
+*Proof.* Theorem 2.5 on `dollarStep.isScottContinuous` and `eq_2_24.Y`. ∎
+
+**Theorem (`eq_2_25`).** Identical to `dollarC.app` (second form of (2.25)).
+
+**Definition (`lamOmega`, equation (2.26)).** For $\tau : \omega \to \mathbf{P}\omega$ (written $\tau[n]$ for $\tau(n)$),
+$$\texttt{lamOmega}\,\tau = \mathrm{funOf}\,\texttt{dollarC}\left(\mathbf{graph}\left(\lambda z.\, \bigcup \{ \tau(n) \mid n \in z \}\right)\right).$$
+This is Scott’s $\lambda n \in \omega.\,\tau$ as **$** applied to the graph of the family $z \mapsto \bigcup \{ \tau(n) \mid n \in z \}$ (formally: $\mathbf{\$}(\lambda z.\, \tau[z/n])$ once $[z/n]$ is the term substitution convention).
+
+*(Primitive recursion as a distributive function — (2.27) — is in `eq_2_27.lean` / the primitive recursion note.)*

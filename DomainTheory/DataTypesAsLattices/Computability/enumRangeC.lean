@@ -1,14 +1,13 @@
 module
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Lambda.dollarC
+public import DomainTheory.DataTypesAsLattices.Lambda.distributive_functions
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import Mathlib.Data.Set.Lattice.Indexed
 public import DomainTheory.DataTypesAsLattices.Computability.Realizes
 public import DomainTheory.DataTypesAsLattices.Computability.pack4
-public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_25
 public import DomainTheory.DataTypesAsLattices.Computability.topElem_combinatory
 
 @[expose] public section

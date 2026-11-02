@@ -26,7 +26,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.haltEnum
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterNum
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterRealizer
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterSeq_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_25
+public import DomainTheory.DataTypesAsLattices.Lambda.distributive_functions
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
 

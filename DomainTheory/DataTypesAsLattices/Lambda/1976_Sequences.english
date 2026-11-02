@@ -14,14 +14,6 @@ Obviously we should formalize the subscript notation so that $u_x = u(x)$; then 
 
 $$(2.23) \quad \langle x_0, x_1, \dots, x_n \rangle_i = \begin{cases} x_i & \text{if } i < n; \\ \bot & \text{if } i \ge n. \end{cases}$$
 
-This gives us the method of LAMBDA-defining *finite sequences* (in a quite natural way), and the next step is to consider *infinite sequences*. But these are just the functions $\hat{p}$ where $p : \omega \to \mathbf{P}\omega$ is arbitrary. What we need then is a condition expressible in the language equivalent to saying $u = \hat{p}$ for some $p$. This is the same as
-
-$$u = \lambda x.\, \bigcup \{ u_i \mid i \in x \}.$$
-
-<!-- page 14 -->
-
-but the $\cup$- and set-notation is not part of LAMBDA. We are forced into a recursive definition:
-
 **Formalization (`sequences.lean`).** *Finite* tuples $\langle x_0,\ldots,x_{n-1}\rangle$ are graphs built from McCarthy conditional (`condSet`) and predecessor on arguments; *infinite* sequences are the spread $\lambda x.\,\bigcup\{u(i)\mid i\in x\}$, approximated by bounded unions `seqFunLt` and defined recursively via `seqShift`. Lean names below are the library entries.
 
 **Definition (`seqCons`).** $\texttt{seqCons}(x,xs) = \mathbf{graph}(\lambda z.\, z \supset x,\, xs(\mathit{pred}\,z))$ — the graph of (2.22): head $x$, tail read from $xs$ off $z-1$.
