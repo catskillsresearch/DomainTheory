@@ -8,7 +8,7 @@
 
 @import "1976_Enumeration_and_degrees.english" {code_block=false}
 
-- [Term avoidance (α)](1976_Avoids.md)
+- [Term avoidance (α)](1976_Avoids.md) ✓
 - [Theorem 3.1](1976_Theorem_3_1.md)
 - [Theorem 3.2](1976_Theorem_3_2.md)
 - [Theorem 3.3](1976_Theorem_3_3.md)

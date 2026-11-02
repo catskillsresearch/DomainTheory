@@ -613,6 +613,7 @@ def gen_note_outline(
     flowchart: str = "flowchart TB",
     force_outline_edges: list[tuple[str, str]] | None = None,
     collapse_hub_into_subgraph: str | tuple[str, str] | None = None,
+    exclude_outline_titles: frozenset[str] | None = None,
 ) -> str:
     header, old_labels, style = parse_preserve_tail(old)
     index_md = find_index_md(mermaid)
@@ -638,6 +639,8 @@ def gen_note_outline(
         if child is None:
             continue
         title = m.group("title")
+        if exclude_outline_titles and title in exclude_outline_titles:
+            continue
         if re.search(r"(?i)^introduction$", title.strip(), re.I) and not lean_modules_from_note(child):
             continue
         if box_modules_fn is not None:
@@ -1250,6 +1253,7 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
         cl_rank_same = None
         cl_subgraph_directions: dict[str, str] | None = None
         collapse_hub: str | tuple[str, str] | None = None
+        exclude_titles: frozenset[str] | None = None
         if mermaid.name == "FixedPoint.mermaid":
             extra_ids = {
                 **(extra_ids or {}),
@@ -1263,9 +1267,11 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
             edge_filter_fn = _fixed_point_edge_filter
         if mermaid.name == "1976_Computability_and_definability.mermaid":
             include_empty_boxes = True
+            exclude_titles = frozenset({"A law of Y"})
             force_edges = COMPUTABILITY_OUTLINE_NARRATIVE
             header_lines = [
                 *outline_mermaid_header("1976_Computability_and_definability.md"),
+                "%% Prose-only hub links (no Lean) are omitted from the diagram.",
             ]
             extra_ids = {
                 **(extra_ids or {}),
@@ -1343,6 +1349,7 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
             force_outline_edges=force_edges,
             edge_filter=edge_filter_fn,
             collapse_hub_into_subgraph=collapse_hub,
+            exclude_outline_titles=exclude_titles,
         )
     return None
 

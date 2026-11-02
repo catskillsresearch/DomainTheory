@@ -1,0 +1,18 @@
+Table 1 records the basic laws of $\lambda$-conversion verified in the $\mathbf{P}\omega$ model. The first is renaming of bound variables:
+
+$$(\alpha) \quad \lambda x.\,\tau = \lambda y.\,\tau[y/x]$$
+
+(in the usual proviso that $y$ is not free in $\tau$).
+
+*Proof of Theorem 2.2 (fragment).* The verification of $(\alpha)$ is obvious as the '$x$' in '$\lambda x.\,\tau$' is a bound variable. (Care should be taken in making the proviso that '$y$' is not otherwise free in $\tau$.) The same would of course hold for any other pair of variables. We do not bother very much about alphabetic questions.
+
+In LAMBDA (Table 2), variables are treated informally and substitution $\tau[e_n/x]$ is used in the semantics of $\lambda x.\,\tau$. In the Lean formalization, terms use de Bruijn-style indices $x_i$ (`Term.var i`), and many closed combinator terms in §3 are built by recursion on `Term`. To match Scott’s proviso mechanically—no accidental capture of a reserved index—we use a small library predicate **`Term.Avoids`**.
+
+**Formalization (`Avoids.lean`).** Each Lean name is the library entry.
+
+**Definition (`Term.Avoids`).** For a variable index $i \in \omega$ and a term $\tau$, $\tau.\texttt{Avoids}\,i$ means $i$ does not occur free in $\tau$:
+- on $x_j$, require $j \neq i$;
+- on $0$, successor, predecessor, conditional, and application, require the property in each subterm;
+- on $\lambda x_j.\,\sigma$, require $j = i$ (then $i$ is bound and not free) or $\sigma.\texttt{Avoids}\,i$.
+
+This is the inductive “term avoids index $i$” check used throughout Enumeration and Computability when proving that a synthesized closed term leaves slots such as $x_7$ or $x_8$ free for later composition (Gödel codes, combinator algebra, and similar).
