@@ -1,0 +1,3 @@
+Table 2 assigns each primitive of LAMBDA a subset of $\mathbf{P}\omega$. The constant $0$ is the singleton $\{0\}$; successor and predecessor are the set maps $x \mapsto \{n+1 \mid n \in x\}$ and $x \mapsto \{n \mid n+1 \in x\}$. Their graph forms `sucC` and `predC` wrap `succSet` and `predSet` via `graph`. The combinator $K$ is encoded as `Kcomb`. Environments for evaluating terms under substitution use `envSet`; numeric literals use `ofNat` and its membership lemmas.
+
+**Formalization (`Table2Denotations`).** `zeroC`, `succSet`, `predSet`, `sucC`, `predC`, `Kcomb`, `envSet`, `ofNat`, `mem_ofNat`, and `e_one` package these denotations.

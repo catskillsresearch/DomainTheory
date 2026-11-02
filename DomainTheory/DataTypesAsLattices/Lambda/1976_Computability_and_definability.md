@@ -6,21 +6,17 @@
 
 - [Minimal and maximal extension](1976_Extension.md) ✓
 - [Meaning](1976_Meaning.md) ✓
-- [LAMBDA](1976_LAMBDA.md)
-- [Theorem 2.1](1976_Theorem_2_1.md)
-- [Theorem 2.2](1976_Theorem_2_2.md)
-- [Theorem 2.3](1976_Theorem_2_3.md)
-- [Theorem 2.4](1976_Theorem_2_4.md)
+- [$\lambda$-calculus as a formal language](1976_LAMBDA.md)
+- [Theorem 2.1 — the continuity theorem](1976_Theorem_2_1.md)
+- [Theorem 2.2 — the conversion theorem](1976_Theorem_2_2.md)
+- [Theorem 2.3 — the reduction theorem](1976_Theorem_2_3.md)
+- [Theorem 2.4 — the combinator theorem](1976_Theorem_2_4.md)
 - [The combinator Y](1976_Combinator_Y.md)
-- [Theorem 2.5](1976_Theorem_2_5.md)
+- [Theorem 2.5 — the first recursion theorem](1976_Theorem_2_5.md)
 - [The graph model](1976_Graph_model.md)
-- [Elementary definitions](1976_Elementary_definitions.md)
 - [Sequences](1976_Sequences.md)
 - [Distributive functions](1976_Distributive_functions.md)
-- [Primitive recursion](1976_Primitive_recursion.md)
-- [Definition (computable)](1976_Definition_computable.md)
-- [Definability](../Computability/1976_Definability.md)
-- [Theorem 2.6](../Computability/1976_Theorem_2_6.md)
+- [The definability theorem](1976_The_definability_theorem.md)
 - [A law of Y](1976_Law_of_Y.md)
 
 @import "1976_Computability_and_definability.english" {code_block=false}

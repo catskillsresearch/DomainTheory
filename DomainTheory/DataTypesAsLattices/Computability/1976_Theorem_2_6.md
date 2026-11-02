@@ -1,4 +1,4 @@
-# Theorem 2.6
+# Theorem 2.6 — the definability theorem
 
 @import "1976_Theorem_2_6.english" {code_block=false}
 

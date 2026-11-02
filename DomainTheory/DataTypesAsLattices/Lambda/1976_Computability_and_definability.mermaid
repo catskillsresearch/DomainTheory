@@ -5,40 +5,32 @@ flowchart TB
 
   EXT["Minimal and maximal extension"]
   MEAN["Meaning"]
-  LAM["LAMBDA"]
-  T21["Theorem 2.1"]
-  T22["Theorem 2.2"]
-  T23["Theorem 2.3"]
-  T24["Theorem 2.4"]
+  LAM["λ-calculus as a formal language"]
+  Theorem_2_1___the_contin["Theorem 2.1 — the continuity theorem"]
+  Theorem_2_2___the_conver["Theorem 2.2 — the conversion theorem"]
+  Theorem_2_3___the_reduct["Theorem 2.3 — the reduction theorem"]
+  Theorem_2_4___the_combin["Theorem 2.4 — the combinator theorem"]
   YC["The combinator Y"]
-  T25["Theorem 2.5"]
+  Theorem_2_5___the_first["Theorem 2.5 — the first recursion theorem"]
   GRA["The graph model"]
-  EL["Elementary definitions"]
   SEQ["Sequences"]
   DOL["Distributive functions"]
-  PR["Primitive recursion"]
-  DCOMP["Definition (computable)"]
-  DEF["Definability"]
-  T26["Theorem 2.6"]
+  DEFTHM["The definability theorem"]
   LY["A law of Y"]
 
-  PR --> DCOMP
-  DCOMP --> DEF
-  T25 --> DOL
-  LAM --> EL
+  Theorem_2_2___the_conver --> DEFTHM
+  Theorem_2_5___the_first --> DOL
   LAM --> GRA
   MEAN --> LAM
   YC --> LY
   EXT --> MEAN
-  EL --> PR
-  T25 --> SEQ
-  LAM --> T21
-  T21 --> T22
-  T22 --> T23
-  T22 --> T24
-  YC --> T25
-  DEF --> T26
-  T24 --> YC
+  Theorem_2_5___the_first --> SEQ
+  LAM --> Theorem_2_1___the_contin
+  Theorem_2_1___the_contin --> Theorem_2_2___the_conver
+  Theorem_2_2___the_conver --> Theorem_2_3___the_reduct
+  Theorem_2_2___the_conver --> Theorem_2_4___the_combin
+  YC --> Theorem_2_5___the_first
+  Theorem_2_4___the_combin --> YC
 
   classDef c1 fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef c2 fill:#cffafe,stroke:#0e7490,color:#164e63

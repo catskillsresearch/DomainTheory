@@ -1,0 +1,18 @@
+%% Each box is one outline note from 1976_LAMBDA.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
+flowchart TB
+
+  The_language_LAMBDA["The language LAMBDA"]
+  Table_2_denotations_in["Table 2 denotations in Pω"]
+  Application_and___lambda["Application and λ-abstraction"]
+  Sample_equations__2_5__a["Sample equations (2.5) and (2.6)"]
+  Finite_witnesses_for_mem["Finite witnesses for membership"]
+
+  The_language_LAMBDA --> Application_and___lambda
+  Table_2_denotations_in --> Finite_witnesses_for_mem
+  Table_2_denotations_in --> Sample_equations__2_5__a
+  The_language_LAMBDA --> Table_2_denotations_in
+
+  classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

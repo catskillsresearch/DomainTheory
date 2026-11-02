@@ -176,6 +176,8 @@ def note_module_set(md: Path) -> set[str]:
     """Modules belonging to one outline box (note or whole topic folder)."""
     text = md.read_text(encoding="utf-8", errors="ignore")
     if re.search(r'@import\s+"[^"]+\.mermaid"', text):
+        if any(OUTLINE_LINK.match(ln) for ln in text.splitlines()):
+            return modules_from_section_outline(md)
         if md.parent.resolve() == DT.resolve():
             return modules_from_section_outline(md)
         folder = md.parent
@@ -361,6 +363,7 @@ def emit_flowchart(
     node_order: list[str] | None = None,
     subgraphs: list[tuple[str, list[str]]] | None = None,
     rank_same: list[list[str]] | None = None,
+    subgraph_directions: dict[str, str] | None = None,
 ) -> str:
     style_tail = filter_style(style_tail, node_labels)
 
@@ -382,6 +385,15 @@ def emit_flowchart(
     placed: set[str] = set()
     subgraph_id_used: set[str] = set(node_labels.keys())
     if subgraphs:
+        subgraph_member_nids: set[str] = set()
+        for _sg_title, sg_nids in subgraphs:
+            subgraph_member_nids.update(n for n in sg_nids if n in node_labels)
+        for nid in node_order:
+            if nid in node_labels and nid not in subgraph_member_nids:
+                emit_node(nid)
+                placed.add(nid)
+        if placed:
+            out.append("")
         for sg_title, sg_nids in subgraphs:
             members = [n for n in sg_nids if n in node_labels]
             if not members:
@@ -389,11 +401,14 @@ def emit_flowchart(
             safe = sg_title.replace('"', "#quot;")
             sid = mermaid_id(f"sg_{sg_title[:28]}", subgraph_id_used)
             out.append(f'  subgraph {sid}["{safe}"]')
+            sg_dir = (subgraph_directions or {}).get(sg_title)
+            if sg_dir:
+                out.append(f"    direction {sg_dir}")
             for nid in members:
                 emit_node(nid, indent="    ")
                 placed.add(nid)
             out.append("  end")
-        loose = [n for n in node_order if n not in placed]
+        loose = [n for n in node_order if n not in placed and n in node_labels]
         if loose:
             out.append("")
             for nid in loose:
@@ -594,8 +609,10 @@ def gen_note_outline(
     transitive_modules: bool = True,
     subgraph_groups: list[tuple[str, list[str]]] | None = None,
     rank_same_titles: list[list[str]] | None = None,
+    subgraph_directions: dict[str, str] | None = None,
     flowchart: str = "flowchart TB",
     force_outline_edges: list[tuple[str, str]] | None = None,
+    collapse_hub_into_subgraph: str | tuple[str, str] | None = None,
 ) -> str:
     header, old_labels, style = parse_preserve_tail(old)
     index_md = find_index_md(mermaid)
@@ -793,6 +810,46 @@ def gen_note_outline(
             for group in rank_same_titles
         ]
 
+    if collapse_hub_into_subgraph is not None and subgraph_groups is not None:
+        if isinstance(collapse_hub_into_subgraph, tuple):
+            hub_title, only_sg_title = collapse_hub_into_subgraph
+            sg_filter = {only_sg_title}
+        else:
+            hub_title = collapse_hub_into_subgraph
+            sg_filter = None
+        hub_nid = title_to_nid.get(hub_title)
+        if hub_nid is not None:
+            sid_used: set[str] = set(node_labels) | set(title_to_nid.values())
+            for sg_title, sg_member_titles in subgraph_groups:
+                if sg_filter is not None and sg_title not in sg_filter:
+                    continue
+                sg_member_nids = {
+                    title_to_nid[t] for t in sg_member_titles if t in title_to_nid
+                }
+                if not sg_member_nids:
+                    continue
+                sg_sid = mermaid_id(f"sg_{sg_title[:28]}", sid_used)
+                sid_used.add(sg_sid)
+                hub_to_members = [
+                    (a, b)
+                    for (a, b) in edges
+                    if a == hub_nid and b in sg_member_nids
+                ]
+                if hub_to_members:
+                    weight = max(
+                        (edges[(a, b)] for a, b in hub_to_members),
+                        default=1,
+                    )
+                    edges = {
+                        (a, b): c
+                        for (a, b), c in edges.items()
+                        if not (a == hub_nid and b in sg_member_nids)
+                    }
+                    edges[(hub_nid, sg_sid)] = max(
+                        edges.get((hub_nid, sg_sid), 0),
+                        weight,
+                    )
+
     return emit_flowchart(
         header,
         node_labels,
@@ -803,6 +860,7 @@ def gen_note_outline(
         node_order=outline_nids,
         subgraphs=subgraphs,
         rank_same=rank_same,
+        subgraph_directions=subgraph_directions,
     )
 
 
@@ -961,11 +1019,14 @@ CONTINUOUS_LATTICES_RANK_SAME: list[list[str]] = [
 # Prose-only outline notes have no Lean @imports; narrative edges follow hub reading order.
 COMPUTABILITY_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Minimal and maximal extension", "Meaning"),
-    ("Meaning", "LAMBDA"),
+    ("Meaning", "$\\lambda$-calculus as a formal language"),
+]
+
+DEFINABILITY_THEOREM_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
+    ("Elementary definitions", "Primitive recursion"),
     ("Primitive recursion", "Definition (computable)"),
     ("Definition (computable)", "Definability"),
 ]
-
 
 def restore_orphan_outline_edges(
     full: dict[tuple[str, str], int],
@@ -1187,6 +1248,8 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
         edge_filter_fn: Callable[[str, str], bool] | None = None
         cl_subgraphs = None
         cl_rank_same = None
+        cl_subgraph_directions: dict[str, str] | None = None
+        collapse_hub: str | tuple[str, str] | None = None
         if mermaid.name == "FixedPoint.mermaid":
             extra_ids = {
                 **(extra_ids or {}),
@@ -1201,15 +1264,35 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
         if mermaid.name == "1976_Computability_and_definability.mermaid":
             include_empty_boxes = True
             force_edges = COMPUTABILITY_OUTLINE_NARRATIVE
+            header_lines = [
+                *outline_mermaid_header("1976_Computability_and_definability.md"),
+            ]
             extra_ids = {
                 **(extra_ids or {}),
                 "Minimal and maximal extension": "EXT",
                 "Meaning": "MEAN",
                 "LAMBDA": "LAM",
+                "$\\lambda$-calculus as a formal language": "LAM",
                 "Definition (computable)": "DCOMP",
                 "Definability": "DEF",
                 "Theorem 2.6": "T26",
+                "Theorem 2.6 — the definability theorem": "T26",
+                "The definability theorem": "DEFTHM",
             }
+        if mermaid.name == "1976_The_definability_theorem.mermaid":
+            include_empty_boxes = True
+            force_edges = DEFINABILITY_THEOREM_OUTLINE_NARRATIVE
+            extra_ids = {
+                **(extra_ids or {}),
+                "Definition (computable)": "DCOMP",
+                "Definability": "DEF",
+                "Theorem 2.6": "T26",
+                "Theorem 2.6 — the definability theorem": "T26",
+            }
+            header_lines = [
+                *outline_mermaid_header("1976_The_definability_theorem.md"),
+                "%% Reading order for prose-only steps; Lean edges for the rest.",
+            ]
         if mermaid.name == "ContinuousLattices.mermaid":
             cl_subgraphs = CONTINUOUS_LATTICES_SUBGRAPH_GROUPS
             cl_rank_same = CONTINUOUS_LATTICES_RANK_SAME
@@ -1255,8 +1338,10 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
             include_empty_outline_boxes=include_empty_boxes,
             subgraph_groups=cl_subgraphs,
             rank_same_titles=cl_rank_same,
+            subgraph_directions=cl_subgraph_directions,
             force_outline_edges=force_edges,
             edge_filter=edge_filter_fn,
+            collapse_hub_into_subgraph=collapse_hub,
         )
     return None
 

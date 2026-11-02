@@ -1,0 +1,15 @@
+Note that the functions are all multiple-valued. Thus we have such a result as:
+
+$$(2.5) \quad (6 \cup 10) + 1 = 7 \cup 11.$$
+
+The partial character of subtraction has expression as:
+
+$$(2.6) \quad 0 - 1 = \bot.$$
+
+We shall see how to define $+$ and $-$ in LAMBDA later. The conditional could also have been defined by cases:
+
+$$(2.7) \quad z \supset x, y = \begin{cases} \bot & \text{if } z = \bot; \\ x & \text{if } z = 0; \\ y & \text{if } 0 \notin z \neq \bot; \\ x \cup y & \text{if } 0 \in z \neq 0. \end{cases}$$
+
+We say that a LAMBDA-term $\tau$ defines a function of its free variables (at least). Other results depend on this fundamental proposition:
+
+**Formalization (`Table2SampleEquations`).** `eq_2_5` and `eq_2_6` verify (2.5) and (2.6); Cantor-pairing lemmas support the encoding of unions and literals used in those proofs.

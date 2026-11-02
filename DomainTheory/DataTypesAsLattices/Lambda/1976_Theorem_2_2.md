@@ -1,4 +1,4 @@
-# Theorem 2.2
+# Theorem 2.2 — the conversion theorem
 
 @import "1976_Theorem_2_2.english" {code_block=false}
 

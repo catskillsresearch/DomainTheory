@@ -1,0 +1,16 @@
+%% Each box is one outline note from 1976_The_definability_theorem.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
+%% Reading order for prose-only steps; Lean edges for the rest.
+flowchart TB
+
+  Elementary_definitions["Elementary definitions"]
+  Primitive_recursion["Primitive recursion"]
+  DCOMP["Definition (computable)"]
+  DEF["Definability"]
+  T26["Theorem 2.6"]
+
+  Primitive_recursion --> DCOMP
+  DCOMP --> DEF
+  Elementary_definitions --> Primitive_recursion
+  DEF --> T26

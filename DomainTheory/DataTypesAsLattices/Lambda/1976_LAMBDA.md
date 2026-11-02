@@ -1,30 +1,9 @@
-# LAMBDA
+# $\lambda$-calculus as a formal language
 
-@import "1976_LAMBDA.english" {code_block=false}
+@import "1976_LAMBDA.mermaid"
 
-@import "Comb.lean"
-@import "ofNat.lean"
-@import "e_one.lean"
-@import "../Continuous/mem_scottUnion.lean"
-@import "pair_one_zero.lean"
-@import "envSet.lean"
-@import "succSet.lean"
-@import "predSet.lean"
-@import "../Graph/graph.lean"
-@import "sucC.lean"
-@import "Kcomb.lean"
-@import "predC.lean"
-@import "pair_zero_zero.lean"
-@import "mem_ofNat.lean"
-@import "Extend.lean"
-@import "eq_2_6.lean"
-@import "eq_2_5.lean"
-@import "triangle_eq_zero.lean"
-@import "pair_eq_right.lean"
-@import "../Graph/lam.lean"
-@import "Term.lean"
-@import "../Enumeration/Avoids.lean"
-@import "exists_least_mem.lean"
-@import "zeroC.lean"
-@import "exists_least_not_mem.lean"
-@import "rename.lean"
+- [The language LAMBDA](1976_The_language_LAMBDA.md)
+- [Table 2 denotations in $\mathbf{P}\omega$](1976_Table_2_denotations.md)
+- [Application and $\lambda$-abstraction](1976_Table_2_application.md)
+- [Sample equations (2.5) and (2.6)](1976_Sample_equations_2_5_2_6.md)
+- [Finite witnesses for membership](1976_Finite_witnesses.md)
