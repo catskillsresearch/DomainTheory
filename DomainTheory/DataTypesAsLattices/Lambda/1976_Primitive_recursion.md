@@ -1,14 +1,14 @@
 # Primitive recursion
 
 @import "1976_Primitive_recursion.english" {code_block=false}
-**[DataTypesAsLattices/Computability/sqrtIter.lean](DomainTheory/DataTypesAsLattices/Computability/sqrtIter.lean)**
+**[DataTypesAsLattices/Computability/sqrtIter.lean](../Computability/sqrtIter.lean)**
 
 @import "../Computability/sqrtIter.lean"
 
-**[DataTypesAsLattices/Computability/sqrtStepTerm.lean](DomainTheory/DataTypesAsLattices/Computability/sqrtStepTerm.lean)**
+**[DataTypesAsLattices/Computability/sqrtStepTerm.lean](../Computability/sqrtStepTerm.lean)**
 
 @import "../Computability/sqrtStepTerm.lean"
-**[DataTypesAsLattices/Computability/primRecOpTerm.lean](DomainTheory/DataTypesAsLattices/Computability/primRecOpTerm.lean)**
+**[DataTypesAsLattices/Computability/primRecOpTerm.lean](../Computability/primRecOpTerm.lean)**
 
 @import "../Computability/primRecOpTerm.lean"
 @import "../Computability/primRecOpTerm.lean"

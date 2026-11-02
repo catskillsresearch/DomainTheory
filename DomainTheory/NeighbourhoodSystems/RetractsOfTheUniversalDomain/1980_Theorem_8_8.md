@@ -94,6 +94,6 @@ That all of these are $\trianglelefteq \mathcal{U}$ follows from knowing that th
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/DAtom.lean](DAtom.lean)**
 
 @import "DAtom.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem_8_8.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem_8_8.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem_8_8.lean](Theorem_8_8.lean)**
 
 @import "Theorem_8_8.lean"

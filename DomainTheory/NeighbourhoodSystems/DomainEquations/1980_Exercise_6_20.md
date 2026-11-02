@@ -1,5 +1,5 @@
 # Exercise 6.20
-**[NeighbourhoodSystems/DomainEquations/Exercise_6_20.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Exercise_6_20.lean)**
+**[NeighbourhoodSystems/DomainEquations/Exercise_6_20.lean](Exercise_6_20.lean)**
 
 @import "Exercise_6_20.lean"
 

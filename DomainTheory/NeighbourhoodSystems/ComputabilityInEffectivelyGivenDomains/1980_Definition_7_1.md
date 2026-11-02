@@ -1,5 +1,5 @@
 # Definition 7.1
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition_7_1.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition_7_1.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition_7_1.lean](Definition_7_1.lean)**
 
 @import "Definition_7_1.lean"
 

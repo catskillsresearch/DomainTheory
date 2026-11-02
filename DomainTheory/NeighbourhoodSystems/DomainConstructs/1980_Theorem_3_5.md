@@ -1,5 +1,5 @@
 # Theorem 3.5
-**[NeighbourhoodSystems/DomainConstructs/Theorem_3_5.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Theorem_3_5.lean)**
+**[NeighbourhoodSystems/DomainConstructs/Theorem_3_5.lean](Theorem_3_5.lean)**
 
 @import "Theorem_3_5.lean"
 

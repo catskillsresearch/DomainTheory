@@ -1,5 +1,5 @@
 # Proposition 3.4
-**[NeighbourhoodSystems/DomainConstructs/Proposition_3_4.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Proposition_3_4.lean)**
+**[NeighbourhoodSystems/DomainConstructs/Proposition_3_4.lean](Proposition_3_4.lean)**
 
 @import "Proposition_3_4.lean"
 

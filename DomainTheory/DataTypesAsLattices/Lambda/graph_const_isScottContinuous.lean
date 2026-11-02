@@ -1,10 +1,8 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Graph.graph
-public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
+import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 
 @[expose] public section
 

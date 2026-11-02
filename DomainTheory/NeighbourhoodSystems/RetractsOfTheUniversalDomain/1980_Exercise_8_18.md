@@ -1,5 +1,5 @@
 # Exercise 8.18
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_18.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_18.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_18.lean](Exercise_8_18.lean)**
 
 @import "Exercise_8_18.lean"
 

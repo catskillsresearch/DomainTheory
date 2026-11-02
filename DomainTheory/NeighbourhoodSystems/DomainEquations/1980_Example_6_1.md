@@ -1,5 +1,5 @@
 # Example 6.1
-**[NeighbourhoodSystems/DomainEquations/Example_6_1.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Example_6_1.lean)**
+**[NeighbourhoodSystems/DomainEquations/Example_6_1.lean](Example_6_1.lean)**
 
 @import "Example_6_1.lean"
 

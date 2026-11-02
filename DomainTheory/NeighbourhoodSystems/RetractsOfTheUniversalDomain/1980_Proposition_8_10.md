@@ -1,5 +1,5 @@
 # Proposition 8.10
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition_8_10.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition_8_10.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition_8_10.lean](Proposition_8_10.lean)**
 
 @import "Proposition_8_10.lean"
 

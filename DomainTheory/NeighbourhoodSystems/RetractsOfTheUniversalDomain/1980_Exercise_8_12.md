@@ -24,7 +24,7 @@
 
 @import "VComputablePresentation.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_12.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_12.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_12.lean](Exercise_8_12.lean)**
 
 @import "Exercise_8_12.lean"
 **EXERCISE 8.12.** Generalize the notation $2X + 1$ for subsets $X \subseteq \mathbb{N}$ to sets of the form

@@ -1,5 +1,5 @@
 # Theorem 7.4
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem_7_4.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem_7_4.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem_7_4.lean](Theorem_7_4.lean)**
 
 @import "Theorem_7_4.lean"
 

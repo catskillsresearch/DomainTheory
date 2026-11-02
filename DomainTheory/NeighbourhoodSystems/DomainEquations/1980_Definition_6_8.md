@@ -1,5 +1,5 @@
 # Definition 6.8
-**[NeighbourhoodSystems/DomainEquations/Definition_6_8.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition_6_8.lean)**
+**[NeighbourhoodSystems/DomainEquations/Definition_6_8.lean](Definition_6_8.lean)**
 
 @import "Definition_6_8.lean"
 

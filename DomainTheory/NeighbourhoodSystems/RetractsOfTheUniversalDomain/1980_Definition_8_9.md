@@ -1,5 +1,5 @@
 # Definition 8.9
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition_8_9.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition_8_9.lean)**
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition_8_9.lean](Definition_8_9.lean)**
 
 @import "Definition_8_9.lean"
 

@@ -1,5 +1,5 @@
 # Theorem 6.9
-**[NeighbourhoodSystems/DomainEquations/Theorem_6_9.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Theorem_6_9.lean)**
+**[NeighbourhoodSystems/DomainEquations/Theorem_6_9.lean](Theorem_6_9.lean)**
 
 @import "Theorem_6_9.lean"
 

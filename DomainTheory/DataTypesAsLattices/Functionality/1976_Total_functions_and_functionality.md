@@ -15,7 +15,7 @@
 - [Theorem 7.4](1976_Theorem_7_4.md)
 
 
-**[DataTypesAsLattices/Enumeration/condCode.lean](DomainTheory/DataTypesAsLattices/Enumeration/condCode.lean)**
+**[DataTypesAsLattices/Enumeration/condCode.lean](../Enumeration/condCode.lean)**
 
 @import "../Enumeration/condCode.lean"
 **[DataTypesAsLattices/Functionality/expTag.lean](expTag.lean)**
@@ -51,7 +51,7 @@
 **[DataTypesAsLattices/Functionality/Scomb_app.lean](Scomb_app.lean)**
 
 @import "Scomb_app.lean"
-**[DataTypesAsLattices/Enumeration/interCode.lean](DomainTheory/DataTypesAsLattices/Enumeration/interCode.lean)**
+**[DataTypesAsLattices/Enumeration/interCode.lean](../Enumeration/interCode.lean)**
 
 @import "../Enumeration/interCode.lean"
 **[DataTypesAsLattices/Functionality/predSet_iterate_expTag_isScottContinuous.lean](predSet_iterate_expTag_isScottContinuous.lean)**
@@ -93,7 +93,7 @@
 **[DataTypesAsLattices/Graph/mu_law.lean](../Graph/mu_law.lean)**
 
 @import "../Graph/mu_law.lean"
-**[DataTypesAsLattices/Enumeration/secondRecOperatorCode.lean](DomainTheory/DataTypesAsLattices/Enumeration/secondRecOperatorCode.lean)**
+**[DataTypesAsLattices/Enumeration/secondRecOperatorCode.lean](../Enumeration/secondRecOperatorCode.lean)**
 
 @import "../Enumeration/secondRecOperatorCode.lean"
 **[DataTypesAsLattices/Functionality/funOf_top.lean](funOf_top.lean)**
@@ -114,10 +114,10 @@
 **[DataTypesAsLattices/Functionality/Kcomb_isGraph.lean](Kcomb_isGraph.lean)**
 
 @import "Kcomb_isGraph.lean"
-**[DataTypesAsLattices/Enumeration/diagonalInterCode.lean](DomainTheory/DataTypesAsLattices/Enumeration/diagonalInterCode.lean)**
+**[DataTypesAsLattices/Enumeration/diagonalInterCode.lean](../Enumeration/diagonalInterCode.lean)**
 
 @import "../Enumeration/diagonalInterCode.lean"
-**[DataTypesAsLattices/Enumeration/primrec_diagonalInterCode.lean](DomainTheory/DataTypesAsLattices/Enumeration/primrec_diagonalInterCode.lean)**
+**[DataTypesAsLattices/Enumeration/primrec_diagonalInterCode.lean](../Enumeration/primrec_diagonalInterCode.lean)**
 
 @import "../Enumeration/primrec_diagonalInterCode.lean"
 **[DataTypesAsLattices/Functionality/funOf_e_union_fresh.lean](funOf_e_union_fresh.lean)**
@@ -129,7 +129,7 @@
 **[DataTypesAsLattices/Functionality/inrightC.lean](inrightC.lean)**
 
 @import "inrightC.lean"
-**[DataTypesAsLattices/Enumeration/unionCode.lean](DomainTheory/DataTypesAsLattices/Enumeration/unionCode.lean)**
+**[DataTypesAsLattices/Enumeration/unionCode.lean](../Enumeration/unionCode.lean)**
 
 @import "../Enumeration/unionCode.lean"
 **[DataTypesAsLattices/Functionality/comp_isGraph.lean](comp_isGraph.lean)**
@@ -399,34 +399,34 @@
 **[DataTypesAsLattices/Functionality/tensor4_diag_isScottContinuous.lean](tensor4_diag_isScottContinuous.lean)**
 
 @import "tensor4_diag_isScottContinuous.lean"
-**[DataTypesAsLattices/Enumeration/Gcomb.lean](DomainTheory/DataTypesAsLattices/Enumeration/Gcomb.lean)**
+**[DataTypesAsLattices/Enumeration/Gcomb.lean](../Enumeration/Gcomb.lean)**
 
 @import "../Enumeration/Gcomb.lean"
-**[DataTypesAsLattices/Enumeration/gClosed.lean](DomainTheory/DataTypesAsLattices/Enumeration/gClosed.lean)**
+**[DataTypesAsLattices/Enumeration/gClosed.lean](../Enumeration/gClosed.lean)**
 
 @import "../Enumeration/gClosed.lean"
-**[DataTypesAsLattices/Enumeration/Subalgebra.lean](DomainTheory/DataTypesAsLattices/Enumeration/Subalgebra.lean)**
+**[DataTypesAsLattices/Enumeration/Subalgebra.lean](../Enumeration/Subalgebra.lean)**
 
 @import "../Enumeration/Subalgebra.lean"
-**[DataTypesAsLattices/Enumeration/GeneratedSubalgebra.lean](DomainTheory/DataTypesAsLattices/Enumeration/GeneratedSubalgebra.lean)**
+**[DataTypesAsLattices/Enumeration/GeneratedSubalgebra.lean](../Enumeration/GeneratedSubalgebra.lean)**
 
 @import "../Enumeration/GeneratedSubalgebra.lean"
-**[DataTypesAsLattices/Enumeration/vaalF.lean](DomainTheory/DataTypesAsLattices/Enumeration/vaalF.lean)**
+**[DataTypesAsLattices/Enumeration/vaalF.lean](../Enumeration/vaalF.lean)**
 
 @import "../Enumeration/vaalF.lean"
-**[DataTypesAsLattices/Enumeration/not_mem_zero_Gcomb.lean](DomainTheory/DataTypesAsLattices/Enumeration/not_mem_zero_Gcomb.lean)**
+**[DataTypesAsLattices/Enumeration/not_mem_zero_Gcomb.lean](../Enumeration/not_mem_zero_Gcomb.lean)**
 
 @import "../Enumeration/not_mem_zero_Gcomb.lean"
 **[DataTypesAsLattices/Functionality/plusR_isRetract.lean](plusR_isRetract.lean)**
 
 @import "plusR_isRetract.lean"
-**[DataTypesAsLattices/Enumeration/valStep.lean](DomainTheory/DataTypesAsLattices/Enumeration/valStep.lean)**
+**[DataTypesAsLattices/Enumeration/valStep.lean](../Enumeration/valStep.lean)**
 
 @import "../Enumeration/valStep.lean"
 **[DataTypesAsLattices/Functionality/plotkinRel.lean](plotkinRel.lean)**
 
 @import "plotkinRel.lean"
-**[DataTypesAsLattices/Enumeration/vaalStepTerm.lean](DomainTheory/DataTypesAsLattices/Enumeration/vaalStepTerm.lean)**
+**[DataTypesAsLattices/Enumeration/vaalStepTerm.lean](../Enumeration/vaalStepTerm.lean)**
 
 @import "../Enumeration/vaalStepTerm.lean"
 **[DataTypesAsLattices/Functionality/tensorR_app.lean](tensorR_app.lean)**
@@ -450,22 +450,22 @@
 **[DataTypesAsLattices/Functionality/plusR_typed_top.lean](plusR_typed_top.lean)**
 
 @import "plusR_typed_top.lean"
-**[DataTypesAsLattices/Enumeration/secondRecV.lean](DomainTheory/DataTypesAsLattices/Enumeration/secondRecV.lean)**
+**[DataTypesAsLattices/Enumeration/secondRecV.lean](../Enumeration/secondRecV.lean)**
 
 @import "../Enumeration/secondRecV.lean"
-**[DataTypesAsLattices/Enumeration/primrec_secondRecV.lean](DomainTheory/DataTypesAsLattices/Enumeration/primrec_secondRecV.lean)**
+**[DataTypesAsLattices/Enumeration/primrec_secondRecV.lean](../Enumeration/primrec_secondRecV.lean)**
 
 @import "../Enumeration/primrec_secondRecV.lean"
-**[DataTypesAsLattices/Enumeration/GeneratedFromG.lean](DomainTheory/DataTypesAsLattices/Enumeration/GeneratedFromG.lean)**
+**[DataTypesAsLattices/Enumeration/GeneratedFromG.lean](../Enumeration/GeneratedFromG.lean)**
 
 @import "../Enumeration/GeneratedFromG.lean"
-**[DataTypesAsLattices/Enumeration/Lcomb.lean](DomainTheory/DataTypesAsLattices/Enumeration/Lcomb.lean)**
+**[DataTypesAsLattices/Enumeration/Lcomb.lean](../Enumeration/Lcomb.lean)**
 
 @import "../Enumeration/Lcomb.lean"
-**[DataTypesAsLattices/Enumeration/combinatory_mem_subalgebra.lean](DomainTheory/DataTypesAsLattices/Enumeration/combinatory_mem_subalgebra.lean)**
+**[DataTypesAsLattices/Enumeration/combinatory_mem_subalgebra.lean](../Enumeration/combinatory_mem_subalgebra.lean)**
 
 @import "../Enumeration/combinatory_mem_subalgebra.lean"
-**[DataTypesAsLattices/Enumeration/seq2_mem_subalgebra.lean](DomainTheory/DataTypesAsLattices/Enumeration/seq2_mem_subalgebra.lean)**
+**[DataTypesAsLattices/Enumeration/seq2_mem_subalgebra.lean](../Enumeration/seq2_mem_subalgebra.lean)**
 
 @import "../Enumeration/seq2_mem_subalgebra.lean"
 **[DataTypesAsLattices/Retracts/retract_isGraph.lean](../Retracts/retract_isGraph.lean)**
@@ -519,94 +519,94 @@
 **[DataTypesAsLattices/Functionality/prodE.lean](prodE.lean)**
 
 @import "prodE.lean"
-**[DataTypesAsLattices/Enumeration/Gcomb_more.lean](DomainTheory/DataTypesAsLattices/Enumeration/Gcomb_more.lean)**
+**[DataTypesAsLattices/Enumeration/Gcomb_more.lean](../Enumeration/Gcomb_more.lean)**
 
 @import "../Enumeration/Gcomb_more.lean"
-**[DataTypesAsLattices/Enumeration/valNat.lean](DomainTheory/DataTypesAsLattices/Enumeration/valNat.lean)**
+**[DataTypesAsLattices/Enumeration/valNat.lean](../Enumeration/valNat.lean)**
 
 @import "../Enumeration/valNat.lean"
-**[DataTypesAsLattices/Enumeration/valStage_subset.lean](DomainTheory/DataTypesAsLattices/Enumeration/valStage_subset.lean)**
+**[DataTypesAsLattices/Enumeration/valStage_subset.lean](../Enumeration/valStage_subset.lean)**
 
 @import "../Enumeration/valStage_subset.lean"
-**[DataTypesAsLattices/Enumeration/condC_from_G.lean](DomainTheory/DataTypesAsLattices/Enumeration/condC_from_G.lean)**
+**[DataTypesAsLattices/Enumeration/condC_from_G.lean](../Enumeration/condC_from_G.lean)**
 
 @import "../Enumeration/condC_from_G.lean"
-**[DataTypesAsLattices/Enumeration/realizes_valNat_mem.lean](DomainTheory/DataTypesAsLattices/Enumeration/realizes_valNat_mem.lean)**
+**[DataTypesAsLattices/Enumeration/realizes_valNat_mem.lean](../Enumeration/realizes_valNat_mem.lean)**
 
 @import "../Enumeration/realizes_valNat_mem.lean"
-**[DataTypesAsLattices/Enumeration/predC_from_G.lean](DomainTheory/DataTypesAsLattices/Enumeration/predC_from_G.lean)**
+**[DataTypesAsLattices/Enumeration/predC_from_G.lean](../Enumeration/predC_from_G.lean)**
 
 @import "../Enumeration/predC_from_G.lean"
-**[DataTypesAsLattices/Enumeration/sucC_from_G.lean](DomainTheory/DataTypesAsLattices/Enumeration/sucC_from_G.lean)**
+**[DataTypesAsLattices/Enumeration/sucC_from_G.lean](../Enumeration/sucC_from_G.lean)**
 
 @import "../Enumeration/sucC_from_G.lean"
-**[DataTypesAsLattices/Enumeration/ValTrace.lean](DomainTheory/DataTypesAsLattices/Enumeration/ValTrace.lean)**
+**[DataTypesAsLattices/Enumeration/ValTrace.lean](../Enumeration/ValTrace.lean)**
 
 @import "../Enumeration/ValTrace.lean"
-**[DataTypesAsLattices/Enumeration/valTraceHas.lean](DomainTheory/DataTypesAsLattices/Enumeration/valTraceHas.lean)**
+**[DataTypesAsLattices/Enumeration/valTraceHas.lean](../Enumeration/valTraceHas.lean)**
 
 @import "../Enumeration/valTraceHas.lean"
-**[DataTypesAsLattices/Enumeration/valTraceG.lean](DomainTheory/DataTypesAsLattices/Enumeration/valTraceG.lean)**
+**[DataTypesAsLattices/Enumeration/valTraceG.lean](../Enumeration/valTraceG.lean)**
 
 @import "../Enumeration/valTraceG.lean"
-**[DataTypesAsLattices/Enumeration/Scomb_from_G.lean](DomainTheory/DataTypesAsLattices/Enumeration/Scomb_from_G.lean)**
+**[DataTypesAsLattices/Enumeration/Scomb_from_G.lean](../Enumeration/Scomb_from_G.lean)**
 
 @import "../Enumeration/Scomb_from_G.lean"
-**[DataTypesAsLattices/Enumeration/Kcomb_from_G.lean](DomainTheory/DataTypesAsLattices/Enumeration/Kcomb_from_G.lean)**
+**[DataTypesAsLattices/Enumeration/Kcomb_from_G.lean](../Enumeration/Kcomb_from_G.lean)**
 
 @import "../Enumeration/Kcomb_from_G.lean"
-**[DataTypesAsLattices/Enumeration/valStage_eq_of_rank_le.lean](DomainTheory/DataTypesAsLattices/Enumeration/valStage_eq_of_rank_le.lean)**
+**[DataTypesAsLattices/Enumeration/valStage_eq_of_rank_le.lean](../Enumeration/valStage_eq_of_rank_le.lean)**
 
 @import "../Enumeration/valStage_eq_of_rank_le.lean"
-**[DataTypesAsLattices/Enumeration/valEntryJustified.lean](DomainTheory/DataTypesAsLattices/Enumeration/valEntryJustified.lean)**
+**[DataTypesAsLattices/Enumeration/valEntryJustified.lean](../Enumeration/valEntryJustified.lean)**
 
 @import "../Enumeration/valEntryJustified.lean"
-**[DataTypesAsLattices/Enumeration/valC.lean](DomainTheory/DataTypesAsLattices/Enumeration/valC.lean)**
+**[DataTypesAsLattices/Enumeration/valC.lean](../Enumeration/valC.lean)**
 
 @import "../Enumeration/valC.lean"
-**[DataTypesAsLattices/Enumeration/Deg.lean](DomainTheory/DataTypesAsLattices/Enumeration/Deg.lean)**
+**[DataTypesAsLattices/Enumeration/Deg.lean](../Enumeration/Deg.lean)**
 
 @import "../Enumeration/Deg.lean"
-**[DataTypesAsLattices/Enumeration/combinatory_mem_Deg.lean](DomainTheory/DataTypesAsLattices/Enumeration/combinatory_mem_Deg.lean)**
+**[DataTypesAsLattices/Enumeration/combinatory_mem_Deg.lean](../Enumeration/combinatory_mem_Deg.lean)**
 
 @import "../Enumeration/combinatory_mem_Deg.lean"
-**[DataTypesAsLattices/Enumeration/eq_3_8_val.lean](DomainTheory/DataTypesAsLattices/Enumeration/eq_3_8_val.lean)**
+**[DataTypesAsLattices/Enumeration/eq_3_8_val.lean](../Enumeration/eq_3_8_val.lean)**
 
 @import "../Enumeration/eq_3_8_val.lean"
-**[DataTypesAsLattices/Enumeration/eq_3_9_val.lean](DomainTheory/DataTypesAsLattices/Enumeration/eq_3_9_val.lean)**
+**[DataTypesAsLattices/Enumeration/eq_3_9_val.lean](../Enumeration/eq_3_9_val.lean)**
 
 @import "../Enumeration/eq_3_9_val.lean"
-**[DataTypesAsLattices/Enumeration/eq_3_10_val.lean](DomainTheory/DataTypesAsLattices/Enumeration/eq_3_10_val.lean)**
+**[DataTypesAsLattices/Enumeration/eq_3_10_val.lean](../Enumeration/eq_3_10_val.lean)**
 
 @import "../Enumeration/eq_3_10_val.lean"
-**[DataTypesAsLattices/Enumeration/primrecRel_valTraceHas.lean](DomainTheory/DataTypesAsLattices/Enumeration/primrecRel_valTraceHas.lean)**
+**[DataTypesAsLattices/Enumeration/primrecRel_valTraceHas.lean](../Enumeration/primrecRel_valTraceHas.lean)**
 
 @import "../Enumeration/primrecRel_valTraceHas.lean"
-**[DataTypesAsLattices/Enumeration/primrecPred_valEntryJustified.lean](DomainTheory/DataTypesAsLattices/Enumeration/primrecPred_valEntryJustified.lean)**
+**[DataTypesAsLattices/Enumeration/primrecPred_valEntryJustified.lean](../Enumeration/primrecPred_valEntryJustified.lean)**
 
 @import "../Enumeration/primrecPred_valEntryJustified.lean"
-**[DataTypesAsLattices/Enumeration/valTraceStruct.lean](DomainTheory/DataTypesAsLattices/Enumeration/valTraceStruct.lean)**
+**[DataTypesAsLattices/Enumeration/valTraceStruct.lean](../Enumeration/valTraceStruct.lean)**
 
 @import "../Enumeration/valTraceStruct.lean"
-**[DataTypesAsLattices/Enumeration/primrecPred_valTraceStruct.lean](DomainTheory/DataTypesAsLattices/Enumeration/primrecPred_valTraceStruct.lean)**
+**[DataTypesAsLattices/Enumeration/primrecPred_valTraceStruct.lean](../Enumeration/primrecPred_valTraceStruct.lean)**
 
 @import "../Enumeration/primrecPred_valTraceStruct.lean"
-**[DataTypesAsLattices/Enumeration/valTraceOk.lean](DomainTheory/DataTypesAsLattices/Enumeration/valTraceOk.lean)**
+**[DataTypesAsLattices/Enumeration/valTraceOk.lean](../Enumeration/valTraceOk.lean)**
 
 @import "../Enumeration/valTraceOk.lean"
-**[DataTypesAsLattices/Enumeration/exists_concat_traces.lean](DomainTheory/DataTypesAsLattices/Enumeration/exists_concat_traces.lean)**
+**[DataTypesAsLattices/Enumeration/exists_concat_traces.lean](../Enumeration/exists_concat_traces.lean)**
 
 @import "../Enumeration/exists_concat_traces.lean"
-**[DataTypesAsLattices/Enumeration/valTraceOk_more.lean](DomainTheory/DataTypesAsLattices/Enumeration/valTraceOk_more.lean)**
+**[DataTypesAsLattices/Enumeration/valTraceOk_more.lean](../Enumeration/valTraceOk_more.lean)**
 
 @import "../Enumeration/valTraceOk_more.lean"
 **[DataTypesAsLattices/Functionality/tensorR_diag_isScottContinuous.lean](tensorR_diag_isScottContinuous.lean)**
 
 @import "tensorR_diag_isScottContinuous.lean"
-**[DataTypesAsLattices/Functionality/treeF_isScottContinuous.lean](DomainTheory/DataTypesAsLattices/Functionality/treeF_isScottContinuous.lean)**
+**[DataTypesAsLattices/Functionality/treeF_isScottContinuous.lean](treeF_isScottContinuous.lean)**
 
 @import "treeF_isScottContinuous.lean"
-**[DataTypesAsLattices/Functionality/eq_4_38.lean](DomainTheory/DataTypesAsLattices/Functionality/eq_4_38.lean)**
+**[DataTypesAsLattices/Functionality/eq_4_38.lean](eq_4_38.lean)**
 
 @import "eq_4_38.lean"
 **[DataTypesAsLattices/Functionality/expF_isScottContinuous.lean](expF_isScottContinuous.lean)**
@@ -618,7 +618,7 @@
 **[DataTypesAsLattices/Functionality/Kcomb_app_isGraph.lean](Kcomb_app_isGraph.lean)**
 
 @import "Kcomb_app_isGraph.lean"
-**[DataTypesAsLattices/Enumeration/eq_3_12.lean](DomainTheory/DataTypesAsLattices/Enumeration/eq_3_12.lean)**
+**[DataTypesAsLattices/Enumeration/eq_3_12.lean](../Enumeration/eq_3_12.lean)**
 
 @import "../Enumeration/eq_3_12.lean"
 **[DataTypesAsLattices/Functionality/typed_pairSeq_tensorR.lean](typed_pairSeq_tensorR.lean)**
@@ -669,40 +669,40 @@
 **[DataTypesAsLattices/Functionality/plus7_typed_inl5.lean](plus7_typed_inl5.lean)**
 
 @import "plus7_typed_inl5.lean"
-**[DataTypesAsLattices/Enumeration/Gbar.lean](DomainTheory/DataTypesAsLattices/Enumeration/Gbar.lean)**
+**[DataTypesAsLattices/Enumeration/Gbar.lean](../Enumeration/Gbar.lean)**
 
 @import "../Enumeration/Gbar.lean"
-**[DataTypesAsLattices/Enumeration/GeneratedSemigroup.lean](DomainTheory/DataTypesAsLattices/Enumeration/GeneratedSemigroup.lean)**
+**[DataTypesAsLattices/Enumeration/GeneratedSemigroup.lean](../Enumeration/GeneratedSemigroup.lean)**
 
 @import "../Enumeration/GeneratedSemigroup.lean"
-**[DataTypesAsLattices/Enumeration/haltEnum.lean](DomainTheory/DataTypesAsLattices/Enumeration/haltEnum.lean)**
+**[DataTypesAsLattices/Enumeration/haltEnum.lean](../Enumeration/haltEnum.lean)**
 
 @import "../Enumeration/haltEnum.lean"
-**[DataTypesAsLattices/Enumeration/primrec_haltEnum.lean](DomainTheory/DataTypesAsLattices/Enumeration/primrec_haltEnum.lean)**
+**[DataTypesAsLattices/Enumeration/primrec_haltEnum.lean](../Enumeration/primrec_haltEnum.lean)**
 
 @import "../Enumeration/primrec_haltEnum.lean"
-**[DataTypesAsLattices/Enumeration/haltEnum_more.lean](DomainTheory/DataTypesAsLattices/Enumeration/haltEnum_more.lean)**
+**[DataTypesAsLattices/Enumeration/haltEnum_more.lean](../Enumeration/haltEnum_more.lean)**
 
 @import "../Enumeration/haltEnum_more.lean"
-**[DataTypesAsLattices/Enumeration/Lterm.lean](DomainTheory/DataTypesAsLattices/Enumeration/Lterm.lean)**
+**[DataTypesAsLattices/Enumeration/Lterm.lean](../Enumeration/Lterm.lean)**
 
 @import "../Enumeration/Lterm.lean"
-**[DataTypesAsLattices/Enumeration/Lterm_more.lean](DomainTheory/DataTypesAsLattices/Enumeration/Lterm_more.lean)**
+**[DataTypesAsLattices/Enumeration/Lterm_more.lean](../Enumeration/Lterm_more.lean)**
 
 @import "../Enumeration/Lterm_more.lean"
-**[DataTypesAsLattices/Enumeration/Lcomb_more.lean](DomainTheory/DataTypesAsLattices/Enumeration/Lcomb_more.lean)**
+**[DataTypesAsLattices/Enumeration/Lcomb_more.lean](../Enumeration/Lcomb_more.lean)**
 
 @import "../Enumeration/Lcomb_more.lean"
-**[DataTypesAsLattices/Enumeration/generatedSemigroup_mem_RE_FUN.lean](DomainTheory/DataTypesAsLattices/Enumeration/generatedSemigroup_mem_RE_FUN.lean)**
+**[DataTypesAsLattices/Enumeration/generatedSemigroup_mem_RE_FUN.lean](../Enumeration/generatedSemigroup_mem_RE_FUN.lean)**
 
 @import "../Enumeration/generatedSemigroup_mem_RE_FUN.lean"
-**[DataTypesAsLattices/Enumeration/eq_3_16.lean](DomainTheory/DataTypesAsLattices/Enumeration/eq_3_16.lean)**
+**[DataTypesAsLattices/Enumeration/eq_3_16.lean](../Enumeration/eq_3_16.lean)**
 
 @import "../Enumeration/eq_3_16.lean"
-**[DataTypesAsLattices/Enumeration/eq_3_17.lean](DomainTheory/DataTypesAsLattices/Enumeration/eq_3_17.lean)**
+**[DataTypesAsLattices/Enumeration/eq_3_17.lean](../Enumeration/eq_3_17.lean)**
 
 @import "../Enumeration/eq_3_17.lean"
-**[DataTypesAsLattices/Enumeration/bar_generated.lean](DomainTheory/DataTypesAsLattices/Enumeration/bar_generated.lean)**
+**[DataTypesAsLattices/Enumeration/bar_generated.lean](../Enumeration/bar_generated.lean)**
 
 @import "../Enumeration/bar_generated.lean"
 **[DataTypesAsLattices/Retracts/inverseLimit_project_earlier.lean](../Retracts/inverseLimit_project_earlier.lean)**
@@ -753,7 +753,7 @@
 **[DataTypesAsLattices/Functionality/eq_4_35.lean](eq_4_35.lean)**
 
 @import "eq_4_35.lean"
-**[DataTypesAsLattices/Enumeration/vaalC.lean](DomainTheory/DataTypesAsLattices/Enumeration/vaalC.lean)**
+**[DataTypesAsLattices/Enumeration/vaalC.lean](../Enumeration/vaalC.lean)**
 
 @import "../Enumeration/vaalC.lean"
 **[DataTypesAsLattices/Functionality/typed_isGraph.lean](typed_isGraph.lean)**
@@ -816,10 +816,10 @@
 **[DataTypesAsLattices/Functionality/eq_4_45.lean](eq_4_45.lean)**
 
 @import "eq_4_45.lean"
-**[DataTypesAsLattices/Enumeration/Ycode.lean](DomainTheory/DataTypesAsLattices/Enumeration/Ycode.lean)**
+**[DataTypesAsLattices/Enumeration/Ycode.lean](../Enumeration/Ycode.lean)**
 
 @import "../Enumeration/Ycode.lean"
-**[DataTypesAsLattices/Enumeration/recCode.lean](DomainTheory/DataTypesAsLattices/Enumeration/recCode.lean)**
+**[DataTypesAsLattices/Enumeration/recCode.lean](../Enumeration/recCode.lean)**
 
 @import "../Enumeration/recCode.lean"
 **[DataTypesAsLattices/Closures/theorem_5_5_universe.lean](../Closures/theorem_5_5_universe.lean)**
@@ -834,85 +834,85 @@
 **[DataTypesAsLattices/Closures/eq_5_23.lean](../Closures/eq_5_23.lean)**
 
 @import "../Closures/eq_5_23.lean"
-**[DataTypesAsLattices/Functionality/treeR_isRetract.lean](DomainTheory/DataTypesAsLattices/Functionality/treeR_isRetract.lean)**
+**[DataTypesAsLattices/Functionality/treeR_isRetract.lean](treeR_isRetract.lean)**
 
 @import "treeR_isRetract.lean"
-**[DataTypesAsLattices/Enumeration/vaalTyped.lean](DomainTheory/DataTypesAsLattices/Enumeration/vaalTyped.lean)**
+**[DataTypesAsLattices/Enumeration/vaalTyped.lean](../Enumeration/vaalTyped.lean)**
 
 @import "../Enumeration/vaalTyped.lean"
 **[DataTypesAsLattices/Functionality/eq_4_37.lean](eq_4_37.lean)**
 
 @import "eq_4_37.lean"
-**[DataTypesAsLattices/Enumeration/botCode.lean](DomainTheory/DataTypesAsLattices/Enumeration/botCode.lean)**
+**[DataTypesAsLattices/Enumeration/botCode.lean](../Enumeration/botCode.lean)**
 
 @import "../Enumeration/botCode.lean"
-**[DataTypesAsLattices/Enumeration/finAux.lean](DomainTheory/DataTypesAsLattices/Enumeration/finAux.lean)**
+**[DataTypesAsLattices/Enumeration/finAux.lean](../Enumeration/finAux.lean)**
 
 @import "../Enumeration/finAux.lean"
-**[DataTypesAsLattices/Enumeration/fin.lean](DomainTheory/DataTypesAsLattices/Enumeration/fin.lean)**
+**[DataTypesAsLattices/Enumeration/fin.lean](../Enumeration/fin.lean)**
 
 @import "../Enumeration/fin.lean"
-**[DataTypesAsLattices/Enumeration/myhillCase2Code.lean](DomainTheory/DataTypesAsLattices/Enumeration/myhillCase2Code.lean)**
+**[DataTypesAsLattices/Enumeration/myhillCase2Code.lean](../Enumeration/myhillCase2Code.lean)**
 
 @import "../Enumeration/myhillCase2Code.lean"
-**[DataTypesAsLattices/Enumeration/myhillQ.lean](DomainTheory/DataTypesAsLattices/Enumeration/myhillQ.lean)**
+**[DataTypesAsLattices/Enumeration/myhillQ.lean](../Enumeration/myhillQ.lean)**
 
 @import "../Enumeration/myhillQ.lean"
-**[DataTypesAsLattices/Enumeration/mem_myhillQ.lean](DomainTheory/DataTypesAsLattices/Enumeration/mem_myhillQ.lean)**
+**[DataTypesAsLattices/Enumeration/mem_myhillQ.lean](../Enumeration/mem_myhillQ.lean)**
 
 @import "../Enumeration/mem_myhillQ.lean"
-**[DataTypesAsLattices/Enumeration/primrecu2082_finAux.lean](DomainTheory/DataTypesAsLattices/Enumeration/primrecu2082_finAux.lean)**
+**[DataTypesAsLattices/Enumeration/primrecu2082_finAux.lean](../Enumeration/primrecu2082_finAux.lean)**
 
 @import "../Enumeration/primrecu2082_finAux.lean"
-**[DataTypesAsLattices/Enumeration/primrec_fin.lean](DomainTheory/DataTypesAsLattices/Enumeration/primrec_fin.lean)**
+**[DataTypesAsLattices/Enumeration/primrec_fin.lean](../Enumeration/primrec_fin.lean)**
 
 @import "../Enumeration/primrec_fin.lean"
-**[DataTypesAsLattices/Enumeration/primrec_myhillCase2Code.lean](DomainTheory/DataTypesAsLattices/Enumeration/primrec_myhillCase2Code.lean)**
+**[DataTypesAsLattices/Enumeration/primrec_myhillCase2Code.lean](../Enumeration/primrec_myhillCase2Code.lean)**
 
 @import "../Enumeration/primrec_myhillCase2Code.lean"
-**[DataTypesAsLattices/Enumeration/beforeHalt.lean](DomainTheory/DataTypesAsLattices/Enumeration/beforeHalt.lean)**
+**[DataTypesAsLattices/Enumeration/beforeHalt.lean](../Enumeration/beforeHalt.lean)**
 
 @import "../Enumeration/beforeHalt.lean"
-**[DataTypesAsLattices/Enumeration/primrecPred_beforeHalt.lean](DomainTheory/DataTypesAsLattices/Enumeration/primrecPred_beforeHalt.lean)**
+**[DataTypesAsLattices/Enumeration/primrecPred_beforeHalt.lean](../Enumeration/primrecPred_beforeHalt.lean)**
 
 @import "../Enumeration/primrecPred_beforeHalt.lean"
-**[DataTypesAsLattices/Enumeration/BasicInst85.lean](DomainTheory/DataTypesAsLattices/Enumeration/BasicInst85.lean)**
+**[DataTypesAsLattices/Enumeration/BasicInst85.lean](../Enumeration/BasicInst85.lean)**
 
 @import "../Enumeration/BasicInst85.lean"
-**[DataTypesAsLattices/Enumeration/filterNum.lean](DomainTheory/DataTypesAsLattices/Enumeration/filterNum.lean)**
+**[DataTypesAsLattices/Enumeration/filterNum.lean](../Enumeration/filterNum.lean)**
 
 @import "../Enumeration/filterNum.lean"
-**[DataTypesAsLattices/Enumeration/primrec_filterNum.lean](DomainTheory/DataTypesAsLattices/Enumeration/primrec_filterNum.lean)**
+**[DataTypesAsLattices/Enumeration/primrec_filterNum.lean](../Enumeration/primrec_filterNum.lean)**
 
 @import "../Enumeration/primrec_filterNum.lean"
-**[DataTypesAsLattices/Enumeration/filterRealizer.lean](DomainTheory/DataTypesAsLattices/Enumeration/filterRealizer.lean)**
+**[DataTypesAsLattices/Enumeration/filterRealizer.lean](../Enumeration/filterRealizer.lean)**
 
 @import "../Enumeration/filterRealizer.lean"
-**[DataTypesAsLattices/Enumeration/filterTerm.lean](DomainTheory/DataTypesAsLattices/Enumeration/filterTerm.lean)**
+**[DataTypesAsLattices/Enumeration/filterTerm.lean](../Enumeration/filterTerm.lean)**
 
 @import "../Enumeration/filterTerm.lean"
-**[DataTypesAsLattices/Enumeration/filterEnv.lean](DomainTheory/DataTypesAsLattices/Enumeration/filterEnv.lean)**
+**[DataTypesAsLattices/Enumeration/filterEnv.lean](../Enumeration/filterEnv.lean)**
 
 @import "../Enumeration/filterEnv.lean"
-**[DataTypesAsLattices/Enumeration/filterSeq_isScottContinuous.lean](DomainTheory/DataTypesAsLattices/Enumeration/filterSeq_isScottContinuous.lean)**
+**[DataTypesAsLattices/Enumeration/filterSeq_isScottContinuous.lean](../Enumeration/filterSeq_isScottContinuous.lean)**
 
 @import "../Enumeration/filterSeq_isScottContinuous.lean"
-**[DataTypesAsLattices/Enumeration/filterC.lean](DomainTheory/DataTypesAsLattices/Enumeration/filterC.lean)**
+**[DataTypesAsLattices/Enumeration/filterC.lean](../Enumeration/filterC.lean)**
 
 @import "../Enumeration/filterC.lean"
-**[DataTypesAsLattices/Enumeration/filterOp.lean](DomainTheory/DataTypesAsLattices/Enumeration/filterOp.lean)**
+**[DataTypesAsLattices/Enumeration/filterOp.lean](../Enumeration/filterOp.lean)**
 
 @import "../Enumeration/filterOp.lean"
-**[DataTypesAsLattices/Enumeration/myhillFilterCode.lean](DomainTheory/DataTypesAsLattices/Enumeration/myhillFilterCode.lean)**
+**[DataTypesAsLattices/Enumeration/myhillFilterCode.lean](../Enumeration/myhillFilterCode.lean)**
 
 @import "../Enumeration/myhillFilterCode.lean"
-**[DataTypesAsLattices/Enumeration/primrec_myhillFilterCode.lean](DomainTheory/DataTypesAsLattices/Enumeration/primrec_myhillFilterCode.lean)**
+**[DataTypesAsLattices/Enumeration/primrec_myhillFilterCode.lean](../Enumeration/primrec_myhillFilterCode.lean)**
 
 @import "../Enumeration/primrec_myhillFilterCode.lean"
-**[DataTypesAsLattices/Enumeration/myhillCase1Code.lean](DomainTheory/DataTypesAsLattices/Enumeration/myhillCase1Code.lean)**
+**[DataTypesAsLattices/Enumeration/myhillCase1Code.lean](../Enumeration/myhillCase1Code.lean)**
 
 @import "../Enumeration/myhillCase1Code.lean"
-**[DataTypesAsLattices/Enumeration/primrec_myhillCase1Code.lean](DomainTheory/DataTypesAsLattices/Enumeration/primrec_myhillCase1Code.lean)**
+**[DataTypesAsLattices/Enumeration/primrec_myhillCase1Code.lean](../Enumeration/primrec_myhillCase1Code.lean)**
 
 @import "../Enumeration/primrec_myhillCase1Code.lean"
 **[DataTypesAsLattices/Functionality/singletonE.lean](singletonE.lean)**
@@ -921,22 +921,22 @@
 **[DataTypesAsLattices/Functionality/singletonE_mem.lean](singletonE_mem.lean)**
 
 @import "singletonE_mem.lean"
-**[DataTypesAsLattices/Enumeration/packList.lean](DomainTheory/DataTypesAsLattices/Enumeration/packList.lean)**
+**[DataTypesAsLattices/Enumeration/packList.lean](../Enumeration/packList.lean)**
 
 @import "../Enumeration/packList.lean"
-**[DataTypesAsLattices/Enumeration/singleGenerator.lean](DomainTheory/DataTypesAsLattices/Enumeration/singleGenerator.lean)**
+**[DataTypesAsLattices/Enumeration/singleGenerator.lean](../Enumeration/singleGenerator.lean)**
 
 @import "../Enumeration/singleGenerator.lean"
-**[DataTypesAsLattices/Enumeration/valNat_codes.lean](DomainTheory/DataTypesAsLattices/Enumeration/valNat_codes.lean)**
+**[DataTypesAsLattices/Enumeration/valNat_codes.lean](../Enumeration/valNat_codes.lean)**
 
 @import "../Enumeration/valNat_codes.lean"
-**[DataTypesAsLattices/Enumeration/generators_mem_singleGenerator_degree.lean](DomainTheory/DataTypesAsLattices/Enumeration/generators_mem_singleGenerator_degree.lean)**
+**[DataTypesAsLattices/Enumeration/generators_mem_singleGenerator_degree.lean](../Enumeration/generators_mem_singleGenerator_degree.lean)**
 
 @import "../Enumeration/generators_mem_singleGenerator_degree.lean"
-**[DataTypesAsLattices/Enumeration/myhillQ_more.lean](DomainTheory/DataTypesAsLattices/Enumeration/myhillQ_more.lean)**
+**[DataTypesAsLattices/Enumeration/myhillQ_more.lean](../Enumeration/myhillQ_more.lean)**
 
 @import "../Enumeration/myhillQ_more.lean"
-**[DataTypesAsLattices/Enumeration/theorem_3_6_more.lean](DomainTheory/DataTypesAsLattices/Enumeration/theorem_3_6_more.lean)**
+**[DataTypesAsLattices/Enumeration/theorem_3_6_more.lean](../Enumeration/theorem_3_6_more.lean)**
 
 @import "../Enumeration/theorem_3_6_more.lean"
 **[DataTypesAsLattices/Retracts/iUnion_retract_isGraph.lean](../Retracts/iUnion_retract_isGraph.lean)**

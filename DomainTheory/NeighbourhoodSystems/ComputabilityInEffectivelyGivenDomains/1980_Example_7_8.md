@@ -1,5 +1,5 @@
 # Example 7.8
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example_7_8.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example_7_8.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example_7_8.lean](Example_7_8.lean)**
 
 @import "Example_7_8.lean"
 

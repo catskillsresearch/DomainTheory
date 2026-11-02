@@ -1,5 +1,5 @@
 # Proposition 6.12
-**[NeighbourhoodSystems/DomainEquations/Proposition_6_12.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Proposition_6_12.lean)**
+**[NeighbourhoodSystems/DomainEquations/Proposition_6_12.lean](Proposition_6_12.lean)**
 
 @import "Proposition_6_12.lean"
 

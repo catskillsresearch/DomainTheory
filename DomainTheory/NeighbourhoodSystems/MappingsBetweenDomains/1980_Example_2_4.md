@@ -1,5 +1,5 @@
 # Example 2.4
-**[NeighbourhoodSystems/MappingsBetweenDomains/Example_2_4.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Example_2_4.lean)**
+**[NeighbourhoodSystems/MappingsBetweenDomains/Example_2_4.lean](Example_2_4.lean)**
 
 @import "Example_2_4.lean"
 

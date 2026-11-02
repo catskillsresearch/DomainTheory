@@ -1,5 +1,5 @@
 # Proposition 5.4
-**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition_5_4.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Proposition_5_4.lean)**
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition_5_4.lean](Proposition_5_4.lean)**
 
 @import "Proposition_5_4.lean"
 

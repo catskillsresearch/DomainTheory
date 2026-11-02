@@ -1,5 +1,5 @@
 # Exercise 7.15
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_15.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_15.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_15.lean](Exercise_7_15.lean)**
 
 @import "Exercise_7_15.lean"
 

@@ -1,7 +1,7 @@
 # Converse retraction
 
 @import "1972_Converse_retraction.english" {code_block=false}
-**[ContinuousLattice/FunctionSpaces/ConverseRetraction.lean](DomainTheory/ContinuousLattice/FunctionSpaces/ConverseRetraction.lean)**
+**[ContinuousLattice/FunctionSpaces/ConverseRetraction.lean](ConverseRetraction.lean)**
 
 @import "ConverseRetraction.lean"
 

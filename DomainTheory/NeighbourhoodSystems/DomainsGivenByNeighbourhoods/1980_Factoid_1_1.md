@@ -1,5 +1,5 @@
 # Factoid 1.1
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Factoid_1_1.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Factoid_1_1.lean)**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Factoid_1_1.lean](Factoid_1_1.lean)**
 
 @import "Factoid_1_1.lean"
 

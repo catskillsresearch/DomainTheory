@@ -184,8 +184,9 @@ def format_lean_block(note: Path, mod_path: Path, label: str) -> str:
     except ValueError:
         label_href = rel_repo
     rel_import = Path(os.path.relpath(mod_path, note.parent)).as_posix()
+    # Markdown link target must be note-relative (see 1976_Extension.md), not repo-root.
     return (
-        f"**[{label_href}]({rel_repo})**\n\n"
+        f"**[{label_href}]({rel_import})**\n\n"
         f'@import "{rel_import}"\n'
     )
 

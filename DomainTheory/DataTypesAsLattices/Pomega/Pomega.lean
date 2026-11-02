@@ -1,4 +1,4 @@
-module
+module -- shake: keep-all
 
 public import Mathlib.Data.Nat.Notation
 public import Mathlib.Data.Set.Defs

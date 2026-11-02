@@ -1,5 +1,5 @@
 # Exercise 1.16
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_16.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_16.lean)**
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_16.lean](Exercise_1_16.lean)**
 
 @import "Exercise_1_16.lean"
 

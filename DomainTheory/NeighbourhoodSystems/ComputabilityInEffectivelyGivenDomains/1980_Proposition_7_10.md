@@ -1,5 +1,5 @@
 # Proposition 7.10
-**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_10.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_10.lean)**
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_10.lean](Proposition_7_10.lean)**
 
 @import "Proposition_7_10.lean"
 

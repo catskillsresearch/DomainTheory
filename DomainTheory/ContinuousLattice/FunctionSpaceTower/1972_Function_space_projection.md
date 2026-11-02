@@ -1,5 +1,5 @@
 # The projection on a function space
-**[ContinuousLattice/FunctionSpaceTower/functionSpaceProjection.lean](DomainTheory/ContinuousLattice/FunctionSpaceTower/functionSpaceProjection.lean)**
+**[ContinuousLattice/FunctionSpaceTower/functionSpaceProjection.lean](functionSpaceProjection.lean)**
 
 @import "functionSpaceProjection.lean"
 

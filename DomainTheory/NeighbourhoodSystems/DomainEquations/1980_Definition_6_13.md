@@ -1,5 +1,5 @@
 # Definition 6.13
-**[NeighbourhoodSystems/DomainEquations/Definition_6_13.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition_6_13.lean)**
+**[NeighbourhoodSystems/DomainEquations/Definition_6_13.lean](Definition_6_13.lean)**
 
 @import "Definition_6_13.lean"
 

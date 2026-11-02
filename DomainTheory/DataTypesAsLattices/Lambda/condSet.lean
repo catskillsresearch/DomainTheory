@@ -1,14 +1,9 @@
 module
 
-public import Mathlib.Topology.Bases
-public import Mathlib.Topology.Defs.Induced
-public import Mathlib.Topology.Order
-public import Mathlib.Topology.Separation.Basic
-public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
-public import Mathlib.Data.Nat.Bitwise
+import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
+import Mathlib.Data.Nat.Bitwise
 
 @[expose] public section
 

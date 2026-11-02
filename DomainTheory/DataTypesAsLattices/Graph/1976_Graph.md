@@ -1,5 +1,5 @@
 # Graphs of continuous functions
-**[DataTypesAsLattices/Graph/graph.lean](DomainTheory/DataTypesAsLattices/Graph/graph.lean)**
+**[DataTypesAsLattices/Graph/graph.lean](graph.lean)**
 
 @import "graph.lean"
 

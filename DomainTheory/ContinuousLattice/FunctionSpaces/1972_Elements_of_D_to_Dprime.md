@@ -6,10 +6,10 @@
 
 @import "ScottMap.lean"
 
-**[ContinuousLattice/ContinuousLattices/continuousLattice_scottTopology_of_injective.lean](DomainTheory/ContinuousLattice/ContinuousLattices/continuousLattice_scottTopology_of_injective.lean)**
+**[ContinuousLattice/ContinuousLattices/continuousLattice_scottTopology_of_injective.lean](../ContinuousLattices/continuousLattice_scottTopology_of_injective.lean)**
 
 @import "../ContinuousLattices/continuousLattice_scottTopology_of_injective.lean"
-**[ContinuousLattice/ContinuousLattices/IdempotentFixedPoint/scottContinuous.lean](DomainTheory/ContinuousLattice/ContinuousLattices/IdempotentFixedPoint/scottContinuous.lean)**
+**[ContinuousLattice/ContinuousLattices/IdempotentFixedPoint/scottContinuous.lean](../ContinuousLattices/IdempotentFixedPoint/scottContinuous.lean)**
 
 @import "../ContinuousLattices/IdempotentFixedPoint/scottContinuous.lean"
 <p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-10-31) — <a href="../1972_REVISION.md">1972 revision progress</a></p>
