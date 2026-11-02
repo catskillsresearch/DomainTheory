@@ -1,3 +1,38 @@
 But the result that makes all this model building and combinatory logic mathematically interesting concerns the so-called *paradoxical combinator* defined by the equation:
 
 $$(2.8) \quad \mathbf{Y} = \lambda u.\, (\lambda x.\, u(x(x)))(\lambda x.\, u(x(x))).$$
+
+**Language, model, and bridge.** Equation (2.8) is stated in **LAMBDA** (syntax: `Term`, interpretation `interp`). The **model** is $\mathbf{P}\omega$ with application `funOf` and graphs `graph`. We separate three roles in `Ycomb.lean`:
+
+- **Language:** `Yterm` is the closed LAMBDA term for (2.8), using variables $x_0,x_1$ for the binders in Scott’s $\lambda u$ and $\lambda x$.
+- **Model:** `Ycomb` is the element of $\mathbf{P}\omega$ obtained by turning (2.8) into a graph: for each $u$, apply the ω-subcombinator $\omega(u) = \lambda x.\, u(x(x))$ to itself (formalized as `omegaComb`).
+- **Bridge:** `Yterm.interp` shows that under the constant environment $\rho \equiv \lambda i.\, \bot$, we have $\mathrm{interp}(\texttt{Yterm})\,\rho = \texttt{Ycomb}$—the syntax of (2.8) denotes the model element.
+
+The lemmas in `namespace Ycomb` are **model** facts about `funOf Ycomb`; `Ycomb.combinatory` links back to **language** via Theorem 2.4 and the bridge.
+
+**Formalization (`Ycomb.lean`).** Each Lean name is the library entry; proofs in the file are short unless noted.
+
+**Definition (`omegaComb`, in `omegaComb.lean`).** For $u \in \mathbf{P}\omega$, $\omega(u) = \mathbf{graph}(\lambda x.\, u(x(x))$, so $\mathrm{funOf}(\omega(u))\,x = \mathrm{funOf}\,u\,(\mathrm{funOf}\,x\,x)$ (`omegaComb.app`).
+
+**Definition (`Ycomb`, model).** $\texttt{Ycomb} = \mathbf{graph}(\lambda u.\, \mathrm{funOf}(\omega(u))(\omega(u)))$—the graph of $u \mapsto (\lambda x.\, u(x(x)))(\lambda x.\, u(x(x)))$ in the model.
+
+**Definition (`Yterm`, language).** `Yterm` is the `Term` for (2.8): $\lambda x_0.\, (\lambda x_1.\, x_0(x_1(x_1)))(\lambda x_1.\, x_0(x_1(x_1)))$.
+
+**Theorem (`Yterm.interp`, bridge).** For $\rho(i) = \bot$ for all $i$,
+$$\mathrm{interp}(\texttt{Yterm})\,\rho = \texttt{Ycomb}.$$
+
+*Proof.* Unfold `interp`, `Yterm`, `Ycomb`, and `omegaComb`; simplify updates in `envSet`. ∎
+
+**Theorem (`Ycomb.app`, model).** For all $u \in \mathbf{P}\omega$,
+$$\mathrm{funOf}(\texttt{Ycomb})\,u = \mathrm{funOf}(\omega(u))(\omega(u)).$$
+
+*Proof.* Unfold `Ycomb` as a graph and apply $(\beta)$ (`beta`), using Theorem 1.3 to justify continuity of the underlying map (`theorem_1_3`, `diagApp_isScottContinuous`, `omegaComb.isScottContinuous`). ∎
+
+**Theorem (`Ycomb.combinatory`, model / language).** `IsCombinatory Ycomb`.
+
+*Proof.* By Theorem 2.4, every closed term’s interpretation is combinatory (`theorem_2_4.closed` applied to `Yterm`). Rewrite with `Yterm.interp`. ∎
+
+**Theorem (`Ycomb.unfold`, model).** For all $u \in \mathbf{P}\omega$,
+$$\mathrm{funOf}(\texttt{Ycomb})\,u = \mathrm{funOf}\,u\,(\mathrm{funOf}(\texttt{Ycomb})\,u).$$
+
+*Proof.* Chain `Ycomb.app`, the defining equation for $\omega(u)$ at $x = \omega(u)$ (`omegaComb.app`), and `Ycomb.app` again. This is the graph-model form of the usual Y fixed-point law; Theorem 2.5 treats the case when $u$ is itself a graph. ∎
