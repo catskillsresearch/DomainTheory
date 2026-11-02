@@ -21,10 +21,7 @@ Proves `V` is universal and records the standard embeddings into `U`.
 
  — universality and the concrete `U`/`V` embeddings
 
-@import "EmbeddingsIntoU.lean"
-
 The tip then assembles those tools into Scott’s statement.
 
  — `exercise_8_17`
 
-@import "Exercise_8_17.lean"

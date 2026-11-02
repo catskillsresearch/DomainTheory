@@ -16,11 +16,7 @@ Library tools: finitely generated subsystems and the reconstructed system `SubD`
 
  — `QBody`, `QFuel`, `TreeVal`, `Q'X`
 
-@import "TreeVal.lean"
-
  — `Q2X`, `Q'xPresentation`
-
-@import "TreeVal_more.lean"
 
 Assembles those tools into the Exercise 8.15 development (order iso, presentations, U-case).
 
@@ -31,4 +27,3 @@ The tip then assembles those tools into Scott’s statement.
 
  — `exercise_8_15`
 
-@import "Exercise_8_15.lean"

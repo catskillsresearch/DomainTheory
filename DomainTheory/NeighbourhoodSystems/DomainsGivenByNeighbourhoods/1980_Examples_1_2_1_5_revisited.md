@@ -28,6 +28,3 @@ $$
 
 <!-- page 15 -->
 
-**[Examples_1_2_1_5_revisited.lean](Examples_1_2_1_5_revisited.lean)**
-
-@import "Examples_1_2_1_5_revisited.lean"

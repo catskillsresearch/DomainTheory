@@ -33,4 +33,3 @@ Do equations (iii) and (iv) uniquely determine $f + g$?
 @import "Exercise_3_19.lean"
  — Pref-folded `sumMap` companions
 
-@import "../RetractsOfTheUniversalDomain/sumMap.lean"

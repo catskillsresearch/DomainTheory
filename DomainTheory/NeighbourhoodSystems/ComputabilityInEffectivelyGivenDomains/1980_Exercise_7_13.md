@@ -22,6 +22,3 @@ $$\mathcal{D} = \big\{ \{m \in \mathbf{N} \mid \mathrm{INCL}(m,n)\} \mid n \in \
 
 Is this essentially any effectively given system?)
 
-**[Exercise_7_13.lean](Exercise_7_13.lean)**
-
-@import "Exercise_7_13.lean"

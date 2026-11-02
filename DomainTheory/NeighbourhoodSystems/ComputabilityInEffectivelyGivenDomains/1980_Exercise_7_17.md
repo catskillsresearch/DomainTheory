@@ -8,6 +8,3 @@ $$g(\mathrm{pair}(y, z)) = v(g(y), g(z)),$$
 
 is a computable mapping.
 
-**[Exercise_7_17.lean](Exercise_7_17.lean)**
-
-@import "Exercise_7_17.lean"

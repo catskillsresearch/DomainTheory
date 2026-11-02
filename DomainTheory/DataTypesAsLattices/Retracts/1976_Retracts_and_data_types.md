@@ -19,35 +19,39 @@
 - [Theorem 4.6](1976_Theorem_4_6.md)
 
 
-
-
-
-
-
-
-
-
-**[DataTypesAsLattices/FixedLattices/DirectedSet.lean](../FixedLattices/DirectedSet.lean)**
-
-@import "../FixedLattices/DirectedSet.lean"
 **[DataTypesAsLattices/Retracts/graph_ext.lean](graph_ext.lean)**
 
 @import "graph_ext.lean"
-**[DataTypesAsLattices/FixedLattices/completeLatticeSupSet.lean](../FixedLattices/completeLatticeSupSet.lean)**
-
-@import "../FixedLattices/completeLatticeSupSet.lean"
-**[DataTypesAsLattices/Retracts/Fixpoints.lean](Fixpoints.lean)**
-
-@import "Fixpoints.lean"
-**[DataTypesAsLattices/Retracts/openR.lean](openR.lean)**
-
-@import "openR.lean"
-**[DataTypesAsLattices/Retracts/graph_const_bot.lean](graph_const_bot.lean)**
-
-@import "graph_const_bot.lean"
 **[DataTypesAsLattices/Retracts/predSet_eq_ofNat_of_no_zero.lean](predSet_eq_ofNat_of_no_zero.lean)**
 
 @import "predSet_eq_ofNat_of_no_zero.lean"
+**[DataTypesAsLattices/FixedLattices/completeLatticePreorder.lean](../FixedLattices/completeLatticePreorder.lean)**
+
+@import "../FixedLattices/completeLatticePreorder.lean"
+**[DataTypesAsLattices/Retracts/predSet_ofNat_zero.lean](predSet_ofNat_zero.lean)**
+
+@import "predSet_ofNat_zero.lean"
+**[DataTypesAsLattices/FixedLattices/completeLatticeSupSet.lean](../FixedLattices/completeLatticeSupSet.lean)**
+
+@import "../FixedLattices/completeLatticeSupSet.lean"
+**[DataTypesAsLattices/FixedLattices/DirectedSet.lean](../FixedLattices/DirectedSet.lean)**
+
+@import "../FixedLattices/DirectedSet.lean"
+**[DataTypesAsLattices/Retracts/graph_const_bot.lean](graph_const_bot.lean)**
+
+@import "graph_const_bot.lean"
+**[DataTypesAsLattices/FixedLattices/completeLatticeLE.lean](../FixedLattices/completeLatticeLE.lean)**
+
+@import "../FixedLattices/completeLatticeLE.lean"
+**[DataTypesAsLattices/Retracts/openR.lean](openR.lean)**
+
+@import "openR.lean"
+**[DataTypesAsLattices/FixedLattices/WayBelow.lean](../FixedLattices/WayBelow.lean)**
+
+@import "../FixedLattices/WayBelow.lean"
+**[DataTypesAsLattices/Retracts/Fixpoints.lean](Fixpoints.lean)**
+
+@import "Fixpoints.lean"
 **[DataTypesAsLattices/Retracts/vals.lean](vals.lean)**
 
 @import "vals.lean"
@@ -60,15 +64,3 @@
 **[DataTypesAsLattices/Retracts/IsCompactSubset.lean](IsCompactSubset.lean)**
 
 @import "IsCompactSubset.lean"
-**[DataTypesAsLattices/FixedLattices/completeLatticeLE.lean](../FixedLattices/completeLatticeLE.lean)**
-
-@import "../FixedLattices/completeLatticeLE.lean"
-**[DataTypesAsLattices/FixedLattices/completeLatticePreorder.lean](../FixedLattices/completeLatticePreorder.lean)**
-
-@import "../FixedLattices/completeLatticePreorder.lean"
-**[DataTypesAsLattices/FixedLattices/WayBelow.lean](../FixedLattices/WayBelow.lean)**
-
-@import "../FixedLattices/WayBelow.lean"
-**[DataTypesAsLattices/Retracts/predSet_ofNat_zero.lean](predSet_ofNat_zero.lean)**
-
-@import "predSet_ofNat_zero.lean"

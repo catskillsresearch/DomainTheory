@@ -12,6 +12,3 @@ $Y_{t(i+1)} \subseteq Y_{t(i)}$
 
 for all $i \in \mathbf{N}$.
 
-**[Exercise_7_14.lean](Exercise_7_14.lean)**
-
-@import "Exercise_7_14.lean"

@@ -14,20 +14,11 @@ These interesting(computable!) combinators on elements of $\mathcal{U} \to \math
 
  — embeddings and `lamComb`
 
-@import "Definition_8_9.lean"
-
  — `sumComb` and Pref-folded companions
-
-@import "sumComb.lean"
 
  — `prodComb` and Pref-folded companions
 
-@import "prodComb.lean"
-
  — `arrowComb` and Pref-folded companions
-
-@import "arrowComb.lean"
 
  — `expMap` and Pref-folded companions
 
-@import "expMap.lean"

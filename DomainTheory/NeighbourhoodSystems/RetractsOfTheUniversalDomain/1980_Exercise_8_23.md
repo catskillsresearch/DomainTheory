@@ -20,11 +20,7 @@ The tip asserts that `fixOp t` is a finitary projection whenever `t` preserves t
 
 Defines `fixOp` and proves it is finitary when the transformer preserves finitary projections.
 
-**[FixOp.lean](FixOp.lean)**
-
-@import "FixOp.lean"
 The tip then assembles those tools into Scott’s statement.
 
  — `exercise_8_23`
 
-@import "Exercise_8_23.lean"

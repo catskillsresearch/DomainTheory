@@ -32,20 +32,68 @@ $$(2.7) \quad z \supset x, y = \begin{cases} \bot & \text{if } z = \bot; \\ x & 
 
 We say that a LAMBDA-term $\tau$ defines a function of its free variables (at least). Other results depend on this fundamental proposition:
 
-**Formalization (`Language.lean`).** The module collects the syntactic objects of LAMBDA, the Table 2 set operations on $\mathbf{P}\omega$, the standard constant graphs used as denotations, and the sample equations (2.5)–(2.6) together with the finite-witness lemmas needed later.
+**Formalization (`Language.lean`).** Below, each Lean name is the library entry; proofs in the file are short unless noted.
 
-**Syntax (`Comb`, `Term`).** `Comb` is the combinator presentation (variables, $0$, successor, predecessor, conditional, $K$, $S$, application) used when relating LAMBDA to combinatory logic. `Term` is the official LAMBDA abstract syntax: variables, constant $0$, unary successor and predecessor, ternary conditional $z \supset x, y$, application $u(x)$, and binding $\lambda x.\,\tau$. The map `rename` implements the obvious alphabetic change of a bound variable on `Term`.
+**Definition (`Comb`).** The inductive type of combinator terms: variables $x_n$, constants $0$, $\mathrm{suc}$, $\mathrm{pred}$, $\mathrm{cond}$, $K$, $S$, and binary application.
 
-**Denotations of numbers and Table 2 operations.** Write $\mathrm{ofNat}\,n = \{n\}$ for the singleton subset of $\omega$ (lemma `mem_ofNat`: $k \in \mathrm{ofNat}\,n \leftrightarrow k = n$). The unary operations of Table 2 are coded as set transformers $\mathrm{succSet}, \mathrm{predSet} : \mathbf{P}\omega \to \mathbf{P}\omega$ by
-$$\mathrm{succSet}(x) = \{k \mid \exists n \in x.\, k = n + 1\}, \qquad \mathrm{predSet}(x) = \{k \mid k + 1 \in x\},$$
-and the primitive constant $0$ as $\mathrm{zeroC} = \mathrm{ofNat}\,0$, with $\mathrm{sucC} = \mathbf{graph}(\mathrm{succSet})$ and $\mathrm{predC} = \mathbf{graph}(\mathrm{predSet})$. The combinator $K$ is $\mathrm{Kcomb} = \mathbf{graph}(\lambda x.\,\mathbf{graph}(\lambda y.\,x))$. The dense element $e_1$ satisfies $e_1 = \{0\}$ (`e_one`).
+**Definition (`Term`).** The inductive type of LAMBDA terms: variables $x_n$; constant $0$; unary successor and predecessor; ternary conditional $\mathrm{cond}(z,x,y)$ for $z \supset x,y$; binary application $\mathrm{app}(u,x)$ for $u(x)$; and abstraction $\mathrm{lam}(i,\tau)$ for $\lambda x_i.\,\tau$.
 
-**Environments.** For an assignment $\rho : \omega \to \mathbf{P}\omega$, variable $i$, and value $v \in \mathbf{P}\omega$, `envSet` is the updated assignment $\rho[i \mapsto v]$; `envSet.comm` states that two distinct updates commute.
+**Definition (`ofNat`).** For $n \in \omega$, $\mathrm{ofNat}\,n = \{n\} \subseteq \mathbf{P}\omega$.
 
-**Pairing.** The Cantor pairing used elsewhere is linked to the triangle function: `triangle_eq_zero` shows $\mathrm{triangle}(w) = 0$ implies $w = 0$; `pair_zero_zero` and `pair_one_zero` record $\mathrm{pair}(0,0) = 0$ and $\mathrm{pair}(1,0) = 1$; `pair_eq_right` shows $\mathrm{pair}(n,m) = m$ forces $n = m = 0$.
+**Theorem (`mem_ofNat`).** For all $n,k \in \omega$, $k \in \mathrm{ofNat}\,n \leftrightarrow k = n$.
 
-**Equations (2.5) and (2.6).** `eq_2_5` is the multiple-valued successor law
+*Proof.* By definition of singleton membership. ∎
+
+**Definition (`predSet`).** For $x \in \mathbf{P}\omega$, $\mathrm{predSet}(x) = \{k \in \omega \mid k + 1 \in x\}$ (Table 2’s $x - 1$ on sets).
+
+**Definition (`succSet`).** For $x \in \mathbf{P}\omega$, $\mathrm{succSet}(x) = \{k \in \omega \mid \exists n \in x.\, k = n + 1\}$ (Table 2’s $x + 1$ on sets).
+
+**Theorem (`e_one`).** The standard dense singleton $e_1$ satisfies $e_1 = \{0\}$.
+
+*Proof.* $e_1 = e(2^0) = \{0\}$ by the definition of $e$. ∎
+
+**Definition (`envSet`).** For an environment $\rho : \omega \to \mathbf{P}\omega$, a variable index $i$, and a value $v \in \mathbf{P}\omega$, $\mathrm{envSet}\,\rho\,i\,v$ is the environment that agrees with $\rho$ except at $i$, where it is $v$ (formally, a single-point update $\rho[i \mapsto v]$).
+
+**Theorem (`envSet.comm`).** If $i \neq j$, then for all $\rho$, $v$, $w$,
+$$\mathrm{envSet}(\mathrm{envSet}\,\rho\,i\,v)\,j\,w = \mathrm{envSet}(\mathrm{envSet}\,\rho\,j\,w)\,i\,v.$$
+
+*Proof.* Extensionality on indices; the two updates commute when $i \neq j$. ∎
+
+**Definition (`Kcomb`).** $\mathrm{Kcomb} = \mathbf{graph}(\lambda x.\,\mathbf{graph}(\lambda y.\,x))$, the graph of the $K$ combinator.
+
+**Definition (`zeroC`).** $\mathrm{zeroC} = \mathrm{ofNat}\,0$, the denotation of the constant $0$.
+
+**Definition (`predC`).** $\mathrm{predC} = \mathbf{graph}(\mathrm{predSet})$, the graph of predecessor on sets.
+
+**Definition (`sucC`).** $\mathrm{sucC} = \mathbf{graph}(\mathrm{succSet})$, the graph of successor on sets.
+
+**Definition (`rename`).** For distinct variable indices treated as a rename $i \leadsto j$, $\mathrm{rename}\,i\,j : \mathrm{Term} \to \mathrm{Term}$ replaces free occurrences of variable $i$ by $j$ and leaves other constructors unchanged; on $\mathrm{lam}(k,\tau)$ the subterm $\tau$ is renamed only when $k \neq i$ (so bound variables are not captured).
+
+**Theorem (`triangle_eq_zero`).** If $\mathrm{triangle}(w) = 0$, then $w = 0$.
+
+*Proof.* For $w = n + 1$, the triangular number $T(n+1) = (n+1)(n+2)/2$ is positive, contradicting $T(w) = 0$. ∎
+
+**Theorem (`pair_zero_zero`).** $\mathrm{pair}(0,0) = 0$.
+
+**Theorem (`pair_one_zero`).** $\mathrm{pair}(1,0) = 1$.
+
+**Theorem (`pair_eq_right`).** If $\mathrm{pair}(n,m) = m$, then $n = 0$ and $m = 0$.
+
+*Proof.* From $\mathrm{pair}(n,m) = m$ and the identity $\mathrm{pair}(n,m) = \mathrm{triangle}(n+m) + m$, deduce $\mathrm{triangle}(n+m) = 0$, hence $n + m = 0$ by `triangle_eq_zero`, and therefore $n = m = 0$. ∎
+
+**Theorem (`eq_2_5`).** Scott’s equation (2.5):
 $$\mathrm{succSet}(\mathrm{ofNat}\,6 \cup \mathrm{ofNat}\,10) = \mathrm{ofNat}\,7 \cup \mathrm{ofNat}\,11.$$
-`eq_2_6` is the partiality of subtraction on $0$: $\mathrm{predSet}(\mathrm{ofNat}\,0) = \bot$.
 
-**Finite witnesses on $\omega$.** For $a \subseteq \omega$, if $a$ is nonempty then `exists_least_mem` gives a least $k \in a$; dually, if some integer is missing from $a$ then `exists_least_not_mem` gives the least $k \notin a$ with every smaller index in $a$. These lemmas support arguments that inspect only finitely many values of a set.
+*Proof.* Extensionality on membership; successor on a singleton $\{n\}$ is $\{n+1\}$, and union distributes over the operation. ∎
+
+**Theorem (`eq_2_6`).** Scott’s equation (2.6): $\mathrm{predSet}(\mathrm{ofNat}\,0) = \bot$.
+
+*Proof.* No $k$ satisfies $k + 1 \in \{0\}$. ∎
+
+**Lemma (`exists_least_mem`).** If $a \subseteq \omega$ is nonempty, there exists $k \in a$ such that $k$ is minimal in $a$ (every $i < k$ satisfies $i \notin a$).
+
+*Proof.* Strong induction on the witness $n \in a$: either $n$ is already minimal below $n$, or some smaller element of $a$ yields a minimal element by the induction hypothesis. ∎
+
+**Lemma (`exists_least_not_mem`).** If $a \subseteq \omega$ is not all of $\omega$ (equivalently, some $k \notin a$), there exists $k \notin a$ minimal with that property (every $i < k$ satisfies $i \in a$).
+
+*Proof.* Dual to `exists_least_mem`, using strong induction on a witness $n \notin a$. ∎

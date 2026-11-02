@@ -12,15 +12,9 @@ The tip asserts that the sharp of a finitary projection is again a finitary proj
 
 Develops the sharp construction and shows it yields a finitary projection.
 
-**[ASharp.lean](ASharp.lean)**
-
-@import "ASharp.lean"
  — `aSharp` projection/computability companions and Ex 8.25 closing
-
-@import "ASharp_more.lean"
 
 The tip then assembles those tools into Scott’s statement.
 
  — `exercise_8_21`
 
-@import "Exercise_8_21.lean"

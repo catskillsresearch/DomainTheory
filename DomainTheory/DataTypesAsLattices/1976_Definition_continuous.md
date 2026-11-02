@@ -1,9 +1,14 @@
 # Definition (continuous)
 
 @import "1976_Definition_continuous.english" {code_block=false}
+**[DataTypesAsLattices/Continuous/scottPiece.lean](DomainTheory/DataTypesAsLattices/Continuous/scottPiece.lean)**
 
-**[DataTypesAsLattices/Continuous/IsScottContinuous.lean](Continuous/IsScottContinuous.lean)**
+@import "Continuous/scottPiece.lean"
+**[DataTypesAsLattices/Continuous/scottUnion.lean](DomainTheory/DataTypesAsLattices/Continuous/scottUnion.lean)**
 
-@import "Continuous/IsScottContinuous.lean"
+@import "Continuous/scottUnion.lean"
+**[DataTypesAsLattices/Continuous/mem_scottUnion.lean](DomainTheory/DataTypesAsLattices/Continuous/mem_scottUnion.lean)**
+
+@import "Continuous/mem_scottUnion.lean"
 
 <p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-01) — <a href="1976_REVISION.md">1976 revision progress</a></p>

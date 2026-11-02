@@ -1,4 +1,7 @@
 # Exercise 8.12
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/deltaPair.lean](deltaPair.lean)**
+
+@import "deltaPair.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/IsComputableSplit.lean](IsComputableSplit.lean)**
 
 @import "IsComputableSplit.lean"
@@ -21,9 +24,6 @@
 
 @import "VComputablePresentation.lean"
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/deltaPair.lean](deltaPair.lean)**
-
-@import "deltaPair.lean"
 **EXERCISE 8.12.** Generalize the notation $2X + 1$ for subsets $X \subseteq \mathbb{N}$ to sets of the form
 
 $$2^k X + \ell, \quad \text{where } \ell < 2^k.$$
@@ -58,15 +58,11 @@ Given two positive, difference-closed, atomless neighbourhood systems with enume
 
  — difference-closure / no-minimal apparatus, atom pairing, and `isomorphic_812c`
 
-@import "domainIso812c.lean"
-
 ### Abstract `E`-side atoms
 
 The one-sided atom apparatus against an abstract neighbourhood system `E` (the `atomU` analogue) lives under `atomE`, with Pref-folded companions `atomE.zero`, `atomE.succ`, `atomE.congr`, `atomE.invariant`, …
 
  — `atomE`, `YseqE`, and Pref-folded `atomE.xxx` lemmas
-
-@import "atomE.lean"
 
 ### Computable presentation predicates
 
@@ -74,19 +70,13 @@ The data-carrying structures for computable difference, split, union, and bisect
 
  — `IsComputableDiff` and Diff-side deciders
 
-@import "IsComputableDiff.lean"
-
  — `IsComputableSplit`
 
 @import "IsComputableSplit.lean"
 
  — `IsComputableUnion` and `combineFound2`
 
-@import "IsComputableUnion.lean"
-
  — `ComputableBisection` and bisection-derived splits
-
-@import "ComputableBisection.lean"
 
 ### Effective isomorphism (8.12(d))
 
@@ -94,15 +84,11 @@ The same back-and-forth is carried out on computable presentations: coded atom s
 
  — coded pairing, primrec witnesses, and `effectiveIso812d`
 
-@import "effectiveIso812d.lean"
-
 ### Computable split of $U$ against $V$ (8.12(e))
 
 With `U`’s computable difference and $V$’s bisection in hand, `splitX812e` is the concrete `IsComputableSplit` of $U$ probing $V$ (`isComputableSplit.«812e»`).
 
  — `U_isComputableDiff`, `splitX812e`, and `isComputableSplit.«812e»`
-
-@import "splitX812e.lean"
 
 ### Symmetric split and UV assembly (8.12(f)–(g))
 
@@ -110,10 +96,7 @@ The mirror split `splitX812f` ( $V$ probing $U$ via `UBisection2`), both `SplitS
 
  — `«812f»`, `hxSplit812e`/`hySplit812f`, unions, and `effectiveIso812_UV`
 
-@import "effectiveIso812_UV.lean"
-
 The tip then simply pairs effective givenness of $V$ with that isomorphism, which is Exercise 8.12 in Scott’s sense.
 
  — Scott tip `exercise_8_12`
 
-@import "Exercise_8_12.lean"

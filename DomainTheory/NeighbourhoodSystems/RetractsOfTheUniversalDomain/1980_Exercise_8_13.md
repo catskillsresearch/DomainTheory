@@ -23,4 +23,3 @@ The tip then assembles those tools into Scott’s statement.
 
  — `exercise_8_13`
 
-@import "Exercise_8_13.lean"

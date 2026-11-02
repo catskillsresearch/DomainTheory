@@ -14,6 +14,3 @@ $$
 N^* \cong N \oplus (N \otimes N^*).
 $$
 
-**[Exercise_6_22.lean](Exercise_6_22.lean)**
-
-@import "Exercise_6_22.lean"

@@ -20,6 +20,3 @@ $$
 
 for all $x \in |D_0|$.)
 
-**[Exercise_2_13.lean](Exercise_2_13.lean)**
-
-@import "Exercise_2_13.lean"

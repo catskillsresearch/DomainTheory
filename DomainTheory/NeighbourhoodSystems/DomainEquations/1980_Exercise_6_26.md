@@ -12,6 +12,3 @@ What is
 
 $$\mathcal{D}_\perp \otimes \mathcal{E}_\perp \cong \ ??$$
 
-**[Exercise_6_26.lean](Exercise_6_26.lean)**
-
-@import "Exercise_6_26.lean"

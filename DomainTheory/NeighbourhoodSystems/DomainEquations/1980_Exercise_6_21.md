@@ -12,6 +12,3 @@ $$
 
 Generalize all of $+$, $\times$, $\oplus$, $\otimes$ to combinations of several terms, not just the binary sums and products.
 
-**[Exercise_6_21.lean](Exercise_6_21.lean)**
-
-@import "Exercise_6_21.lean"

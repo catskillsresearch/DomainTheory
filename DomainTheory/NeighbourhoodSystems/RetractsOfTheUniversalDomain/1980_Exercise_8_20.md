@@ -14,11 +14,7 @@ The tip asserts $D \trianglelefteq D\times D$ and $D \trianglelefteq D\to D$ for
 
 Proves the unconditional self-embeddings $D \trianglelefteq D\times D$ and $D \trianglelefteq D\to D$.
 
-**[DiagonalRetracts.lean](DiagonalRetracts.lean)**
-
-@import "DiagonalRetracts.lean"
 The tip then assembles those tools into Scott’s statement.
 
  — `exercise_8_20`
 
-@import "Exercise_8_20.lean"

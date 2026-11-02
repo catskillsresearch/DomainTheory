@@ -10,6 +10,3 @@
 
 @import "fix.lean"
 
-**[DataTypesAsLattices/FixedPoint/iterateBot_mono.lean](iterateBot_mono.lean)**
-
-@import "iterateBot_mono.lean"

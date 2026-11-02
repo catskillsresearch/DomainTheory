@@ -8,6 +8,3 @@ $$
 
 The principal filters form what we shall call the *finite elements* of the domain $|\mathcal{D}|$. $\square$
 
-**[principal.lean](principal.lean)**
-
-@import "principal.lean"
