@@ -4,7 +4,7 @@
 
 @import "1976_Computability_and_definability.mermaid"
 
-- [Minimal and maximal extension](1976_Extension.md)
+- [Minimal and maximal extension](1976_Extension.md) ✓
 - [Meaning](1976_Meaning.md)
 - [LAMBDA](1976_LAMBDA.md)
 - [Theorem 2.1](1976_Theorem_2_1.md)

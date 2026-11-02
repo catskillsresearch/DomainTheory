@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+import Mathlib.Data.Set.Insert
 
 @[expose] public section
 

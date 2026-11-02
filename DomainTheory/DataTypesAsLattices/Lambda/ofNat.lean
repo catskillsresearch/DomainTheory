@@ -1,6 +1,7 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
+public import DomainTheory.DataTypesAsLattices.Pomega.Pomega
+import Mathlib.Tactic.Finiteness.Attr
 
 @[expose] public section
 

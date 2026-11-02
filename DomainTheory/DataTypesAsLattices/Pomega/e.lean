@@ -3,7 +3,6 @@ module
 public import DomainTheory.DataTypesAsLattices.Pomega.Pomega
 public import Mathlib.Algebra.Group.Nat.Defs
 import Mathlib.Algebra.GroupWithZero.Nat
-public import Aesop.BuiltinRules
 public import Mathlib.Basic.Finite.Defs
 import Mathlib.Data.Set.Finite.Basic
 
