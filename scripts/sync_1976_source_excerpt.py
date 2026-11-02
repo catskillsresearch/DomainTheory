@@ -366,7 +366,7 @@ def update_hub_tocs() -> None:
         [
             '@import "1976_LAMBDA.mermaid"',
             "",
-            "- [The language LAMBDA](1976_The_language_LAMBDA.md)",
+            "- [The language LAMBDA](1976_The_language_LAMBDA.md) ✓",
             "- [Table 2 denotations in $\\mathbf{P}\\omega$](1976_Table_2_denotations.md)",
             "- [Application and $\\lambda$-abstraction](1976_Table_2_application.md)",
             "- [Sample equations (2.5) and (2.6)](1976_Sample_equations_2_5_2_6.md)",
@@ -606,33 +606,29 @@ def main() -> None:
 
         lambda_hub = DT / "Lambda/1976_Computability_and_definability.md"
         if lambda_hub.is_file():
-            lean = preserve_lean_blocks(lambda_hub)
-            toc = [
-                "**Historical note.** The language LAMBDA is Scott's. Plotkin and Rogers already used graphs, application, and conversion; the abstraction operation is what this section supplies.",
-                "",
-                '@import "1976_Computability_and_definability.mermaid"',
-                "",
-                "- [Minimal and maximal extension](1976_Extension.md) ✓",
-                "- [Meaning](1976_Meaning.md) ✓",
-                "- [$\\lambda$-calculus as a formal language](1976_LAMBDA.md)",
-                "- [Theorem 2.1 — the continuity theorem](1976_Theorem_2_1.md)",
-                "- [Theorem 2.2 — the conversion theorem](1976_Theorem_2_2.md)",
-                "- [Theorem 2.3 — the reduction theorem](1976_Theorem_2_3.md)",
-                "- [Theorem 2.4 — the combinator theorem](1976_Theorem_2_4.md)",
-                "- [The combinator Y](1976_Combinator_Y.md)",
-                "- [Theorem 2.5 — the first recursion theorem](1976_Theorem_2_5.md)",
-                "- [The graph model](1976_Graph_model.md)",
-                "- [Sequences](1976_Sequences.md)",
-                "- [Distributive functions](1976_Distributive_functions.md)",
-                "- [The definability theorem](1976_The_definability_theorem.md)",
-                "- [A law of Y](1976_Law_of_Y.md)",
-                "",
-            ]
-            write_note_md(
+            patch_md_toc(
                 lambda_hub,
-                lambda_hub.with_suffix(".english"),
-                toc,
-                lean,
+                [
+                    "**Historical note.** The language LAMBDA is Scott's. Plotkin and Rogers already used graphs, application, and conversion; the abstraction operation is what this section supplies.",
+                    "",
+                    '@import "1976_Computability_and_definability.mermaid"',
+                    "",
+                    "- [Minimal and maximal extension](1976_Extension.md) ✓",
+                    "- [Meaning](1976_Meaning.md) ✓",
+                    "- [$\\lambda$-calculus as a formal language](1976_LAMBDA.md)",
+                    "- [Theorem 2.1 — the continuity theorem](1976_Theorem_2_1.md)",
+                    "- [Theorem 2.2 — the conversion theorem](1976_Theorem_2_2.md)",
+                    "- [Theorem 2.3 — the reduction theorem](1976_Theorem_2_3.md)",
+                    "- [Theorem 2.4 — the combinator theorem](1976_Theorem_2_4.md)",
+                    "- [The combinator Y](1976_Combinator_Y.md)",
+                    "- [Theorem 2.5 — the first recursion theorem](1976_Theorem_2_5.md)",
+                    "- [The graph model](1976_Graph_model.md)",
+                    "- [Sequences](1976_Sequences.md)",
+                    "- [Distributive functions](1976_Distributive_functions.md)",
+                    "- [The definability theorem](1976_The_definability_theorem.md)",
+                    "- [A law of Y](1976_Law_of_Y.md)",
+                    "",
+                ],
             )
 
         update_hub_tocs()

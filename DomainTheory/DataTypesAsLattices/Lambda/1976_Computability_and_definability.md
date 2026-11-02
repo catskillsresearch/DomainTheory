@@ -18,5 +18,3 @@
 - [Distributive functions](1976_Distributive_functions.md)
 - [The definability theorem](1976_The_definability_theorem.md)
 - [A law of Y](1976_Law_of_Y.md)
-
-@import "1976_Computability_and_definability.english" {code_block=false}
