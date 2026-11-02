@@ -59,3 +59,17 @@ To understand sums and other facts about retracts, consider the least fixed poin
 $$(4.38) \quad \mathbf{tree} = \mathbf{nil} \oplus (\mathbf{tree} \otimes \mathbf{tree}).$$
 
 To be certain that **tree** is a retract, we need a general theorem:
+
+*Proofs of Theorems 4.3–4.5.* We will not give full details as all the parts of these theorems are direct calculations. Consider by way of example Theorem 4.3(i). We find:
+
+$$(a \circ\to b) \circ (a \circ\to b) = \lambda u.\, b \circ (b \circ u \circ a) \circ a$$
+$$= \lambda u.\, b \circ u \circ a$$
+$$= a \circ\to b,$$
+
+provided that $a$ and $b$ are retracts. A very similar computation would verify part (iv), if one writes out the composition:
+
+$$(a \circ\to b') \circ (f \circ\to f') \circ (b \circ\to a')$$
+
+and uses the equations:
+
+$$f = b \circ f \circ a \quad \text{and} \quad f' = b' \circ f' \circ a'.$$

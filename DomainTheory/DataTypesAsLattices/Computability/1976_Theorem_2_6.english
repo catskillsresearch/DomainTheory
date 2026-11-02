@@ -7,3 +7,21 @@
 *(iii) $\lambda x_0 \lambda x_1 \cdots \lambda x_{k-1}.\, f(x_0)(x_1) \cdots (x_{k-1})$ is LAMBDA-definable.*
 
 <!-- page 15 -->
+
+*Proof of Theorem 2.6.* In case of a function of several variables, we remark:
+
+$$\lambda x_0 \lambda x_1 \cdots \lambda x_{k-1}.\, f(x_0)(x_1) \cdots (x_{k-1})$$
+
+$$= \{(n_0, (n_1, (\cdots, (n_{k-1}, m) \cdots))) \mid m \in f(e_{n_0})(e_{n_1}) \cdots (e_{n_{k-1}})\}.$$
+
+This makes the implication from (i) to (ii) obvious. Conversely, if a graph $u$ is r.e., then from the definition of application we have:
+
+$$m \in u(e_{n_0})(e_{n_1}) \cdots (e_{n_{k-1}}) \quad \text{iff} \quad (n_0, (n_1, (\cdots, (n_{k-1}, m) \cdots))) \in u,$$
+
+which is r.e. in $m, n_0, n_1, \dots, n_{k-1}$. Therefore (i) and (ii) are equivalent.
+
+We have already proved that (ii) implies (iii). For the converse we have only to show that all LAMBDA-definable sets are r.e. For this argument we could take advantage of the combinator theorem, (Theorem 2.4). Each of the six combinators are r.e., and there is no problem of showing that if $u$ and $x$ are r.e., then so is $u(x)$; because it is defined in such an elementary way with existential and bounded universal number quantifiers and with membership in $u$ and in $x$ occurring positively. Explicitly we have:
+
+$$m \in u(x) \quad \text{iff} \quad \exists e_n \subseteq x.\, (n, m) \in u$$
+
+$$\quad \text{iff} \quad \exists n\, \forall m < n\, [[m \in e_n \text{ implies } m \in x] \text{ and } (n, m) \in u].$$

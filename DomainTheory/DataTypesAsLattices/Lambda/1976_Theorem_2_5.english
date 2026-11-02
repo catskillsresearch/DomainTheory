@@ -1,3 +1,22 @@
 **THEOREM 2.5 (The first recursion theorem).** *If $u$ is the graph of a continuous function $f$, then $\mathbf{Y}(u) = \mathbf{fix}(f)$, the least fixed point of $f$.*
 
 There are two points to note here: the fixed point is LAMBDA-definable if $f$ is; and $\mathbf{Y}$ defines a continuous operator. The word “recursion” is attached to the theorem because fixed points are employed to solve recursion equations. It would not be correct to call the fixed-point theorem (Theorem 1.4) the recursion theorem since it only shows that fixed points exist and not how they are definable in a language. The *second* recursion theorem (in Kleene’s terminology) is related, but it involves Gödel numbers as introduced in § 3.
+
+*Proof of Theorem 2.5.* The well-known calculation shows that we have from (2.8):
+
+$$\mathbf{Y}(u) = (\lambda x.\, u(x(x)))(\lambda x.\, u(x(x))) = u(\mathbf{Y}(u)).$$
+
+Thus $\mathbf{Y}(u)$ is a fixed point of the function $u(x)$. What is needed is the proof to show that it is the least one.
+
+Let $d = \lambda x.\, u(x(x))$ and let $a$ be any other fixed point of $u(x)$. To show, as we must, that $d(d) \subseteq a$, it is enough to show that $e_l \subseteq d$ always implies $e_l(e_l) \subseteq a$; because by continuity we have:
+
+$$d(d) = \bigcup \{e_l(e_l) \mid e_l \subseteq d\}.$$
+
+By way of induction, suppose that this implication holds for all $n < l$. Assume that $e_l \subseteq d$ and that $m \in e_l(e_l)$. We will want to use the induction hypothesis to show that $m \in a$. By the definition of application, there exists an integer $n$ such that $(n, m) \in e_l$ and $e_n \subseteq e_l$. But $n \le (n, m) < l$, and $e_n \subseteq d$. By the hypothesis, we have $e_n(e_n) \subseteq a$. Note that $(n, m) \in d$ also, and that $d$ is defined by $\lambda$-abstraction; thus,
+
+<!-- page 51 -->
+
+
+$m \in d(e_n)$ by definition. By monotonicity $u(e_n(e_n)) \subseteq u(a) = a$; therefore $m \in a$. This shows that $e_l(e_l) \subseteq a$, and the inductive proof is complete.
+
+*Remark.* Note that we did not actually use the fixed-point theorem in the proof, but we did use rather special properties of the pairing $(n, m)$ and the finite sets $e_l$.

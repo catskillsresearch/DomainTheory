@@ -11,3 +11,17 @@
 (v) if $f : a \circ\to b$ and $f' : b \circ\to c$, then $f' \circ f : a \circ\to c$.
 
 Parts (i), (iii), (iv), and (v) can be proved using (4.8) and (4.11) in an algebraic (formal) fashion. It is (ii) that tells us what it all means: the range of $a \circ\to b$ consists exactly of those functions which are restricted to (the range of) $a$ and which have values in $b$. So we can read $u : a \circ\to b$ in the normal way: $u$ is a (continuous) mapping from $a$ into $b$. In technical jargon, we can say that the (strict) retracts and continuous functions form a *category*. In fact, it is equivalent to the category of separable continuous lattices and continuous maps. In this context, (iv) shows that $\circ\to$ operates not only on spaces (retracts) but also on maps: it is a functor contravariant in the first argument and covariant in the second. Further categorical properties will emerge.
+
+*Proofs of Theorems 4.3–4.5.* We will not give full details as all the parts of these theorems are direct calculations. Consider by way of example Theorem 4.3(i). We find:
+
+$$(a \circ\to b) \circ (a \circ\to b) = \lambda u.\, b \circ (b \circ u \circ a) \circ a$$
+$$= \lambda u.\, b \circ u \circ a$$
+$$= a \circ\to b,$$
+
+provided that $a$ and $b$ are retracts. A very similar computation would verify part (iv), if one writes out the composition:
+
+$$(a \circ\to b') \circ (f \circ\to f') \circ (b \circ\to a')$$
+
+and uses the equations:
+
+$$f = b \circ f \circ a \quad \text{and} \quad f' = b' \circ f' \circ a'.$$

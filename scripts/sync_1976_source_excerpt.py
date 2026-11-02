@@ -118,7 +118,6 @@ SLICE_NOTES: list[tuple[str, str | None]] = [
     ("Functionality/1976_Theorem_7_2.md", None),
     ("Functionality/1976_Theorem_7_3.md", None),
     ("Functionality/1976_Theorem_7_4.md", None),
-    ("1976_Appendix_A.md", "1976_Appendix_A.english"),
     ("1976_Appendix_B.md", "1976_Appendix_B.english"),
 ]
 
@@ -132,7 +131,6 @@ ANCHOR_OVERRIDE: dict[str, str] = {
     "Pomega/1976_e_density.md": "Topologically speaking",
     "Pomega/1976_pair.md": "To formulate the definition, we introduce a standard enumeration",
     "Lambda/1976_Computability_and_definability.md": "**2. Computability and definability.**",
-    "1976_Appendix_A.md": "**Appendix A.",
     "1976_Appendix_B.md": "**Appendix B.",
 }
 
@@ -372,7 +370,6 @@ def update_hub_tocs() -> None:
 - [Closure operations and algebraic lattices](Closures/1976_Closure_operations_and_algebraic_lattices.md)
 - [Subsets and their classification](Classification/1976_Subsets_and_their_classification.md)
 - [Total functions and functionality](Functionality/1976_Total_functions_and_functionality.md)
-- [Appendix A](1976_Appendix_A.md)
 - [Appendix B](1976_Appendix_B.md)
 """,
         encoding="utf-8",
@@ -537,10 +534,7 @@ def main() -> None:
         write_note_md(tgt.md, tgt.english, extra, lean)
 
     if not args.dry_run:
-        for name, title in (
-            ("1976_Appendix_A.md", "Appendix A"),
-            ("1976_Appendix_B.md", "Appendix B"),
-        ):
+        for name, title in (("1976_Appendix_B.md", "Appendix B"),):
             p = DT / name
             if not p.is_file():
                 p.write_text(f"# {title}\n\n", encoding="utf-8")

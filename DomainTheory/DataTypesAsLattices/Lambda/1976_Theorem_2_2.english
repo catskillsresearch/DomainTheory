@@ -1,3 +1,23 @@
 Once that is proved, we can use Theorem 1.2 to establish:
 
 **THEOREM 2.2** (The conversion theorem). *The three basic principles $(\alpha)$, $(\beta)$, $(\xi)$ of $\lambda$-conversion are all valid in the model.*
+
+*Proof of Theorem 2.2.* The reason behind this result is the restriction to continuous functions. Theorem 2.1 shows that we cannot violate the restriction by giving definitions in LAMBDA, and the graph theorem (Theorem 1.2) shows that continuous functions correspond perfectly with their graphs.
+
+The verification of $(\alpha)$ of Table 1 is obvious as the '$x$' in '$\lambda x.\,\tau$' is a bound variable. (Care should be taken in making the proviso that '$y$' is not otherwise free in $\tau$.) The same would of course hold for any other pair of variables. We do not bother very much about alphabetic questions.
+
+The verification of $(\beta)$ is just a restatement of Theorem 1.2(i). Let $\tau$ define a function $f$ (of $x$). Then by definition $f(x) = \tau$ and $\lambda x.\,\tau = \mathbf{graph}(f)$. Also $\mathbf{fun}(u)(x)$ in the notation of Theorem 1.2 is the same as the binary operation $u(x)$ in the notation of LAMBDA. Thus in Theorem 1.2(i) if we apply both sides to $y$ we get nothing else than $(\beta)$.
+
+<!-- page 50 -->
+
+Half of property $(\xi)$ is already implied by $(\beta)$: the implication from left to right. (Just apply both sides to $x$.) In the other direction, $\forall x.\,\tau = \sigma$ means that $\tau$ and $\sigma$ define the *same* function of $x$; thus, the two graphs must be equal.
+
+*Remarks on other laws.* The failure of $(\eta)$ simply means that not every set in $\mathbf{P}\omega$ is the graph of a function. Condition (iii) of Theorem 1.2 is equivalent to saying that $u = \lambda x.\, u(x)$, in other words, $u$ is the graph of some function if and only if it is the graph of the function determined by $u$.
+
+Law $(\mu)$ is the monotone property of application (in both variables); therefore, $(\mu)$ and $(\xi)$ together imply $(\xi^*)$ from left to right. Suppose that $\forall x.\,\tau \subseteq \sigma$; then clearly:
+
+$$\{(n, m) \mid m \in \tau[e_n / x]\} \subseteq \{(n, m) \mid m \in \sigma[e_n / x]\},$$
+
+which gives $(\xi^*)$ from right to left.
+
+There are, by the way, other laws valid in the model, as explained in the later results.

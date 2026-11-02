@@ -22,3 +22,5 @@ Here $\sqsupset$ is the *doubly strict conditional* defined by
 $$(4.4) \quad z \sqsupset x, y = z \supset (z \supset x, \top), (z \supset \top, y),$$
 
 which has the property that if $z$ is both zero and positive, then it takes the value $\top$ instead of the value $x \cup y$.
+
+**For Section 4.** The notion of a *continuous lattice* is due to Scott (1970/71) and we shall not review all the facts here. One special feature of these lattices is that the lattice operations of meet and join ($\sqcap$ and $\sqcup$) are continuous (that is, commute with directed sups). As topological spaces, they can be characterized as those $T_0$-spaces satisfying the extension theorem (which we proved for $\mathbf{P}\omega$ in Theorem 1.5).

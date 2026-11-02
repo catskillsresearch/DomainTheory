@@ -3,3 +3,13 @@
 $$\bar{f}(y) = \bigcup \{ \bigcap \{ f(x) \mid x \in X \cap U \} \mid y \in U \},$$
 
 *where $y \in Y$, and $U$ ranges over the open subsets of $Y$.*
+
+*Proof of Theorem 1.5.* The function $\bar{f}$ is clearly well-defined even when $y \in Y$ has a neighborhood $U$ where $X \cap U = \varnothing$: in that case $\bar{f}(y) = \omega$ by convention on the meaning of $\bigcap$ in $\mathbf{P}\omega$. In case $x \in X$, it is obvious that $\bar{f}(x) \subseteq f(x)$. For the opposite inclusion, suppose that $m \in f(x)$. Because $f$ is continuous and $\{z \mid m \in z\}$ is open in $\mathbf{P}\omega$, there is an open subset $V$ of $X$ such that $x' \in V$ always implies that $m \in f(x')$. But $X$ is a subspace of $Y$, so $V = X \cap U$ for some open subset $U$ of $Y$. Thus we can see why $m \in \bar{f}(x)$. It remains to show that $\bar{f}$ is itself continuous.
+
+We must show that the inverse image under $\bar{f}$ of every open subset of $\mathbf{P}\omega$ is open in $Y$. But the open subsets of $\mathbf{P}\omega$ are unions of finite intersections of sets of the form $\{z \mid m \in z\}$. Thus it is enough to show that $\{y \mid m \in \bar{f}(y)\}$ is always open in $Y$. But this set equals $\bigcup \{U \mid m \in \bigcap \{f(x) \mid x \in X \cap U\}\}$, which being a union of open sets is open. Note that what we have proved is that $\bar{f}$ is continuous no matter what function $f$ is given; however, if $f$ is not continuous, then $\bar{f}$ cannot be an extension of $f$.
+
+For readers not as familiar with general topology we note that the idea of Theorem 1.5 can be turned into a *definition*. Suppose $X \subseteq \mathbf{P}\omega$ is a subset of $\mathbf{P}\omega$. It becomes a subspace with the relative topology. What are the continuous functions $f : X \to \mathbf{P}\omega$? From Theorem 1.5 we see that a necessary and sufficient condition is that $\bar{f} : \mathbf{P}\omega \to \mathbf{P}\omega$ be an extension of $f$. Thus for $x \in X$ we can write the equation $f(x) = \bar{f}(x)$ as a biconditional:
+
+$$m \in f(x) \quad \text{iff} \quad \exists e_n \subseteq x\;\forall x' \in X\; [e_n \subseteq x' \text{ implies } m \in f(x')],$$
+
+which is to hold for all $m \in \omega$. This form of the definition of continuity on a subspace is more complicated than the original definition, because in general $e_n \notin X$ and we cannot write $f(e_n)$.

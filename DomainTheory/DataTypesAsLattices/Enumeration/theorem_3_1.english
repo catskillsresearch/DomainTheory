@@ -13,3 +13,5 @@ The point of these auxiliary combinators concerns our Gödel numbering of the r.
 $$(3.7) \quad \mathbf{val} = \lambda k \in \omega.\, k \supset \mathbf{G},\, \mathbf{val}(\mathbf{op}(k - 1))(\mathbf{val}(\mathbf{arg}(k - 1))).$$
 
 This function accomplishes the enumeration as follows:
+
+Theorem 3.1 is obvious from the construction of $\mathbf{G}$, because $\mathbf{G}(\mathbf{G}) = 0$ and $\mathbf{G}(0)(0) = \mathbf{suc}$, and so the $\mathbf{G}(0)(i)$ give us all the other combinators.

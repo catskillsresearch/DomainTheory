@@ -13,3 +13,44 @@ As we have seen, $\{\mathbf{val}(n) \mid n \in \omega\}$ is an enumeration of al
 $$\mathbf{Deg}(a) = \{u(a) \mid u \in \mathbf{RE}\}.$$
 
 The set-theoretical inclusion is then the same as the partial ordering of degrees. What kind of a partially ordered set do we have?
+
+*Proof of Theorem 3.5.* The argument is essentially the original one of Myhill–Shepherdson. Suppose $p$ is computable, total and extensional. Define:
+
+$$q = \{(j, m) \mid m \in \mathbf{val}(p(\mathbf{fin}(j)))\},$$
+
+where $\mathbf{fin}$ is primitive recursive, and for all $j \in \omega$:
+
+$$\mathbf{val}(\mathbf{fin}(j)) = e_j.$$
+
+Certainly $q \in \mathbf{RE}$, and we will establish the theorem if we can prove “continuity”:
+
+$$\mathbf{val}(p(n)) = \bigcup \{\mathbf{val}(p(\mathbf{fin}(j))) \mid e_j \subseteq \mathbf{val}(n)\}.$$
+
+We proceed by contradiction. Suppose first we have a $k \in \mathbf{val}(p(n))$, where $k \notin \mathbf{val}(p(\mathbf{fin}(j)))$ whenever $e_j \subseteq \mathbf{val}(n)$. Pick $r$ to be a primitive recursive function whose range is *not* recursive. Define $s$, primitive recursive, so that for all $m \in \omega$:
+
+$$\mathbf{val}(s(m)) = \{j \in \mathbf{val}(n) \mid m \notin \{r(i) \mid i \leq j\}\}.$$
+
+The set $\mathbf{val}(n)$ must be infinite, because $p$ is extensional, and if $\mathbf{val}(n) = e_j = \mathbf{val}(\mathbf{fin}(j))$, then $k \notin \mathbf{val}(p(\mathbf{fin}(j))) = \mathbf{val}(p(n))$. Note that $\mathbf{val}(s(m))$, as a subset of the infinite set, is *finite* if $m$ is in the range of $r$; otherwise it is equal to $\mathbf{val}(n)$. Again by the extensionality of $p$ we see that $k \in \mathbf{val}(p(s(m)))$ if and only if $m$ is *not* in the range of $r$. But this puts an r.e. condition on $m$ equivalent to a non-r.e. condition, which shows there is no such $k$.
+
+For the second case suppose we have a $k \notin \mathbf{val}(p(n))$, where for a suitable $e_j \subseteq \mathbf{val}(n)$ it is the case that $k \in \mathbf{val}(p(\mathbf{fin}(j)))$. Define:
+
+$$t = \lambda m \in \omega.\, e_j \cup (\mathbf{val}(m) \supset \mathbf{val}(n), \mathbf{val}(n)).$$
+
+We have:
+
+$$t(m) = \begin{cases} e_j & \text{if } \mathbf{val}(m) = \bot; \\ \mathbf{val}(n) & \text{if not.} \end{cases}$$
+
+We choose $u$ primitive recursive, where:
+
+$$\mathbf{val}(u(m)) = t(m).$$
+
+By the choice of $k$, and by the extensionality of $p$, and by the fact that $\mathbf{val}(n) \neq e_j$,
+
+<!-- page 54 -->
+
+By the choice of $k$, and by the extensionality of $p$, and by the fact that $\mathbf{val}(n) \neq e_j$, we have:
+
+$$k \in \mathbf{val}(p(u(m))) \quad \text{iff} \quad t(m) = e_j$$
+$$\quad \text{iff} \quad \mathbf{val}(m) = \bot.$$
+
+But this is impossible, since one side is r.e. in $m$ and the other is not by Theorem 3.4. As both cases lead to contradiction, continuity is established and the proof is complete.

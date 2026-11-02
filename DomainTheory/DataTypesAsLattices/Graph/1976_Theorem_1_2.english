@@ -11,3 +11,9 @@
 (iii) *whenever $(k, m) \in u$ and $e_k \subseteq e_n$, then $(n, m) \in u$.*
 
 Besides functions of one variable we need to consider also functions of several variables. The official definition for one variable given above can be extended simply by saying $f(x, y, \dots)$ is continuous iff it is continuous in each of $x, y, \dots$. Those familiar with the product topology can prove that for our special positive topology on $\mathbf{P}\omega$ this is equivalent to being continuous on the product space (continuous in the variables jointly). Those interested only in elementary proofs can calculate out directly from the definition (with the aid of 1.1) that continuity behaves under combinations by substitution [as in: $f(g(x, y), h(y, x, y))$].
+
+*Proof of Theorem 1.2.* Equation (i) as a functional equation comes down to
+
+$$\{m \mid \exists e_n \subseteq x.\; m \in f(e_n)\} = f(x),$$
+
+which is just another way of writing the definition of continuity. Thus it is indeed true for all $x$. Next, inclusion (ii) means that if $(n, m) \in u$, then $\exists e_k \subseteq e_n.\; (k, m) \in u$. Clearly all we need to do is take $k = n$. If we also want the converse inclusion to hold, then what we need is condition (iii).

@@ -1,1 +1,17 @@
 **THEOREM 2.1** (The continuity theorem). *All LAMBDA definable functions are continuous.*
+
+*Proof of Theorem 2.1.* If we did not use the $\lambda$-notation, then all LAMBDA-definable functions would be obtained by substitution from the first five (cf. Table 2). Since they are all seen to be continuous, the result would then follow by the substitution theorem (Theorem 1.3). Bringing in $\lambda$-abstraction means that we have to combine Theorem 1.3 with this fact:
+
+**LEMMA.** *If $f(x, y, z, \cdots)$ is a continuous function of all its variables, then $\lambda x.\, f(x, y, z, \cdots)$ is a continuous function of the remaining variables.*
+
+*Proof.* It is enough to consider one extra variable. We compute from the definition of $\lambda$ in Table 2 as follows:
+
+$$\lambda x.\, f(x, y) = \{(n, m) \mid m \in f(e_n, y)\}$$
+
+$$= \{(n, m) \mid \exists e_k \subseteq y.\; m \in f(e_n, e_k)\}$$
+
+$$= \bigcup \{\{(n, m) \mid m \in f(e_n, e_k)\} \mid e_k \subseteq y\}$$
+
+$$= \bigcup \{\lambda x.\, f(x, e_k) \mid e_k \subseteq y\}.$$
+
+Thus $\lambda x.\, f(x, y)$ is continuous in $y$.

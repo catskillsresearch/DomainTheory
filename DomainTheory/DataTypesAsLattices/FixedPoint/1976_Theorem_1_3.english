@@ -1,1 +1,15 @@
 **THEOREM 1.3** (The substitution theorem). *Continuous functions of several variables on $\mathbf{P}\omega$ are closed under substitution.*
+
+*Proof of Theorem 1.3.* Substitution is generalized composition of functions of many variables with all possible identifications and permutations of the variables; however, as we are able to define continuity by separating the variables, the argument reduces to a few special cases. The first trick is to take advantage of monotonicity. Thus, suppose $f(x, y)$ is continuous in each of its variables. What can we say of $f(x, x)$, a very special case of substitution? We calculate
+
+$$f(x, x) = \bigcup \{f(e_n, x) \mid e_n \subseteq x\}$$
+
+$$= \bigcup \{f(e_n, e_m) \mid e_n \subseteq x,\; e_m \subseteq x\}.$$
+
+Then if we think of $e_k = e_n \cup e_m$ and realize that $f(e_n, e_m) \subseteq f(e_k, e_k)$, we see that
+
+$$f(x, x) = \bigcup \{f(e_k, e_k) \mid e_k \subseteq x\}.$$
+
+This means that $f(x, x)$ is continuous in $x$. This same argument works if other variables are present, as in the passage from $f(x, y, z, w)$ to $f(x, x, z, w)$. When an identification of more than two variables is required, as from $f(x, y, z, w)$ to $f(x, x, x, x)$, the principle is just applied several times.
+
+Finally, to show that $f(g(x, y), h(y, x, y))$ is continuous, it is sufficient to show that $f(g(x, y), h(z, u, v))$ is continuous in each of its variables separately. By simply overlooking the remaining variables, this comes down to showing that $f(g(x))$ is continuous if $f$ and $g$ are. But the proof for ordinary composition is very easy with the aid of the characterization theorem (Theorem 1.1).

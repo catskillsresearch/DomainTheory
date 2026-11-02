@@ -92,3 +92,5 @@ We have discussed the category of retracts and continuous maps, but if they are 
 the universal space $\mathbf{P}\omega$ and by *defining* a notion when required—if possible with the aid of LAMBDA. This makes it possible to give all the necessary definitions and to prove the theorems without at first having to worry about axiomatic problems.
 
 **5. Closure operations and algebraic lattices.**
+
+The main point of the proof of Theorem 4.6 has already been given in the text.

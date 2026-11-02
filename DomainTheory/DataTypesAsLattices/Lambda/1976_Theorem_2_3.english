@@ -5,3 +5,9 @@ By "model" here we of course understand the interpretation of the language where
 $$f(x_0, x_1, \cdots, x_{k-1}) = u(x_0)(x_1) \cdots (x_{k-1}),$$
 
 *where $u$ is a suitably chosen element of $\mathbf{P}\omega$.*
+
+*Proof of Theorem 2.3.* This is a standard result in combinatory logic. We have only to put:
+
+$$u = \lambda x_0 \lambda x_1 \cdots \lambda x_{n-1}.\, f(x_0, x_1, \cdots, x_{n-1}).$$
+
+That is, we use the iteration of the process of forming the graph of a continuous function. As each step (from the inside out) keeps everything continuous, we are sure that the equation of Theorem 2.3 will hold for iterated application.

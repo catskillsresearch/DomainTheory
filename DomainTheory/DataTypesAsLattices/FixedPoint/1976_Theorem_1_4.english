@@ -11,3 +11,19 @@ $$\mathbf{fix}(f) = \bigcup \{ f^n(\varnothing) \mid n \in \omega \},$$
 Actually **fix** is a *functional* with continuity properties of its own. We shall not give the required definitions here because they can be more easily derived from the construction of the model given in the next section.
 
 For those familiar with the abstract theory of topological spaces we give in conclusion two general facts about continuous functions with values in $\mathbf{P}\omega$ which indicate the scope and generality of our method.
+
+*Proof of Theorem 1.4.* This well-known fact holds for continuous functions on many kinds of chain-complete partial orderings; but $\mathbf{P}\omega$ illustrates the idea well enough. Suppose $f$ had a fixed point $x = f(x)$. Then since $\varnothing \subseteq x$ and $f$ is monotonic, we see that $f(\varnothing) \subseteq f(x) = x$. But then again, $f(f(\varnothing)) \subseteq f(x) = x$; and so by induction, $f^n(\varnothing) \subseteq x$. This proves that $\mathbf{fix}(f) \subseteq x$; and thus if $\mathbf{fix}(f)$ is a fixed point, it must be the least one. To prove that it is a fixed point, we need a fact that will often be useful:
+
+**LEMMA.** *If $x_n \subseteq x_{n+1}$ for all $n$, and if $f$ is continuous, then*
+
+$$f\!\left(\bigcup \{x_n \mid n \in \omega\}\right) = \bigcup \{f(x_n) \mid n \in \omega\}.$$
+
+<!-- page 48 -->
+
+*Proof.* By monotonicity, the inclusion holds in one direction. Suppose $e_m \subseteq f(\bigcup \{x_n \mid n \in \omega\})$. Then by Theorem 1.1 we have $e_m \subseteq f(e_k)$ for some $e_k \subseteq \bigcup \{x_n \mid n \in \omega\}$. Because $e_k$ is finite and the sequence is increasing, we can argue that $e_k \subseteq x_n$ for some $n$. But then $f(e_k) \subseteq f(x_n)$. This shows that $e_m \subseteq \bigcup \{f(x_n) \mid n \in \omega\}$ and proves the inclusion in the other direction. (*Exercise:* Does this property characterize continuous functions?)
+
+*Proof of Theorem 1.4 concluded.* Noting that $f^n(\varnothing) \subseteq f^{n+1}(\varnothing)$ holds for all $n$, we can calculate:
+
+$$f(\mathbf{fix}(f)) = \bigcup \{f(f^n(\varnothing)) \mid n \in \omega\} = \bigcup \{f^{n+1}(\varnothing) \mid n \in \omega\}.$$
+
+But this is just $\mathbf{fix}(f)$, since the only term left out is $f^0(\varnothing) = \varnothing$.

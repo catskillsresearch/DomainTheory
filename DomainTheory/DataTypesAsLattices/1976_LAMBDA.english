@@ -1,0 +1,51 @@
+
+
+**For Section 2.** Equation (2.1) defines a continuous function because it is a special case of Theorem 1.5, where we have been able to simplify the definition into cases because $\omega$ is a very elementary subset of $\mathbf{P}\omega$. Equation (2.2) gives a continuous function since the definition makes $\hat{p}$ distributive, as remarked in the text for finite unions, but it is just as easy to show that $\hat{p}$ distributes over arbitrary unions. The difference between a continuous $f$ and a distributive $\hat{p}$ is this: to find $m \in f(x)$ we need a finite subset $e_n \subseteq x$ with $m \in f(e_n)$; however, to find $m \in \hat{p}(x)$ we need only *one* element $n \in x$ with $m \in \hat{p}(\{n\}) = \hat{p}(n) = p(n)$. Continuous functions are generalizations of distributive functions. The generality is necessary. For example, in (2.3) we see another function $x; y$ distributive in each of its variables; but take care: the function $x; x$ is not distributive in $x$—there is no closure under substitution. This is just one reason why continuous functions are better. Another good example comes from (2.4) if you compare the functions $x$, $x + x$, $x + x + x$, etc.
+
+Equations (2.5)–(2.7) are very elementary. Note that $z \supset x, y$ is distributive in each of its variables. We could write: $z \supset x, y = \hat{p}(z)$, where $p(0) = x$ and $p(n + 1) = y$, to show that it is distributive in $z$.
+
+Equation (2.9) is proved easily from the definition of application; indeed $u(x)$ is distributive in $u$. Equation (2.10) is proved even more easily from the definition of $\lambda$-abstraction. For (2.11), we see that the inclusion from left to right would hold in general by monotonicity. In the other direction, suppose $m \in f(x) \cap g(x)$. Then for suitable $k$ and $l$ we have $(k, m) \in f$ and $e_k \subseteq x$, also $(l, m) \in g$ and $e_l \subseteq x$. Let $e_n = e_k \cup e_l \subseteq x$. Because $f$ and $g$ are graphs, we can say $(n, m) \in f \cap g$; and thus $m \in (f \cap g)(x)$. This is the only point where we require the assumption on graphs. Equation (2.12) follows directly from the definition of abstraction. For (2.13), which generalizes (2.9), we can also argue directly from the definition of application. In the case of intersection it is easy to find $u_n$ such that $0 \in u_n(\top)$ for all $n$, but $\bigcap \{u_n \mid n \in \omega\} = \bot$.
+
+Equation (2.14) is obvious because the least fixed point of the identity function must be $\bot$. A less mysterious definition would be $\bot = 0 - 1$, but the chosen one is more “logical”.
+
+For (2.15) we note that by definition:
+
+$$\lambda z.\, 0 = \{(n, m) \mid m \in 0\} = \{(n, 0) \mid n \in \omega\}.$$
+
+Because $0 = (0, 0)$ and $1 = (1, 0)$, we get the hint. Equation (2.16) makes use of $\cup$ for iteration. If $x = 0 \cup (x + 1)$, then $x$ must contain all integers; hence $x = \top$. The iteration for $\cap$ in (2.17) is more complex. The fundamental equation we need is:
+
+$$x \cap y = x \supset (y \supset 0, \bot),\, ((x - 1) \cap (y - 1)) + 1.$$
+
+This says to compute the intersection of two sets $x$ and $y$, we first test whether $0 \in x$. If so, then test whether $0 \in y$. If so, then we know $0 \in x \cap y$. In the meantime we begin testing $x$ for positive elements. If we could compute (by the same program) the intersection $(x - 1) \cap (y - 1)$, then we would get the positive elements of the intersection $x \cap y$ by adding one. This is a very slow program, but we can argue by induction that it gives us all the desired elements. Of course, $\cap$ is the least function satisfying this equation.
+
+In the case of (2.18) it is clear that we have:
+
+$$\lambda x.\, \bot = \{(n, m) \mid m \in \bot\} = \bot;$$
+
+$$\lambda x.\, \top = \{(n, m) \mid m \in \top\} = \top;$$
+
+because in the last every integer is a (number of a) pair. Suppose now that $a = \lambda x.\, a$ and $a \neq \top$. Let $k$ be the least integer where $k \notin a$. Now $k = (n, m)$ for some $n$ and $m$. If $m \in a$, then $(n, m) \in a = \lambda x.\, a$; hence $m \notin a$. But $m \leq k$ and $k$ is minimal; therefore, $m = k$. But this is only possible if $k = m = n = 0$. Suppose further $a \neq \bot$ and that $l$ is the least integer where $l \in a$. Now $l = (i, j)$ with $j \in a$ and $j \leq l$. So $j = l$ and $l = j = i = 0$. This contradiction proves that $a = \bot$ or $a = \top$.
+
+Equations (2.19)–(2.22) are definitions, and (2.23) is proved easily by induction on $i$. Equation (2.24) is also a definition. To prove (2.25) we note that
+
+<!-- page 52 -->
+
+$\{ u_i \mid i \in x \}$ is continuous (even: distributive) in $u$ and $x$. Thus, there is a continuous function $\mathbf{seq}(u)(x)$ giving this value. What is required is to prove that it is LAMBDA-definable. We see:
+
+$$\mathbf{seq}(u)(x) = \{n \in u_0 \mid 0 \in x\} \cup \{m \in \bigcup \{u_{i+1} \mid i+1 \in x\} \mid \exists k.\, k+1 \in x\}$$
+
+$$= x \supset u_0,\, \mathbf{seq}(\lambda t.\, u_{t+1})(x - 1);$$
+
+that is, $\mathbf{seq}$ satisfies the fixed-point equation for $\mathbf{\$}$. Thus $\mathbf{\$} \subseteq \mathbf{seq}$. To establish the other inclusion we argue by induction on $i$ for:
+
+$$\forall x, u.\, [i \in x \Rightarrow u_i \subseteq \mathbf{\$}(u)(x)]$$
+
+This is easy by cases using what we are given about $\mathbf{\$}$ in (2.24); it implies that $\mathbf{seq} \subseteq \mathbf{\$}$. Note that:
+
+$$\lambda n \in \omega.\, \tau = \lambda n \in \omega.\, \sigma \quad \text{iff} \quad \forall n \in \omega.\, \tau = \sigma.$$
+
+For primitive recursive functions, even of several variables, there is no trouble in transcribing into LAMBDA-notation any standard definition—especially as we can use the abstraction operator $\lambda n \in \omega$. If we recall that every r.e. set $a$ has the form:
+
+$$a = \{m \mid \exists n.\, p(n) = m + 1\},$$
+
+where $p$ is primitive recursive, we then see that $a = \hat{p}(\top) - 1$. This means that every r.e. set is LAMBDA-definable.

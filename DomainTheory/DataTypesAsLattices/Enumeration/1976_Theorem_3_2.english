@@ -25,3 +25,20 @@ and derive the equation for all $n \in \omega$:
 $$(3.12) \quad \mathbf{val}(\mathbf{num}(n)) = n.$$
 
 We note that $\mathbf{num}$ is a primitive recursive (total) function. The combinator $\mathbf{num}$ allows us now to effectively find a LAMBDA-definition, corresponding to a given LAMBDA-definable element $u$, of an element $v$ such that uniformly in the integer variable $n$ we have $\mathbf{val}(v(n)) = u(n)$. Further, $v$ is a primitive recursive (total) function. This is the technique involved in the proof of Kleene's well-known result:
+
+**For Section 3.** For the proof of (3.1) we distinguish cases. In case $x = y = \bot$, we note that $\mathbf{cond}(\bot)(\bot) = \bot$ and $\bot(\bot) = \bot$, so the equation checks in this case. Recall:
+
+$$\mathbf{cond}(x)(y) = \lambda z.\, z \supset x, y = \{(n, m) \mid m \in (e_n \supset x, y)\}.$$
+
+<!-- page 53 -->
+
+
+We can show $0 \notin \mathbf{cond}(x)(y)$. Note first $0 = (n, m)$ iff $n = 0 = m$; furthermore, $e_0 = \bot$ and $\bot \supset x, y = \bot$; but $0 \notin \bot$. Also we have:
+
+$$\mathbf{cond}(x)(y)(0) = x \quad \text{and} \quad \mathbf{cond}(x)(y)(1) = y;$$
+
+so if either $x \neq \bot$ or $y \neq \bot$, then $\mathbf{cond}(x)(y) \neq \bot$. In this case, $\mathbf{cond}(x)(y)$ must contain *positive* elements. The result now follows.
+
+Theorem 3.1 is obvious from the construction of $\mathbf{G}$, because $\mathbf{G}(\mathbf{G}) = 0$ and $\mathbf{G}(0)(0) = \mathbf{suc}$, and so the $\mathbf{G}(0)(i)$ give us all the other combinators.
+
+The primitive recursive functions needed for (3.4)–(3.6) are standard. Equation (3.7) is a definition—if we rewrote it using the $\mathbf{Y}$-operator—and the proof of Theorem 3.2 is easy by induction. There is also no difficulty with (3.8)–(3.12). The idea of the proof of Theorem 3.3 is contained in the statement of the theorem itself. The proof of Theorem 3.4 is already outlined in the text.

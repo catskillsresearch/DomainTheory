@@ -1,1 +1,43 @@
 **THEOREM 4.1 (The lattice theorem).** The fixed points of any continuous function form a complete lattice (under $\subseteq$); while those of a retract form a continuous lattice.
+
+*Proof of Theorem 4.1.* Consider a continuous function $a$, and let $A = \{x \mid x = a(x)\}$. By the fixed-point theorem (Theorem 1.4) we know that $A$ is nonempty and that it has a least element under $\subseteq$. Certainly $A$ is partially ordered by $\subseteq$; further, $A$ is closed under *directed* unions but not under arbitrary unions.
+
+<!-- page 55 -->
+
+That is, $A$ is not a complete sublattice of $\mathbf{P}\omega$ with regard to the lattice operations of $\mathbf{P}\omega$, but it could be a complete lattice on its own—if we can show sups exist. Thus, let $S \subseteq A$ be an arbitrary subset of $A$. By the fixed-point theorem, find the least solution to the equation:
+
+$$y = \bigcup \{x \mid x \in S\} \cup a(y).$$
+
+Clearly $x \subseteq y$ for all $x \in S$; and so $x = a(x) \subseteq a(y)$, for all $x \in S$. This means that $y = a(y)$, and thus $y \in A$. By construction, then, $y$ is an upper bound to the elements of $S$. Suppose $z \in A$ is another upper bound for $S$. It will also satisfy the above equation; thus $y \subseteq z$, and so $y$ is the least upper bound. A partially ordered set with sups also has infs, as is well known, and is a complete lattice.
+
+Suppose that $a$ is a retract. We can easily show that the fixed-point set $A$ (with the relative topology from $\mathbf{P}\omega$) satisfies the extension theorem. For assume $f : X \to A$ is continuous, and $X \subseteq Y$ as a subspace. Now we can also regard $f : X \to \mathbf{P}\omega$ as continuous because $A$ is a subspace of $\mathbf{P}\omega$. By Theorem 1.5 there is an extension to a continuous $\bar{f} : Y \to \mathbf{P}\omega$. But then $a \circ \bar{f} : Y \to A$ is the continuous function we want for $A$, and the proof is complete.
+
+*The space of retracts.* Let us define:
+
+$$\mathbf{RET} = \{a \mid a = a \circ a\},$$
+
+the set of all retracts, which is a complete lattice in view of Theorem 4.1. It will be proved to be not a retract itself by showing it is not a continuous lattice; in fact, the meet operation on $\mathbf{RET}$ is not continuous on $\mathbf{RET}$.
+
+The proof was kindly communicated by Y. L. Ershov and rests on distinguishing some extreme cases of retracts. Call a retract $a$ *nonextensive* if for all nonempty finite sets $x$ we have $x \not\subseteq a(x)$. Call a retract $b$ *finite* if all its values are finite (i.e., $b(\top)$ is finite). If $a$ is nonextensive and $b$ is finite, then Ershov notes that they are “orthogonal” in $\mathbf{RET}$ in the sense that $c = a \sqcap b = \bot$. The reason is that, since $c \subseteq b$, it is finite; but $c \subseteq a$, too, so $c(x) \subseteq a(x)$ for all $x$. Because $c$ is a retract, we have $c(x) = c(c(x)) \subseteq a(c(x))$. As $c(x)$ is finite and $a$ is nonextensive, it follows that $c(x) = \bot$ for all $x$.
+
+This orthogonality is unfortunate, because consider the finite retracts $b_n = \lambda x.\, e_n$. We have here a directed set of retracts where $\bigcup \{b_n \mid n \in \omega\} = \lambda x.\, \top = \top$. If $\sqcap$ were continuous, it would follow that for nonextensive $a$:
+
+$$a = a \sqcap \top = a \sqcap \bigcup \{b_n \mid n \in \omega\} = \bigcup \{a \sqcap b_n \mid n \in \omega\} = \bot,$$
+
+showing that there are no nontrivial such $a$. But this is not so.
+
+Let $\ll$ be a strict linear ordering of $\omega$ in the order type of the rational numbers. Define:
+
+$$a(x) = \{m \mid \exists n \in x.\, m \ll n\}.$$
+
+We see at once that $a$ is continuous; and, because $\ll$ is transitive and dense, $a$ is a retract. Since $\ll$ is irreflexive, it is the case for finite nonempty sets $x$ that $\max_\ll(x) \notin a(x)$; hence, $a$ is nonextensive. As $a(\top) = \top$, we find $a \neq \bot$. The proof is complete.
+
+Note that there are many transitive, dense, irreflexive relations on $\omega$, so there are many nonextensive retracts. These retracts, like $a$ above, are *distributive*.
+
+<!-- page 56 -->
+
+A nondistributive example is:
+
+$$a' = \{m \mid \exists n, n' \in x.\, n \ll m \ll n'\}.$$
+
+Many other examples are possible.

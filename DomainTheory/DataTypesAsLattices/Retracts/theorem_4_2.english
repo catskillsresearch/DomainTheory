@@ -52,3 +52,9 @@ The reversal of order $(a' \circ a)$ on the right-hand side of (4.11) should be 
 <!-- page 24 -->
 
 These equations will be used not only for properties of types (ranges of retracts) but also for the mappings between the types.
+
+*Proof of Theorem 4.2.* The relation $\sqsubseteq$ is by the definition of retract reflexive on $\mathbf{RET}$; it is also obviously antisymmetric. To prove transitivity, suppose $a \sqsubseteq b \sqsubseteq c$, then
+
+$$a = a \circ b = a \circ b \circ c = a \circ c.$$
+
+Similarly, $a = c \circ a$. Note, by the way, that $a \sqsubseteq b$ implies that the range of $a$ is included in that of $b$; but that the relationship $a \subseteq b$ does not imply this fact. The relationship $a \sqsubseteq b$, however, is stronger than inclusion of ranges.

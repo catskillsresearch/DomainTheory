@@ -12,5 +12,4 @@
 - [Closure operations and algebraic lattices](Closures/1976_Closure_operations_and_algebraic_lattices.md)
 - [Subsets and their classification](Classification/1976_Subsets_and_their_classification.md)
 - [Total functions and functionality](Functionality/1976_Total_functions_and_functionality.md)
-- [Appendix A](1976_Appendix_A.md)
 - [Appendix B](1976_Appendix_B.md)
