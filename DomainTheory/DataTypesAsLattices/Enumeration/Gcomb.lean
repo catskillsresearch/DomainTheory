@@ -2,8 +2,7 @@ module
 public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.zeroC
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.condC
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.graph

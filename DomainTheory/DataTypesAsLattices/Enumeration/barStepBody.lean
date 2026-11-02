@@ -4,7 +4,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.barPos
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepBody
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more

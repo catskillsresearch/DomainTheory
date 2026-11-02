@@ -1,3 +1,0 @@
-Evaluating LAMBDA terms and checking definability often reduces to finite subsets $e_n$ and whether a given $k$ first appears at some stage. The lemmas `exists_least_mem` and `exists_least_not_mem` locate the least index witnessing membership or non-membership in an increasing family; `Avoids` supports freshness side conditions in enumeration arguments.
-
-**Formalization (`FiniteWitnesses`).** `exists_least_mem`, `exists_least_not_mem`, and `Avoids`.

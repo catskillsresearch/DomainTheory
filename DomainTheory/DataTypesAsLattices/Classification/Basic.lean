@@ -2,7 +2,7 @@ module
 
 public import Mathlib.Order.CompleteLattice.Defs
 public import DomainTheory.DataTypesAsLattices.Lambda.seq2
-public import DomainTheory.DataTypesAsLattices.Lambda.e_one
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Lambda.const_isScottContinuous
@@ -12,8 +12,6 @@ public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.predSet
 public import DomainTheory.DataTypesAsLattices.Continuous.isScottOpen_isUpper
 public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous

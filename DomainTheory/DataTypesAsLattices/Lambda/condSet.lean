@@ -7,7 +7,7 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import Mathlib.Data.Nat.Bitwise
 
 @[expose] public section

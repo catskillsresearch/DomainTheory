@@ -2,11 +2,9 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.termShift
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.predSet
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order

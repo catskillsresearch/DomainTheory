@@ -4,7 +4,7 @@ module
 public import DomainTheory.DataTypesAsLattices.Retracts.tagInj
 public import DomainTheory.DataTypesAsLattices.Retracts.plus7Body
 public import Mathlib.Order.CompleteLattice.Defs
-public import DomainTheory.DataTypesAsLattices.Lambda.predSet
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Lambda.const_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet
@@ -13,7 +13,6 @@ public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary

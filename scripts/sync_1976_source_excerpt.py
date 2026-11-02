@@ -47,12 +47,7 @@ SLICE_NOTES: list[tuple[str, str | None]] = [
     ("Embedding/1976_Theorem_1_6.md", None),
     ("Lambda/1976_Computability_and_definability.md", None),
     ("Lambda/1976_Meaning.md", None),
-    ("Lambda/1976_LAMBDA.md", None),
     ("Lambda/1976_The_language_LAMBDA.md", None),
-    ("Lambda/1976_Table_2_denotations.md", None),
-    ("Lambda/1976_Table_2_application.md", None),
-    ("Lambda/1976_Sample_equations_2_5_2_6.md", None),
-    ("Lambda/1976_Finite_witnesses.md", None),
     ("Lambda/1976_Theorem_2_1.md", None),
     ("Lambda/1976_Theorem_2_2.md", None),
     ("Lambda/1976_Theorem_2_3.md", None),
@@ -362,19 +357,6 @@ def update_hub_tocs() -> None:
         ],
     )
     patch_md_toc(
-        DT / "Lambda/1976_LAMBDA.md",
-        [
-            '@import "1976_LAMBDA.mermaid"',
-            "",
-            "- [The language LAMBDA](1976_The_language_LAMBDA.md) ✓",
-            "- [Table 2 denotations in $\\mathbf{P}\\omega$](1976_Table_2_denotations.md)",
-            "- [Application and $\\lambda$-abstraction](1976_Table_2_application.md)",
-            "- [Sample equations (2.5) and (2.6)](1976_Sample_equations_2_5_2_6.md)",
-            "- [Finite witnesses for membership](1976_Finite_witnesses.md)",
-            "",
-        ],
-    )
-    patch_md_toc(
         DT / "Lambda/1976_The_definability_theorem.md",
         [
             '@import "1976_The_definability_theorem.mermaid"',
@@ -615,7 +597,7 @@ def main() -> None:
                     "",
                     "- [Minimal and maximal extension](1976_Extension.md) ✓",
                     "- [Meaning](1976_Meaning.md) ✓",
-                    "- [$\\lambda$-calculus as a formal language](1976_LAMBDA.md)",
+                    "- [The language LAMBDA](1976_The_language_LAMBDA.md) ✓",
                     "- [Theorem 2.1 — the continuity theorem](1976_Theorem_2_1.md)",
                     "- [Theorem 2.2 — the conversion theorem](1976_Theorem_2_2.md)",
                     "- [Theorem 2.3 — the reduction theorem](1976_Theorem_2_3.md)",

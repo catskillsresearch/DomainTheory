@@ -16,13 +16,11 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import Mathlib.Order.CompleteLattice.Defs
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import Mathlib.Data.Set.Lattice.Indexed
 public import DomainTheory.DataTypesAsLattices.Computability.pairComb
-public import DomainTheory.DataTypesAsLattices.Lambda.envSet
 public import DomainTheory.DataTypesAsLattices.Lambda.ofComb
 public import DomainTheory.DataTypesAsLattices.Lambda.seqFun
-public import DomainTheory.DataTypesAsLattices.Lambda.predSet
 public import DomainTheory.DataTypesAsLattices.Enumeration.beforeHalt
 public import DomainTheory.DataTypesAsLattices.Enumeration.haltEnum
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterNum

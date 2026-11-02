@@ -1,10 +1,8 @@
 module
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Lambda.Term
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
-public import DomainTheory.DataTypesAsLattices.Lambda.Comb
-public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 
 @[expose] public section
 

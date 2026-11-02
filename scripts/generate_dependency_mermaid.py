@@ -1019,7 +1019,7 @@ CONTINUOUS_LATTICES_RANK_SAME: list[list[str]] = [
 # Prose-only outline notes have no Lean @imports; narrative edges follow hub reading order.
 COMPUTABILITY_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Minimal and maximal extension", "Meaning"),
-    ("Meaning", "$\\lambda$-calculus as a formal language"),
+    ("Meaning", "The language LAMBDA"),
 ]
 
 DEFINABILITY_THEOREM_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
@@ -1272,6 +1272,7 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Minimal and maximal extension": "EXT",
                 "Meaning": "MEAN",
                 "LAMBDA": "LAM",
+                "The language LAMBDA": "LAM",
                 "$\\lambda$-calculus as a formal language": "LAM",
                 "Definition (computable)": "DCOMP",
                 "Definability": "DEF",

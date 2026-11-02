@@ -15,9 +15,7 @@ public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.succSet
-public import DomainTheory.DataTypesAsLattices.Lambda.predSet
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more

@@ -16,14 +16,11 @@ public import DomainTheory.DataTypesAsLattices.Computability.LambdaDefinable
 public import DomainTheory.DataTypesAsLattices.Computability.ComputableFin
 public import DomainTheory.DataTypesAsLattices.Computability.combinatory_isLambdaDefinable
 
-public import DomainTheory.DataTypesAsLattices.Lambda.Term
-public import DomainTheory.DataTypesAsLattices.Lambda.zeroC
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.ScottContinuousFin
 public import DomainTheory.DataTypesAsLattices.Lambda.curryFin
-public import DomainTheory.DataTypesAsLattices.Lambda.envSet
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
 public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_1
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.Avoids
 public import DomainTheory.DataTypesAsLattices.Enumeration.fin
 public import DomainTheory.DataTypesAsLattices.Computability.IsREu2eiff_combinatory

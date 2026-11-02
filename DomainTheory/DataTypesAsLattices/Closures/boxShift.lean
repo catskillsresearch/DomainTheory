@@ -7,8 +7,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
 public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
 public import DomainTheory.DataTypesAsLattices.Retracts.predSet_ofNat_zero
 public import Mathlib.Order.CompleteLattice.Defs
-public import DomainTheory.DataTypesAsLattices.Lambda.succSet
-public import DomainTheory.DataTypesAsLattices.Lambda.predSet
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
@@ -16,7 +15,6 @@ public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense

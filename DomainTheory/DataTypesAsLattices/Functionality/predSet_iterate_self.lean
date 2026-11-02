@@ -1,8 +1,7 @@
 
 module
 
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.predSet
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Functionality.predSet_iterate_ofNat
 
 @[expose] public section

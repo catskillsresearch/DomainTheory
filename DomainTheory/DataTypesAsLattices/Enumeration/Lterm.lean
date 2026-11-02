@@ -1,6 +1,6 @@
 module
 public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Lambda.Term
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Graph.lam
 public import DomainTheory.DataTypesAsLattices.Functionality.sumMed

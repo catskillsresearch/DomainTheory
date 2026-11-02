@@ -5,7 +5,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_zero
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_succ
 public import DomainTheory.DataTypesAsLattices.Lambda.condC
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Retracts.funOf_botElem

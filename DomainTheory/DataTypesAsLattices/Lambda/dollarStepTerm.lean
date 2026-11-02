@@ -1,17 +1,15 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Graph.lam
-public import DomainTheory.DataTypesAsLattices.Lambda.Term
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Enumeration.Avoids
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Lambda.envSet
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
 public import DomainTheory.DataTypesAsLattices.Lambda.termShift
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
-public import DomainTheory.DataTypesAsLattices.Lambda.succSet
 
 @[expose] public section
 

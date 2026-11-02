@@ -1,7 +1,7 @@
 module
 
 public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Lambda.Term
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Graph.lam
 
 @[expose] public section

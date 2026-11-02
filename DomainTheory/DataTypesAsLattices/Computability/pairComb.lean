@@ -8,12 +8,11 @@ public import DomainTheory.DataTypesAsLattices.Computability.arithEnv
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Computability.addC
 public import DomainTheory.DataTypesAsLattices.Computability.subC
 public import DomainTheory.DataTypesAsLattices.Computability.pack4
 public import DomainTheory.DataTypesAsLattices.Computability.mulC
-public import DomainTheory.DataTypesAsLattices.Lambda.envSet
 public import DomainTheory.DataTypesAsLattices.Lambda.ofComb
 
 @[expose] public section

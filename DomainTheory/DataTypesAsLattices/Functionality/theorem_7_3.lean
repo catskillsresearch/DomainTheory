@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
 public import DomainTheory.DataTypesAsLattices.Embedding.extend
-public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.Scomb
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.funOf

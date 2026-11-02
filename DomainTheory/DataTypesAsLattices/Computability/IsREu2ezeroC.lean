@@ -1,7 +1,7 @@
 module
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Lambda.zeroC
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Computability.IsREu2enumeral
 

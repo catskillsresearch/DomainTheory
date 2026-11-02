@@ -11,7 +11,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_15
 public import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_16
 public import DomainTheory.DataTypesAsLattices.Enumeration.barComb
 public import DomainTheory.DataTypesAsLattices.Enumeration.barComb_more
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Enumeration.enumComp
 public import DomainTheory.DataTypesAsLattices.Enumeration.barStepBody
 public import DomainTheory.DataTypesAsLattices.Enumeration.Rcomb

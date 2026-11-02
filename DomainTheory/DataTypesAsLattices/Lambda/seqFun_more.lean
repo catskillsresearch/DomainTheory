@@ -3,8 +3,7 @@ module
 public import DomainTheory.DataTypesAsLattices.Lambda.seqFun
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.seqFunLt
 public import DomainTheory.DataTypesAsLattices.Lambda.mem_seqFunLt
 public import Mathlib.Topology.Bases

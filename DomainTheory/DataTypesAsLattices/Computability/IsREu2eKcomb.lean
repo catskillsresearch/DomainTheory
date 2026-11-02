@@ -7,7 +7,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eor
 public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eand
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE

@@ -2,7 +2,7 @@
 module
 
 public import Mathlib.Order.CompleteLattice.Defs
-public import DomainTheory.DataTypesAsLattices.Lambda.predSet
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.const_isScottContinuous

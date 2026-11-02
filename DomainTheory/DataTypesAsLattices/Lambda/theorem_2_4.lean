@@ -1,19 +1,14 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
-public import DomainTheory.DataTypesAsLattices.Lambda.zeroC
-public import DomainTheory.DataTypesAsLattices.Lambda.sucC
-public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb
-public import DomainTheory.DataTypesAsLattices.Lambda.predC
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.condC
 public import DomainTheory.DataTypesAsLattices.Lambda.Scomb
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Lambda.Term
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
 public import DomainTheory.DataTypesAsLattices.Lambda.ofComb
 public import DomainTheory.DataTypesAsLattices.Lambda.erase
-public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_6
 public import DomainTheory.DataTypesAsLattices.Enumeration.Avoids
 public import DomainTheory.DataTypesAsLattices.Lambda.predC_more
 

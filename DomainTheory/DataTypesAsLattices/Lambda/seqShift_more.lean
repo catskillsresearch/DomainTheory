@@ -4,13 +4,12 @@ public import DomainTheory.DataTypesAsLattices.Lambda.seqShift
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.seqFun
-public import DomainTheory.DataTypesAsLattices.Lambda.succSet
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import Mathlib.Data.Set.Lattice.Indexed
 public import DomainTheory.DataTypesAsLattices.Lambda.seqFun_more
 public import DomainTheory.DataTypesAsLattices.Lambda.succSet_more

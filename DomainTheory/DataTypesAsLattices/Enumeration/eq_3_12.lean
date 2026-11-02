@@ -1,9 +1,7 @@
 module
 
 public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Lambda.sucC
-public import DomainTheory.DataTypesAsLattices.Lambda.succSet
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.num
 public import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_8_val

@@ -1,14 +1,13 @@
 module
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.Scomb
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Computability.primRecZeroC
 public import DomainTheory.DataTypesAsLattices.Computability.sqrtStepC
 
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Computability.Realizes
 public import DomainTheory.DataTypesAsLattices.Computability.pack4
 public import DomainTheory.DataTypesAsLattices.Computability.sqrtIter

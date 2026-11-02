@@ -8,7 +8,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
 public import DomainTheory.DataTypesAsLattices.Retracts.fstC
 public import DomainTheory.DataTypesAsLattices.Retracts.sndC
 public import DomainTheory.DataTypesAsLattices.Retracts.tensorR
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Functionality.pairMed

@@ -4,16 +4,14 @@ public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
-public import DomainTheory.DataTypesAsLattices.Lambda.predSet
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Lambda.envSet
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
-public import DomainTheory.DataTypesAsLattices.Lambda.Term
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Graph.lam

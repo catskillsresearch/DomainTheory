@@ -1,9 +1,8 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Lambda.predSet
 public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 
 @[expose] public section

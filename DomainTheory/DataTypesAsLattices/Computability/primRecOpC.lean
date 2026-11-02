@@ -9,7 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 public import DomainTheory.DataTypesAsLattices.Computability.pack4
 public import DomainTheory.DataTypesAsLattices.Computability.primRecComb
-public import DomainTheory.DataTypesAsLattices.Lambda.envSet
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.ofComb
 
 @[expose] public section

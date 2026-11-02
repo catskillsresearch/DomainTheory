@@ -9,11 +9,10 @@ public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_22
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_succ
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_zero
 public import DomainTheory.DataTypesAsLattices.Lambda.seq2
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.seqCons
 public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepBody
-public import DomainTheory.DataTypesAsLattices.Lambda.predSet
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 @[expose] public section
 

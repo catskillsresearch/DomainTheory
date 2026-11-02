@@ -6,10 +6,8 @@ public import DomainTheory.DataTypesAsLattices.Graph.lam
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Computability.pack4
-public import DomainTheory.DataTypesAsLattices.Lambda.envSet
-public import DomainTheory.DataTypesAsLattices.Lambda.predSet
 public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_2
 public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_succ

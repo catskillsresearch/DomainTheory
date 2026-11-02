@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.mem
 

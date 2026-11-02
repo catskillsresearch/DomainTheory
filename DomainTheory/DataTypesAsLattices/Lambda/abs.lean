@@ -1,13 +1,11 @@
 
 module
 
-public import DomainTheory.DataTypesAsLattices.Lambda.Comb
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.theorem_1_2
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Lambda.envSet
 public import DomainTheory.DataTypesAsLattices.Lambda.ofComb
-public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb
 public import DomainTheory.DataTypesAsLattices.Lambda.Scomb
 public import DomainTheory.DataTypesAsLattices.Lambda.SKK_eq_I
 public import DomainTheory.DataTypesAsLattices.Graph.beta

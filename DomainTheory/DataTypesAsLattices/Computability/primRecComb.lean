@@ -7,7 +7,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.dollarC
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Computability.pack4
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecHat
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecVal

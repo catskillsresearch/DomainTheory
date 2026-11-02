@@ -6,9 +6,8 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Deg
 public import DomainTheory.DataTypesAsLattices.Enumeration.Icomb_SK
 public import DomainTheory.DataTypesAsLattices.Enumeration.packList
 public import DomainTheory.DataTypesAsLattices.Enumeration.singleGenerator
-public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.Scomb
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb_more
 public import DomainTheory.DataTypesAsLattices.Lambda.Scomb_more
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat_more

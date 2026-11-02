@@ -1,7 +1,7 @@
 module
 
 public import Mathlib.Algebra.Ring.Parity
-public import DomainTheory.DataTypesAsLattices.Lambda.predSet
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 @[expose] public section
 

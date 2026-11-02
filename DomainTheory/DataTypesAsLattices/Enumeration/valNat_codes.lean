@@ -13,8 +13,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
 public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb
 public import DomainTheory.DataTypesAsLattices.Lambda.interC
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
-public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.condC
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.graph

@@ -3,10 +3,9 @@ module
 public import DomainTheory.DataTypesAsLattices.Enumeration.Rcomb
 public import DomainTheory.DataTypesAsLattices.Enumeration.Rterm
 public import DomainTheory.DataTypesAsLattices.Enumeration.seq2Term
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Graph.graph
-public import DomainTheory.DataTypesAsLattices.Lambda.envSet
 public import DomainTheory.DataTypesAsLattices.Lambda.seq2
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
 public import DomainTheory.DataTypesAsLattices.Enumeration.Avoids

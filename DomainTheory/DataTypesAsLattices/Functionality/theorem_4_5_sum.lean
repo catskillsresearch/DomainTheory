@@ -6,7 +6,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.typed
 public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
 public import DomainTheory.DataTypesAsLattices.Retracts.plusR
 public import DomainTheory.DataTypesAsLattices.Retracts.IsStrict
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Functionality.plusR_isStrict
 public import DomainTheory.DataTypesAsLattices.Functionality.plusR_isRetract

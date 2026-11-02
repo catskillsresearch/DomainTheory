@@ -4,7 +4,7 @@ public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Lambda.seq2
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Enumeration.Deg
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat_more
 public import DomainTheory.DataTypesAsLattices.Enumeration.combinatory_mem_Deg

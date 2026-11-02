@@ -10,7 +10,7 @@ public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
 public import DomainTheory.DataTypesAsLattices.Functionality.updateEnv_isScottContinuous_t
 public import DomainTheory.DataTypesAsLattices.Lambda.Extend
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Retracts.updateEnv
 

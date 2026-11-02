@@ -1,8 +1,7 @@
 module
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Lambda.succSet
-public import DomainTheory.DataTypesAsLattices.Lambda.sucC
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_testBit

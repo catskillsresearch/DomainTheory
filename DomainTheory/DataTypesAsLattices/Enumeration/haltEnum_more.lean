@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Enumeration.haltEnum
 public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Retracts.comp

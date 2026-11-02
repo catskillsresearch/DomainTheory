@@ -2,9 +2,7 @@
 module
 
 public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.zeroC
-public import DomainTheory.DataTypesAsLattices.Lambda.sucC
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb

@@ -17,3 +17,35 @@ $$u(x) = \{m \mid \exists e_n \subseteq x.\, (n, m) \in u\}$$
 $$\lambda x.\, \tau = \{(n, m) \mid m \in \tau[e_n / x]\}$$
 
 The definition has been left somewhat informal in hopes that it will be more understandable. In the above, $\tau$ is any term of the language. LAMBDA is type-free and allows any combination to be made by substitution into the given functions. There is one primitive constant $(0)$; there are two unary functions $(x + 1,\, x - 1)$; there is one binary function $(u(x))$ and one ternary function $(z \supset x, y)$; finally there is one variable binding operator $(\lambda x.\, \tau)$. The first three equations have obvious sense. In the fourth, $z \supset x, y$ is McCarthy's conditional expression (a test for zero). Next $u(x)$ defines *application* ($u$ is treated as a graph and $x$ as a set), and $\lambda x.\, \tau$ is *functional abstraction* (compare the definition of **fun**). In defining $\lambda x.\, \tau$, we use $\tau[e_n/x]$ as a shorthand for evaluating the term $\tau$ when the variable $x$ is given the value $e_n$.
+
+Note that the functions are all multiple-valued. Thus we have such a result as:
+
+$$(2.5) \quad (6 \cup 10) + 1 = 7 \cup 11.$$
+
+The partial character of subtraction has expression as:
+
+$$(2.6) \quad 0 - 1 = \bot.$$
+
+We shall see how to define $+$ and $-$ in LAMBDA later. The conditional could also have been defined by cases:
+
+$$(2.7) \quad z \supset x, y = \begin{cases} \bot & \text{if } z = \bot; \\ x & \text{if } z = 0; \\ y & \text{if } 0 \notin z \neq \bot; \\ x \cup y & \text{if } 0 \in z \neq 0. \end{cases}$$
+
+We say that a LAMBDA-term $\tau$ defines a function of its free variables (at least). Other results depend on this fundamental proposition:
+
+**Formalization (`Language.lean`).** The module collects the syntactic objects of LAMBDA, the Table 2 set operations on $\mathbf{P}\omega$, the standard constant graphs used as denotations, and the sample equations (2.5)–(2.6) together with the finite-witness lemmas needed later.
+
+**Syntax (`Comb`, `Term`).** `Comb` is the combinator presentation (variables, $0$, successor, predecessor, conditional, $K$, $S$, application) used when relating LAMBDA to combinatory logic. `Term` is the official LAMBDA abstract syntax: variables, constant $0$, unary successor and predecessor, ternary conditional $z \supset x, y$, application $u(x)$, and binding $\lambda x.\,\tau$. The map `rename` implements the obvious alphabetic change of a bound variable on `Term`.
+
+**Denotations of numbers and Table 2 operations.** Write $\mathrm{ofNat}\,n = \{n\}$ for the singleton subset of $\omega$ (lemma `mem_ofNat`: $k \in \mathrm{ofNat}\,n \leftrightarrow k = n$). The unary operations of Table 2 are coded as set transformers $\mathrm{succSet}, \mathrm{predSet} : \mathbf{P}\omega \to \mathbf{P}\omega$ by
+$$\mathrm{succSet}(x) = \{k \mid \exists n \in x.\, k = n + 1\}, \qquad \mathrm{predSet}(x) = \{k \mid k + 1 \in x\},$$
+and the primitive constant $0$ as $\mathrm{zeroC} = \mathrm{ofNat}\,0$, with $\mathrm{sucC} = \mathbf{graph}(\mathrm{succSet})$ and $\mathrm{predC} = \mathbf{graph}(\mathrm{predSet})$. The combinator $K$ is $\mathrm{Kcomb} = \mathbf{graph}(\lambda x.\,\mathbf{graph}(\lambda y.\,x))$. The dense element $e_1$ satisfies $e_1 = \{0\}$ (`e_one`).
+
+**Environments.** For an assignment $\rho : \omega \to \mathbf{P}\omega$, variable $i$, and value $v \in \mathbf{P}\omega$, `envSet` is the updated assignment $\rho[i \mapsto v]$; `envSet.comm` states that two distinct updates commute.
+
+**Pairing.** The Cantor pairing used elsewhere is linked to the triangle function: `triangle_eq_zero` shows $\mathrm{triangle}(w) = 0$ implies $w = 0$; `pair_zero_zero` and `pair_one_zero` record $\mathrm{pair}(0,0) = 0$ and $\mathrm{pair}(1,0) = 1$; `pair_eq_right` shows $\mathrm{pair}(n,m) = m$ forces $n = m = 0$.
+
+**Equations (2.5) and (2.6).** `eq_2_5` is the multiple-valued successor law
+$$\mathrm{succSet}(\mathrm{ofNat}\,6 \cup \mathrm{ofNat}\,10) = \mathrm{ofNat}\,7 \cup \mathrm{ofNat}\,11.$$
+`eq_2_6` is the partiality of subtraction on $0$: $\mathrm{predSet}(\mathrm{ofNat}\,0) = \bot$.
+
+**Finite witnesses on $\omega$.** For $a \subseteq \omega$, if $a$ is nonempty then `exists_least_mem` gives a least $k \in a$; dually, if some integer is missing from $a$ then `exists_least_not_mem` gives the least $k \notin a$ with every smaller index in $a$. These lemmas support arguments that inspect only finitely many values of a set.

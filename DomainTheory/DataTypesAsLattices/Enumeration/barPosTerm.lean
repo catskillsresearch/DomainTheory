@@ -1,12 +1,10 @@
 module
 
 public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Lambda.Term
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Enumeration.seq2Term
 public import DomainTheory.DataTypesAsLattices.Enumeration.seqConsTerm
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.succSet
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
 public import DomainTheory.DataTypesAsLattices.Enumeration.enumBottomTerm
 public import DomainTheory.DataTypesAsLattices.Enumeration.Avoids

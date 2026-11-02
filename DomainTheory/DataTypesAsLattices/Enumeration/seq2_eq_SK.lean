@@ -4,16 +4,11 @@ module
 public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Lambda.seq2
-public import DomainTheory.DataTypesAsLattices.Lambda.predSet
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_6
-public import DomainTheory.DataTypesAsLattices.Lambda.predC
-public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb
 public import DomainTheory.DataTypesAsLattices.Lambda.Scomb
 public import DomainTheory.DataTypesAsLattices.Lambda.condC
 public import DomainTheory.DataTypesAsLattices.Lambda.SKK_eq_I
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
-public import DomainTheory.DataTypesAsLattices.Lambda.zeroC
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.graph

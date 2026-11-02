@@ -1,10 +1,9 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecVal
 public import Mathlib.Data.Set.Lattice.Indexed
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 
 @[expose] public section
 

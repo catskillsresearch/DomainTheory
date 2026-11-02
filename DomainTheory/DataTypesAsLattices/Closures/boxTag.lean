@@ -2,7 +2,7 @@ module
 
 public import Mathlib.Algebra.Ring.Parity
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 
 @[expose] public section

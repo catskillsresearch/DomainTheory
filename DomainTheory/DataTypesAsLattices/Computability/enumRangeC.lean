@@ -4,7 +4,7 @@ public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Lambda.dollarC
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import Mathlib.Data.Set.Lattice.Indexed
 public import DomainTheory.DataTypesAsLattices.Computability.Realizes
 public import DomainTheory.DataTypesAsLattices.Computability.pack4

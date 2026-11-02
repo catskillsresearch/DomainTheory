@@ -1,3 +1,0 @@
-Application and functional abstraction in Table 2 are graph-based: $u(x)$ reads off values $(n,m) \in u$ for finite approximations $e_n \subseteq x$, and $\lambda x.\,\tau$ collects pairs $(n,m)$ with $m$ in the value of $\tau$ when $x$ is $e_n$. These are the same `graph` and `lam` constructors used in Section 1 for continuous functions on $\mathbf{P}\omega$.
-
-**Formalization (`Table2Application`).** Re-exports `graph` and `lam` from the Graph development.

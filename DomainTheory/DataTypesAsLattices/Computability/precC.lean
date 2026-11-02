@@ -9,7 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.lam
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Computability.Realizes
 public import DomainTheory.DataTypesAsLattices.Computability.pairComb
 public import DomainTheory.DataTypesAsLattices.Computability.unpairSndC
@@ -17,7 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Computability.unpairFstC
 public import DomainTheory.DataTypesAsLattices.Computability.pack4
 public import DomainTheory.DataTypesAsLattices.Computability.primRecOpC
 public import DomainTheory.DataTypesAsLattices.Computability.primRecComb
-public import DomainTheory.DataTypesAsLattices.Lambda.envSet
 public import DomainTheory.DataTypesAsLattices.Lambda.ofComb
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecVal
 

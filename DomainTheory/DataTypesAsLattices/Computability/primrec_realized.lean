@@ -2,8 +2,7 @@ module
 
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
-public import DomainTheory.DataTypesAsLattices.Lambda.sucC
-public import DomainTheory.DataTypesAsLattices.Lambda.succSet
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Computability.pack4
 public import DomainTheory.DataTypesAsLattices.Computability.Realizes
@@ -13,7 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Computability.unpairFstC
 public import DomainTheory.DataTypesAsLattices.Computability.unpairSndC
 public import DomainTheory.DataTypesAsLattices.Computability.pairRealizer
 public import DomainTheory.DataTypesAsLattices.Computability.precC
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
 public import DomainTheory.DataTypesAsLattices.Lambda.sucC_more
 public import DomainTheory.DataTypesAsLattices.Lambda.succSet_more

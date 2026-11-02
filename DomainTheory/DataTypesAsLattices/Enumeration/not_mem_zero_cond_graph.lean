@@ -2,7 +2,7 @@ module
 
 public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
-public import DomainTheory.DataTypesAsLattices.Lambda.pair_zero_zero
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.condC
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.pair

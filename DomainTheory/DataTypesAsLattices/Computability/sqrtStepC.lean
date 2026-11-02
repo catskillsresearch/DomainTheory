@@ -7,13 +7,11 @@ public import DomainTheory.DataTypesAsLattices.Computability.sqrtEnv
 public import DomainTheory.DataTypesAsLattices.Computability.sqrtStepTerm
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
-public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Computability.pack4
 public import DomainTheory.DataTypesAsLattices.Computability.mulC
 public import DomainTheory.DataTypesAsLattices.Computability.leC
-public import DomainTheory.DataTypesAsLattices.Lambda.envSet
 public import DomainTheory.DataTypesAsLattices.Lambda.ofComb
-public import DomainTheory.DataTypesAsLattices.Lambda.succSet
 public import DomainTheory.DataTypesAsLattices.Lambda.succSet_more
 
 @[expose] public section
