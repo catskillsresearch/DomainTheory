@@ -1,14 +1,10 @@
 module
 
-public import Mathlib.Topology.Bases
 public import DomainTheory.DataTypesAsLattices.Continuous.Basic
-public import DomainTheory.DataTypesAsLattices.Continuous.isOpen_basicNhhd
-public import DomainTheory.DataTypesAsLattices.Continuous.exists_basicNhhd_subset_of_generateOpen
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen
-public import Mathlib.Data.Set.Lattice.Indexed
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Continuous.memOpen
-public import DomainTheory.DataTypesAsLattices.Continuous.basicNhhd
+import DomainTheory.DataTypesAsLattices.Continuous.exists_basicNhhd_subset_of_generateOpen
+import DomainTheory.DataTypesAsLattices.Continuous.isOpen_basicNhhd
+import Mathlib.Tactic.Bound.Init
 
 @[expose] public section
 

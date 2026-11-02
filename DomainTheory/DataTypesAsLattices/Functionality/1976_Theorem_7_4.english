@@ -92,5 +92,3 @@ But then by continuity this equation holds for *all* $f, x$. It follows now that
 These results bring up many questions which we leave unanswered here. For example, which combinators (i.e., pure $\lambda$-terms) have functionality as in the examples above, and can we decide when a term is one such? In particular, can the diagonal combinator $\lambda x.\, x(x)$ be typed? (The argument of Hindley, et al. (1972, p. 81) is purely formal and does not apparently apply to the model.) What about terms in LAMBDA beyond the pure $\lambda$-calculus?
 
 <!-- page 47 -->
-
-**DANA SCOTT**

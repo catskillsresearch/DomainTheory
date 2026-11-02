@@ -1,16 +1,14 @@
 module
 
-public import Mathlib.Topology.Bases
-public import Mathlib.Topology.Order
-public import Mathlib.Data.Nat.Bitwise
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Pomega.pair
+public import DomainTheory.DataTypesAsLattices.Pomega.e
+import Mathlib.Data.Finset.Attr
+import Mathlib.Data.Set.BooleanAlgebra
+import Mathlib.Tactic.Bound.Init
+import Mathlib.Tactic.SetLike
 
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
-
-open TopologicalSpace
 
 def basicNhhd (n : ℕ) : Set Pomega := {x | e n ⊆ x}
 

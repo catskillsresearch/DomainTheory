@@ -1,16 +1,16 @@
 module
 
-public import Mathlib.Topology.Bases
-public import Mathlib.Topology.Order
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Continuous.basicNhhd
 public import DomainTheory.DataTypesAsLattices.Continuous.memOpen
+public import Mathlib.Order.SetNotation
+import Mathlib.Data.Finset.Attr
+import Mathlib.Data.Set.Lattice.Indexed
+import Mathlib.Tactic.Bound.Init
+import Mathlib.Tactic.Continuity.Init
+import Mathlib.Tactic.SetLike
 
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
-
-open TopologicalSpace
 
 namespace basicNhhd
 

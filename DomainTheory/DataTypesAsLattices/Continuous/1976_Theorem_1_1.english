@@ -10,6 +10,10 @@ Note that open sets and continuous functions have a *monotonicity property*:
 
 This gives a precise expression to the “positive” character of our topology. However, note too that openness and continuity mean rather more than just monotonicity. In particular, a continuous function is completely determined by the pairs of integers $n, m$ such that $m \in f(e_n)$, as can be seen from the definition. (Hence, there are only a continuum number of continuous functions, but more than a continuum number of monotonic functions.) This brings us to the definition of the *graph* of a continuous function.
 
-<!-- page 7 -->
+As translated into Lean, we have: 
 
-**DANA SCOTT**
+**Theorem (`theorem_1_1`).** For $f : \mathbf{P}\omega \to \mathbf{P}\omega$, $f$ is Scott-continuous iff for all $x$ and $m$, $e_m \subseteq f(x)$ iff there exists $n$ with $e_n \subseteq x$ and $e_m \subseteq f(e_n)$.
+
+*Proof.* The forward direction uses `IsScottContinuous.out` and membership in `scottUnion`/`scottPiece`; the converse rebuilds $f(x)$ as a union of pieces from the $\varepsilon$-$\delta$ hypothesis. ∎
+
+<!-- page 7 -->

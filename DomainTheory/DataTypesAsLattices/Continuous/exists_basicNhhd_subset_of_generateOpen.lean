@@ -2,9 +2,7 @@ module
 
 public import Mathlib.Topology.Order
 public import DomainTheory.DataTypesAsLattices.Continuous.memOpen
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Continuous.basicNhhd
-public import DomainTheory.DataTypesAsLattices.Continuous.basicNhhd_more
+import Mathlib.Tactic.Bound.Init
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices

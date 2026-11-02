@@ -1,8 +1,8 @@
 module
 
 public import Mathlib.Computability.Primrec.Basic
-public import Mathlib.Data.Nat.Find
-public import DomainTheory.DataTypesAsLattices.Pomega.eScan
+public import DomainTheory.DataTypesAsLattices.Pomega.e
+import DomainTheory.DataTypesAsLattices.Pomega.eScan
 
 @[expose] public section
 

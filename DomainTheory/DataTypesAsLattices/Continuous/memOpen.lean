@@ -1,14 +1,15 @@
 module
 
-public import Mathlib.Topology.Bases
 public import DomainTheory.DataTypesAsLattices.Continuous.basicNhhd
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
+import Mathlib.Data.Finset.Attr
+import Mathlib.Data.Set.Insert
+import Mathlib.Tactic.Bound.Init
+import Mathlib.Tactic.Continuity.Init
+import Mathlib.Tactic.SetLike
 
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
-
-open TopologicalSpace
 
 def memOpen (k : ℕ) : Set Pomega := {x | k ∈ x}
 

@@ -5,3 +5,19 @@ $$\{x \in \mathbf{P}\omega \mid e_n \subseteq x\},$$
 for a given $e_n$. An arbitrary *open subset* is then a union of basic neighborhoods.
 
 It is easy to prove that an open subset $U \subseteq \mathbf{P}\omega$ is just a set of “finite character”; that is, a set such that for all $x \in \mathbf{P}\omega$ we have $x \in U$ if and only if some finite subset of $x$ also belongs to $U$. An alternate approach would define directly what we mean by a continuous function using the idea that such functions must preserve limits.
+
+**Definition (`basicNhhd`).** For $n \in \omega$, the basic neighborhood is $\mathrm{basicNhhd}\,n = \{x \in \mathbf{P}\omega \mid e_n \subseteq x\}$.
+
+In the `basicNhhd` namespace we define:
+
+**Theorem (`inter`).** $\mathrm{basicNhhd}\,n \cap \mathrm{basicNhhd}\,m = \mathrm{basicNhhd}\,(n \mathbin{|} m)$.
+
+*Proof.* Extensionality: $x$ lies in the intersection iff $e_n \subseteq x$ and $e_m \subseteq x$ iff $e_n \cup e_m \subseteq x$ iff $e_{n \mathbin{|} m} \subseteq x$ by `e.or`. ∎
+
+**Theorem (`zero`).** $\mathrm{basicNhhd}\,0 = \mathbf{P}\omega$.
+
+*Proof.* Every $x$ satisfies $e_0 \subseteq x$ because $e_0 = \emptyset$ (`e.zero`). ∎
+
+**Theorem (`mono`).** If $e_n \subseteq e_m$, then $\mathrm{basicNhhd}\,m \subseteq \mathrm{basicNhhd}\,n$.
+
+*Proof.* If $e_m \subseteq x$ and $e_n \subseteq e_m$, then $e_n \subseteq x$. ∎

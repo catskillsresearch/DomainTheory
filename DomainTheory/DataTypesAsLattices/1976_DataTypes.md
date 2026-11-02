@@ -5,7 +5,7 @@
 @import "1976_DataTypes.mermaid"
 
 - [Introduction](1976_Introduction.md) [✓](1976_REVISION.md)
-- [Continuous functions](1976_Continuous_functions.md)
+- [Continuous functions](1976_Continuous_functions.md) [✓](1976_REVISION.md)
 - [Computability and definability](Lambda/1976_Computability_and_definability.md)
 - [Enumeration and degrees](Enumeration/1976_Enumeration_and_degrees.md)
 - [Retracts and data types](Retracts/1976_Retracts_and_data_types.md)

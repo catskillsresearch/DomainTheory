@@ -3,6 +3,7 @@ module
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Data.Set.Lattice.Indexed
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
+import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 
 @[expose] public section
 

@@ -1,16 +1,15 @@
 module
 
-public import Mathlib.Topology.Bases
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen
-public import Mathlib.Order.ConditionallyCompleteLattice.Basic
-public import Mathlib.Data.Set.Lattice.Indexed
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
+import Mathlib.Data.Finset.Attr
+import Mathlib.Order.ConditionallyCompleteLattice.Basic
+import Mathlib.Tactic.Bound.Init
+import Mathlib.Tactic.Continuity.Init
+import Mathlib.Tactic.SetLike
 
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
-
-open TopologicalSpace
 
 theorem isScottOpen_isUpper {U : Set Pomega} (hU : IsScottOpen U)
     {x y : Pomega} (hx : x ∈ U) (hxy : x ⊆ y) : y ∈ U := by

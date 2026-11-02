@@ -4,6 +4,7 @@ public import DomainTheory.DataTypesAsLattices.FixedLattices.DirectedSet
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.vals
+import Mathlib.Data.Set.Finite.Basic
 
 @[expose] public section
 

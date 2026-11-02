@@ -19,13 +19,13 @@ theorem predSet_eq_ofNat_of_no_zero {u : Pomega} {k : ℕ}
     have : t ∈ predSet u := hm
     have : t = k := by
       have : t ∈ ofNat k := by rwa [hk] at this
-      simpa [ofNat] using this
-    simp [ofNat, this]
+      simpa [ofNat, Set.mem_singleton_iff] using this
+    simp [ofNat, Set.mem_singleton_iff, this]
   · intro hm
-    simp [ofNat] at hm
+    simp [ofNat, Set.mem_singleton_iff] at hm
     subst hm
     have : k ∈ predSet u := by
-      rw [hk]; simp [ofNat]
+      rw [hk]; simp [ofNat, Set.mem_singleton_iff]
     exact this
 
 end DomainTheory.DataTypesAsLattices

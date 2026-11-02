@@ -6,7 +6,6 @@ In Theorem 4.6, the fact that $c$ is a retract can be reasoned as follows: $\bot
 
 <!-- page 27 -->
 
-**DANA SCOTT**
 
 retract. Thus each $F^n(\bot)$ is a retract. We compute:
 
@@ -68,7 +67,6 @@ If we rewrite the semantic equations $\mathcal{H}\llbracket \tau \rrbracket(t) =
 
 <!-- page 29 -->
 
-**DANA SCOTT**
 
 Actually we can regard **Exp** as being a subset of $\mathbf{P}\omega$ to avoid dragging in other lattices. What we need is another recursive definition of a data type:
 

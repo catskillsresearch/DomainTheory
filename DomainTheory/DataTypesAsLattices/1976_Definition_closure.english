@@ -22,7 +22,6 @@ $$(5.4) \quad a(x) = \bigcap \{y \in \mathscr{C} \mid x \subseteq y\},$$
 
 <!-- page 31 -->
 
-**DANA SCOTT**
 
 then this will be a closure operation *provided* it is continuous. This remark makes it easy to check that certain functions are closure operations if we can spot easily the family $\mathscr{C}$ of fixed points.
 

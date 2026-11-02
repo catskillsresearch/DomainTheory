@@ -2,7 +2,6 @@
 
 <!-- page 57 -->
 
-**DANA SCOTT**
 
 $\lambda$-calculus (as well as many other calculi for other "reflexive domains"). The details can be found in Scott (1971) and Scott (1973b). Algebra was justified, but the work in doing so was tiring and the exact connections with computability were not all that easy to describe.
 
@@ -26,7 +25,6 @@ Over the years in work on $\lambda$-calculus and programming language semantics,
 
 <!-- page 59 -->
 
-**DANA SCOTT**
 
 *Section 6.* More information on the classification by notions in descriptive set theory of various subsets can be found in the work of Tang who also makes connections with the work of Wadge. The various normal forms for the classes of sets (e.g., Table 3) are due to the author.
 

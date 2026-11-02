@@ -1,8 +1,12 @@
 module
 
 public import Mathlib.Order.SetNotation
-public import DomainTheory.DataTypesAsLattices.Pomega.codeFinset
-public import DomainTheory.DataTypesAsLattices.Pomega.ePrimrec
+public import DomainTheory.DataTypesAsLattices.Pomega.e
+import Mathlib.Data.Finset.Attr
+import Mathlib.Data.Set.Insert
+import Mathlib.Tactic.Attr.Core
+import Mathlib.Tactic.Bound.Init
+import Mathlib.Tactic.SetLike
 
 @[expose] public section
 

@@ -5,6 +5,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import DomainTheory.DataTypesAsLattices.Lambda.succSet
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
+import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 
 @[expose] public section
 

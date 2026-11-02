@@ -2,7 +2,8 @@ module
 
 public import Mathlib.Data.Nat.Notation
 public import Mathlib.Data.Set.Defs
-import Mathlib.Data.Set.Basic
+public import Mathlib.Data.Set.Basic
+public import Mathlib.Data.Set.Insert
 
 @[expose] public section
 

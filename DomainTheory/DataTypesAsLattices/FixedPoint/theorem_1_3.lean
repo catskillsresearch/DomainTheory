@@ -4,6 +4,7 @@ public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Continuous.theorem_1_1
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
+import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 
 @[expose] public section
 

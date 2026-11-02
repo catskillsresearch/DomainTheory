@@ -1,16 +1,12 @@
 module
 
-public import Mathlib.Topology.Bases
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Continuous.exists_e_cover_finite
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
+import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
-
-open TopologicalSpace
 
 theorem theorem_1_1 (f : Pomega → Pomega) :
     IsScottContinuous f ↔

@@ -1,8 +1,7 @@
 module
 
-public import Mathlib.Topology.Bases
 public import DomainTheory.DataTypesAsLattices.Continuous.Basic
-public import DomainTheory.DataTypesAsLattices.Continuous.memOpen
+import Mathlib.Tactic.Bound.Init
 
 @[expose] public section
 

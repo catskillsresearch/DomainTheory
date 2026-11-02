@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
+import Mathlib.Data.Nat.Basic
 
 @[expose] public section
 

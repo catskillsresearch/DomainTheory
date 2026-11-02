@@ -2,7 +2,7 @@ module
 
 public import Mathlib.Topology.Order
 public import DomainTheory.DataTypesAsLattices.Continuous.memOpen
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
+import Mathlib.Tactic.Bound.Init
 
 @[expose] public section
 

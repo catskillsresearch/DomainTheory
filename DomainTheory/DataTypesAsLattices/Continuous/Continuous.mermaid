@@ -3,8 +3,12 @@
 %% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
+  Definition__basis["Definition (basis)"]
+  Definition__continuous["Definition (continuous)"]
   Theorem_1_1["Theorem 1.1"]
 
+  Definition__basis --> Definition__continuous
+  Definition__continuous --> Theorem_1_1
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
