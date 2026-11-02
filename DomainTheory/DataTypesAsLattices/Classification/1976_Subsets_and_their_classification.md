@@ -71,9 +71,9 @@
 **[DataTypesAsLattices/Continuous/IsScottContinuous.lean](../Continuous/IsScottContinuous.lean)**
 
 @import "../Continuous/IsScottContinuous.lean"
-**[DataTypesAsLattices/Lambda/minExtend.lean](../Lambda/minExtend.lean)**
+**[DataTypesAsLattices/Lambda/Extend.lean](../Lambda/Extend.lean)**
 
-@import "../Lambda/minExtend.lean"
+@import "../Lambda/Extend.lean"
 **[DataTypesAsLattices/Closures/squareSnd.lean](../Closures/squareSnd.lean)**
 
 @import "../Closures/squareSnd.lean"

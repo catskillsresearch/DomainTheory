@@ -3,6 +3,7 @@
 %% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
+  EXT["Minimal and maximal extension"]
   MEAN["Meaning"]
   LAM["LAMBDA"]
   T21["Theorem 2.1"]
@@ -16,19 +17,20 @@ flowchart TB
   SEQ["Sequences"]
   DOL["Distributive functions"]
   PR["Primitive recursion"]
-  REC["Computable functions"]
+  DCOMP["Definition (computable)"]
   DEF["Definability"]
   T26["Theorem 2.6"]
   LY["A law of Y"]
 
-  LAM --> DEF
+  PR --> DCOMP
+  DCOMP --> DEF
   T25 --> DOL
   LAM --> EL
   LAM --> GRA
   MEAN --> LAM
   YC --> LY
+  EXT --> MEAN
   EL --> PR
-  T21 --> REC
   T25 --> SEQ
   LAM --> T21
   T21 --> T22

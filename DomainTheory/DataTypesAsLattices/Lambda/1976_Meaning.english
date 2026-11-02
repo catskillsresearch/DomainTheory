@@ -22,18 +22,6 @@ Where does this interpretation leave the empty set $\varnothing$? When we write 
 
 How does this interpretation fit in with monotonicity? In case $a \subseteq b$ and $m \in f(a)$, then we must have $m \in f(b)$. We can read "$a \subseteq b$" as "$b$ is an *improvement of* $a$" or "$b$ is *better-defined than* $a$." The point of monotonicity is that the better we define an argument, the better we define a value. "Better" does not imply "well" (that is, singleton-valuedness), and overdefinedness may well creep in. This is not the fault of the function; it is our fault for not choosing a different function.
 
-As a subspace $\omega \subseteq \mathbf{P}\omega$ is discrete. This implies that arbitrary functions $p : \omega \to \omega$ are continuous. Note that $p : \omega \to \mathbf{P}\omega$ as well, because $\omega \subseteq \mathbf{P}\omega$. By Theorem 1.5 we can extend $p$ continuously to $\bar{p} : \mathbf{P}\omega \to \mathbf{P}\omega$. The formula given produces this function:
-
-$$(2.1) \quad \bar{p}(x) = \begin{cases} \bigcap \{p(n) \mid n \in \omega\} & \text{if } x = \varnothing; \\ p(n) & \text{if } x = n \in \omega; \\ \omega & \text{otherwise.} \end{cases}$$
-
-This is a rather abrupt extension of $p$ (the *maximal extension*); a more gradual, continuous extension (the *minimal extension*) is determined by this equation:
-
-$$(2.2) \quad \hat{p}(x) = \bigcup \{p(n) \mid n \in x\}.$$
-
-The same formulae work for *all* multiple-valued functions $p : \omega \to \mathbf{P}\omega$. Functions like $f = \hat{p}$ are exactly characterized as being those continuous functions $f : \mathbf{P}\omega \to \mathbf{P}\omega$ which in addition are *distributive* in the sense of these equations:
-
-$$f(x \cup y) = f(x) \cup f(y) \quad \text{and} \quad f(\varnothing) = \varnothing.$$
-
 <!-- page 10 -->
 
 The sets $\varnothing$ and $\omega$ play special roles. When we consider them as elements of $\mathbf{P}\omega$ we shall employ the notation:

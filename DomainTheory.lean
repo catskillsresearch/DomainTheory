@@ -989,9 +989,7 @@ import DomainTheory.DataTypesAsLattices.Lambda.eq_2_15
 import DomainTheory.DataTypesAsLattices.Lambda.eq_2_16
 import DomainTheory.DataTypesAsLattices.Lambda.eq_2_17
 import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
-import DomainTheory.DataTypesAsLattices.Lambda.eq_2_1_else
-import DomainTheory.DataTypesAsLattices.Lambda.eq_2_1_empty
-import DomainTheory.DataTypesAsLattices.Lambda.eq_2_1_singleton
+import DomainTheory.DataTypesAsLattices.Lambda.Extend
 import DomainTheory.DataTypesAsLattices.Lambda.eq_2_22
 import DomainTheory.DataTypesAsLattices.Lambda.eq_2_23_ge
 import DomainTheory.DataTypesAsLattices.Lambda.eq_2_23_one
@@ -1018,10 +1016,8 @@ import DomainTheory.DataTypesAsLattices.Lambda.interC
 import DomainTheory.DataTypesAsLattices.Lambda.interStep
 import DomainTheory.DataTypesAsLattices.Lambda.interp
 import DomainTheory.DataTypesAsLattices.Lambda.iterateBot_param_isScottContinuous
-import DomainTheory.DataTypesAsLattices.Lambda.maxExtend
 import DomainTheory.DataTypesAsLattices.Lambda.mem_ofNat
 import DomainTheory.DataTypesAsLattices.Lambda.mem_seqFunLt
-import DomainTheory.DataTypesAsLattices.Lambda.minExtend
 import DomainTheory.DataTypesAsLattices.Lambda.nestApplyFin
 import DomainTheory.DataTypesAsLattices.Lambda.ofComb
 import DomainTheory.DataTypesAsLattices.Lambda.ofNat

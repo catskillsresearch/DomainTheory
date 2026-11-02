@@ -2,7 +2,7 @@ module
 
 public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
-public import DomainTheory.DataTypesAsLattices.Lambda.minExtend
+public import DomainTheory.DataTypesAsLattices.Lambda.Extend
 public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat
 public import Mathlib.Topology.Bases

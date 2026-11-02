@@ -590,6 +590,7 @@ def gen_note_outline(
     subgraph_groups: list[tuple[str, list[str]]] | None = None,
     rank_same_titles: list[list[str]] | None = None,
     flowchart: str = "flowchart TB",
+    force_outline_edges: list[tuple[str, str]] | None = None,
 ) -> str:
     header, old_labels, style = parse_preserve_tail(old)
     index_md = find_index_md(mermaid)
@@ -721,6 +722,13 @@ def gen_note_outline(
                 if src_nid == dst_nid:
                     continue
                 edges[(src_nid, dst_nid)] += 1
+
+    if force_outline_edges:
+        for src_title, dst_title in force_outline_edges:
+            a = title_to_nid.get(src_title)
+            b = title_to_nid.get(dst_title)
+            if a is not None and b is not None and a != b:
+                edges[(a, b)] += 1
 
     if edge_filter is not None:
         nid_to_title = {v: k for k, v in title_to_nid.items()}
@@ -945,6 +953,14 @@ CONTINUOUS_LATTICES_RANK_SAME: list[list[str]] = [
     ],
 ]
 
+# Prose-only outline notes have no Lean @imports; narrative edges follow hub reading order.
+COMPUTABILITY_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
+    ("Minimal and maximal extension", "Meaning"),
+    ("Meaning", "LAMBDA"),
+    ("Primitive recursion", "Definition (computable)"),
+    ("Definition (computable)", "Definability"),
+]
+
 
 def restore_orphan_outline_edges(
     full: dict[tuple[str, str], int],
@@ -1162,8 +1178,21 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Proposition 2.2": "P22",
             }
         include_empty_boxes = False
+        force_edges: list[tuple[str, str]] | None = None
         cl_subgraphs = None
         cl_rank_same = None
+        if mermaid.name == "1976_Computability_and_definability.mermaid":
+            include_empty_boxes = True
+            force_edges = COMPUTABILITY_OUTLINE_NARRATIVE
+            extra_ids = {
+                **(extra_ids or {}),
+                "Minimal and maximal extension": "EXT",
+                "Meaning": "MEAN",
+                "LAMBDA": "LAM",
+                "Definition (computable)": "DCOMP",
+                "Definability": "DEF",
+                "Theorem 2.6": "T26",
+            }
         if mermaid.name == "ContinuousLattices.mermaid":
             cl_subgraphs = CONTINUOUS_LATTICES_SUBGRAPH_GROUPS
             cl_rank_same = CONTINUOUS_LATTICES_RANK_SAME
@@ -1209,6 +1238,7 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
             include_empty_outline_boxes=include_empty_boxes,
             subgraph_groups=cl_subgraphs,
             rank_same_titles=cl_rank_same,
+            force_outline_edges=force_edges,
         )
     return None
 

@@ -32,9 +32,6 @@ flowchart TB
   N86["eq_2_16"]
   N191["eq_2_17"]
   N241["eq_2_18"]
-  N90["eq_2_1_else"]
-  N91["eq_2_1_empty"]
-  N92["eq_2_1_singleton"]
   N171["eq_2_22"]
   N164["eq_2_23_ge"]
   N166["eq_2_23_one"]
@@ -54,6 +51,7 @@ flowchart TB
   N28["erase"]
   N103["exists_least_mem"]
   N104["exists_least_not_mem"]
+  Extend["Extend"]
   N133["fix_param_isScottContinuous"]
   FixedPoint["FixedPoint"]
   N16["Fofg"]
@@ -68,10 +66,8 @@ flowchart TB
   N132["iterateBot_param_isScottContinuous"]
   N2["Kcomb"]
   Kcomb_more["Kcomb_more"]
-  N32["maxExtend"]
   N14["mem_ofNat"]
   N136["mem_seqFunLt"]
-  N33["minExtend"]
   N34["nestApplyFin"]
   N35["ofComb"]
   N7["ofNat"]
@@ -126,6 +122,10 @@ flowchart TB
   N20["Yterm"]
   N12["zeroC"]
 
+  Continuous -->|"2"| Extend
+  N14 -->|"1"| Extend
+  N7 -->|"1"| Extend
+  Pomega -->|"1"| Extend
   Graph -->|"4"| Kcomb_more
   N112 -->|"1"| Kcomb_more
   N127 -->|"1"| Kcomb_more
@@ -445,11 +445,6 @@ flowchart TB
   Pomega -->|"2"| N31
   predSet_more -->|"1"| N31
   succSet_more -->|"1"| N31
-  N14 -->|"1"| N32
-  N7 -->|"1"| N32
-  Pomega -->|"1"| N32
-  Continuous -->|"1"| N33
-  Pomega -->|"1"| N33
   Graph -->|"2"| N34
   Pomega -->|"1"| N34
   Continuous -->|"1"| N35
@@ -632,7 +627,7 @@ flowchart TB
   Pomega -->|"1"| N58
   seqFunLt_more -->|"1"| N58
   seqFun_more -->|"1"| N58
-  Continuous -->|"1"| N59
+  Continuous -->|"2"| N59
   N10 -->|"1"| N59
   N14 -->|"1"| N59
   N7 -->|"1"| N59
@@ -661,18 +656,6 @@ flowchart TB
   Graph -->|"1"| N9
   N8 -->|"1"| N9
   Pomega -->|"1"| N9
-  N14 -->|"1"| N90
-  N32 -->|"1"| N90
-  N7 -->|"1"| N90
-  Pomega -->|"1"| N90
-  N14 -->|"1"| N91
-  N32 -->|"1"| N91
-  N7 -->|"1"| N91
-  Pomega -->|"1"| N91
-  N14 -->|"1"| N92
-  N32 -->|"1"| N92
-  N7 -->|"1"| N92
-  Pomega -->|"1"| N92
   Continuous -->|"1"| N93
   FixedPoint -->|"3"| N93
   Graph -->|"5"| N93

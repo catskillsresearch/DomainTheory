@@ -1,0 +1,33 @@
+As a subspace $\omega \subseteq \mathbf{P}\omega$ is discrete. This implies that arbitrary functions $p : \omega \to \omega$ are continuous. Note that $p : \omega \to \mathbf{P}\omega$ as well, because $\omega \subseteq \mathbf{P}\omega$. By Theorem 1.5 we can extend $p$ continuously to $\bar{p} : \mathbf{P}\omega \to \mathbf{P}\omega$. The formula given produces this function:
+
+$$(2.1) \quad \bar{p}(x) = \begin{cases} \bigcap \{p(n) \mid n \in \omega\} & \text{if } x = \varnothing; \\ p(n) & \text{if } x = n \in \omega; \\ \omega & \text{otherwise.} \end{cases}$$
+
+This is a rather abrupt extension of $p$ (the *maximal extension*); a more gradual, continuous extension (the *minimal extension*) is determined by this equation:
+
+$$(2.2) \quad \hat{p}(x) = \bigcup \{p(n) \mid n \in x\}.$$
+
+The same formulae work for *all* multiple-valued functions $p : \omega \to \mathbf{P}\omega$. Functions like $f = \hat{p}$ are exactly characterized as being those continuous functions $f : \mathbf{P}\omega \to \mathbf{P}\omega$ which in addition are *distributive* in the sense of these equations:
+
+$$f(x \cup y) = f(x) \cup f(y) \quad \text{and} \quad f(\varnothing) = \varnothing.$$
+
+**Definition (`maxExtend`, `minExtend`).** For $p : \omega \to \mathbf{P}\omega$ and $x \in \mathbf{P}\omega$, the maximal extension is $\mathrm{maxExtend}\,p\,x$ (Scott’s piecewise $\bar{p}(x)$ in (2.1)), and the minimal extension is $\mathrm{minExtend}\,p\,x = \bigcup \{p(n) \mid n \in x\}$.
+
+**Theorem (`eq_2_1_empty`).** $\mathrm{maxExtend}\,p\,\bot = \bigcap_n p(n)$.
+
+*Proof.* On $\bot$, membership in $\mathrm{maxExtend}\,p\,\bot$ is equivalent to $k \in p(n)$ for every $n$. ∎
+
+**Theorem (`eq_2_1_singleton`).** For $n \in \omega$, $\mathrm{maxExtend}\,p\,(\mathrm{ofNat}\,n) = p(n)$.
+
+*Proof.* Case-split on the three disjuncts in the definition of $\mathrm{maxExtend}$; the singleton case is the only viable branch. ∎
+
+**Theorem (`eq_2_1_else`).** If $x \neq \bot$ and $x$ is not a singleton $\mathrm{ofNat}\,n$, then $\mathrm{maxExtend}\,p\,x = \top$.
+
+*Proof.* Every $k$ satisfies the third disjunct in the definition. ∎
+
+**Theorem (`minExtend.bot`).** $\mathrm{minExtend}\,p\,\bot = \bot$.
+
+**Theorem (`minExtend.union`).** $\mathrm{minExtend}\,p\,(x \cup y) = \mathrm{minExtend}\,p\,x \cup \mathrm{minExtend}\,p\,y$.
+
+**Theorem (`minExtend.isScottContinuous`).** $\mathrm{minExtend}\,p$ is Scott-continuous for every $p : \omega \to \mathbf{P}\omega$.
+
+*Proof.* Compare membership in $\mathrm{minExtend}\,p\,x$ with membership in $\mathrm{scottUnion}\,(\mathrm{minExtend}\,p)\,x$ via finite singleton witnesses $e_{2^n}$. ∎
