@@ -88,12 +88,12 @@ That all of these are $\trianglelefteq \mathcal{U}$ follows from knowing that th
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/DiagFixed.lean](DiagFixed.lean)**
 
 @import "DiagFixed.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/D_X.lean](D_X.lean)**
-
-@import "D_X.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/DAtom.lean](DAtom.lean)**
 
 @import "DAtom.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/D_X.lean](D_X.lean)**
+
+@import "D_X.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem_8_8.lean](Theorem_8_8.lean)**
 
 @import "Theorem_8_8.lean"

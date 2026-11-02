@@ -7,7 +7,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Lcomb
 public import DomainTheory.DataTypesAsLattices.Enumeration.Rcomb
 public import DomainTheory.DataTypesAsLattices.Enumeration.barPos
 public import DomainTheory.DataTypesAsLattices.Graph.graph
-public import DomainTheory.DataTypesAsLattices.Graph.lam
+public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Enumeration.enumComp
 public import DomainTheory.DataTypesAsLattices.Enumeration.barStepBody
 public import DomainTheory.DataTypesAsLattices.Enumeration.barComb

@@ -15,378 +15,270 @@
 - [Theorem 7.4](1976_Theorem_7_4.md)
 
 
-**[DataTypesAsLattices/Enumeration/condCode.lean](../Enumeration/condCode.lean)**
-
-@import "../Enumeration/condCode.lean"
-**[DataTypesAsLattices/Functionality/expTag.lean](expTag.lean)**
-
-@import "expTag.lean"
-**[DataTypesAsLattices/Functionality/typed_bot_botElem.lean](typed_bot_botElem.lean)**
-
-@import "typed_bot_botElem.lean"
-**[DataTypesAsLattices/Functionality/pairSeq_isScottContinuous_right.lean](pairSeq_isScottContinuous_right.lean)**
-
-@import "pairSeq_isScottContinuous_right.lean"
-**[DataTypesAsLattices/Functionality/inleftC.lean](inleftC.lean)**
-
-@import "inleftC.lean"
-**[DataTypesAsLattices/Functionality/outC.lean](outC.lean)**
-
-@import "outC.lean"
-**[DataTypesAsLattices/Retracts/seq4.lean](../Retracts/seq4.lean)**
-
-@import "../Retracts/seq4.lean"
-**[DataTypesAsLattices/Functionality/Icomb_isGraph.lean](Icomb_isGraph.lean)**
-
-@import "Icomb_isGraph.lean"
-**[DataTypesAsLattices/Functionality/graph_funOf_ext.lean](graph_funOf_ext.lean)**
-
-@import "graph_funOf_ext.lean"
-**[DataTypesAsLattices/Functionality/typed_ofNat_intR.lean](typed_ofNat_intR.lean)**
-
-@import "typed_ofNat_intR.lean"
-**[DataTypesAsLattices/Functionality/Scomb_map_isScottContinuous.lean](Scomb_map_isScottContinuous.lean)**
-
-@import "Scomb_map_isScottContinuous.lean"
-**[DataTypesAsLattices/Functionality/Scomb_app.lean](Scomb_app.lean)**
-
-@import "Scomb_app.lean"
 **[DataTypesAsLattices/Enumeration/interCode.lean](../Enumeration/interCode.lean)**
 
 @import "../Enumeration/interCode.lean"
-**[DataTypesAsLattices/Functionality/predSet_iterate_expTag_isScottContinuous.lean](predSet_iterate_expTag_isScottContinuous.lean)**
+**[DataTypesAsLattices/Functionality/funOf_condSet.lean](funOf_condSet.lean)**
 
-@import "predSet_iterate_expTag_isScottContinuous.lean"
-**[DataTypesAsLattices/Retracts/fstC.lean](../Retracts/fstC.lean)**
+@import "funOf_condSet.lean"
+**[DataTypesAsLattices/Functionality/Scomb_map_isScottContinuous.lean](Scomb_map_isScottContinuous.lean)**
 
-@import "../Retracts/fstC.lean"
-**[DataTypesAsLattices/Functionality/sigmaJ.lean](sigmaJ.lean)**
-
-@import "sigmaJ.lean"
-**[DataTypesAsLattices/Functionality/expPayload.lean](expPayload.lean)**
-
-@import "expPayload.lean"
-**[DataTypesAsLattices/Retracts/updateEnv.lean](../Retracts/updateEnv.lean)**
-
-@import "../Retracts/updateEnv.lean"
-**[DataTypesAsLattices/Functionality/updateEnv_isScottContinuous_t.lean](updateEnv_isScottContinuous_t.lean)**
-
-@import "updateEnv_isScottContinuous_t.lean"
-**[DataTypesAsLattices/Functionality/pairSeq_app_one.lean](pairSeq_app_one.lean)**
-
-@import "pairSeq_app_one.lean"
-**[DataTypesAsLattices/Functionality/hVar.lean](hVar.lean)**
-
-@import "hVar.lean"
-**[DataTypesAsLattices/Functionality/pairSeq_app_zero.lean](pairSeq_app_zero.lean)**
-
-@import "pairSeq_app_zero.lean"
-**[DataTypesAsLattices/Functionality/Kcomb_app.lean](Kcomb_app.lean)**
-
-@import "Kcomb_app.lean"
-**[DataTypesAsLattices/Retracts/plusR.lean](../Retracts/plusR.lean)**
-
-@import "../Retracts/plusR.lean"
-**[DataTypesAsLattices/Retracts/tensor4.lean](../Retracts/tensor4.lean)**
-
-@import "../Retracts/tensor4.lean"
-**[DataTypesAsLattices/Graph/mu_law.lean](../Graph/mu_law.lean)**
-
-@import "../Graph/mu_law.lean"
-**[DataTypesAsLattices/Enumeration/secondRecOperatorCode.lean](../Enumeration/secondRecOperatorCode.lean)**
-
-@import "../Enumeration/secondRecOperatorCode.lean"
-**[DataTypesAsLattices/Functionality/funOf_top.lean](funOf_top.lean)**
-
-@import "funOf_top.lean"
-**[DataTypesAsLattices/Functionality/plusR_right_isScottContinuous.lean](plusR_right_isScottContinuous.lean)**
-
-@import "plusR_right_isScottContinuous.lean"
-**[DataTypesAsLattices/Functionality/hApply.lean](hApply.lean)**
-
-@import "hApply.lean"
-**[DataTypesAsLattices/Functionality/Scomb_isGraph.lean](Scomb_isGraph.lean)**
-
-@import "Scomb_isGraph.lean"
-**[DataTypesAsLattices/Functionality/typed_apply_retract.lean](typed_apply_retract.lean)**
-
-@import "typed_apply_retract.lean"
-**[DataTypesAsLattices/Functionality/Kcomb_isGraph.lean](Kcomb_isGraph.lean)**
-
-@import "Kcomb_isGraph.lean"
-**[DataTypesAsLattices/Enumeration/diagonalInterCode.lean](../Enumeration/diagonalInterCode.lean)**
-
-@import "../Enumeration/diagonalInterCode.lean"
-**[DataTypesAsLattices/Enumeration/primrec_diagonalInterCode.lean](../Enumeration/primrec_diagonalInterCode.lean)**
-
-@import "../Enumeration/primrec_diagonalInterCode.lean"
-**[DataTypesAsLattices/Functionality/funOf_e_union_fresh.lean](funOf_e_union_fresh.lean)**
-
-@import "funOf_e_union_fresh.lean"
-**[DataTypesAsLattices/Functionality/hZero.lean](hZero.lean)**
-
-@import "hZero.lean"
-**[DataTypesAsLattices/Functionality/inrightC.lean](inrightC.lean)**
-
-@import "inrightC.lean"
+@import "Scomb_map_isScottContinuous.lean"
 **[DataTypesAsLattices/Enumeration/unionCode.lean](../Enumeration/unionCode.lean)**
 
 @import "../Enumeration/unionCode.lean"
-**[DataTypesAsLattices/Functionality/comp_isGraph.lean](comp_isGraph.lean)**
+**[DataTypesAsLattices/Functionality/graph_funOf_ext.lean](graph_funOf_ext.lean)**
 
-@import "comp_isGraph.lean"
+@import "graph_funOf_ext.lean"
+**[DataTypesAsLattices/Functionality/expTag.lean](expTag.lean)**
+
+@import "expTag.lean"
+**[DataTypesAsLattices/Functionality/RestrictedEquiv.lean](RestrictedEquiv.lean)**
+
+@import "RestrictedEquiv.lean"
+**[DataTypesAsLattices/Functionality/typed_apply_retract.lean](typed_apply_retract.lean)**
+
+@import "typed_apply_retract.lean"
+**[DataTypesAsLattices/Functionality/outC.lean](outC.lean)**
+
+@import "outC.lean"
+**[DataTypesAsLattices/Functionality/singletonE.lean](singletonE.lean)**
+
+@import "singletonE.lean"
+**[DataTypesAsLattices/Functionality/Scomb_app.lean](Scomb_app.lean)**
+
+@import "Scomb_app.lean"
+**[DataTypesAsLattices/Functionality/Scomb_isGraph.lean](Scomb_isGraph.lean)**
+
+@import "Scomb_isGraph.lean"
+**[DataTypesAsLattices/Enumeration/botCode.lean](../Enumeration/botCode.lean)**
+
+@import "../Enumeration/botCode.lean"
+**[DataTypesAsLattices/Functionality/eta2_map_isScottContinuous.lean](eta2_map_isScottContinuous.lean)**
+
+@import "eta2_map_isScottContinuous.lean"
 **[DataTypesAsLattices/Functionality/Scomb_mid_isScottContinuous.lean](Scomb_mid_isScottContinuous.lean)**
 
 @import "Scomb_mid_isScottContinuous.lean"
 **[DataTypesAsLattices/Functionality/Scomb_app2.lean](Scomb_app2.lean)**
 
 @import "Scomb_app2.lean"
-**[DataTypesAsLattices/Functionality/RestrictedEquiv.lean](RestrictedEquiv.lean)**
+**[DataTypesAsLattices/Functionality/Scomb_app_isGraph.lean](Scomb_app_isGraph.lean)**
 
-@import "RestrictedEquiv.lean"
-**[DataTypesAsLattices/Functionality/kerE.lean](kerE.lean)**
-
-@import "kerE.lean"
-**[DataTypesAsLattices/Functionality/mem.lean](mem.lean)**
-
-@import "mem.lean"
-**[DataTypesAsLattices/Functionality/Nk.lean](Nk.lean)**
-
-@import "Nk.lean"
-**[DataTypesAsLattices/Functionality/emptyE.lean](emptyE.lean)**
-
-@import "emptyE.lean"
-**[DataTypesAsLattices/Functionality/arrowE.lean](arrowE.lean)**
-
-@import "arrowE.lean"
-**[DataTypesAsLattices/Functionality/Ea.lean](Ea.lean)**
-
-@import "Ea.lean"
-**[DataTypesAsLattices/Functionality/inrightC_app.lean](inrightC_app.lean)**
-
-@import "inrightC_app.lean"
-**[DataTypesAsLattices/Functionality/Nrel.lean](Nrel.lean)**
-
-@import "Nrel.lean"
-**[DataTypesAsLattices/Functionality/pairSeq_inj.lean](pairSeq_inj.lean)**
-
-@import "pairSeq_inj.lean"
-**[DataTypesAsLattices/Functionality/pairElem.lean](pairElem.lean)**
-
-@import "pairElem.lean"
-**[DataTypesAsLattices/Functionality/sumE.lean](sumE.lean)**
-
-@import "sumE.lean"
-**[DataTypesAsLattices/Functionality/pairSeq_isScottContinuous_left.lean](pairSeq_isScottContinuous_left.lean)**
-
-@import "pairSeq_isScottContinuous_left.lean"
-**[DataTypesAsLattices/Functionality/curry_mid_isScottContinuous.lean](curry_mid_isScottContinuous.lean)**
-
-@import "curry_mid_isScottContinuous.lean"
-**[DataTypesAsLattices/Retracts/tagInj.lean](../Retracts/tagInj.lean)**
-
-@import "../Retracts/tagInj.lean"
-**[DataTypesAsLattices/Functionality/tagInj_zero.lean](tagInj_zero.lean)**
-
-@import "tagInj_zero.lean"
-**[DataTypesAsLattices/Functionality/tagInj_one.lean](tagInj_one.lean)**
-
-@import "tagInj_one.lean"
-**[DataTypesAsLattices/Functionality/tagInj_isScottContinuous.lean](tagInj_isScottContinuous.lean)**
-
-@import "tagInj_isScottContinuous.lean"
-**[DataTypesAsLattices/Retracts/plus7Body.lean](../Retracts/plus7Body.lean)**
-
-@import "../Retracts/plus7Body.lean"
-**[DataTypesAsLattices/Functionality/whichC.lean](whichC.lean)**
-
-@import "whichC.lean"
-**[DataTypesAsLattices/Functionality/normalized_finite_app.lean](normalized_finite_app.lean)**
-
-@import "normalized_finite_app.lean"
-**[DataTypesAsLattices/Retracts/lambF.lean](../Retracts/lambF.lean)**
-
-@import "../Retracts/lambF.lean"
-**[DataTypesAsLattices/Retracts/lambR.lean](../Retracts/lambR.lean)**
-
-@import "../Retracts/lambR.lean"
-**[DataTypesAsLattices/Retracts/envR.lean](../Retracts/envR.lean)**
-
-@import "../Retracts/envR.lean"
-**[DataTypesAsLattices/Functionality/predSet_iterate_ofNat.lean](predSet_iterate_ofNat.lean)**
-
-@import "predSet_iterate_ofNat.lean"
-**[DataTypesAsLattices/Functionality/predSet_iterate_self.lean](predSet_iterate_self.lean)**
-
-@import "predSet_iterate_self.lean"
+@import "Scomb_app_isGraph.lean"
 **[DataTypesAsLattices/Retracts/bot_isRetract.lean](../Retracts/bot_isRetract.lean)**
 
 @import "../Retracts/bot_isRetract.lean"
 **[DataTypesAsLattices/Retracts/theorem_4_4.lean](../Retracts/theorem_4_4.lean)**
 
 @import "../Retracts/theorem_4_4.lean"
-**[DataTypesAsLattices/Retracts/iterates_areRetracts.lean](../Retracts/iterates_areRetracts.lean)**
-
-@import "../Retracts/iterates_areRetracts.lean"
-**[DataTypesAsLattices/Retracts/iterateBot_isStrict.lean](../Retracts/iterateBot_isStrict.lean)**
-
-@import "../Retracts/iterateBot_isStrict.lean"
-**[DataTypesAsLattices/Retracts/iterateBot_retractLe.lean](../Retracts/iterateBot_retractLe.lean)**
-
-@import "../Retracts/iterateBot_retractLe.lean"
-**[DataTypesAsLattices/Retracts/inverseLimit_project_later.lean](../Retracts/inverseLimit_project_later.lean)**
-
-@import "../Retracts/inverseLimit_project_later.lean"
-**[DataTypesAsLattices/Retracts/fixedToInverseLimit.lean](../Retracts/fixedToInverseLimit.lean)**
-
-@import "../Retracts/fixedToInverseLimit.lean"
-**[DataTypesAsLattices/Functionality/envR_map_isScottContinuous.lean](envR_map_isScottContinuous.lean)**
-
-@import "envR_map_isScottContinuous.lean"
-**[DataTypesAsLattices/Functionality/envR_app.lean](envR_app.lean)**
-
-@import "envR_app.lean"
-**[DataTypesAsLattices/Retracts/tensorR.lean](../Retracts/tensorR.lean)**
-
-@import "../Retracts/tensorR.lean"
-**[DataTypesAsLattices/Functionality/pairMed.lean](pairMed.lean)**
-
-@import "pairMed.lean"
-**[DataTypesAsLattices/Functionality/tensorR_right_isScottContinuous.lean](tensorR_right_isScottContinuous.lean)**
-
-@import "tensorR_right_isScottContinuous.lean"
-**[DataTypesAsLattices/Retracts/treeF.lean](../Retracts/treeF.lean)**
-
-@import "../Retracts/treeF.lean"
-**[DataTypesAsLattices/Retracts/treeR.lean](../Retracts/treeR.lean)**
-
-@import "../Retracts/treeR.lean"
-**[DataTypesAsLattices/Functionality/Scomb_app_isGraph.lean](Scomb_app_isGraph.lean)**
-
-@import "Scomb_app_isGraph.lean"
-**[DataTypesAsLattices/Functionality/curryC_isScottContinuous.lean](curryC_isScottContinuous.lean)**
-
-@import "curryC_isScottContinuous.lean"
-**[DataTypesAsLattices/Functionality/curryC_app.lean](curryC_app.lean)**
-
-@import "curryC_app.lean"
-**[DataTypesAsLattices/Functionality/Kcomb_app2.lean](Kcomb_app2.lean)**
-
-@import "Kcomb_app2.lean"
 **[DataTypesAsLattices/Functionality/continuous_on_diag.lean](continuous_on_diag.lean)**
 
 @import "continuous_on_diag.lean"
-**[DataTypesAsLattices/Functionality/continuous_tuple.lean](continuous_tuple.lean)**
+**[DataTypesAsLattices/Functionality/typed_ofNat_intR.lean](typed_ofNat_intR.lean)**
 
-@import "continuous_tuple.lean"
-**[DataTypesAsLattices/Functionality/arrowR_diag_isScottContinuous.lean](arrowR_diag_isScottContinuous.lean)**
+@import "typed_ofNat_intR.lean"
+**[DataTypesAsLattices/Functionality/Kcomb_app.lean](Kcomb_app.lean)**
 
-@import "arrowR_diag_isScottContinuous.lean"
-**[DataTypesAsLattices/Functionality/Z.lean](Z.lean)**
+@import "Kcomb_app.lean"
+**[DataTypesAsLattices/Functionality/kerE.lean](kerE.lean)**
 
-@import "Z.lean"
-**[DataTypesAsLattices/Functionality/eq_7_18_eq.lean](eq_7_18_eq.lean)**
+@import "kerE.lean"
+**[DataTypesAsLattices/Retracts/updateEnv.lean](../Retracts/updateEnv.lean)**
 
-@import "eq_7_18_eq.lean"
-**[DataTypesAsLattices/Functionality/normalized_finite_fresh_app.lean](normalized_finite_fresh_app.lean)**
+@import "../Retracts/updateEnv.lean"
+**[DataTypesAsLattices/Functionality/updateEnv_isScottContinuous_t.lean](updateEnv_isScottContinuous_t.lean)**
 
-@import "normalized_finite_fresh_app.lean"
-**[DataTypesAsLattices/Functionality/plotkin_finite_separation.lean](plotkin_finite_separation.lean)**
+@import "updateEnv_isScottContinuous_t.lean"
+**[DataTypesAsLattices/Enumeration/diagonalInterCode.lean](../Enumeration/diagonalInterCode.lean)**
 
-@import "plotkin_finite_separation.lean"
-**[DataTypesAsLattices/Functionality/iterateE.lean](iterateE.lean)**
+@import "../Enumeration/diagonalInterCode.lean"
+**[DataTypesAsLattices/Functionality/Kcomb_isGraph.lean](Kcomb_isGraph.lean)**
 
-@import "iterateE.lean"
-**[DataTypesAsLattices/Functionality/Zcomb.lean](Zcomb.lean)**
+@import "Kcomb_isGraph.lean"
+**[DataTypesAsLattices/Functionality/mem.lean](mem.lean)**
 
-@import "Zcomb.lean"
-**[DataTypesAsLattices/Functionality/outleftC.lean](outleftC.lean)**
+@import "mem.lean"
+**[DataTypesAsLattices/Functionality/Nk.lean](Nk.lean)**
 
-@import "outleftC.lean"
-**[DataTypesAsLattices/Functionality/eq_7_18_ne.lean](eq_7_18_ne.lean)**
+@import "Nk.lean"
+**[DataTypesAsLattices/Functionality/Ea.lean](Ea.lean)**
 
-@import "eq_7_18_ne.lean"
-**[DataTypesAsLattices/Functionality/continuous_nary.lean](continuous_nary.lean)**
+@import "Ea.lean"
+**[DataTypesAsLattices/Functionality/emptyE.lean](emptyE.lean)**
 
-@import "continuous_nary.lean"
-**[DataTypesAsLattices/Functionality/plus7_map_isScottContinuous.lean](plus7_map_isScottContinuous.lean)**
+@import "emptyE.lean"
+**[DataTypesAsLattices/Functionality/singletonE_mem.lean](singletonE_mem.lean)**
 
-@import "plus7_map_isScottContinuous.lean"
-**[DataTypesAsLattices/Functionality/hApp.lean](hApp.lean)**
+@import "singletonE_mem.lean"
+**[DataTypesAsLattices/Retracts/seq4.lean](../Retracts/seq4.lean)**
 
-@import "hApp.lean"
-**[DataTypesAsLattices/Functionality/plusR_map_isScottContinuous.lean](plusR_map_isScottContinuous.lean)**
+@import "../Retracts/seq4.lean"
+**[DataTypesAsLattices/Retracts/tensor4.lean](../Retracts/tensor4.lean)**
 
-@import "plusR_map_isScottContinuous.lean"
-**[DataTypesAsLattices/Functionality/plusR_app.lean](plusR_app.lean)**
+@import "../Retracts/tensor4.lean"
+**[DataTypesAsLattices/Functionality/LambTerm.lean](LambTerm.lean)**
 
-@import "plusR_app.lean"
-**[DataTypesAsLattices/Functionality/eq_4_13.lean](eq_4_13.lean)**
+@import "LambTerm.lean"
+**[DataTypesAsLattices/Functionality/funOf_e_union_fresh.lean](funOf_e_union_fresh.lean)**
 
-@import "eq_4_13.lean"
-**[DataTypesAsLattices/Functionality/hSucc.lean](hSucc.lean)**
+@import "funOf_e_union_fresh.lean"
+**[DataTypesAsLattices/Retracts/plusR.lean](../Retracts/plusR.lean)**
 
-@import "hSucc.lean"
-**[DataTypesAsLattices/Functionality/plusR_isStrict.lean](plusR_isStrict.lean)**
+@import "../Retracts/plusR.lean"
+**[DataTypesAsLattices/Retracts/lambF.lean](../Retracts/lambF.lean)**
 
-@import "plusR_isStrict.lean"
-**[DataTypesAsLattices/Functionality/hCond.lean](hCond.lean)**
+@import "../Retracts/lambF.lean"
+**[DataTypesAsLattices/Enumeration/secondRecOperatorCode.lean](../Enumeration/secondRecOperatorCode.lean)**
 
-@import "hCond.lean"
-**[DataTypesAsLattices/Functionality/finite_sigma_union_app.lean](finite_sigma_union_app.lean)**
+@import "../Enumeration/secondRecOperatorCode.lean"
+**[DataTypesAsLattices/Enumeration/secondRecV.lean](../Enumeration/secondRecV.lean)**
 
-@import "finite_sigma_union_app.lean"
-**[DataTypesAsLattices/Functionality/lambF_isScottContinuous.lean](lambF_isScottContinuous.lean)**
+@import "../Enumeration/secondRecV.lean"
+**[DataTypesAsLattices/Enumeration/primrec_secondRecV.lean](../Enumeration/primrec_secondRecV.lean)**
 
-@import "lambF_isScottContinuous.lean"
-**[DataTypesAsLattices/Functionality/sumMed.lean](sumMed.lean)**
+@import "../Enumeration/primrec_secondRecV.lean"
+**[DataTypesAsLattices/Functionality/typed_bot_botElem.lean](typed_bot_botElem.lean)**
 
-@import "sumMed.lean"
-**[DataTypesAsLattices/Functionality/outrightC.lean](outrightC.lean)**
+@import "typed_bot_botElem.lean"
+**[DataTypesAsLattices/Functionality/funOf_top.lean](funOf_top.lean)**
 
-@import "outrightC.lean"
-**[DataTypesAsLattices/Functionality/eq_7_19.lean](eq_7_19.lean)**
+@import "funOf_top.lean"
+**[DataTypesAsLattices/Functionality/funOf_dcondSet.lean](funOf_dcondSet.lean)**
 
-@import "eq_7_19.lean"
-**[DataTypesAsLattices/Functionality/evalC_isScottContinuous.lean](evalC_isScottContinuous.lean)**
+@import "funOf_dcondSet.lean"
+**[DataTypesAsLattices/Enumeration/finAux.lean](../Enumeration/finAux.lean)**
 
-@import "evalC_isScottContinuous.lean"
-**[DataTypesAsLattices/Functionality/finite_sigma_plain_app.lean](finite_sigma_plain_app.lean)**
+@import "../Enumeration/finAux.lean"
+**[DataTypesAsLattices/Enumeration/fin.lean](../Enumeration/fin.lean)**
 
-@import "finite_sigma_plain_app.lean"
-**[DataTypesAsLattices/Functionality/hPred.lean](hPred.lean)**
+@import "../Enumeration/fin.lean"
+**[DataTypesAsLattices/Functionality/predSet_iterate_expTag_isScottContinuous.lean](predSet_iterate_expTag_isScottContinuous.lean)**
 
-@import "hPred.lean"
-**[DataTypesAsLattices/Functionality/plusR_typed_bot.lean](plusR_typed_bot.lean)**
+@import "predSet_iterate_expTag_isScottContinuous.lean"
+**[DataTypesAsLattices/Functionality/updateEnvUnion.lean](updateEnvUnion.lean)**
 
-@import "plusR_typed_bot.lean"
-**[DataTypesAsLattices/Functionality/Scomb_inner_isScottContinuous.lean](Scomb_inner_isScottContinuous.lean)**
+@import "updateEnvUnion.lean"
+**[DataTypesAsLattices/Functionality/Kcomb_app2.lean](Kcomb_app2.lean)**
 
-@import "Scomb_inner_isScottContinuous.lean"
-**[DataTypesAsLattices/Functionality/Scomb_app3.lean](Scomb_app3.lean)**
+@import "Kcomb_app2.lean"
+**[DataTypesAsLattices/Graph/mu_law.lean](../Graph/mu_law.lean)**
 
-@import "Scomb_app3.lean"
-**[DataTypesAsLattices/Functionality/Scomb_app2_isGraph.lean](Scomb_app2_isGraph.lean)**
+@import "../Graph/mu_law.lean"
+**[DataTypesAsLattices/Functionality/curryC_isScottContinuous.lean](curryC_isScottContinuous.lean)**
 
-@import "Scomb_app2_isGraph.lean"
+@import "curryC_isScottContinuous.lean"
+**[DataTypesAsLattices/Functionality/pairSeq_isScottContinuous_right.lean](pairSeq_isScottContinuous_right.lean)**
+
+@import "pairSeq_isScottContinuous_right.lean"
+**[DataTypesAsLattices/Functionality/plusR_right_isScottContinuous.lean](plusR_right_isScottContinuous.lean)**
+
+@import "plusR_right_isScottContinuous.lean"
+**[DataTypesAsLattices/Functionality/inleftC.lean](inleftC.lean)**
+
+@import "inleftC.lean"
+**[DataTypesAsLattices/Functionality/normalized_finite_app.lean](normalized_finite_app.lean)**
+
+@import "normalized_finite_app.lean"
+**[DataTypesAsLattices/Functionality/pairSeq_app_zero.lean](pairSeq_app_zero.lean)**
+
+@import "pairSeq_app_zero.lean"
+**[DataTypesAsLattices/Functionality/inrightC.lean](inrightC.lean)**
+
+@import "inrightC.lean"
+**[DataTypesAsLattices/Functionality/Kcomb_app_isGraph.lean](Kcomb_app_isGraph.lean)**
+
+@import "Kcomb_app_isGraph.lean"
+**[DataTypesAsLattices/Retracts/lambR.lean](../Retracts/lambR.lean)**
+
+@import "../Retracts/lambR.lean"
+**[DataTypesAsLattices/Retracts/envR.lean](../Retracts/envR.lean)**
+
+@import "../Retracts/envR.lean"
+**[DataTypesAsLattices/Functionality/envR_map_isScottContinuous.lean](envR_map_isScottContinuous.lean)**
+
+@import "envR_map_isScottContinuous.lean"
+**[DataTypesAsLattices/Functionality/Icomb_isGraph.lean](Icomb_isGraph.lean)**
+
+@import "Icomb_isGraph.lean"
+**[DataTypesAsLattices/Functionality/arrowE.lean](arrowE.lean)**
+
+@import "arrowE.lean"
+**[DataTypesAsLattices/Functionality/pairSeq_isScottContinuous_left.lean](pairSeq_isScottContinuous_left.lean)**
+
+@import "pairSeq_isScottContinuous_left.lean"
 **[DataTypesAsLattices/Functionality/diagC_app.lean](diagC_app.lean)**
 
 @import "diagC_app.lean"
-**[DataTypesAsLattices/Functionality/eq_4_39.lean](eq_4_39.lean)**
+**[DataTypesAsLattices/Functionality/curry_mid_isScottContinuous.lean](curry_mid_isScottContinuous.lean)**
 
-@import "eq_4_39.lean"
-**[DataTypesAsLattices/Functionality/plotkinGood.lean](plotkinGood.lean)**
+@import "curry_mid_isScottContinuous.lean"
+**[DataTypesAsLattices/Functionality/curryC_app.lean](curryC_app.lean)**
 
-@import "plotkinGood.lean"
-**[DataTypesAsLattices/Functionality/eraseTag.lean](eraseTag.lean)**
+@import "curryC_app.lean"
+**[DataTypesAsLattices/Enumeration/primrec_diagonalInterCode.lean](../Enumeration/primrec_diagonalInterCode.lean)**
 
-@import "eraseTag.lean"
+@import "../Enumeration/primrec_diagonalInterCode.lean"
+**[DataTypesAsLattices/Functionality/predSet_iterate_ofNat.lean](predSet_iterate_ofNat.lean)**
+
+@import "predSet_iterate_ofNat.lean"
+**[DataTypesAsLattices/Functionality/predSet_iterate_self.lean](predSet_iterate_self.lean)**
+
+@import "predSet_iterate_self.lean"
+**[DataTypesAsLattices/Retracts/fstC.lean](../Retracts/fstC.lean)**
+
+@import "../Retracts/fstC.lean"
+**[DataTypesAsLattices/Functionality/whichC.lean](whichC.lean)**
+
+@import "whichC.lean"
+**[DataTypesAsLattices/Functionality/eta2_app.lean](eta2_app.lean)**
+
+@import "eta2_app.lean"
+**[DataTypesAsLattices/Functionality/pairSeq_app_one.lean](pairSeq_app_one.lean)**
+
+@import "pairSeq_app_one.lean"
+**[DataTypesAsLattices/Functionality/pairSeq_inj.lean](pairSeq_inj.lean)**
+
+@import "pairSeq_inj.lean"
+**[DataTypesAsLattices/Functionality/continuous_tuple.lean](continuous_tuple.lean)**
+
+@import "continuous_tuple.lean"
+**[DataTypesAsLattices/Functionality/Scomb_inner_isScottContinuous.lean](Scomb_inner_isScottContinuous.lean)**
+
+@import "Scomb_inner_isScottContinuous.lean"
 **[DataTypesAsLattices/Functionality/tensorR_map_isScottContinuous.lean](tensorR_map_isScottContinuous.lean)**
 
 @import "tensorR_map_isScottContinuous.lean"
-**[DataTypesAsLattices/Functionality/evalC_app.lean](evalC_app.lean)**
+**[DataTypesAsLattices/Functionality/Scomb_app2_isGraph.lean](Scomb_app2_isGraph.lean)**
 
-@import "evalC_app.lean"
+@import "Scomb_app2_isGraph.lean"
+**[DataTypesAsLattices/Functionality/outrightC.lean](outrightC.lean)**
+
+@import "outrightC.lean"
+**[DataTypesAsLattices/Functionality/arrowR_diag_isScottContinuous.lean](arrowR_diag_isScottContinuous.lean)**
+
+@import "arrowR_diag_isScottContinuous.lean"
+**[DataTypesAsLattices/Functionality/lambF_isScottContinuous.lean](lambF_isScottContinuous.lean)**
+
+@import "lambF_isScottContinuous.lean"
+**[DataTypesAsLattices/Functionality/Z.lean](Z.lean)**
+
+@import "Z.lean"
+**[DataTypesAsLattices/Functionality/iterateE.lean](iterateE.lean)**
+
+@import "iterateE.lean"
+**[DataTypesAsLattices/Functionality/plotkinRel.lean](plotkinRel.lean)**
+
+@import "plotkinRel.lean"
+**[DataTypesAsLattices/Functionality/plotkinGood.lean](plotkinGood.lean)**
+
+@import "plotkinGood.lean"
+**[DataTypesAsLattices/Functionality/continuous_nary.lean](continuous_nary.lean)**
+
+@import "continuous_nary.lean"
+**[DataTypesAsLattices/Functionality/Hinterp.lean](Hinterp.lean)**
+
+@import "Hinterp.lean"
 **[DataTypesAsLattices/Functionality/seq4_comp_isScottContinuous.lean](seq4_comp_isScottContinuous.lean)**
 
 @import "seq4_comp_isScottContinuous.lean"
@@ -396,78 +288,129 @@
 **[DataTypesAsLattices/Functionality/tensor4_app.lean](tensor4_app.lean)**
 
 @import "tensor4_app.lean"
-**[DataTypesAsLattices/Functionality/tensor4_diag_isScottContinuous.lean](tensor4_diag_isScottContinuous.lean)**
+**[DataTypesAsLattices/Functionality/plusR_map_isScottContinuous.lean](plusR_map_isScottContinuous.lean)**
 
-@import "tensor4_diag_isScottContinuous.lean"
-**[DataTypesAsLattices/Enumeration/Gcomb.lean](../Enumeration/Gcomb.lean)**
+@import "plusR_map_isScottContinuous.lean"
+**[DataTypesAsLattices/Functionality/plusR_app.lean](plusR_app.lean)**
 
-@import "../Enumeration/Gcomb.lean"
-**[DataTypesAsLattices/Enumeration/gClosed.lean](../Enumeration/gClosed.lean)**
-
-@import "../Enumeration/gClosed.lean"
-**[DataTypesAsLattices/Enumeration/Subalgebra.lean](../Enumeration/Subalgebra.lean)**
-
-@import "../Enumeration/Subalgebra.lean"
-**[DataTypesAsLattices/Enumeration/GeneratedSubalgebra.lean](../Enumeration/GeneratedSubalgebra.lean)**
-
-@import "../Enumeration/GeneratedSubalgebra.lean"
-**[DataTypesAsLattices/Enumeration/vaalF.lean](../Enumeration/vaalF.lean)**
-
-@import "../Enumeration/vaalF.lean"
-**[DataTypesAsLattices/Enumeration/not_mem_zero_Gcomb.lean](../Enumeration/not_mem_zero_Gcomb.lean)**
-
-@import "../Enumeration/not_mem_zero_Gcomb.lean"
-**[DataTypesAsLattices/Functionality/plusR_isRetract.lean](plusR_isRetract.lean)**
-
-@import "plusR_isRetract.lean"
-**[DataTypesAsLattices/Enumeration/valStep.lean](../Enumeration/valStep.lean)**
-
-@import "../Enumeration/valStep.lean"
-**[DataTypesAsLattices/Functionality/plotkinRel.lean](plotkinRel.lean)**
-
-@import "plotkinRel.lean"
-**[DataTypesAsLattices/Enumeration/vaalStepTerm.lean](../Enumeration/vaalStepTerm.lean)**
-
-@import "../Enumeration/vaalStepTerm.lean"
-**[DataTypesAsLattices/Functionality/tensorR_app.lean](tensorR_app.lean)**
-
-@import "tensorR_app.lean"
-**[DataTypesAsLattices/Functionality/eq_4_21.lean](eq_4_21.lean)**
-
-@import "eq_4_21.lean"
-**[DataTypesAsLattices/Functionality/eq_4_20.lean](eq_4_20.lean)**
-
-@import "eq_4_20.lean"
-**[DataTypesAsLattices/Functionality/theorem_4_4_typed.lean](theorem_4_4_typed.lean)**
-
-@import "theorem_4_4_typed.lean"
-**[DataTypesAsLattices/Functionality/tensorR_isRetract.lean](tensorR_isRetract.lean)**
-
-@import "tensorR_isRetract.lean"
-**[DataTypesAsLattices/Functionality/eq_4_12.lean](eq_4_12.lean)**
-
-@import "eq_4_12.lean"
+@import "plusR_app.lean"
 **[DataTypesAsLattices/Functionality/plusR_typed_top.lean](plusR_typed_top.lean)**
 
 @import "plusR_typed_top.lean"
-**[DataTypesAsLattices/Enumeration/secondRecV.lean](../Enumeration/secondRecV.lean)**
+**[DataTypesAsLattices/Functionality/plusR_fst.lean](plusR_fst.lean)**
 
-@import "../Enumeration/secondRecV.lean"
-**[DataTypesAsLattices/Enumeration/primrec_secondRecV.lean](../Enumeration/primrec_secondRecV.lean)**
+@import "plusR_fst.lean"
+**[DataTypesAsLattices/Functionality/eq_4_13.lean](eq_4_13.lean)**
 
-@import "../Enumeration/primrec_secondRecV.lean"
-**[DataTypesAsLattices/Enumeration/GeneratedFromG.lean](../Enumeration/GeneratedFromG.lean)**
+@import "eq_4_13.lean"
+**[DataTypesAsLattices/Functionality/plusR_isStrict.lean](plusR_isStrict.lean)**
 
-@import "../Enumeration/GeneratedFromG.lean"
-**[DataTypesAsLattices/Enumeration/Lcomb.lean](../Enumeration/Lcomb.lean)**
+@import "plusR_isStrict.lean"
+**[DataTypesAsLattices/Functionality/plusR_typed_bot.lean](plusR_typed_bot.lean)**
 
-@import "../Enumeration/Lcomb.lean"
-**[DataTypesAsLattices/Enumeration/combinatory_mem_subalgebra.lean](../Enumeration/combinatory_mem_subalgebra.lean)**
+@import "plusR_typed_bot.lean"
+**[DataTypesAsLattices/Functionality/tensor4_diag_isScottContinuous.lean](tensor4_diag_isScottContinuous.lean)**
 
-@import "../Enumeration/combinatory_mem_subalgebra.lean"
-**[DataTypesAsLattices/Enumeration/seq2_mem_subalgebra.lean](../Enumeration/seq2_mem_subalgebra.lean)**
+@import "tensor4_diag_isScottContinuous.lean"
+**[DataTypesAsLattices/Functionality/eraseTag.lean](eraseTag.lean)**
 
-@import "../Enumeration/seq2_mem_subalgebra.lean"
+@import "eraseTag.lean"
+**[DataTypesAsLattices/Functionality/plotkinE.lean](plotkinE.lean)**
+
+@import "plotkinE.lean"
+**[DataTypesAsLattices/Functionality/plusR_typed_inr.lean](plusR_typed_inr.lean)**
+
+@import "plusR_typed_inr.lean"
+**[DataTypesAsLattices/Functionality/Zcomb.lean](Zcomb.lean)**
+
+@import "Zcomb.lean"
+**[DataTypesAsLattices/Functionality/seq4_body_isScottContinuous.lean](seq4_body_isScottContinuous.lean)**
+
+@import "seq4_body_isScottContinuous.lean"
+**[DataTypesAsLattices/Functionality/seq4_app.lean](seq4_app.lean)**
+
+@import "seq4_app.lean"
+**[DataTypesAsLattices/Functionality/plusR_isRetract.lean](plusR_isRetract.lean)**
+
+@import "plusR_isRetract.lean"
+**[DataTypesAsLattices/Functionality/outleftC.lean](outleftC.lean)**
+
+@import "outleftC.lean"
+**[DataTypesAsLattices/Functionality/plusR_typed_inl.lean](plusR_typed_inl.lean)**
+
+@import "plusR_typed_inl.lean"
+**[DataTypesAsLattices/Functionality/plusR_typed_iff.lean](plusR_typed_iff.lean)**
+
+@import "plusR_typed_iff.lean"
+**[DataTypesAsLattices/Functionality/theorem_4_5_sum.lean](theorem_4_5_sum.lean)**
+
+@import "theorem_4_5_sum.lean"
+**[DataTypesAsLattices/Functionality/pairElem.lean](pairElem.lean)**
+
+@import "pairElem.lean"
+**[DataTypesAsLattices/Functionality/prodE.lean](prodE.lean)**
+
+@import "prodE.lean"
+**[DataTypesAsLattices/Functionality/sumE.lean](sumE.lean)**
+
+@import "sumE.lean"
+**[DataTypesAsLattices/Functionality/sumMed.lean](sumMed.lean)**
+
+@import "sumMed.lean"
+**[DataTypesAsLattices/Functionality/normalized_finite_fresh_app.lean](normalized_finite_fresh_app.lean)**
+
+@import "normalized_finite_fresh_app.lean"
+**[DataTypesAsLattices/Functionality/Scomb_app3.lean](Scomb_app3.lean)**
+
+@import "Scomb_app3.lean"
+**[DataTypesAsLattices/Enumeration/Ycode.lean](../Enumeration/Ycode.lean)**
+
+@import "../Enumeration/Ycode.lean"
+**[DataTypesAsLattices/Enumeration/recCode.lean](../Enumeration/recCode.lean)**
+
+@import "../Enumeration/recCode.lean"
+**[DataTypesAsLattices/Functionality/envR_app.lean](envR_app.lean)**
+
+@import "envR_app.lean"
+**[DataTypesAsLattices/Retracts/iterates_areRetracts.lean](../Retracts/iterates_areRetracts.lean)**
+
+@import "../Retracts/iterates_areRetracts.lean"
+**[DataTypesAsLattices/Retracts/iterateBot_isStrict.lean](../Retracts/iterateBot_isStrict.lean)**
+
+@import "../Retracts/iterateBot_isStrict.lean"
+**[DataTypesAsLattices/Retracts/iterateBot_retractLe.lean](../Retracts/iterateBot_retractLe.lean)**
+
+@import "../Retracts/iterateBot_retractLe.lean"
+**[DataTypesAsLattices/Retracts/inverseLimit_project_earlier.lean](../Retracts/inverseLimit_project_earlier.lean)**
+
+@import "../Retracts/inverseLimit_project_earlier.lean"
+**[DataTypesAsLattices/Retracts/inverseLimit_project_later.lean](../Retracts/inverseLimit_project_later.lean)**
+
+@import "../Retracts/inverseLimit_project_later.lean"
+**[DataTypesAsLattices/Retracts/inverseLimit_project_iUnion.lean](../Retracts/inverseLimit_project_iUnion.lean)**
+
+@import "../Retracts/inverseLimit_project_iUnion.lean"
+**[DataTypesAsLattices/Retracts/inverseLimit_iUnion_typed.lean](../Retracts/inverseLimit_iUnion_typed.lean)**
+
+@import "../Retracts/inverseLimit_iUnion_typed.lean"
+**[DataTypesAsLattices/Retracts/inverseLimitToFixed.lean](../Retracts/inverseLimitToFixed.lean)**
+
+@import "../Retracts/inverseLimitToFixed.lean"
+**[DataTypesAsLattices/Retracts/funOf_fix_idem.lean](../Retracts/funOf_fix_idem.lean)**
+
+@import "../Retracts/funOf_fix_idem.lean"
+**[DataTypesAsLattices/Enumeration/condCode.lean](../Enumeration/condCode.lean)**
+
+@import "../Enumeration/condCode.lean"
+**[DataTypesAsLattices/Enumeration/myhillCase2Code.lean](../Enumeration/myhillCase2Code.lean)**
+
+@import "../Enumeration/myhillCase2Code.lean"
+**[DataTypesAsLattices/Enumeration/primrec_myhillCase2Code.lean](../Enumeration/primrec_myhillCase2Code.lean)**
+
+@import "../Enumeration/primrec_myhillCase2Code.lean"
+**[DataTypesAsLattices/Functionality/tensor4_isRetract.lean](tensor4_isRetract.lean)**
+
+@import "tensor4_isRetract.lean"
 **[DataTypesAsLattices/Retracts/retract_isGraph.lean](../Retracts/retract_isGraph.lean)**
 
 @import "../Retracts/retract_isGraph.lean"
@@ -480,114 +423,213 @@
 **[DataTypesAsLattices/Closures/Vcomb_more.lean](../Closures/Vcomb_more.lean)**
 
 @import "../Closures/Vcomb_more.lean"
-**[DataTypesAsLattices/Functionality/updateEnvUnion.lean](updateEnvUnion.lean)**
+**[DataTypesAsLattices/Closures/eq_5_21.lean](../Closures/eq_5_21.lean)**
 
-@import "updateEnvUnion.lean"
-**[DataTypesAsLattices/Functionality/hLam.lean](hLam.lean)**
+@import "../Closures/eq_5_21.lean"
+**[DataTypesAsLattices/Closures/Icomb_subset_Vcomb.lean](../Closures/Icomb_subset_Vcomb.lean)**
 
-@import "hLam.lean"
-**[DataTypesAsLattices/Functionality/Hstep.lean](Hstep.lean)**
+@import "../Closures/Icomb_subset_Vcomb.lean"
+**[DataTypesAsLattices/Closures/theorem_5_5_universe.lean](../Closures/theorem_5_5_universe.lean)**
 
-@import "Hstep.lean"
-**[DataTypesAsLattices/Functionality/HF.lean](HF.lean)**
+@import "../Closures/theorem_5_5_universe.lean"
+**[DataTypesAsLattices/Closures/eq_5_24.lean](../Closures/eq_5_24.lean)**
 
-@import "HF.lean"
-**[DataTypesAsLattices/Functionality/plotkinE.lean](plotkinE.lean)**
+@import "../Closures/eq_5_24.lean"
+**[DataTypesAsLattices/Closures/eq_5_23.lean](../Closures/eq_5_23.lean)**
 
-@import "plotkinE.lean"
-**[DataTypesAsLattices/Functionality/plotkin_function_related.lean](plotkin_function_related.lean)**
+@import "../Closures/eq_5_23.lean"
+**[DataTypesAsLattices/Closures/eq_5_22.lean](../Closures/eq_5_22.lean)**
 
-@import "plotkin_function_related.lean"
-**[DataTypesAsLattices/Retracts/funOf_fix_idem.lean](../Retracts/funOf_fix_idem.lean)**
+@import "../Closures/eq_5_22.lean"
+**[DataTypesAsLattices/Functionality/comp_isGraph.lean](comp_isGraph.lean)**
 
-@import "../Retracts/funOf_fix_idem.lean"
+@import "comp_isGraph.lean"
+**[DataTypesAsLattices/Functionality/Nrel.lean](Nrel.lean)**
+
+@import "Nrel.lean"
+**[DataTypesAsLattices/Retracts/iUnion_retract_isGraph.lean](../Retracts/iUnion_retract_isGraph.lean)**
+
+@import "../Retracts/iUnion_retract_isGraph.lean"
+**[DataTypesAsLattices/Enumeration/primrecu2082_finAux.lean](../Enumeration/primrecu2082_finAux.lean)**
+
+@import "../Enumeration/primrecu2082_finAux.lean"
+**[DataTypesAsLattices/Enumeration/primrec_fin.lean](../Enumeration/primrec_fin.lean)**
+
+@import "../Enumeration/primrec_fin.lean"
+**[DataTypesAsLattices/Functionality/eq_4_39.lean](eq_4_39.lean)**
+
+@import "eq_4_39.lean"
+**[DataTypesAsLattices/Retracts/tagInj.lean](../Retracts/tagInj.lean)**
+
+@import "../Retracts/tagInj.lean"
+**[DataTypesAsLattices/Functionality/tagInj_one.lean](tagInj_one.lean)**
+
+@import "tagInj_one.lean"
+**[DataTypesAsLattices/Functionality/encodeExp.lean](encodeExp.lean)**
+
+@import "encodeExp.lean"
+**[DataTypesAsLattices/Functionality/tagInj_isScottContinuous.lean](tagInj_isScottContinuous.lean)**
+
+@import "tagInj_isScottContinuous.lean"
+**[DataTypesAsLattices/Retracts/plus7Body.lean](../Retracts/plus7Body.lean)**
+
+@import "../Retracts/plus7Body.lean"
+**[DataTypesAsLattices/Functionality/plus7_map_isScottContinuous.lean](plus7_map_isScottContinuous.lean)**
+
+@import "plus7_map_isScottContinuous.lean"
+**[DataTypesAsLattices/Functionality/tagInj_zero.lean](tagInj_zero.lean)**
+
+@import "tagInj_zero.lean"
 **[DataTypesAsLattices/Retracts/plus7.lean](../Retracts/plus7.lean)**
 
 @import "../Retracts/plus7.lean"
 **[DataTypesAsLattices/Functionality/plus7_comp_isScottContinuous.lean](plus7_comp_isScottContinuous.lean)**
 
 @import "plus7_comp_isScottContinuous.lean"
-**[DataTypesAsLattices/Retracts/expF.lean](../Retracts/expF.lean)**
+**[DataTypesAsLattices/Functionality/plus7_app.lean](plus7_app.lean)**
 
-@import "../Retracts/expF.lean"
-**[DataTypesAsLattices/Retracts/expR.lean](../Retracts/expR.lean)**
+@import "plus7_app.lean"
+**[DataTypesAsLattices/Functionality/plus7_isRetract.lean](plus7_isRetract.lean)**
 
-@import "../Retracts/expR.lean"
-**[DataTypesAsLattices/Functionality/plusR_typed_inr.lean](plusR_typed_inr.lean)**
+@import "plus7_isRetract.lean"
+**[DataTypesAsLattices/Functionality/plus7_typed_inl0.lean](plus7_typed_inl0.lean)**
 
-@import "plusR_typed_inr.lean"
-**[DataTypesAsLattices/Functionality/prodE.lean](prodE.lean)**
+@import "plus7_typed_inl0.lean"
+**[DataTypesAsLattices/Functionality/plus7_typed_inl5.lean](plus7_typed_inl5.lean)**
 
-@import "prodE.lean"
+@import "plus7_typed_inl5.lean"
+**[DataTypesAsLattices/Functionality/plus7_typed_inl6.lean](plus7_typed_inl6.lean)**
+
+@import "plus7_typed_inl6.lean"
+**[DataTypesAsLattices/Functionality/plus7_typed_inl2.lean](plus7_typed_inl2.lean)**
+
+@import "plus7_typed_inl2.lean"
+**[DataTypesAsLattices/Functionality/plus7_typed_inl4.lean](plus7_typed_inl4.lean)**
+
+@import "plus7_typed_inl4.lean"
+**[DataTypesAsLattices/Functionality/plus7_typed_inl1.lean](plus7_typed_inl1.lean)**
+
+@import "plus7_typed_inl1.lean"
+**[DataTypesAsLattices/Functionality/plus7_typed_inl3.lean](plus7_typed_inl3.lean)**
+
+@import "plus7_typed_inl3.lean"
+**[DataTypesAsLattices/Functionality/expPayload.lean](expPayload.lean)**
+
+@import "expPayload.lean"
+**[DataTypesAsLattices/Functionality/hApply.lean](hApply.lean)**
+
+@import "hApply.lean"
+**[DataTypesAsLattices/Functionality/hApp.lean](hApp.lean)**
+
+@import "hApp.lean"
+**[DataTypesAsLattices/Functionality/hPred.lean](hPred.lean)**
+
+@import "hPred.lean"
+**[DataTypesAsLattices/Functionality/hLam.lean](hLam.lean)**
+
+@import "hLam.lean"
+**[DataTypesAsLattices/Functionality/hCond.lean](hCond.lean)**
+
+@import "hCond.lean"
+**[DataTypesAsLattices/Functionality/hVar.lean](hVar.lean)**
+
+@import "hVar.lean"
+**[DataTypesAsLattices/Functionality/hSucc.lean](hSucc.lean)**
+
+@import "hSucc.lean"
+**[DataTypesAsLattices/Functionality/sigmaJ.lean](sigmaJ.lean)**
+
+@import "sigmaJ.lean"
+**[DataTypesAsLattices/Enumeration/Gcomb.lean](../Enumeration/Gcomb.lean)**
+
+@import "../Enumeration/Gcomb.lean"
+**[DataTypesAsLattices/Enumeration/valStep.lean](../Enumeration/valStep.lean)**
+
+@import "../Enumeration/valStep.lean"
+**[DataTypesAsLattices/Functionality/eq_7_18_ne.lean](eq_7_18_ne.lean)**
+
+@import "eq_7_18_ne.lean"
+**[DataTypesAsLattices/Enumeration/not_mem_zero_Gcomb.lean](../Enumeration/not_mem_zero_Gcomb.lean)**
+
+@import "../Enumeration/not_mem_zero_Gcomb.lean"
 **[DataTypesAsLattices/Enumeration/Gcomb_more.lean](../Enumeration/Gcomb_more.lean)**
 
 @import "../Enumeration/Gcomb_more.lean"
+**[DataTypesAsLattices/Enumeration/Gbar.lean](../Enumeration/Gbar.lean)**
+
+@import "../Enumeration/Gbar.lean"
 **[DataTypesAsLattices/Enumeration/valNat.lean](../Enumeration/valNat.lean)**
 
 @import "../Enumeration/valNat.lean"
-**[DataTypesAsLattices/Enumeration/valStage_subset.lean](../Enumeration/valStage_subset.lean)**
-
-@import "../Enumeration/valStage_subset.lean"
-**[DataTypesAsLattices/Enumeration/condC_from_G.lean](../Enumeration/condC_from_G.lean)**
-
-@import "../Enumeration/condC_from_G.lean"
-**[DataTypesAsLattices/Enumeration/realizes_valNat_mem.lean](../Enumeration/realizes_valNat_mem.lean)**
-
-@import "../Enumeration/realizes_valNat_mem.lean"
-**[DataTypesAsLattices/Enumeration/predC_from_G.lean](../Enumeration/predC_from_G.lean)**
-
-@import "../Enumeration/predC_from_G.lean"
-**[DataTypesAsLattices/Enumeration/sucC_from_G.lean](../Enumeration/sucC_from_G.lean)**
-
-@import "../Enumeration/sucC_from_G.lean"
-**[DataTypesAsLattices/Enumeration/ValTrace.lean](../Enumeration/ValTrace.lean)**
-
-@import "../Enumeration/ValTrace.lean"
-**[DataTypesAsLattices/Enumeration/valTraceHas.lean](../Enumeration/valTraceHas.lean)**
-
-@import "../Enumeration/valTraceHas.lean"
-**[DataTypesAsLattices/Enumeration/valTraceG.lean](../Enumeration/valTraceG.lean)**
-
-@import "../Enumeration/valTraceG.lean"
-**[DataTypesAsLattices/Enumeration/Scomb_from_G.lean](../Enumeration/Scomb_from_G.lean)**
-
-@import "../Enumeration/Scomb_from_G.lean"
-**[DataTypesAsLattices/Enumeration/Kcomb_from_G.lean](../Enumeration/Kcomb_from_G.lean)**
-
-@import "../Enumeration/Kcomb_from_G.lean"
-**[DataTypesAsLattices/Enumeration/valStage_eq_of_rank_le.lean](../Enumeration/valStage_eq_of_rank_le.lean)**
-
-@import "../Enumeration/valStage_eq_of_rank_le.lean"
-**[DataTypesAsLattices/Enumeration/valEntryJustified.lean](../Enumeration/valEntryJustified.lean)**
-
-@import "../Enumeration/valEntryJustified.lean"
-**[DataTypesAsLattices/Enumeration/valC.lean](../Enumeration/valC.lean)**
-
-@import "../Enumeration/valC.lean"
-**[DataTypesAsLattices/Enumeration/Deg.lean](../Enumeration/Deg.lean)**
-
-@import "../Enumeration/Deg.lean"
-**[DataTypesAsLattices/Enumeration/combinatory_mem_Deg.lean](../Enumeration/combinatory_mem_Deg.lean)**
-
-@import "../Enumeration/combinatory_mem_Deg.lean"
 **[DataTypesAsLattices/Enumeration/eq_3_8_val.lean](../Enumeration/eq_3_8_val.lean)**
 
 @import "../Enumeration/eq_3_8_val.lean"
-**[DataTypesAsLattices/Enumeration/eq_3_9_val.lean](../Enumeration/eq_3_9_val.lean)**
+**[DataTypesAsLattices/Enumeration/valStage_subset.lean](../Enumeration/valStage_subset.lean)**
 
-@import "../Enumeration/eq_3_9_val.lean"
-**[DataTypesAsLattices/Enumeration/eq_3_10_val.lean](../Enumeration/eq_3_10_val.lean)**
+@import "../Enumeration/valStage_subset.lean"
+**[DataTypesAsLattices/Enumeration/ValTrace.lean](../Enumeration/ValTrace.lean)**
 
-@import "../Enumeration/eq_3_10_val.lean"
+@import "../Enumeration/ValTrace.lean"
+**[DataTypesAsLattices/Enumeration/valTraceG.lean](../Enumeration/valTraceG.lean)**
+
+@import "../Enumeration/valTraceG.lean"
+**[DataTypesAsLattices/Enumeration/valStage_eq_of_rank_le.lean](../Enumeration/valStage_eq_of_rank_le.lean)**
+
+@import "../Enumeration/valStage_eq_of_rank_le.lean"
+**[DataTypesAsLattices/Enumeration/Scomb_from_G.lean](../Enumeration/Scomb_from_G.lean)**
+
+@import "../Enumeration/Scomb_from_G.lean"
+**[DataTypesAsLattices/Enumeration/valC.lean](../Enumeration/valC.lean)**
+
+@import "../Enumeration/valC.lean"
+**[DataTypesAsLattices/Enumeration/sucC_from_G.lean](../Enumeration/sucC_from_G.lean)**
+
+@import "../Enumeration/sucC_from_G.lean"
+**[DataTypesAsLattices/Functionality/plotkin_finite_separation.lean](plotkin_finite_separation.lean)**
+
+@import "plotkin_finite_separation.lean"
+**[DataTypesAsLattices/Functionality/eq_7_18_eq.lean](eq_7_18_eq.lean)**
+
+@import "eq_7_18_eq.lean"
+**[DataTypesAsLattices/Enumeration/predC_from_G.lean](../Enumeration/predC_from_G.lean)**
+
+@import "../Enumeration/predC_from_G.lean"
+**[DataTypesAsLattices/Enumeration/vaalF.lean](../Enumeration/vaalF.lean)**
+
+@import "../Enumeration/vaalF.lean"
+**[DataTypesAsLattices/Enumeration/Kcomb_from_G.lean](../Enumeration/Kcomb_from_G.lean)**
+
+@import "../Enumeration/Kcomb_from_G.lean"
+**[DataTypesAsLattices/Functionality/finite_sigma_plain_app.lean](finite_sigma_plain_app.lean)**
+
+@import "finite_sigma_plain_app.lean"
+**[DataTypesAsLattices/Enumeration/valTraceHas.lean](../Enumeration/valTraceHas.lean)**
+
+@import "../Enumeration/valTraceHas.lean"
+**[DataTypesAsLattices/Enumeration/valEntryJustified.lean](../Enumeration/valEntryJustified.lean)**
+
+@import "../Enumeration/valEntryJustified.lean"
+**[DataTypesAsLattices/Enumeration/valTraceStruct.lean](../Enumeration/valTraceStruct.lean)**
+
+@import "../Enumeration/valTraceStruct.lean"
+**[DataTypesAsLattices/Enumeration/gClosed.lean](../Enumeration/gClosed.lean)**
+
+@import "../Enumeration/gClosed.lean"
+**[DataTypesAsLattices/Enumeration/vaalStepTerm.lean](../Enumeration/vaalStepTerm.lean)**
+
+@import "../Enumeration/vaalStepTerm.lean"
+**[DataTypesAsLattices/Enumeration/myhillQ.lean](../Enumeration/myhillQ.lean)**
+
+@import "../Enumeration/myhillQ.lean"
+**[DataTypesAsLattices/Enumeration/realizes_valNat_mem.lean](../Enumeration/realizes_valNat_mem.lean)**
+
+@import "../Enumeration/realizes_valNat_mem.lean"
 **[DataTypesAsLattices/Enumeration/primrecRel_valTraceHas.lean](../Enumeration/primrecRel_valTraceHas.lean)**
 
 @import "../Enumeration/primrecRel_valTraceHas.lean"
 **[DataTypesAsLattices/Enumeration/primrecPred_valEntryJustified.lean](../Enumeration/primrecPred_valEntryJustified.lean)**
 
 @import "../Enumeration/primrecPred_valEntryJustified.lean"
-**[DataTypesAsLattices/Enumeration/valTraceStruct.lean](../Enumeration/valTraceStruct.lean)**
-
-@import "../Enumeration/valTraceStruct.lean"
 **[DataTypesAsLattices/Enumeration/primrecPred_valTraceStruct.lean](../Enumeration/primrecPred_valTraceStruct.lean)**
 
 @import "../Enumeration/primrecPred_valTraceStruct.lean"
@@ -600,90 +642,69 @@
 **[DataTypesAsLattices/Enumeration/valTraceOk_more.lean](../Enumeration/valTraceOk_more.lean)**
 
 @import "../Enumeration/valTraceOk_more.lean"
-**[DataTypesAsLattices/Functionality/tensorR_diag_isScottContinuous.lean](tensorR_diag_isScottContinuous.lean)**
+**[DataTypesAsLattices/Enumeration/condC_from_G.lean](../Enumeration/condC_from_G.lean)**
 
-@import "tensorR_diag_isScottContinuous.lean"
-**[DataTypesAsLattices/Functionality/treeF_isScottContinuous.lean](treeF_isScottContinuous.lean)**
+@import "../Enumeration/condC_from_G.lean"
+**[DataTypesAsLattices/Enumeration/mem_myhillQ.lean](../Enumeration/mem_myhillQ.lean)**
 
-@import "treeF_isScottContinuous.lean"
-**[DataTypesAsLattices/Functionality/eq_4_38.lean](eq_4_38.lean)**
+@import "../Enumeration/mem_myhillQ.lean"
+**[DataTypesAsLattices/Functionality/finite_sigma_union_app.lean](finite_sigma_union_app.lean)**
 
-@import "eq_4_38.lean"
-**[DataTypesAsLattices/Functionality/expF_isScottContinuous.lean](expF_isScottContinuous.lean)**
+@import "finite_sigma_union_app.lean"
+**[DataTypesAsLattices/Functionality/plotkin_function_related.lean](plotkin_function_related.lean)**
 
-@import "expF_isScottContinuous.lean"
-**[DataTypesAsLattices/Functionality/eq_4_44.lean](eq_4_44.lean)**
+@import "plotkin_function_related.lean"
+**[DataTypesAsLattices/Enumeration/Subalgebra.lean](../Enumeration/Subalgebra.lean)**
 
-@import "eq_4_44.lean"
-**[DataTypesAsLattices/Functionality/Kcomb_app_isGraph.lean](Kcomb_app_isGraph.lean)**
+@import "../Enumeration/Subalgebra.lean"
+**[DataTypesAsLattices/Enumeration/Deg.lean](../Enumeration/Deg.lean)**
 
-@import "Kcomb_app_isGraph.lean"
-**[DataTypesAsLattices/Enumeration/eq_3_12.lean](../Enumeration/eq_3_12.lean)**
+@import "../Enumeration/Deg.lean"
+**[DataTypesAsLattices/Enumeration/GeneratedSubalgebra.lean](../Enumeration/GeneratedSubalgebra.lean)**
 
-@import "../Enumeration/eq_3_12.lean"
-**[DataTypesAsLattices/Functionality/typed_pairSeq_tensorR.lean](typed_pairSeq_tensorR.lean)**
+@import "../Enumeration/GeneratedSubalgebra.lean"
+**[DataTypesAsLattices/Enumeration/GeneratedFromG.lean](../Enumeration/GeneratedFromG.lean)**
 
-@import "typed_pairSeq_tensorR.lean"
-**[DataTypesAsLattices/Functionality/funOf_condSet.lean](funOf_condSet.lean)**
+@import "../Enumeration/GeneratedFromG.lean"
+**[DataTypesAsLattices/Enumeration/combinatory_mem_Deg.lean](../Enumeration/combinatory_mem_Deg.lean)**
 
-@import "funOf_condSet.lean"
-**[DataTypesAsLattices/Functionality/funOf_dcondSet.lean](funOf_dcondSet.lean)**
+@import "../Enumeration/combinatory_mem_Deg.lean"
+**[DataTypesAsLattices/Enumeration/combinatory_mem_subalgebra.lean](../Enumeration/combinatory_mem_subalgebra.lean)**
 
-@import "funOf_dcondSet.lean"
-**[DataTypesAsLattices/Functionality/plusR_fst.lean](plusR_fst.lean)**
+@import "../Enumeration/combinatory_mem_subalgebra.lean"
+**[DataTypesAsLattices/Enumeration/seq2_mem_subalgebra.lean](../Enumeration/seq2_mem_subalgebra.lean)**
 
-@import "plusR_fst.lean"
-**[DataTypesAsLattices/Functionality/plusR_typed_inl.lean](plusR_typed_inl.lean)**
+@import "../Enumeration/seq2_mem_subalgebra.lean"
+**[DataTypesAsLattices/Enumeration/packList.lean](../Enumeration/packList.lean)**
 
-@import "plusR_typed_inl.lean"
-**[DataTypesAsLattices/Functionality/plusR_typed_iff.lean](plusR_typed_iff.lean)**
+@import "../Enumeration/packList.lean"
+**[DataTypesAsLattices/Enumeration/singleGenerator.lean](../Enumeration/singleGenerator.lean)**
 
-@import "plusR_typed_iff.lean"
-**[DataTypesAsLattices/Functionality/theorem_4_5_sum.lean](theorem_4_5_sum.lean)**
+@import "../Enumeration/singleGenerator.lean"
+**[DataTypesAsLattices/Enumeration/generators_mem_singleGenerator_degree.lean](../Enumeration/generators_mem_singleGenerator_degree.lean)**
 
-@import "theorem_4_5_sum.lean"
-**[DataTypesAsLattices/Functionality/plus7_app.lean](plus7_app.lean)**
+@import "../Enumeration/generators_mem_singleGenerator_degree.lean"
+**[DataTypesAsLattices/Enumeration/theorem_3_6_more.lean](../Enumeration/theorem_3_6_more.lean)**
 
-@import "plus7_app.lean"
-**[DataTypesAsLattices/Functionality/plus7_typed_inl6.lean](plus7_typed_inl6.lean)**
+@import "../Enumeration/theorem_3_6_more.lean"
+**[DataTypesAsLattices/Functionality/evalC_isScottContinuous.lean](evalC_isScottContinuous.lean)**
 
-@import "plus7_typed_inl6.lean"
-**[DataTypesAsLattices/Functionality/plus7_typed_inl0.lean](plus7_typed_inl0.lean)**
+@import "evalC_isScottContinuous.lean"
+**[DataTypesAsLattices/Functionality/evalC_app.lean](evalC_app.lean)**
 
-@import "plus7_typed_inl0.lean"
-**[DataTypesAsLattices/Functionality/plus7_typed_inl3.lean](plus7_typed_inl3.lean)**
+@import "evalC_app.lean"
+**[DataTypesAsLattices/Functionality/inrightC_app.lean](inrightC_app.lean)**
 
-@import "plus7_typed_inl3.lean"
-**[DataTypesAsLattices/Functionality/plus7_typed_inl2.lean](plus7_typed_inl2.lean)**
+@import "inrightC_app.lean"
+**[DataTypesAsLattices/Retracts/fixedToInverseLimit.lean](../Retracts/fixedToInverseLimit.lean)**
 
-@import "plus7_typed_inl2.lean"
-**[DataTypesAsLattices/Functionality/plus7_isRetract.lean](plus7_isRetract.lean)**
+@import "../Retracts/fixedToInverseLimit.lean"
+**[DataTypesAsLattices/Enumeration/Lcomb.lean](../Enumeration/Lcomb.lean)**
 
-@import "plus7_isRetract.lean"
-**[DataTypesAsLattices/Functionality/plus7_typed_inl4.lean](plus7_typed_inl4.lean)**
-
-@import "plus7_typed_inl4.lean"
-**[DataTypesAsLattices/Functionality/plus7_typed_inl1.lean](plus7_typed_inl1.lean)**
-
-@import "plus7_typed_inl1.lean"
-**[DataTypesAsLattices/Functionality/plus7_typed_inl5.lean](plus7_typed_inl5.lean)**
-
-@import "plus7_typed_inl5.lean"
-**[DataTypesAsLattices/Enumeration/Gbar.lean](../Enumeration/Gbar.lean)**
-
-@import "../Enumeration/Gbar.lean"
+@import "../Enumeration/Lcomb.lean"
 **[DataTypesAsLattices/Enumeration/GeneratedSemigroup.lean](../Enumeration/GeneratedSemigroup.lean)**
 
 @import "../Enumeration/GeneratedSemigroup.lean"
-**[DataTypesAsLattices/Enumeration/haltEnum.lean](../Enumeration/haltEnum.lean)**
-
-@import "../Enumeration/haltEnum.lean"
-**[DataTypesAsLattices/Enumeration/primrec_haltEnum.lean](../Enumeration/primrec_haltEnum.lean)**
-
-@import "../Enumeration/primrec_haltEnum.lean"
-**[DataTypesAsLattices/Enumeration/haltEnum_more.lean](../Enumeration/haltEnum_more.lean)**
-
-@import "../Enumeration/haltEnum_more.lean"
 **[DataTypesAsLattices/Enumeration/Lterm.lean](../Enumeration/Lterm.lean)**
 
 @import "../Enumeration/Lterm.lean"
@@ -705,18 +726,78 @@
 **[DataTypesAsLattices/Enumeration/bar_generated.lean](../Enumeration/bar_generated.lean)**
 
 @import "../Enumeration/bar_generated.lean"
-**[DataTypesAsLattices/Retracts/inverseLimit_project_earlier.lean](../Retracts/inverseLimit_project_earlier.lean)**
+**[DataTypesAsLattices/Enumeration/haltEnum.lean](../Enumeration/haltEnum.lean)**
 
-@import "../Retracts/inverseLimit_project_earlier.lean"
-**[DataTypesAsLattices/Retracts/inverseLimit_project_iUnion.lean](../Retracts/inverseLimit_project_iUnion.lean)**
+@import "../Enumeration/haltEnum.lean"
+**[DataTypesAsLattices/Enumeration/primrec_haltEnum.lean](../Enumeration/primrec_haltEnum.lean)**
 
-@import "../Retracts/inverseLimit_project_iUnion.lean"
-**[DataTypesAsLattices/Retracts/inverseLimit_iUnion_typed.lean](../Retracts/inverseLimit_iUnion_typed.lean)**
+@import "../Enumeration/primrec_haltEnum.lean"
+**[DataTypesAsLattices/Enumeration/haltEnum_more.lean](../Enumeration/haltEnum_more.lean)**
 
-@import "../Retracts/inverseLimit_iUnion_typed.lean"
-**[DataTypesAsLattices/Retracts/inverseLimitToFixed.lean](../Retracts/inverseLimitToFixed.lean)**
+@import "../Enumeration/haltEnum_more.lean"
+**[DataTypesAsLattices/Functionality/eq_7_19.lean](eq_7_19.lean)**
 
-@import "../Retracts/inverseLimitToFixed.lean"
+@import "eq_7_19.lean"
+**[DataTypesAsLattices/Retracts/tensorR.lean](../Retracts/tensorR.lean)**
+
+@import "../Retracts/tensorR.lean"
+**[DataTypesAsLattices/Functionality/tensorR_app.lean](tensorR_app.lean)**
+
+@import "tensorR_app.lean"
+**[DataTypesAsLattices/Functionality/typed_pairSeq_tensorR.lean](typed_pairSeq_tensorR.lean)**
+
+@import "typed_pairSeq_tensorR.lean"
+**[DataTypesAsLattices/Retracts/treeF.lean](../Retracts/treeF.lean)**
+
+@import "../Retracts/treeF.lean"
+**[DataTypesAsLattices/Retracts/treeR.lean](../Retracts/treeR.lean)**
+
+@import "../Retracts/treeR.lean"
+**[DataTypesAsLattices/Functionality/eq_4_12.lean](eq_4_12.lean)**
+
+@import "eq_4_12.lean"
+**[DataTypesAsLattices/Functionality/tensorR_right_isScottContinuous.lean](tensorR_right_isScottContinuous.lean)**
+
+@import "tensorR_right_isScottContinuous.lean"
+**[DataTypesAsLattices/Functionality/tensorR_isRetract.lean](tensorR_isRetract.lean)**
+
+@import "tensorR_isRetract.lean"
+**[DataTypesAsLattices/Functionality/theorem_4_4_typed.lean](theorem_4_4_typed.lean)**
+
+@import "theorem_4_4_typed.lean"
+**[DataTypesAsLattices/Retracts/expF.lean](../Retracts/expF.lean)**
+
+@import "../Retracts/expF.lean"
+**[DataTypesAsLattices/Functionality/eq_4_20.lean](eq_4_20.lean)**
+
+@import "eq_4_20.lean"
+**[DataTypesAsLattices/Functionality/tensorR_diag_isScottContinuous.lean](tensorR_diag_isScottContinuous.lean)**
+
+@import "tensorR_diag_isScottContinuous.lean"
+**[DataTypesAsLattices/Functionality/expF_isScottContinuous.lean](expF_isScottContinuous.lean)**
+
+@import "expF_isScottContinuous.lean"
+**[DataTypesAsLattices/Functionality/treeF_isScottContinuous.lean](treeF_isScottContinuous.lean)**
+
+@import "treeF_isScottContinuous.lean"
+**[DataTypesAsLattices/Functionality/eq_4_38.lean](eq_4_38.lean)**
+
+@import "eq_4_38.lean"
+**[DataTypesAsLattices/Functionality/treeR_isRetract.lean](treeR_isRetract.lean)**
+
+@import "treeR_isRetract.lean"
+**[DataTypesAsLattices/Functionality/eq_4_21.lean](eq_4_21.lean)**
+
+@import "eq_4_21.lean"
+**[DataTypesAsLattices/Functionality/pairMed.lean](pairMed.lean)**
+
+@import "pairMed.lean"
+**[DataTypesAsLattices/Retracts/expR.lean](../Retracts/expR.lean)**
+
+@import "../Retracts/expR.lean"
+**[DataTypesAsLattices/Functionality/expR_isRetract.lean](expR_isRetract.lean)**
+
+@import "expR_isRetract.lean"
 **[DataTypesAsLattices/Retracts/theorem_4_3_more.lean](../Retracts/theorem_4_3_more.lean)**
 
 @import "../Retracts/theorem_4_3_more.lean"
@@ -726,150 +807,96 @@
 **[DataTypesAsLattices/Retracts/arrowR_more.lean](../Retracts/arrowR_more.lean)**
 
 @import "../Retracts/arrowR_more.lean"
-**[DataTypesAsLattices/Functionality/eq_4_19.lean](eq_4_19.lean)**
+**[DataTypesAsLattices/Functionality/lambR_isRetract.lean](lambR_isRetract.lean)**
 
-@import "eq_4_19.lean"
-**[DataTypesAsLattices/Functionality/eq_4_33.lean](eq_4_33.lean)**
-
-@import "eq_4_33.lean"
-**[DataTypesAsLattices/Functionality/eq_4_17.lean](eq_4_17.lean)**
-
-@import "eq_4_17.lean"
-**[DataTypesAsLattices/Functionality/eq_4_25.lean](eq_4_25.lean)**
-
-@import "eq_4_25.lean"
+@import "lambR_isRetract.lean"
 **[DataTypesAsLattices/Functionality/eq_4_18.lean](eq_4_18.lean)**
 
 @import "eq_4_18.lean"
-**[DataTypesAsLattices/Functionality/eq_4_36.lean](eq_4_36.lean)**
-
-@import "eq_4_36.lean"
-**[DataTypesAsLattices/Functionality/eq_4_24.lean](eq_4_24.lean)**
-
-@import "eq_4_24.lean"
-**[DataTypesAsLattices/Functionality/eq_4_32.lean](eq_4_32.lean)**
-
-@import "eq_4_32.lean"
-**[DataTypesAsLattices/Functionality/eq_4_35.lean](eq_4_35.lean)**
-
-@import "eq_4_35.lean"
-**[DataTypesAsLattices/Enumeration/vaalC.lean](../Enumeration/vaalC.lean)**
-
-@import "../Enumeration/vaalC.lean"
 **[DataTypesAsLattices/Functionality/typed_isGraph.lean](typed_isGraph.lean)**
 
 @import "typed_isGraph.lean"
+**[DataTypesAsLattices/Functionality/eq_4_36.lean](eq_4_36.lean)**
+
+@import "eq_4_36.lean"
+**[DataTypesAsLattices/Functionality/eq_4_32.lean](eq_4_32.lean)**
+
+@import "eq_4_32.lean"
+**[DataTypesAsLattices/Functionality/eq_4_37.lean](eq_4_37.lean)**
+
+@import "eq_4_37.lean"
+**[DataTypesAsLattices/Functionality/eq_4_25.lean](eq_4_25.lean)**
+
+@import "eq_4_25.lean"
+**[DataTypesAsLattices/Functionality/eq_4_44.lean](eq_4_44.lean)**
+
+@import "eq_4_44.lean"
+**[DataTypesAsLattices/Functionality/encodeExp_typed.lean](encodeExp_typed.lean)**
+
+@import "encodeExp_typed.lean"
+**[DataTypesAsLattices/Functionality/eq_4_35.lean](eq_4_35.lean)**
+
+@import "eq_4_35.lean"
+**[DataTypesAsLattices/Functionality/envR_isRetract.lean](envR_isRetract.lean)**
+
+@import "envR_isRetract.lean"
+**[DataTypesAsLattices/Functionality/Htyped.lean](Htyped.lean)**
+
+@import "Htyped.lean"
+**[DataTypesAsLattices/Functionality/eq_4_24.lean](eq_4_24.lean)**
+
+@import "eq_4_24.lean"
+**[DataTypesAsLattices/Enumeration/vaalC.lean](../Enumeration/vaalC.lean)**
+
+@import "../Enumeration/vaalC.lean"
+**[DataTypesAsLattices/Functionality/eq_4_17.lean](eq_4_17.lean)**
+
+@import "eq_4_17.lean"
+**[DataTypesAsLattices/Functionality/eq_4_19.lean](eq_4_19.lean)**
+
+@import "eq_4_19.lean"
+**[DataTypesAsLattices/Functionality/eq_4_34.lean](eq_4_34.lean)**
+
+@import "eq_4_34.lean"
+**[DataTypesAsLattices/Enumeration/vaalTyped.lean](../Enumeration/vaalTyped.lean)**
+
+@import "../Enumeration/vaalTyped.lean"
 **[DataTypesAsLattices/Functionality/theorem_4_4_med.lean](theorem_4_4_med.lean)**
 
 @import "theorem_4_4_med.lean"
 **[DataTypesAsLattices/Functionality/theorem_4_4_med_unique.lean](theorem_4_4_med_unique.lean)**
 
 @import "theorem_4_4_med_unique.lean"
-**[DataTypesAsLattices/Functionality/eq_4_34.lean](eq_4_34.lean)**
+**[DataTypesAsLattices/Functionality/eq_4_33.lean](eq_4_33.lean)**
 
-@import "eq_4_34.lean"
-**[DataTypesAsLattices/Functionality/lambR_isRetract.lean](lambR_isRetract.lean)**
+@import "eq_4_33.lean"
+**[DataTypesAsLattices/Functionality/hZero.lean](hZero.lean)**
 
-@import "lambR_isRetract.lean"
-**[DataTypesAsLattices/Functionality/envR_isRetract.lean](envR_isRetract.lean)**
+@import "hZero.lean"
+**[DataTypesAsLattices/Functionality/Hstep.lean](Hstep.lean)**
 
-@import "envR_isRetract.lean"
-**[DataTypesAsLattices/Functionality/LambTerm.lean](LambTerm.lean)**
+@import "Hstep.lean"
+**[DataTypesAsLattices/Functionality/HF.lean](HF.lean)**
 
-@import "LambTerm.lean"
-**[DataTypesAsLattices/Functionality/Hinterp.lean](Hinterp.lean)**
-
-@import "Hinterp.lean"
-**[DataTypesAsLattices/Functionality/Htyped.lean](Htyped.lean)**
-
-@import "Htyped.lean"
-**[DataTypesAsLattices/Functionality/encodeExp.lean](encodeExp.lean)**
-
-@import "encodeExp.lean"
-**[DataTypesAsLattices/Closures/eq_5_21.lean](../Closures/eq_5_21.lean)**
-
-@import "../Closures/eq_5_21.lean"
-**[DataTypesAsLattices/Closures/Icomb_subset_Vcomb.lean](../Closures/Icomb_subset_Vcomb.lean)**
-
-@import "../Closures/Icomb_subset_Vcomb.lean"
-**[DataTypesAsLattices/Functionality/seq4_body_isScottContinuous.lean](seq4_body_isScottContinuous.lean)**
-
-@import "seq4_body_isScottContinuous.lean"
-**[DataTypesAsLattices/Functionality/seq4_app.lean](seq4_app.lean)**
-
-@import "seq4_app.lean"
-**[DataTypesAsLattices/Functionality/encodeExp_typed.lean](encodeExp_typed.lean)**
-
-@import "encodeExp_typed.lean"
+@import "HF.lean"
 **[DataTypesAsLattices/Functionality/Hfun.lean](Hfun.lean)**
 
 @import "Hfun.lean"
-**[DataTypesAsLattices/Functionality/tensor4_isRetract.lean](tensor4_isRetract.lean)**
-
-@import "tensor4_isRetract.lean"
-**[DataTypesAsLattices/Functionality/expR_isRetract.lean](expR_isRetract.lean)**
-
-@import "expR_isRetract.lean"
 **[DataTypesAsLattices/Functionality/Hcomb.lean](Hcomb.lean)**
 
 @import "Hcomb.lean"
 **[DataTypesAsLattices/Functionality/eq_4_45.lean](eq_4_45.lean)**
 
 @import "eq_4_45.lean"
-**[DataTypesAsLattices/Enumeration/Ycode.lean](../Enumeration/Ycode.lean)**
+**[DataTypesAsLattices/Enumeration/eq_3_9_val.lean](../Enumeration/eq_3_9_val.lean)**
 
-@import "../Enumeration/Ycode.lean"
-**[DataTypesAsLattices/Enumeration/recCode.lean](../Enumeration/recCode.lean)**
+@import "../Enumeration/eq_3_9_val.lean"
+**[DataTypesAsLattices/Enumeration/eq_3_10_val.lean](../Enumeration/eq_3_10_val.lean)**
 
-@import "../Enumeration/recCode.lean"
-**[DataTypesAsLattices/Closures/theorem_5_5_universe.lean](../Closures/theorem_5_5_universe.lean)**
+@import "../Enumeration/eq_3_10_val.lean"
+**[DataTypesAsLattices/Enumeration/eq_3_12.lean](../Enumeration/eq_3_12.lean)**
 
-@import "../Closures/theorem_5_5_universe.lean"
-**[DataTypesAsLattices/Closures/eq_5_24.lean](../Closures/eq_5_24.lean)**
-
-@import "../Closures/eq_5_24.lean"
-**[DataTypesAsLattices/Closures/eq_5_22.lean](../Closures/eq_5_22.lean)**
-
-@import "../Closures/eq_5_22.lean"
-**[DataTypesAsLattices/Closures/eq_5_23.lean](../Closures/eq_5_23.lean)**
-
-@import "../Closures/eq_5_23.lean"
-**[DataTypesAsLattices/Functionality/treeR_isRetract.lean](treeR_isRetract.lean)**
-
-@import "treeR_isRetract.lean"
-**[DataTypesAsLattices/Enumeration/vaalTyped.lean](../Enumeration/vaalTyped.lean)**
-
-@import "../Enumeration/vaalTyped.lean"
-**[DataTypesAsLattices/Functionality/eq_4_37.lean](eq_4_37.lean)**
-
-@import "eq_4_37.lean"
-**[DataTypesAsLattices/Enumeration/botCode.lean](../Enumeration/botCode.lean)**
-
-@import "../Enumeration/botCode.lean"
-**[DataTypesAsLattices/Enumeration/finAux.lean](../Enumeration/finAux.lean)**
-
-@import "../Enumeration/finAux.lean"
-**[DataTypesAsLattices/Enumeration/fin.lean](../Enumeration/fin.lean)**
-
-@import "../Enumeration/fin.lean"
-**[DataTypesAsLattices/Enumeration/myhillCase2Code.lean](../Enumeration/myhillCase2Code.lean)**
-
-@import "../Enumeration/myhillCase2Code.lean"
-**[DataTypesAsLattices/Enumeration/myhillQ.lean](../Enumeration/myhillQ.lean)**
-
-@import "../Enumeration/myhillQ.lean"
-**[DataTypesAsLattices/Enumeration/mem_myhillQ.lean](../Enumeration/mem_myhillQ.lean)**
-
-@import "../Enumeration/mem_myhillQ.lean"
-**[DataTypesAsLattices/Enumeration/primrecu2082_finAux.lean](../Enumeration/primrecu2082_finAux.lean)**
-
-@import "../Enumeration/primrecu2082_finAux.lean"
-**[DataTypesAsLattices/Enumeration/primrec_fin.lean](../Enumeration/primrec_fin.lean)**
-
-@import "../Enumeration/primrec_fin.lean"
-**[DataTypesAsLattices/Enumeration/primrec_myhillCase2Code.lean](../Enumeration/primrec_myhillCase2Code.lean)**
-
-@import "../Enumeration/primrec_myhillCase2Code.lean"
+@import "../Enumeration/eq_3_12.lean"
 **[DataTypesAsLattices/Enumeration/beforeHalt.lean](../Enumeration/beforeHalt.lean)**
 
 @import "../Enumeration/beforeHalt.lean"
@@ -888,15 +915,15 @@
 **[DataTypesAsLattices/Enumeration/filterRealizer.lean](../Enumeration/filterRealizer.lean)**
 
 @import "../Enumeration/filterRealizer.lean"
-**[DataTypesAsLattices/Enumeration/filterTerm.lean](../Enumeration/filterTerm.lean)**
-
-@import "../Enumeration/filterTerm.lean"
 **[DataTypesAsLattices/Enumeration/filterEnv.lean](../Enumeration/filterEnv.lean)**
 
 @import "../Enumeration/filterEnv.lean"
 **[DataTypesAsLattices/Enumeration/filterSeq_isScottContinuous.lean](../Enumeration/filterSeq_isScottContinuous.lean)**
 
 @import "../Enumeration/filterSeq_isScottContinuous.lean"
+**[DataTypesAsLattices/Enumeration/filterTerm.lean](../Enumeration/filterTerm.lean)**
+
+@import "../Enumeration/filterTerm.lean"
 **[DataTypesAsLattices/Enumeration/filterC.lean](../Enumeration/filterC.lean)**
 
 @import "../Enumeration/filterC.lean"
@@ -912,39 +939,12 @@
 **[DataTypesAsLattices/Enumeration/myhillCase1Code.lean](../Enumeration/myhillCase1Code.lean)**
 
 @import "../Enumeration/myhillCase1Code.lean"
-**[DataTypesAsLattices/Enumeration/primrec_myhillCase1Code.lean](../Enumeration/primrec_myhillCase1Code.lean)**
-
-@import "../Enumeration/primrec_myhillCase1Code.lean"
-**[DataTypesAsLattices/Functionality/singletonE.lean](singletonE.lean)**
-
-@import "singletonE.lean"
-**[DataTypesAsLattices/Functionality/singletonE_mem.lean](singletonE_mem.lean)**
-
-@import "singletonE_mem.lean"
-**[DataTypesAsLattices/Enumeration/packList.lean](../Enumeration/packList.lean)**
-
-@import "../Enumeration/packList.lean"
-**[DataTypesAsLattices/Enumeration/singleGenerator.lean](../Enumeration/singleGenerator.lean)**
-
-@import "../Enumeration/singleGenerator.lean"
 **[DataTypesAsLattices/Enumeration/valNat_codes.lean](../Enumeration/valNat_codes.lean)**
 
 @import "../Enumeration/valNat_codes.lean"
-**[DataTypesAsLattices/Enumeration/generators_mem_singleGenerator_degree.lean](../Enumeration/generators_mem_singleGenerator_degree.lean)**
+**[DataTypesAsLattices/Enumeration/primrec_myhillCase1Code.lean](../Enumeration/primrec_myhillCase1Code.lean)**
 
-@import "../Enumeration/generators_mem_singleGenerator_degree.lean"
+@import "../Enumeration/primrec_myhillCase1Code.lean"
 **[DataTypesAsLattices/Enumeration/myhillQ_more.lean](../Enumeration/myhillQ_more.lean)**
 
 @import "../Enumeration/myhillQ_more.lean"
-**[DataTypesAsLattices/Enumeration/theorem_3_6_more.lean](../Enumeration/theorem_3_6_more.lean)**
-
-@import "../Enumeration/theorem_3_6_more.lean"
-**[DataTypesAsLattices/Retracts/iUnion_retract_isGraph.lean](../Retracts/iUnion_retract_isGraph.lean)**
-
-@import "../Retracts/iUnion_retract_isGraph.lean"
-**[DataTypesAsLattices/Functionality/eta2_map_isScottContinuous.lean](eta2_map_isScottContinuous.lean)**
-
-@import "eta2_map_isScottContinuous.lean"
-**[DataTypesAsLattices/Functionality/eta2_app.lean](eta2_app.lean)**
-
-@import "eta2_app.lean"

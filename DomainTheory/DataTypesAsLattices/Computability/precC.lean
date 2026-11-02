@@ -6,7 +6,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Computability.precEnv
 public import DomainTheory.DataTypesAsLattices.Computability.precTerm
 public import DomainTheory.DataTypesAsLattices.Graph.beta
-public import DomainTheory.DataTypesAsLattices.Graph.lam
+public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 public import DomainTheory.DataTypesAsLattices.Lambda.Language

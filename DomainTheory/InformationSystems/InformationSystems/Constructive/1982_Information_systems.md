@@ -6,18 +6,18 @@
 
 @import "1982_Information_systems.english" {code_block=false}
 
-**[InformationSystems/InformationSystems/Factoid26/consistent_empty.lean](../Factoid26/consistent_empty.lean)**
-
-@import "../Factoid26/consistent_empty.lean"
 **[InformationSystems/InformationSystems/Constructive/insert_comm'.lean](insert_comm'.lean)**
 
 @import "insert_comm'.lean"
-**[InformationSystems/InformationSystems/Constructive/instLeftCommutativeInsert.lean](instLeftCommutativeInsert.lean)**
+**[InformationSystems/InformationSystems/Factoid26/consistent_empty.lean](../Factoid26/consistent_empty.lean)**
 
-@import "instLeftCommutativeInsert.lean"
+@import "../Factoid26/consistent_empty.lean"
 **[InformationSystems/InformationSystems/Factoid26.lean](../Factoid26.lean)**
 
 @import "../Factoid26.lean"
+**[InformationSystems/InformationSystems/Constructive/instLeftCommutativeInsert.lean](instLeftCommutativeInsert.lean)**
+
+@import "instLeftCommutativeInsert.lean"
 **[InformationSystems/InformationSystems/Constructive/funion.lean](funion.lean)**
 
 @import "funion.lean"

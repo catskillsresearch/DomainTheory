@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Graph.lam
+public import DomainTheory.DataTypesAsLattices.Graph.graph
 
 @[expose] public section
 

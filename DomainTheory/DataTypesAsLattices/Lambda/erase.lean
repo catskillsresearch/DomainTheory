@@ -1,13 +1,8 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Graph.lam
-public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.abs
 public import DomainTheory.DataTypesAsLattices.Enumeration.Avoids
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
-public import DomainTheory.DataTypesAsLattices.Lambda.ofComb
-public import DomainTheory.DataTypesAsLattices.Lambda.condC
 public import DomainTheory.DataTypesAsLattices.Lambda.condC_more
 public import DomainTheory.DataTypesAsLattices.Lambda.predC_more
 public import DomainTheory.DataTypesAsLattices.Lambda.sucC_more

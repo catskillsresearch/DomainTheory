@@ -1,8 +1,6 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Graph.graph
-public import Mathlib.Tactic.Basic
-import Mathlib.Data.Set.Insert
 
 @[expose] public section
 

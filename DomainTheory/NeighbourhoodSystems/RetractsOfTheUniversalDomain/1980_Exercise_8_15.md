@@ -20,12 +20,12 @@ Library tools: finitely generated subsystems and the reconstructed system `SubD`
 
 Assembles those tools into the Exercise 8.15 development (order iso, presentations, U-case).
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/finGen.lean](finGen.lean)**
-
-@import "finGen.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_15.lean](Exercise_8_15.lean)**
 
 @import "Exercise_8_15.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/finGen.lean](finGen.lean)**
+
+@import "finGen.lean"
 The tip then assembles those tools into Scott’s statement.
 
  — `exercise_8_15`

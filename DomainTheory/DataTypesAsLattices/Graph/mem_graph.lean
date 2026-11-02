@@ -4,7 +4,6 @@ module
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 import Mathlib.Data.Finset.Attr
 import Mathlib.Tactic.Continuity.Init
-import Mathlib.Tactic.Finiteness.Attr
 import Mathlib.Tactic.SetLike
 
 @[expose] public section

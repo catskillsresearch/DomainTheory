@@ -3,7 +3,7 @@ module
 public import DomainTheory.DataTypesAsLattices.Retracts.typed
 public import DomainTheory.DataTypesAsLattices.Retracts.intR
 public import DomainTheory.DataTypesAsLattices.Retracts.expR
-public import DomainTheory.DataTypesAsLattices.Graph.lam
+public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Functionality.encodeExp
 public import DomainTheory.DataTypesAsLattices.Functionality.typed_pairSeq_tensorR

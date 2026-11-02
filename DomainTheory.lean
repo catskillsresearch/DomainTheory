@@ -944,7 +944,7 @@ import DomainTheory.DataTypesAsLattices.Graph.beta
 import DomainTheory.DataTypesAsLattices.Graph.funOf
 import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 import DomainTheory.DataTypesAsLattices.Graph.graph
-import DomainTheory.DataTypesAsLattices.Graph.lam
+import DomainTheory.DataTypesAsLattices.Graph.graph
 import DomainTheory.DataTypesAsLattices.Graph.mem_graph
 import DomainTheory.DataTypesAsLattices.Graph.mu_law
 import DomainTheory.DataTypesAsLattices.Graph.theorem_1_2

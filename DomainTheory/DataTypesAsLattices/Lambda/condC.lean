@@ -1,7 +1,6 @@
 
 module
 
-public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 

@@ -14,7 +14,7 @@ public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Graph.lam
+public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_2
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous

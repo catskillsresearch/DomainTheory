@@ -1,14 +1,8 @@
 
 module
 
-public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import Mathlib.Topology.Bases
-public import Mathlib.Topology.Order
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Graph.graph
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Graph.IsGraph
-public import DomainTheory.DataTypesAsLattices.Graph.lam
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 public import DomainTheory.DataTypesAsLattices.Graph.theorem_1_2
 

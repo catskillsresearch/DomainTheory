@@ -2,7 +2,7 @@ module
 
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
-public import DomainTheory.DataTypesAsLattices.Graph.lam
+public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Enumeration.Avoids
 @[expose] public section
 

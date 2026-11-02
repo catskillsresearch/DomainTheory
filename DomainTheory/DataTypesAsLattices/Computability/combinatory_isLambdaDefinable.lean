@@ -6,7 +6,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
 public import DomainTheory.DataTypesAsLattices.Lambda.condC
 public import DomainTheory.DataTypesAsLattices.Lambda.Scomb
-public import DomainTheory.DataTypesAsLattices.Graph.lam
+public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Computability.LambdaDefinable
 

@@ -2,7 +2,6 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Continuous.basicNhhd
 import Mathlib.Data.Finset.Attr
-import Mathlib.Data.Set.Insert
 import Mathlib.Tactic.Bound.Init
 import Mathlib.Tactic.Continuity.Init
 import Mathlib.Tactic.SetLike

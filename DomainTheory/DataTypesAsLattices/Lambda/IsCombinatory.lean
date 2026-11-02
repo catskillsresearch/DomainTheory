@@ -1,9 +1,6 @@
 
 module
 
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.condC
 public import DomainTheory.DataTypesAsLattices.Lambda.Scomb
 

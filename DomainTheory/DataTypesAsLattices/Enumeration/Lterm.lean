@@ -2,7 +2,7 @@ module
 public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
-public import DomainTheory.DataTypesAsLattices.Graph.lam
+public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Functionality.sumMed
 public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb
 public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ
