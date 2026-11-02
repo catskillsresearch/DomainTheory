@@ -8,7 +8,9 @@ import DomainTheory.DataTypesAsLattices.Continuous.theorem_1_1
 
 namespace DomainTheory.DataTypesAsLattices
 
-theorem theorem_1_3.comp {f g : Pomega → Pomega}
+namespace theorem_1_3
+
+theorem comp {f g : Pomega → Pomega}
     (hf : IsScottContinuous f) (hg : IsScottContinuous g) :
     IsScottContinuous (f ∘ g) := by
   constructor
@@ -31,7 +33,7 @@ theorem theorem_1_3.comp {f g : Pomega → Pomega}
     obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp hk
     exact IsScottContinuous.monotone hf (IsScottContinuous.monotone hg hn) hkn
 
-theorem theorem_1_3.diag {f : Pomega → Pomega → Pomega}
+theorem diag {f : Pomega → Pomega → Pomega}
     (hfx : ∀ y, IsScottContinuous (fun x => f x y))
     (hfy : ∀ x, IsScottContinuous (fun y => f x y))
     {x : Pomega} :
@@ -55,17 +57,17 @@ theorem theorem_1_3.diag {f : Pomega → Pomega → Pomega}
     exact IsScottContinuous.monotone (hfy x) hn
       (IsScottContinuous.monotone (hfx (e n)) hn hkn)
 
-theorem theorem_1_3.tuple {f : Pomega → Pomega → Pomega}
+theorem tuple {f : Pomega → Pomega → Pomega}
     (hfx : ∀ y, IsScottContinuous (fun x => f x y))
     (hfy : ∀ x, IsScottContinuous (fun y => f x y))
     {g h : Pomega → Pomega} (hg : IsScottContinuous g) (hh : IsScottContinuous h) :
     IsScottContinuous (fun x => f (g x) (h x)) := by
   constructor
   intro x
-  have H := theorem_1_3.diag (x := x)
+  have H := diag (x := x)
     (f := fun u v => f (g u) (h v))
-    (fun v => theorem_1_3.comp (hfx (h v)) hg)
-    (fun u => theorem_1_3.comp (hfy (g u)) hh)
+    (fun v => comp (hfx (h v)) hg)
+    (fun u => comp (hfy (g u)) hh)
   ext k
   constructor
   · intro hk
@@ -78,7 +80,7 @@ theorem theorem_1_3.tuple {f : Pomega → Pomega → Pomega}
       Set.mem_iUnion.mpr ⟨n, hn, hkn⟩
     rwa [← H] at this
 
-theorem theorem_1_3.nary {f : Pomega → Pomega → Pomega → Pomega}
+theorem nary {f : Pomega → Pomega → Pomega → Pomega}
     (hf0 : ∀ y z, IsScottContinuous (fun x => f x y z))
     (hf1 : ∀ x z, IsScottContinuous (fun y => f x y z))
     (hf2 : ∀ x y, IsScottContinuous (fun z => f x y z))
@@ -87,10 +89,10 @@ theorem theorem_1_3.nary {f : Pomega → Pomega → Pomega → Pomega}
     IsScottContinuous (fun x => f (g x) (h x) (i x)) := by
   constructor
   intro x
-  have H := theorem_1_3.diag (x := x)
+  have H := diag (x := x)
     (f := fun u v => f (g u) (h u) (i v))
-    (fun v => theorem_1_3.tuple (fun y => hf0 y (i v)) (fun x => hf1 x (i v)) hg hh)
-    (fun u => theorem_1_3.comp (hf2 (g u) (h u)) hi)
+    (fun v => tuple (fun y => hf0 y (i v)) (fun x => hf1 x (i v)) hg hh)
+    (fun u => comp (hf2 (g u) (h u)) hi)
   ext k
   constructor
   · intro hk
@@ -104,6 +106,9 @@ theorem theorem_1_3.nary {f : Pomega → Pomega → Pomega → Pomega}
       Set.mem_iUnion.mpr ⟨n, hn, hkn⟩
     rwa [← H] at this
 
+end theorem_1_3
+
+/-- Scott Theorem 1.3 (unary composition case). -/
 theorem theorem_1_3 {f g : Pomega → Pomega}
     (hf : IsScottContinuous f) (hg : IsScottContinuous g) :
     IsScottContinuous (fun x => f (g x)) :=

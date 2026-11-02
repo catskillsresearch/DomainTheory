@@ -13,3 +13,27 @@ $$f(x, x) = \bigcup \{f(e_k, e_k) \mid e_k \subseteq x\}.$$
 This means that $f(x, x)$ is continuous in $x$. This same argument works if other variables are present, as in the passage from $f(x, y, z, w)$ to $f(x, x, z, w)$. When an identification of more than two variables is required, as from $f(x, y, z, w)$ to $f(x, x, x, x)$, the principle is just applied several times.
 
 Finally, to show that $f(g(x, y), h(y, x, y))$ is continuous, it is sufficient to show that $f(g(x, y), h(z, u, v))$ is continuous in each of its variables separately. By simply overlooking the remaining variables, this comes down to showing that $f(g(x))$ is continuous if $f$ and $g$ are. But the proof for ordinary composition is very easy with the aid of the characterization theorem (Theorem 1.1).
+
+**Formalization.** In `theorem_1_3.lean`, namespace `theorem_1_3` holds the special cases; callers use `theorem_1_3.comp`, `theorem_1_3.diag`, etc. The paper’s unary composition clause is the top-level theorem `theorem_1_3`.
+
+**Lemma (`theorem_1_3.comp`).** If $f$ and $g$ are Scott-continuous, then $f \circ g$ is Scott-continuous.
+
+*Proof.* Membership in $f(g(x))$ is routed through Theorem 1.1 on $g(x)$ and $f(g(x))$, using `mem_scottUnion` and monotonicity. ∎
+
+**Lemma (`theorem_1_3.diag`).** If $F(x,y)$ is continuous in $x$ for each fixed $y$ and in $y$ for each fixed $x$, then $x \mapsto F(x,x)$ is Scott-continuous; equivalently $F(x,x) = \bigcup \{ k \mid \exists n.\, e_n \subseteq x \land k \in F(e_n,e_n)\}$.
+
+*Proof.* Scott’s calculation on $f(x,x)$ via $e_n \subseteq x$ and $e_k = e_n \cup e_m$. ∎
+
+**Lemma (`theorem_1_3.tuple`).** Under the same separate-continuity hypothesis on $F(x,y)$, if $g$ and $h$ are Scott-continuous then $x \mapsto F(g(x), h(x))$ is Scott-continuous.
+
+*Proof.* Apply `theorem_1_3.diag` to $(u,v) \mapsto F(g(u), h(v))$ with `theorem_1_3.comp` on each coordinate. ∎
+
+**Lemma (`theorem_1_3.nary`).** If $F(x,y,z)$ is continuous in each argument separately and $g,h,i$ are Scott-continuous, then $x \mapsto F(g(x), h(x), i(x))$ is Scott-continuous.
+
+*Proof.* Same pattern: `theorem_1_3.diag` on $(u,v) \mapsto F(g(u), h(u), i(v))$, with `theorem_1_3.tuple` and `theorem_1_3.comp`. ∎
+
+**Theorem (`theorem_1_3`).** If $f$ and $g$ are Scott-continuous, then $x \mapsto f(g(x))$ is Scott-continuous.
+
+*Proof.* `theorem_1_3.comp`. ∎
+
+**Corollary (Functionality wrappers).** `continuous_on_diag`, `continuous_tuple`, and `continuous_nary` restate the diagonal, binary, and ternary substitution cases for call sites that prefer those names; their proofs invoke `theorem_1_3.diag`, `theorem_1_3.tuple`, and `theorem_1_3.comp` respectively.

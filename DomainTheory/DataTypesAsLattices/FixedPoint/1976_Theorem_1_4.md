@@ -2,4 +2,6 @@
 
 @import "1976_Theorem_1_4.english" {code_block=false}
 
-@import "exists_index_of_finset.lean"
+**[DataTypesAsLattices/FixedPoint/theorem_1_4.lean](theorem_1_4.lean)**
+
+@import "theorem_1_4.lean"

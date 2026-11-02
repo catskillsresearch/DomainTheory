@@ -1,0 +1,13 @@
+The other general fact about continuous functions that we shall use constantly concerns fixed points, whose existence can be proved using a well-known method.
+
+Scott's least fixed point is built from iterating $f$ starting at the empty set $\varnothing$ (our $\bot$):
+
+$$\mathbf{fix}(f) = \bigcup \{ f^n(\varnothing) \mid n \in \omega \},$$
+
+where $f^0(\varnothing) = \varnothing$ and $f^{n+1}(\varnothing) = f(f^n(\varnothing))$.
+
+**Definition (`iterateBot`, `fix`).** For $f : \mathbf{P}\omega \to \mathbf{P}\omega$, set $\mathrm{iterateBot}\,f\,0 = \bot$ and $\mathrm{iterateBot}\,f\,(n+1) = f(\mathrm{iterateBot}\,f\,n)$; then $\mathrm{fix}\,f = \bigcup_n \mathrm{iterateBot}\,f\,n$.
+
+**Lemma (`iterateBot_mono`).** If $f$ is Scott-continuous, then $\mathrm{iterateBot}\,f\,n \subseteq \mathrm{iterateBot}\,f\,(n+1)$ for every $n$.
+
+*Proof.* By induction: the base case is $\bot \subseteq f(\bot)$; the step applies monotonicity of $f$ to the induction hypothesis. ∎

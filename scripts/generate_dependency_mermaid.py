@@ -292,9 +292,14 @@ def mermaid_display_label(text: str) -> str:
     """Outline titles use $...$ for PDF math; Mermaid node labels do not render LaTeX."""
     s = re.sub(r"\$([^$]*)\$", r"\1", text)
     s = s.replace("$", "")
+    s = re.sub(r"\*\*([^*]+)\*\*", r"\1", s)
+    s = re.sub(r"\*([^*]+)\*", r"\1", s)
     s = s.replace(r"\mathbf{P}\omega", "Pω")
     s = re.sub(r"\\mathbf\{([^{}]+)\}", r"\1", s)
     for src, dst in (
+        (r"\varnothing", "∅"),
+        (r"\bot", "⊥"),
+        (r"\top", "⊤"),
         (r"\omega", "ω"),
         (r"\lambda", "λ"),
         (r"\to", "→"),
@@ -1179,8 +1184,20 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
             }
         include_empty_boxes = False
         force_edges: list[tuple[str, str]] | None = None
+        edge_filter_fn: Callable[[str, str], bool] | None = None
         cl_subgraphs = None
         cl_rank_same = None
+        if mermaid.name == "FixedPoint.mermaid":
+            extra_ids = {
+                **(extra_ids or {}),
+                "Iteration from $\\bot$ and **fix**": "ITER",
+            }
+
+            def _fixed_point_edge_filter(src: str, _dst: str) -> bool:
+                # Theorem 1.3 (substitution) does not import iteration; drop spurious shared-module edges.
+                return src != "Theorem 1.3"
+
+            edge_filter_fn = _fixed_point_edge_filter
         if mermaid.name == "1976_Computability_and_definability.mermaid":
             include_empty_boxes = True
             force_edges = COMPUTABILITY_OUTLINE_NARRATIVE
@@ -1239,6 +1256,7 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
             subgraph_groups=cl_subgraphs,
             rank_same_titles=cl_rank_same,
             force_outline_edges=force_edges,
+            edge_filter=edge_filter_fn,
         )
     return None
 
