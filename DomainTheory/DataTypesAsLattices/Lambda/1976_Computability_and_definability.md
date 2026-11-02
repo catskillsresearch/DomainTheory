@@ -7,7 +7,7 @@
 - [Minimal and maximal extension](1976_Extension.md) ✓
 - [Meaning](1976_Meaning.md) ✓
 - [The language LAMBDA](1976_The_language_LAMBDA.md) ✓
-- [Theorem 2.1 — the continuity theorem](1976_Theorem_2_1.md)
+- [Theorem 2.1 — the continuity theorem](1976_Theorem_2_1.md) ✓
 - [Theorem 2.2 — the conversion theorem](1976_Theorem_2_2.md)
 - [Theorem 2.3 — the reduction theorem](1976_Theorem_2_3.md)
 - [Theorem 2.4 — the combinator theorem](1976_Theorem_2_4.md)
