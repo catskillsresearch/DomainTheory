@@ -1,4 +1,7 @@
 # Exercise 8.20
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_20.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_20.lean)**
+
+@import "Exercise_8_20.lean"
 
 **EXERCISE 8.20.** For any system we know $D \trianglelefteq D + D$, but what about
 

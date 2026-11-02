@@ -1,4 +1,7 @@
 # Example 7.8
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example_7_8.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Example_7_8.lean)**
+
+@import "Example_7_8.lean"
 
 **EXAMPLE 7.8.** We have often made reference to the powerset $P\mathbf{N}$ as a domain and we should check here that it is effectively given. One easy way to see this is to note
 

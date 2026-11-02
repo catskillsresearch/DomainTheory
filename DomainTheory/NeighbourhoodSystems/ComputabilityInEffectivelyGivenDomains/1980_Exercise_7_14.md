@@ -1,4 +1,7 @@
 # Exercise 7.14
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_14.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_14.lean)**
+
+@import "Exercise_7_14.lean"
 
 **EXERCISE 7.14.** (For recursive-function theorists.) Prove the statements after definition 7.2 about the existence of primitive recursive functions for showing things recursively enumerable. (Recall that a non-empty set is r.e. iff it is the range of a primitive recursive function.) Show also that every computable element $y \in |E|$ can be written
 

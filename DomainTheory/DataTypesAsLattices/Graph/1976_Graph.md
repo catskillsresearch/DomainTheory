@@ -1,4 +1,7 @@
 # Graphs of continuous functions
+**[DataTypesAsLattices/Graph/graph.lean](DomainTheory/DataTypesAsLattices/Graph/graph.lean)**
+
+@import "graph.lean"
 
 @import "Graph.mermaid"
 

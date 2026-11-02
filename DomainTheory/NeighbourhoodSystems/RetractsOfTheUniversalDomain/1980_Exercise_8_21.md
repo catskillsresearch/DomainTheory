@@ -1,4 +1,7 @@
 # Exercise 8.21
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_21.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_21.lean)**
+
+@import "Exercise_8_21.lean"
 
 **EXERCISE 8.21.** Using the fixed-point construction, show that there is a continuous and computable operator $\lambda a.\, a^{\S}$, such that if $a$ is a finitary projection of $U$, then
 

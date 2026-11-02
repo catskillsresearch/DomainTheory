@@ -31,6 +31,3 @@ Prove that the $n^{\mathrm{th}}$ digit of $t$ is the sum mod 2 of the digits of 
 **[Exercise_5_16.lean](Exercise_5_16.lean)**
 
 @import "Exercise_5_16.lean"
-**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition_5_4.lean](Proposition_5_4.lean)**
-
-@import "Proposition_5_4.lean"

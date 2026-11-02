@@ -1,4 +1,7 @@
 # Exercise 7.21
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_21.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_21.lean)**
+
+@import "Exercise_7_21.lean"
 
 **EXERCISE 7.21.** Is there a non-trivial combinator of type
 

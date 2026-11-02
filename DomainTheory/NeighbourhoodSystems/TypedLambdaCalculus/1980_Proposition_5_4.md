@@ -1,4 +1,7 @@
 # Proposition 5.4
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition_5_4.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Proposition_5_4.lean)**
+
+@import "Proposition_5_4.lean"
 
 **PROPOSITION 5.4.** Let $x$, $y$, and $\tau(x, y)$ be of the same type $D$ and let $g$ be of type $(D \to D)$, then the equation
 

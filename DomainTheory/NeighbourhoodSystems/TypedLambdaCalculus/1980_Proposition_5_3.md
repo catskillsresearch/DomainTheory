@@ -1,4 +1,7 @@
 # Proposition 5.3
+**[NeighbourhoodSystems/TypedLambdaCalculus/Proposition_5_3.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Proposition_5_3.lean)**
+
+@import "Proposition_5_3.lean"
 
 **PROPOSITION 5.3.** The least fixed point of $\lambda x, y.\ \langle \tau(x, y), \sigma(x, y) \rangle$ is the pair with coordinates
 

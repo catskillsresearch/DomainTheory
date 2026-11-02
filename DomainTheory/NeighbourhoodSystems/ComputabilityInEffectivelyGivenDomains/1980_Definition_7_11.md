@@ -1,4 +1,7 @@
 # Definition 7.11
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition_7_11.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition_7_11.lean)**
+
+@import "Definition_7_11.lean"
 
 **DEFINITION 7.11.** For elements $x_0, \dots, x_{n-1} \in |D|$ we define
 

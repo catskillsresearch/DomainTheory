@@ -1,4 +1,7 @@
 # Proposition 7.3
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_3.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_3.lean)**
+
+@import "Proposition_7_3.lean"
 
 **PROPOSITION 7.3.** The identity map on an effectively given domain is computable; the composition of computable mappings on effectively given domains is again computable. $\square$
 

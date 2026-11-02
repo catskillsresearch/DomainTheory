@@ -1,4 +1,7 @@
 # Definition 8.9
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition_8_9.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Definition_8_9.lean)**
+
+@import "Definition_8_9.lean"
 
 **DEFINITION 8.9.** Let the computable projection pairs $i_+ : \mathcal{U} + \mathcal{U} \to \mathcal{U}$ and $j_+ : \mathcal{U} \to \mathcal{U} + \mathcal{U}$ be fixed. Similarly choose $i_\times, j_\times$ and $i_\to, j_\to$ for $\mathcal{U} \times \mathcal{U}$ and $\mathcal{U} \to \mathcal{U}$. Define:
 

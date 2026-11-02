@@ -53,6 +53,46 @@ BOLD_LEAN_LINE_RE = re.compile(
     r"^\s*\*\*\[[^\]]*\]\(([^)]+\.lean)\)\*\*\s*\n",
     re.MULTILINE,
 )
+NOTE_YEAR_STEM = re.compile(r"^(?:1972|1976|1980|1982)_(.+)$")
+
+
+def _norm_stem(s: str) -> str:
+    return s.lower().replace("_", "")
+
+
+def dedicated_note_for(
+    mod: str, modules: dict[str, Path], notes: list[Path]
+) -> Path | None:
+    """Prefer ``1976_Theorem_2_1.md``-style notes over import-relocation hubs."""
+    path = modules[mod]
+    stem = path.stem
+    parent = path.parent.resolve()
+    target = _norm_stem(stem)
+    for note in notes:
+        if note.parent.resolve() != parent:
+            continue
+        m = NOTE_YEAR_STEM.match(note.stem)
+        if not m:
+            continue
+        if _norm_stem(m.group(1)) == target:
+            return note.resolve()
+    return None
+
+
+def prefer_dedicated_notes(
+    owner: dict[str, Path],
+    modules: dict[str, Path],
+    notes: list[Path],
+) -> int:
+    moved = 0
+    for mod in modules:
+        dedicated = dedicated_note_for(mod, modules, notes)
+        if dedicated is None:
+            continue
+        if owner.get(mod) != dedicated:
+            owner[mod] = dedicated
+            moved += 1
+    return moved
 
 
 def owned_mods_on_note(note: Path, owner: dict[str, Path]) -> set[str]:
@@ -157,11 +197,15 @@ def main() -> int:
     relocate(modules, aggregators, owner, note_time, imports_of)
 
     notes = collect_notes(args.root.resolve())
+    dedicated_moves = prefer_dedicated_notes(owner, modules, notes)
     note_set = set(notes)
 
     if args.dry_run:
         missing, dups = verify(owner, modules, notes)
-        print(f"Would enforce {len(owner)} owners; missing={missing} dups={dups}")
+        print(
+            f"Would enforce {len(owner)} owners ({dedicated_moves} dedicated-note overrides); "
+            f"missing={missing} dups={dups}"
+        )
         return 1 if missing or dups else 0
 
     stripped_count = 0
@@ -194,7 +238,8 @@ def main() -> int:
 
     missing, dups = verify(owner, modules, notes)
     print(
-        f"Stripped {stripped_count} notes; rewrote {rewritten} owner notes; "
+        f"Stripped {stripped_count} notes; rewrote {rewritten} owner notes "
+        f"({dedicated_moves} dedicated-note overrides); "
         f"missing={missing} duplicate modules={dups}"
     )
     return 1 if missing or dups else 0

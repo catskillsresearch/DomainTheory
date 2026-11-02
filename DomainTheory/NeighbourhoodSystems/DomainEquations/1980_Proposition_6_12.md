@@ -1,4 +1,7 @@
 # Proposition 6.12
+**[NeighbourhoodSystems/DomainEquations/Proposition_6_12.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Proposition_6_12.lean)**
+
+@import "Proposition_6_12.lean"
 
 **PROPOSITION 6.12.** If $D \triangleleft E$, then there exists a projection pair of approximable mappings:
 

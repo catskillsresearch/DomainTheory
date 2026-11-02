@@ -43,6 +43,3 @@ $$
 **[Exercise_5_11.lean](Exercise_5_11.lean)**
 
 @import "Exercise_5_11.lean"
-**[NeighbourhoodSystems/TypedLambdaCalculus/Theorem_5_6.lean](Theorem_5_6.lean)**
-
-@import "Theorem_5_6.lean"

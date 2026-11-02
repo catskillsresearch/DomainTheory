@@ -1,4 +1,7 @@
 # Proposition 8.10
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition_8_10.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Proposition_8_10.lean)**
+
+@import "Proposition_8_10.lean"
 
 **PROPOSITION 8.10.** If $a, b : \mathcal{U} \to \mathcal{U}$ are projections, then so are $a + b$, $a \times b$, and $a \to b$. If $a$ and $b$ are finitary, then so are the others; for the fixed-point set of each of them is isomorphic to the corresponding construct applied to the domains determined by $a$ and $b$.
 

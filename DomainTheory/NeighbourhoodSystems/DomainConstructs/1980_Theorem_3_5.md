@@ -1,4 +1,7 @@
 # Theorem 3.5
+**[NeighbourhoodSystems/DomainConstructs/Theorem_3_5.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Theorem_3_5.lean)**
+
+@import "Theorem_3_5.lean"
 
 **THEOREM 3.5.** An elementwise function
 $$f : |D_0 \times D_1| \to |D_2|$$

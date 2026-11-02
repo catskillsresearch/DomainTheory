@@ -1,4 +1,7 @@
 # Definition 6.4
+**[NeighbourhoodSystems/DomainEquations/Definition_6_4.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition_6_4.lean)**
+
+@import "Definition_6_4.lean"
 
 **DEFINITION 6.4.** A ***T*-algebra** is a domain $E$ in the category together with a map
 

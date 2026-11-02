@@ -1,4 +1,7 @@
 # Exercise 8.23
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_23.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_23.lean)**
+
+@import "Exercise_8_23.lean"
 
 **EXERCISE 8.23.** Suppose a construct $T$ on domains can be made into a computable operator $t : (U \to U) \to (U \to U)$ so that whenever $a : U \to U$ is a finitary projection, then so is $t(a)$ and
 

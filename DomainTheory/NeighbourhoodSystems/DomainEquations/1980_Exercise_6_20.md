@@ -1,4 +1,7 @@
 # Exercise 6.20
+**[NeighbourhoodSystems/DomainEquations/Exercise_6_20.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Exercise_6_20.lean)**
+
+@import "Exercise_6_20.lean"
 
 **EXERCISE 6.20.** For any system $\mathcal{D}$ let $\mathrm{tok}(\mathcal{D})$ be the underlying set of tokens, so that $\mathcal{D}$ is a system over $\mathrm{tok}(\mathcal{D})$. For the category of Exercise 6.19 show that the function
 

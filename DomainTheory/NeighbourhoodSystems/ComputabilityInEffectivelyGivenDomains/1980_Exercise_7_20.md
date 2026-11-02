@@ -1,4 +1,7 @@
 # Exercise 7.20
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_20.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Exercise_7_20.lean)**
+
+@import "Exercise_7_20.lean"
 
 **EXERCISE 7.20.** Show that there is a combinator
 

@@ -21,9 +21,3 @@ It is also easy to prove that the union of a directed family of subdomains of $E
 **[Definition_6_10.lean](Definition_6_10.lean)**
 
 @import "Definition_6_10.lean"
-**[NeighbourhoodSystems/DomainEquations/Example_6_1.lean](Example_6_1.lean)**
-
-@import "Example_6_1.lean"
-**[NeighbourhoodSystems/DomainEquations/Example_6_2.lean](Example_6_2.lean)**
-
-@import "Example_6_2.lean"

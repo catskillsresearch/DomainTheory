@@ -1,4 +1,7 @@
 # Proposition 7.12
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_12.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_12.lean)**
+
+@import "Proposition_7_12.lean"
 
 **PROPOSITION 7.12.** The mapping
 

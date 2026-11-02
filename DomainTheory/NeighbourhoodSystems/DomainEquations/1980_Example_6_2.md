@@ -1,4 +1,7 @@
 # Example 6.2
+**[NeighbourhoodSystems/DomainEquations/Example_6_2.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Example_6_2.lean)**
+
+@import "Example_6_2.lean"
 
 **EXAMPLE 6.2.** Our staple examples $B$ and $C$ satisfy “domain equations” in the form of isomorphisms as we have previously seen. Indeed
 

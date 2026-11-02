@@ -1,4 +1,7 @@
 # Definition 6.13
+**[NeighbourhoodSystems/DomainEquations/Definition_6_13.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition_6_13.lean)**
+
+@import "Definition_6_13.lean"
 
 **DEFINITION 6.13.** A functor $T$ is *monotone on domains* iff whenever $D \triangleleft E$, then not only do we have $T(D) \triangleleft T(E)$ but the projection pair $i, j$ of 6.12 is mapped to the same kind of projection pair $T(i), T(j)$. A monotone functor is *continuous on domains* iff whenever $E$ is a domain, then the mapping
 

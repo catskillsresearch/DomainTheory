@@ -1,4 +1,7 @@
 # Definition 7.2
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition_7_2.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Definition_7_2.lean)**
+
+@import "Definition_7_2.lean"
 
 **DEFINITION 7.2.** Given two recursively presented domains,
 

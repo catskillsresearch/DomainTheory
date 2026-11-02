@@ -1,4 +1,7 @@
 # Example 1.3
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example_1_3.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example_1_3.lean)**
+
+@import "Example_1_3.lean"
 
 EXAMPLE 1.3. Let $\Delta = \{0, 1, 2\}$ and let $\mathcal{D} = \{\{0, 1, 2\}, \{1, 2\}, \{2\}\}$.
 

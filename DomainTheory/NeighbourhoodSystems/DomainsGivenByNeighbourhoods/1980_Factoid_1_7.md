@@ -1,4 +1,7 @@
 # Factoid 1.7
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Factoid_1_7.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Factoid_1_7.lean)**
+
+@import "Factoid_1_7.lean"
 
 ## Factoid 1.7a1 — principals are one-one
 

@@ -47,15 +47,15 @@ $$\mathrm{smash}(x, y) = \mathrm{fade}(\mathrm{check}(x), \mathrm{fade}(\mathrm{
 
 for $x \in |D|$ and $y \in |E|$. $\square$
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/fixedNbhd.lean](fixedNbhd.lean)**
-
-@import "fixedNbhd.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/fixOfO.lean](fixOfO.lean)**
 
 @import "fixOfO.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/smashRetraction.lean](smashRetraction.lean)**
 
 @import "smashRetraction.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/fixedNbhd.lean](fixedNbhd.lean)**
+
+@import "fixedNbhd.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/strictRetraction.lean](strictRetraction.lean)**
 
 @import "strictRetraction.lean"

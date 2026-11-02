@@ -1,4 +1,7 @@
 # Proposition 7.7
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_7.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_7.lean)**
+
+@import "Proposition_7_7.lean"
 
 **PROPOSITION 7.7.** For any effectively given domain $D$, the domain $D^\S$ is also effectively given, and all the combinators of Example 6.1 prove to be computable.
 

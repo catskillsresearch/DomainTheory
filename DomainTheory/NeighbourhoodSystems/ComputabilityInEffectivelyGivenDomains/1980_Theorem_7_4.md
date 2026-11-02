@@ -1,4 +1,7 @@
 # Theorem 7.4
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem_7_4.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem_7_4.lean)**
+
+@import "Theorem_7_4.lean"
 
 **THEOREM 7.4.** If $\mathcal{D}_0$ and $\mathcal{D}_1$ are effectively given, then so are $(\mathcal{D}_0 + \mathcal{D}_1)$ and $(\mathcal{D}_0 \times \mathcal{D}_1)$.
 

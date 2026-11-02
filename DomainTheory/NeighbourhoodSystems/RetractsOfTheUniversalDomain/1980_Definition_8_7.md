@@ -46,6 +46,3 @@ where $0 \le r_0 < r_1 < r_2 < \cdots < r_{2n} < r_{2n+1} \le 1$. (Hint: Any ove
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Yseq.lean](Yseq.lean)**
 
 @import "Yseq.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Theorem_8_6.lean](Theorem_8_6.lean)**
-
-@import "Theorem_8_6.lean"

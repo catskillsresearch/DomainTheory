@@ -17,33 +17,36 @@
 - [Theorem 5.6](1976_Theorem_5_6.md)
 
 
+**[DataTypesAsLattices/Closures/union_botElem.lean](union_botElem.lean)**
+
+@import "union_botElem.lean"
 **[DataTypesAsLattices/Closures/predSet_union.lean](predSet_union.lean)**
 
 @import "predSet_union.lean"
+**[DataTypesAsLattices/Closures/directed_finite_cover_subset.lean](directed_finite_cover_subset.lean)**
+
+@import "directed_finite_cover_subset.lean"
+**[DataTypesAsLattices/Closures/exists_mem_of_ne_bot.lean](exists_mem_of_ne_bot.lean)**
+
+@import "exists_mem_of_ne_bot.lean"
+**[DataTypesAsLattices/Closures/squarePair.lean](squarePair.lean)**
+
+@import "squarePair.lean"
 **[DataTypesAsLattices/Closures/botElem_union.lean](botElem_union.lean)**
 
 @import "botElem_union.lean"
 **[DataTypesAsLattices/Closures/topElem_ne_botElem.lean](topElem_ne_botElem.lean)**
 
 @import "topElem_ne_botElem.lean"
-**[DataTypesAsLattices/Closures/exists_mem_of_ne_bot.lean](exists_mem_of_ne_bot.lean)**
+**[DataTypesAsLattices/Closures/predSet_succSet.lean](predSet_succSet.lean)**
 
-@import "exists_mem_of_ne_bot.lean"
-**[DataTypesAsLattices/Closures/Isolated.lean](Isolated.lean)**
-
-@import "Isolated.lean"
-**[DataTypesAsLattices/Closures/directed_finite_cover_subset.lean](directed_finite_cover_subset.lean)**
-
-@import "directed_finite_cover_subset.lean"
-**[DataTypesAsLattices/Closures/union_botElem.lean](union_botElem.lean)**
-
-@import "union_botElem.lean"
-**[DataTypesAsLattices/Closures/squarePair.lean](squarePair.lean)**
-
-@import "squarePair.lean"
+@import "predSet_succSet.lean"
 **[DataTypesAsLattices/FixedLattices/IsCompact.lean](../FixedLattices/IsCompact.lean)**
 
 @import "../FixedLattices/IsCompact.lean"
+**[DataTypesAsLattices/Closures/Isolated.lean](Isolated.lean)**
+
+@import "Isolated.lean"
 **[DataTypesAsLattices/FixedLattices/CountablyAlgebraic.lean](../FixedLattices/CountablyAlgebraic.lean)**
 
 @import "../FixedLattices/CountablyAlgebraic.lean"
@@ -68,6 +71,3 @@
 **[DataTypesAsLattices/Closures/representationDecode.lean](representationDecode.lean)**
 
 @import "representationDecode.lean"
-**[DataTypesAsLattices/Closures/predSet_succSet.lean](predSet_succSet.lean)**
-
-@import "predSet_succSet.lean"

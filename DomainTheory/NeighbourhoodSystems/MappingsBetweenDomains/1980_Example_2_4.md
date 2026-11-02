@@ -1,4 +1,7 @@
 # Example 2.4
+**[NeighbourhoodSystems/MappingsBetweenDomains/Example_2_4.lean](DomainTheory/NeighbourhoodSystems/MappingsBetweenDomains/Example_2_4.lean)**
+
+@import "Example_2_4.lean"
 
 **EXAMPLE 2.4.** Let us briefly describe an approximable mapping $g : B \to B$. Informally, $g$ can be said to "read a sequence from left to right and eliminate the first consecutive run of 1's while copying all the other digits as read." We will have
 

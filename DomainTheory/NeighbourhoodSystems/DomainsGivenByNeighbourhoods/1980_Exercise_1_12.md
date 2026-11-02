@@ -1,4 +1,7 @@
 # Exercise 1.12
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_12.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_12.lean)**
+
+@import "Exercise_1_12.lean"
 
 **EXERCISE 1.12.** Let $\Delta = \mathbb{N} = \{0, 1, 2, \ldots, n, \ldots\}$ be the set of non-negative integers. Use as neighbourhoods final segments:
 

@@ -7,12 +7,6 @@
 **[Exercise_1_19.lean](Exercise_1_19.lean)**
 
 @import "Exercise_1_19.lean"
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Factoid_1_1.lean](Factoid_1_1.lean)**
-
-@import "Factoid_1_1.lean"
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Factoid_1_4.lean](Factoid_1_4.lean)**
-
-@import "Factoid_1_4.lean"
 **[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/principal.lean](principal.lean)**
 
 @import "principal.lean"
@@ -22,48 +16,3 @@
 **[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/DomainIso.lean](DomainIso.lean)**
 
 @import "DomainIso.lean"
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example_1_2.lean](Example_1_2.lean)**
-
-@import "Example_1_2.lean"
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example_1_3.lean](Example_1_3.lean)**
-
-@import "Example_1_3.lean"
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example_1_4.lean](Example_1_4.lean)**
-
-@import "Example_1_4.lean"
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example_1_5.lean](Example_1_5.lean)**
-
-@import "Example_1_5.lean"
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Factoid_1_5.lean](Factoid_1_5.lean)**
-
-@import "Factoid_1_5.lean"
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Factoid_1_7.lean](Factoid_1_7.lean)**
-
-@import "Factoid_1_7.lean"
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Examples_1_2_1_5_revisited.lean](Examples_1_2_1_5_revisited.lean)**
-
-@import "Examples_1_2_1_5_revisited.lean"
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Factoid_1_8.lean](Factoid_1_8.lean)**
-
-@import "Factoid_1_8.lean"
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Theorem_1_11.lean](Theorem_1_11.lean)**
-
-@import "Theorem_1_11.lean"
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_12.lean](Exercise_1_12.lean)**
-
-@import "Exercise_1_12.lean"
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_13.lean](Exercise_1_13.lean)**
-
-@import "Exercise_1_13.lean"
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_14.lean](Exercise_1_14.lean)**
-
-@import "Exercise_1_14.lean"
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_15.lean](Exercise_1_15.lean)**
-
-@import "Exercise_1_15.lean"
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_16.lean](Exercise_1_16.lean)**
-
-@import "Exercise_1_16.lean"
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_18.lean](Exercise_1_18.lean)**
-
-@import "Exercise_1_18.lean"

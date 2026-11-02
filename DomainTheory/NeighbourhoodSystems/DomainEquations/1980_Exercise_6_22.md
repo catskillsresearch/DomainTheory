@@ -1,4 +1,7 @@
 # Exercise 6.22
+**[NeighbourhoodSystems/DomainEquations/Exercise_6_22.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Exercise_6_22.lean)**
+
+@import "Exercise_6_22.lean"
 
 **EXERCISE 6.22.** Comment on these domain equations:
 

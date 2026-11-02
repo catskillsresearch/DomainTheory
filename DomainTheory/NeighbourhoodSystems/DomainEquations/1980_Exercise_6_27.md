@@ -1,4 +1,7 @@
 # Exercise 6.27
+**[NeighbourhoodSystems/DomainEquations/Exercise_6_27.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Exercise_6_27.lean)**
+
+@import "Exercise_6_27.lean"
 
 **EXERCISE 6.27.** Which of the following relationships are true:
 

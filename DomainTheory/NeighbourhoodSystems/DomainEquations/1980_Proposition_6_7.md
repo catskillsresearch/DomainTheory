@@ -1,4 +1,7 @@
 # Proposition 6.7
+**[NeighbourhoodSystems/DomainEquations/Proposition_6_7.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Proposition_6_7.lean)**
+
+@import "Proposition_6_7.lean"
 
 **PROPOSITION 6.7.** If $i : T(D) \to D$ is an initial $T$-algebra, then so is $T(i) : T^2(D) \to T(D)$ and $i$ is the isomorphism from $T(D)$ to $D$.
 

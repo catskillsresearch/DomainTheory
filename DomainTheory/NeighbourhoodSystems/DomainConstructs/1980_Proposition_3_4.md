@@ -1,4 +1,7 @@
 # Proposition 3.4
+**[NeighbourhoodSystems/DomainConstructs/Proposition_3_4.lean](DomainTheory/NeighbourhoodSystems/DomainConstructs/Proposition_3_4.lean)**
+
+@import "Proposition_3_4.lean"
 
 **PROPOSITION 3.4.** The mappings $p_0$, $p_1$ and $\langle f, g \rangle$ are approximable mappings, provided $f$ and $g$ are, and we have:
 

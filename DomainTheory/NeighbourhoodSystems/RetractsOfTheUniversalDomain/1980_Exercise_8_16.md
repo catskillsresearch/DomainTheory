@@ -1,4 +1,7 @@
 # Exercise 8.16
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_16.lean](DomainTheory/NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_16.lean)**
+
+@import "Exercise_8_16.lean"
 
 **EXERCISE 8.16.** For finitary projections $a : E \to E$, write
 

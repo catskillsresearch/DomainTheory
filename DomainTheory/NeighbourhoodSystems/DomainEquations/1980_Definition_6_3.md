@@ -1,4 +1,7 @@
 # Definition 6.3
+**[NeighbourhoodSystems/DomainEquations/Definition_6_3.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Definition_6_3.lean)**
+
+@import "Definition_6_3.lean"
 
 **DEFINITION 6.3.** A *functor* on a category (into itself) associates with every domain $X$ in the category another domain $T(X)$ and to every map
 

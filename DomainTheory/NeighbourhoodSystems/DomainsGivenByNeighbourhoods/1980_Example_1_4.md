@@ -1,4 +1,7 @@
 # Example 1.4
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example_1_4.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example_1_4.lean)**
+
+@import "Example_1_4.lean"
 
 EXAMPLE 1.4. Let $\Delta = \{\Lambda, 0, 1, 00, 01, 10, 11\}$ and let $\mathcal{D} = \{\Delta, \{0, 00, 01\}, \{1, 10, 11\}, \{00\}, \{01\}, \{10\}, \{11\}\}$.
 

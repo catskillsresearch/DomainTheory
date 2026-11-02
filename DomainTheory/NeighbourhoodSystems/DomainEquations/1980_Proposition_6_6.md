@@ -1,4 +1,7 @@
 # Proposition 6.6
+**[NeighbourhoodSystems/DomainEquations/Proposition_6_6.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Proposition_6_6.lean)**
+
+@import "Proposition_6_6.lean"
 
 **PROPOSITION 6.6.** Any two initial $T$-algebras are uniquely isomorphic. $\square$
 

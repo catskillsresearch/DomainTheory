@@ -1,4 +1,7 @@
 # Proposition 7.10
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_10.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Proposition_7_10.lean)**
+
+@import "Proposition_7_10.lean"
 
 **PROPOSITION 7.10.** The power domain $\mathbb{P}\mathcal{D}$ is a neighbourhood system if $\mathcal{D}$ is, and it is effectively given if $\mathcal{D}$ is.
 

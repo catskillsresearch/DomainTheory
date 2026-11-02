@@ -1,4 +1,7 @@
 # Exercise 6.26
+**[NeighbourhoodSystems/DomainEquations/Exercise_6_26.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Exercise_6_26.lean)**
+
+@import "Exercise_6_26.lean"
 
 **EXERCISE 6.26.** For systems $\mathcal{D}$ as in 6.19 define
 

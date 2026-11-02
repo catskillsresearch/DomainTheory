@@ -1,4 +1,7 @@
 # Theorem 5.6
+**[NeighbourhoodSystems/TypedLambdaCalculus/Theorem_5_6.lean](DomainTheory/NeighbourhoodSystems/TypedLambdaCalculus/Theorem_5_6.lean)**
+
+@import "Theorem_5_6.lean"
 
 **THEOREM 5.6.** For every partial recursive function $h : \mathbf{N} \to \mathbf{N}$, there is a $\lambda$-term $\tau$ of type $(\mathbf{N} \to \mathbf{N})$ such that the only constants occurring in $\tau$ are
 

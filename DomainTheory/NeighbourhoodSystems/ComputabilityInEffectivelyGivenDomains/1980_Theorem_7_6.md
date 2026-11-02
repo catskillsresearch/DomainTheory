@@ -1,4 +1,7 @@
 # Theorem 7.6
+**[NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem_7_6.lean](DomainTheory/NeighbourhoodSystems/ComputabilityInEffectivelyGivenDomains/Theorem_7_6.lean)**
+
+@import "Theorem_7_6.lean"
 
 **THEOREM 7.6.** For any effectively given domain $\mathcal{D}$, the combinator $\mathrm{fix} : (\mathcal{D} \to \mathcal{D}) \to \mathcal{D}$ is computable.
 

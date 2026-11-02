@@ -1,4 +1,7 @@
 # Factoid 1.1
+**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Factoid_1_1.lean](DomainTheory/NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Factoid_1_1.lean)**
+
+@import "Factoid_1_1.lean"
 
 ## Factoid 1.1a — empty intersection is delta
 

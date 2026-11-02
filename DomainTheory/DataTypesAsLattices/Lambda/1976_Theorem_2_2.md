@@ -8,3 +8,6 @@
 
 @import "../Enumeration/Avoids.lean"
 
+**[DataTypesAsLattices/Lambda/theorem_2_2.lean](DomainTheory/DataTypesAsLattices/Lambda/theorem_2_2.lean)**
+
+@import "theorem_2_2.lean"

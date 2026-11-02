@@ -1,4 +1,7 @@
 # Theorem 6.9
+**[NeighbourhoodSystems/DomainEquations/Theorem_6_9.lean](DomainTheory/NeighbourhoodSystems/DomainEquations/Theorem_6_9.lean)**
+
+@import "Theorem_6_9.lean"
 
 **THEOREM 6.9.** If the functor $T$ is continuous on maps and if $D \cong T(D)$, so in particular $D$ is a $T$-algebra, then for any $T$-algebra $k : T(E) \to E$ there is a homomorphism $h : D \to E$.
 
