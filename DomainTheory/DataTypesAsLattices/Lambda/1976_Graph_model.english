@@ -23,3 +23,23 @@ In the above $f$ and $g$ must be graphs. It is also true that if $\mathscr{F} \s
 $$(2.13) \quad \bigcup \{f \mid f \in \mathscr{F}\}(x) = \bigcup \{f(x) \mid f \in \mathscr{F}\},$$
 
 but the same does not hold for $\cap$.
+
+**Formalization (`graph_model.lean`).** Scott’s (2.9)–(2.11) are stated for graphs $f,g$ and application; in Lean we use `graph` for functional abstraction and prove the union/intersection laws (2.10) and (2.12) in that form, together with $(\xi^*)$ as `xi_star`. Each name below is the library entry; proofs in the file are short unless noted.
+
+**Definition (`graph`).** For $F : \mathbf{P}\omega \to \mathbf{P}\omega$, $\mathbf{graph}(F) = \{(n,m) \mid m \in F(e_n)\}$ (pairs coded as `pair n m`).
+
+**Theorem (`xi_star`, Table 1 $(\xi^*)$).** If $\tau, \sigma : \mathbf{P}\omega \to \mathbf{P}\omega$ and $\forall x.\, \tau(x) \subseteq \sigma(x)$, then $\mathbf{graph}(\tau) \subseteq \mathbf{graph}(\sigma)$.
+
+*Proof.* If $(n,m) \in \mathbf{graph}(\tau)$, then $m \in \tau(e_n)$; by hypothesis $m \in \sigma(e_n)$, so $(n,m) \in \mathbf{graph}(\sigma)$. ∎
+
+**Theorem (`eq_2_10`, equation (2.10)).** For all $\tau, \sigma : \mathbf{P}\omega \to \mathbf{P}\omega$,
+$$\mathbf{graph}(\tau) \cup \mathbf{graph}(\sigma) = \mathbf{graph}(\lambda x.\, \tau(x) \cup \sigma(x)).$$
+
+*Proof.* Extensionality on pairs: membership in the left union splits according to membership in $\mathbf{graph}(\tau)$ or $\mathbf{graph}(\sigma)$; on the right, $m \in \tau(x) \cup \sigma(x)$ iff $m \in \tau(x)$ or $m \in \sigma(x)$. ∎
+
+**Theorem (`eq_2_12`, equation (2.12)).** For all $\tau, \sigma : \mathbf{P}\omega \to \mathbf{P}\omega$,
+$$\mathbf{graph}(\tau) \cap \mathbf{graph}(\sigma) = \mathbf{graph}(\lambda x.\, \tau(x) \cap \sigma(x)).$$
+
+*Proof.* If $(n,m)$ lies in both graphs, the argument codes $n,m$ must agree (`pair_inj`); then $m \in \tau(e_n) \cap \sigma(e_n)$. Conversely, if $m$ lies in both value sets at the same $e_n$, the pair belongs to both graphs. ∎
+
+*(Equations (2.9) and (2.11) are the same distribution for application and values; (2.13) is not in this file.)*

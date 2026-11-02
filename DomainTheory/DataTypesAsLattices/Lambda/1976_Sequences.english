@@ -21,3 +21,81 @@ $$u = \lambda x.\, \bigcup \{ u_i \mid i \in x \}.$$
 <!-- page 14 -->
 
 but the $\cup$- and set-notation is not part of LAMBDA. We are forced into a recursive definition:
+
+**Formalization (`sequences.lean`).** *Finite* tuples $\langle x_0,\ldots,x_{n-1}\rangle$ are graphs built from McCarthy conditional (`condSet`) and predecessor on arguments; *infinite* sequences are the spread $\lambda x.\,\bigcup\{u(i)\mid i\in x\}$, approximated by bounded unions `seqFunLt` and defined recursively via `seqShift`. Lean names below are the library entries.
+
+**Definition (`seqCons`).** $\texttt{seqCons}(x,xs) = \mathbf{graph}(\lambda z.\, z \supset x,\, xs(\mathit{pred}\,z))$ — the graph of (2.22): head $x$, tail read from $xs$ off $z-1$.
+
+**Theorem (`seqCons.body`).** The body $z \mapsto \mathit{condSet}(z,x,xs(\mathit{pred}\,z))$ is Scott-continuous.
+
+*Proof.* `theorem_1_3.tuple` from continuity of conditional, identity, `funOf xs`, and `predSet`. ∎
+
+**Definition (`seq2`).** $\texttt{seq2}(x,y) = \mathbf{graph}(\lambda z.\, z \supset x,\, (\mathit{pred}\,z \supset y,\,\bot))$ — model form of (2.21) for a pair.
+
+**Theorem (`seq2.app`).** $\mathrm{funOf}(\texttt{seq2}\,x\,y)\,z = z \supset x,\, (\mathit{pred}\,z \supset y,\,\bot)$.
+
+*Proof.* $(\beta)$ via `seq2.body_isScottContinuous`. ∎
+
+**Theorem (`eq_2_22`).** Same as `seq2.app` for general `seqCons`: $\mathrm{funOf}(\texttt{seqCons}\,x\,xs)\,z = z \supset x,\, \mathrm{funOf}\,xs\,(\mathit{predSet}\,z)$.
+
+*Proof.* `seqCons.body` and $(\beta)$. ∎
+
+**Theorem (`eq_2_23_zero`, `seq2.zero`).** $\mathrm{funOf}(\texttt{seq2}\,x\,y)\,0 = x$ (argument $0 = \mathrm{ofNat}\,0$).
+
+*Proof.* Unfold `seq2.app`; case split on conditional and predecessor. ∎
+
+**Theorem (`eq_2_23_one`, `seq2.one`).** $\mathrm{funOf}(\texttt{seq2}\,x\,y)\,1 = y$.
+
+*Proof.* Same. ∎
+
+**Theorem (`eq_2_23_ge`).** For all $n$, $\mathrm{funOf}(\texttt{seq2}\,x\,y)\,(n+2) = \bot$ (empty beyond the pair).
+
+*Proof.* `seq2.app` and arithmetic on `predSet` / `ofNat`. ∎
+
+**Theorem (`seq2.tag_ne`).** $\texttt{seq2}(\mathrm{ofNat}\,0,x) \neq \texttt{seq2}(\mathrm{ofNat}\,1,y)$ (tags $0$ and $1$ are distinguishable).
+
+*Proof.* Apply both sides to argument $0$; membership in $0$ vs $1$ contradicts. ∎
+
+**Definition (`seqFun`).** $\texttt{seqFun}(u,x) = \bigcup \{ \mathrm{funOf}\,u\,(\mathrm{ofNat}\,i) \mid i \in x \}$ — the spread in (2.23) without $\lambda$-notation.
+
+**Definition (`seqFunLt`).** $\texttt{seqFunLt}(u,x,n) = \bigcup \{ \mathrm{funOf}\,u\,(\mathrm{ofNat}\,i) \mid i \in x,\, i < n \}$ — the same union restricted to indices $< n$.
+
+**Theorem (`mem_seqFunLt`).** $k \in \texttt{seqFunLt}\,u\,x\,n \leftrightarrow \exists i \in x,\, i < n \land k \in \mathrm{funOf}\,u\,(\mathrm{ofNat}\,i)$.
+
+*Proof.* Unfold `seqFunLt` as a double indexed union. ∎
+
+**Theorem (`seqFun.eq_iUnion_lt`).** $\texttt{seqFun}(u,z) = \bigcup_n \texttt{seqFunLt}(u,z,n)$.
+
+*Proof.* Extensionality; each index $i$ contributes at stage $i+1$. ∎
+
+**Theorem (`seqFun.left_isScottContinuous`, `seqFun.right_isScottContinuous`).** $u \mapsto \texttt{seqFun}(u,x)$ and $x \mapsto \texttt{seqFun}(u,x)$ are Scott-continuous.
+
+*Proof.* Directed unions of Scott-continuous applications (`scottUnion`, `mem_scottUnion`, `funOf.isScottContinuous`). ∎
+
+**Definition (`seqShift`).** $\texttt{seqShift}(u) = \mathbf{graph}(\lambda z.\, \texttt{seqFun}(u,\mathit{succSet}\,z))$ — reindex tail by successor on arguments (shift $u_i$ to $u_{i+1}$).
+
+**Theorem (`seqShift.app`, `seqShift.ofNat`).** $\mathrm{funOf}(\texttt{seqShift}\,u)\,z = \texttt{seqFun}(u,\mathit{succSet}\,z)$; at numeric $i$, $\mathrm{funOf}(\texttt{seqShift}\,u)\,(\mathrm{ofNat}\,i) = \mathrm{funOf}\,u\,(\mathrm{ofNat}(i+1))$.
+
+*Proof.* Graph $(\beta)$ and unfold `seqFun` / `succSet`. ∎
+
+**Definition (`termShift`).** $\texttt{termShift}(u) = \mathbf{graph}(\lambda t.\, \mathrm{funOf}\,u\,(\mathit{succSet}\,t))$ — the same index shift on arbitrary arguments (for LAMBDA terms later).
+
+**Theorem (`termShift.app`, `termShift.ofNat`).** As for `seqShift`, with `funOf` in place of `seqFun`.
+
+*Proof.* `theorem_1_3` and $(\beta)$. ∎
+
+**Theorem (`seqFunLt.zero`).** $\texttt{seqFunLt}\,u\,z\,0 = \bot$.
+
+*Proof.* No index $i < 0$. ∎
+
+**Theorem (`seqFunLt.succ`).** 
+$$z \supset \mathrm{funOf}\,u\,0,\, \texttt{seqFunLt}(\texttt{seqShift}\,u,\mathit{predSet}\,z,n) = \texttt{seqFunLt}\,u\,z\,(n+1).$$
+This is the recursive step Scott uses because $\cup$ is not primitive in LAMBDA.
+
+*Proof.* Case split on McCarthy conditional; use `seqShift.ofNat` to align indices. ∎
+
+**Theorem (`seqFunLt.term`).** Same identity with `termShift` in place of `seqShift` (term-level shift for definability proofs).
+
+*Proof.* Parallel to `seqFunLt.succ`. ∎
+
+*(Equations (2.19)–(2.20) for empty and singleton tuples are $\bot$ and `seqCons`-special cases; the dollar combinator and full LAMBDA term for `seqFun` continue in later notes.)*

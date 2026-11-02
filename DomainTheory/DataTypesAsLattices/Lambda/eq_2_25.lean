@@ -3,9 +3,8 @@ module
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Lambda.seqFun
+public import DomainTheory.DataTypesAsLattices.Lambda.sequences
 public import DomainTheory.DataTypesAsLattices.Lambda.dollarC
-public import DomainTheory.DataTypesAsLattices.Lambda.seqFun_more
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices

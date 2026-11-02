@@ -1,7 +1,7 @@
 module
 
 public import Mathlib.Order.CompleteLattice.Defs
-public import DomainTheory.DataTypesAsLattices.Lambda.seq2
+public import DomainTheory.DataTypesAsLattices.Lambda.sequences
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Graph.funOf

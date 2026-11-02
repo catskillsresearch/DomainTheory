@@ -5,8 +5,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepBody
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Lambda.seqFun
-public import DomainTheory.DataTypesAsLattices.Lambda.seqFunLt
+public import DomainTheory.DataTypesAsLattices.Lambda.sequences
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot
 public import DomainTheory.DataTypesAsLattices.FixedPoint.fix
@@ -16,8 +15,6 @@ public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
-public import DomainTheory.DataTypesAsLattices.Lambda.seqFunLt_more
-public import DomainTheory.DataTypesAsLattices.Lambda.seqFun_more
 
 @[expose] public section
 

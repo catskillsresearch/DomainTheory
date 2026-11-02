@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Lambda.seq2
+public import DomainTheory.DataTypesAsLattices.Lambda.sequences
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 @[expose] public section
 

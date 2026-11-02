@@ -3,7 +3,7 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_9
-public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_10
+public import DomainTheory.DataTypesAsLattices.Lambda.graph_model
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Graph.graph

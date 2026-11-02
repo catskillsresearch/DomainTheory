@@ -18,36 +18,30 @@
 - [Theorem 3.7](1976_Theorem_3_7.md)
 
 
-**[DataTypesAsLattices/Enumeration/opNat.lean](opNat.lean)**
-
-@import "opNat.lean"
-**[DataTypesAsLattices/Enumeration/e_subset_ofNat_iff.lean](e_subset_ofNat_iff.lean)**
-
-@import "e_subset_ofNat_iff.lean"
-**[DataTypesAsLattices/Enumeration/eq_3_5.lean](eq_3_5.lean)**
-
-@import "eq_3_5.lean"
 **[DataTypesAsLattices/Enumeration/unpairWRec.lean](unpairWRec.lean)**
 
 @import "unpairWRec.lean"
-**[DataTypesAsLattices/Enumeration/secondRecSubst.lean](secondRecSubst.lean)**
-
-@import "secondRecSubst.lean"
 **[DataTypesAsLattices/Enumeration/Extensional.lean](Extensional.lean)**
 
 @import "Extensional.lean"
+**[DataTypesAsLattices/Enumeration/eq_3_10_apply.lean](eq_3_10_apply.lean)**
+
+@import "eq_3_10_apply.lean"
 **[DataTypesAsLattices/Enumeration/exists_triangle_succ.lean](exists_triangle_succ.lean)**
 
 @import "exists_triangle_succ.lean"
-**[DataTypesAsLattices/Enumeration/unpairComp.lean](unpairComp.lean)**
-
-@import "unpairComp.lean"
-**[DataTypesAsLattices/Enumeration/valRank.lean](valRank.lean)**
-
-@import "valRank.lean"
 **[DataTypesAsLattices/Enumeration/argNat.lean](argNat.lean)**
 
 @import "argNat.lean"
+**[DataTypesAsLattices/Enumeration/eq_3_9_apply.lean](eq_3_9_apply.lean)**
+
+@import "eq_3_9_apply.lean"
+**[DataTypesAsLattices/Enumeration/secondRecSubst.lean](secondRecSubst.lean)**
+
+@import "secondRecSubst.lean"
+**[DataTypesAsLattices/Enumeration/unpairComp.lean](unpairComp.lean)**
+
+@import "unpairComp.lean"
 **[DataTypesAsLattices/Enumeration/eq_3_6.lean](eq_3_6.lean)**
 
 @import "eq_3_6.lean"
@@ -57,15 +51,21 @@
 **[DataTypesAsLattices/Enumeration/unpairW.lean](unpairW.lean)**
 
 @import "unpairW.lean"
-**[DataTypesAsLattices/Enumeration/eq_3_10_apply.lean](eq_3_10_apply.lean)**
+**[DataTypesAsLattices/Enumeration/opNat.lean](opNat.lean)**
 
-@import "eq_3_10_apply.lean"
-**[DataTypesAsLattices/Enumeration/eq_3_8_apply.lean](eq_3_8_apply.lean)**
+@import "opNat.lean"
+**[DataTypesAsLattices/Enumeration/eq_3_5.lean](eq_3_5.lean)**
 
-@import "eq_3_8_apply.lean"
+@import "eq_3_5.lean"
+**[DataTypesAsLattices/Enumeration/valRank.lean](valRank.lean)**
+
+@import "valRank.lean"
 **[DataTypesAsLattices/Enumeration/recNat.lean](recNat.lean)**
 
 @import "recNat.lean"
-**[DataTypesAsLattices/Enumeration/eq_3_9_apply.lean](eq_3_9_apply.lean)**
+**[DataTypesAsLattices/Enumeration/e_subset_ofNat_iff.lean](e_subset_ofNat_iff.lean)**
 
-@import "eq_3_9_apply.lean"
+@import "e_subset_ofNat_iff.lean"
+**[DataTypesAsLattices/Enumeration/eq_3_8_apply.lean](eq_3_8_apply.lean)**
+
+@import "eq_3_8_apply.lean"

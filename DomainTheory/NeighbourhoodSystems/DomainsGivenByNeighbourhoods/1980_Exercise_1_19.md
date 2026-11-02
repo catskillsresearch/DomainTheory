@@ -4,9 +4,6 @@
 
 <!-- page 21 -->
 
-**[Exercise_1_19.lean](Exercise_1_19.lean)**
-
-@import "Exercise_1_19.lean"
 **[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/principal.lean](principal.lean)**
 
 @import "principal.lean"
@@ -16,3 +13,6 @@
 **[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/DomainIso.lean](DomainIso.lean)**
 
 @import "DomainIso.lean"
+**[Exercise_1_19.lean](Exercise_1_19.lean)**
+
+@import "Exercise_1_19.lean"

@@ -3,9 +3,8 @@ module
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb
-public import DomainTheory.DataTypesAsLattices.Lambda.seqFun
+public import DomainTheory.DataTypesAsLattices.Lambda.sequences
 public import DomainTheory.DataTypesAsLattices.Lambda.dollarC
-public import DomainTheory.DataTypesAsLattices.Lambda.seqShift
 public import DomainTheory.DataTypesAsLattices.Lambda.dollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.dollarStep
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
@@ -15,7 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_5
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_4
-public import DomainTheory.DataTypesAsLattices.Lambda.seqShift_more
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices

@@ -1,16 +1,9 @@
 # The graph model
 
 @import "1976_Graph_model.english" {code_block=false}
-**[DataTypesAsLattices/Lambda/xi_star.lean](xi_star.lean)**
 
-@import "xi_star.lean"
+**[DataTypesAsLattices/Lambda/graph_model.lean](graph_model.lean)**
 
-**[DataTypesAsLattices/Lambda/eq_2_12.lean](eq_2_12.lean)**
+@import "graph_model.lean"
 
-@import "eq_2_12.lean"
-**[DataTypesAsLattices/Lambda/eq_2_10.lean](eq_2_10.lean)**
-
-@import "eq_2_10.lean"
-@import "xi_star.lean"
-@import "eq_2_10.lean"
-@import "eq_2_12.lean"
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-02) — <a href="../1976_REVISION.md">1976 revision progress</a></p>

@@ -1,16 +1,13 @@
 # Exercise 8.12
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/deltaPair.lean](deltaPair.lean)**
-
-@import "deltaPair.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/IsComputableSplit.lean](IsComputableSplit.lean)**
-
-@import "IsComputableSplit.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/V.lean](V.lean)**
 
 @import "V.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_12.lean](Exercise_8_12.lean)**
 
 @import "Exercise_8_12.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/deltaPair.lean](deltaPair.lean)**
+
+@import "deltaPair.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/VX.lean](VX.lean)**
 
 @import "VX.lean"
@@ -23,6 +20,9 @@
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/splitV.lean](splitV.lean)**
 
 @import "splitV.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/IsComputableSplit.lean](IsComputableSplit.lean)**
+
+@import "IsComputableSplit.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/VComputablePresentation.lean](VComputablePresentation.lean)**
 
 @import "VComputablePresentation.lean"

@@ -9,7 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Enumeration.interp_avoids
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
-public import DomainTheory.DataTypesAsLattices.Lambda.seq2
+public import DomainTheory.DataTypesAsLattices.Lambda.sequences
 
 @[expose] public section
 

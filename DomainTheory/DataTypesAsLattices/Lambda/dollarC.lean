@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Lambda.seqFun
+public import DomainTheory.DataTypesAsLattices.Lambda.sequences
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
@@ -17,7 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_5
 public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4
 public import DomainTheory.DataTypesAsLattices.FixedPoint.fix
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_4
-public import DomainTheory.DataTypesAsLattices.Lambda.seqFun_more
 
 @[expose] public section
 

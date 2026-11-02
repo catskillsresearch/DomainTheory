@@ -5,7 +5,7 @@ public import Mathlib.Algebra.Ring.Parity
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
 public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
-public import DomainTheory.DataTypesAsLattices.Lambda.xi_star
+public import DomainTheory.DataTypesAsLattices.Lambda.graph_model
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense

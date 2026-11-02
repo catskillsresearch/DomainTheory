@@ -13,12 +13,9 @@ public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Lambda.seqFunLt
-public import DomainTheory.DataTypesAsLattices.Lambda.seqFun
+public import DomainTheory.DataTypesAsLattices.Lambda.sequences
 public import DomainTheory.DataTypesAsLattices.Lambda.dollarStep
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
-public import DomainTheory.DataTypesAsLattices.Lambda.seqFunLt_more
-public import DomainTheory.DataTypesAsLattices.Lambda.seqFun_more
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices

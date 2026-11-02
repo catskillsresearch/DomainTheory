@@ -6,7 +6,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.Avoids
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
-public import DomainTheory.DataTypesAsLattices.Lambda.termShift
+public import DomainTheory.DataTypesAsLattices.Lambda.sequences
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStepBody
 public import DomainTheory.DataTypesAsLattices.Lambda.termDollarStep
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet

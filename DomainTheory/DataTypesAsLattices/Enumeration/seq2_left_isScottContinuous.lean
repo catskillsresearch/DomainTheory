@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Lambda.seq2
+public import DomainTheory.DataTypesAsLattices.Lambda.sequences
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense

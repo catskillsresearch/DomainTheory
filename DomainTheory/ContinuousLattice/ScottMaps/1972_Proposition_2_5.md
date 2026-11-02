@@ -5,12 +5,12 @@
 **[PreservesDirectedSup.lean](PreservesDirectedSup.lean)**
 
 @import "PreservesDirectedSup.lean"
-**[preservesDirectedSup_monotone.lean](preservesDirectedSup_monotone.lean)**
-
-@import "preservesDirectedSup_monotone.lean"
 **[scottOpen_preimage.lean](scottOpen_preimage.lean)**
 
 @import "scottOpen_preimage.lean"
+**[preservesDirectedSup_monotone.lean](preservesDirectedSup_monotone.lean)**
+
+@import "preservesDirectedSup_monotone.lean"
 **[continuous_preservesDirectedSup.lean](continuous_preservesDirectedSup.lean)**
 
 @import "continuous_preservesDirectedSup.lean"

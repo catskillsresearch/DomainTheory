@@ -10,8 +10,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.enumBottomTerm
 public import DomainTheory.DataTypesAsLattices.Enumeration.Avoids
 public import DomainTheory.DataTypesAsLattices.Enumeration.barPos
 public import DomainTheory.DataTypesAsLattices.Lambda.succSet_more
-public import DomainTheory.DataTypesAsLattices.Lambda.seqCons
-public import DomainTheory.DataTypesAsLattices.Lambda.seq2
+public import DomainTheory.DataTypesAsLattices.Lambda.sequences
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 
 @[expose] public section
