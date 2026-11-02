@@ -144,7 +144,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.primrecRel_valTraceHa
 public import DomainTheory.DataTypesAsLattices.Enumeration.REPredu2eexists_param
 public import DomainTheory.DataTypesAsLattices.Enumeration.realizes_valNat_mem
 public import DomainTheory.DataTypesAsLattices.Enumeration.funOf_ofNat_mem_re
-public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_more
 public import DomainTheory.DataTypesAsLattices.Lambda.condC_more
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceOk_more
 

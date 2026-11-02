@@ -19,7 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Icomb_isClosure
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
 public import DomainTheory.DataTypesAsLattices.Closures.Vcomb_more
-public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_more
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 public import DomainTheory.DataTypesAsLattices.Closures.theorem_5_5_universe
 @[expose] public section

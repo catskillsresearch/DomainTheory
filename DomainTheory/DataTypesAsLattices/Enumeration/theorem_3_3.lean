@@ -17,7 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_recNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_codes
 public import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_12
 public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb
-public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_more
 
 @[expose] public section
 

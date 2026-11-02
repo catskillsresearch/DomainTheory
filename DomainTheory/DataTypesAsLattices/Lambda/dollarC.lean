@@ -17,7 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_5
 public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4
 public import DomainTheory.DataTypesAsLattices.FixedPoint.fix
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_4
-public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_more
 public import DomainTheory.DataTypesAsLattices.Lambda.seqFun_more
 
 @[expose] public section

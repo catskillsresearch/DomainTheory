@@ -1,7 +1,4 @@
 # Exercise 8.12
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_12.lean](Exercise_8_12.lean)**
-
-@import "Exercise_8_12.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/deltaPair.lean](deltaPair.lean)**
 
 @import "deltaPair.lean"
@@ -11,6 +8,9 @@
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/V.lean](V.lean)**
 
 @import "V.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_12.lean](Exercise_8_12.lean)**
+
+@import "Exercise_8_12.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/VX.lean](VX.lean)**
 
 @import "VX.lean"

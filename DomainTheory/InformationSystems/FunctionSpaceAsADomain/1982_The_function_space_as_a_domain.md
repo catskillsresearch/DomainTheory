@@ -9,51 +9,81 @@
 **[InformationSystems/InformationSystems/Proposition23/proposition_2_3_iv.lean](../InformationSystems/Proposition23/proposition_2_3_iv.lean)**
 
 @import "../InformationSystems/Proposition23/proposition_2_3_iv.lean"
-**[InformationSystems/InformationSystems/Proposition23/proposition_2_3_vi.lean](../InformationSystems/Proposition23/proposition_2_3_vi.lean)**
-
-@import "../InformationSystems/Proposition23/proposition_2_3_vi.lean"
-**[InformationSystems/InformationSystems/Proposition23/proposition_2_3_iii.lean](../InformationSystems/Proposition23/proposition_2_3_iii.lean)**
-
-@import "../InformationSystems/Proposition23/proposition_2_3_iii.lean"
 **[InformationSystems/InformationSystems/Proposition23/proposition_2_3_v.lean](../InformationSystems/Proposition23/proposition_2_3_v.lean)**
 
 @import "../InformationSystems/Proposition23/proposition_2_3_v.lean"
-**[InformationSystems/InformationSystems/Factoid25/Token.lean](../InformationSystems/Factoid25/Token.lean)**
+**[InformationSystems/InformationSystems/Proposition23/proposition_2_3_iii.lean](../InformationSystems/Proposition23/proposition_2_3_iii.lean)**
 
-@import "../InformationSystems/Factoid25/Token.lean"
+@import "../InformationSystems/Proposition23/proposition_2_3_iii.lean"
+**[InformationSystems/InformationSystems/Proposition23/proposition_2_3_vi.lean](../InformationSystems/Proposition23/proposition_2_3_vi.lean)**
+
+@import "../InformationSystems/Proposition23/proposition_2_3_vi.lean"
 **[InformationSystems/InformationSystems/Proposition23.lean](../InformationSystems/Proposition23.lean)**
 
 @import "../InformationSystems/Proposition23.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/FunToken.lean](FunctionSpace/FunToken.lean)**
+**[InformationSystems/ElementsOfASystem/Factoid35/closure.lean](../ElementsOfASystem/Factoid35/closure.lean)**
 
-@import "FunctionSpace/FunToken.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Product/IsProdToken.lean](../ProductsAndSumsOfDomains/Product/IsProdToken.lean)**
+@import "../ElementsOfASystem/Factoid35/closure.lean"
+**[InformationSystems/ElementsOfASystem/Factoid35/subset_closure.lean](../ElementsOfASystem/Factoid35/subset_closure.lean)**
 
-@import "../ProductsAndSumsOfDomains/Product/IsProdToken.lean"
+@import "../ElementsOfASystem/Factoid35/subset_closure.lean"
+**[InformationSystems/ElementsOfASystem/Factoid35/mem_closure_iff.lean](../ElementsOfASystem/Factoid35/mem_closure_iff.lean)**
+
+@import "../ElementsOfASystem/Factoid35/mem_closure_iff.lean"
+**[InformationSystems/ElementsOfASystem/Factoid35.lean](../ElementsOfASystem/Factoid35.lean)**
+
+@import "../ElementsOfASystem/Factoid35.lean"
+**[InformationSystems/ElementsOfASystem/Factoid36/approxUnion.lean](../ElementsOfASystem/Factoid36/approxUnion.lean)**
+
+@import "../ElementsOfASystem/Factoid36/approxUnion.lean"
+**[InformationSystems/ElementsOfASystem/Factoid36/mem_element_iff_mem_closure.lean](../ElementsOfASystem/Factoid36/mem_element_iff_mem_closure.lean)**
+
+@import "../ElementsOfASystem/Factoid36/mem_element_iff_mem_closure.lean"
+**[InformationSystems/ElementsOfASystem/Factoid36/element_eq_approxUnion.lean](../ElementsOfASystem/Factoid36/element_eq_approxUnion.lean)**
+
+@import "../ElementsOfASystem/Factoid36/element_eq_approxUnion.lean"
+**[InformationSystems/ElementsOfASystem/Factoid36.lean](../ElementsOfASystem/Factoid36.lean)**
+
+@import "../ElementsOfASystem/Factoid36.lean"
+**[InformationSystems/ElementsOfASystem/Factoid36/closure_le_of_entSet.lean](../ElementsOfASystem/Factoid36/closure_le_of_entSet.lean)**
+
+@import "../ElementsOfASystem/Factoid36/closure_le_of_entSet.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Sum/SumToken.lean](../ProductsAndSumsOfDomains/Sum/SumToken.lean)**
 
 @import "../ProductsAndSumsOfDomains/Sum/SumToken.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Sum/instDecidableEqSumToken.lean](../ProductsAndSumsOfDomains/Sum/instDecidableEqSumToken.lean)**
 
 @import "../ProductsAndSumsOfDomains/Sum/instDecidableEqSumToken.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/sumBot.lean](../ProductsAndSumsOfDomains/Sum/sumBot.lean)**
-
-@import "../ProductsAndSumsOfDomains/Sum/sumBot.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/rhtInsert.lean](../ProductsAndSumsOfDomains/Sum/rhtInsert.lean)**
-
-@import "../ProductsAndSumsOfDomains/Sum/rhtInsert.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Sum/lftInsert.lean](../ProductsAndSumsOfDomains/Sum/lftInsert.lean)**
 
 @import "../ProductsAndSumsOfDomains/Sum/lftInsert.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/rhtInsert.lean](../ProductsAndSumsOfDomains/Sum/rhtInsert.lean)**
+
+@import "../ProductsAndSumsOfDomains/Sum/rhtInsert.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Sum/instLeftCommutativeLftInsert.lean](../ProductsAndSumsOfDomains/Sum/instLeftCommutativeLftInsert.lean)**
 
 @import "../ProductsAndSumsOfDomains/Sum/instLeftCommutativeLftInsert.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Sum/instLeftCommutativeRhtInsert.lean](../ProductsAndSumsOfDomains/Sum/instLeftCommutativeRhtInsert.lean)**
 
 @import "../ProductsAndSumsOfDomains/Sum/instLeftCommutativeRhtInsert.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/mem_foldr_rht.lean](../ProductsAndSumsOfDomains/Sum/mem_foldr_rht.lean)**
+
+@import "../ProductsAndSumsOfDomains/Sum/mem_foldr_rht.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset.lean](../ProductsAndSumsOfDomains/Sum/rhtFinset.lean)**
+
+@import "../ProductsAndSumsOfDomains/Sum/rhtFinset.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Sum/mem_foldr_lft.lean](../ProductsAndSumsOfDomains/Sum/mem_foldr_lft.lean)**
 
 @import "../ProductsAndSumsOfDomains/Sum/mem_foldr_lft.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/lftFinset.lean](../ProductsAndSumsOfDomains/Sum/lftFinset.lean)**
+
+@import "../ProductsAndSumsOfDomains/Sum/lftFinset.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/SumCon.lean](../ProductsAndSumsOfDomains/Sum/SumCon.lean)**
+
+@import "../ProductsAndSumsOfDomains/Sum/SumCon.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/SumEnt.lean](../ProductsAndSumsOfDomains/Sum/SumEnt.lean)**
+
+@import "../ProductsAndSumsOfDomains/Sum/SumEnt.lean"
 **[InformationSystems/ElementsOfASystem/Factoid32/factoid_3_2.lean](../ElementsOfASystem/Factoid32/factoid_3_2.lean)**
 
 @import "../ElementsOfASystem/Factoid32/factoid_3_2.lean"
@@ -69,108 +99,129 @@
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf.lean)**
 
 @import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/le_inf.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/le_inf.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/le_inf.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_comm.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_comm.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_comm.lean"
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/le_iff_inf_eq.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/le_iff_inf_eq.lean)**
 
 @import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/le_iff_inf_eq.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41.lean)**
-
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInfCarrier.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInfCarrier.lean)**
-
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInfCarrier.lean"
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_idem.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_idem.lean)**
 
 @import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_idem.lean"
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/botElement_inf.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/botElement_inf.lean)**
 
 @import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/botElement_inf.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/lftFinset.lean](../ProductsAndSumsOfDomains/Sum/lftFinset.lean)**
-
-@import "../ProductsAndSumsOfDomains/Sum/lftFinset.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/BasicInst7.lean](FunctionSpace/BasicInst7.lean)**
-
-@import "FunctionSpace/BasicInst7.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funion_left_comm'.lean](FunctionSpace/funion_left_comm'.lean)**
-
-@import "FunctionSpace/funion_left_comm'.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funion_left_comm.lean](FunctionSpace/funion_left_comm.lean)**
-
-@import "FunctionSpace/funion_left_comm.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funion_assoc.lean](FunctionSpace/funion_assoc.lean)**
-
-@import "FunctionSpace/funion_assoc.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funion_comm'.lean](FunctionSpace/funion_comm'.lean)**
-
-@import "FunctionSpace/funion_comm'.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/instLeftCommutativeFunInput.lean](FunctionSpace/instLeftCommutativeFunInput.lean)**
-
-@import "FunctionSpace/instLeftCommutativeFunInput.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/instLeftCommutativeFunOutput.lean](FunctionSpace/instLeftCommutativeFunOutput.lean)**
-
-@import "FunctionSpace/instLeftCommutativeFunOutput.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/filter_ne_subset_of_subset_insert.lean](FunctionSpace/filter_ne_subset_of_subset_insert.lean)**
-
-@import "FunctionSpace/filter_ne_subset_of_subset_insert.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/mem_foldr_funOutput.lean](FunctionSpace/mem_foldr_funOutput.lean)**
-
-@import "FunctionSpace/mem_foldr_funOutput.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/mem_foldr_funInput.lean](FunctionSpace/mem_foldr_funInput.lean)**
-
-@import "FunctionSpace/mem_foldr_funInput.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funBot.lean](FunctionSpace/funInputUnion.lean)**
-
-@import "FunctionSpace/funInputUnion.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/insert_filter_ne.lean](FunctionSpace/insert_filter_ne.lean)**
-
-@import "FunctionSpace/insert_filter_ne.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funBot.lean](FunctionSpace/funBot.lean)**
-
-@import "FunctionSpace/funBot.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf.lean)**
-
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/le_familyInf.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/le_familyInf.lean)**
-
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/le_familyInf.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf_le_iff.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf_le_iff.lean)**
-
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf_le_iff.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funOutputUnion.lean](FunctionSpace/funOutputUnion.lean)**
-
-@import "FunctionSpace/funOutputUnion.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/FunCon.lean](FunctionSpace/FunCon.lean)**
-
-@import "FunctionSpace/FunCon.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/FunEnt.lean](FunctionSpace/FunEnt.lean)**
-
-@import "FunctionSpace/FunEnt.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/exists_combined_witness.lean](FunctionSpace/exists_combined_witness.lean)**
-
-@import "FunctionSpace/exists_combined_witness.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/le_inf.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/le_inf.lean)**
-
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/le_inf.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf_pair.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf_pair.lean)**
-
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf_pair.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_comm.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_comm.lean)**
-
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_comm.lean"
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_botElement.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_botElement.lean)**
 
 @import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_botElement.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_le_iff.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_le_iff.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_le_iff.lean"
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_assoc.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_assoc.lean)**
 
 @import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_assoc.lean"
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_mono.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_mono.lean)**
 
 @import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_mono.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Product/IsProdToken.lean](../ProductsAndSumsOfDomains/Product/IsProdToken.lean)**
+
+@import "../ProductsAndSumsOfDomains/Product/IsProdToken.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Product/BasicInst5.lean](../ProductsAndSumsOfDomains/Product/BasicInst5.lean)**
+
+@import "../ProductsAndSumsOfDomains/Product/BasicInst5.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInfCarrier.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInfCarrier.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInfCarrier.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/le_familyInf.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/le_familyInf.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/le_familyInf.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf_pair.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf_pair.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf_pair.lean"
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid42.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42.lean)**
 
 @import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_le_iff.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_le_iff.lean)**
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/IsFinitelyConsistent.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/IsFinitelyConsistent.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/inf_le_iff.lean"
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/IsFinitelyConsistent.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/familyUnionCarrier.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/familyUnionCarrier.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/familyUnionCarrier.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/exists_entSet_of_subset_deductive.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/exists_entSet_of_subset_deductive.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/exists_entSet_of_subset_deductive.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/deductiveClosure.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/deductiveClosure.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/deductiveClosure.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/familySup.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/familySup.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/familySup.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/join.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/join.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/join.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/subset_deductiveClosure.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/subset_deductiveClosure.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/subset_deductiveClosure.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/le_join_right.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/le_join_right.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/le_join_right.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/le_familySup.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/le_familySup.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/le_familySup.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/finitelyConsistent_of_upperBound.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/finitelyConsistent_of_upperBound.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/finitelyConsistent_of_upperBound.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/exists_isLUB_iff.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/exists_isLUB_iff.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/exists_isLUB_iff.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/le_join_left.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/le_join_left.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/le_join_left.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/exists_join_iff.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/exists_join_iff.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/exists_join_iff.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/Chain.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/Chain.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/Chain.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/IsDirected.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/IsDirected.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/IsDirected.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/exists_mem_of_subset_directedUnion.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/exists_mem_of_subset_directedUnion.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/exists_mem_of_subset_directedUnion.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/finitelyConsistent_of_directed.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/finitelyConsistent_of_directed.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/finitelyConsistent_of_directed.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/directedSup.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/directedSup.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/directedSup.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/finiteApproximants.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/finiteApproximants.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/finiteApproximants.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/botElement_eq_closure_empty.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/botElement_eq_closure_empty.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/botElement_eq_closure_empty.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/nonempty_finiteApproximants.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/nonempty_finiteApproximants.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/nonempty_finiteApproximants.lean"
+**[InformationSystems/InformationSystems/Factoid25/Token.lean](../InformationSystems/Factoid25/Token.lean)**
+
+@import "../InformationSystems/Factoid25/Token.lean"
 **[InformationSystems/InformationSystems/instDecidableEq.lean](../InformationSystems/instDecidableEq.lean)**
 
 @import "../InformationSystems/instDecidableEq.lean"
@@ -189,75 +240,21 @@
 **[InformationSystems/InformationSystems/Factoid25.lean](../InformationSystems/Factoid25.lean)**
 
 @import "../InformationSystems/Factoid25.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funion_assoc'.lean](FunctionSpace/funion_assoc'.lean)**
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/chainSup.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/chainSup.lean)**
 
-@import "FunctionSpace/funion_assoc'.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/mem_foldr_rht.lean](../ProductsAndSumsOfDomains/Sum/mem_foldr_rht.lean)**
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/chainSup.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/le_directedSup.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/le_directedSup.lean)**
 
-@import "../ProductsAndSumsOfDomains/Sum/mem_foldr_rht.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset.lean](../ProductsAndSumsOfDomains/Sum/rhtFinset.lean)**
-
-@import "../ProductsAndSumsOfDomains/Sum/rhtFinset.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/SumCon.lean](../ProductsAndSumsOfDomains/Sum/SumCon.lean)**
-
-@import "../ProductsAndSumsOfDomains/Sum/SumCon.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/SumEnt.lean](../ProductsAndSumsOfDomains/Sum/SumEnt.lean)**
-
-@import "../ProductsAndSumsOfDomains/Sum/SumEnt.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/sumSystem.lean](../ProductsAndSumsOfDomains/Sum/sumSystem.lean)**
-
-@import "../ProductsAndSumsOfDomains/Sum/sumSystem.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Sum/SumCon_empty.lean](../ProductsAndSumsOfDomains/Sum/SumCon_empty.lean)**
-
-@import "../ProductsAndSumsOfDomains/Sum/SumCon_empty.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Sum.lean](../ProductsAndSumsOfDomains/Sum.lean)**
-
-@import "../ProductsAndSumsOfDomains/Sum.lean"
-**[InformationSystems/ElementsOfASystem/Factoid35/closure.lean](../ElementsOfASystem/Factoid35/closure.lean)**
-
-@import "../ElementsOfASystem/Factoid35/closure.lean"
-**[InformationSystems/ElementsOfASystem/Factoid35/subset_closure.lean](../ElementsOfASystem/Factoid35/subset_closure.lean)**
-
-@import "../ElementsOfASystem/Factoid35/subset_closure.lean"
-**[InformationSystems/ElementsOfASystem/Factoid35.lean](../ElementsOfASystem/Factoid35.lean)**
-
-@import "../ElementsOfASystem/Factoid35.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/IsFinitelyConsistent.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/IsFinitelyConsistent.lean)**
-
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/IsFinitelyConsistent.lean"
-**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ApproximableMap.lean](../ApproximableMappingsBetweenDomains/Approximable/ApproximableMap.lean)**
-
-@import "../ApproximableMappingsBetweenDomains/Approximable/ApproximableMap.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/familyUnionCarrier.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/familyUnionCarrier.lean)**
-
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/familyUnionCarrier.lean"
-**[InformationSystems/ElementsOfASystem/Factoid36/approxUnion.lean](../ElementsOfASystem/Factoid36/approxUnion.lean)**
-
-@import "../ElementsOfASystem/Factoid36/approxUnion.lean"
-**[InformationSystems/ElementsOfASystem/Factoid36/mem_element_iff_mem_closure.lean](../ElementsOfASystem/Factoid36/mem_element_iff_mem_closure.lean)**
-
-@import "../ElementsOfASystem/Factoid36/mem_element_iff_mem_closure.lean"
-**[InformationSystems/ElementsOfASystem/Factoid36/closure_le_of_entSet.lean](../ElementsOfASystem/Factoid36/closure_le_of_entSet.lean)**
-
-@import "../ElementsOfASystem/Factoid36/closure_le_of_entSet.lean"
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/le_directedSup.lean"
 **[InformationSystems/ElementsOfASystem/Factoid36/closure_le_element.lean](../ElementsOfASystem/Factoid36/closure_le_element.lean)**
 
 @import "../ElementsOfASystem/Factoid36/closure_le_element.lean"
-**[InformationSystems/ElementsOfASystem/Factoid36/element_eq_approxUnion.lean](../ElementsOfASystem/Factoid36/element_eq_approxUnion.lean)**
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/compact_closure.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/compact_closure.lean)**
 
-@import "../ElementsOfASystem/Factoid36/element_eq_approxUnion.lean"
-**[InformationSystems/ElementsOfASystem/Factoid36.lean](../ElementsOfASystem/Factoid36.lean)**
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/compact_closure.lean"
+**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ApproximableMap.lean](../ApproximableMappingsBetweenDomains/Approximable/ApproximableMap.lean)**
 
-@import "../ElementsOfASystem/Factoid36.lean"
-**[InformationSystems/ElementsOfASystem/Factoid35/mem_closure_iff.lean](../ElementsOfASystem/Factoid35/mem_closure_iff.lean)**
-
-@import "../ElementsOfASystem/Factoid35/mem_closure_iff.lean"
-**[InformationSystems/ElementsOfASystem/Factoid36/closure_le_of_subset.lean](../ElementsOfASystem/Factoid36/closure_le_of_subset.lean)**
-
-@import "../ElementsOfASystem/Factoid36/closure_le_of_subset.lean"
-**[InformationSystems/ElementsOfASystem/Factoid36/closures_directed.lean](../ElementsOfASystem/Factoid36/closures_directed.lean)**
-
-@import "../ElementsOfASystem/Factoid36/closures_directed.lean"
+@import "../ApproximableMappingsBetweenDomains/Approximable/ApproximableMap.lean"
 **[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ext.lean](../ApproximableMappingsBetweenDomains/Approximable/ext.lean)**
 
 @import "../ApproximableMappingsBetweenDomains/Approximable/ext.lean"
@@ -279,75 +276,78 @@
 **[InformationSystems/ApproximableMappingsBetweenDomains/Approximable.lean](../ApproximableMappingsBetweenDomains/Approximable.lean)**
 
 @import "../ApproximableMappingsBetweenDomains/Approximable.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/exists_entSet_of_subset_deductive.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/exists_entSet_of_subset_deductive.lean)**
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/FunToken.lean](FunctionSpace/FunToken.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/exists_entSet_of_subset_deductive.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/deductiveClosure.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/deductiveClosure.lean)**
+@import "FunctionSpace/FunToken.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/BasicInst7.lean](FunctionSpace/BasicInst7.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/deductiveClosure.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/familySup.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/familySup.lean)**
+@import "FunctionSpace/BasicInst7.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funion_left_comm'.lean](FunctionSpace/funion_left_comm'.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/familySup.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/join.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/join.lean)**
+@import "FunctionSpace/funion_left_comm'.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funion_comm.lean](FunctionSpace/funion_comm.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/join.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/finitelyConsistent_of_upperBound.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/finitelyConsistent_of_upperBound.lean)**
+@import "FunctionSpace/funion_comm.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funion_comm'.lean](FunctionSpace/funion_comm'.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/finitelyConsistent_of_upperBound.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/subset_deductiveClosure.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/subset_deductiveClosure.lean)**
+@import "FunctionSpace/funion_comm'.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funion_left_comm.lean](FunctionSpace/funion_left_comm.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/subset_deductiveClosure.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/le_familySup.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/le_familySup.lean)**
+@import "FunctionSpace/funion_left_comm.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funion_assoc'.lean](FunctionSpace/funion_assoc'.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/le_familySup.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/le_join_left.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/le_join_left.lean)**
+@import "FunctionSpace/funion_assoc'.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funion_assoc.lean](FunctionSpace/funion_assoc.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/le_join_left.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/le_join_right.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/le_join_right.lean)**
+@import "FunctionSpace/funion_assoc.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funBot.lean](FunctionSpace/funBot.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/le_join_right.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/exists_join_iff.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/exists_join_iff.lean)**
+@import "FunctionSpace/funBot.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/instLeftCommutativeFunInput.lean](FunctionSpace/instLeftCommutativeFunInput.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/exists_join_iff.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43.lean)**
+@import "FunctionSpace/instLeftCommutativeFunInput.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/instLeftCommutativeFunOutput.lean](FunctionSpace/instLeftCommutativeFunOutput.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/Chain.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/Chain.lean)**
+@import "FunctionSpace/instLeftCommutativeFunOutput.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/mem_foldr_funInput.lean](FunctionSpace/mem_foldr_funInput.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/Chain.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/IsDirected.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/IsDirected.lean)**
+@import "FunctionSpace/mem_foldr_funInput.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/mem_foldr_funOutput.lean](FunctionSpace/mem_foldr_funOutput.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/IsDirected.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/exists_isLUB_iff.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/exists_isLUB_iff.lean)**
+@import "FunctionSpace/mem_foldr_funOutput.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funOutputUnion.lean](FunctionSpace/funOutputUnion.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/exists_isLUB_iff.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/exists_mem_of_subset_directedUnion.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/exists_mem_of_subset_directedUnion.lean)**
+@import "FunctionSpace/funOutputUnion.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funBot.lean](FunctionSpace/funInputUnion.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/exists_mem_of_subset_directedUnion.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/finitelyConsistent_of_directed.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/finitelyConsistent_of_directed.lean)**
+@import "FunctionSpace/funInputUnion.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/filter_ne_subset_of_subset_insert.lean](FunctionSpace/filter_ne_subset_of_subset_insert.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/finitelyConsistent_of_directed.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/directedSup.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/directedSup.lean)**
+@import "FunctionSpace/filter_ne_subset_of_subset_insert.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/insert_filter_ne.lean](FunctionSpace/insert_filter_ne.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/directedSup.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/chainSup.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/chainSup.lean)**
+@import "FunctionSpace/insert_filter_ne.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/FunCon.lean](FunctionSpace/FunCon.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/chainSup.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44.lean)**
+@import "FunctionSpace/FunCon.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/FunEnt.lean](FunctionSpace/FunEnt.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/finiteApproximants.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/finiteApproximants.lean)**
+@import "FunctionSpace/FunEnt.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/exists_combined_witness.lean](FunctionSpace/exists_combined_witness.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/finiteApproximants.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/botElement_eq_closure_empty.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/botElement_eq_closure_empty.lean)**
+@import "FunctionSpace/exists_combined_witness.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/functionSystem.lean](FunctionSpace/functionSystem.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/botElement_eq_closure_empty.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/nonempty_finiteApproximants.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/nonempty_finiteApproximants.lean)**
+@import "FunctionSpace/functionSystem.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace.lean](FunctionSpace.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/nonempty_finiteApproximants.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/le_directedSup.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/le_directedSup.lean)**
+@import "FunctionSpace.lean"
+**[InformationSystems/ElementsOfASystem/Factoid36/closure_le_of_subset.lean](../ElementsOfASystem/Factoid36/closure_le_of_subset.lean)**
 
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/le_directedSup.lean"
+@import "../ElementsOfASystem/Factoid36/closure_le_of_subset.lean"
+**[InformationSystems/ElementsOfASystem/Factoid36/closures_directed.lean](../ElementsOfASystem/Factoid36/closures_directed.lean)**
+
+@import "../ElementsOfASystem/Factoid36/closures_directed.lean"
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/directed_finiteApproximants.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/directed_finiteApproximants.lean)**
 
 @import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/directed_finiteApproximants.lean"
@@ -360,12 +360,12 @@
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/ScottContinuous.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/ScottContinuous.lean)**
 
 @import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/ScottContinuous.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/mono.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/mono.lean)**
-
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/mono.lean"
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/basicOpen.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/basicOpen.lean)**
 
 @import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/basicOpen.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/mono.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/mono.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/mono.lean"
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/ofScottContinuous.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/ofScottContinuous.lean)**
 
 @import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/ofScottContinuous.lean"
@@ -375,33 +375,18 @@
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/toScottContinuous.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/toScottContinuous.lean)**
 
 @import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/toScottContinuous.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/eq_of_basicOpen_eq.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/eq_of_basicOpen_eq.lean)**
-
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/eq_of_basicOpen_eq.lean"
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/toElement_ofScottContinuous.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/toElement_ofScottContinuous.lean)**
 
 @import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/toElement_ofScottContinuous.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/eq_of_basicOpen_eq.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/eq_of_basicOpen_eq.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/eq_of_basicOpen_eq.lean"
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid46.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46.lean)**
 
 @import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46.lean"
 **[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/mem_basicOpen.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/mem_basicOpen.lean)**
 
 @import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/mem_basicOpen.lean"
-**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/compact_closure.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/compact_closure.lean)**
-
-@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/compact_closure.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funion_comm.lean](FunctionSpace/funion_comm.lean)**
-
-@import "FunctionSpace/funion_comm.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/functionSystem.lean](FunctionSpace/functionSystem.lean)**
-
-@import "FunctionSpace/functionSystem.lean"
-**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace.lean](FunctionSpace.lean)**
-
-@import "FunctionSpace.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Product/BasicInst5.lean](../ProductsAndSumsOfDomains/Product/BasicInst5.lean)**
-
-@import "../ProductsAndSumsOfDomains/Product/BasicInst5.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Product/ProdToken.lean](../ProductsAndSumsOfDomains/Product/ProdToken.lean)**
 
 @import "../ProductsAndSumsOfDomains/Product/ProdToken.lean"
@@ -441,6 +426,21 @@
 **[InformationSystems/ProductsAndSumsOfDomains/Product.lean](../ProductsAndSumsOfDomains/Product.lean)**
 
 @import "../ProductsAndSumsOfDomains/Product.lean"
+**[InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf_le_iff.lean](../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf_le_iff.lean)**
+
+@import "../DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/familyInf_le_iff.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/sumBot.lean](../ProductsAndSumsOfDomains/Sum/sumBot.lean)**
+
+@import "../ProductsAndSumsOfDomains/Sum/sumBot.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/sumSystem.lean](../ProductsAndSumsOfDomains/Sum/sumSystem.lean)**
+
+@import "../ProductsAndSumsOfDomains/Sum/sumSystem.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/SumCon_empty.lean](../ProductsAndSumsOfDomains/Sum/SumCon_empty.lean)**
+
+@import "../ProductsAndSumsOfDomains/Sum/SumCon_empty.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum.lean](../ProductsAndSumsOfDomains/Sum.lean)**
+
+@import "../ProductsAndSumsOfDomains/Sum.lean"
 @import "FunctionSpace/funBot.lean"
 
 @import "FunctionSpace/funOutputUnion.lean"

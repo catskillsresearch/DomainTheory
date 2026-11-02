@@ -11,7 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 public import DomainTheory.DataTypesAsLattices.Computability.pack4
 public import DomainTheory.DataTypesAsLattices.Computability.primRecComb
-public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_more
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat_more
 public import DomainTheory.DataTypesAsLattices.Computability.SK_comp
 @[expose] public section

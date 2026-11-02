@@ -958,9 +958,7 @@ import DomainTheory.DataTypesAsLattices.Lambda.Scomb
 import DomainTheory.DataTypesAsLattices.Lambda.Scomb_more
 import DomainTheory.DataTypesAsLattices.Lambda.ScottContinuousFin
 import DomainTheory.DataTypesAsLattices.Lambda.Ycomb
-import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_more
 import DomainTheory.DataTypesAsLattices.Lambda.Ymap
-import DomainTheory.DataTypesAsLattices.Lambda.Yterm
 import DomainTheory.DataTypesAsLattices.Lambda.abs
 import DomainTheory.DataTypesAsLattices.Lambda.condC
 import DomainTheory.DataTypesAsLattices.Lambda.condC_more

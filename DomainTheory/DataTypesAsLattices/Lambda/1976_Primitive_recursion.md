@@ -4,13 +4,13 @@
 **[DataTypesAsLattices/Computability/sqrtStepTerm.lean](../Computability/sqrtStepTerm.lean)**
 
 @import "../Computability/sqrtStepTerm.lean"
-**[DataTypesAsLattices/Computability/primRecOpTerm.lean](../Computability/primRecOpTerm.lean)**
-
-@import "../Computability/primRecOpTerm.lean"
 **[DataTypesAsLattices/Computability/sqrtIter.lean](../Computability/sqrtIter.lean)**
 
 @import "../Computability/sqrtIter.lean"
 
+**[DataTypesAsLattices/Computability/primRecOpTerm.lean](../Computability/primRecOpTerm.lean)**
+
+@import "../Computability/primRecOpTerm.lean"
 @import "../Computability/primRecOpTerm.lean"
 @import "../Computability/sqrtStepTerm.lean"
 @import "../Computability/sqrtIter.lean"

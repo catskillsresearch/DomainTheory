@@ -7,7 +7,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
 public import DomainTheory.DataTypesAsLattices.Enumeration.barStepTerm
-public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_more
 public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_5
 
 @[expose] public section

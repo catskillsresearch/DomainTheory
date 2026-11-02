@@ -12,7 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Computability.pack4
 public import DomainTheory.DataTypesAsLattices.Computability.topRecTerm
-public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_more
 @[expose] public section
 
 set_option maxHeartbeats 2000000

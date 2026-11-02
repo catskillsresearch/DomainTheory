@@ -10,7 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Enumeration.interStepTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
-public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_more
 @[expose] public section
 
 set_option maxHeartbeats 2000000

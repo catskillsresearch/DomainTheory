@@ -55,6 +55,11 @@ BOLD_LEAN_LINE_RE = re.compile(
 )
 NOTE_YEAR_STEM = re.compile(r"^(?:1972|1976|1980|1982)_(.+)$")
 
+# Lean stem → ``1976_*.md`` note stem when prose title ≠ module name (same parent dir).
+DEDICATED_NOTE_STEMS: dict[str, str] = {
+    "Ycomb": "1976_Combinator_Y",
+}
+
 
 def _norm_stem(s: str) -> str:
     return s.lower().replace("_", "")
@@ -67,6 +72,11 @@ def dedicated_note_for(
     path = modules[mod]
     stem = path.stem
     parent = path.parent.resolve()
+    alias_stem = DEDICATED_NOTE_STEMS.get(stem)
+    if alias_stem is not None:
+        for note in notes:
+            if note.parent.resolve() == parent and note.stem == alias_stem:
+                return note.resolve()
     target = _norm_stem(stem)
     for note in notes:
         if note.parent.resolve() != parent:

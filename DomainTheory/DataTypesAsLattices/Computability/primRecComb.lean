@@ -12,7 +12,6 @@ public import DomainTheory.DataTypesAsLattices.Computability.pack4
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecHat
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecVal
 public import DomainTheory.DataTypesAsLattices.Lambda.primRecStep
-public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_more
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_27
 @[expose] public section
 

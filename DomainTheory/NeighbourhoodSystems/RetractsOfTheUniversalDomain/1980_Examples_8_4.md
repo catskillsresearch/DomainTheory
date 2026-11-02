@@ -53,12 +53,12 @@ for $x \in |D|$ and $y \in |E|$. $\square$
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/fixOfO.lean](fixOfO.lean)**
 
 @import "fixOfO.lean"
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/strictRetraction.lean](strictRetraction.lean)**
-
-@import "strictRetraction.lean"
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/smashRetraction.lean](smashRetraction.lean)**
 
 @import "smashRetraction.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/strictRetraction.lean](strictRetraction.lean)**
+
+@import "strictRetraction.lean"
 **[Examples_8_4.lean](Examples_8_4.lean)**
 
 @import "Examples_8_4.lean"

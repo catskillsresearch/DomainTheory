@@ -15,7 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Computability.Realizes2
 public import DomainTheory.DataTypesAsLattices.Computability.primRecComb
 public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb_more
 public import DomainTheory.DataTypesAsLattices.Lambda.Scomb_more
-public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_more
 public import DomainTheory.DataTypesAsLattices.Computability.primRecVal_add
 
 @[expose] public section

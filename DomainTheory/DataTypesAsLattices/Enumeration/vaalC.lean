@@ -16,7 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.typed
 public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
 public import DomainTheory.DataTypesAsLattices.Enumeration.vaalStepTerm
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb
-public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_more
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 public import DomainTheory.DataTypesAsLattices.Computability.combinatory_isRE
 public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory

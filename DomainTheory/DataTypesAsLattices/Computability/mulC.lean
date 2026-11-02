@@ -14,7 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 public import DomainTheory.DataTypesAsLattices.Computability.pack4
 public import DomainTheory.DataTypesAsLattices.Computability.Realizes2
 public import DomainTheory.DataTypesAsLattices.Computability.primRecComb
-public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb_more
 public import DomainTheory.DataTypesAsLattices.Lambda.ofNat_more
 public import DomainTheory.DataTypesAsLattices.Computability.SK_comp
 public import DomainTheory.DataTypesAsLattices.Computability.primRecVal_mul
