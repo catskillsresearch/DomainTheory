@@ -1,9 +1,36 @@
 Cantor pairing is inverted by locating the least triangle bucket that contains a code and reading off the residual. The formalization uses a search lemma and two equivalent presentations of that search, then defines the computational unpair map.
 
-**Lemma (`exists_triangle_succ`).** For every $k$ there is a $w$ with $k < \mathrm{triangle}(w+1)$.
+**Definition (`triangle`, from `pair.lean`).** $\mathrm{triangle}(w)=w(w+1)/2$. The codes with diagonal sum $w$ occupy the half-open interval $[\mathrm{triangle}(w),\,\mathrm{triangle}(w+1))$.
 
-**Definition (`unpairWRec`).** Recursion on $n$ that advances the candidate bucket until $k$ lies below $\mathrm{triangle}(w+1)$.
+**Definition (`unpairWRec`).** Recursion on $n$: $\mathrm{unpairWRec}(k,0)=0$, and
+$$\mathrm{unpairWRec}(k,n+1)=\begin{cases}\mathrm{unpairWRec}(k,n)&\text{if }k<\mathrm{triangle}(n+1),\\ n+1&\text{otherwise.}\end{cases}$$
+This advances the candidate bucket until $k$ lies below $\mathrm{triangle}(w+1)$.
 
-**Definition (`unpairW`).** $\mathrm{unpairW}(k) = \mathrm{unpairWRec}(k,k)$. It equals $\mathrm{Nat.find}$ of `exists_triangle_succ`.
+**Definition (`unpairW`).** $\mathrm{unpairW}(k)=\mathrm{unpairWRec}(k,k)$.
 
-**Definition (`unpairComp`).** With $w = \mathrm{Nat.find}(\ldots)$ and $m = k - \mathrm{triangle}(w)$, set $\mathrm{unpairComp}(k) = (w-m, m)$. Lemma `unpairComp.eq` shows this recovers Mathlib's `unpair`.
+**Definition (`unpairComp`).** With $w=\mathrm{Nat.find}(\mathrm{exists\_triangle\_succ}\,k)$ and $m=k-\mathrm{triangle}(w)$, set $\mathrm{unpairComp}(k)=(w-m,\,m)$.
+
+**Theorem (`exists_triangle_succ`).** For every $k\in\omega$ there is a $w$ with $k < \mathrm{triangle}(w+1)$.
+
+*Proof.* Take $w=k$. Then $\mathrm{triangle}(k+1)=\mathrm{triangle}(k)+(k+1)$, so $k < k+1 \le \mathrm{triangle}(k+1)$. ∎
+
+**Theorem (`unpairWRec.succ`).** Unfolding the successor step:
+$$\mathrm{unpairWRec}(k,n+1)=\begin{cases}\mathrm{unpairWRec}(k,n)&\text{if }k<\mathrm{triangle}(n+1),\\ n+1&\text{otherwise.}\end{cases}$$
+
+*Proof.* By definition of `Nat.rec`. ∎
+
+**Theorem (`unpairWRec.lt`).** For all $k,n$, either $k < \mathrm{triangle}(\mathrm{unpairWRec}(k,n)+1)$ or $\mathrm{unpairWRec}(k,n)=n$.
+
+*Proof.* Induction on $n$. At $0$, case-split on $k<\mathrm{triangle}(1)$. At $n+1$, if $k<\mathrm{triangle}(n+1)$ then the recursive value inherits the claim from the inductive hypothesis (and if that value equals $n$, the same inequality $k<\mathrm{triangle}(n+1)$ applies); otherwise the value is $n+1$. ∎
+
+**Theorem (`unpairWRec.min`).** If $m < \mathrm{unpairWRec}(k,n)$, then $\neg(k < \mathrm{triangle}(m+1))$.
+
+*Proof.* Induction on $n$, generalizing $m$. At $0$ the hypothesis $m<\mathrm{unpairWRec}(k,0)$ is impossible. At $n+1$, if $k<\mathrm{triangle}(n+1)$ reduce to the inductive hypothesis; otherwise $\mathrm{unpairWRec}(k,n+1)=n+1$, so $m\le n$, and any $k<\mathrm{triangle}(m+1)$ would force $k<\mathrm{triangle}(n+1)$ by monotonicity of $\mathrm{triangle}$, a contradiction. ∎
+
+**Theorem (`unpairW.eq`).** $\mathrm{unpairW}(k)=\mathrm{Nat.find}(\mathrm{exists\_triangle\_succ}\,k)$.
+
+*Proof.* Show $\mathrm{unpairWRec}(k,k)$ satisfies the characterizing properties of $\mathrm{Nat.find}$: it is a witness (`unpairWRec.lt`, using $k+1\le\mathrm{triangle}(k+1)$ when the residual case $\mathrm{unpairWRec}(k,k)=k$ occurs), and no smaller index works (`unpairWRec.min`). ∎
+
+**Theorem (`unpairComp.eq`).** $\mathrm{unpairComp}(k)=\mathrm{unpair}(k)$.
+
+*Proof.* Let $w$ be that find-witness and $m=k-\mathrm{triangle}(w)$. Minimality of $w$ gives $\mathrm{triangle}(w)\le k$, and $k<\mathrm{triangle}(w+1)$ gives $m\le w$. Then $(w-m)+m=w$, so $\mathrm{pair}(w-m,\,m)=k$ by the triangle form of pairing. Apply `unpair_pair`. ∎

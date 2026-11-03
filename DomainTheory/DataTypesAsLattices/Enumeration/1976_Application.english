@@ -1,9 +1,31 @@
-Scott codes application of combinators by operations on integers. After Theorem 3.1 he introduces three total (primitive recursive) functions used in the Gödel numbering of r.e. sets; the integer form of application is the first, and the two projections of Cantor pairing are the others.
+Scott codes application of combinators by operations on integers. After Theorem 3.1 he introduces three total (primitive recursive) functions used in the Gödel numbering of r.e. sets; the integer form of application is the first, and the two projections of Cantor pairing are the others. As they come from obvious primitive recursive functions, the paper does not write out LAMBDA-definitions. The point of these auxiliaries is that $0$ will correspond to the generator $\mathbf{G}$, while $(n,m)+1$ will correspond to applying the $n$th set to the $m$th.
 
-**Definition (`applyNat`, (3.4)).** $\mathrm{applyNat}(n, m) = (n, m) + 1$. This is the integer form of $\mathbf{apply}(n)(m)$.
+**Definition (`applyNat`, equation (3.4)).** For $n,m\in\omega$,
+$$\mathrm{applyNat}(n,m) = (n,m)+1,$$
+where $(n,m)$ is Cantor pairing (`pair`). This is the integer form of $\mathbf{apply}(n)(m)$.
 
-**Definition (`opNat`, (3.5)).** $\mathrm{opNat}((n, m)) = n$.
+**Definition (`opNat`, equation (3.5)).** $\mathrm{opNat}(k) = (\mathrm{unpair}\,k)_1$. On a coded pair this recovers the first component, so $\mathbf{op}((n,m))=n$.
 
-**Definition (`argNat`, (3.6)).** $\mathrm{argNat}((n, m)) = m$.
+**Definition (`argNat`, equation (3.6)).** $\mathrm{argNat}(k) = (\mathrm{unpair}\,k)_2$. On a coded pair this recovers the second component, so $\mathbf{arg}((n,m))=m$.
 
-**Lemmas.** `eq_3_5` and `eq_3_6` recover the pair components after `pair`. The special cases `eq_3_8_apply`, `eq_3_9_apply`, and `eq_3_10_apply` record the integer codes $\mathrm{applyNat}(0,0)=1$, $\mathrm{applyNat}(0,1)=3$, and $\mathrm{applyNat}(3,1)=12$ used later for numerals and $\mathbf{val}$.
+**Theorem (`eq_3_5`).** For all $n,m\in\omega$, $\mathrm{opNat}((n,m)) = n$.
+
+*Proof.* Unfold `opNat` and apply `unpair_pair`: $\mathrm{unpair}((n,m))=(n,m)$. ∎
+
+**Theorem (`eq_3_6`).** For all $n,m\in\omega$, $\mathrm{argNat}((n,m)) = m$.
+
+*Proof.* Unfold `argNat` and apply `unpair_pair`. ∎
+
+**Theorem (`eq_3_8_apply`, first half of (3.8)).** $\mathrm{applyNat}(0,0)=1$.
+
+*Proof.* $(0,0)=0$, so $(0,0)+1=1$. ∎
+
+**Theorem (`eq_3_9_apply`, first half of (3.9)).** $\mathrm{applyNat}(0,1)=3$.
+
+*Proof.* $(0,1)=2$, so $(0,1)+1=3$. ∎
+
+**Theorem (`eq_3_10_apply`, first half of (3.10)).** $\mathrm{applyNat}(3,1)=12$.
+
+*Proof.* $(3,1)=11$, so $(3,1)+1=12$. ∎
+
+These three special cases are the integer codes later used for numerals and $\mathbf{val}$: by (3.8)–(3.10) one has $\mathbf{val}(1)=0$, $\mathbf{val}(3)=\langle\mathbf{suc},\ldots\rangle$, and $\mathbf{val}(12)=\mathbf{suc}$.
