@@ -1029,7 +1029,7 @@ import DomainTheory.DataTypesAsLattices.Retracts.iterates_areRetracts
 import DomainTheory.DataTypesAsLattices.Retracts.lambF
 import DomainTheory.DataTypesAsLattices.Retracts.lambR
 import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove
-import DomainTheory.DataTypesAsLattices.Retracts.openR
+import DomainTheory.DataTypesAsLattices.Retracts.openSetRetract
 import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
 import DomainTheory.DataTypesAsLattices.Retracts.plus7
 import DomainTheory.DataTypesAsLattices.Retracts.plus7Body

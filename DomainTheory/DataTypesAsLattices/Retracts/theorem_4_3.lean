@@ -28,7 +28,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.RetractInverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.fixedToInverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimitToFixed
 public import DomainTheory.DataTypesAsLattices.Retracts.treeR
-public import DomainTheory.DataTypesAsLattices.Retracts.openR
+public import DomainTheory.DataTypesAsLattices.Retracts.openSetRetract
 public import DomainTheory.DataTypesAsLattices.Retracts.lambF
 public import DomainTheory.DataTypesAsLattices.Retracts.lambR
 public import DomainTheory.DataTypesAsLattices.Retracts.envR
