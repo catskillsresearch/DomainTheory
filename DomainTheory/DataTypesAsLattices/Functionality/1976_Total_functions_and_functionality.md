@@ -33,9 +33,6 @@
 **[DataTypesAsLattices/Retracts/bot_isRetract.lean](../Retracts/bot_isRetract.lean)**
 
 @import "../Retracts/bot_isRetract.lean"
-**[DataTypesAsLattices/Retracts/theorem_4_4.lean](../Retracts/theorem_4_4.lean)**
-
-@import "../Retracts/theorem_4_4.lean"
 **[DataTypesAsLattices/Retracts/tensorR.lean](../Retracts/tensorR.lean)**
 
 @import "../Retracts/tensorR.lean"
@@ -579,9 +576,6 @@
 **[DataTypesAsLattices/Functionality/eq_4_12.lean](eq_4_12.lean)**
 
 @import "eq_4_12.lean"
-**[DataTypesAsLattices/Functionality/theorem_4_4_typed.lean](theorem_4_4_typed.lean)**
-
-@import "theorem_4_4_typed.lean"
 **[DataTypesAsLattices/Functionality/eq_4_20.lean](eq_4_20.lean)**
 
 @import "eq_4_20.lean"
@@ -927,12 +921,6 @@
 **[DataTypesAsLattices/Enumeration/myhillQ_more.lean](../Enumeration/myhillQ_more.lean)**
 
 @import "../Enumeration/myhillQ_more.lean"
-**[DataTypesAsLattices/Functionality/theorem_4_4_med.lean](theorem_4_4_med.lean)**
-
-@import "theorem_4_4_med.lean"
-**[DataTypesAsLattices/Functionality/theorem_4_4_med_unique.lean](theorem_4_4_med_unique.lean)**
-
-@import "theorem_4_4_med_unique.lean"
 **[DataTypesAsLattices/Functionality/Hfun.lean](Hfun.lean)**
 
 @import "Hfun.lean"

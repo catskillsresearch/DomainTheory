@@ -887,9 +887,6 @@ import DomainTheory.DataTypesAsLattices.Functionality.tensorR_diag_isScottContin
 import DomainTheory.DataTypesAsLattices.Functionality.tensorR_isRetract
 import DomainTheory.DataTypesAsLattices.Functionality.tensorR_map_isScottContinuous
 import DomainTheory.DataTypesAsLattices.Functionality.tensorR_right_isScottContinuous
-import DomainTheory.DataTypesAsLattices.Functionality.theorem_4_4_med
-import DomainTheory.DataTypesAsLattices.Functionality.theorem_4_4_med_unique
-import DomainTheory.DataTypesAsLattices.Functionality.theorem_4_4_typed
 import DomainTheory.DataTypesAsLattices.Functionality.theorem_4_5_sum
 import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_1
 import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_2
@@ -1051,7 +1048,7 @@ import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1
 import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_2
 import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3
 import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3_more
-import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_4
+import DomainTheory.DataTypesAsLattices.Functionality.theorem_4_4
 import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_5
 import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_6
 import DomainTheory.DataTypesAsLattices.Retracts.treeF

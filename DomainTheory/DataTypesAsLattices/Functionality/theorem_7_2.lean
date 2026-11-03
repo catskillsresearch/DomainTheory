@@ -28,7 +28,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_inl
 public import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_inr
 public import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_top
 public import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_iff
-public import DomainTheory.DataTypesAsLattices.Functionality.theorem_4_4_typed
+public import DomainTheory.DataTypesAsLattices.Functionality.theorem_4_4
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 
 @[expose] public section
@@ -125,7 +125,7 @@ theorem theorem_7_2.iii_exact (a b u v : Pomega) :
   constructor
   · intro huv
     rcases huv with ⟨hu, hv, rfl⟩
-    rcases (theorem_4_4_typed.mp hu) with ⟨hpair, ha, hb⟩
+    rcases (theorem_4_4.typed_iff.mp hu) with ⟨hpair, ha, hb⟩
     refine ⟨hpair, hpair, ?_, ?_⟩
     · exact ⟨ha, ha, rfl⟩
     · exact ⟨hb, hb, rfl⟩
@@ -136,8 +136,8 @@ theorem theorem_7_2.iii_exact (a b u v : Pomega) :
     have huvEq : u = v := by
       rw [hu, hv, heqx, heqy]
     refine ⟨?_, ?_, huvEq⟩
-    · exact theorem_4_4_typed.mpr ⟨hu, hx, hy⟩
-    · exact theorem_4_4_typed.mpr ⟨hv, hx', hy'⟩
+    · exact theorem_4_4.typed_iff.mpr ⟨hu, hx, hy⟩
+    · exact theorem_4_4.typed_iff.mpr ⟨hv, hx', hy'⟩
 
 theorem theorem_7_2.iv {a b : Pomega} (ha : Retract a) (hb : Retract b)
     (u v : Pomega) :
