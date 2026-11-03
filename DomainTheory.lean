@@ -481,6 +481,7 @@ import DomainTheory.DataTypesAsLattices.Lambda.primitive_recursion
 import DomainTheory.DataTypesAsLattices.Computability.primRecComb
 import DomainTheory.DataTypesAsLattices.Computability.primRecOpC
 import DomainTheory.DataTypesAsLattices.Computability.primRecOpEnv
+import DomainTheory.DataTypesAsLattices.Computability.primRecOpTerm
 import DomainTheory.DataTypesAsLattices.Computability.primRecVal_add
 import DomainTheory.DataTypesAsLattices.Computability.primRecVal_mul
 import DomainTheory.DataTypesAsLattices.Computability.primRecVal_sqrt
@@ -508,7 +509,9 @@ import DomainTheory.DataTypesAsLattices.Computability.rePred_Scomb_nested
 import DomainTheory.DataTypesAsLattices.Computability.safePredC
 import DomainTheory.DataTypesAsLattices.Computability.sqrtC
 import DomainTheory.DataTypesAsLattices.Computability.sqrtEnv
+import DomainTheory.DataTypesAsLattices.Computability.sqrtIter
 import DomainTheory.DataTypesAsLattices.Computability.sqrtStepC
+import DomainTheory.DataTypesAsLattices.Computability.sqrtStepTerm
 import DomainTheory.DataTypesAsLattices.Computability.subC
 import DomainTheory.DataTypesAsLattices.Computability.subStepC
 import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6
@@ -993,8 +996,13 @@ import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4
 import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_5
 import DomainTheory.DataTypesAsLattices.Lambda.topRec
 import DomainTheory.DataTypesAsLattices.Lambda.union_via_cond
+import DomainTheory.DataTypesAsLattices.Pomega.codeFinset
+import DomainTheory.DataTypesAsLattices.Pomega.e
 import DomainTheory.DataTypesAsLattices.Pomega.eDense
+import DomainTheory.DataTypesAsLattices.Pomega.ePrimrec
+import DomainTheory.DataTypesAsLattices.Pomega.eScan
 import DomainTheory.DataTypesAsLattices.Pomega.pair
+import DomainTheory.DataTypesAsLattices.Pomega.Pomega
 import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55
 import DomainTheory.DataTypesAsLattices.Retracts.DirectedSubset
