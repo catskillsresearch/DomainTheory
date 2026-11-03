@@ -1048,7 +1048,6 @@ import DomainTheory.DataTypesAsLattices.Retracts.tagInj
 import DomainTheory.DataTypesAsLattices.Retracts.tensor4
 import DomainTheory.DataTypesAsLattices.Retracts.tensorR
 import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1
-import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1_more
 import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_2
 import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3
 import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3_more

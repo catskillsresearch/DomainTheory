@@ -1,30 +1,63 @@
 module
 
-public import Mathlib.Order.CompleteLattice.Defs
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
-public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow
+public import DomainTheory.DataTypesAsLattices.Retracts.typed
+public import DomainTheory.DataTypesAsLattices.Retracts.retractBasis
 
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
 
-theorem theorem_4_1.complete (f : Pomega → Pomega) (hf : IsScottContinuous f)
+namespace theorem_4_1
+
+theorem complete (f : Pomega → Pomega) (hf : IsScottContinuous f)
     (A : Set Pomega) (hA : A ⊆ Fixpoints f) :
-    gfpBelow f (⋂₀ A) ∈ Fixpoints f := by
-  let z := gfpBelow f (⋂₀ A)
-  have hinter : f z ∩ ⋂₀ A = z := gfpBelow.fixed_inter hf (⋂₀ A)
-  have hzle : z ⊆ ⋂₀ A := gfpBelow.subset f (⋂₀ A)
-  have hfz : f z ⊆ ⋂₀ A := by
-    intro k hk y hy
-    have hzy : z ⊆ y := subset_trans hzle (Set.sInter_subset_of_mem hy)
-    have : k ∈ f y := IsScottContinuous.monotone hf hzy hk
-    have hyf : f y = y := hA hy
-    rwa [hyf] at this
-  have : f z ∩ ⋂₀ A = f z := Set.inter_eq_left.mpr hfz
-  change f z = z
-  rwa [this] at hinter
+    gfpBelow f (⋂₀ A) ∈ Fixpoints f :=
+  gfpBelow.mem f hf A hA
+
+theorem continuous {a : Pomega} (ha : Retract a) :
+    ∀ x : Fixpoints (funOf a),
+      DirectedSubset (retractBasis a x) ∧
+        (x : Pomega) = ⋃₀ (Subtype.val '' retractBasis a x) ∧
+        ∀ y ∈ retractBasis a x,
+          ∀ s : Set (Fixpoints (funOf a)),
+            DirectedSubset s →
+              (x : Pomega) ⊆ ⋃₀ (Subtype.val '' s) →
+              ∃ z ∈ s, (y : Pomega) ⊆ z := by
+  intro x
+  refine ⟨retractBasis.directedSubset ha x, retractBasis.eq_sUnion ha x, ?_⟩
+  intro y hy s hs hxs
+  obtain ⟨n, hnx, hyn⟩ := hy
+  have hen : e n ⊆ ⋃₀ (Subtype.val '' s) := hnx.trans hxs
+  have hs' : DirectedSet s :=
+    ⟨⟨hs.out.1, fun u hu v hv => by
+      obtain ⟨w, hw, huw, hvw⟩ := hs.out.2 hu hv
+      exact ⟨w, hw, huw, hvw⟩⟩⟩
+  obtain ⟨z, hz, hnz⟩ :=
+    directed_finite_cover hs' (e.finite n) (by simpa [Fixpoints.vals] using hen)
+  refine ⟨z, hz, ?_⟩
+  rw [hyn]
+  have := IsScottContinuous.monotone (funOf.isScottContinuous a) hnz
+  rwa [z.property] at this
+
+end theorem_4_1
+
+theorem theorem_4_1 {f : Pomega → Pomega} (hf : IsScottContinuous f) :
+    (∀ A : Set Pomega, A ⊆ Fixpoints f →
+      gfpBelow f (⋂₀ A) ∈ Fixpoints f ∧
+        lfpAbove f (⋃₀ A) ∈ Fixpoints f) ∧
+      ∀ {a} (_ha : Retract a),
+        Fixpoints (funOf a) = {x | typed x a} ∧
+          ∀ x : Fixpoints (funOf a),
+            DirectedSubset (retractBasis a x) ∧
+              (x : Pomega) = ⋃₀ (Subtype.val '' retractBasis a x) := by
+  constructor
+  · intro A hA
+    exact ⟨theorem_4_1.complete f hf A hA, lfpAbove.mem hf hA⟩
+  · intro a ha
+    constructor
+    · ext x
+      simp [Fixpoints, typed, eq_comm]
+    · intro x
+      exact ⟨retractBasis.directedSubset ha x, retractBasis.eq_sUnion ha x⟩
 
 end DomainTheory.DataTypesAsLattices

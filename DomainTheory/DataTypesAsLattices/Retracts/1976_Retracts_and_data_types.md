@@ -7,7 +7,7 @@
 - [Predecessor set](1976_Pred_set.md) ✓
 - [Fixpoints](1976_Fixpoints.md) ✓
 - [Directed fixpoints](1976_Directed_fixpoints.md) ✓
-- [Definition (retract)](1976_Definition_retract.md)
+- [Definition (retract)](1976_Definition_retract.md) ✓
 - [Theorem 4.1](1976_Theorem_4_1.md)
 - [Definition (membership)](1976_Definition_membership.md)
 - [Definition (ordering)](1976_Definition_ordering.md)

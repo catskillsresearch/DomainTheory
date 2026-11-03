@@ -789,9 +789,6 @@
 **[DataTypesAsLattices/Closures/closureCompact.lean](../Closures/closureCompact.lean)**
 
 @import "../Closures/closureCompact.lean"
-**[DataTypesAsLattices/Retracts/theorem_4_1_more.lean](../Retracts/theorem_4_1_more.lean)**
-
-@import "../Retracts/theorem_4_1_more.lean"
 **[DataTypesAsLattices/Closures/compactFixedBelow_more.lean](../Closures/compactFixedBelow_more.lean)**
 
 @import "../Closures/compactFixedBelow_more.lean"
