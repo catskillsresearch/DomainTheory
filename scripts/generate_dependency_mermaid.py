@@ -1043,6 +1043,18 @@ ENUMERATION_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Recursion codes", "Theorem 3.3"),
 ]
 
+RETRACTS_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
+    ("Introduction", "Definition (retract)"),
+    ("Definition (retract)", "Theorem 4.1"),
+    ("Theorem 4.1", "Definition (membership)"),
+    ("Definition (membership)", "Definition (ordering)"),
+    ("Definition (ordering)", "Theorem 4.2"),
+    ("Theorem 4.2", "Theorem 4.3"),
+    ("Theorem 4.3", "Theorem 4.4"),
+    ("Theorem 4.4", "Theorem 4.5"),
+    ("Theorem 4.5", "Theorem 4.6"),
+]
+
 DEFINABILITY_THEOREM_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Elementary definitions", "Primitive recursion"),
     ("Primitive recursion", "Definition (computable)"),
@@ -1327,6 +1339,26 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Theorem 3.5": "T35",
                 "Theorem 3.6": "T36",
                 "Theorem 3.7": "T37",
+            }
+        if mermaid.name == "Retracts.mermaid":
+            include_empty_boxes = True
+            force_edges = RETRACTS_OUTLINE_NARRATIVE
+            header_lines = [
+                *outline_mermaid_header("1976_Retracts_and_data_types.md"),
+                "%% Reading order for definition notes; Lean edges for theorem deps.",
+            ]
+            extra_ids = {
+                **(extra_ids or {}),
+                "Introduction": "INTRO",
+                "Definition (retract)": "DRET",
+                "Theorem 4.1": "T41",
+                "Definition (membership)": "DMEM",
+                "Definition (ordering)": "DORD",
+                "Theorem 4.2": "T42",
+                "Theorem 4.3": "T43",
+                "Theorem 4.4": "T44",
+                "Theorem 4.5": "T45",
+                "Theorem 4.6": "T46",
             }
         if mermaid.name == "1976_The_definability_theorem.mermaid":
             include_empty_boxes = True

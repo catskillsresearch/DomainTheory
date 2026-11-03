@@ -1,26 +1,20 @@
 module
 
-public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Computability.IsRE
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2ecombinatory
 public import DomainTheory.DataTypesAsLattices.Computability.Realizes
-public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Pomega.codeFinset
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_codes
-public import DomainTheory.DataTypesAsLattices.Enumeration.fin
 public import DomainTheory.DataTypesAsLattices.Enumeration.myhillQ
-public import DomainTheory.DataTypesAsLattices.Enumeration.myhillQ_more
 public import DomainTheory.DataTypesAsLattices.Enumeration.valRank
-public import DomainTheory.DataTypesAsLattices.Enumeration.myhillCase2Code
-public import DomainTheory.DataTypesAsLattices.Enumeration.haltEnum
-public import DomainTheory.DataTypesAsLattices.Enumeration.myhillCase1Code
-public import DomainTheory.DataTypesAsLattices.Enumeration.haltEnum_more
-public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_myhillCase1Code
-public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_myhillCase2Code
-public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_4
+
+import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_4
+import DomainTheory.DataTypesAsLattices.Enumeration.primrec_myhillCase2Code
+import DomainTheory.DataTypesAsLattices.Enumeration.primrec_myhillCase1Code
+import DomainTheory.DataTypesAsLattices.Enumeration.haltEnum_more
+import DomainTheory.DataTypesAsLattices.Enumeration.myhillQ_more
+import DomainTheory.DataTypesAsLattices.Enumeration.valNat_codes
+import DomainTheory.DataTypesAsLattices.Pomega.codeFinset
+import DomainTheory.DataTypesAsLattices.Computability.IsREu2ecombinatory
+import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_bot
+import Mathlib.Order.Interval.Finset.Nat
+
 @[expose] public section
 
 set_option maxHeartbeats 2000000

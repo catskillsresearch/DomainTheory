@@ -8,18 +8,6 @@ The Myhill–Shepherdson theorem shows that extensional, syntactical mappings re
 
 Of course $q$ is uniquely determined (because the values of $q$ are given at least on the finite sets). Thus any attempt to define something *new* by means of some strange mapping on Gödel numbers is bound to fail as long as it is *effective* and *extensional*. The main part of the argument is concentrated on showing these mappings to be *continuous*; that is why $q$ exists.
 
-The preceding results indicate that the expected results on r.e. sets are forthcoming in a smooth and unified manner in this setting. Some knowledge of r.e. theory was presupposed, but analysis shows that the knowledge required is slight. The notion of primitive recursive functions should certainly be well understood together with standard examples. Partial functions need not be introduced separately since they are naturally incorporated into LAMBDA (the theory of multiple-valued functions). As a working definition of r.e. one can take either “empty or the range of a primitive recursive function” or, more uniformly, “a set of the form $\{m \mid \exists n.\, m + 1 = p(n)\}$ where $p$ is primitive recursive”. A few obvious closure properties of r.e. sets should then be proved, and then an adequate foundation for the discussion of LAMBDA will have been provided.
-
-The point of introducing LAMBDA is that further closure properties are more easily expressed in a theory where equations can be variously interpreted as involving numbers, functionals, etc., without becoming too heavily involved in intricate Gödel numbering and encodings. Another useful feature of the present theory concerns the ease with which we can introduce *relative recursiveness*.
-
-<!-- page 19 -->
-
-As we have seen, $\{\mathbf{val}(n) \mid n \in \omega\}$ is an enumeration of all r.e. sets. Suppose we add a new set $a$ as a new constant. What are the sets enumerable in $a$? Answer: $\{\mathbf{val}(n)(a) \mid n \in \omega\}$, since in combinatory logic a parameter can always be factored out as an extra argument. Another way to put the point is this: for $b$ to be enumeration reducible to $a$ it is necessary and sufficient that $b = u(a)$ where $u \in \mathbf{RE}$. This is *word for word* the definition given by Rogers (1967, pp. 146–147). What we have done is to put the theory of enumeration operators (Friedberg–Rogers and Myhill–Shepherdson) into a general setting in which the language LAMBDA not only provides definitions but also the basis of a calculus for demonstrating properties of the operators defined. The algebraic style of this language throws a little light on the notion of enumeration degree. In the first place we can identify the degree of an element with the set of all objects reducible to it (rather than just those equivalent to it) and write
-
-$$\mathbf{Deg}(a) = \{u(a) \mid u \in \mathbf{RE}\}.$$
-
-The set-theoretical inclusion is then the same as the partial ordering of degrees. What kind of a partially ordered set do we have?
-
 *Proof of Theorem 3.5.* The argument is essentially the original one of Myhill–Shepherdson. Suppose $p$ is computable, total and extensional. Define:
 
 $$q = \{(j, m) \mid m \in \mathbf{val}(p(\mathbf{fin}(j)))\},$$
@@ -50,13 +38,41 @@ We choose $u$ primitive recursive, where:
 
 $$\mathbf{val}(u(m)) = t(m).$$
 
-By the choice of $k$, and by the extensionality of $p$, and by the fact that $\mathbf{val}(n) \neq e_j$,
-
-<!-- page 54 -->
-
 By the choice of $k$, and by the extensionality of $p$, and by the fact that $\mathbf{val}(n) \neq e_j$, we have:
 
 $$k \in \mathbf{val}(p(u(m))) \quad \text{iff} \quad t(m) = e_j$$
 $$\quad \text{iff} \quad \mathbf{val}(m) = \bot.$$
 
 But this is impossible, since one side is r.e. in $m$ and the other is not by Theorem 3.4. As both cases lead to contradiction, continuity is established and the proof is complete.
+
+**Formalization.** Write $\mathbf{fin}(j)$ for a code of the finite set $e_j$, and write
+$$Q = \{(j,m)\mid m\in\mathbf{val}(p(\mathbf{fin}(j)))\}$$
+for Scott’s $q$. Continuity is the equality $\mathbf{val}(p(n))=Q(\mathbf{val}(n))$, proved by ruling out the two failure modes below. The enumerator’s range of a fixed non-recursive primitive recursive $r$ plays the role of Scott’s $\{r(i)\}$.
+
+**Theorem (`theorem_3_5.case1`).** Let $p$ be realized by a combinatory element and be extensional for $\mathbf{val}$. Suppose $k\in\mathbf{val}(p(n))$ yet $k\notin\mathbf{val}(p(\mathbf{fin}(j)))$ whenever $e_j\subseteq\mathbf{val}(n)$, and suppose $\mathbf{val}(n)$ is infinite. Then contradiction.
+
+*Proof.* Form the primitive recursive $s$ of Scott’s first case (filter $\mathbf{val}(n)$ against the initial segment of the range of $r$ up to stage $j$). Extensionality yields $k\in\mathbf{val}(p(s(m)))$ if and only if $m$ lies outside the range of $r$. The left-hand side is an r.e. predicate of $m$ (membership of a fixed $k$ after composing the realizer of $p$ with $s$), while the complement of the range of $r$ is not r.e. ∎
+
+**Theorem (`theorem_3_5.case2`).** Under the same hypotheses on $p$, suppose $e_j\subseteq\mathbf{val}(n)$, $e_j\neq\mathbf{val}(n)$, $k\in\mathbf{val}(p(\mathbf{fin}(j)))$, and $k\notin\mathbf{val}(p(n))$. Then contradiction.
+
+*Proof.* Form Scott’s $t(m)$ (equal to $e_j$ when $\mathbf{val}(m)=\bot$, and to $\mathbf{val}(n)$ otherwise) and a primitive recursive code $u$ with $\mathbf{val}(u(m))=t(m)$. Extensionality gives $k\in\mathbf{val}(p(u(m)))$ if and only if $\mathbf{val}(m)=\bot$. The left side is r.e. in $m$; the right side is not, by Theorem 3.4. ∎
+
+**Theorem (`theorem_3_5.q`).** $(j,m)\in Q$ if and only if $m\in\mathbf{val}(p(\mathbf{fin}(j)))$.
+
+*Proof.* Immediate from the definition of $Q$ as a set of coded pairs. ∎
+
+**Theorem (`theorem_3_5.q_app`).** $\mathbf{val}(p(\mathbf{fin}(j))) \subseteq Q(e_j)$.
+
+*Proof.* Every $m\in\mathbf{val}(p(\mathbf{fin}(j)))$ contributes the pair $(j,m)$ to $Q$, and $j\in e_j$. ∎
+
+**Theorem (`theorem_3_5.unique`).** If $q$ and $q'$ are Scott-continuous and agree on every finite $e_n$, then $q=q'$ as maps on $\mathbf{P}\omega$.
+
+*Proof.* Every $x$ is the directed union of the finite $e_n\subseteq x$; continuity and agreement on those pieces give $q(x)=q'(x)$. ∎
+
+**Theorem (`theorem_3_5.of_realizer`).** If $\mathbf{val}(p(n))=q(\mathbf{val}(n))$ holds for all $n$, then that same family of equations holds for all $n$.
+
+*Proof.* Immediate. ∎
+
+**Theorem (`theorem_3_5`).** If a total $p$ is LAMBDA-definable and extensional for $\mathbf{val}$, then there is a LAMBDA-definable $q$ with $\mathbf{val}(p(n))=q(\mathbf{val}(n))$ for all $n$.
+
+*Proof.* Take $q=Q$ as above; it is r.e., hence combinatory. For membership of $k$ in $\mathbf{val}(p(n))$ versus $Q(\mathbf{val}(n))$, the two directions reduce to the continuity equation. Failure of either inclusion produces one of the two contradictory configurations already ruled out. ∎

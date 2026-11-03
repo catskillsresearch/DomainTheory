@@ -1,3 +1,13 @@
+The preceding results indicate that the expected results on r.e. sets are forthcoming in a smooth and unified manner in this setting. Some knowledge of r.e. theory was presupposed, but analysis shows that the knowledge required is slight. The notion of primitive recursive functions should certainly be well understood together with standard examples. Partial functions need not be introduced separately since they are naturally incorporated into LAMBDA (the theory of multiple-valued functions). As a working definition of r.e. one can take either “empty or the range of a primitive recursive function” or, more uniformly, “a set of the form $\{m \mid \exists n.\, m + 1 = p(n)\}$ where $p$ is primitive recursive”. A few obvious closure properties of r.e. sets should then be proved, and then an adequate foundation for the discussion of LAMBDA will have been provided.
+
+The point of introducing LAMBDA is that further closure properties are more easily expressed in a theory where equations can be variously interpreted as involving numbers, functionals, etc., without becoming too heavily involved in intricate Gödel numbering and encodings. Another useful feature of the present theory concerns the ease with which we can introduce *relative recursiveness*.
+
+As we have seen, $\{\mathbf{val}(n) \mid n \in \omega\}$ is an enumeration of all r.e. sets. Suppose we add a new set $a$ as a new constant. What are the sets enumerable in $a$? Answer: $\{\mathbf{val}(n)(a) \mid n \in \omega\}$, since in combinatory logic a parameter can always be factored out as an extra argument. Another way to put the point is this: for $b$ to be enumeration reducible to $a$ it is necessary and sufficient that $b = u(a)$ where $u \in \mathbf{RE}$. This is *word for word* the definition given by Rogers (1967, pp. 146–147). What we have done is to put the theory of enumeration operators (Friedberg–Rogers and Myhill–Shepherdson) into a general setting in which the language LAMBDA not only provides definitions but also the basis of a calculus for demonstrating properties of the operators defined. The algebraic style of this language throws a little light on the notion of enumeration degree. In the first place we can identify the degree of an element with the set of all objects reducible to it (rather than just those equivalent to it) and write
+
+$$\mathbf{Deg}(a) = \{u(a) \mid u \in \mathbf{RE}\}.$$
+
+The set-theoretical inclusion is then the same as the partial ordering of degrees. What kind of a partially ordered set do we have?
+
 **THEOREM 3.6 (The subalgebra theorem).** *The enumeration degrees are exactly the finitely generated combinatory subalgebras of* $\mathbf{P}\omega$.
 
 By “subalgebras” here we of course mean subsets containing $\mathbf{G}$ and closed under application (hence, they contain all of $\mathbf{RE}$, the least subalgebra). Part of the assertion is that every finitely generated subalgebra has a single generator (under application). This fact is an easy extension of Theorem 3.1. Not very much seems to be known about enumeration degrees. Joins can obviously be formed using the pairing function $\langle x, y \rangle$ on sets. Each degree is a countable set; hence, it is trivial to obtain the existence of a sequence of degrees whose *infinite join* is not a degree (not finitely generated). The intersection of subalgebras is a subalgebra—but it may not be a degree even starting with degrees. There are no minimal degrees above $\mathbf{RE}$, but there are minimal *pairs* of degrees. Also for a given degree there are only countably many degrees minimal over it; but the question of whether the partial ordering of enumeration degrees is dense seems still to be open.
@@ -8,18 +18,6 @@ $$\mathbf{TOT} = \{u \mid u = \mathbf{\$}(u) \text{ and } \forall n \in \omega.\
 
 the space of all graphs of total functions. Then the system $\{\mathbf{Deg}(u) \mid u \in \mathbf{TOT}\}$ is isomorphic to the system of Turing degrees. Now there are many other interesting subsets of $\mathbf{P}\omega$. Whether the degree structure of these various subsets is worth investigation is a question whose answer awaits some new ideas.
 
-Among the subsets of $\mathbf{P}\omega$ with natural mathematical structure, we of course have $\mathbf{FUN}$, which is a semigroup under $\circ = \lambda u \lambda v \lambda x.\, u(v(x))$. It is, however, a rather
-
-<!-- page 20 -->
-
-complicated semigroup. We introduce for its study three new combinators:
-
-$$(3.13) \quad \mathbf{R} = \lambda x.\, \langle 0, x \rangle;$$
-
-$$(3.14) \quad \mathbf{L} = \lambda x.\, x_1(x_2);$$
-
-$$(3.15) \quad \bar{u} = \lambda x.\, x_0 \supset \langle 1, u, x_1 \rangle,\, \overline{u(x_1)(x_2)}.$$
-
 *Proof of Theorem 3.6.* Consider a degree $\mathbf{Deg}(a)$. This set is closed under application, because:
 
 $$u(a)(v(a)) = \mathbf{S}(u)(v)(a),$$
@@ -27,3 +25,19 @@ $$u(a)(v(a)) = \mathbf{S}(u)(v)(a),$$
 and $\mathbf{S}(u)(v)$ is r.e. if both $u$ and $v$ are. Note that it also contains the element $\mathbf{G}$; hence, as a subalgebra, it is generated by $a$ and $\mathbf{G}$.
 
 Let $A$ be any finitely generated subalgebra with generators $a'_0, a'_1, \dots, a'_{n-1}$. Consider the element $a = \mathbf{cond}(\langle a'_0, a'_1, \dots, a'_{n-1} \rangle)(\mathbf{G})$. As in the proof of Theorem 3.1, $a$ generates $A$ under application. It is then easy to see why $\mathbf{A} = \mathbf{Deg}(a)$.
+
+**Formalization.** Write $\mathbf{Deg}(a)=\{r(a)\mid r\in\mathbf{RE}\}$ as above. Pack a finite list of generators into a single sequence element $\langle a'_0,\ldots,a'_{n-1}\rangle$ by iterating the binary sequence constructor, and form Scott’s single generator
+$$a=\mathbf{cond}(\langle a'_0,\ldots,a'_{n-1}\rangle)(\mathbf{G}).$$
+(Thus $a(0)=\langle a'_0,\ldots\rangle$ and $a$ still lies in any subalgebra containing the $a'_i$ and $\mathbf{G}$.) The three lemmas below are the pieces of Scott’s argument recorded in this note’s Lean module.
+
+**Theorem (`theorem_3_6.degree`).** For every $a$, the set $\mathbf{Deg}(a)$ is a combinatory subalgebra and contains $a$.
+
+*Proof.* Closure under application is the $\mathbf{S}$-identity $r(a)\cdot s(a)=\mathbf{S}(r)(s)(a)$ already quoted; $\mathbf{G}$ appears as the constant map $\mathbf{K}(\mathbf{G})$ applied to $a$. The element $a$ itself is recovered as $\mathbf{I}(a)$ with $\mathbf{I}$ combinatory. ∎
+
+**Theorem (`theorem_3_6.finite`).** If $a=\mathbf{cond}(\langle a'_0,\ldots\rangle)(\mathbf{G})$ is the single generator of a finite list, then the packed sequence $\langle a'_0,\ldots\rangle$ and the generator $\mathbf{G}$ both lie in $\mathbf{Deg}(a)$.
+
+*Proof.* The packed sequence equals $a(0)$, and $0$ is r.e., so evaluation at $0$ is an r.e. operation applied to $a$. The generator $\mathbf{G}$ belongs to every degree by the preceding theorem. ∎
+
+**Theorem (`theorem_3_6.converse`).** Every $x$ belongs to $\mathbf{Deg}(\mathbf{cond}(\langle x\rangle)(\mathbf{G}))$.
+
+*Proof.* By the finite-list lemma, the singleton packing $\langle x\rangle$ lies in that degree. Applying it to $0$ (again an r.e. operation, and degrees are closed under application) recovers $x$. ∎

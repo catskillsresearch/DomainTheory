@@ -13,6 +13,8 @@
 - [Recursion codes](1976_Recursion_codes.md) ✓
 - [Theorem 3.3](1976_Theorem_3_3.md) ✓
 - [Theorem 3.4](1976_Theorem_3_4.md) ✓
-- [Theorem 3.5](1976_Theorem_3_5.md)
-- [Theorem 3.6](1976_Theorem_3_6.md)
-- [Theorem 3.7](1976_Theorem_3_7.md)
+- [Theorem 3.5](1976_Theorem_3_5.md) ✓
+- [Theorem 3.6](1976_Theorem_3_6.md) ✓
+- [Theorem 3.7](1976_Theorem_3_7.md) ✓
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-03) — <a href="../1976_REVISION.md">1976 revision progress</a></p>

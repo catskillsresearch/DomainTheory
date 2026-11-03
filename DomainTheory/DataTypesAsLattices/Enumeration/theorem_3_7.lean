@@ -1,22 +1,13 @@
 module
 
-public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Lambda.FUN
-public import DomainTheory.DataTypesAsLattices.Lambda.Language
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedSemigroup
 public import DomainTheory.DataTypesAsLattices.Enumeration.RE
-public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.generatedSemigroup_mem_RE_FUN
-public import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_16
-public import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_17
-public import DomainTheory.DataTypesAsLattices.Enumeration.bar_generated
-public import DomainTheory.DataTypesAsLattices.Enumeration.Lcomb
-public import DomainTheory.DataTypesAsLattices.Enumeration.Rcomb
-public import DomainTheory.DataTypesAsLattices.Enumeration.barComb
-public import DomainTheory.DataTypesAsLattices.Enumeration.barPos
-public import DomainTheory.DataTypesAsLattices.Enumeration.enumComp
+
+import DomainTheory.DataTypesAsLattices.Enumeration.bar_generated
+import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_17
+import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_16
+import DomainTheory.DataTypesAsLattices.Enumeration.generatedSemigroup_mem_RE_FUN
+import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
 
 @[expose] public section
 
