@@ -1023,6 +1023,7 @@ CONTINUOUS_LATTICES_RANK_SAME: list[list[str]] = [
 COMPUTABILITY_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Minimal and maximal extension", "Meaning"),
     ("Meaning", "The language LAMBDA"),
+    ("The definability theorem", "A law of Y"),
 ]
 
 DEFINABILITY_THEOREM_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
@@ -1267,7 +1268,6 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
             edge_filter_fn = _fixed_point_edge_filter
         if mermaid.name == "1976_Computability_and_definability.mermaid":
             include_empty_boxes = True
-            exclude_titles = frozenset({"A law of Y"})
             force_edges = COMPUTABILITY_OUTLINE_NARRATIVE
             header_lines = [
                 *outline_mermaid_header("1976_Computability_and_definability.md"),
@@ -1285,6 +1285,7 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Theorem 2.6": "T26",
                 "Theorem 2.6 — the definability theorem": "T26",
                 "The definability theorem": "DEFTHM",
+                "A law of Y": "LAWY",
             }
         if mermaid.name == "1976_The_definability_theorem.mermaid":
             include_empty_boxes = True

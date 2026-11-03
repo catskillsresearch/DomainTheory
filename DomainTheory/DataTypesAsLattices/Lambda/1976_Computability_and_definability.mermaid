@@ -18,6 +18,7 @@ flowchart TB
   SEQ["Sequences"]
   DOL["Distributive functions"]
   DEFTHM["The definability theorem"]
+  LAWY["A law of Y"]
 
   DOL --> DEFTHM
   Theorem_2_3___the_reduct --> DEFTHM
@@ -25,6 +26,7 @@ flowchart TB
   Theorem_2_5___the_first --> DOL
   Theorem_2_2___the_conver --> GRA
   MEAN --> LAM
+  DEFTHM --> LAWY
   EXT --> MEAN
   Theorem_2_4___the_combin --> SEQ
   LAM --> Term_avoidance

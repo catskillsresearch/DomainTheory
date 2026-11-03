@@ -6,7 +6,7 @@
 
 - [Introduction](1976_Introduction.md) [✓](1976_REVISION.md)
 - [Continuous functions](1976_Continuous_functions.md) [✓](1976_REVISION.md)
-- [Computability and definability](Lambda/1976_Computability_and_definability.md)
+- [Computability and definability](Lambda/1976_Computability_and_definability.md) [✓](1976_REVISION.md)
 - [Enumeration and degrees](Enumeration/1976_Enumeration_and_degrees.md)
 - [Retracts and data types](Retracts/1976_Retracts_and_data_types.md)
 - [Closure operations and algebraic lattices](Closures/1976_Closure_operations_and_algebraic_lattices.md)
