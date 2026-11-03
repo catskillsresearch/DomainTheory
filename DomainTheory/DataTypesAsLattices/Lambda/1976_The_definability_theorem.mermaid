@@ -8,9 +8,17 @@ flowchart TB
   Primitive_recursion["Primitive recursion"]
   DCOMP["Definition (computable)"]
   ISRE["R.e. subsets"]
+  FIN["Finite subsets"]
+  PAIR["Pairing terms"]
+  CONST["Constant graph"]
+  CODE["Code enumerator"]
   DEF["Theorem 2.6: Definability"]
 
   Primitive_recursion --> DCOMP
   DCOMP --> ISRE
-  ISRE --> DEF
+  ISRE --> FIN
+  FIN --> PAIR
+  PAIR --> CONST
+  CONST --> CODE
+  CODE --> DEF
   Elementary_definitions --> Primitive_recursion

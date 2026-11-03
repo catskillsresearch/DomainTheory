@@ -20,7 +20,13 @@ This already shows that a large part of the definitions of recursion theory can 
 
 **Definition (`primRecStep`).** $\texttt{primRecStep}(a,f)(u) = \mathbf{graph}(\lambda n.\, n \supset a,\, f(\mathit{predSet}\,n)(u(\mathit{predSet}\,n)))$ — the step function inside Scott’s $\mathbf{Y}$ in (2.27).
 
-**Theorem (`primRecStep.app`, `primRecStep.isScottContinuous`).** $(\beta)$ for the graph and Scott continuity of $u \mapsto \texttt{primRecStep}(a,f)(u)$.
+**Theorem (`primRecStep.body_isScottContinuous_n`).** For fixed $a$, $f$, and $u$, the map $n \mapsto (n \supset a,\, f(n-1)(u(n-1)))$ is Scott continuous.
+
+**Theorem (`primRecStep.graph_of`).** The graph of $u \mapsto \texttt{primRecStep}(a,f)(u)$ is the interpretation of `primRecStepTerm` applied to the parameters $a$ and $f$.
+
+**Theorem (`primRecStep.isScottContinuous`).** The map $u \mapsto \texttt{primRecStep}(a,f)(u)$ is Scott continuous.
+
+**Theorem (`primRecStep.app`).** Applying that graph at $n$ returns $n \supset a,\, f(n-1)(u(n-1))$.
 
 **Definition (`primRecVal`).** $\texttt{primRecVal}(a,f)(0)=a$, $\texttt{primRecVal}(a,f)(n+1)=\mathrm{funOf}(\mathrm{funOf}\,f\,(\mathrm{ofNat}\,n))(\texttt{primRecVal}(a,f)\,n)$ — the numeric schema above.
 
@@ -36,3 +42,5 @@ This already shows that a large part of the definitions of recursion theory can 
 $$\texttt{primRecHat}(a,f)(x)=\mathrm{funOf}(\mathrm{funOf}\,\texttt{dollarC}\,(\mathrm{fix}(\texttt{primRecStep}\,a\,f)))(x).$$
 
 *Proof.* Rewrite with `eq_2_25` (spread as **$**); index-wise use `primRecVal.fix`. ∎
+
+**Definition (`precTerm`).** A second LAMBDA term for the same scheme, written with an explicit zero value, step function, and predecessor rather than with $\mathbf{Y}$. The combinator `precC` is its interpretation.

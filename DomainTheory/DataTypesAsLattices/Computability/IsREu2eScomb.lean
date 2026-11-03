@@ -1,15 +1,13 @@
 module
-public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
+public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Computability.REPredu2ecomp
 public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eexists
-public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
 public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eand
 
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Lambda.Scomb
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 public import DomainTheory.DataTypesAsLattices.Computability.mem_Scomb_iff
 public import DomainTheory.DataTypesAsLattices.Computability.rePred_Scomb_nested

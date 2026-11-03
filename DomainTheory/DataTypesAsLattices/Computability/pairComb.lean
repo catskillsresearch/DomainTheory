@@ -3,7 +3,7 @@ module
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
+public import DomainTheory.DataTypesAsLattices.Computability.pairTerm
 public import DomainTheory.DataTypesAsLattices.Computability.arithEnv
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.funOf

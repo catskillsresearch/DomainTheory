@@ -1,0 +1,15 @@
+Integer pairing and its inverse are written as LAMBDA terms in addition, multiplication, subtraction, square root, and the order test. Write $s = \lfloor\sqrt{n}\rfloor$ and $k = n - s^2$. Mathlib's $\mathrm{Nat.unpair}\,n$ is the pair of components recovered from $s$ and $k$.
+
+**Definition (`pairTerm`).** With addition, multiplication, and subtraction supplied, this term applied to the numerals $n$ and $m$ denotes the numeral $\mathrm{Nat.pair}\,n\,m$.
+
+**Definition (`unpairSqrtTerm`).** Square root applied to the input: the term for $s$.
+
+**Definition (`unpairSquareTerm`).** The product of that value with itself: the term for $s^2$.
+
+**Definition (`unpairDeltaTerm`).** The input minus that square: the term for $k$.
+
+**Definition (`unpairTestTerm`).** The comparison of $k + 1$ with $s$: the term for the test $k < s$.
+
+**Definition (`unpairFstTerm`).** The conditional on that test which selects $s$ or $k$. Interpreted with square root, subtraction, multiplication, and $\le$, it denotes the first component of $\mathrm{Nat.unpair}\,n$.
+
+**Definition (`unpairSndTerm`).** The conditional on the same test which selects either $k - s$ or $s$. In the same interpretation it denotes the second component of $\mathrm{Nat.unpair}\,n$.

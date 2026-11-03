@@ -1,0 +1,3 @@
+The numeral for each integer is built by iterating application, starting from the code of zero.
+
+**Definition (`num`, (3.11)).** $\mathrm{num}(0) = 1$ and $\mathrm{num}(n + 1) = \mathrm{applyNat}(12, \mathrm{num}(n))$. By (3.8) and (3.10), $1$ is the code of $0$ and $12$ is the code of successor, so $\mathrm{num}(n)$ is the code of the numeral for $n$.

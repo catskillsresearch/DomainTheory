@@ -4,6 +4,11 @@ public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_2
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_zero
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_succ
 public import DomainTheory.DataTypesAsLattices.Lambda.distributive_functions
+public import Mathlib.Computability.RE
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
+public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Pomega.pair
+public import DomainTheory.DataTypesAsLattices.Enumeration.Avoids
 
 @[expose] public section
 
@@ -158,5 +163,22 @@ theorem eq_2_27 (a f x : Pomega) :
     obtain ⟨n, hn, hkn⟩ := Set.mem_iUnion₂.mp hk
     refine Set.mem_iUnion₂.mpr ⟨n, hn, ?_⟩
     simpa [primRecVal.fix] using hkn
+
+open Encodable
+
+open Nat.Partrec (Code)
+
+open Nat.Partrec.Code
+
+def precTerm : Term :=
+  .lam 0
+    (.app
+      (.app
+        (.app (.var 3) (.app (.var 4) (.app (.var 6) (.var 0))))
+        (.lam 1 (.lam 2
+          (.app (.var 5)
+            (.app (.app (.var 8) (.app (.var 6) (.var 0)))
+              (.app (.app (.var 8) (.var 1)) (.var 2)))))))
+      (.app (.var 7) (.var 0)))
 
 end DomainTheory.DataTypesAsLattices

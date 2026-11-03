@@ -6,7 +6,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_pair
 public import DomainTheory.DataTypesAsLattices.Computability.primrecRel_mem_funOf_e
-public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
+public import DomainTheory.DataTypesAsLattices.Computability.eSubset
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_pack4_proj1
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_pack4_proj3
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_pack4_proj4

@@ -1,0 +1,3 @@
+A nonempty r.e. set is the range of a primitive recursive function. The enumerator below reads a code and a stage.
+
+**Definition (`enumFun`).** Let $t$ code a pair $(i, s)$. Then $\mathrm{enumFun}\,c\,t$ is $i + 1$ when the code $c$ has halted on input $i$ by stage $s$, and is $0$ otherwise.

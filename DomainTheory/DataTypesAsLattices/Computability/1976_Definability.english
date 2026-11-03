@@ -34,6 +34,14 @@ We may draw some interesting conclusions from the definability theorem. In the f
 
 The point never struck the present author as an especially telling one, and the reduction of $\lambda$-calculus to r.e. theory shows that the divergence between the theories is not at all wide. Of course it is a pleasant surprise to see how many complicated things can be defined in pure $\lambda$-calculus (without arithmetical combinators), but this fact cuts the wrong way as evidence for the thesis (we want stronger theories, not weaker ones). Post systems (or even first-order theories) are much better to mention in this connection, since they are obviously more inclusive in giving enumerations than Turing machines or Herbrand–Gödel recursion equations. But the equivalence proofs are all so easy! What one would like to see is a "natural" definition where the equivalence with r.e. is not just a mechanical exercise involving a few tricks of coding.
 
-**Formalization (`theorem_2_6_more.lean`).** Proof kit for Theorem 2.6 (not Scott’s numbered statements): $e_n$ membership lemmas, `REPred` connectives, pairing and primitive-recursion LAMBDA terms, unpairing terms for arithmetic coding, and related infrastructure used by the combinatory / `IsRE` development.
+**Formalization (`theorem_2_6.lean`).**
 
-**Formalization (`theorem_2_6.lean`).** **`theorem_2_6`** and **`theorem_2_6.fin`**: equivalences (i)–(iii) for unary and $k$-ary continuous $f$ (`IsComputable`, `IsRE (graph f)`, `IsCombinatory`, `LambdaDefinable`, `ComputableFin`). Imports `theorem_2_6_more` for the proof layer.
+**Theorem (`theorem_2_6`).** For a Scott continuous $f : \mathbf{P}\omega \to \mathbf{P}\omega$, the following are equivalent: $f$ is computable; the graph of $f$ is r.e.; the graph of $f$ is combinatory; the graph of $f$ is LAMBDA-definable. Combinatory and LAMBDA-definable agree for every set, so the last two are equivalent without using continuity of $f$.
+
+**Theorem (`theorem_2_6.fin`).** The same four-way equivalence for a Scott continuous function of $n$ variables, with the graph replaced by its curried form `curryFin`.
+
+**Theorem (`theorem_2_6.combinatory_zero`).** The zero combinator is LAMBDA-definable.
+
+**Theorem (`theorem_2_6.lambda_continuous`).** The interpretation of any LAMBDA term, with every variable except one held at $\bot$, is Scott continuous in that variable.
+
+**Theorem (`theorem_2_6.ofNat_isRE`).** If the numeral for $n$ is combinatory, then it is r.e.

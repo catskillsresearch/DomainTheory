@@ -1,13 +1,11 @@
 module
-public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
+public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Computability.REPredu2ecomp
-public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
 public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eand
 
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Lambda.condC
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_testBit
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_pair
 public import DomainTheory.DataTypesAsLattices.Computability.primrecPred_bool

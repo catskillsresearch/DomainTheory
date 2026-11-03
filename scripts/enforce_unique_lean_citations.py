@@ -61,8 +61,13 @@ DEDICATED_NOTE_STEMS: dict[str, str] = {
     "distributive_functions": "1976_Distributive_functions",
     "primitive_recursion": "1976_Primitive_recursion",
     "theorem_2_6": "1976_Definability",
-    "theorem_2_6_more": "1976_Definability",
     "IsRE": "1976_IsRE",
+    "eSubset": "1976_Finite_subsets",
+    "pairTerm": "1976_Pairing_terms",
+    "mem_graph_const_iff": "1976_Constant_graph",
+    "enumFun": "1976_Code_enumerator",
+    "applyNat": "1976_Application",
+    "num": "1976_Numerals",
 }
 
 
@@ -81,6 +86,9 @@ def dedicated_note_for(
     if alias_stem is not None:
         for note in notes:
             if note.parent.resolve() == parent and note.stem == alias_stem:
+                return note.resolve()
+        for note in notes:
+            if note.stem == alias_stem:
                 return note.resolve()
     target = _norm_stem(stem)
     for note in notes:

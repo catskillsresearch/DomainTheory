@@ -5,3 +5,9 @@ This is exactly the hypothesis in Theorem 2.6 (ii), where the $\lambda$-term ass
 **Formalization (`IsRE.lean`).** Mathlib’s `REPred` captures “recursively enumerable as a predicate on $\mathbb{N}$”. For $u \in \mathbf{P}\omega$, **`IsRE u`** holds when $\lambda n.\, n \in u$ is of that kind—equivalently, the membership set $\{\,n \in \omega \mid n \in u\,\}$ is r.e. The proof field is packaged as `IsRE.out`; downstream lemmas use `IsRE` for combinators, application, and Theorem 2.6.
 
 **Definition (`IsRE`).** $u \in \mathbf{P}\omega$ is **r.e.** iff the membership predicate $n \mapsto (n \in u)$ is recursively enumerable (`IsRE u`).
+
+**Theorem (`REPred.empty`).** The constantly false predicate on $\omega$ is recursively enumerable.
+
+**Theorem (`REPred.true`).** The constantly true predicate, on any primcodable type, is recursively enumerable.
+
+**Theorem (`REPred.or`).** If $p$ and $q$ are recursively enumerable predicates on the same primcodable type, then so is $a \mapsto p(a) \lor q(a)$.

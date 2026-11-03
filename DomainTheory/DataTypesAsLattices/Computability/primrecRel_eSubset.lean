@@ -20,7 +20,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.subC
 public import DomainTheory.DataTypesAsLattices.Computability.mulC
 public import DomainTheory.DataTypesAsLattices.Computability.isZeroC
 public import DomainTheory.DataTypesAsLattices.Computability.leC
-public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
+public import DomainTheory.DataTypesAsLattices.Computability.pairTerm
 public import DomainTheory.DataTypesAsLattices.Computability.arithEnv
 public import DomainTheory.DataTypesAsLattices.Computability.pairComb
 public import DomainTheory.DataTypesAsLattices.Computability.primRecZeroC
@@ -29,23 +29,20 @@ public import DomainTheory.DataTypesAsLattices.Computability.sqrtEnv
 public import DomainTheory.DataTypesAsLattices.Computability.sqrtStepC
 public import DomainTheory.DataTypesAsLattices.Computability.sqrtC
 public import DomainTheory.DataTypesAsLattices.Computability.unpairEnv
-public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
 public import DomainTheory.DataTypesAsLattices.Computability.unpairFstC
 public import DomainTheory.DataTypesAsLattices.Computability.unpairSndC
 public import DomainTheory.DataTypesAsLattices.Computability.primRecOpEnv
 public import DomainTheory.DataTypesAsLattices.Computability.primRecOpC
 public import DomainTheory.DataTypesAsLattices.Computability.pairRealizer
 public import DomainTheory.DataTypesAsLattices.Computability.precEnv
-public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
 public import DomainTheory.DataTypesAsLattices.Computability.precC
-public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
+public import DomainTheory.DataTypesAsLattices.Computability.enumFun
 public import DomainTheory.DataTypesAsLattices.Computability.enumRangeC
 public import DomainTheory.DataTypesAsLattices.Computability.ComputableFin
 public import DomainTheory.DataTypesAsLattices.Computability.REPredu2ecomp
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_testBit
-public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
 public import DomainTheory.DataTypesAsLattices.Computability.primrecPred_bool
-public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
+public import DomainTheory.DataTypesAsLattices.Computability.eSubset
 
 @[expose] public section
 

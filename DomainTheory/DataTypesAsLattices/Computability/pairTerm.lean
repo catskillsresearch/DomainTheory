@@ -28,4 +28,60 @@ def pairTerm : Term :=
           (.app (.app (.var 1) (.var 4)) (.var 4)))
         (.var 3))))
 
+
+open Encodable
+
+open Nat.Partrec (Code)
+
+open Nat.Partrec.Code
+
+def unpairSqrtTerm : Term := .app (.var 1) (.var 0)
+
+open Encodable
+
+open Nat.Partrec (Code)
+
+open Nat.Partrec.Code
+
+def unpairSquareTerm : Term :=
+  .app (.app (.var 3) unpairSqrtTerm) unpairSqrtTerm
+
+open Encodable
+
+open Nat.Partrec (Code)
+
+open Nat.Partrec.Code
+
+def unpairDeltaTerm : Term :=
+  .app (.app (.var 2) (.var 0)) unpairSquareTerm
+
+open Encodable
+
+open Nat.Partrec (Code)
+
+open Nat.Partrec.Code
+
+def unpairTestTerm : Term :=
+  .app (.app (.var 4) (.succ unpairDeltaTerm)) unpairSqrtTerm
+
+open Encodable
+
+open Nat.Partrec (Code)
+
+open Nat.Partrec.Code
+
+def unpairFstTerm : Term :=
+  .lam 0 (.cond unpairTestTerm unpairSqrtTerm unpairDeltaTerm)
+
+open Encodable
+
+open Nat.Partrec (Code)
+
+open Nat.Partrec.Code
+
+def unpairSndTerm : Term :=
+  .lam 0 (.cond unpairTestTerm
+    (.app (.app (.var 2) unpairDeltaTerm) unpairSqrtTerm)
+    unpairSqrtTerm)
+
 end DomainTheory.DataTypesAsLattices

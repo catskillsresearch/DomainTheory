@@ -1,0 +1,11 @@
+The basic neighbourhoods $e_n \subseteq \omega$ are the finite sets coded by the bits of $n$. The lemmas below are the bit-arithmetic used to treat membership and application as r.e. relations.
+
+**Theorem (`lt_two_pow_of_high_bits`).** If every bit of $n$ in position $k$ or higher is off, then $n < 2^k$.
+
+**Theorem (`bits_subset_lt_two_pow`).** If $e_n \subseteq e_b$, then $n < 2^{b+1}$.
+
+**Theorem (`eSubset_e_iff`).** $e_n \subseteq e_b$ if and only if for every position $k < n$, the bit of $n$ at $k$ is off or the bit of $b$ at $k$ is on.
+
+**Theorem (`eSubset_funOf_e_iff`).** $e_k \subseteq e_a(e_b)$ if and only if for every position $i < k$, the bit of $k$ at $i$ is off or $i$ lies in the application $e_a(e_b)$.
+
+**Theorem (`eSubset_iff_stage`).** Suppose the code $c$ returns $0$ on input $k$ exactly when $k \in x$. Then $e_n \subseteq x$ if and only if there is a stage $s$ such that, for every position $k < n$, the bit of $n$ at $k$ is off or $c$ has halted on $k$ by stage $s$.
