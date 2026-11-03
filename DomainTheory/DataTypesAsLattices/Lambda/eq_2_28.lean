@@ -14,13 +14,6 @@ import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
 namespace DomainTheory.DataTypesAsLattices
 
 theorem eq_2_28 {g : Pomega → Pomega → Pomega}
-    (hgy : ∀ x, IsScottContinuous (fun y => g x y)) (x : Pomega) :
-    fix (g x) = g x (fix (g x)) :=
-  (theorem_1_4 (hgy x)).1.symm
-
-namespace eq_2_28
-
-theorem commute {g : Pomega → Pomega → Pomega}
     (hgx : ∀ y, IsScottContinuous (fun x => g x y))
     (hgy : ∀ x, IsScottContinuous (fun y => g x y)) :
     fix (Fofg g) = Ymap g := by
@@ -63,7 +56,5 @@ theorem commute {g : Pomega → Pomega → Pomega}
         rw [hiter]
         exact hkm⟩
     exact Set.mem_iUnion.mpr ⟨k + 1, this⟩
-
-end eq_2_28
 
 end DomainTheory.DataTypesAsLattices
