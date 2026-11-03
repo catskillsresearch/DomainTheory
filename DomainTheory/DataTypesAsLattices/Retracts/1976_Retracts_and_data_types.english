@@ -6,23 +6,8 @@ What then is a *data type*? Answer: a type of data. That is to say, a collection
 
 <!-- page 21 -->
 
-
 important as they may be. Our objective here is conceptual organization, and we wish to show how such ideas, in the language for computable functions used here, can find the proper expression.
 
 Which are the data types that can be defined in LAMBDA? No final answer can be given since the number is infinite and inexhaustible. From one point of view, however, there is only one: $\mathbf{P}\omega$ itself. It is the universal type and all other types are subtypes of it; so $\mathbf{P}\omega$ plays a primary role in this exposition. But in a way it is too big, or at least too complex, since each of its elements can be used in so many different ways. When we specify a subtype the intention is to restrict attention to a special use. But even the various subtypes overlap, and so the same elements still get different uses. Style in writing definitions will usually make the differentiation clear though. The main innovation to be described in this section is the use of LAMBDA expressions to define types *as well as* elements. Certain expressions define *retracts* (or better: retraction mappings), and it is the *ranges* (or as we shall see: *sets of finite points*) of such retracts that form the groupings into types. Thus LAMBDA provides a calculus of type definitions including *recursive* type definitions. Examples will be explained both here and in the following sections. Note that types as retracts turn out to be types as *lattices*, that is, types of partial and many-valued objects. The problem of cutting these lattice types down to the perfect or complete objects is discussed in § 6. Another view of types and functionality of mappings is presented in § 7.
 
 The notion of a retract comes from (analytic) topology, but it seems almost an accident that the idea can be applied in the present context. The word is employed not because there is some deep tie-up with topology but because it is short and rather descriptive. Three easy examples will motivate the general plan:
-
-$$(4.1) \quad \mathbf{fun} = \lambda u \lambda x.\, u(x);$$
-
-$$(4.2) \quad \mathbf{pair} = \lambda u.\, \langle u_0, u_1 \rangle;$$
-
-$$(4.3) \quad \mathbf{bool} = \lambda u.\, u \sqsupset 0, 1.$$
-
-Here $\sqsupset$ is the *doubly strict conditional* defined by
-
-$$(4.4) \quad z \sqsupset x, y = z \supset (z \supset x, \top), (z \supset \top, y),$$
-
-which has the property that if $z$ is both zero and positive, then it takes the value $\top$ instead of the value $x \cup y$.
-
-**For Section 4.** The notion of a *continuous lattice* is due to Scott (1970/71) and we shall not review all the facts here. One special feature of these lattices is that the lattice operations of meet and join ($\sqcap$ and $\sqcup$) are continuous (that is, commute with directed sups). As topological spaces, they can be characterized as those $T_0$-spaces satisfying the extension theorem (which we proved for $\mathbf{P}\omega$ in Theorem 1.5).

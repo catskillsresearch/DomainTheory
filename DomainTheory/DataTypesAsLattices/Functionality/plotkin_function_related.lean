@@ -1,7 +1,7 @@
 
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_9
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_model
 public import DomainTheory.DataTypesAsLattices.Graph.beta

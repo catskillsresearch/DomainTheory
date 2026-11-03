@@ -13,7 +13,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_9
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_10
-public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.Closures.squarePair_more
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 

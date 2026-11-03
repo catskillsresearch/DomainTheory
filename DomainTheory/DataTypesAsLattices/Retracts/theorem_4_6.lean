@@ -24,7 +24,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.fixedToInverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimitToFixed
 public import DomainTheory.DataTypesAsLattices.Retracts.iterates_areRetracts
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_iUnion
-public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.Retracts.iUnion_retract_isGraph
 public import DomainTheory.DataTypesAsLattices.Retracts.funOf_fix_idem
 public import DomainTheory.DataTypesAsLattices.Retracts.vals

@@ -8,7 +8,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
 public import DomainTheory.DataTypesAsLattices.Retracts.tensorR
 public import DomainTheory.DataTypesAsLattices.Retracts.curryC
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
-public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Graph.beta

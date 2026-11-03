@@ -1,0 +1,9 @@
+The fixed-point set of a continuous self-map of $\mathbf{P}\omega$ is the carrier of Theorem 4.1.
+
+**Definition (`Fixpoints`).** $\mathrm{Fixpoints}(f)=\{x\mid f(x)=x\}$.
+
+**Definition (`Fixpoints.vals`).** For a set $A$ of fixed points (as a subtype), $\mathrm{vals}(A)$ is the underlying set of elements of $\mathbf{P}\omega$.
+
+**Theorem (`Fixpoints.vals.subset`).** $\mathrm{vals}(A)\subseteq\mathrm{Fixpoints}(f)$.
+
+*Proof.* Each element of $\mathrm{vals}(A)$ is the underlying point of some fixed-point witness. ∎

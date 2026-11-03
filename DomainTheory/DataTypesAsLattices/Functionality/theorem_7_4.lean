@@ -64,7 +64,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Lambda.distributive_functions
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.Retracts.intR
 public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove
 public import DomainTheory.DataTypesAsLattices.Retracts.retractLe

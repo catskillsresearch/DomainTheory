@@ -1,11 +1,14 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
+
+theorem predSet_ofNat_zero : predSet (ofNat 0) = botElem := by
+  ext k
+  simp [predSet, ofNat, botElem, Set.mem_singleton_iff]
 
 theorem predSet_eq_ofNat_of_no_zero {u : Pomega} {k : ℕ}
     (h0 : 0 ∉ u) (hk : predSet u = ofNat k) :

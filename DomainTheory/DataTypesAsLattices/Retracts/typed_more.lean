@@ -8,7 +8,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.comp
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3_more
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
-public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 
 @[expose] public section

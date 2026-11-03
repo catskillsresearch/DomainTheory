@@ -1,0 +1,15 @@
+Directed families of fixed points and the compactness property used when the retract’s fixed-point lattice is continuous. The supporting lattice interface (order, directed sets, way-below) lives with these tools.
+
+**Definition (`completeLatticeLE`, `completeLatticePreorder`, `completeLatticeSupSet`).** The order, preorder, and supremum structures of a complete lattice, named for inference.
+
+**Definition (`DirectedSet`).** A nonempty set in a preorder is directed when any two elements have a common upper bound in the set.
+
+**Definition (`WayBelow`).** $x\ll y$ when every directed set whose supremum is at least $y$ already has a member above $x$. (This is the directed-sup form used for fixed-point lattices in $\mathbf{P}\omega$; the Continuous Lattice chapter’s $\ll$ is the Scott-open form.)
+
+**Definition (`DirectedSubset`).** A nonempty set $s$ of fixed points of $f$ is directed when any two members have an upper bound in $s$ under $\subseteq$.
+
+**Definition (`IsCompactSubset`).** A fixed point $x$ is compact (relative to $f$) when every directed family of fixed points whose union covers $x$ has a single member that already covers $x$.
+
+**Theorem (`directed_finite_cover`).** If $A$ is a directed set of fixed points and $t\subseteq\mathbf{P}\omega$ is finite and contained in $\bigcup\mathrm{vals}(A)$, then some $z\in A$ already contains $t$.
+
+*Proof.* Induct on the finite set: the empty set is covered by any member of the nonempty directed family; for an inserted point, take upper bounds for the inductive cover and for a witness covering the new point. ∎

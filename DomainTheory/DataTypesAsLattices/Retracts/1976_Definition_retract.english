@@ -1,3 +1,15 @@
+$$(4.1) \quad \mathbf{fun} = \lambda u \lambda x.\, u(x);$$
+
+$$(4.2) \quad \mathbf{pair} = \lambda u.\, \langle u_0, u_1 \rangle;$$
+
+$$(4.3) \quad \mathbf{bool} = \lambda u.\, u \sqsupset 0, 1.$$
+
+Here $\sqsupset$ is the *doubly strict conditional* defined by
+
+$$(4.4) \quad z \sqsupset x, y = z \supset (z \supset x, \top), (z \supset \top, y),$$
+
+which has the property that if $z$ is both zero and positive, then it takes the value $\top$ instead of the value $x \cup y$.
+
 **DEFINITION.** An element $a \in \mathbf{P}\omega$ is called a *retract* iff it satisfies the equation $a = a \circ a$.
 
 Of course the $\circ$-notation is used for functional composition in the standard way:

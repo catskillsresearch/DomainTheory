@@ -1,3 +1,5 @@
+**For Section 4.** The notion of a *continuous lattice* is due to Scott (1970/71) and we shall not review all the facts here. One special feature of these lattices is that the lattice operations of meet and join ($\sqcap$ and $\sqcup$) are continuous (that is, commute with directed sups). As topological spaces, they can be characterized as those $T_0$-spaces satisfying the extension theorem (which we proved for $\mathbf{P}\omega$ in Theorem 1.5).
+
 **THEOREM 4.1 (The lattice theorem).** The fixed points of any continuous function form a complete lattice (under $\subseteq$); while those of a retract form a continuous lattice.
 
 *Proof of Theorem 4.1.* Consider a continuous function $a$, and let $A = \{x \mid x = a(x)\}$. By the fixed-point theorem (Theorem 1.4) we know that $A$ is nonempty and that it has a least element under $\subseteq$. Certainly $A$ is partially ordered by $\subseteq$; further, $A$ is closed under *directed* unions but not under arbitrary unions.

@@ -1,0 +1,9 @@
+Predecessor-set identities for numerals, used when building integer retracts.
+
+**Theorem (`predSet_ofNat_zero`).** $\mathrm{predSet}(0)=\bot$.
+
+*Proof.* The predecessor of the singleton $\{0\}$ is empty. ∎
+
+**Theorem (`predSet_eq_ofNat_of_no_zero`).** If $0\notin u$ and $\mathrm{predSet}(u)=k$, then $u=k+1$ as numerals.
+
+*Proof.* Members of $u$ are successors; the predecessor condition forces each to be exactly $k+1$, and conversely $k+1$ has predecessor $k$. ∎

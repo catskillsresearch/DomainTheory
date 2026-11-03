@@ -7,7 +7,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
 public import DomainTheory.DataTypesAsLattices.Retracts.tensorR
 public import DomainTheory.DataTypesAsLattices.Retracts.plusR
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
-public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3
 public import DomainTheory.DataTypesAsLattices.Embedding.extend
 public import DomainTheory.DataTypesAsLattices.Graph.graph

@@ -21,7 +21,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.Closure
 public import DomainTheory.DataTypesAsLattices.Closures.union_right_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Closures.union_left_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.fix_param_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_4
 
 @[expose] public section

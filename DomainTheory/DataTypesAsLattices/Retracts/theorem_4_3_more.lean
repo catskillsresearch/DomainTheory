@@ -53,7 +53,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
 public import DomainTheory.DataTypesAsLattices.Retracts.funOf_botElem
-public import DomainTheory.DataTypesAsLattices.Retracts.graph_const_bot
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.Retracts.bot_isRetract
 public import DomainTheory.DataTypesAsLattices.Retracts.iterates_areRetracts
 public import DomainTheory.DataTypesAsLattices.Retracts.bot_retractLe
@@ -66,7 +66,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_lat
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_earlier
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_iUnion
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_iUnion_typed
-public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
 
 @[expose] public section
 

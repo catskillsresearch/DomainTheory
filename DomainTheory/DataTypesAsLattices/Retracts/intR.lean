@@ -9,8 +9,8 @@ public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_4
 public import DomainTheory.DataTypesAsLattices.FixedPoint.fix
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Retracts.dcondSet_same_ofNat
-public import DomainTheory.DataTypesAsLattices.Retracts.predSet_eq_ofNat_of_no_zero
-public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
+public import DomainTheory.DataTypesAsLattices.Retracts.predSet
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more

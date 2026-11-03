@@ -1022,8 +1022,7 @@ import DomainTheory.DataTypesAsLattices.Retracts.funOf_botElem
 import DomainTheory.DataTypesAsLattices.Retracts.funOf_fix_idem
 import DomainTheory.DataTypesAsLattices.Retracts.funRetract
 import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow
-import DomainTheory.DataTypesAsLattices.Retracts.graph_const_bot
-import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
+import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 import DomainTheory.DataTypesAsLattices.Retracts.iUnion_retract_isGraph
 import DomainTheory.DataTypesAsLattices.Retracts.intF
 import DomainTheory.DataTypesAsLattices.Retracts.intR
@@ -1046,8 +1045,7 @@ import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
 import DomainTheory.DataTypesAsLattices.Retracts.plus7
 import DomainTheory.DataTypesAsLattices.Retracts.plus7Body
 import DomainTheory.DataTypesAsLattices.Retracts.plusR
-import DomainTheory.DataTypesAsLattices.Retracts.predSet_eq_ofNat_of_no_zero
-import DomainTheory.DataTypesAsLattices.Retracts.predSet_ofNat_zero
+import DomainTheory.DataTypesAsLattices.Retracts.predSet
 import DomainTheory.DataTypesAsLattices.Retracts.retractBasis
 import DomainTheory.DataTypesAsLattices.Retracts.retractLe
 import DomainTheory.DataTypesAsLattices.Retracts.retract_app

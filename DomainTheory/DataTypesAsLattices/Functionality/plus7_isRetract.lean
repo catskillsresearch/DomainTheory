@@ -6,7 +6,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.tagInj
 public import DomainTheory.DataTypesAsLattices.Retracts.plus7Body
 public import DomainTheory.DataTypesAsLattices.Retracts.plus7
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
-public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Lambda.Language

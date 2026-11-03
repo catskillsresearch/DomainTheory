@@ -6,7 +6,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
 public import DomainTheory.DataTypesAsLattices.Retracts.plusR
 public import DomainTheory.DataTypesAsLattices.Retracts.boolR
 public import DomainTheory.DataTypesAsLattices.Retracts.fstC
-public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.Retracts.dcondSet_bool_idem
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense

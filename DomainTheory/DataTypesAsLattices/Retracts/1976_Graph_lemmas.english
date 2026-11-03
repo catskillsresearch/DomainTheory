@@ -1,0 +1,9 @@
+Two elementary graph identities used throughout the retract constructions.
+
+**Theorem (`graph_ext`).** If $f(x)=g(x)$ for all $x$, then $\mathrm{graph}(f)=\mathrm{graph}(g)$.
+
+*Proof.* Unfold the graph coding; the pointwise equality rewrites the defining set. ∎
+
+**Theorem (`graph_const_bot`).** The graph of the constant map with value $\bot$ is $\bot$.
+
+*Proof.* No coded pair lies in the empty set. ∎

@@ -4,8 +4,8 @@ public import Mathlib.Algebra.Ring.Parity
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
-public import DomainTheory.DataTypesAsLattices.Retracts.graph_ext
-public import DomainTheory.DataTypesAsLattices.Retracts.predSet_ofNat_zero
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
+public import DomainTheory.DataTypesAsLattices.Retracts.predSet
 public import Mathlib.Order.CompleteLattice.Defs
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3

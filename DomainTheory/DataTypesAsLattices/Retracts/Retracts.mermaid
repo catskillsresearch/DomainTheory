@@ -5,21 +5,31 @@
 flowchart TB
 
   INTRO["Introduction"]
+  GLEM["Graph lemmas"]
+  PRED["Predecessor set"]
+  FIXP["Fixpoints"]
+  DFIX["Directed fixpoints"]
   DRET["Definition (retract)"]
   T41["Theorem 4.1"]
   DMEM["Definition (membership)"]
   DORD["Definition (ordering)"]
+  OPENR["Open retract"]
   T42["Theorem 4.2"]
   T43["Theorem 4.3"]
   T44["Theorem 4.4"]
   T45["Theorem 4.5"]
   T46["Theorem 4.6"]
 
+  FIXP --> DFIX
   T41 --> DMEM
   DMEM --> DORD
-  INTRO --> DRET
+  DFIX --> DRET
+  PRED --> FIXP
+  INTRO --> GLEM
+  DORD --> OPENR
+  GLEM --> PRED
   DRET --> T41
-  DORD --> T42
+  OPENR --> T42
   T42 --> T43
   T43 --> T44
   T44 --> T45

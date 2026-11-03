@@ -49,7 +49,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_imag
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
 public import DomainTheory.DataTypesAsLattices.Retracts.funOf_botElem
-public import DomainTheory.DataTypesAsLattices.Retracts.graph_const_bot
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.Retracts.bot_isRetract
 public import DomainTheory.DataTypesAsLattices.Retracts.iterates_areRetracts
 public import DomainTheory.DataTypesAsLattices.Retracts.bot_retractLe

@@ -5,7 +5,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
 public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
 public import DomainTheory.DataTypesAsLattices.Retracts.funOf_botElem
-public import DomainTheory.DataTypesAsLattices.Retracts.graph_const_bot
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.Retracts.IsStrict
 
 @[expose] public section
