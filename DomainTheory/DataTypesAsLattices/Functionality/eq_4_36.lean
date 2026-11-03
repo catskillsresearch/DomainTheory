@@ -1,13 +1,12 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts.comp
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.typed
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
 public import DomainTheory.DataTypesAsLattices.Retracts.plusR
-public import DomainTheory.DataTypesAsLattices.Retracts.boolR
 public import DomainTheory.DataTypesAsLattices.Retracts.fstC
 public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
-public import DomainTheory.DataTypesAsLattices.Retracts.dcondSet_bool_idem
+public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Functionality.whichC
@@ -26,6 +25,6 @@ theorem eq_4_36 (a b : Pomega) :
   apply graph_ext
   intro u
   simp only [comp.app, whichC, fstC.app]
-  rw [plusR_fst, boolR.app, plusR_fst, plusR_fst, dcondSet_bool_idem, dcondSet_bool_idem]
+  rw [plusR_fst, boolR.app, plusR_fst, plusR_fst, dcondSet.bool_idem, dcondSet.bool_idem]
 
 end DomainTheory.DataTypesAsLattices

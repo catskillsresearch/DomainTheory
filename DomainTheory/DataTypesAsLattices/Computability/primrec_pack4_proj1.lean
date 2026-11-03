@@ -3,7 +3,7 @@ module
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
-public import DomainTheory.DataTypesAsLattices.Retracts.comp
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 
 @[expose] public section
 

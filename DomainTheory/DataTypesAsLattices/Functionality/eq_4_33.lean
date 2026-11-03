@@ -1,6 +1,5 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts.comp
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.typed
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
@@ -15,7 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_zero
 public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_app_one
 public import DomainTheory.DataTypesAsLattices.Functionality.plusR_app
 public import DomainTheory.DataTypesAsLattices.Functionality.inrightC_app
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 
 @[expose] public section

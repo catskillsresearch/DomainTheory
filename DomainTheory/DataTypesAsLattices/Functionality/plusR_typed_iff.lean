@@ -15,7 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_bot
 public import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_inl
 public import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_inr
 public import DomainTheory.DataTypesAsLattices.Functionality.plusR_typed_top
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 
 @[expose] public section
 

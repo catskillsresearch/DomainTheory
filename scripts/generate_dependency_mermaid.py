@@ -1047,6 +1047,11 @@ DIRECTED_FIXPOINTS_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Directed-sup way-below", "Directed compact fixed points"),
 ]
 
+DEFINITION_RETRACT_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
+    ("Introduction", "Doubly strict conditional"),
+    ("Doubly strict conditional", "Functional composition"),
+]
+
 RETRACTS_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Introduction", "Graph lemmas"),
     ("Graph lemmas", "Predecessor set"),
@@ -1148,6 +1153,8 @@ def classify(mermaid: Path, text: str) -> str:
     if mermaid.name == "WayBelow.mermaid" and mermaid.parent.name == "WayBelow":
         return "note_outline"
     if mermaid.name == "DirectedFixpoints.mermaid" and mermaid.parent.name == "Retracts":
+        return "note_outline"
+    if mermaid.name == "DefinitionRetract.mermaid" and mermaid.parent.name == "Retracts":
         return "note_outline"
     if mermaid.name == "ContinuousLattices.mermaid" and mermaid.parent.name == "ContinuousLattices":
         return "note_outline"
@@ -1387,6 +1394,19 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 **(extra_ids or {}),
                 "Directed-sup way-below": "WBSUP",
                 "Directed compact fixed points": "DCOMP",
+            }
+        if mermaid.name == "DefinitionRetract.mermaid":
+            include_empty_boxes = True
+            force_edges = DEFINITION_RETRACT_OUTLINE_NARRATIVE
+            header_lines = [
+                "%% Notes under Definition (retract), in outline order.",
+                *outline_mermaid_header("1976_Definition_retract.md"),
+            ]
+            extra_ids = {
+                **(extra_ids or {}),
+                "Introduction": "DRINTRO",
+                "Doubly strict conditional": "DCOND",
+                "Functional composition": "FCOMP",
             }
         if mermaid.name == "1976_The_definability_theorem.mermaid":
             include_empty_boxes = True

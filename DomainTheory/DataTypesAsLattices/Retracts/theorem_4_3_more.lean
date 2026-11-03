@@ -4,12 +4,10 @@ public import DomainTheory.DataTypesAsLattices.Lambda.distributive_functions
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Retracts.comp
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.DirectedSubset
 public import DomainTheory.DataTypesAsLattices.Retracts.typed
-public import DomainTheory.DataTypesAsLattices.Retracts.funRetract
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
 public import DomainTheory.DataTypesAsLattices.Retracts.fstC
 public import DomainTheory.DataTypesAsLattices.Retracts.sndC
@@ -33,7 +31,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.fixedToInverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimitToFixed
 public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_6
 public import DomainTheory.DataTypesAsLattices.Retracts.treeR
-public import DomainTheory.DataTypesAsLattices.Retracts.boolR
 public import DomainTheory.DataTypesAsLattices.Retracts.openR
 public import DomainTheory.DataTypesAsLattices.Retracts.lambF
 public import DomainTheory.DataTypesAsLattices.Retracts.lambR

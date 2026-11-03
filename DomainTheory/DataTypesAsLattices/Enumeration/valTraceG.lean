@@ -5,7 +5,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Enumeration.ValTrace
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Retracts.comp
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb
 public import DomainTheory.DataTypesAsLattices.Enumeration.REPredu2eexists_param
 public import DomainTheory.DataTypesAsLattices.Computability.primrecPred_bool

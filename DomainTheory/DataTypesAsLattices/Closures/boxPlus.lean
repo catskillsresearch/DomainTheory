@@ -35,7 +35,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.exists_mem_of_ne_bot
 public import DomainTheory.DataTypesAsLattices.Closures.topElem_ne_botElem
 public import DomainTheory.DataTypesAsLattices.Closures.squarePair_more
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 
 @[expose] public section
 

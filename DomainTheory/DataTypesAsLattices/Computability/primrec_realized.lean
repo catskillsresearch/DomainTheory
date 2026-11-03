@@ -12,7 +12,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.unpairFstC
 public import DomainTheory.DataTypesAsLattices.Computability.unpairSndC
 public import DomainTheory.DataTypesAsLattices.Computability.pairRealizer
 public import DomainTheory.DataTypesAsLattices.Computability.precC
-public import DomainTheory.DataTypesAsLattices.Retracts.comp
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Lambda.sucC_more
 public import DomainTheory.DataTypesAsLattices.Lambda.succSet_more
 @[expose] public section

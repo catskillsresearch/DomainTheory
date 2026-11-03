@@ -19,7 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.plus7_app
 public import DomainTheory.DataTypesAsLattices.Functionality.tagInj_zero
 public import DomainTheory.DataTypesAsLattices.Functionality.tagInj_one
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
 
 @[expose] public section

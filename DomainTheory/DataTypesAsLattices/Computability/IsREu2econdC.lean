@@ -10,7 +10,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.primrec_testBit
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_pair
 public import DomainTheory.DataTypesAsLattices.Computability.primrecPred_bool
 public import DomainTheory.DataTypesAsLattices.Computability.mem_condC_iff
-public import DomainTheory.DataTypesAsLattices.Retracts.comp
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eexists
 
 @[expose] public section

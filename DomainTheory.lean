@@ -934,7 +934,6 @@ import DomainTheory.DataTypesAsLattices.Lambda.curry2
 import DomainTheory.DataTypesAsLattices.Lambda.curry3
 import DomainTheory.DataTypesAsLattices.Lambda.curryFin
 import DomainTheory.DataTypesAsLattices.Lambda.dcondSet
-import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 import DomainTheory.DataTypesAsLattices.Lambda.diagApp_isScottContinuous
 import DomainTheory.DataTypesAsLattices.Lambda.distributive_functions
 import DomainTheory.DataTypesAsLattices.Lambda.graph_model
@@ -995,12 +994,9 @@ import DomainTheory.DataTypesAsLattices.Retracts.Retract
 import DomainTheory.DataTypesAsLattices.Retracts.RetractInverseLimit
 import DomainTheory.DataTypesAsLattices.Retracts.arrowR
 import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
-import DomainTheory.DataTypesAsLattices.Retracts.boolR
 import DomainTheory.DataTypesAsLattices.Retracts.bot_isRetract
 import DomainTheory.DataTypesAsLattices.Retracts.bot_retractLe
-import DomainTheory.DataTypesAsLattices.Retracts.comp
 import DomainTheory.DataTypesAsLattices.Retracts.curryC
-import DomainTheory.DataTypesAsLattices.Retracts.dcondSet_bool_idem
 import DomainTheory.DataTypesAsLattices.Retracts.dcondSet_same_ofNat
 import DomainTheory.DataTypesAsLattices.Retracts.diagC
 import DomainTheory.DataTypesAsLattices.Retracts.directed_sUnion_fixed
@@ -1014,7 +1010,6 @@ import DomainTheory.DataTypesAsLattices.Retracts.fixpointsCompleteLattice
 import DomainTheory.DataTypesAsLattices.Retracts.fstC
 import DomainTheory.DataTypesAsLattices.Retracts.funOf_botElem
 import DomainTheory.DataTypesAsLattices.Retracts.funOf_fix_idem
-import DomainTheory.DataTypesAsLattices.Retracts.funRetract
 import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow
 import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 import DomainTheory.DataTypesAsLattices.Retracts.iUnion_retract_isGraph

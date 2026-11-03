@@ -8,7 +8,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
-public import DomainTheory.DataTypesAsLattices.Retracts.comp
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eand
 public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eexists
 public import DomainTheory.DataTypesAsLattices.Computability.IsREu2epair_mem

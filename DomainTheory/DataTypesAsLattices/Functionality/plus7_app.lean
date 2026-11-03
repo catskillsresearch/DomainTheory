@@ -10,7 +10,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense

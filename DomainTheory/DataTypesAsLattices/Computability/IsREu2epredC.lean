@@ -6,7 +6,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_testBit
 public import DomainTheory.DataTypesAsLattices.Computability.primrecPred_bool
-public import DomainTheory.DataTypesAsLattices.Retracts.comp
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Computability.IsREu2egraph_of_primrecRel
 
 @[expose] public section

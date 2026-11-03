@@ -11,7 +11,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.primrecRel_eSubset
 public import DomainTheory.DataTypesAsLattices.Computability.mem_funOf_e_iff
 
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
-public import DomainTheory.DataTypesAsLattices.Retracts.comp
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 @[expose] public section
 
 set_option maxHeartbeats 2000000

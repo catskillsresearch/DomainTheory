@@ -13,7 +13,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.primrec_pack4_proj4
 public import DomainTheory.DataTypesAsLattices.Computability.primrecPred_Scomb_subset
 
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
-public import DomainTheory.DataTypesAsLattices.Retracts.comp
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 @[expose] public section
 
 set_option maxHeartbeats 2000000

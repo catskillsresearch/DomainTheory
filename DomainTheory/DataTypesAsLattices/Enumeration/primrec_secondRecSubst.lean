@@ -2,7 +2,7 @@ module
 
 public import Mathlib.Computability.Halting
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Retracts.comp
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
 public import DomainTheory.DataTypesAsLattices.Enumeration.recNat

@@ -8,7 +8,7 @@ public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Computability.composeC
 public import DomainTheory.DataTypesAsLattices.Lambda.FUN
-public import DomainTheory.DataTypesAsLattices.Retracts.funRetract
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 public import DomainTheory.DataTypesAsLattices.Computability.SK_comp
 public import DomainTheory.DataTypesAsLattices.Enumeration.funRetract_combinatory

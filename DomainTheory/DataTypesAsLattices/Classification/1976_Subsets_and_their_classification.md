@@ -253,9 +253,6 @@
 **[DataTypesAsLattices/Enumeration/TOT.lean](../Enumeration/TOT.lean)**
 
 @import "../Enumeration/TOT.lean"
-**[DataTypesAsLattices/Retracts/comp.lean](../Retracts/comp.lean)**
-
-@import "../Retracts/comp.lean"
 **[DataTypesAsLattices/Computability/REPredu2ecomp.lean](../Computability/REPredu2ecomp.lean)**
 
 @import "../Computability/REPredu2ecomp.lean"
@@ -283,9 +280,6 @@
 **[DataTypesAsLattices/Lambda/interStep.lean](../Lambda/interStep.lean)**
 
 @import "../Lambda/interStep.lean"
-**[DataTypesAsLattices/Retracts/Retract.lean](../Retracts/Retract.lean)**
-
-@import "../Retracts/Retract.lean"
 **[DataTypesAsLattices/Closures/compactFixedBelow.lean](../Closures/compactFixedBelow.lean)**
 
 @import "../Closures/compactFixedBelow.lean"
@@ -538,9 +532,6 @@
 **[DataTypesAsLattices/Closures/Icomb_subset_graph.lean](../Closures/Icomb_subset_graph.lean)**
 
 @import "../Closures/Icomb_subset_graph.lean"
-**[DataTypesAsLattices/Retracts/funRetract.lean](../Retracts/funRetract.lean)**
-
-@import "../Retracts/funRetract.lean"
 **[DataTypesAsLattices/Enumeration/funRetractTerm.lean](../Enumeration/funRetractTerm.lean)**
 
 @import "../Enumeration/funRetractTerm.lean"
@@ -632,9 +623,6 @@
 **[DataTypesAsLattices/Lambda/abs.lean](../Lambda/abs.lean)**
 
 @import "../Lambda/abs.lean"
-**[DataTypesAsLattices/Lambda/dcondSet.lean](../Lambda/dcondSet.lean)**
-
-@import "../Lambda/dcondSet.lean"
 **[DataTypesAsLattices/Computability/combinatory_isLambdaDefinable.lean](../Computability/combinatory_isLambdaDefinable.lean)**
 
 @import "../Computability/combinatory_isLambdaDefinable.lean"
@@ -680,12 +668,6 @@
 **[DataTypesAsLattices/Enumeration/cond_graph_eq_bot_iff.lean](../Enumeration/cond_graph_eq_bot_iff.lean)**
 
 @import "../Enumeration/cond_graph_eq_bot_iff.lean"
-**[DataTypesAsLattices/Lambda/dcondSet_more.lean](../Lambda/dcondSet_more.lean)**
-
-@import "../Lambda/dcondSet_more.lean"
-**[DataTypesAsLattices/Retracts/dcondSet_bool_idem.lean](../Retracts/dcondSet_bool_idem.lean)**
-
-@import "../Retracts/dcondSet_bool_idem.lean"
 **[DataTypesAsLattices/Retracts/intF.lean](../Retracts/intF.lean)**
 
 @import "../Retracts/intF.lean"
@@ -698,9 +680,6 @@
 **[DataTypesAsLattices/Enumeration/bot_combinatory.lean](../Enumeration/bot_combinatory.lean)**
 
 @import "../Enumeration/bot_combinatory.lean"
-**[DataTypesAsLattices/Retracts/boolR.lean](../Retracts/boolR.lean)**
-
-@import "../Retracts/boolR.lean"
 **[DataTypesAsLattices/Computability/mem_condC_iff.lean](../Computability/mem_condC_iff.lean)**
 
 @import "../Computability/mem_condC_iff.lean"

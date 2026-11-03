@@ -1,0 +1,43 @@
+Functional composition (4.5), the retract equation, and the motivating combinators $\mathbf{fun}$ and $\mathbf{bool}$.
+
+**Definition (`comp`).** Composition of graphs is
+$$u \circ v \;=\; \mathbf{graph}\bigl(x\mapsto u(v(x))\bigr),$$
+Scott’s equation (4.5).
+
+**Theorem (`comp.app`).** $(u\circ v)(x)=u(v(x))$.
+
+*Proof.* The body $x\mapsto u(v(x))$ is Scott-continuous (composite of continuous applications), so $(\beta)$ applies. ∎
+
+**Theorem (`comp.isScottContinuous_right`).** For fixed $u$, the map $v\mapsto u\circ v$ is Scott-continuous.
+
+*Proof.* The graphing of a family continuous in $v$ (pointwise $x\mapsto u(v(x))$ is continuous in $v$) is continuous. ∎
+
+**Theorem (`comp.right_const`).** For fixed $a$, the map $u\mapsto u\circ a$ is Scott-continuous.
+
+*Proof.* Likewise: $x\mapsto u(a(x))$ is continuous in $u$, and graphing preserves that. ∎
+
+**Definition (`Retract`).** An element $a\in\mathbf{P}\omega$ is a *retract* when $a=a\circ a$.
+
+**Definition (`funRetract`).** Scott’s $\mathbf{fun}$ of (4.1):
+$$\mathbf{fun}=\mathbf{graph}\bigl(u\mapsto\mathbf{graph}(x\mapsto u(x))\bigr).$$
+
+**Theorem (`funRetract.app`).** $\mathbf{fun}(u)=\mathbf{graph}(x\mapsto u(x))$.
+
+*Proof.* $(\beta)$: the body is continuous in $u$ because application is continuous in the function argument. ∎
+
+**Theorem (`funRetract.isRetract`).** $\mathbf{fun}$ is a retract: $\mathbf{fun}=\mathbf{fun}\circ\mathbf{fun}$.
+
+*Proof.* Pointwise on graphs: for each $u$, $\mathbf{fun}(\mathbf{fun}(u))=\mathbf{graph}(x\mapsto\mathbf{fun}(u)(x))=\mathbf{graph}(x\mapsto u(x))=\mathbf{fun}(u)$, using $(\beta)$ for continuous $u$. ∎
+
+**Definition (`boolR`).** Scott’s $\mathbf{bool}$ of (4.3):
+$$\mathbf{bool}=\mathbf{graph}\bigl(u\mapsto u\sqsupset 0,1\bigr).$$
+
+**Theorem (`boolR.app`).** $\mathbf{bool}(u)=u\sqsupset 0,1$.
+
+*Proof.* $(\beta)$ from continuity of $u\mapsto u\sqsupset 0,1$ in the left argument of $\sqsupset$. ∎
+
+**Theorem (`boolR.isRetract`).** $\mathbf{bool}$ is a retract: $\mathbf{bool}=\mathbf{bool}\circ\mathbf{bool}$.
+
+*Proof.* Pointwise: $\mathbf{bool}(\mathbf{bool}(u))=(u\sqsupset 0,1)\sqsupset 0,1=u\sqsupset 0,1=\mathbf{bool}(u)$ by idempotence of $\sqsupset 0,1$. ∎
+
+(Scott’s $\mathbf{pair}$ of (4.2) is not yet a named retract module; pairing of elements is `pairSeq` elsewhere.)

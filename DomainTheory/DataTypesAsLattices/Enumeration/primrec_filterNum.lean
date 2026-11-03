@@ -3,7 +3,7 @@ module
 public import Mathlib.Computability.Halting
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Retracts.comp
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Enumeration.beforeHalt
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrecPred_beforeHalt
 public import DomainTheory.DataTypesAsLattices.Enumeration.filterNum

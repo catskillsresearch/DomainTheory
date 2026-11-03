@@ -8,7 +8,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.primrec_pack4_proj1
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_pack4_proj2
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_pack4_proj3
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_pack4_proj4
-public import DomainTheory.DataTypesAsLattices.Retracts.comp
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 
 @[expose] public section
 

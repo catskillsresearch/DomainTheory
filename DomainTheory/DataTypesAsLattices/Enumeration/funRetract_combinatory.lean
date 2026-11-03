@@ -3,7 +3,7 @@ module
 public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
 public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4
-public import DomainTheory.DataTypesAsLattices.Retracts.funRetract
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Enumeration.funRetractTerm
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
 @[expose] public section

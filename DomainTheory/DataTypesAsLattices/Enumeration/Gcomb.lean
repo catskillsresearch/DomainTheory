@@ -17,7 +17,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove
 public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
 public import DomainTheory.DataTypesAsLattices.Retracts.intF
 public import DomainTheory.DataTypesAsLattices.Retracts.intR
-public import DomainTheory.DataTypesAsLattices.Retracts.boolR
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_bot
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_succ

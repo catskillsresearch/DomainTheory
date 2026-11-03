@@ -18,7 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
 public import DomainTheory.DataTypesAsLattices.Functionality.tagInj_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet_more
 public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
 
 @[expose] public section

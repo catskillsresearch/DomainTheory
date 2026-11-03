@@ -5,7 +5,7 @@ public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Retracts.comp
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eexists
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_haltEnum
 

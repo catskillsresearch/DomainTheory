@@ -1,0 +1,61 @@
+The doubly strict conditional of (4.4), used to define $\mathbf{bool}$.
+
+**Definition (`dcondSet`).** For $z,x,y\in\mathbf{P}\omega$,
+$$z \sqsupset x, y \;=\; z \supset \bigl(z \supset x,\, \top\bigr),\; \bigl(z \supset \top,\, y\bigr).$$
+Equivalently, nest McCarthy’s conditional: test $z$ for zero, and on each branch test $z$ again against $\top$ so that a mixed tag (both zero and positive) yields $\top$ instead of $x\cup y$.
+
+**Theorem (`dcondSet.isScottContinuous_left`).** For fixed $x,y$, the map $z\mapsto z\sqsupset x,y$ is Scott-continuous.
+
+*Proof.* Composition of continuous McCarthy conditionals (in each argument) with the continuous identity and the continuous maps $z\mapsto z\supset x,\top$ and $z\mapsto z\supset\top,y$. ∎
+
+**Theorem (`dcondSet.isScottContinuous_mid`).** For fixed $z,y$, the map $x\mapsto z\sqsupset x,y$ is Scott-continuous.
+
+*Proof.* As a composite of continuous conditionals in the middle argument. ∎
+
+**Theorem (`dcondSet.isScottContinuous_right`).** For fixed $z,x$, the map $y\mapsto z\sqsupset x,y$ is Scott-continuous.
+
+*Proof.* As a composite of continuous conditionals in the right argument. ∎
+
+**Theorem (`dcondSet.bot`).** $\bot\sqsupset x,y=\bot$.
+
+*Proof.* Both nested conditionals see an empty tag, so the result is empty. ∎
+
+**Theorem (`dcondSet.cases`).** For any $z$, exactly one of the following holds: $z$ is a pure zero tag ($0\in z$ and no positive); a pure positive tag ($0\notin z$ and some $k{+}1\in z$); mixed (both); or empty (neither).
+
+*Proof.* Case-split on membership of $0$ and of some successor. ∎
+
+**Theorem (`dcondSet.of_empty`).** If $z$ is empty (neither zero nor positive), then $z\sqsupset x,y=\bot$.
+
+*Proof.* Neither branch of the outer conditional can fire. ∎
+
+**Theorem (`dcondSet.of_zero_not_pos`).** If $z$ is a pure zero tag, then $z\sqsupset x,y=x$.
+
+*Proof.* The outer test takes the “zero” branch; the inner $z\supset x,\top$ collapses to $x$, while the unused right branch is $\top$. ∎
+
+**Theorem (`dcondSet.of_pos_not_zero`).** If $z$ is a pure positive tag, then $z\sqsupset x,y=y$.
+
+*Proof.* Symmetrically: the outer test takes the “positive” branch, and $z\supset\top,y$ collapses to $y$. ∎
+
+**Theorem (`dcondSet.of_mixed`).** If $z$ is mixed, then $z\sqsupset x,y=\top$.
+
+*Proof.* Both inner conditionals evaluate to $\top$ (each has a live tag forcing the $\top$ arm), so the outer conditional yields $\top$. ∎
+
+**Theorem (`dcondSet.ofNat_zero`).** $0\sqsupset x,y=x$.
+
+*Proof.* The numeral $0$ is a pure zero tag. ∎
+
+**Theorem (`dcondSet.ofNat_one`).** $1\sqsupset x,y=y$.
+
+*Proof.* The numeral $1$ is a pure positive tag. ∎
+
+**Theorem (`dcondSet.ofNat_succ`).** For every $n$, $(n{+}1)\sqsupset x,y=y$.
+
+*Proof.* Every positive numeral is a pure positive tag. ∎
+
+**Theorem (`dcondSet.top`).** $\top\sqsupset x,y=\top$.
+
+*Proof.* $\top$ is mixed (contains $0$ and every successor). ∎
+
+**Theorem (`dcondSet.bool_idem`).** $(u\sqsupset 0,1)\sqsupset 0,1 \;=\; u\sqsupset 0,1$.
+
+*Proof.* By the four cases on $u$: pure zero gives $0\sqsupset 0,1=0$; pure positive gives $1\sqsupset 0,1=1$; mixed gives $\top\sqsupset 0,1=\top$; empty gives $\bot\sqsupset 0,1=\bot$. In each case a second $\sqsupset 0,1$ is the identity on that value. ∎

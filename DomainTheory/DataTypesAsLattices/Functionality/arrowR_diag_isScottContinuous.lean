@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
-public import DomainTheory.DataTypesAsLattices.Retracts.comp
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import Mathlib.Order.CompleteLattice.Defs
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
