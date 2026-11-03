@@ -1,19 +1,17 @@
 module
 
-public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Graph.graph
-public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
+public import Mathlib.Data.Nat.Pairing
+import Mathlib.Data.Finset.Attr
+import Mathlib.Tactic.Attr.Core
+import Mathlib.Tactic.Bound.Init
+import Mathlib.Tactic.SetLike
 
 @[expose] public section
 
 set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
-
-open Encodable
-open Nat.Partrec (Code)
-open Nat.Partrec.Code
 
 theorem mem_graph_const_iff (n m : ℕ) :
     m ∈ graph (fun _ => e n) ↔
