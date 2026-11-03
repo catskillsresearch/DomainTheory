@@ -1,16 +1,11 @@
 module
 
-public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
-public import DomainTheory.DataTypesAsLattices.Lambda.Language
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Retracts.comp
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
-public import DomainTheory.DataTypesAsLattices.Enumeration.diagonalInterCode
-public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_2
-public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_diagonalInterCode
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2ecombinatory
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_codes
+
+import DomainTheory.DataTypesAsLattices.Enumeration.valNat_codes
+import DomainTheory.DataTypesAsLattices.Computability.IsREu2ecombinatory
+import DomainTheory.DataTypesAsLattices.Enumeration.primrec_diagonalInterCode
 
 @[expose] public section
 
