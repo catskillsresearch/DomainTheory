@@ -17,5 +17,5 @@
 - [The graph model](1976_Graph_model.md) ✓
 - [Sequences](1976_Sequences.md) ✓
 - [Distributive functions](1976_Distributive_functions.md) ✓
-- [The definability theorem](1976_The_definability_theorem.md)
+- [The definability theorem](1976_The_definability_theorem.md) ✓
 - [A law of Y](1976_Law_of_Y.md)

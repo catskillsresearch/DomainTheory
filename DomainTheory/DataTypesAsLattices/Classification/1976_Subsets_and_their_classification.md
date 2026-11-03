@@ -577,9 +577,7 @@
 **[DataTypesAsLattices/Closures/Vcomb.lean](../Closures/Vcomb.lean)**
 
 @import "../Closures/Vcomb.lean"
-**[DataTypesAsLattices/Lambda/eq_2_28.lean](../Lambda/eq_2_28.lean)**
 
-@import "../Lambda/eq_2_28.lean"
 **[DataTypesAsLattices/Closures/eq_5_14.lean](../Closures/eq_5_14.lean)**
 
 @import "../Closures/eq_5_14.lean"
