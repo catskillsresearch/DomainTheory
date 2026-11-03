@@ -88,26 +88,29 @@ def InverseLimit {F : Pomega → Pomega}
       intro n
       exact funOf.monotone_right (iterateBot F n) huw
 
+/-- Scott’s second sentence as a proposition: the ranges are order-isomorphic
+(witnessed by `InverseLimit`). -/
+theorem inverse_limit {F : Pomega → Pomega}
+    (hf : IsScottContinuous F)
+    (hret : ∀ a, Retract a → Retract (F a))
+    (hstrict : ∀ a, Retract a → IsStrict a → IsStrict (F a))
+    (hmono : ∀ {a b}, Retract a → IsStrict a →
+      Retract b → IsStrict b → retractLe a b → retractLe (F a) (F b)) :
+    Nonempty (Fixpoints (funOf (fix F)) ≃o RetractInverseLimit F) :=
+  ⟨InverseLimit hf hret hstrict hmono⟩
+
 end theorem_4_6
 
-/-- Scott’s Theorem 4.6: assemble `theorem_4_6.Limit` and `theorem_4_6.InverseLimit`. -/
+/-- Scott’s Theorem 4.6: the two sentences, as two theorems. -/
 theorem theorem_4_6 {F : Pomega → Pomega}
     (hf : IsScottContinuous F)
     (hret : ∀ a, Retract a → Retract (F a))
     (hstrict : ∀ a, Retract a → IsStrict a → IsStrict (F a))
     (hmono : ∀ {a b}, Retract a → IsStrict a →
       Retract b → IsStrict b → retractLe a b → retractLe (F a) (F b)) :
-    (∀ n, Retract (iterateBot F n)) ∧
-      Retract (funOf Ycomb (graph F)) ∧
-        ∃ φ : Fixpoints (funOf (fix F)) → RetractInverseLimit F,
-          Function.Bijective φ ∧
-            ∀ x y : Fixpoints (funOf (fix F)),
-              (x : Pomega) ⊆ (y : Pomega) ↔
-                ∀ n, (φ x).1 n ⊆ (φ y).1 n := by
-  refine ⟨(theorem_4_6.Limit hf hret).1, (theorem_4_6.Limit hf hret).2, ?_⟩
-  let iso := theorem_4_6.InverseLimit hf hret hstrict hmono
-  refine ⟨iso, iso.bijective, fun x y => ?_⟩
-  change x ≤ y ↔ iso x ≤ iso y
-  exact (iso.map_rel_iff (a := x) (b := y)).symm
+    ((∀ n, Retract (iterateBot F n)) ∧
+      Retract (funOf Ycomb (graph F))) ∧
+      Nonempty (Fixpoints (funOf (fix F)) ≃o RetractInverseLimit F) :=
+  ⟨theorem_4_6.Limit hf hret, theorem_4_6.inverse_limit hf hret hstrict hmono⟩
 
 end DomainTheory.DataTypesAsLattices

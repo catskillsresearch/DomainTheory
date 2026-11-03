@@ -2,7 +2,7 @@
 
 **Limit.** *Suppose $F$ is a continuous function that maps retracts to retracts and let $c = \mathbf{Y}(F)$. Then $c$ is also a retract.*
 
-**InverseLimit.** *If in addition $F$ maps strict retracts to strict retracts and is monotone in the sense that $a \sqsubseteq b$ implies $F(a) \sqsubseteq F(b)$ for all (strict) retracts $a$ and $b$, then the range of $c$ is homeomorphic to the inverse limit of the ranges of the strict retracts $F^n(\bot)$ for $n \in \omega$.*
+**inverse_limit.** *If in addition $F$ maps strict retracts to strict retracts and is monotone in the sense that $a \sqsubseteq b$ implies $F(a) \sqsubseteq F(b)$ for all (strict) retracts $a$ and $b$, then the range of $c$ is homeomorphic to the inverse limit of the ranges of the strict retracts $F^n(\bot)$ for $n \in \omega$.*
 
 This can be applied to the case of (4.38) where $F = \lambda z.\, \mathbf{nil} \oplus (z \otimes z)$. Thus we can analyze **tree** as an inverse limit. This approach has the great advantage over the earlier method of the author where limits were required in showing that **tree** exists. Here we use **Y** to give existence at once, and then apply Theorems 4.3–4.5 to figure out the nature of the retract.
 
@@ -101,18 +101,22 @@ The main point of the proof of Theorem 4.6 has already been given in the text.
 
 <!-- formalization -->
 
-**Formalization.** Library facts `theorem_4_6.Limit` and `theorem_4_6.InverseLimit` prove the two sentences; Scott’s `theorem_4_6` only assembles them. Downstream existence for **tree**, **lamb**, and **exp** uses `theorem_4_6.Limit`.
+**Formalization.** Scott’s two sentences are two theorems, `theorem_4_6.Limit` and `theorem_4_6.inverse_limit`; `theorem_4_6` is their conjunction. The witnessing order isomorphism is the definition `theorem_4_6.InverseLimit`. Downstream existence for **tree**, **lamb**, and **exp** uses `theorem_4_6.Limit`.
 
 **Theorem (`theorem_4_6.Limit`).** If $F$ is Scott-continuous and sends retracts to retracts, then every iterate $F^n(\bot)$ is a retract, and so is $c=\mathbf{Y}(F)$.
 
 *Proof.* Induction from $\bot$ gives the iterates. For $c$: identify $\mathbf{Y}(F)$ with $\mathrm{fix}\,F=\bigcup_n F^n(\bot)$ (Theorem 2.5); the union of a chain of retracts is a graph, and application of that graph is idempotent on the union, so $c=c\circ c$. ∎
 
-**Definition (`theorem_4_6.InverseLimit`).** Under the extra hypotheses that $F$ preserves strictness and is monotone on (strict) retracts, the order isomorphism
+**Definition (`theorem_4_6.InverseLimit`).** The order isomorphism
 $$\mathrm{Fix}(\mathrm{fix}\,F)\;\simeq_o\;\varprojlim_n\mathrm{range}(F^n(\bot))$$
-with projections $u\mapsto F^n(\bot)(u)$ and reconstruction $u=\bigcup_n v_n$.
+under the strictness and monotonicity hypotheses, with projections $u\mapsto F^n(\bot)(u)$ and reconstruction $u=\bigcup_n v_n$.
 
-*Proof.* The forward and reverse maps are the existing `fixedToInverseLimit` / `inverseLimitToFixed` constructions; the order-iso laws are the union/projection identities Scott records after the retract calculation. ∎
+*Proof.* Assemble `fixedToInverseLimit` / `inverseLimitToFixed` and the union/projection identities. ∎
 
-**Theorem (`theorem_4_6`).** The conjunction of `theorem_4_6.Limit` with the existence of a bijective, inclusion-preserving correspondence given by `theorem_4_6.InverseLimit`.
+**Theorem (`theorem_4_6.inverse_limit`).** Under those same extra hypotheses, such an order isomorphism exists (the ranges are homeomorphic / lattice-isomorphic in Scott’s sense).
 
-*Proof.* Call `theorem_4_6.Limit` and `theorem_4_6.InverseLimit`; the order-iso supplies the bijection and the $\subseteq$/projection equivalence. ∎
+*Proof.* $\langle$`theorem_4_6.InverseLimit`$\rangle$. ∎
+
+**Theorem (`theorem_4_6`).** `theorem_4_6.Limit` and `theorem_4_6.inverse_limit`.
+
+*Proof.* $\langle$`theorem_4_6.Limit`, `theorem_4_6.inverse_limit`$\rangle$. ∎
