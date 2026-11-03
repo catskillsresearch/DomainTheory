@@ -543,7 +543,7 @@ import DomainTheory.DataTypesAsLattices.Embedding.theorem_1_6
 import DomainTheory.DataTypesAsLattices.Enumeration.Avoids
 import DomainTheory.DataTypesAsLattices.Enumeration.BasicInst85
 import DomainTheory.DataTypesAsLattices.Enumeration.Deg
-import DomainTheory.DataTypesAsLattices.Enumeration.Extensional
+import DomainTheory.DataTypesAsLattices.Enumeration.valRank
 import DomainTheory.DataTypesAsLattices.Enumeration.Gbar
 import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb
 import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_more
@@ -568,7 +568,6 @@ import DomainTheory.DataTypesAsLattices.Enumeration.TOT
 import DomainTheory.DataTypesAsLattices.Enumeration.ValTrace
 import DomainTheory.DataTypesAsLattices.Enumeration.Ycode
 import DomainTheory.DataTypesAsLattices.Enumeration.applyNat
-import DomainTheory.DataTypesAsLattices.Enumeration.argNat
 import DomainTheory.DataTypesAsLattices.Enumeration.barComb
 import DomainTheory.DataTypesAsLattices.Enumeration.barComb_more
 import DomainTheory.DataTypesAsLattices.Enumeration.barPos
@@ -578,7 +577,6 @@ import DomainTheory.DataTypesAsLattices.Enumeration.barStepBody
 import DomainTheory.DataTypesAsLattices.Enumeration.barStepTerm
 import DomainTheory.DataTypesAsLattices.Enumeration.bar_generated
 import DomainTheory.DataTypesAsLattices.Enumeration.beforeHalt
-import DomainTheory.DataTypesAsLattices.Enumeration.bitList
 import DomainTheory.DataTypesAsLattices.Enumeration.botCode
 import DomainTheory.DataTypesAsLattices.Enumeration.bot_combinatory
 import DomainTheory.DataTypesAsLattices.Enumeration.combinatory_mem_Deg
@@ -589,27 +587,21 @@ import DomainTheory.DataTypesAsLattices.Enumeration.condClosed
 import DomainTheory.DataTypesAsLattices.Enumeration.condCode
 import DomainTheory.DataTypesAsLattices.Enumeration.cond_graph_eq_bot_iff
 import DomainTheory.DataTypesAsLattices.Enumeration.diagonalInterCode
-import DomainTheory.DataTypesAsLattices.Enumeration.e_subset_ofNat_iff
 import DomainTheory.DataTypesAsLattices.Enumeration.enumBottomTerm
 import DomainTheory.DataTypesAsLattices.Enumeration.enumComp
 import DomainTheory.DataTypesAsLattices.Enumeration.enumerationUnion_left_isScottContinuous
 import DomainTheory.DataTypesAsLattices.Enumeration.enumerationUnion_right_isScottContinuous
 import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_1
-import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_10_apply
 import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_10_val
 import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_12
 import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_15
 import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_16
 import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_17
 import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_2
-import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_5
-import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_6
-import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_8_apply
 import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_8_val
-import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_9_apply
 import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_9_val
 import DomainTheory.DataTypesAsLattices.Enumeration.exists_concat_traces
-import DomainTheory.DataTypesAsLattices.Enumeration.exists_triangle_succ
+import DomainTheory.DataTypesAsLattices.Enumeration.unpairW
 import DomainTheory.DataTypesAsLattices.Enumeration.filterC
 import DomainTheory.DataTypesAsLattices.Enumeration.filterEnv
 import DomainTheory.DataTypesAsLattices.Enumeration.filterNum
@@ -644,7 +636,6 @@ import DomainTheory.DataTypesAsLattices.Enumeration.myhillQ_more
 import DomainTheory.DataTypesAsLattices.Enumeration.not_mem_zero_Gcomb
 import DomainTheory.DataTypesAsLattices.Enumeration.not_mem_zero_cond_graph
 import DomainTheory.DataTypesAsLattices.Enumeration.num
-import DomainTheory.DataTypesAsLattices.Enumeration.opNat
 import DomainTheory.DataTypesAsLattices.Enumeration.packList
 import DomainTheory.DataTypesAsLattices.Enumeration.predC_from_G
 import DomainTheory.DataTypesAsLattices.Enumeration.predClosed
@@ -674,7 +665,6 @@ import DomainTheory.DataTypesAsLattices.Enumeration.recNat
 import DomainTheory.DataTypesAsLattices.Enumeration.sClosed
 import DomainTheory.DataTypesAsLattices.Enumeration.secondRecOperator
 import DomainTheory.DataTypesAsLattices.Enumeration.secondRecOperatorCode
-import DomainTheory.DataTypesAsLattices.Enumeration.secondRecSubst
 import DomainTheory.DataTypesAsLattices.Enumeration.secondRecSubstC
 import DomainTheory.DataTypesAsLattices.Enumeration.secondRecV
 import DomainTheory.DataTypesAsLattices.Enumeration.secondRecVal
@@ -704,9 +694,6 @@ import DomainTheory.DataTypesAsLattices.Enumeration.unionOperator_app
 import DomainTheory.DataTypesAsLattices.Enumeration.unionOperator_combinatory
 import DomainTheory.DataTypesAsLattices.Enumeration.unionTerm
 import DomainTheory.DataTypesAsLattices.Enumeration.union_combinatory
-import DomainTheory.DataTypesAsLattices.Enumeration.unpairComp
-import DomainTheory.DataTypesAsLattices.Enumeration.unpairW
-import DomainTheory.DataTypesAsLattices.Enumeration.unpairWRec
 import DomainTheory.DataTypesAsLattices.Enumeration.vaalC
 import DomainTheory.DataTypesAsLattices.Enumeration.vaalF
 import DomainTheory.DataTypesAsLattices.Enumeration.vaalStepTerm
@@ -715,7 +702,6 @@ import DomainTheory.DataTypesAsLattices.Enumeration.valC
 import DomainTheory.DataTypesAsLattices.Enumeration.valEntryJustified
 import DomainTheory.DataTypesAsLattices.Enumeration.valNat
 import DomainTheory.DataTypesAsLattices.Enumeration.valNat_codes
-import DomainTheory.DataTypesAsLattices.Enumeration.valRank
 import DomainTheory.DataTypesAsLattices.Enumeration.valStage_eq_of_rank_le
 import DomainTheory.DataTypesAsLattices.Enumeration.valStage_subset
 import DomainTheory.DataTypesAsLattices.Enumeration.valStep

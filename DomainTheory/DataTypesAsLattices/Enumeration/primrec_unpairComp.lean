@@ -4,7 +4,6 @@ public import Mathlib.Computability.Halting
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
-public import DomainTheory.DataTypesAsLattices.Enumeration.unpairComp
 public import DomainTheory.DataTypesAsLattices.Enumeration.unpairW
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_triangle
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_unpairW

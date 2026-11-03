@@ -5,7 +5,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.exists_concat_traces
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb
-public import DomainTheory.DataTypesAsLattices.Enumeration.unpairComp
+public import DomainTheory.DataTypesAsLattices.Enumeration.unpairW
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Computability.Halting

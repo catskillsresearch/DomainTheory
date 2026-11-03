@@ -5,7 +5,7 @@ public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_num
-public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecSubst
+public import DomainTheory.DataTypesAsLattices.Enumeration.recNat
 
 @[expose] public section
 

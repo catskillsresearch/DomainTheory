@@ -1,0 +1,9 @@
+Cantor pairing is inverted by locating the least triangle bucket that contains a code and reading off the residual. The formalization uses a search lemma and two equivalent presentations of that search, then defines the computational unpair map.
+
+**Lemma (`exists_triangle_succ`).** For every $k$ there is a $w$ with $k < \mathrm{triangle}(w+1)$.
+
+**Definition (`unpairWRec`).** Recursion on $n$ that advances the candidate bucket until $k$ lies below $\mathrm{triangle}(w+1)$.
+
+**Definition (`unpairW`).** $\mathrm{unpairW}(k) = \mathrm{unpairWRec}(k,k)$. It equals $\mathrm{Nat.find}$ of `exists_triangle_succ`.
+
+**Definition (`unpairComp`).** With $w = \mathrm{Nat.find}(\ldots)$ and $m = k - \mathrm{triangle}(w)$, set $\mathrm{unpairComp}(k) = (w-m, m)$. Lemma `unpairComp.eq` shows this recovers Mathlib's `unpair`.

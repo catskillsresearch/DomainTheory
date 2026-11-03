@@ -8,7 +8,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.primrecPred_bool
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
-public import DomainTheory.DataTypesAsLattices.Enumeration.unpairComp
+public import DomainTheory.DataTypesAsLattices.Enumeration.unpairW
 public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas
 public import DomainTheory.DataTypesAsLattices.Enumeration.valEntryJustified
 public import DomainTheory.DataTypesAsLattices.Enumeration.ValTrace

@@ -5,7 +5,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.fin
 public import DomainTheory.DataTypesAsLattices.Enumeration.myhillQ
-public import DomainTheory.DataTypesAsLattices.Enumeration.unpairComp
+public import DomainTheory.DataTypesAsLattices.Enumeration.unpairW
 @[expose] public section
 
 set_option maxHeartbeats 2000000

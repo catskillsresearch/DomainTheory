@@ -6,7 +6,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack
 public import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_8_val
-public import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_9_apply
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_more
 

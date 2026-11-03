@@ -4,6 +4,7 @@ public import Mathlib.Computability.RE
 public import Mathlib.Data.Nat.Bitwise
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
 
 @[expose] public section
 
@@ -112,5 +113,31 @@ theorem eSubset_iff_stage {x : Pomega} {c : Code}
     have : val ∈ (Part.assert (k ∈ x) fun _ => Part.some (0 : ℕ)) := by
       simpa [hc] using this
     exact (Part.mem_assert_iff.mp this).1
+
+theorem e_subset_ofNat_iff (code n : ℕ) :
+    e code ⊆ ofNat n ↔ code = 0 ∨ code = 2 ^ n := by
+  constructor
+  · intro h
+    by_cases hz : code = 0
+    · exact Or.inl hz
+    · have hbit : ∀ k, code.testBit k = true → k = n := by
+        intro k hk
+        simpa [ofNat] using h (e.mem.mpr hk)
+      have hn : code.testBit n = true := by
+        have hk : code.testBit code.log2 = true := Nat.testBit_log2 hz
+        simpa [hbit _ hk] using hk
+      refine Or.inr (Nat.eq_of_testBit_eq fun k => ?_)
+      by_cases hk : k = n
+      · subst hk
+        simp [hn]
+      · have hfalse : code.testBit k = false :=
+          Bool.eq_false_iff.mpr fun hb => hk (hbit k hb)
+        simp [hfalse, Ne.symm hk]
+  · intro h
+    rcases h with rfl | rfl
+    · intro k hk
+      simp [e.zero] at hk
+    · intro k hk
+      simpa [e.pow2, ofNat] using hk
 
 end DomainTheory.DataTypesAsLattices

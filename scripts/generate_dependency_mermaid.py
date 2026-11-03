@@ -641,7 +641,11 @@ def gen_note_outline(
         title = m.group("title")
         if exclude_outline_titles and title in exclude_outline_titles:
             continue
-        if re.search(r"(?i)^introduction$", title.strip(), re.I) and not lean_modules_from_note(child):
+        if (
+            re.search(r"(?i)^introduction$", title.strip(), re.I)
+            and not lean_modules_from_note(child)
+            and not include_empty_outline_boxes
+        ):
             continue
         if box_modules_fn is not None:
             mods = box_modules_fn(child, title)
@@ -1026,6 +1030,19 @@ COMPUTABILITY_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("The definability theorem", "A law of Y"),
 ]
 
+# Reading-order edges for prose/tool notes that Lean edges may skip.
+ENUMERATION_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
+    ("Introduction", "Term avoidance (α)"),
+    ("Term avoidance (α)", "Theorem 3.1"),
+    ("Theorem 3.1", "Application"),
+    ("Application", "Unpairing"),
+    ("Unpairing", "Numerals"),
+    ("Numerals", "Val rank"),
+    ("Val rank", "Theorem 3.2"),
+    ("Theorem 3.2", "Recursion codes"),
+    ("Recursion codes", "Theorem 3.3"),
+]
+
 DEFINABILITY_THEOREM_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Elementary definitions", "Primitive recursion"),
     ("Primitive recursion", "Definition (computable)"),
@@ -1286,6 +1303,30 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Theorem 2.6 — the definability theorem": "T26",
                 "The definability theorem": "DEFTHM",
                 "A law of Y": "LAWY",
+            }
+        if mermaid.name == "Enumeration.mermaid":
+            include_empty_boxes = True
+            force_edges = ENUMERATION_OUTLINE_NARRATIVE
+            header_lines = [
+                *outline_mermaid_header("1976_Enumeration_and_degrees.md"),
+                "%% Reading order for tool notes; Lean edges for theorem deps.",
+            ]
+            extra_ids = {
+                **(extra_ids or {}),
+                "Introduction": "INTRO",
+                "Term avoidance (α)": "AVOID",
+                "Theorem 3.1": "T31",
+                "Application": "APP",
+                "Unpairing": "UNP",
+                "Numerals": "NUM",
+                "Val rank": "VRANK",
+                "Theorem 3.2": "T32",
+                "Recursion codes": "RCODE",
+                "Theorem 3.3": "T33",
+                "Theorem 3.4": "T34",
+                "Theorem 3.5": "T35",
+                "Theorem 3.6": "T36",
+                "Theorem 3.7": "T37",
             }
         if mermaid.name == "1976_The_definability_theorem.mermaid":
             include_empty_boxes = True

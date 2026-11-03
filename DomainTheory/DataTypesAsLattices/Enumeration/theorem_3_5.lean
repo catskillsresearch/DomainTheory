@@ -13,7 +13,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_codes
 public import DomainTheory.DataTypesAsLattices.Enumeration.fin
 public import DomainTheory.DataTypesAsLattices.Enumeration.myhillQ
 public import DomainTheory.DataTypesAsLattices.Enumeration.myhillQ_more
-public import DomainTheory.DataTypesAsLattices.Enumeration.Extensional
+public import DomainTheory.DataTypesAsLattices.Enumeration.valRank
 public import DomainTheory.DataTypesAsLattices.Enumeration.myhillCase2Code
 public import DomainTheory.DataTypesAsLattices.Enumeration.haltEnum
 public import DomainTheory.DataTypesAsLattices.Enumeration.myhillCase1Code

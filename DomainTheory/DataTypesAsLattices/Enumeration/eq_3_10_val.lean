@@ -7,7 +7,6 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gpack
 public import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_8_val
 public import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_9_val
-public import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_10_apply
 
 @[expose] public section
 

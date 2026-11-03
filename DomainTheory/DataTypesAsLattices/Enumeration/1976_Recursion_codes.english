@@ -1,0 +1,5 @@
+Integer codes used in the second recursion theorem package the diagonal substitution $m \mapsto \mathbf{apply}(m)(\mathbf{num}(m))$ and its relativization to a coding function $v$.
+
+**Definition (`secondRecSubst`).** $\mathrm{secondRecSubst}(m) = \mathrm{applyNat}(m, \mathrm{num}(m))$.
+
+**Definition (`recNat`).** $\mathrm{recNat}(v, n) = \mathrm{applyNat}(v(n), \mathrm{num}(v(n)))$. Theorem 3.3 uses a primitive recursive $v$ for which $\mathbf{val}(\mathrm{recNat}(v,n))$ realizes the fixed-point equation at code $n$.

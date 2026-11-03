@@ -12,7 +12,7 @@ public import DomainTheory.DataTypesAsLattices.Enumeration.valTraceHas
 public import DomainTheory.DataTypesAsLattices.Enumeration.valEntryJustified
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.primrecPred_valTraceStruct
-public import DomainTheory.DataTypesAsLattices.Enumeration.unpairComp
+public import DomainTheory.DataTypesAsLattices.Enumeration.unpairW
 
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 @[expose] public section

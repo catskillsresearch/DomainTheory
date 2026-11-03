@@ -1,0 +1,7 @@
+The enumeration $\mathbf{val}$ is defined by recursion on application codes. Rank measures the depth of that recursion, and bit lists collect the one-bits of a code when scanning finite approximations.
+
+**Definition (`valRank`).** $\mathrm{valRank}(0) = 1$, and for a positive code $p+1$ the rank is one more than the maximum of the ranks of the two Cantor components of $p$.
+
+**Definition (`bitList`).** $\mathrm{bitList}(j)$ is the list of indices $k \le j$ for which the $k$th bit of $j$ is set.
+
+**Definition (`Extensional`).** A map $p$ on codes is extensional relative to an enumeration $\mathrm{val}$ when $\mathrm{val}(n)=\mathrm{val}(m)$ implies $\mathrm{val}(p(n))=\mathrm{val}(p(m))$. Theorem 3.5 uses this for $\mathrm{val}=\mathbf{val}$.

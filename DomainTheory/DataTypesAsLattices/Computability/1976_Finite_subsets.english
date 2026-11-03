@@ -9,3 +9,5 @@ The basic neighbourhoods $e_n \subseteq \omega$ are the finite sets coded by the
 **Theorem (`eSubset_funOf_e_iff`).** $e_k \subseteq e_a(e_b)$ if and only if for every position $i < k$, the bit of $k$ at $i$ is off or $i$ lies in the application $e_a(e_b)$.
 
 **Theorem (`eSubset_iff_stage`).** Suppose the code $c$ returns $0$ on input $k$ exactly when $k \in x$. Then $e_n \subseteq x$ if and only if there is a stage $s$ such that, for every position $k < n$, the bit of $n$ at $k$ is off or $c$ has halted on $k$ by stage $s$.
+
+**Theorem (`e_subset_ofNat_iff`).** $e_{\mathrm{code}} \subseteq \{n\}$ if and only if $\mathrm{code}=0$ or $\mathrm{code}=2^n$.

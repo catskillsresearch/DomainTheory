@@ -2,6 +2,7 @@ module
 
 public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 
 @[expose] public section
 
@@ -19,5 +20,11 @@ decreasing_by
   · exact (pair_lt_right (unpair p).1 (unpair p).2).trans_le (by
       have := pair_unpair p
       omega)
+
+def bitList (j : ℕ) : List ℕ :=
+  (List.range (j + 1)).filter (fun k => j.testBit k)
+
+class Extensional (val : ℕ → Pomega) (p : ℕ → ℕ) : Prop where
+  out : ∀ n m, val n = val m → val (p n) = val (p m)
 
 end DomainTheory.DataTypesAsLattices
