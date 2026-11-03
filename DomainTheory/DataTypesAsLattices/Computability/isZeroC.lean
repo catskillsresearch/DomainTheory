@@ -5,7 +5,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.condC
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_succ
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_zero
 public import DomainTheory.DataTypesAsLattices.Lambda.condC_more

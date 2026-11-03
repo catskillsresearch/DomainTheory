@@ -7,7 +7,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import Mathlib.Data.Set.Lattice.Indexed
 public import DomainTheory.DataTypesAsLattices.Computability.Realizes
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 public import DomainTheory.DataTypesAsLattices.Computability.topElem_combinatory
 
 @[expose] public section

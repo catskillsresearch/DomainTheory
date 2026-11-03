@@ -1,7 +1,6 @@
 module
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
 
 @[expose] public section
 
@@ -22,10 +21,6 @@ def sqrtIter (n : ℕ) : ℕ → ℕ
       if (a + 1) * (a + 1) ≤ n then a + 1 else a
 
 namespace sqrtIter
-
-open Encodable
-open Nat.Partrec (Code)
-open Nat.Partrec.Code
 
 theorem eq_min (n k : ℕ) : sqrtIter n k = min k (Nat.sqrt n) := by
   induction k with

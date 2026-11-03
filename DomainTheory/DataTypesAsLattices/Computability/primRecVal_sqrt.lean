@@ -1,10 +1,10 @@
 module
 
 public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Lambda.primRecVal
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 public import DomainTheory.DataTypesAsLattices.Computability.sqrtIter
+public import DomainTheory.DataTypesAsLattices.Lambda.primitive_recursion
 public import DomainTheory.DataTypesAsLattices.Computability.sqrtStepC
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 @[expose] public section

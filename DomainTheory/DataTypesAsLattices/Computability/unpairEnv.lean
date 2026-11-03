@@ -6,7 +6,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.subC
 public import DomainTheory.DataTypesAsLattices.Computability.mulC
 public import DomainTheory.DataTypesAsLattices.Computability.leC
 public import DomainTheory.DataTypesAsLattices.Computability.sqrtC
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 
 @[expose] public section
 

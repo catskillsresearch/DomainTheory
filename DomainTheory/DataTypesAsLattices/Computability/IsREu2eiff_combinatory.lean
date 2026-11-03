@@ -4,7 +4,7 @@ public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 public import DomainTheory.DataTypesAsLattices.Computability.combinatory_isRE
 public import DomainTheory.DataTypesAsLattices.Computability.IsREu2ecombinatory
 

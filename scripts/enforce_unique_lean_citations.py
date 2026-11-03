@@ -59,6 +59,7 @@ NOTE_YEAR_STEM = re.compile(r"^(?:1972|1976|1980|1982)_(.+)$")
 DEDICATED_NOTE_STEMS: dict[str, str] = {
     "Ycomb": "1976_Combinator_Y",
     "distributive_functions": "1976_Distributive_functions",
+    "primitive_recursion": "1976_Primitive_recursion",
 }
 
 

@@ -9,7 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.isZeroC
 
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb_more
 public import DomainTheory.DataTypesAsLattices.Lambda.Scomb_more
 @[expose] public section

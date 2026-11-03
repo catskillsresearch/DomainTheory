@@ -7,7 +7,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.primRecOpEnv
 public import DomainTheory.DataTypesAsLattices.Computability.primRecOpTerm
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 public import DomainTheory.DataTypesAsLattices.Computability.primRecComb
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.ofComb

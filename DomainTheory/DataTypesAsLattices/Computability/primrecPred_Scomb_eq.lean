@@ -2,7 +2,7 @@ module
 
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_pair
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_pack4_proj1
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_pack4_proj2

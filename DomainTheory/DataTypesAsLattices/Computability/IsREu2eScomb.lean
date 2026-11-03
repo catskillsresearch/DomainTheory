@@ -11,7 +11,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Scomb
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 public import DomainTheory.DataTypesAsLattices.Computability.mem_Scomb_iff
 public import DomainTheory.DataTypesAsLattices.Computability.rePred_Scomb_nested
 public import DomainTheory.DataTypesAsLattices.Computability.primrecPred_Scomb_eq

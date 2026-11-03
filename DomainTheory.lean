@@ -480,7 +480,6 @@ import DomainTheory.DataTypesAsLattices.Computability.mem_condC_iff
 import DomainTheory.DataTypesAsLattices.Computability.mem_funOf_e_iff
 import DomainTheory.DataTypesAsLattices.Computability.mem_graph_const_iff
 import DomainTheory.DataTypesAsLattices.Computability.mulC
-import DomainTheory.DataTypesAsLattices.Computability.pack4
 import DomainTheory.DataTypesAsLattices.Computability.pairComb
 import DomainTheory.DataTypesAsLattices.Computability.pairRealizer
 import DomainTheory.DataTypesAsLattices.Computability.pairTerm
@@ -490,7 +489,7 @@ import DomainTheory.DataTypesAsLattices.Computability.precTerm
 import DomainTheory.DataTypesAsLattices.Computability.primRecComb
 import DomainTheory.DataTypesAsLattices.Computability.primRecOpC
 import DomainTheory.DataTypesAsLattices.Computability.primRecOpEnv
-import DomainTheory.DataTypesAsLattices.Computability.primRecOpTerm
+import DomainTheory.DataTypesAsLattices.Lambda.primitive_recursion
 import DomainTheory.DataTypesAsLattices.Computability.primRecVal_add
 import DomainTheory.DataTypesAsLattices.Computability.primRecVal_mul
 import DomainTheory.DataTypesAsLattices.Computability.primRecVal_sqrt
@@ -518,9 +517,7 @@ import DomainTheory.DataTypesAsLattices.Computability.rePred_Scomb_nested
 import DomainTheory.DataTypesAsLattices.Computability.safePredC
 import DomainTheory.DataTypesAsLattices.Computability.sqrtC
 import DomainTheory.DataTypesAsLattices.Computability.sqrtEnv
-import DomainTheory.DataTypesAsLattices.Computability.sqrtIter
 import DomainTheory.DataTypesAsLattices.Computability.sqrtStepC
-import DomainTheory.DataTypesAsLattices.Computability.sqrtStepTerm
 import DomainTheory.DataTypesAsLattices.Computability.subC
 import DomainTheory.DataTypesAsLattices.Computability.subStepC
 import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6
@@ -981,7 +978,6 @@ import DomainTheory.DataTypesAsLattices.Lambda.eq_2_17
 import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 import DomainTheory.DataTypesAsLattices.Lambda.Extend
 import DomainTheory.DataTypesAsLattices.Lambda.sequences
-import DomainTheory.DataTypesAsLattices.Lambda.eq_2_27
 import DomainTheory.DataTypesAsLattices.Lambda.eq_2_28
 import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_bot
 import DomainTheory.DataTypesAsLattices.Lambda.eq_2_7_mix
@@ -1004,10 +1000,6 @@ import DomainTheory.DataTypesAsLattices.Lambda.omegaComb
 import DomainTheory.DataTypesAsLattices.Lambda.omega_first_recursion
 import DomainTheory.DataTypesAsLattices.Lambda.predC_more
 import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
-import DomainTheory.DataTypesAsLattices.Lambda.primRecHat
-import DomainTheory.DataTypesAsLattices.Lambda.primRecStep
-import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
-import DomainTheory.DataTypesAsLattices.Lambda.primRecVal
 import DomainTheory.DataTypesAsLattices.Lambda.sucC_more
 import DomainTheory.DataTypesAsLattices.Lambda.succSet_more
 import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_1

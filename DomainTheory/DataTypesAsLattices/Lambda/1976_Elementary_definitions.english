@@ -11,3 +11,50 @@ $$(2.17) \quad x \cap y = \mathbf{Y}(\lambda f \lambda x \lambda y.\, x \supset 
 The elements $\bot$ and $\top$ are graphs, by the way, and we can characterize them as the only fixed points of the combinator $\mathbf{K}$:
 
 $$(2.18) \quad a = \lambda x.\, a \quad \text{iff} \quad a = \bot \quad \text{or} \quad a = \top.$$
+
+**Formalization.** Scott’s (2.14)–(2.18) are separate library entries; this note’s `@import` is `eq_2_18.lean`, which proves (2.18) and also holds the nested `pack4` pairing used later in §2.6. Each name below is the Lean theorem or definition; proofs live in the cited module unless noted.
+
+**Theorem (`eq_2_14`, equation (2.14)).** 
+$$\mathrm{funOf}(\omega(\mathrm{id}))(\omega(\mathrm{id})) = \bot,$$
+where $\omega(u) = \lambda x.\, u(x(x))$ is `omegaComb` and the left side is Scott’s $(\lambda x.\, x(x))(\lambda x.\, x(x))$ as graphs.
+
+*Proof.* Identify the ω-subcombinator with `graph (fun x => funOf x x)`; apply `omega_first_recursion` so every finite iterate is $\bot$. ∎  
+*(Module `eq_2_14.lean`.)*
+
+**Theorem (`eq_2_15`, equation (2.15)).** For all $x,y \in \mathbf{P}\omega$,
+$$\mathrm{condSet}(\lambda z.\, 0,\, x,\, y) = x \cup y,$$
+with $\lambda z.\, 0$ formalized as `graph (fun _ => ofNat 0)` and $0,1 \in \lambda z.\, 0$ from membership in that constant graph.
+
+*Proof.* Case-split on the McCarthy conditional using $0,1 \in \mathrm{graph}(\lambda z.\, 0)$. ∎  
+*(Module `eq_2_15.lean`.)*
+
+**Theorem (`eq_2_16`, equation (2.16)).** $\mathrm{fix}(\texttt{topRec}) = \top$, where `topRec` is the step $x \mapsto 0 \cup (x+1)$ underlying $\mathbf{Y}(\lambda x.\, 0 \cup (x+1))$.
+
+*Proof.* $\top$ is universal; for membership in $\mathrm{fix}(\texttt{topRec})$, use that iterate $n+1$ already contains $n$. ∎  
+*(Module `eq_2_16.lean`.)*
+
+**Theorem (`eq_2_17`, equation (2.17)).** For all $x,y \in \mathbf{P}\omega$,
+$$\mathrm{funOf}(\mathrm{funOf}(\texttt{interC})\,x)\,y = x \cap y,$$
+with `interC` the graph of Scott’s $Y$-based intersection step.
+
+*Proof.* Strong induction on the argument $n$; unfold `interC.app` and the conditional branches matching (2.17). ∎
+
+**Theorem (`eq_2_17.step`).** The same intersection as a McCarthy recursion:
+$$x \cap y = x \supset (y \supset 0,\,\bot),\; f(x-1)(y-1)+1$$
+at the level of `condSet` / `predSet` / `succSet` (the body of (2.17) before abstracting $f$).
+
+*Proof.* Extensionality; parallel case analysis to `eq_2_17`. ∎  
+*(Module `eq_2_17.lean`.)*
+
+**Theorem (`eq_2_18.bot`, `eq_2_18.top`).** $\bot = \lambda x.\,\bot$ and $\top = \lambda x.\,\top$ as graphs: `botElem = graph (fun _ => botElem)` and `topElem = graph (fun _ => topElem)`.
+
+*Proof.* For $\bot$, no pair lies in the empty set; for $\top$, every coded pair’s value lies in $\mathbf{P}\omega$. ∎
+
+**Theorem (`eq_2_18`, equation (2.18)).** For $a \in \mathbf{P}\omega$,
+$$a = \mathbf{graph}(\lambda x.\, a) \leftrightarrow a = \bot \lor a = \top.$$
+So the only $\mathbf{K}$-fixed graphs are $\bot$ and $\top$.
+
+*Proof.* If $a$ is a constant graph and $a \neq \top$, least excluded index forces $0 \notin a$; if $a \neq \bot$, least included index yields $0 \in a$ and contradiction. Conversely use `eq_2_18.bot` / `eq_2_18.top`. ∎  
+*(Module `eq_2_18.lean` — owner of this note.)*
+
+**Definition (`pack4`, `pack4.proj1`–`proj4`).** Nested `Nat.pair` coding of four naturals and its unpairing projections (not numbered in Scott’s (2.14)–(2.18); bundled in `eq_2_18.lean` for §2.6 computability proofs).

@@ -9,3 +9,30 @@ The question is: can we give a LAMBDA-definition for $\hat{p}$ (in terms of $f$ 
 $$(2.27) \quad \hat{p} = \mathbf{Y}(\lambda u \lambda n \in \omega.\, n \supset a,\, f(n - 1)(u(n - 1))).$$
 
 This already shows that a large part of the definitions of recursion theory can be given in this special language. Of course, simultaneous (primitive) recursions can be transcribed into LAMBDA with the aid of the ordered tuples of (2.22), (2.23) above. But we can go further and connect with partial (and general) recursive functions. We state first a definition.
+
+**Formalization (`primitive_recursion.lean`).** Scott’s scheme $p(0)=a$, $p(n+1)=f(n)(p(n))$ is $\texttt{primRecVal}$; the spread $\hat{p}(x)=\bigcup\{p(n)\mid n\in x\}$ is $\texttt{primRecHat}$; the recursive step in (2.27) is $\texttt{primRecStep}$; **(2.27)** is `eq_2_27` via **$** (`dollarC`). Each name below is in this module.
+
+**Definition (`primRecStepTerm`).** LAMBDA term for $\lambda u\,\lambda n.\, n \supset a,\, f(n-1)(u(n-1))$ (de Bruijn form with parameters $a,f$ abstracted).
+
+**Theorem (`primRecStepTerm.interp`).** Interpretation of `primRecStepTerm` matches the body of `primRecStep` at each $u,n$.
+
+*Proof.* Four $(\beta)$ steps and unfold `interp` / `condSet`. ∎
+
+**Definition (`primRecStep`).** $\texttt{primRecStep}(a,f)(u) = \mathbf{graph}(\lambda n.\, n \supset a,\, f(\mathit{predSet}\,n)(u(\mathit{predSet}\,n)))$ — the step function inside Scott’s $\mathbf{Y}$ in (2.27).
+
+**Theorem (`primRecStep.app`, `primRecStep.isScottContinuous`).** $(\beta)$ for the graph and Scott continuity of $u \mapsto \texttt{primRecStep}(a,f)(u)$.
+
+**Definition (`primRecVal`).** $\texttt{primRecVal}(a,f)(0)=a$, $\texttt{primRecVal}(a,f)(n+1)=\mathrm{funOf}(\mathrm{funOf}\,f\,(\mathrm{ofNat}\,n))(\texttt{primRecVal}(a,f)\,n)$ — the numeric schema above.
+
+**Theorem (`primRecVal.fix`).** $\mathrm{funOf}(\mathrm{fix}(\texttt{primRecStep}\,a\,f))(\mathrm{ofNat}\,n)=\texttt{primRecVal}(a,f)\,n$ for all $n$.
+
+*Proof.* Fixed-point law (Theorem 1.4); case $n=0$ and $n+1$ via `primRecStep.app` and predecessor lemmas. ∎
+
+**Definition (`primRecHat`).** $\texttt{primRecHat}(a,f)(x)=\bigcup\{ \texttt{primRecVal}(a,f)(n) \mid n \in x \}$ — formal $\hat{p}$.
+
+**Theorem (`primRecHat.zero`, `primRecHat.ofNat`).** $\texttt{primRecHat}(a,f)(0)=a$ and $\texttt{primRecHat}(a,f)(n)=\texttt{primRecVal}(a,f)(n)$ on singletons $\mathrm{ofNat}\,n$.
+
+**Theorem (`eq_2_27`, equation (2.27)).** For all $a,f,x \in \mathbf{P}\omega$,
+$$\texttt{primRecHat}(a,f)(x)=\mathrm{funOf}(\mathrm{funOf}\,\texttt{dollarC}\,(\mathrm{fix}(\texttt{primRecStep}\,a\,f)))(x).$$
+
+*Proof.* Rewrite with `eq_2_25` (spread as **$**); index-wise use `primRecVal.fix`. ∎

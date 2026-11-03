@@ -3,7 +3,7 @@ module
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_pair
 public import DomainTheory.DataTypesAsLattices.Computability.primrecRel_mem_funOf_e
 public import DomainTheory.DataTypesAsLattices.Computability.eSubset_funOf_e_iff

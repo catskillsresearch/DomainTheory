@@ -4,13 +4,13 @@ public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
 public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb
 public import DomainTheory.DataTypesAsLattices.Lambda.distributive_functions
-public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
+public import DomainTheory.DataTypesAsLattices.Lambda.primitive_recursion
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.Scomb
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Computability.addStepC
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 public import DomainTheory.DataTypesAsLattices.Computability.Realizes2
 public import DomainTheory.DataTypesAsLattices.Computability.primRecComb
 public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb_more

@@ -6,7 +6,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.addC
 public import DomainTheory.DataTypesAsLattices.Computability.subC
 public import DomainTheory.DataTypesAsLattices.Computability.mulC
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.predC_more
 

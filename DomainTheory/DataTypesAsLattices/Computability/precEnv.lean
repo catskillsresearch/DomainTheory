@@ -6,7 +6,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.pairComb
 public import DomainTheory.DataTypesAsLattices.Computability.unpairFstC
 public import DomainTheory.DataTypesAsLattices.Computability.unpairSndC
 public import DomainTheory.DataTypesAsLattices.Computability.primRecOpC
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 
 @[expose] public section
 

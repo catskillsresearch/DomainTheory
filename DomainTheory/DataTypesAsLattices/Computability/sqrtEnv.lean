@@ -4,7 +4,7 @@ public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Computability.mulC
 public import DomainTheory.DataTypesAsLattices.Computability.leC
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 public import DomainTheory.DataTypesAsLattices.Computability.botElem_combinatory
 
 @[expose] public section

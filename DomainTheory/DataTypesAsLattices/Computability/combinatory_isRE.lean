@@ -15,7 +15,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.IsREu2econdC
 public import DomainTheory.DataTypesAsLattices.Computability.IsREu2epredC
 public import DomainTheory.DataTypesAsLattices.Computability.IsREu2esucC
 public import DomainTheory.DataTypesAsLattices.Computability.IsREu2ezeroC
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 
 @[expose] public section
 

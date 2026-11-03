@@ -5,7 +5,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Computability.IsComputable
 public import DomainTheory.DataTypesAsLattices.Computability.LambdaDefinable
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 public import DomainTheory.DataTypesAsLattices.Computability.topRecTerm
 public import DomainTheory.DataTypesAsLattices.Computability.Realizes
 public import DomainTheory.DataTypesAsLattices.Computability.Realizes2
@@ -24,9 +24,8 @@ public import DomainTheory.DataTypesAsLattices.Computability.pairTerm
 public import DomainTheory.DataTypesAsLattices.Computability.arithEnv
 public import DomainTheory.DataTypesAsLattices.Computability.pairComb
 public import DomainTheory.DataTypesAsLattices.Computability.primRecZeroC
-public import DomainTheory.DataTypesAsLattices.Computability.sqrtIter
+public import DomainTheory.DataTypesAsLattices.Lambda.primitive_recursion
 public import DomainTheory.DataTypesAsLattices.Computability.sqrtEnv
-public import DomainTheory.DataTypesAsLattices.Computability.sqrtStepTerm
 public import DomainTheory.DataTypesAsLattices.Computability.sqrtStepC
 public import DomainTheory.DataTypesAsLattices.Computability.sqrtC
 public import DomainTheory.DataTypesAsLattices.Computability.unpairEnv
@@ -39,7 +38,6 @@ public import DomainTheory.DataTypesAsLattices.Computability.unpairSndTerm
 public import DomainTheory.DataTypesAsLattices.Computability.unpairFstC
 public import DomainTheory.DataTypesAsLattices.Computability.unpairSndC
 public import DomainTheory.DataTypesAsLattices.Computability.primRecOpEnv
-public import DomainTheory.DataTypesAsLattices.Computability.primRecOpTerm
 public import DomainTheory.DataTypesAsLattices.Computability.primRecOpC
 public import DomainTheory.DataTypesAsLattices.Computability.pairRealizer
 public import DomainTheory.DataTypesAsLattices.Computability.precEnv

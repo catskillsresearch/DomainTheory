@@ -1,16 +1,8 @@
 # Primitive recursion
 
 @import "1976_Primitive_recursion.english" {code_block=false}
-**[DataTypesAsLattices/Computability/primRecOpTerm.lean](../Computability/primRecOpTerm.lean)**
 
-@import "../Computability/primRecOpTerm.lean"
-**[DataTypesAsLattices/Computability/sqrtIter.lean](../Computability/sqrtIter.lean)**
+**[DataTypesAsLattices/Lambda/primitive_recursion.lean](primitive_recursion.lean)**
 
-@import "../Computability/sqrtIter.lean"
+@import "primitive_recursion.lean"
 
-**[DataTypesAsLattices/Computability/sqrtStepTerm.lean](../Computability/sqrtStepTerm.lean)**
-
-@import "../Computability/sqrtStepTerm.lean"
-@import "../Computability/primRecOpTerm.lean"
-@import "../Computability/sqrtStepTerm.lean"
-@import "../Computability/sqrtIter.lean"

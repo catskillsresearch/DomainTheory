@@ -4,7 +4,7 @@ public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eexists
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 public import DomainTheory.DataTypesAsLattices.Computability.primrecRel_Scomb_app
 
 public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3

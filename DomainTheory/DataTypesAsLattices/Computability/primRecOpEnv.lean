@@ -4,9 +4,9 @@ public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
 public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb
 public import DomainTheory.DataTypesAsLattices.Lambda.distributive_functions
-public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
+public import DomainTheory.DataTypesAsLattices.Lambda.primitive_recursion
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 public import DomainTheory.DataTypesAsLattices.Computability.primRecComb
 public import DomainTheory.DataTypesAsLattices.Computability.botElem_combinatory
 @[expose] public section

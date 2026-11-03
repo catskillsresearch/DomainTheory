@@ -4,15 +4,11 @@ public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
 public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb
 public import DomainTheory.DataTypesAsLattices.Lambda.distributive_functions
-public import DomainTheory.DataTypesAsLattices.Lambda.primRecStepTerm
+public import DomainTheory.DataTypesAsLattices.Lambda.primitive_recursion
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
-public import DomainTheory.DataTypesAsLattices.Lambda.primRecHat
-public import DomainTheory.DataTypesAsLattices.Lambda.primRecVal
-public import DomainTheory.DataTypesAsLattices.Lambda.primRecStep
-public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_27
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 @[expose] public section
 
 set_option maxHeartbeats 2000000

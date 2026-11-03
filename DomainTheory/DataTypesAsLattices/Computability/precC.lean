@@ -14,11 +14,11 @@ public import DomainTheory.DataTypesAsLattices.Computability.Realizes
 public import DomainTheory.DataTypesAsLattices.Computability.pairComb
 public import DomainTheory.DataTypesAsLattices.Computability.unpairSndC
 public import DomainTheory.DataTypesAsLattices.Computability.unpairFstC
-public import DomainTheory.DataTypesAsLattices.Computability.pack4
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
 public import DomainTheory.DataTypesAsLattices.Computability.primRecOpC
 public import DomainTheory.DataTypesAsLattices.Computability.primRecComb
 public import DomainTheory.DataTypesAsLattices.Lambda.ofComb
-public import DomainTheory.DataTypesAsLattices.Lambda.primRecVal
+public import DomainTheory.DataTypesAsLattices.Lambda.primitive_recursion
 
 @[expose] public section
 
