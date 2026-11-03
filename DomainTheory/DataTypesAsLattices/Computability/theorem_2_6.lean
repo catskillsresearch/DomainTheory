@@ -1,29 +1,15 @@
 module
 
-public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
-public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4
-public import Mathlib.Topology.Bases
-public import Mathlib.Topology.Defs.Induced
-public import Mathlib.Topology.Order
-public import Mathlib.Topology.Separation.Basic
-public import DomainTheory.DataTypesAsLattices.Graph.graph
-public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Computability.IsComputable
 public import DomainTheory.DataTypesAsLattices.Computability.LambdaDefinable
 public import DomainTheory.DataTypesAsLattices.Computability.ComputableFin
-public import DomainTheory.DataTypesAsLattices.Computability.combinatory_isLambdaDefinable
 
-public import DomainTheory.DataTypesAsLattices.Lambda.Language
-public import DomainTheory.DataTypesAsLattices.Lambda.ScottContinuousFin
-public import DomainTheory.DataTypesAsLattices.Lambda.curryFin
-public import DomainTheory.DataTypesAsLattices.Lambda.interp
-public import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.Avoids
-public import DomainTheory.DataTypesAsLattices.Enumeration.fin
-public import DomainTheory.DataTypesAsLattices.Computability.IsREu2eiff_combinatory
+import DomainTheory.DataTypesAsLattices.Computability.IsREu2eiff_combinatory
+import DomainTheory.DataTypesAsLattices.Computability.IsREu2enumeral
+import DomainTheory.DataTypesAsLattices.Computability.combinatory_isLambdaDefinable
+import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_1
+import DomainTheory.DataTypesAsLattices.Lambda.theorem_2_4
 @[expose] public section
 
 set_option maxHeartbeats 2000000
