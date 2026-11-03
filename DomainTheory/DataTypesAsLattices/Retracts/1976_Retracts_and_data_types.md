@@ -15,5 +15,5 @@
 - [Theorem 4.2](1976_Theorem_4_2.md) ✓
 - [Theorem 4.3](1976_Theorem_4_3.md) ✓
 - [Theorem 4.4](../Functionality/1976_Theorem_4_4.md) ✓
-- [Theorem 4.5](1976_Theorem_4_5.md)
+- [Theorem 4.5](1976_Theorem_4_5.md) ✓
 - [Theorem 4.6](1976_Theorem_4_6.md)

@@ -15,7 +15,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 namespace DomainTheory.DataTypesAsLattices
 
 theorem lambR_isRetract : Retract lambR :=
-  (theorem_4_6 lambF_isScottContinuous (fun _a ha =>
+  (theorem_4_6.Limit lambF_isScottContinuous (fun _a ha =>
     plusR_isRetract intR.isRetract (arrowR.isRetract ha ha))).2
 
 end DomainTheory.DataTypesAsLattices

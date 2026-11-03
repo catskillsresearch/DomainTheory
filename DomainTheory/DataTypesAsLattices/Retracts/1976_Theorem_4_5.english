@@ -73,3 +73,15 @@ $$(a \circ\to b') \circ (f \circ\to f') \circ (b \circ\to a')$$
 and uses the equations:
 
 $$f = b \circ f \circ a \quad \text{and} \quad f' = b' \circ f' \circ a'.$$
+
+<!-- formalization -->
+
+**Formalization.** The Lean owned by this note is a thin packaging of the $\bot$-case that seeds strictness of $\oplus$. The sum operator itself is
+$$a\oplus b=\mathbf{graph}\bigl(u\mapsto u_0\sqsupset\langle 0,\,a(u_1)\rangle,\,\langle 1,\,b(u_1)\rangle\bigr)$$
+(using the doubly strict conditional of (4.4)). The full packaging of Scott’s (i)–(ii) lives in `theorem_4_5_sum` (Functionality); clauses (iii)–(iv) and (4.32)–(4.37) are companion lemmas.
+
+**Theorem (`theorem_4_5`).** For any $a,b$,
+$$\bot\sqsupset\langle 0,\,a(\bot)\rangle,\,\langle 1,\,b(\bot)\rangle \;=\; \bot,$$
+and $\bot$ is a retract.
+
+*Proof.* The first conjunct is the empty-tag law for $\sqsupset$: a pure bottom discriminator yields $\bot$ regardless of the two branches. The second is the known retract $\bot=\bot\circ\bot$. ∎

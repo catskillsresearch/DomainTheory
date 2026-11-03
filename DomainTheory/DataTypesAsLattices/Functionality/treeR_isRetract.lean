@@ -14,7 +14,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.treeF_isScottContin
 namespace DomainTheory.DataTypesAsLattices
 
 theorem treeR_isRetract : Retract treeR :=
-  (theorem_4_6 treeF_isScottContinuous (fun _a ha =>
+  (theorem_4_6.Limit treeF_isScottContinuous (fun _a ha =>
     plusR_isRetract bot_isRetract (tensorR_isRetract ha ha))).2
 
 end DomainTheory.DataTypesAsLattices

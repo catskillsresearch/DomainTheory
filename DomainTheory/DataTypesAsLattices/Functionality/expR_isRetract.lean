@@ -15,7 +15,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.expF_isScottContinu
 namespace DomainTheory.DataTypesAsLattices
 
 theorem expR_isRetract : Retract expR :=
-  (theorem_4_6 expF_isScottContinuous (fun _a ha =>
+  (theorem_4_6.Limit expF_isScottContinuous (fun _a ha =>
     plus7_isRetract intR.isRetract bot_isRetract ha ha
       (tensor4_isRetract ha ha ha ha) (tensorR_isRetract ha ha)
       (tensorR_isRetract intR.isRetract ha))).2
