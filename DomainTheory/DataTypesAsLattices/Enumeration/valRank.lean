@@ -1,8 +1,7 @@
 module
 
-public import Mathlib.Computability.Halting
+public import DomainTheory.DataTypesAsLattices.Pomega.Pomega
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 
 @[expose] public section
 

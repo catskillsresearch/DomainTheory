@@ -1,14 +1,10 @@
-
 module
 
-public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Enumeration.applyNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.RE
 public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
-public import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb
-public import DomainTheory.DataTypesAsLattices.Graph.Basic.notation3
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
+
+import DomainTheory.DataTypesAsLattices.Enumeration.theorem_3_1
+import Mathlib.Algebra.GroupWithZero.Nat
 
 @[expose] public section
 

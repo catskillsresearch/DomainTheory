@@ -4,41 +4,23 @@
 
 *(ii)* $\mathbf{val}(\mathbf{apply}(n)(m)) = \mathbf{val}(n)(\mathbf{val}(m))$.
 
-As a principal application of the Enumeration Theorem we may mention the following: suppose $u$ is given as LAMBDA-definable. We look at its definition and rewrite it in terms of combinators—eventually in terms of $\mathbf{G}$ alone. Then using 0 and $\mathbf{apply}$ we write down the name of an integer corresponding to the combination—say, $n$. By Theorem 3.2 we see that we have *effectively found* from
+As a principal application of the Enumeration Theorem we may mention the following: suppose $u$ is given as LAMBDA-definable. We look at its definition and rewrite it in terms of combinators—eventually in terms of $\mathbf{G}$ alone. Then using 0 and $\mathbf{apply}$ we write down the name of an integer corresponding to the combination—say, $n$. By Theorem 3.2 we see that we have *effectively found* from the definition an integer such that $\mathbf{val}\, n = u$. This remark can be strengthened by some numerology.
 
-<!-- page 17 -->
+**Formalization.** Scott’s (i)–(ii) and the set equality $\mathbf{RE}=\{\mathbf{val}(n)\}$ are assembled in `theorem_3_2.lean` from the recursive enumerator `valNat` (equation (3.7)) and Theorem 3.1. Each name below is the Lean theorem; proofs live in that module.
 
-the definition an integer such that $\mathbf{val}\, n = u$. This remark can be strengthened by some numerology.
+**Theorem (`theorem_3_2`).** For every $n$, $\mathrm{valNat}(n)\in\mathbf{RE}$; $\mathrm{valNat}(0)=\mathbf{G}$; and for all $n,m$,
+$$\mathrm{valNat}(\mathrm{applyNat}(n,m)) = \mathrm{valNat}(n)\cdot\mathrm{valNat}(m).$$
 
-$$(3.8) \quad \mathbf{apply}(0)(0) = 1 \quad \text{and} \quad \mathbf{val}(1) = 0;$$
+*Proof.* Package three library facts on `valNat`: `valNat.combinatory` (every value is combinatory, hence in $\mathbf{RE}$), `valNat.zero`, and `valNat.app`. ∎
 
-$$(3.9) \quad \mathbf{apply}(0)(1) = 3 \quad \text{and} \quad \mathbf{val}(3) = \langle \mathbf{suc}, \ldots \rangle;$$
+**Theorem (`theorem_3_2.surjective`).** If $u$ is combinatory, then $\exists n.\;\mathrm{valNat}(n)=u$.
 
-$$(3.10) \quad \mathbf{apply}(3)(1) = 12 \quad \text{and} \quad \mathbf{val}(12) = \mathbf{suc}.$$
+*Proof.* By Theorem 3.1, combinatory elements are exactly those generated from $\mathbf{G}$ by application. Induct on that generation: $\mathbf{G}$ is $\mathrm{valNat}(0)$; if $u=\mathrm{valNat}(n)$ and $v=\mathrm{valNat}(m)$, then $u\cdot v=\mathrm{valNat}(\mathrm{applyNat}(n,m))$ by `valNat.app`. ∎
 
-Thus, define $\mathbf{num}$ as the least fixed point:
+**Theorem (`theorem_3_2.i`).** $\mathrm{condSet}(0,\,\mathbf{G},\,\bot)=\mathbf{G}$.
 
-$$(3.11) \quad \mathbf{num} = \lambda n \in \omega.\, n \supset 1,\, \mathbf{apply}(12)(\mathbf{num}(n - 1)),$$
+*Proof.* Extensionality on membership. Left-to-right: a member of the conditional is either in $\mathbf{G}$ on the true branch, or comes from a witness that $0\in 0$, which is impossible. Right-to-left: every member of $\mathbf{G}$ sits on the true branch. ∎
 
-and derive the equation for all $n \in \omega$:
+**Theorem (`theorem_3_2.range`).** $\mathbf{RE}=\mathrm{Set.range}\,\mathrm{valNat}$.
 
-$$(3.12) \quad \mathbf{val}(\mathbf{num}(n)) = n.$$
-
-We note that $\mathbf{num}$ is a primitive recursive (total) function. The combinator $\mathbf{num}$ allows us now to effectively find a LAMBDA-definition, corresponding to a given LAMBDA-definable element $u$, of an element $v$ such that uniformly in the integer variable $n$ we have $\mathbf{val}(v(n)) = u(n)$. Further, $v$ is a primitive recursive (total) function. This is the technique involved in the proof of Kleene's well-known result:
-
-**For Section 3.** For the proof of (3.1) we distinguish cases. In case $x = y = \bot$, we note that $\mathbf{cond}(\bot)(\bot) = \bot$ and $\bot(\bot) = \bot$, so the equation checks in this case. Recall:
-
-$$\mathbf{cond}(x)(y) = \lambda z.\, z \supset x, y = \{(n, m) \mid m \in (e_n \supset x, y)\}.$$
-
-<!-- page 53 -->
-
-
-We can show $0 \notin \mathbf{cond}(x)(y)$. Note first $0 = (n, m)$ iff $n = 0 = m$; furthermore, $e_0 = \bot$ and $\bot \supset x, y = \bot$; but $0 \notin \bot$. Also we have:
-
-$$\mathbf{cond}(x)(y)(0) = x \quad \text{and} \quad \mathbf{cond}(x)(y)(1) = y;$$
-
-so if either $x \neq \bot$ or $y \neq \bot$, then $\mathbf{cond}(x)(y) \neq \bot$. In this case, $\mathbf{cond}(x)(y)$ must contain *positive* elements. The result now follows.
-
-Theorem 3.1 is obvious from the construction of $\mathbf{G}$, because $\mathbf{G}(\mathbf{G}) = 0$ and $\mathbf{G}(0)(0) = \mathbf{suc}$, and so the $\mathbf{G}(0)(i)$ give us all the other combinators.
-
-The primitive recursive functions needed for (3.4)–(3.6) are standard. Equation (3.7) is a definition—if we rewrote it using the $\mathbf{Y}$-operator—and the proof of Theorem 3.2 is easy by induction. There is also no difficulty with (3.8)–(3.12). The idea of the proof of Theorem 3.3 is contained in the statement of the theorem itself. The proof of Theorem 3.4 is already outlined in the text.
+*Proof.* If $u\in\mathbf{RE}$, then $u$ is combinatory, so `surjective` supplies a preimage. Conversely, every $\mathrm{valNat}(n)$ lies in $\mathbf{RE}$ by the first conjunct of `theorem_3_2`. ∎
