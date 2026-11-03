@@ -1,12 +1,8 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Lambda.dcondSet
-public import DomainTheory.DataTypesAsLattices.Lambda.Language
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
-public import DomainTheory.DataTypesAsLattices.Retracts.bot_isRetract
+import DomainTheory.DataTypesAsLattices.Retracts.bot_isRetract
 
 @[expose] public section
 
