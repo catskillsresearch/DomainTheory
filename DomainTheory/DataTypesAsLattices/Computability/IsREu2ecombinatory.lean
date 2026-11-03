@@ -7,7 +7,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Computability.IsRE
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
-public import DomainTheory.DataTypesAsLattices.Computability.enumFun
+public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
 public import DomainTheory.DataTypesAsLattices.Computability.enumRangeC
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_realized
 public import DomainTheory.DataTypesAsLattices.Computability.primrec_enumFun

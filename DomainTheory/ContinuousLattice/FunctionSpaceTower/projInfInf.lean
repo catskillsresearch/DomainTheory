@@ -9,7 +9,6 @@ public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iInfTerm_monoton
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.iSup₂_monotone_eq_diagonal
 public import DomainTheory.ContinuousLattice.InverseLimits.inverseLimitTopology
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
-public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.ScottMaps.proposition_2_5
 public import Mathlib.Data.Set.Basic
 

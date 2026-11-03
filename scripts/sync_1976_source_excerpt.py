@@ -61,7 +61,7 @@ SLICE_NOTES: list[tuple[str, str | None]] = [
     ("Lambda/1976_The_definability_theorem.md", None),
     ("Lambda/1976_Primitive_recursion.md", None),
     ("Lambda/1976_Definition_computable.md", "1976_Definition_computable.english"),
-    ("Computability/1976_Theorem_2_6.md", None),
+    ("Computability/1976_IsRE.md", "1976_IsRE.english"),
     ("Computability/1976_Definability.md", None),
     ("Lambda/1976_Law_of_Y.md", None),
     (
@@ -364,8 +364,9 @@ def update_hub_tocs() -> None:
             "- [Elementary definitions](1976_Elementary_definitions.md)",
             "- [Primitive recursion](1976_Primitive_recursion.md)",
             "- [Definition (computable)](1976_Definition_computable.md)",
-            "- [Definability](../Computability/1976_Definability.md)",
-            "- [Theorem 2.6 — the definability theorem](../Computability/1976_Theorem_2_6.md)",
+            "- [R.e. subsets](../Computability/1976_IsRE.md)",
+            "- [Theorem 2.6: Definability](../Computability/1976_Definability.md)",
+            "",
             "",
         ],
     )

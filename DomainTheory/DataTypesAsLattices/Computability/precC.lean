@@ -4,7 +4,7 @@ public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Computability.precEnv
-public import DomainTheory.DataTypesAsLattices.Computability.precTerm
+public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Pomega.pair

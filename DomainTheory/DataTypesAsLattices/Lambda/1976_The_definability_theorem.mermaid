@@ -7,10 +7,10 @@ flowchart TB
   Elementary_definitions["Elementary definitions"]
   Primitive_recursion["Primitive recursion"]
   DCOMP["Definition (computable)"]
-  DEF["Definability"]
-  T26["Theorem 2.6"]
+  ISRE["R.e. subsets"]
+  DEF["Theorem 2.6: Definability"]
 
   Primitive_recursion --> DCOMP
-  DCOMP --> DEF
+  DCOMP --> ISRE
+  ISRE --> DEF
   Elementary_definitions --> Primitive_recursion
-  DEF --> T26

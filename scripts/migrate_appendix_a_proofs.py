@@ -25,7 +25,7 @@ SLICES: list[tuple[str, int, int]] = [
     ("Lambda/1976_Theorem_2_3.english", 104, 108),
     ("Lambda/1976_Theorem_2_4.english", 110, 114),
     ("Lambda/1976_Theorem_2_5.english", 116, 133),
-    ("Computability/1976_Theorem_2_6.english", 181, 197),
+    ("Computability/1976_Definability.english", 181, 197),
     ("Enumeration/theorem_3_1.english", 212, 212),
     ("Enumeration/1976_Theorem_3_2.english", 199, 214),
     ("Enumeration/1976_Theorem_3_5.english", 216, 255),

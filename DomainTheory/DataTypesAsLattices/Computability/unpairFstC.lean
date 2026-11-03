@@ -4,20 +4,19 @@ public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Lambda.interp
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Computability.unpairEnv
-public import DomainTheory.DataTypesAsLattices.Computability.unpairFstTerm
+public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Computability.sqrtC
 public import DomainTheory.DataTypesAsLattices.Computability.Realizes
-public import DomainTheory.DataTypesAsLattices.Computability.unpairDeltaTerm
+public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
 public import DomainTheory.DataTypesAsLattices.Computability.subC
 public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_18
-public import DomainTheory.DataTypesAsLattices.Computability.unpairTestTerm
+public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
 public import DomainTheory.DataTypesAsLattices.Computability.mulC
 public import DomainTheory.DataTypesAsLattices.Computability.leC
-public import DomainTheory.DataTypesAsLattices.Computability.unpairSqrtTerm
-public import DomainTheory.DataTypesAsLattices.Computability.unpairSquareTerm
+public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
 public import DomainTheory.DataTypesAsLattices.Lambda.ofComb
 public import DomainTheory.DataTypesAsLattices.Lambda.succSet_more
 

@@ -3,7 +3,6 @@ module
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.jInfTerm
 public import DomainTheory.ContinuousLattice.FunctionSpaceTower.incl_projInf_le_projInf_succ
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
-public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import Mathlib.Data.Set.Basic
 
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap

@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.ContinuousLattice.InverseLimits.embInf
-public import DomainTheory.ContinuousLattice.InverseLimits.embInf
 public import DomainTheory.ContinuousLattice.InverseLimits.iComp
 public import DomainTheory.ContinuousLattice.InverseLimits.limitProjectionToLevel
 public import DomainTheory.ContinuousLattice.InverseLimits.projectionAlongTower

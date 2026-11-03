@@ -1,0 +1,7 @@
+Scott treats the *recursively enumerable* objects as a subcollection $\mathbf{RE} \subseteq \mathbf{P}\omega$: those elements $u$ whose membership is susceptible to enumeration. In ordinary recursion theory a set $A \subseteq \omega$ is r.e. when the relation “$n \in A$” is recursively enumerable. An element $u \in \mathbf{P}\omega$ is itself a set of natural numbers (integers coding finite or infinite subsets), so the same idea applies: $u$ is r.e. when one can enumerate the instances of membership $n \in u$.
+
+This is exactly the hypothesis in Theorem 2.6 (ii), where the $\lambda$-term associated with a continuous function $f$ is required to be an r.e. *set* of codes. The proof that LAMBDA-definable graphs are r.e. and the construction of r.e. sets from primitive recursive functions both live in the $\mathbf{RE}$ fragment of $\mathbf{P}\omega$ closed under application and definability.
+
+**Formalization (`IsRE.lean`).** Mathlib’s `REPred` captures “recursively enumerable as a predicate on $\mathbb{N}$”. For $u \in \mathbf{P}\omega$, **`IsRE u`** holds when $\lambda n.\, n \in u$ is of that kind—equivalently, the membership set $\{\,n \in \omega \mid n \in u\,\}$ is r.e. The proof field is packaged as `IsRE.out`; downstream lemmas use `IsRE` for combinators, application, and Theorem 2.6.
+
+**Definition (`IsRE`).** $u \in \mathbf{P}\omega$ is **r.e.** iff the membership predicate $n \mapsto (n \in u)$ is recursively enumerable (`IsRE u`).

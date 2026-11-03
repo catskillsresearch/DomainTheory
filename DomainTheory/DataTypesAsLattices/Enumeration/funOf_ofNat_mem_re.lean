@@ -10,7 +10,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Retracts.comp
 public import DomainTheory.DataTypesAsLattices.Enumeration.mem_funOf_ofNat
-public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eor
+public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
 public import DomainTheory.DataTypesAsLattices.Computability.IsREu2epair_mem
 
 @[expose] public section

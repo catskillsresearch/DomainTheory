@@ -60,6 +60,9 @@ DEDICATED_NOTE_STEMS: dict[str, str] = {
     "Ycomb": "1976_Combinator_Y",
     "distributive_functions": "1976_Distributive_functions",
     "primitive_recursion": "1976_Primitive_recursion",
+    "theorem_2_6": "1976_Definability",
+    "theorem_2_6_more": "1976_Definability",
+    "IsRE": "1976_IsRE",
 }
 
 

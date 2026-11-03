@@ -2,15 +2,15 @@
 **[DataTypesAsLattices/Continuous/memOpen.lean](../Continuous/memOpen.lean)**
 
 @import "../Continuous/memOpen.lean"
-**[DataTypesAsLattices/Continuous/basicNhhd_more.lean](../Continuous/basicNhhd_more.lean)**
-
-@import "../Continuous/basicNhhd_more.lean"
-**[DataTypesAsLattices/Embedding/extend.lean](extend.lean)**
-
-@import "extend.lean"
 **[DataTypesAsLattices/Continuous/Basic.lean](../Continuous/Basic.lean)**
 
 @import "../Continuous/Basic.lean"
+**[DataTypesAsLattices/Embedding/extend.lean](extend.lean)**
+
+@import "extend.lean"
+**[DataTypesAsLattices/Continuous/basicNhhd_more.lean](../Continuous/basicNhhd_more.lean)**
+
+@import "../Continuous/basicNhhd_more.lean"
 **[DataTypesAsLattices/Embedding/embed.lean](embed.lean)**
 
 @import "embed.lean"

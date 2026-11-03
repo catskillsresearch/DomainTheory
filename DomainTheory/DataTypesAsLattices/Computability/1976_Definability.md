@@ -1,24 +1,12 @@
-# Definability
+# Theorem 2.6: Definability
 
 @import "1976_Definability.english" {code_block=false}
-**[DataTypesAsLattices/Computability/unpairSqrtTerm.lean](unpairSqrtTerm.lean)**
 
-@import "unpairSqrtTerm.lean"
-**[DataTypesAsLattices/Computability/unpairSquareTerm.lean](unpairSquareTerm.lean)**
+**[DataTypesAsLattices/Computability/theorem_2_6_more.lean](theorem_2_6_more.lean)**
 
-@import "unpairSquareTerm.lean"
-**[DataTypesAsLattices/Computability/unpairDeltaTerm.lean](unpairDeltaTerm.lean)**
+@import "theorem_2_6_more.lean"
+**[DataTypesAsLattices/Computability/theorem_2_6.lean](theorem_2_6.lean)**
 
-@import "unpairDeltaTerm.lean"
-**[DataTypesAsLattices/Computability/unpairTestTerm.lean](unpairTestTerm.lean)**
+@import "theorem_2_6.lean"
 
-@import "unpairTestTerm.lean"
-**[DataTypesAsLattices/Computability/unpairSndTerm.lean](unpairSndTerm.lean)**
-
-@import "unpairSndTerm.lean"
-
-@import "unpairSqrtTerm.lean"
-@import "unpairSquareTerm.lean"
-@import "unpairDeltaTerm.lean"
-@import "unpairTestTerm.lean"
-@import "unpairSndTerm.lean"
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-02) — <a href="../1976_REVISION.md">1976 revision progress</a></p>

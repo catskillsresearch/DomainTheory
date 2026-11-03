@@ -3,11 +3,10 @@ module
 public import Mathlib.Computability.Halting
 public import Mathlib.Computability.RE
 public import DomainTheory.DataTypesAsLattices.Computability.Realizes
-public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eempty
-public import DomainTheory.DataTypesAsLattices.Computability.REPredu2etrue
+public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
 public import DomainTheory.DataTypesAsLattices.Computability.REPredu2ecomp
 public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eand
-public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eor
+public import DomainTheory.DataTypesAsLattices.Computability.theorem_2_6_more
 public import DomainTheory.DataTypesAsLattices.Computability.REPredu2eexists
 public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
 public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb
