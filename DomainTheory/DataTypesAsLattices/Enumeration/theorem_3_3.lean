@@ -1,22 +1,13 @@
 module
 
-public import Mathlib.Computability.Halting
-public import Mathlib.Computability.RE
-public import DomainTheory.DataTypesAsLattices.Lambda.Language
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Enumeration.applyNat
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat
-public import DomainTheory.DataTypesAsLattices.Enumeration.num
-public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecVal
-public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecOperator
+public import Mathlib.Computability.Primrec.Basic
 public import DomainTheory.DataTypesAsLattices.Enumeration.secondRecV
-public import DomainTheory.DataTypesAsLattices.Enumeration.recNat
 public import DomainTheory.DataTypesAsLattices.Enumeration.recCode
-public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_secondRecV
-public import DomainTheory.DataTypesAsLattices.Enumeration.primrec_recNat
-public import DomainTheory.DataTypesAsLattices.Enumeration.valNat_codes
-public import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_12
-public import DomainTheory.DataTypesAsLattices.Lambda.Ycomb
+
+import DomainTheory.DataTypesAsLattices.Enumeration.valNat_codes
+import DomainTheory.DataTypesAsLattices.Enumeration.eq_3_12
+import DomainTheory.DataTypesAsLattices.Enumeration.primrec_recNat
+import DomainTheory.DataTypesAsLattices.Enumeration.primrec_secondRecV
 
 @[expose] public section
 

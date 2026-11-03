@@ -10,4 +10,29 @@ Then we have a primitive recursive function with this fixed-point property:
 
 *(iii)* $\mathbf{val}(\mathbf{rec}(n)) = \mathbf{val}(n)(\mathbf{rec}(n))$.
 
-Note that if $u$ is LAMBDA-definable, then we find first an $n$ such that $\mathbf{val}(n) = u$. Next we calculate $k = \mathbf{rec}(n)$. This effectively gives us an integer such that $\mathbf{val}(k) = u(k)$. Gödel numbers represent expressions (combinations in $\mathbf{G}$), and $\mathbf{val}$ maps the numbers to the values denoted by the expressions in the model. The $k$ just found thus represents an expression whose value is defined in terms of its own Gödel number. In recursion theory there are many applications of this result. Another familiar argument shows:
+Note that if $u$ is LAMBDA-definable, then we find first an $n$ such that $\mathbf{val}(n) = u$. Next we calculate $k = \mathbf{rec}(n)$. This effectively gives us an integer such that $\mathbf{val}(k) = u(k)$. Gödel numbers represent expressions (combinations in $\mathbf{G}$), and $\mathbf{val}$ maps the numbers to the values denoted by the expressions in the model. The $k$ just found thus represents an expression whose value is defined in terms of its own Gödel number. In recursion theory there are many applications of this result.
+
+**Formalization.** Write $S(u)$ for the continuous function $\lambda x.\,\bigcup_{m\in x} u(\mathbf{apply}(m)(\mathbf{num}(m)))$, so Scott’s right-hand side in (i) is $S(\mathbf{val}(n))$. A concrete total primitive recursive $v$ is obtained by applying a fixed code for the operator $u\mapsto S(u)$ to $n$. The recursion code is $\mathbf{rec}(n)=\mathbf{apply}(v(n))(\mathbf{num}(v(n)))$ as in (ii). A parallel self-application uses $\mathbf{Y}$: the code $\mathbf{apply}(\mathbf{Ycode},n)$ satisfies $\mathbf{val}(\mathbf{apply}(\mathbf{Ycode},n))=\mathbf{val}(n)(\mathbf{val}(\mathbf{apply}(\mathbf{Ycode},n)))$.
+
+**Theorem (`theorem_3_3.from_v`).** Suppose $\mathbf{val}(v(n))=S(\mathbf{val}(n))$. Setting $\mathbf{rec}(n)=\mathbf{apply}(v(n))(\mathbf{num}(v(n)))$, one has
+$$\mathbf{val}(\mathbf{rec}(n)) = \mathbf{val}(n)(\mathbf{rec}(n)).$$
+
+*Proof.* By the enumeration theorem, $\mathbf{val}(\mathbf{apply}(v(n))(\mathbf{num}(v(n))))=\mathbf{val}(v(n))(\mathbf{val}(\mathbf{num}(v(n))))$. The hypothesis replaces the operator by $S(\mathbf{val}(n))$, and (3.12) gives $\mathbf{val}(\mathbf{num}(v(n)))=v(n)$. Unfolding $S$ yields a union of applications of $\mathbf{val}(n)$ indexed by members of the numeral $v(n)$; that numeral is the singleton $\{v(n)\}$ in the coding, so the union reduces to the single term $\mathbf{val}(n)(\mathbf{apply}(v(n))(\mathbf{num}(v(n))))=\mathbf{val}(n)(\mathbf{rec}(n))$. ∎
+
+**Theorem (`theorem_3_3.i`).** For the concrete $v$ above, $\mathbf{val}(v(n))=S(\mathbf{val}(n))$ for every $n$.
+
+*Proof.* By construction $v(n)$ is the application of the code of the operator $u\mapsto S(u)$ to $n$. The enumeration theorem and the defining equation of that operator give $\mathbf{val}(v(n))=S(\mathbf{val}(n))$. ∎
+
+**Theorem (`theorem_3_3.ii`).** For every total $v$ and every $n$,
+$$\mathbf{rec}(n)=\mathbf{apply}(v(n))(\mathbf{num}(v(n))).$$
+
+*Proof.* This is the definition of $\mathbf{rec}$ in (ii). ∎
+
+**Theorem (`theorem_3_3.val`).** Writing $r(n)=\mathbf{apply}(\mathbf{Ycode},n)$, one has
+$$\mathbf{val}(r(n)) = \mathbf{val}(n)(\mathbf{val}(r(n))).$$
+
+*Proof.* By the enumeration theorem, $\mathbf{val}(r(n))=\mathbf{val}(\mathbf{Ycode})(\mathbf{val}(n))$. The code $\mathbf{Ycode}$ evaluates to the combinator $\mathbf{Y}$, and the fixed-point law for $\mathbf{Y}$ supplies $\mathbf{Y}(\mathbf{val}(n))=\mathbf{val}(n)(\mathbf{Y}(\mathbf{val}(n)))$. ∎
+
+**Theorem (`theorem_3_3`).** There is a total primitive recursive $v$ such that $\mathbf{rec}$ defined by (ii) is primitive recursive, (i) holds for this $v$, and (iii) holds for the corresponding $\mathbf{rec}$.
+
+*Proof.* Take the concrete $v$ of the preceding construction (application of the code of $u\mapsto S(u)$). It is primitive recursive, as is $\mathbf{rec}$ formed from it by pairing with $\mathbf{num}$. Clause (i) is the theorem just proved for this $v$; clause (ii) is the definition of $\mathbf{rec}$; clause (iii) follows from the general fixed-point lemma once (i) is known. ∎
