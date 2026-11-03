@@ -1,19 +1,15 @@
-
 module
 
-public import Mathlib.Computability.Halting
-public import DomainTheory.DataTypesAsLattices.Lambda.IsCombinatory
-public import DomainTheory.DataTypesAsLattices.Lambda.Language
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Enumeration.GeneratedFromG
-public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_from_G
-public import DomainTheory.DataTypesAsLattices.Enumeration.predC_from_G
-public import DomainTheory.DataTypesAsLattices.Enumeration.condC_from_G
-public import DomainTheory.DataTypesAsLattices.Enumeration.Kcomb_from_G
-public import DomainTheory.DataTypesAsLattices.Enumeration.Scomb_from_G
-public import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb
-public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_more
+
+import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb_more
+import DomainTheory.DataTypesAsLattices.Enumeration.sucC_from_G
+import DomainTheory.DataTypesAsLattices.Enumeration.predC_from_G
+import DomainTheory.DataTypesAsLattices.Enumeration.condC_from_G
+import DomainTheory.DataTypesAsLattices.Enumeration.Kcomb_from_G
+import DomainTheory.DataTypesAsLattices.Enumeration.Scomb_from_G
+import DomainTheory.DataTypesAsLattices.Enumeration.sucC_zero
+
 @[expose] public section
 
 set_option maxHeartbeats 2000000
