@@ -1,0 +1,9 @@
+Directed families of fixed points of a continuous self-map of $\mathbf{P}\omega$, and the compactness property used for continuous retract lattices.
+
+**Definition (`DirectedSubset`).** A nonempty set $s$ of fixed points of $f$ is directed when any two members have an upper bound in $s$ under $\subseteq$.
+
+**Definition (`IsCompactSubset`).** A fixed point $x$ is compact (relative to $f$) when every directed family of fixed points whose union covers $x$ has a single member that already covers $x$.
+
+**Theorem (`directed_finite_cover`).** If $A$ is a directed set of fixed points and $t\subseteq\mathbf{P}\omega$ is finite and contained in $\bigcup\mathrm{vals}(A)$, then some $z\in A$ already contains $t$.
+
+*Proof.* Induct on the finite set: the empty set is covered by any member of the nonempty directed family; for an inserted point, take upper bounds for the inductive cover and for a witness covering the new point. ∎

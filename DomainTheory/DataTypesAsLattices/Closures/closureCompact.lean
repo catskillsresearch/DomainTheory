@@ -16,8 +16,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Closures.Closure
 public import DomainTheory.DataTypesAsLattices.FixedLattices.IsCompact
 public import DomainTheory.DataTypesAsLattices.Retracts.retractBasis
-public import DomainTheory.DataTypesAsLattices.Retracts.vals
-public import DomainTheory.DataTypesAsLattices.Retracts.IsCompactSubset
+public import DomainTheory.DataTypesAsLattices.Retracts.DirectedSubset
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 public import DomainTheory.DataTypesAsLattices.Closures.closure_expansive
 public import DomainTheory.DataTypesAsLattices.Closures.directed_finite_cover_subset

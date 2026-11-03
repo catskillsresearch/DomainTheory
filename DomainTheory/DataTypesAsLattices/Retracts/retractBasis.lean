@@ -14,10 +14,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_interpolation
 public import DomainTheory.DataTypesAsLattices.Retracts.sSup_fixed_eq_sUnion
-public import DomainTheory.DataTypesAsLattices.Retracts.directed_finite_cover
-public import DomainTheory.DataTypesAsLattices.FixedLattices.DirectedSet
 public import DomainTheory.DataTypesAsLattices.Retracts.DirectedSubset
-public import DomainTheory.DataTypesAsLattices.Retracts.vals
 public import DomainTheory.DataTypesAsLattices.Retracts.typed
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst36
 public import DomainTheory.DataTypesAsLattices.Retracts.fixpointsCompleteLattice

@@ -13,7 +13,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.sUnion_Fixpoints_le_image
 public import DomainTheory.DataTypesAsLattices.FixedPoint.chain_lemma
 public import DomainTheory.DataTypesAsLattices.FixedPoint.fix
-public import DomainTheory.DataTypesAsLattices.Retracts.vals
 
 @[expose] public section
 

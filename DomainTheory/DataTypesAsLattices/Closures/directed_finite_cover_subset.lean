@@ -3,9 +3,7 @@ module
 public import Mathlib.Algebra.Ring.Parity
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.DirectedSubset
-public import DomainTheory.DataTypesAsLattices.Retracts.vals
-public import DomainTheory.DataTypesAsLattices.Retracts.directed_finite_cover
-public import DomainTheory.DataTypesAsLattices.FixedLattices.DirectedSet
+public import DomainTheory.DataTypesAsLattices.FixedLattices.WayBelow
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 @[expose] public section
 

@@ -14,7 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove
 public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow
 public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1
-public import DomainTheory.DataTypesAsLattices.Retracts.vals
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices

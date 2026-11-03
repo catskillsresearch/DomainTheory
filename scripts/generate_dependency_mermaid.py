@@ -1043,6 +1043,10 @@ ENUMERATION_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Recursion codes", "Theorem 3.3"),
 ]
 
+DIRECTED_FIXPOINTS_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
+    ("Directed-sup way-below", "Directed compact fixed points"),
+]
+
 RETRACTS_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Introduction", "Graph lemmas"),
     ("Graph lemmas", "Predecessor set"),
@@ -1142,6 +1146,8 @@ def classify(mermaid: Path, text: str) -> str:
     if mermaid.name == "Specialization.mermaid" and mermaid.parent.name == "Specialization":
         return "note_outline"
     if mermaid.name == "WayBelow.mermaid" and mermaid.parent.name == "WayBelow":
+        return "note_outline"
+    if mermaid.name == "DirectedFixpoints.mermaid" and mermaid.parent.name == "Retracts":
         return "note_outline"
     if mermaid.name == "ContinuousLattices.mermaid" and mermaid.parent.name == "ContinuousLattices":
         return "note_outline"
@@ -1369,6 +1375,18 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Theorem 4.4": "T44",
                 "Theorem 4.5": "T45",
                 "Theorem 4.6": "T46",
+            }
+        if mermaid.name == "DirectedFixpoints.mermaid":
+            include_empty_boxes = True
+            force_edges = DIRECTED_FIXPOINTS_OUTLINE_NARRATIVE
+            header_lines = [
+                "%% Notes under Directed fixpoints, in outline order.",
+                *outline_mermaid_header("1976_Directed_fixpoints.md"),
+            ]
+            extra_ids = {
+                **(extra_ids or {}),
+                "Directed-sup way-below": "WBSUP",
+                "Directed compact fixed points": "DCOMP",
             }
         if mermaid.name == "1976_The_definability_theorem.mermaid":
             include_empty_boxes = True

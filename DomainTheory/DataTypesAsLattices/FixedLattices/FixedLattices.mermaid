@@ -3,13 +3,9 @@
 %% The arrowhead points at the file or folder that imports. The label is how many direct imports.
 flowchart TB
 
-  N1["completeLatticeLE"]
-  N2["completeLatticePreorder"]
-  N3["completeLatticeSupSet"]
   N7["ContinuousBasis"]
   N6["CountablyAlgebraic"]
   N12["CountablyAlgebraicu2ecompact_finite_support"]
-  N0["DirectedSet"]
   N8["finiteBasisSups"]
   N10["finiteBasisSups_directed"]
   N5["IsCompact"]
@@ -27,19 +23,9 @@ flowchart TB
   N6 -->|"1"| N12
   N7 -->|"1"| N12
   N8 -->|"1"| N12
-  N0 -->|"1"| N4
-  N1 -->|"1"| N4
-  N2 -->|"1"| N4
-  N3 -->|"1"| N4
   N4 -->|"1"| N5
-  N0 -->|"1"| N6
-  N1 -->|"1"| N6
-  N2 -->|"1"| N6
-  N3 -->|"1"| N6
   N4 -->|"1"| N6
   N5 -->|"1"| N6
-  N2 -->|"1"| N7
-  N3 -->|"1"| N7
   N4 -->|"1"| N7
   N6 -->|"1"| N7
   N6 -->|"1"| N8

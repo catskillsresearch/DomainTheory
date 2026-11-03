@@ -14,7 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Closures.Closure
 public import DomainTheory.DataTypesAsLattices.Closures.closure_expansive
 public import DomainTheory.DataTypesAsLattices.Closures.compactFixedBelow
-public import DomainTheory.DataTypesAsLattices.Retracts.vals
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 @[expose] public section

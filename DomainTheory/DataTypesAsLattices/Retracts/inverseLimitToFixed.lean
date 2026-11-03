@@ -15,7 +15,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
 public import DomainTheory.DataTypesAsLattices.Retracts.IsStrict
 public import DomainTheory.DataTypesAsLattices.Retracts.RetractInverseLimit
 public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_iUnion_typed
-public import DomainTheory.DataTypesAsLattices.Retracts.vals
 
 @[expose] public section
 

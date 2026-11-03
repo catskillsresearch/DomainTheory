@@ -714,12 +714,8 @@ import DomainTheory.DataTypesAsLattices.Enumeration.valTraceStruct
 import DomainTheory.DataTypesAsLattices.FixedLattices.ContinuousBasis
 import DomainTheory.DataTypesAsLattices.FixedLattices.CountablyAlgebraic
 import DomainTheory.DataTypesAsLattices.FixedLattices.CountablyAlgebraicu2ecompact_finite_support
-import DomainTheory.DataTypesAsLattices.FixedLattices.DirectedSet
-import DomainTheory.DataTypesAsLattices.FixedLattices.IsCompact
 import DomainTheory.DataTypesAsLattices.FixedLattices.WayBelow
-import DomainTheory.DataTypesAsLattices.FixedLattices.completeLatticeLE
-import DomainTheory.DataTypesAsLattices.FixedLattices.completeLatticePreorder
-import DomainTheory.DataTypesAsLattices.FixedLattices.completeLatticeSupSet
+import DomainTheory.DataTypesAsLattices.FixedLattices.IsCompact
 import DomainTheory.DataTypesAsLattices.FixedLattices.finiteBasisSups
 import DomainTheory.DataTypesAsLattices.FixedLattices.finiteBasisSups_directed
 import DomainTheory.DataTypesAsLattices.FixedLattices.sSup_finiteBasisSups
@@ -994,7 +990,6 @@ import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55
 import DomainTheory.DataTypesAsLattices.Retracts.DirectedSubset
 import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 import DomainTheory.DataTypesAsLattices.Retracts.Icomb
-import DomainTheory.DataTypesAsLattices.Retracts.IsCompactSubset
 import DomainTheory.DataTypesAsLattices.Retracts.IsStrict
 import DomainTheory.DataTypesAsLattices.Retracts.Retract
 import DomainTheory.DataTypesAsLattices.Retracts.RetractInverseLimit
@@ -1008,7 +1003,6 @@ import DomainTheory.DataTypesAsLattices.Retracts.curryC
 import DomainTheory.DataTypesAsLattices.Retracts.dcondSet_bool_idem
 import DomainTheory.DataTypesAsLattices.Retracts.dcondSet_same_ofNat
 import DomainTheory.DataTypesAsLattices.Retracts.diagC
-import DomainTheory.DataTypesAsLattices.Retracts.directed_finite_cover
 import DomainTheory.DataTypesAsLattices.Retracts.directed_sUnion_fixed
 import DomainTheory.DataTypesAsLattices.Retracts.envR
 import DomainTheory.DataTypesAsLattices.Retracts.eq_4_11
@@ -1071,7 +1065,6 @@ import DomainTheory.DataTypesAsLattices.Retracts.treeR
 import DomainTheory.DataTypesAsLattices.Retracts.typed
 import DomainTheory.DataTypesAsLattices.Retracts.typed_more
 import DomainTheory.DataTypesAsLattices.Retracts.updateEnv
-import DomainTheory.DataTypesAsLattices.Retracts.vals
 import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable
 import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.ApproximableMap
 import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.Basic

@@ -19,7 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.IsStrict
 public import DomainTheory.DataTypesAsLattices.Retracts.iterates_areRetracts
 public import DomainTheory.DataTypesAsLattices.Retracts.iterateBot_retractLe
 public import DomainTheory.DataTypesAsLattices.Retracts.RetractInverseLimit
-public import DomainTheory.DataTypesAsLattices.Retracts.vals
 
 @[expose] public section
 

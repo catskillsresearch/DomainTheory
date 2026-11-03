@@ -6,7 +6,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.comp
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.DirectedSubset
-public import DomainTheory.DataTypesAsLattices.Retracts.IsCompactSubset
 public import DomainTheory.DataTypesAsLattices.Retracts.typed
 public import DomainTheory.DataTypesAsLattices.Retracts.funRetract
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
@@ -20,7 +19,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.iterateFrom
 public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove
 public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow
 public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
-public import DomainTheory.DataTypesAsLattices.Retracts.vals
 public import DomainTheory.DataTypesAsLattices.Retracts.fixpointsCompleteLattice
 public import DomainTheory.DataTypesAsLattices.Retracts.IsStrict
 public import DomainTheory.DataTypesAsLattices.Retracts.diagC

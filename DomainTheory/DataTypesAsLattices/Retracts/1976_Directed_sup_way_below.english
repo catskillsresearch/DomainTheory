@@ -1,0 +1,7 @@
+The directed-sup form of the way-below relation, used when a retract’s fixed-point lattice is treated as a continuous lattice. Distinct from the Continuous Lattice chapter’s Scott-open ≪.
+
+**Definition (`completeLatticeLE`, `completeLatticePreorder`, `completeLatticeSupSet`).** The order, preorder, and supremum structures of a complete lattice, named for inference.
+
+**Definition (`DirectedSet`).** A nonempty set in a preorder is directed when any two elements have a common upper bound in the set.
+
+**Definition (`WayBelow`).** $x\ll y$ when every directed set whose supremum is at least $y$ already has a member above $x$.

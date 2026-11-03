@@ -27,7 +27,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.inverseLimit_project_iUn
 public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.Retracts.iUnion_retract_isGraph
 public import DomainTheory.DataTypesAsLattices.Retracts.funOf_fix_idem
-public import DomainTheory.DataTypesAsLattices.Retracts.vals
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 public import DomainTheory.DataTypesAsLattices.Retracts.BasicInst55
 

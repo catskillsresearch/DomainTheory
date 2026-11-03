@@ -1,7 +1,7 @@
 module
 
 public import Mathlib.Order.CompleteLattice.Defs
-public import DomainTheory.DataTypesAsLattices.FixedLattices.DirectedSet
+public import DomainTheory.DataTypesAsLattices.FixedLattices.WayBelow
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
@@ -17,9 +17,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.DirectedSubset
 public import DomainTheory.DataTypesAsLattices.Retracts.typed
 public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove
 public import DomainTheory.DataTypesAsLattices.Retracts.gfpBelow
-public import DomainTheory.DataTypesAsLattices.Retracts.vals
 public import DomainTheory.DataTypesAsLattices.Retracts.retractBasis
-public import DomainTheory.DataTypesAsLattices.Retracts.directed_finite_cover
 public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_1
 
 @[expose] public section

@@ -1,7 +1,7 @@
 module
 
 public import Mathlib.Order.CompleteLattice.Defs
-public import DomainTheory.DataTypesAsLattices.FixedLattices.DirectedSet
+public import DomainTheory.DataTypesAsLattices.FixedLattices.WayBelow
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
@@ -9,7 +9,6 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
-public import DomainTheory.DataTypesAsLattices.Retracts.vals
 public import DomainTheory.DataTypesAsLattices.Retracts.fixpointsCompleteLattice
 public import DomainTheory.DataTypesAsLattices.Retracts.directed_sUnion_fixed
 

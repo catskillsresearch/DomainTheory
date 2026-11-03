@@ -3,7 +3,6 @@ module
 public import Mathlib.Algebra.Ring.Parity
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.DirectedSubset
-public import DomainTheory.DataTypesAsLattices.Retracts.IsCompactSubset
 public import DomainTheory.DataTypesAsLattices.Retracts.typed
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
@@ -12,7 +11,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Isolated
 public import DomainTheory.DataTypesAsLattices.Closures.closureCompact
 public import DomainTheory.DataTypesAsLattices.Closures.compactFixedBelow
 public import DomainTheory.DataTypesAsLattices.Closures.compact_fixed_iff
-public import DomainTheory.DataTypesAsLattices.Retracts.vals
 public import DomainTheory.DataTypesAsLattices.Closures.compactFixedBelow_more
 @[expose] public section
 

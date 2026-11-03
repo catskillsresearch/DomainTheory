@@ -9,7 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.representClosure
 public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode
 public import DomainTheory.DataTypesAsLattices.Closures.representationEncode
 public import DomainTheory.DataTypesAsLattices.Closures.representationDecode
-public import DomainTheory.DataTypesAsLattices.Retracts.vals
 public import DomainTheory.DataTypesAsLattices.Closures.representationEncode_more
 @[expose] public section
 

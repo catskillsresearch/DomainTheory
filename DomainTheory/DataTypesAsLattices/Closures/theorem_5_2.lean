@@ -16,7 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.Closure
 public import DomainTheory.DataTypesAsLattices.Closures.representClosure
 public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode
 public import DomainTheory.DataTypesAsLattices.Closures.representationOrderIso
-public import DomainTheory.DataTypesAsLattices.Retracts.vals
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices

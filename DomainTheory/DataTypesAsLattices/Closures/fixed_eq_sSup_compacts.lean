@@ -3,13 +3,12 @@ module
 public import Mathlib.Algebra.Ring.Parity
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
 public import DomainTheory.DataTypesAsLattices.Retracts.retractBasis
-public import DomainTheory.DataTypesAsLattices.FixedLattices.DirectedSet
+public import DomainTheory.DataTypesAsLattices.FixedLattices.WayBelow
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Closures.Closure
 public import DomainTheory.DataTypesAsLattices.Closures.compactFixedBelow
 public import DomainTheory.DataTypesAsLattices.Closures.retractBasis_eq_compactFixedBelow
-public import DomainTheory.DataTypesAsLattices.Retracts.vals
 
 @[expose] public section
 

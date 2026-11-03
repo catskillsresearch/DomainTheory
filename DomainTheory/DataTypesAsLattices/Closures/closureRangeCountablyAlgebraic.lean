@@ -17,7 +17,6 @@ public import DomainTheory.DataTypesAsLattices.Closures.closureCompact
 public import DomainTheory.DataTypesAsLattices.Closures.compact_fixed_iff
 public import DomainTheory.DataTypesAsLattices.Closures.compactFixedBelow
 public import DomainTheory.DataTypesAsLattices.Closures.fixed_eq_sSup_compacts
-public import DomainTheory.DataTypesAsLattices.Retracts.vals
 
 @[expose] public section
 
