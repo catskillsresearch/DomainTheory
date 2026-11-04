@@ -1,1 +1,1 @@
-Countably algebraic complete lattices: compact elements, continuous bases, and finite-support approximation along an enumeration of the compacts.
+A complete lattice is countably algebraic when its compact elements admit a countable enumeration that is dense: every element is the supremum of the compacts below it. Finite-support approximations along that enumeration are directed and recover the same supremum.

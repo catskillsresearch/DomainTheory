@@ -1,1 +1,5 @@
 A finite subset of the union of a directed family of fixpoints is covered by a single member of the family.
+
+**Theorem (`directed_finite_cover_subset`).** Let $A$ be a directed set of fixed points of a continuous map on $\mathbf{P}\omega$. If a finite $t\subseteq\omega$ is contained in the union of the members of $A$, then some single $z\in A$ already contains $t$.
+
+*Proof.* Directedness of $A$ as fixed points is the same as directedness of the underlying sets, so the ordinary finite-cover lemma for directed families applies. ∎

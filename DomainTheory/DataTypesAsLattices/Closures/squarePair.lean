@@ -1,7 +1,7 @@
 module
 
-public import Mathlib.Algebra.Ring.Parity
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
+public import DomainTheory.DataTypesAsLattices.Pomega.Pomega
+public import Mathlib.Tactic.ToAdditive
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices

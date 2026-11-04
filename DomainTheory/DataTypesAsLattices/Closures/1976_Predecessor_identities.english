@@ -1,1 +1,19 @@
 Predecessor identities used when shifting codes: $\mathrm{pred}(\mathrm{succ}\,x)=x$ and $\mathrm{pred}$ preserves unions.
+
+**Formalization.** Library facts live under `predSet` in `Lambda/predSet_more.lean`.
+
+**Theorem (`predSet.isScottContinuous`).** The map $x\mapsto\mathrm{predSet}(x)$ is Scott-continuous on $\mathbf{P}\omega$.
+
+*Proof.* Membership of $k$ in $\mathrm{predSet}(x)$ is witnessed by a finite $e$-approximation (namely $e_{2^{k+1}}$), so the Scott-union characterization applies both ways. ∎
+
+**Theorem (`predSet.ofNat_succ`).** $\mathrm{predSet}(j+1)=j$ as numerals.
+
+*Proof.* Unfold `ofNat` and `predSet`; the predecessor of the singleton $\{j+1\}$ is $\{j\}$. ∎
+
+**Theorem (`predSet.succSet`).** $\mathrm{predSet}(\mathrm{succSet}\,x)=x$.
+
+*Proof.* Elements of $\mathrm{succSet}\,x$ are successors of members of $x$; injectivity of $\mathrm{succ}$ recovers $x$, and conversely every $k\in x$ contributes $k+1$. ∎
+
+**Theorem (`predSet.union`).** $\mathrm{predSet}(x\cup y)=\mathrm{predSet}(x)\cup\mathrm{predSet}(y)$.
+
+*Proof.* Unfold `predSet`; predecessor distributes over union of sets of naturals. ∎

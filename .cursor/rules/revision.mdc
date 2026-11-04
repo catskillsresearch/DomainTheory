@@ -16,6 +16,15 @@ The vendored formalizations were brute force: a paper statement and its proof li
 
 Add the green **Revised** footer to a note’s `.md` **only** when the user explicitly asks to **mark complete** or **mc** that note. Do not add or restore the footer while refactoring Lean, trimming imports, or cleaning up `@import`s—even if the note looks finished.
 
+# Add formalization notes (`afn`)
+
+When the user says **afn** (with a note path, or the focused note): write formalization notes into that note’s `.english` (keep the human-English source passage).
+
+- **Prose is mathematics.** Statements and *Proof*s are pure mathematical English (Scott/Graph-lemmas style). Do not dump Lean tokens: no import paths, namespaces-as-homes, tactic names, `Set.foo`, `rw`, `simp`, angle-bracket constructors, or file names in the body.
+- **Library name only in the heading.** Each fact is **Theorem (`Name`)** / **Definition (`Name`)** with a Mathlib-style dotted name (`botElem.ne_top`, `predSet.succSet`); that parenthetical is the sole Lean-facing label.
+- **Short proofs.** One paragraph that says what is used mathematically, without redoing the argument.
+- Paper theorems that already have Scott prose: put formalization after `<!-- formalization -->` as in Theorems 4.5–4.6. Do not `mc` unless asked.
+
 # Pref fold (`Pref_suffix` → `Pref.suffix`)
 
 When asked to fold, combine, or namespace `Pref_*` companions into a parent:

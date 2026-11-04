@@ -1,1 +1,17 @@
 Elementary identities for $\bot$ in $\mathbf{P}\omega$: it is distinct from $\top$, every nonempty set meets some element, and unions with $\bot$ are trivial.
+
+**Theorem (`botElem.ne_top`).** $\top\neq\bot$ in $\mathbf{P}\omega$.
+
+*Proof.* Otherwise $0\in\bot$; but $\bot$ is empty. ∎
+
+**Theorem (`botElem.exists_mem`).** If $x\neq\bot$, then some natural number belongs to $x$.
+
+*Proof.* Contrapositively, a set with no members is $\bot$. ∎
+
+**Theorem (`botElem.union_empty`).** $x\cup\bot=x$.
+
+*Proof.* Union with the empty set does not change $x$. ∎
+
+**Theorem (`botElem.empty_union`).** $\bot\cup x=x$.
+
+*Proof.* The empty set is a unit for union on the left as well. ∎

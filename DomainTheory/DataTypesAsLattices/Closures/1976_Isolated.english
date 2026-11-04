@@ -1,1 +1,7 @@
 Isolated elements of $\mathbf{P}\omega$ are the finite (compact) basis sets $e_n$.
+
+**Formalization.**
+
+**Definition (`Isolated`).** An element $x\in\mathbf{P}\omega$ is isolated when $x=e_n$ for some $n\in\omega$.
+
+*Proof.* The class packages that existential; `e` is the standard finite-set coding on $\mathbf{P}\omega$. ∎

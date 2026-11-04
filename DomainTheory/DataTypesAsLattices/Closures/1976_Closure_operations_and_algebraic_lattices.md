@@ -4,10 +4,12 @@
 
 - [Introduction](1976_Closures_Introduction.md) ✓
 - [Isolated](1976_Isolated.md) ✓
-- [Bottom](1976_Bottom.md)
-- [Square pair](1976_Square_pair.md)
-- [Predecessor identities](1976_Predecessor_identities.md)
-- [Directed finite cover](1976_Directed_finite_cover.md)
+- [Bottom](1976_Bottom.md) ✓
+- [Square pair](1976_Square_pair.md) ✓
+- [Predecessor identities](1976_Predecessor_identities.md) ✓
+- [Directed finite cover](1976_Directed_finite_cover.md) ✓
+- [Is compact](1976_IsCompact.md) ✓
+- [Continuous basis](1976_Continuous_basis.md)
 - [Countably algebraic](1976_Countably_algebraic.md)
 - [Representation](1976_Representation.md)
 - [Definition (closure)](1976_Definition_closure.md)

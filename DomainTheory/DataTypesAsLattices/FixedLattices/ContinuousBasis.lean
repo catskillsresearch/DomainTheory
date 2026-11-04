@@ -1,8 +1,5 @@
 module
 
-public import Mathlib.Order.CompleteLattice.Defs
-public import Mathlib.Data.Finset.Basic
-public import DomainTheory.DataTypesAsLattices.FixedLattices.CountablyAlgebraic
 public import DomainTheory.DataTypesAsLattices.FixedLattices.WayBelow
 
 @[expose] public section

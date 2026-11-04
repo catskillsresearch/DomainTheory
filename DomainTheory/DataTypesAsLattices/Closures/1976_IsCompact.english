@@ -1,0 +1,5 @@
+An element of a complete lattice is compact when it is way-below itself.
+
+**Definition (`IsCompact`).** In a complete lattice, $x$ is compact when $x\ll x$: whenever a directed set has supremum at least $x$, some single member of the set already lies above $x$.
+
+*Proof.* Compactness is the diagonal case of the way-below relation. ∎

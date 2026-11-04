@@ -10,6 +10,8 @@ flowchart TB
   SQP["Square pair"]
   PRED["Predecessor identities"]
   DFC["Directed finite cover"]
+  ICMP["Is Compact"]
+  CBAS["Continuous basis"]
   CALG["Countably algebraic"]
   REP["Representation"]
   DCLOS["Definition (closure)"]
@@ -21,14 +23,16 @@ flowchart TB
   T56["Theorem 5.6 — the limit theorem"]
 
   ISOL --> BOT
-  DFC --> CALG
+  CBAS --> CALG
+  ICMP --> CBAS
   REP --> DCLOS
   PRED --> DFC
+  DFC --> ICMP
   INTRO --> ISOL
   SQP --> PRED
   CALG --> REP
   BOT --> SQP
-  CALG --> T51
+  ICMP --> T51
   REP --> T52
   T51 --> T52
   T51 --> T53

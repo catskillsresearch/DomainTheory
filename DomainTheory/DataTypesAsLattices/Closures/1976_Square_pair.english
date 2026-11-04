@@ -1,1 +1,6 @@
 The square pairing $x\,\square\,y$ interlaces the elements of $x$ and $y$ by parity of codes.
+
+**Definition (`squarePair`).** For $x,y\subseteq\omega$,
+$$x\,\square\,y \;=\; \{2n\mid n\in x\}\;\cup\;\{2m+1\mid m\in y\}.$$
+
+*Proof.* Evens carry the first component and odds the second; every code has a unique parity, so the two halves do not interfere. ∎
