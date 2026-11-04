@@ -42,3 +42,9 @@ we can also state such functorial properties as:
 $$(5.24) \quad (\lambda a : \mathbf{V}.\, \lambda b : \mathbf{V}.\, a \circ\to b) : \mathbf{V} \circ\to (\mathbf{V} \circ\to \mathbf{V}).$$
 
 Using this style of notation we have:
+
+<!-- formalization -->
+
+**Theorem (`theorem_5_5`).** If $a$ is a closure operation, then $\mathbf{V}(a)(x)=a(x)$ for every $x$, and $\mathbf{V}(a)$ is idempotent: $\mathbf{V}(a)(\mathbf{V}(a)(x))=\mathbf{V}(a)(x)$.
+
+*Proof.* The equality with $a(x)$ is (5.18) at a closure; the idempotence is (5.17). ∎
