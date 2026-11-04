@@ -1421,6 +1421,7 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Pair mediation": "PMED",
                 "Theorem 4.4": "T44",
                 "Theorem 4.5": "T45",
+                "Expression interpreter": "HINT",
                 "Theorem 4.6": "T46",
             }
         if mermaid.name == "Closures.mermaid":

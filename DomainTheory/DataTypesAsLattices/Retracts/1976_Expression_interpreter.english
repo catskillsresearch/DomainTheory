@@ -1,0 +1,271 @@
+Any combination of retract preserving functors can be used in this game. For example:
+
+$$(4.39) \quad \mathbf{lamb} = \mathbf{int} \oplus (\mathbf{lamb} \circ\to \mathbf{lamb}).$$
+
+This looks innocent, but the range of **lamb** would give a quite different and not unattractive model for the $\lambda$-calculus (plus arithmetic). What we do to investigate this model is to modify LAMBDA slightly by replacing the ternary conditional $z \supset x, y$ by a quaternary one $w \supset x, y, z$; otherwise the syntax of the language remains the same. The semantics, however, is a little more complex.
+
+Let us use $\tau$, $\sigma$, $\rho$, $\theta$ as syntactical variables for expressions in the modified language. The semantics is provided by a function $\mathcal{H}$ that maps the expressions of the language to their values in (the range of) **lamb**. To be completely rigorous we
+
+<!-- page 28 -->
+
+also have to confront the question of free and bound variables. For simplicity let us index the variables of the language by integers, and let us take the variables to be $v_0, v_1, v_2, \dots, v_n, \dots$. We cannot simply evaluate out an expression $\tau$ to its value $\mathcal{H}\llbracket \tau \rrbracket$ until we know the values of the free variables in $\tau$. The values of these variables will be given by an "environment" $t$ which can be construed as a *sequence* of values in **lamb**. We can restrict these environments to the retract:
+
+$$(4.40) \quad \mathbf{env} = \lambda t.\, \mathbf{lamb} \circ \mathbf{seq}(t).$$
+
+When $t : \mathbf{env}$, then $t_n : \mathbf{lamb}$ is the value that the environment gives to the variable $v_n$. We also need to employ a transformation on environments as follows:
+
+$$(4.41) \quad t[x/n] = \lambda m \in \omega.\, \mathbf{eq}(n)(m) \supset x,\, t_m.$$
+
+Here **eq** is the primitive recursive function that is $0$, if $n, m$ are equal, and is $1$, otherwise, for $n, m \in \omega$. The effect of $t[x/n]$ is to replace the $n$th term of the sequence $t$ by the value of $x$, otherwise to leave the rest of the sequence unchanged. To correspond with our use of very simple variables we have selected a simple notion of environment: in the semantics of more general languages it is customary to regard an environment as a function from the set of variables into the domain of denotable values.
+
+The correct way to evaluate a term $\tau$ given an environment $t$ is to find $\mathcal{H}\llbracket \tau \rrbracket(t)$. We use the brackets $\llbracket$ and $\rrbracket$ here simply as an aid to the eye in keeping the syntactical part separated from the rest. The environment enters as a function-argument in the usual way; thus we shall have:
+
+$$(4.42) \quad \mathcal{H}\llbracket \tau \rrbracket : \mathbf{env} \to \mathbf{lamb}.$$
+
+$$(4.43) \quad \begin{aligned}
+\mathcal{H}\llbracket v_n \rrbracket(t) &= t_n \\
+\mathcal{H}\llbracket 0 \rrbracket(t) &= \mathbf{inleft}(0) \\
+\mathcal{H}\llbracket \tau + 1 \rrbracket(t) &= \mathbf{which}(\mathcal{H}\llbracket \tau \rrbracket(t) \supset \mathbf{inleft}(\mathbf{out}(\mathcal{H}\llbracket \tau \rrbracket(t)) + 1),\, \bot) \\
+\mathcal{H}\llbracket \tau - 1 \rrbracket(t) &= \mathbf{which}(\mathcal{H}\llbracket \tau \rrbracket(t) \supset \mathbf{inleft}(\mathbf{out}(\mathcal{H}\llbracket \tau \rrbracket(t)) - 1),\, \bot) \\
+\mathcal{H}\llbracket \theta \supset \tau, \sigma, \rho \rrbracket(t) &= \mathbf{lamb}(\mathbf{which}(\mathcal{H}\llbracket \theta \rrbracket(t) \supset (\mathbf{out}(\mathcal{H}\llbracket \theta \rrbracket(t)) \supset \mathcal{H}\llbracket \tau \rrbracket(t),\, \mathcal{H}\llbracket \sigma \rrbracket(t)),\, \mathcal{H}\llbracket \rho \rrbracket(t))) \\
+\mathcal{H}\llbracket \tau(\sigma) \rrbracket(t) &= \mathbf{which}(\mathcal{H}\llbracket \tau \rrbracket(t) \supset \bot,\, \mathbf{out}(\mathcal{H}\llbracket \tau \rrbracket(t))(\mathcal{H}\llbracket \sigma \rrbracket(t))) \\
+\mathcal{H}\llbracket \lambda v_n.\,\tau \rrbracket(t) &= \mathbf{inright}(\lambda x : \mathbf{lamb}.\, \mathcal{H}\llbracket \tau \rrbracket(t[x/n])).
+\end{aligned}$$
+
+A good question is: why does $\mathcal{H}$ exist? The answer is: because of the fixed-point theorem.
+
+If we rewrite the semantic equations $\mathcal{H}\llbracket \tau \rrbracket(t) = (\dots)$ in (43) by the equation $\mathcal{H}\llbracket \tau \rrbracket = \lambda t : \mathbf{env}\, (\dots)$, then $\mathcal{H}$ is seen to be a function from expressions to values in **lamb**. As the range of **lamb** is contained in $\mathbf{P}\omega$, we can say more broadly that $\mathcal{H} \in \mathbf{P}\omega^{\mathbf{Exp}}$, where **Exp** is the syntactical set of expressions and the exponential notation designates the set of *all* functions from **Exp** into $\mathbf{P}\omega$. This function set is a complete lattice because $\mathbf{P}\omega$ is. Therefore if we read (4.43) as a definition by cases on **Exp**, then we can find $\mathcal{H}$ as a suitable fixed point in the complete lattice $\mathbf{P}\omega^{\mathbf{Exp}}$. Indeed it is the fixed point of a continuous operator.
+
+<!-- page 29 -->
+
+
+Actually we can regard **Exp** as being a subset of $\mathbf{P}\omega$ to avoid dragging in other lattices. What we need is another recursive definition of a data type:
+
+$$(4.44) \quad \mathbf{exp} = \mathbf{int} \oplus \mathbf{nil} \oplus \mathbf{exp} \oplus \mathbf{exp} \oplus (\mathbf{exp} \otimes \mathbf{exp} \otimes \mathbf{exp} \otimes \mathbf{exp})$$
+$$\qquad \oplus (\mathbf{exp} \otimes \mathbf{exp}) \oplus (\mathbf{int} \otimes \mathbf{exp}).$$
+
+Note that there are as many summands in (4.44) as there are clauses in (4.43). We can think of **exp** as giving the “abstract” syntax of the language. We use the integers to index the variables and the **nil** element to stand for the individual constant. Read (4.44) as saying that every expression is *either* a variable *or* a constant *or* the successor of an expression *or* the predecessor of an expression *or* the conditional formed from a tuple of expressions *or* the abstraction formed from a pair of a variable and an expression. We do not need in (4.44) to introduce special “symbols” for the successor, application, etc., because the separation by cases given by the $\oplus$ operation is sufficient to make the distinctions. (That is why the syntax is “abstract”.) The point is that for recursive definitions it does not matter how we make the distinctions as long as they can be made. From this new point of view, we could rewrite (4.43) so as to show:
+
+$$(4.45) \quad \mathcal{H} : \mathbf{exp} \to (\mathbf{env} \to \mathbf{lamb}),$$
+
+which is clearly more satisfactory—especially as it is now clear that $\mathcal{H}$ is *computable*. And this is a method that can be generalized to many other languages. The method also shows why it is useful to allow *function spaces* as particular data types.
+
+<!-- formalization -->
+
+**Formalization.** Abstract syntax, its encoding into the **exp** retract, the tagged continuous step clauses of the interpreter, the least fixed point packaging, and the typing identity (4.45).
+
+**Definition (`LambTerm`).** An expression is a variable index, zero, a successor or predecessor of an expression, a quaternary conditional of four expressions, an application of two expressions, or an abstraction of an index and a body.
+
+**Definition (`encodeExp`).** Encode each constructor by the corresponding summand of (4.44): tag $0$ with a numeral, tag $1$ with $\bot$, tags $2$–$3$ with a recursive encoding, tag $4$ with a four-tuple of encodings, tag $5$ with a pair of encodings, and tag $6$ with a numeral paired to a body encoding.
+
+**Theorem (`encodeExp.typed`).** Every encoding is typed into **exp**.
+
+*Proof.* Induction on syntax, using the fixed-point equation for **exp** and the typing laws for the seven summands. ∎
+
+**Definition (`expTag`).** The tag of an encoded expression is its application to $0$.
+
+**Definition (`expPayload`).** The payload of an encoded expression is its application to $1$.
+
+**Definition (`hApply`).** Apply an interpreter candidate $H$ to an encoded expression $e$ at an environment $t$.
+
+**Theorem (`hApply.isScottContinuous_H`).** Application is Scott-continuous in the interpreter candidate.
+
+*Proof.* Compose left-continuity of application twice. ∎
+
+**Theorem (`hApply.isScottContinuous_e`).** Application is Scott-continuous in the encoded expression.
+
+*Proof.* Compose left-continuity of application with continuity of the candidate. ∎
+
+**Theorem (`hApply.payload_isScottContinuous_e`).** Applying $H$ at the $i$th component of the payload is Scott-continuous in the encoding.
+
+*Proof.* Compose the previous continuity in $e$ with continuity of payload projection. ∎
+
+**Definition (`hVar`).** The variable clause looks up the payload of $e$ in the environment $t$.
+
+**Theorem (`hVar.isScottContinuous_t`).** The variable clause is Scott-continuous in the environment.
+
+*Proof.* Left-continuity of application at a fixed payload. ∎
+
+**Theorem (`hVar.isScottContinuous_e`).** The variable clause is Scott-continuous in the encoding.
+
+*Proof.* Compose continuity of the environment with continuity of the payload. ∎
+
+**Definition (`hZero`).** The zero clause is the left injection of the numeral $0$.
+
+**Definition (`hApp`).** The application clause tests the tag of the value of the operator payload: on a right injection it applies the extracted function to the value of the operand payload; otherwise it yields $\bot$.
+
+**Theorem (`hApp.isScottContinuous_H`).** The application clause is Scott-continuous in the interpreter candidate.
+
+*Proof.* Continuity of the ternary conditional along continuous tag tests and continuous applications of $H$. ∎
+
+**Theorem (`hApp.isScottContinuous_t`).** The application clause is Scott-continuous in the environment.
+
+*Proof.* Continuity of the conditional along continuous evaluation of the two payloads. ∎
+
+**Theorem (`hApp.isScottContinuous_e`).** The application clause is Scott-continuous in the encoding.
+
+*Proof.* Continuity of the conditional along continuous payload projections. ∎
+
+**Definition (`hSucc`).** The successor clause tests the tag of the recursive value: on a left injection it re-injects the successor of the payload; otherwise it yields $\bot$.
+
+**Theorem (`hSucc.isScottContinuous_H`).** The successor clause is Scott-continuous in the interpreter candidate.
+
+*Proof.* Continuity of the conditional along continuous application of $H$, extraction, and successor. ∎
+
+**Theorem (`hSucc.isScottContinuous_t`).** The successor clause is Scott-continuous in the environment.
+
+*Proof.* Continuity of the conditional along continuous evaluation of the payload. ∎
+
+**Theorem (`hSucc.isScottContinuous_e`).** The successor clause is Scott-continuous in the encoding.
+
+*Proof.* Continuity of the conditional along continuous payload projection. ∎
+
+**Definition (`hPred`).** The predecessor clause is as for successor, with predecessor in place of successor.
+
+**Theorem (`hPred.isScottContinuous_H`).** The predecessor clause is Scott-continuous in the interpreter candidate.
+
+*Proof.* As for successor, with continuity of predecessor. ∎
+
+**Theorem (`hPred.isScottContinuous_t`).** The predecessor clause is Scott-continuous in the environment.
+
+*Proof.* As for successor. ∎
+
+**Theorem (`hPred.isScottContinuous_e`).** The predecessor clause is Scott-continuous in the encoding.
+
+*Proof.* As for successor. ∎
+
+**Definition (`hCond`).** The quaternary conditional clause evaluates the four payload components and selects via the **lamb**-wrapped nested conditional of (4.43).
+
+**Theorem (`hCond.isScottContinuous_H`).** The conditional clause is Scott-continuous in the interpreter candidate.
+
+*Proof.* Continuity of application of **lamb** along continuous nested conditionals of continuous applications of $H$. ∎
+
+**Theorem (`hCond.isScottContinuous_t`).** The conditional clause is Scott-continuous in the environment.
+
+*Proof.* Continuity of **lamb**-application along continuous evaluation of the four payloads. ∎
+
+**Theorem (`hCond.isScottContinuous_e`).** The conditional clause is Scott-continuous in the encoding.
+
+*Proof.* Continuity of **lamb**-application along continuous payload projections. ∎
+
+**Definition (`hLam`).** The abstraction clause right-injects the graph of $x\mapsto H$ applied to the body payload at the environment updated at the bound index by $x$.
+
+**Theorem (`hLam.isScottContinuous_H`).** The abstraction clause is Scott-continuous in the interpreter candidate.
+
+*Proof.* Continuity of right injection of a graph whose body is continuous in $H$. ∎
+
+**Theorem (`hLam.isScottContinuous_t`).** The abstraction clause is Scott-continuous in the environment.
+
+*Proof.* Continuity of right injection of a graph continuous in the updated environment. ∎
+
+**Theorem (`hLam.isScottContinuous_e`).** The abstraction clause is Scott-continuous in the encoding.
+
+*Proof.* Continuity of right injection along continuous payload projections into the update. ∎
+
+**Definition (`Hstep`).** The tagged step nests doubly strict conditionals on iterated predecessors of the tag, dispatching to the variable, zero, successor, predecessor, conditional, application, and abstraction clauses, with $\top$ as the residual.
+
+**Theorem (`Hstep.tag0`).** On a tag-$0$ injection with payload $x$, the step returns $t(x)$.
+
+*Proof.* Unfold the tag cascade at numeral $0$. ∎
+
+**Theorem (`Hstep.tag1`).** On a tag-$1$ injection, the step returns the zero clause.
+
+*Proof.* Unfold the tag cascade at numeral $1$. ∎
+
+**Theorem (`Hstep.tag2`).** On a tag-$2$ injection, the step returns the successor clause at that encoding.
+
+*Proof.* Unfold the tag cascade at numeral $2$. ∎
+
+**Theorem (`Hstep.tag3`).** On a tag-$3$ injection, the step returns the predecessor clause at that encoding.
+
+*Proof.* Unfold the tag cascade at numeral $3$. ∎
+
+**Theorem (`Hstep.tag4`).** On a tag-$4$ injection, the step returns the conditional clause at that encoding.
+
+*Proof.* Unfold the tag cascade at numeral $4$. ∎
+
+**Theorem (`Hstep.tag5`).** On a tag-$5$ injection, the step returns the application clause at that encoding.
+
+*Proof.* Unfold the tag cascade at numeral $5$. ∎
+
+**Theorem (`Hstep.tag6`).** On a tag-$6$ injection, the step returns the abstraction clause at that encoding.
+
+*Proof.* Unfold the tag cascade at numeral $6$. ∎
+
+**Theorem (`Hstep.isScottContinuous_H`).** The step is Scott-continuous in the interpreter candidate.
+
+*Proof.* Nest continuity of the doubly strict conditional along continuous clauses in $H$. ∎
+
+**Theorem (`Hstep.isScottContinuous_t`).** The step is Scott-continuous in the environment.
+
+*Proof.* Nest continuity of the doubly strict conditional along continuous clauses in $t$. ∎
+
+**Theorem (`Hstep.isScottContinuous_e`).** The step is Scott-continuous in the encoding.
+
+*Proof.* Nest continuity of the doubly strict conditional along continuous tag maps and continuous clauses in $e$. ∎
+
+**Definition (`HF`).** The continuous operator on interpreter candidates sends $H$ to the graph of $e\mapsto$ the graph of $t\mapsto\mathrm{Hstep}(H,e,t)$.
+
+**Theorem (`HF.inner_isScottContinuous`).** For fixed $H$, the map $e\mapsto$ the graph of $t\mapsto\mathrm{Hstep}(H,e,t)$ is Scott-continuous.
+
+*Proof.* Graph of a family continuous in $e$ for each $t$. ∎
+
+**Theorem (`HF.isScottContinuous`).** $\mathrm{HF}$ is Scott-continuous.
+
+*Proof.* Graph of a family continuous in $H$ for each $e$, using continuity of the step in $H$. ∎
+
+**Theorem (`HF.app`).** Applying $\mathrm{HF}(H)$ to $e$ recovers the graph of $t\mapsto\mathrm{Hstep}(H,e,t)$.
+
+*Proof.* The $\beta$-law for the inner continuous graph. ∎
+
+**Theorem (`HF.app2`).** Applying that graph at $t$ recovers $\mathrm{Hstep}(H,e,t)$.
+
+*Proof.* The previous application law and the $\beta$-law for the step in $t$. ∎
+
+**Definition (`Hinterp`).** The compositional semantics (4.43): variables look up the environment; zero is the left injection of $0$; successor and predecessor re-inject after testing; the quaternary conditional is **lamb**-wrapped; application tests the operator tag; abstraction right-injects the graph of the body in an updated environment.
+
+**Theorem (`Hinterp.isScottContinuous`).** For each expression, compositional interpretation is Scott-continuous in the environment.
+
+*Proof.* Induction on syntax, assembling continuity of conditionals, injections, **lamb**, graphs, and environment update. ∎
+
+**Definition (`Hfun`).** The interpreter is the least fixed point of $\mathrm{HF}$.
+
+**Theorem (`Hfun.fixed`).** $\mathrm{HF}(\mathrm{Hfun})=\mathrm{Hfun}$.
+
+*Proof.* The fixed-point theorem for a Scott-continuous operator. ∎
+
+**Theorem (`Hfun.app2`).** Applying $\mathrm{Hfun}$ twice recovers the step at $\mathrm{Hfun}$.
+
+*Proof.* Congruence from the fixed-point equation and the double application law for $\mathrm{HF}$. ∎
+
+**Theorem (`Hfun.interp`).** On an encoded expression, $\mathrm{Hfun}$ agrees with compositional interpretation.
+
+*Proof.* Induction on syntax: tag laws select the matching clause, and inductive hypotheses rewrite recursive applications. ∎
+
+**Theorem (`Hfun.decode`).** Applying $\mathrm{Hfun}$ to an encoding yields the graph of compositional interpretation.
+
+*Proof.* The fixed-point application law yields the step graph; pointwise the previous agreement rewrites it to compositional interpretation. ∎
+
+**Definition (`Htyped`).** The retract-arrow packaging of compositional interpretation as an element of $\mathbf{env}\circ\to\mathbf{lamb}$.
+
+**Theorem (`Htyped.app`).** Applying the packaging at $t$ yields **lamb** of compositional interpretation at the **env**-projection of $t$.
+
+*Proof.* The retract-arrow application law and the $\beta$-law for continuous compositional interpretation. ∎
+
+**Theorem (`Htyped.typed`).** The packaging is typed into $\mathbf{env}\circ\to\mathbf{lamb}$.
+
+*Proof.* Typing of retract-arrow application. ∎
+
+**Definition (`Hcomb`).** $\mathcal{H}$ as the retract-arrow packaging of $\mathrm{Hfun}$ into $\mathbf{exp}\circ\to(\mathbf{env}\circ\to\mathbf{lamb})$.
+
+**Theorem (`Hcomb.app`).** Applying $\mathcal{H}$ at $e$ yields the **env**–**lamb** packaging of $\mathrm{Hfun}$ at the **exp**-projection of $e$.
+
+*Proof.* The retract-arrow application law. ∎
+
+**Theorem (`Hcomb.typed`).** $\mathcal{H}$ is typed into $\mathbf{exp}\circ\to(\mathbf{env}\circ\to\mathbf{lamb})$.
+
+*Proof.* Typing of retract-arrow application at the three retracts. ∎
+
+**Theorem (`eq_4_45`).** An encoding is typed into **exp**; its compositional packaging is typed into $\mathbf{env}\circ\to\mathbf{lamb}$; and $\mathcal{H}$ on that encoding equals the compositional packaging.
+
+*Proof.* Encoding typing, packaging typing, and decode after projecting the encoding through **exp**. ∎

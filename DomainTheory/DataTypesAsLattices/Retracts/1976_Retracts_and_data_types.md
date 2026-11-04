@@ -18,6 +18,7 @@
 - [Pair mediation](1976_Pair_mediation.md) ✓
 - [Theorem 4.4](../Functionality/1976_Theorem_4_4.md) ✓
 - [Theorem 4.5](1976_Theorem_4_5.md) ✓
+- [Expression interpreter](1976_Expression_interpreter.md) ✓
 - [Theorem 4.6](1976_Theorem_4_6.md) ✓
 
 <p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-04) — <a href="../1976_REVISION.md">1976 revision progress</a></p>

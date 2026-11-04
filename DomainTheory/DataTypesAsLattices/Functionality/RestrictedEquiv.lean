@@ -1,7 +1,9 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts.typed
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Functionality.pairElem
+import DomainTheory.DataTypesAsLattices.Retracts.retract_app
 
 @[expose] public section
 
@@ -77,10 +79,6 @@ def sumE (A B : RestrictedEquiv) : RestrictedEquiv where
           (hv'.symm.trans hv)).elim
       · exact Or.inr ⟨hu, hw, B.trans hB hB'⟩
 
-end RestrictedEquiv
-
-export RestrictedEquiv (Ea arrowE prodE sumE)
-
 def emptyE : RestrictedEquiv where
   rel := fun _ _ => False
   symm := fun h => False.elim h
@@ -95,11 +93,50 @@ def singletonE (a : Pomega) : RestrictedEquiv where
     intro x y z ⟨hx, _hy⟩ ⟨_hy', hz⟩
     exact ⟨hx, hz⟩
 
+def Nk (k : ℕ) : RestrictedEquiv where
+  rel := fun x y => (∃ n < k, x = ofNat n) ∧ x = y
+  symm := by
+    intro x y ⟨hn, h⟩
+    exact ⟨by rw [← h]; exact hn, h.symm⟩
+  trans := by
+    intro x y z ⟨hn, hxy⟩ ⟨_, hyz⟩
+    exact ⟨hn, hxy.trans hyz⟩
+
+def Nrel : RestrictedEquiv where
+  rel := fun x y => (∃ n, x = ofNat n) ∧ x = y
+  symm := by
+    intro x y ⟨hn, h⟩
+    exact ⟨by rw [← h]; exact hn, h.symm⟩
+  trans := by
+    intro x y z ⟨hn, hxy⟩ ⟨_, hyz⟩
+    exact ⟨hn, hxy.trans hyz⟩
+
+def kerE (a : Pomega) : RestrictedEquiv where
+  rel := fun x y => funOf a x = funOf a y
+  symm := by
+    intro x y h
+    exact h.symm
+  trans := by
+    intro x y z hxy hyz
+    exact hxy.trans hyz
+
+end RestrictedEquiv
+
+export RestrictedEquiv (Ea arrowE prodE sumE emptyE singletonE Nk Nrel kerE)
+
 namespace singletonE
 
 theorem mem (a x : Pomega) : (singletonE a).mem x ↔ x = a :=
   ⟨fun h => h.1, fun hx => ⟨hx, hx⟩⟩
 
 end singletonE
+
+namespace kerE
+
+theorem repr {a : Pomega} (ha : Retract a) (x : Pomega) :
+    (kerE a).rel x (funOf a x) :=
+  (retract_app ha x).symm
+
+end kerE
 
 end DomainTheory.DataTypesAsLattices

@@ -42,10 +42,22 @@ $$(7.8) \quad A + B = \{\langle \langle 0, x \rangle, \langle 0, y \rangle \rang
 
 **Definition (`RestrictedEquiv.sumE`).** $A+B$ relates $u$ to $v$ when both are left injections whose payloads are related in $A$, or both are right injections whose payloads are related in $B$.
 
-**Definition (`emptyE`).** The empty restricted equivalence relates nothing.
+**Definition (`RestrictedEquiv.emptyE`).** The empty restricted equivalence relates nothing.
 
-**Definition (`singletonE`).** The singleton on $a$ relates $x$ to $y$ just when $x=y=a$.
+**Definition (`RestrictedEquiv.singletonE`).** The singleton on $a$ relates $x$ to $y$ just when $x=y=a$.
 
 **Theorem (`singletonE.mem`).** $x$ is a member of the singleton on $a$ if and only if $x=a$.
 
 *Proof.* Unfold membership as $x\,A\,x$. ∎
+
+**Definition (`RestrictedEquiv.Nk`).** $N_k$ relates $x$ to $y$ when $x=y=\overline{n}$ for some $n<k$.
+
+**Definition (`RestrictedEquiv.Nrel`).** $N$ relates $x$ to $y$ when $x=y=\overline{n}$ for some $n\in\omega$.
+
+**Definition (`RestrictedEquiv.kerE`).** The kernel of $a$ relates $x$ to $y$ when $a(x)=a(y)$.
+
+**Theorem (`kerE.repr`).** If $a$ is a retract, then $x$ is kernel-related to $a(x)$.
+
+*Proof.* Retract-fixedness gives $a(a(x))=a(x)$. ∎
+
+**Definition (`iterateE`).** The iterate equivalence at $f$ and $x$ relates $u$ to $v$ when $u=v=Z(n,f,x)$ for some $n$.
