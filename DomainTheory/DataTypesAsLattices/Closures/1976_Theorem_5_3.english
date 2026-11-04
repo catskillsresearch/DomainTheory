@@ -17,3 +17,13 @@ while for sums using $a' = \lambda x.\, 0 \cup a(x - 1) + 1$ and similarly for $
 $$(5.13) \quad a \boxplus b = \lambda u.\, ([u]_0 \supset 0,\, 0) \cup ([u]_1 \supset 1,\, 1) \sqsupset [a'([u]_0), \bot],\, [\bot, b'([u]_1)].$$
 
 We can then establish with the aid of (5.8)–(5.10):
+
+<!-- formalization -->
+
+**Theorem (`theorem_5_3`).** If $a$ and $b$ are closure operations, then $a\circ\to b$ is a retract.
+
+*Proof.* Theorem 4.3(i) already gives idempotence of the function-space retract when $a$ and $b$ are retracts; closures are retracts. ∎
+
+**Theorem (`theorem_5_3.closure`).** If $a$ and $b$ are closure operations, then so is $a\circ\to b$.
+
+*Proof.* Expansiveness $\mathbf{I}\subseteq a\circ\to b$ together with the preceding retract fact. ∎
