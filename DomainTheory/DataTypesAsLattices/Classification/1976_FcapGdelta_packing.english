@@ -1,0 +1,15 @@
+The $\mathfrak{F}\dot{\cap}\mathfrak{G}_\delta$ packing combines a map that detects a closed fibre with one that detects a $\mathfrak{G}_\delta$ fibre, encoding the closed side at $0$ and the open sequence on positive numerals.
+
+**Definition (`fcapGdeltaPack`).**
+\[
+(\mathrm{fcapGdeltaPack}\,f\,g)\,x
+=\{k\mid (k=0\land 0\in f(x))\lor(\exists n.\,k=n+1\land n\in g(x))\}.
+\]
+
+**Theorem (`fcapGdeltaPack.isScottContinuous`).** If $f$ and $g$ are Scott-continuous, so is $\mathrm{fcapGdeltaPack}\,f\,g$.
+
+*Proof.* The clause $0\in f(x)$ and each clause $n\in g(x)$ pull Scott-union witnesses from $f$ or $g$; monotonicity of $f$ and $g$ closes the converse. ∎
+
+**Theorem (`fcapGdeltaPack.eq`).** Suppose $f(x)$ is $\bot$ or $\top$. Then $\mathrm{fcapGdeltaPack}\,f\,g\,x=\mathrm{succSet}\,\top$ if and only if $f(x)=\bot$ and $g(x)=\top$.
+
+*Proof.* The successor of $\top$ never contains $0$, so a packed value equal to $\mathrm{succSet}\,\top$ forces $0\notin f(x)$, hence $f(x)=\bot$ under the two-point hypothesis, while positive packed indices force $g(x)=\top$. Conversely, with $f(x)=\bot$ and $g(x)=\top$ the packed value is exactly the positive numerals. ∎

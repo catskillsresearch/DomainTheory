@@ -1,18 +1,10 @@
 
 module
 
-public import Mathlib.Order.CompleteLattice.Defs
-public import Mathlib.Topology.Bases
-public import Mathlib.Topology.Defs.Induced
-public import Mathlib.Topology.Order
-public import Mathlib.Topology.Separation.Basic
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
-public import DomainTheory.DataTypesAsLattices.Classification.zero_not_mem_succSet_top
-public import Mathlib.Data.Set.Finite.Powerset
+import DomainTheory.DataTypesAsLattices.Classification.zero_not_mem_succSet_top
+import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 
 @[expose] public section
 
@@ -22,7 +14,6 @@ open TopologicalSpace
 
 def fcapGdeltaPack (f g : Pomega → Pomega) (x : Pomega) : Pomega :=
   {k | (k = 0 ∧ 0 ∈ f x) ∨ ∃ n, k = n + 1 ∧ n ∈ g x}
-
 
 namespace fcapGdeltaPack
 
