@@ -1,4 +1,4 @@
-# Theorem 6.3
+# Theorem 6.3 — the Gδ theorem
 
 @import "1976_Theorem_6_3.english" {code_block=false}
 **[DataTypesAsLattices/Classification/theorem_6_3.lean](theorem_6_3.lean)**

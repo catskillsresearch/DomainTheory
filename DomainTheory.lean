@@ -343,6 +343,8 @@ import DomainTheory.DataTypesAsLattices.Classification.theorem_6_2
 import DomainTheory.DataTypesAsLattices.Classification.theorem_6_3
 import DomainTheory.DataTypesAsLattices.Classification.theorem_6_4
 import DomainTheory.DataTypesAsLattices.Classification.theorem_6_5
+import DomainTheory.DataTypesAsLattices.Classification.theorem_6_6
+import DomainTheory.DataTypesAsLattices.Classification.theorem_6_7
 import DomainTheory.DataTypesAsLattices.Classification.typicalBdelta
 import DomainTheory.DataTypesAsLattices.Classification.uvU
 import DomainTheory.DataTypesAsLattices.Classification.uvV

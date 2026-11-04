@@ -1,4 +1,4 @@
-# Theorem 6.4
+# Theorem 6.4 — the F∩G theorem
 
 @import "1976_Theorem_6_4.english" {code_block=false}
 **[DataTypesAsLattices/Classification/theorem_6_4.lean](theorem_6_4.lean)**

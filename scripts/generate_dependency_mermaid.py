@@ -1455,12 +1455,19 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Three-valued": "TVAL",
                 "Boolean membership": "BMEM",
                 "Theorem 6.1": "T61",
+                "Theorem 6.1 — the G theorem": "T61",
                 "Theorem 6.2": "T62",
+                "Theorem 6.2 — the F theorem": "T62",
                 "Theorem 6.3": "T63",
+                "Theorem 6.3 — the Gδ theorem": "T63",
                 "Theorem 6.4": "T64",
+                "Theorem 6.4 — the F∩G theorem": "T64",
                 "Theorem 6.5": "T65",
+                "Theorem 6.5 — the F∩Gδ theorem": "T65",
                 "Theorem 6.6": "T66",
+                "Theorem 6.6 — the B theorem": "T66",
                 "Theorem 6.7": "T67",
+                "Theorem 6.7 — the Bδ theorem": "T67",
             }
         if mermaid.name == "DirectedFixpoints.mermaid":
             include_empty_boxes = True

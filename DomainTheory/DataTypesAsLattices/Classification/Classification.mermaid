@@ -12,13 +12,13 @@ flowchart TB
   FGDP["F∩Gδ packing"]
   TVAL["Three-valued"]
   BMEM["Boolean membership"]
-  T61["Theorem 6.1"]
-  T62["Theorem 6.2"]
-  T63["Theorem 6.3"]
-  T64["Theorem 6.4"]
-  T65["Theorem 6.5"]
-  T66["Theorem 6.6"]
-  T67["Theorem 6.7"]
+  T61["Theorem 6.1 — the G theorem"]
+  T62["Theorem 6.2 — the F theorem"]
+  T63["Theorem 6.3 — the Gδ theorem"]
+  T64["Theorem 6.4 — the F∩G theorem"]
+  T65["Theorem 6.5 — the F∩Gδ theorem"]
+  T66["Theorem 6.6 — the B theorem"]
+  T67["Theorem 6.7 — the Bδ theorem"]
 
   TVAL --> BMEM
   DCLASS --> CHAR
@@ -31,4 +31,9 @@ flowchart TB
   BMEM --> T63
   BMEM --> T64
   T63 --> T65
+  BMEM --> T66
+  T66 --> T67
   FGDP --> TVAL
+
+  classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
