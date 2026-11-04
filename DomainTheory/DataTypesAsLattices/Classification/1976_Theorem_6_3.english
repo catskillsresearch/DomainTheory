@@ -23,3 +23,9 @@ $$W = \{x \mid g(x) = \top\},$$
 as desired.
 
 We let $\mathfrak{F} \dot{\cap} \mathfrak{G}$ denote the class of all sets of the form $C \cap U$, where $C \in \mathfrak{F}$ and $U \in \mathfrak{G}$. Similarly for $\mathfrak{F} \dot{\cap} \mathfrak{G}_\delta$. Now $\{x \mid x \subseteq 0\}$ is closed and $\{x \mid x \supseteq 0\}$ is open. Thus $\{0\} \in \mathfrak{F} \dot{\cap} \mathfrak{G}$. This set is typical.
+
+<!-- formalization -->
+
+**Theorem (`theorem_6_3`).** A subset $U\subseteq\mathbf{P}\omega$ is a $\mathfrak{G}_\delta$ if and only if $U=\{x\mid f(x)=\top\}$ for some Scott-continuous $f:\mathbf{P}\omega\to\mathbf{P}\omega$.
+
+*Proof.* If $U=\bigcap_n U_n$ with each $U_n$ Scott-open, pair-index the maps $\mathrm{charTop}\,U_n$; the packed value is $\top$ precisely when every factor is $\top$, hence precisely on the intersection. Conversely, if $f$ is Scott-continuous then $\{x\mid f(x)=\top\}$ is the intersection over $n$ of the open fibres $\{x\mid n\in f(x)\}$. ∎

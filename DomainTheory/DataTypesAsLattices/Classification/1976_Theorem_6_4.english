@@ -28,3 +28,9 @@ It is easy to see that $\{e\} \in \mathfrak{F} \dot{\cap} \mathfrak{G}$ if $e$ i
 
 
 In case $a$ is infinite but not equal to $\top$ (say, $a = \{n \mid n > 0\} = \top + 1$), then $\{a\}$ is typical in its class.
+
+<!-- formalization -->
+
+**Theorem (`theorem_6_4`).** A subset $U\subseteq\mathbf{P}\omega$ belongs to $\mathfrak{F}\dot{\cap}\mathfrak{G}$ if and only if $U=\{x\mid f(x)=0\}$ for some Scott-continuous $f:\mathbf{P}\omega\to\mathbf{P}\omega$.
+
+*Proof.* If $U=C\cap O$ with $C$ closed and $O$ open, odd–even pack $\mathrm{charTop}\,C^{\mathrm{c}}$ with $\mathrm{charOpen}\,O$; the packed value equals the numeral $0$ precisely when the closed factor is $\bot$ and the open factor is $0$. Conversely, if $f$ is Scott-continuous then $\{x\mid f(x)=0\}$ is the intersection of the closed set $\{x\mid f(x)\subseteq 0\}$ with the open fibre $\{x\mid 0\in f(x)\}$. ∎
