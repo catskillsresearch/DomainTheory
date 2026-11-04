@@ -18,4 +18,6 @@
 - [Theorem 5.3 — the function space theorem](1976_Theorem_5_3.md) ✓
 - [Theorem 5.4 — the product and sum theorem](1976_Theorem_5_4.md) ✓
 - [Theorem 5.5 — the universe theorem](1976_Theorem_5_5.md) ✓
-- [Theorem 5.6 — the limit theorem](1976_Theorem_5_6.md)
+- [Theorem 5.6 — the limit theorem](1976_Theorem_5_6.md) ✓
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-04) — <a href="../1976_REVISION.md">1976 revision progress</a></p>
