@@ -1,27 +1,27 @@
-Boolean membership packages a Scott-continuous map of bounded finite range together with a finite set of admissible finite values; the class is closed under the Boolean operations.
+Boolean membership packages a Scott-continuous map of uniformly bounded values together with a finite set of admissible values inside that bound; the class contains every Scott-open set and is closed under the Boolean operations.
 
-**Definition (`BooleanMemE`).** A set $U$ has Boolean membership when $U=\{x\mid f(x)\in E\}$ for some Scott-continuous $f$ with uniformly bounded finite values and a finite set $E$ of subsets of that bound.
+**Definition (`BooleanMemE`).** A set $U$ has Boolean membership when there exist a Scott-continuous $f$, a bound $N$, and a finite set $E$ of subsets of $\{m\mid m<N\}$ such that $f(x)\subseteq\{m\mid m<N\}$ for every $x$ and $U=\{x\mid f(x)\in E\}$.
 
 **Theorem (`BooleanMemE.finite_Iio`).** Every initial segment $\{m\mid m<N\}$ of $\omega$ is finite.
 
-*Proof.* It is the range of $\{0,\ldots,N-1\}$. ∎
+*Proof.* It coincides with the finite set $\{0,\ldots,N-1\}$. ∎
 
 **Theorem (`BooleanMemE.finite_subsets_lt`).** The set of subsets of $\{m\mid m<N\}$ is finite.
 
-*Proof.* Finite powerset of a finite set. ∎
+*Proof.* The powerset of a finite set is finite. ∎
 
 **Theorem (`BooleanMemE.ofOpen`).** Every Scott-open set has Boolean membership.
 
-*Proof.* Take $f=\mathrm{charOpen}\,U$, bound $1$, and $E=\{0\}$; continuity and the equation $\mathrm{charOpen}\,U\,x=0\leftrightarrow x\in U$ give the representation. ∎
+*Proof.* Take $f=\mathrm{charOpen}\,U$, bound $1$, and $E=\{0\}$. Continuity of the characteristic map is already known; Scott-open membership supplies a finite witness forcing $\mathrm{charOpen}\,U\,x=0$, and conversely a zero value yields a witness in $U$. ∎
 
 **Theorem (`BooleanMemE.union`).** Boolean membership is closed under binary unions.
 
-*Proof.* Odd–even pack the two witnessing maps and collect those packed values whose even/odd parts land in the respective admissible sets. ∎
+*Proof.* Odd–even pack the two witnessing maps with bound $2\max(N,M)+1$, and admit those packed values whose odd part lies in the first admissible set or whose even part lies in the second; the parity projections recover membership in either factor. ∎
 
 **Theorem (`BooleanMemE.inter`).** Boolean membership is closed under binary intersections.
 
-*Proof.* The same packing, requiring both parity projections to land in the respective admissible sets. ∎
+*Proof.* The same packing and bound, now requiring both parity projections to land in the respective admissible sets. ∎
 
 **Theorem (`BooleanMemE.compl`).** Boolean membership is closed under complements.
 
-*Proof.* Keep the same continuous map and replace the admissible set by its relative complement inside the finite powerset bound. ∎
+*Proof.* Keep the same continuous map and bound, and replace the admissible set by its relative complement inside the finite powerset of $\{m\mid m<N\}$. ∎
