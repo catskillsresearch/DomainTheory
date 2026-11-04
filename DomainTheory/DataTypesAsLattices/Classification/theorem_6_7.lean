@@ -2,13 +2,11 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Classification.Classes
 public import DomainTheory.DataTypesAsLattices.Classification.ThreeValued
-public import DomainTheory.DataTypesAsLattices.Lambda.sequences
 import DomainTheory.DataTypesAsLattices.Classification.CharacteristicMaps
 import DomainTheory.DataTypesAsLattices.Classification.pairIndexed
 import DomainTheory.DataTypesAsLattices.Classification.theorem_6_6
 import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen_more
 import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
-import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
 import Mathlib.Tactic.Bound.Init
 
 @[expose] public section
@@ -17,7 +15,9 @@ namespace DomainTheory.DataTypesAsLattices
 
 open TopologicalSpace
 
-theorem theorem_6_7_of_equalizer :
+namespace theorem_6_7
+
+theorem of_equalizer :
     ∀ U, (∃ f g, IsScottContinuous f ∧ IsScottContinuous g ∧
         U = {x | f x = g x}) → IsBdelta U := by
   rintro U ⟨f, g, hf, hg, rfl⟩
@@ -65,7 +65,7 @@ theorem theorem_6_7_of_equalizer :
         · exact hnf
         · exact (hng hgx).elim
 
-theorem theorem_6_7_iInter_equalizer (f g : ℕ → Pomega → Pomega)
+theorem iInter_equalizer (f g : ℕ → Pomega → Pomega)
     (hf : ∀ n, IsScottContinuous (f n)) (hg : ∀ n, IsScottContinuous (g n)) :
     ∃ F G, IsScottContinuous F ∧ IsScottContinuous G ∧
       {x | ∀ n, f n x = g n x} = {x | F x = G x} :=
@@ -98,14 +98,14 @@ theorem theorem_6_7_iInter_equalizer (f g : ℕ → Pomega → Pomega)
         obtain ⟨rfl, rfl⟩ := pair_inj heq
         exact hm'⟩
 
-theorem theorem_6_7_converse_of_equalizers (f g : ℕ → Pomega → Pomega)
+theorem converse_of_equalizers (f g : ℕ → Pomega → Pomega)
     (hf : ∀ n, IsScottContinuous (f n)) (hg : ∀ n, IsScottContinuous (g n))
     {U : Set Pomega} (hU : U = {x | ∀ n, f n x = g n x}) :
     ∃ F G, IsScottContinuous F ∧ IsScottContinuous G ∧ U = {x | F x = G x} := by
-  obtain ⟨F, G, hF, hG, h⟩ := theorem_6_7_iInter_equalizer f g hf hg
+  obtain ⟨F, G, hF, hG, h⟩ := iInter_equalizer f g hf hg
   exact ⟨F, G, hF, hG, hU.trans h⟩
 
-theorem isBooleanOpen_as_iInter_open_union_closed {U : Set Pomega}
+theorem boolean_as_iInter_open_union_closed {U : Set Pomega}
     (hU : IsBooleanOpen U) :
     ∃ (O C : ℕ → Set Pomega),
       (∀ n, IsScottOpen (O n)) ∧ (∀ n, IsScottOpen (C n)ᶜ) ∧
@@ -178,13 +178,13 @@ theorem isBooleanOpen_as_iInter_open_union_closed {U : Set Pomega}
       rwa [← hEeq]
   rw [hUeq, hOC]
 
-theorem theorem_6_7_of_bdelta {U : Set Pomega} (hU : IsBdelta U) :
+theorem of_bdelta {U : Set Pomega} (hU : IsBdelta U) :
     ∃ f g, IsScottContinuous f ∧ IsScottContinuous g ∧ U = {x | f x = g x} := by
   obtain ⟨Bs, hB, rfl⟩ := hU
   have hslice : ∀ n, ∃ O C : ℕ → Set Pomega,
       (∀ k, IsScottOpen (O k)) ∧ (∀ k, IsScottOpen (C k)ᶜ) ∧
         Bs n = ⋂ k, O k ∪ C k :=
-    fun n => isBooleanOpen_as_iInter_open_union_closed (hB n)
+    fun n => boolean_as_iInter_open_union_closed (hB n)
   choose Os Cs hOs hCs hEq using hslice
   let O (m : ℕ) : Set Pomega := Os (unpair m).1 (unpair m).2
   let C (m : ℕ) : Set Pomega := Cs (unpair m).1 (unpair m).2
@@ -236,57 +236,14 @@ theorem theorem_6_7_of_bdelta {U : Set Pomega} (hU : IsBdelta U) :
       rcases heq with hf0 | hg0
       · exact Or.inl ((charOpen.eq_zero (hO m) x).mp hf0)
       · exact Or.inr ((closedToZero.eq_zero (hC m) x).mp hg0)
-  exact theorem_6_7_converse_of_equalizers F G hF hG hpack
+  exact converse_of_equalizers F G hF hG hpack
+
+end theorem_6_7
 
 theorem theorem_6_7 :
     ∀ U, IsBdelta U ↔
       ∃ f g, IsScottContinuous f ∧ IsScottContinuous g ∧
         U = {x | f x = g x} :=
-  fun U => ⟨theorem_6_7_of_bdelta, theorem_6_7_of_equalizer U⟩
-
-theorem seq2_isScottContinuous_left (y : Pomega) :
-    IsScottContinuous (fun x => seq2 x y) :=
-  graph_const_isScottContinuous
-    (fun x z => condSet z x (condSet (predSet z) y botElem))
-    (fun z => condSet.isScottContinuous_mid z _)
-
-theorem seq2_isScottContinuous_right (x : Pomega) :
-    IsScottContinuous (fun y => seq2 x y) :=
-  graph_const_isScottContinuous
-    (fun y z => condSet z x (condSet (predSet z) y botElem))
-    (fun z =>
-      theorem_1_3 (condSet.isScottContinuous_right z x)
-        (condSet.isScottContinuous_mid (predSet z) botElem))
-
-theorem seq2_pair_isScottContinuous {f g : Pomega → Pomega}
-    (hf : IsScottContinuous f) (hg : IsScottContinuous g) :
-    IsScottContinuous (fun x => seq2 (f x) (g x)) :=
-  theorem_1_3.tuple seq2_isScottContinuous_left seq2_isScottContinuous_right hf hg
-
-theorem typicalBdelta_universal (U : Set Pomega) :
-    IsBdelta U ↔ ∃ f, IsScottContinuous f ∧ U = {x | f x ∈ typicalBdelta} := by
-  constructor
-  · intro hU
-    obtain ⟨F, G, hF, hG, rfl⟩ := (theorem_6_7 U).mp hU
-    refine ⟨fun x => seq2 (F x) (G x), seq2_pair_isScottContinuous hF hG, ?_⟩
-    ext x
-    constructor
-    · intro h
-      change funOf (seq2 (F x) (G x)) (ofNat 0) =
-        funOf (seq2 (F x) (G x)) (ofNat 1)
-      rw [seq2.zero, seq2.one]
-      exact h
-    · intro h
-      have : funOf (seq2 (F x) (G x)) (ofNat 0) =
-          funOf (seq2 (F x) (G x)) (ofNat 1) := h
-      rw [seq2.zero, seq2.one] at this
-      exact this
-  · rintro ⟨f, hf, rfl⟩
-    exact (theorem_6_7 _).mpr
-      ⟨fun x => funOf (f x) (ofNat 0), fun x => funOf (f x) (ofNat 1),
-        theorem_1_3 (f := fun u => funOf u (ofNat 0))
-          (funOf.isScottContinuous_left (ofNat 0)) hf,
-        theorem_1_3 (f := fun u => funOf u (ofNat 1))
-          (funOf.isScottContinuous_left (ofNat 1)) hf, rfl⟩
+  fun U => ⟨theorem_6_7.of_bdelta, theorem_6_7.of_equalizer U⟩
 
 end DomainTheory.DataTypesAsLattices

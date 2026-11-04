@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
 import DomainTheory.DataTypesAsLattices.Closures.botElem
 import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
@@ -428,8 +428,5 @@ theorem uvU_eq_uvV {x y : Pomega} (hx : ThreeValued x) (hy : ThreeValued y) :
       rcases h with h | h <;> exact (topElem.ne_ofNat_zero h).elim
 
 end ThreeValued
-
-def typicalBdelta : Set Pomega :=
-  {u | funOf u (ofNat 0) = funOf u (ofNat 1)}
 
 end DomainTheory.DataTypesAsLattices

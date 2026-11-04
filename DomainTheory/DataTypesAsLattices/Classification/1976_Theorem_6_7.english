@@ -103,10 +103,26 @@ It should be possible to extract the precise definition from the outline of the 
 
 <!-- formalization -->
 
+**Theorem (`theorem_6_7.of_equalizer`).** Every equalizer $\{x\mid f(x)=g(x)\}$ of Scott-continuous maps is a $\mathfrak{B}_\delta$.
+
+*Proof.* For each $n$, the set where $n$ belongs to both values or to neither is a Boolean combination of open fibres; the equalizer is their countable intersection. ∎
+
+**Theorem (`theorem_6_7.iInter_equalizer`).** A countable family of continuous equalizers $\{x\mid\forall n.\,f_n(x)=g_n(x)\}$ is itself a single equalizer of continuous maps.
+
+*Proof.* Pair-index the two sequences; the packed values agree precisely when every fibre agrees. ∎
+
+**Theorem (`theorem_6_7.converse_of_equalizers`).** If $U=\{x\mid\forall n.\,f_n(x)=g_n(x)\}$ for continuous $f_n,g_n$, then $U$ is an equalizer of two continuous maps.
+
+*Proof.* Apply the previous packing. ∎
+
+**Theorem (`theorem_6_7.boolean_as_iInter_open_union_closed`).** Every Boolean combination of opens is a countable intersection of sets of the form $O_n\cup C_n$ with $O_n$ open and $C_n$ closed.
+
+*Proof.* By Theorem 6.6 the complement is a continuous fibre of a finite set $E$ of finite values; induct on $E$, slicing each finite value as the intersection of an open upper set and a closed lower set, and reindexing the accumulating intersection. ∎
+
+**Theorem (`theorem_6_7.of_bdelta`).** Every $\mathfrak{B}_\delta$ is an equalizer of two Scott-continuous maps.
+
+*Proof.* Expand each Boolean factor by the previous theorem, reindex the double sequence by pairing, pack open and closed characteristics with the three-valued tables $U$ and $V$ so that equalizers of the packed sequence recover the intersection, and collapse that sequence of equalizers to one equation. ∎
+
 **Theorem (`theorem_6_7`).** A subset $U\subseteq\mathbf{P}\omega$ is a $\mathfrak{B}_\delta$ if and only if $U=\{x\mid f(x)=g(x)\}$ for some Scott-continuous $f,g:\mathbf{P}\omega\to\mathbf{P}\omega$.
 
-*Proof.* An equalizer of continuous maps is a countable intersection of Boolean combinations of open fibres (membership of each $n$ in $f(x)$ and in $g(x)$ agree). Conversely, write a $\mathfrak{B}_\delta$ as a countable intersection of Boolean sets, expand each Boolean set as a countable intersection of open-or-closed slices, reindex by pairing, and pack the open and closed characteristics with the three-valued tables $U$ and $V$ so that equalizers of the packed sequence recover the intersection; a final pair-index collapses the sequence of equalizers to a single equation. ∎
-
-**Theorem (`typicalBdelta_universal`).** $U$ is a $\mathfrak{B}_\delta$ if and only if $U=\{x\mid f(x)\in\mathrm{typicalBdelta}\}$ for some Scott-continuous $f$, where $\mathrm{typicalBdelta}=\{u\mid u(0)=u(1)\}$.
-
-*Proof.* Package an equalizer $F=G$ as the sequential pair $\langle F(x),G(x)\rangle$ and recover the two coordinates by application at $0$ and $1$; the converse unpacks those coordinates. ∎
+*Proof.* The two directions are the equalizer and $\mathfrak{B}_\delta$ tools above. ∎
