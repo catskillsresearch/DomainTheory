@@ -11,7 +11,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Data.Set.Finite.Powerset
 public import DomainTheory.DataTypesAsLattices.Classification.theorem_6_3
 public import DomainTheory.DataTypesAsLattices.Classification.fcapGdeltaPack
-public import DomainTheory.DataTypesAsLattices.Classification.zero_not_mem_succSet_top
+public import DomainTheory.DataTypesAsLattices.Classification.ThreeValued
 public import DomainTheory.DataTypesAsLattices.Classification.Classes
 public import DomainTheory.DataTypesAsLattices.Classification.CharacteristicMaps
 

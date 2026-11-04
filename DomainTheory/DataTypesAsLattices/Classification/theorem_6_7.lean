@@ -16,9 +16,6 @@ public import DomainTheory.DataTypesAsLattices.Classification.ThreeValued
 public import DomainTheory.DataTypesAsLattices.Classification.CharacteristicMaps
 public import DomainTheory.DataTypesAsLattices.Classification.pairIndexed
 public import DomainTheory.DataTypesAsLattices.Classification.theorem_6_6
-public import DomainTheory.DataTypesAsLattices.Classification.typicalBdelta
-public import DomainTheory.DataTypesAsLattices.Classification.uvU
-public import DomainTheory.DataTypesAsLattices.Classification.uvV
 import Mathlib.Tactic.Bound.Init
 
 @[expose] public section

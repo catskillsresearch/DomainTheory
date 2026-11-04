@@ -3,7 +3,7 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
-import DomainTheory.DataTypesAsLattices.Classification.zero_not_mem_succSet_top
+import DomainTheory.DataTypesAsLattices.Classification.ThreeValued
 import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 
 @[expose] public section

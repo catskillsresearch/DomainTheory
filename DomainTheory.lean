@@ -334,11 +334,6 @@ import DomainTheory.DataTypesAsLattices.Classification.theorem_6_4
 import DomainTheory.DataTypesAsLattices.Classification.theorem_6_5
 import DomainTheory.DataTypesAsLattices.Classification.theorem_6_6
 import DomainTheory.DataTypesAsLattices.Classification.theorem_6_7
-import DomainTheory.DataTypesAsLattices.Classification.typicalBdelta
-import DomainTheory.DataTypesAsLattices.Classification.uvU
-import DomainTheory.DataTypesAsLattices.Classification.uvV
-import DomainTheory.DataTypesAsLattices.Classification.zeroPrime
-import DomainTheory.DataTypesAsLattices.Classification.zero_not_mem_succSet_top
 import DomainTheory.DataTypesAsLattices.Closures.Closure
 import DomainTheory.DataTypesAsLattices.Closures.Icomb_isClosure
 import DomainTheory.DataTypesAsLattices.Closures.Icomb_subset_Vcomb

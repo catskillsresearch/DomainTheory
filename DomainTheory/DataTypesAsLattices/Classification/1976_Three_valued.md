@@ -6,22 +6,4 @@
 
 @import "ThreeValued.lean"
 
-**[DataTypesAsLattices/Classification/zeroPrime.lean](zeroPrime.lean)**
-
-@import "zeroPrime.lean"
-
-**[DataTypesAsLattices/Classification/zero_not_mem_succSet_top.lean](zero_not_mem_succSet_top.lean)**
-
-@import "zero_not_mem_succSet_top.lean"
-
-**[DataTypesAsLattices/Classification/uvU.lean](uvU.lean)**
-
-@import "uvU.lean"
-
-**[DataTypesAsLattices/Classification/uvV.lean](uvV.lean)**
-
-@import "uvV.lean"
-
-**[DataTypesAsLattices/Classification/typicalBdelta.lean](typicalBdelta.lean)**
-
-@import "typicalBdelta.lean"
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-04) — <a href="../1976_REVISION.md">1976 revision progress</a></p>
