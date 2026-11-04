@@ -1,12 +1,18 @@
-Odd–even packing interlaces two continuous maps on the odd and even numerals and recovers each factor by parity projection.
+Odd–even packing interlaces two maps on the odd and even numerals and recovers each factor by parity projection.
 
-**Definition (`oddPart`, `evenPart`).** $\mathrm{oddPart}\,y=\{n\mid 2n+1\in y\}$ and $\mathrm{evenPart}\,y=\{n\mid 2n\in y\}$.
+**Definition (`oddPart`).** $\mathrm{oddPart}\,y=\{n\mid 2n+1\in y\}$.
 
-**Definition (`oddEvenPack`).** $(\mathrm{oddEvenPack}\,f\,g)\,x$ places the members of $f(x)$ on odd indices and those of $g(x)$ on even indices.
+**Definition (`evenPart`).** $\mathrm{evenPart}\,y=\{n\mid 2n\in y\}$.
+
+**Definition (`oddEvenPack`).**
+\[
+(\mathrm{oddEvenPack}\,f\,g)\,x
+=\{k\mid (\exists n.\,k=2n+1\land n\in f(x))\lor(\exists n.\,k=2n\land n\in g(x))\}.
+\]
 
 **Theorem (`oddEvenPack.eq_zero`).** $\mathrm{oddEvenPack}\,f\,g\,x=0$ if and only if $f(x)=\bot$ and $g(x)=0$.
 
-*Proof.* Odd membership forces $f(x)$ empty; even membership forces $g(x)$ to be the singleton $\{0\}$; the converse packs those values back to the numeral $0$. ∎
+*Proof.* An odd packed index forces $f(x)$ empty; an even packed index forces $g(x)$ to be the singleton $\{0\}$; the converse packs those values back to the numeral $0$. ∎
 
 **Theorem (`oddEvenPack.isScottContinuous`).** If $f$ and $g$ are Scott-continuous, so is $\mathrm{oddEvenPack}\,f\,g$.
 
@@ -20,6 +26,6 @@ Odd–even packing interlaces two continuous maps on the odd and even numerals a
 
 *Proof.* Symmetric to the even case. ∎
 
-**Theorem (`oddEvenPack.subset`).** If $f(x)$ is bounded by $N$ and $g(x)$ by $M$, then $\mathrm{oddEvenPack}\,f\,g\,x$ is bounded by $2\max(N,M)+1$.
+**Theorem (`oddEvenPack.subset`).** If $f(x)\subseteq\{m\mid m<N\}$ and $g(x)\subseteq\{m\mid m<M\}$, then $\mathrm{oddEvenPack}\,f\,g\,x\subseteq\{k\mid k<2\max(N,M)+1\}$.
 
-*Proof.* An odd or even packed index is at most twice the corresponding bound, plus one on the odd side. ∎
+*Proof.* An odd or even packed index is strictly less than twice the corresponding bound, plus one on the odd side. ∎
