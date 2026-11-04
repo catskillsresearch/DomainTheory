@@ -14,7 +14,7 @@ Characteristic maps detect membership in Scott-open or closed sets by continuous
 
 *Proof.* A witness $e_n\subseteq x$ in $U$ and upward closure put $x$ in $U$; conversely Scott-open membership supplies such a witness, forcing the value to equal the numeral $0$. ∎
 
-**Theorem (`charOpen.threeValued`).** Every value of $\mathrm{charOpen}\,U$ is $\bot$, $0$, or $\top$.
+**Theorem (`charOpen.threeValued`).** Every value of $\mathrm{charOpen}\,U$ is three-valued (in fact $\bot$ or $0$).
 
 *Proof.* Either $0$ belongs to the value, which forces equality with the numeral $0$, or the value is empty. ∎
 

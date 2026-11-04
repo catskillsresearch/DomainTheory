@@ -4,7 +4,7 @@
 
 - [Introduction](1976_Classification_Introduction.md) ✓
 - [Scott classes](1976_Scott_classes.md) ✓
-- [Characteristic maps](1976_Characteristic_maps.md)
+- [Characteristic maps](1976_Characteristic_maps.md) ✓
 - [Odd-even packing](1976_Odd_even_packing.md)
 - [Pair indexing](1976_Pair_indexing.md)
 - [F∩Gδ packing](1976_FcapGdelta_packing.md)
