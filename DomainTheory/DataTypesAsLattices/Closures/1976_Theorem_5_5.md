@@ -1,4 +1,4 @@
-# Theorem 5.5
+# Theorem 5.5 — the universe theorem
 
 @import "1976_Theorem_5_5.english" {code_block=false}
 **[DataTypesAsLattices/Closures/theorem_5_5.lean](theorem_5_5.lean)**

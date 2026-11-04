@@ -1069,6 +1069,8 @@ RETRACTS_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Theorem 4.5", "Theorem 4.6"),
 ]
 
+# Tool-note reading order only. Theorem boxes use Lean import edges
+# (5.1–5.4 are independent; 5.6 imports 5.3 and 5.5).
 CLOSURES_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Introduction", "Isolated"),
     ("Isolated", "Bottom"),
@@ -1078,12 +1080,6 @@ CLOSURES_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Directed finite cover", "Countably algebraic"),
     ("Countably algebraic", "Representation"),
     ("Representation", "Definition (closure)"),
-    ("Definition (closure)", "Theorem 5.1"),
-    ("Theorem 5.1", "Theorem 5.2"),
-    ("Theorem 5.2", "Theorem 5.3"),
-    ("Theorem 5.3", "Theorem 5.4"),
-    ("Theorem 5.4", "Theorem 5.5"),
-    ("Theorem 5.5", "Theorem 5.6"),
 ]
 
 DEFINABILITY_THEOREM_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
@@ -1418,12 +1414,12 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Countably algebraic": "CALG",
                 "Representation": "REP",
                 "Definition (closure)": "DCLOS",
-                "Theorem 5.1": "T51",
-                "Theorem 5.2": "T52",
-                "Theorem 5.3": "T53",
-                "Theorem 5.4": "T54",
-                "Theorem 5.5": "T55",
-                "Theorem 5.6": "T56",
+                "Theorem 5.1 — the algebraic lattice theorem": "T51",
+                "Theorem 5.2 — the representation theorem": "T52",
+                "Theorem 5.3 — the function space theorem": "T53",
+                "Theorem 5.4 — the product and sum theorem": "T54",
+                "Theorem 5.5 — the universe theorem": "T55",
+                "Theorem 5.6 — the limit theorem": "T56",
             }
         if mermaid.name == "DirectedFixpoints.mermaid":
             include_empty_boxes = True

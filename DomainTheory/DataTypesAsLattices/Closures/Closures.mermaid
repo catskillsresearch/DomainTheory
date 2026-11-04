@@ -13,12 +13,12 @@ flowchart TB
   CALG["Countably algebraic"]
   REP["Representation"]
   DCLOS["Definition (closure)"]
-  T51["Theorem 5.1"]
-  T52["Theorem 5.2"]
-  T53["Theorem 5.3"]
-  T54["Theorem 5.4"]
-  T55["Theorem 5.5"]
-  T56["Theorem 5.6"]
+  T51["Theorem 5.1 — the algebraic lattice theorem"]
+  T52["Theorem 5.2 — the representation theorem"]
+  T53["Theorem 5.3 — the function space theorem"]
+  T54["Theorem 5.4 — the product and sum theorem"]
+  T55["Theorem 5.5 — the universe theorem"]
+  T56["Theorem 5.6 — the limit theorem"]
 
   ISOL --> BOT
   DFC --> CALG
@@ -28,9 +28,14 @@ flowchart TB
   SQP --> PRED
   CALG --> REP
   BOT --> SQP
-  DCLOS --> T51
+  CALG --> T51
+  REP --> T52
   T51 --> T52
-  T52 --> T53
+  T51 --> T53
   T53 --> T54
+  T52 --> T55
   T54 --> T55
   T55 --> T56
+
+  classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
+  classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
