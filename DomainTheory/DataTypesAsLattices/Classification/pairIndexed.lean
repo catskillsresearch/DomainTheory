@@ -1,16 +1,8 @@
 module
 
-public import Mathlib.Order.CompleteLattice.Defs
-public import Mathlib.Topology.Bases
-public import Mathlib.Topology.Defs.Induced
-public import Mathlib.Topology.Order
-public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
-public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import Mathlib.Data.Set.Finite.Powerset
+import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 
 @[expose] public section
 
