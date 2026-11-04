@@ -10,7 +10,7 @@ public import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen_more
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Data.Set.Finite.Powerset
 public import DomainTheory.DataTypesAsLattices.Classification.Classes
-public import DomainTheory.DataTypesAsLattices.Classification.charTop
+public import DomainTheory.DataTypesAsLattices.Classification.CharacteristicMaps
 
 @[expose] public section
 

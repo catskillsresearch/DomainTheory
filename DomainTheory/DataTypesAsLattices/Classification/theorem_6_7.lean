@@ -13,8 +13,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Classification.BooleanMemE
 public import DomainTheory.DataTypesAsLattices.Classification.Classes
 public import DomainTheory.DataTypesAsLattices.Classification.ThreeValued
-public import DomainTheory.DataTypesAsLattices.Classification.charOpen
-public import DomainTheory.DataTypesAsLattices.Classification.closedToZero
+public import DomainTheory.DataTypesAsLattices.Classification.CharacteristicMaps
 public import DomainTheory.DataTypesAsLattices.Classification.pairIndexed
 public import DomainTheory.DataTypesAsLattices.Classification.theorem_6_6
 public import DomainTheory.DataTypesAsLattices.Classification.typicalBdelta

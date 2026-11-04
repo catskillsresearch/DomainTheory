@@ -9,7 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen_more
 public import DomainTheory.DataTypesAsLattices.Continuous.isScottOpen_isUpper
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
-public import DomainTheory.DataTypesAsLattices.Classification.charOpen
+public import DomainTheory.DataTypesAsLattices.Classification.CharacteristicMaps
 public import DomainTheory.DataTypesAsLattices.Classification.oddEvenPack
 public import DomainTheory.DataTypesAsLattices.Classification.evenPart
 public import DomainTheory.DataTypesAsLattices.Classification.oddPart

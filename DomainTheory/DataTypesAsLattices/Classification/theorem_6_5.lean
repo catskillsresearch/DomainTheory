@@ -13,7 +13,7 @@ public import DomainTheory.DataTypesAsLattices.Classification.theorem_6_3
 public import DomainTheory.DataTypesAsLattices.Classification.fcapGdeltaPack
 public import DomainTheory.DataTypesAsLattices.Classification.zero_not_mem_succSet_top
 public import DomainTheory.DataTypesAsLattices.Classification.Classes
-public import DomainTheory.DataTypesAsLattices.Classification.charTop
+public import DomainTheory.DataTypesAsLattices.Classification.CharacteristicMaps
 
 @[expose] public section
 

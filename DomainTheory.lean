@@ -323,9 +323,7 @@ import DomainTheory.ContinuousLattice.WayBelow.proposition_2_2
 import DomainTheory.DataTypesAsLattices.Classification.BooleanMemE
 import DomainTheory.DataTypesAsLattices.Classification.Classes
 import DomainTheory.DataTypesAsLattices.Classification.ThreeValued
-import DomainTheory.DataTypesAsLattices.Classification.charOpen
-import DomainTheory.DataTypesAsLattices.Classification.charTop
-import DomainTheory.DataTypesAsLattices.Classification.closedToZero
+import DomainTheory.DataTypesAsLattices.Classification.CharacteristicMaps
 import DomainTheory.DataTypesAsLattices.Classification.evenPart
 import DomainTheory.DataTypesAsLattices.Classification.fcapGdeltaPack
 import DomainTheory.DataTypesAsLattices.Classification.oddEvenPack
