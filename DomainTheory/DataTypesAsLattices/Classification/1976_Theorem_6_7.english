@@ -101,4 +101,12 @@ $$\{x \mid \mathbf{union}(f)(g)(x) \in B\} = \{x \mid f(x) \in B\} \cup \{x \mid
 
 It should be possible to extract the precise definition from the outline of the proofs given above, but in general this matter needs more investigation. There may very well be certain classes where such operations are not constructive, even though the classes are simply defined.
 
-**7. Total functions and functionality.**
+<!-- formalization -->
+
+**Theorem (`theorem_6_7`).** A subset $U\subseteq\mathbf{P}\omega$ is a $\mathfrak{B}_\delta$ if and only if $U=\{x\mid f(x)=g(x)\}$ for some Scott-continuous $f,g:\mathbf{P}\omega\to\mathbf{P}\omega$.
+
+*Proof.* An equalizer of continuous maps is a countable intersection of Boolean combinations of open fibres (membership of each $n$ in $f(x)$ and in $g(x)$ agree). Conversely, write a $\mathfrak{B}_\delta$ as a countable intersection of Boolean sets, expand each Boolean set as a countable intersection of open-or-closed slices, reindex by pairing, and pack the open and closed characteristics with the three-valued tables $U$ and $V$ so that equalizers of the packed sequence recover the intersection; a final pair-index collapses the sequence of equalizers to a single equation. ∎
+
+**Theorem (`typicalBdelta_universal`).** $U$ is a $\mathfrak{B}_\delta$ if and only if $U=\{x\mid f(x)\in\mathrm{typicalBdelta}\}$ for some Scott-continuous $f$, where $\mathrm{typicalBdelta}=\{u\mid u(0)=u(1)\}$.
+
+*Proof.* Package an equalizer $F=G$ as the sequential pair $\langle F(x),G(x)\rangle$ and recover the two coordinates by application at $0$ and $1$; the converse unpacks those coordinates. ∎

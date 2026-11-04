@@ -16,4 +16,6 @@
 - [Theorem 6.4 — the F∩G theorem](1976_Theorem_6_4.md) ✓
 - [Theorem 6.5 — the F∩Gδ theorem](1976_Theorem_6_5.md) ✓
 - [Theorem 6.6 — the B theorem](1976_Theorem_6_6.md) ✓
-- [Theorem 6.7 — the Bδ theorem](1976_Theorem_6_7.md)
+- [Theorem 6.7 — the Bδ theorem](1976_Theorem_6_7.md) ✓
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-04) — <a href="../1976_REVISION.md">1976 revision progress</a></p>

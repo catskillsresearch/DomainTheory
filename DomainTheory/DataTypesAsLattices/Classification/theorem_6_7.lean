@@ -1,21 +1,14 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen_more
-public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
-public import DomainTheory.DataTypesAsLattices.Lambda.Language
-public import DomainTheory.DataTypesAsLattices.Lambda.condSet
-public import DomainTheory.DataTypesAsLattices.Lambda.sequences
-public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Classification.BooleanMemE
 public import DomainTheory.DataTypesAsLattices.Classification.Classes
 public import DomainTheory.DataTypesAsLattices.Classification.ThreeValued
-public import DomainTheory.DataTypesAsLattices.Classification.CharacteristicMaps
-public import DomainTheory.DataTypesAsLattices.Classification.pairIndexed
-public import DomainTheory.DataTypesAsLattices.Classification.theorem_6_6
+public import DomainTheory.DataTypesAsLattices.Lambda.sequences
+import DomainTheory.DataTypesAsLattices.Classification.CharacteristicMaps
+import DomainTheory.DataTypesAsLattices.Classification.pairIndexed
+import DomainTheory.DataTypesAsLattices.Classification.theorem_6_6
+import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen_more
+import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
+import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
 import Mathlib.Tactic.Bound.Init
 
 @[expose] public section
