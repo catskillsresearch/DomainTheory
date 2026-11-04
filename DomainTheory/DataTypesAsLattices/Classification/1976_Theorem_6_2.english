@@ -13,3 +13,9 @@ special character. We note:
 $$\{\top\} = \bigcap \{\{x \mid n \in x\} \mid n \in \omega\}.$$
 
 Thus $\{\top\}$ is a countable intersection of open sets, otherwise called a $\mathfrak{G}_\delta$-set. There are of course many other $\mathfrak{G}_\delta$-sets, but $\{\top\}$ is the typical one:
+
+<!-- formalization -->
+
+**Theorem (`theorem_6_2`).** A subset $U\subseteq\mathbf{P}\omega$ is Scott-closed if and only if $U=\{x\mid f(x)=\bot\}$ for some Scott-continuous $f:\mathbf{P}\omega\to\mathbf{P}\omega$.
+
+*Proof.* If $U$ is closed, then $\mathrm{charTop}\,U^{\mathrm{c}}$ is Scott-continuous and equals $\bot$ precisely on $U$. Conversely, if $f$ is Scott-continuous then the complement of $\{x\mid f(x)=\bot\}$ is the union over $k$ of the open fibres $\{x\mid k\in f(x)\}$, hence open, so the fibre of $\bot$ is closed. ∎

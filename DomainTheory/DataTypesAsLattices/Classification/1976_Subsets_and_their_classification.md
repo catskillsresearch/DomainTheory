@@ -11,7 +11,7 @@
 - [Three-valued](1976_Three_valued.md) ✓
 - [Boolean membership](1976_Boolean_membership.md) ✓
 - [Theorem 6.1 — the G theorem](1976_Theorem_6_1.md) ✓
-- [Theorem 6.2 — the F theorem](1976_Theorem_6_2.md)
+- [Theorem 6.2 — the F theorem](1976_Theorem_6_2.md) ✓
 - [Theorem 6.3 — the Gδ theorem](1976_Theorem_6_3.md)
 - [Theorem 6.4 — the F∩G theorem](1976_Theorem_6_4.md)
 - [Theorem 6.5 — the F∩Gδ theorem](1976_Theorem_6_5.md)
