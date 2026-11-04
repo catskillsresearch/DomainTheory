@@ -1,15 +1,15 @@
 module
 
-public import Mathlib.Algebra.Ring.Parity
 public import DomainTheory.DataTypesAsLattices.FixedLattices.CountablyAlgebraic
-public import DomainTheory.DataTypesAsLattices.FixedLattices.CountablyAlgebraic_more
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.FixedLattices.IsCompact
-public import DomainTheory.DataTypesAsLattices.Closures.representationEncode
+public import DomainTheory.DataTypesAsLattices.Pomega.Pomega
 
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
+
+def representationEncode {α : Type u} [CompleteLattice α]
+    (D : CountablyAlgebraic α) (x : α) : Pomega :=
+  {n | D.compact n ≤ x}
 
 def representationDecode {α : Type u} [CompleteLattice α]
     (D : CountablyAlgebraic α) (x : Pomega) : α :=

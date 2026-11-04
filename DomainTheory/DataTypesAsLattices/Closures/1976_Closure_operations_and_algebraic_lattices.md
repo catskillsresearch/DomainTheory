@@ -10,8 +10,8 @@
 - [Directed finite cover](1976_Directed_finite_cover.md) ✓
 - [Is compact](1976_IsCompact.md) ✓
 - [Continuous basis](1976_Continuous_basis.md) ✓
-- [Countably algebraic](1976_Countably_algebraic.md)
-- [Representation](1976_Representation.md)
+- [Countably algebraic](1976_Countably_algebraic.md) ✓
+- [Representation](1976_Representation.md) ✓
 - [Definition (closure)](1976_Definition_closure.md)
 - [Theorem 5.1 — the algebraic lattice theorem](1976_Theorem_5_1.md)
 - [Theorem 5.2 — the representation theorem](1976_Theorem_5_2.md)

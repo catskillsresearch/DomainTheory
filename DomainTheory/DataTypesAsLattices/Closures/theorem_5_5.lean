@@ -18,9 +18,8 @@ public import DomainTheory.DataTypesAsLattices.Closures.VapplyY
 public import DomainTheory.DataTypesAsLattices.Closures.closureRangeCountablyAlgebraic
 public import DomainTheory.DataTypesAsLattices.Closures.representClosure
 public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode
-public import DomainTheory.DataTypesAsLattices.Closures.representationEncode
+public import DomainTheory.DataTypesAsLattices.Closures.representation
 public import DomainTheory.DataTypesAsLattices.Closures.representationEncode_more
-public import DomainTheory.DataTypesAsLattices.Closures.representationDecode
 public import DomainTheory.DataTypesAsLattices.Closures.representationOrderIso
 public import DomainTheory.DataTypesAsLattices.Closures.Vcomb
 public import DomainTheory.DataTypesAsLattices.Closures.selfArrowStep

@@ -1,1 +1,21 @@
 A complete lattice is countably algebraic when its compact elements admit a countable enumeration that is dense: every element is the supremum of the compacts below it. Finite-support approximations along that enumeration are directed and recover the same supremum.
+
+**Definition (`CountablyAlgebraic`).** A complete lattice is countably algebraic when there is an enumeration $n\mapsto c_n$ of compact elements such that every compact equals some $c_n$, and every $x$ is the supremum of $\{c_n\mid c_n\le x\}$.
+
+*Proof.* Compactness of each $c_n$, completeness of the enumeration, and density are the three data of the structure. ∎
+
+**Definition (`finiteBasisSups`).** Given a sequence $d$ and a set $x$ of indices, the finite-basis supremums are the elements $\bigsqcup\{d_n\mid n\in t\}$ for finite $t\subseteq x$.
+
+*Proof.* Each such supremum is determined by a finite support inside $x$. ∎
+
+**Theorem (`finiteBasisSups.sSup_eq`).** The supremum of all finite-basis supremums of $d$ along $x$ equals $\bigsqcup\{d_n\mid n\in x\}$.
+
+*Proof.* Every finite sub-supremum is below the full image supremum; conversely each singleton support is one of the finite-basis supremums. ∎
+
+**Theorem (`finiteBasisSups.directed`).** The set of finite-basis supremums of $d$ along $x$ is directed.
+
+*Proof.* The empty support supplies a bottom; the union of two finite supports supplies an upper bound. ∎
+
+**Theorem (`CountablyAlgebraic.compact_finite_support`).** If $c_m\le\bigsqcup\{c_n\mid n\in x\}$ in a countably algebraic lattice, then finitely many indices from $x$ already suffice.
+
+*Proof.* Compactness of $c_m$ against the directed family of finite-basis supremums yields a finite support; the preceding supremum identity rewrites that as a finite sub-image of the enumeration. ∎

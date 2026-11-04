@@ -1,13 +1,12 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Closures.representationEncode
+public import DomainTheory.DataTypesAsLattices.Closures.representation
 public import Mathlib.Algebra.Ring.Parity
 public import DomainTheory.DataTypesAsLattices.FixedLattices.CountablyAlgebraic
 public import DomainTheory.DataTypesAsLattices.FixedLattices.CountablyAlgebraic_more
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode
-public import DomainTheory.DataTypesAsLattices.Closures.representationDecode
 
 @[expose] public section
 

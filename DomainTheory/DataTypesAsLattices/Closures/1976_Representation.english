@@ -1,1 +1,13 @@
 The representation of a countably algebraic lattice in $\mathbf{P}\omega$: encode by the set of compact indices below an element, and decode by the supremum of those compacts.
+
+**Definition (`representationEncode`).** Given a countably algebraic lattice with compact enumeration $c_n$, the code of an element $x$ is $\{n\in\omega\mid c_n\le x\}$.
+
+*Proof.* Membership of an index records that the corresponding compact lies below $x$. ∎
+
+**Definition (`representationDecode`).** The decode of a set $u\subseteq\omega$ is $\bigsqcup\{c_n\mid n\in u\}$.
+
+*Proof.* The image of the codes under the enumeration, taken as a supremum. ∎
+
+**Theorem (`representationDecode.encode`).** Decoding the code of $x$ recovers $x$.
+
+*Proof.* Every compact below $x$ appears in the code, so density says $x$ is their supremum; conversely each selected compact is already $\le x$. ∎
