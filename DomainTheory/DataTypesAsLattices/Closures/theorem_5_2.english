@@ -11,3 +11,9 @@ $$a(x) = \{m \mid d_m \sqsubseteq \sqcup \{d_n \mid n \in x\}\}.$$
 It is an easy exercise to show that from the definition of “isolated” it follows that $a$ is continuous; and from density, it follows that $D$ is in a one-to-one order preserving correspondence with the fixed points of $a$.
 
 In the last section we introduced an algebra of retracts, much of which carries over to closure operations given the proper definitions. Without any change we can use Theorem 4.3 on function spaces, provided we check that the required retracts are closures.
+
+<!-- formalization -->
+
+**Theorem (`theorem_5_2`).** Every countably algebraic lattice is order-isomorphic to the fixed points of a closure operation on $\mathbf{P}\omega$: the representing map is Scott-continuous, yields a closure, and induces a bijective order correspondence with that closure’s fixed points.
+
+*Proof.* Continuity of the representing map, that it is a closure, and the order isomorphism onto the fixed points. ∎

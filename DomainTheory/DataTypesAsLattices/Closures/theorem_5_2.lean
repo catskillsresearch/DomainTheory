@@ -1,21 +1,8 @@
 module
 
-public import Mathlib.Algebra.Ring.Parity
 public import DomainTheory.DataTypesAsLattices.Retracts.Fixpoints
-public import Mathlib.Order.CompleteLattice.Defs
-public import DomainTheory.DataTypesAsLattices.FixedLattices.CountablyAlgebraic
-public import DomainTheory.DataTypesAsLattices.FixedLattices.CountablyAlgebraic_more
-public import Mathlib.Topology.Bases
-public import Mathlib.Topology.Defs.Induced
-public import Mathlib.Topology.Order
-public import Mathlib.Topology.Separation.Basic
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Closures.Closure
-public import DomainTheory.DataTypesAsLattices.Closures.representClosure
 public import DomainTheory.DataTypesAsLattices.Closures.representClosureCode
-public import DomainTheory.DataTypesAsLattices.Closures.representationOrderIso
+import DomainTheory.DataTypesAsLattices.Closures.representationOrderIso
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices

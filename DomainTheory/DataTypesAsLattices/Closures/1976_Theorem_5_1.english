@@ -1,1 +1,7 @@
 **THEOREM 5.1 (The algebraic lattice theorem).** *The fixed points of any closure operation form an algebraic lattice.*
+
+<!-- formalization -->
+
+**Theorem (`theorem_5_1`).** The fixed points of any closure operation form an algebraic lattice: their compact elements are the $a(e_n)$, and every fixed point is the directed supremum of the compact fixed points below it.
+
+*Proof.* A fixed point is compact among the fixed points precisely when it is some $a(e_n)$; the $a(e_n)$ below a given fixed point are directed and recover it as their union. ∎
