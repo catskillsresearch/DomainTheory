@@ -7,3 +7,9 @@ $$\{x \mid f(x) = a\},$$
 Note that $(\mathfrak{F} \dot{\cap} \mathfrak{G})_\delta$ is the same class as $\mathfrak{F} \dot{\cap} \mathfrak{G}_\delta$, so we see by Theorem 6.4 that a good choice of $a$ is $\lambda n \in \omega . 0$.
 
 There is no single subset of $\mathbf{P}\omega$ typical for $\mathfrak{B}$, which can be viewed as the finite unions of sets from the class $\mathfrak{F} \dot{\cap} \mathfrak{G}$.
+
+<!-- formalization -->
+
+**Theorem (`theorem_6_5`).** A subset $U\subseteq\mathbf{P}\omega$ belongs to $\mathfrak{F}\dot{\cap}\mathfrak{G}_\delta$ if and only if $U=\{x\mid f(x)=\mathrm{succSet}\,\top\}$ for some Scott-continuous $f:\mathbf{P}\omega\to\mathbf{P}\omega$.
+
+*Proof.* If $U=C\cap G$ with $C$ closed and $G$ a $\mathfrak{G}_\delta$, take a continuous fibre of $\top$ for $G$ by Theorem 6.3 and pack it with $\mathrm{charTop}\,C^{\mathrm{c}}$; the packed value equals $\mathrm{succSet}\,\top$ precisely when the closed factor is $\bot$ and the $\mathfrak{G}_\delta$ factor is $\top$. Conversely, if $f$ is Scott-continuous then $\{x\mid f(x)=\mathrm{succSet}\,\top\}$ is the intersection of the closed set $\{x\mid f(x)\subseteq\mathrm{succSet}\,\top\}$ with the $\mathfrak{G}_\delta$ set $\{x\mid\mathrm{succSet}\,\top\subseteq f(x)\}$. ∎
