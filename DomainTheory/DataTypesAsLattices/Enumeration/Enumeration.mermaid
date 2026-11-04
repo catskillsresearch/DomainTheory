@@ -6,6 +6,7 @@ flowchart TB
 
   INTRO["Introduction"]
   AVOID["Term avoidance (α)"]
+  GTOOLS["G-combinator tools"]
   T31["Theorem 3.1"]
   APP["Application"]
   UNP["Unpairing"]
@@ -13,6 +14,7 @@ flowchart TB
   VRANK["Val rank"]
   T32["Theorem 3.2"]
   RCODE["Recursion codes"]
+  PHELP["Plotkin helpers"]
   T33["Theorem 3.3"]
   T34["Theorem 3.4"]
   T35["Theorem 3.5"]
@@ -21,10 +23,13 @@ flowchart TB
 
   T31 --> APP
   INTRO --> AVOID
+  AVOID --> GTOOLS
   UNP --> NUM
+  GTOOLS --> PHELP
   T32 --> RCODE
-  AVOID --> T31
+  GTOOLS --> T31
   VRANK --> T32
+  PHELP --> T33
   RCODE --> T33
   T33 --> T34
   T34 --> T35

@@ -11,27 +11,32 @@ flowchart TB
   DFIX["Directed fixpoints"]
   DRET["Definition (retract)"]
   T41["Theorem 4.1"]
-  DMEM["u is in the range of retract a"]
+  u__is_in_the_range_of_r["u is in the range of retract a"]
   DORD["Definition (ordering)"]
   OPENR["Open-set retract"]
   T42["Theorem 4.2"]
   T43["Theorem 4.3"]
+  COMBC["C combinators"]
+  PMED["Pair mediation"]
   T44["Theorem 4.4"]
   T45["Theorem 4.5"]
   T46["Theorem 4.6"]
 
+  T43 --> COMBC
   FIXP --> DFIX
-  T41 --> DMEM
-  DMEM --> DORD
   DFIX --> DRET
   PRED --> FIXP
   INTRO --> GLEM
-  DORD --> OPENR
+  GLEM --> OPENR
+  T43 --> PMED
   GLEM --> PRED
   DRET --> T41
-  OPENR --> T42
+  DRET --> T42
+  OPENR --> T43
+  T41 --> T43
   T42 --> T43
-  T43 --> T44
+  COMBC --> T44
+  PMED --> T44
   T44 --> T45
   T45 --> T46
 

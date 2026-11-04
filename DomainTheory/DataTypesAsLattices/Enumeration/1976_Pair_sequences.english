@@ -1,0 +1,21 @@
+Projection, injectivity, and Scott continuity for the binary pairing sequence.
+
+**Theorem (`PairSeq.app_zero`).** $\mathrm{pairSeq}(x,y)\,0=x$.
+
+*Proof.* The zero clause of the underlying length-two sequence. ∎
+
+**Theorem (`PairSeq.app_one`).** $\mathrm{pairSeq}(x,y)\,1=y$.
+
+*Proof.* The one clause of the underlying length-two sequence. ∎
+
+**Theorem (`PairSeq.inj`).** If $\mathrm{pairSeq}(x,y)=\mathrm{pairSeq}(x',y')$, then $x=x'$ and $y=y'$.
+
+*Proof.* Apply the zero and one projections to both sides. ∎
+
+**Theorem (`PairSeq.isScottContinuous_left`).** For fixed $y$, the map $x\mapsto\mathrm{pairSeq}(x,y)$ is Scott-continuous.
+
+*Proof.* Graph-constant continuity along the mid-argument continuity of the conditional packing that defines the sequence. ∎
+
+**Theorem (`PairSeq.isScottContinuous_right`).** For fixed $x$, the map $y\mapsto\mathrm{pairSeq}(x,y)$ is Scott-continuous.
+
+*Proof.* Graph-constant continuity using continuity of the conditional in the right and mid slots. ∎

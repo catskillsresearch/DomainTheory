@@ -1033,7 +1033,8 @@ COMPUTABILITY_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
 # Reading-order edges for prose/tool notes that Lean edges may skip.
 ENUMERATION_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Introduction", "Term avoidance (α)"),
-    ("Term avoidance (α)", "Theorem 3.1"),
+    ("Term avoidance (α)", "G-combinator tools"),
+    ("G-combinator tools", "Theorem 3.1"),
     ("Theorem 3.1", "Application"),
     ("Application", "Unpairing"),
     ("Unpairing", "Numerals"),
@@ -1096,8 +1097,8 @@ CLASSIFICATION_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
 ]
 
 FUNCTIONALITY_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
-    ("Introduction", "Definition (equivalence)"),
-    ("Definition (equivalence)", "Theorem 7.1"),
+    ("Introduction", "Restricted equivalence relations"),
+    ("Restricted equivalence relations", "Theorem 7.1"),
     ("Theorem 7.1", "Theorem 7.2"),
     ("Theorem 7.2", "Theorem 7.3"),
     ("Theorem 7.3", "Theorem 7.4"),
@@ -1331,6 +1332,7 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
         include_empty_boxes = False
         force_edges: list[tuple[str, str]] | None = None
         edge_filter_fn: Callable[[str, str], bool] | None = None
+        outline_transitive_modules = True
         cl_subgraphs = None
         cl_rank_same = None
         cl_subgraph_directions: dict[str, str] | None = None
@@ -1379,6 +1381,7 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 **(extra_ids or {}),
                 "Introduction": "INTRO",
                 "Term avoidance (α)": "AVOID",
+                "G-combinator tools": "GTOOLS",
                 "Theorem 3.1": "T31",
                 "Application": "APP",
                 "Unpairing": "UNP",
@@ -1386,6 +1389,7 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Val rank": "VRANK",
                 "Theorem 3.2": "T32",
                 "Recursion codes": "RCODE",
+                "Plotkin helpers": "PHELP",
                 "Theorem 3.3": "T33",
                 "Theorem 3.4": "T34",
                 "Theorem 3.5": "T35",
@@ -1413,6 +1417,8 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Open retract": "OPENR",
                 "Theorem 4.2": "T42",
                 "Theorem 4.3": "T43",
+                "C combinators": "COMBC",
+                "Pair mediation": "PMED",
                 "Theorem 4.4": "T44",
                 "Theorem 4.5": "T45",
                 "Theorem 4.6": "T46",
@@ -1487,7 +1493,8 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
             extra_ids = {
                 **(extra_ids or {}),
                 "Introduction": "INTRO",
-                "Definition (equivalence)": "DEQUIV",
+                "Pair elements": "PAIR",
+                "Restricted equivalence relations": "DEQUIV",
                 "Theorem 7.1": "T71",
                 "Theorem 7.2": "T72",
                 "Theorem 7.3": "T73",
@@ -1504,6 +1511,22 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 **(extra_ids or {}),
                 "Directed-sup way-below": "WBSUP",
                 "Directed compact fixed points": "DCOMP",
+            }
+        if mermaid.name == "GcombTools.mermaid":
+            include_empty_boxes = True
+            # Direct imports only: shared Mathlib/Pomega deps would otherwise
+            # invent ContinuityHelpers → PairSeq edges via first-owner attribution.
+            outline_transitive_modules = False
+            header_lines = [
+                *outline_mermaid_header("1976_Gcomb_tools.md"),
+                "%% Lean import edges among the four tool notes.",
+            ]
+            extra_ids = {
+                **(extra_ids or {}),
+                "Continuity helpers": "CONT",
+                "Pair sequences": "PSEQ",
+                "Sum mediation": "SMED",
+                "Z combinator": "ZCOMB",
             }
         if mermaid.name == "DefinitionRetract.mermaid":
             include_empty_boxes = True
@@ -1582,6 +1605,7 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
             edge_filter=edge_filter_fn,
             collapse_hub_into_subgraph=collapse_hub,
             exclude_outline_titles=exclude_titles,
+            transitive_modules=outline_transitive_modules,
         )
     return None
 

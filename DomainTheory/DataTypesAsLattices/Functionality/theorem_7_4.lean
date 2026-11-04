@@ -17,8 +17,8 @@ public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Functionality.Nk
 public import DomainTheory.DataTypesAsLattices.Functionality.Nrel
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
-public import DomainTheory.DataTypesAsLattices.Functionality.Z
-public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb
+public import DomainTheory.DataTypesAsLattices.Enumeration.SumMed
+public import DomainTheory.DataTypesAsLattices.Enumeration.Zcomb
 public import DomainTheory.DataTypesAsLattices.Functionality.arrowE
 public import DomainTheory.DataTypesAsLattices.Functionality.emptyE
 public import DomainTheory.DataTypesAsLattices.Functionality.encodeExp
@@ -31,7 +31,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.PlotkinHelpers
 public import DomainTheory.DataTypesAsLattices.Functionality.pairMed
 public import DomainTheory.DataTypesAsLattices.Functionality.plotkinE
 public import DomainTheory.DataTypesAsLattices.Functionality.prodE
-public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ
 public import DomainTheory.DataTypesAsLattices.Functionality.singletonE
 public import DomainTheory.DataTypesAsLattices.Functionality.sumE
 public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_1
@@ -42,6 +41,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.mu_law
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.Lambda.distributive_functions
+public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_9
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
@@ -52,6 +52,54 @@ public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
+
+theorem eq_7_18_eq (j m : ℕ) :
+    Z m (graph (sigmaJ j)) {pair j 0} = ({pair j m} : Pomega) := by
+  induction m with
+  | zero => rfl
+  | succ m ih =>
+    calc
+      Z (m + 1) (graph (sigmaJ j)) {pair j 0}
+        = funOf (graph (sigmaJ j)) (Z m (graph (sigmaJ j)) {pair j 0}) := rfl
+      _ = sigmaJ j (Z m (graph (sigmaJ j)) {pair j 0}) := sigmaJ.app _ _
+      _ = sigmaJ j {pair j m} := by rw [ih]
+      _ = {pair j (m + 1)} := sigmaJ.succ_singleton j m
+
+theorem eq_7_18_ne (j j' m : ℕ) (hne : j ≠ j') :
+    Z (m + 1) (graph (sigmaJ j)) {pair j' 0} = botElem := by
+  induction m with
+  | zero =>
+    calc
+      Z 1 (graph (sigmaJ j)) {pair j' 0}
+        = funOf (graph (sigmaJ j)) {pair j' 0} := rfl
+      _ = sigmaJ j {pair j' 0} := sigmaJ.app _ _
+      _ = botElem := sigmaJ.succ_ne j j' 0 hne
+  | succ m ih =>
+    calc
+      Z (m + 1 + 1) (graph (sigmaJ j)) {pair j' 0}
+        = funOf (graph (sigmaJ j))
+            (Z (m + 1) (graph (sigmaJ j)) {pair j' 0}) := rfl
+      _ = sigmaJ j (Z (m + 1) (graph (sigmaJ j)) {pair j' 0}) :=
+          sigmaJ.app _ _
+      _ = sigmaJ j botElem := by rw [ih]
+      _ = botElem := sigmaJ.bot j
+
+theorem eq_7_19 (j j' m : ℕ) :
+    Z m (graph (sigmaJ j) ∪ graph (sigmaJ j'))
+        (({pair j 0} : Pomega) ∪ {pair j' 0}) =
+      ({pair j m} : Pomega) ∪ {pair j' m} := by
+  by_cases h : j = j'
+  · subst j'
+    simp only [Set.union_self]
+    exact eq_7_18_eq j m
+  · induction m with
+    | zero => rfl
+    | succ m ih =>
+      rw [Z, eq_2_9, ih, sigmaJ.app, sigmaJ.app,
+        sigmaJ.pair_union j j' m h]
+      rw [show sigmaJ j' (({pair j m} : Pomega) ∪ {pair j' m}) =
+          ({pair j' (m + 1)} : Pomega) by
+        simpa [Set.union_comm] using sigmaJ.pair_union j' j m (Ne.symm h)]
 
 namespace theorem_7_4
 

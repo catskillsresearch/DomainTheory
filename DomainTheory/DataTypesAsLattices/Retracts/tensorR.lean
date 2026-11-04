@@ -13,8 +13,8 @@ public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Functionality.ContinuityHelpers
-public import DomainTheory.DataTypesAsLattices.Functionality.PairSeq
+public import DomainTheory.DataTypesAsLattices.Enumeration.ContinuityHelpers
+public import DomainTheory.DataTypesAsLattices.Enumeration.PairSeq
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app

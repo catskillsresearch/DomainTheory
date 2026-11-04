@@ -1,18 +1,13 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Functionality.Z
-public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ
-public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
-public import DomainTheory.DataTypesAsLattices.Graph.beta
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Graph.graph
-public import DomainTheory.DataTypesAsLattices.Lambda.eq_2_9
-public import DomainTheory.DataTypesAsLattices.Lambda.Language
-public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
-public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
-public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Pomega.pair
+public import DomainTheory.DataTypesAsLattices.Enumeration.SumMed
+public import DomainTheory.DataTypesAsLattices.Enumeration.Zcomb
+
+import DomainTheory.DataTypesAsLattices.Lambda.eq_2_9
+import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
+import DomainTheory.DataTypesAsLattices.Graph.funOf_more
+import DomainTheory.DataTypesAsLattices.Graph.beta
+import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 
 @[expose] public section
 

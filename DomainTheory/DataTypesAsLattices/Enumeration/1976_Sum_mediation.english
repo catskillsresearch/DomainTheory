@@ -1,0 +1,73 @@
+Tag successor $\sigma_j$ and the mediating map out of a binary sum.
+
+**Definition (`sigmaJ`).** $\sigma_j(x)=\{(j,k+1)\mid (j,k)\in x\}$.
+
+**Theorem (`sigmaJ.isScottContinuous`).** Each $\sigma_j$ is Scott-continuous.
+
+*Proof.* A coded successor tag pulls a basic approximation containing the predecessor tag; conversely a Scott-union witness unpacks to such a predecessor. ∎
+
+**Theorem (`sigmaJ.app`).** $\mathrm{graph}(\sigma_j)\,x=\sigma_j(x)$.
+
+*Proof.* The continuous-graph $\beta$-law. ∎
+
+**Theorem (`sigmaJ.bot`).** $\sigma_j(\bot)=\bot$.
+
+*Proof.* The empty set contributes no tagged pairs. ∎
+
+**Theorem (`sigmaJ.of_no_tag`).** If $u$ contains no pair with left tag $j$, then $\sigma_j(u)=\bot$.
+
+*Proof.* Every member of $\sigma_j(u)$ would require such a predecessor tag. ∎
+
+**Theorem (`sigmaJ.pair_union`).** If $j\neq j'$, then $\sigma_j\bigl(\{(j,m)\}\cup\{(j',m)\}\bigr)=\{(j,m+1)\}$.
+
+*Proof.* Only the matching tag survives; the other tag is excluded by distinctness. ∎
+
+**Theorem (`sigmaJ.succ_ne`).** If $j\neq j'$, then $\sigma_j(\{(j',m)\})=\bot$.
+
+*Proof.* A membership would force the tags equal. ∎
+
+**Theorem (`sigmaJ.succ_singleton`).** $\sigma_j(\{(j,m)\})=\{(j,m+1)\}$.
+
+*Proof.* Direct unpacking of the single tagged pair. ∎
+
+**Theorem (`sigmaJ.union_fresh`).** If $u$ has no $j$-tag, then $\sigma_j\bigl(u\cup\{(j,m)\}\bigr)=\{(j,m+1)\}$.
+
+*Proof.* Reorder the union and apply the singleton and no-tag cases. ∎
+
+**Definition (`sumMed`).** $\mathrm{sumMed}(f,g)$ is the graph of
+\[
+u\mapsto
+\begin{cases}
+f(u_1) & \text{if }u_0=0,\\
+g(u_1) & \text{otherwise},
+\end{cases}
+\]
+via the strict conditional on the zero and one projections of $u$.
+
+**Theorem (`sumMed.body_isScottContinuous`).** That body map in $u$ is Scott-continuous for fixed $f$ and $g$.
+
+*Proof.* Ternary continuity of the conditional along continuous projections and applications of $f$ and $g$. ∎
+
+**Theorem (`sumMed.app`).** Applying $\mathrm{sumMed}(f,g)$ recovers the conditional body.
+
+*Proof.* The $\beta$-law for the continuous body. ∎
+
+**Theorem (`sumMed.app_inl`).** $\mathrm{sumMed}(f,g)\,\langle 0,x\rangle=f(x)$.
+
+*Proof.* Unfold application and the left injection projections. ∎
+
+**Theorem (`sumMed.app_inr`).** $\mathrm{sumMed}(f,g)\,\langle 1,x\rangle=g(x)$.
+
+*Proof.* Symmetric with the right injection. ∎
+
+**Theorem (`sumMed.isGraph`).** $\mathrm{sumMed}(f,g)$ equals the graph of its own application.
+
+*Proof.* Pointwise graph extension from $\mathrm{sumMed.app}$. ∎
+
+**Theorem (`sumMed.rel`).** If $f:A\to C$ and $g:B\to C$ as morphisms of restricted equivalences, then $\mathrm{sumMed}(f,g):A+B\to C$.
+
+*Proof.* Related sum elements are left or right injections; reduce via $\mathrm{sumMed.app\_inl}$ or $\mathrm{sumMed.app\_inr}$ to the assumed relatedness of $f$ or $g$. ∎
+
+**Theorem (`sumMed.rel_unique`).** Any $h:A+B\to C$ that agrees with $f$ on left injections and with $g$ on right injections is related (as an arrow) to $\mathrm{sumMed}(f,g)$.
+
+*Proof.* On related sum elements, rewrite $h$ along the injection form and compare to the mediating applications of $f$ or $g$. ∎

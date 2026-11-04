@@ -15,3 +15,11 @@ $$(3.7) \quad \mathbf{val} = \lambda k \in \omega.\, k \supset \mathbf{G},\, \ma
 This function accomplishes the enumeration as follows:
 
 Theorem 3.1 is obvious from the construction of $\mathbf{G}$, because $\mathbf{G}(\mathbf{G}) = 0$ and $\mathbf{G}(0)(0) = \mathbf{suc}$, and so the $\mathbf{G}(0)(i)$ give us all the other combinators.
+
+<!-- formalization -->
+
+**Formalization.** Combinatory elements are those built from the base combinators $\mathbf{0}$, $\mathbf{suc}$, $\mathbf{pred}$, $\mathbf{cond}$, $\mathbf{K}$, $\mathbf{S}$ by application. Generation from $\mathbf{G}$ is the inductive closure of $\{\mathbf{G}\}$ under application. The generator theorem equates the two.
+
+**Theorem (`theorem_3_1`).** An element is combinatory if and only if it is generated from $\mathbf{G}$ by iterated application.
+
+*Proof.* ($\Rightarrow$) By induction on the combinatory construction: $\mathbf{0}=\mathbf{G}(\mathbf{G})$ and $\mathbf{suc}=\mathbf{G}(0)(0)$, so both lie in the $\mathbf{G}$-closure; the remaining base combinators are obtained by further applications of $\mathbf{G}$ to $0$ and $1=\mathbf{suc}(0)$ as in the generator identities; the inductive step is closure under application. ($\Leftarrow$) By induction on generation from $\mathbf{G}$: $\mathbf{G}$ itself is combinatory, and the combinatory class is closed under application. ∎

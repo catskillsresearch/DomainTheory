@@ -1,0 +1,8 @@
+The mediating arrow into a tensor product of retracts.
+
+**Definition (`pairMed`).** For maps $f$, $g$ and a retract $c$,
+\[
+\mathrm{pairMed}(f,g,c)=(f\otimes g)\circ\mathrm{diagC}\circ c.
+\]
+
+That is the composite of $c$ with the diagonal into $c\otimes c$, then the tensor of $f$ and $g$.

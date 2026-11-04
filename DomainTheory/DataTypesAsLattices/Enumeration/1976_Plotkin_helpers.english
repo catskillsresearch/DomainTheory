@@ -1,0 +1,44 @@
+Finite Plotkin steps: normalized application of $e_p$, tagging via $\sigma_j$, and iterated predecessors on numerals.
+
+**Theorem (`PlotkinHelpers.normalized_finite_app`).** Applying the graph of $y\mapsto e_p(y)$ recovers $e_p$ itself: $\mathrm{graph}(y\mapsto e_p(y))\,u=e_p(u)$.
+
+*Proof.* The $\beta$-law for continuous application of $e_p$. ∎
+
+**Theorem (`PlotkinHelpers.normalized_finite_fresh_app`).**
+\[
+\mathrm{graph}(y\mapsto e_p(y))\bigl(Z(m,e_p,e_q)\cup\{(\max(p,q)+1,\,m)\}\bigr)
+=Z(m+1,e_p,e_q).
+\]
+
+*Proof.* Reduce by the normalized $\beta$-law, then discard the fresh tag by the union-fresh application of $e_p$. ∎
+
+**Theorem (`PlotkinHelpers.finite_sigma_plain_app`).**
+\[
+\bigl(\mathrm{graph}(y\mapsto e_p(y))\cup\mathrm{graph}(\sigma_{\max(p,q)+1})\bigr)\,Z(m,e_p,e_q)
+=Z(m+1,e_p,e_q).
+\]
+
+*Proof.* Split the union application; the normalized part iterates once, while $\sigma_j$ on $Z(m,e_p,e_q)$ is empty by the finite no-tag bound. ∎
+
+**Theorem (`PlotkinHelpers.finite_sigma_union_app`).**
+\[
+\begin{aligned}
+&\bigl(\mathrm{graph}(y\mapsto e_p(y))\cup\mathrm{graph}(\sigma_{\max(p,q)+1})\bigr)
+\bigl(Z(m,e_p,e_q)\cup\{(\max(p,q)+1,\,m)\}\bigr)\\
+&\qquad=Z(m+1,e_p,e_q)\cup\{(\max(p,q)+1,\,m+1)\}.
+\end{aligned}
+\]
+
+*Proof.* Split the union: the normalized fresh step yields the next iterate, and $\sigma_j$ on the fresh singleton advances the tag. ∎
+
+**Theorem (`PlotkinHelpers.predSet_iterate_expTag_isScottContinuous`).** For each $k$, the map $e\mapsto\mathrm{predSet}^k(e(0))$ is Scott-continuous.
+
+*Proof.* Induction on $k$: the base is left-continuity of application at $0$; the step composes continuous $\mathrm{predSet}$ with the inductive map. ∎
+
+**Theorem (`PlotkinHelpers.predSet_iterate_ofNat`).** $\mathrm{predSet}^k(\overline{k+i})=\overline{i}$.
+
+*Proof.* Induction on $k$: the base is immediate; the step uses the successor law for $\mathrm{predSet}$ on numerals. ∎
+
+**Theorem (`PlotkinHelpers.predSet_iterate_self`).** $\mathrm{predSet}^k(\overline{k})=\overline{0}$.
+
+*Proof.* The previous identity at $i=0$. ∎

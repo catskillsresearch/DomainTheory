@@ -8,7 +8,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
-public import DomainTheory.DataTypesAsLattices.Functionality.Z
+public import DomainTheory.DataTypesAsLattices.Enumeration.Zcomb
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Retracts.typed_more
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract

@@ -4,7 +4,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.tensorR
 public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Functionality.PairSeq
+public import DomainTheory.DataTypesAsLattices.Enumeration.PairSeq
 
 @[expose] public section
 

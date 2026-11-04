@@ -8,9 +8,8 @@ public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Functionality.sumMed
-public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb
-public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ
+public import DomainTheory.DataTypesAsLattices.Enumeration.SumMed
+public import DomainTheory.DataTypesAsLattices.Enumeration.Zcomb
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
 public import DomainTheory.DataTypesAsLattices.Retracts.iterateFrom
 public import DomainTheory.DataTypesAsLattices.Retracts.lfpAbove

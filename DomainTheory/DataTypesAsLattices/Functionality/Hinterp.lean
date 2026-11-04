@@ -8,7 +8,7 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
-public import DomainTheory.DataTypesAsLattices.Functionality.ContinuityHelpers
+public import DomainTheory.DataTypesAsLattices.Enumeration.ContinuityHelpers
 public import DomainTheory.DataTypesAsLattices.Functionality.CombC
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more

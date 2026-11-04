@@ -11,7 +11,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Hinterp
 public import DomainTheory.DataTypesAsLattices.Functionality.encodeExp
 public import DomainTheory.DataTypesAsLattices.Functionality.Hops
 public import DomainTheory.DataTypesAsLattices.Functionality.Hstep
-public import DomainTheory.DataTypesAsLattices.Functionality.PairSeq
+public import DomainTheory.DataTypesAsLattices.Enumeration.PairSeq
 public import DomainTheory.DataTypesAsLattices.Retracts.tagInj
 public import DomainTheory.DataTypesAsLattices.Retracts.seq4
 public import DomainTheory.DataTypesAsLattices.Retracts.updateEnv

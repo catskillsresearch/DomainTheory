@@ -17,7 +17,7 @@ public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Functionality.ContinuityHelpers
+public import DomainTheory.DataTypesAsLattices.Enumeration.ContinuityHelpers
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
 
 @[expose] public section

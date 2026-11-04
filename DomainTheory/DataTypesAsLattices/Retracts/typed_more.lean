@@ -15,7 +15,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.intR
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
 public import DomainTheory.DataTypesAsLattices.Retracts.tensorR
-public import DomainTheory.DataTypesAsLattices.Functionality.PairSeq
+public import DomainTheory.DataTypesAsLattices.Enumeration.PairSeq
 
 @[expose] public section
 

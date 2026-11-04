@@ -1,0 +1,65 @@
+Sum and product combinators for retracts: tag tests, injections, diagonal, curry, and evaluation.
+
+**Definition (`whichC`).** $\mathrm{whichC}=\mathrm{fstC}$.
+
+**Theorem (`whichC.app`).** $\mathrm{whichC}\,u=u(0)$.
+
+*Proof.* The first-projection law. ∎
+
+**Definition (`outC`).** $\mathrm{outC}=\mathrm{sndC}$.
+
+**Definition (`outleftC`).** $\mathrm{outleftC}$ is the graph of $u\mapsto\mathrm{cond}(u(0),\,u(1),\,\bot)$.
+
+**Theorem (`outleftC.isScottContinuous`).** That body map is Scott-continuous.
+
+*Proof.* Continuity of the conditional in its first two arguments along continuous projections. ∎
+
+**Theorem (`outleftC.app`).** Applying $\mathrm{outleftC}$ recovers the conditional body.
+
+*Proof.* The $\beta$-law for the continuous body. ∎
+
+**Definition (`outrightC`).** $\mathrm{outrightC}$ is the graph of $u\mapsto\mathrm{cond}(u(0),\,\bot,\,u(1))$.
+
+**Theorem (`outrightC.isScottContinuous`).** That body map is Scott-continuous.
+
+*Proof.* Continuity of the conditional in its first and third arguments along continuous projections. ∎
+
+**Theorem (`outrightC.app`).** Applying $\mathrm{outrightC}$ recovers the conditional body.
+
+*Proof.* The $\beta$-law for the continuous body. ∎
+
+**Definition (`inrightC`).** $\mathrm{inrightC}$ is the graph of $x\mapsto\langle 1,x\rangle$.
+
+**Theorem (`inrightC_app`).** $\mathrm{inrightC}\,x=\langle 1,x\rangle$.
+
+*Proof.* The $\beta$-law for continuous right pairing at tag $1$. ∎
+
+**Definition (`inleftC`).** $\mathrm{inleftC}$ is the graph of $x\mapsto\langle 0,x\rangle$.
+
+**Theorem (`inleftC.app`).** $\mathrm{inleftC}\,x=\langle 0,x\rangle$.
+
+*Proof.* The $\beta$-law for continuous right pairing at tag $0$. ∎
+
+**Theorem (`curryC_isScottContinuous`).** The map $u\mapsto\mathrm{graph}\bigl(x\mapsto\mathrm{graph}(y\mapsto u(\langle x,y\rangle))\bigr)$ is Scott-continuous.
+
+*Proof.* Nested graph-constant continuity using left-continuity of application at a paired argument. ∎
+
+**Theorem (`curryC_app`).** $\mathrm{curryC}\,u=\mathrm{graph}\bigl(x\mapsto\mathrm{graph}(y\mapsto u(\langle x,y\rangle))\bigr)$.
+
+*Proof.* The $\beta$-law for that continuous outer map. ∎
+
+**Theorem (`curry_mid_isScottContinuous`).** For fixed $u$, the mid map $x\mapsto\mathrm{graph}(y\mapsto u(\langle x,y\rangle))$ is Scott-continuous.
+
+*Proof.* Graph-constant continuity from continuous application of $u$ along continuous left pairing. ∎
+
+**Theorem (`diagC_app`).** $\mathrm{diagC}\,u=\langle u,u\rangle$.
+
+*Proof.* The $\beta$-law for the continuous diagonal of pairing. ∎
+
+**Theorem (`evalC_isScottContinuous`).** The map $u\mapsto u(0)\,(u(1))$ is Scott-continuous.
+
+*Proof.* Continuity of application in both arguments along the two projections. ∎
+
+**Theorem (`evalC_app`).** $\mathrm{evalC}\,u=u(0)\,(u(1))$.
+
+*Proof.* The $\beta$-law for that continuous body. ∎

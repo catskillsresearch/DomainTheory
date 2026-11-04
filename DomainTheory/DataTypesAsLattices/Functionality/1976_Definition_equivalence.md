@@ -1,4 +1,4 @@
-# Definition
+# Restricted equivalence relations
 
 @import "../1976_Definition_equivalence.english" {code_block=false}
 
@@ -9,10 +9,6 @@
 **[Functionality/Ea.lean](Ea.lean)**
 
 @import "Ea.lean"
-
-**[Functionality/pairElem.lean](pairElem.lean)**
-
-@import "pairElem.lean"
 
 **[Functionality/arrowE.lean](arrowE.lean)**
 

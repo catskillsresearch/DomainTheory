@@ -6,8 +6,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.sndC
 public import DomainTheory.DataTypesAsLattices.Functionality.pairMed
 import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 import DomainTheory.DataTypesAsLattices.Functionality.CombC
-import DomainTheory.DataTypesAsLattices.Retracts.tensorR
-import DomainTheory.DataTypesAsLattices.Functionality.PairSeq
+import DomainTheory.DataTypesAsLattices.Enumeration.PairSeq
 import DomainTheory.DataTypesAsLattices.Retracts.typed_more
 import DomainTheory.DataTypesAsLattices.Retracts.bot_isRetract
 import DomainTheory.DataTypesAsLattices.Retracts.retract_app

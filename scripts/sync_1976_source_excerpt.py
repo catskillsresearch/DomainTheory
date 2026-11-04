@@ -463,7 +463,8 @@ def wire_section_child_tocs() -> None:
         (
             "Functionality/1976_Total_functions_and_functionality.md",
             [
-                "- [Definition (equivalence)](1976_Definition_equivalence.md)",
+                "- [Pair elements](1976_Pair_elements.md)",
+                "- [Restricted equivalence relations](1976_Definition_equivalence.md)",
                 "- [Theorem 7.1](1976_Theorem_7_1.md)",
                 "- [Theorem 7.2](1976_Theorem_7_2.md)",
                 "- [Theorem 7.3](1976_Theorem_7_3.md)",

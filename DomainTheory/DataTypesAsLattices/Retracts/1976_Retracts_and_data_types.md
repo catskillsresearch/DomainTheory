@@ -14,8 +14,10 @@
 - [Open-set retract](1976_Open_retract.md) ✓
 - [Theorem 4.2](1976_Theorem_4_2.md) ✓
 - [Theorem 4.3](1976_Theorem_4_3.md) ✓
+- [C combinators](1976_CombC.md) ✓
+- [Pair mediation](1976_Pair_mediation.md) ✓
 - [Theorem 4.4](../Functionality/1976_Theorem_4_4.md) ✓
 - [Theorem 4.5](1976_Theorem_4_5.md) ✓
 - [Theorem 4.6](1976_Theorem_4_6.md) ✓
 
-<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-03) — <a href="../1976_REVISION.md">1976 revision progress</a></p>
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-04) — <a href="../1976_REVISION.md">1976 revision progress</a></p>

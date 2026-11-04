@@ -17,7 +17,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.prodE
 public import DomainTheory.DataTypesAsLattices.Functionality.sumE
 public import DomainTheory.DataTypesAsLattices.Functionality.Ea
 public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
-public import DomainTheory.DataTypesAsLattices.Functionality.PairSeq
+public import DomainTheory.DataTypesAsLattices.Enumeration.PairSeq
 public import DomainTheory.DataTypesAsLattices.Retracts.typed_more
 public import DomainTheory.DataTypesAsLattices.Functionality.pairElem
 public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_4

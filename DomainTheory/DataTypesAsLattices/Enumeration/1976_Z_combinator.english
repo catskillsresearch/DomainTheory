@@ -1,0 +1,52 @@
+Finite iteration of application and its continuous combinator.
+
+**Definition (`Z`).** For $n\in\mathbb{N}$, a map $f$, and an argument $x$,
+\[
+Z(0,f,x)=x,\qquad Z(n+1,f,x)=f\bigl(Z(n,f,x)\bigr).
+\]
+
+**Theorem (`Z.rel`).** If a restricted equivalence $A$ is preserved by $f$ versus $f'$ on related arguments, and $A$ relates $x$ to $y$, then $A$ relates $Z(n,f,x)$ to $Z(n,f',y)$.
+
+*Proof.* Induction on $n$: the base is the given relatedness of $x$ and $y$; the step applies the assumed preservation of $A$ by $f$ and $f'$. ∎
+
+**Theorem (`Z.finite_bound`).** Every member of $Z(m,e_p,e_q)$ is at most $\max(p,q)$.
+
+*Proof.* Induction on $m$: the base uses the bound on members of $e_q$; the step unpacks a coded pair and uses the bound on the left factor from $e_p$. ∎
+
+**Theorem (`Z.finite_no_tag`).** The tagged pair $(\max(p,q)+1,\,k)$ does not lie in $Z(m,e_p,e_q)$.
+
+*Proof.* Any such membership would force $\max(p,q)+1\le\max(p,q)$ by the finite bound. ∎
+
+**Theorem (`Z.graph_funOf`).** Iterating the graph of $y\mapsto f(y)$ agrees with iterating $f$: $Z(n,\mathrm{graph}(y\mapsto f(y)),x)=Z(n,f,x)$.
+
+*Proof.* Induction on $n$; the step uses the $\beta$-law for the continuous map $f$. ∎
+
+**Theorem (`Z.isScottContinuous_left`).** For fixed $n$ and $x$, the map $f\mapsto Z(n,f,x)$ is Scott-continuous.
+
+*Proof.* Induction on $n$: the base is a constant map; the step is continuous application of $f$ to a continuous iterate, assembled by the tuple continuity helper. ∎
+
+**Theorem (`Z.isScottContinuous_right`).** For fixed $n$ and $f$, the map $x\mapsto Z(n,f,x)$ is Scott-continuous.
+
+*Proof.* Induction on $n$: the base is the identity; the step composes continuous application of $f$ with the inductive iterate. ∎
+
+**Definition (`Zcomb`).** $\mathrm{Zcomb}(n)=\mathrm{graph}\bigl(f\mapsto\mathrm{graph}(x\mapsto Z(n,f,x))\bigr)$.
+
+**Theorem (`Zcomb.map_isScottContinuous`).** The outer graph map $f\mapsto\mathrm{graph}(x\mapsto Z(n,f,x))$ is Scott-continuous.
+
+*Proof.* Graph-constant continuity from the left continuity of $Z$ in $f$. ∎
+
+**Theorem (`Zcomb.app`).** $\mathrm{Zcomb}(n)\,f=\mathrm{graph}(x\mapsto Z(n,f,x))$.
+
+*Proof.* The $\beta$-law for the continuous outer map. ∎
+
+**Theorem (`Zcomb.app2`).** $\mathrm{Zcomb}(n)\,f\,x=Z(n,f,x)$.
+
+*Proof.* Apply $\mathrm{Zcomb.app}$, then the $\beta$-law for the continuous right iterate. ∎
+
+**Theorem (`Zcomb.isGraph`).** $\mathrm{Zcomb}(n)$ equals the graph of $f\mapsto\mathrm{Zcomb}(n)\,f$.
+
+*Proof.* Pointwise graph extension using $\mathrm{Zcomb.app}$. ∎
+
+**Theorem (`Zcomb.app_isGraph`).** $\mathrm{Zcomb}(n)\,f$ equals the graph of $x\mapsto\mathrm{Zcomb}(n)\,f\,x$.
+
+*Proof.* From $\mathrm{Zcomb.app}$ and the $\beta$-law for the right iterate. ∎

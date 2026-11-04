@@ -3,9 +3,8 @@ public import Mathlib.Computability.Halting
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.distributive_functions
 public import DomainTheory.DataTypesAsLattices.Graph.graph
-public import DomainTheory.DataTypesAsLattices.Functionality.sumMed
-public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb
-public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ
+public import DomainTheory.DataTypesAsLattices.Enumeration.SumMed
+public import DomainTheory.DataTypesAsLattices.Enumeration.Zcomb
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
 public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
 public import DomainTheory.DataTypesAsLattices.Retracts.intF

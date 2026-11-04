@@ -1,0 +1,23 @@
+Ordered pairs of elements of $\mathbf{P}\omega$, as length-$2$ sequences.
+
+**Definition (`pairElem`).** $\langle x,y\rangle=\mathrm{seq}_2(x,y)$.
+
+**Theorem (`pairElem.tag_ne`).** $\langle 0,x\rangle\neq\langle 1,y\rangle$.
+
+*Proof.* Distinct tags on length-$2$ sequences. ∎
+
+**Theorem (`pairElem.eq_pairSeq`).** $\langle x,y\rangle$ agrees with the retract pairing $\mathrm{pairSeq}(x,y)$.
+
+*Proof.* Both are $\mathrm{seq}_2(x,y)$. ∎
+
+**Theorem (`pairElem.fst`).** $\langle x,y\rangle_0=x$.
+
+*Proof.* The zero coordinate of a length-$2$ sequence. ∎
+
+**Theorem (`pairElem.snd`).** $\langle x,y\rangle_1=y$.
+
+*Proof.* The one coordinate of a length-$2$ sequence. ∎
+
+**Theorem (`pairElem.inj`).** If $\langle x,y\rangle=\langle x',y'\rangle$, then $x=x'$ and $y=y'$.
+
+*Proof.* Project both sides with the first and second coordinates. ∎

@@ -5,3 +5,10 @@
 
 @import "theorem_7_3.lean"
 
+**[DataTypesAsLattices/Functionality/emptyE.lean](emptyE.lean)**
+
+@import "emptyE.lean"
+
+**[DataTypesAsLattices/Functionality/singletonE.lean](singletonE.lean)**
+
+@import "singletonE.lean"

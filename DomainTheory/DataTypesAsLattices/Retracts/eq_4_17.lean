@@ -9,7 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
 public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Functionality.PairSeq
+public import DomainTheory.DataTypesAsLattices.Enumeration.PairSeq
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 
 @[expose] public section

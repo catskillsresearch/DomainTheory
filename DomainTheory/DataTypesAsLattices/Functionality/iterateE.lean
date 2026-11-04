@@ -3,7 +3,7 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
-public import DomainTheory.DataTypesAsLattices.Functionality.Z
+public import DomainTheory.DataTypesAsLattices.Enumeration.Zcomb
 
 @[expose] public section
 

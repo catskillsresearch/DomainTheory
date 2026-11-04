@@ -1,10 +1,8 @@
 
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts.Retract
 public import DomainTheory.DataTypesAsLattices.Retracts.tensorR
 public import DomainTheory.DataTypesAsLattices.Retracts.diagC
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 
 @[expose] public section
 

@@ -14,7 +14,7 @@ public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Functionality.ContinuityHelpers
+public import DomainTheory.DataTypesAsLattices.Enumeration.ContinuityHelpers
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Defs.Induced

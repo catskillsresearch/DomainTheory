@@ -1,14 +1,8 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
-public import DomainTheory.DataTypesAsLattices.Lambda.sequences
-public import DomainTheory.DataTypesAsLattices.Lambda.condSet
-public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Lambda.Language
-public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
-public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
+import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
+import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
 
 @[expose] public section
 

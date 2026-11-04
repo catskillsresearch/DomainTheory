@@ -1,0 +1,13 @@
+%% Each box is one outline note from 1976_Gcomb_tools.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
+%% Lean import edges among the four tool notes.
+flowchart TB
+
+  CONT["Continuity helpers"]
+  PSEQ["Pair sequences"]
+  SMED["Sum mediation"]
+  ZCOMB["Z combinator"]
+
+  CONT --> SMED
+  SMED --> ZCOMB

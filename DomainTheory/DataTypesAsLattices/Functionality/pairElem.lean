@@ -1,11 +1,5 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Functionality.PairSeq
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Graph.graph
-public import DomainTheory.DataTypesAsLattices.Lambda.Language
-public import DomainTheory.DataTypesAsLattices.Lambda.sequences
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
 @[expose] public section
 
@@ -28,8 +22,14 @@ theorem snd (x y : Pomega) : funOf (pairElem x y) (ofNat 1) = y :=
   seq2.one x y
 
 theorem inj {x y x' y' : Pomega} (h : pairElem x y = pairElem x' y') :
-    x = x' ∧ y = y' :=
-  PairSeq.inj h
+    x = x' ∧ y = y' := by
+  constructor
+  · have := congrArg (fun w => funOf w (ofNat 0)) h
+    rw [fst, fst] at this
+    exact this
+  · have := congrArg (fun w => funOf w (ofNat 1)) h
+    rw [snd, snd] at this
+    exact this
 
 end pairElem
 

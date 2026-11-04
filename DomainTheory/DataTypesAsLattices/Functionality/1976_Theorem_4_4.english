@@ -69,7 +69,7 @@ This shows that our category of retracts is a *Cartesian closed category*, which
 
 <!-- formalization -->
 
-**Formalization.** The Lean in this note packages pairing projections, Scott’s membership clause (ii) for $\otimes$, and the mediating-morphism existence/uniqueness that make $\otimes$ a categorical product. (Clauses (i), (iii), (iv) and the numbered equations (4.17)–(4.25) live in companion modules not yet folded here.)
+**Formalization.** The facts below package pairing projections, Scott’s membership clause (ii) for $\otimes$, and the mediating existence/uniqueness that make $\otimes$ a categorical product. Write $h=(f\otimes g)\circ\mathbf{diag}\circ c$ for the mediating composite of the prior peer; the combinators $\mathbf{fst}$, $\mathbf{snd}$, $\mathbf{diag}$ are as in (4.14)–(4.16). Clauses (i), (iii), (iv) and the numbered equations (4.17)–(4.25) are recorded elsewhere.
 
 **Theorem (`theorem_4_4.ii`).** Pairing recovers its components: $\langle x,y\rangle_0=x$ and $\langle x,y\rangle_1=y$.
 
@@ -79,16 +79,14 @@ This shows that our category of retracts is a *Cartesian closed category*, which
 
 *Proof.* ($\Rightarrow$) Fixed-pointness under $a\otimes b$ rewrites $u$ as $\langle a(u_0),b(u_1)\rangle$; projecting both sides yields $u_i=a(u_i)$ (resp.\ $b$), and substituting those equalities back gives the displayed pairing. ($\Leftarrow$) From $u=\langle u_0,u_1\rangle$ and the two typings, $(a\otimes b)(u)=\langle a(u_0),b(u_1)\rangle=\langle u_0,u_1\rangle=u$. ∎
 
-**Theorem (`theorem_4_4.med`).** If $f:c\circ\to a$ and $g:c\circ\to b$, the mediating map
-$$h=(f\otimes g)\circ\mathbf{diag}\circ c$$
-satisfies $h:c\circ\to(a\otimes b)$, $\mathbf{fst}\circ h=f$, and $\mathbf{snd}\circ h=g$.
+**Theorem (`theorem_4_4.med`).** If $f:c\circ\to a$ and $g:c\circ\to b$, then $h:c\circ\to(a\otimes b)$, $\mathbf{fst}\circ h=f$, and $\mathbf{snd}\circ h=g$.
 
-*Proof.* Pointwise on graphs: $h(x)=\langle f(c(x)),g(c(x))\rangle$, and applying $a\otimes b$ (with $c$ a retract and the typings of $f,g$) returns the same pair, so $h$ is typed into the product arrow. Composing with $\mathbf{fst}$ (resp.\ $\mathbf{snd}$) peels the first (resp.\ second) coordinate and uses that $f$ (resp.\ $g$) already restricts along $c$. ∎
+*Proof.* Pointwise, $h(x)=\langle f(c(x)),g(c(x))\rangle$; applying $a\otimes b$ (with $c$ a retract and the typings of $f$ and $g$) returns the same pair, so $h$ is typed into the product arrow. Composing with $\mathbf{fst}$ (resp.\ $\mathbf{snd}$) peels the first (resp.\ second) coordinate and uses that $f$ (resp.\ $g$) already restricts along $c$. ∎
 
-**Theorem (`theorem_4_4.med_unique`).** Any $h:c\circ\to(a\otimes b)$ with $\mathbf{fst}\circ h=f$ and $\mathbf{snd}\circ h=g$ equals that mediating map.
+**Theorem (`theorem_4_4.med_unique`).** Any $h':c\circ\to(a\otimes b)$ with $\mathbf{fst}\circ h'=f$ and $\mathbf{snd}\circ h'=g$ equals $h$.
 
-*Proof.* Extensionality of graphs: at each $x$, typing into $a\otimes b$ forces $h(x)=\langle a(h(c(x))_0),b(h(c(x))_1)\rangle$; the projection hypotheses identify those coordinates with $f(x)$ and $g(x)$, matching $(f\otimes g)(\mathbf{diag}(c(x)))$. ∎
+*Proof.* At each $x$, typing into $a\otimes b$ forces $h'(x)=\langle a(h'(c(x))_0),b(h'(c(x))_1)\rangle$; the projection hypotheses identify those coordinates with $f(x)$ and $g(x)$, matching $(f\otimes g)(\mathbf{diag}(c(x)))$. ∎
 
 **Theorem (`theorem_4_4`).** Pairing projections hold for all $x,y$, and $\bot$ is a retract.
 
-*Proof.* Assemble `theorem_4_4.ii` with the known retract $\bot$. (A placeholder packaging; the product theorem proper is the typed/mediating lemmas above.) ∎
+*Proof.* The projection identity just proved, together with the known retract $\bot$. ∎

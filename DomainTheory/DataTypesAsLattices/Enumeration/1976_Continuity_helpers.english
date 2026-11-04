@@ -1,0 +1,13 @@
+Scott-continuity lemmas for diagonal and multi-argument composition.
+
+**Theorem (`ContinuityHelpers.on_diag`).** If a binary map $F$ is Scott-continuous in each argument separately, then $x\mapsto F(x,x)$ is Scott-continuous.
+
+*Proof.* The diagonal substitution theorem identifies membership in $F(x,x)$ with a Scott-union over basic approximations $e_n\subseteq x$; translating that union into the Scott-union characterisation of continuity gives the claim. ∎
+
+**Theorem (`ContinuityHelpers.tuple`).** If $F$ is Scott-continuous in each argument and $g$, $h$ are Scott-continuous, then $x\mapsto F(g(x),h(x))$ is Scott-continuous.
+
+*Proof.* Reduce to the diagonal case by fixing one composed argument and using substitution continuity of $F$ along $g$ or $h$. ∎
+
+**Theorem (`ContinuityHelpers.nary`).** If a ternary map $F$ is Scott-continuous in each argument and $g$, $h$, $i$ are Scott-continuous, then $x\mapsto F(g(x),h(x),i(x))$ is Scott-continuous.
+
+*Proof.* Apply the tuple lemma in the first two slots with the third argument held by $i$, then close under diagonal continuity with substitution along $i$. ∎
