@@ -14,8 +14,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Functionality.emptyE
-public import DomainTheory.DataTypesAsLattices.Functionality.singletonE
 public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_1
 
 @[expose] public section

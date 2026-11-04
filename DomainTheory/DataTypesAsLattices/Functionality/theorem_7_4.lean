@@ -18,7 +18,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Nk
 public import DomainTheory.DataTypesAsLattices.Functionality.Nrel
 public import DomainTheory.DataTypesAsLattices.Enumeration.SumMed
 public import DomainTheory.DataTypesAsLattices.Enumeration.Zcomb
-public import DomainTheory.DataTypesAsLattices.Functionality.emptyE
 public import DomainTheory.DataTypesAsLattices.Functionality.encodeExp
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 public import DomainTheory.DataTypesAsLattices.Functionality.Hops
@@ -28,7 +27,6 @@ public import DomainTheory.DataTypesAsLattices.Functionality.kerE
 public import DomainTheory.DataTypesAsLattices.Functionality.PlotkinHelpers
 public import DomainTheory.DataTypesAsLattices.Functionality.pairMed
 public import DomainTheory.DataTypesAsLattices.Functionality.plotkinE
-public import DomainTheory.DataTypesAsLattices.Functionality.singletonE
 public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_1
 public import DomainTheory.DataTypesAsLattices.Retracts.updateEnv
 public import DomainTheory.DataTypesAsLattices.Graph.beta

@@ -28,7 +28,7 @@ $$(7.8) \quad A + B = \{\langle \langle 0, x \rangle, \langle 0, y \rangle \rang
 
 <!-- formalization -->
 
-**Formalization.** Restricted equivalences are packaged as a structure with a binary relation that is symmetric and transitive. Membership $x:A$ is reflexivity $x\,A\,x$. The retract identity $E_a$ and the functors (7.6)–(7.8) are the constructions below; symmetry and transitivity of each are part of the definition.
+**Formalization.** Restricted equivalences are packaged as a structure with a binary relation that is symmetric and transitive. Membership $x:A$ is reflexivity $x\,A\,x$. The retract identity $E_a$, the functors (7.6)–(7.8), and the empty and singleton equivalences are the constructions below; symmetry and transitivity of each are part of the definition.
 
 **Definition (`RestrictedEquiv`).** A restricted equivalence is a relation $A$ on $\mathbf{P}\omega$ satisfying (7.2) and (7.3).
 
@@ -41,3 +41,11 @@ $$(7.8) \quad A + B = \{\langle \langle 0, x \rangle, \langle 0, y \rangle \rang
 **Definition (`RestrictedEquiv.prodE`).** $A\times B$ relates $u$ to $v$ when both are pairs of their projections and the projections are related in $A$ and in $B$ respectively.
 
 **Definition (`RestrictedEquiv.sumE`).** $A+B$ relates $u$ to $v$ when both are left injections whose payloads are related in $A$, or both are right injections whose payloads are related in $B$.
+
+**Definition (`emptyE`).** The empty restricted equivalence relates nothing.
+
+**Definition (`singletonE`).** The singleton on $a$ relates $x$ to $y$ just when $x=y=a$.
+
+**Theorem (`singletonE.mem`).** $x$ is a member of the singleton on $a$ if and only if $x=a$.
+
+*Proof.* Unfold membership as $x\,A\,x$. ∎

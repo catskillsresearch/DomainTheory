@@ -721,7 +721,6 @@ import DomainTheory.DataTypesAsLattices.Enumeration.SumMed
 import DomainTheory.DataTypesAsLattices.Enumeration.Zcomb
 import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 import DomainTheory.DataTypesAsLattices.Functionality.CombC
-import DomainTheory.DataTypesAsLattices.Functionality.emptyE
 import DomainTheory.DataTypesAsLattices.Functionality.encodeExp
 import DomainTheory.DataTypesAsLattices.Retracts.envR
 import DomainTheory.DataTypesAsLattices.Retracts.eq_4_12
@@ -757,7 +756,6 @@ import DomainTheory.DataTypesAsLattices.Functionality.plotkinE
 import DomainTheory.DataTypesAsLattices.Retracts.plus7
 import DomainTheory.DataTypesAsLattices.Retracts.plusR
 import DomainTheory.DataTypesAsLattices.Retracts.seq4
-import DomainTheory.DataTypesAsLattices.Functionality.singletonE
 import DomainTheory.DataTypesAsLattices.Retracts.tagInj
 import DomainTheory.DataTypesAsLattices.Retracts.tensor4
 import DomainTheory.DataTypesAsLattices.Retracts.tensorR
