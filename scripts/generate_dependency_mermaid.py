@@ -1081,7 +1081,7 @@ CLOSURES_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Is compact", "Continuous basis"),
     ("Continuous basis", "Countably algebraic"),
     ("Countably algebraic", "Representation"),
-    ("Representation", "Definition (closure)"),
+    ("Representation", "Closure operation"),
 ]
 
 DEFINABILITY_THEOREM_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
@@ -1417,6 +1417,7 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Continuous basis": "CBAS",
                 "Countably algebraic": "CALG",
                 "Representation": "REP",
+                "Closure operation": "DCLOS",
                 "Definition (closure)": "DCLOS",
                 "Theorem 5.1 — the algebraic lattice theorem": "T51",
                 "Theorem 5.2 — the representation theorem": "T52",

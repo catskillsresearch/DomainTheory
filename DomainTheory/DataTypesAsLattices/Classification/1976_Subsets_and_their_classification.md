@@ -475,9 +475,6 @@
 **[DataTypesAsLattices/Lambda/Fofg.lean](../Lambda/Fofg.lean)**
 
 @import "../Lambda/Fofg.lean"
-**[DataTypesAsLattices/Closures/Closure.lean](../Closures/Closure.lean)**
-
-@import "../Closures/Closure.lean"
 **[DataTypesAsLattices/Closures/closure_expansive.lean](../Closures/closure_expansive.lean)**
 
 @import "../Closures/closure_expansive.lean"

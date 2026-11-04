@@ -14,7 +14,7 @@ flowchart TB
   CBAS["Continuous basis"]
   CALG["Countably algebraic"]
   REP["Representation"]
-  DCLOS["Definition (closure)"]
+  DCLOS["Closure operation"]
   T51["Theorem 5.1 — the algebraic lattice theorem"]
   T52["Theorem 5.2 — the representation theorem"]
   T53["Theorem 5.3 — the function space theorem"]
@@ -32,9 +32,8 @@ flowchart TB
   SQP --> PRED
   CALG --> REP
   BOT --> SQP
-  ICMP --> T51
-  REP --> T52
-  T51 --> T52
+  DCLOS --> T51
+  DCLOS --> T52
   T51 --> T53
   T53 --> T54
   T52 --> T55

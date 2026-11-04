@@ -48,3 +48,9 @@ $$(5.10) \quad [[x, y]]_1 = y.$$
 We shall not extend the idea of these new functions to triples and sequences, though it is clear what to do.
 
 Abstractly, an *algebraic lattice* is a complete lattice in which the isolated points are dense. An *isolated* (sometimes called: *compact*) point in a lattice is one that is not the limit (sup or l.u.b.) of any directed family of its proper subelements. This definition works in continuous lattices, but more generally it is better to say that if the isolated point is *contained in* a sup, then it is also contained in a finite subsup (a sup of a finite selection of elements out of the given sup). In the case of the lattice of subgroups of a group, the isolated ones are the finitely generated subgroups. The isolated points of $\mathbf{P}\omega$ are the finite sets $e_n$. To say that isolated points are *dense* means that every element in the lattice is the sup of the isolated points it contains. The sequel to Theorem 4.1 for closure operations relates them to algebraic lattices.
+
+<!-- formalization -->
+
+**Definition (`Closure`).** An element $a\in\mathbf{P}\omega$ is a closure operation when $\mathbf{I}\subseteq a$ and $a$ is a retract ($a=a\circ a$).
+
+*Proof.* Expansiveness $\mathbf{I}\subseteq a$ is $x\subseteq a(x)$ for all $x$; idempotence is the retract equation. Together these are Scott’s display $\mathbf{I}\subseteq a=a\circ a$. ∎
