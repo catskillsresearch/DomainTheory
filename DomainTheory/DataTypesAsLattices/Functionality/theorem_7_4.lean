@@ -8,7 +8,7 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Embedding.extend
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
-public import DomainTheory.DataTypesAsLattices.Functionality.Ea
+public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.HF
 public import DomainTheory.DataTypesAsLattices.Functionality.Hfun
 public import DomainTheory.DataTypesAsLattices.Functionality.Hinterp
@@ -16,10 +16,8 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Htyped
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 public import DomainTheory.DataTypesAsLattices.Functionality.Nk
 public import DomainTheory.DataTypesAsLattices.Functionality.Nrel
-public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Enumeration.SumMed
 public import DomainTheory.DataTypesAsLattices.Enumeration.Zcomb
-public import DomainTheory.DataTypesAsLattices.Functionality.arrowE
 public import DomainTheory.DataTypesAsLattices.Functionality.emptyE
 public import DomainTheory.DataTypesAsLattices.Functionality.encodeExp
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
@@ -30,9 +28,7 @@ public import DomainTheory.DataTypesAsLattices.Functionality.kerE
 public import DomainTheory.DataTypesAsLattices.Functionality.PlotkinHelpers
 public import DomainTheory.DataTypesAsLattices.Functionality.pairMed
 public import DomainTheory.DataTypesAsLattices.Functionality.plotkinE
-public import DomainTheory.DataTypesAsLattices.Functionality.prodE
 public import DomainTheory.DataTypesAsLattices.Functionality.singletonE
-public import DomainTheory.DataTypesAsLattices.Functionality.sumE
 public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_1
 public import DomainTheory.DataTypesAsLattices.Retracts.updateEnv
 public import DomainTheory.DataTypesAsLattices.Graph.beta

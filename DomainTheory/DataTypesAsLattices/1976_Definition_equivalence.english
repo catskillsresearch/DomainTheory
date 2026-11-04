@@ -25,3 +25,19 @@ $$(7.7) \quad A \times B = \{\langle \langle x, x' \rangle, \langle y, y' \rangl
 $$(7.8) \quad A + B = \{\langle \langle 0, x \rangle, \langle 0, y \rangle \rangle \mid x \, A \, y\} \cup \{\langle \langle 1, x' \rangle, \langle 1, y' \rangle \rangle \mid x' \, B \, y'\}.$$
 
 <!-- page 42 -->
+
+<!-- formalization -->
+
+**Formalization.** Restricted equivalences are packaged as a structure with a binary relation that is symmetric and transitive. Membership $x:A$ is reflexivity $x\,A\,x$. The retract identity $E_a$ and the functors (7.6)–(7.8) are the constructions below; symmetry and transitivity of each are part of the definition.
+
+**Definition (`RestrictedEquiv`).** A restricted equivalence is a relation $A$ on $\mathbf{P}\omega$ satisfying (7.2) and (7.3).
+
+**Definition (`RestrictedEquiv.mem`).** $x:A$ means $x\,A\,x$.
+
+**Definition (`RestrictedEquiv.Ea`).** $E_a$ relates $x$ to $y$ just when $x:a$, $y:a$, and $x=y$.
+
+**Definition (`RestrictedEquiv.arrowE`).** $A\to B$ relates $f$ to $g$ when both are graphs of their own application and $x\,A\,y$ implies $f(x)\,B\,g(y)$.
+
+**Definition (`RestrictedEquiv.prodE`).** $A\times B$ relates $u$ to $v$ when both are pairs of their projections and the projections are related in $A$ and in $B$ respectively.
+
+**Definition (`RestrictedEquiv.sumE`).** $A+B$ relates $u$ to $v$ when both are left injections whose payloads are related in $A$, or both are right injections whose payloads are related in $B$.

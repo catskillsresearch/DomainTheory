@@ -702,7 +702,7 @@ import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot
 import DomainTheory.DataTypesAsLattices.FixedPoint.iterateBot_mono
 import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_4
-import DomainTheory.DataTypesAsLattices.Functionality.Ea
+import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 import DomainTheory.DataTypesAsLattices.Functionality.HF
 import DomainTheory.DataTypesAsLattices.Functionality.Hcomb
 import DomainTheory.DataTypesAsLattices.Functionality.Hfun
@@ -714,13 +714,11 @@ import DomainTheory.DataTypesAsLattices.Lambda.eta2
 import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
 import DomainTheory.DataTypesAsLattices.Functionality.Nk
 import DomainTheory.DataTypesAsLattices.Functionality.Nrel
-import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 import DomainTheory.DataTypesAsLattices.Lambda.Scomb_more
 import DomainTheory.DataTypesAsLattices.Enumeration.ContinuityHelpers
 import DomainTheory.DataTypesAsLattices.Enumeration.PairSeq
 import DomainTheory.DataTypesAsLattices.Enumeration.SumMed
 import DomainTheory.DataTypesAsLattices.Enumeration.Zcomb
-import DomainTheory.DataTypesAsLattices.Functionality.arrowE
 import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 import DomainTheory.DataTypesAsLattices.Functionality.CombC
 import DomainTheory.DataTypesAsLattices.Functionality.emptyE
@@ -758,10 +756,8 @@ import DomainTheory.DataTypesAsLattices.Functionality.pairMed
 import DomainTheory.DataTypesAsLattices.Functionality.plotkinE
 import DomainTheory.DataTypesAsLattices.Retracts.plus7
 import DomainTheory.DataTypesAsLattices.Retracts.plusR
-import DomainTheory.DataTypesAsLattices.Functionality.prodE
 import DomainTheory.DataTypesAsLattices.Retracts.seq4
 import DomainTheory.DataTypesAsLattices.Functionality.singletonE
-import DomainTheory.DataTypesAsLattices.Functionality.sumE
 import DomainTheory.DataTypesAsLattices.Retracts.tagInj
 import DomainTheory.DataTypesAsLattices.Retracts.tensor4
 import DomainTheory.DataTypesAsLattices.Retracts.tensorR

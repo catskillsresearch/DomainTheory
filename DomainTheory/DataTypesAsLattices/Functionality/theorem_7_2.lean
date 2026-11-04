@@ -12,10 +12,7 @@ public import DomainTheory.DataTypesAsLattices.Embedding.extend
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Functionality.arrowE
-public import DomainTheory.DataTypesAsLattices.Functionality.prodE
-public import DomainTheory.DataTypesAsLattices.Functionality.sumE
-public import DomainTheory.DataTypesAsLattices.Functionality.Ea
+public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
 public import DomainTheory.DataTypesAsLattices.Enumeration.PairSeq
 public import DomainTheory.DataTypesAsLattices.Retracts.typed_more

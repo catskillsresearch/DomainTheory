@@ -1,7 +1,6 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Functionality.arrowE
-public import DomainTheory.DataTypesAsLattices.Functionality.sumE
+public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 import DomainTheory.DataTypesAsLattices.Enumeration.ContinuityHelpers
 import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3

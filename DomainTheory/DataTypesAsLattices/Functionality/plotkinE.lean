@@ -9,7 +9,6 @@ public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Pomega.pair
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
-public import DomainTheory.DataTypesAsLattices.Functionality.arrowE
 public import DomainTheory.DataTypesAsLattices.Enumeration.SumMed
 public import DomainTheory.DataTypesAsLattices.Enumeration.Zcomb
 public import DomainTheory.DataTypesAsLattices.Functionality.encodeExp

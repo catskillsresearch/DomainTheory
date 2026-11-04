@@ -6,18 +6,4 @@
 
 @import "RestrictedEquiv.lean"
 
-**[Functionality/Ea.lean](Ea.lean)**
-
-@import "Ea.lean"
-
-**[Functionality/arrowE.lean](arrowE.lean)**
-
-@import "arrowE.lean"
-
-**[Functionality/prodE.lean](prodE.lean)**
-
-@import "prodE.lean"
-
-**[Functionality/sumE.lean](sumE.lean)**
-
-@import "sumE.lean"
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-04) — <a href="../1976_REVISION.md">1976 revision progress</a></p>
