@@ -3,7 +3,7 @@
 @import "Closures.mermaid"
 
 - [Introduction](1976_Closures_Introduction.md) ✓
-- [Isolated](1976_Isolated.md)
+- [Isolated](1976_Isolated.md) ✓
 - [Bottom](1976_Bottom.md)
 - [Square pair](1976_Square_pair.md)
 - [Predecessor identities](1976_Predecessor_identities.md)
