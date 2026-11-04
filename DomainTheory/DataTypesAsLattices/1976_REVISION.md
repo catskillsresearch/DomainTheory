@@ -13,6 +13,6 @@ Tracks the [revision ethos](../../README.md#revision): Mathlib-style library lem
 | 4 | Retracts and data types | [Retracts/1976_Retracts_and_data_types.md](Retracts/1976_Retracts_and_data_types.md) | **complete** (2026-11-04) |
 | 5 | Closure operations and algebraic lattices | [Closures/1976_Closure_operations_and_algebraic_lattices.md](Closures/1976_Closure_operations_and_algebraic_lattices.md) | **complete** (2026-11-04) |
 | 6 | Subsets and their classification | [Classification/1976_Subsets_and_their_classification.md](Classification/1976_Subsets_and_their_classification.md) | **complete** (2026-11-04) |
-| 7 | Total functions and functionality | [Functionality/1976_Total_functions_and_functionality.md](Functionality/1976_Total_functions_and_functionality.md) | pending |
+| 7 | Total functions and functionality | [Functionality/1976_Total_functions_and_functionality.md](Functionality/1976_Total_functions_and_functionality.md) | **complete** (2026-11-04) |
 
 When a section is finished, set its status here and add the green **Revised** footer on that section’s hub and its note pages.

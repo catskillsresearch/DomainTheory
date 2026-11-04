@@ -92,3 +92,71 @@ But then by continuity this equation holds for *all* $f, x$. It follows now that
 These results bring up many questions which we leave unanswered here. For example, which combinators (i.e., pure $\lambda$-terms) have functionality as in the examples above, and can we decide when a term is one such? In particular, can the diagonal combinator $\lambda x.\, x(x)$ be typed? (The argument of Hindley, et al. (1972, p. 81) is purely formal and does not apparently apply to the model.) What about terms in LAMBDA beyond the pure $\lambda$-calculus?
 
 <!-- page 47 -->
+
+<!-- formalization -->
+
+**Formalization.** The iterator theorem packages Plotkin’s tag-erasure argument: successor identities for $\sigma_j$, a restricted equivalence that pairs finite orbits with fresh tags, and uniqueness of any $\eta$-normalized $z$ that is functional at every $(A\to A)\to(A\to A)$.
+
+**Definition (`eraseTag`).** Erase tag $j$ from $u$ by discarding every pair whose first component is $j$.
+
+**Theorem (`eraseTag.Z_finite`).** On a finite orbit $Z_m(e_p,e_q)$, erasing the fresh tag $\max(p,q)+1$ leaves the orbit unchanged.
+
+*Proof.* Finite orbits never carry that fresh tag. ∎
+
+**Theorem (`eraseTag.Z_finite_union`).** Erasing the fresh tag from an orbit union a fresh singleton recovers the plain orbit.
+
+*Proof.* Membership either lies in the orbit (kept) or is the fresh pair (discarded). ∎
+
+**Definition (`plotkinGood`).** An element is Plotkin-good when it is a finite orbit of $e_p$ on $e_q$, or that orbit union the fresh singleton at step $m$.
+
+**Definition (`plotkinRel`).** The generating relation identifies an orbit with the same orbit union its fresh singleton at the same step, in either order.
+
+**Definition (`plotkinE`).** The Plotkin equivalence relates good elements whose equivalence closure under that generating relation identifies them.
+
+**Theorem (`plotkinE.erase`).** Related elements have equal erase-tag projections at the fresh tag.
+
+*Proof.* Induction on the generated equivalence, using the two erase-tag orbit identities. ∎
+
+**Theorem (`plotkinE.finite_separation`).** Iterating the $\eta$-normalized finite graph of $e_p$ united with $\sigma_j$ on $e_q$ union a fresh zero yields the finite orbit union the fresh singleton.
+
+*Proof.* Induction on the iterate, separating $e_p$ from $\sigma_j$ by freshness of the tag. ∎
+
+**Theorem (`plotkinE.function_related`).** The $\eta$-normalized graph of $e_p$ is related in $A\to A$ to that graph united with $\sigma_j$, for $A$ the Plotkin equivalence at the fresh tag.
+
+*Proof.* Both sides are graphs; on related arguments, erase-tag agreement and the four orbit/singleton cases produce related results. ∎
+
+**Theorem (`eq_7_18_eq`).** $\sigma_j^m(\{(j,0)\})=\{(j,m)\}$.
+
+*Proof.* Induction, applying the successor-on-singleton law for $\sigma_j$. ∎
+
+**Theorem (`eq_7_18_ne`).** If $j\neq j'$, then $\sigma_j^{m+1}(\{(j',0)\})=\bot$.
+
+*Proof.* Induction: the first step kills a wrong tag, and $\sigma_j$ preserves $\bot$. ∎
+
+**Theorem (`eq_7_19`).** $(\sigma_j\cup\sigma_{j'})^m(\{(j,0)\}\cup\{(j',0)\})=\{(j,m)\}\cup\{(j',m)\}$.
+
+*Proof.* Equal tags reduce to the previous identity; distinct tags induct using the pairwise successor law. ∎
+
+**Theorem (`theorem_7_4.i`).** Each iterator $\mathbf{Z}_n$ is a member of $(A\to A)\to(A\to A)$ for every restricted equivalence $A$.
+
+*Proof.* Iterators are graphs, and relatedness is preserved by the iterate law for $Z$. ∎
+
+**Theorem (`theorem_7_4.plotkin`).** If $z$ is $\eta$-normalized and functional at every $(A\to A)\to(A\to A)$, then for any $f$ and $x$ there is an $n$ with $z(f)(x)=f^n(x)$.
+
+*Proof.* Specialize to the iterate equivalence of the $\eta$-normalized $f$ at $x$; functionality forces the value into that orbit. ∎
+
+**Theorem (`theorem_7_4.finite`).** Under those hypotheses, if $z(\sigma_j)(\{(j,0)\})=\{(j,n)\}$ for every $j$, then on finite $e_p$ and $e_q$ one has $z(e_p)(e_q)=e_p^n(e_q)$.
+
+*Proof.* Relate the $\eta$-normalized finite graph to its union with a fresh $\sigma_j$ in the Plotkin equivalence; compare orbits by erase-tag, and force the iterate index to equal the fixed $n$ by a fresh-tag witness. ∎
+
+**Theorem (`theorem_7_4.sigma_index`).** Under those hypotheses there is a single $n$ such that $z(\sigma_j)(\{(j,0)\})=\{(j,n)\}$ for every $j$.
+
+*Proof.* Compare the indices at $0$, at $j$, and at their union via (7.18)–(7.19) and monotonicity of application. ∎
+
+**Theorem (`theorem_7_4.unique`).** Under those hypotheses, $z=\mathbf{Z}_n$ for that $n$.
+
+*Proof.* On finite arguments the previous two tools give agreement with $\mathbf{Z}_n$; continuity and $\eta$-normalization extend to all arguments, then graph extensionality. ∎
+
+**Theorem (`theorem_7_4`).** Every $\mathbf{Z}_n$ is functional at all $(A\to A)\to(A\to A)$, and every $\eta$-normalized $z$ with that functionality is some $\mathbf{Z}_n$.
+
+*Proof.* Assemble the membership and uniqueness tools. ∎
