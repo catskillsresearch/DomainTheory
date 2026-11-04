@@ -1,150 +1,34 @@
-%% Inside Classification. A box is one Lean file in this folder, or one subfolder.
-%% A box named as another folder is that whole folder. A box named as another chapter is that whole chapter.
-%% The arrowhead points at the file or folder that imports. The label is how many direct imports.
+%% Each box is one outline note from 1976_Subsets_and_their_classification.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
+%% Reading order for tool notes; Lean edges for theorem deps.
 flowchart TB
 
-  N32["Basic"]
-  N2["BooleanMemE"]
-  N13["charOpen"]
-  N14["charTop"]
-  N15["closedToZero"]
-  Continuous["Continuous"]
-  N16["evenPart"]
-  N17["fcapGdeltaPack"]
-  N58["fcapGdeltaPack_eq"]
-  N33["fcapGdeltaPack_isScottContinuous"]
-  FixedPoint["FixedPoint"]
-  Graph["Graph"]
-  N3["IsBdelta"]
-  N1["IsBooleanOpen"]
-  N4["IsFcapG"]
-  N6["IsFcapGdelta"]
-  N5["IsScottGdelta"]
-  Lambda["Lambda"]
-  N18["oddEvenPack"]
-  N36["oddEvenPack_eq_zero"]
-  N19["oddPart"]
-  N20["pairIndexed"]
-  N37["pairIndexed_eq_top"]
-  Pomega["Pomega"]
-  N9["ScottB"]
-  N10["ScottF"]
-  N38["theorem_6_1"]
-  N39["theorem_6_2"]
-  N40["theorem_6_3"]
-  N41["theorem_6_4"]
-  N59["theorem_6_5"]
-  N12["ThreeValued"]
-  N21["typicalBdelta"]
-  N29["uvU"]
-  N30["uvV"]
-  N57["zero_not_mem_succSet_top"]
-  N31["zeroPrime"]
+  INTRO["Introduction"]
+  DCLASS["Definition (classes)"]
+  CHAR["Characteristic maps"]
+  OEP["Odd-even packing"]
+  PAIR["Pair indexing"]
+  FGDP["F∩Gδ packing"]
+  TVAL["Three-valued"]
+  BMEM["Boolean membership"]
+  T61["Theorem 6.1"]
+  T62["Theorem 6.2"]
+  T63["Theorem 6.3"]
+  T64["Theorem 6.4"]
+  T65["Theorem 6.5"]
+  T66["Theorem 6.6"]
+  T67["Theorem 6.7"]
 
-  Continuous -->|"1"| N1
-  Pomega -->|"1"| N1
-  Continuous -->|"1"| N10
-  Pomega -->|"1"| N10
-  Lambda -->|"1"| N12
-  Pomega -->|"1"| N12
-  Pomega -->|"1"| N13
-  Pomega -->|"1"| N14
-  Lambda -->|"1"| N15
-  N14 -->|"1"| N15
-  Pomega -->|"1"| N15
-  Pomega -->|"1"| N16
-  Pomega -->|"1"| N17
-  Pomega -->|"1"| N18
-  Pomega -->|"1"| N19
-  Continuous -->|"1"| N2
-  Pomega -->|"1"| N2
-  Pomega -->|"2"| N20
-  Graph -->|"1"| N21
-  Lambda -->|"1"| N21
-  Pomega -->|"1"| N21
-  Pomega -->|"1"| N29
-  N1 -->|"1"| N3
-  Pomega -->|"1"| N3
-  Pomega -->|"1"| N30
-  Lambda -->|"1"| N31
-  Pomega -->|"1"| N31
-  Continuous -->|"8"| N32
-  FixedPoint -->|"1"| N32
-  Graph -->|"2"| N32
-  Lambda -->|"7"| N32
-  N1 -->|"1"| N32
-  N12 -->|"1"| N32
-  N13 -->|"1"| N32
-  N14 -->|"1"| N32
-  N15 -->|"1"| N32
-  N16 -->|"1"| N32
-  N18 -->|"1"| N32
-  N19 -->|"1"| N32
-  N2 -->|"1"| N32
-  N20 -->|"1"| N32
-  N21 -->|"1"| N32
-  N29 -->|"1"| N32
-  N3 -->|"1"| N32
-  N30 -->|"1"| N32
-  N31 -->|"1"| N32
-  N4 -->|"1"| N32
-  N9 -->|"1"| N32
-  Pomega -->|"2"| N32
-  Continuous -->|"3"| N33
-  N17 -->|"1"| N33
-  Pomega -->|"1"| N33
-  Lambda -->|"1"| N36
-  N18 -->|"1"| N36
-  Pomega -->|"1"| N36
-  N20 -->|"1"| N37
-  Pomega -->|"2"| N37
-  Continuous -->|"5"| N38
-  N13 -->|"1"| N38
-  N32 -->|"1"| N38
-  Pomega -->|"1"| N38
-  Continuous -->|"2"| N39
-  N10 -->|"1"| N39
-  N14 -->|"1"| N39
-  N32 -->|"1"| N39
-  Pomega -->|"1"| N39
-  Continuous -->|"1"| N4
-  Pomega -->|"1"| N4
-  Continuous -->|"1"| N40
-  N14 -->|"1"| N40
-  N20 -->|"1"| N40
-  N32 -->|"1"| N40
-  N37 -->|"1"| N40
-  N5 -->|"1"| N40
-  Pomega -->|"1"| N40
-  Continuous -->|"2"| N41
-  Lambda -->|"1"| N41
-  N32 -->|"1"| N41
-  N36 -->|"1"| N41
-  N4 -->|"1"| N41
-  Pomega -->|"1"| N41
-  Continuous -->|"1"| N5
-  Pomega -->|"1"| N5
-  Lambda -->|"1"| N57
-  Pomega -->|"1"| N57
-  Lambda -->|"1"| N58
-  N17 -->|"1"| N58
-  N57 -->|"1"| N58
-  Pomega -->|"1"| N58
-  Continuous -->|"1"| N59
-  Lambda -->|"1"| N59
-  N14 -->|"1"| N59
-  N32 -->|"1"| N59
-  N33 -->|"1"| N59
-  N40 -->|"1"| N59
-  N57 -->|"1"| N59
-  N58 -->|"1"| N59
-  N6 -->|"1"| N59
-  Pomega -->|"1"| N59
-  Continuous -->|"1"| N6
-  N5 -->|"1"| N6
-  Pomega -->|"1"| N6
-  N1 -->|"1"| N9
-  Pomega -->|"1"| N9
-
-  classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
-  classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
+  TVAL --> BMEM
+  DCLASS --> CHAR
+  INTRO --> DCLASS
+  PAIR --> FGDP
+  CHAR --> OEP
+  OEP --> PAIR
+  BMEM --> T61
+  BMEM --> T62
+  BMEM --> T63
+  BMEM --> T64
+  T63 --> T65
+  FGDP --> TVAL

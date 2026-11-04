@@ -1084,6 +1084,17 @@ CLOSURES_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Representation", "Closure operation"),
 ]
 
+# Tool-note reading order. Theorem boxes use Lean import edges.
+CLASSIFICATION_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
+    ("Introduction", "Definition (classes)"),
+    ("Definition (classes)", "Characteristic maps"),
+    ("Characteristic maps", "Odd-even packing"),
+    ("Odd-even packing", "Pair indexing"),
+    ("Pair indexing", "F∩Gδ packing"),
+    ("F∩Gδ packing", "Three-valued"),
+    ("Three-valued", "Boolean membership"),
+]
+
 DEFINABILITY_THEOREM_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Elementary definitions", "Primitive recursion"),
     ("Primitive recursion", "Definition (computable)"),
@@ -1425,6 +1436,31 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Theorem 5.4 — the product and sum theorem": "T54",
                 "Theorem 5.5 — the universe theorem": "T55",
                 "Theorem 5.6 — the limit theorem": "T56",
+            }
+        if mermaid.name == "Classification.mermaid":
+            include_empty_boxes = True
+            force_edges = CLASSIFICATION_OUTLINE_NARRATIVE
+            header_lines = [
+                *outline_mermaid_header("1976_Subsets_and_their_classification.md"),
+                "%% Reading order for tool notes; Lean edges for theorem deps.",
+            ]
+            extra_ids = {
+                **(extra_ids or {}),
+                "Introduction": "INTRO",
+                "Definition (classes)": "DCLASS",
+                "Characteristic maps": "CHAR",
+                "Odd-even packing": "OEP",
+                "Pair indexing": "PAIR",
+                "F∩Gδ packing": "FGDP",
+                "Three-valued": "TVAL",
+                "Boolean membership": "BMEM",
+                "Theorem 6.1": "T61",
+                "Theorem 6.2": "T62",
+                "Theorem 6.3": "T63",
+                "Theorem 6.4": "T64",
+                "Theorem 6.5": "T65",
+                "Theorem 6.6": "T66",
+                "Theorem 6.7": "T67",
             }
         if mermaid.name == "DirectedFixpoints.mermaid":
             include_empty_boxes = True

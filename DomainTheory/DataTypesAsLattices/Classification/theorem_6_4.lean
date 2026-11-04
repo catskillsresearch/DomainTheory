@@ -11,7 +11,7 @@ public import DomainTheory.DataTypesAsLattices.Continuous.isScottOpen_isUpper
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Data.Set.Finite.Powerset
-public import DomainTheory.DataTypesAsLattices.Classification.oddEvenPack_eq_zero
+public import DomainTheory.DataTypesAsLattices.Classification.oddEvenPack
 public import DomainTheory.DataTypesAsLattices.Classification.IsFcapG
 public import DomainTheory.DataTypesAsLattices.Classification.Basic
 
@@ -33,7 +33,7 @@ theorem theorem_6_4 :
     constructor
     · intro hx
       change oddEvenPack (charTop Cᶜ) (charOpen O) x = ofNat 0
-      refine (oddEvenPack_eq_zero x).mpr ?_
+      refine (oddEvenPack.eq_zero x).mpr ?_
       have hx' : x ∈ C ∧ x ∈ O := hx
       constructor
       · exact (charTop_eq_bot_of_closed hC x).mpr hx'.1
@@ -47,7 +47,7 @@ theorem theorem_6_4 :
           obtain ⟨n, hn, hne⟩ := (mem_isScottOpen_iff hO).mp hx'.2
           exact ⟨rfl, n, hn, hne⟩
     · intro hf
-      have hf' := (oddEvenPack_eq_zero (f := charTop Cᶜ) (g := charOpen O) x).mp hf
+      have hf' := (oddEvenPack.eq_zero (f := charTop Cᶜ) (g := charOpen O) x).mp hf
       constructor
       · exact (charTop_eq_bot_of_closed hC x).mp hf'.1
       · have : 0 ∈ charOpen O x := by rw [hf'.2]; simp [ofNat]

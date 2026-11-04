@@ -11,9 +11,8 @@ public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Data.Set.Finite.Powerset
 public import DomainTheory.DataTypesAsLattices.Classification.theorem_6_3
-public import DomainTheory.DataTypesAsLattices.Classification.fcapGdeltaPack_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Classification.fcapGdeltaPack
 public import DomainTheory.DataTypesAsLattices.Classification.zero_not_mem_succSet_top
-public import DomainTheory.DataTypesAsLattices.Classification.fcapGdeltaPack_eq
 public import DomainTheory.DataTypesAsLattices.Classification.IsFcapGdelta
 public import DomainTheory.DataTypesAsLattices.Classification.Basic
 public import DomainTheory.DataTypesAsLattices.Classification.charTop
@@ -32,7 +31,7 @@ theorem theorem_6_5 :
   · rintro ⟨C, G, hC, hG, rfl⟩
     obtain ⟨fG, hfG, rflG⟩ := (theorem_6_3 G).mp hG
     refine ⟨fcapGdeltaPack (charTop Cᶜ) fG,
-      fcapGdeltaPack_isScottContinuous (charTop_isScottContinuous Cᶜ) hfG, ?_⟩
+      fcapGdeltaPack.isScottContinuous (charTop_isScottContinuous Cᶜ) hfG, ?_⟩
     ext x
     have hfval : charTop Cᶜ x = botElem ∨ charTop Cᶜ x = topElem := by
       by_cases hx : x ∈ C
@@ -42,9 +41,9 @@ theorem theorem_6_5 :
     · intro ⟨hxC, hxG⟩
       have hf : charTop Cᶜ x = botElem := (charTop_eq_bot_of_closed hC x).mpr hxC
       have hg : fG x = topElem := by rw [rflG] at hxG; exact hxG
-      exact (fcapGdeltaPack_eq hfval).mpr ⟨hf, hg⟩
+      exact (fcapGdeltaPack.eq hfval).mpr ⟨hf, hg⟩
     · intro hpack
-      obtain ⟨hf, hg⟩ := (fcapGdeltaPack_eq hfval).mp hpack
+      obtain ⟨hf, hg⟩ := (fcapGdeltaPack.eq hfval).mp hpack
       exact ⟨(charTop_eq_bot_of_closed hC x).mp hf, by rw [rflG]; exact hg⟩
   · rintro ⟨f, hf, rfl⟩
     refine ⟨{x | f x ⊆ succSet topElem}, {x | succSet topElem ⊆ f x}, ?_, ?_, ?_⟩

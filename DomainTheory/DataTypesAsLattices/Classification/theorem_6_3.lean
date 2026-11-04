@@ -9,11 +9,10 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Data.Set.Finite.Powerset
-public import DomainTheory.DataTypesAsLattices.Classification.pairIndexed_eq_top
+public import DomainTheory.DataTypesAsLattices.Classification.pairIndexed
 public import DomainTheory.DataTypesAsLattices.Classification.IsScottGdelta
 public import DomainTheory.DataTypesAsLattices.Classification.Basic
 public import DomainTheory.DataTypesAsLattices.Classification.charTop
-public import DomainTheory.DataTypesAsLattices.Classification.pairIndexed
 
 @[expose] public section
 
@@ -33,12 +32,12 @@ theorem theorem_6_3 :
     constructor
     · intro hx
       change pairIndexed fs x = topElem
-      exact (pairIndexed_eq_top fs x).mpr fun n =>
+      exact (pairIndexed.eq_top fs x).mpr fun n =>
         (charTop_eq_top (hUs n) x).mpr (Set.mem_iInter.mp hx n)
     · intro hf
       have hf' : pairIndexed fs x = topElem := hf
       exact Set.mem_iInter.mpr fun n =>
-        (charTop_eq_top (hUs n) x).mp ((pairIndexed_eq_top fs x).mp hf' n)
+        (charTop_eq_top (hUs n) x).mp ((pairIndexed.eq_top fs x).mp hf' n)
   · rintro ⟨f, hf, rfl⟩
     refine ⟨fun n => {x | n ∈ f x}, fun n => mem_preimage_isScottOpen hf n, ?_⟩
     ext x
