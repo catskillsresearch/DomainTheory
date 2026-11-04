@@ -1,1 +1,8 @@
 A continuous basis assigns to each element a directed family of way-below approximants whose supremum recovers the element.
+
+**Definition (`ContinuousBasis`).** A map sending each $x$ in a complete lattice to a set $\mathrm{basis}(x)$ is a continuous basis when, for every $x$:
+- $\mathrm{basis}(x)$ is directed,
+- every $y\in\mathrm{basis}(x)$ satisfies $y\ll x$, and
+- $x=\bigsqcup\mathrm{basis}(x)$.
+
+*Proof.* These three clauses are the definition of a continuous basis. ∎
