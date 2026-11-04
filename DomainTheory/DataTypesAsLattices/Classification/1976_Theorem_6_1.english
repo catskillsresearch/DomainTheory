@@ -7,3 +7,9 @@ $$\{x \mid f(x) \supseteq 0\},$$
 We could have written $0 \in f(x)$ or the equation $f(x) \cap 0 = 0$ instead of $f(x) \supseteq 0$. Note that in case $f : \mathbf{P}\omega \to \{\bot, \top\}$, then $f(x) \supseteq 0$ is equivalent to $f(x) = \top$. Also any other integer could have been used in place of $0$.
 
 We can say that $\{x \mid 0 \in x\}$ is the *typical* open set, and that every other open set can be obtained as an inverse image of the typical set by a continuous function. We shall extend this pattern to other classes, especially looking for equations. In the case of openness an inequality could also be used, giving as the typical set $\{x \mid x \neq \bot\}$. But since closed sets are just the complements of open sets, this remark gives us:
+
+<!-- formalization -->
+
+**Theorem (`theorem_6_1`).** A subset $U\subseteq\mathbf{P}\omega$ is Scott-open if and only if $U=\{x\mid 0\in f(x)\}$ for some Scott-continuous $f:\mathbf{P}\omega\to\mathbf{P}\omega$.
+
+*Proof.* If $f$ is Scott-continuous, then $0\in f(x)$ holds exactly when some finite $e_n\subseteq x$ already satisfies $0\in f(e_n)$, so the fibre is a union of basic Scott neighbourhoods. Conversely, the characteristic map $\mathrm{charOpen}\,U$ is Scott-continuous and equals the numeral $0$ precisely on $U$, so membership of $0$ recovers $U$. ∎
