@@ -1,10 +1,10 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen_more
-public import DomainTheory.DataTypesAsLattices.Continuous.isScottOpen_iff_isOpen
-public import DomainTheory.DataTypesAsLattices.Classification.BooleanMemE
 public import DomainTheory.DataTypesAsLattices.Classification.Classes
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
+import DomainTheory.DataTypesAsLattices.Classification.BooleanMemE
+import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen_more
+import DomainTheory.DataTypesAsLattices.Continuous.isScottOpen_iff_isOpen
 import Mathlib.Tactic.Bound.Init
 
 @[expose] public section

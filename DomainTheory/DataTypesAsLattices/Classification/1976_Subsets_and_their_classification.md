@@ -15,5 +15,5 @@
 - [Theorem 6.3 — the Gδ theorem](1976_Theorem_6_3.md) ✓
 - [Theorem 6.4 — the F∩G theorem](1976_Theorem_6_4.md) ✓
 - [Theorem 6.5 — the F∩Gδ theorem](1976_Theorem_6_5.md) ✓
-- [Theorem 6.6 — the B theorem](1976_Theorem_6_6.md)
+- [Theorem 6.6 — the B theorem](1976_Theorem_6_6.md) ✓
 - [Theorem 6.7 — the Bδ theorem](1976_Theorem_6_7.md)

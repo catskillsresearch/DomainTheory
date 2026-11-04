@@ -25,3 +25,9 @@ we have:
 $$V = \{x \mid g(x) \in \mathcal{E}\}$$
 
 as desired.
+
+<!-- formalization -->
+
+**Theorem (`theorem_6_6`).** A subset $U\subseteq\mathbf{P}\omega$ is a Boolean combination of Scott-open sets if and only if $U=\{x\mid f(x)\in E\}$ for some Scott-continuous $f$ and some finite set $E$ of finite elements of $\mathbf{P}\omega$.
+
+*Proof.* Boolean membership yields a continuous map of uniformly bounded values with a finite admissible set of subsets of that bound, each of which is finite. Conversely, each fibre $\{x\mid f(x)=e\}$ for finite $e$ is an $\mathfrak{F}\dot{\cap}\mathfrak{G}$ set (closed upper and open lower sandwich), hence Boolean, and a finite union of those fibres recovers $\{x\mid f(x)\in E\}$. ∎
