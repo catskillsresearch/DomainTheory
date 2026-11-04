@@ -1,12 +1,7 @@
 
 module
 
-public import DomainTheory.DataTypesAsLattices.Embedding.extend
-public import DomainTheory.DataTypesAsLattices.Lambda.Language
-public import DomainTheory.DataTypesAsLattices.Graph.graph
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
-public import DomainTheory.DataTypesAsLattices.Functionality.pairElem
 
 @[expose] public section
 
