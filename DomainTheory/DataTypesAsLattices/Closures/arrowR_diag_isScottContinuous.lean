@@ -20,7 +20,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
 namespace DomainTheory.DataTypesAsLattices
 
-theorem arrowR_diag_isScottContinuous :
+theorem arrowR.diag_isScottContinuous :
     IsScottContinuous (fun a => arrowR a a) := by
   have hbody : ∀ u, IsScottContinuous (fun a =>
       graph (fun x => funOf a (funOf u (funOf a x)))) :=

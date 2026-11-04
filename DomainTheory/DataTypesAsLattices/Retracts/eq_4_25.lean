@@ -1,0 +1,90 @@
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
+public import DomainTheory.DataTypesAsLattices.Retracts.typed
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
+public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
+public import DomainTheory.DataTypesAsLattices.Retracts.tensorR
+public import DomainTheory.DataTypesAsLattices.Retracts.curryC
+public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
+public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
+public import DomainTheory.DataTypesAsLattices.Graph.beta
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
+public import DomainTheory.DataTypesAsLattices.Functionality.PairSeq
+public import DomainTheory.DataTypesAsLattices.Functionality.CombC
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
+
+@[expose] public section
+
+namespace DomainTheory.DataTypesAsLattices
+
+theorem eq_4_25 {a b c : Pomega}
+    (ha : Retract a) (hb : Retract b) (hc : Retract c) :
+    typed (comp curryC (arrowR (tensorR a b) c))
+      (arrowR (arrowR (tensorR a b) c) (arrowR a (arrowR b c))) := by
+  change comp curryC (arrowR (tensorR a b) c) =
+    funOf (arrowR (arrowR (tensorR a b) c) (arrowR a (arrowR b c)))
+      (comp curryC (arrowR (tensorR a b) c))
+  rw [arrowR.app]
+  have harr := arrowR.isRetract (tensorR.isRetract ha hb) hc
+  apply graph_ext
+  intro u
+  simp only [comp.app]
+  rw [retract_app harr]
+  have hL :
+      funOf curryC (funOf (arrowR (tensorR a b) c) u) =
+        graph (fun x => graph (fun y =>
+          funOf c (funOf u (pairSeq (funOf a x) (funOf b y))))) := by
+    rw [curryC_app]
+    apply graph_ext
+    intro x
+    apply graph_ext
+    intro y
+    rw [arrowR.app]
+    simp only [comp.app]
+    rw [tensorR.app, PairSeq.app_zero, PairSeq.app_one]
+  have hR :
+      funOf (arrowR a (arrowR b c))
+        (funOf curryC (funOf (arrowR (tensorR a b) c) u)) =
+        graph (fun x => graph (fun y =>
+          funOf c (funOf u (pairSeq (funOf a x) (funOf b y))))) := by
+    rw [arrowR.app, hL]
+    apply graph_ext
+    intro x
+    simp only [comp.app]
+    have hmid :
+        funOf (graph (fun x => graph (fun y =>
+          funOf c (funOf u (pairSeq (funOf a x) (funOf b y)))))) (funOf a x) =
+          graph (fun y =>
+            funOf c (funOf u (pairSeq (funOf a (funOf a x)) (funOf b y)))) :=
+      beta (graph_const_isScottContinuous
+        (fun x y => funOf c (funOf u (pairSeq (funOf a x) (funOf b y))))
+        (fun y => theorem_1_3 (funOf.isScottContinuous c)
+          (theorem_1_3 (funOf.isScottContinuous u)
+            (theorem_1_3 (f := fun x => pairSeq x (funOf b y))
+              (g := fun x => funOf a x)
+              (PairSeq.isScottContinuous_left (funOf b y))
+              (funOf.isScottContinuous a))))) (funOf a x)
+    rw [hmid, retract_app ha, arrowR.app]
+    apply graph_ext
+    intro y
+    simp only [comp.app]
+    have hbeta :
+        funOf (graph (fun y =>
+          funOf c (funOf u (pairSeq (funOf a x) (funOf b y))))) (funOf b y) =
+          funOf c (funOf u (pairSeq (funOf a x) (funOf b (funOf b y)))) :=
+      beta (theorem_1_3 (funOf.isScottContinuous c)
+        (theorem_1_3 (funOf.isScottContinuous u)
+          (theorem_1_3 (f := fun y => pairSeq (funOf a x) y)
+            (g := fun y => funOf b y)
+            (PairSeq.isScottContinuous_right (funOf a x))
+            (funOf.isScottContinuous b)))) (funOf b y)
+    rw [hbeta, retract_app hb, retract_app hc]
+  exact hL.trans hR.symm
+
+end DomainTheory.DataTypesAsLattices

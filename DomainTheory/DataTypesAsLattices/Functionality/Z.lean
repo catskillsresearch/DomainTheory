@@ -2,8 +2,7 @@ module
 
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
-public import DomainTheory.DataTypesAsLattices.Functionality.continuous_tuple
-public import DomainTheory.DataTypesAsLattices.Functionality.mem
+public import DomainTheory.DataTypesAsLattices.Functionality.ContinuityHelpers
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
@@ -66,7 +65,7 @@ theorem isScottContinuous_left (n : ℕ) (x : Pomega) :
   | zero => simpa [Z] using const_isScottContinuous x
   | succ n ih =>
     simpa [Z] using
-      continuous_tuple
+      ContinuityHelpers.tuple
         (fun y => funOf.isScottContinuous_left y)
         (fun u => funOf.isScottContinuous u)
         id_isScottContinuous ih

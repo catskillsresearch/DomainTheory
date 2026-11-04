@@ -21,7 +21,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.retractLe
 public import DomainTheory.DataTypesAsLattices.Retracts.typed
 public import DomainTheory.DataTypesAsLattices.Retracts.eq_4_11
 public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3_more
-
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
@@ -79,5 +78,4 @@ theorem functor {a b a' b' f f' : Pomega}
       exact (hf'y _).symm
 
 end arrowR
-
 end DomainTheory.DataTypesAsLattices

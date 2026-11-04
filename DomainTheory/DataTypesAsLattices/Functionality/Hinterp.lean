@@ -8,12 +8,8 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Functionality.LambTerm
-public import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
-public import DomainTheory.DataTypesAsLattices.Functionality.continuous_tuple
-public import DomainTheory.DataTypesAsLattices.Functionality.inleftC
-public import DomainTheory.DataTypesAsLattices.Functionality.inrightC
-public import DomainTheory.DataTypesAsLattices.Functionality.outC
-public import DomainTheory.DataTypesAsLattices.Functionality.whichC
+public import DomainTheory.DataTypesAsLattices.Functionality.ContinuityHelpers
+public import DomainTheory.DataTypesAsLattices.Functionality.CombC
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 public import DomainTheory.DataTypesAsLattices.Graph.graph
@@ -62,7 +58,7 @@ theorem isScottContinuous (τ : LambTerm) :
   | zero =>
     exact const_isScottContinuous _
   | succ τ ih =>
-    exact continuous_nary
+    exact ContinuityHelpers.nary
       (fun y z => condSet.isScottContinuous_left y z)
       (fun x z => condSet.isScottContinuous_mid x z)
       (fun x y => condSet.isScottContinuous_right x y)
@@ -72,7 +68,7 @@ theorem isScottContinuous (τ : LambTerm) :
           (theorem_1_3 (funOf.isScottContinuous outC) ih)))
       (const_isScottContinuous botElem)
   | pred τ ih =>
-    exact continuous_nary
+    exact ContinuityHelpers.nary
       (fun y z => condSet.isScottContinuous_left y z)
       (fun x z => condSet.isScottContinuous_mid x z)
       (fun x y => condSet.isScottContinuous_right x y)
@@ -88,25 +84,25 @@ theorem isScottContinuous (τ : LambTerm) :
           (condSet (funOf outC (Hinterp θ t)) (Hinterp τ t) (Hinterp σ t))
           (Hinterp ρ t))
       (funOf.isScottContinuous lambR)
-      (continuous_nary
+      (ContinuityHelpers.nary
         (fun y z => condSet.isScottContinuous_left y z)
         (fun x z => condSet.isScottContinuous_mid x z)
         (fun x y => condSet.isScottContinuous_right x y)
         (theorem_1_3 (funOf.isScottContinuous whichC) ihθ)
-        (continuous_nary
+        (ContinuityHelpers.nary
           (fun y z => condSet.isScottContinuous_left y z)
           (fun x z => condSet.isScottContinuous_mid x z)
           (fun x y => condSet.isScottContinuous_right x y)
           (theorem_1_3 (funOf.isScottContinuous outC) ihθ) ihτ ihσ)
         ihρ)
   | app τ σ ihτ ihσ =>
-    exact continuous_nary
+    exact ContinuityHelpers.nary
       (fun y z => condSet.isScottContinuous_left y z)
       (fun x z => condSet.isScottContinuous_mid x z)
       (fun x y => condSet.isScottContinuous_right x y)
       (theorem_1_3 (funOf.isScottContinuous whichC) ihτ)
       (const_isScottContinuous botElem)
-      (continuous_tuple
+      (ContinuityHelpers.tuple
         (fun y => funOf.isScottContinuous_left y)
         (fun u => funOf.isScottContinuous u)
         (theorem_1_3 (funOf.isScottContinuous outC) ihτ) ihσ)

@@ -14,8 +14,7 @@ public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Functionality.continuous_tuple
-public import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
+public import DomainTheory.DataTypesAsLattices.Functionality.ContinuityHelpers
 public import Mathlib.Order.CompleteLattice.Defs
 public import DomainTheory.DataTypesAsLattices.Enumeration.Gcomb
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
@@ -47,13 +46,13 @@ theorem body_isScottContinuous (v : Pomega) :
       condSet (funOf x (ofNat 0)) Gcomb
         (funOf (funOf v (funOf (funOf x (ofNat 1)) (ofNat 0)))
           (funOf v (funOf (funOf x (ofNat 1)) (ofNat 1))))) :=
-  continuous_nary
+  ContinuityHelpers.nary
     (fun y z => condSet.isScottContinuous_left y z)
     (fun x z => condSet.isScottContinuous_mid x z)
     (fun x y => condSet.isScottContinuous_right x y)
     (funOf.isScottContinuous_left (ofNat 0))
     (const_isScottContinuous Gcomb)
-    (continuous_tuple
+    (ContinuityHelpers.tuple
       (fun y => funOf.isScottContinuous_left y)
       (fun u => funOf.isScottContinuous u)
       (theorem_1_3 (funOf.isScottContinuous v)
@@ -85,7 +84,7 @@ theorem isScottContinuous : IsScottContinuous vaalF :=
     (fun x =>
       theorem_1_3
         (condSet.isScottContinuous_right (funOf x (ofNat 0)) Gcomb)
-        (continuous_tuple
+        (ContinuityHelpers.tuple
           (fun y => funOf.isScottContinuous_left y)
           (fun u => funOf.isScottContinuous u)
           (funOf.isScottContinuous_left

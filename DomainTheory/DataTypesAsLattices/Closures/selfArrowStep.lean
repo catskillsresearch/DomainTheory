@@ -12,7 +12,6 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
-public import DomainTheory.DataTypesAsLattices.Closures.arrowR_diag_isScottContinuous
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
@@ -25,7 +24,7 @@ theorem isScottContinuous :
     IsScottContinuous selfArrowStep := by
   constructor
   intro a
-  have h := arrowR_diag_isScottContinuous.out a
+  have h := arrowR.diag_isScottContinuous.out a
   ext k
   constructor
   · intro hk
@@ -38,7 +37,7 @@ theorem isScottContinuous :
     obtain ⟨n, hn, hkn⟩ := mem_scottUnion.mp hk
     rcases hkn with hkn | hkn
     · exact Or.inl hkn
-    · exact Or.inr (IsScottContinuous.monotone arrowR_diag_isScottContinuous hn hkn)
+    · exact Or.inr (IsScottContinuous.monotone arrowR.diag_isScottContinuous hn hkn)
 
 end selfArrowStep
 

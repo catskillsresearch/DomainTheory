@@ -16,11 +16,10 @@ public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 public import DomainTheory.DataTypesAsLattices.Functionality.pairElem
 public import DomainTheory.DataTypesAsLattices.Functionality.arrowE
 public import DomainTheory.DataTypesAsLattices.Functionality.sumE
-public import DomainTheory.DataTypesAsLattices.Functionality.continuous_nary
+public import DomainTheory.DataTypesAsLattices.Functionality.ContinuityHelpers
 public import DomainTheory.DataTypesAsLattices.Lambda.condSet
 public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
 public import DomainTheory.DataTypesAsLattices.Graph.beta
-public import DomainTheory.DataTypesAsLattices.Functionality.mem
 public import DomainTheory.DataTypesAsLattices.Lambda.interC
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
@@ -41,7 +40,7 @@ theorem body_isScottContinuous (f g : Pomega) :
       condSet (funOf u (ofNat 0))
         (funOf f (funOf u (ofNat 1)))
         (funOf g (funOf u (ofNat 1)))) :=
-  continuous_nary
+  ContinuityHelpers.nary
     (fun y z => condSet.isScottContinuous_left y z)
     (fun x z => condSet.isScottContinuous_mid x z)
     (fun x y => condSet.isScottContinuous_right x y)

@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Functionality.pairSeq_inj
+public import DomainTheory.DataTypesAsLattices.Functionality.PairSeq
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
@@ -29,7 +29,7 @@ theorem snd (x y : Pomega) : funOf (pairElem x y) (ofNat 1) = y :=
 
 theorem inj {x y x' y' : Pomega} (h : pairElem x y = pairElem x' y') :
     x = x' ∧ y = y' :=
-  pairSeq_inj h
+  PairSeq.inj h
 
 end pairElem
 

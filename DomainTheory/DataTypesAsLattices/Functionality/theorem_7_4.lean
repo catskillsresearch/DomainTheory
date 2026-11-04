@@ -22,40 +22,20 @@ public import DomainTheory.DataTypesAsLattices.Functionality.Zcomb
 public import DomainTheory.DataTypesAsLattices.Functionality.arrowE
 public import DomainTheory.DataTypesAsLattices.Functionality.emptyE
 public import DomainTheory.DataTypesAsLattices.Functionality.encodeExp
-public import DomainTheory.DataTypesAsLattices.Functionality.eq_7_18_eq
-public import DomainTheory.DataTypesAsLattices.Functionality.eq_7_19
-public import DomainTheory.DataTypesAsLattices.Functionality.eraseTag
-public import DomainTheory.DataTypesAsLattices.Functionality.expPayload
-public import DomainTheory.DataTypesAsLattices.Functionality.expTag
-public import DomainTheory.DataTypesAsLattices.Functionality.graph_funOf_ext
-public import DomainTheory.DataTypesAsLattices.Functionality.hApp
-public import DomainTheory.DataTypesAsLattices.Functionality.hApply
-public import DomainTheory.DataTypesAsLattices.Functionality.hCond
-public import DomainTheory.DataTypesAsLattices.Functionality.hPred
-public import DomainTheory.DataTypesAsLattices.Functionality.hVar
-public import DomainTheory.DataTypesAsLattices.Functionality.hZero
-public import DomainTheory.DataTypesAsLattices.Functionality.inleftC
-public import DomainTheory.DataTypesAsLattices.Functionality.inrightC
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
+public import DomainTheory.DataTypesAsLattices.Functionality.Hops
+public import DomainTheory.DataTypesAsLattices.Functionality.CombC
 public import DomainTheory.DataTypesAsLattices.Functionality.iterateE
 public import DomainTheory.DataTypesAsLattices.Functionality.kerE
-public import DomainTheory.DataTypesAsLattices.Functionality.mem
-public import DomainTheory.DataTypesAsLattices.Functionality.normalized_finite_app
-public import DomainTheory.DataTypesAsLattices.Functionality.outC
-public import DomainTheory.DataTypesAsLattices.Functionality.outleftC
-public import DomainTheory.DataTypesAsLattices.Functionality.outrightC
+public import DomainTheory.DataTypesAsLattices.Functionality.PlotkinHelpers
 public import DomainTheory.DataTypesAsLattices.Functionality.pairMed
 public import DomainTheory.DataTypesAsLattices.Functionality.plotkinE
-public import DomainTheory.DataTypesAsLattices.Functionality.plotkinGood
-public import DomainTheory.DataTypesAsLattices.Functionality.plotkinRel
-public import DomainTheory.DataTypesAsLattices.Functionality.plotkin_finite_separation
-public import DomainTheory.DataTypesAsLattices.Functionality.plotkin_function_related
 public import DomainTheory.DataTypesAsLattices.Functionality.prodE
 public import DomainTheory.DataTypesAsLattices.Functionality.sigmaJ
 public import DomainTheory.DataTypesAsLattices.Functionality.singletonE
 public import DomainTheory.DataTypesAsLattices.Functionality.sumE
 public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_1
-public import DomainTheory.DataTypesAsLattices.Functionality.updateEnvUnion
-public import DomainTheory.DataTypesAsLattices.Functionality.whichC
+public import DomainTheory.DataTypesAsLattices.Retracts.updateEnv
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Graph.graph
@@ -123,7 +103,7 @@ theorem finite (z : Pomega)
   let gu := gf ∪ graph (sigmaJ j)
   have hfg : (arrowE
       (plotkinE p q j) (plotkinE p q j)).rel gf gu := by
-    simpa [j, gf, gu] using plotkin_function_related p q
+    simpa [j, gf, gu] using plotkinE.function_related p q
   have hzfg :
       (arrowE (plotkinE p q j) (plotkinE p q j)).rel
         (funOf z gf) (funOf z gu) :=
@@ -149,7 +129,7 @@ theorem finite (z : Pomega)
       funOf (funOf z gu) (e q ∪ {pair j 0}) =
         Z m (e p) (e q) ∪ {pair j m} := by
     rw [hm]
-    simpa [j, gf, gu] using plotkin_finite_separation p q m
+    simpa [j, gf, gu] using plotkinE.finite_separation p q m
   have herase := plotkinE.erase hout
   have horbit : Z r (e p) (e q) = Z m (e p) (e q) := by
     rw [hleft, hright] at herase
@@ -252,7 +232,7 @@ theorem unique (z : Pomega)
     have hgpGraph : gp = graph (fun y => funOf gp y) := by
       apply graph_ext
       intro y
-      exact (normalized_finite_app p y).symm
+      exact (PlotkinHelpers.normalized_finite_app p y).symm
     have hgpMem : (arrowE emptyE emptyE).mem gp :=
       ⟨hgpGraph, hgpGraph, fun _ _ h => False.elim h⟩
     have hzgpGraph : funOf z gp = graph (fun y => funOf (funOf z gp) y) :=
@@ -262,7 +242,7 @@ theorem unique (z : Pomega)
         funOf z (e p) = graph (fun y => funOf (funOf z (e p)) y) := by
       rw [hη (e p)]
       exact hzgpGraph
-    apply graph_funOf_ext hzFiniteGraph (Zcomb.app_isGraph n (e p))
+    apply funOf.ext_graph hzFiniteGraph (Zcomb.app_isGraph n (e p))
     intro x
     have hright :
         IsScottContinuous (fun y => Z n (e p) y) :=
@@ -289,7 +269,7 @@ theorem unique (z : Pomega)
         funOf z f = graph (fun y => funOf (funOf z f) y) := by
       rw [hη f]
       exact hzgfGraph
-    apply graph_funOf_ext hzfGraph (Zcomb.app_isGraph n f)
+    apply funOf.ext_graph hzfGraph (Zcomb.app_isGraph n f)
     intro x
     have hleft :
         IsScottContinuous (fun g => funOf (funOf z g) x) :=
@@ -303,7 +283,7 @@ theorem unique (z : Pomega)
         have := congrArg (fun w => funOf w x) (hfinite p)
         simpa [Zcomb.app2] using this)) f
     simpa [Zcomb.app2] using heq
-  exact graph_funOf_ext (hz emptyE).1 (Zcomb.isGraph n) hall
+  exact funOf.ext_graph (hz emptyE).1 (Zcomb.isGraph n) hall
 
 end theorem_7_4
 

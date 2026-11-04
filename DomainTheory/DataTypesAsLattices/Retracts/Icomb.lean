@@ -6,6 +6,7 @@ public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Lambda.id_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 
 @[expose] public section
 
@@ -17,6 +18,11 @@ namespace Icomb
 
 theorem app (x : Pomega) : funOf Icomb x = x :=
   beta id_isScottContinuous x
+
+theorem isGraph : Icomb = graph (fun x => funOf Icomb x) := by
+  apply graph_ext
+  intro x
+  rw [Icomb.app]
 
 theorem isRetract : Retract Icomb := by
   constructor

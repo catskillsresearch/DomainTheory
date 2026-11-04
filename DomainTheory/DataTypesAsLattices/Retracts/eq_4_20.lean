@@ -1,0 +1,21 @@
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
+public import DomainTheory.DataTypesAsLattices.Retracts.fstC
+public import DomainTheory.DataTypesAsLattices.Retracts.tensorR
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
+public import DomainTheory.DataTypesAsLattices.Functionality.PairSeq
+
+@[expose] public section
+
+namespace DomainTheory.DataTypesAsLattices
+
+theorem eq_4_20 (f f' : Pomega) :
+    comp fstC (tensorR f f') = comp f fstC := by
+  simp only [comp]
+  apply graph_ext
+  intro u
+  rw [fstC.app, tensorR.app, PairSeq.app_zero, fstC.app]
+
+end DomainTheory.DataTypesAsLattices

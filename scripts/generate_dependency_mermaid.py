@@ -1095,6 +1095,14 @@ CLASSIFICATION_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Three-valued", "Boolean membership"),
 ]
 
+FUNCTIONALITY_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
+    ("Introduction", "Definition (equivalence)"),
+    ("Definition (equivalence)", "Theorem 7.1"),
+    ("Theorem 7.1", "Theorem 7.2"),
+    ("Theorem 7.2", "Theorem 7.3"),
+    ("Theorem 7.3", "Theorem 7.4"),
+]
+
 DEFINABILITY_THEOREM_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Elementary definitions", "Primitive recursion"),
     ("Primitive recursion", "Definition (computable)"),
@@ -1468,6 +1476,22 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Theorem 6.6 — the B theorem": "T66",
                 "Theorem 6.7": "T67",
                 "Theorem 6.7 — the Bδ theorem": "T67",
+            }
+        if mermaid.name == "Functionality.mermaid":
+            include_empty_boxes = True
+            force_edges = FUNCTIONALITY_OUTLINE_NARRATIVE
+            header_lines = [
+                *outline_mermaid_header("1976_Total_functions_and_functionality.md"),
+                "%% Reading order for tool notes; Lean edges for theorem deps.",
+            ]
+            extra_ids = {
+                **(extra_ids or {}),
+                "Introduction": "INTRO",
+                "Definition (equivalence)": "DEQUIV",
+                "Theorem 7.1": "T71",
+                "Theorem 7.2": "T72",
+                "Theorem 7.3": "T73",
+                "Theorem 7.4": "T74",
             }
         if mermaid.name == "DirectedFixpoints.mermaid":
             include_empty_boxes = True

@@ -1,6 +1,7 @@
 
 module
 
+public import DomainTheory.DataTypesAsLattices.Embedding.extend
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
 
@@ -16,5 +17,12 @@ def singletonE (a : Pomega) : RestrictedEquiv where
   trans := by
     intro x y z ⟨hx, _hy⟩ ⟨_hy', hz⟩
     exact ⟨hx, hz⟩
+
+namespace singletonE
+
+theorem mem (a x : Pomega) : (singletonE a).mem x ↔ x = a :=
+  ⟨fun h => h.1, fun hx => ⟨hx, hx⟩⟩
+
+end singletonE
 
 end DomainTheory.DataTypesAsLattices

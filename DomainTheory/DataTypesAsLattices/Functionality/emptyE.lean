@@ -1,7 +1,6 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
-public import DomainTheory.DataTypesAsLattices.Functionality.mem
 
 @[expose] public section
 

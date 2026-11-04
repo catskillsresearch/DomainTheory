@@ -21,6 +21,12 @@ theorem app (u v x : Pomega) :
     funOf (comp u v) x = funOf u (funOf v x) :=
   beta (theorem_1_3 (funOf.isScottContinuous u) (funOf.isScottContinuous v)) x
 
+theorem isGraph (u v : Pomega) :
+    comp u v = graph (fun x => funOf (comp u v) x) := by
+  apply graph_ext
+  intro x
+  exact (comp.app u v x).symm
+
 theorem isScottContinuous_right (u : Pomega) :
     IsScottContinuous (fun v => comp u v) :=
   graph_const_isScottContinuous (fun v x => funOf u (funOf v x))

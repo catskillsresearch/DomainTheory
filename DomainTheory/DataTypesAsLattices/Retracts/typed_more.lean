@@ -9,6 +9,13 @@ public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3_more
 public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
 public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 public import DomainTheory.DataTypesAsLattices.Graph.graph
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
+public import DomainTheory.DataTypesAsLattices.Retracts.intR
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
+public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
+public import DomainTheory.DataTypesAsLattices.Retracts.tensorR
+public import DomainTheory.DataTypesAsLattices.Functionality.PairSeq
 
 @[expose] public section
 
@@ -44,7 +51,7 @@ theorem arrowR_iff {a b u : Pomega} (ha : Retract a) (_hb : Retract b) :
       u = comp u a ∧ ∀ x, typed x a → typed (funOf u x) b := by
   constructor
   · intro hu
-    exact ⟨typed.arrowR_restrict ha hu, fun x hx => theorem_4_3.ii hu hx⟩
+    exact ⟨arrowR_restrict ha hu, fun x hx => theorem_4_3.ii hu hx⟩
   · intro ⟨hrest, hval⟩
     change u = funOf (arrowR a b) u
     rw [arrowR.app]
@@ -71,7 +78,7 @@ theorem comp {a b c f f' : Pomega}
   have hfx : funOf f x = funOf b (funOf f (funOf a x)) := by
     simpa [DomainTheory.DataTypesAsLattices.comp.app] using
       congrArg (fun w => funOf w x) hf1
-  have hrest := typed.arrowR_restrict ha hf
+  have hrest := arrowR_restrict ha hf
   have hfa : funOf f (funOf a x) = funOf f x := by
     simpa [DomainTheory.DataTypesAsLattices.comp.app] using
       (congrArg (fun w => funOf w x) hrest).symm
@@ -79,12 +86,50 @@ theorem comp {a b c f f' : Pomega}
       funOf c (funOf f' (funOf b (funOf f x))) := by
     simpa [DomainTheory.DataTypesAsLattices.comp.app] using
       congrArg (fun w => funOf w (funOf f x)) hf2
-  have hrange := typed.arrowR_range hb hf
+  have hrange := arrowR_range hb hf
   have hbval : funOf b (funOf f (funOf a x)) = funOf f (funOf a x) := by
     simpa [DomainTheory.DataTypesAsLattices.comp.app] using
       (congrArg (fun w => funOf w (funOf a x)) hrange).symm
   simp only [DomainTheory.DataTypesAsLattices.comp.app]
   rw [hf'fx, ← hfa, hbval, hfa]
+
+theorem apply_retract {a x : Pomega} (ha : Retract a) :
+    typed (funOf a x) a :=
+  (retract_app ha x).symm
+
+theorem bot_botElem : typed botElem botElem := by
+  change botElem = funOf botElem botElem
+  rw [funOf.bot]
+
+theorem isGraph {a b f : Pomega} (hf : typed f (arrowR a b)) :
+    f = graph (fun x => funOf f x) := by
+  have hf' := arrowR.typed_of hf
+  apply Eq.trans hf'
+  apply graph_ext
+  intro x
+  have : funOf f x = funOf b (funOf f (funOf a x)) := by
+    have h1 : funOf f x =
+        funOf (DomainTheory.DataTypesAsLattices.comp b
+          (DomainTheory.DataTypesAsLattices.comp f a)) x :=
+      congrArg (fun w => funOf w x) hf'
+    rw [h1, DomainTheory.DataTypesAsLattices.comp.app,
+      DomainTheory.DataTypesAsLattices.comp.app]
+  rw [DomainTheory.DataTypesAsLattices.comp.app, this]
+
+theorem ofNat_intR (n : ℕ) : typed (ofNat n) intR :=
+  (intR.app_ofNat n).symm
+
+theorem pairSeq_tensorR (a b x y : Pomega) :
+    typed (pairSeq x y) (tensorR a b) ↔ typed x a ∧ typed y b := by
+  constructor
+  · intro h
+    have h' : pairSeq x y =
+        pairSeq (funOf a x) (funOf b y) := by
+      rw [typed, tensorR.app, PairSeq.app_zero, PairSeq.app_one] at h
+      exact h
+    exact PairSeq.inj h'
+  · intro ⟨hx, hy⟩
+    rw [typed, tensorR.app, PairSeq.app_zero, PairSeq.app_one, ← hx, ← hy]
 
 end typed
 

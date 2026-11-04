@@ -1,18 +1,15 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Functionality.Hfun
-public import DomainTheory.DataTypesAsLattices.Functionality.envR_isRetract
-public import DomainTheory.DataTypesAsLattices.Functionality.expR_isRetract
-public import DomainTheory.DataTypesAsLattices.Functionality.lambR_isRetract
-public import DomainTheory.DataTypesAsLattices.Functionality.typed_apply_retract
+public import DomainTheory.DataTypesAsLattices.Retracts.envR
+public import DomainTheory.DataTypesAsLattices.Retracts.expR
+public import DomainTheory.DataTypesAsLattices.Retracts.lambR
+public import DomainTheory.DataTypesAsLattices.Retracts.typed_more
 public import DomainTheory.DataTypesAsLattices.Graph.funOf
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
 public import DomainTheory.DataTypesAsLattices.Retracts.Retract
-public import DomainTheory.DataTypesAsLattices.Retracts.envR
-public import DomainTheory.DataTypesAsLattices.Retracts.expR
-public import DomainTheory.DataTypesAsLattices.Retracts.lambR
 public import DomainTheory.DataTypesAsLattices.Retracts.typed
 
 @[expose] public section
@@ -32,9 +29,9 @@ theorem app (e : Pomega) :
 
 theorem typed :
     typed Hcomb (arrowR expR (arrowR envR lambR)) :=
-  typed_apply_retract
-    (arrowR.isRetract expR_isRetract
-      (arrowR.isRetract envR_isRetract lambR_isRetract))
+  typed.apply_retract
+    (arrowR.isRetract expR.isRetract
+      (arrowR.isRetract envR.isRetract lambR.isRetract))
 
 end Hcomb
 

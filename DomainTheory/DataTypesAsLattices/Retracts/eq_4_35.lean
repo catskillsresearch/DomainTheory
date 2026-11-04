@@ -1,0 +1,28 @@
+module
+
+public import DomainTheory.DataTypesAsLattices.Retracts.Retract
+public import DomainTheory.DataTypesAsLattices.Retracts.typed
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
+public import DomainTheory.DataTypesAsLattices.Retracts.plusR
+public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Pomega.eDense
+public import DomainTheory.DataTypesAsLattices.Functionality.CombC
+public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
+
+@[expose] public section
+
+namespace DomainTheory.DataTypesAsLattices
+
+theorem eq_4_35 {a b : Pomega} (ha : Retract a) (hb : Retract b) :
+    typed (comp b (comp outrightC (plusR a b))) (arrowR (plusR a b) b) := by
+  change comp b (comp outrightC (plusR a b)) =
+    funOf (arrowR (plusR a b) b) (comp b (comp outrightC (plusR a b)))
+  rw [arrowR.app]
+  apply graph_ext
+  intro u
+  simp only [comp.app]
+  rw [retract_app (plusR.isRetract ha hb), retract_app hb]
+
+end DomainTheory.DataTypesAsLattices

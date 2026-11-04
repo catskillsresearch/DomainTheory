@@ -33,8 +33,6 @@ public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_6
 public import DomainTheory.DataTypesAsLattices.Retracts.treeR
 public import DomainTheory.DataTypesAsLattices.Retracts.openSetRetract
 public import DomainTheory.DataTypesAsLattices.Retracts.lambF
-public import DomainTheory.DataTypesAsLattices.Retracts.lambR
-public import DomainTheory.DataTypesAsLattices.Retracts.envR
 public import DomainTheory.DataTypesAsLattices.Retracts.updateEnv
 public import DomainTheory.DataTypesAsLattices.Retracts.tagInj
 public import DomainTheory.DataTypesAsLattices.Retracts.seq4

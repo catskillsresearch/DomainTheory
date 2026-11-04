@@ -1,6 +1,8 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
+public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
+public import DomainTheory.DataTypesAsLattices.Graph.graph
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 public import DomainTheory.DataTypesAsLattices.Graph.beta
 public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
@@ -22,6 +24,18 @@ theorem beta (x : Pomega) :
 theorem beta2 (x y : Pomega) : funOf (funOf Kcomb x) y = x := by
   rw [Kcomb.beta]
   exact _root_.DomainTheory.DataTypesAsLattices.beta (const_isScottContinuous x) y
+
+theorem isGraph : Kcomb = graph (fun x => funOf Kcomb x) := by
+  apply graph_ext
+  intro x
+  rw [Kcomb.beta]
+
+theorem app_isGraph (x : Pomega) :
+    funOf Kcomb x = graph (fun y => funOf (funOf Kcomb x) y) := by
+  rw [Kcomb.beta]
+  apply graph_ext
+  intro y
+  exact (_root_.DomainTheory.DataTypesAsLattices.beta (const_isScottContinuous x) y).symm
 
 end Kcomb
 
