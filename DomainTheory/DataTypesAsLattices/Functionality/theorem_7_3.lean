@@ -1,26 +1,24 @@
 module
 
 public import DomainTheory.DataTypesAsLattices.Retracts.Icomb
-public import DomainTheory.DataTypesAsLattices.Embedding.extend
-public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Lambda.Scomb
-public import DomainTheory.DataTypesAsLattices.Lambda.Scomb_more
-public import DomainTheory.DataTypesAsLattices.Lambda.Kcomb_more
-public import DomainTheory.DataTypesAsLattices.Lambda.eta2
-public import DomainTheory.DataTypesAsLattices.Graph.graph
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
-public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
-public import DomainTheory.DataTypesAsLattices.Graph.beta
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
-public import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_1
+
+import DomainTheory.DataTypesAsLattices.Functionality.theorem_7_1
+import DomainTheory.DataTypesAsLattices.Lambda.eta2
+import DomainTheory.DataTypesAsLattices.Lambda.Kcomb_more
+import DomainTheory.DataTypesAsLattices.Lambda.Scomb_more
+import DomainTheory.DataTypesAsLattices.Graph.funOf_more
+import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
+import DomainTheory.DataTypesAsLattices.Graph.beta
 
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
 
-theorem theorem_7_3.I_unique (i : Pomega)
+namespace theorem_7_3
+
+theorem I_unique (i : Pomega)
     (hi : ∀ A, (arrowE A A).mem i) : i = Icomb := by
   have hgraph : i = graph (fun x => funOf i x) := (hi emptyE).1
   apply funOf.ext_graph hgraph Icomb.isGraph
@@ -30,7 +28,7 @@ theorem theorem_7_3.I_unique (i : Pomega)
       ((singletonE.mem a a).mpr rfl)
   simpa [Icomb.app, singletonE.mem] using ha
 
-theorem theorem_7_3.K_unique (k : Pomega)
+theorem K_unique (k : Pomega)
     (hk : ∀ A B, (arrowE A (arrowE B A)).mem k) : k = Kcomb := by
   have hgraph : k = graph (fun x => funOf k x) := (hk emptyE emptyE).1
   apply funOf.ext_graph hgraph Kcomb.isGraph
@@ -52,7 +50,7 @@ theorem theorem_7_3.K_unique (k : Pomega)
       ((singletonE.mem b b).mpr rfl)
   simpa [Kcomb.beta2, singletonE.mem] using hab
 
-theorem theorem_7_3.S_unique (s : Pomega)
+theorem S_unique (s : Pomega)
     (hη1 : ∀ f, funOf s f =
       funOf s (graph (fun x => graph (fun y => funOf (funOf f x) y))))
     (hη2 : ∀ f g, funOf (funOf s f) g =
@@ -157,11 +155,11 @@ theorem theorem_7_3.S_unique (s : Pomega)
     rw [hsg, hsg']
   rw [hgoal, hval', Scomb.beta3]
 
-theorem theorem_7_3.i (A : RestrictedEquiv) :
+theorem i (A : RestrictedEquiv) :
     (arrowE A A).mem Icomb :=
   ⟨Icomb.isGraph, Icomb.isGraph, fun x y hxy => by simpa [Icomb.app] using hxy⟩
 
-theorem theorem_7_3.ii (A B : RestrictedEquiv) :
+theorem ii (A B : RestrictedEquiv) :
     (arrowE A (arrowE B A)).mem Kcomb := by
   refine ⟨Kcomb.isGraph, Kcomb.isGraph, ?_⟩
   intro x x' hx
@@ -169,7 +167,7 @@ theorem theorem_7_3.ii (A B : RestrictedEquiv) :
   intro y y' _hy
   simpa [Kcomb.beta2] using hx
 
-theorem theorem_7_3.iii (A B C : RestrictedEquiv) :
+theorem iii (A B C : RestrictedEquiv) :
     (arrowE (arrowE A (arrowE B C))
       (arrowE (arrowE A B) (arrowE A C))).mem Scomb := by
   refine ⟨Scomb.isGraph, Scomb.isGraph, ?_⟩
@@ -183,6 +181,8 @@ theorem theorem_7_3.iii (A B C : RestrictedEquiv) :
   have hB : B.rel (funOf g x) (funOf g' x') := hgx.2.2 x x' hx
   have hBC : (arrowE B C).rel (funOf f x) (funOf f' x') := hfx.2.2 x x' hx
   simpa [Scomb.beta3] using hBC.2.2 (funOf g x) (funOf g' x') hB
+
+end theorem_7_3
 
 theorem theorem_7_3 :
     (∀ A, (arrowE A A).mem Icomb) ∧

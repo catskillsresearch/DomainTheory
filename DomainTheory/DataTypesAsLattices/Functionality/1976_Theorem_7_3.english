@@ -94,3 +94,35 @@ $$(7.15) \quad \mathbf{Z}_0 = \lambda f \lambda x.\, x,$$
 $$(7.16) \quad \mathbf{Z}_{n+1} = \lambda f \lambda x.\, f(\mathbf{Z}_n(f)(x)),$$
 
 In other words, $\mathbf{Z}_n(f)(x) = f^n(x)$. These natural combinators can be typed very easily, but Gordon Plotkin has shown that the obvious typing actually characterizes them.
+
+<!-- formalization -->
+
+**Formalization.** Functionality of $\mathbf{I}$, $\mathbf{K}$, and $\mathbf{S}$ for all restricted equivalences, together with uniqueness under those typings (with the $\eta$-hypotheses for $\mathbf{S}$).
+
+**Theorem (`theorem_7_3.i`).** $\mathbf{I}:A\to A$ for every restricted equivalence $A$.
+
+*Proof.* $\mathbf{I}$ is a graph and preserves relatedness by acting as the identity. ∎
+
+**Theorem (`theorem_7_3.ii`).** $\mathbf{K}:A\to(B\to A)$ for all restricted equivalences $A$ and $B$.
+
+*Proof.* $\mathbf{K}$ and its applications are graphs; relatedness of the first arguments is preserved by discarding the second. ∎
+
+**Theorem (`theorem_7_3.iii`).** $\mathbf{S}:(A\to(B\to C))\to((A\to B)\to(A\to C))$ for all restricted equivalences $A$, $B$, and $C$.
+
+*Proof.* Nested graphhood of $\mathbf{S}$ and its curried applications; at related $x,x'$ the applications $g(x)$ and $f(x)$ are related in $B$ and $B\to C$, so $f(x)(g(x))$ is related in $C$. ∎
+
+**Theorem (`theorem_7_3.I_unique`).** If $i:A\to A$ for every restricted equivalence $A$, then $i=\mathbf{I}$.
+
+*Proof.* Specialize to singletons: $i(a)$ is related to itself in the singleton on $a$, so $i(a)=a$. ∎
+
+**Theorem (`theorem_7_3.K_unique`).** If $k:A\to(B\to A)$ for all restricted equivalences $A$ and $B$, then $k=\mathbf{K}$.
+
+*Proof.* Specialize to singletons on $a$ and $b$: $k(a)(b)$ lies in the singleton on $a$, so equals $a$. ∎
+
+**Theorem (`theorem_7_3.S_unique`).** If $s$ is $\eta$-stable in its first two arguments as in Scott’s proviso, and $s:(A\to(B\to C))\to((A\to B)\to(A\to C))$ for all $A$, $B$, $C$, then $s=\mathbf{S}$.
+
+*Proof.* Reduce to $\eta$-normalized arguments, then evaluate at a singleton argument: the typing forces $s(f)(g)(x)=f(x)(g(x))$. ∎
+
+**Theorem (`theorem_7_3`).** The functionality and uniqueness clauses of Theorem 7.3 hold.
+
+*Proof.* Assemble the six preceding tools. ∎
