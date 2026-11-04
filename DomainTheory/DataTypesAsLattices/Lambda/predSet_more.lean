@@ -27,6 +27,18 @@ theorem ofNat_succ (j : ℕ) : predSet (ofNat (j + 1)) = ofNat j := by
   ext k
   simp [predSet, ofNat]
 
+theorem succSet (x : Pomega) : predSet (succSet x) = x := by
+  ext k
+  constructor
+  · intro ⟨n, hn, heq⟩
+    exact (Nat.succ_injective heq) ▸ hn
+  · intro hk
+    exact ⟨k, hk, rfl⟩
+
+theorem union (x y : Pomega) :
+    predSet (x ∪ y) = predSet x ∪ predSet y := by
+  ext k; simp [predSet]
+
 end predSet
 
 end DomainTheory.DataTypesAsLattices

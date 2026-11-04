@@ -29,10 +29,7 @@ public import DomainTheory.DataTypesAsLattices.Closures.eq_5_9
 public import DomainTheory.DataTypesAsLattices.Closures.eq_5_10
 public import DomainTheory.DataTypesAsLattices.Closures.union_left_isScottContinuous
 public import DomainTheory.DataTypesAsLattices.Closures.union_const_left_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Closures.union_botElem
-public import DomainTheory.DataTypesAsLattices.Closures.botElem_union
-public import DomainTheory.DataTypesAsLattices.Closures.exists_mem_of_ne_bot
-public import DomainTheory.DataTypesAsLattices.Closures.topElem_ne_botElem
+public import DomainTheory.DataTypesAsLattices.Closures.botElem
 public import DomainTheory.DataTypesAsLattices.Closures.squarePair_more
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 
@@ -95,23 +92,23 @@ theorem app_left {a b u : Pomega} (hx : squareFst u ≠ botElem)
     (hy : squareSnd u = botElem) :
     funOf (boxPlus a b) u =
       squarePair (funOf (boxShift a) (squareFst u)) botElem := by
-  obtain ⟨m, hm⟩ := exists_mem_of_ne_bot hx
-  rw [app, boxTag.of_mem hm, hy, boxTag.bot, union_botElem,
+  obtain ⟨m, hm⟩ := botElem.exists_mem hx
+  rw [app, boxTag.of_mem hm, hy, boxTag.bot, botElem.union_empty,
     dcondSet.ofNat_zero]
 
 theorem app_right {a b u : Pomega} (hx : squareFst u = botElem)
     (hy : squareSnd u ≠ botElem) :
     funOf (boxPlus a b) u =
       squarePair botElem (funOf (boxShift b) (squareSnd u)) := by
-  obtain ⟨m, hm⟩ := exists_mem_of_ne_bot hy
-  rw [app, boxTag.of_mem hm, hx, boxTag.bot, botElem_union,
+  obtain ⟨m, hm⟩ := botElem.exists_mem hy
+  rw [app, boxTag.of_mem hm, hx, boxTag.bot, botElem.empty_union,
     dcondSet.ofNat_one]
 
 theorem app_mixed {a b u : Pomega} (hx : squareFst u ≠ botElem)
     (hy : squareSnd u ≠ botElem) :
     funOf (boxPlus a b) u = topElem := by
-  obtain ⟨m, hm⟩ := exists_mem_of_ne_bot hx
-  obtain ⟨k, hk⟩ := exists_mem_of_ne_bot hy
+  obtain ⟨m, hm⟩ := botElem.exists_mem hx
+  obtain ⟨k, hk⟩ := botElem.exists_mem hy
   rw [app, boxTag.of_mem hm, boxTag.of_mem hk]
   exact dcondSet.of_mixed (by simp [ofNat]) ⟨0, by simp [ofNat]⟩
 
@@ -121,8 +118,8 @@ theorem app_bot (a b : Pomega) :
 
 theorem app_top (a b : Pomega) :
     funOf (boxPlus a b) topElem = topElem :=
-  app_mixed (by rw [squareFst.top]; exact topElem_ne_botElem)
-    (by rw [squareSnd.top]; exact topElem_ne_botElem)
+  app_mixed (by rw [squareFst.top]; exact botElem.ne_top)
+    (by rw [squareSnd.top]; exact botElem.ne_top)
 
 theorem app_app {a b : Pomega} (ha : Retract a) (hb : Retract b)
     (u : Pomega) :

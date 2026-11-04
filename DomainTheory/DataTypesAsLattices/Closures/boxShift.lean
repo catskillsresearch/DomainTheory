@@ -20,8 +20,6 @@ public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Closures.Closure
 public import DomainTheory.DataTypesAsLattices.Closures.union_const_left_isScottContinuous
-public import DomainTheory.DataTypesAsLattices.Closures.predSet_union
-public import DomainTheory.DataTypesAsLattices.Closures.predSet_succSet
 public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
 public import DomainTheory.DataTypesAsLattices.Lambda.predSet_more
 public import DomainTheory.DataTypesAsLattices.Lambda.succSet_more
@@ -68,7 +66,7 @@ theorem isRetract {a : Pomega} (ha : Retract a) :
   rw [app, app]
   have hpred : predSet (ofNat 0 ∪ succSet (funOf a (predSet x))) =
       funOf a (predSet x) := by
-    rw [predSet_union, predSet_ofNat_zero, predSet_succSet]
+    rw [predSet.union, predSet_ofNat_zero, predSet.succSet]
     simp [botElem]
   rw [hpred, retract_app ha]
 

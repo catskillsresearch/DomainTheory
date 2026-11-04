@@ -1,0 +1,1 @@
+Predecessor identities used when shifting codes: $\mathrm{pred}(\mathrm{succ}\,x)=x$ and $\mathrm{pred}$ preserves unions.

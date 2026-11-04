@@ -1069,6 +1069,23 @@ RETRACTS_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Theorem 4.5", "Theorem 4.6"),
 ]
 
+CLOSURES_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
+    ("Introduction", "Isolated"),
+    ("Isolated", "Bottom"),
+    ("Bottom", "Square pair"),
+    ("Square pair", "Predecessor identities"),
+    ("Predecessor identities", "Directed finite cover"),
+    ("Directed finite cover", "Countably algebraic"),
+    ("Countably algebraic", "Representation"),
+    ("Representation", "Definition (closure)"),
+    ("Definition (closure)", "Theorem 5.1"),
+    ("Theorem 5.1", "Theorem 5.2"),
+    ("Theorem 5.2", "Theorem 5.3"),
+    ("Theorem 5.3", "Theorem 5.4"),
+    ("Theorem 5.4", "Theorem 5.5"),
+    ("Theorem 5.5", "Theorem 5.6"),
+]
+
 DEFINABILITY_THEOREM_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
     ("Elementary definitions", "Primitive recursion"),
     ("Primitive recursion", "Definition (computable)"),
@@ -1382,6 +1399,31 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
                 "Theorem 4.4": "T44",
                 "Theorem 4.5": "T45",
                 "Theorem 4.6": "T46",
+            }
+        if mermaid.name == "Closures.mermaid":
+            include_empty_boxes = True
+            force_edges = CLOSURES_OUTLINE_NARRATIVE
+            header_lines = [
+                *outline_mermaid_header("1976_Closure_operations_and_algebraic_lattices.md"),
+                "%% Reading order for tool notes; Lean edges for theorem deps.",
+            ]
+            extra_ids = {
+                **(extra_ids or {}),
+                "Introduction": "INTRO",
+                "Isolated": "ISOL",
+                "Bottom": "BOT",
+                "Square pair": "SQP",
+                "Predecessor identities": "PRED",
+                "Directed finite cover": "DFC",
+                "Countably algebraic": "CALG",
+                "Representation": "REP",
+                "Definition (closure)": "DCLOS",
+                "Theorem 5.1": "T51",
+                "Theorem 5.2": "T52",
+                "Theorem 5.3": "T53",
+                "Theorem 5.4": "T54",
+                "Theorem 5.5": "T55",
+                "Theorem 5.6": "T56",
             }
         if mermaid.name == "DirectedFixpoints.mermaid":
             include_empty_boxes = True
