@@ -33,3 +33,39 @@ A more precise discussion identifies $N \to N$ as a topological space, usually c
 $$(7.12) \quad N_k = \{\langle n, n \rangle \mid n < k\},$$
 
 then $N \to N_2$ can also be identified with a topological space, usually called the *Cantor space*. In this identification we find at the next type, say either $(N \to N) \to N$ or $(N \to N_2) \to N_2$, that elements correspond to the usual notion of continuous function defined in topological terms. However, these higher type spaces are not at all conveniently taken as *topological* spaces. Certain of them can be identified as *limit spaces* according to the work of Hyland, and for these $\to$, $\times$, and $+$ have the natural interpretation. We cannot enter into these details here, but we can remark that the higher type spaces become ever more complicated. Thus $((N \to N) \to N) \to N$ is a $\Pi_2^1$-set and each $\to$ will add another quantifier to the definition. This is reasonable, because to say that a function is total is to say that *all* its values are well-behaved. But if its domain is a complex space, this statement of totality is even more complex. Despite this complexity, however, it is possible to sort out what kind of mapping properties many functions have. We shall mention a few of the combinators.
+
+<!-- formalization -->
+
+**Formalization.** The isomorphism theorem relates the retract identity $E_a$ to kernels, arrows, products, and sums. The packaging theorem assembles the four clauses for retracts $a$ and $b$.
+
+**Theorem (`theorem_7_2.i`).** $x\,E_a\,y$ if and only if $x:a$, $y:a$, and $x=y$.
+
+*Proof.* Unfolding the definition of $E_a$. ∎
+
+**Theorem (`theorem_7_2.i_iso`).** If $a$ is a retract, then $a(x)=a(y)$ if and only if $a(x)\,E_a\,a(y)$.
+
+*Proof.* Both sides reduce to equality of the images once retract-fixedness supplies $a(x):a$ and $a(y):a$. ∎
+
+**Theorem (`theorem_7_2.ii_of_typed`).** If $f:a\circ\to b$, then $f:E_a\to E_b$.
+
+*Proof.* Typing into the retract arrow rewrites $f$ as a graph; relatedness in $E_a$ is equality of $a$-typed points, and the retract arrow preserves typing into $b$. ∎
+
+**Theorem (`theorem_7_2.ii`).** For retracts $a$ and $b$, typing into $a\circ\to b$ implies membership in $E_a\to E_b$; relatedness in $E_a\to E_b$ passes to relatedness of the retract-arrow applications in $E_{a\circ\to b}$ and conversely.
+
+*Proof.* The forward typing clause is the previous theorem; the two directions between $E_a\to E_b$ and $E_{a\circ\to b}$ compare graph preservation on $a$-fixed arguments with equality after applying $a\circ\to b$. ∎
+
+**Theorem (`theorem_7_2.iii`).** On paired arguments, $E_{a\otimes b}$ agrees with $E_a\times E_b$.
+
+*Proof.* Unpack tensor typing of a pair into component typings, or reassemble them. ∎
+
+**Theorem (`theorem_7_2.iii_exact`).** For arbitrary $u$ and $v$, $u\,E_{a\otimes b}\,v$ if and only if $u\,(E_a\times E_b)\,v$.
+
+*Proof.* Reduce via the product membership characterisation of Theorem 4.4 to the previous clause on pairs. ∎
+
+**Theorem (`theorem_7_2.iv`).** For retracts $a$ and $b$, $u\,E_{a\oplus b}\,v$ if and only if $u\,(E_a+E_b)\,v$, or both are $\bot$, or both are $\top$.
+
+*Proof.* Case on the sum typing of $u$: bottom, top, left injection, or right injection; the converse rebuilds sum typing from the sum equivalence or the two exceptional pairs. ∎
+
+**Theorem (`theorem_7_2`).** For retracts $a$ and $b$, clauses (i)–(iv) of the isomorphism theorem hold.
+
+*Proof.* Assemble the four preceding tools. ∎

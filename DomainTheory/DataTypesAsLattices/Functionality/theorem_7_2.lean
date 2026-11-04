@@ -1,34 +1,29 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Retracts.Retract
-public import DomainTheory.DataTypesAsLattices.Retracts.typed
 public import DomainTheory.DataTypesAsLattices.Retracts.arrowR
 public import DomainTheory.DataTypesAsLattices.Retracts.tensorR
 public import DomainTheory.DataTypesAsLattices.Retracts.plusR
-public import DomainTheory.DataTypesAsLattices.Retracts.retract_app
-public import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3
-public import DomainTheory.DataTypesAsLattices.Embedding.extend
-public import DomainTheory.DataTypesAsLattices.Graph.graph
-public import DomainTheory.DataTypesAsLattices.Graph.funOf
-public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import DomainTheory.DataTypesAsLattices.Functionality.RestrictedEquiv
-public import DomainTheory.DataTypesAsLattices.Retracts.pairSeq
-public import DomainTheory.DataTypesAsLattices.Enumeration.PairSeq
-public import DomainTheory.DataTypesAsLattices.Retracts.typed_more
-public import DomainTheory.DataTypesAsLattices.Functionality.pairElem
-public import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_4
-public import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
+
+import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_4
+import DomainTheory.DataTypesAsLattices.Retracts.typed_more
+import DomainTheory.DataTypesAsLattices.Retracts.arrowR_more
+import DomainTheory.DataTypesAsLattices.Retracts.theorem_4_3_more
+import DomainTheory.DataTypesAsLattices.Retracts.retract_app
+import DomainTheory.DataTypesAsLattices.Enumeration.PairSeq
+import DomainTheory.DataTypesAsLattices.Retracts.graphLemmas
 
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
 
-theorem theorem_7_2.i (a x y : Pomega) :
+namespace theorem_7_2
+
+theorem i (a x y : Pomega) :
     (Ea a).rel x y ↔ typed x a ∧ typed y a ∧ x = y :=
   Iff.rfl
 
-theorem theorem_7_2.i_iso {a : Pomega} (ha : Retract a) (x y : Pomega) :
+theorem i_iso {a : Pomega} (ha : Retract a) (x y : Pomega) :
     funOf a x = funOf a y ↔ (Ea a).rel (funOf a x) (funOf a y) := by
   constructor
   · intro h
@@ -38,7 +33,7 @@ theorem theorem_7_2.i_iso {a : Pomega} (ha : Retract a) (x y : Pomega) :
   · intro h
     exact h.2.2
 
-theorem theorem_7_2.ii_of_typed {a b f : Pomega} (hf : typed f (arrowR a b)) :
+theorem ii_of_typed {a b f : Pomega} (hf : typed f (arrowR a b)) :
     (arrowE (Ea a) (Ea b)).mem f := by
   have hf' : f = comp b (comp f a) := by
     simpa [typed, arrowR.app] using hf
@@ -57,13 +52,13 @@ theorem theorem_7_2.ii_of_typed {a b f : Pomega} (hf : typed f (arrowR a b)) :
   have hfx : typed (funOf f x) b := theorem_4_3.ii hf hx
   exact ⟨hfx, hfx, rfl⟩
 
-theorem theorem_7_2.ii {a b : Pomega} (ha : Retract a) (hb : Retract b)
+theorem ii {a b : Pomega} (ha : Retract a) (hb : Retract b)
     (f g : Pomega) :
     (typed f (arrowR a b) → (arrowE (Ea a) (Ea b)).mem f) ∧
       ((arrowE (Ea a) (Ea b)).rel f g →
         (Ea (arrowR a b)).rel (funOf (arrowR a b) f) (funOf (arrowR a b) g)) ∧
       ((Ea (arrowR a b)).rel f g → (arrowE (Ea a) (Ea b)).rel f g) := by
-  refine ⟨fun hf => theorem_7_2.ii_of_typed hf, ?_, ?_⟩
+  refine ⟨fun hf => ii_of_typed hf, ?_, ?_⟩
   · intro hfg
     rcases hfg with ⟨hfgraph, hggraph, hpres⟩
     have hftyped : typed (funOf (arrowR a b) f) (arrowR a b) :=
@@ -83,10 +78,10 @@ theorem theorem_7_2.ii {a b : Pomega} (ha : Retract a) (hb : Retract b)
     rw [← hfb, ← hgb, hfeq]
   · intro hfg
     rcases hfg with ⟨hf, hg, rfl⟩
-    have hmem := theorem_7_2.ii_of_typed hf
+    have hmem := ii_of_typed hf
     exact ⟨hmem.1, hmem.1, hmem.2.2⟩
 
-theorem theorem_7_2.iii (a b x y x' y' : Pomega) :
+theorem iii (a b x y x' y' : Pomega) :
     (Ea (tensorR a b)).rel (pairSeq x y) (pairSeq x' y') ↔
       (prodE (Ea a) (Ea b)).rel (pairSeq x y) (pairSeq x' y') := by
   constructor
@@ -109,7 +104,7 @@ theorem theorem_7_2.iii (a b x y x' y' : Pomega) :
       (typed.pairSeq_tensorR a b x' y').mpr ⟨hx', hy'⟩, ?_⟩
     rw [heqx, heqy]
 
-theorem theorem_7_2.iii_exact (a b u v : Pomega) :
+theorem iii_exact (a b u v : Pomega) :
     (Ea (tensorR a b)).rel u v ↔ (prodE (Ea a) (Ea b)).rel u v := by
   constructor
   · intro huv
@@ -128,7 +123,7 @@ theorem theorem_7_2.iii_exact (a b u v : Pomega) :
     · exact theorem_4_4.typed_iff.mpr ⟨hu, hx, hy⟩
     · exact theorem_4_4.typed_iff.mpr ⟨hv, hx', hy'⟩
 
-theorem theorem_7_2.iv {a b : Pomega} (ha : Retract a) (hb : Retract b)
+theorem iv {a b : Pomega} (ha : Retract a) (hb : Retract b)
     (u v : Pomega) :
     (Ea (plusR a b)).rel u v ↔
       (sumE (Ea a) (Ea b)).rel u v ∨
@@ -164,6 +159,8 @@ theorem theorem_7_2.iv {a b : Pomega} (ha : Retract a) (hb : Retract b)
       · rw [hv]; exact plusR.typed_inr hyt
     · exact ⟨plusR.typed_bot a b, plusR.typed_bot a b, rfl⟩
     · exact ⟨plusR.typed_top a b, plusR.typed_top a b, rfl⟩
+
+end theorem_7_2
 
 theorem theorem_7_2 {a b : Pomega} (ha : Retract a) (hb : Retract b) :
     (∀ x y, funOf a x = funOf a y ↔ (Ea a).rel (funOf a x) (funOf a y)) ∧
