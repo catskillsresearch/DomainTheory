@@ -5,7 +5,7 @@
 flowchart TB
 
   INTRO["Introduction"]
-  DCLASS["Definition (classes)"]
+  DCLASS["Scott classes"]
   CHAR["Characteristic maps"]
   OEP["Odd-even packing"]
   PAIR["Pair indexing"]
@@ -26,14 +26,12 @@ flowchart TB
   PAIR --> FGDP
   CHAR --> OEP
   OEP --> PAIR
-  BMEM --> T61
-  BMEM --> T62
-  BMEM --> T63
-  BMEM --> T64
+  CHAR --> T61
+  CHAR --> T62
+  PAIR --> T63
+  OEP --> T64
+  FGDP --> T65
   T63 --> T65
   BMEM --> T66
   T66 --> T67
   FGDP --> TVAL
-
-  classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
-  classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

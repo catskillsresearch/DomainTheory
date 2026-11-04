@@ -1,7 +1,27 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Classification.Basic
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen_more
+public import DomainTheory.DataTypesAsLattices.FixedPoint.theorem_1_3
+public import DomainTheory.DataTypesAsLattices.Graph.funOf
+public import DomainTheory.DataTypesAsLattices.Graph.funOf_more
+public import DomainTheory.DataTypesAsLattices.Lambda.Language
+public import DomainTheory.DataTypesAsLattices.Lambda.condSet
+public import DomainTheory.DataTypesAsLattices.Lambda.sequences
+public import DomainTheory.DataTypesAsLattices.Lambda.graph_const_isScottContinuous
+public import DomainTheory.DataTypesAsLattices.Pomega.pair
+public import DomainTheory.DataTypesAsLattices.Classification.BooleanMemE
+public import DomainTheory.DataTypesAsLattices.Classification.Classes
+public import DomainTheory.DataTypesAsLattices.Classification.ThreeValued
+public import DomainTheory.DataTypesAsLattices.Classification.charOpen
+public import DomainTheory.DataTypesAsLattices.Classification.closedToZero
+public import DomainTheory.DataTypesAsLattices.Classification.pairIndexed
 public import DomainTheory.DataTypesAsLattices.Classification.theorem_6_6
+public import DomainTheory.DataTypesAsLattices.Classification.typicalBdelta
+public import DomainTheory.DataTypesAsLattices.Classification.uvU
+public import DomainTheory.DataTypesAsLattices.Classification.uvV
+import Mathlib.Tactic.Bound.Init
+
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
@@ -15,9 +35,9 @@ theorem theorem_6_7_of_equalizer :
   refine ⟨fun n => {x | n ∈ f x ∧ n ∈ g x} ∪ {x | n ∉ f x ∧ n ∉ g x}, ?_, ?_⟩
   · intro n
     refine (IsBooleanOpen.ofOpen
-      (isScottOpen_inter (mem_preimage_isScottOpen hf n)
-        (mem_preimage_isScottOpen hg n))).union
-      (isBooleanOpen_of_closed ?_)
+      (IsScottOpen.inter (IsScottContinuous.mem_preimage hf n)
+        (IsScottContinuous.mem_preimage hg n))).union
+      (IsBooleanOpen.of_closed ?_)
     have : {x | n ∉ f x ∧ n ∉ g x}ᶜ = {x | n ∈ f x} ∪ {x | n ∈ g x} := by
       ext x
       constructor
@@ -33,8 +53,8 @@ theorem theorem_6_7_of_equalizer :
         · exact h.1 hf'
         · exact h.2 hg'
     rw [this]
-    exact isScottOpen_union (mem_preimage_isScottOpen hf n)
-      (mem_preimage_isScottOpen hg n)
+    exact IsScottOpen.union (IsScottContinuous.mem_preimage hf n)
+      (IsScottContinuous.mem_preimage hg n)
   · ext x
     constructor
     · intro h
@@ -61,7 +81,7 @@ theorem theorem_6_7_iInter_equalizer (f g : ℕ → Pomega → Pomega)
     ∃ F G, IsScottContinuous F ∧ IsScottContinuous G ∧
       {x | ∀ n, f n x = g n x} = {x | F x = G x} :=
   ⟨pairIndexed f, pairIndexed g,
-    pairIndexed_isScottContinuous f hf, pairIndexed_isScottContinuous g hg, by
+    pairIndexed.isScottContinuous f hf, pairIndexed.isScottContinuous g hg, by
     ext x
     constructor
     · intro h
@@ -112,8 +132,8 @@ theorem isBooleanOpen_as_iInter_open_union_closed {U : Set Pomega}
     induction S, hS using Set.Finite.induction_on with
     | empty =>
       intro
-      refine ⟨fun _ => Set.univ, fun _ => ∅, fun _ => isScottOpen_univ,
-        fun _ => by rw [Set.compl_empty]; exact isScottOpen_univ, ?_⟩
+      refine ⟨fun _ => Set.univ, fun _ => ∅, fun _ => IsScottOpen.univ,
+        fun _ => by rw [Set.compl_empty]; exact IsScottOpen.univ, ?_⟩
       ext x
       simp
     | insert ha hs ih =>
@@ -122,7 +142,7 @@ theorem isBooleanOpen_as_iInter_open_union_closed {U : Set Pomega}
       obtain ⟨Os, Cs, hOs, hCs, hseq⟩ :=
         ih fun e he => hfin e (Set.mem_insert_of_mem a he)
       have haFin : a.Finite := hfin a (Set.mem_insert a s)
-      obtain ⟨hslice, hOa, hCa⟩ := ne_eq_open_union_closed hf haFin
+      obtain ⟨hslice, hOa, hCa⟩ := IsScottContinuous.ne_eq_open_union_closed hf haFin
       refine ⟨fun n => match n with
         | 0 => {x | ¬ f x ⊆ a}
         | _n + 1 => Os _n,
@@ -197,16 +217,16 @@ theorem theorem_6_7_of_bdelta {U : Set Pomega} (hU : IsBdelta U) :
   let f : ℕ → Pomega → Pomega := fun m x => charOpen (O m) x
   let g : ℕ → Pomega → Pomega := fun m x => closedToZero (C m) x
   have hf : ∀ m, IsScottContinuous (f m) :=
-    fun m => charOpen_isScottContinuous (O m)
+    fun m => charOpen.isScottContinuous (O m)
   have hg : ∀ m, IsScottContinuous (g m) :=
-    fun m => closedToZero_isScottContinuous (C m)
+    fun m => closedToZero.isScottContinuous (C m)
   let F : ℕ → Pomega → Pomega := fun m x => uvU (f m x) (g m x)
   let G : ℕ → Pomega → Pomega := fun m x => uvV (f m x) (g m x)
   have hF : ∀ m, IsScottContinuous (F m) :=
-    fun m => theorem_1_3.tuple (uvU_isScottContinuous_left) (uvU_isScottContinuous_right)
+    fun m => theorem_1_3.tuple (uvU.isScottContinuous_left) (uvU.isScottContinuous_right)
       (hf m) (hg m)
   have hG : ∀ m, IsScottContinuous (G m) :=
-    fun m => theorem_1_3.tuple (uvV_isScottContinuous_left) (uvV_isScottContinuous_right)
+    fun m => theorem_1_3.tuple (uvV.isScottContinuous_left) (uvV.isScottContinuous_right)
       (hf m) (hg m)
   have hpack : (⋂ n, Bs n) = {x | ∀ m, F m x = G m x} := by
     rw [hUC]
@@ -216,16 +236,17 @@ theorem theorem_6_7_of_bdelta {U : Set Pomega} (hU : IsBdelta U) :
       have hx' := Set.mem_iInter.mp hx m
       have hfg : f m x = ofNat 0 ∨ g m x = ofNat 0 := by
         rcases hx' with hOm | hCm
-        · exact Or.inl ((charOpen_eq_zero (hO m) x).mpr hOm)
-        · exact Or.inr ((closedToZero_eq_zero (hC m) x).mpr hCm)
-      exact (uv_eq_iff (charOpen_three (O m) x) (closedToZero_three (hC m) x)).mpr hfg
+        · exact Or.inl ((charOpen.eq_zero (hO m) x).mpr hOm)
+        · exact Or.inr ((closedToZero.eq_zero (hC m) x).mpr hCm)
+      exact (ThreeValued.uvU_eq_uvV (charOpen.threeValued (O m) x)
+        (closedToZero.threeValued (hC m) x)).mpr hfg
     · intro hx
       refine Set.mem_iInter.mpr fun m => ?_
-      have heq := (uv_eq_iff (charOpen_three (O m) x)
-        (closedToZero_three (hC m) x)).mp (hx m)
+      have heq := (ThreeValued.uvU_eq_uvV (charOpen.threeValued (O m) x)
+        (closedToZero.threeValued (hC m) x)).mp (hx m)
       rcases heq with hf0 | hg0
-      · exact Or.inl ((charOpen_eq_zero (hO m) x).mp hf0)
-      · exact Or.inr ((closedToZero_eq_zero (hC m) x).mp hg0)
+      · exact Or.inl ((charOpen.eq_zero (hO m) x).mp hf0)
+      · exact Or.inr ((closedToZero.eq_zero (hC m) x).mp hg0)
   exact theorem_6_7_converse_of_equalizers F G hF hG hpack
 
 theorem theorem_6_7 :

@@ -1,6 +1,12 @@
 module
 
-public import DomainTheory.DataTypesAsLattices.Classification.Basic
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen_more
+public import DomainTheory.DataTypesAsLattices.Continuous.isScottOpen_iff_isOpen
+public import DomainTheory.DataTypesAsLattices.Classification.BooleanMemE
+public import DomainTheory.DataTypesAsLattices.Classification.Classes
+import Mathlib.Tactic.Bound.Init
+
 @[expose] public section
 
 namespace DomainTheory.DataTypesAsLattices
@@ -16,12 +22,12 @@ theorem theorem_6_6 :
   · intro hU
     have : BooleanMemE U := by
       induction hU with
-      | ofOpen hU => exact booleanMemE_ofOpen hU
-      | union _ _ ihU ihV => exact booleanMemE_union ihU ihV
-      | inter _ _ ihU ihV => exact booleanMemE_inter ihU ihV
-      | compl _ ih => exact booleanMemE_compl ih
+      | ofOpen hU => exact BooleanMemE.ofOpen hU
+      | union _ _ ihU ihV => exact BooleanMemE.union ihU ihV
+      | inter _ _ ihU ihV => exact BooleanMemE.inter ihU ihV
+      | compl _ ih => exact BooleanMemE.compl ih
     obtain ⟨f, N, E, hf, hfb, hEf, hEsub, rfl⟩ := this
-    refine ⟨f, hf, E, hEf, fun e he => (finite_Iio_nat N).subset (hEsub e he), rfl⟩
+    refine ⟨f, hf, E, hEf, fun e he => (BooleanMemE.finite_Iio N).subset (hEsub e he), rfl⟩
   · rintro ⟨f, hf, E, hE, hEfin, rfl⟩
     have : {x | f x ∈ E} = ⋃₀ ((fun e => {x | f x = e}) '' E) := by
       ext x
@@ -34,7 +40,7 @@ theorem theorem_6_6 :
         change f x ∈ E
         rwa [hxeq]
     rw [this]
-    refine isBooleanOpen_sUnion_finite (hE.image _) fun W hW => ?_
+    refine IsBooleanOpen.sUnion_finite (hE.image _) fun W hW => ?_
     obtain ⟨e, heE, rfl⟩ := hW
     have hefin : e.Finite := hEfin e heE
     have hopen : IsScottOpen {x | e ⊆ f x} := by
@@ -47,7 +53,7 @@ theorem theorem_6_6 :
           exact Set.mem_iInter₂.mp hx k (hefin.mem_toFinset.mpr hk)
       rw [this, isScottOpen_iff_isOpen]
       exact isOpen_biInter_finset fun k _ =>
-        (isScottOpen_iff_isOpen _).mp (mem_preimage_isScottOpen hf k)
+        (isScottOpen_iff_isOpen _).mp (IsScottContinuous.mem_preimage hf k)
     have hclosed : IsScottOpen {x | f x ⊆ e}ᶜ := by
       have : {x | f x ⊆ e}ᶜ = ⋃ k, {x | k ∉ e ∧ k ∈ f x} := by
         ext x
@@ -60,15 +66,15 @@ theorem theorem_6_6 :
           intro hsub
           exact hke (hsub hk)
       rw [this]
-      exact isScottOpen_iUnion _ fun k => by
+      exact IsScottOpen.iUnion _ fun k => by
         by_cases hke : k ∈ e
         · have : {x | k ∉ e ∧ k ∈ f x} = (∅ : Set Pomega) := by
             ext x; simp [hke]
-          rw [this]; exact isScottOpen_empty
+          rw [this]; exact IsScottOpen.empty
         · have : {x | k ∉ e ∧ k ∈ f x} = {x | k ∈ f x} := by
             ext x; simp [hke]
-          rw [this]; exact mem_preimage_isScottOpen hf k
-    exact isBooleanOpen_of_fcapg ⟨{x | f x ⊆ e}, {x | e ⊆ f x}, hclosed, hopen, by
+          rw [this]; exact IsScottContinuous.mem_preimage hf k
+    exact IsBooleanOpen.of_fcapG ⟨{x | f x ⊆ e}, {x | e ⊆ f x}, hclosed, hopen, by
       ext x
       constructor
       · intro hx

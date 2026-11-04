@@ -1,4 +1,3 @@
-
 module
 
 public import Mathlib.Order.CompleteLattice.Defs
@@ -7,12 +6,11 @@ public import Mathlib.Topology.Defs.Induced
 public import Mathlib.Topology.Order
 public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
-public import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen_more
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Data.Set.Finite.Powerset
-public import DomainTheory.DataTypesAsLattices.Classification.ScottF
+public import DomainTheory.DataTypesAsLattices.Classification.Classes
 public import DomainTheory.DataTypesAsLattices.Classification.charTop
-public import DomainTheory.DataTypesAsLattices.Classification.Basic
 
 @[expose] public section
 
@@ -25,9 +23,9 @@ theorem theorem_6_2 :
   intro U
   constructor
   · intro hU
-    refine ⟨charTop Uᶜ, charTop_isScottContinuous Uᶜ, ?_⟩
+    refine ⟨charTop Uᶜ, charTop.isScottContinuous Uᶜ, ?_⟩
     ext x
-    exact (charTop_eq_bot_of_closed hU x).symm
+    exact (charTop.eq_bot_of_closed hU x).symm
   · rintro ⟨f, hf, rfl⟩
     change IsScottOpen {x | f x = botElem}ᶜ
     have : {x | f x = botElem}ᶜ = ⋃ k, {x | k ∈ f x} := by
@@ -52,6 +50,6 @@ theorem theorem_6_2 :
         rw [hbot'] at hk'
         exact ((mem_botElem k).mp hk').elim
     rw [this]
-    exact isScottOpen_iUnion _ fun k => mem_preimage_isScottOpen hf k
+    exact IsScottOpen.iUnion _ fun k => IsScottContinuous.mem_preimage hf k
 
 end DomainTheory.DataTypesAsLattices

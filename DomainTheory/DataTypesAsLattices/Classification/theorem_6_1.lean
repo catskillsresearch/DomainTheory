@@ -1,4 +1,3 @@
-
 module
 
 public import Mathlib.Order.CompleteLattice.Defs
@@ -14,7 +13,6 @@ public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Data.Set.Finite.Powerset
 public import DomainTheory.DataTypesAsLattices.Classification.charOpen
-public import DomainTheory.DataTypesAsLattices.Classification.Basic
 
 @[expose] public section
 
@@ -40,7 +38,7 @@ theorem theorem_6_1 :
       obtain ⟨n, h0, hn⟩ := Set.mem_iUnion₂.mp hx
       exact IsScottContinuous.monotone hf hn h0
   · intro U hU
-    refine ⟨charOpen U, charOpen_isScottContinuous U, ?_⟩
+    refine ⟨charOpen U, charOpen.isScottContinuous U, ?_⟩
     ext x
     constructor
     · intro hx

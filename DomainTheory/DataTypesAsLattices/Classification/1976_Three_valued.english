@@ -1,0 +1,35 @@
+Three-valued elements of $\mathbf{P}\omega$ are $\bot$, the numeral $0$, and $\top$. The auxiliary maps $\mathrm{uvU}$ and $\mathrm{uvV}$ agree on three-valued arguments precisely when at least one argument is $0$.
+
+**Definition (`ThreeValued`).** An element is three-valued when it equals $\bot$, $0$, or $\top$.
+
+**Definition (`zeroPrime`).** $\mathrm{zeroPrime}=0\cup 1$.
+
+**Definition (`uvU`, `uvV`).** Two continuous binary combinations of arguments used to detect equalizers among three-valued values (Scott’s $U$ and $V$ tables).
+
+**Theorem (`zeroPrime.ne_ofNat_zero`).** $\mathrm{zeroPrime}\neq 0$.
+
+*Proof.* $1\in\mathrm{zeroPrime}$ but $1\notin 0$. ∎
+
+**Theorem (`zeroPrime.ne_top`).** $\mathrm{zeroPrime}\neq\top$.
+
+*Proof.* $2\notin\mathrm{zeroPrime}$. ∎
+
+**Theorem (`uvU.mono_left`, `uvU.mono_right`, `uvV.mono_left`, `uvV.mono_right`).** Each of $\mathrm{uvU}$ and $\mathrm{uvV}$ is monotone in each argument separately.
+
+*Proof.* Enlarging an argument only adds positive membership witnesses used by the clauses. ∎
+
+**Theorem (`uvU.isScottContinuous_left`, `uvU.isScottContinuous_right`, `uvV.isScottContinuous_left`, `uvV.isScottContinuous_right`).** Fixing either argument, both maps are Scott-continuous in the other.
+
+*Proof.* Each clause that places $0$ or $1$ in the value is witnessed by a finite $e_n$ from the varying argument; Scott unions reassemble those witnesses, and monotonicity closes the converse. ∎
+
+**Theorem (`uvU.bot_bot`, `uvU.bot_zero`, `uvU.zero_bot`, `uvU.zero_zero`, `uvU.bot_top`, `uvU.top_bot`, `uvU.zero_top`, `uvU.top_zero`, `uvU.top_top`).** The nine three-valued evaluations of $\mathrm{uvU}$ match Scott’s $U$-table.
+
+*Proof.* Direct case analysis on membership of $0$ and of positive numerals in $\bot$, $0$, and $\top$. ∎
+
+**Theorem (`uvV.bot_bot`, `uvV.bot_zero`, `uvV.zero_bot`, `uvV.zero_zero`, `uvV.bot_top`, `uvV.top_bot`, `uvV.zero_top`, `uvV.top_zero`, `uvV.top_top`).** The nine three-valued evaluations of $\mathrm{uvV}$ match Scott’s $V$-table.
+
+*Proof.* The same case analysis for the clauses defining $\mathrm{uvV}$. ∎
+
+**Theorem (`ThreeValued.uvU_eq_uvV`).** If $x$ and $y$ are three-valued, then $\mathrm{uvU}\,x\,y=\mathrm{uvV}\,x\,y$ if and only if $x=0$ or $y=0$.
+
+*Proof.* Evaluate the nine cases against the tables and the inequalities among $\bot$, $0$, $\mathrm{zeroPrime}$, and $\top$. ∎

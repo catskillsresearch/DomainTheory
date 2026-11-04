@@ -19,4 +19,12 @@ def topElem : Pomega := Set.univ
 
 @[simp] theorem mem_topElem (n : ℕ) : n ∈ topElem := Set.mem_univ n
 
+namespace topElem
+
+theorem pos : ∃ n, n + 1 ∈ topElem :=
+  ⟨0, Set.mem_univ 1⟩
+
+end topElem
+
 end DomainTheory.DataTypesAsLattices
+

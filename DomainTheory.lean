@@ -320,15 +320,8 @@ import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 import DomainTheory.ContinuousLattice.WayBelow.proposition_2_2
-import DomainTheory.DataTypesAsLattices.Classification.Basic
 import DomainTheory.DataTypesAsLattices.Classification.BooleanMemE
-import DomainTheory.DataTypesAsLattices.Classification.IsBdelta
-import DomainTheory.DataTypesAsLattices.Classification.IsBooleanOpen
-import DomainTheory.DataTypesAsLattices.Classification.IsFcapG
-import DomainTheory.DataTypesAsLattices.Classification.IsFcapGdelta
-import DomainTheory.DataTypesAsLattices.Classification.IsScottGdelta
-import DomainTheory.DataTypesAsLattices.Classification.ScottB
-import DomainTheory.DataTypesAsLattices.Classification.ScottF
+import DomainTheory.DataTypesAsLattices.Classification.Classes
 import DomainTheory.DataTypesAsLattices.Classification.ThreeValued
 import DomainTheory.DataTypesAsLattices.Classification.charOpen
 import DomainTheory.DataTypesAsLattices.Classification.charTop
@@ -515,6 +508,7 @@ import DomainTheory.DataTypesAsLattices.Computability.unpairSndC
 import DomainTheory.DataTypesAsLattices.Continuous.Basic
 import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen
+import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen_more
 import DomainTheory.DataTypesAsLattices.Continuous.basicNhhd
 import DomainTheory.DataTypesAsLattices.Continuous.basicNhhd_more
 import DomainTheory.DataTypesAsLattices.Continuous.exists_basicNhhd_subset_of_generateOpen

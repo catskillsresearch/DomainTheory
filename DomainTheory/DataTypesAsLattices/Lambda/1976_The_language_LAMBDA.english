@@ -97,3 +97,19 @@ $$\mathrm{succSet}(\mathrm{ofNat}\,6 \cup \mathrm{ofNat}\,10) = \mathrm{ofNat}\,
 **Lemma (`exists_least_not_mem`).** If $a \subseteq \omega$ is not all of $\omega$ (equivalently, some $k \notin a$), there exists $k \notin a$ minimal with that property (every $i < k$ satisfies $i \in a$).
 
 *Proof.* Dual to `exists_least_mem`, using strong induction on a witness $n \notin a$. ∎
+
+**Theorem (`ofNat.combinatory`).** Every numeral $\mathrm{ofNat}\,n$ is combinatory.
+
+*Proof.* By induction: $0$ is the zero combinator; successors apply the successor combinator. ∎
+
+**Theorem (`ofNat.zero_nonempty`).** The numeral $0$ is nonempty.
+
+*Proof.* $0\in\{0\}$. ∎
+
+**Theorem (`ofNat.zero_not_pos`).** No positive numeral belongs to $0$.
+
+*Proof.* Membership in $\{0\}$ forces equality with $0$. ∎
+
+**Theorem (`topElem.ne_ofNat_zero`).** $\top\neq 0$.
+
+*Proof.* Otherwise $1\in 0$. ∎

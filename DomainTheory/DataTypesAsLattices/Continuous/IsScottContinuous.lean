@@ -2,11 +2,13 @@ module
 
 public import DomainTheory.DataTypesAsLattices.Continuous.scottUnion
 public import DomainTheory.DataTypesAsLattices.Continuous.Basic
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen_more
 import DomainTheory.DataTypesAsLattices.Continuous.isOpen_memOpen
 import DomainTheory.DataTypesAsLattices.Continuous.isScottOpen_iff_isOpen
 import DomainTheory.DataTypesAsLattices.Continuous.isScottOpen_isUpper
 import DomainTheory.DataTypesAsLattices.Continuous.mem_scottUnion
 import Mathlib.Tactic.Bound.Init
+import Mathlib.Data.Set.Finite.Basic
 
 @[expose] public section
 
@@ -75,6 +77,69 @@ theorem iff_continuous (f : Pomega → Pomega) :
       have : e n ∈ f ⁻¹' memOpen k := hkn
       exact isScottOpen_isUpper hopen this hn
 
+theorem mem_preimage {f : Pomega → Pomega} (hf : IsScottContinuous f) (k : ℕ) :
+    IsScottOpen {x | k ∈ f x} := by
+  have : {x | k ∈ f x} = f ⁻¹' memOpen k := rfl
+  rw [this, isScottOpen_iff_isOpen]
+  exact IsOpen.preimage ((IsScottContinuous.iff_continuous f).mp hf) (isOpen_memOpen k)
+
+theorem not_subset {f : Pomega → Pomega} (hf : IsScottContinuous f)
+    (e : Pomega) : IsScottOpen {x | ¬ f x ⊆ e} := by
+  have : {x | ¬ f x ⊆ e} = ⋃ k, {x | k ∉ e ∧ k ∈ f x} := by
+    ext x
+    constructor
+    · intro hx
+      obtain ⟨k, hk, hke⟩ := Set.not_subset.mp hx
+      exact Set.mem_iUnion.mpr ⟨k, ⟨hke, hk⟩⟩
+    · intro hx
+      obtain ⟨k, hke, hk⟩ := Set.mem_iUnion.mp hx
+      intro hsub
+      exact hke (hsub hk)
+  rw [this]
+  exact IsScottOpen.iUnion _ fun k => by
+    by_cases hke : k ∈ e
+    · have : {x | k ∉ e ∧ k ∈ f x} = (∅ : Set Pomega) := by
+        ext x; simp [hke]
+      rw [this]; exact IsScottOpen.empty
+    · have : {x | k ∉ e ∧ k ∈ f x} = {x | k ∈ f x} := by
+        ext x; simp [hke]
+      rw [this]; exact mem_preimage hf k
+
+theorem subset_preimage {f : Pomega → Pomega} (hf : IsScottContinuous f)
+    {e : Pomega} (he : e.Finite) : IsScottOpen {x | e ⊆ f x} := by
+  have : {x | e ⊆ f x} = ⋂ k ∈ he.toFinset, {x | k ∈ f x} := by
+    ext x
+    constructor
+    · intro hx
+      exact Set.mem_iInter₂.mpr fun k hk => hx (he.mem_toFinset.mp hk)
+    · intro hx k hk
+      exact Set.mem_iInter₂.mp hx k (he.mem_toFinset.mpr hk)
+  rw [this, isScottOpen_iff_isOpen]
+  exact isOpen_biInter_finset fun k _ =>
+    (isScottOpen_iff_isOpen _).mp (mem_preimage hf k)
+
+theorem ne_eq_open_union_closed {f : Pomega → Pomega} (hf : IsScottContinuous f)
+    {e : Pomega} (he : e.Finite) :
+    {x | f x ≠ e} = {x | ¬ f x ⊆ e} ∪ {x | ¬ e ⊆ f x} ∧
+      IsScottOpen {x | ¬ f x ⊆ e} ∧
+      IsScottOpen {x | ¬ e ⊆ f x}ᶜ := by
+  refine ⟨?_, not_subset hf e, ?_⟩
+  · ext x
+    constructor
+    · intro hne
+      by_cases hsub : f x ⊆ e
+      · refine Or.inr fun hsup => hne (subset_antisymm hsub hsup)
+      · exact Or.inl hsub
+    · intro h heq
+      rcases h with h | h
+      · exact h heq.subset
+      · exact h heq.symm.subset
+  · have : {x | ¬ e ⊆ f x}ᶜ = {x | e ⊆ f x} := by
+      ext x; simp
+    rw [this]
+    exact subset_preimage hf he
+
 end IsScottContinuous
 
 end DomainTheory.DataTypesAsLattices
+

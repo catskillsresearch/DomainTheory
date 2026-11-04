@@ -107,7 +107,7 @@ SLICE_NOTES: list[tuple[str, str | None]] = [
         "Classification/1976_Subsets_and_their_classification.md",
         "1976_Subsets_and_their_classification.english",
     ),
-    ("Classification/1976_Definition_classes.md", "1976_Definition_classes.english"),
+    ("Classification/1976_Scott_classes.md", "Classification/1976_Scott_classes.english"),
     ("Classification/1976_Theorem_6_1.md", None),
     ("Classification/1976_Theorem_6_2.md", None),
     ("Classification/1976_Theorem_6_3.md", None),
@@ -450,7 +450,7 @@ def wire_section_child_tocs() -> None:
         (
             "Classification/1976_Subsets_and_their_classification.md",
             [
-                "- [Definition (classes)](1976_Definition_classes.md)",
+                "- [Scott classes](1976_Scott_classes.md)",
                 "- [Theorem 6.1](1976_Theorem_6_1.md)",
                 "- [Theorem 6.2](1976_Theorem_6_2.md)",
                 "- [Theorem 6.3](1976_Theorem_6_3.md)",

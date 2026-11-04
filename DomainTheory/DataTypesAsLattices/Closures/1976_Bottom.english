@@ -15,3 +15,7 @@ Elementary identities for $\bot$ in $\mathbf{P}\omega$: it is distinct from $\to
 **Theorem (`botElem.empty_union`).** $\bot\cup x=x$.
 
 *Proof.* The empty set is a unit for union on the left as well. ∎
+
+**Theorem (`botElem.ne_ofNat_zero`).** $\bot\neq 0$ in $\mathbf{P}\omega$.
+
+*Proof.* Otherwise $0\in\bot$; but $\bot$ is empty. ∎

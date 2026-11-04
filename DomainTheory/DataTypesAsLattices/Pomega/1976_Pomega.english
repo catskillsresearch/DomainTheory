@@ -1,1 +1,5 @@
 The main innovation in this report is to model everything within one “universal” domain $\mathbf{P}\omega = \{x \mid x \subseteq \omega\}$, the domain of all subsets of the set $\omega$ of nonnegative integers. The advantages are many: by the most elementary considerations $\mathbf{P}\omega$ is recognized to be a lattice and a topological space. In fact, $\mathbf{P}\omega$ is a *continuous lattice*, even an *algebraic lattice*, but in the beginning we do not even need to define such an “advanced” concept; we can save these ideas for an *analysis* of what has been done here in a more direct way. Next by taking the set of integers as the basis of the construction, the connection with the ordinary theory of number-theoretic (especially, general recursive) functions can be made clear and straightforward.
+
+**Theorem (`topElem.pos`).** Some positive numeral belongs to $\top$.
+
+*Proof.* $1\in\top$. ∎

@@ -1,4 +1,3 @@
-
 module
 
 public import Mathlib.Order.CompleteLattice.Defs
@@ -9,11 +8,13 @@ public import Mathlib.Topology.Separation.Basic
 public import DomainTheory.DataTypesAsLattices.Lambda.Language
 public import DomainTheory.DataTypesAsLattices.Continuous.isScottOpen_isUpper
 public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
+public import DomainTheory.DataTypesAsLattices.Continuous.IsScottOpen_more
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Data.Set.Finite.Powerset
 public import DomainTheory.DataTypesAsLattices.Classification.oddEvenPack
-public import DomainTheory.DataTypesAsLattices.Classification.IsFcapG
-public import DomainTheory.DataTypesAsLattices.Classification.Basic
+public import DomainTheory.DataTypesAsLattices.Classification.Classes
+public import DomainTheory.DataTypesAsLattices.Classification.charOpen
+public import DomainTheory.DataTypesAsLattices.Classification.charTop
 
 @[expose] public section
 
@@ -27,8 +28,8 @@ theorem theorem_6_4 :
   constructor
   · rintro ⟨C, O, hC, hO, rfl⟩
     refine ⟨oddEvenPack (charTop Cᶜ) (charOpen O),
-      oddEvenPack_isScottContinuous (charTop_isScottContinuous Cᶜ)
-        (charOpen_isScottContinuous O), ?_⟩
+      oddEvenPack.isScottContinuous (charTop.isScottContinuous Cᶜ)
+        (charOpen.isScottContinuous O), ?_⟩
     ext x
     constructor
     · intro hx
@@ -36,7 +37,7 @@ theorem theorem_6_4 :
       refine (oddEvenPack.eq_zero x).mpr ?_
       have hx' : x ∈ C ∧ x ∈ O := hx
       constructor
-      · exact (charTop_eq_bot_of_closed hC x).mpr hx'.1
+      · exact (charTop.eq_bot_of_closed hC x).mpr hx'.1
       · ext k
         constructor
         · intro ⟨hk0, n, hn, hne⟩
@@ -44,17 +45,18 @@ theorem theorem_6_4 :
         · intro hk
           simp [ofNat] at hk
           subst hk
-          obtain ⟨n, hn, hne⟩ := (mem_isScottOpen_iff hO).mp hx'.2
+          obtain ⟨n, hn, hne⟩ := (IsScottOpen.mem_iff hO).mp hx'.2
           exact ⟨rfl, n, hn, hne⟩
     · intro hf
       have hf' := (oddEvenPack.eq_zero (f := charTop Cᶜ) (g := charOpen O) x).mp hf
       constructor
-      · exact (charTop_eq_bot_of_closed hC x).mp hf'.1
+      · exact (charTop.eq_bot_of_closed hC x).mp hf'.1
       · have : 0 ∈ charOpen O x := by rw [hf'.2]; simp [ofNat]
         obtain ⟨_, n, hn, hne⟩ := this
         exact isScottOpen_isUpper hO hne hn
   · rintro ⟨f, hf, rfl⟩
-    refine ⟨{x | f x ⊆ ofNat 0}, {x | 0 ∈ f x}, ?_, mem_preimage_isScottOpen hf 0, ?_⟩
+    refine ⟨{x | f x ⊆ ofNat 0}, {x | 0 ∈ f x}, ?_,
+      IsScottContinuous.mem_preimage hf 0, ?_⟩
     · have : {x | f x ⊆ ofNat 0}ᶜ = ⋃ k : ℕ, {x | k ≠ 0 ∧ k ∈ f x} := by
         ext x
         constructor
@@ -69,15 +71,15 @@ theorem theorem_6_4 :
           intro hsub
           exact hk0 (hsub hk)
       rw [this]
-      exact isScottOpen_iUnion _ fun k => by
+      exact IsScottOpen.iUnion _ fun k => by
         by_cases hk0 : k = 0
         · subst hk0
           have : {x | (0 : ℕ) ≠ 0 ∧ 0 ∈ f x} = (∅ : Set Pomega) := by
             ext x; simp
-          rw [this]; exact isScottOpen_empty
+          rw [this]; exact IsScottOpen.empty
         · have : {x | k ≠ 0 ∧ k ∈ f x} = {x | k ∈ f x} := by
             ext x; simp [hk0]
-          rw [this]; exact mem_preimage_isScottOpen hf k
+          rw [this]; exact IsScottContinuous.mem_preimage hf k
     · ext x
       constructor
       · intro hx

@@ -1,4 +1,3 @@
-
 module
 
 public import Mathlib.Order.CompleteLattice.Defs
@@ -10,8 +9,7 @@ public import DomainTheory.DataTypesAsLattices.Continuous.IsScottContinuous
 public import DomainTheory.DataTypesAsLattices.Pomega.eDense
 public import Mathlib.Data.Set.Finite.Powerset
 public import DomainTheory.DataTypesAsLattices.Classification.pairIndexed
-public import DomainTheory.DataTypesAsLattices.Classification.IsScottGdelta
-public import DomainTheory.DataTypesAsLattices.Classification.Basic
+public import DomainTheory.DataTypesAsLattices.Classification.Classes
 public import DomainTheory.DataTypesAsLattices.Classification.charTop
 
 @[expose] public section
@@ -26,20 +24,20 @@ theorem theorem_6_3 :
   constructor
   · rintro ⟨Us, hUs, rfl⟩
     let fs := fun n => charTop (Us n)
-    refine ⟨pairIndexed fs, pairIndexed_isScottContinuous fs fun n =>
-      charTop_isScottContinuous (Us n), ?_⟩
+    refine ⟨pairIndexed fs, pairIndexed.isScottContinuous fs fun n =>
+      charTop.isScottContinuous (Us n), ?_⟩
     ext x
     constructor
     · intro hx
       change pairIndexed fs x = topElem
       exact (pairIndexed.eq_top fs x).mpr fun n =>
-        (charTop_eq_top (hUs n) x).mpr (Set.mem_iInter.mp hx n)
+        (charTop.eq_top (hUs n) x).mpr (Set.mem_iInter.mp hx n)
     · intro hf
       have hf' : pairIndexed fs x = topElem := hf
       exact Set.mem_iInter.mpr fun n =>
-        (charTop_eq_top (hUs n) x).mp ((pairIndexed.eq_top fs x).mp hf' n)
+        (charTop.eq_top (hUs n) x).mp ((pairIndexed.eq_top fs x).mp hf' n)
   · rintro ⟨f, hf, rfl⟩
-    refine ⟨fun n => {x | n ∈ f x}, fun n => mem_preimage_isScottOpen hf n, ?_⟩
+    refine ⟨fun n => {x | n ∈ f x}, fun n => IsScottContinuous.mem_preimage hf n, ?_⟩
     ext x
     constructor
     · intro hx

@@ -1,5 +1,7 @@
 # Characteristic maps
 
+@import "1976_Characteristic_maps.english" {code_block=false}
+
 **[DataTypesAsLattices/Classification/charOpen.lean](charOpen.lean)**
 
 @import "charOpen.lean"

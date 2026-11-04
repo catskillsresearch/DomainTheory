@@ -1086,8 +1086,8 @@ CLOSURES_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
 
 # Tool-note reading order. Theorem boxes use Lean import edges.
 CLASSIFICATION_OUTLINE_NARRATIVE: list[tuple[str, str]] = [
-    ("Introduction", "Definition (classes)"),
-    ("Definition (classes)", "Characteristic maps"),
+    ("Introduction", "Scott classes"),
+    ("Scott classes", "Characteristic maps"),
     ("Characteristic maps", "Odd-even packing"),
     ("Odd-even packing", "Pair indexing"),
     ("Pair indexing", "F∩Gδ packing"),
@@ -1447,7 +1447,7 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
             extra_ids = {
                 **(extra_ids or {}),
                 "Introduction": "INTRO",
-                "Definition (classes)": "DCLASS",
+                "Scott classes": "DCLASS",
                 "Characteristic maps": "CHAR",
                 "Odd-even packing": "OEP",
                 "Pair indexing": "PAIR",

@@ -1,0 +1,11 @@
+Pair-indexed packing assembles a sequence of continuous maps into a single continuous map via Cantor pairing.
+
+**Definition (`pairIndexed`).** $(\mathrm{pairIndexed}\,f_s)\,x$ consists of all pair codes $\langle n,m\rangle$ with $m\in f_s(n)(x)$.
+
+**Theorem (`pairIndexed.eq_top`).** $\mathrm{pairIndexed}\,f_s\,x=\top$ if and only if every $f_s(n)(x)$ equals $\top$.
+
+*Proof.* Every pair code belongs to the packed value precisely when each fibre is universal; surjectivity of pairing recovers the fibres. ∎
+
+**Theorem (`pairIndexed.isScottContinuous`).** If each $f_s(n)$ is Scott-continuous, so is $\mathrm{pairIndexed}\,f_s$.
+
+*Proof.* Membership of a pair code pulls a Scott-union witness from the corresponding fibre and reassembles under the packed Scott union. ∎

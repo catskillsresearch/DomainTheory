@@ -1,0 +1,25 @@
+Odd–even packing interlaces two continuous maps on the odd and even numerals and recovers each factor by parity projection.
+
+**Definition (`oddPart`, `evenPart`).** $\mathrm{oddPart}\,y=\{n\mid 2n+1\in y\}$ and $\mathrm{evenPart}\,y=\{n\mid 2n\in y\}$.
+
+**Definition (`oddEvenPack`).** $(\mathrm{oddEvenPack}\,f\,g)\,x$ places the members of $f(x)$ on odd indices and those of $g(x)$ on even indices.
+
+**Theorem (`oddEvenPack.eq_zero`).** $\mathrm{oddEvenPack}\,f\,g\,x=0$ if and only if $f(x)=\bot$ and $g(x)=0$.
+
+*Proof.* Odd membership forces $f(x)$ empty; even membership forces $g(x)$ to be the singleton $\{0\}$; the converse packs those values back to the numeral $0$. ∎
+
+**Theorem (`oddEvenPack.isScottContinuous`).** If $f$ and $g$ are Scott-continuous, so is $\mathrm{oddEvenPack}\,f\,g$.
+
+*Proof.* Each parity clause pulls a Scott-union witness from $f$ or $g$ and pushes it forward; monotonicity of $f$ and $g$ closes the converse. ∎
+
+**Theorem (`oddEvenPack.evenPart`).** $\mathrm{evenPart}(\mathrm{oddEvenPack}\,f\,g\,x)=g(x)$.
+
+*Proof.* Even indices unpack exactly the members of $g(x)$; odd indices cannot contribute. ∎
+
+**Theorem (`oddEvenPack.oddPart`).** $\mathrm{oddPart}(\mathrm{oddEvenPack}\,f\,g\,x)=f(x)$.
+
+*Proof.* Symmetric to the even case. ∎
+
+**Theorem (`oddEvenPack.subset`).** If $f(x)$ is bounded by $N$ and $g(x)$ by $M$, then $\mathrm{oddEvenPack}\,f\,g\,x$ is bounded by $2\max(N,M)+1$.
+
+*Proof.* An odd or even packed index is at most twice the corresponding bound, plus one on the odd side. ∎

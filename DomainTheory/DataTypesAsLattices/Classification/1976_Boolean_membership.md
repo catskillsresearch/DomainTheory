@@ -1,5 +1,7 @@
 # Boolean membership
 
-**[DataTypesAsLattices/Classification/Basic.lean](Basic.lean)**
+@import "1976_Boolean_membership.english" {code_block=false}
 
-@import "Basic.lean"
+**[DataTypesAsLattices/Classification/BooleanMemE.lean](BooleanMemE.lean)**
+
+@import "BooleanMemE.lean"

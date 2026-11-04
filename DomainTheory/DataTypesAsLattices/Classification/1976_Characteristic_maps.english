@@ -1,0 +1,47 @@
+Characteristic maps of Scott-open sets take values in a three-element range and are Scott-continuous; they detect membership by equations with $0$ or $\top$.
+
+**Definition (`charOpen`).** For an open $U$, $\mathrm{charOpen}\,U\,x$ contains $0$ precisely when some finite $e_n\subseteq x$ already lies in $U$.
+
+**Definition (`charTop`).** For an open $U$, $\mathrm{charTop}\,U\,x$ is $\top$ or $\bot$ according as $x\in U$ or not, witnessed again by a finite subset of $x$ in $U$.
+
+**Definition (`closedToZero`).** For a closed set $C$, $\mathrm{closedToZero}\,C\,x=0\cup\mathrm{charTop}\,C^{\mathrm{c}}\,x$.
+
+**Theorem (`charOpen.isScottContinuous`).** The map $x\mapsto\mathrm{charOpen}\,U\,x$ is Scott-continuous.
+
+*Proof.* Membership of $k$ in the value at $x$ unfolds through a finite witness $e_n\subseteq x$ and is stable under directed unions via the Scott-union characterization of continuity. ∎
+
+**Theorem (`charOpen.eq_zero`).** If $U$ is Scott-open, then $\mathrm{charOpen}\,U\,x=0$ if and only if $x\in U$.
+
+*Proof.* Forward: a witness $e_n\subseteq x$ in $U$ and upward closure of $U$ put $x$ in $U$. Converse: Scott-open membership yields a finite $e_n\subseteq x$ in $U$, which forces $0$ into the characteristic value. ∎
+
+**Theorem (`charOpen.threeValued`).** Every value of $\mathrm{charOpen}\,U$ is one of $\bot$, $0$, or $\top$.
+
+*Proof.* Either $0$ belongs to the value, forcing equality with the numeral $0$, or the value is empty. ∎
+
+**Theorem (`charTop.isScottContinuous`).** The map $x\mapsto\mathrm{charTop}\,U\,x$ is Scott-continuous.
+
+*Proof.* As for $\mathrm{charOpen}$, finite witnesses assemble under Scott unions. ∎
+
+**Theorem (`charTop.eq_top`).** If $U$ is Scott-open, then $\mathrm{charTop}\,U\,x=\top$ if and only if $x\in U$.
+
+*Proof.* Membership of $0$ in a top value yields a finite witness in $U$; conversely, Scott-openness supplies such a witness for every coordinate of $\top$. ∎
+
+**Theorem (`charTop.eq_bot`).** If $U$ is Scott-open, then $\mathrm{charTop}\,U\,x=\bot$ if and only if $x\notin U$.
+
+*Proof.* Compare with $\mathrm{charTop.eq_top}$ and the emptiness of $\bot$. ∎
+
+**Theorem (`charTop.eq_bot_of_closed`).** If $C^{\mathrm{c}}$ is Scott-open, then $\mathrm{charTop}\,C^{\mathrm{c}}\,x=\bot$ if and only if $x\in C$.
+
+*Proof.* Rewrite by $\mathrm{charTop.eq_bot}$ on the complement. ∎
+
+**Theorem (`closedToZero.isScottContinuous`).** The map $x\mapsto\mathrm{closedToZero}\,C\,x$ is Scott-continuous.
+
+*Proof.* It is the pointwise union of the constant numeral $0$ with $\mathrm{charTop}\,C^{\mathrm{c}}$, and binary union is Scott-continuous separately in each argument. ∎
+
+**Theorem (`closedToZero.threeValued`).** If $C^{\mathrm{c}}$ is Scott-open, every value of $\mathrm{closedToZero}\,C$ is three-valued.
+
+*Proof.* On $C$ the characteristic of the complement is $\bot$, so the union equals $0$; off $C$ it is $\top$, so the union equals $\top$. ∎
+
+**Theorem (`closedToZero.eq_zero`).** If $C^{\mathrm{c}}$ is Scott-open, then $\mathrm{closedToZero}\,C\,x=0$ if and only if $x\in C$.
+
+*Proof.* Off $C$ the value is $\top$, distinct from $0$; on $C$ it collapses to $0$. ∎

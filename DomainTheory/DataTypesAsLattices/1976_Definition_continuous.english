@@ -23,3 +23,43 @@ In the `IsScottContinuous` namespace:
 *Proof.* ($\Rightarrow$) By `continuous_generateFrom_iff`, it suffices to show each preimage $f^{-1}(\mathrm{memOpen}\,k)$ is Scott-open. Using `isScottOpen_iff_isOpen`, rewrite membership in that preimage as $k \in \mathrm{scottUnion}\,f\,x$ when $f(x) = \mathrm{scottUnion}\,f\,x$ (`out`), then as an union over indices $n$ with $k \in f(e_n)$ and $e_n \subseteq x$ via `mem_scottUnion`; the converse direction uses `monotone` on the chosen finite witness.
 
 ($\Leftarrow$) Fix $x$ and $k$. If $k \in f(x)$, Scott-openness of $f^{-1}(\mathrm{memOpen}\,k)$ (`isScottOpen_iff_isOpen`, preimage of the open set $\mathrm{memOpen}\,k$ by `isOpen_memOpen`) gives a union of basic neighborhoods $\mathrm{basicNhhd}\,n$ covering $x$; some $e_n \subseteq x$ still carries $k \in f(e_n)$, hence $k \in \mathrm{scottUnion}\,f\,x$ by `mem_scottUnion`. If $k \in \mathrm{scottUnion}\,f\,x$, pick $n$ with $e_n \subseteq x$ and $k \in f(e_n)$; then $e_n \in f^{-1}(\mathrm{memOpen}\,k)$, and upward closure (`isScottOpen_isUpper`) with $e_n \subseteq x$ puts $x$ in that preimage, so $k \in f(x)$. Thus `out` holds. ∎
+
+**Theorem (`IsScottOpen.univ`).** The whole space $\mathbf{P}\omega$ is Scott-open.
+
+*Proof.* It is open in the Scott topology. ∎
+
+**Theorem (`IsScottOpen.empty`).** The empty set is Scott-open.
+
+*Proof.* It is open in the Scott topology. ∎
+
+**Theorem (`IsScottOpen.union`).** The union of two Scott-open sets is Scott-open.
+
+*Proof.* Openness is preserved by binary unions. ∎
+
+**Theorem (`IsScottOpen.inter`).** The intersection of two Scott-open sets is Scott-open.
+
+*Proof.* Openness is preserved by binary intersections. ∎
+
+**Theorem (`IsScottOpen.iUnion`).** An arbitrary union of Scott-open sets is Scott-open.
+
+*Proof.* Openness is preserved by arbitrary unions. ∎
+
+**Theorem (`IsScottOpen.mem_iff`).** If $U$ is Scott-open, then $x\in U$ if and only if some finite $e_n\subseteq x$ already lies in $U$.
+
+*Proof.* Unpack the basic-neighbourhood presentation of $U$, or use upward closure on a finite witness. ∎
+
+**Theorem (`IsScottContinuous.mem_preimage`).** If $f$ is Scott-continuous, then $\{x\mid k\in f(x)\}$ is Scott-open.
+
+*Proof.* It is the preimage of the subbasic open $\mathrm{memOpen}\,k$. ∎
+
+**Theorem (`IsScottContinuous.not_subset`).** If $f$ is Scott-continuous, then $\{x\mid f(x)\not\subseteq e\}$ is Scott-open.
+
+*Proof.* Write the set as a union over $k\notin e$ of the preimages $\{x\mid k\in f(x)\}$. ∎
+
+**Theorem (`IsScottContinuous.subset_preimage`).** If $f$ is Scott-continuous and $e$ is finite, then $\{x\mid e\subseteq f(x)\}$ is Scott-open.
+
+*Proof.* Intersect the finitely many preimages $\{x\mid k\in f(x)\}$ for $k\in e$. ∎
+
+**Theorem (`IsScottContinuous.ne_eq_open_union_closed`).** If $f$ is Scott-continuous and $e$ is finite, then $\{x\mid f(x)\neq e\}$ is the union of $\{x\mid f(x)\not\subseteq e\}$ with the complement of $\{x\mid e\subseteq f(x)\}$, and those two pieces are respectively open and co-open.
+
+*Proof.* Inequality of sets is failure of either inclusion; apply the two previous facts. ∎
