@@ -340,13 +340,16 @@ def filter_style(style_tail: list[str], node_labels: dict[str, str]) -> list[str
             out.append(line)
             continue
         if st.startswith("class "):
+            # Mermaid: `class nodeId1,nodeId2 className` (space before class name).
             rest = st[len("class ") :]
-            ids = [x.strip() for x in rest.split(",")]
-            cls = ids[-1] if ids else ""
-            nids = ids[:-1] if len(ids) > 1 else []
+            parts = rest.rsplit(None, 1)
+            if len(parts) != 2:
+                continue
+            nids = [x.strip() for x in parts[0].split(",") if x.strip()]
+            cls = parts[1].strip()
             kept = [n for n in nids if n in nodes]
             if kept:
-                out.append(f"  class {','.join(kept + [cls])}")
+                out.append(f"  class {','.join(kept)} {cls}")
             continue
         out.append(line)
     return out
@@ -980,6 +983,107 @@ def gen_top_chapters(mermaid: Path, modules: dict[str, Path], old: str) -> str:
     return emit_flowchart(header, node_labels, edges, style, labeled=True)
 
 
+# 1976 Data types as lattices — section hubs vs the Lean folders they own.
+# Continuous spans several topic folders; Computability sits under §2 definability;
+# FixedLattices under §5 Closures. Paper-order forward edges only (later section imports
+# earlier); reverse edges are implementation accidents and would cycle the reduce step.
+DTAL_SECTION_ORDER: list[str] = [
+    "CONT",
+    "COMP",
+    "ENUM",
+    "RET",
+    "CLO",
+    "CLASS",
+    "FUN",
+]
+DTAL_SECTION_LABELS: dict[str, str] = {
+    "CONT": "Continuous functions",
+    "COMP": "Computability and definability",
+    "ENUM": "Enumeration and degrees",
+    "RET": "Retracts and data types",
+    "CLO": "Closure operations and algebraic lattices",
+    "CLASS": "Subsets and their classification",
+    "FUN": "Total functions and functionality",
+}
+DTAL_SECTION_FOLDERS: dict[str, tuple[str, ...]] = {
+    "CONT": ("Pomega", "Continuous", "Graph", "FixedPoint", "Embedding"),
+    "COMP": ("Lambda", "Computability"),
+    "ENUM": ("Enumeration",),
+    "RET": ("Retracts",),
+    "CLO": ("Closures", "FixedLattices"),
+    "CLASS": ("Classification",),
+    "FUN": ("Functionality",),
+}
+
+
+def gen_dtal_sections(mermaid: Path, modules: dict[str, Path], old: str) -> str:
+    """Cross-section Lean deps for 1976_DataTypes.mermaid (folder ownership)."""
+    header = [
+        "%% Each box is one section from 1976_DataTypes.md.",
+        "%% Lean modules = .lean files under that section's topic folders.",
+        "%% Arrowhead on the importer; label = direct-import count.",
+        "%% Only paper-forward edges (earlier → later). Paths implied by longer routes omitted.",
+    ]
+    _, old_labels, style = parse_preserve_tail(old)
+
+    sec_mods: dict[str, set[str]] = {}
+    mod_owner: dict[str, str] = {}
+    for nid in DTAL_SECTION_ORDER:
+        mods: set[str] = set()
+        for folder in DTAL_SECTION_FOLDERS[nid]:
+            root = DT / "DataTypesAsLattices" / folder
+            if not root.is_dir():
+                continue
+            mods |= {module_of(p) for p in root.rglob("*.lean") if p.is_file()}
+        sec_mods[nid] = mods
+        for mod in mods:
+            mod_owner[mod] = nid
+
+    node_labels = {
+        nid: old_labels.get(nid, DTAL_SECTION_LABELS[nid]) for nid in DTAL_SECTION_ORDER
+    }
+
+    raw: dict[tuple[str, str], int] = defaultdict(int)
+    for dst, mods in sec_mods.items():
+        for mod in mods:
+            for imp in direct_imports_mod(mod, modules):
+                src = mod_owner.get(imp)
+                if src is None or src == dst:
+                    continue
+                if DTAL_SECTION_ORDER.index(src) >= DTAL_SECTION_ORDER.index(dst):
+                    continue
+                raw[(src, dst)] += 1
+
+    kept = transitive_reduce(set(raw))
+    edges = {(a, b): raw[(a, b)] for a, b in kept}
+
+    class_defs = [ln for ln in style if ln.strip().startswith("classDef ")]
+    if not class_defs:
+        class_defs = [
+            "  classDef c1 fill:#dcfce7,stroke:#15803d,color:#14532d",
+            "  classDef c2 fill:#cffafe,stroke:#0e7490,color:#164e63",
+            "  classDef c3 fill:#ffedd5,stroke:#c2410c,color:#7c2d12",
+            "  classDef c4 fill:#ecfccb,stroke:#4d7c0f,color:#365314",
+            "  classDef c5 fill:#f3e8ff,stroke:#7e22ce,color:#581c87",
+            "  classDef c6 fill:#fde68a,stroke:#a16207,color:#713f12",
+            "  classDef c7 fill:#e2e8f0,stroke:#334155,color:#0f172a",
+        ]
+    class_assigns = [
+        f"  class {nid} c{i}" for i, nid in enumerate(DTAL_SECTION_ORDER, start=1)
+    ]
+    init = [ln for ln in style if INIT_LINE.match(ln.strip())]
+
+    return emit_flowchart(
+        header,
+        node_labels,
+        edges,
+        init + class_defs + class_assigns,
+        labeled=True,
+        flowchart="flowchart TB",
+        node_order=list(DTAL_SECTION_ORDER),
+    )
+
+
 def cl1972_outline_box_modules(child: Path, title: str) -> set[str]:
     if re.match(r"(?i)introduction\s*$", title.strip()):
         return set()
@@ -1177,6 +1281,8 @@ def index_md_is_outline_barrel(mermaid: Path) -> bool:
 def classify(mermaid: Path, text: str) -> str:
     if mermaid.name in CL1972_SECTION_MERMAIDS:
         return "cl1972_section"
+    if mermaid.name == "1976_DataTypes.mermaid":
+        return "dtal_sections"
     if index_md_is_outline_barrel(mermaid):
         return "note_outline"
     if mermaid.name == "1972_ContinuousLattices.mermaid":
@@ -1213,6 +1319,8 @@ def classify(mermaid: Path, text: str) -> str:
         or "Each box is one construction" in text
     ):
         return "note_outline"
+    if "Each box is one section from 1976_DataTypes" in text:
+        return "dtal_sections"
     if "Each box is a section" in text or "Data types as lattices" in text:
         return "note_outline"
     if "The inverse system" in text:
@@ -1241,6 +1349,8 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
         return gen_folder_aggregate(mermaid, modules, old, parent_dir=DT / "InformationSystems")
     if kind == "top_chapters":
         return gen_top_chapters(mermaid, modules, old)
+    if kind == "dtal_sections":
+        return gen_dtal_sections(mermaid, modules, old)
     if kind == "cl1972_section":
         section_flowchart = (
             "flowchart TD"

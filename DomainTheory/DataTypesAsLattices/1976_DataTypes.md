@@ -1,6 +1,6 @@
 # Data types as lattices
 
-**Dependencies.** Each box is one section. The arrowhead is on the section that imports. The number is how many direct imports. An arrow already implied by a longer path is left out.
+**Dependencies.** Each box is one section. Lean ownership is by topic folder. The arrowhead is on the section that imports; the number is how many direct imports. Only paper-forward edges are shown (a later section importing an earlier one). An arrow already implied by a longer path is left out.
 
 @import "1976_DataTypes.mermaid"
 
@@ -13,4 +13,4 @@
 - [Subsets and their classification](Classification/1976_Subsets_and_their_classification.md) [✓](1976_REVISION.md)
 - [Total functions and functionality](Functionality/1976_Total_functions_and_functionality.md) [✓](1976_REVISION.md)
 
-- [Appendix B](1976_Appendix_B.md)
+- [Acknowledgements and references](1976_Acknowledgements_and_references.md) [✓](1976_REVISION.md)
