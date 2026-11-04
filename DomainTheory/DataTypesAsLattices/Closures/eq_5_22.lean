@@ -15,7 +15,7 @@ namespace DomainTheory.DataTypesAsLattices
 theorem eq_5_22 {a b : Pomega} (ha : typed a Vcomb) (hb : typed b Vcomb) :
     typed (boxTensor a b) Vcomb :=
   (theorem_5_5.universe.2 (boxTensor a b)).mp
-    (theorem_5_4 ((theorem_5_5.universe.2 a).mpr ha)
+    (theorem_5_4.times ((theorem_5_5.universe.2 a).mpr ha)
       ((theorem_5_5.universe.2 b).mpr hb))
 
 end DomainTheory.DataTypesAsLattices
