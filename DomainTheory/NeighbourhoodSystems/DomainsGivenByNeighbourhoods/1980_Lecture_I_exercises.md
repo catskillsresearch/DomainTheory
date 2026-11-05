@@ -11,7 +11,7 @@
 - [Exercise 1.18 — consistency of neighbourhood families](1980_Exercise_1_18.md) [✓](../1980_REVISION.md)
 - [Exercise 1.19 — positive neighbourhood systems](1980_Exercise_1_19.md) [✓](../1980_REVISION.md)
 - [Exercise 1.20 — upward closed neighbourhoods](1980_Exercise_1_20.md) [✓](../1980_REVISION.md)
-- [Exercise 1.21 — complete neighbourhood systems](1980_Exercise_1_21.md)
+- [Exercise 1.21 — complete neighbourhood systems](1980_Exercise_1_21.md) [✓](../1980_REVISION.md)
 - [Exercise 1.22 — topology of a domain](1980_Exercise_1_22.md)
 - [Exercise 1.23 — decidable total elements](1980_Exercise_1_23.md)
 - [Exercise 1.24 — extending partial elements](1980_Exercise_1_24.md)
