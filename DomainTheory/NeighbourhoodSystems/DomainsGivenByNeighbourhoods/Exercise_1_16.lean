@@ -4,6 +4,9 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Dom
 public import Mathlib.Algebra.Group.End
 public import Mathlib.Basic.Finite.Defs
 
+public import Mathlib.Data.Set.Basic
+public import Mathlib.Data.Set.Finite.Basic
+public import Mathlib.Order.BooleanAlgebra.Set
 @[expose] public section
 
 section

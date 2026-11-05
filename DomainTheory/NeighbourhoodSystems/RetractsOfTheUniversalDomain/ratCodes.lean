@@ -4,6 +4,10 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 public import Mathlib.Data.Nat.Bitwise
 public import Mathlib.Data.Rat.Defs
 
+import Mathlib.Tactic.Ring
+import Lean.Elab.Tactic.Omega
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.NormNum
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems

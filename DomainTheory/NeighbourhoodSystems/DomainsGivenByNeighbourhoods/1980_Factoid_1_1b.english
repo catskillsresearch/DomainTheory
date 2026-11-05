@@ -1,0 +1,11 @@
+$$
+\bigcap_{i < n} X_i = \left(\bigcap_{i < n-1} X_i\right) \cap X_{n-1}, \text{ if } n > 0.
+$$
+
+Some examples will help us understand the notions better.
+
+<!-- formalization -->
+
+**Theorem (`factoid_1_1_b`).** If $n>0$, then $\bigcap_{i<n} X_i = (\bigcap_{i<n-1} X_i)\cap X_{n-1}$.
+
+*Proof.* Write $n=m+1$; the claim is then the successor clause in the recursive definition of finite intersection. ∎

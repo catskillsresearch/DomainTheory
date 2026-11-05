@@ -6,6 +6,9 @@ import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal
 public import Mathlib.Basic.Finite.Defs
 
+public import Mathlib.Data.Set.Basic
+public import Mathlib.Data.Set.Finite.Basic
+public import Mathlib.Data.Set.Finite.Range
 @[expose] public section
 
 section
@@ -57,7 +60,7 @@ theorem bounded_iff_finite_bounded (X : Set V.Element) :
 
 theorem interUpTo_pairSeq (U W : Set α) :
     V.interUpTo (pairSeq U W) 2 = V.master ∩ U ∩ W := by
-  simp only [interUpTo_succ, interUpTo_zero, pairSeq]
+  simp only [interUpTo.succ, interUpTo.zero, pairSeq]
   norm_num
 
 theorem consistent_pair_iff_bounded {U W : Set α} (hU : V.mem U) (hW : V.mem W) :

@@ -6,6 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Fac
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
 public import Mathlib.Data.Nat.Bitwise
 
+import Mathlib.Tactic.Ring
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems

@@ -105,7 +105,7 @@ theorem exists_forall_swap {x : V₀.Element} {W : Set (ℕ × β)}
     have hbase : x.mem (V₀.interUpTo Xs N) := x.mem_interUpTo Xs (n := N) (fun i _ => hXx i)
     refine ⟨V₀.interUpTo Xs N, hbase, fun i => ?_⟩
     by_cases h : i < N
-    · exact (g i).mono (hXrel i) (V₀.interUpTo_subset Xs h) subset_rfl (x.sub hbase)
+    · exact (g i).mono (hXrel i) (interUpTo.subset V₀ Xs h) subset_rfl (x.sub hbase)
         ((g i).rel_cod (hXrel i))
     · rw [hN i (not_lt.mp h)]; exact (g i).rel_master (x.sub hbase)
 

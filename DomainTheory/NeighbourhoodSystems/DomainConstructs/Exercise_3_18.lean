@@ -2,6 +2,9 @@ module
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
 
 public import Mathlib.Data.Set.Operations
+public import Mathlib.Data.Set.Basic
+public import Mathlib.Data.Set.Image
+public import Mathlib.Data.Set.Insert
 @[expose] public section
 
 section

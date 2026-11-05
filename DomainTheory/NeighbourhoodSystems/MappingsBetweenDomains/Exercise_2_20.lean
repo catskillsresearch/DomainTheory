@@ -5,6 +5,10 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 public import Mathlib.Algebra.Group.End
 public import Mathlib.Basic.Finite.Defs
 public import Mathlib.Order.Hom.Basic
+public import Mathlib.Data.Set.Basic
+public import Mathlib.Data.Set.Finite.Basic
+public import Mathlib.Order.BooleanAlgebra.Set
+public import Mathlib.Data.Set.Image
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise220

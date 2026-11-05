@@ -1,0 +1,27 @@
+Ideal elements are ordered by reverse inclusion of neighbourhoods: $x \le y$ when every neighbourhood of $x$ is a neighbourhood of $y$. Two approximating sequences are *equivalent* when each refines the other, and the *limit family* of a sequence is the collection of all neighbourhoods that eventually contain a term of the sequence.
+
+<!-- formalization -->
+
+**Definition (`element_le`).** Write $x \le y$ when every neighbourhood belonging to $x$ also belongs to $y$.
+
+**Theorem (`element_le_refl`).** The relation $\le$ is reflexive.
+
+*Proof.* Immediate from the definition. ∎
+
+**Theorem (`element_le_trans`).** The relation $\le$ is transitive.
+
+*Proof.* Compose the two neighbourhood-membership implications. ∎
+
+**Theorem (`Element.ext`).** Ideal elements with the same neighbourhoods are equal.
+
+*Proof.* Equality of the membership predicates determines the element. ∎
+
+**Theorem (`element_le_antisymm`).** The relation $\le$ is antisymmetric.
+
+*Proof.* Mutual $\le$ gives the same neighbourhoods, so the elements coincide by the preceding uniqueness. ∎
+
+Together these facts make the set of ideal elements into a partially ordered set under $\le$.
+
+**Definition (`SeqEquiv`).** Sequences $X$ and $Y$ of neighbourhoods are *equivalent* when for every index of either sequence some term of the other is contained in it.
+
+**Definition (`limitFamily`).** The *limit family* of a sequence $X$ is the set of all neighbourhoods $Z$ for which some term $X_n$ is contained in $Z$.

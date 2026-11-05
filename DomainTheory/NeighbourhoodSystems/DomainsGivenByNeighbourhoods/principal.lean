@@ -1,6 +1,8 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_4
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Element
+public import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

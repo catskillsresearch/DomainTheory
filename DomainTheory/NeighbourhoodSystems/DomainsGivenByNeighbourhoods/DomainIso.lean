@@ -1,6 +1,8 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ElementOrder
+public import Mathlib.Order.Hom.Basic
 
 @[expose] public section
 

@@ -1,6 +1,8 @@
 module
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Definition_3_8
 
+public import Mathlib.Data.Set.Basic
+public import Mathlib.Order.Hom.Basic
 @[expose] public section
 
 section

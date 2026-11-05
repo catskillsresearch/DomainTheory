@@ -3,6 +3,11 @@ module
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.presentedIntervals
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_19
 public import Mathlib.Data.Fintype.Defs
+public import Mathlib.Data.Set.Basic
+public import Mathlib.Order.Interval.Set.Basic
+public import Mathlib.Algebra.Order.Field.Basic
+public import Mathlib.Order.CompleteLattice.Finset
+import Mathlib.Tactic.NormNum
 
 @[expose] public section
 

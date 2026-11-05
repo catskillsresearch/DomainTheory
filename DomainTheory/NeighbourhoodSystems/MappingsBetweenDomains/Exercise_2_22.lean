@@ -2,11 +2,13 @@ module
 
 public import Mathlib.Order.Directed
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_1
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ElementOrder
 public import Mathlib.Algebra.Group.End
 public import Mathlib.Basic.Finite.Defs
 public import Mathlib.Order.SetNotation
 public import Mathlib.Order.Hom.Basic
+import Mathlib.Data.Set.Basic
+public import Mathlib.Data.Set.Finite.Basic
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise222

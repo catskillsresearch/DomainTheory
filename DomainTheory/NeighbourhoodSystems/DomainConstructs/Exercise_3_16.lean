@@ -83,14 +83,14 @@ theorem interUpTo_subset_master (F : ℕ → Set (ℕ × α)) (N : ℕ) :
     (iterSys V).interUpTo F N ⊆ (iterSys V).master := by
   induction N with
   | zero => exact subset_rfl
-  | succ n ih => rw [NeighborhoodSystem.interUpTo_succ]; exact Set.inter_subset_left.trans ih
+  | succ n ih => rw [NeighborhoodSystem.interUpTo.succ]; exact Set.inter_subset_left.trans ih
 
 theorem reconstruct_subset {W : Set (ℕ × α)} (_hW : (iterSys V).mem W) {N : ℕ}
     (hN : ∀ i, N ≤ i → fiber W i = V.master) :
     (iterSys V).interUpTo (fun i => single V i (fiber W i)) N ⊆ W := by
   rintro ⟨j, a⟩ ha
   by_cases h : j < N
-  · have hsub := (iterSys V).interUpTo_subset (fun i => single V i (fiber W i)) h
+  · have hsub := interUpTo.subset (iterSys V) (fun i => single V i (fiber W i)) h
     have hmem : (j, a) ∈ single V j (fiber W j) := hsub ha
     simpa [single] using hmem
   · have haM : a ∈ V.master := interUpTo_subset_master (fun i => single V i (fiber W i)) N ha

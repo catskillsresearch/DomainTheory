@@ -24,7 +24,7 @@ theorem consistent_iff_iInter_bracket_nonempty (X : ℕ → Set α) {n : ℕ}
   rw [V.consistent_iff_bracket_interUpTo_nonempty X hX]
   constructor
   · rintro ⟨x, hx⟩
-    exact ⟨x, fun i hi => x.up_mem hx (hX i hi) (V.interUpTo_subset X hi)⟩
+    exact ⟨x, fun i hi => x.up_mem hx (hX i hi) (interUpTo.subset V X hi)⟩
   · rintro ⟨x, hx⟩
     exact ⟨x, x.mem_interUpTo X (fun i hi => hx i hi)⟩
 

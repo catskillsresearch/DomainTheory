@@ -2,6 +2,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Element
 public import Mathlib.Basic.Real.Basic
+import Mathlib.Algebra.Order.Archimedean.Real.Basic
 
 @[expose] public section
 

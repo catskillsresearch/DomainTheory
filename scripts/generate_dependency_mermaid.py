@@ -1184,9 +1184,21 @@ NS_DOM_SHORT: dict[str, tuple[str, str]] = {
         "D11",
         "Definition 1.1<br>neighbourhood system",
     ),
-    "Factoid 1.1 — empty intersection is delta; recursive finite intersection": (
-        "F11",
-        "Factoid 1.1",
+    "Finite intersections": (
+        "iUT",
+        "Finite intersections",
+    ),
+    "Empty intersection is delta": (
+        "F11a",
+        "Empty intersection<br>is delta",
+    ),
+    "Recursive finite intersection": (
+        "F11b",
+        "Recursive finite<br>intersection",
+    ),
+    "Element order and sequence limits": (
+        "Ord",
+        "Element order<br>and sequence limits",
     ),
     "Example 1.2 — two-token domain": ("E12", "Example 1.2<br>two-token domain"),
     "Example 1.3 — three-step chain": ("E13", "Example 1.3<br>three-step chain"),

@@ -1,5 +1,7 @@
 module
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_1
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ElementOrder
+import Mathlib.Data.Set.Basic
+import Mathlib.Data.Set.Image
 
 public import Mathlib.Data.Set.Operations
 @[expose] public section

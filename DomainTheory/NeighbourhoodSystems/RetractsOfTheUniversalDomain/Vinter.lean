@@ -2,6 +2,8 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.VX
 
+import Mathlib.Tactic.Ring
+import Lean.Elab.Tactic.Omega
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems

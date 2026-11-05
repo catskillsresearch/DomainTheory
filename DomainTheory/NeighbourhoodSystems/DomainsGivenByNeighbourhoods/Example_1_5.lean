@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainIso
+public import Mathlib.Data.Fintype.Powerset
 
 @[expose] public section
 
@@ -37,8 +38,6 @@ def neighborhoodSystem : NeighborhoodSystem Token where
   inter_mem := P4_inter_mem
   sub_master := P4_sub_master
 
-instance P4_countable : Countable {S : Set Token // neighborhoodSystem.mem S} :=
-  inferInstance
 end
 
 end DomainTheory.NeighbourhoodSystems.Example15

@@ -1,0 +1,36 @@
+The finite intersection of a sequence of neighbourhoods $X_0,\ldots,X_{n-1}$ is defined by recursion on $n$: the empty intersection is the master set $\Delta$, and each successor step intersects with the next neighbourhood.
+
+Of course, from Definition 1.1(ii), we can extend the intersection property to any finite sequence. Consequently, we can say $X_0, \dots, X_{n-1}$ is consistent in $\mathcal{D}$ iff
+
+$$
+\bigcap_{i < n} X_i \in \mathcal{D}.
+$$
+
+<!-- formalization -->
+
+**Definition (`interUpTo`).** Given a neighbourhood system $\mathcal{D}$ over $\Delta$ and a sequence $X$ of subsets, write $\bigcap_{i<n} X_i$ for the set obtained by recursion: the empty intersection is $\Delta$, and
+\[
+\bigcap_{i<n+1} X_i \;=\; \Bigl(\bigcap_{i<n} X_i\Bigr)\cap X_n.
+\]
+
+**Definition (`Consistent`).** A length-$n$ initial segment of $X$ is *consistent* when some member of $\mathcal{D}$ is contained in $\bigcap_{i<n} X_i$.
+
+**Theorem (`interUpTo.zero`).** The empty intersection equals the master set.
+
+*Proof.* Immediate from the definition. ∎
+
+**Theorem (`interUpTo.succ`).** The successor step peels the last factor as above.
+
+*Proof.* Immediate from the definition. ∎
+
+**Theorem (`interUpTo.subset`).** If $j<n$, then $\bigcap_{i<n} X_i\subseteq X_j$.
+
+*Proof.* By induction on $n$, using the successor equation and the two projections of an intersection. ∎
+
+**Theorem (`interUpTo.mem`).** If each $X_i$ for $i<n$ is a member and the length-$n$ segment is consistent, then $\bigcap_{i<n} X_i$ is a member.
+
+*Proof.* By induction on $n$. The empty case is membership of $\Delta$. At a successor, consistency of the longer segment yields consistency of the shorter one, so the inductive hypothesis and pairwise intersection closure finish the argument. ∎
+
+**Theorem (`consistent_iff_interUpTo_mem`).** If each $X_i$ for $i<n$ is a member, then the length-$n$ segment is consistent if and only if $\bigcap_{i<n} X_i$ is a member.
+
+*Proof.* One direction is `interUpTo.mem`; the other takes the intersection itself as the witnessing neighbourhood. ∎

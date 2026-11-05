@@ -2,6 +2,8 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainIso
 
+public import Mathlib.Data.Set.Basic
+public import Mathlib.Data.Set.Finite.Basic
 @[expose] public section
 
 section

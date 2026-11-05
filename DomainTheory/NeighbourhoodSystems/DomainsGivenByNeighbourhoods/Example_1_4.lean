@@ -2,6 +2,9 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainIso
 
+public import Mathlib.Data.Set.Basic
+public import Mathlib.Tactic.FinCases
+public import Mathlib.Data.Fintype.Basic
 @[expose] public section
 
 section

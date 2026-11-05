@@ -1,11 +1,16 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_1
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NeighborhoodSystem
+import Mathlib.Data.Set.Basic
 
 @[expose] public section
 
 section
 namespace DomainTheory.NeighbourhoodSystems
+
+/-- Neighbourhoods are nested or pairwise disjoint. -/
+def NestedOrDisjoint {α : Type*} (mem : Set α → Prop) : Prop :=
+  ∀ ⦃X Y : Set α⦄, mem X → mem Y → X ⊆ Y ∨ Y ⊆ X ∨ X ∩ Y = ∅
 
 def NeighborhoodSystem.ofNestedOrDisjoint {α : Type*} (mem : Set α → Prop) (master : Set α)
     (master_nonempty : master.Nonempty) (master_mem : mem master) (hnd : NestedOrDisjoint mem)

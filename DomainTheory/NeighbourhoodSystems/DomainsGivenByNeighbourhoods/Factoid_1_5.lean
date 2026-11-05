@@ -1,6 +1,9 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example_1_5
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_19
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ElementOrder
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.interUpTo
 
 @[expose] public section
 
@@ -18,44 +21,6 @@ namespace NeighborhoodSystem
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-theorem interUpTo_subset (X : ℕ → Set α) :
-    ∀ {n j : ℕ}, j < n → V.interUpTo X n ⊆ X j := by
-  intro n
-  induction n with
-  | zero => intro j h; exact absurd h (Nat.not_lt_zero j)
-  | succ n ih =>
-    intro j h
-    rw [interUpTo_succ]
-    rcases Nat.eq_or_lt_of_le (Nat.lt_succ_iff.mp h) with h' | h'
-    · subst h'; exact Set.inter_subset_right
-    · exact Set.inter_subset_left.trans (ih h')
-
-theorem interUpTo_mem (X : ℕ → Set α) :
-    ∀ {n : ℕ}, (∀ i, i < n → V.mem (X i)) → V.Consistent X n →
-      V.mem (V.interUpTo X n) := by
-  intro n
-  induction n with
-  | zero => intro _ _; exact V.master_mem
-  | succ n ih =>
-    intro hX hcons
-    obtain ⟨Z, hZmem, hZsub⟩ := hcons
-    have hZsub' : Z ⊆ V.interUpTo X n ∩ X n := by rwa [interUpTo_succ] at hZsub
-
-    have hconsn : V.Consistent X n :=
-      ⟨Z, hZmem, hZsub'.trans Set.inter_subset_left⟩
-    have hmemn : V.mem (V.interUpTo X n) :=
-      ih (fun i hi => hX i (Nat.lt_succ_of_lt hi)) hconsn
-    have hXn : V.mem (X n) := hX n (Nat.lt_succ_self n)
-    rw [interUpTo_succ]
-    exact V.inter_mem hmemn hXn hZmem hZsub'
-
-theorem consistent_iff_interUpTo_mem (X : ℕ → Set α) {n : ℕ}
-    (hX : ∀ i, i < n → V.mem (X i)) :
-    V.Consistent X n ↔ V.mem (V.interUpTo X n) := by
-  constructor
-  · exact V.interUpTo_mem X hX
-  · intro h; exact ⟨V.interUpTo X n, h, Set.Subset.refl _⟩
-
 theorem Element.mem_interUpTo {α : Type*} {V : NeighborhoodSystem α} (x : V.Element)
     (X : ℕ → Set α) :
     ∀ {n : ℕ}, (∀ i, i < n → x.mem (X i)) → x.mem (V.interUpTo X n) := by
@@ -64,7 +29,7 @@ theorem Element.mem_interUpTo {α : Type*} {V : NeighborhoodSystem α} (x : V.El
   | zero => intro _; exact x.master_mem
   | succ n ih =>
     intro h
-    rw [interUpTo_succ]
+    rw [interUpTo.succ]
     exact x.inter_mem (ih (fun i hi => h i (Nat.lt_succ_of_lt hi))) (h n (Nat.lt_succ_self n))
 
 theorem Element.mem_interUpTo_iff {α : Type*} {V : NeighborhoodSystem α} (x : V.Element)
@@ -72,7 +37,7 @@ theorem Element.mem_interUpTo_iff {α : Type*} {V : NeighborhoodSystem α} (x : 
     x.mem (V.interUpTo X n) ↔ ∀ i, i < n → x.mem (X i) := by
   constructor
   · intro h i hi
-    exact x.up_mem h (hX i hi) (V.interUpTo_subset X hi)
+    exact x.up_mem h (hX i hi) (interUpTo.subset V X hi)
   · exact x.mem_interUpTo X
 
 theorem limitFamily_eq_iff (X Y : ℕ → Set α)

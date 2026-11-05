@@ -3,6 +3,8 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainIso
 public import Mathlib.Order.Preorder.Chain
 
+public import Mathlib.Data.Set.Basic
+public import Mathlib.Order.Zorn
 @[expose] public section
 
 section

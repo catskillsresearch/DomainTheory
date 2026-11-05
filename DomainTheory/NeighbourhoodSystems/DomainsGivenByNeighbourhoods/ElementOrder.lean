@@ -1,28 +1,17 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_19
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Element
+public import Mathlib.Order.Defs.PartialOrder
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 namespace NeighborhoodSystem
-section
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
-def interUpTo (V : NeighborhoodSystem α) (X : ℕ → Set α) : ℕ → Set α
-  | 0 => V.master
-  | (n + 1) => interUpTo V X n ∩ X n
-
-@[simp] theorem interUpTo_zero (X : ℕ → Set α) : V.interUpTo X 0 = V.master := rfl
-
-@[simp] theorem interUpTo_succ (X : ℕ → Set α) (n : ℕ) :
-    V.interUpTo X (n + 1) = V.interUpTo X n ∩ X n := rfl
-
-def Consistent (X : ℕ → Set α) (n : ℕ) : Prop :=
-  ∃ Z, V.mem Z ∧ Z ⊆ V.interUpTo X n
-
+/-- Approximation order on ideal elements: $x \le y$ means every neighbourhood of $x$
+is a neighbourhood of $y$. -/
 def element_le (x y : V.Element) : Prop :=
   ∀ X, x.mem X → y.mem X
 
@@ -52,12 +41,12 @@ instance : PartialOrder V.Element where
   le_trans := element_le_trans V
   le_antisymm := element_le_antisymm V
 
+/-- Two sequences of neighbourhoods are equivalent when each is refined by the other. -/
 def SeqEquiv (X Y : ℕ → Set α) : Prop :=
   (∀ m, ∃ n, X n ⊆ Y m) ∧ (∀ n, ∃ m, Y m ⊆ X n)
 
+/-- Neighbourhoods that eventually contain a term of the sequence $X$. -/
 def limitFamily (X : ℕ → Set α) : Set (Set α) := {Z | V.mem Z ∧ ∃ n, X n ⊆ Z}
-end
 
 end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems
-end

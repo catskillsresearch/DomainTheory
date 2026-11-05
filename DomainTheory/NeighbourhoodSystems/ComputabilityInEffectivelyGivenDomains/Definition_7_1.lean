@@ -7,6 +7,7 @@ public import Mathlib.Computability.Primrec.Basic
 
 public import Mathlib.Data.Nat.Bitwise
 
+import Mathlib.Tactic.Ring
 @[expose] public section
 
 section

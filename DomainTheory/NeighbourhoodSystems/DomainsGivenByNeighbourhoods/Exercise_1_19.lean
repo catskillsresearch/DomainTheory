@@ -1,6 +1,10 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Element
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_4
+public import Mathlib.Data.Fintype.Basic
+public import Mathlib.Data.Set.Basic
+public import Mathlib.Data.Set.Insert
+public import Mathlib.Tactic.FinCases
 
 @[expose] public section
 
@@ -16,9 +20,6 @@ def NeighborhoodSystem.DiffClosed {α : Type*} (D : NeighborhoodSystem α) : Pro
 def NeighborhoodSystem.NoMinimal {α : Type*} (D : NeighborhoodSystem α) : Prop :=
   ∀ {X : Set α}, D.mem X →
     ∃ Y Z : Set α, D.mem Y ∧ D.mem Z ∧ Y.Nonempty ∧ Z.Nonempty ∧ Y ∩ Z = ∅ ∧ Y ∪ Z = X
-
-def NestedOrDisjoint {α : Type*} (mem : Set α → Prop) : Prop :=
-  ∀ ⦃X Y : Set α⦄, mem X → mem Y → X ⊆ Y ∨ Y ⊆ X ∨ X ∩ Y = ∅
 
 def NeighborhoodSystem.ofPositive {α : Type*} (mem : Set α → Prop) (master : Set α)
     (master_nonempty : master.Nonempty) (master_mem : mem master)

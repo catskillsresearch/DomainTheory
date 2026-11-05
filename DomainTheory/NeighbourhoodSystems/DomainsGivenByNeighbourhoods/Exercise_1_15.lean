@@ -6,6 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Dom
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_4
 
+import Mathlib.Tactic.NormNum
 @[expose] public section
 
 section

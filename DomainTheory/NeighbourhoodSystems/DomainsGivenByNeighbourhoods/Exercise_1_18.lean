@@ -1,9 +1,12 @@
 module
 
 import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_5
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_1
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_1b
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ElementOrder
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_19
 
+public import Mathlib.Data.Set.Basic
+public import Mathlib.Tactic.IntervalCases
 @[expose] public section
 
 section
@@ -131,7 +134,7 @@ theorem interUpTo_appendSeq_left (X1 : ℕ → Set α) (n1 : ℕ) (X2 : ℕ → 
   | zero => intro _; rfl
   | succ k ih =>
     intro hk
-    rw [interUpTo_succ, interUpTo_succ, ih (Nat.le_of_succ_le hk)]
+    rw [interUpTo.succ, interUpTo.succ, ih (Nat.le_of_succ_le hk)]
     have happ : appendSeq X1 n1 X2 k = X1 k := by
       simp only [appendSeq, ite_eq_left (Nat.lt_of_succ_le hk)]
     rw [happ]
@@ -178,15 +181,15 @@ theorem interUpTo_appendSeq (X1 : ℕ → Set α) (n1 : ℕ) (X2 : ℕ → Set �
   intro j
   induction j with
   | zero =>
-    rw [Nat.add_zero, V.interUpTo_appendSeq_left X1 n1 X2 (le_refl n1), interUpTo_zero]
+    rw [Nat.add_zero, V.interUpTo_appendSeq_left X1 n1 X2 (le_refl n1), interUpTo.zero]
     exact (Set.inter_eq_left.mpr (V.interUpTo_subset_master X1 n1)).symm
   | succ j ih =>
-    rw [Nat.add_succ, interUpTo_succ, ih]
+    rw [Nat.add_succ, interUpTo.succ, ih]
     have happ : appendSeq X1 n1 X2 (n1 + j) = X2 j := by
       simp only [appendSeq, ite_eq_right (by omega : ¬ n1 + j < n1)]
       congr 1
       omega
-    rw [happ, interUpTo_succ, Set.inter_assoc]
+    rw [happ, interUpTo.succ, Set.inter_assoc]
 
 end NeighborhoodSystem
 
@@ -377,7 +380,7 @@ theorem subset_leastFilter (C : Set (Set α)) (hCsub : ∀ X ∈ C, V.mem X)
     (hC : V.FinitelyConsistent C) {W : Set α} (hW : W ∈ C) :
     (V.leastFilter C hCsub hC).mem W := by
   refine ⟨hCsub W hW, 1, (fun _ => W), (fun _ _ => hW), ?_⟩
-  rw [interUpTo_succ, interUpTo_zero]
+  rw [interUpTo.succ, interUpTo.zero]
   exact Set.inter_subset_right
 
 end NeighborhoodSystem
@@ -404,7 +407,7 @@ namespace DomainTheory.NeighbourhoodSystems
 namespace triSys
 
 theorem triple_interUpTo_empty : triSys.interUpTo triple 3 = (∅ : Set (Fin 3)) := by
-  simp only [NeighborhoodSystem.interUpTo_succ, NeighborhoodSystem.interUpTo_zero, triSys_master]
+  simp only [NeighborhoodSystem.interUpTo.succ, NeighborhoodSystem.interUpTo.zero, triSys_master]
   ext x
   fin_cases x <;> simp [triple, A, B, Cc]
 

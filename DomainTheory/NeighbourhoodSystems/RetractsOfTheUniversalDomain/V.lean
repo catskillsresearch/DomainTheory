@@ -7,6 +7,10 @@ public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 public import Mathlib.Data.Nat.Bitwise
 public import Mathlib.Data.Nat.BitIndices
 public import Mathlib.Combinatorics.Colex
+public import Mathlib.Data.Set.Basic
+import Mathlib.Tactic.Positivity
+import Lean.Elab.Tactic.Omega
+import Mathlib.Tactic.Ring
 
 @[expose] public section
 

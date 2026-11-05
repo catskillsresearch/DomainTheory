@@ -3,6 +3,7 @@ module
 import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_13
 import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_5
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainIso
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.interUpTo
 
 @[expose] public section
 
@@ -57,14 +58,14 @@ theorem acc_eq_interUpTo : ∀ n, acc V enum n = V.interUpTo (Y V enum) (n + 1) 
   intro n
   induction n with
   | zero =>
-    rw [acc_zero, interUpTo_succ, interUpTo_zero, Y_zero]
+    rw [acc_zero, interUpTo.succ, interUpTo.zero, Y_zero]
   | succ n ih =>
-    rw [interUpTo_succ, ← ih]
+    rw [interUpTo.succ, ← ih]
     by_cases h : cond V enum n
     · rw [acc_succ_pos V enum h, Y_succ_pos V enum h]
     · rw [acc_succ_neg V enum h, Y_succ_neg V enum h]
       have hsub : acc V enum n ⊆ Y V enum n := by
-        rw [ih]; exact V.interUpTo_subset (Y V enum) (Nat.lt_succ_self n)
+        rw [ih]; exact interUpTo.subset V (Y V enum) (Nat.lt_succ_self n)
       rw [Set.inter_eq_left.mpr hsub]
 
 section
@@ -88,7 +89,7 @@ include henum
 theorem mem_interUpTo_Y : ∀ n, V.mem (V.interUpTo (Y V enum) n) := by
   intro n
   cases n with
-  | zero => rw [interUpTo_zero]; exact V.master_mem
+  | zero => rw [interUpTo.zero]; exact V.master_mem
   | succ n => rw [← acc_eq_interUpTo V enum]; exact acc_mem V enum henum n
 end
 end
@@ -109,7 +110,7 @@ include henum
 def greedyElement : V.Element where
   mem X := V.mem X ∧ ∃ n, V.interUpTo (Y V enum) n ⊆ X
   sub h := h.1
-  master_mem := ⟨V.master_mem, 0, by rw [interUpTo_zero]⟩
+  master_mem := ⟨V.master_mem, 0, by rw [interUpTo.zero]⟩
   inter_mem := by
     rintro X X' ⟨hX, n, hn⟩ ⟨hX', m, hm⟩
     have hsub : V.interUpTo (Y V enum) (max n m) ⊆ X ∩ X' :=
@@ -142,7 +143,7 @@ theorem Y_prefix_consistent (n : ℕ) : V.Consistent (Y V enum) n :=
   ⟨V.interUpTo (Y V enum) n, mem_interUpTo_Y V enum henum n, subset_rfl⟩
 
 theorem greedyElement_mem_Y (n : ℕ) : (greedyElement V enum henum).mem (Y V enum n) :=
-  ⟨Y_mem V enum henum n, n + 1, V.interUpTo_subset (Y V enum) (Nat.lt_succ_self n)⟩
+  ⟨Y_mem V enum henum n, n + 1, interUpTo.subset V (Y V enum) (Nat.lt_succ_self n)⟩
 
 theorem greedyElement_mem_acc (n : ℕ) : (greedyElement V enum henum).mem (acc V enum n) := by
   refine ⟨acc_mem V enum henum n, n + 1, ?_⟩

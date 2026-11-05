@@ -3,6 +3,8 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_20
 public import Mathlib.Topology.Defs.Filter
 
+public import Mathlib.Data.Set.Basic
+public import Mathlib.Topology.Inseparable
 @[expose] public section
 
 section

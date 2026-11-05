@@ -4,6 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Nei
 public import Mathlib.Algebra.Order.Ring.Unbundled.Rat
 public import Mathlib.Order.SetNotation
 public import Mathlib.Order.Interval.Set.Defs
+import Mathlib.Data.Set.Basic
+import Mathlib.Order.Interval.Set.Basic
 
 @[expose] public section
 

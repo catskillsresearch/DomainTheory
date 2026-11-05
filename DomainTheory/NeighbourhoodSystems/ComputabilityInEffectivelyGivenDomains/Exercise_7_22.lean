@@ -9,6 +9,8 @@ public import Mathlib.Data.Fintype.Prod
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 
+public import Mathlib.Data.Fintype.Card
+public import Mathlib.Data.Fintype.Pigeonhole
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
