@@ -1,0 +1,39 @@
+**EXERCISE 1.23.** Suppose that the neighbourhood system $D$ is countable, say,
+
+$$
+D = \{X_0, X_1, X_2, \ldots, X_n, \ldots\}.
+$$
+
+Suppose further that the property of consistency of finite sequences of neighbourhoods is decidable (or "effectively known"). Then the following sequence is well defined:
+
+$$
+\begin{aligned}
+Y_0 &= X_0 \\
+Y_{n+1} &= X_{n+1}, \text{ if this set is consistent with } Y_0, Y_1, \ldots, Y_n; \\
+&= Y_n, \text{ if not.}
+\end{aligned}
+$$
+
+Show that $\{Y_0, Y_1, \ldots, Y_n, \ldots\}$ is a total element of $|D|$. (Hint: Show first that $Y_0, Y_1, \ldots, Y_{n-1}$ is consistent for all $n$.) In such a system show that all filters can be determined by sequences.
+
+<!-- formalization -->
+
+**Definition (`Y`).** The greedy sequence that accepts the next enumerated neighbourhood precisely when it remains consistent with those already chosen.
+
+**Definition (`greedyElement`).** The ideal element whose neighbourhoods are those containing some finite intersection of an initial segment of $Y$.
+
+**Theorem (`Y_prefix_consistent`).** Every finite initial segment of $Y$ is consistent.
+
+*Proof.* By construction each accepted step preserves a nonempty witnessing intersection. ∎
+
+**Theorem (`greedyElement_isTotal`).** When the enumeration is surjective onto the neighbourhoods, the greedy element is total.
+
+*Proof.* Any proper refinement would have to accept a neighbourhood rejected by greediness, contradicting consistency of the accumulated intersection. ∎
+
+**Theorem (`filters_sequence_determined`).** Every ideal element is determined by a sequence of neighbourhoods.
+
+*Proof.* Enumerate those members of the enumeration that belong to the filter (or the master set otherwise). ∎
+
+**Theorem (`exercise_1_23`).** The greedy sequence is finitely consistent; under a surjective enumeration the greedy element is total; and every filter is sequence-determined.
+
+*Proof.* Assemble the three preceding theorems. ∎
