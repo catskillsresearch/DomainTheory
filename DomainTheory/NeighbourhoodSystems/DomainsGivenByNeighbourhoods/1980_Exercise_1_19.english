@@ -1,0 +1,25 @@
+**EXERCISE 1.19.** Define a *positive neighbourhood system* to be a family $\mathcal{D}$ where (ii) of 1.1 is replaced by **(ii')** whenever $X, Y \in \mathcal{D}$, then $X \cap Y \neq \emptyset$ iff $X \cap Y \in \mathcal{D}$. Prove that a positive neighbourhood system is indeed a neighbourhood system in the sense of the earlier definition. Give an example of a neighbourhood system that is *not* positive. (Hint: (suggested by C.A.R. Hoare). Let $\Delta = \mathbf{N} \times \mathbf{N}$, in the plane. Let $\mathcal{D}$ be the family of subsets $X \subseteq \mathbf{N} \times \mathbf{N}$ where all but a finite number of places the *vertical* sections of $X$ are the whole of $\mathbf{N}$ but at the other places the sections are finite and nonempty. Smaller examples are of course possible.)
+
+<!-- formalization -->
+
+**Definition (`IsPositive`).** A neighbourhood system is positive when membership of an intersection is equivalent to nonempty intersection, for any two members.
+
+**Definition (`ofPositive`).** From a positive intersection law one obtains a neighbourhood system in the sense of Definition 1.1.
+
+*Proof.* Nonempty intersection of members yields a member by positivity, which discharges the witness required by the ordinary intersection axiom. ∎
+
+**Definition (`notPositiveSystem`).** On a three-token set, the neighbourhoods are the universe together with the doubletons $\{0,1\}$ and $\{1,2\}$.
+
+**Theorem (`not_isPositive`).** That system is not positive.
+
+*Proof.* The two doubletons meet in $\{1\}$, which is nonempty but not a neighbourhood. ∎
+
+**Definition (`positiveExample`).** The system of all nonempty subsets of a two-point set (built via positivity).
+
+**Theorem (`positiveExample_isPositive`).** That system is positive.
+
+*Proof.* Nonempty subsets are closed under nonempty intersection. ∎
+
+**Theorem (`exercise_1_19`).** There is a neighbourhood system that fails positivity, and there is a positive example.
+
+*Proof.* Assemble the two examples. ∎
