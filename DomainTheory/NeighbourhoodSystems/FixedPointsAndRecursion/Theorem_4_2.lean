@@ -7,7 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_9
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_10
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_7
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_7a2
 public import Mathlib.Tactic.Bound
 
 @[expose] public section

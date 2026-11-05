@@ -1226,9 +1226,17 @@ NS_DOM_SHORT: dict[str, tuple[str, str]] = {
     ),
     "Definition 1.6 — ideal elements": ("D16", "Definition 1.6<br>ideal elements"),
     "Definition 1.7 — principal filter": ("D17", "Definition 1.7<br>principal filter"),
-    "Factoid 1.7 — principals are one-one; inclusion-reversing principals; union of principal filters": (
-        "F17",
-        "Factoid 1.7",
+    "Principals are one-one": (
+        "F17a1",
+        "Principals are<br>one-one",
+    ),
+    "Inclusion-reversing principals": (
+        "F17a2",
+        "Inclusion-reversing<br>principals",
+    ),
+    "Union of principal filters": (
+        "F17b",
+        "Union of principal<br>filters",
     ),
     "Definition 1.8 — approximation and totality": (
         "D18",

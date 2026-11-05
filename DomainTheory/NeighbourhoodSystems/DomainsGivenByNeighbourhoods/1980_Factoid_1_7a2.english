@@ -1,0 +1,11 @@
+$$
+X \subseteq Y \quad \text{iff} \quad \uparrow Y \subseteq \uparrow X
+$$
+
+for all $X, Y \in \mathcal{D}$. But, except in very special cases, there is much more to $|\mathcal{D}|$ than just the finite elements. Much of our investigation will be concerned with finding out how much more. The finite elements are, in a certain sense, "dense" in $|\mathcal{D}|$, however, because it is also obvious from the definitions that for each $x \in |\mathcal{D}|$
+
+<!-- formalization -->
+
+**Theorem (`principal_le_iff`).** For neighbourhoods $X$ and $Y$, one has $\uparrow X \le \uparrow Y$ in the approximation order if and only if $Y\subseteq X$. Equivalently, $X\subseteq Y$ if and only if $\uparrow Y\subseteq \uparrow X$ as families of neighbourhoods.
+
+*Proof.* If $\uparrow X\le \uparrow Y$, then $X$ belongs to $\uparrow Y$, so $Y\subseteq X$. Conversely, if $Y\subseteq X$ and $Z$ belongs to $\uparrow X$, then $X\subseteq Z$, hence $Y\subseteq Z$, so $Z$ belongs to $\uparrow Y$. ∎

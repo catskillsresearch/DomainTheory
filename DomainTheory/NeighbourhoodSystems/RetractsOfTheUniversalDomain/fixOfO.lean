@@ -7,7 +7,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_4
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_7
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_9
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6

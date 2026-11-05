@@ -21,7 +21,9 @@ flowchart TB
   F15b["Equivalent sequences<br>with same limit"]
   D16["Definition 1.6<br>ideal elements"]
   D17["Definition 1.7<br>principal filter"]
-  F17["Factoid 1.7"]
+  F17a2["Inclusion-reversing<br>principals"]
+  F17a1["Principals are<br>one-one"]
+  F17b["Union of principal<br>filters"]
   D18["Definition 1.8<br>approximation and totality"]
   F18["Factoid 1.8"]
   ER["Examples 1.2–1.5<br>revisited"]
@@ -32,7 +34,6 @@ flowchart TB
 
   D11 -->|"1"| D16
   D16 -->|"1"| D17
-  F14a -->|"1"| D17
   D17 -->|"1"| D18
   Ord -->|"1"| D19
   Ord -->|"1"| E12
@@ -44,8 +45,10 @@ flowchart TB
   E13 -->|"1"| ER
   E14 -->|"1"| ER
   E15 -->|"1"| ER
+  F14a -->|"1"| ER
   F11b -->|"1"| EX
   F15a -->|"3"| EX
+  F17a1 -->|"1"| EX
   T10 -->|"1"| EX
   T11 -->|"1"| EX
   iTot -->|"7"| EX
@@ -55,10 +58,12 @@ flowchart TB
   E15 -->|"1"| F15a
   iUT -->|"1"| F15a
   Ord -->|"1"| F15b
-  D17 -->|"1"| F17
-  Ord -->|"1"| F17
+  F17a2 -->|"1"| F17a1
+  D17 -->|"1"| F17a2
+  Ord -->|"1"| F17a2
+  D17 -->|"1"| F17b
   ER -->|"1"| F18
-  F17 -->|"1"| F18
+  F17a2 -->|"1"| F18
   D16 -->|"1"| Ord
   EX -->|"1"| T10
   F18 -->|"1"| T11
@@ -86,7 +91,9 @@ flowchart TB
   class F15b cfac
   class D16 cdef
   class D17 cdef
-  class F17 cfac
+  class F17a2 cfac
+  class F17a1 cfac
+  class F17b cfac
   class D18 cdef
   class F18 cfac
   class ER cexs
