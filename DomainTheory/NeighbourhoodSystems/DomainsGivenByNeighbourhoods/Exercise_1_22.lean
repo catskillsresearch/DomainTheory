@@ -1,18 +1,54 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_20
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ElementOrder
+public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Topology.Defs.Filter
-
 public import Mathlib.Data.Set.Basic
 public import Mathlib.Topology.Inseparable
+
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 namespace NeighborhoodSystem
-section
 
 variable {α : Type*} (V : NeighborhoodSystem α)
+
+def basicOpen (X : Set α) : Set V.Element := {x | x.mem X}
+
+@[simp] theorem mem_basicOpen {X : Set α} {x : V.Element} :
+    x ∈ V.basicOpen X ↔ x.mem X := Iff.rfl
+
+class OpenFilter (U : Set V.Element) : Prop where
+  out : ∀ x ∈ U, ∃ X, x.mem X ∧ V.basicOpen X ⊆ U
+
+theorem basicOpen_inter_subset_left {X Y : Set α} (hX : V.mem X) :
+    V.basicOpen (X ∩ Y) ⊆ V.basicOpen X :=
+  fun z hz => z.up_mem hz hX Set.inter_subset_left
+
+theorem basicOpen_inter_subset_right {X Y : Set α} (hY : V.mem Y) :
+    V.basicOpen (X ∩ Y) ⊆ V.basicOpen Y :=
+  fun z hz => z.up_mem hz hY Set.inter_subset_right
+
+instance instTopologicalSpaceElement : TopologicalSpace V.Element where
+  IsOpen := V.OpenFilter
+  isOpen_univ := ⟨fun x _ => ⟨V.master, x.master_mem, Set.subset_univ _⟩⟩
+  isOpen_inter := by
+    intro U W hU hW
+    constructor
+    intro x hx
+    obtain ⟨hxU, hxW⟩ := hx
+    obtain ⟨X, hX, hXU⟩ := hU.out x hxU
+    obtain ⟨Y, hY, hYW⟩ := hW.out x hxW
+    refine ⟨X ∩ Y, x.inter_mem hX hY, fun z hz => ⟨hXU ?_, hYW ?_⟩⟩
+    · exact V.basicOpen_inter_subset_left (x.sub hX) hz
+    · exact V.basicOpen_inter_subset_right (x.sub hY) hz
+  isOpen_sUnion := by
+    intro S hS
+    constructor
+    intro x hx
+    obtain ⟨t, htS, hxt⟩ := hx
+    obtain ⟨X, hX, hXt⟩ := (hS t htS).out x hxt
+    exact ⟨X, hX, hXt.trans fun _ ha => ⟨t, htS, ha⟩⟩
 
 theorem isOpen_basicOpen (X : Set α) : IsOpen (V.basicOpen X) :=
   ⟨fun _ hx => ⟨X, hx, subset_rfl⟩⟩
@@ -59,8 +95,6 @@ theorem exercise_1_22 :
       (∀ x y : V.Element, y ⤳ x ↔ x ≤ y) :=
   ⟨V.isOpen_isUpperSet, V.isOpen_basicOpen, V.isOpen_iff_upper_basic, V.le_iff_isOpen_imp,
     V.specializes_iff_le⟩
-end
 
 end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems
-end

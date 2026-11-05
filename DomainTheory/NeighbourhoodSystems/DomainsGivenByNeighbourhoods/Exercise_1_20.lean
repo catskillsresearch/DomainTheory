@@ -3,15 +3,12 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainIso
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_19
-public import Mathlib.Topology.Defs.Basic
 public import Mathlib.Algebra.Group.End
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 namespace NeighborhoodSystem
-section
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 
@@ -30,18 +27,6 @@ theorem upSet_subset_iff {X Y : Set α} (hX : V.mem X) : V.upSet X ⊆ V.upSet Y
     exact (h ⟨hX, subset_rfl⟩).2
   · intro hXY Z hZ
     exact ⟨hZ.1, hZ.2.trans hXY⟩
-end
-
-end NeighborhoodSystem
-end DomainTheory.NeighbourhoodSystems
-end
-
-section
-namespace DomainTheory.NeighbourhoodSystems
-namespace NeighborhoodSystem
-section
-
-variable {α : Type*} (V : NeighborhoodSystem α)
 
 def powerSystem : NeighborhoodSystem (Set α) where
   mem S := ∃ X, V.mem X ∧ S = V.upSet X
@@ -155,54 +140,6 @@ theorem exercise_1_20 :
         ∀ {X : Set α} (hX : V.mem X),
           V.toPower (V.principal hX) = V.powerSystem.principal ⟨X, hX, rfl⟩ :=
   ⟨V.isomorphic_powerSystem, V.powerSystem_isPositive, V.toPower_principal⟩
-end
 
 end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems
-namespace NeighborhoodSystem
-section
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-def basicOpen (X : Set α) : Set V.Element := {x | x.mem X}
-
-@[simp] theorem mem_basicOpen {X : Set α} {x : V.Element} :
-    x ∈ V.basicOpen X ↔ x.mem X := Iff.rfl
-
-class OpenFilter (U : Set V.Element) : Prop where
-  out : ∀ x ∈ U, ∃ X, x.mem X ∧ V.basicOpen X ⊆ U
-
-theorem basicOpen_inter_subset_left {X Y : Set α} (hX : V.mem X) :
-    V.basicOpen (X ∩ Y) ⊆ V.basicOpen X :=
-  fun z hz => z.up_mem hz hX Set.inter_subset_left
-
-theorem basicOpen_inter_subset_right {X Y : Set α} (hY : V.mem Y) :
-    V.basicOpen (X ∩ Y) ⊆ V.basicOpen Y :=
-  fun z hz => z.up_mem hz hY Set.inter_subset_right
-
-instance instTopologicalSpaceElement : TopologicalSpace V.Element where
-  IsOpen := V.OpenFilter
-  isOpen_univ := ⟨fun x _ => ⟨V.master, x.master_mem, Set.subset_univ _⟩⟩
-  isOpen_inter := by
-    intro U W hU hW
-    constructor
-    intro x hx
-    obtain ⟨hxU, hxW⟩ := hx
-    obtain ⟨X, hX, hXU⟩ := hU.out x hxU
-    obtain ⟨Y, hY, hYW⟩ := hW.out x hxW
-    refine ⟨X ∩ Y, x.inter_mem hX hY, fun z hz => ⟨hXU ?_, hYW ?_⟩⟩
-    · exact V.basicOpen_inter_subset_left (x.sub hX) hz
-    · exact V.basicOpen_inter_subset_right (x.sub hY) hz
-  isOpen_sUnion := by
-    intro S hS
-    constructor
-    intro x hx
-    obtain ⟨t, htS, hxt⟩ := hx
-    obtain ⟨X, hX, hXt⟩ := (hS t htS).out x hxt
-    exact ⟨X, hX, hXt.trans fun _ ha => ⟨t, htS, ha⟩⟩
-end
-
-end NeighborhoodSystem
-end DomainTheory.NeighbourhoodSystems
-end

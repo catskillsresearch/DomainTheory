@@ -1,5 +1,5 @@
 module
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_20
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_22
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 @[expose] public section
 

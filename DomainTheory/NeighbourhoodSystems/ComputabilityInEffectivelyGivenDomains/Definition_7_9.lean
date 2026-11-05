@@ -1,6 +1,8 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_20
+public import Mathlib.Data.Set.Lattice.Indexed
+public import Mathlib.Data.List.Basic
 
 @[expose] public section
 
