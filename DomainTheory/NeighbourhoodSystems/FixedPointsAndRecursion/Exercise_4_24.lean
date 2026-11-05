@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NeighborhoodSystem
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_14
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap
 public import Mathlib.Algebra.Group.End
 
 @[expose] public section

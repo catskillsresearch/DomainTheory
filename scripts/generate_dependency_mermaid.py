@@ -23,12 +23,18 @@ OUTLINE_LINK = re.compile(
     r"(?:[ \t]+\[[^\]]*\]\([^)]*\))*"
     r"(?:[ \t]+✓)?[ \t]*$"
 )
-# Domains §1 outline: Graphviz SVG is the gold display copy (no sibling .mermaid).
+# Outline § hubs: Graphviz SVG is the gold display copy (no sibling .mermaid).
 NS_DOMAINS_SVG = (
     DT
     / "NeighbourhoodSystems"
     / "DomainsGivenByNeighbourhoods"
     / "1980_Domains_given_by_neighbourhoods.svg"
+)
+NS_MAPPINGS_SVG = (
+    DT
+    / "NeighbourhoodSystems"
+    / "MappingsBetweenDomains"
+    / "1980_Mappings_between_domains.svg"
 )
 
 DEPRECATED_MERMAID = DT / "1972_Continuous_lattices.mermaid"
@@ -1309,12 +1315,114 @@ NS_DOM_SHORT: dict[str, tuple[str, str]] = {
     "Lecture I exercises": ("EX", "Lecture I exercises"),
 }
 
+# Lecture II hub: outline notes (Lecture II exercises hub has no Lean; exercises are separate boxes).
+NS_MAP_SHORT: dict[str, tuple[str, str]] = {
+    "Definition 2.1 — approximable mapping": (
+        "D21",
+        "Definition 2.1 — approximable mapping",
+    ),
+    "Proposition 2.2 — elementwise action": (
+        "P22",
+        "Proposition 2.2 — elementwise action",
+    ),
+    "Two-token ideal elements": (
+        "Tok2",
+        "Two-token ideal elements",
+    ),
+    "Example 2.3 — parity of leading zeros": (
+        "E23",
+        "Example 2.3 — parity of leading zeros",
+    ),
+    "Example 2.4 — erase a run of ones": (
+        "E24",
+        "Example 2.4 — erase a run of ones",
+    ),
+    "Theorem 2.5 — category of approximable maps": (
+        "T25",
+        "Theorem 2.5 — category of approximable maps",
+    ),
+    "Proposition 2.6 — identity and composition": (
+        "P26",
+        "Proposition 2.6 — identity and composition",
+    ),
+    "Theorem 2.7 — isomorphisms are approximable": (
+        "T27",
+        "Theorem 2.7 — isomorphisms are approximable",
+    ),
+    "Exercise 2.8 — determined by finite elements": (
+        "X28",
+        "Exercise 2.8 — determined by finite elements",
+    ),
+    "Exercise 2.9 — directed union formula": (
+        "X29",
+        "Exercise 2.9 — directed union formula",
+    ),
+    "Exercise 2.10 — intersection of two maps": (
+        "X210",
+        "Exercise 2.10 — intersection of two maps",
+    ),
+    "Exercise 2.11 — directed unions of elements": (
+        "X211",
+        "Exercise 2.11 — directed unions of elements",
+    ),
+    "Exercise 2.12 — directed unions of maps": (
+        "X212",
+        "Exercise 2.12 — directed unions of maps",
+    ),
+    "Exercise 2.13 — approximable means continuous": (
+        "X213",
+        "Exercise 2.13 — approximable means continuous",
+    ),
+    "Exercise 2.14 — isomorphisms of neighbourhoods": (
+        "X214",
+        "Exercise 2.14 — isomorphisms of neighbourhoods",
+    ),
+    "Exercise 2.15 — opens classified by maps": (
+        "X215",
+        "Exercise 2.15 — opens classified by maps",
+    ),
+    "Exercise 2.16 — prefixing is approximable": (
+        "X216",
+        "Exercise 2.16 — prefixing is approximable",
+    ),
+    "Exercise 2.17 — equations for erase-ones": (
+        "X217",
+        "Exercise 2.17 — equations for erase-ones",
+    ),
+    "Exercise 2.17 — uniqueness of the erase-ones map": (
+        "X217b",
+        "Exercise 2.17 — uniqueness of the erase-ones map",
+    ),
+    "Exercise 2.18 — doubling binary digits": (
+        "X218",
+        "Exercise 2.18 — doubling binary digits",
+    ),
+    "Exercise 2.19 — maps of two arguments": (
+        "X219",
+        "Exercise 2.19 — maps of two arguments",
+    ),
+    "Exercise 2.20 — powerset of the integers": (
+        "X220",
+        "Exercise 2.20 — powerset of the integers",
+    ),
+    "Exercise 2.21 — finite and infinite sequences": (
+        "X221",
+        "Exercise 2.21 — finite and infinite sequences",
+    ),
+    "Exercise 2.22 — domains from closure properties": (
+        "X222",
+        "Exercise 2.22 — domains from closure properties",
+    ),
+}
+
 
 def _ns_dom_kind_class(nid: str) -> str:
     if nid.startswith("D"):
         return "cdef"
-    if nid.startswith("F"):
+    if nid.startswith(("F", "P")):
         return "cfac"
+    if nid.startswith("X"):
+        return "cex"
     if nid.startswith("E") and nid != "EX":
         return "cexs"
     if nid == "ER":
@@ -1323,6 +1431,8 @@ def _ns_dom_kind_class(nid: str) -> str:
         return "cthm"
     if nid == "EX":
         return "cex"
+    if nid == "Tok2":
+        return "cexs"
     return "cdef"
 
 
@@ -1331,8 +1441,12 @@ def ns_domains_compact_label(text: str, *, width: int = 15) -> str:
     s = mermaid_display_label(text).replace("<br>", " ").replace("\n", " ")
     s = re.sub(r"\bDefinitions\b", "Defs", s)
     s = re.sub(r"\bDefinition\b", "Def", s)
+    s = re.sub(r"\bPropositions\b", "Props", s)
+    s = re.sub(r"\bProposition\b", "Prop", s)
     s = re.sub(r"\bExamples\b", "Exs", s)
     s = re.sub(r"\bExample\b", "Ex", s)
+    s = re.sub(r"\bExercises\b", "Exers", s)
+    s = re.sub(r"\bExercise\b", "Exer", s)
     s = re.sub(r"\bTheorems\b", "Thms", s)
     s = re.sub(r"\bTheorem\b", "Thm", s)
     words = s.split()
@@ -1397,16 +1511,22 @@ def write_ns_domains_graphviz_svg(
     )
 
 
-def gen_ns_domains_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
-    """Item-level Lean deps for 1980_Domains_given_by_neighbourhoods (SVG gold copy)."""
-    header = [
-        "%% Each box is one outline note from 1980_Domains_given_by_neighbourhoods.md.",
-        "%% Lean modules = that note's @import .lean files (Lecture I exercises = all exercise modules;",
-        "%%   Def 1.7/1.8/1.9 also own principal/bot/DomainIso; iTot owns IsTotal).",
-        "%% Arrowhead on the importer; label = direct-import count.",
-        "%% All cross-note Lean imports, then transitive reduction (keeps reachability).",
-        "%% Display copy: Graphviz SVG (gold); no sibling .mermaid.",
-    ]
+def gen_ns_outline_svg_lecture(
+    diagram: Path,
+    modules: dict[str, Path],
+    old: str,
+    *,
+    short: dict[str, tuple[str, str]],
+    companions: dict[str, tuple[str, ...]],
+    header: list[str],
+    aggregate_lecture_exercises: bool = True,
+) -> str:
+    """Item-level Lean deps for a 1980 section hub (SVG gold copy).
+
+    Ownership is each note's ``@import`` Lean files (plus companions). Edges are
+    direct imports across owners, then transitive reduction on the full graph —
+    no outline-order edge filtering.
+    """
     _, old_labels, style = parse_preserve_tail(old if diagram.suffix == ".mermaid" else "")
     index_md = find_index_md(diagram)
     if index_md is None:
@@ -1424,10 +1544,14 @@ def gen_ns_domains_lecture(diagram: Path, modules: dict[str, Path], old: str) ->
             continue
         if re.search(r"(?i)^introduction$", title.strip()):
             continue
-        if title not in NS_DOM_SHORT:
+        if title not in short:
             continue
-        nid, default_lab = NS_DOM_SHORT[title]
-        if title.lower().startswith("lecture") and "exercise" in title.lower():
+        nid, default_lab = short[title]
+        if (
+            aggregate_lecture_exercises
+            and title.lower().startswith("lecture")
+            and "exercise" in title.lower()
+        ):
             mods: set[str] = set()
             for ln in child.read_text(encoding="utf-8", errors="ignore").splitlines():
                 mm = OUTLINE_LINK.match(ln)
@@ -1438,7 +1562,7 @@ def gen_ns_domains_lecture(diagram: Path, modules: dict[str, Path], old: str) ->
                     mods |= lean_modules_from_note(sub)
         else:
             mods = set(lean_modules_from_note(child))
-            for stem in NS_DOM_COMPANIONS.get(title, ()):
+            for stem in companions.get(title, ()):
                 p = folder / f"{stem}.lean"
                 if p.is_file():
                     mods.add(module_of(p))
@@ -1480,10 +1604,10 @@ def gen_ns_domains_lecture(diagram: Path, modules: dict[str, Path], old: str) ->
     svg_path = diagram.with_suffix(".svg") if diagram.suffix == ".mermaid" else diagram
     write_ns_domains_graphviz_svg(svg_path, node_labels, edges, order)
 
-    # SVG is the gold copy: when regenerating from the .svg path, leave file text alone
-    # (Graphviz already rewrote the SVG) so main does not treat XML as Mermaid source.
+    # SVG is the gold copy: Graphviz already wrote the file. Return that content so
+    # main's write_text is a no-op (and does not clobber the SVG with stale ``old``).
     if diagram.suffix == ".svg":
-        return old
+        return svg_path.read_text(encoding="utf-8")
 
     return emit_flowchart(
         header,
@@ -1493,6 +1617,46 @@ def gen_ns_domains_lecture(diagram: Path, modules: dict[str, Path], old: str) ->
         labeled=True,
         flowchart="flowchart TB",
         node_order=order,
+    )
+
+
+def gen_ns_domains_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    """Item-level Lean deps for 1980_Domains_given_by_neighbourhoods (SVG gold copy)."""
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=NS_DOM_SHORT,
+        companions=NS_DOM_COMPANIONS,
+        header=[
+            "%% Each box is one outline note from 1980_Domains_given_by_neighbourhoods.md.",
+            "%% Lean modules = that note's @import .lean files (Lecture I exercises = all exercise modules;",
+            "%%   Def 1.7/1.8/1.9 also own principal/bot/DomainIso; iTot owns IsTotal).",
+            "%% Arrowhead on the importer; label = direct-import count.",
+            "%% All cross-note Lean imports, then transitive reduction (keeps reachability).",
+            "%% Display copy: Graphviz SVG (gold); no sibling .mermaid.",
+        ],
+        aggregate_lecture_exercises=True,
+    )
+
+
+def gen_ns_mappings_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    """Item-level Lean deps for 1980_Mappings_between_domains (SVG gold copy)."""
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=NS_MAP_SHORT,
+        companions={},
+        header=[
+            "%% Each box is one outline note from 1980_Mappings_between_domains.md.",
+            "%% Lean modules = that note's @import .lean files.",
+            "%% Arrowhead on the importer; label = direct-import count.",
+            "%% All cross-note Lean imports, then transitive reduction (keeps reachability).",
+            "%% Display copy: Graphviz SVG (gold); no sibling .mermaid.",
+        ],
+        # Exercises are listed individually on this hub (unlike Domains §1).
+        aggregate_lecture_exercises=False,
     )
 
 
@@ -1702,6 +1866,11 @@ def classify(mermaid: Path, text: str) -> str:
         "1980_Domains_given_by_neighbourhoods.svg",
     ):
         return "ns_domains_lecture"
+    if mermaid.name in (
+        "1980_Mappings_between_domains.mermaid",
+        "1980_Mappings_between_domains.svg",
+    ):
+        return "ns_mappings_lecture"
     if index_md_is_outline_barrel(mermaid):
         return "note_outline"
     if mermaid.name == "1972_ContinuousLattices.mermaid":
@@ -1809,6 +1978,8 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
         return gen_ns_sections(mermaid, modules, old)
     if kind == "ns_domains_lecture":
         return gen_ns_domains_lecture(mermaid, modules, old)
+    if kind == "ns_mappings_lecture":
+        return gen_ns_mappings_lecture(mermaid, modules, old)
     if kind == "ns_items":
         return gen_neighborhood_items(mermaid, modules, old)
     if kind == "note_outline":
@@ -2154,9 +2325,10 @@ def main() -> None:
         top = ROOT / "DomainTheory.mermaid"
         if top.is_file():
             paths.append(top)
-        # Domains §1: SVG gold copy (no .mermaid sibling).
-        if NS_DOMAINS_SVG.is_file():
-            paths.append(NS_DOMAINS_SVG.resolve())
+        # Section hubs with SVG gold copies (no .mermaid sibling).
+        for svg in (NS_DOMAINS_SVG, NS_MAPPINGS_SVG):
+            if svg.is_file():
+                paths.append(svg.resolve())
 
     changed = 0
     unknown: list[Path] = []

@@ -6,11 +6,12 @@ alwaysApply: false
 
 # Dependency diagram labels
 
-When generating or refreshing outline dependency diagrams (especially Graphviz SVGs; for Domains given by neighbourhoods the `.svg` is the gold copy — there is no sibling `.mermaid`):
+When generating or refreshing outline dependency diagrams (especially Graphviz SVGs; for Domains given by neighbourhoods and Mappings between domains the `.svg` is the gold copy — there is no sibling `.mermaid`):
 
-- Abbreviate: `Definition` → `Def`, `Example` → `Ex`, `Examples` → `Exs`, `Theorem` → `Thm` (and plurals `Defs` / `Thms` if needed).
+- Abbreviate: `Definition` → `Def`, `Proposition` → `Prop`, `Example` → `Ex`, `Examples` → `Exs`, `Exercise` → `Exer`, `Theorem` → `Thm` (and plurals `Defs` / `Props` / `Thms` / `Exers` if needed).
 - Soft-wrap labels at about **15 characters** per line (break between words; do not leave a wide single-line example row).
 - Prefer a dense Graphviz layout over sparse Mermaid/dagre when fit-to-viewport scaling would shrink text.
 - Keep full cross-note Lean import edges, then transitive reduction — without outline-order filtering that would disconnect early notes (e.g. examples) from Definition 1.1.
+- Recheck edges from each note’s `@import` Lean modules (plus companions); do not reuse a stale Mermaid edge list.
 
 Canonical helper: `ns_domains_compact_label` in `scripts/generate_dependency_mermaid.py`.

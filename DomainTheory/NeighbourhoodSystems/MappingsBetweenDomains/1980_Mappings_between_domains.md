@@ -1,10 +1,8 @@
 # Mappings between domains
 
-**Dependency diagram.** Each box is one item. The arrowhead is on the item that imports. An arrow already implied by a longer path is left out. The introduction has no Lean file, so it is not shown. Blue is a definition, green a proposition, amber an example, red a theorem, and indigo an exercise.
+@import "1980_Mappings_between_domains.svg" {code_block=false}
 
-@import "1980_Mappings_between_domains.mermaid"
-
-- [Introduction](1980_Introduction.md)
+- [Introduction](1980_Introduction.md) [✓](../1980_REVISION.md)
 - [Definition 2.1 — approximable mapping](1980_Definition_2_1.md)
 - [Proposition 2.2 — elementwise action](1980_Proposition_2_2.md)
 - [Two-token ideal elements](1980_Example_1_2_elements.md)

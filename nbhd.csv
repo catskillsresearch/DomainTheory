@@ -45,7 +45,7 @@ line,keyword,number,label,file
 536,EXERCISE,1.25,final segments of ordinals,DomainsGivenByNeighbourhoods/Exercise_1_25.lean
 538,EXERCISE,1.26,ideals of a ring,DomainsGivenByNeighbourhoods/Exercise_1_26.lean
 546,EXERCISE,1.27,suprema of bounded sets,DomainsGivenByNeighbourhoods/Exercise_1_27.lean
-568,DEFINITION,2.1,approximable mapping,MappingsBetweenDomains/Definition_2_1.lean
+568,DEFINITION,2.1,approximable mapping,MappingsBetweenDomains/ApproximableMap.lean
 586,PROPOSITION,2.2,elementwise action,MappingsBetweenDomains/Proposition_2_2.lean
 620,EXAMPLE,2.3,parity of leading zeros,MappingsBetweenDomains/Example_2_3.lean
 663,EXAMPLE,2.4,erase a run of ones,MappingsBetweenDomains/Example_2_4.lean

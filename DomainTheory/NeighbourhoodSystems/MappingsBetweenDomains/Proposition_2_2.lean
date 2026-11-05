@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Definition_2_1
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal
 @[expose] public section
