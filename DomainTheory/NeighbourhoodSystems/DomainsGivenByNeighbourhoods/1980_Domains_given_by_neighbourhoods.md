@@ -36,4 +36,6 @@
 - [Countable intersection of ideal elements](1980_Countable_intersection_of_ideal_elements.md) [✓](../1980_REVISION.md)
 - [Directed union of ideal elements](1980_Directed_union_of_ideal_elements.md) [✓](../1980_REVISION.md)
 - [Theorem 1.11 — intersections and directed unions](1980_Theorem_1_11.md) [✓](../1980_REVISION.md)
-- [Lecture I exercises](1980_Lecture_I_exercises.md)
+- [Lecture I exercises](1980_Lecture_I_exercises.md) [✓](../1980_REVISION.md)
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-05) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

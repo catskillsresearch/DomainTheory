@@ -5,7 +5,7 @@
 @import "1980_Neighborhood.mermaid"
 
 - [Introduction](1980_Introduction.md) [✓](1980_REVISION.md)
-- [Domains given by neighbourhoods](DomainsGivenByNeighbourhoods/1980_Domains_given_by_neighbourhoods.md)
+- [Domains given by neighbourhoods](DomainsGivenByNeighbourhoods/1980_Domains_given_by_neighbourhoods.md) [✓](1980_REVISION.md)
 - [Mappings between domains](MappingsBetweenDomains/1980_Mappings_between_domains.md)
 - [Domain constructs](DomainConstructs/1980_Domain_constructs.md)
 - [Fixed points and recursion](FixedPointsAndRecursion/1980_Fixed_points_and_recursion.md)
