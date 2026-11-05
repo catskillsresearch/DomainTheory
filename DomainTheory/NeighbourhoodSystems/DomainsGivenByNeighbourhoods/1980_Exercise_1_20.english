@@ -1,0 +1,39 @@
+**EXERCISE 1.20.** Let $\mathcal{D}$ be any neighbourhood system over a set $\Delta$. Let $\Delta' = \mathcal{D}$ and define
+
+$$
+\mathcal{D}' = \{ \uparrow X \mid X \in \mathcal{D} \},
+$$
+
+where
+
+$$
+\uparrow X = \{ Y \in \mathcal{D} \mid Y \subseteq X \}.
+$$
+
+Show that $\mathcal{D}'$ is a positive neighbourhood system and that $|\mathcal{D}|$ and $|\mathcal{D}'|$ are isomorphic. Note that for $\mathcal{D}'$ finite elements and tokens are in a one-one correspondence.
+
+<!-- formalization -->
+
+**Definition (`upSet`).** For $X\in\mathcal{D}$, write $\uparrow X=\{Y\in\mathcal{D}\mid Y\subseteq X\}$.
+
+**Theorem (`upSet_inter`).** Up-sets commute with intersection: $\uparrow X\cap\uparrow Y=\uparrow(X\cap Y)$.
+
+*Proof.* Expand the definitions. ∎
+
+**Definition (`powerSystem`).** The neighbourhood system $\mathcal{D}'$ whose tokens are the members of $\mathcal{D}$ and whose neighbourhoods are the up-sets $\uparrow X$.
+
+**Definition (`toPower` / `ofPower`).** The mutually inverse translations between ideal elements of $\mathcal{D}$ and of $\mathcal{D}'$.
+
+**Theorem (`isomorphic_powerSystem`).** $|\mathcal{D}|$ and $|\mathcal{D}'|$ are isomorphic as domains.
+
+*Proof.* The order isomorphism `powerIso` identifies approximation with inclusion of up-sets. ∎
+
+**Theorem (`powerSystem_isPositive`).** The system $\mathcal{D}'$ is positive.
+
+*Proof.* Nonempty intersection of up-sets yields an up-set of an intersection of members. ∎
+
+**Theorem (`toPower_principal`).** Principals of $\mathcal{D}$ correspond to principals of $\mathcal{D}'$ under the isomorphism — finite elements match tokens.
+
+**Theorem (`exercise_1_20`).** The power system is positive and domain-isomorphic to the original, with principals corresponding.
+
+*Proof.* Assemble the isomorphism, positivity, and principal correspondence. ∎
