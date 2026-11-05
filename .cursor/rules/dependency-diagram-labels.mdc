@@ -6,7 +6,7 @@ alwaysApply: false
 
 # Dependency diagram labels
 
-When generating or refreshing outline dependency diagrams (especially Graphviz SVGs written beside `.mermaid` files):
+When generating or refreshing outline dependency diagrams (especially Graphviz SVGs; for Domains given by neighbourhoods the `.svg` is the gold copy — there is no sibling `.mermaid`):
 
 - Abbreviate: `Definition` → `Def`, `Example` → `Ex`, `Examples` → `Exs`, `Theorem` → `Thm` (and plurals `Defs` / `Thms` if needed).
 - Soft-wrap labels at about **15 characters** per line (break between words; do not leave a wide single-line example row).

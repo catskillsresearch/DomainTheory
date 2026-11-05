@@ -5,10 +5,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.iUn
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 namespace NeighborhoodSystem
-section
 
 /-- Scott's Theorem 1.11: countable intersections of ideal elements, and directed
 (monotone) countable unions, are again ideal elements — characterized by
@@ -20,8 +18,5 @@ theorem theorem_111 :
       {X : Set α}, (V.iUnion x hmono).mem X ↔ ∃ n, (x n).mem X) :=
   ⟨mem_iInter, mem_iUnion⟩
 
-end
-
 end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems
-end

@@ -23,6 +23,14 @@ OUTLINE_LINK = re.compile(
     r"(?:[ \t]+\[[^\]]*\]\([^)]*\))*"
     r"(?:[ \t]+✓)?[ \t]*$"
 )
+# Domains §1 outline: Graphviz SVG is the gold display copy (no sibling .mermaid).
+NS_DOMAINS_SVG = (
+    DT
+    / "NeighbourhoodSystems"
+    / "DomainsGivenByNeighbourhoods"
+    / "1980_Domains_given_by_neighbourhoods.svg"
+)
+
 DEPRECATED_MERMAID = DT / "1972_Continuous_lattices.mermaid"
 CL1972_SECTION_MERMAIDS = frozenset(
     {
@@ -1389,20 +1397,20 @@ def write_ns_domains_graphviz_svg(
     )
 
 
-def gen_ns_domains_lecture(mermaid: Path, modules: dict[str, Path], old: str) -> str:
-    """Item-level Lean deps for 1980_Domains_given_by_neighbourhoods.mermaid."""
+def gen_ns_domains_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    """Item-level Lean deps for 1980_Domains_given_by_neighbourhoods (SVG gold copy)."""
     header = [
         "%% Each box is one outline note from 1980_Domains_given_by_neighbourhoods.md.",
         "%% Lean modules = that note's @import .lean files (Lecture I exercises = all exercise modules;",
         "%%   Def 1.7/1.8/1.9 also own principal/bot/DomainIso; iTot owns IsTotal).",
         "%% Arrowhead on the importer; label = direct-import count.",
         "%% All cross-note Lean imports, then transitive reduction (keeps reachability).",
-        "%% Display copy: same edges written to sibling .svg via Graphviz (tighter packing).",
+        "%% Display copy: Graphviz SVG (gold); no sibling .mermaid.",
     ]
-    _, old_labels, style = parse_preserve_tail(old)
-    index_md = find_index_md(mermaid)
+    _, old_labels, style = parse_preserve_tail(old if diagram.suffix == ".mermaid" else "")
+    index_md = find_index_md(diagram)
     if index_md is None:
-        raise ValueError(f"no index md for {mermaid}")
+        raise ValueError(f"no index md for {diagram}")
     folder = index_md.parent
 
     boxes: list[tuple[str, str, set[str]]] = []
@@ -1469,7 +1477,13 @@ def gen_ns_domains_lecture(mermaid: Path, modules: dict[str, Path], old: str) ->
         ]
     class_assigns = [f"  class {nid} {_ns_dom_kind_class(nid)}" for nid in order]
     init = [ln for ln in style if INIT_LINE.match(ln.strip())]
-    write_ns_domains_graphviz_svg(mermaid.with_suffix(".svg"), node_labels, edges, order)
+    svg_path = diagram.with_suffix(".svg") if diagram.suffix == ".mermaid" else diagram
+    write_ns_domains_graphviz_svg(svg_path, node_labels, edges, order)
+
+    # SVG is the gold copy: when regenerating from the .svg path, leave file text alone
+    # (Graphviz already rewrote the SVG) so main does not treat XML as Mermaid source.
+    if diagram.suffix == ".svg":
+        return old
 
     return emit_flowchart(
         header,
@@ -1683,7 +1697,10 @@ def classify(mermaid: Path, text: str) -> str:
         return "dtal_sections"
     if mermaid.name == "1980_Neighborhood.mermaid":
         return "ns_sections"
-    if mermaid.name == "1980_Domains_given_by_neighbourhoods.mermaid":
+    if mermaid.name in (
+        "1980_Domains_given_by_neighbourhoods.mermaid",
+        "1980_Domains_given_by_neighbourhoods.svg",
+    ):
         return "ns_domains_lecture"
     if index_md_is_outline_barrel(mermaid):
         return "note_outline"
@@ -2137,6 +2154,9 @@ def main() -> None:
         top = ROOT / "DomainTheory.mermaid"
         if top.is_file():
             paths.append(top)
+        # Domains §1: SVG gold copy (no .mermaid sibling).
+        if NS_DOMAINS_SVG.is_file():
+            paths.append(NS_DOMAINS_SVG.resolve())
 
     changed = 0
     unknown: list[Path] = []
