@@ -3,20 +3,27 @@ EXAMPLE 1.3. Let $\Delta = \{0, 1, 2\}$ and let $\mathcal{D} = \{\{0, 1, 2\}, \{
 In pictures we have:
 
 ```mermaid
+%%{init: {
+  "themeCSS": ".cluster rect { rx: 80px; ry: 80px; }",
+  "flowchart": { "htmlLabels": true }
+}}%%
 flowchart LR
   subgraph outer[" "]
     direction LR
-    A["0"]
+    A["<span style='font-size:1.6em;line-height:1'>●</span><span style='font-size:1.15em'>0</span>"]
     subgraph mid[" "]
       direction LR
-      B["1"]
-      subgraph inn[" "]
-        C["2"]
-      end
-      B ~~~ inn
+      B["<span style='font-size:1.6em;line-height:1'>●</span><span style='font-size:1.15em'>1</span>"]
+      C(("<span style='font-size:1.6em;line-height:1'>●</span><span style='font-size:1.15em'>2</span>"))
+      B ~~~ C
     end
     A ~~~ mid
   end
+  style outer fill:none,stroke:#222,stroke-width:1.5px
+  style mid fill:none,stroke:#222,stroke-width:1.5px
+  style A fill:none,stroke:none
+  style B fill:none,stroke:none
+  style C fill:none,stroke:#222,stroke-width:1.5px
 ```
 
 <!-- page 10 -->

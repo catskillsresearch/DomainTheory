@@ -1,3 +1,6 @@
+
+We remark that by convention $\Delta$ corresponds to the intersection of an empty sequence of neighbourhoods.
+
 The finite intersection of a sequence of neighbourhoods $X_0,\ldots,X_{n-1}$ is defined by recursion on $n$: the empty intersection is the master set $\Delta$, and each successor step intersects with the next neighbourhood.
 
 Of course, from Definition 1.1(ii), we can extend the intersection property to any finite sequence. Consequently, we can say $X_0, \dots, X_{n-1}$ is consistent in $\mathcal{D}$ iff

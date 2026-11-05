@@ -4,9 +4,6 @@ DEFINITION 1.1. A family $\mathcal{D}$ of subsets of a given set $\Delta$ is cal
 
 (ii) whenever $X$, $Y$, $Z \in \mathcal{D}$ and $Z \subseteq X \cap Y$, then $X \cap Y \in \mathcal{D}$. $\square$
 
-<!-- page 9 -->
-
-We remark that by convention $\Delta$ corresponds to the intersection of an empty sequence of neighbourhoods; in particular, see Factoid 1.1.
 
 <!-- formalization -->
 

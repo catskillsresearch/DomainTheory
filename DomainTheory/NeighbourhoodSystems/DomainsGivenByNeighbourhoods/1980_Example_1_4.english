@@ -2,43 +2,47 @@ EXAMPLE 1.4. Let $\Delta = \{\Lambda, 0, 1, 00, 01, 10, 11\}$ and let $\mathcal{
 
 Or more understandably in pictures:
 
-```mermaid
-flowchart TB
-  subgraph outer[" "]
-    direction TB
-    subgraph row1[" "]
-      direction LR
-      a["00"]
-      b["01"]
-      c["10"]
-      d["11"]
-      a ~~~ b ~~~ c ~~~ d
-    end
-    subgraph row2[" "]
-      direction LR
-      L["0&nbsp;&nbsp;00&nbsp;&nbsp;01"]
-      R["1&nbsp;&nbsp;10&nbsp;&nbsp;11"]
-      L ~~~ R
-    end
-    subgraph row3[" "]
-      direction LR
-      z["0"]
-      o["1"]
-      z ~~~ o
-    end
-    lam["Λ"]
-    row1 ~~~ row2
-    row2 ~~~ row3
-    row3 ~~~ lam
-  end
-  style row1 fill:none,stroke:none
-  style row2 fill:none,stroke:none
-  style row3 fill:none,stroke:none
-```
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 240" width="440" height="240" role="img" aria-label="Binary tree of tokens with neighbourhood U-curves">
+  <g fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- leaf neighbourhood cups -->
+    <path d="M 42 16 L 42 52 Q 72 72 102 52 L 102 16"/>
+    <path d="M 118 16 L 118 52 Q 148 72 178 52 L 178 16"/>
+    <path d="M 262 16 L 262 52 Q 292 72 322 52 L 322 16"/>
+    <path d="M 338 16 L 338 52 Q 368 72 398 52 L 398 16"/>
+    <!-- branch neighbourhood cups -->
+    <path d="M 34 10 L 34 128 Q 110 162 186 128 L 186 10"/>
+    <path d="M 254 10 L 254 128 Q 330 162 406 128 L 406 10"/>
+    <!-- master cup -->
+    <path d="M 22 6 L 22 198 Q 220 238 418 198 L 418 6"/>
+    <!-- tree edges -->
+    <path d="M 62 46 L 110 108"/>
+    <path d="M 148 46 L 110 108"/>
+    <path d="M 292 46 L 330 108"/>
+    <path d="M 378 46 L 330 108"/>
+    <path d="M 110 118 L 220 178"/>
+    <path d="M 330 118 L 220 178"/>
+  </g>
+  <g fill="#fff" stroke="#111" stroke-width="1.4">
+    <circle cx="62" cy="38" r="7"/>
+    <circle cx="148" cy="38" r="7"/>
+    <circle cx="292" cy="38" r="7"/>
+    <circle cx="378" cy="38" r="7"/>
+    <circle cx="110" cy="115" r="7"/>
+    <circle cx="330" cy="115" r="7"/>
+    <circle cx="220" cy="185" r="7"/>
+  </g>
+  <g fill="#111" font-family="serif" font-size="15">
+    <text x="74" y="43">00</text>
+    <text x="160" y="43">01</text>
+    <text x="304" y="43">10</text>
+    <text x="390" y="43">11</text>
+    <text x="122" y="120">0</text>
+    <text x="342" y="120">1</text>
+    <text x="232" y="190">Λ</text>
+  </g>
+</svg>
 
 The tokens are finite sequences of 0's and 1's (up to length 2) with $\Lambda$ the empty sequence; they form — in the picture — the binary tree with the sequences as the nodes. The neighbourhoods are the subtrees of all nodes above a given node. Obviously this can be generalized to sequences of any length (and to trees less regular than the binary tree). The total elements of the example correspond to the top nodes 00, 01, 10, 11 and the lower nodes to the partial elements. When we are not at a top node we have only partially determined a sequence, and the branching indicates that we have some choice as to how the sequence can be extended. $\square$
-
-It should be noted that, in these three examples, the reason that we have a neighbourhood system is a simple consequence of a
 
 <!-- formalization -->
 

@@ -3,13 +3,18 @@ EXAMPLE 1.2. Let $\Delta = \{0, 1\}$ and let $\mathcal{D} = \{\{0, 1\}, \{0\}, \
 In pictures we have:
 
 ```mermaid
+%%{init: {
+  "themeCSS": ".cluster rect { rx: 80px; ry: 80px; }",
+  "flowchart": { "htmlLabels": true }
+}}%%
 flowchart LR
   subgraph outer[" "]
     direction LR
-    Z["0"]
-    O["1"]
+    Z(("<span style='font-size:1.6em;line-height:1'>●</span><span style='font-size:1.15em'>0</span>"))
+    O(("<span style='font-size:1.6em;line-height:1'>●</span><span style='font-size:1.15em'>1</span>"))
     Z ~~~ O
   end
+  style outer fill:none,stroke:#222,stroke-width:1.5px
 ```
 
 The intention is that 0 and 1 can be completely specified and that they can be identified with the total elements. As we shall see, there is only one partial element: either we give no information (the neighbourhood $\{0, 1\}$), or we decide between 0 and 1 (by giving $\{0\}$ or $\{1\}$). $\square$

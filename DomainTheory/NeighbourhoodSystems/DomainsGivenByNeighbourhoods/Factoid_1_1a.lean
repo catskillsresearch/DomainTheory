@@ -4,11 +4,5 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.int
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
-namespace NeighborhoodSystem
-
-/-- Scott Factoid 1.1a. -/
-alias factoid_1_1_a := interUpTo.zero
-
-end NeighborhoodSystem
-end DomainTheory.NeighbourhoodSystems
+alias DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.factoid_1_1_a :=
+  DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.interUpTo.zero
