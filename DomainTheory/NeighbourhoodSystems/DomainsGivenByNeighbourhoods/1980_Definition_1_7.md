@@ -1,10 +1,9 @@
 # Definition 1.7
 
-DEFINITION 1.7. For $X \in \mathcal{D}$, the *principal filter* determined by $X$ is defined by:
+@import "1980_Definition_1_7.english" {code_block=false}
 
-$$
-\uparrow X = \{ Y \in \mathcal{D} \mid X \subseteq Y \}.
-$$
+**[principal.lean](principal.lean)**
 
-The principal filters form what we shall call the *finite elements* of the domain $|\mathcal{D}|$. $\square$
+@import "principal.lean"
 
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-05) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

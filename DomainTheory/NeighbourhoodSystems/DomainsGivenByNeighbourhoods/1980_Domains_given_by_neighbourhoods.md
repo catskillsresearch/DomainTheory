@@ -17,7 +17,7 @@
 - [Consistent iff nonempty](1980_Factoid_1_5a.md) [✓](../1980_REVISION.md)
 - [Equivalent sequences with same limit](1980_Factoid_1_5b.md) [✓](../1980_REVISION.md)
 - [Definition 1.6 — ideal elements](1980_Definition_1_6.md) [✓](../1980_REVISION.md)
-- [Definition 1.7 — principal filter](1980_Definition_1_7.md)
+- [Definition 1.7 — principal filter](1980_Definition_1_7.md) [✓](../1980_REVISION.md)
 - [Factoid 1.7 — principals are one-one; inclusion-reversing principals; union of principal filters](1980_Factoid_1_7.md)
 - [Definition 1.8 — approximation and totality](1980_Definition_1_8.md)
 - [Factoid 1.8 — bottom element; bottom is least; finite filters are principal; prefix order; union of finite approximations](1980_Factoid_1_8.md)
