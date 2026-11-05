@@ -194,14 +194,9 @@ theorem not_isomorphic : ¬ (flat ≅ᴰ stem) := by
   exact flat_no_three_chain
     ⟨e.symm a, e.symm b, e.symm c, e.symm.lt_iff_lt.mpr hab, e.symm.lt_iff_lt.mpr hbc⟩
 
-section
-set_option linter.unusedVariables false
+theorem exercise_1_15 : ¬ (flat ≅ᴰ stem) :=
+  not_isomorphic
 
-theorem example_115 : Not
-  (@DomainTheory.NeighbourhoodSystems.Isomorphic Nat Nat DomainTheory.NeighbourhoodSystems.Exercise115.flat
-    DomainTheory.NeighbourhoodSystems.Exercise115.stem) :=
-  DomainTheory.NeighbourhoodSystems.Exercise115.not_isomorphic
-end
 end
 
 end DomainTheory.NeighbourhoodSystems.Exercise115

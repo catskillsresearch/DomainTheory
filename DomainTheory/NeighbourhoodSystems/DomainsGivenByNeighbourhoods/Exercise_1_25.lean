@@ -169,79 +169,17 @@ theorem topElement_not_principal_of_noMax (hnomax : ∀ a : Δ, ∃ b, a < b) (a
     rw [← h]; exact Ici_mem b
   have hsub : Set.Ici a ⊆ Set.Ici b := hmem.2
   exact absurd (Set.Ici_subset_Ici.mp hsub) (not_le.mpr hab)
+
+theorem exercise_1_25 :
+    (finalSegmentSystem Δ).IsTotal topElement ∧
+      (∀ (_hnomax : ∀ a : Δ, ∃ b, a < b) (a : Δ),
+        topElement ≠ (finalSegmentSystem Δ).principal (Ici_mem a)) :=
+  ⟨topElement_isTotal, topElement_not_principal_of_noMax⟩
 end
 end
 
 end FinalSegment
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.FinalSegment
-section
-
-set_option linter.unusedVariables false
-
-theorem example_125.{u_1} : And
-  (∀ {Δ : Type u_1} [inst : LinearOrder Δ] [inst_1 : Nonempty Δ],
-    @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsTotal Δ
-      (@DomainTheory.NeighbourhoodSystems.FinalSegment.finalSegmentSystem Δ inst inst_1)
-      (@DomainTheory.NeighbourhoodSystems.FinalSegment.topElement Δ inst inst_1))
-  (∀ {Δ : Type u_1} [inst : LinearOrder Δ] [inst_1 : Nonempty Δ],
-    (∀ (a : Δ),
-        ∃ (b : Δ),
-          @LT.lt Δ
-            (@Preorder.toLT Δ
-              (@PartialOrder.toPreorder Δ
-                (@SemilatticeInf.toPartialOrder Δ
-                  (@Lattice.toSemilatticeInf Δ
-                    (@DistribLattice.toLattice Δ (@instDistribLatticeOfLinearOrder Δ inst))))))
-            a b) →
-      ∀ (a : Δ),
-        @Ne
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element Δ
-            (@DomainTheory.NeighbourhoodSystems.FinalSegment.finalSegmentSystem Δ inst inst_1))
-          (@DomainTheory.NeighbourhoodSystems.FinalSegment.topElement Δ inst inst_1)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.principal Δ
-            (@DomainTheory.NeighbourhoodSystems.FinalSegment.finalSegmentSystem Δ inst inst_1)
-            (@Set.Ici Δ
-              (@PartialOrder.toPreorder Δ
-                (@SemilatticeInf.toPartialOrder Δ
-                  (@Lattice.toSemilatticeInf Δ
-                    (@DistribLattice.toLattice Δ (@instDistribLatticeOfLinearOrder Δ inst)))))
-              a)
-            (@DomainTheory.NeighbourhoodSystems.FinalSegment.Ici_mem Δ inst inst_1 a))) :=
-  @And.intro
-  (∀ {Δ : Type u_1} [inst : LinearOrder Δ] [inst_1 : Nonempty Δ],
-    @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsTotal Δ
-      (@DomainTheory.NeighbourhoodSystems.FinalSegment.finalSegmentSystem Δ inst inst_1)
-      (@DomainTheory.NeighbourhoodSystems.FinalSegment.topElement Δ inst inst_1))
-  (∀ {Δ : Type u_1} [inst : LinearOrder Δ] [inst_1 : Nonempty Δ],
-    (∀ (a : Δ),
-        ∃ (b : Δ),
-          @LT.lt Δ
-            (@Preorder.toLT Δ
-              (@PartialOrder.toPreorder Δ
-                (@SemilatticeInf.toPartialOrder Δ
-                  (@Lattice.toSemilatticeInf Δ
-                    (@DistribLattice.toLattice Δ (@instDistribLatticeOfLinearOrder Δ inst))))))
-            a b) →
-      ∀ (a : Δ),
-        @Ne
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element Δ
-            (@DomainTheory.NeighbourhoodSystems.FinalSegment.finalSegmentSystem Δ inst inst_1))
-          (@DomainTheory.NeighbourhoodSystems.FinalSegment.topElement Δ inst inst_1)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.principal Δ
-            (@DomainTheory.NeighbourhoodSystems.FinalSegment.finalSegmentSystem Δ inst inst_1)
-            (@Set.Ici Δ
-              (@PartialOrder.toPreorder Δ
-                (@SemilatticeInf.toPartialOrder Δ
-                  (@Lattice.toSemilatticeInf Δ
-                    (@DistribLattice.toLattice Δ (@instDistribLatticeOfLinearOrder Δ inst)))))
-              a)
-            (@DomainTheory.NeighbourhoodSystems.FinalSegment.Ici_mem Δ inst inst_1 a)))
-  @DomainTheory.NeighbourhoodSystems.FinalSegment.topElement_isTotal
-  @DomainTheory.NeighbourhoodSystems.FinalSegment.topElement_not_principal_of_noMax
-end
-
-end DomainTheory.NeighbourhoodSystems.FinalSegment
 namespace DomainTheory.NeighbourhoodSystems
 namespace FinalSegment
 section

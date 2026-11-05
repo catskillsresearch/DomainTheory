@@ -38,26 +38,11 @@ theorem exists_total_ge (x : V.Element) : ∃ t, V.IsTotal t ∧ x ≤ t := by
         ⟨V.chainUnion c ⟨y, hy⟩ hchain, fun z hz => V.le_chainUnion c ⟨y, hy⟩ hchain hz⟩)
       x le_rfl
   exact ⟨m, fun y hy => hmax hy, hxm⟩
+
+theorem exercise_1_24 (x : V.Element) : ∃ t, V.IsTotal t ∧ x ≤ t :=
+  V.exists_total_ge x
 end
 
 end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
-section
-
-set_option linter.unusedVariables false
-
-theorem example_124.{u_1} : ∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
-  (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-  ∃ (t : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-    And (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsTotal α V t)
-      (@LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-        x t) :=
-  @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.exists_total_ge
-end
-
-end DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
 end

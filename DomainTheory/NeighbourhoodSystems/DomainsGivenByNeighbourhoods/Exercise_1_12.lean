@@ -122,4 +122,9 @@ theorem isTotal_iff_top (x : neighborhoodSystem.Element) :
     exact le_antisymm (le_top x) (h top (le_top x))
   · rintro rfl; exact top_isTotal
 
+theorem exercise_1_12 :
+    (NestedOrDisjoint mem ∧
+      ∀ x : neighborhoodSystem.Element, neighborhoodSystem.IsTotal x ↔ x = top) :=
+  ⟨nestedOrDisjoint, isTotal_iff_top⟩
+
 end DomainTheory.NeighbourhoodSystems.Exercise112

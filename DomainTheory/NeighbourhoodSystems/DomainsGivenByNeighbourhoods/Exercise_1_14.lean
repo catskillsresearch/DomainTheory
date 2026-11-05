@@ -66,18 +66,10 @@ theorem singleton_isTotal (n : ℕ) :
   rw [hempty] at hi
   exact empty_not_mem (y.sub hi)
 
-section
-set_option linter.unusedVariables false
+theorem exercise_1_14 : ∀ n : ℕ,
+    neighborhoodSystem.IsTotal (neighborhoodSystem.principal (mem_singleton n)) :=
+  singleton_isTotal
 
-theorem example_114 : ∀ (n : Nat),
-  @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsTotal Nat
-    DomainTheory.NeighbourhoodSystems.Exercise114.neighborhoodSystem
-    (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.principal Nat
-      DomainTheory.NeighbourhoodSystems.Exercise114.neighborhoodSystem
-      (@Singleton.singleton Nat (Set Nat) (@Set.instSingletonSet Nat) n)
-      (DomainTheory.NeighbourhoodSystems.Exercise114.mem_singleton n)) :=
-  DomainTheory.NeighbourhoodSystems.Exercise114.singleton_isTotal
-end
 end
 
 end DomainTheory.NeighbourhoodSystems.Exercise114

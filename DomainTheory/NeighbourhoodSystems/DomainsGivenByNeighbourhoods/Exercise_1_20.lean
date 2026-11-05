@@ -148,84 +148,17 @@ theorem toPower_principal {X : Set α} (hX : V.mem X) :
     exact ⟨⟨W, hWmem, rfl⟩, (V.upSet_subset_iff hX).mpr hXW⟩
   · rintro ⟨⟨W, hWmem, rfl⟩, hsub⟩
     exact ⟨W, ⟨hWmem, (V.upSet_subset_iff hX).mp hsub⟩, rfl⟩
+
+theorem exercise_1_20 :
+    (V ≅ᴰ V.powerSystem) ∧
+      V.powerSystem.IsPositive ∧
+        ∀ {X : Set α} (hX : V.mem X),
+          V.toPower (V.principal hX) = V.powerSystem.principal ⟨X, hX, rfl⟩ :=
+  ⟨V.isomorphic_powerSystem, V.powerSystem_isPositive, V.toPower_principal⟩
 end
 
 end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
-section
-
-set_option linter.unusedVariables false
-
-theorem example_120.{u_1} : And
-  (And
-    (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-      @DomainTheory.NeighbourhoodSystems.Isomorphic α (Set α) V
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.powerSystem α V))
-    (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsPositive (Set α)
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.powerSystem α V)))
-  (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α) {X : Set α}
-    (hX : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V X),
-    @Eq
-      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (Set α)
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.powerSystem α V))
-      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.toPower α V
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.principal α V X hX))
-      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.principal (Set α)
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.powerSystem α V)
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.upSet α V X)
-        (@Exists.intro (Set α)
-          (fun (X_1 : Set α) =>
-            And (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V X_1)
-              (@Eq (Set (Set α)) (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.upSet α V X)
-                (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.upSet α V X_1)))
-          X
-          (@And.intro (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V X)
-            (@Eq (Set (Set α)) (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.upSet α V X)
-              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.upSet α V X))
-            hX (@rfl (Set (Set α)) (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.upSet α V X)))))) :=
-  @And.intro
-  (And
-    (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-      @DomainTheory.NeighbourhoodSystems.Isomorphic α (Set α) V
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.powerSystem α V))
-    (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsPositive (Set α)
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.powerSystem α V)))
-  (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α) {X : Set α}
-    (hX : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V X),
-    @Eq
-      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (Set α)
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.powerSystem α V))
-      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.toPower α V
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.principal α V X hX))
-      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.principal (Set α)
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.powerSystem α V)
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.upSet α V X)
-        (@Exists.intro (Set α)
-          (fun (X_1 : Set α) =>
-            And (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V X_1)
-              (@Eq (Set (Set α)) (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.upSet α V X)
-                (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.upSet α V X_1)))
-          X
-          (@And.intro (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V X)
-            (@Eq (Set (Set α)) (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.upSet α V X)
-              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.upSet α V X))
-            hX (@rfl (Set (Set α)) (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.upSet α V X))))))
-  (@And.intro
-    (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-      @DomainTheory.NeighbourhoodSystems.Isomorphic α (Set α) V
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.powerSystem α V))
-    (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsPositive (Set α)
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.powerSystem α V))
-    @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.isomorphic_powerSystem
-    @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.powerSystem_isPositive)
-  @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.toPower_principal
-end
-
-end DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
 namespace DomainTheory.NeighbourhoodSystems
 namespace NeighborhoodSystem
 section

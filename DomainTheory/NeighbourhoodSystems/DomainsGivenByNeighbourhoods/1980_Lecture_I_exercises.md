@@ -2,7 +2,7 @@
 
 @import "1980_Lecture_I_exercises.mermaid"
 
-- [Exercise 1.12 — final segments of integers](1980_Exercise_1_12.md)
+- [Exercise 1.12 — final segments of integers](1980_Exercise_1_12.md) [✓](../1980_REVISION.md)
 - [Exercise 1.13 — infinite binary tree](1980_Exercise_1_13.md)
 - [Exercise 1.14 — finite nonempty subsets](1980_Exercise_1_14.md)
 - [Exercise 1.15 — finite elements without chains](1980_Exercise_1_15.md)

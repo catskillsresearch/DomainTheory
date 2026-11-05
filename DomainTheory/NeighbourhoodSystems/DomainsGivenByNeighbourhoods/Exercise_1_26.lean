@@ -186,25 +186,12 @@ theorem IFamily_eq_of_span_eq {F₁ F₂ : Finset A}
   apply Set.Subset.antisymm
   · exact (IFamily_subset_iff F₁ F₂).mpr (by rw [h]; exact Ideal.subset_span)
   · exact (IFamily_subset_iff F₂ F₁).mpr (by rw [← h]; exact Ideal.subset_span)
+
+theorem exercise_1_26 {F₁ F₂ : Finset A}
+    (h : Ideal.span (↑F₁ : Set A) = Ideal.span (↑F₂ : Set A)) : IFamily F₁ = IFamily F₂ :=
+  IFamily_eq_of_span_eq h
 end
 
 end Ring
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.Ring
-section
-
-set_option linter.unusedVariables false
-
-theorem example_126.{u_1} : ∀ {A : Type u_1} [inst : CommRing A] {F₁ F₂ : Finset A},
-  @Eq (@Ideal A (@CommSemiring.toSemiring A (@CommRing.toCommSemiring A inst)))
-      (@Ideal.span A (@CommSemiring.toSemiring A (@CommRing.toCommSemiring A inst))
-        (@SetLike.coe (Finset A) A (@Finset.instSetLike A) F₁))
-      (@Ideal.span A (@CommSemiring.toSemiring A (@CommRing.toCommSemiring A inst))
-        (@SetLike.coe (Finset A) A (@Finset.instSetLike A) F₂)) →
-    @Eq (Set (Finset A)) (@DomainTheory.NeighbourhoodSystems.Ring.IFamily A inst F₁)
-      (@DomainTheory.NeighbourhoodSystems.Ring.IFamily A inst F₂) :=
-  @DomainTheory.NeighbourhoodSystems.Ring.IFamily_eq_of_span_eq
-end
-
-end DomainTheory.NeighbourhoodSystems.Ring
 end

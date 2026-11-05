@@ -44,19 +44,21 @@ theorem le_iff_isOpen_imp (x y : V.Element) :
   · intro h
     exact fun X hX => h (V.basicOpen X) (V.isOpen_basicOpen X) hX
 
-example :
+theorem specializes_iff_le (x y : V.Element) : y ⤳ x ↔ x ≤ y := by
+  rw [specializes_iff_forall_open]
+  exact (V.le_iff_isOpen_imp x y).symm
+
+theorem exercise_1_22 :
     (∀ {U : Set V.Element}, IsOpen U → ∀ ⦃x y : V.Element⦄, x ∈ U → x ≤ y → y ∈ U) ∧
       (∀ X : Set α, IsOpen (V.basicOpen X)) ∧
       (∀ U : Set V.Element,
         IsOpen U ↔
           (∀ ⦃x y : V.Element⦄, x ∈ U → x ≤ y → y ∈ U) ∧
             (∀ x ∈ U, ∃ X, x.mem X ∧ V.basicOpen X ⊆ U)) ∧
-      (∀ x y : V.Element, x ≤ y ↔ ∀ U : Set V.Element, IsOpen U → x ∈ U → y ∈ U) :=
-  ⟨V.isOpen_isUpperSet, V.isOpen_basicOpen, V.isOpen_iff_upper_basic, V.le_iff_isOpen_imp⟩
-
-theorem specializes_iff_le (x y : V.Element) : y ⤳ x ↔ x ≤ y := by
-  rw [specializes_iff_forall_open]
-  exact (V.le_iff_isOpen_imp x y).symm
+      (∀ x y : V.Element, x ≤ y ↔ ∀ U : Set V.Element, IsOpen U → x ∈ U → y ∈ U) ∧
+      (∀ x y : V.Element, y ⤳ x ↔ x ≤ y) :=
+  ⟨V.isOpen_isUpperSet, V.isOpen_basicOpen, V.isOpen_iff_upper_basic, V.le_iff_isOpen_imp,
+    V.specializes_iff_le⟩
 end
 
 end NeighborhoodSystem

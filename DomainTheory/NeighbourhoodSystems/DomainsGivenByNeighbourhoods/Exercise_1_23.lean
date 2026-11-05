@@ -195,22 +195,17 @@ theorem filters_sequence_determined (x : V.Element) :
         · simp only [ite_eq_right h]; exact x.master_mem
       exact x.up_mem hsx hZmem hn
 
+/-- Exercise 1.23: the greedy neighbourhoods are finitely consistent, the greedy
+element is total when the enumeration is surjective, and every filter is sequence-determined. -/
+theorem exercise_1_23 :
+    (∀ n, V.Consistent (Y V enum) n) ∧
+      V.IsTotal (greedyElement V enum henum) ∧
+      ∀ x : V.Element,
+        ∃ s : ℕ → Set α, (∀ n, V.mem (s n)) ∧ ∀ Z, x.mem Z ↔ (V.mem Z ∧ ∃ n, s n ⊆ Z) :=
+  ⟨Y_prefix_consistent V enum henum, greedyElement_isTotal V enum henum hsurj,
+    filters_sequence_determined V enum henum hsurj⟩
+
 end Exercise123
 
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.Exercise123
-section
-
-set_option linter.unusedVariables false
-
-theorem example_123.{u_1} : ∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α) (enum : Nat → Set α)
-  [inst : @DecidablePred (Set α) (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V)],
-  (∀ (n : Nat), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V (enum n)) →
-    ∀ (n : Nat),
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Consistent α V
-        (@DomainTheory.NeighbourhoodSystems.Exercise123.Y α V enum inst) n :=
-  @DomainTheory.NeighbourhoodSystems.Exercise123.Y_prefix_consistent
-end
-
-end DomainTheory.NeighbourhoodSystems.Exercise123
 end

@@ -69,165 +69,19 @@ theorem tokenSystem_isPositive : V.tokenSystem.IsPositive := by
 
 theorem tokenSystem_toToken_bijective : Function.Bijective V.toToken :=
   V.tokenIso.bijective
+
+theorem exercise_1_21 :
+    (∀ (X : ℕ → Set α) {n : ℕ}, (∀ i, i < n → V.mem (X i)) →
+        (V.Consistent X n ↔ (V.bracket (V.interUpTo X n)).Nonempty)) ∧
+      (∀ (X : ℕ → Set α) {n : ℕ}, (∀ i, i < n → V.mem (X i)) →
+        (V.Consistent X n ↔ ∃ x, ∀ i, i < n → x ∈ V.bracket (X i))) ∧
+      V.tokenSystem.IsComplete ∧
+      V.tokenSystem.IsPositive ∧
+      Function.Bijective V.toToken :=
+  ⟨V.consistent_iff_bracket_interUpTo_nonempty, V.consistent_iff_iInter_bracket_nonempty,
+    V.tokenSystem_complete, V.tokenSystem_isPositive, V.tokenSystem_toToken_bijective⟩
 end
 
 end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
-section
-
-set_option linter.unusedVariables false
-
-theorem example_121.{u_1} : And
-  (And
-    (And
-      (And
-        (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α) (X : Nat → Set α) {n : Nat},
-          (∀ (i : Nat),
-              @LT.lt Nat instLTNat i n → @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V (X i)) →
-            Iff (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Consistent α V X n)
-              (@Set.Nonempty (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bracket α V
-                  (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.interUpTo α V X n))))
-        (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α) (X : Nat → Set α) {n : Nat},
-          (∀ (i : Nat),
-              @LT.lt Nat instLTNat i n → @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V (X i)) →
-            Iff (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Consistent α V X n)
-              (∃ (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-                ∀ (i : Nat),
-                  @LT.lt Nat instLTNat i n →
-                    @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                      (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                      (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bracket α V (X i)) x)))
-      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsComplete
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.tokenSystem α V)))
-    (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsPositive
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.tokenSystem α V)))
-  (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-    @Function.Bijective (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.tokenSystem α V))
-      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.toToken α V)) :=
-  @And.intro
-  (And
-    (And
-      (And
-        (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α) (X : Nat → Set α) {n : Nat},
-          (∀ (i : Nat),
-              @LT.lt Nat instLTNat i n → @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V (X i)) →
-            Iff (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Consistent α V X n)
-              (@Set.Nonempty (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bracket α V
-                  (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.interUpTo α V X n))))
-        (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α) (X : Nat → Set α) {n : Nat},
-          (∀ (i : Nat),
-              @LT.lt Nat instLTNat i n → @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V (X i)) →
-            Iff (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Consistent α V X n)
-              (∃ (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-                ∀ (i : Nat),
-                  @LT.lt Nat instLTNat i n →
-                    @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                      (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                      (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bracket α V (X i)) x)))
-      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsComplete
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.tokenSystem α V)))
-    (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsPositive
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.tokenSystem α V)))
-  (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-    @Function.Bijective (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.tokenSystem α V))
-      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.toToken α V))
-  (@And.intro
-    (And
-      (And
-        (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α) (X : Nat → Set α) {n : Nat},
-          (∀ (i : Nat),
-              @LT.lt Nat instLTNat i n → @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V (X i)) →
-            Iff (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Consistent α V X n)
-              (@Set.Nonempty (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bracket α V
-                  (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.interUpTo α V X n))))
-        (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α) (X : Nat → Set α) {n : Nat},
-          (∀ (i : Nat),
-              @LT.lt Nat instLTNat i n → @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V (X i)) →
-            Iff (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Consistent α V X n)
-              (∃ (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-                ∀ (i : Nat),
-                  @LT.lt Nat instLTNat i n →
-                    @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                      (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                      (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bracket α V (X i)) x)))
-      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsComplete
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.tokenSystem α V)))
-    (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsPositive
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.tokenSystem α V))
-    (@And.intro
-      (And
-        (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α) (X : Nat → Set α) {n : Nat},
-          (∀ (i : Nat),
-              @LT.lt Nat instLTNat i n → @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V (X i)) →
-            Iff (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Consistent α V X n)
-              (@Set.Nonempty (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bracket α V
-                  (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.interUpTo α V X n))))
-        (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α) (X : Nat → Set α) {n : Nat},
-          (∀ (i : Nat),
-              @LT.lt Nat instLTNat i n → @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V (X i)) →
-            Iff (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Consistent α V X n)
-              (∃ (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-                ∀ (i : Nat),
-                  @LT.lt Nat instLTNat i n →
-                    @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                      (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                      (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bracket α V (X i)) x)))
-      (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsComplete
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.tokenSystem α V))
-      (@And.intro
-        (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α) (X : Nat → Set α) {n : Nat},
-          (∀ (i : Nat),
-              @LT.lt Nat instLTNat i n → @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V (X i)) →
-            Iff (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Consistent α V X n)
-              (@Set.Nonempty (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bracket α V
-                  (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.interUpTo α V X n))))
-        (∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α) (X : Nat → Set α) {n : Nat},
-          (∀ (i : Nat),
-              @LT.lt Nat instLTNat i n → @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V (X i)) →
-            Iff (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Consistent α V X n)
-              (∃ (x : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-                ∀ (i : Nat),
-                  @LT.lt Nat instLTNat i n →
-                    @Membership.mem (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                      (Set (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                      (@Set.instMembership (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V))
-                      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bracket α V (X i)) x))
-        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.consistent_iff_bracket_interUpTo_nonempty
-        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.consistent_iff_iInter_bracket_nonempty)
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.tokenSystem_complete)
-    @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.tokenSystem_isPositive)
-  @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.tokenSystem_toToken_bijective
-end
-
-end DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
 end

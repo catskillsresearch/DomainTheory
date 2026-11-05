@@ -306,34 +306,14 @@ theorem not_isPositive : ¬ notPositiveSystem.IsPositive := by
   rw [a_inter_b] at hab
   exact one_not_mem (hab.mpr ⟨1, rfl⟩)
 
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-set_option linter.unusedVariables false
-
-theorem example_119 : Not
-  (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsPositive DomainTheory.NeighbourhoodSystems.Exercise119.Tok
-    DomainTheory.NeighbourhoodSystems.Exercise119.notPositiveSystem) :=
-  DomainTheory.NeighbourhoodSystems.Exercise119.not_isPositive
-
-end DomainTheory.NeighbourhoodSystems.Exercise119
-end
-
-section
-
-set_option linter.unusedSimpArgs false
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise119
-
-open DomainTheory.NeighbourhoodSystems
-
 theorem positiveExample_isPositive : positiveExample.IsPositive := by
   intro X Y _ _
   exact Iff.rfl
+
+/-- Exercise 1.19: a counterexample that is not positive, and a positive example. -/
+theorem exercise_1_19 :
+    ¬ notPositiveSystem.IsPositive ∧ positiveExample.IsPositive :=
+  ⟨not_isPositive, positiveExample_isPositive⟩
 
 end DomainTheory.NeighbourhoodSystems.Exercise119
 end

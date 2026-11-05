@@ -82,46 +82,15 @@ theorem filterAt_injective {s t : ℝ} (h : filterAt s = filterAt t) : s = t := 
     have hsmem : (filterAt s).mem (Set.Ioo (a : ℝ) (b : ℝ)) := ⟨hint, ha2, hb⟩
     rw [h] at hsmem
     exact absurd hsmem.2.1 (not_lt.mpr ha1.le)
+
+theorem exercise_1_17 :
+    (∀ {s t : ℝ}, filterAt s = filterAt t → s = t) ∧
+      (∀ {X Y : Set ℝ}, ratIntervalMem X → ratIntervalMem Y → (X ∩ Y).Nonempty →
+        ratIntervalMem (X ∩ Y)) :=
+  ⟨filterAt_injective, inter_mem'⟩
+
 end
 
 end RatInterval
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.RatInterval
-section
-
-set_option linter.unusedVariables false
-
-theorem example_117 : And
-  (∀ {s t : Real},
-    @Eq
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element Real
-          DomainTheory.NeighbourhoodSystems.RatInterval.ratIntervalSystem)
-        (DomainTheory.NeighbourhoodSystems.RatInterval.filterAt s)
-        (DomainTheory.NeighbourhoodSystems.RatInterval.filterAt t) →
-      @Eq Real s t)
-  (∀ {X Y : Set Real},
-    DomainTheory.NeighbourhoodSystems.RatInterval.ratIntervalMem X →
-      DomainTheory.NeighbourhoodSystems.RatInterval.ratIntervalMem Y →
-        @Set.Nonempty Real (@Inter.inter (Set Real) (@Set.instInter Real) X Y) →
-          DomainTheory.NeighbourhoodSystems.RatInterval.ratIntervalMem
-            (@Inter.inter (Set Real) (@Set.instInter Real) X Y)) :=
-  @And.intro
-  (∀ {s t : Real},
-    @Eq
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element Real
-          DomainTheory.NeighbourhoodSystems.RatInterval.ratIntervalSystem)
-        (DomainTheory.NeighbourhoodSystems.RatInterval.filterAt s)
-        (DomainTheory.NeighbourhoodSystems.RatInterval.filterAt t) →
-      @Eq Real s t)
-  (∀ {X Y : Set Real},
-    DomainTheory.NeighbourhoodSystems.RatInterval.ratIntervalMem X →
-      DomainTheory.NeighbourhoodSystems.RatInterval.ratIntervalMem Y →
-        @Set.Nonempty Real (@Inter.inter (Set Real) (@Set.instInter Real) X Y) →
-          DomainTheory.NeighbourhoodSystems.RatInterval.ratIntervalMem
-            (@Inter.inter (Set Real) (@Set.instInter Real) X Y))
-  @DomainTheory.NeighbourhoodSystems.RatInterval.filterAt_injective
-  @DomainTheory.NeighbourhoodSystems.RatInterval.inter_mem'
-end
-
-end DomainTheory.NeighbourhoodSystems.RatInterval
 end

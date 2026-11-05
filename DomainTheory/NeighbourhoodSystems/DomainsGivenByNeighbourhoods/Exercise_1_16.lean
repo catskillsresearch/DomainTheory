@@ -127,20 +127,12 @@ theorem le_ofExcluded_univ (x : cofiniteSystem.Element) :
 
 theorem ofExcluded_univ_isTotal : cofiniteSystem.IsTotal (ofExcluded Set.univ) :=
   fun y _ => le_ofExcluded_univ y
+
+theorem exercise_1_16 : cofiniteSystem.IsTotal (ofExcluded Set.univ) :=
+  ofExcluded_univ_isTotal
+
 end
 
 end Cofinite
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.Cofinite
-section
-
-set_option linter.unusedVariables false
-
-theorem example_116 : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsTotal Nat
-  DomainTheory.NeighbourhoodSystems.Cofinite.cofiniteSystem
-  (DomainTheory.NeighbourhoodSystems.Cofinite.ofExcluded (@Set.univ Nat)) :=
-  DomainTheory.NeighbourhoodSystems.Cofinite.ofExcluded_univ_isTotal
-end
-
-end DomainTheory.NeighbourhoodSystems.Cofinite
 end

@@ -76,14 +76,9 @@ theorem branch_isTotal (p : ℕ → Bool) : B.IsTotal (branch p) := by
     have hσ : prefixSeq p σ.length = σ := h.eq_of_length hlen
     exact (branch_mem_iff p).mpr ⟨σ.length, by rw [hσ]; exact List.prefix_rfl⟩
 
-section
-set_option linter.unusedVariables false
+theorem exercise_1_13 : ∀ p : ℕ → Bool, B.IsTotal (branch p) :=
+  branch_isTotal
 
-theorem example_113 : ∀ (p : Nat → Bool),
-  @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsTotal DomainTheory.NeighbourhoodSystems.ExampleB.Str
-    DomainTheory.NeighbourhoodSystems.ExampleB.B (DomainTheory.NeighbourhoodSystems.Exercise113.branch p) :=
-  DomainTheory.NeighbourhoodSystems.Exercise113.branch_isTotal
-end
 end
 
 end DomainTheory.NeighbourhoodSystems.Exercise113

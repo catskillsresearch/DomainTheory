@@ -1,0 +1,35 @@
+**EXERCISE 1.12.** Let $\Delta = \mathbb{N} = \{0, 1, 2, \ldots, n, \ldots\}$ be the set of non-negative integers. Use as neighbourhoods final segments:
+
+$$
+\{m \in \mathbb{N} \mid m > n\}
+$$
+
+for $n \in \mathbb{N}$. Verify that this is a neighbourhood system. What are the total elements? What are the finite elements? Draw a picture of the approximation relation in this domain. (Hint: there is only one limit element.)
+
+<!-- formalization -->
+
+**Definition (`tail`).** The final segment of threshold $n$ is $\{m\in\mathbb{N}\mid n\le m\}$.
+
+**Definition (`mem`).** A set is a neighbourhood precisely when it equals some final segment.
+
+**Theorem (`nestedOrDisjoint`).** Any two final segments are nested or disjoint (in fact nested).
+
+*Proof.* Compare thresholds: the larger threshold yields the smaller segment. ∎
+
+**Definition (`neighborhoodSystem`).** The final-segment neighbourhood system on $\mathbb{N}$.
+
+**Definition (`fin`).** The principal filter of the final segment of threshold $n$.
+
+**Definition (`top`).** The filter of *all* final segments — the unique limit element.
+
+**Theorem (`element_eq`).** Every ideal element is either some finite principal $\mathrm{fin}\,n$ or else $\mathrm{top}$.
+
+*Proof.* If the filter meets every final segment it is $\mathrm{top}$; otherwise the least missing threshold determines a principal. ∎
+
+**Theorem (`isTotal_iff_top`).** An ideal element is total if and only if it equals $\mathrm{top}$.
+
+*Proof.* Everything approximates $\mathrm{top}$, and $\mathrm{top}$ is maximal. ∎
+
+**Theorem (`exercise_1_12`).** Final segments form a nested-or-disjoint neighbourhood system, and the only total element is the limit $\mathrm{top}$.
+
+*Proof.* Assemble nestedness of final segments with the characterization of totality. ∎
