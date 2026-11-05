@@ -1,4 +1,4 @@
-# Exercise 1.15
+# Exercise 1.15 — finite elements without chains
 **[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_15.lean](Exercise_1_15.lean)**
 
 @import "Exercise_1_15.lean"

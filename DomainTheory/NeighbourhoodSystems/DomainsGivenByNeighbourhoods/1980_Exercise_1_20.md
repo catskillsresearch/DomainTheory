@@ -1,4 +1,4 @@
-# Exercise 1.20
+# Exercise 1.20 — upward closed neighbourhoods
 
 **EXERCISE 1.20.** Let $\mathcal{D}$ be any neighbourhood system over a set $\Delta$. Let $\Delta' = \mathcal{D}$ and define
 

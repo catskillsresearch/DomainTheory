@@ -1,4 +1,4 @@
-# Exercise 1.22
+# Exercise 1.22 — topology of a domain
 
 **EXERCISE 1.22.** (For topologists). Show that the neighbourhoods $[X]$ for $X \in \mathcal{D}$ make $|\mathcal{D}|$ into a topological space where the open subsets $\mathcal{U} \subseteq |\mathcal{D}|$ can be characterized by the following two conditions:
 

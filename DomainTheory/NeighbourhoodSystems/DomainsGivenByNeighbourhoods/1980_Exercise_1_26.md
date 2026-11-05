@@ -1,4 +1,4 @@
-# Exercise 1.26
+# Exercise 1.26 — ideals of a ring
 
 **EXERCISE 1.26.** (For algebraists). Let $A$ be a commutative ring with unit. Let $\Delta$ be the set of finite subsets $F \subseteq A$. Define
 

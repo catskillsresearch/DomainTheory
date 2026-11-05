@@ -1,4 +1,4 @@
-# Exercise 1.18
+# Exercise 1.18 — consistency of neighbourhood families
 **[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_18.lean](Exercise_1_18.lean)**
 
 @import "Exercise_1_18.lean"

@@ -1,4 +1,4 @@
-# Exercise 1.13
+# Exercise 1.13 — infinite binary tree
 **[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_13.lean](Exercise_1_13.lean)**
 
 @import "Exercise_1_13.lean"

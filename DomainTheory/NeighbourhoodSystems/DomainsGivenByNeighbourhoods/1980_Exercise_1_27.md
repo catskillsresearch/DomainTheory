@@ -1,4 +1,4 @@
-# Exercise 1.27
+# Exercise 1.27 — suprema of bounded sets
 
 **EXERCISE 1.27.** Further closure properties of domains can be proved for bounded sets. We say $X \subseteq |\mathcal{D}|$ is *bounded* iff for some $y \in |\mathcal{D}|$ we have $x \subseteq y$ for all $x \in X$. This $y$ is called an *upper bound*. We let
 

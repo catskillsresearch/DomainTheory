@@ -1,4 +1,4 @@
-# Exercise 1.16
+# Exercise 1.16 — cofinite integer subsets
 **[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_16.lean](Exercise_1_16.lean)**
 
 @import "Exercise_1_16.lean"

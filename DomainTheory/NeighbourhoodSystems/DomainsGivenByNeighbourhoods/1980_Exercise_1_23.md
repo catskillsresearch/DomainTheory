@@ -1,4 +1,4 @@
-# Exercise 1.23
+# Exercise 1.23 — decidable total elements
 
 **EXERCISE 1.23.** Suppose that the neighbourhood system $D$ is countable, say,
 

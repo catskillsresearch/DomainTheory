@@ -1,4 +1,4 @@
-# Exercise 1.21
+# Exercise 1.21 — complete neighbourhood systems
 **[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_21.lean](Exercise_1_21.lean)**
 
 @import "Exercise_1_21.lean"

@@ -1,4 +1,4 @@
-# Exercise 1.14
+# Exercise 1.14 — finite nonempty subsets
 **[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Exercise_1_14.lean](Exercise_1_14.lean)**
 
 @import "Exercise_1_14.lean"
