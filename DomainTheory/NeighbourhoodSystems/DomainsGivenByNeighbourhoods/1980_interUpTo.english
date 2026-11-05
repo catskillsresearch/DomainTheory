@@ -36,4 +36,8 @@ $$
 
 **Theorem (`consistent_iff_interUpTo_mem`).** If each $X_i$ for $i<n$ is a member, then the length-$n$ segment is consistent if and only if $\bigcap_{i<n} X_i$ is a member.
 
-*Proof.* One direction is `interUpTo.mem`; the other takes the intersection itself as the witnessing neighbourhood. ∎
+*Proof.* One direction is the membership theorem for finite intersections; the other takes the intersection itself as the witnessing neighbourhood. ∎
+
+**Theorem (`interUpTo_antitone`).** Lengthening the initial segment shrinks the finite intersection: if $j\le k$, then $\bigcap_{i<k} X_i\subseteq\bigcap_{i<j} X_i$.
+
+*Proof.* By induction on $k$. Equality of lengths is trivial; at a successor the longer intersection is contained in the shorter one by the left projection of an intersection. ∎

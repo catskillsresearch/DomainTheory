@@ -1,7 +1,9 @@
 # Exercise 1.13 — infinite binary tree
 
-**EXERCISE 1.13.** Verify all the assertions made about the system $B$ defined as the infinite generalization of Example 1.4. Draw a picture similar to that given in the text which includes nodes for all $\sigma \in \Sigma^*$. Show the neighbourhoods, how the approximation relation behaves, and where the total elements lie. (The picture is closely related to the "binary tree", but has to have limit nodes all along the top.)
+@import "1980_Exercise_1_13.english" {code_block=false}
 
 **[Exercise_1_13.lean](Exercise_1_13.lean)**
 
 @import "Exercise_1_13.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-05) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

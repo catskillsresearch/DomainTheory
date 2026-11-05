@@ -1,0 +1,29 @@
+**EXERCISE 1.13.** Verify all the assertions made about the system $B$ defined as the infinite generalization of Example 1.4. Draw a picture similar to that given in the text which includes nodes for all $\sigma \in \Sigma^*$. Show the neighbourhoods, how the approximation relation behaves, and where the total elements lie. (The picture is closely related to the "binary tree", but has to have limit nodes all along the top.)
+
+<!-- formalization -->
+
+**Definition (`prefixSeq`).** The length-$n$ initial segment of an infinite bit path $p$ is the finite string $p{\restriction}n$.
+
+**Definition (`branchSeq`).** The finite approximations along $p$ are the principals $(p{\restriction}n)\perp$.
+
+**Theorem (`branchSeq_mono`).** Along any path the sequence of principals is monotone.
+
+*Proof.* Longer prefixes refine shorter ones, and principals compare by reverse inclusion of cones. ∎
+
+**Definition (`branch`).** The limit node of a path is the directed union of its finite approximations.
+
+**Theorem (`branch_mem_iff`).** The cone of $\sigma$ belongs to the branch of $p$ if and only if $\sigma$ prefixes some $p{\restriction}n$.
+
+*Proof.* Unwind membership in the directed union and the characterisation of cone membership for principals. ∎
+
+**Theorem (`prefix_comparable_of_mem`).** If an ideal element contains both $\sigma\Sigma^*$ and $\tau\Sigma^*$, then $\sigma$ and $\tau$ are prefix-comparable.
+
+*Proof.* Their cones intersect in a neighbourhood, so trichotomy of cones excludes the disjoint case. ∎
+
+**Theorem (`branch_isTotal`).** Every infinite path yields a total element of $B$.
+
+*Proof.* Any refinement must accept every cone already present on the branch; prefix-comparability forces those cones to lie along the same path. ∎
+
+**Theorem (`exercise_1_13`).** For every infinite bit path $p$, the corresponding branch is a total element of $B$.
+
+*Proof.* Assemble totality of branches. ∎

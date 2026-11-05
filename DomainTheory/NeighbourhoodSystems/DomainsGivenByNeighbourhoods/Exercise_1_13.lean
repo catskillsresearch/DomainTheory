@@ -2,15 +2,12 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.iUnion
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.IsTotal
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.interUpTo
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.sigmaBot_le_iff
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems.Exercise113
-section
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
@@ -79,26 +76,4 @@ theorem branch_isTotal (p : ℕ → Bool) : B.IsTotal (branch p) := by
 theorem exercise_1_13 : ∀ p : ℕ → Bool, B.IsTotal (branch p) :=
   branch_isTotal
 
-end
-
 end DomainTheory.NeighbourhoodSystems.Exercise113
-namespace DomainTheory.NeighbourhoodSystems
-namespace NeighborhoodSystem
-section
-
-variable {α : Type*} (V : NeighborhoodSystem α)
-
-theorem interUpTo_antitone (X : ℕ → Set α) {j k : ℕ} (h : j ≤ k) :
-    V.interUpTo X k ⊆ V.interUpTo X j := by
-  induction k with
-  | zero => rw [Nat.le_zero.mp h]
-  | succ k ih =>
-    rcases Nat.eq_or_lt_of_le h with h' | h'
-    · rw [h']
-    · exact Set.inter_subset_left.trans (ih (Nat.lt_succ_iff.mp h'))
-end
-
-end NeighborhoodSystem
-
-end DomainTheory.NeighbourhoodSystems
-end

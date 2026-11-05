@@ -71,5 +71,15 @@ theorem consistent_iff_interUpTo_mem (X : ℕ → Set α) {n : ℕ}
   · exact interUpTo.mem V X hX
   · intro h; exact ⟨V.interUpTo X n, h, Set.Subset.refl _⟩
 
+/-- Lengthening the initial segment shrinks the finite intersection. -/
+theorem interUpTo_antitone (X : ℕ → Set α) {j k : ℕ} (h : j ≤ k) :
+    V.interUpTo X k ⊆ V.interUpTo X j := by
+  induction k with
+  | zero => rw [Nat.le_zero.mp h]
+  | succ k ih =>
+    rcases Nat.eq_or_lt_of_le h with h' | h'
+    · rw [h']
+    · exact Set.inter_subset_left.trans (ih (Nat.lt_succ_iff.mp h'))
+
 end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems
