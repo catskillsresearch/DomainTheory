@@ -4,14 +4,21 @@ EXAMPLE 1.3. Let $\Delta = \{0, 1, 2\}$ and let $\mathcal{D} = \{\{0, 1, 2\}, \{
 
 In pictures we have:
 
-```
-╭──────────────────────────────────────╮
-│  0   ╭──────────────────────╮        │
-│      │  1        ╭───╮      │        │
-│      │           │ 2 │      │        │
-│      │           ╰───╯      │        │
-│      ╰──────────────────────╯        │
-╰──────────────────────────────────────╯
+```mermaid
+flowchart LR
+  subgraph outer[" "]
+    direction LR
+    A["0"]
+    subgraph mid[" "]
+      direction LR
+      B["1"]
+      subgraph inn[" "]
+        C["2"]
+      end
+      B ~~~ inn
+    end
+    A ~~~ mid
+  end
 ```
 
 <!-- page 10 -->
