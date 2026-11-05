@@ -1,78 +1,47 @@
 %% Each box is one outline note from 1980_Domains_given_by_neighbourhoods.md.
-%% Lean modules = transitive closure of that note's @import Lean files.
-%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
+%% Lean modules = that note's @import .lean files (Lecture I exercises = all exercise modules;
+%%   Def 1.7/1.8/1.9 also own principal/bot/DomainIso).
+%% Arrowhead on the importer; label = direct-import count.
+%% Only paper-forward edges. Paths implied by longer routes omitted.
 flowchart TB
 
-  Definition_1_1___neighbo["Definition 1.1 — neighbourhood system"]
-  Factoid_1_1___empty_inte["Factoid 1.1 — empty intersection is delta; recursive finite intersection"]
-  Example_1_2___two_token["Example 1.2 — two-token domain"]
-  Example_1_3___three_step["Example 1.3 — three-step chain"]
-  Example_1_4___finite_bin["Example 1.4 — finite binary tree"]
-  Factoid_1_4a___nested_or["Factoid 1.4a — nested or disjoint"]
-  Example_1_5___all_nonemp["Example 1.5 — all nonempty subsets"]
-  Factoid_1_5___consistent["Factoid 1.5 — consistent iff nonempty; equivalent sequences same limit"]
-  Definition_1_6___ideal_e["Definition 1.6 — ideal elements"]
-  Definition_1_7___princip["Definition 1.7 — principal filter"]
-  Factoid_1_7___principals["Factoid 1.7 — principals are one-one; inclusion-reversing principals; union of principal filters"]
-  Definition_1_8___approxi["Definition 1.8 — approximation and totality"]
-  Factoid_1_8___bottom_ele["Factoid 1.8 — bottom element; bottom is least; finite filters are principal; prefix order; union of finite approximations"]
-  Examples_1_2_1_5__Revisi["Examples 1.2–1.5 (Revisited) — finite examples revisited"]
-  Definition_1_9___isomorp["Definition 1.9 — isomorphic domains"]
-  Theorem_1_10___basic_ope["Theorem 1.10 — basic open neighbourhoods"]
-  Theorem_1_11___intersect["Theorem 1.11 — intersections and directed unions"]
-  Exercise_1_12___final_se["Exercise 1.12 — final segments of integers"]
-  Exercise_1_13___infinite["Exercise 1.13 — infinite binary tree"]
-  Exercise_1_14___finite_n["Exercise 1.14 — finite nonempty subsets"]
-  Exercise_1_15___finite_e["Exercise 1.15 — finite elements without chains"]
-  Exercise_1_16___cofinite["Exercise 1.16 — cofinite integer subsets"]
-  Exercise_1_17___rational["Exercise 1.17 — rational open intervals"]
-  Exercise_1_18___consiste["Exercise 1.18 — consistency of neighbourhood families"]
-  Exercise_1_19___positive["Exercise 1.19 — positive neighbourhood systems"]
-  Exercise_1_20___upward_c["Exercise 1.20 — upward closed neighbourhoods"]
-  Exercise_1_21___complete["Exercise 1.21 — complete neighbourhood systems"]
-  Exercise_1_22___topology["Exercise 1.22 — topology of a domain"]
-  Exercise_1_23___decidabl["Exercise 1.23 — decidable total elements"]
-  Exercise_1_24___extendin["Exercise 1.24 — extending partial elements"]
-  Exercise_1_25___final_se["Exercise 1.25 — final segments of ordinals"]
-  Exercise_1_26___ideals_o["Exercise 1.26 — ideals of a ring"]
-  Exercise_1_27___suprema["Exercise 1.27 — suprema of bounded sets"]
+  D11["Definition 1.1<br>neighbourhood system"]
+  F11["Factoid 1.1"]
+  E12["Example 1.2<br>two-token domain"]
+  E13["Example 1.3<br>three-step chain"]
+  E14["Example 1.4<br>finite binary tree"]
+  F14a["Factoid 1.4a<br>nested or disjoint"]
+  E15["Example 1.5<br>all nonempty subsets"]
+  F15["Factoid 1.5"]
+  D16["Definition 1.6<br>ideal elements"]
+  D17["Definition 1.7<br>principal filter"]
+  F17["Factoid 1.7"]
+  D18["Definition 1.8<br>approximation and totality"]
+  F18["Factoid 1.8"]
+  ER["Examples 1.2–1.5<br>revisited"]
+  D19["Definition 1.9<br>isomorphic domains"]
+  T10["Theorem 1.10<br>basic open neighbourhoods"]
+  T11["Theorem 1.11<br>intersections and directed unions"]
+  EX["Lecture I exercises"]
 
-  Definition_1_1___neighbo --> Definition_1_6___ideal_e
-  Example_1_2___two_token --> Definition_1_7___princip
-  Example_1_2___two_token --> Definition_1_8___approxi
-  Example_1_2___two_token --> Definition_1_9___isomorp
-  Factoid_1_1___empty_inte --> Example_1_2___two_token
-  Example_1_2___two_token --> Example_1_3___three_step
-  Example_1_2___two_token --> Example_1_4___finite_bin
-  Example_1_2___two_token --> Example_1_5___all_nonemp
-  Example_1_3___three_step --> Examples_1_2_1_5__Revisi
-  Example_1_4___finite_bin --> Examples_1_2_1_5__Revisi
-  Example_1_5___all_nonemp --> Examples_1_2_1_5__Revisi
-  Factoid_1_7___principals --> Exercise_1_12___final_se
-  Theorem_1_11___intersect --> Exercise_1_13___infinite
-  Example_1_2___two_token --> Exercise_1_14___finite_n
-  Factoid_1_8___bottom_ele --> Exercise_1_15___finite_e
-  Example_1_2___two_token --> Exercise_1_16___cofinite
-  Factoid_1_1___empty_inte --> Exercise_1_17___rational
-  Factoid_1_5___consistent --> Exercise_1_18___consiste
-  Theorem_1_11___intersect --> Exercise_1_19___positive
-  Example_1_2___two_token --> Exercise_1_20___upward_c
-  Theorem_1_10___basic_ope --> Exercise_1_21___complete
-  Exercise_1_20___upward_c --> Exercise_1_22___topology
-  Exercise_1_13___infinite --> Exercise_1_23___decidabl
-  Example_1_2___two_token --> Exercise_1_24___extendin
-  Factoid_1_7___principals --> Exercise_1_25___final_se
-  Factoid_1_1___empty_inte --> Exercise_1_26___ideals_o
-  Theorem_1_10___basic_ope --> Exercise_1_27___suprema
-  Definition_1_1___neighbo --> Factoid_1_1___empty_inte
-  Factoid_1_1___empty_inte --> Factoid_1_4a___nested_or
-  Example_1_5___all_nonemp --> Factoid_1_5___consistent
-  Factoid_1_5___consistent --> Factoid_1_7___principals
-  Example_1_3___three_step --> Factoid_1_8___bottom_ele
-  Example_1_4___finite_bin --> Factoid_1_8___bottom_ele
-  Factoid_1_7___principals --> Factoid_1_8___bottom_ele
-  Factoid_1_7___principals --> Theorem_1_10___basic_ope
-  Factoid_1_8___bottom_ele --> Theorem_1_11___intersect
+  D11 -->|"1"| D16
+  F14a -->|"1"| D17
+  D17 -->|"1"| D18
+  D18 -->|"1"| D19
+  E12 -->|"1"| ER
+  E13 -->|"1"| ER
+  E14 -->|"1"| ER
+  E15 -->|"1"| ER
+  D16 -->|"2"| EX
+  T10 -->|"1"| EX
+  T11 -->|"1"| EX
+  F11 -->|"1"| F14a
+  E15 -->|"1"| F15
+  F15 -->|"1"| F17
+  F17 -->|"1"| F18
+  D19 -->|"1"| T10
+  ER -->|"1"| T11
+  F18 -->|"1"| T11
 
 %%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
   classDef cdef fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
@@ -80,3 +49,21 @@ flowchart TB
   classDef cexs fill:#fef3c7,stroke:#b45309,color:#78350f
   classDef cex fill:#e0e7ff,stroke:#4338ca,color:#312e81
   classDef cthm fill:#fee2e2,stroke:#b91c1c,color:#7f1d1d
+  class D11 cdef
+  class F11 cfac
+  class E12 cexs
+  class E13 cexs
+  class E14 cexs
+  class F14a cfac
+  class E15 cexs
+  class F15 cfac
+  class D16 cdef
+  class D17 cdef
+  class F17 cfac
+  class D18 cdef
+  class F18 cfac
+  class ER cexs
+  class D19 cdef
+  class T10 cthm
+  class T11 cthm
+  class EX cex

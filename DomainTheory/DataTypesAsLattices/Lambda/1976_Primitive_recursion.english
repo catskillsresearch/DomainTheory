@@ -10,7 +10,7 @@ $$(2.27) \quad \hat{p} = \mathbf{Y}(\lambda u \lambda n \in \omega.\, n \supset 
 
 This already shows that a large part of the definitions of recursion theory can be given in this special language. Of course, simultaneous (primitive) recursions can be transcribed into LAMBDA with the aid of the ordered tuples of (2.22), (2.23) above. But we can go further and connect with partial (and general) recursive functions. We state first a definition.
 
-**Formalization (`primitive_recursion.lean`).** Scott’s scheme $p(0)=a$, $p(n+1)=f(n)(p(n))$ is $\texttt{primRecVal}$; the spread $\hat{p}(x)=\bigcup\{p(n)\mid n\in x\}$ is $\texttt{primRecHat}$; the recursive step in (2.27) is $\texttt{primRecStep}$; **(2.27)** is `eq_2_27` via **$** (`dollarC`). Each name below is in this module.
+**Formalization (`primitive_recursion.lean`).** Scott’s scheme $p(0)=a$, $p(n+1)=f(n)(p(n))$ is $\texttt{primRecVal}$; the spread $\hat{p}(x)=\bigcup\{p(n)\mid n\in x\}$ is $\texttt{primRecHat}$; the recursive step in (2.27) is $\texttt{primRecStep}$; **(2.27)** is `eq_2_27` via $\mathbf{\$}$ (`dollarC`). Each name below is in this module.
 
 **Definition (`primRecStepTerm`).** LAMBDA term for $\lambda u\,\lambda n.\, n \supset a,\, f(n-1)(u(n-1))$ (de Bruijn form with parameters $a,f$ abstracted).
 
@@ -41,6 +41,6 @@ This already shows that a large part of the definitions of recursion theory can 
 **Theorem (`eq_2_27`, equation (2.27)).** For all $a,f,x \in \mathbf{P}\omega$,
 $$\texttt{primRecHat}(a,f)(x)=\mathrm{funOf}(\mathrm{funOf}\,\texttt{dollarC}\,(\mathrm{fix}(\texttt{primRecStep}\,a\,f)))(x).$$
 
-*Proof.* Rewrite with `eq_2_25` (spread as **$**); index-wise use `primRecVal.fix`. ∎
+*Proof.* Rewrite with `eq_2_25` (spread as $\mathbf{\$}$); index-wise use `primRecVal.fix`. ∎
 
 **Definition (`precTerm`).** A second LAMBDA term for the same scheme, written with an explicit zero value, step function, and predecessor rather than with $\mathbf{Y}$. The combinator `precC` is its interpretation.

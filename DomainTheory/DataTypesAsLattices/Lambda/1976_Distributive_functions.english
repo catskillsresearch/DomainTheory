@@ -17,7 +17,7 @@ $$(2.26) \quad \lambda n \in \omega.\, \tau = \mathbf{\$}(\lambda z.\, \tau[z/n]
 With all these conventions LAMBDA-notation becomes very much like ordinary mathematical notation without too much strain.
 
 Recall (from minimal extension) that a continuous $f : \mathbf{P}\omega \to \mathbf{P}\omega$ is *distributive* when $f(\varnothing) = \varnothing$ and $f(x \cup y) = f(x) \cup f(y)$. 
-The spread $\hat{p}(x) = \bigcup \{ p(n) \mid n \in x \}$ is the canonical example. `seqFun` in `sequences.lean` is $\hat{p}$ at fixed $u$. The combinator $\mathbf{\$}$ packages that revaluation, and (2.26) expresses ω-indexed $\lambda$-notation in terms of **$**.
+The spread $\hat{p}(x) = \bigcup \{ p(n) \mid n \in x \}$ is the canonical example. `seqFun` in `sequences.lean` is $\hat{p}$ at fixed $u$. The combinator $\mathbf{\$}$ packages that revaluation, and (2.26) expresses ω-indexed $\lambda$-notation in terms of $\mathbf{\$}$.
 
 **Formalization (`distributive_functions.lean`).** Scott’s (2.24)–(2.26) are split into a **model** step (graphs, `dollarStep`, `dollarC`) and a **language** step (`dollarStepTerm`, `termDollarStep`) linked by `interp` and Theorems 2.4–2.5. Each Lean name is the library entry; proofs in the file are short unless noted.
 
@@ -62,7 +62,7 @@ $$\mathrm{interp}(\texttt{dollarStepTerm})\,\rho = \mathbf{graph}(\texttt{termDo
 
 *Proof.* Unfold `interp`, `termDollarStep`, `termShift`, and `condSet`; reflexivity. ∎
 
-**Definition (`dollarC`, combinator **$**).** 
+**Definition (`dollarC`, combinator $\mathbf{\$}$).** 
 $$\texttt{dollarC} = \mathbf{graph}(\lambda u.\, \mathbf{graph}(\lambda x.\, \texttt{seqFun}\,u\,x)).$$
 Scott’s (2.25) is $\mathbf{\$}(u) = \lambda x.\, \texttt{seqFun}(u,x)$ in graph form.
 
@@ -81,7 +81,7 @@ $$\mathrm{funOf}(\mathrm{funOf}\,\texttt{dollarC}\,u)\,x = \texttt{seqFun}\,u\,x
 
 **Theorem (`eq_2_24`, spread recursion).** For all $u,x \in \mathbf{P}\omega$,
 $$\texttt{seqFun}\,u\,x = x \supset \mathrm{funOf}\,u\,0,\; \texttt{seqFun}(\texttt{seqShift}\,u)(\mathit{predSet}\,x).$$
-This is the set-theoretic recursion underlying (2.24), before introducing **$**.
+This is the set-theoretic recursion underlying (2.24), before introducing $\mathbf{\$}$.
 
 *Proof.* Extensionality on members; split indices $i \in x$ into $i = 0$ vs $i = j+1$; rewrite with `seqShift.app` and `ofNat`. ∎
 
@@ -98,6 +98,6 @@ $$\mathrm{funOf}\,\texttt{Ycomb}\,(\mathbf{graph}\,\texttt{dollarStep}) = \textt
 
 **Definition (`lamOmega`, equation (2.26)).** For $\tau : \omega \to \mathbf{P}\omega$ (written $\tau[n]$ for $\tau(n)$),
 $$\texttt{lamOmega}\,\tau = \mathrm{funOf}\,\texttt{dollarC}\left(\mathbf{graph}\left(\lambda z.\, \bigcup \{ \tau(n) \mid n \in z \}\right)\right).$$
-This is Scott’s $\lambda n \in \omega.\,\tau$ as **$** applied to the graph of the family $z \mapsto \bigcup \{ \tau(n) \mid n \in z \}$ (formally: $\mathbf{\$}(\lambda z.\, \tau[z/n])$ once $[z/n]$ is the term substitution convention).
+This is Scott’s $\lambda n \in \omega.\,\tau$ as $\mathbf{\$}$ applied to the graph of the family $z \mapsto \bigcup \{ \tau(n) \mid n \in z \}$ (formally: $\mathbf{\$}(\lambda z.\, \tau[z/n])$ once $[z/n]$ is the term substitution convention).
 
 *(Primitive recursion as a distributive function — (2.27) — is in `eq_2_27.lean` / the primitive recursion note.)*

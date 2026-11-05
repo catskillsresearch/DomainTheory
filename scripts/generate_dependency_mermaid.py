@@ -1016,10 +1016,20 @@ DTAL_SECTION_FOLDERS: dict[str, tuple[str, ...]] = {
 }
 
 
-def gen_dtal_sections(mermaid: Path, modules: dict[str, Path], old: str) -> str:
-    """Cross-section Lean deps for 1976_DataTypes.mermaid (folder ownership)."""
+def _gen_paper_section_deps(
+    *,
+    index_md_name: str,
+    chapter_dir: Path,
+    section_order: list[str],
+    section_labels: dict[str, str],
+    section_folders: dict[str, tuple[str, ...]],
+    modules: dict[str, Path],
+    old: str,
+    default_class_defs: list[str] | None = None,
+) -> str:
+    """Folder-owned, paper-forward, labeled section dependency flowchart."""
     header = [
-        "%% Each box is one section from 1976_DataTypes.md.",
+        f"%% Each box is one section from {index_md_name}.",
         "%% Lean modules = .lean files under that section's topic folders.",
         "%% Arrowhead on the importer; label = direct-import count.",
         "%% Only paper-forward edges (earlier → later). Paths implied by longer routes omitted.",
@@ -1028,10 +1038,10 @@ def gen_dtal_sections(mermaid: Path, modules: dict[str, Path], old: str) -> str:
 
     sec_mods: dict[str, set[str]] = {}
     mod_owner: dict[str, str] = {}
-    for nid in DTAL_SECTION_ORDER:
+    for nid in section_order:
         mods: set[str] = set()
-        for folder in DTAL_SECTION_FOLDERS[nid]:
-            root = DT / "DataTypesAsLattices" / folder
+        for folder in section_folders[nid]:
+            root = chapter_dir / folder
             if not root.is_dir():
                 continue
             mods |= {module_of(p) for p in root.rglob("*.lean") if p.is_file()}
@@ -1040,7 +1050,7 @@ def gen_dtal_sections(mermaid: Path, modules: dict[str, Path], old: str) -> str:
             mod_owner[mod] = nid
 
     node_labels = {
-        nid: old_labels.get(nid, DTAL_SECTION_LABELS[nid]) for nid in DTAL_SECTION_ORDER
+        nid: old_labels.get(nid, section_labels[nid]) for nid in section_order
     }
 
     raw: dict[tuple[str, str], int] = defaultdict(int)
@@ -1050,7 +1060,7 @@ def gen_dtal_sections(mermaid: Path, modules: dict[str, Path], old: str) -> str:
                 src = mod_owner.get(imp)
                 if src is None or src == dst:
                     continue
-                if DTAL_SECTION_ORDER.index(src) >= DTAL_SECTION_ORDER.index(dst):
+                if section_order.index(src) >= section_order.index(dst):
                     continue
                 raw[(src, dst)] += 1
 
@@ -1059,7 +1069,7 @@ def gen_dtal_sections(mermaid: Path, modules: dict[str, Path], old: str) -> str:
 
     class_defs = [ln for ln in style if ln.strip().startswith("classDef ")]
     if not class_defs:
-        class_defs = [
+        class_defs = default_class_defs or [
             "  classDef c1 fill:#dcfce7,stroke:#15803d,color:#14532d",
             "  classDef c2 fill:#cffafe,stroke:#0e7490,color:#164e63",
             "  classDef c3 fill:#ffedd5,stroke:#c2410c,color:#7c2d12",
@@ -1067,9 +1077,10 @@ def gen_dtal_sections(mermaid: Path, modules: dict[str, Path], old: str) -> str:
             "  classDef c5 fill:#f3e8ff,stroke:#7e22ce,color:#581c87",
             "  classDef c6 fill:#fde68a,stroke:#a16207,color:#713f12",
             "  classDef c7 fill:#e2e8f0,stroke:#334155,color:#0f172a",
+            "  classDef c8 fill:#fae8ff,stroke:#a21caf,color:#701a75",
         ]
     class_assigns = [
-        f"  class {nid} c{i}" for i, nid in enumerate(DTAL_SECTION_ORDER, start=1)
+        f"  class {nid} c{i}" for i, nid in enumerate(section_order, start=1)
     ]
     init = [ln for ln in style if INIT_LINE.match(ln.strip())]
 
@@ -1080,7 +1091,252 @@ def gen_dtal_sections(mermaid: Path, modules: dict[str, Path], old: str) -> str:
         init + class_defs + class_assigns,
         labeled=True,
         flowchart="flowchart TB",
-        node_order=list(DTAL_SECTION_ORDER),
+        node_order=list(section_order),
+    )
+
+
+def gen_dtal_sections(mermaid: Path, modules: dict[str, Path], old: str) -> str:
+    """Cross-section Lean deps for 1976_DataTypes.mermaid (folder ownership)."""
+    return _gen_paper_section_deps(
+        index_md_name="1976_DataTypes.md",
+        chapter_dir=DT / "DataTypesAsLattices",
+        section_order=DTAL_SECTION_ORDER,
+        section_labels=DTAL_SECTION_LABELS,
+        section_folders=DTAL_SECTION_FOLDERS,
+        modules=modules,
+        old=old,
+        default_class_defs=[
+            "  classDef c1 fill:#dcfce7,stroke:#15803d,color:#14532d",
+            "  classDef c2 fill:#cffafe,stroke:#0e7490,color:#164e63",
+            "  classDef c3 fill:#ffedd5,stroke:#c2410c,color:#7c2d12",
+            "  classDef c4 fill:#ecfccb,stroke:#4d7c0f,color:#365314",
+            "  classDef c5 fill:#f3e8ff,stroke:#7e22ce,color:#581c87",
+            "  classDef c6 fill:#fde68a,stroke:#a16207,color:#713f12",
+            "  classDef c7 fill:#e2e8f0,stroke:#334155,color:#0f172a",
+        ],
+    )
+
+
+# 1980 Neighbourhood systems — one folder per section (see 1980_Neighborhood.md).
+NS_SECTION_ORDER: list[str] = [
+    "DOM",
+    "MAP",
+    "CON",
+    "FIX",
+    "LAM",
+    "EQ",
+    "COMP",
+    "RET",
+]
+NS_SECTION_LABELS: dict[str, str] = {
+    "DOM": "Domains given<br>by neighbourhoods",
+    "MAP": "Mappings<br>between domains",
+    "CON": "Domain<br>constructs",
+    "FIX": "Fixed points<br>and recursion",
+    "LAM": "Typed λ-calculus",
+    "EQ": "Domain<br>equations",
+    "COMP": "Computability in effectively given domains",
+    "RET": "Retracts of the universal domain",
+}
+NS_SECTION_FOLDERS: dict[str, tuple[str, ...]] = {
+    "DOM": ("DomainsGivenByNeighbourhoods",),
+    "MAP": ("MappingsBetweenDomains",),
+    "CON": ("DomainConstructs",),
+    "FIX": ("FixedPointsAndRecursion",),
+    "LAM": ("TypedLambdaCalculus",),
+    "EQ": ("DomainEquations",),
+    "COMP": ("ComputabilityInEffectivelyGivenDomains",),
+    "RET": ("RetractsOfTheUniversalDomain",),
+}
+
+
+def gen_ns_sections(mermaid: Path, modules: dict[str, Path], old: str) -> str:
+    """Cross-section Lean deps for 1980_Neighborhood.mermaid (folder ownership)."""
+    return _gen_paper_section_deps(
+        index_md_name="1980_Neighborhood.md",
+        chapter_dir=DT / "NeighbourhoodSystems",
+        section_order=NS_SECTION_ORDER,
+        section_labels=NS_SECTION_LABELS,
+        section_folders=NS_SECTION_FOLDERS,
+        modules=modules,
+        old=old,
+        default_class_defs=[
+            "  classDef c1 fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a",
+            "  classDef c2 fill:#dcfce7,stroke:#15803d,color:#14532d",
+            "  classDef c3 fill:#fef3c7,stroke:#b45309,color:#78350f",
+            "  classDef c4 fill:#fce7f3,stroke:#be185d,color:#831843",
+            "  classDef c5 fill:#fee2e2,stroke:#b91c1c,color:#7f1d1d",
+            "  classDef c6 fill:#e0e7ff,stroke:#4338ca,color:#312e81",
+            "  classDef c7 fill:#cffafe,stroke:#0e7490,color:#164e63",
+            "  classDef c8 fill:#fae8ff,stroke:#a21caf,color:#701a75",
+        ],
+    )
+
+
+# Lecture I hub: outline notes + companions for defs that lack @import Lean yet.
+NS_DOM_COMPANIONS: dict[str, tuple[str, ...]] = {
+    "Definition 1.7 — principal filter": ("principal",),
+    "Definition 1.8 — approximation and totality": ("bot",),
+    "Definition 1.9 — isomorphic domains": ("DomainIso",),
+}
+NS_DOM_SHORT: dict[str, tuple[str, str]] = {
+    "Definition 1.1 — neighbourhood system": (
+        "D11",
+        "Definition 1.1<br>neighbourhood system",
+    ),
+    "Factoid 1.1 — empty intersection is delta; recursive finite intersection": (
+        "F11",
+        "Factoid 1.1",
+    ),
+    "Example 1.2 — two-token domain": ("E12", "Example 1.2<br>two-token domain"),
+    "Example 1.3 — three-step chain": ("E13", "Example 1.3<br>three-step chain"),
+    "Example 1.4 — finite binary tree": ("E14", "Example 1.4<br>finite binary tree"),
+    "Factoid 1.4a — nested or disjoint": ("F14a", "Factoid 1.4a<br>nested or disjoint"),
+    "Example 1.5 — all nonempty subsets": ("E15", "Example 1.5<br>all nonempty subsets"),
+    "Factoid 1.5 — consistent iff nonempty; equivalent sequences same limit": (
+        "F15",
+        "Factoid 1.5",
+    ),
+    "Definition 1.6 — ideal elements": ("D16", "Definition 1.6<br>ideal elements"),
+    "Definition 1.7 — principal filter": ("D17", "Definition 1.7<br>principal filter"),
+    "Factoid 1.7 — principals are one-one; inclusion-reversing principals; union of principal filters": (
+        "F17",
+        "Factoid 1.7",
+    ),
+    "Definition 1.8 — approximation and totality": (
+        "D18",
+        "Definition 1.8<br>approximation and totality",
+    ),
+    "Factoid 1.8 — bottom element; bottom is least; finite filters are principal; prefix order; union of finite approximations": (
+        "F18",
+        "Factoid 1.8",
+    ),
+    "Examples 1.2–1.5 (Revisited) — finite examples revisited": (
+        "ER",
+        "Examples 1.2–1.5<br>revisited",
+    ),
+    "Definition 1.9 — isomorphic domains": (
+        "D19",
+        "Definition 1.9<br>isomorphic domains",
+    ),
+    "Theorem 1.10 — basic open neighbourhoods": (
+        "T10",
+        "Theorem 1.10<br>basic open neighbourhoods",
+    ),
+    "Theorem 1.11 — intersections and directed unions": (
+        "T11",
+        "Theorem 1.11<br>intersections and directed unions",
+    ),
+    "Lecture I exercises": ("EX", "Lecture I exercises"),
+}
+
+
+def _ns_dom_kind_class(nid: str) -> str:
+    if nid.startswith("D"):
+        return "cdef"
+    if nid.startswith("F"):
+        return "cfac"
+    if nid.startswith("E") and nid != "EX":
+        return "cexs"
+    if nid == "ER":
+        return "cexs"
+    if nid.startswith("T"):
+        return "cthm"
+    if nid == "EX":
+        return "cex"
+    return "cdef"
+
+
+def gen_ns_domains_lecture(mermaid: Path, modules: dict[str, Path], old: str) -> str:
+    """Item-level Lean deps for 1980_Domains_given_by_neighbourhoods.mermaid."""
+    header = [
+        "%% Each box is one outline note from 1980_Domains_given_by_neighbourhoods.md.",
+        "%% Lean modules = that note's @import .lean files (Lecture I exercises = all exercise modules;",
+        "%%   Def 1.7/1.8/1.9 also own principal/bot/DomainIso).",
+        "%% Arrowhead on the importer; label = direct-import count.",
+        "%% Only paper-forward edges. Paths implied by longer routes omitted.",
+    ]
+    _, old_labels, style = parse_preserve_tail(old)
+    index_md = find_index_md(mermaid)
+    if index_md is None:
+        raise ValueError(f"no index md for {mermaid}")
+    folder = index_md.parent
+
+    boxes: list[tuple[str, str, set[str]]] = []
+    for line in index_md.read_text(encoding="utf-8", errors="ignore").splitlines():
+        m = OUTLINE_LINK.match(line)
+        if not m:
+            continue
+        title = m.group("title")
+        child = resolve_md(index_md, m.group("href"))
+        if child is None:
+            continue
+        if re.search(r"(?i)^introduction$", title.strip()):
+            continue
+        if title not in NS_DOM_SHORT:
+            continue
+        nid, default_lab = NS_DOM_SHORT[title]
+        if title.lower().startswith("lecture") and "exercise" in title.lower():
+            mods: set[str] = set()
+            for ln in child.read_text(encoding="utf-8", errors="ignore").splitlines():
+                mm = OUTLINE_LINK.match(ln)
+                if not mm:
+                    continue
+                sub = resolve_md(child, mm.group("href"))
+                if sub is not None:
+                    mods |= lean_modules_from_note(sub)
+        else:
+            mods = set(lean_modules_from_note(child))
+            for stem in NS_DOM_COMPANIONS.get(title, ()):
+                p = folder / f"{stem}.lean"
+                if p.is_file():
+                    mods.add(module_of(p))
+        if not mods:
+            continue
+        boxes.append((nid, old_labels.get(nid, default_lab), mods))
+
+    mod_owner: dict[str, str] = {}
+    for nid, _lab, mods in boxes:
+        for mod in mods:
+            mod_owner.setdefault(mod, nid)
+
+    order = [nid for nid, _, _ in boxes]
+    idx = {nid: i for i, nid in enumerate(order)}
+    raw: dict[tuple[str, str], int] = defaultdict(int)
+    for nid, _lab, mods in boxes:
+        for mod in mods:
+            for imp in direct_imports_mod(mod, modules):
+                src = mod_owner.get(imp)
+                if src is None or src == nid:
+                    continue
+                if idx[src] >= idx[nid]:
+                    continue
+                raw[(src, nid)] += 1
+
+    kept = transitive_reduce(set(raw))
+    edges = {(a, b): raw[(a, b)] for a, b in kept}
+    node_labels = {nid: lab for nid, lab, _ in boxes}
+
+    class_defs = [ln for ln in style if ln.strip().startswith("classDef ")]
+    if not class_defs:
+        class_defs = [
+            "  classDef cdef fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a",
+            "  classDef cfac fill:#dcfce7,stroke:#15803d,color:#14532d",
+            "  classDef cexs fill:#fef3c7,stroke:#b45309,color:#78350f",
+            "  classDef cex fill:#e0e7ff,stroke:#4338ca,color:#312e81",
+            "  classDef cthm fill:#fee2e2,stroke:#b91c1c,color:#7f1d1d",
+        ]
+    class_assigns = [f"  class {nid} {_ns_dom_kind_class(nid)}" for nid in order]
+    init = [ln for ln in style if INIT_LINE.match(ln.strip())]
+
+    return emit_flowchart(
+        header,
+        node_labels,
+        edges,
+        init + class_defs + class_assigns,
+        labeled=True,
+        flowchart="flowchart TB",
+        node_order=order,
     )
 
 
@@ -1283,6 +1539,10 @@ def classify(mermaid: Path, text: str) -> str:
         return "cl1972_section"
     if mermaid.name == "1976_DataTypes.mermaid":
         return "dtal_sections"
+    if mermaid.name == "1980_Neighborhood.mermaid":
+        return "ns_sections"
+    if mermaid.name == "1980_Domains_given_by_neighbourhoods.mermaid":
+        return "ns_domains_lecture"
     if index_md_is_outline_barrel(mermaid):
         return "note_outline"
     if mermaid.name == "1972_ContinuousLattices.mermaid":
@@ -1387,29 +1647,9 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
             ],
         )
     if kind == "ns_sections":
-        ns_ids = {
-            "Domains given by neighbourhoods": "DOM",
-            "Mappings between domains": "MAP",
-            "Domain constructs": "CON",
-            "Fixed points and recursion": "FIX",
-            "Typed $\\lambda$-calculus": "LAM",
-            "Domain equations": "EQ",
-            "Computability in effectively given domains": "COMP",
-            "Retracts of the universal domain": "RET",
-        }
-
-        def ns_box_modules(child: Path, _title: str) -> set[str]:
-            return {module_of(p) for p in child.parent.rglob("*.lean")}
-
-        return gen_note_outline(
-            mermaid,
-            modules,
-            old,
-            reduce=True,
-            labeled=True,
-            box_modules_fn=ns_box_modules,
-            extra_title_ids=ns_ids,
-        )
+        return gen_ns_sections(mermaid, modules, old)
+    if kind == "ns_domains_lecture":
+        return gen_ns_domains_lecture(mermaid, modules, old)
     if kind == "ns_items":
         return gen_neighborhood_items(mermaid, modules, old)
     if kind == "note_outline":

@@ -1,0 +1,15 @@
+DEFINITION 1.1. A family $\mathcal{D}$ of subsets of a given set $\Delta$ is called a *neighbourhood system* (over $\Delta$) iff it is a non-empty family closed under the intersection of finite consistent sequences of neighbourhoods. That is to say, $\mathcal{D}$ must fulfill these two conditions:
+
+(i) $\Delta \in \mathcal{D}$;
+
+(ii) whenever $X$, $Y$, $Z \in \mathcal{D}$ and $Z \subseteq X \cap Y$, then $X \cap Y \in \mathcal{D}$. $\square$
+
+<!-- page 9 -->
+
+We remark that by convention $\Delta$ corresponds to the intersection of an empty sequence of neighbourhoods; in particular, see Factoid 1.1.
+
+<!-- formalization -->
+
+**Definition (`NeighborhoodSystem`).** A neighbourhood system on a carrier $\alpha$ consists of a membership predicate on subsets of $\alpha$, together with a distinguished nonempty *master* set $\Delta\subseteq\alpha$ that belongs to the system, such that every member is contained in $\Delta$, and whenever $X$ and $Y$ are members and some member $Z$ lies in $X\cap Y$, the intersection $X\cap Y$ is again a member.
+
+*Proof.* This is the packaging of Scott’s (i)–(ii), with the master set playing the role of $\Delta$ and the intersection clause matching the finite-consistency closure. ∎

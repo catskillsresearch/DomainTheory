@@ -303,10 +303,17 @@ def wrap_orphan_tex_display(text: str) -> str:
             out.append(line)
             i += 1
             continue
-        # Display-math fences: standalone ``$$``, or ``$$`` opened/closed on partial lines.
+        # Display-math fences: ``$$``, ``\[`` / ``\]``, or ``$$`` opened/closed on partial lines.
+        # Content inside ``\[...\]`` must not be re-wrapped (orphan ``\bigl`` lines match
+        # ORPHAN_TEX_LINE and would otherwise inject nested ``$$`` and break pdflatex).
         if not in_code:
-            if stripped == "$$":
-                in_math = not in_math
+            if stripped in ("$$", "\\[", "\\]"):
+                if stripped == "\\[":
+                    in_math = True
+                elif stripped == "\\]":
+                    in_math = False
+                else:
+                    in_math = not in_math
                 out.append(line)
                 i += 1
                 continue
@@ -339,9 +346,11 @@ def wrap_orphan_tex_display(text: str) -> str:
                 nxt = lines[i].strip()
                 if not nxt or nxt.startswith("#") or nxt.startswith("```"):
                     break
-                if nxt == "$$":
-                    # Closing fence belonging to a half-broken block: consume it.
-                    i += 1
+                if nxt in ("$$", "\\]"):
+                    # Closing fence belonging to a half-broken block: leave ``\]``
+                    # for the caller; consume a stray ``$$``.
+                    if nxt == "$$":
+                        i += 1
                     break
                 chunk.append(nxt)
                 i += 1

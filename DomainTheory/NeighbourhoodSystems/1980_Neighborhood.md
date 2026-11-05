@@ -1,10 +1,10 @@
 # Neighbourhood systems
 
-**Dependency diagram.** Each box is one section. The arrowhead is on the section that imports, and the number on it is how many import lines run that way. An arrow already implied by a longer path is left out. The introduction has no Lean file, so it has no arrow.
+**Dependency diagram.** Each box is one section. Lean ownership is by topic folder. The arrowhead is on the section that imports; the number is how many direct imports. Only paper-forward edges are shown (a later section importing an earlier one). An arrow already implied by a longer path is left out. The introduction has no Lean file, so it has no box.
 
 @import "1980_Neighborhood.mermaid"
 
-- [Introduction](1980_Introduction.md)
+- [Introduction](1980_Introduction.md) [✓](1980_REVISION.md)
 - [Domains given by neighbourhoods](DomainsGivenByNeighbourhoods/1980_Domains_given_by_neighbourhoods.md)
 - [Mappings between domains](MappingsBetweenDomains/1980_Mappings_between_domains.md)
 - [Domain constructs](DomainConstructs/1980_Domain_constructs.md)

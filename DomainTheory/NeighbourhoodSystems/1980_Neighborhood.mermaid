@@ -1,24 +1,25 @@
-%% Each box is one outline note from 1980_Neighborhood.md.
-%% Lean modules = transitive closure of that note's @import Lean files.
-%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
+%% Each box is one section from 1980_Neighborhood.md.
+%% Lean modules = .lean files under that section's topic folders.
+%% Arrowhead on the importer; label = direct-import count.
+%% Only paper-forward edges (earlier → later). Paths implied by longer routes omitted.
 flowchart TB
 
   DOM["Domains given<br>by neighbourhoods"]
   MAP["Mappings<br>between domains"]
   CON["Domain<br>constructs"]
   FIX["Fixed points<br>and recursion"]
-  Typed___lambda__calculus["Typed \lambda-calculus"]
+  LAM["Typed λ-calculus"]
   EQ["Domain<br>equations"]
-  Computability_in_effecti["Computability in effectively given domains"]
-  Retracts_of_the_universa["Retracts of the universal domain"]
+  COMP["Computability in effectively given domains"]
+  RET["Retracts of the universal domain"]
 
-  MAP --> CON
-  EQ --> Computability_in_effecti
-  Typed___lambda__calculus --> EQ
-  CON --> FIX
-  DOM --> MAP
-  Computability_in_effecti --> Retracts_of_the_universa
-  FIX --> Typed___lambda__calculus
+  EQ -->|"3"| COMP
+  MAP -->|"18"| CON
+  LAM -->|"4"| EQ
+  CON -->|"6"| FIX
+  FIX -->|"12"| LAM
+  DOM -->|"27"| MAP
+  COMP -->|"77"| RET
 
 %%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
   classDef c1 fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
@@ -29,3 +30,11 @@ flowchart TB
   classDef c6 fill:#e0e7ff,stroke:#4338ca,color:#312e81
   classDef c7 fill:#cffafe,stroke:#0e7490,color:#164e63
   classDef c8 fill:#fae8ff,stroke:#a21caf,color:#701a75
+  class DOM c1
+  class MAP c2
+  class CON c3
+  class FIX c4
+  class LAM c5
+  class EQ c6
+  class COMP c7
+  class RET c8
