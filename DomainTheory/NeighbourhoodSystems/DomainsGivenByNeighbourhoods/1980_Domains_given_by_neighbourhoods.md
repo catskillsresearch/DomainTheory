@@ -12,7 +12,7 @@
 - [Example 1.2 — two-token domain](1980_Example_1_2.md) [✓](../1980_REVISION.md)
 - [Example 1.3 — three-step chain](1980_Example_1_3.md) [✓](../1980_REVISION.md)
 - [Example 1.4 — finite binary tree](1980_Example_1_4.md) [✓](../1980_REVISION.md)
-- [Are two neighbourhoods nested or disjoint?](1980_Factoid_1_4.md)
+- [Are two neighbourhoods nested or disjoint?](1980_Factoid_1_4.md) [✓](../1980_REVISION.md)
 - [Example 1.5 — all nonempty subsets](1980_Example_1_5.md)
 - [Factoid 1.5 — consistent iff nonempty; equivalent sequences same limit](1980_Factoid_1_5.md)
 - [Definition 1.6 — ideal elements](1980_Definition_1_6.md)
