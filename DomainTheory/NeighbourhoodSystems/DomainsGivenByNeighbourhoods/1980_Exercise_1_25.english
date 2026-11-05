@@ -1,0 +1,35 @@
+**EXERCISE 1.25.** (For set theorists). Let $\Delta$ be any well-ordered set (ordinal). (Even small ordinals like $\omega \cdot 3$ or $\omega^5$ are interesting.) Let $\mathcal{D}$ be the family of non-empty *final* segments of $\Delta$. What is $|\mathcal{D}|$? Are all elements finite? Is every approximation to a finite element finite?
+
+<!-- formalization -->
+
+**Theorem (`upperSet_subset_or`).** On a linear order, any two upper sets are nested.
+
+*Proof.* From an element of one set missing from the other, upward closure forces the opposite inclusion. ∎
+
+**Definition (`finalSegmentSystem`).** The neighbourhood system of nonempty upper sets of a nonempty linear order $\Delta$.
+
+**Theorem (`Ici_mem`).** Every principal final segment $\uparrow a$ is a neighbourhood.
+
+**Theorem (`exists_Ici_of_mem`).** When $\Delta$ is well-ordered, every neighbourhood equals some $\uparrow a$.
+
+*Proof.* Take the least element of the neighbourhood. ∎
+
+**Definition (`lowerSetOf`).** The set of points $a$ such that $\uparrow a$ belongs to the ideal element.
+
+**Definition (`ofLowerSet`).** From a nonempty lower set $S$, the ideal element of neighbourhoods containing $\uparrow a$ for some $a\in S$.
+
+**Theorem (`finalSegmentClassify`).** Ideal elements are order-isomorphic to the nonempty lower sets of $\Delta$.
+
+*Proof.* The two maps are mutually inverse once every neighbourhood is a principal final segment. ∎
+
+**Definition (`topElement`).** The ideal element containing every neighbourhood.
+
+**Theorem (`topElement_isTotal`).** The top element is total.
+
+**Theorem (`topElement_not_principal_of_noMax`).** If $\Delta$ has no greatest element, the top element is not principal.
+
+*Proof.* A principal $\uparrow a$ omits every strictly later final segment. ∎
+
+**Theorem (`exercise_1_25`).** The top element is total, and when $\Delta$ is unbounded above it is not finite.
+
+*Proof.* Assemble totality of the top with the non-principality criterion. ∎

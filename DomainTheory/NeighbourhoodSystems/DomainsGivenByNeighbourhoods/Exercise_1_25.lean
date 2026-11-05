@@ -1,6 +1,5 @@
 module
 
-import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_le_iff
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.IsTotal
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NestedOrDisjoint
@@ -48,10 +47,7 @@ variable {Δ : Type*} [LinearOrder Δ] [Nonempty Δ]
 
 theorem Ici_mem (a : Δ) : (finalSegmentSystem Δ).mem (Set.Ici a) :=
   ⟨⟨a, le_refl a⟩, isUpperSet_Ici a⟩
-end
 
-section
-variable {Δ : Type*} [LinearOrder Δ] [Nonempty Δ]
 variable [WellFoundedLT Δ]
 
 theorem exists_Ici_of_mem {X : Set Δ} (hX : (finalSegmentSystem Δ).mem X) :
@@ -176,21 +172,6 @@ theorem exercise_1_25 :
         topElement ≠ (finalSegmentSystem Δ).principal (Ici_mem a)) :=
   ⟨topElement_isTotal, topElement_not_principal_of_noMax⟩
 end
-end
-
-end FinalSegment
-end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems
-namespace FinalSegment
-section
-
-open NeighborhoodSystem
-variable {Δ : Type*} [LinearOrder Δ] [Nonempty Δ]
-
-theorem principal_Ici_le_iff (a b : Δ) :
-    (finalSegmentSystem Δ).principal (Ici_mem a) ≤ (finalSegmentSystem Δ).principal (Ici_mem b)
-      ↔ a ≤ b := by
-  rw [NeighborhoodSystem.principal_le_iff, Set.Ici_subset_Ici]
 end
 
 end FinalSegment
