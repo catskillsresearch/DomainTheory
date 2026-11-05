@@ -17,4 +17,4 @@
 - [Exercise 1.24 — extending partial elements](1980_Exercise_1_24.md) [✓](../1980_REVISION.md)
 - [Exercise 1.25 — final segments of ordinals](1980_Exercise_1_25.md) [✓](../1980_REVISION.md)
 - [Exercise 1.26 — ideals of a ring](1980_Exercise_1_26.md) [✓](../1980_REVISION.md)
-- [Exercise 1.27 — suprema of bounded sets](1980_Exercise_1_27.md)
+- [Exercise 1.27 — suprema of bounded sets](1980_Exercise_1_27.md) [✓](../1980_REVISION.md)

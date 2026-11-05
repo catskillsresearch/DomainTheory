@@ -1,0 +1,35 @@
+**EXERCISE 1.27.** Further closure properties of domains can be proved for bounded sets. We say $X \subseteq |\mathcal{D}|$ is *bounded* iff for some $y \in |\mathcal{D}|$ we have $x \subseteq y$ for all $x \in X$. This $y$ is called an *upper bound*. We let
+
+$$
+\bigsqcup X = \bigcap \{y \in |\mathcal{D}| \mid x \subseteq y \text{ all } x \in X\}.
+$$
+
+Prove that if $X$ is bounded, then $\bigsqcup X$ is the *least upper bound* for $X$ in $|\mathcal{D}|$. Prove also: if $U, V \in \mathcal{D}$ are neighbourhoods, then $\{U, V\}$ is consistent in $\mathcal{D}$ iff $\{\uparrow U, \uparrow V\}$ is bounded in $|\mathcal{D}|$. (That is, boundedness is for elements what consistency is for neighbourhoods.) Prove finally with the aid of 1.18 that $X \subseteq |\mathcal{D}|$ is bounded iff every finite subset of $X$ is bounded.
+
+<!-- formalization -->
+
+**Definition (`Bounded`).** A set of ideal elements is bounded when it has an upper bound under approximation.
+
+**Definition (`upperBounds`).** The set of all upper bounds of a given set of ideal elements.
+
+**Definition (`sSup`).** The supremum of a bounded set is the least filter of its upper bounds.
+
+**Theorem (`le_sSup`).** Every member of a bounded set approximates the supremum.
+
+**Theorem (`sSup_le`).** The supremum is below every upper bound.
+
+*Proof.* The least-filter characterisation of the infimum of the upper bounds. ∎
+
+**Definition (`pairSeq`).** The length-two sequence with values $U$ and $W$.
+
+**Theorem (`consistent_pair_iff_bounded`).** Two neighbourhoods are consistent if and only if their principal ideal elements are bounded.
+
+*Proof.* A witnessing neighbourhood for the pair intersection supplies a common principal upper bound, and conversely. ∎
+
+**Theorem (`bounded_iff_finite_bounded`).** A set of ideal elements is bounded if and only if every finite subset is.
+
+*Proof.* The forward direction is immediate. Conversely, the neighbourhoods appearing in members of the set form a finitely consistent family by the finite-boundedness hypothesis, and the least filter of that family is an upper bound (Exercise 1.18). ∎
+
+**Theorem (`exercise_1_27`).** Boundedness is equivalent to finite boundedness; pairwise consistency of neighbourhoods matches boundedness of their principals; and the supremum of a bounded set is its least upper bound.
+
+*Proof.* Assemble the three preceding theorems with the lub inequalities. ∎
