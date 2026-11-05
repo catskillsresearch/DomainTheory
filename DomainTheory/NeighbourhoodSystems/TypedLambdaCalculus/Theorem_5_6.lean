@@ -5,7 +5,7 @@ public import Mathlib.Computability.PartrecBasis
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_11
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot_le
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6

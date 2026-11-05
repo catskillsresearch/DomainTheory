@@ -3,7 +3,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition_7_1
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DedekindCutProjection
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot_le
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
 
 @[expose] public section

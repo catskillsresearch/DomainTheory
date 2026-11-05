@@ -1242,9 +1242,25 @@ NS_DOM_SHORT: dict[str, tuple[str, str]] = {
         "D18",
         "Definition 1.8<br>approximation and totality",
     ),
-    "Factoid 1.8 — bottom element; bottom is least; finite filters are principal; prefix order; union of finite approximations": (
-        "F18",
-        "Factoid 1.8",
+    "Bottom element": (
+        "F18a1",
+        "Bottom element",
+    ),
+    "Bottom is least": (
+        "F18a2",
+        "Bottom is least",
+    ),
+    "Finite filters are principal": (
+        "F18b",
+        "Finite filters<br>are principal",
+    ),
+    "Prefix order": (
+        "F18c",
+        "Prefix order",
+    ),
+    "Union of finite approximations": (
+        "F18d",
+        "Union of finite<br>approximations",
     ),
     "Examples 1.2–1.5 (Revisited) — finite examples revisited": (
         "ER",

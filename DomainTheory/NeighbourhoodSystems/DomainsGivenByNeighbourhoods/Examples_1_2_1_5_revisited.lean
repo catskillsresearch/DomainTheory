@@ -5,6 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exa
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example_1_4
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example_1_5
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.eq_principal_of_isMin
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_4
 
 public import Mathlib.Data.Set.Card
@@ -18,14 +19,8 @@ section
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 theorem eq_principal_of_minimum (x : V.Element) {X : Set α} (hX : x.mem X)
-    (hmin : ∀ Y, x.mem Y → X ⊆ Y) : x = V.principal (x.sub hX) := by
-  apply Element.ext
-  intro Z
-  constructor
-  · intro hZ
-    exact ⟨x.sub hZ, hmin Z hZ⟩
-  · rintro ⟨hZ, hXZ⟩
-    exact x.up_mem hX hZ hXZ
+    (hmin : ∀ Y, x.mem Y → X ⊆ Y) : x = V.principal (x.sub hX) :=
+  V.eq_principal_of_isMin x hX hmin
 
 theorem exists_minimum_of_fintype [Fintype α] (x : V.Element) :
     ∃ X, x.mem X ∧ ∀ Y, x.mem Y → X ⊆ Y := by

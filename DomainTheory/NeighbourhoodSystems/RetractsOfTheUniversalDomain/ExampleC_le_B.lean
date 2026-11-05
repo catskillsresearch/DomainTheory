@@ -3,7 +3,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_17
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition_6_12
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_29
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot_le
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_4
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6

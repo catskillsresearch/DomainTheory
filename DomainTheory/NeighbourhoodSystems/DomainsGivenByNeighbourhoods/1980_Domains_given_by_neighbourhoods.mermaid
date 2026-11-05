@@ -25,8 +25,12 @@ flowchart TB
   F17a1["Principals are<br>one-one"]
   F17b["Union of principal<br>filters"]
   D18["Definition 1.8<br>approximation and totality"]
-  F18["Factoid 1.8"]
+  F18a1["Bottom element"]
+  F18a2["Bottom is least"]
+  F18b["Finite filters<br>are principal"]
   ER["Examples 1.2–1.5<br>revisited"]
+  F18c["Prefix order"]
+  F18d["Union of finite<br>approximations"]
   D19["Definition 1.9<br>isomorphic domains"]
   T10["Theorem 1.10<br>basic open neighbourhoods"]
   T11["Theorem 1.11<br>intersections and directed unions"]
@@ -46,9 +50,11 @@ flowchart TB
   E14 -->|"1"| ER
   E15 -->|"1"| ER
   F14a -->|"1"| ER
+  F18b -->|"1"| ER
   F11b -->|"1"| EX
   F15a -->|"3"| EX
   F17a1 -->|"1"| EX
+  F18a2 -->|"1"| EX
   T10 -->|"1"| EX
   T11 -->|"1"| EX
   iTot -->|"7"| EX
@@ -62,11 +68,17 @@ flowchart TB
   D17 -->|"1"| F17a2
   Ord -->|"1"| F17a2
   D17 -->|"1"| F17b
-  ER -->|"1"| F18
-  F17a2 -->|"1"| F18
+  D17 -->|"1"| F18a1
+  D18 -->|"1"| F18a2
+  Ord -->|"1"| F18a2
+  D17 -->|"1"| F18b
+  Ord -->|"1"| F18b
+  ER -->|"1"| F18c
+  F17a2 -->|"1"| F18c
+  F18c -->|"1"| F18d
   D16 -->|"1"| Ord
   EX -->|"1"| T10
-  F18 -->|"1"| T11
+  F18c -->|"1"| T11
   Ord -->|"1"| iTot
   D11 -->|"1"| iUT
 
@@ -95,8 +107,12 @@ flowchart TB
   class F17a1 cfac
   class F17b cfac
   class D18 cdef
-  class F18 cfac
+  class F18a1 cfac
+  class F18a2 cfac
+  class F18b cfac
   class ER cexs
+  class F18c cfac
+  class F18d cfac
   class D19 cdef
   class T10 cthm
   class T11 cthm

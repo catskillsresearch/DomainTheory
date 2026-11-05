@@ -1,0 +1,11 @@
+DEFINITION 1.8. For $x, y \in |\mathcal{D}|$, we say that $x$ *approximates* $y$ iff $x \subseteq y$. The element that approximates all others, $\{\Delta\}$, is called $\perp$ (read: *bottom*); it is the "least defined" element, or the "most partial" element. Elements maximal with respect to the approximation relation are called *total elements*. $\square$
+
+<!-- formalization -->
+
+**Theorem (`bot_le`).** Bottom approximates every ideal element: $\perp\le x$ for all $x\in|\mathcal{D}|$.
+
+*Proof.* The only neighbourhood of $\perp$ is $\Delta$, and every ideal element contains $\Delta$. ∎
+
+**Instance (`OrderBot`).** Approximation order on ideal elements has least element $\perp$.
+
+*Proof.* Take bottom as $\perp=\uparrow\Delta$ and leastness from the previous theorem. ∎

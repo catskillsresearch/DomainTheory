@@ -1,7 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
-
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot_le
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_13
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_18
 
