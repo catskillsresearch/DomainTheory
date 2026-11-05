@@ -5,6 +5,7 @@ flowchart TB
 
   Definition_2_1___approxi["Definition 2.1 — approximable mapping"]
   Proposition_2_2___elemen["Proposition 2.2 — elementwise action"]
+  Two_token_ideal_elements["Two-token ideal elements"]
   Example_2_3___parity_of["Example 2.3 — parity of leading zeros"]
   Example_2_4___erase_a_ru["Example 2.4 — erase a run of ones"]
   Theorem_2_5___category_o["Theorem 2.5 — category of approximable maps"]
@@ -28,6 +29,7 @@ flowchart TB
   Exercise_2_22___domains["Exercise 2.22 — domains from closure properties"]
 
   Proposition_2_2___elemen --> Example_2_3___parity_of
+  Two_token_ideal_elements --> Example_2_3___parity_of
   Example_2_3___parity_of --> Example_2_4___erase_a_ru
   Proposition_2_2___elemen --> Exercise_2_10___intersec
   Proposition_2_2___elemen --> Exercise_2_11___directed
@@ -39,7 +41,7 @@ flowchart TB
   Theorem_2_7___isomorphis --> Exercise_2_14___isomorph
   Exercise_2_13___approxim --> Exercise_2_15___opens_cl
   Example_2_4___erase_a_ru --> Exercise_2_16___prefixin
-  Example_2_4___erase_a_ru --> Exercise_2_17___equation
+  Example_2_3___parity_of --> Exercise_2_17___equation
   Exercise_2_13___approxim --> Exercise_2_17___uniquene
   Example_2_4___erase_a_ru --> Exercise_2_18___doubling
   Proposition_2_6___identi --> Exercise_2_18___doubling
@@ -54,6 +56,7 @@ flowchart TB
   Theorem_2_5___category_o --> Proposition_2_6___identi
   Proposition_2_2___elemen --> Theorem_2_5___category_o
   Example_2_4___erase_a_ru --> Theorem_2_7___isomorphis
+  Definition_2_1___approxi --> Two_token_ideal_elements
 
 %%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
   classDef cdef fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
