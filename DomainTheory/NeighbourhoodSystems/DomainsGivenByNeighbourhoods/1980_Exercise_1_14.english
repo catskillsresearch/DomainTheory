@@ -1,0 +1,21 @@
+**EXERCISE 1.14.** Let $\Delta = \mathbb{N}$ and let $\mathcal{V}$ be the family of finite non-empty subsets of $\Delta$ plus the set $\Delta$. Show that this is a neighbourhood system. What are the total elements? What are the finite elements? Draw a picture.
+
+<!-- formalization -->
+
+**Definition (`mem`).** A set is a neighbourhood when it is either all of $\mathbb{N}$ or a nonempty finite subset.
+
+**Definition (`neighborhoodSystem`).** The neighbourhood system of finite nonempty subsets of $\mathbb{N}$ (together with the master set).
+
+*Proof of the axioms.* The master set is $\mathbb{N}$. Intersections of neighbourhoods remain nonempty finite or reduce to a factor when one factor is the universe. ∎
+
+**Definition (`fin`).** The principal filter of a neighbourhood.
+
+**Theorem (`mem_singleton`).** Every singleton is a neighbourhood.
+
+**Theorem (`singleton_isTotal`).** The principal of a singleton is a total element.
+
+*Proof.* Any refinement must contain that singleton; intersecting with a neighbourhood that omits the point would yield the empty set, which is not a neighbourhood. ∎
+
+**Theorem (`exercise_1_14`).** For every $n\in\mathbb{N}$, the principal of $\{n\}$ is total.
+
+*Proof.* Assemble totality of singleton principals. ∎
