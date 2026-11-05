@@ -36,6 +36,8 @@ flowchart TB
   brak["Brackets"]
   tokS["Token system"]
   T10["Theorem 1.10<br>basic open neighbourhoods"]
+  iInt["Countable intersection<br>of ideal elements"]
+  iUni["Directed union<br>of ideal elements"]
   T11["Theorem 1.11<br>intersections and directed unions"]
   EX["Lecture I exercises"]
 
@@ -55,8 +57,9 @@ flowchart TB
   F15a -->|"3"| EX
   F17a1 -->|"1"| EX
   F18a2 -->|"1"| EX
-  T11 -->|"1"| EX
+  F18c -->|"1"| EX
   iTot -->|"7"| EX
+  iUni -->|"1"| EX
   tokS -->|"1"| EX
   iUT -->|"1"| F11a
   iUT -->|"1"| F11b
@@ -78,10 +81,13 @@ flowchart TB
   F18c -->|"1"| F18d
   D16 -->|"1"| Ord
   tokS -->|"1"| T10
-  F18c -->|"1"| T11
+  iInt -->|"1"| T11
+  iUni -->|"1"| T11
   D17 -->|"1"| brak
+  Ord -->|"1"| iInt
   Ord -->|"1"| iTot
   D11 -->|"1"| iUT
+  Ord -->|"1"| iUni
   D18 -->|"1"| tokS
   D19 -->|"1"| tokS
   brak -->|"1"| tokS
@@ -122,5 +128,7 @@ flowchart TB
   class brak cdef
   class tokS cdef
   class T10 cthm
+  class iInt cdef
+  class iUni cdef
   class T11 cthm
   class EX cex

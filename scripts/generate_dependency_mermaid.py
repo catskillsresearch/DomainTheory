@@ -1286,6 +1286,14 @@ NS_DOM_SHORT: dict[str, tuple[str, str]] = {
         "T10",
         "Theorem 1.10<br>basic open neighbourhoods",
     ),
+    "Countable intersection of ideal elements": (
+        "iInt",
+        "Countable intersection<br>of ideal elements",
+    ),
+    "Directed union of ideal elements": (
+        "iUni",
+        "Directed union<br>of ideal elements",
+    ),
     "Theorem 1.11 — intersections and directed unions": (
         "T11",
         "Theorem 1.11<br>intersections and directed unions",

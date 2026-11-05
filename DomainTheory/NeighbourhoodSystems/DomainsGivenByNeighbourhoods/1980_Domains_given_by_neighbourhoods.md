@@ -33,5 +33,7 @@
 - [Brackets](1980_Brackets.md) [✓](../1980_REVISION.md)
 - [Token system](1980_Token_system.md) [✓](../1980_REVISION.md)
 - [Theorem 1.10 — basic open neighbourhoods](1980_Theorem_1_10.md) [✓](../1980_REVISION.md)
+- [Countable intersection of ideal elements](1980_Countable_intersection_of_ideal_elements.md) [✓](../1980_REVISION.md)
+- [Directed union of ideal elements](1980_Directed_union_of_ideal_elements.md)
 - [Theorem 1.11 — intersections and directed unions](1980_Theorem_1_11.md)
 - [Lecture I exercises](1980_Lecture_I_exercises.md)

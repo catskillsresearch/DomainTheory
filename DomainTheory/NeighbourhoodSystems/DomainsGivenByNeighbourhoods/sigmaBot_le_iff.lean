@@ -1,7 +1,9 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_le_iff
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ElementOrder
+import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_le_iff
+import Mathlib.Tactic.Attr.Core
 
 @[expose] public section
 

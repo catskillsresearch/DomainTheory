@@ -1,0 +1,15 @@
+The countable intersection $\bigcap_n x_n$ of ideal elements is again an ideal element: a neighbourhood belongs to the meet precisely when it belongs to every $x_n$. It is the greatest lower bound of the sequence in the approximation order.
+
+<!-- formalization -->
+
+**Definition (`iInter`).** The countable intersection of a sequence of ideal elements is the filter of neighbourhoods belonging to every term.
+
+**Theorem (`mem_iInter`).** A neighbourhood belongs to the countable intersection if and only if it belongs to every term of the sequence.
+
+**Theorem (`iInter_le`).** The countable intersection is below each term of the sequence.
+
+*Proof.* Membership in the meet means membership in that term. ∎
+
+**Theorem (`le_iInter`).** Any common lower bound of the sequence is below the countable intersection.
+
+*Proof.* A neighbourhood of the bound belongs to every term, hence to the meet. ∎

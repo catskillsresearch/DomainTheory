@@ -26,6 +26,8 @@ line,keyword,number,label,file
 334,FACTOID,1.10a,brackets,DomainsGivenByNeighbourhoods/bracket.lean
 334,FACTOID,1.10b,token system,DomainsGivenByNeighbourhoods/tokenSystem.lean
 334,THEOREM,1.10,basic open neighbourhoods,DomainsGivenByNeighbourhoods/Theorem_1_10.lean
+372,FACTOID,1.11a,countable intersection of ideal elements,DomainsGivenByNeighbourhoods/iInter.lean
+372,FACTOID,1.11b,directed union of ideal elements,DomainsGivenByNeighbourhoods/iUnion.lean
 372,THEOREM,1.11,intersections and directed unions,DomainsGivenByNeighbourhoods/Theorem_1_11.lean
 446,EXERCISE,1.12,final segments of integers,DomainsGivenByNeighbourhoods/Exercise_1_12.lean
 454,EXERCISE,1.13,infinite binary tree,DomainsGivenByNeighbourhoods/Exercise_1_13.lean
