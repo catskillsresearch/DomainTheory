@@ -1,9 +1,9 @@
 # Exercise 1.24 — extending partial elements
 
-**EXERCISE 1.24.** (For set theorists). Prove, using the Axiom of Choice, or some equivalent principle, that in every domain a partial element can always be extended to a total element. Is this assertion equivalent to the Axiom of Choice? (Hint: Remember to prove that the union of every (transfinite) chain of filters is again a filter.)
-
-<!-- page 23 -->
+@import "1980_Exercise_1_24.english" {code_block=false}
 
 **[Exercise_1_24.lean](Exercise_1_24.lean)**
 
 @import "Exercise_1_24.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-05) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

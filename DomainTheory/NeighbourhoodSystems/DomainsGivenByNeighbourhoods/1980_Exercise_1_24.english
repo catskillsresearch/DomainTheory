@@ -1,0 +1,17 @@
+**EXERCISE 1.24.** (For set theorists). Prove, using the Axiom of Choice, or some equivalent principle, that in every domain a partial element can always be extended to a total element. Is this assertion equivalent to the Axiom of Choice? (Hint: Remember to prove that the union of every (transfinite) chain of filters is again a filter.)
+
+<!-- formalization -->
+
+**Definition (`chainUnion`).** The union of a nonempty chain of ideal elements is again an ideal element: a neighbourhood belongs to the union when it belongs to some member of the chain.
+
+*Proof.* Pairwise intersection of neighbourhoods drawn from comparable chain members may be formed in the larger of the two. ∎
+
+**Theorem (`le_chainUnion`).** Every member of the chain approximates the chain union.
+
+**Theorem (`exists_total_ge`).** Every ideal element extends to a total element.
+
+*Proof.* Zorn's lemma applied to the upset of the given element: chain unions supply upper bounds. ∎
+
+**Theorem (`exercise_1_24`).** Every partial element extends to a total element.
+
+*Proof.* Assemble the Zorn extension theorem. ∎
