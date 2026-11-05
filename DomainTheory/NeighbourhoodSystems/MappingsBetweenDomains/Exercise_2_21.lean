@@ -3,7 +3,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_19
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Examples_1_2_1_5_revisited
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainIso
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.IsTotal
 @[expose] public section
 
 section

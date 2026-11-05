@@ -4,6 +4,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exa
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example_1_3
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example_1_4
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example_1_5
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot
 
 public import Mathlib.Data.Set.Card
 @[expose] public section

@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainIso
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.IsTotal
 public import Mathlib.Algebra.Group.End
 public import Mathlib.Basic.Finite.Defs
 

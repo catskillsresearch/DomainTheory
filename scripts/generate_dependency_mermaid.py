@@ -1200,6 +1200,10 @@ NS_DOM_SHORT: dict[str, tuple[str, str]] = {
         "Ord",
         "Element order<br>and sequence limits",
     ),
+    "Total elements": (
+        "iTot",
+        "Total elements",
+    ),
     "Example 1.2 — two-token domain": ("E12", "Example 1.2<br>two-token domain"),
     "Example 1.3 — three-step chain": ("E13", "Example 1.3<br>three-step chain"),
     "Example 1.4 — finite binary tree": ("E14", "Example 1.4<br>finite binary tree"),
@@ -1264,7 +1268,7 @@ def gen_ns_domains_lecture(mermaid: Path, modules: dict[str, Path], old: str) ->
     header = [
         "%% Each box is one outline note from 1980_Domains_given_by_neighbourhoods.md.",
         "%% Lean modules = that note's @import .lean files (Lecture I exercises = all exercise modules;",
-        "%%   Def 1.7/1.8/1.9 also own principal/bot/DomainIso).",
+        "%%   Def 1.7/1.8/1.9 also own principal/bot/DomainIso; iTot owns IsTotal).",
         "%% Arrowhead on the importer; label = direct-import count.",
         "%% Only paper-forward edges. Paths implied by longer routes omitted.",
     ]

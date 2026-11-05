@@ -1,6 +1,7 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainIso
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.IsTotal
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot
 
 public import Mathlib.Data.Set.Basic
 public import Mathlib.Data.Set.Finite.Basic
