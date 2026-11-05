@@ -10,7 +10,7 @@
 - [Element order and sequence limits](1980_ElementOrder.md) [✓](../1980_REVISION.md)
 - [Total elements](1980_IsTotal.md) [✓](../1980_REVISION.md)
 - [Example 1.2 — two-token domain](1980_Example_1_2.md) [✓](../1980_REVISION.md)
-- [Example 1.3 — three-step chain](1980_Example_1_3.md)
+- [Example 1.3 — three-step chain](1980_Example_1_3.md) [✓](../1980_REVISION.md)
 - [Example 1.4 — finite binary tree](1980_Example_1_4.md)
 - [Factoid 1.4a — nested or disjoint](1980_Factoid_1_4.md)
 - [Example 1.5 — all nonempty subsets](1980_Example_1_5.md)

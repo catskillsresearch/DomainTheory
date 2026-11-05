@@ -1,30 +1,9 @@
 # Example 1.3
 
-EXAMPLE 1.3. Let $\Delta = \{0, 1, 2\}$ and let $\mathcal{D} = \{\{0, 1, 2\}, \{1, 2\}, \{2\}\}$.
+@import "1980_Example_1_3.english" {code_block=false}
 
-In pictures we have:
-
-```mermaid
-flowchart LR
-  subgraph outer[" "]
-    direction LR
-    A["0"]
-    subgraph mid[" "]
-      direction LR
-      B["1"]
-      subgraph inn[" "]
-        C["2"]
-      end
-      B ~~~ inn
-    end
-    A ~~~ mid
-  end
-```
-
-<!-- page 10 -->
-
-Instead of stepping to the total element (here represented by 2) in one big step, the passage is divided into two steps. (Note 0 and 1 cannot be taken as representing total elements.) This example is not very interesting because the direction of approximation is unique. We need an example with some choice. $\square$
-
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example_1_3.lean](Example_1_3.lean)**
+**[Example_1_3.lean](Example_1_3.lean)**
 
 @import "Example_1_3.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-04) — <a href="../1980_REVISION.md">1980 revision progress</a></p>
