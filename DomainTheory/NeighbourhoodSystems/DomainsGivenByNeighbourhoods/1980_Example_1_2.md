@@ -1,22 +1,9 @@
 # Example 1.2
 
+@import "1980_Example_1_2.english" {code_block=false}
 
-EXAMPLE 1.2. Let $\Delta = \{0, 1\}$ and let $\mathcal{D} = \{\{0, 1\}, \{0\}, \{1\}\}$.
-
-In pictures we have:
-
-```mermaid
-flowchart LR
-  subgraph outer[" "]
-    direction LR
-    Z["0"]
-    O["1"]
-    Z ~~~ O
-  end
-```
-
-The intention is that 0 and 1 can be completely specified and that they can be identified with the total elements. As we shall see, there is only one partial element: either we give no information (the neighbourhood $\{0, 1\}$), or we decide between 0 and 1 (by giving $\{0\}$ or $\{1\}$). $\square$
-
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example_1_2.lean](Example_1_2.lean)**
+**[Example_1_2.lean](Example_1_2.lean)**
 
 @import "Example_1_2.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-04) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

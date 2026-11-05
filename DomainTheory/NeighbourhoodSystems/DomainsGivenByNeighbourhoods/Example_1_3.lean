@@ -22,17 +22,7 @@ theorem master_inter (A : Set Token) : master ∩ A = A := by
 
 def twelve : Set Token := (insert 2 {1} : Set Token)
 
-theorem master_not_subset_twelve : ¬master ⊆ twelve := by
-  intro h
-  have : (0 : Token) ∈ twelve := h (by simp [master])
-  simp [twelve] at this
-
 def two : Set Token := {2}
-
-theorem master_not_subset_two : ¬master ⊆ two := by
-  intro h
-  have : (0 : Token) ∈ two := h (by simp [master])
-  simp [two] at this
 
 def memSet : Set (Set Token) := {master, twelve, two}
 
@@ -58,20 +48,9 @@ theorem mem_iff (X : Set Token) : mem X ↔ X = master ∨ X = twelve ∨ X = tw
     · exact mem_twelve
     · exact mem_two
 
-theorem eq_of_master_subset {Y : Set Token} (h : mem Y) (hsub : master ⊆ Y) : Y = master := by
-  rcases (mem_iff Y).mp h with rfl | htwelve | htwo
-  · rfl
-  · exact absurd htwelve (fun h' => master_not_subset_twelve (h' ▸ hsub))
-  · exact absurd htwo (fun h' => master_not_subset_two (h' ▸ hsub))
-
 theorem twelve_inter_two : twelve ∩ two = two := by
   ext t
   fin_cases t <;> simp [twelve, two]
-
-theorem twelve_not_subset_two : ¬twelve ⊆ two := by
-  intro h
-  have : (1 : Token) ∈ two := h (by simp [twelve])
-  simp [two] at this
 
 theorem two_inter_twelve : two ∩ twelve = two := by
   ext t
@@ -104,203 +83,19 @@ def neighborhoodSystem : NeighborhoodSystem Token where
     · rw [h]; exact mem_twelve
     · rw [h]; exact mem_two
 
-namespace neighborhoodSystem
-section
-
-open NeighborhoodSystem
-
-def bot : neighborhoodSystem.Element where
-  mem X := X = master
-  sub h := by rw [h]; exact mem_master
-  master_mem := rfl
-  inter_mem := by
-    intro X Y hX hY
-    rw [hX, hY, master_inter]
-  up_mem := by
-    intro X Y hX hY hXY
-    rw [hX] at hXY
-    exact eq_of_master_subset hY hXY
-
-def elemTwelve : neighborhoodSystem.Element where
-  mem X := X = master ∨ X = twelve
-  sub h := by
-    rcases h with rfl | rfl
-    · exact mem_master
-    · exact mem_twelve
-  master_mem := Or.inl rfl
-  inter_mem := by
-    intro X Y hX hY
-    rcases hX with rfl | rfl <;> rcases hY with rfl | rfl
-    · exact Or.inl (master_inter _)
-    · exact Or.inr (master_inter _)
-    · exact Or.inr (inter_master _)
-    · exact Or.inr (Set.inter_self _)
-  up_mem := by
-    intro X Y hX hY hXY
-    rcases hX with rfl | rfl
-    · exact Or.inl (eq_of_master_subset hY hXY)
-    · rcases (mem_iff Y).mp hY with rfl | rfl | rfl
-      · exact Or.inl rfl
-      · exact Or.inr rfl
-      · exact absurd hXY twelve_not_subset_two
-
-def elemTwo : neighborhoodSystem.Element where
-  mem X := X = master ∨ X = twelve ∨ X = two
-  sub h := by
-    rcases h with rfl | rfl | rfl
-    · exact mem_master
-    · exact mem_twelve
-    · exact mem_two
-  master_mem := Or.inl rfl
-  inter_mem := by
-    intro X Y hX hY
-    rcases hX with rfl | rfl | rfl <;> rcases hY with rfl | rfl | rfl
-    · exact Or.inl (master_inter _)
-    · exact Or.inr (Or.inl (master_inter _))
-    · exact Or.inr (Or.inr (master_inter _))
-    · exact Or.inr (Or.inl (inter_master _))
-    · exact Or.inr (Or.inl (Set.inter_self _))
-    · exact Or.inr (Or.inr (twelve_inter_two))
-    · exact Or.inr (Or.inr (inter_master _))
-    · exact Or.inr (Or.inr (two_inter_twelve))
-    · exact Or.inr (Or.inr (Set.inter_self _))
-  up_mem := by
-    intro X Y hX hY hXY
-    rcases hX with rfl | rfl | rfl
-    · exact Or.inl (eq_of_master_subset hY hXY)
-    · rcases (mem_iff Y).mp hY with rfl | rfl | rfl
-      · exact Or.inl rfl
-      · exact Or.inr (Or.inl rfl)
-      · exact Or.inr (Or.inr rfl)
-    · rcases (mem_iff Y).mp hY with rfl | rfl | rfl
-      · exact Or.inl rfl
-      · exact Or.inr (Or.inl rfl)
-      · exact Or.inr (Or.inr rfl)
-end
-
-end neighborhoodSystem
-theorem twelve_ne_master : twelve ≠ master := by
-  intro h
-  have hmem : (0 : Token) ∈ twelve := by
-    rw [h]
-    simp [master]
-  simp [twelve] at hmem
-
-theorem two_ne_master : two ≠ master := by
-  intro h
-  have hmem : (0 : Token) ∈ two := by
-    rw [h]
-    simp [master]
-  simp [two] at hmem
-
-theorem two_ne_twelve : two ≠ twelve := by
-  intro h
-  have hmem : (1 : Token) ∈ two := by
-    rw [h]
-    simp [twelve]
-  simp [two] at hmem
-
-namespace neighborhoodSystem
-
-open NeighborhoodSystem
-
-theorem two_subset_twelve : two ⊆ twelve := by
-  intro t ht
-  fin_cases t <;> simp [two, twelve] at ht ⊢
-
-theorem mem_two_of_mem (x : neighborhoodSystem.Element) (h : x.mem two) :
-    x = elemTwo := by
-  apply Element.ext
-  intro X
-  constructor
-  · intro hx
-    rcases (mem_iff X).mp (x.sub hx) with rfl | hX12 | htwo
-    · exact Or.inl rfl
-    · rw [hX12]; exact Or.inr (Or.inl rfl)
-    · exact Or.inr (Or.inr htwo)
-  · intro hx
-    rcases hx with rfl | hx | hx
-    · exact x.master_mem
-    · rw [hx]; exact x.up_mem h mem_twelve two_subset_twelve
-    · rw [hx]; exact h
-
-theorem mem_twelve_of_mem (x : neighborhoodSystem.Element) (htwelve : x.mem twelve)
-    (htwo : ¬x.mem two) : x = elemTwelve := by
-  apply Element.ext
-  intro X
-  constructor
-  · intro hx
-    rcases (mem_iff X).mp (x.sub hx) with rfl | hX12 | hX2
-    · exact Or.inl rfl
-    · exact Or.inr hX12
-    · have hxo : x.mem two := hX2 ▸ hx
-      have := x.inter_mem htwelve hxo
-      rw [twelve_inter_two] at this
-      exact absurd this htwo
-  · intro hx
-    rcases hx with rfl | hx
-    · exact x.master_mem
-    · rw [hx]; exact htwelve
-
-section
-
-open NeighborhoodSystem
-
-theorem bot_lt_elemTwelve : bot < elemTwelve := by
-  constructor
-  · intro X hx
-    rw [hx]
-    exact Or.inl rfl
-  · intro h
-    have : bot.mem twelve := h twelve (Or.inr rfl)
-    exact twelve_ne_master this
-
-theorem elemTwelve_lt_elemTwo : elemTwelve < elemTwo := by
-  constructor
-  · intro X hx
-    rcases hx with rfl | hX12
-    · exact Or.inl rfl
-    · exact Or.inr (Or.inl hX12)
-  · intro h
-    exfalso
-    have ht := h two (Or.inr (Or.inr rfl))
-    rcases ht with h1 | h2
-    · exact absurd h1 two_ne_master
-    · exact two_ne_twelve h2
-
-theorem element_classification (x : neighborhoodSystem.Element) :
-    x = bot ∨ x = elemTwelve ∨ x = elemTwo := by
-  by_cases htwo : x.mem two
-  · exact Or.inr (Or.inr (mem_two_of_mem x htwo))
-  by_cases htwelve : x.mem twelve
-  · exact Or.inr (Or.inl (mem_twelve_of_mem x htwelve htwo))
-  apply Or.inl
-  apply Element.ext
-  intro X
-  constructor
-  · intro hx
-    rcases (mem_iff X).mp (x.sub hx) with rfl | htwelve' | htwo'
-    · rfl
-    · exact absurd (htwelve' ▸ hx) htwelve
-    · exact absurd (htwo' ▸ hx) htwo
-  · intro hx
-    rw [hx]
-    exact x.master_mem
-
-theorem elemTwo_maximal (x : neighborhoodSystem.Element) (h : elemTwo ≤ x) : x = elemTwo := by
-  rcases element_classification x with rfl | rfl | rfl
-  · exfalso
-    have : bot.mem twelve := h twelve (Or.inr (Or.inl rfl))
-    exact twelve_ne_master this
-  · exfalso
-    have ht := h two (Or.inr (Or.inr rfl))
-    rcases ht with h1 | h2
-    · exact absurd h1 two_ne_master
-    · exact two_ne_twelve h2
-  · rfl
-end
-
-end neighborhoodSystem
+/-- **Example 1.3.** Tokens `Δ = {0, 1, 2}` and neighbourhoods
+`𝒟 = {{0, 1, 2}, {1, 2}, {2}}` form a neighbourhood system. -/
+theorem example_1_3 :
+    ∃ (V : NeighborhoodSystem Token),
+      V.master = (Set.univ : Set Token) ∧
+        (∀ X : Set Token,
+          V.mem X ↔
+            X = Set.univ ∨ X = ({1, 2} : Set Token) ∨ X = ({2} : Set Token)) :=
+  ⟨neighborhoodSystem, rfl, fun X => by
+    have h12 : twelve = ({1, 2} : Set Token) := by
+      ext t; fin_cases t <;> simp [twelve]
+    refine (mem_iff X).trans ?_
+    simp [master, two, h12]⟩
 
 end DomainTheory.NeighbourhoodSystems.Example13
 end
