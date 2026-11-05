@@ -1230,9 +1230,9 @@ NS_DOM_SHORT: dict[str, tuple[str, str]] = {
         "F17a1",
         "Principals are<br>one-one",
     ),
-    "Inclusion-reversing principals": (
+    "Inclusion reversing principals": (
         "F17a2",
-        "Inclusion-reversing<br>principals",
+        "Inclusion reversing<br>principals",
     ),
     "Union of principal filters": (
         "F17b",

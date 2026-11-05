@@ -12,7 +12,7 @@ line,keyword,number,label,file
 240,DEFINITION,1.6,ideal elements,DomainsGivenByNeighbourhoods/Element.lean
 256,DEFINITION,1.7,principal filter,DomainsGivenByNeighbourhoods/principal.lean
 264,FACTOID,1.7a1,principals are one-one,DomainsGivenByNeighbourhoods/principal_injective.lean
-267,FACTOID,1.7a2,inclusion-reversing principals,DomainsGivenByNeighbourhoods/principal_le_iff.lean
+267,FACTOID,1.7a2,inclusion reversing principals,DomainsGivenByNeighbourhoods/principal_le_iff.lean
 273,FACTOID,1.7b,union of principal filters,DomainsGivenByNeighbourhoods/Factoid_1_7b.lean
 282,DEFINITION,1.8,approximation and totality,DomainsGivenByNeighbourhoods/bot.lean
 282,FACTOID,1.8a1,bottom element,DomainsGivenByNeighbourhoods/Factoid_1_8.lean

@@ -1,4 +1,4 @@
-# Inclusion-reversing principals
+# Inclusion reversing principals
 
 @import "1980_Factoid_1_7a2.english" {code_block=false}
 
