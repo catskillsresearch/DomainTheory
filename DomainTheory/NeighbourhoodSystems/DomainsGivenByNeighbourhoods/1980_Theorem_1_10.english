@@ -43,9 +43,3 @@ The last theorem in this lecture is a result on *closure properties* of a domain
 **Theorem (`theorem_110`).** Clauses (2)–(4) of the proof, together with the token-system isomorphism, hold for every neighbourhood system.
 
 *Proof.* Assemble the previous theorem with the intersection of brackets, the token-system isomorphism, and membership of principals in their brackets. (Clause (1) is the master bracket.) ∎
-
-**Definition (`IsComplete`).** A neighbourhood system on a ground set $B$ is complete when every ideal element is fixed by a unique token: for each ideal element $y$ there is a unique $b\in B$ such that $y$ contains exactly the neighbourhoods through $b$.
-
-**Theorem (`bracket_nonempty_iff`).** The bracket $[X]$ is nonempty if and only if $X$ is a neighbourhood.
-
-*Proof.* Every ideal element’s neighbourhoods are neighbourhoods of the system; conversely the principal of $X$ lies in $[X]$. ∎

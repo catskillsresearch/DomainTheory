@@ -34,14 +34,6 @@ theorem theorem_110 :
       V.principal hX ∈ V.bracket X) :=
   ⟨bracket_inter_nonempty_iff, bracket_inter, isomorphic_tokenSystem, principal_mem_bracket⟩
 
-def IsComplete {β : Type*} (V' : NeighborhoodSystem β) : Prop :=
-  ∀ y : V'.Element, ∃! b : β, ∀ S, V'.mem S → (y.mem S ↔ b ∈ S)
-
-theorem bracket_nonempty_iff {X : Set α} : (V.bracket X).Nonempty ↔ V.mem X := by
-  constructor
-  · rintro ⟨x, hx⟩; exact x.sub hx
-  · intro hX; exact ⟨V.principal hX, V.principal_mem_bracket hX⟩
-
 end
 
 end NeighborhoodSystem

@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem_1_10
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.tokenSystem
 import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_5a
 
 @[expose] public section
@@ -11,6 +11,14 @@ namespace NeighborhoodSystem
 section
 
 variable {α : Type*} (V : NeighborhoodSystem α)
+
+def IsComplete {β : Type*} (V' : NeighborhoodSystem β) : Prop :=
+  ∀ y : V'.Element, ∃! b : β, ∀ S, V'.mem S → (y.mem S ↔ b ∈ S)
+
+theorem bracket_nonempty_iff {X : Set α} : (V.bracket X).Nonempty ↔ V.mem X := by
+  constructor
+  · rintro ⟨x, hx⟩; exact x.sub hx
+  · intro hX; exact ⟨V.principal hX, V.principal_mem_bracket hX⟩
 
 theorem consistent_iff_bracket_interUpTo_nonempty (X : ℕ → Set α) {n : ℕ}
     (hX : ∀ i, i < n → V.mem (X i)) :
