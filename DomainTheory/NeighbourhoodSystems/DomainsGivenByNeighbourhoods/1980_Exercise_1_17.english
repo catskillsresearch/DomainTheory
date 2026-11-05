@@ -1,0 +1,21 @@
+**EXERCISE 1.17.** Let $\Delta = \mathbf{R}$ be the real line. Let $\mathcal{D}$ be the set of non-empty open intervals with rational end points plus the set $\Delta$. Show that this is a neighbourhood system. For any real $t \in \mathbf{R}$, show that $\{ X \in \mathcal{D} \mid t \in X \}$ is a filter. Is it always total? What are the total elements of $|\mathcal{D}|$? (Hint: When $t$ is rational consider all intervals with $t$ as a right-hand end point.)
+
+<!-- formalization -->
+
+**Definition (`ratIntervalMem`).** A set is a neighbourhood when it is either $\mathbb{R}$ or a nonempty open interval with rational endpoints.
+
+**Theorem (`inter_mem'`).** The intersection of two neighbourhoods, when nonempty, is again a neighbourhood.
+
+*Proof.* Intersecting rational open intervals yields a (possibly empty) rational open interval; nonempty intersection keeps the endpoints rational. ∎
+
+**Definition (`ratIntervalSystem`).** The neighbourhood system of rational open intervals on $\mathbb{R}$.
+
+**Definition (`filterAt`).** For each real $t$, the filter of all neighbourhoods containing $t$.
+
+**Theorem (`filterAt_injective`).** Distinct reals determine distinct point-filters.
+
+*Proof.* Separate the two points by a rational open interval that contains one but not the other. ∎
+
+**Theorem (`exercise_1_17`).** Neighbourhoods are closed under nonempty intersection, and the point-filters separate points of $\mathbb{R}$.
+
+*Proof.* Assemble the intersection lemma with injectivity of point-filters. ∎

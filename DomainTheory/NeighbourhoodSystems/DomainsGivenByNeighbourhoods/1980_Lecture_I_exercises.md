@@ -7,7 +7,7 @@
 - [Exercise 1.14 — finite nonempty subsets](1980_Exercise_1_14.md) [✓](../1980_REVISION.md)
 - [Exercise 1.15 — finite elements without chains](1980_Exercise_1_15.md) [✓](../1980_REVISION.md)
 - [Exercise 1.16 — cofinite integer subsets](1980_Exercise_1_16.md) [✓](../1980_REVISION.md)
-- [Exercise 1.17 — rational open intervals](1980_Exercise_1_17.md)
+- [Exercise 1.17 — rational open intervals](1980_Exercise_1_17.md) [✓](../1980_REVISION.md)
 - [Exercise 1.18 — consistency of neighbourhood families](1980_Exercise_1_18.md)
 - [Exercise 1.19 — positive neighbourhood systems](1980_Exercise_1_19.md)
 - [Exercise 1.20 — upward closed neighbourhoods](1980_Exercise_1_20.md)
