@@ -1,0 +1,23 @@
+**EXERCISE 1.16.** Let $\Delta = \mathbf{N}$ and let $\mathcal{D}$ be the family of *cofinite* subsets of $\mathbf{N}$. Show that $|\mathcal{D}|$ is isomorphic to the partially ordered set of *all* subsets of $\mathbf{N}$ under inclusion. Construct some other neighbourhood systems where $\mathcal{D}$ is closed under finite intersection. What happens to the total elements in such systems?
+
+<!-- formalization -->
+
+**Definition (`cofiniteSystem`).** The neighbourhood system whose members are the cofinite subsets of $\mathbb{N}$.
+
+**Definition (`ofExcluded`).** From an arbitrary set $E\subseteq\mathbb{N}$ form the filter of cofinite neighbourhoods whose complements lie in $E$.
+
+**Definition (`toExcluded`).** From an ideal element recover the set of points whose singleton-complements belong to the filter.
+
+**Theorem (`cofiniteIso`).** The map sending an ideal element to its excluded set is an order isomorphism between $|\mathcal{D}|$ and $(\mathcal{P}(\mathbb{N}),\subseteq)$.
+
+*Proof.* The two constructions are mutually inverse, and approximation corresponds to inclusion of excluded sets. ∎
+
+**Definition (`fullSystem`).** The neighbourhood system in which every subset is a neighbourhood (closed under all intersections).
+
+**Theorem (`ofExcluded_univ_isTotal`).** Excluding the whole of $\mathbb{N}$ yields a total element of the cofinite system.
+
+*Proof.* Every ideal element approximates that filter. ∎
+
+**Theorem (`exercise_1_16`).** The cofinite system has a total element — namely the filter of all cofinite sets.
+
+*Proof.* Assemble totality of the universal excluded set. ∎
