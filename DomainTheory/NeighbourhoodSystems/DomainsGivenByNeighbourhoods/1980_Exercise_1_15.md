@@ -1,9 +1,9 @@
 # Exercise 1.15 — finite elements without chains
 
-**EXERCISE 1.15.** Construct non-isomorphic infinite domains where all elements are finite but where there are no infinite chains $\langle x_n \rangle_{n=0}^{\infty}$ of elements with $x_n \sqsubseteq x_{n+1}$ but $x_n \neq x_{n+1}$ for all $n$.
-
-<!-- page 20 -->
+@import "1980_Exercise_1_15.english" {code_block=false}
 
 **[Exercise_1_15.lean](Exercise_1_15.lean)**
 
 @import "Exercise_1_15.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-05) — <a href="../1980_REVISION.md">1980 revision progress</a></p>
