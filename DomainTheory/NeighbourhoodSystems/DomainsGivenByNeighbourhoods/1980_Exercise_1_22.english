@@ -1,0 +1,45 @@
+**EXERCISE 1.22.** (For topologists). Show that the neighbourhoods $[X]$ for $X \in \mathcal{D}$ make $|\mathcal{D}|$ into a topological space where the open subsets $\mathcal{U} \subseteq |\mathcal{D}|$ can be characterized by the following two conditions:
+
+(i) whenever $x \in \mathcal{U}$ and $x \sqsubseteq y \in |\mathcal{D}|$, then $y \in \mathcal{U}$; and
+
+(ii) whenever $x \in \mathcal{U}$, then $[X] \in \mathcal{U}$ for some $X \in x$.
+
+Prove also that the inclusion relation on $|\mathcal{D}|$ can be defined topologically as:
+
+(iii) $x \sqsubseteq y$ iff for all open $\mathcal{U} \subseteq |\mathcal{D}|$, if $x \in \mathcal{U}$ then $y \in \mathcal{U}$.
+
+Is $|D|$ ever a Hausdorff space?
+
+Show that if $(x_n)_{n=0}^{\infty}$ is a sequence of elements of $|D|$ with $x_n \subseteq x_{n+1}$ for all $n$, then
+
+$$
+\bigcup_{n=0}^{\infty} x_n
+$$
+
+is not only in $|D|$ but is a topological limit point of the sequence. Show that any element $x$ is a limit point of the set $\{\uparrow X \mid X \in x\}$. Are there other limit points?
+
+<!-- formalization -->
+
+**Definition (`basicOpen`).** The basic open of a set $X$ is $[X]=\{x\in|\mathcal{D}|\mid X\in x\}$.
+
+**Definition (`OpenFilter`).** A set of ideal elements is open in the Scott sense when every member has a basic open neighbourhood contained in the set.
+
+**Instance (`instTopologicalSpaceElement`).** Open filters form a topology on $|\mathcal{D}|$.
+
+*Proof.* The universe is open via the master neighbourhood; binary intersections use pairwise intersection of neighbourhoods; arbitrary unions inherit witnesses from a component. ∎
+
+**Theorem (`isOpen_basicOpen`).** Every basic open is open.
+
+**Theorem (`isOpen_iff_upper_basic`).** Open sets are exactly the upper sets that contain a basic open around each of their points — Scott's clauses (i) and (ii).
+
+*Proof.* Unfold the open-filter definition against upward closure of filters. ∎
+
+**Theorem (`le_iff_isOpen_imp`).** Approximation is topological: $x\le y$ if and only if every open containing $x$ contains $y$ — clause (iii).
+
+*Proof.* Opens are upper; conversely test against basic opens. ∎
+
+**Theorem (`specializes_iff_le`).** Specialization in this topology coincides with approximation.
+
+**Theorem (`exercise_1_22`).** Opens are upper basic-neighbourhood sets; basic opens are open; approximation is the open-membership order; specialization is approximation.
+
+*Proof.* Assemble the preceding characterizations. ∎
