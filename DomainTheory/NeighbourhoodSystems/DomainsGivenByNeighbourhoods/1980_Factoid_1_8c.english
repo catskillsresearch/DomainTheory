@@ -1,0 +1,19 @@
+Again there is an exercise here to show $\sigma x \in |B|$. In particular $\sigma\perp \in |B|$ for all $\sigma \in \Sigma^*$, and these are just the finite elements. The minimal element of $\sigma\perp$ is $\sigma\Delta$. Note that $\sigma_0\perp \subseteq \sigma_1\perp$ if and only if $\sigma_0$ is an *initial segment* of the sequence $\sigma_1$.
+
+<!-- formalization -->
+
+**Theorem (`prepend_append`).** Prepending concatenates: $\sigma(\tau X)=(\sigma\tau)X$.
+
+*Proof.* Expand both sides as concatenations of strings. ∎
+
+**Theorem (`prepend_mono`).** Prepending preserves inclusion: $X'\subseteq X$ implies $\sigma X'\subseteq\sigma X$.
+
+*Proof.* Every $\sigma\tau$ with $\tau\in X'$ is likewise in $\sigma X$. ∎
+
+**Theorem (`prepend_univ`).** Prepending the master set yields the cone: $\sigma\Delta=\sigma\Sigma^*$.
+
+*Proof.* Extensions of $\sigma$ are exactly concatenations $\sigma\tau$ for $\tau\in\Sigma^*$. ∎
+
+**Theorem (`sigmaBot_le_iff`).** One has $\sigma_0\perp\le\sigma_1\perp$ if and only if $\sigma_0$ is a prefix of $\sigma_1$.
+
+*Proof.* Principals compare by reverse inclusion of cones, and cones reverse-include exactly when the shorter string prefixes the longer. ∎

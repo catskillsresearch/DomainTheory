@@ -1344,12 +1344,14 @@ def write_ns_domains_graphviz_svg(
     }
     lines = [
         "digraph G {",
-        # size caps width so fit-to-viewport preview keeps fontsize readable
-        '  graph [rankdir=TB, ranksep=0.35, nodesep=0.15, splines=true,',
-        '         size="7.5,10!", ratio=compress, bgcolor="white", fontname="Helvetica"];',
-        '  node [shape=box, style="filled,rounded", fontname="Helvetica", fontsize=14,',
-        '        margin="0.08,0.04", width=0, height=0];',
-        "  edge [fontsize=9, arrowsize=0.65];",
+        # size caps width so fit-to-viewport preview keeps fontsize readable.
+        # Larger ranksep + taller size envelope stretches the diagram down the page
+        # (aspect ~1) without changing width-fit label scale much.
+        '  graph [rankdir=TB, ranksep=0.85, nodesep=0.18, splines=true,',
+        '         size="7.5,18!", ratio=compress, bgcolor="white", fontname="Helvetica"];',
+        '  node [shape=box, style="filled,rounded", fontname="Helvetica", fontsize=18,',
+        '        margin="0.1,0.06", width=0, height=0];',
+        "  edge [fontsize=10, arrowsize=0.7];",
     ]
     for nid in order:
         if nid not in node_labels:
