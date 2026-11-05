@@ -8,7 +8,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_16
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_18
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_19
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_5
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_5a
 @[expose] public section
 
 section

@@ -1,7 +1,6 @@
 module
 
 import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_13
-import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_5
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.IsTotal
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.interUpTo
 

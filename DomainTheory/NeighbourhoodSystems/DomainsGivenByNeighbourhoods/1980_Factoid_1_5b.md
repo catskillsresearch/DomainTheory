@@ -1,11 +1,4 @@
-# Factoid 1.5
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Factoid_1_5.lean](Factoid_1_5.lean)**
-
-@import "Factoid_1_5.lean"
-
-## Factoid 1.5a — consistent iff nonempty
-
-This system is a direct generalization of Example 1.2., which was special owing to the small number of tokens. (The other examples were special by virtue of the choice of neighbourhoods.) The verification that the present $\mathcal{D}$ is a neighbourhood system rests on nothing more than the remark that sets are consistent in $\mathcal{D}$ iff they have a non-empty intersection. Clearly the arrangement of neighbourhoods in $\mathcal{D}$ can be as varied as a four-element set will allow; if $\Delta$ were made larger, the possible combinations of neighbourhoods could be made as complex as you wish. $\square$
+# Equivalent sequences with same limit
 
 Having some idea now of the variety of neighbourhood systems, we have to discuss what it is they do. As stressed before, the tokens do not have to correspond directly to the elements; but where, we ask, do the elements come from? One obvious suggestion for determining an element is to produce a sequence of "better and better" neighbourhoods:
 
@@ -33,7 +26,8 @@ $$
 x = \{Z \in \mathcal{D} \mid X_n \subseteq Z \text{ for some } n\}.
 $$
 
-## Factoid 1.5b — equivalent sequences same limit
-
 It is easy to prove that if we form the analogous class for $\langle Y_n \rangle_{n=0}^\infty$, then the two families are *equal* if and only if the sequences are *equivalent*. Thus, we seem justified in letting $x$ represent the limit of $\langle X_n \rangle_{n=0}^\infty$. All we have to do now is to remark on what sort of class $x$ is as a subfamily of $\mathcal{D}$; what we abstract from the construction, however, will be just a bit more general than taking those $x$ that result from sequences.
 
+**[Factoid_1_5b.lean](Factoid_1_5b.lean)**
+
+@import "Factoid_1_5b.lean"

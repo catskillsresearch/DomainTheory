@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_5
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ElementOrder
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal
 
 @[expose] public section

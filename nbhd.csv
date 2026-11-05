@@ -7,8 +7,8 @@ line,keyword,number,label,file
 177,EXAMPLE,1.4,finite binary tree,DomainsGivenByNeighbourhoods/Example_1_4.lean
 206,FACTOID,1.4a,nested or disjoint,DomainsGivenByNeighbourhoods/Factoid_1_4.lean
 208,EXAMPLE,1.5,all nonempty subsets,DomainsGivenByNeighbourhoods/Example_1_5.lean
-210,FACTOID,1.5a,consistent iff nonempty,DomainsGivenByNeighbourhoods/Factoid_1_5.lean
-238,FACTOID,1.5b,equivalent sequences same limit,DomainsGivenByNeighbourhoods/Factoid_1_5.lean
+210,FACTOID,1.5a,consistent iff nonempty,DomainsGivenByNeighbourhoods/Factoid_1_5a.lean
+238,FACTOID,1.5b,equivalent sequences same limit,DomainsGivenByNeighbourhoods/Factoid_1_5b.lean
 240,DEFINITION,1.6,ideal elements,DomainsGivenByNeighbourhoods/Element.lean
 256,DEFINITION,1.7,principal filter,DomainsGivenByNeighbourhoods/principal.lean
 264,FACTOID,1.7a1,principals are one-one,DomainsGivenByNeighbourhoods/Factoid_1_7.lean

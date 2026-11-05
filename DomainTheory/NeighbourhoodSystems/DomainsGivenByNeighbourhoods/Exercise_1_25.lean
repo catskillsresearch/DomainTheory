@@ -6,6 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.pri
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_4
 public import Mathlib.Algebra.Group.End
 public import Mathlib.Order.UpperLower.Basic
+import Mathlib.Order.WellFounded
 
 @[expose] public section
 

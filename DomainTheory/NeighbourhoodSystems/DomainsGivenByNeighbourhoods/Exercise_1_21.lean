@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Theorem_1_10
-import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_5
+import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_5a
 
 @[expose] public section
 

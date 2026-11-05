@@ -17,7 +17,8 @@ flowchart TB
   E14["Example 1.4<br>finite binary tree"]
   F14a["Are two neighbourhoods<br>nested or disjoint?"]
   E15["Example 1.5<br>all nonempty subsets"]
-  F15["Factoid 1.5"]
+  F15a["Consistent iff<br>nonempty"]
+  F15b["Equivalent sequences<br>with same limit"]
   D16["Definition 1.6<br>ideal elements"]
   D17["Definition 1.7<br>principal filter"]
   F17["Factoid 1.7"]
@@ -44,14 +45,19 @@ flowchart TB
   E14 -->|"1"| ER
   E15 -->|"1"| ER
   F11b -->|"1"| EX
+  F15a -->|"3"| EX
   T10 -->|"1"| EX
   T11 -->|"1"| EX
   iTot -->|"7"| EX
   iUT -->|"1"| F11a
   iUT -->|"1"| F11b
   D11 -->|"1"| F14a
-  EX -->|"1"| F15
-  F15 -->|"1"| F17
+  E15 -->|"1"| F15a
+  iUT -->|"1"| F15a
+  Ord -->|"1"| F15b
+  D17 -->|"1"| F17
+  Ord -->|"1"| F17
+  ER -->|"1"| F18
   F17 -->|"1"| F18
   D16 -->|"1"| Ord
   EX -->|"1"| T10
@@ -76,7 +82,8 @@ flowchart TB
   class E14 cexs
   class F14a cfac
   class E15 cexs
-  class F15 cfac
+  class F15a cfac
+  class F15b cfac
   class D16 cdef
   class D17 cdef
   class F17 cfac

@@ -1216,9 +1216,13 @@ NS_DOM_SHORT: dict[str, tuple[str, str]] = {
         "Are two neighbourhoods<br>nested or disjoint?",
     ),
     "Example 1.5 — all nonempty subsets": ("E15", "Example 1.5<br>all nonempty subsets"),
-    "Factoid 1.5 — consistent iff nonempty; equivalent sequences same limit": (
-        "F15",
-        "Factoid 1.5",
+    "Consistent iff nonempty": (
+        "F15a",
+        "Consistent iff<br>nonempty",
+    ),
+    "Equivalent sequences with same limit": (
+        "F15b",
+        "Equivalent sequences<br>with same limit",
     ),
     "Definition 1.6 — ideal elements": ("D16", "Definition 1.6<br>ideal elements"),
     "Definition 1.7 — principal filter": ("D17", "Definition 1.7<br>principal filter"),

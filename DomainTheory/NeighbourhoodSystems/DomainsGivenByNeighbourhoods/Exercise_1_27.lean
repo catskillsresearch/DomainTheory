@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_18
 import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_7
-import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_5
+import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_5a
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal
 public import Mathlib.Basic.Finite.Defs
 

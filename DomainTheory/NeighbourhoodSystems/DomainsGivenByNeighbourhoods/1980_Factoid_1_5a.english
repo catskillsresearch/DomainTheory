@@ -1,0 +1,11 @@
+This system is a direct generalization of Example 1.2., which was special owing to the small number of tokens. (The other examples were special by virtue of the choice of neighbourhoods.) The verification that the present $\mathcal{D}$ is a neighbourhood system rests on nothing more than the remark that sets are consistent in $\mathcal{D}$ iff they have a non-empty intersection. Clearly the arrangement of neighbourhoods in $\mathcal{D}$ can be as varied as a four-element set will allow; if $\Delta$ were made larger, the possible combinations of neighbourhoods could be made as complex as you wish. $\square$
+
+<!-- formalization -->
+
+**Theorem (`Element.mem_interUpTo`).** If an ideal element belongs to each of the first $n$ terms of a sequence of sets, then it belongs to their finite intersection $\bigcap_{i<n} X_i$.
+
+*Proof.* Induction on $n$: the empty intersection is the master, which every ideal meets; the successor step uses that ideals are closed under pairwise intersection. ∎
+
+**Theorem (`consistent_iff_inter_nonempty`).** In the four-token system of all nonempty subsets, a length-$n$ initial segment is consistent if and only if $\bigcap_{i<n} X_i$ is nonempty.
+
+*Proof.* A witnessing neighbourhood below the intersection is nonempty, so the intersection is nonempty. Conversely, a nonempty intersection is itself a neighbourhood contained in itself. ∎
