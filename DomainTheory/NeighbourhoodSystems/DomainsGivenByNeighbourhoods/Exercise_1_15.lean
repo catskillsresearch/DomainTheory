@@ -1,7 +1,7 @@
 module
 
 import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
-import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_7a1
+import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_injective
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainIso
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_4

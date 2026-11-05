@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_22
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_7a2
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_le_iff
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems

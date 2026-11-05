@@ -7,7 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_26
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Definition_3_8
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_5
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_7a2
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_le_iff
 
 @[expose] public section
 

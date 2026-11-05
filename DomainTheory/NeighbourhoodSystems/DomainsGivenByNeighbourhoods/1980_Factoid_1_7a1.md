@@ -1,7 +1,9 @@
 # Principals are one-one
 
-It is obvious that the correspondence between $X$ and $\uparrow X$ is one-one and inclusion *reversing*, in the sense that
+@import "1980_Factoid_1_7a1.english" {code_block=false}
 
-**[Factoid_1_7a1.lean](Factoid_1_7a1.lean)**
+**[principal_injective.lean](principal_injective.lean)**
 
-@import "Factoid_1_7a1.lean"
+@import "principal_injective.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-05) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

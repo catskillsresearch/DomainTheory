@@ -1,0 +1,15 @@
+Except in very special cases, there is much more to $|\mathcal{D}|$ than just the finite elements. Much of our investigation will be concerned with finding out how much more. The finite elements are, in a certain sense, "dense" in $|\mathcal{D}|$, however, because it is also obvious from the definitions that for each $x \in |\mathcal{D}|$
+
+$$
+x = \bigcup \{ \uparrow X \mid X \in x \}.
+$$
+
+That is, every element is a certain type of "limit" of finite elements. (This statement is made more precise in Exercise 1.21)
+
+We note that we have now had several occasions to use inclusion relationships between elements; this is an important relationship, and we give it a special name.
+
+<!-- formalization -->
+
+**Theorem (`eq_iUnion_principal`).** A neighbourhood $Z$ belongs to an ideal element $x$ if and only if $Z$ belongs to $\uparrow X$ for some neighbourhood $X$ of $x$. Equivalently, $x=\bigcup\{\uparrow X\mid X\in x\}$.
+
+*Proof.* If $Z$ belongs to $x$, take $X=Z$: then $Z$ belongs to $\uparrow Z$. Conversely, if $Z$ belongs to $\uparrow X$ for some neighbourhood $X$ of $x$, then $X\subseteq Z$, so upward closure puts $Z$ in $x$. ∎

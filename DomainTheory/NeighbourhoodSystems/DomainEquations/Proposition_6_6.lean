@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition_6_8
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition_6_5
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_8
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_7a2
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_le_iff
 
 @[expose] public section
 

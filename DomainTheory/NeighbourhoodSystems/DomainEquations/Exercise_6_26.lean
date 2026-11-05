@@ -4,7 +4,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_24
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_21
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_10
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_7a2
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_le_iff
 
 @[expose] public section
 

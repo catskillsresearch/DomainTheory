@@ -1,0 +1,7 @@
+It is obvious that the correspondence between $X$ and $\uparrow X$ is one-one.
+
+<!-- formalization -->
+
+**Theorem (`principal_injective`).** The map sending a neighbourhood to its principal filter is injective: if $\uparrow X=\uparrow Y$, then $X=Y$.
+
+*Proof.* From the inclusion-reversing equivalence, equal principals give $Y\subseteq X$ and $X\subseteq Y$. ∎

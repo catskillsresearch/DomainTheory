@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_7
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_7a2
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_le_iff
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems

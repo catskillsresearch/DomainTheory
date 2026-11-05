@@ -1,6 +1,6 @@
 module
 
-import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_7a2
+import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_le_iff
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal
 import Mathlib.Data.Set.Basic
 
