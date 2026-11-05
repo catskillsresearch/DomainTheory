@@ -1,0 +1,16 @@
+---
+description: Compact label style for section dependency diagrams (Graphviz SVG)
+globs: "**/generate_dependency_mermaid.py,**/1980_*.mermaid,**/1980_*.svg"
+alwaysApply: false
+---
+
+# Dependency diagram labels
+
+When generating or refreshing outline dependency diagrams (especially Graphviz SVGs written beside `.mermaid` files):
+
+- Abbreviate: `Definition` → `Def`, `Example` → `Ex`, `Examples` → `Exs`, `Theorem` → `Thm` (and plurals `Defs` / `Thms` if needed).
+- Soft-wrap labels at about **15 characters** per line (break between words; do not leave a wide single-line example row).
+- Prefer a dense Graphviz layout over sparse Mermaid/dagre when fit-to-viewport scaling would shrink text.
+- Keep full cross-note Lean import edges, then transitive reduction — without outline-order filtering that would disconnect early notes (e.g. examples) from Definition 1.1.
+
+Canonical helper: `ns_domains_compact_label` in `scripts/generate_dependency_mermaid.py`.

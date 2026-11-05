@@ -1,0 +1,29 @@
+EXAMPLE 1.5. Let $\Delta = \{0, 1, 2, 3\}$ and let $\mathcal{D}$ be the family of all non-empty subsets of $\Delta$.
+
+<!-- formalization -->
+
+**Definition (`Token`).** The token set is a four-element type, standing for $\Delta=\{0,1,2,3\}$.
+
+**Definition (`P4Mem`).** A subset belongs to the family precisely when it is nonempty.
+
+**Theorem (`P4_inter_mem`).** If $Z$ is nonempty and $Z\subseteq X\cap Y$, then $X\cap Y$ is nonempty.
+
+*Proof.* Nonemptiness passes along the inclusion. ∎
+
+**Definition (`master`).** The master set is the full set of tokens.
+
+**Theorem (`P4_master_mem`), (`P4_master_nonempty`).** The master is nonempty (hence a neighbourhood).
+
+*Proof.* The full token set is nonempty. ∎
+
+**Theorem (`P4_sub_master`).** Every neighbourhood is contained in the master.
+
+*Proof.* Every set of tokens lies in the full token set. ∎
+
+**Definition (`neighborhoodSystem`).** The neighbourhood system on the four-token carrier whose members are exactly the nonempty subsets, with this master set.
+
+*Proof.* The master is nonempty and a neighbourhood; every neighbourhood lies in the master; if two neighbourhoods meet in a set containing a third neighbourhood, their intersection is nonempty by the preceding theorem, hence again a neighbourhood. ∎
+
+**Theorem (`example_1_5`).** There is a neighbourhood system on $\{0,1,2,3\}$ whose master is the full token set and whose neighbourhoods are exactly the nonempty subsets.
+
+*Proof.* Take the system just constructed; the master and membership claims are immediate from the definitions. ∎

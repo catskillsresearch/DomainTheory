@@ -1,7 +1,9 @@
 # Example 1.5
 
-EXAMPLE 1.5. Let $\Delta = \{0, 1, 2, 3\}$ and let $\mathcal{D}$ be the family of all non-empty subsets of $\Delta$.
+@import "1980_Example_1_5.english" {code_block=false}
 
-**[NeighbourhoodSystems/DomainsGivenByNeighbourhoods/Example_1_5.lean](Example_1_5.lean)**
+**[Example_1_5.lean](Example_1_5.lean)**
 
 @import "Example_1_5.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-05) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

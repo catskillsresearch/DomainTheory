@@ -38,6 +38,14 @@ def neighborhoodSystem : NeighborhoodSystem Token where
   inter_mem := P4_inter_mem
   sub_master := P4_sub_master
 
+/-- **Example 1.5.** Tokens $\Delta=\{0,1,2,3\}$ and neighbourhoods
+$\mathcal{D}=$ all nonempty subsets of $\Delta$ form a neighbourhood system. -/
+theorem example_1_5 :
+    ∃ (V : NeighborhoodSystem Token),
+      V.master = (Set.univ : Set Token) ∧
+        (∀ X : Set Token, V.mem X ↔ X.Nonempty) :=
+  ⟨neighborhoodSystem, rfl, fun _ => Iff.rfl⟩
+
 end
 
 end DomainTheory.NeighbourhoodSystems.Example15

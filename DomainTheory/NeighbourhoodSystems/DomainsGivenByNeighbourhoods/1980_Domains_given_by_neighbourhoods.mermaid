@@ -2,7 +2,8 @@
 %% Lean modules = that note's @import .lean files (Lecture I exercises = all exercise modules;
 %%   Def 1.7/1.8/1.9 also own principal/bot/DomainIso; iTot owns IsTotal).
 %% Arrowhead on the importer; label = direct-import count.
-%% Only paper-forward edges. Paths implied by longer routes omitted.
+%% All cross-note Lean imports, then transitive reduction (keeps reachability).
+%% Display copy: same edges written to sibling .svg via Graphviz (tighter packing).
 flowchart TB
 
   D11["Definition 1.1<br>neighbourhood system"]
@@ -47,21 +48,18 @@ flowchart TB
   T11 -->|"1"| EX
   iTot -->|"7"| EX
   iUT -->|"1"| F11a
-  F11a -->|"1"| F11b
+  iUT -->|"1"| F11b
   D11 -->|"1"| F14a
-  E15 -->|"1"| F15
-  iUT -->|"1"| F15
-  D17 -->|"1"| F17
+  EX -->|"1"| F15
   F15 -->|"1"| F17
   F17 -->|"1"| F18
-  D18 -->|"1"| T10
-  D19 -->|"1"| T10
-  ER -->|"1"| T11
+  D16 -->|"1"| Ord
+  EX -->|"1"| T10
   F18 -->|"1"| T11
   Ord -->|"1"| iTot
   D11 -->|"1"| iUT
 
-%%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
+%%{init: {"flowchart": {"curve": "basis", "wrappingWidth": 110, "nodeSpacing": 8, "rankSpacing": 14, "padding": 2, "htmlLabels": true, "useMaxWidth": true}, "themeVariables": {"fontSize": "22px", "fontFamily": "ui-sans-serif, system-ui, sans-serif"}}}%%
   classDef cdef fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef cfac fill:#dcfce7,stroke:#15803d,color:#14532d
   classDef cexs fill:#fef3c7,stroke:#b45309,color:#78350f

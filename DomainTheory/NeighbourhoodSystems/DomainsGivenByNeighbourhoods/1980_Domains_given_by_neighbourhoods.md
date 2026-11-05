@@ -1,6 +1,6 @@
 # Domains given by neighbourhoods
 
-@import "1980_Domains_given_by_neighbourhoods.mermaid"
+@import "1980_Domains_given_by_neighbourhoods.svg" {code_block=false}
 
 - [Introduction](1980_Introduction.md) [✓](../1980_REVISION.md)
 - [Definition 1.1 — neighbourhood system](1980_Definition_1_1.md) [✓](../1980_REVISION.md)
@@ -13,7 +13,7 @@
 - [Example 1.3 — three-step chain](1980_Example_1_3.md) [✓](../1980_REVISION.md)
 - [Example 1.4 — finite binary tree](1980_Example_1_4.md) [✓](../1980_REVISION.md)
 - [Are two neighbourhoods nested or disjoint?](1980_Factoid_1_4.md) [✓](../1980_REVISION.md)
-- [Example 1.5 — all nonempty subsets](1980_Example_1_5.md)
+- [Example 1.5 — all nonempty subsets](1980_Example_1_5.md) [✓](../1980_REVISION.md)
 - [Factoid 1.5 — consistent iff nonempty; equivalent sequences same limit](1980_Factoid_1_5.md)
 - [Definition 1.6 — ideal elements](1980_Definition_1_6.md)
 - [Definition 1.7 — principal filter](1980_Definition_1_7.md)

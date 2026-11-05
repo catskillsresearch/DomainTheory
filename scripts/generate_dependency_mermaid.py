@@ -115,6 +115,10 @@ def transitive_import_closure(
 
 def find_index_md(mermaid: Path) -> Path | None:
     name = mermaid.name
+    svg_name = mermaid.with_suffix(".svg").name
+    sibling_md = mermaid.with_suffix(".md")
+    if sibling_md.is_file():
+        return sibling_md
     for md in list(DT.rglob("*.md")) + [ROOT / "DomainTheory.md"]:
         if not md.is_file():
             continue
@@ -122,7 +126,7 @@ def find_index_md(mermaid: Path) -> Path | None:
             text = md.read_text(encoding="utf-8", errors="ignore")
         except OSError:
             continue
-        if f'@import "{name}"' in text:
+        if f'@import "{name}"' in text or f'@import "{svg_name}"' in text:
             return md
     return None
 
@@ -1207,7 +1211,10 @@ NS_DOM_SHORT: dict[str, tuple[str, str]] = {
     "Example 1.2 — two-token domain": ("E12", "Example 1.2<br>two-token domain"),
     "Example 1.3 — three-step chain": ("E13", "Example 1.3<br>three-step chain"),
     "Example 1.4 — finite binary tree": ("E14", "Example 1.4<br>finite binary tree"),
-    "Factoid 1.4a — nested or disjoint": ("F14a", "Factoid 1.4a<br>nested or disjoint"),
+    "Are two neighbourhoods nested or disjoint?": (
+        "F14a",
+        "Are two neighbourhoods<br>nested or disjoint?",
+    ),
     "Example 1.5 — all nonempty subsets": ("E15", "Example 1.5<br>all nonempty subsets"),
     "Factoid 1.5 — consistent iff nonempty; equivalent sequences same limit": (
         "F15",
@@ -1263,6 +1270,75 @@ def _ns_dom_kind_class(nid: str) -> str:
     return "cdef"
 
 
+def ns_domains_compact_label(text: str, *, width: int = 15) -> str:
+    """Shorten Def/Ex/Thm prefixes and soft-wrap so Graphviz nodes stay narrow."""
+    s = mermaid_display_label(text).replace("<br>", " ").replace("\n", " ")
+    s = re.sub(r"\bDefinitions\b", "Defs", s)
+    s = re.sub(r"\bDefinition\b", "Def", s)
+    s = re.sub(r"\bExamples\b", "Exs", s)
+    s = re.sub(r"\bExample\b", "Ex", s)
+    s = re.sub(r"\bTheorems\b", "Thms", s)
+    s = re.sub(r"\bTheorem\b", "Thm", s)
+    words = s.split()
+    rows: list[str] = []
+    cur = ""
+    for w in words:
+        trial = w if not cur else f"{cur} {w}"
+        if cur and len(trial) > width:
+            rows.append(cur)
+            cur = w
+        else:
+            cur = trial
+    if cur:
+        rows.append(cur)
+    return "\\n".join(rows).replace('"', '\\"')
+
+
+def write_ns_domains_graphviz_svg(
+    svg_path: Path,
+    node_labels: dict[str, str],
+    edges: dict[tuple[str, str], int],
+    order: list[str],
+) -> None:
+    """Compact Graphviz SVG — Mermaid/dagre leaves too much whitespace when fit-scaled."""
+    import subprocess
+
+    fills = {
+        "cdef": ("#dbeafe", "#1d4ed8", "#1e3a8a"),
+        "cfac": ("#dcfce7", "#15803d", "#14532d"),
+        "cexs": ("#fef3c7", "#b45309", "#78350f"),
+        "cex": ("#e0e7ff", "#4338ca", "#312e81"),
+        "cthm": ("#fee2e2", "#b91c1c", "#7f1d1d"),
+    }
+    lines = [
+        "digraph G {",
+        # size caps width so fit-to-viewport preview keeps fontsize readable
+        '  graph [rankdir=TB, ranksep=0.35, nodesep=0.15, splines=true,',
+        '         size="7.5,10!", ratio=compress, bgcolor="white", fontname="Helvetica"];',
+        '  node [shape=box, style="filled,rounded", fontname="Helvetica", fontsize=14,',
+        '        margin="0.08,0.04", width=0, height=0];',
+        "  edge [fontsize=9, arrowsize=0.65];",
+    ]
+    for nid in order:
+        if nid not in node_labels:
+            continue
+        lab = ns_domains_compact_label(node_labels[nid])
+        fill, stroke, font = fills[_ns_dom_kind_class(nid)]
+        lines.append(
+            f'  {nid} [label="{lab}", fillcolor="{fill}", color="{stroke}", '
+            f'fontcolor="{font}"];'
+        )
+    for (a, b), n in sorted(edges.items()):
+        lines.append(f'  {a} -> {b} [label="{n}"];')
+    lines.append("}")
+    subprocess.run(
+        ["dot", "-Tsvg", "-o", str(svg_path)],
+        input="\n".join(lines) + "\n",
+        text=True,
+        check=True,
+    )
+
+
 def gen_ns_domains_lecture(mermaid: Path, modules: dict[str, Path], old: str) -> str:
     """Item-level Lean deps for 1980_Domains_given_by_neighbourhoods.mermaid."""
     header = [
@@ -1270,7 +1346,8 @@ def gen_ns_domains_lecture(mermaid: Path, modules: dict[str, Path], old: str) ->
         "%% Lean modules = that note's @import .lean files (Lecture I exercises = all exercise modules;",
         "%%   Def 1.7/1.8/1.9 also own principal/bot/DomainIso; iTot owns IsTotal).",
         "%% Arrowhead on the importer; label = direct-import count.",
-        "%% Only paper-forward edges. Paths implied by longer routes omitted.",
+        "%% All cross-note Lean imports, then transitive reduction (keeps reachability).",
+        "%% Display copy: same edges written to sibling .svg via Graphviz (tighter packing).",
     ]
     _, old_labels, style = parse_preserve_tail(old)
     index_md = find_index_md(mermaid)
@@ -1317,7 +1394,6 @@ def gen_ns_domains_lecture(mermaid: Path, modules: dict[str, Path], old: str) ->
             mod_owner.setdefault(mod, nid)
 
     order = [nid for nid, _, _ in boxes]
-    idx = {nid: i for i, nid in enumerate(order)}
     raw: dict[tuple[str, str], int] = defaultdict(int)
     for nid, _lab, mods in boxes:
         for mod in mods:
@@ -1325,10 +1401,9 @@ def gen_ns_domains_lecture(mermaid: Path, modules: dict[str, Path], old: str) ->
                 src = mod_owner.get(imp)
                 if src is None or src == nid:
                     continue
-                if idx[src] >= idx[nid]:
-                    continue
                 raw[(src, nid)] += 1
-
+    # Reduce on the full import graph (do not filter by outline order — that dropped
+    # D16→Ord and left examples unreachable from Definition 1.1).
     kept = transitive_reduce(set(raw))
     edges = {(a, b): raw[(a, b)] for a, b in kept}
     node_labels = {nid: lab for nid, lab, _ in boxes}
@@ -1344,6 +1419,7 @@ def gen_ns_domains_lecture(mermaid: Path, modules: dict[str, Path], old: str) ->
         ]
     class_assigns = [f"  class {nid} {_ns_dom_kind_class(nid)}" for nid in order]
     init = [ln for ln in style if INIT_LINE.match(ln.strip())]
+    write_ns_domains_graphviz_svg(mermaid.with_suffix(".svg"), node_labels, edges, order)
 
     return emit_flowchart(
         header,
