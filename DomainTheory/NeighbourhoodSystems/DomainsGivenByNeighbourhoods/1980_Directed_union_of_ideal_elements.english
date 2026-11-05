@@ -1,0 +1,15 @@
+Given an increasing sequence $x_0 \subseteq x_1 \subseteq \cdots$ of ideal elements, the directed union $\bigcup_n x_n$ is again an ideal element: a neighbourhood belongs to the join precisely when it belongs to some $x_n$. It is the least upper bound of the sequence in the approximation order. (Monotonicity is needed so that neighbourhoods drawn from different stages still have a common later stage in which their intersection may be formed.)
+
+<!-- formalization -->
+
+**Definition (`iUnion`).** The directed union of a monotone sequence of ideal elements is the filter of neighbourhoods belonging to some term.
+
+**Theorem (`mem_iUnion`).** A neighbourhood belongs to the directed union if and only if it belongs to some term of the sequence.
+
+**Theorem (`le_iUnion`).** Each term of the sequence is below the directed union.
+
+*Proof.* Membership in that term witnesses membership in the join. ∎
+
+**Theorem (`iUnion_le`).** The directed union is below every upper bound of the sequence.
+
+*Proof.* A neighbourhood of the join comes from some term, hence belongs to any common upper bound. ∎
