@@ -1274,6 +1274,10 @@ NS_DOM_SHORT: dict[str, tuple[str, str]] = {
         "D19",
         "Definition 1.9<br>isomorphic domains",
     ),
+    "Token system": (
+        "tokS",
+        "Token system",
+    ),
     "Theorem 1.10 — basic open neighbourhoods": (
         "T10",
         "Theorem 1.10<br>basic open neighbourhoods",

@@ -1,0 +1,51 @@
+**THEOREM 1.10.** Given any neighbourhood system $\mathcal{D}$, define for $X \in \mathcal{D}$
+
+$$
+[X] = \{x \in |\mathcal{D}| \mid X \in x\}.
+$$
+
+The subsets $[X] \subseteq |\mathcal{D}|$ for $X \in \mathcal{D}$ form a neighbourhood system over $|\mathcal{D}|$ which determines a domain isomorphic to $|\mathcal{D}|$.
+
+**Proof:** We note first that
+
+(1) $[\Delta] = |\mathcal{D}|.$
+
+Next note that
+
+(2) $X, Y$ are consistent in $\mathcal{D}$ iff $[X] \cap [Y] \neq \emptyset$;
+
+and that for $X, Y \in \mathcal{D}$
+
+(3) $[X] \cap [Y] = [X \cap Y]$ if $X \cap Y \in \mathcal{D}.$
+
+Inasmuch as
+
+(4) $\uparrow X \in [X]$ for all $X \in \mathcal{D},$
+
+it easily follows that $\mathcal{D}$ and the family
+
+$$
+\{[X] \mid X \in \mathcal{D}\}
+$$
+
+are in a one-one, inclusion-preserving correspondence. Thus, we can induce the desired one-one correspondence between the elements of the two systems. $\square$
+
+The import of 1.10 is that the original tokens in $\Delta$ can be replaced by the elements of $|\mathcal{D}|$. This process replaces the neighbourhood $X \subseteq \Delta$ by the subset $[X] \subseteq |\mathcal{D}|$. As the passage is inclusion preserving, the domain has not really changed, only its presentation. Though of some theoretical charm, the theorem is not of much use since we still have to get $\mathcal{D}$ from somewhere. It does emphasize, though, that the rôle of the tokens is simply to keep the inclusions (and intersections) of neighbourhoods sorted out. It is *not* always true that the tokens can be identified with the total elements.
+
+The last theorem in this lecture is a result on *closure properties* of a domain with respect to set-theoretical operations which have interesting meanings with respect to approximation.
+
+<!-- formalization -->
+
+**Theorem (`bracket_inter_nonempty_iff`).** Neighbourhoods $X$ and $Y$ are consistent if and only if $[X]\cap[Y]$ is nonempty.
+
+*Proof.* A common ideal element witnesses a neighbourhood under $X\cap Y$; conversely a principal of such a neighbourhood lies in both brackets. ∎
+
+**Theorem (`theorem_110`).** Clauses (2)–(4) of the proof, together with the token-system isomorphism, hold for every neighbourhood system.
+
+*Proof.* Assemble the previous theorem with the intersection of brackets, the token-system isomorphism, and membership of principals in their brackets. (Clause (1) is the master bracket.) ∎
+
+**Definition (`IsComplete`).** A neighbourhood system on a ground set $B$ is complete when every ideal element is fixed by a unique token: for each ideal element $y$ there is a unique $b\in B$ such that $y$ contains exactly the neighbourhoods through $b$.
+
+**Theorem (`bracket_nonempty_iff`).** The bracket $[X]$ is nonempty if and only if $X$ is a neighbourhood.
+
+*Proof.* Every ideal element’s neighbourhoods are neighbourhoods of the system; conversely the principal of $X$ lies in $[X]$. ∎

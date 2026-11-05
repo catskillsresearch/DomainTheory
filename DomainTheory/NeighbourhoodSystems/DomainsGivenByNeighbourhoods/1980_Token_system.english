@@ -1,0 +1,27 @@
+Given any neighbourhood system $\mathcal{D}$, define for $X \in \mathcal{D}$
+
+$$
+[X] = \{x \in |\mathcal{D}| \mid X \in x\}.
+$$
+
+The subsets $[X] \subseteq |\mathcal{D}|$ for $X \in \mathcal{D}$ form a neighbourhood system over $|\mathcal{D}|$.
+
+<!-- formalization -->
+
+**Definition (`tokenSystem`).** The token system of $\mathcal{D}$ is the neighbourhood system on $|\mathcal{D}|$ whose neighbourhoods are exactly the brackets $[X]$ for $X\in\mathcal{D}$, with master $|\mathcal{D}|$.
+
+*Proof.* Masterhood is $[\Delta]=|\mathcal{D}|$; intersections of brackets are brackets of intersections. ∎
+
+**Theorem (`tokenSystem_mem`).** A set of ideal elements is a neighbourhood of the token system if and only if it equals $[X]$ for some neighbourhood $X$ of $\mathcal{D}$.
+
+**Definition (`toToken`).** Send an ideal element $x$ of $\mathcal{D}$ to the filter of those brackets $[X]$ with $X\in x$.
+
+**Definition (`ofToken`).** Send an ideal element $y$ of the token system to the filter of those $X\in\mathcal{D}$ with $[X]\in y$.
+
+**Definition (`tokenIso`).** Those two maps are mutually inverse order isomorphisms between $|\mathcal{D}|$ and the domain of the token system.
+
+*Proof.* Bracket injectivity recovers neighbourhoods from brackets; order is preserved because inclusion of filters matches inclusion of brackets. ∎
+
+**Theorem (`isomorphic_tokenSystem`).** Every neighbourhood system is isomorphic to its token system.
+
+*Proof.* The previous order isomorphism. ∎
