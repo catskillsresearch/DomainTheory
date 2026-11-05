@@ -49,8 +49,8 @@ section
 
 theorem not_cone_subset_singleton (τ σ : Str) : ¬ cone τ ⊆ ({σ} : Set Str) := by
   intro h
-  have h1 : τ ∈ ({σ} : Set Str) := h (by simp [mem_cone])
-  have h2 : (τ ++ [true]) ∈ ({σ} : Set Str) := h (by simp [mem_cone])
+  have h1 : τ ∈ ({σ} : Set Str) := h (by simp [cone.mem])
+  have h2 : (τ ++ [true]) ∈ ({σ} : Set Str) := h (by simp [cone.mem])
   rw [Set.mem_singleton_iff] at h1 h2
   have : τ = τ ++ [true] := h1.trans h2.symm
   simp at this
@@ -81,10 +81,10 @@ def liftC (V : NeighborhoodSystem β) (coneVal singVal : Str → V.Element)
     · exact (singVal σ).sub hY
   master_rel := by
     refine Or.inl ⟨[], ?_, (coneVal []).master_mem⟩
-    rw [C_master]; exact cone_nil.symm
+    rw [C_master]; exact cone.nil.symm
   inter_right := by
     rintro X Y Y' (⟨σ, rfl, hY⟩ | ⟨σ, rfl, hY⟩) (⟨σ', hX', hY'⟩ | ⟨σ', hX', hY'⟩)
-    · have : σ = σ' := cone_injective hX'
+    · have : σ = σ' := cone.injective hX'
       subst this
       exact Or.inl ⟨σ, rfl, (coneVal σ).inter_mem hY hY'⟩
     · exact absurd hX' (cone_ne_singleton σ σ')
@@ -97,7 +97,7 @@ def liftC (V : NeighborhoodSystem β) (coneVal singVal : Str → V.Element)
     ·
       rcases hX' with ⟨τ, rfl⟩ | ⟨τ, rfl⟩
       ·
-        have hpre : σ <+: τ := cone_subset_cone.mp hX'X
+        have hpre : σ <+: τ := cone.subset_cone.mp hX'X
         exact Or.inl ⟨τ, rfl, (coneVal τ).up_mem (hcone hpre Y hY) hY' hYY'⟩
       ·
         have hpre : σ <+: τ := singleton_subset_cone.mp hX'X
@@ -124,7 +124,7 @@ theorem liftC_strBot (V : NeighborhoodSystem β) (coneVal singVal : Str → V.El
   constructor
   · rintro ⟨X, ⟨_, hsub⟩, hrel⟩
     rcases hrel with ⟨σ', hXcone, hY⟩ | ⟨σ', hXsing, hY⟩
-    · have hpre : σ' <+: σ := cone_subset_cone.mp (hXcone ▸ hsub)
+    · have hpre : σ' <+: σ := cone.subset_cone.mp (hXcone ▸ hsub)
       exact hcone hpre Y hY
     · exact absurd (hXsing ▸ hsub) (not_cone_subset_singleton σ σ')
   · intro hY

@@ -211,7 +211,7 @@ theorem C_bot_eq_strBot_nil : C.bot = strBot [] := by
   apply NeighborhoodSystem.Element.ext
   intro Y
   show (C.mem Y ∧ C.master ⊆ Y) ↔ (C.mem Y ∧ cone [] ⊆ Y)
-  rw [C_master, cone_nil]
+  rw [C_master, cone.nil]
 
 end Initial
 end

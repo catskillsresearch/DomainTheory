@@ -113,20 +113,20 @@ theorem branch_mem_iff (p : ℕ → Bool) {σ : Str} :
   constructor
   · intro h
     obtain ⟨n, hn⟩ := (B.mem_iUnion (branchSeq p) (branchSeq_mono p)).mp h
-    exact ⟨n, cone_subset_cone.mp hn.2⟩
+    exact ⟨n, cone.subset_cone.mp hn.2⟩
   · rintro ⟨n, hn⟩
     exact (B.mem_iUnion (branchSeq p) (branchSeq_mono p)).mpr
-      ⟨n, memB_cone σ, cone_subset_cone.mpr hn⟩
+      ⟨n, memB_cone σ, cone.subset_cone.mpr hn⟩
 
 theorem prefix_comparable_of_mem {σ τ : Str} (y : B.Element)
     (hσ : y.mem (cone σ)) (hτ : y.mem (cone τ)) : σ <+: τ ∨ τ <+: σ := by
   have hi : y.mem (cone σ ∩ cone τ) := y.inter_mem hσ hτ
   obtain ⟨ρ, hρ⟩ := y.sub hi
-  rcases cone_trichotomy σ τ with h | h | h
-  · exact Or.inr (cone_subset_cone.mp h)
-  · exact Or.inl (cone_subset_cone.mp h)
+  rcases cone.trichotomy σ τ with h | h | h
+  · exact Or.inr (cone.subset_cone.mp h)
+  · exact Or.inl (cone.subset_cone.mp h)
   · exfalso
-    have hmem : ρ ∈ cone ρ := mem_cone.mpr List.prefix_rfl
+    have hmem : ρ ∈ cone ρ := cone.mem.mpr List.prefix_rfl
     rw [← hρ, h] at hmem
     simp at hmem
 end

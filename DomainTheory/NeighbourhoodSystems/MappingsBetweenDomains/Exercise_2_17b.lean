@@ -48,7 +48,7 @@ theorem runMap_toElementMap_sigmaElt (σ : Str) (x : B.Element) (Y : Set Str) :
   · rintro ⟨Z, ⟨_, X, hX, hsub⟩, ρ, rfl, hYmem, hsubOut⟩
     obtain ⟨τ, rfl⟩ := x.sub hX
     rw [prepend_cone] at hsub
-    exact ⟨τ, hX, hYmem, (cone_subset_cone.mpr (out_mono (cone_subset_cone.mp hsub))).trans hsubOut⟩
+    exact ⟨τ, hX, hYmem, (cone.subset_cone.mpr (out_mono (cone.subset_cone.mp hsub))).trans hsubOut⟩
   · rintro ⟨τ, hτ, hYmem, hsub⟩
     exact ⟨cone (σ ++ τ), ⟨memB_cone _, cone τ, hτ, (prepend_cone σ τ).le⟩,
       (runMap_rel_cone (σ ++ τ) Y).mpr ⟨hYmem, hsub⟩⟩
@@ -112,13 +112,13 @@ theorem runMap_satisfies : SatisfiesRunEquations runMap where
     constructor
     · rintro ⟨τ, hτ, hYmem, hsub⟩
       obtain rfl : τ = [] := bot_mem_cone_iff.mp hτ
-      rw [show out ([true] ++ ([] : Str)) = ([] : Str) from rfl, cone_nil] at hsub
+      rw [show out ([true] ++ ([] : Str)) = ([] : Str) from rfl, cone.nil] at hsub
       rw [mem_bot]
       exact Set.eq_univ_of_univ_subset hsub
     · intro hY
       rw [mem_bot] at hY
       refine ⟨[], bot_mem_cone_iff.mpr rfl, hY ▸ B.master_mem, ?_⟩
-      rw [show out ([true] ++ ([] : Str)) = ([] : Str) from rfl, cone_nil, hY, B_master]
+      rw [show out ([true] ++ ([] : Str)) = ([] : Str) from rfl, cone.nil, hY, B_master]
 end
 
 end DomainTheory.NeighbourhoodSystems.Example24

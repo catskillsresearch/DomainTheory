@@ -1313,7 +1313,7 @@ theorem embStr_prefix_iff : ∀ σ τ : ExampleB.Str, embStr σ <+: embStr τ �
 
 theorem cone_subset_cone_iff_nbhd_embStr (σ τ : ExampleB.Str) :
     ExampleB.cone σ ⊆ ExampleB.cone τ ↔ nbhd (embStr σ) ⊆ nbhd (embStr τ) := by
-  rw [ExampleB.cone_subset_cone, nbhd_subset_iff, embStr_prefix_iff]
+  rw [ExampleB.cone.subset_cone, nbhd_subset_iff, embStr_prefix_iff]
 
 theorem sigmaBot_le_iff_toElement_inl_embStr (σ τ : ExampleB.Str) :
     ExampleB.sigmaBot σ ≤ ExampleB.sigmaBot τ ↔

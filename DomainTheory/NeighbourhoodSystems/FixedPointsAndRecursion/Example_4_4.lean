@@ -45,7 +45,7 @@ end
 section
 
 theorem singleton_subset_cone {σ τ : Str} : ({τ} : Set Str) ⊆ cone σ ↔ σ <+: τ := by
-  rw [Set.singleton_subset_iff, mem_cone]
+  rw [Set.singleton_subset_iff, cone.mem]
 end
 
 section
@@ -56,7 +56,7 @@ theorem singleton_cone_nd (σ τ : Str) :
   · exact Or.inl (singleton_subset_cone.mpr h)
   · refine Or.inr (Or.inr ?_)
     ext w
-    simp only [Set.mem_inter_iff, Set.mem_singleton_iff, mem_cone, Set.mem_empty_iff_false,
+    simp only [Set.mem_inter_iff, Set.mem_singleton_iff, cone.mem, Set.mem_empty_iff_false,
       iff_false, not_and]
     rintro rfl hτ
     exact h hτ
@@ -66,7 +66,7 @@ section
 
 theorem nestedOrDisjoint : NestedOrDisjoint memC := by
   rintro X Y (⟨σ, rfl⟩ | ⟨σ, rfl⟩) (⟨τ, rfl⟩ | ⟨τ, rfl⟩)
-  · exact cone_trichotomy σ τ
+  · exact cone.trichotomy σ τ
   · rcases singleton_cone_nd σ τ with h | h | h
     · exact Or.inr (Or.inl h)
     · exact Or.inl h
@@ -94,7 +94,7 @@ section
 
 abbrev C : NeighborhoodSystem Str :=
   NeighborhoodSystem.ofNestedOrDisjoint memC Set.univ
-    ⟨[], Set.mem_univ _⟩ (Or.inl ⟨[], cone_nil.symm⟩) nestedOrDisjoint
+    ⟨[], Set.mem_univ _⟩ (Or.inl ⟨[], cone.nil.symm⟩) nestedOrDisjoint
     (fun _ => Set.subset_univ _)
 end
 
@@ -121,7 +121,7 @@ def consMap (b : Bool) : ApproximableMap C C where
   rel_dom h := h.1
   rel_cod h := h.2.1
   master_rel := by
-    refine ⟨Or.inl ⟨[], cone_nil.symm⟩, Or.inl ⟨[], cone_nil.symm⟩, ?_⟩
+    refine ⟨Or.inl ⟨[], cone.nil.symm⟩, Or.inl ⟨[], cone.nil.symm⟩, ?_⟩
     exact Set.subset_univ _
   inter_right := by
     rintro X Y Y' ⟨hX, hY, hsub⟩ ⟨_, hY', hsub'⟩

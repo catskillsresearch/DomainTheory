@@ -52,7 +52,7 @@ theorem not_strElem_le_strBot {σ τ : Str} : ¬ strElem σ ≤ strBot τ := by
   exact not_cone_subset_singleton τ σ
 
 theorem strBot_le_strBot_iff {σ τ : Str} : strBot σ ≤ strBot τ ↔ σ <+: τ := by
-  rw [strBot, strBot, C.principal_le_iff, cone_subset_cone]
+  rw [strBot, strBot, C.principal_le_iff, cone.subset_cone]
 
 theorem strBot_le_strElem_iff {σ τ : Str} : strBot σ ≤ strElem τ ↔ σ <+: τ := by
   rw [strBot, strElem, C.principal_le_iff]
@@ -253,7 +253,7 @@ theorem shape_injective : ∀ {b b' : Bool} {σ σ' : Str}, shape b σ = shape b
   | true, true, σ, σ', h => ⟨rfl, by rwa [shape, shape, Set.singleton_eq_singleton_iff] at h⟩
   | true, false, σ, σ', h => absurd h.symm (cone_ne_singleton σ' σ)
   | false, true, σ, σ', h => absurd h (cone_ne_singleton σ σ')
-  | false, false, σ, σ', h => ⟨rfl, cone_injective h⟩
+  | false, false, σ, σ', h => ⟨rfl, cone.injective h⟩
 
 theorem shape_refine {b : Bool} {σ : Str} {P : Set Str} (hP : memC P) (hsub : P ⊆ shape b σ) :
     ∃ (b' : Bool) (σ' : Str), P = shape b' σ' ∧ shapeElem b σ ≤ shapeElem b' σ' := by
@@ -273,7 +273,7 @@ def mergeMap : ApproximableMap (prod C C) C where
   master_rel := by
     refine ⟨false, [], false, [], ?_, (mergeElem [] false [] false).master_mem⟩
     show (prod C C).master = prodNbhd (shape false []) (shape false [])
-    simp only [prod_master, shape, C_master, cone_nil]
+    simp only [prod_master, shape, C_master, cone.nil]
   inter_right := by
     rintro W Z Z' ⟨b₀, σ, b₁, τ, rfl, hZ⟩ ⟨b₀', σ', b₁', τ', heq, hZ'⟩
     obtain ⟨hX, hY⟩ := prodNbhd_injective heq
@@ -474,8 +474,8 @@ def tElt : C.Element := tmOp.fixElement
 theorem cone_univ_iff {σ : Str} : cone σ = Set.univ ↔ σ = [] := by
   constructor
   · intro h
-    exact List.prefix_nil.mp (mem_cone.mp (h ▸ Set.mem_univ ([] : Str)))
-  · rintro rfl; exact cone_nil
+    exact List.prefix_nil.mp (cone.mem.mp (h ▸ Set.mem_univ ([] : Str)))
+  · rintro rfl; exact cone.nil
 
 theorem expand_append (σ τ : Str) : expand (σ ++ τ) = expand σ ++ expand τ := by
   induction σ with
@@ -496,12 +496,12 @@ theorem mergeVal_snd_false : ∀ (σ τ : Str) (b₁ : Bool), (mergeVal σ false
 
 theorem strBot_mem_cone {σ τ : Str} : (strBot τ).mem (cone σ) ↔ σ <+: τ := by
   rw [strBot, mem_principal]
-  exact ⟨fun h => cone_subset_cone.mp h.2, fun h => ⟨memC_cone σ, cone_subset_cone.mpr h⟩⟩
+  exact ⟨fun h => cone.subset_cone.mp h.2, fun h => ⟨memC_cone σ, cone.subset_cone.mpr h⟩⟩
 
 theorem strBot_nil : strBot [] = C.bot := by
   apply Element.ext
   intro Y
-  rw [strBot, mem_principal, mem_bot, cone_nil, C_master]
+  rw [strBot, mem_principal, mem_bot, cone.nil, C_master]
   exact ⟨fun h => Set.Subset.antisymm (Set.subset_univ _) h.2,
     fun h => ⟨h ▸ C.master_mem, h ▸ Set.Subset.refl _⟩⟩
 

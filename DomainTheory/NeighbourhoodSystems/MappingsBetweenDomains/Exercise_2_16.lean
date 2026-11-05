@@ -98,7 +98,7 @@ theorem parityMap_satisfies : SatisfiesParityEquations Example23.parityMap where
     · rintro ⟨τ, _, hval⟩
       rwa [Example23.scan_append_true] at hval
     · intro hval
-      exact ⟨[], by rw [cone_nil]; exact x.master_mem, by rwa [Example23.scan_append_true]⟩
+      exact ⟨[], by rw [cone.nil]; exact x.master_mem, by rwa [Example23.scan_append_true]⟩
   zeroOne x := by
     apply Element.ext
     intro Y
@@ -107,7 +107,7 @@ theorem parityMap_satisfies : SatisfiesParityEquations Example23.parityMap where
     · rintro ⟨τ, _, hval⟩
       rwa [Example23.scan_append_falseTrue] at hval
     · intro hval
-      exact ⟨[], by rw [cone_nil]; exact x.master_mem, by rwa [Example23.scan_append_falseTrue]⟩
+      exact ⟨[], by rw [cone.nil]; exact x.master_mem, by rwa [Example23.scan_append_falseTrue]⟩
   zeroZero x := by
     apply Element.ext
     intro Y

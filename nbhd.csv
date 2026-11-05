@@ -17,8 +17,9 @@ line,keyword,number,label,file
 282,DEFINITION,1.8,approximation and totality,DomainsGivenByNeighbourhoods/bot.lean
 282,FACTOID,1.8a1,bottom element,DomainsGivenByNeighbourhoods/bot.lean
 282,FACTOID,1.8a2,bottom is least,DomainsGivenByNeighbourhoods/bot_le.lean
-284,EXAMPLES,1.2–1.5,infinite binary neighbourhoods,DomainsGivenByNeighbourhoods/ExampleB.lean
 284,FACTOID,1.8b,finite filters are principal,DomainsGivenByNeighbourhoods/eq_principal_of_isMin.lean
+284,EXAMPLES,1.2–1.5,cone of finite bit strings,DomainsGivenByNeighbourhoods/cone.lean
+284,EXAMPLES,1.2–1.5,infinite binary neighbourhoods,DomainsGivenByNeighbourhoods/ExampleB.lean
 312,FACTOID,1.8c,prefix order,DomainsGivenByNeighbourhoods/sigmaBot_le_iff.lean
 317,FACTOID,1.8d,union of finite approximations,DomainsGivenByNeighbourhoods/mem_iff_exists_sigmaBot.lean
 326,DEFINITION,1.9,isomorphic domains,DomainsGivenByNeighbourhoods/DomainIso.lean

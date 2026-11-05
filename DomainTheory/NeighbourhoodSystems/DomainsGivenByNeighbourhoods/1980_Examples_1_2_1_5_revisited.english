@@ -26,15 +26,11 @@ $$
 
 <!-- formalization -->
 
-**Definition (`Str`).** Tokens are finite bit-strings: $\Sigma^*=\mathrm{List}\,\Sigma$ with $\Sigma=\{0,1\}$.
-
-**Definition (`cone`).** The cone of a string $\sigma$ is $\sigma\Sigma^*=\{w\mid \sigma\mathrel{\mathrm{prefix}}w\}$.
-
 **Definition (`memB`).** Membership in $B$ means being equal to some cone $\sigma\Sigma^*$.
 
 **Theorem (`nestedOrDisjoint`).** Any two cones are nested or disjoint.
 
-*Proof.* Compare the two prefixes: one extends the other, or else no common extension exists. ∎
+*Proof.* From the trichotomy of cones. ∎
 
 **Definition (`B`).** The binary neighbourhood system is the nested-or-disjoint system of all cones, with master $\Delta=\Sigma^*$.
 

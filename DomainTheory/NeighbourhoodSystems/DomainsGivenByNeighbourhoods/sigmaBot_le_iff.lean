@@ -27,7 +27,7 @@ theorem prepend_mono (σ : Str) {X X' : Set Str} (h : X' ⊆ X) : prepend σ X' 
 
 theorem prepend_univ (σ : Str) : prepend σ Set.univ = cone σ := by
   ext w
-  simp only [mem_prepend, Set.mem_univ, true_and, mem_cone]
+  simp only [mem_prepend, Set.mem_univ, true_and, cone.mem]
   constructor
   · rintro ⟨τ, rfl⟩
     exact List.prefix_append σ τ
@@ -36,7 +36,7 @@ theorem prepend_univ (σ : Str) : prepend σ Set.univ = cone σ := by
 
 theorem sigmaBot_le_iff (σ₀ σ₁ : Str) :
     sigmaBot σ₀ ≤ sigmaBot σ₁ ↔ σ₀ <+: σ₁ := by
-  rw [sigmaBot, sigmaBot, B.principal_le_iff, cone_subset_cone]
+  rw [sigmaBot, sigmaBot, B.principal_le_iff, cone.subset_cone]
 
 end
 

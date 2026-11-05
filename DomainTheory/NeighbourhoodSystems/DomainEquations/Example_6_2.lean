@@ -18,7 +18,7 @@ theorem memB_cases {W : Set Str} (hW : B.mem W) :
     W = Set.univ ∨ (∃ X, B.mem X ∧ W = embBit false X) ∨ (∃ Y, B.mem Y ∧ W = embBit true Y) := by
   obtain ⟨σ, rfl⟩ := hW
   cases σ with
-  | nil => exact Or.inl cone_nil
+  | nil => exact Or.inl cone.nil
   | cons b σ' =>
     cases b with
     | false => exact Or.inr (Or.inl ⟨cone σ', memB_cone σ', (embBit_cone false σ').symm⟩)
@@ -137,7 +137,7 @@ def fromBB (s : BB.Element) : B.Element where
     ∨ (∃ Y, B.mem Y ∧ W = embBit true Y ∧ s.mem (inj₁ Y))
   sub := by
     rintro W (rfl | ⟨X, hX, rfl, -⟩ | ⟨Y, hY, rfl, -⟩)
-    · exact ⟨[], cone_nil.symm⟩
+    · exact ⟨[], cone.nil.symm⟩
     · exact memB_embBit false hX
     · exact memB_embBit true hY
   master_mem := Or.inl rfl
@@ -968,7 +968,7 @@ theorem memC_cases {W : Set Str} (hW : C.mem W) :
       ∨ (∃ X, C.mem X ∧ W = embBit false X) ∨ (∃ Y, C.mem Y ∧ W = embBit true Y) := by
   rcases hW with ⟨σ, rfl⟩ | ⟨σ, rfl⟩
   · cases σ with
-    | nil => exact Or.inl cone_nil
+    | nil => exact Or.inl cone.nil
     | cons b σ' => cases b with
       | false =>
         exact Or.inr (Or.inr (Or.inl ⟨cone σ', memC_cone σ', (embBit_cone false σ').symm⟩))
@@ -1229,7 +1229,7 @@ def fromCC (s : CC.Element) : C.Element where
     ∨ (∃ Y, C.mem Y ∧ W = embBit true Y ∧ s.mem (j2 Y))
   sub := by
     rintro W (rfl | ⟨rfl, -⟩ | ⟨X, hX, rfl, -⟩ | ⟨Y, hY, rfl, -⟩)
-    · exact Or.inl ⟨[], cone_nil.symm⟩
+    · exact Or.inl ⟨[], cone.nil.symm⟩
     · exact memC_singleton []
     · exact memC_embBit false hX
     · exact memC_embBit true hY

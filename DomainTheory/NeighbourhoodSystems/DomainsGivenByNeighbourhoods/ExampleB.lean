@@ -1,5 +1,6 @@
 module
 
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.cone
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NestedOrDisjoint
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ElementOrder
@@ -12,43 +13,15 @@ section
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
-abbrev Str := List Bool
-
-def cone (σ : Str) : Set Str := {w | σ <+: w}
-
-@[simp] theorem mem_cone {σ w : Str} : w ∈ cone σ ↔ σ <+: w := Iff.rfl
-
-theorem cone_nil : cone [] = Set.univ := by
-  ext w; simp [cone]
-
-theorem cone_subset_cone {σ τ : Str} : cone σ ⊆ cone τ ↔ τ <+: σ := by
-  constructor
-  · intro h
-    exact h (show σ ∈ cone σ from List.prefix_rfl)
-  · intro hτσ w hw
-    exact hτσ.trans hw
-
-theorem cone_trichotomy (σ τ : Str) :
-    cone σ ⊆ cone τ ∨ cone τ ⊆ cone σ ∨ cone σ ∩ cone τ = ∅ :=
-  if hστ : σ <+: τ then Or.inr (Or.inl (cone_subset_cone.mpr hστ))
-  else if hτσ : τ <+: σ then Or.inl (cone_subset_cone.mpr hτσ)
-  else Or.inr (Or.inr (by
-    ext w
-    simp only [Set.mem_inter_iff, mem_cone, Set.mem_empty_iff_false, iff_false, not_and]
-    intro h1 h2
-    rcases List.prefix_or_prefix_of_prefix h1 h2 with h | h
-    · exact hστ h
-    · exact hτσ h))
-
 def memB (X : Set Str) : Prop := ∃ σ, X = cone σ
 
 theorem nestedOrDisjoint : NestedOrDisjoint memB := by
   rintro X Y ⟨σ, rfl⟩ ⟨τ, rfl⟩
-  exact cone_trichotomy σ τ
+  exact cone.trichotomy σ τ
 
 def B : NeighborhoodSystem Str :=
   NeighborhoodSystem.ofNestedOrDisjoint memB Set.univ
-    ⟨[], Set.mem_univ _⟩ ⟨[], cone_nil.symm⟩ nestedOrDisjoint
+    ⟨[], Set.mem_univ _⟩ ⟨[], cone.nil.symm⟩ nestedOrDisjoint
     (fun _ => Set.subset_univ _)
 
 @[simp] theorem B_mem {X : Set Str} : B.mem X ↔ memB X := Iff.rfl
@@ -64,7 +37,7 @@ def prepend (σ : Str) (X : Set Str) : Set Str := {w | ∃ τ, τ ∈ X ∧ w = 
 
 theorem prepend_cone (σ ρ : Str) : prepend σ (cone ρ) = cone (σ ++ ρ) := by
   ext w
-  simp only [mem_prepend, mem_cone]
+  simp only [mem_prepend, cone.mem]
   constructor
   · rintro ⟨τ, hτ, rfl⟩
     exact (List.prefix_append_right_inj σ).mpr hτ
@@ -99,15 +72,10 @@ def sigmaElt (σ : Str) (x : B.Element) : B.Element where
     obtain ⟨_, X', hX', hsub'⟩ := hX
     exact ⟨hY, X', hX', hsub'.trans hXY⟩
 
-theorem cone_injective {σ τ : Str} (h : cone σ = cone τ) : σ = τ := by
-  have h1 : τ <+: σ := cone_subset_cone.mp (le_of_eq h)
-  have h2 : σ <+: τ := cone_subset_cone.mp (le_of_eq h.symm)
-  exact h2.eq_of_length (h2.length_le.antisymm h1.length_le)
-
 theorem bot_mem_cone_iff {σ : Str} : B.bot.mem (cone σ) ↔ σ = [] := by
-  rw [mem_bot, B_master, ← cone_nil]
+  rw [mem_bot, B_master, ← cone.nil]
   constructor
-  · exact cone_injective
+  · exact cone.injective
   · intro h; rw [h]
 end
 

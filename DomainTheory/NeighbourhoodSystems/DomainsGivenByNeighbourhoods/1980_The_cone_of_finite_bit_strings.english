@@ -1,0 +1,31 @@
+We let
+
+$$
+\Delta = \Sigma^*,
+$$
+
+where $\Sigma = \{0, 1\}$ and $\Sigma^*$ means the set of all finite sequences of 0's and 1's, with $\Lambda$ being the empty sequence. A neighbourhood consists of all *extensions* of a given sequence $\sigma$:
+
+$$
+\sigma\Sigma^* = \{\sigma\tau \mid \tau \in \Sigma^*\}.
+$$
+
+(Refer back to the finite version of 1.4.)
+
+<!-- formalization -->
+
+**Definition (`Str`).** Tokens are finite bit-strings: $\Sigma^*=\mathrm{List}\,\Sigma$ with $\Sigma=\{0,1\}$.
+
+**Definition (`cone`).** The cone of a string $\sigma$ is $\sigma\Sigma^*=\{w\mid \sigma\mathrel{\mathrm{prefix}}w\}$.
+
+**Theorem (`cone.nil`).** The cone of the empty string is all of $\Sigma^*$.
+
+**Theorem (`cone.subset_cone`).** One has $\sigma\Sigma^*\subseteq\tau\Sigma^*$ if and only if $\tau$ is a prefix of $\sigma$.
+
+**Theorem (`cone.trichotomy`).** Any two cones are nested or disjoint.
+
+*Proof.* Compare the two prefixes: one extends the other, or else no common extension exists. ∎
+
+**Theorem (`cone.injective`).** Equal cones come from equal strings.
+
+*Proof.* Mutual inclusion of cones yields mutual prefix, hence equal length and equal strings. ∎

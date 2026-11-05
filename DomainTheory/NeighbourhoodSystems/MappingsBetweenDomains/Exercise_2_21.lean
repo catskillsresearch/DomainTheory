@@ -17,8 +17,8 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
 theorem cone_not_subset_singleton (σ τ : Str) : ¬ cone σ ⊆ ({τ} : Set Str) := by
   intro h
-  have h1 : σ ∈ ({τ} : Set Str) := h (mem_cone.mpr List.prefix_rfl)
-  have h2 : (σ ++ [false]) ∈ ({τ} : Set Str) := h (mem_cone.mpr (List.prefix_append σ [false]))
+  have h1 : σ ∈ ({τ} : Set Str) := h (cone.mem.mpr List.prefix_rfl)
+  have h2 : (σ ++ [false]) ∈ ({τ} : Set Str) := h (cone.mem.mpr (List.prefix_append σ [false]))
   rw [Set.mem_singleton_iff] at h1 h2
   rw [← h1] at h2
   have hlen := congrArg List.length h2
@@ -45,11 +45,11 @@ section
 theorem cone_singleton_nd (σ τ : Str) :
     cone σ ⊆ ({τ} : Set Str) ∨ ({τ} : Set Str) ⊆ cone σ ∨ cone σ ∩ ({τ} : Set Str) = ∅ :=
   if h : σ <+: τ then
-    Or.inr (Or.inl (Set.singleton_subset_iff.mpr (mem_cone.mpr h)))
+    Or.inr (Or.inl (Set.singleton_subset_iff.mpr (cone.mem.mpr h)))
   else
     Or.inr (Or.inr (by
       ext w
-      simp only [Set.mem_inter_iff, mem_cone, Set.mem_singleton_iff, Set.mem_empty_iff_false,
+      simp only [Set.mem_inter_iff, cone.mem, Set.mem_singleton_iff, Set.mem_empty_iff_false,
         iff_false, not_and]
       rintro hw rfl
       exact h hw))
@@ -65,11 +65,11 @@ section
 theorem singleton_cone_nd (σ τ : Str) :
     ({σ} : Set Str) ⊆ cone τ ∨ cone τ ⊆ ({σ} : Set Str) ∨ ({σ} : Set Str) ∩ cone τ = ∅ :=
   if h : τ <+: σ then
-    Or.inl (Set.singleton_subset_iff.mpr (mem_cone.mpr h))
+    Or.inl (Set.singleton_subset_iff.mpr (cone.mem.mpr h))
   else
     Or.inr (Or.inr (by
       ext w
-      simp only [Set.mem_inter_iff, Set.mem_singleton_iff, mem_cone, Set.mem_empty_iff_false,
+      simp only [Set.mem_inter_iff, Set.mem_singleton_iff, cone.mem, Set.mem_empty_iff_false,
         iff_false, not_and]
       rintro rfl hw
       exact h hw))
@@ -95,7 +95,7 @@ section
 theorem nestedOrDisjoint_C : NestedOrDisjoint memC := by
   rintro X Y hX hY
   rcases hX with ⟨σ, rfl⟩ | ⟨σ, rfl⟩ <;> rcases hY with ⟨τ, rfl⟩ | ⟨τ, rfl⟩
-  · exact cone_trichotomy σ τ
+  · exact cone.trichotomy σ τ
   · exact cone_singleton_nd σ τ
   · exact singleton_cone_nd σ τ
   · exact singleton_singleton_nd σ τ
@@ -105,7 +105,7 @@ section
 
 def C : NeighborhoodSystem Str :=
   ofNestedOrDisjoint memC Set.univ ⟨[], Set.mem_univ _⟩
-    (Or.inl ⟨[], cone_nil.symm⟩) nestedOrDisjoint_C
+    (Or.inl ⟨[], cone.nil.symm⟩) nestedOrDisjoint_C
     (by rintro X (⟨σ, rfl⟩ | ⟨σ, rfl⟩) <;> exact Set.subset_univ _)
 end
 
@@ -156,7 +156,7 @@ section
 
 theorem prepend_subset_cone (σ : Str) (Y : Set Str) : prepend σ Y ⊆ cone σ := by
   rintro w ⟨τ, _, rfl⟩
-  exact mem_cone.mpr (List.prefix_append σ τ)
+  exact cone.mem.mpr (List.prefix_append σ τ)
 end
 
 section
@@ -191,12 +191,12 @@ def juxtapose : ApproximableMap₂ C C C where
   rel_dom₁ := fun ⟨hY, _, _⟩ => hY
   rel_cod := fun ⟨_, hZ, _⟩ => hZ
   master_rel := ⟨C.master_mem, C.master_mem,
-    Or.inl ⟨[], C_master.trans cone_nil.symm, by rw [C_master]; exact Set.subset_univ _⟩⟩
+    Or.inl ⟨[], C_master.trans cone.nil.symm, by rw [C_master]; exact Set.subset_univ _⟩⟩
   inter_right := by
     rintro X Y Z Z' ⟨hY, hZ, hd⟩ ⟨_, hZ', hd'⟩
     rcases hd with ⟨σ, rfl, hsub⟩ | ⟨σ, rfl, hsub⟩
     · rcases hd' with ⟨σ', hX', hsub'⟩ | ⟨σ', hX', _⟩
-      · obtain rfl : σ = σ' := cone_injective hX'
+      · obtain rfl : σ = σ' := cone.injective hX'
         exact ⟨hY, C.inter_mem hZ hZ' (memC_cone σ) (Set.subset_inter hsub hsub'),
           Or.inl ⟨σ, rfl, Set.subset_inter hsub hsub'⟩⟩
       · exact absurd hX' (cone_ne_singleton σ σ')
@@ -213,8 +213,8 @@ def juxtapose : ApproximableMap₂ C C C where
     · rcases hX' with ⟨σ', rfl⟩ | ⟨σ', rfl⟩
       · exact Or.inl ⟨σ', rfl, (hX'X.trans hsub).trans hZZ'⟩
       · refine Or.inr ⟨σ', rfl, ?_⟩
-        have hσσ' : σ <+: σ' := mem_cone.mp (Set.singleton_subset_iff.mp hX'X)
-        have h2 : cone σ' ⊆ cone σ := cone_subset_cone.mpr hσσ'
+        have hσσ' : σ <+: σ' := cone.mem.mp (Set.singleton_subset_iff.mp hX'X)
+        have h2 : cone σ' ⊆ cone σ := cone.subset_cone.mpr hσσ'
         exact ((prepend_subset_cone σ' Y').trans (h2.trans hsub)).trans hZZ'
     · obtain rfl : X' = ({σ} : Set Str) := subset_singleton_eq hX' hX'X
       exact Or.inr ⟨σ, rfl, ((prepend_mono σ hY'Y).trans hsub).trans hZZ'⟩
@@ -270,10 +270,10 @@ theorem juxtapose_singleton_mem (σ : Str) (y : C.Element) {Z : Set Str} :
   · rintro ⟨X, Y, ⟨_, hsingleX⟩, hYmem, _, hZ, hd⟩
     refine ⟨hZ, ?_⟩
     rcases hd with ⟨ρ, rfl, hsub⟩ | ⟨ρ, rfl, hsub⟩
-    · have hρσ : ρ <+: σ := mem_cone.mp (Set.singleton_subset_iff.mp hsingleX)
+    · have hρσ : ρ <+: σ := cone.mem.mp (Set.singleton_subset_iff.mp hsingleX)
       refine ⟨C.master, y.master_mem, ?_⟩
       rw [C_master, prepend_univ]
-      exact (cone_subset_cone.mpr hρσ).trans hsub
+      exact (cone.subset_cone.mpr hρσ).trans hsub
     · obtain rfl : σ = ρ := by
         have := Set.singleton_subset_iff.mp hsingleX
         rwa [Set.mem_singleton_iff] at this
@@ -323,7 +323,7 @@ section
 
 theorem memC_nonempty {W : Set Str} (hW : C.mem W) : W.Nonempty := by
   rcases hW with ⟨σ, rfl⟩ | ⟨σ, rfl⟩
-  · exact ⟨σ, mem_cone.mpr List.prefix_rfl⟩
+  · exact ⟨σ, cone.mem.mpr List.prefix_rfl⟩
   · exact ⟨σ, rfl⟩
 end
 

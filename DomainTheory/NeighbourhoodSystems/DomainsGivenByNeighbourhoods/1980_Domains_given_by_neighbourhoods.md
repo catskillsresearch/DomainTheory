@@ -25,6 +25,7 @@
 - [Bottom element](1980_Factoid_1_8a1.md) [✓](../1980_REVISION.md)
 - [Bottom is least](1980_Factoid_1_8a2.md) [✓](../1980_REVISION.md)
 - [Finite filters are principal](1980_Factoid_1_8b.md) [✓](../1980_REVISION.md)
+- [The cone of finite bit strings](1980_The_cone_of_finite_bit_strings.md)
 - [Examples 1.2–1.5 (Revisited) — infinite binary neighbourhoods](1980_Examples_1_2_1_5_revisited.md) [✓](../1980_REVISION.md)
 - [Prefix order](1980_Factoid_1_8c.md)
 - [Union of finite approximations](1980_Factoid_1_8d.md)

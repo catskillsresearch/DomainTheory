@@ -97,35 +97,35 @@ def f : ApproximableMap B (iterSys T) where
   rel X W := ∃ σ, X = cone σ ∧ (iterSys T).mem W ∧ encSet σ ⊆ W
   rel_dom := fun ⟨σ, hX, _⟩ => hX ▸ memB_cone σ
   rel_cod := fun ⟨_, _, hW, _⟩ => hW
-  master_rel := ⟨[], cone_nil.symm, (iterSys T).master_mem, by rw [encSet_nil]; exact Set.subset_univ _⟩
+  master_rel := ⟨[], cone.nil.symm, (iterSys T).master_mem, by rw [encSet_nil]; exact Set.subset_univ _⟩
   inter_right := by
     rintro X W W' ⟨σ, hX, hWmem, hWsub⟩ ⟨σ', hX', hW'mem, hW'sub⟩
-    obtain rfl : σ = σ' := cone_injective (hX.symm.trans hX')
+    obtain rfl : σ = σ' := cone.injective (hX.symm.trans hX')
     exact ⟨σ, hX, (iterSys T).inter_mem hWmem hW'mem (encSet_mem σ)
       (Set.subset_inter hWsub hW'sub), Set.subset_inter hWsub hW'sub⟩
   mono := by
     rintro X X' W W' ⟨σ, hX, _, hWsub⟩ hX'X hWW' hX' hW'mem
     obtain ⟨σ', rfl⟩ := hX'
     subst hX
-    have hpre : σ <+: σ' := cone_subset_cone.mp hX'X
+    have hpre : σ <+: σ' := cone.subset_cone.mp hX'X
     exact ⟨σ', rfl, hW'mem, (encSet_anti hpre).trans (hWsub.trans hWW')⟩
 
 def g : ApproximableMap (iterSys T) B where
   rel W X := (iterSys T).mem W ∧ ∃ τ, X = cone τ ∧ W ⊆ encSet τ
   rel_dom h := h.1
   rel_cod := fun ⟨_, τ, hX, _⟩ => hX ▸ memB_cone τ
-  master_rel := ⟨(iterSys T).master_mem, [], cone_nil.symm, by rw [encSet_nil]; exact Set.subset_univ _⟩
+  master_rel := ⟨(iterSys T).master_mem, [], cone.nil.symm, by rw [encSet_nil]; exact Set.subset_univ _⟩
   inter_right := by
     rintro W X X' ⟨hW, τ, hX, hWτ⟩ ⟨_, τ', hX', hWτ'⟩
     subst hX; subst hX'
     rcases comparable_of_agree (fun i b b' => encSet_agree hW hWτ hWτ') with hpre | hpre
-    · exact ⟨hW, τ', by rw [Set.inter_eq_right.mpr (cone_subset_cone.mpr hpre)], hWτ'⟩
-    · exact ⟨hW, τ, by rw [Set.inter_eq_left.mpr (cone_subset_cone.mpr hpre)], hWτ⟩
+    · exact ⟨hW, τ', by rw [Set.inter_eq_right.mpr (cone.subset_cone.mpr hpre)], hWτ'⟩
+    · exact ⟨hW, τ, by rw [Set.inter_eq_left.mpr (cone.subset_cone.mpr hpre)], hWτ⟩
   mono := by
     rintro W W₂ X X₂ ⟨_, τ, hX, hWτ⟩ hW₂W hXX₂ hW₂ hX₂
     obtain ⟨τ₂, rfl⟩ := hX₂
     subst hX
-    have hpre : τ₂ <+: τ := cone_subset_cone.mp hXX₂
+    have hpre : τ₂ <+: τ := cone.subset_cone.mp hXX₂
     exact ⟨hW₂, τ₂, rfl, hW₂W.trans (hWτ.trans (encSet_anti hpre))⟩
 
 theorem exists_not_mem_bitNbhd (b : Bool) : ∃ t : Token, t ∉ bitNbhd b := by
@@ -137,7 +137,7 @@ theorem fg_le_id : f.comp g ≤ idMap (iterSys T) := by
   intro W Z
   rw [comp_rel, idMap_rel]
   rintro ⟨X, ⟨hW, τ, hX, hWτ⟩, σ, hXσ, hZmem, hσZ⟩
-  obtain rfl : τ = σ := cone_injective (hX.symm.trans hXσ)
+  obtain rfl : τ = σ := cone.injective (hX.symm.trans hXσ)
   exact ⟨hW, hZmem, hWτ.trans hσZ⟩
 
 theorem prefix_of_encSet_subset {σ τ : Str} (h : encSet σ ⊆ encSet τ) : τ <+: σ := by
@@ -166,11 +166,11 @@ theorem gf_eq_id : g.comp f = idMap B := by
     refine ⟨hX ▸ memB_cone σ, hY ▸ memB_cone τ, ?_⟩
     have hsub : encSet σ ⊆ encSet τ := hσW.trans hWτ
     rw [hX, hY]
-    exact cone_subset_cone.mpr (prefix_of_encSet_subset hsub)
+    exact cone.subset_cone.mpr (prefix_of_encSet_subset hsub)
   · rintro ⟨hX, hY, hXY⟩
     obtain ⟨σ, rfl⟩ := hX
     obtain ⟨τ, rfl⟩ := hY
-    have hpre : τ <+: σ := cone_subset_cone.mp hXY
+    have hpre : τ <+: σ := cone.subset_cone.mp hXY
     exact ⟨encSet σ, ⟨σ, rfl, encSet_mem σ, subset_rfl⟩,
       encSet_mem σ, τ, rfl, encSet_anti hpre⟩
 

@@ -69,11 +69,11 @@ def hMap : ApproximableMap B B where
   rel_dom := fun ⟨σ, hX, _, _⟩ => ⟨σ, hX⟩
   rel_cod := fun ⟨_, _, hYmem, _⟩ => hYmem
   master_rel := by
-    refine ⟨[], (B_master).trans cone_nil.symm, B.master_mem, ?_⟩
-    rw [hOut_nil, B_master, cone_nil]
+    refine ⟨[], (B_master).trans cone.nil.symm, B.master_mem, ?_⟩
+    rw [hOut_nil, B_master, cone.nil]
   inter_right := by
     rintro X Y Y' ⟨σ, hX, hYmem, hYsub⟩ ⟨σ', hX', hY'mem, hY'sub⟩
-    have hσ : σ = σ' := cone_injective (hX ▸ hX')
+    have hσ : σ = σ' := cone.injective (hX ▸ hX')
     subst hσ
     have hsub : cone (hOut σ) ⊆ Y ∩ Y' := Set.subset_inter hYsub hY'sub
     exact ⟨σ, hX, B.inter_mem hYmem hY'mem (memB_cone (hOut σ)) hsub, hsub⟩
@@ -81,8 +81,8 @@ def hMap : ApproximableMap B B where
     rintro X X' Y Y' ⟨σ, hX, _, hYsub⟩ hX'X hYY' hX'mem hY'mem
     obtain ⟨σ', hX'cone⟩ := hX'mem
     have hpre : σ <+: σ' := by
-      apply cone_subset_cone.mp; rw [← hX'cone, ← hX]; exact hX'X
-    have hcone : cone (hOut σ') ⊆ cone (hOut σ) := cone_subset_cone.mpr (hOut_mono hpre)
+      apply cone.subset_cone.mp; rw [← hX'cone, ← hX]; exact hX'X
+    have hcone : cone (hOut σ') ⊆ cone (hOut σ) := cone.subset_cone.mpr (hOut_mono hpre)
     exact ⟨σ', hX'cone, hY'mem, (hcone.trans hYsub).trans hYY'⟩
 end
 
@@ -112,11 +112,11 @@ def kMap : ApproximableMap B B where
   rel_dom := fun ⟨σ, hX, _, _⟩ => ⟨σ, hX⟩
   rel_cod := fun ⟨_, _, hYmem, _⟩ => hYmem
   master_rel := by
-    refine ⟨[], (B_master).trans cone_nil.symm, B.master_mem, ?_⟩
-    rw [kOut_nil, B_master, cone_nil]
+    refine ⟨[], (B_master).trans cone.nil.symm, B.master_mem, ?_⟩
+    rw [kOut_nil, B_master, cone.nil]
   inter_right := by
     rintro X Y Y' ⟨σ, hX, hYmem, hYsub⟩ ⟨σ', hX', hY'mem, hY'sub⟩
-    have hσ : σ = σ' := cone_injective (hX ▸ hX')
+    have hσ : σ = σ' := cone.injective (hX ▸ hX')
     subst hσ
     have hsub : cone (kOut σ) ⊆ Y ∩ Y' := Set.subset_inter hYsub hY'sub
     exact ⟨σ, hX, B.inter_mem hYmem hY'mem (memB_cone (kOut σ)) hsub, hsub⟩
@@ -124,8 +124,8 @@ def kMap : ApproximableMap B B where
     rintro X X' Y Y' ⟨σ, hX, _, hYsub⟩ hX'X hYY' hX'mem hY'mem
     obtain ⟨σ', hX'cone⟩ := hX'mem
     have hpre : σ <+: σ' := by
-      apply cone_subset_cone.mp; rw [← hX'cone, ← hX]; exact hX'X
-    have hcone : cone (kOut σ') ⊆ cone (kOut σ) := cone_subset_cone.mpr (kOut_mono hpre)
+      apply cone.subset_cone.mp; rw [← hX'cone, ← hX]; exact hX'X
+    have hcone : cone (kOut σ') ⊆ cone (kOut σ) := cone.subset_cone.mpr (kOut_mono hpre)
     exact ⟨σ', hX'cone, hY'mem, (hcone.trans hYsub).trans hYY'⟩
 end
 
@@ -146,10 +146,10 @@ theorem kMap_comp_hMap : kMap.comp hMap = idMap B := by
   constructor
   · rintro ⟨Y, ⟨σ, hXcone, _, hYsub⟩, τ, hYcone, hZmem, hZsub⟩
     refine ⟨⟨σ, hXcone⟩, hZmem, ?_⟩
-    have hτ : τ <+: hOut σ := cone_subset_cone.mp (hYcone ▸ hYsub)
+    have hτ : τ <+: hOut σ := cone.subset_cone.mp (hYcone ▸ hYsub)
     have hτσ : kOut τ <+: σ := by have := kOut_mono hτ; rwa [kOut_hOut] at this
     calc X = cone σ := hXcone
-      _ ⊆ cone (kOut τ) := cone_subset_cone.mpr hτσ
+      _ ⊆ cone (kOut τ) := cone.subset_cone.mpr hτσ
       _ ⊆ Z := hZsub
   · rintro ⟨⟨σ, hXcone⟩, hZmem, hXZ⟩
     refine ⟨cone (hOut σ), ⟨σ, hXcone, memB_cone (hOut σ), subset_rfl⟩, hOut σ, rfl, hZmem, ?_⟩
@@ -166,7 +166,7 @@ theorem toElementMap_hMap_cone (σ : Str) :
   rw [← hMap.rel_iff_mem_principal (memB_cone σ), mem_principal]
   constructor
   · rintro ⟨ρ, hcone, hYmem, hsub⟩
-    have : σ = ρ := cone_injective hcone
+    have : σ = ρ := cone.injective hcone
     subst this
     exact ⟨hYmem, hsub⟩
   · rintro ⟨hYmem, hsub⟩
@@ -182,7 +182,7 @@ theorem toElementMap_kMap_cone (σ : Str) :
   rw [← kMap.rel_iff_mem_principal (memB_cone σ), mem_principal]
   constructor
   · rintro ⟨ρ, hcone, hYmem, hsub⟩
-    have : σ = ρ := cone_injective hcone
+    have : σ = ρ := cone.injective hcone
     subst this
     exact ⟨hYmem, hsub⟩
   · rintro ⟨hYmem, hsub⟩
@@ -198,7 +198,7 @@ theorem hMap_not_surjective : ¬ Function.Surjective hMap.toElementMap := by
     rw [← toElementMap_comp, kMap_comp_hMap, toElementMap_idMap]
   rw [hx, toElementMap_kMap_cone] at hkhx
   rw [← hkhx, toElementMap_hMap_cone] at hx
-  have hcone := cone_injective (B.principal_injective (memB_cone _) (memB_cone _) hx)
+  have hcone := cone.injective (B.principal_injective (memB_cone _) (memB_cone _) hx)
   simp at hcone
 end
 
@@ -210,7 +210,7 @@ theorem kMap_not_injective : ¬ Function.Injective kMap.toElementMap := by
       = kMap.toElementMap (B.principal (memB_cone [true])) := by
     rw [toElementMap_kMap_cone, toElementMap_kMap_cone]; rfl
   have h2 := hinj h1
-  have hcone := cone_injective (B.principal_injective (memB_cone _) (memB_cone _) h2)
+  have hcone := cone.injective (B.principal_injective (memB_cone _) (memB_cone _) h2)
   simp at hcone
 end
 

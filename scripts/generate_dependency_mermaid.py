@@ -1262,6 +1262,10 @@ NS_DOM_SHORT: dict[str, tuple[str, str]] = {
         "F18d",
         "Union of finite<br>approximations",
     ),
+    "The cone of finite bit strings": (
+        "Cone",
+        "The cone of<br>finite bit strings",
+    ),
     "Examples 1.2–1.5 (Revisited) — infinite binary neighbourhoods": (
         "ER",
         "Examples 1.2–1.5<br>revisited",
