@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.iUnion
 public import Mathlib.Data.Set.Operations
 public import Mathlib.Data.Set.Basic
 public import Mathlib.Data.Set.Image

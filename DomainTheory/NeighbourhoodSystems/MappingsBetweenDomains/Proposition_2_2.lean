@@ -64,21 +64,6 @@ end ApproximableMap
 section
 variable {α β γ δ : Type*}
 
-namespace NeighborhoodSystem
-
-theorem sSupDirected_le (V : NeighborhoodSystem α) (S : Set V.Element) (hne : S.Nonempty)
-    (hdir : ∀ a ∈ S, ∀ b ∈ S, ∃ c ∈ S, a ≤ c ∧ b ≤ c) {y : V.Element}
-    (hy : ∀ s ∈ S, s ≤ y) : V.sSupDirected S hne hdir ≤ y := by
-  rintro Z ⟨s, hs, hsZ⟩
-  exact hy s hs Z hsZ
-
-theorem le_sSupDirected (V : NeighborhoodSystem α) (S : Set V.Element) (hne : S.Nonempty)
-    (hdir : ∀ a ∈ S, ∀ b ∈ S, ∃ c ∈ S, a ≤ c ∧ b ≤ c) {a : V.Element} (ha : a ∈ S) :
-    a ≤ V.sSupDirected S hne hdir :=
-  fun _ hZ => ⟨a, ha, hZ⟩
-
-end NeighborhoodSystem
-
 namespace ApproximableMap
 
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}

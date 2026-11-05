@@ -13,3 +13,11 @@ Given an increasing sequence $x_0 \subseteq x_1 \subseteq \cdots$ of ideal eleme
 **Theorem (`iUnion_le`).** The directed union is below every upper bound of the sequence.
 
 *Proof.* A neighbourhood of the join comes from some term, hence belongs to any common upper bound. ∎
+
+**Definition (`sSupDirected`).** The directed supremum of a nonempty directed family of ideal elements is the filter of neighbourhoods belonging to some member of the family.
+
+**Theorem (`le_sSupDirected`).** Each member of the family is below the directed supremum.
+
+**Theorem (`sSupDirected_le`).** The directed supremum is below every upper bound of the family.
+
+*Proof.* As for the countable monotone case: membership in the join is witnessed by a family member. ∎
