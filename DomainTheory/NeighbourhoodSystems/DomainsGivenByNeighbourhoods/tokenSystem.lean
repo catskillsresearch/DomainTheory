@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_27
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bracket
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainIso
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot
 

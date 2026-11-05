@@ -30,6 +30,7 @@
 - [Prefix order](1980_Factoid_1_8c.md) [✓](../1980_REVISION.md)
 - [Union of finite approximations](1980_Factoid_1_8d.md) [✓](../1980_REVISION.md)
 - [Definition 1.9 — isomorphic domains](1980_Definition_1_9.md) [✓](../1980_REVISION.md)
+- [Brackets](1980_Brackets.md) [✓](../1980_REVISION.md)
 - [Token system](1980_Token_system.md) [✓](../1980_REVISION.md)
 - [Theorem 1.10 — basic open neighbourhoods](1980_Theorem_1_10.md) [✓](../1980_REVISION.md)
 - [Theorem 1.11 — intersections and directed unions](1980_Theorem_1_11.md)

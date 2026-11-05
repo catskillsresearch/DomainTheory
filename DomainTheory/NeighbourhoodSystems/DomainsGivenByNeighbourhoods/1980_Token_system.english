@@ -1,9 +1,3 @@
-Given any neighbourhood system $\mathcal{D}$, define for $X \in \mathcal{D}$
-
-$$
-[X] = \{x \in |\mathcal{D}| \mid X \in x\}.
-$$
-
 The subsets $[X] \subseteq |\mathcal{D}|$ for $X \in \mathcal{D}$ form a neighbourhood system over $|\mathcal{D}|$.
 
 <!-- formalization -->

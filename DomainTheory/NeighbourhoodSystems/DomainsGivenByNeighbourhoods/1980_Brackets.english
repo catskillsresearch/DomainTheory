@@ -1,0 +1,31 @@
+Given any neighbourhood system $\mathcal{D}$, define for $X \in \mathcal{D}$
+
+$$
+[X] = \{x \in |\mathcal{D}| \mid X \in x\}.
+$$
+
+<!-- formalization -->
+
+**Definition (`bracket`).** The bracket of a neighbourhood $X$ is $[X]=\{x\in|\mathcal{D}|\mid X\in x\}$.
+
+**Theorem (`mem_bracket`).** An ideal element lies in $[X]$ if and only if $X$ is one of its neighbourhoods.
+
+**Theorem (`bracket_master`).** The master bracket is the whole domain: $[\Delta]=|\mathcal{D}|$.
+
+*Proof.* Every ideal element contains $\Delta$. ∎
+
+**Theorem (`bracket_inter`).** For neighbourhoods $X$ and $Y$ one has $[X]\cap[Y]=[X\cap Y]$.
+
+*Proof.* Membership in both brackets means both $X$ and $Y$ belong to the filter, hence so does their intersection; conversely an ideal element containing $X\cap Y$ contains each factor by upward closure. ∎
+
+**Theorem (`principal_mem_bracket`).** The principal $\uparrow X$ lies in $[X]$.
+
+*Proof.* $X$ belongs to $\uparrow X$. ∎
+
+**Theorem (`bracket_subset_iff`).** For neighbourhoods $X$ and $Y$, one has $[X]\subseteq[Y]$ if and only if $X\subseteq Y$.
+
+*Proof.* Forward: $\uparrow X\in[X]$ forces $Y\in\uparrow X$. Reverse: upward closure of filters. ∎
+
+**Theorem (`bracket_injective`).** Equal brackets come from equal neighbourhoods.
+
+*Proof.* Mutual inclusion of brackets yields mutual inclusion of the neighbourhoods. ∎

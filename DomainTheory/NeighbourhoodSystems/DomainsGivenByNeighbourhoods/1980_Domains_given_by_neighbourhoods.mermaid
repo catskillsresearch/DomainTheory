@@ -33,6 +33,7 @@ flowchart TB
   F18c["Prefix order"]
   F18d["Union of finite<br>approximations"]
   D19["Definition 1.9<br>isomorphic domains"]
+  brak["Brackets"]
   tokS["Token system"]
   T10["Theorem 1.10<br>basic open neighbourhoods"]
   T11["Theorem 1.11<br>intersections and directed unions"]
@@ -78,9 +79,12 @@ flowchart TB
   D16 -->|"1"| Ord
   tokS -->|"1"| T10
   F18c -->|"1"| T11
+  D17 -->|"1"| brak
   Ord -->|"1"| iTot
   D11 -->|"1"| iUT
-  EX -->|"1"| tokS
+  D18 -->|"1"| tokS
+  D19 -->|"1"| tokS
+  brak -->|"1"| tokS
 
 %%{init: {"flowchart": {"curve": "basis", "wrappingWidth": 110, "nodeSpacing": 8, "rankSpacing": 14, "padding": 2, "htmlLabels": true, "useMaxWidth": true}, "themeVariables": {"fontSize": "22px", "fontFamily": "ui-sans-serif, system-ui, sans-serif"}}}%%
   classDef cdef fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
@@ -115,6 +119,7 @@ flowchart TB
   class F18c cfac
   class F18d cfac
   class D19 cdef
+  class brak cdef
   class tokS cdef
   class T10 cthm
   class T11 cthm

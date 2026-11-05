@@ -1,6 +1,8 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.tokenSystem
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.interUpTo
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_19
 import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_5a
 
 @[expose] public section
