@@ -5,7 +5,7 @@ line,keyword,number,label,file
 146,EXAMPLE,1.2,two-token domain,DomainsGivenByNeighbourhoods/Example_1_2.lean
 160,EXAMPLE,1.3,three-step chain,DomainsGivenByNeighbourhoods/Example_1_3.lean
 177,EXAMPLE,1.4,finite binary tree,DomainsGivenByNeighbourhoods/Example_1_4.lean
-206,FACTOID,1.4a,nested or disjoint,DomainsGivenByNeighbourhoods/Factoid_1_4.lean
+206,FACTOID,1.4a,nested or disjoint,DomainsGivenByNeighbourhoods/NestedOrDisjoint.lean
 208,EXAMPLE,1.5,all nonempty subsets,DomainsGivenByNeighbourhoods/Example_1_5.lean
 210,FACTOID,1.5a,consistent iff nonempty,DomainsGivenByNeighbourhoods/Factoid_1_5a.lean
 238,FACTOID,1.5b,equivalent sequences same limit,DomainsGivenByNeighbourhoods/Factoid_1_5b.lean
@@ -17,7 +17,7 @@ line,keyword,number,label,file
 282,DEFINITION,1.8,approximation and totality,DomainsGivenByNeighbourhoods/bot.lean
 282,FACTOID,1.8a1,bottom element,DomainsGivenByNeighbourhoods/bot.lean
 282,FACTOID,1.8a2,bottom is least,DomainsGivenByNeighbourhoods/bot_le.lean
-284,EXAMPLES,1.2–1.5,finite examples revisited,DomainsGivenByNeighbourhoods/Examples_1_2_1_5_revisited.lean
+284,EXAMPLES,1.2–1.5,infinite binary neighbourhoods,DomainsGivenByNeighbourhoods/ExampleB.lean
 284,FACTOID,1.8b,finite filters are principal,DomainsGivenByNeighbourhoods/eq_principal_of_isMin.lean
 312,FACTOID,1.8c,prefix order,DomainsGivenByNeighbourhoods/sigmaBot_le_iff.lean
 317,FACTOID,1.8d,union of finite approximations,DomainsGivenByNeighbourhoods/mem_iff_exists_sigmaBot.lean

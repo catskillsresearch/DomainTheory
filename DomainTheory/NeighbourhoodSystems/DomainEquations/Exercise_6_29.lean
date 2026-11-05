@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_19
+import Mathlib.Data.Set.Finite.Basic
 
 @[expose] public section
 

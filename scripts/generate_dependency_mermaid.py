@@ -1262,7 +1262,7 @@ NS_DOM_SHORT: dict[str, tuple[str, str]] = {
         "F18d",
         "Union of finite<br>approximations",
     ),
-    "Examples 1.2–1.5 (Revisited) — finite examples revisited": (
+    "Examples 1.2–1.5 (Revisited) — infinite binary neighbourhoods": (
         "ER",
         "Examples 1.2–1.5<br>revisited",
     ),

@@ -5,7 +5,7 @@ import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_
 import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_le_iff
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainIso
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_4
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NestedOrDisjoint
 
 import Mathlib.Tactic.NormNum
 @[expose] public section

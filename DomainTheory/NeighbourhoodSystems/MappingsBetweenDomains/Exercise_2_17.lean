@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Examples_1_2_1_5_revisited
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems.Example24

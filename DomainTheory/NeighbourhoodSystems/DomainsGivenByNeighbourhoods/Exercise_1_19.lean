@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_4
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NestedOrDisjoint
 public import Mathlib.Data.Fintype.Basic
 public import Mathlib.Data.Set.Basic
 public import Mathlib.Data.Set.Insert

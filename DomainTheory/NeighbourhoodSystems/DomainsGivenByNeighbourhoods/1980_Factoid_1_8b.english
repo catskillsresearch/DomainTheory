@@ -5,3 +5,11 @@ EXAMPLES 1.2 – 1.5 (Revisited). The examples as given were all finite, so any 
 **Theorem (`eq_principal_of_isMin`).** If $X$ belongs to an ideal element $x$ and is $\subseteq$-minimal among the neighbourhoods of $x$, then $x=\uparrow X$.
 
 *Proof.* Every neighbourhood of $x$ contains $X$, so belongs to $\uparrow X$; conversely every member of $\uparrow X$ is an upward extension of $X$ and hence a neighbourhood of $x$. ∎
+
+**Theorem (`exists_minimum_of_fintype`).** When the ground set is finite, every ideal element has a $\subseteq$-minimal neighbourhood.
+
+*Proof.* Among neighbourhoods of $x$ contained in $\Delta$, take one of least cardinality; a strictly smaller neighbourhood would contradict minimality of that cardinality. ∎
+
+**Theorem (`element_eq_principal_of_fintype`).** When the ground set is finite, every ideal element is principal.
+
+*Proof.* Combine the previous two theorems. ∎
