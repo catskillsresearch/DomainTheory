@@ -24,7 +24,7 @@
 - [Definition 1.8 — approximation and totality](1980_Definition_1_8.md) [✓](../1980_REVISION.md)
 - [Bottom element](1980_Factoid_1_8a1.md) [✓](../1980_REVISION.md)
 - [Bottom is least](1980_Factoid_1_8a2.md) [✓](../1980_REVISION.md)
-- [Finite filters are principal](1980_Factoid_1_8b.md)
+- [Finite filters are principal](1980_Factoid_1_8b.md) [✓](../1980_REVISION.md)
 - [Examples 1.2–1.5 (Revisited) — finite examples revisited](1980_Examples_1_2_1_5_revisited.md)
 - [Prefix order](1980_Factoid_1_8c.md)
 - [Union of finite approximations](1980_Factoid_1_8d.md)
