@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal
+import Mathlib.Data.Set.Basic
 
 @[expose] public section
 

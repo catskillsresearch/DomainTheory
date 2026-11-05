@@ -21,7 +21,7 @@
 - [Inclusion reversing principals](1980_Factoid_1_7a2.md) [✓](../1980_REVISION.md)
 - [Principals are one-one](1980_Factoid_1_7a1.md) [✓](../1980_REVISION.md)
 - [Union of principal filters](1980_Factoid_1_7b.md) [✓](../1980_REVISION.md)
-- [Definition 1.8 — approximation and totality](1980_Definition_1_8.md)
+- [Definition 1.8 — approximation and totality](1980_Definition_1_8.md) [✓](../1980_REVISION.md)
 - [Factoid 1.8 — bottom element; bottom is least; finite filters are principal; prefix order; union of finite approximations](1980_Factoid_1_8.md)
 - [Examples 1.2–1.5 (Revisited) — finite examples revisited](1980_Examples_1_2_1_5_revisited.md)
 - [Definition 1.9 — isomorphic domains](1980_Definition_1_9.md)

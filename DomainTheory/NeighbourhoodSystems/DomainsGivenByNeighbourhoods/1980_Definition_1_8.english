@@ -1,0 +1,11 @@
+DEFINITION 1.8. For $x, y \in |\mathcal{D}|$, we say that $x$ *approximates* $y$ iff $x \subseteq y$. The element that approximates all others, $\{\Delta\}$, is called $\perp$ (read: *bottom*); it is the "least defined" element, or the "most partial" element. Elements maximal with respect to the approximation relation are called *total elements*. $\square$
+
+<!-- formalization -->
+
+**Definition (`bot`).** Bottom is the principal filter of the master set: $\perp=\uparrow\Delta$.
+
+*Proof.* Take the principal element determined by $\Delta$. ∎
+
+**Theorem (`mem_bot`).** A set $Y$ is a neighbourhood of $\perp$ if and only if $Y=\Delta$.
+
+*Proof.* Membership in $\uparrow\Delta$ means $Y$ is a neighbourhood containing $\Delta$; every neighbourhood already lies in $\Delta$, so that forces $Y=\Delta$. ∎
