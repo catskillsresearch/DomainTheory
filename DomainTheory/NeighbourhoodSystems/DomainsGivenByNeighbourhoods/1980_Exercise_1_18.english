@@ -1,0 +1,25 @@
+**EXERCISE 1.18.** Let $\mathcal{D}$ be a neighbourhood system. Call a subset $C \subseteq \mathcal{D}$ *consistent* iff every finite subset of $C$ is consistent in $\mathcal{D}$. Give an example where $C$ is a subset with more than two elements, every pair of neighbourhoods in $C$ is consistent, but $C$ is *not* consistent. Show that if $C$ is consistent, then there is a *least* filter $x \in |\mathcal{D}|$ with $C \subseteq x$. Show generally that the *intersection* of any non-empty collection of filters is again a filter.
+
+<!-- formalization -->
+
+**Definition (`FinitelyConsistent`).** A family $C$ of neighbourhoods is finitely consistent when every finite sequence drawn from $C$ is consistent in $\mathcal{D}$.
+
+**Definition (`leastFilter`).** From a finitely consistent family $C$ form the least ideal element containing every member of $C$.
+
+**Theorem (`leastFilter_le`).** Any ideal element containing all of $C$ lies above the least filter of $C$.
+
+*Proof.* Membership in the least filter is forced by every common upper bound. ∎
+
+**Definition (`sInf`).** The intersection of a nonempty family of ideal elements is again an ideal element.
+
+**Theorem (`sInf_le` / `le_sInf`).** Pointwise intersection is the greatest lower bound in the approximation order.
+
+**Definition (`family`).** On a three-point token set, the three pairwise-overlapping doubletons $\{0,1\}$, $\{1,2\}$, $\{0,2\}$.
+
+**Theorem (`not_finitelyConsistent`).** That three-set family is pairwise nonempty but not finitely consistent.
+
+*Proof.* The length-three intersection is empty, so no neighbourhood witnesses consistency of the whole family. ∎
+
+**Theorem (`exercise_1_18`).** Least filters of finitely consistent families are least upper bounds for those families, and the three-doubleton family is a counterexample to pairwise consistency implying finite consistency.
+
+*Proof.* Assemble the least-filter inequality with the triangle counterexample. ∎
