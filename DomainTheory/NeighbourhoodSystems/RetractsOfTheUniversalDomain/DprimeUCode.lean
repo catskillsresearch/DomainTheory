@@ -120,9 +120,7 @@ theorem transfer_double_subset_iff_idxYc (i j k : ℕ) :
   have key := transfer_empty_iff_idxYc P (cs := [(i, true), (j, true), (k, false)])
     (n := max i (max j k) + 1)
     (by simp only [List.mem_cons, List.not_mem_nil, or_false]
-        rintro p (rfl | rfl | rfl) <;>
-          simp [(Nat.le_max_left j k).trans (Nat.le_max_right i (max j k)),
-            (Nat.le_max_right j k).trans (Nat.le_max_right i (max j k))])
+        rintro p (rfl | rfl | rfl) <;> exact Nat.lt_succ_of_le (by simp))
   have hLHS : {x ∈ (Set.univ : Set ℕ) | ∀ p ∈ [(i, true), (j, true), (k, false)],
       (p.2 = true ↔ x ∈ idxSet (e P) p.1)}
       = ((Set.univ : Set ℕ) ∩ idxSet (e P) i ∩ idxSet (e P) j) \ idxSet (e P) k := by
@@ -159,7 +157,7 @@ theorem transfer_inter_empty_iff_idxYc (i j : ℕ) :
       U.master ∩ Yc P i ∩ Yc P j = ∅ := by
   have key := transfer_empty_iff_idxYc P (cs := [(i, true), (j, true)]) (n := max i j + 1)
     (by simp only [List.mem_cons, List.not_mem_nil, or_false]
-        rintro p (rfl | rfl) <;> simp)
+        rintro p (rfl | rfl) <;> exact Nat.lt_succ_of_le (by simp))
   have hLHS : {x ∈ (Set.univ : Set ℕ) | ∀ p ∈ [(i, true), (j, true)],
       (p.2 = true ↔ x ∈ idxSet (e P) p.1)} = (Set.univ : Set ℕ) ∩ idxSet (e P) i ∩ idxSet (e P) j := by
     ext x
@@ -188,7 +186,7 @@ theorem transfer_subset_iff_idxYc (i j : ℕ) :
       U.master ∩ Yc P i ⊆ Yc P j := by
   have key := transfer_empty_iff_idxYc P (cs := [(i, true), (j, false)]) (n := max i j + 1)
     (by simp only [List.mem_cons, List.not_mem_nil, or_false]
-        rintro p (rfl | rfl) <;> simp)
+        rintro p (rfl | rfl) <;> exact Nat.lt_succ_of_le (by simp))
   have hLHS : {x ∈ (Set.univ : Set ℕ) | ∀ p ∈ [(i, true), (j, false)],
       (p.2 = true ↔ x ∈ idxSet (e P) p.1)} = ((Set.univ : Set ℕ) ∩ idxSet (e P) i) \ idxSet (e P) j := by
     ext x
