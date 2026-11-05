@@ -247,37 +247,6 @@ theorem ofC_toC (x : (reprSystem C hInter hne).Element) :
 end
 
 section
-set_option linter.unusedVariables false
-
-theorem example_222.{u_1} : ∀ {τ : Type u_1} (C : Set (Set τ))
-  (hInter :
-    ∀ (𝒮 : Set (Set τ)),
-      @Set.Nonempty (Set τ) 𝒮 →
-        @LE.le (Set (Set τ)) (@Set.instLE (Set τ)) 𝒮 C →
-          @Membership.mem (Set τ) (Set (Set τ)) (@Set.instMembership (Set τ)) C (@Set.sInter τ 𝒮))
-  (hne : @Set.Nonempty (Set τ) C)
-  (hDir :
-    ∀ (𝒮 : Set (Set τ)),
-      @Set.Nonempty (Set τ) 𝒮 →
-        @LE.le (Set (Set τ)) (@Set.instLE (Set τ)) 𝒮 C →
-          @DirectedOn (Set τ) (fun (x1 x2 : Set τ) => @LE.le (Set τ) (@Set.instLE τ) x1 x2) 𝒮 →
-            @Membership.mem (Set τ) (Set (Set τ)) (@Set.instMembership (Set τ)) C (@Set.sUnion τ 𝒮))
-  (x :
-    @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-      (@DomainTheory.NeighbourhoodSystems.Exercise222.Tok τ C)
-      (@DomainTheory.NeighbourhoodSystems.Exercise222.reprSystem τ C hInter hne)),
-  @Eq
-    (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-      (@DomainTheory.NeighbourhoodSystems.Exercise222.Tok τ C)
-      (@DomainTheory.NeighbourhoodSystems.Exercise222.reprSystem τ C hInter hne))
-    (@DomainTheory.NeighbourhoodSystems.Exercise222.ofC τ C hInter hne
-      (@DomainTheory.NeighbourhoodSystems.Exercise222.toC τ C hInter hne x)
-      (@DomainTheory.NeighbourhoodSystems.Exercise222.toC_mem τ C hInter hne hDir x))
-    x :=
-  @DomainTheory.NeighbourhoodSystems.Exercise222.ofC_toC
-end
-
-section
 variable {τ : Type*} (C : Set (Set τ))
 variable (hInter : ∀ 𝒮 : Set (Set τ), 𝒮.Nonempty → 𝒮 ⊆ C → ⋂₀ 𝒮 ∈ C)
 variable (hne : C.Nonempty)
@@ -324,6 +293,13 @@ def reprIso : (reprSystem C hInter hne).Element ≃o {X : Set τ // X ∈ C} whe
       rw [mem_toC] at ht ⊢
       obtain ⟨F, hF, htCl⟩ := ht
       exact ⟨F, hab _ hF, htCl⟩
+
+include hDir in
+
+/-- Scott's Exercise 2.22: a family closed under nonempty intersections and directed
+unions is inclusion-isomorphic to the domain of the token neighbourhood system. -/
+def exercise_2_22 : (reprSystem C hInter hne).Element ≃o {X : Set τ // X ∈ C} :=
+  reprIso C hInter hne hDir
 end
 
 end DomainTheory.NeighbourhoodSystems.Exercise222

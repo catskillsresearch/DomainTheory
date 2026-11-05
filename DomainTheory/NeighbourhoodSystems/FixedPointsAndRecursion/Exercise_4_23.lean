@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot_le
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot

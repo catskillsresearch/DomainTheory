@@ -23,3 +23,15 @@ One indication that the conditions of 2.1 are sufficient for a definition is tha
 *Proof.* The three Scott clauses are the master, intersection, and monotonicity fields; well-formedness records that related sets are neighbourhoods. ∎
 
 **Theorem (`ApproximableMap.ext`).** Two approximable mappings are equal when they relate the same pairs of neighbourhoods.
+
+**Definition (`ApproximableMap.toElementMap`).** The elementwise action sends an ideal element $x$ to the filter of neighbourhoods $Y$ for which some $X\in x$ satisfies $X\,f\,Y$.
+
+**Theorem (`ApproximableMap.mem_toElementMap`).** Membership in the image filter is exactly the existential formula above.
+
+**Theorem (`ApproximableMap.rel_iff_mem_principal`).** The neighbourhood relation is recovered by evaluating the elementwise action at the principal filter: $X\,f\,Y$ if and only if $Y$ belongs to $f(\uparrow X)$.
+
+**Theorem (`ApproximableMap.ext_of_toElementMap`).** Equal elementwise actions determine equal approximable mappings.
+
+**Theorem (`ApproximableMap.rel_master`).** Every neighbourhood is related to the codomain master set.
+
+**Theorem (`ApproximableMap.toElementMap_mono`).** The elementwise action is monotone for approximation.

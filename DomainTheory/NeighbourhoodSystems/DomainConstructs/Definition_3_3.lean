@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Definition_3_1
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_2
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap
 public import Mathlib.Data.Set.Basic
 public import Mathlib.Data.Set.Image
 @[expose] public section
