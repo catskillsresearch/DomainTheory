@@ -1,0 +1,99 @@
+EXAMPLE 1.4. Let $\Delta = \{\Lambda, 0, 1, 00, 01, 10, 11\}$ and let $\mathcal{D} = \{\Delta, \{0, 00, 01\}, \{1, 10, 11\}, \{00\}, \{01\}, \{10\}, \{11\}\}$.
+
+Or more understandably in pictures:
+
+```mermaid
+flowchart TB
+  subgraph outer[" "]
+    direction TB
+    subgraph row1[" "]
+      direction LR
+      a["00"]
+      b["01"]
+      c["10"]
+      d["11"]
+      a ~~~ b ~~~ c ~~~ d
+    end
+    subgraph row2[" "]
+      direction LR
+      L["0&nbsp;&nbsp;00&nbsp;&nbsp;01"]
+      R["1&nbsp;&nbsp;10&nbsp;&nbsp;11"]
+      L ~~~ R
+    end
+    subgraph row3[" "]
+      direction LR
+      z["0"]
+      o["1"]
+      z ~~~ o
+    end
+    lam["Λ"]
+    row1 ~~~ row2
+    row2 ~~~ row3
+    row3 ~~~ lam
+  end
+  style row1 fill:none,stroke:none
+  style row2 fill:none,stroke:none
+  style row3 fill:none,stroke:none
+```
+
+The tokens are finite sequences of 0's and 1's (up to length 2) with $\Lambda$ the empty sequence; they form — in the picture — the binary tree with the sequences as the nodes. The neighbourhoods are the subtrees of all nodes above a given node. Obviously this can be generalized to sequences of any length (and to trees less regular than the binary tree). The total elements of the example correspond to the top nodes 00, 01, 10, 11 and the lower nodes to the partial elements. When we are not at a top node we have only partially determined a sequence, and the branching indicates that we have some choice as to how the sequence can be extended. $\square$
+
+It should be noted that, in these three examples, the reason that we have a neighbourhood system is a simple consequence of a
+
+<!-- formalization -->
+
+**Definition (`Token`).** The token set is a seven-element type standing for $\Delta=\{\Lambda,0,1,00,01,10,11\}$.
+
+**Definition (`leaf00`), (`leaf01`), (`leaf10`), (`leaf11`).** The four singleton neighbourhoods at the leaves of the tree.
+
+**Definition (`left`).** The left-branch neighbourhood $\{0,00,01\}$.
+
+**Definition (`right`).** The right-branch neighbourhood $\{1,10,11\}$.
+
+**Definition (`master`).** The master set is the full set of tokens.
+
+**Definition (`mem`).** A subset belongs to the family precisely when it equals the master set, the left or right branch, or one of the four leaves.
+
+**Theorem (`mem_iff`).** A set is a neighbourhood if and only if it is one of those seven sets.
+
+*Proof.* Immediate from the seven-element family. ∎
+
+**Theorem (`not_mem_empty`).** The empty set is not a neighbourhood.
+
+*Proof.* Each of the seven neighbourhoods contains a distinguished token, so none equals the empty set. ∎
+
+**Theorem (`inter_master`), (`master_inter`).** Intersection with the master absorbs.
+
+*Proof.* The master is the full token set. ∎
+
+**Theorem (`left_inter_right`), (`right_inter_left`).** The two branches are disjoint.
+
+*Proof.* Direct membership check on the seven tokens. ∎
+
+**Theorem (`left_inter_leaf00`), (`left_inter_leaf01`), (`leaf00_inter_left`), (`leaf01_inter_left`).** Each left leaf sits inside the left branch.
+
+*Proof.* Direct membership check on the seven tokens. ∎
+
+**Theorem (`right_inter_leaf10`), (`right_inter_leaf11`), (`leaf10_inter_right`), (`leaf11_inter_right`).** Each right leaf sits inside the right branch.
+
+*Proof.* Direct membership check on the seven tokens. ∎
+
+**Theorem (`left_inter_leaf10`), (`left_inter_leaf11`), (`leaf10_inter_left`), (`leaf11_inter_left`), (`right_inter_leaf00`), (`right_inter_leaf01`), (`leaf00_inter_right`), (`leaf01_inter_right`).** A leaf of one branch misses the other branch.
+
+*Proof.* Direct membership check on the seven tokens. ∎
+
+**Theorem (`leaf00_inter_leaf01`), (`leaf00_inter_leaf10`), (`leaf00_inter_leaf11`), (`leaf01_inter_leaf00`), (`leaf01_inter_leaf10`), (`leaf01_inter_leaf11`), (`leaf10_inter_leaf00`), (`leaf10_inter_leaf01`), (`leaf10_inter_leaf11`), (`leaf11_inter_leaf00`), (`leaf11_inter_leaf01`), (`leaf11_inter_leaf10`).** Distinct leaves are pairwise disjoint.
+
+*Proof.* Direct membership check on the seven tokens. ∎
+
+**Theorem (`inter_mem_or_empty`).** The intersection of any two neighbourhoods is again a neighbourhood, or else empty.
+
+*Proof.* Case analysis on the two factors, assembling absorption by the master, self-intersection, the branch and leaf lemmas above, and the empty intersections. ∎
+
+**Definition (`neighborhoodSystem`).** The neighbourhood system on this token carrier with the membership predicate and master set above.
+
+*Proof.* The master is nonempty and a neighbourhood; every neighbourhood lies in the master; if two neighbourhoods meet in a set containing a third neighbourhood, their intersection cannot be empty (the empty set is not a neighbourhood), so by the preceding classification it is again a neighbourhood. ∎
+
+**Theorem (`example_1_4`).** There is a neighbourhood system whose master is the full token set and whose neighbourhoods are exactly $\Delta$, $\{0,00,01\}$, $\{1,10,11\}$, $\{00\}$, $\{01\}$, $\{10\}$, and $\{11\}$.
+
+*Proof.* Take the system just constructed; the master and membership claims are immediate from the definitions. ∎
