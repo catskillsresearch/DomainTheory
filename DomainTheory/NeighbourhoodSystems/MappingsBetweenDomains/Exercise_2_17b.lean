@@ -5,7 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_22
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_20
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot_le
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.mem_iff_exists_sigmaBot
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.sigmaBot_le_iff
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems.Example24

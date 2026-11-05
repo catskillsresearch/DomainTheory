@@ -17,3 +17,15 @@ Again there is an exercise here to show $\sigma x \in |B|$. In particular $\sigm
 **Theorem (`sigmaBot_le_iff`).** One has $\sigma_0\perp\le\sigma_1\perp$ if and only if $\sigma_0$ is a prefix of $\sigma_1$.
 
 *Proof.* Principals compare by reverse inclusion of cones, and cones reverse-include exactly when the shorter string prefixes the longer. ∎
+
+**Theorem (`sigmaElt_append`).** Prepending concatenates on elements: $(\sigma\tau)x=\sigma(\tau x)$.
+
+*Proof.* Unwind the definition of $\sigma x$ and use that prepending concatenates on sets. ∎
+
+**Theorem (`sigmaElt_bot`).** Prepending bottom yields the principal: $\sigma\perp=\sigma\cdot\perp$.
+
+*Proof.* The only neighbourhood of $\perp$ is $\Delta$, and $\sigma\Delta$ is the cone of $\sigma$. ∎
+
+**Theorem (`sigmaElt_nil`).** The empty string acts as identity: $\Lambda x=x$.
+
+*Proof.* Prepending the empty string leaves sets unchanged. ∎

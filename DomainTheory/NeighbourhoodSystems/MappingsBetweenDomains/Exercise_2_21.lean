@@ -2,9 +2,9 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_19
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot_le
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.mem_iff_exists_sigmaBot
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NestedOrDisjoint
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.sigmaBot_le_iff
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.IsTotal
 import Mathlib.Data.Set.Insert
 @[expose] public section
