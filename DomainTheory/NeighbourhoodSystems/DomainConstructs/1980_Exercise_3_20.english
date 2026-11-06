@@ -1,0 +1,10 @@
+**EXERCISE 3.20.** (For category theorists). Show that the result of 3.19 can be used to prove that $\mathbf{+}$ and $\mathbf{\times}$ on the category of domains and approximable maps are indeed functors. Show further that $\mathbf{\times}$ is the categorical product for this category.
+
+The product functoriality and pairing uniqueness are with the
+[product functor](1980_prodFunctor.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`example_320`).** The product of maps preserves composition and identities, and a map into a product is uniquely determined by its projections.
+
+*Proof.* Invoke the composition law, the identity law, and the pairing uniqueness law. ∎

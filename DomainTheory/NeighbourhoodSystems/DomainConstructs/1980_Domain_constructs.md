@@ -40,7 +40,7 @@
 - [Induced maps](1980_inducedMaps.md) [✓](../1980_REVISION.md)
 - [Exercise 3.19 — induced maps on constructs](1980_Exercise_3_19.md) [✓](../1980_REVISION.md)
 - [Product functor](1980_prodFunctor.md) [✓](../1980_REVISION.md)
-- [Exercise 3.20 — sum and product functors](1980_Exercise_3_20.md)
+- [Exercise 3.20 — sum and product functors](1980_Exercise_3_20.md) [✓](../1980_REVISION.md)
 - [Identity of step neighbourhoods](1980_stepEq.md)
 - [Exercise 3.21 — identity of step neighbourhoods](1980_Exercise_3_21.md)
 - [Composition combinator](1980_compMap.md)
