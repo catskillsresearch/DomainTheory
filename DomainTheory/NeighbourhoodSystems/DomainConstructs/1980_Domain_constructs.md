@@ -36,7 +36,10 @@
 
 - [Proposition 3.9 — consistent step neighbourhoods](1980_Proposition_3_9.md) [✓](../1980_REVISION.md)
 
+- [Function-space element isomorphism](1980_funSpaceEquiv.md) [✓](../1980_REVISION.md)
+
 - [Theorem 3.10 — elements are mappings](1980_Theorem_3_10.md)
+
 - [Theorem 3.11 — evaluation combinator](1980_Theorem_3_11.md)
 - [Theorem 3.12 — currying](1980_Theorem_3_12.md)
 - [Theorem 3.13 — pointwise order of maps](1980_Theorem_3_13.md)

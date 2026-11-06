@@ -1554,10 +1554,15 @@ NS_CON_SHORT: dict[str, tuple[str, str]] = {
         "P39",
         "Proposition 3.9 — consistent step neighbourhoods",
     ),
+    "Function-space element isomorphism": (
+        "fsEq",
+        "Function-space element isomorphism",
+    ),
     "Theorem 3.10 — elements are mappings": (
         "T310",
         "Theorem 3.10 — elements are mappings",
     ),
+
     "Theorem 3.11 — evaluation combinator": (
         "T311",
         "Theorem 3.11 — evaluation combinator",

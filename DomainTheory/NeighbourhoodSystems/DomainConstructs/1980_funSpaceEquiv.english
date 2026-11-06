@@ -1,0 +1,35 @@
+Order isomorphism between ideal elements of a function space and approximable maps.
+
+<!-- formalization -->
+
+**Definition (`toApproxMap`).** An ideal element of a function space determines an approximable map by relating neighbourhoods precisely when the corresponding step belongs to the element.
+
+*Proof.* Domain and codomain membership unpack a witnessing map in the step; the masters relate via the master step being universal; intersection on the right and monotonicity use the filter axioms with the step intersection and nesting laws. ∎
+
+**Theorem (`toApproxMap_rel`).** Membership in the recovered relation is membership of the corresponding step in the ideal element.
+
+*Proof.* By definition. ∎
+
+**Definition (`toFilter`).** An approximable map determines an ideal element of the function space consisting of those function-space neighbourhoods that contain the map.
+
+*Proof.* Filter axioms follow from the neighbourhood structure of the function space and membership of the map. ∎
+
+**Theorem (`mem_toFilter`).** Membership in the filter of a map is function-space neighbourhood membership together with containment of the map.
+
+*Proof.* By definition. ∎
+
+**Definition (`funSpaceEquiv`).** Ideal elements of a function space are order-isomorphic to approximable maps via the two conversions.
+
+*Proof.* Round trips compare membership via step-function generation of neighbourhoods; the order equivalence unpacks approximation as containment of steps. ∎
+
+**Theorem (`funSpaceEquiv_apply`).** The isomorphism sends an ideal element to its recovered approximable map.
+
+*Proof.* By definition. ∎
+
+**Theorem (`funSpaceEquiv_symm_apply`).** The inverse isomorphism sends a map to its principal filter of neighbourhoods containing it.
+
+*Proof.* By definition. ∎
+
+**Theorem (`funSpace_mem_inter`).** The intersection of two nonempty function-space neighbourhoods is again a neighbourhood.
+
+*Proof.* Concatenate the witnessing step-function lists. ∎
