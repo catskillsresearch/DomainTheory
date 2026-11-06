@@ -3,7 +3,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofMono
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_27
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_le_iff
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.curry
 
 @[expose] public section
 

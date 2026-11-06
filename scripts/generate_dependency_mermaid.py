@@ -1570,6 +1570,10 @@ NS_CON_SHORT: dict[str, tuple[str, str]] = {
         "T311",
         "Theorem 3.11 — evaluation combinator",
     ),
+    "Currying": (
+        "curry",
+        "Currying",
+    ),
     "Theorem 3.12 — currying": (
         "T312",
         "Theorem 3.12 — currying",

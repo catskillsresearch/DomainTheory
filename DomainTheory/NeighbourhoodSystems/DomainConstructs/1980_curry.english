@@ -1,0 +1,67 @@
+Currying and uncurrying for approximable maps, with the adjunction to evaluation.
+
+<!-- formalization -->
+
+**Definition (`gSection`).** Fixing a domain neighbourhood of a product map yields an approximable map on the second factor by relating neighbourhoods precisely when the product neighbourhood of the fixed factor with the second relates under the original map.
+
+*Proof.* Domain and codomain membership, master, intersection on the right, and monotonicity inherit from the product map via the product-neighbourhood laws. ∎
+
+**Theorem (`gSection_rel`).** Membership in a section relation is membership of the corresponding product neighbourhood in the original relation.
+
+*Proof.* By definition. ∎
+
+**Theorem (`gSection_le`).** Enlarging the fixed domain neighbourhood yields a smaller section.
+
+*Proof.* Monotonicity of the product map in the product neighbourhood. ∎
+
+**Definition (`curry`).** The curry of a product map relates a domain neighbourhood to a function-space neighbourhood precisely when the section at that neighbourhood belongs to the latter.
+
+*Proof.* Domain and codomain membership unpack the witnesses; the masters relate by the masters of each system; intersection on the right uses intersection of function-space neighbourhoods; monotonicity uses upward closure and the section comparison. ∎
+
+**Theorem (`curry_rel`).** Membership in the curry relation is domain membership, function-space membership, and section membership.
+
+*Proof.* By definition. ∎
+
+**Theorem (`rel_stepFun_iff`).** Relating a domain neighbourhood to a step-function neighbourhood is equivalent to relating it to each constituent step.
+
+*Proof.* By induction on the witnessing list, using the master law, intersection on the right, and monotonicity. ∎
+
+**Definition (`uncurry`).** The uncurry of a map into a function space relates a product neighbourhood to a codomain neighbourhood precisely when the map relates the left projection to the step of the right projection with that codomain neighbourhood.
+
+*Proof.* Domain membership unpacks the product conjunct; codomain membership unpacks a witnessing map in the step; the masters relate via the product master and the master step; intersection on the right and monotonicity use the corresponding laws for the map into the function space together with step intersection and nesting. ∎
+
+**Theorem (`uncurry_rel`).** Membership in the uncurry relation is product membership together with the projected step relation.
+
+*Proof.* By definition. ∎
+
+**Theorem (`curry_uncurry`).** Currying after uncurrying recovers the original map into the function space.
+
+*Proof.* Compare relations via the step-function characterisation. ∎
+
+**Theorem (`uncurry_curry`).** Uncurrying after currying recovers the original product map.
+
+*Proof.* Compare relations via the product-neighbourhood preimage law. ∎
+
+**Definition (`curryEquiv`).** Product maps are order-isomorphic to maps into the function space via curry and uncurry.
+
+*Proof.* The round trips are the previous identities; order equivalence unpacks approximation through sections and steps. ∎
+
+**Theorem (`toElementMap_curry_apply`).** Currying acts elementwise by sending a pair of ideal elements to the value of the product map at their pairing.
+
+*Proof.* Compare membership of codomain neighbourhoods via product neighbourhoods and steps. ∎
+
+**Theorem (`uncurry_eq`).** Uncurry is evaluation after pairing with the projections.
+
+*Proof.* Compare elementwise via the pairing, projection, and evaluation identities. ∎
+
+**Theorem (`curry_eval_comp`).** Currying evaluation after pairing with the projections recovers the original map into the function space.
+
+*Proof.* Rewrite via the uncurry equation and the curry–uncurry round trip. ∎
+
+**Theorem (`eval_comp_curry`).** Evaluation after pairing the curry of a product map with the projections recovers that product map.
+
+*Proof.* Rewrite via the uncurry equation and the uncurry–curry round trip. ∎
+
+**Theorem (`ApproximableMap.le_iff`).** Approximation of approximable maps is pointwise containment of relations.
+
+*Proof.* By definition. ∎

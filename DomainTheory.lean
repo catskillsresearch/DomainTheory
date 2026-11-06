@@ -1658,6 +1658,7 @@ import DomainTheory.NeighbourhoodSystems.DomainConstructs.funSpaceEquiv
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_10
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.eval
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_11
+import DomainTheory.NeighbourhoodSystems.DomainConstructs.curry
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_5
