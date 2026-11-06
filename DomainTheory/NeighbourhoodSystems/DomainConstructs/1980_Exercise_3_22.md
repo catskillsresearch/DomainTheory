@@ -1,29 +1,9 @@
 # Exercise 3.22
 
-**EXERCISE 3.22.** Prove that there is an approximable mapping
-
-$$
-\text{comp} : (D_1 \to D_2) \times (D_0 \to D_1) \to (D_0 \to D_2)
-$$
-
-where for all $g : D_1 \to D_2$ and $f : D_0 \to D_1$ we have
-
-$$
-\text{comp}(g, f) = g \circ f.
-$$
-
-Show this directly by writing down the neighbourhood relation and by building the mapping up from eval and curry (on suitable domains) using $\circ$ and $\langle,\,\rangle$. (Hint: Fill in maps in the following sequence of domains:
-
-1. $(D_0 \to D_1) \times D_0 \to D_1$
-2. $(D_1 \to D_2) \times ((D_0 \to D_1) \times D_0) \to (D_1 \to D_2) \times D_1$
-3. $((D_1 \to D_2) \times (D_0 \to D_1)) \times D_0 \to (D_1 \to D_2) \times D_1$
-4. $((D_1 \to D_2) \times (D_0 \to D_1)) \times D_0 \to D_2$
-5. $(D_1 \to D_2) \times (D_0 \to D_1) \to (D_0 \to D_2)$.
-
-The maps are of course not uniquely determined, but the shifting of brackets ought to suggest the right choice.)
-
-<!-- page 53 -->
+@import "1980_Exercise_3_22.english" {code_block=false}
 
 **[Exercise_3_22.lean](Exercise_3_22.lean)**
 
 @import "Exercise_3_22.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-06) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

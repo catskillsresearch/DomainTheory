@@ -1,0 +1,159 @@
+The conditional operator on a domain, its sum-valued variant, and the which map from a separated sum.
+
+<!-- formalization -->
+
+**Definition (`TD`).** Write \(T\) for the token neighbourhood system of Example 1.2.
+
+*Proof.* By abbreviation. ∎
+
+**Theorem (`Tmem_eq_one`).** A neighbourhood contained in the one neighbourhood equals the one neighbourhood.
+
+*Proof.* Inspect the three neighbourhoods of Example 1.2. ∎
+
+**Theorem (`Tmem_eq_zero`).** A neighbourhood contained in the zero neighbourhood equals the zero neighbourhood.
+
+*Proof.* Inspect the three neighbourhoods of Example 1.2. ∎
+
+**Definition (`condGuard`).** A conditional guard on a product neighbourhood and a codomain neighbourhood holds according to Scott’s three cases on the token factor.
+
+*Proof.* By definition. ∎
+
+**Theorem (`cond_components`).** A product neighbourhood for the conditional unpacks as a token neighbourhood paired with a product of domain neighbourhoods.
+
+*Proof.* Unpack the product membership criterion. ∎
+
+**Theorem (`one_ne_master`).** The one neighbourhood is not the master.
+
+*Proof.* Compare the underlying sets of Example 1.2. ∎
+
+**Theorem (`zero_ne_master`).** The zero neighbourhood is not the master.
+
+*Proof.* Compare the underlying sets of Example 1.2. ∎
+
+**Theorem (`condGuard_master`).** A guard with master token factor forces the codomain neighbourhood to be the master.
+
+*Proof.* Apply the master case of the guard. ∎
+
+**Theorem (`zero_ne_one`).** The zero and one neighbourhoods are distinct.
+
+*Proof.* Compare the underlying sets of Example 1.2. ∎
+
+**Theorem (`condGuard_one`).** A guard with one token factor reduces to containment of the first domain neighbourhood in the codomain.
+
+*Proof.* Apply the one case of the guard. ∎
+
+**Theorem (`condGuard_zero`).** A guard with zero token factor reduces to containment of the second domain neighbourhood in the codomain.
+
+*Proof.* Apply the zero case of the guard. ∎
+
+**Definition (`cond`).** The conditional relates a product neighbourhood of the token system with a product of a domain with itself to a domain neighbourhood precisely when the conditional guard holds.
+
+*Proof.* Domain and codomain membership unpack the witnesses; the masters relate by the master guard; intersection on the right and monotonicity follow by cases on the token factor. ∎
+
+**Theorem (`cond_bot`).** The conditional at bottom returns bottom.
+
+*Proof.* Compare membership via the master token factor. ∎
+
+**Theorem (`cond_false`).** The conditional at false returns the second argument.
+
+*Proof.* Compare membership via the zero token factor. ∎
+
+**Theorem (`cond_toElementMap_mem`).** Membership of the conditional value in a neighbourhood unpacks according to the three token cases.
+
+*Proof.* Apply the guard characterisation at principals. ∎
+
+**Theorem (`cond_true`).** The conditional at true returns the first argument.
+
+*Proof.* Compare membership via the one token factor. ∎
+
+**Theorem (`Tmem_ge_master`).** Every neighbourhood of the token system is contained in the master.
+
+*Proof.* Apply the master bound. ∎
+
+**Theorem (`Tmem_ge_one`).** A neighbourhood contained in the one neighbourhood equals the one neighbourhood or is handled by the containment criterion.
+
+*Proof.* Inspect the three neighbourhoods. ∎
+
+**Theorem (`Tmem_ge_zero`).** Symmetric to the one case for the zero neighbourhood.
+
+*Proof.* Inspect the three neighbourhoods. ∎
+
+**Definition (`condSumEmb`).** The sum-valued conditional embedding pairs a token with the left and right injections of the two arguments.
+
+*Proof.* Assemble pairing with the injections. ∎
+
+**Definition (`condSum`).** The sum-valued conditional is the conditional of the sum after the sum-valued embedding.
+
+*Proof.* By definition. ∎
+
+**Theorem (`inter_in_oneset`).** Intersection of neighbourhoods from the master–one family stays in that family.
+
+*Proof.* Case on the two possibilities. ∎
+
+**Theorem (`inter_in_zeroset`).** Intersection of neighbourhoods from the master–zero family stays in that family.
+
+*Proof.* Case on the two possibilities. ∎
+
+**Definition (`whichGuard`).** A which-guard relates a sum neighbourhood to a token neighbourhood by the three cases distinguishing left injections, right injections, and the sum master.
+
+*Proof.* By definition. ∎
+
+**Theorem (`whichGuard_left`).** A left-injection guard forces the token neighbourhood into the master–one family.
+
+*Proof.* Unpack the left case. ∎
+
+**Theorem (`whichGuard_masterC`).** A sum-master guard forces the token neighbourhood to be the master.
+
+*Proof.* Unpack the master case. ∎
+
+**Theorem (`whichGuard_right`).** A right-injection guard forces the token neighbourhood into the master–zero family.
+
+*Proof.* Unpack the right case. ∎
+
+**Definition (`whichMap`).** The which map relates a sum neighbourhood to a token neighbourhood precisely when the which-guard holds.
+
+*Proof.* Domain and codomain membership, master, intersection on the right, and monotonicity follow by cases on sum neighbourhoods. ∎
+
+**Theorem (`condSumEmb_toElementMap`).** Elementwise, the sum-valued embedding pairs a token with the two injections.
+
+*Proof.* Unpack the defining pairing. ∎
+
+**Theorem (`condSum_bot`).** The sum-valued conditional at bottom returns bottom.
+
+*Proof.* Rewrite via the embedding and the ordinary conditional at bottom. ∎
+
+**Theorem (`condSum_false`).** The sum-valued conditional at false returns the right injection of the second argument.
+
+*Proof.* Rewrite via the embedding and the ordinary conditional at false. ∎
+
+**Theorem (`condSum_true`).** The sum-valued conditional at true returns the left injection of the first argument.
+
+*Proof.* Rewrite via the embedding and the ordinary conditional at true. ∎
+
+**Theorem (`not_sum_mem_empty`).** The empty set is not a sum neighbourhood.
+
+*Proof.* Each of the three kinds of sum neighbourhood is nonempty under the standing hypotheses. ∎
+
+**Theorem (`inMap₀_outMap₀_eq_of_left`).** On left summands, the left injection after the left projection recovers the element.
+
+*Proof.* Compare membership via left injections and left parts. ∎
+
+**Theorem (`inMap₁_outMap₁_eq_of_right`).** On right summands, the right injection after the right projection recovers the element.
+
+*Proof.* Compare membership via right injections and right parts. ∎
+
+**Theorem (`sum_element_trichotomy`).** Every sum element is a left summand, a right summand, or bottom.
+
+*Proof.* Case on membership of distinguishing neighbourhoods. ∎
+
+**Theorem (`which_mem_one`).** The which value of a left summand belongs to the one neighbourhood.
+
+*Proof.* Apply the left case of the which-guard. ∎
+
+**Theorem (`which_mem_zero`).** The which value of a right summand belongs to the zero neighbourhood.
+
+*Proof.* Apply the right case of the which-guard. ∎
+
+**Theorem (`cond_which`).** Conditioning on which, with the two reinjected projections, recovers every sum element.
+
+*Proof.* Case on the trichotomy and apply the conditional and injection–projection laws. ∎

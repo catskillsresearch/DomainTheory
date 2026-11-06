@@ -1,0 +1,27 @@
+Elementwise characterisation of the least map of a step list as a pointwise supremum of principals.
+
+<!-- formalization -->
+
+**Definition (`leastMapVals`).** At an ideal element, the value set of a step list is the set of principals of those right factors whose left factors contain the argument.
+
+*Proof.* By definition. ∎
+
+**Theorem (`Element.mem_interYs_of`).** Membership of an ideal element in an intersection of range neighbourhoods is membership in the master together with membership in each active right factor.
+
+*Proof.* Unpack the defining quantification. ∎
+
+**Theorem (`leastMap_toElementMap_le_of_ub`).** The least map of a consistent step list is below every map that relates each listed pair.
+
+*Proof.* Bound the value via the relating neighbourhoods of the upper bound. ∎
+
+**Theorem (`val_le_leastMap_toElementMap`).** Each principal arising from an active right factor lies below the value of the least map.
+
+*Proof.* The least map relates the corresponding left factor to that right factor. ∎
+
+**Theorem (`leastMapVals_bounded`).** Under consistency of the step list, the value set at each argument is bounded.
+
+*Proof.* The value of the least map is a common upper bound. ∎
+
+**Theorem (`toElementMap_leastMap_eq_sSup`).** The value of the least map at an argument is the supremum of the corresponding value set.
+
+*Proof.* The least map is an upper bound, and every upper bound of the step list dominates that supremum. ∎

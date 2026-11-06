@@ -1,0 +1,23 @@
+The composition combinator on function spaces, built from evaluation and currying.
+
+<!-- formalization -->
+
+**Definition (`compApp`).** Composition applied to an argument is evaluation of the outer map at the evaluation of the inner map, organised by projections and pairing.
+
+*Proof.* Assemble evaluation and pairing along the indicated product projections. ∎
+
+**Definition (`compMap`).** The composition combinator is the curry of composition-at-an-argument.
+
+*Proof.* By definition. ∎
+
+**Theorem (`toElementMap_compApp`).** Elementwise, composition-at-an-argument evaluates the outer map at the value of the inner map.
+
+*Proof.* Unpack the defining composition of evaluations and projections. ∎
+
+**Theorem (`toElementMap_compMap_apply`).** Elementwise, the composition combinator acts by ordinary composition of the corresponding maps at each argument.
+
+*Proof.* Apply the curry evaluation identity and the previous identity. ∎
+
+**Theorem (`toApproxMap_compMap`).** The approximable map of a composed pair is the composition of the approximable maps.
+
+*Proof.* Compare elementwise via the previous identity. ∎

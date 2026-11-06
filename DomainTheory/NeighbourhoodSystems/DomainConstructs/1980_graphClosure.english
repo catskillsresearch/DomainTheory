@@ -1,0 +1,55 @@
+Approximable maps as a directed-complete family of graphs, yielding a representation of the function space.
+
+<!-- formalization -->
+
+**Definition (`graph`).** The graph of an approximable map is the set of related pairs of neighbourhoods.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mem_graph`).** Membership in a graph is the relating relation.
+
+*Proof.* By definition. ∎
+
+**Definition (`C`).** The family of graphs is the range of the graph map.
+
+*Proof.* By definition. ∎
+
+**Theorem (`C_nonempty`).** The family of graphs is nonempty.
+
+*Proof.* The constant map at bottom supplies a graph. ∎
+
+**Theorem (`graph_injective`).** Distinct approximable maps have distinct graphs.
+
+*Proof.* Extensionality of relations. ∎
+
+**Definition (`graphEquiv`).** Approximable maps are order-isomorphic to their graphs as members of the family of graphs.
+
+*Proof.* The round trip chooses a witnessing map; order equivalence is inclusion of graphs. ∎
+
+**Definition (`joinMap`).** The directed join of a nonempty directed family of graphs is the approximable map whose relation is the union of the graphs.
+
+*Proof.* Filter axioms follow by directedness, picking a common upper graph. ∎
+
+**Definition (`meetMap`).** The meet of a nonempty family of graphs is the approximable map whose relation is the intersection of the graphs.
+
+*Proof.* Filter axioms hold pointwise in the family. ∎
+
+**Theorem (`sInter_eq_graph_meetMap`).** The intersection of a nonempty family of graphs is the graph of the meet map.
+
+*Proof.* Compare membership. ∎
+
+**Theorem (`C_inter`).** The family of graphs is closed under nonempty intersections.
+
+*Proof.* The intersection is the graph of the meet. ∎
+
+**Theorem (`sUnion_eq_graph_joinMap`).** The union of a nonempty directed family of graphs is the graph of the join map.
+
+*Proof.* Compare membership. ∎
+
+**Theorem (`C_dir`).** The family of graphs is closed under nonempty directed unions.
+
+*Proof.* The union is the graph of the join. ∎
+
+**Definition (`funSpaceReprIso`).** Ideal elements of the representation system on the family of graphs are order-isomorphic to function-space elements.
+
+*Proof.* Compose the representation isomorphism, the graph equivalence, and the function-space element isomorphism. ∎

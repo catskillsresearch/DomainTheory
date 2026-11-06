@@ -1,0 +1,10 @@
+**EXERCISE 3.25.** (For topologists.) Recall from Exercises 1.21 and 2.13 on how to regard a domain $|D|$ as a topological space. Using 3.10 show that the family of open subsets of $|D|$ is isomorphic to a domain.
+
+The Sierpiński representation of opens is with the
+[opens form a domain](1980_opensDomain.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`example_325`).** The open set associated to a map into Sierpiński is open.
+
+*Proof.* Invoke openness of the open-of-map construction. ∎

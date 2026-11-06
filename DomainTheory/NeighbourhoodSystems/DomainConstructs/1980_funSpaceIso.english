@@ -1,0 +1,79 @@
+Function-space isomorphisms for products, infinite sequences, and sums, including distribution of products over sums.
+
+<!-- formalization -->
+
+**Definition (`funProdEquiv`).** Maps into a product are order-isomorphic to pairs of maps into the factors.
+
+*Proof.* Pair and project via the pairing–projection laws; order equivalence is componentwise. ∎
+
+**Definition (`funProdIso`).** Function-space elements into a product are order-isomorphic to the product of the function spaces.
+
+*Proof.* Transport the previous equivalence through the function-space element isomorphisms and the product-element isomorphism. ∎
+
+**Theorem (`funProd_isomorphic`).** The function space into a product is isomorphic to the product of the function spaces.
+
+*Proof.* Invoke the corresponding element order isomorphism. ∎
+
+**Theorem (`exists_forall_swap`).** A sequence neighbourhood belongs fibrewise to the values of a family of maps at an argument if and only if the assembled sequence of values belongs to that neighbourhood.
+
+*Proof.* Compare fibre membership with membership of indexed pairs. ∎
+
+**Theorem (`le_of_projComp_le`).** Pointwise approximation of projections after maps into the sequence system yields approximation of the maps.
+
+*Proof.* Compare via the sequence reconstruction from components. ∎
+
+**Definition (`mapOfSeq`).** A sequence of maps into a base determines a map into the sequence system by requiring fibrewise membership of the values.
+
+*Proof.* Filter axioms follow fibrewise from the terms. ∎
+
+**Definition (`piCongrOrderIso`).** A family of order isomorphisms induces an order isomorphism of dependent products.
+
+*Proof.* Apply componentwise; order equivalence is componentwise. ∎
+
+**Theorem (`projComp_mono`).** Approximation of maps into the sequence system yields approximation after each projection.
+
+*Proof.* Apply monotonicity of the projection. ∎
+
+**Theorem (`toElementMap_mapOfSeq`).** Elementwise, a sequence of maps sends an argument to the sequence of its values.
+
+*Proof.* Compare membership via fibres. ∎
+
+**Definition (`funIterEquiv`).** Maps into the sequence system are order-isomorphic to sequences of maps into the base.
+
+*Proof.* The round trips are the sequence of projections and the map of a sequence; order equivalence uses the projection comparison. ∎
+
+**Definition (`funIterIso`).** Function-space elements into the sequence system are order-isomorphic to the sequence system on the function space.
+
+*Proof.* Transport the previous equivalence through the function-space and sequence-element isomorphisms. ∎
+
+**Theorem (`funIter_isomorphic`).** The function space into the sequence system is isomorphic to the sequence system on the function space.
+
+*Proof.* Invoke the corresponding element order isomorphism. ∎
+
+**Definition (`copair`).** The copairing of two maps into a common codomain relates a sum neighbourhood by routing left and right injections through the corresponding maps.
+
+*Proof.* Domain and codomain membership, master, intersection on the right, and monotonicity follow by cases on sum neighbourhoods. ∎
+
+**Definition (`copairProj`).** The pair of projections of a map out of a sum is the pair of that map after the two injections.
+
+*Proof.* By definition. ∎
+
+**Theorem (`prod_mem_nonempty`).** Under nonempty-neighbourhood hypotheses on the factors, every product neighbourhood is nonempty.
+
+*Proof.* Pick witnesses in each projected neighbourhood. ∎
+
+**Definition (`distribMap`).** Distribution of a product over a sum pairs the first projection with the left injection after the second projection.
+
+*Proof.* Assemble pairing and composition of the product projections with the left injection. ∎
+
+**Theorem (`copair_comp_inMap₀`).** The copair after the left injection recovers the left summand map.
+
+*Proof.* Compare relations via left injections. ∎
+
+**Theorem (`copair_comp_inMap₁`).** The copair after the right injection recovers the right summand map.
+
+*Proof.* Compare relations via right injections. ∎
+
+**Theorem (`copairProj_copair`).** Projecting a copair recovers the original pair of maps.
+
+*Proof.* Apply the two injection laws. ∎

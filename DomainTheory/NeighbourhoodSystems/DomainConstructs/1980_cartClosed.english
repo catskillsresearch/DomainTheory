@@ -1,0 +1,23 @@
+Cartesian closed structure: the curry adjunction and the terminal unit system.
+
+<!-- formalization -->
+
+**Instance (`Subsingleton (ApproximableMap V unitSys)`).** There is at most one approximable map into the unit system.
+
+*Proof.* Compare elementwise using uniqueness of the unit element. ∎
+
+**Instance (`Unique (ApproximableMap V unitSys)`).** There is a unique approximable map into the unit system, namely the constant at the unique unit element.
+
+*Proof.* Take the constant map as default and invoke the subsingleton law. ∎
+
+**Definition (`homAdjunction`).** Maps out of a product are order-isomorphic to maps into the function space via curry.
+
+*Proof.* Invoke the curry equivalence. ∎
+
+**Definition (`toUnit`).** The unique map into the unit system is the default of that unique type.
+
+*Proof.* By definition. ∎
+
+**Theorem (`toUnit_unique`).** Every map into the unit system equals the unique map.
+
+*Proof.* Invoke the subsingleton law. ∎

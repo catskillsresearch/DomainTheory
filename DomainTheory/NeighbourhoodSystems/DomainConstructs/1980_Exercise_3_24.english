@@ -1,0 +1,28 @@
+**EXERCISE 3.24.** Establish some more isomorphisms :
+
+(i) $(D_0 \to (D_1 \times D_2)) \cong (D_0 \to D_1) \times (D_0 \to D_2)$
+
+(ii) $(D_0 \to D_1^\infty) \cong (D_0 \to D_1)^\infty$
+
+(iii) $D_0 \times (D_1 + D_2) \cong (D_0 \times D_1) + (D_0 \times D_2)$
+
+(iv) $(D_0 + D_1) \to D_2 \cong (D_0 \to D_2) \times (D_1 \to D_2)$ . . .
+
+If some of the above are not true, perhaps at least some mapping relationships can be established.
+
+The function-space isomorphisms and copairing laws are with the
+[function-space isomorphisms](1980_funSpaceIso.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`example_324`).** The function space into a product is isomorphic to the product of the function spaces.
+
+*Proof.* Invoke the product function-space isomorphism. ∎
+
+**Theorem (`example_324_iter`).** The function space into the sequence system is isomorphic to the sequence system on the function space.
+
+*Proof.* Invoke the sequence function-space isomorphism. ∎
+
+**Theorem (`example_324_distrib`).** Copairing after the injections recovers the summand maps, and projecting a copair recovers the original pair.
+
+*Proof.* Invoke the corresponding copairing laws. ∎

@@ -1,0 +1,31 @@
+Open sets of a domain as maps into the Sierpiński system.
+
+<!-- formalization -->
+
+**Definition (`sierpinski`).** The Sierpiński neighbourhood system on a singleton has the empty set and the singleton as neighbourhoods, with master the singleton.
+
+*Proof.* The filter axioms hold for these two sets. ∎
+
+**Definition (`mapOfOpen`).** An open set of ideal elements determines an approximable map into Sierpiński by relating a domain neighbourhood to the singleton precisely when the corresponding basic open lies in the open set, and relating freely to the empty neighbourhood.
+
+*Proof.* Domain and codomain membership, master, intersection on the right, and monotonicity unpack the open-set axioms. ∎
+
+**Theorem (`mapOfOpen_rel_empty`).** Relating to the empty Sierpiński neighbourhood is domain membership together with membership of some principal in the open set.
+
+*Proof.* Unpack the defining cases. ∎
+
+**Definition (`openOfMap`).** The open set of a map into Sierpiński consists of those ideal elements for which some principal neighbourhood relates to the singleton.
+
+*Proof.* By definition. ∎
+
+**Theorem (`openOfMap_isOpen`).** The open set of a map into Sierpiński is open.
+
+*Proof.* Witness basic opens via relating neighbourhoods. ∎
+
+**Definition (`openIso`).** Open subsets are order-isomorphic to approximable maps into Sierpiński.
+
+*Proof.* The round trips are the previous constructions; order equivalence compares membership via principals. ∎
+
+**Definition (`opensReprIso`).** Open subsets are order-isomorphic to ideal elements of the function space into Sierpiński.
+
+*Proof.* Compose the previous isomorphism with the function-space element isomorphism. ∎

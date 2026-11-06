@@ -1,0 +1,51 @@
+Criterion for equality of step neighbourhoods, via the least map of a singleton step.
+
+<!-- formalization -->
+
+**Theorem (`interYs_single_not_subset_eq`).** If a domain neighbourhood is not contained in the left factor of a singleton step list, the associated intersection of range neighbourhoods is the master.
+
+*Proof.* The defining constraints are vacuous off that factor. ∎
+
+**Theorem (`interYs_single_subset_eq`).** If a domain neighbourhood is contained in the left factor of a singleton step list, the associated intersection of range neighbourhoods recovers the right factor.
+
+*Proof.* Unpack the singleton constraint. ∎
+
+**Theorem (`stepCons`).** The intersection of range neighbourhoods for a singleton step list is always a neighbourhood.
+
+*Proof.* Case on containment in the left factor and apply the previous identities. ∎
+
+**Definition (`leastStep`).** The least map of a singleton step neighbourhood is the least map of the corresponding singleton list.
+
+*Proof.* By definition, using the consistency law just proved. ∎
+
+**Theorem (`leastStep_le`).** The least map of a step neighbourhood is below every member.
+
+*Proof.* Specialise the least-map comparison at a singleton. ∎
+
+**Theorem (`leastStep_mem`).** The least map of a step neighbourhood belongs to that neighbourhood.
+
+*Proof.* Specialise membership of the least map in a step list at a singleton. ∎
+
+**Theorem (`leastStep_eq_of_step_eq`).** Equal step neighbourhoods have equal least maps.
+
+*Proof.* Compare both ways via membership of each least map in the other neighbourhood. ∎
+
+**Theorem (`leastStep_rel`).** The least map of a step relates neighbourhoods precisely when the associated intersection of range neighbourhoods is contained in the codomain neighbourhood.
+
+*Proof.* Unpack the least-map relation at a singleton. ∎
+
+**Theorem (`step_master_right`).** A step neighbourhood with master codomain is the universal set of maps.
+
+*Proof.* Every map relates the domain neighbourhood to the master by monotonicity of the master law. ∎
+
+**Theorem (`step_eq_univ_iff`).** A step neighbourhood is universal precisely when the codomain neighbourhood is the master.
+
+*Proof.* Forward, the empty least map forces the master below the codomain; converse is the previous identity. ∎
+
+**Theorem (`step_eq_of_ne_master`).** Distinct from the master on the right, equal step neighbourhoods have equal factors.
+
+*Proof.* Compare least maps and recover the factors from the least-map relation. ∎
+
+**Theorem (`step_eq_iff`).** Two step neighbourhoods agree precisely when both have master codomain, or the factors agree.
+
+*Proof.* Combine the universal characterisation with the non-master uniqueness. ∎

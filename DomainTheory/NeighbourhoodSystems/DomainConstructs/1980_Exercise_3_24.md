@@ -1,17 +1,9 @@
 # Exercise 3.24
 
-**EXERCISE 3.24.** Establish some more isomorphisms :
-
-(i) $(D_0 \to (D_1 \times D_2)) \cong (D_0 \to D_1) \times (D_0 \to D_2)$
-
-(ii) $(D_0 \to D_1^\infty) \cong (D_0 \to D_1)^\infty$
-
-(iii) $D_0 \times (D_1 + D_2) \cong (D_0 \times D_1) + (D_0 \times D_2)$
-
-(iv) $(D_0 + D_1) \to D_2 \cong (D_0 \to D_2) \times (D_1 \to D_2)$ . . .
-
-If some of the above are not true, perhaps at least some mapping relationships can be established.
+@import "1980_Exercise_3_24.english" {code_block=false}
 
 **[Exercise_3_24.lean](Exercise_3_24.lean)**
 
 @import "Exercise_3_24.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-06) — <a href="../1980_REVISION.md">1980 revision progress</a></p>
