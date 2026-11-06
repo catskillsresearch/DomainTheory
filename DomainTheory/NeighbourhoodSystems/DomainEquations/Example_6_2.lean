@@ -3,7 +3,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
 public import Mathlib.Computability.MyhillNerode
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example_6_1
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_15
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodIso
 import Mathlib.Data.Set.Finite.Basic
 
 @[expose] public section

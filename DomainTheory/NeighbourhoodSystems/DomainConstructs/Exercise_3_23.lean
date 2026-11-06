@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_15
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodIso
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6
 @[expose] public section

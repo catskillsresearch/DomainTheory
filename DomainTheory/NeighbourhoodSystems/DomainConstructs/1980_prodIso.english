@@ -1,0 +1,67 @@
+Usual product isomorphisms, including the empty product as the unit system.
+
+<!-- formalization -->
+
+**Definition (`prodCommD`).** Ideal elements of a product are order-isomorphic to those of the swapped product.
+
+*Proof.* Transport the cartesian swap of ordered sets through the product-element isomorphism. ∎
+
+**Definition (`prodCongrOrderIso`).** The product of two order isomorphisms is an order isomorphism of products.
+
+*Proof.* Componentwise application; order equivalence is componentwise. ∎
+
+**Definition (`prodAssocD`).** Ideal elements of a left-associated iterated product are order-isomorphic to those of the right-associated iteration.
+
+*Proof.* Transport the cartesian associator through the product-element isomorphisms and product congruence. ∎
+
+**Definition (`prodUniqueOrderIso`).** A product with a unique right factor is order-isomorphic to the left factor.
+
+*Proof.* Project and reinstate the unique default; order comparison ignores the unique coordinate. ∎
+
+**Definition (`uniqueProdOrderIso`).** A product with a unique left factor is order-isomorphic to the right factor.
+
+*Proof.* Symmetric to the previous. ∎
+
+**Definition (`unitSys`).** The unit neighbourhood system on a singleton has only the universal neighbourhood.
+
+*Proof.* The filter axioms hold for the unique neighbourhood. ∎
+
+**Theorem (`unitSys_element_eq`).** Every ideal element of the unit system equals the bottom element.
+
+*Proof.* Compare membership: each neighbourhood of an element contains the master, hence equals the unique neighbourhood. ∎
+
+**Instance (`Unique unitSys.Element`).** The unit system has a unique ideal element.
+
+*Proof.* The bottom is the unique element by the previous identity. ∎
+
+**Definition (`prodCongrD`).** Ideal elements of products are order-isomorphic when the factors are, via the product of the factor isomorphisms.
+
+*Proof.* Transport product congruence through the product-element isomorphisms. ∎
+
+**Definition (`prodUnitD`).** Ideal elements of a product with the unit system on the right are order-isomorphic to those of the left factor.
+
+*Proof.* Apply the unique-right-factor isomorphism after the product-element isomorphism. ∎
+
+**Definition (`unitProdD`).** Ideal elements of a product with the unit system on the left are order-isomorphic to those of the right factor.
+
+*Proof.* Apply the unique-left-factor isomorphism after the product-element isomorphism. ∎
+
+**Theorem (`Isomorphic.prod`).** Domain isomorphism is congruent under products.
+
+*Proof.* Unpack witnessing order isomorphisms and apply product congruence. ∎
+
+**Theorem (`prod_assoc_isomorphic`).** Iterated products are associative up to domain isomorphism.
+
+*Proof.* Invoke the associated element order isomorphism. ∎
+
+**Theorem (`prod_comm_isomorphic`).** Products are commutative up to domain isomorphism.
+
+*Proof.* Invoke the swapped-product element order isomorphism. ∎
+
+**Theorem (`prod_unit_isomorphic`).** A product with the unit system on the right is isomorphic to the left factor.
+
+*Proof.* Invoke the corresponding element order isomorphism. ∎
+
+**Theorem (`unit_prod_isomorphic`).** A product with the unit system on the left is isomorphic to the right factor.
+
+*Proof.* Invoke the corresponding element order isomorphism. ∎

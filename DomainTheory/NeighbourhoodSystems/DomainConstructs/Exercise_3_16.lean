@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_15
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodIso
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_5a
 

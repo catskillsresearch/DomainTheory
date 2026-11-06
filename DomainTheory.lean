@@ -1633,6 +1633,7 @@ import DomainTheory.NeighbourhoodSystems.DomainConstructs.leastMap
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.funSpace
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.diag
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_14
+import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodIso
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_15
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_16
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_17

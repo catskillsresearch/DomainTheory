@@ -1594,6 +1594,10 @@ NS_CON_SHORT: dict[str, tuple[str, str]] = {
         "X314",
         "Exercise 3.14 — tagged product of tokens",
     ),
+    "Product isomorphisms": (
+        "pIso",
+        "Product isomorphisms",
+    ),
     "Exercise 3.15 — product isomorphisms": (
         "X315",
         "Exercise 3.15 — product isomorphisms",

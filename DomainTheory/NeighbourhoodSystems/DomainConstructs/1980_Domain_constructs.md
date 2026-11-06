@@ -29,6 +29,7 @@
 - [Theorem 3.13 — pointwise order of maps](1980_Theorem_3_13.md) [✓](../1980_REVISION.md)
 - [Diagonal map](1980_diag.md)
 - [Exercise 3.14 — tagged product of tokens](1980_Exercise_3_14.md) [✓](../1980_REVISION.md)
+- [Product isomorphisms](1980_prodIso.md) [✓](../1980_REVISION.md)
 - [Exercise 3.15 — product isomorphisms](1980_Exercise_3_15.md)
 - [Exercise 3.16 — infinite sequences of elements](1980_Exercise_3_16.md)
 - [Exercise 3.17 — embedding binary sequences](1980_Exercise_3_17.md)
