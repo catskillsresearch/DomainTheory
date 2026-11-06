@@ -1405,6 +1405,10 @@ NS_MAP_SHORT: dict[str, tuple[str, str]] = {
         "X213",
         "Exercise 2.13 — approximable means continuous",
     ),
+    "Neighbourhood correspondence of an order isomorphism": (
+        "phi",
+        "Neighbourhood correspondence of an order isomorphism",
+    ),
     "Exercise 2.14 — isomorphisms of neighbourhoods": (
         "X214",
         "Exercise 2.14 — isomorphisms of neighbourhoods",

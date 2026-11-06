@@ -1,0 +1,21 @@
+The neighbourhood correspondence induced by an order isomorphism of ideal elements, its preservation of intersections, and the containment characterisation of the induced approximable map.
+
+<!-- formalization -->
+
+**Definition (`phi`).** An order isomorphism of ideal elements determines a neighbourhood correspondence: the image of the principal filter of a neighbourhood is again a principal filter, and $\varphi$ selects that neighbourhood.
+
+**Theorem (`phi_mem`).** The selected neighbourhood is a neighbourhood of the codomain system.
+
+*Proof.* Part of the choice data from the principal-image theorem. ∎
+
+**Theorem (`phi_spec`).** Applying the isomorphism to the principal filter of a neighbourhood yields the principal filter of the corresponding neighbourhood.
+
+*Proof.* The remaining clause of that choice data. ∎
+
+**Theorem (`phi_inter`).** The correspondence preserves intersections of consistent neighbourhoods.
+
+*Proof.* Compare principals via monotonicity of the isomorphism and its inverse; the least-upper-bound property of the intersection principal yields both inclusions. ∎
+
+**Theorem (`rel_ofIso_iff`).** The approximable map induced by the isomorphism relates $X$ to $Y$ if and only if $Y$ is a neighbourhood containing the corresponding neighbourhood of $X$.
+
+*Proof.* Rewrite membership in the image principal via the correspondence specification. ∎
