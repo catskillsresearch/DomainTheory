@@ -1,29 +1,21 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap
+
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem
-
-section
-variable {α β γ : Type*}
-
 namespace ApproximableMap
 
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
-
-theorem toElementMap_mem_iff_principal (f : ApproximableMap V₀ V₁) (x : V₀.Element) {Y : Set β} :
-    (f.toElementMap x).mem Y ↔
-      ∃ (X : Set α) (hx : x.mem X), (f.toElementMap (V₀.principal (x.sub hx))).mem Y := by
-  rw [mem_toElementMap]
-  constructor
-  · rintro ⟨X, hxX, hrel⟩
-    exact ⟨X, hxX, (f.rel_iff_mem_principal (x.sub hxX)).mp hrel⟩
-  · rintro ⟨X, hxX, hmem⟩
-    exact ⟨X, hxX, (f.rel_iff_mem_principal (x.sub hxX)).mpr hmem⟩
+/-- Scott's Exercise 2.9 (forward direction): the elementwise image is the directed union of
+images of principal approximations — in membership form,
+$Y \in f(x)$ iff $Y \in f(\uparrow X)$ for some $X \in x$. -/
+theorem exercise_2_9 :
+    ∀ {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+      (f : ApproximableMap V₀ V₁) (x : V₀.Element) {Y : Set β},
+      (f.toElementMap x).mem Y ↔
+        ∃ (X : Set α) (hx : x.mem X), (f.toElementMap (V₀.principal (x.sub hx))).mem Y :=
+  toElementMap_mem_iff_principal
 
 end ApproximableMap
-end
-
 end DomainTheory.NeighbourhoodSystems

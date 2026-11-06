@@ -1,13 +1,9 @@
 # Exercise 2.9
 
-**EXERCISE 2.9.** Prove that if $f : D_0 \to D_1$ is an approximable mapping, then the elementwise mapping $f : |D_0| \to |D_1|$ satisfies the equation
-
-$$
-f(x) = \bigcup \{ f(\uparrow X) \mid X \in x \}
-$$
-
-for all $x \in |D_0|$. Conversely, show that every elementwise function satisfying this equation comes from an approximable mapping as defined in 2.2.
+@import "1980_Exercise_2_9.english" {code_block=false}
 
 **[Exercise_2_9.lean](Exercise_2_9.lean)**
 
 @import "Exercise_2_9.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-05) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

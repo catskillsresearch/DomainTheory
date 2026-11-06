@@ -63,6 +63,18 @@ theorem rel_iff_mem_principal (f : ApproximableMap V₀ V₁) {X : Set α} (hX :
   · rintro ⟨Z, ⟨_, hXZ⟩, hZY⟩
     exact f.mono hZY hXZ subset_rfl hX (f.rel_cod hZY)
 
+/-- Membership in the elementwise image is witnessed by some principal approximation:
+$Y \in f(x)$ iff $Y \in f(\uparrow X)$ for some $X \in x$. -/
+theorem toElementMap_mem_iff_principal (f : ApproximableMap V₀ V₁) (x : V₀.Element) {Y : Set β} :
+    (f.toElementMap x).mem Y ↔
+      ∃ (X : Set α) (hx : x.mem X), (f.toElementMap (V₀.principal (x.sub hx))).mem Y := by
+  rw [mem_toElementMap]
+  constructor
+  · rintro ⟨X, hxX, hrel⟩
+    exact ⟨X, hxX, (f.rel_iff_mem_principal (x.sub hxX)).mp hrel⟩
+  · rintro ⟨X, hxX, hmem⟩
+    exact ⟨X, hxX, (f.rel_iff_mem_principal (x.sub hxX)).mpr hmem⟩
+
 theorem ext_of_toElementMap {f g : ApproximableMap V₀ V₁}
     (h : ∀ x, f.toElementMap x = g.toElementMap x) : f = g := by
   apply ApproximableMap.ext

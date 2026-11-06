@@ -30,6 +30,8 @@ One indication that the conditions of 2.1 are sufficient for a definition is tha
 
 **Theorem (`ApproximableMap.rel_iff_mem_principal`).** The neighbourhood relation is recovered by evaluating the elementwise action at the principal filter: $X\,f\,Y$ if and only if $Y$ belongs to $f(\uparrow X)$.
 
+**Theorem (`ApproximableMap.toElementMap_mem_iff_principal`).** Membership in the elementwise image is witnessed by a principal approximation: $Y$ belongs to $f(x)$ if and only if $Y$ belongs to $f(\uparrow X)$ for some neighbourhood $X$ of $x$.
+
 **Theorem (`ApproximableMap.ext_of_toElementMap`).** Equal elementwise actions determine equal approximable mappings.
 
 **Theorem (`ApproximableMap.rel_master`).** Every neighbourhood is related to the codomain master set.

@@ -5,7 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofMono
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
 
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_9
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_10
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_le_iff
 public import Mathlib.Tactic.Bound

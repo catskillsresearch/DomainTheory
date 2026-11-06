@@ -1,0 +1,13 @@
+**EXERCISE 2.9.** Prove that if $f : D_0 \to D_1$ is an approximable mapping, then the elementwise mapping $f : |D_0| \to |D_1|$ satisfies the equation
+
+$$
+f(x) = \bigcup \{ f(\uparrow X) \mid X \in x \}
+$$
+
+for all $x \in |D_0|$. Conversely, show that every elementwise function satisfying this equation comes from an approximable mapping as defined in 2.2.
+
+<!-- formalization -->
+
+**Theorem (`exercise_2_9`).** Membership in the elementwise image is witnessed by a principal approximation: a neighbourhood belongs to $f(x)$ if and only if it belongs to $f(\uparrow X)$ for some neighbourhood $X$ of $x$.
+
+*Proof.* This is the membership form of the directed-union equation; it is the corresponding library fact for the elementwise action. ∎
