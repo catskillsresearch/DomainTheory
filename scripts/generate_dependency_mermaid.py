@@ -1373,6 +1373,10 @@ NS_MAP_SHORT: dict[str, tuple[str, str]] = {
         "X29",
         "Exercise 2.9 — directed union formula",
     ),
+    "Pointwise intersection of approximable maps": (
+        "iMap",
+        "Pointwise intersection of approximable maps",
+    ),
     "Exercise 2.10 — intersection of two maps": (
         "X210",
         "Exercise 2.10 — intersection of two maps",
@@ -1449,7 +1453,7 @@ def _ns_dom_kind_class(nid: str) -> str:
         return "cex"
     if nid in ("Tok2",):
         return "cexs"
-    if nid in ("idM", "DomO", "ofIso", "ofMo"):
+    if nid in ("idM", "DomO", "ofIso", "ofMo", "iMap"):
         return "cdef"
     return "cdef"
 

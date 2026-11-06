@@ -1,0 +1,11 @@
+The pointwise meet of two approximable maps, whose elementwise action is intersection of filters.
+
+<!-- formalization -->
+
+**Definition (`interMap`).** The pointwise intersection of two approximable maps relates neighbourhoods precisely when both components do.
+
+*Proof.* Master, intersection, and monotonicity hold componentwise. ∎
+
+**Theorem (`mem_toElementMap_interMap`).** The elementwise action of the pointwise intersection is the intersection of the elementwise actions.
+
+*Proof.* One direction splits a common witness; the converse intersects the two witnessing neighbourhoods and uses monotonicity. ∎
