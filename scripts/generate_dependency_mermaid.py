@@ -1626,6 +1626,10 @@ NS_CON_SHORT: dict[str, tuple[str, str]] = {
         "X318",
         "Exercise 3.18 — separated sum",
     ),
+    "Induced maps": (
+        "iMap",
+        "Induced maps",
+    ),
     "Exercise 3.19 — induced maps on constructs": (
         "X319",
         "Exercise 3.19 — induced maps on constructs",

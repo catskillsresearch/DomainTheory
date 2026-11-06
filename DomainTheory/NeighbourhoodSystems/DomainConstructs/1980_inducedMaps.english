@@ -1,0 +1,27 @@
+Induced maps of a pair of approximable maps on products and separated sums.
+
+<!-- formalization -->
+
+**Definition (`sumMap`).** The sum of two approximable maps relates a sum neighbourhood to a sum neighbourhood of the targets by sending the sum master to the sum master and routing left and right injections through the corresponding factor maps.
+
+*Proof.* Domain and codomain membership unpack the witnesses; the masters relate by the sum masters; intersection on the right and monotonicity are checked by cases on the three kinds of sum neighbourhoods, using injectivity of the tagged copies and the impossibility of mixed inclusions. ∎
+
+**Theorem (`outMap₀_comp_sumMap_comp_inMap₀`).** The left projection after the sum of maps after the left injection recovers the left factor.
+
+*Proof.* Compare relations via the left-part identities for left injections and the sum master. ∎
+
+**Theorem (`outMap₁_comp_sumMap_comp_inMap₁`).** The right projection after the sum of maps after the right injection recovers the right factor.
+
+*Proof.* Compare relations via the right-part identities for right injections and the sum master. ∎
+
+**Definition (`prodMap`).** The product of two approximable maps is the pairing of each factor after the corresponding projection.
+
+*Proof.* By definition. ∎
+
+**Theorem (`toElementMap_prodMap`).** Elementwise, the product of maps sends a product element to the pair of the factor values at its components.
+
+*Proof.* Apply the pairing and composition evaluations with the projection laws. ∎
+
+**Theorem (`toElementMap_prodMap_pair`).** Elementwise, the product of maps sends a pair to the pair of the factor values.
+
+*Proof.* Specialise the previous identity at a pairing. ∎

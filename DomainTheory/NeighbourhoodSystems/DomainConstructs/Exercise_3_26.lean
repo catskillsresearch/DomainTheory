@@ -1,6 +1,6 @@
 module
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.sumSys
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_19
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.inducedMaps
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.ProjectionMappings
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_4
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3

@@ -1,5 +1,5 @@
 module
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_19
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.inducedMaps
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_4
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 @[expose] public section

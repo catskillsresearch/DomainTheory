@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_4
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap2
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.iterSys
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.sumSys
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_19
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.inducedMaps
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Factoid_1_5a
 @[expose] public section
