@@ -1,0 +1,37 @@
+Continuous maps of ideal elements as approximable maps, and the converse continuity of elementwise actions.
+
+<!-- formalization -->
+
+**Definition (`instNonemptyMemSubtype`).** For each ideal element, the type of neighbourhoods belonging to that element is nonempty (witnessed by the master neighbourhood).
+
+**Theorem (`continuous_monotone`).** A continuous map of ideal elements is monotone for the approximation order.
+
+*Proof.* Preimages of opens are open, and opens are upper sets for approximation. ∎
+
+**Theorem (`mem_iff_principal_of_continuous`).** Under a continuous map, a neighbourhood belongs to the image of an ideal element if and only if it belongs to the image of some principal filter of a neighbourhood of that element.
+
+*Proof.* One direction uses continuity at the basic open determined by the neighbourhood; the converse uses monotonicity of continuous maps. ∎
+
+**Theorem (`principalFamily_directed`).** The family of principal filters of neighbourhoods of a fixed ideal element is directed under approximation.
+
+*Proof.* Intersect two neighbourhoods and compare principals by the principal-order characterisation. ∎
+
+**Theorem (`eq_iSupDirected_principal`).** Every ideal element is the indexed directed supremum of the principal filters of its neighbourhoods.
+
+*Proof.* Membership on either side rearranges the directed-join formula against the filter axioms. ∎
+
+**Theorem (`continuous_of_monotone_iSupDirected`).** A monotone map of ideal elements that preserves indexed directed joins is continuous.
+
+*Proof.* Express the point as the directed join of its principals, apply preservation of joins, and extract a basic open neighbourhood from membership in an open of the image. ∎
+
+**Definition (`ofContinuous`).** A continuous map of ideal elements induces an approximable map by evaluating the continuous map on principal filters.
+
+*Proof.* Monotonicity of the assignment follows from continuity. ∎
+
+**Theorem (`continuous_toElementMap`).** The elementwise action of an approximable map is continuous.
+
+*Proof.* Membership of the image in an open is witnessed by a related neighbourhood, which supplies a basic open preimage. ∎
+
+**Theorem (`toElementMap_ofContinuous`).** The elementwise action of the approximable map induced by a continuous map recovers that continuous map.
+
+*Proof.* Compare membership via the principal-union law for continuous maps and evaluation of the induced map on principals. ∎

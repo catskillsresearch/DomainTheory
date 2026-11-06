@@ -1397,6 +1397,10 @@ NS_MAP_SHORT: dict[str, tuple[str, str]] = {
         "X212",
         "Exercise 2.12 — directed unions of maps",
     ),
+    "Continuous maps as approximable": (
+        "ofC",
+        "Continuous maps as approximable",
+    ),
     "Exercise 2.13 — approximable means continuous": (
         "X213",
         "Exercise 2.13 — approximable means continuous",

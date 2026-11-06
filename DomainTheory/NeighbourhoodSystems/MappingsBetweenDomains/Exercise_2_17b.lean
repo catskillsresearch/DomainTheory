@@ -121,27 +121,3 @@ theorem runMap_satisfies : SatisfiesRunEquations runMap where
 end
 
 end DomainTheory.NeighbourhoodSystems.Example24
-
-namespace DomainTheory.NeighbourhoodSystems
-
-namespace NeighborhoodSystem
-
-section
-open NeighborhoodSystem
-universe u
-variable {α : Type u} {β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-
-instance instNonemptyMemSubtype (x : V₀.Element) : Nonempty {X : Set α // x.mem X} :=
-  ⟨⟨V₀.master, x.master_mem⟩⟩
-
-theorem continuous_monotone {c : V₀.Element → V₁.Element} (hc : Continuous c) : Monotone c := by
-  intro x y hxy
-  rw [V₁.le_iff_isOpen_imp]
-  intro U hU hxU
-  exact V₀.isOpen_isUpperSet (hU.preimage hc) hxU hxy
-
-end
-
-end NeighborhoodSystem
-
-end DomainTheory.NeighbourhoodSystems

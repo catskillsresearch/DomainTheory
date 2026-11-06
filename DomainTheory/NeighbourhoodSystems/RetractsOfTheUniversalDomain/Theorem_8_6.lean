@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise_7_24
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition_6_11
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_13
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofContinuous
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Examples_8_4
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.sub
