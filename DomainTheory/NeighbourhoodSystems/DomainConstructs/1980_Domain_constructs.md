@@ -36,7 +36,7 @@
 - [Embedding binary sequences](1980_embBinSeq.md) [✓](../1980_REVISION.md)
 - [Exercise 3.17 — embedding binary sequences](1980_Exercise_3_17.md) [✓](../1980_REVISION.md)
 - [Sum system](1980_sumSys.md) [✓](../1980_REVISION.md)
-- [Exercise 3.18 — separated sum](1980_Exercise_3_18.md)
+- [Exercise 3.18 — separated sum](1980_Exercise_3_18.md) [✓](../1980_REVISION.md)
 - [Exercise 3.19 — induced maps on constructs](1980_Exercise_3_19.md)
 - [Exercise 3.20 — sum and product functors](1980_Exercise_3_20.md)
 - [Exercise 3.21 — identity of step neighbourhoods](1980_Exercise_3_21.md)
