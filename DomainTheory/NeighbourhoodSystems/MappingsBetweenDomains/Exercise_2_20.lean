@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_19
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap2
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap
 public import Mathlib.Algebra.Group.End
 public import Mathlib.Basic.Finite.Defs

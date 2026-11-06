@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_19
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap2
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot_le
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NestedOrDisjoint
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB

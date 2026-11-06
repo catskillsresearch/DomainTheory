@@ -1445,6 +1445,10 @@ NS_MAP_SHORT: dict[str, tuple[str, str]] = {
         "X218",
         "Exercise 2.18 — doubling binary digits",
     ),
+    "Approximable maps of two arguments": (
+        "AMap2",
+        "Approximable maps of two arguments",
+    ),
     "Exercise 2.19 — maps of two arguments": (
         "X219",
         "Exercise 2.19 — maps of two arguments",

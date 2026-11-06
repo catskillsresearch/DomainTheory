@@ -1,5 +1,5 @@
 module
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_19
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap2
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Definition_3_3

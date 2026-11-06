@@ -1,0 +1,21 @@
+Approximable mappings of two arguments as ternary neighbourhood relations, and their elementwise action on pairs of ideal elements.
+
+<!-- formalization -->
+
+**Definition (`ApproximableMap₂`).** An approximable mapping of two arguments is a ternary relation on neighbourhoods that relates only neighbourhoods of the respective systems, relates the three masters, is closed under intersection in the third argument, and is monotone when the first two neighbourhoods shrink and the third expands.
+
+**Definition (`toElementMap₂`).** The elementwise action of a binary approximable map on a pair of ideal elements collects those neighbourhoods related to some neighbourhoods of each argument.
+
+*Proof.* Codomain membership, master, intersection, and upward closure follow from the corresponding axioms of the ternary relation. ∎
+
+**Theorem (`mem_toElementMap₂`).** Membership in the elementwise image is existence of witnessing neighbourhoods of each argument related to the given neighbourhood.
+
+*Proof.* By definition. ∎
+
+**Theorem (`rel₂_iff_mem_principal`).** The ternary relation holds of neighbourhoods if and only if the corresponding neighbourhood belongs to the elementwise image of their principal filters.
+
+*Proof.* One direction evaluates at the principals; the converse uses monotonicity to shrink to the given neighbourhoods. ∎
+
+**Theorem (`toElementMap₂_mono`).** The elementwise action is monotone in each argument for the approximation order.
+
+*Proof.* Membership witnesses transport along the inequalities. ∎
