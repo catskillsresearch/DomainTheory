@@ -1,5 +1,5 @@
 module
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofMono
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_9
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_27
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_le_iff

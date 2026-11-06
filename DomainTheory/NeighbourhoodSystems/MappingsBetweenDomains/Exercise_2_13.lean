@@ -3,7 +3,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_17b
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_9
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofMono
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_22
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_le_iff

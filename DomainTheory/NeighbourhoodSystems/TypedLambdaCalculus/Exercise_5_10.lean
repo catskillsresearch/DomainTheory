@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_8
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofMono
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot_le
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_26

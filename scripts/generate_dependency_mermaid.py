@@ -1361,6 +1361,10 @@ NS_MAP_SHORT: dict[str, tuple[str, str]] = {
         "T27",
         "Theorem 2.7 — isomorphisms are approximable",
     ),
+    "Monotone on principals as approximable map": (
+        "ofMo",
+        "Monotone on principals as approximable map",
+    ),
     "Exercise 2.8 — determined by finite elements": (
         "X28",
         "Exercise 2.8 — determined by finite elements",
@@ -1445,7 +1449,7 @@ def _ns_dom_kind_class(nid: str) -> str:
         return "cex"
     if nid in ("Tok2",):
         return "cexs"
-    if nid in ("idM", "DomO", "ofIso"):
+    if nid in ("idM", "DomO", "ofIso", "ofMo"):
         return "cdef"
     return "cdef"
 

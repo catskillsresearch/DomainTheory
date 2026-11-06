@@ -1,0 +1,15 @@
+Approximable maps determined by their action on principal filters, and the approximable map induced by a monotone assignment of ideal elements to neighbourhoods.
+
+<!-- formalization -->
+
+**Definition (`ofMono`).** A monotone assignment of ideal elements to neighbourhoods induces an approximable map: $X$ relates to $Y$ when $Y$ belongs to the assigned element at $X$.
+
+*Proof.* Domain and codomain membership are immediate; master, intersection, and monotonicity follow from the corresponding properties of the assigned elements and the monotonicity hypothesis. ∎
+
+**Theorem (`eq_of_toElementMap_principal`).** Approximable maps that agree on all principal filters are equal.
+
+*Proof.* Recover the neighbourhood relation from evaluation at principals. ∎
+
+**Theorem (`toElementMap_ofMono_principal`).** The elementwise action of the induced map at a principal filter recovers the assigned element.
+
+*Proof.* Membership in the image comes from a smaller neighbourhood by monotonicity; conversely the neighbourhood itself witnesses the relation. ∎
