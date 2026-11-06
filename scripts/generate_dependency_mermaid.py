@@ -1610,6 +1610,10 @@ NS_CON_SHORT: dict[str, tuple[str, str]] = {
         "X316",
         "Exercise 3.16 — infinite sequences of elements",
     ),
+    "Embedding binary sequences": (
+        "eBin",
+        "Embedding binary sequences",
+    ),
     "Exercise 3.17 — embedding binary sequences": (
         "X317",
         "Exercise 3.17 — embedding binary sequences",

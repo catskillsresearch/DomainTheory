@@ -1,0 +1,87 @@
+Embedding of binary sequences into the infinite token sequence system, with a left inverse.
+
+<!-- formalization -->
+
+**Definition (`T`).** Write \(T\) for the token neighbourhood system of Example 1.2.
+
+*Proof.* By abbreviation. ∎
+
+**Definition (`Token`).** Write Token for the underlying token type of Example 1.2.
+
+*Proof.* By abbreviation. ∎
+
+**Theorem (`T_nbhd_nonempty`).** Every neighbourhood in \(T\) is nonempty.
+
+*Proof.* Inspect the three neighbourhoods of Example 1.2. ∎
+
+**Definition (`bitNbhd`).** The bit neighbourhood of a boolean is the zero neighbourhood or the one neighbourhood according as the bit is false or true.
+
+*Proof.* By definition. ∎
+
+**Theorem (`bitNbhd_mem`).** Each bit neighbourhood belongs to \(T\).
+
+*Proof.* Invoke the corresponding membership facts of Example 1.2. ∎
+
+**Definition (`encSet`).** The encoding of a finite boolean string is the set of indexed tokens that, whenever the string is defined at that index, lie in the corresponding bit neighbourhood.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mem_encSet`).** Membership in an encoding is the defining bit constraint at each index.
+
+*Proof.* By definition. ∎
+
+**Theorem (`encSet_nil`).** The encoding of the empty string is the universal set.
+
+*Proof.* The defining constraints are vacuous. ∎
+
+**Theorem (`comparable_of_agree`).** Two finite boolean strings that never disagree at a common defined index are comparable under the prefix order.
+
+*Proof.* By induction on the strings, matching heads when both are nonempty. ∎
+
+**Theorem (`encSet_agree`).** If a sequence neighbourhood is contained in two encodings, then those encodings agree on every commonly defined bit.
+
+*Proof.* Pick a token from the fibre at that index and observe that it must lie in both bit neighbourhoods. ∎
+
+**Theorem (`encSet_anti`).** Extending a string shrinks its encoding.
+
+*Proof.* A defined bit of the shorter string remains defined with the same value after concatenation. ∎
+
+**Theorem (`fiber_encSet_none`).** Beyond the length of a string, every fibre of its encoding is universal.
+
+*Proof.* The defining constraint at that index is vacuous. ∎
+
+**Theorem (`fiber_encSet_some`).** At a defined bit, the fibre of the encoding is the corresponding bit neighbourhood.
+
+*Proof.* Compare membership of tokens with the defining constraint. ∎
+
+**Theorem (`encSet_mem`).** Every encoding belongs to the infinite sequence system on \(T\).
+
+*Proof.* Fibres are either the master or a bit neighbourhood; after the string length they are the master. ∎
+
+**Definition (`f`).** The forward embedding relates a cone neighbourhood of a string to a sequence neighbourhood precisely when the encoding of that string is contained in the latter.
+
+*Proof.* Domain membership recovers cone membership in \(\mathcal{B}\); codomain membership is the sequence witness; the masters relate via the empty encoding; intersection on the right uses uniqueness of cones; monotonicity uses anti-monotonicity of encodings under prefixes. ∎
+
+**Definition (`g`).** The reverse map relates a sequence neighbourhood to a cone neighbourhood of a string precisely when the former is contained in the encoding of that string.
+
+*Proof.* Domain and codomain membership unpack the witnesses; the masters relate via the empty encoding; intersection on the right uses agreement of encodings under a common lower bound together with comparability of agreeing strings; monotonicity uses anti-monotonicity of encodings. ∎
+
+**Theorem (`exists_not_mem_bitNbhd`).** Each bit neighbourhood omits some token.
+
+*Proof.* The opposite bit token of Example 1.2 lies outside. ∎
+
+**Theorem (`fg_le_id`).** Composing the forward embedding after the reverse map stays below the identity on the sequence system.
+
+*Proof.* Unpack the composite relation and transport containment through a common encoding. ∎
+
+**Theorem (`prefix_of_encSet_subset`).** Inclusion of encodings implies the reverse prefix order on the corresponding strings.
+
+*Proof.* Agreeing encodings are comparable; the longer-first case is ruled out by placing a forbidden token at the first undefined index of the shorter string. ∎
+
+**Theorem (`gf_eq_id`).** Composing the reverse map after the forward embedding recovers the identity on \(\mathcal{B}\).
+
+*Proof.* Compare relations: one direction uses the prefix recovery from encodings; the other embeds via the encoding of the larger cone. ∎
+
+**Theorem (`f_injective`).** The forward embedding is injective on ideal elements.
+
+*Proof.* Apply the left-inverse identity after transporting equality of values through the reverse map. ∎
