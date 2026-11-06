@@ -1453,6 +1453,10 @@ NS_MAP_SHORT: dict[str, tuple[str, str]] = {
         "X219",
         "Exercise 2.19 — maps of two arguments",
     ),
+    "Powerset neighbourhood system": (
+        "PSet",
+        "Powerset neighbourhood system",
+    ),
     "Exercise 2.20 — powerset of the integers": (
         "X220",
         "Exercise 2.20 — powerset of the integers",

@@ -1,0 +1,101 @@
+The powerset neighbourhood system on the naturals, its identification with arbitrary subsets, and approximable union, intersection, successor, and predecessor maps.
+
+<!-- formalization -->
+
+**Definition (`powerSet`).** The powerset neighbourhood system on the naturals takes as neighbourhoods those sets whose complements are finite, with master the universe.
+
+*Proof.* The empty complement is finite; intersecting neighbourhoods unions their finite complements; every neighbourhood sits in the universe. ∎
+
+**Theorem (`mem_powerSet`).** A set is a powerset neighbourhood if and only if its complement is finite.
+
+*Proof.* By definition. ∎
+
+**Theorem (`powerSet_master`).** The master is the universe.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mem_compl_singleton`).** The complement of a singleton is a powerset neighbourhood.
+
+*Proof.* Its complement is a singleton, hence finite. ∎
+
+**Theorem (`powerSet_inter_mem`).** The intersection of two powerset neighbourhoods is a powerset neighbourhood.
+
+*Proof.* Complements of intersections are unions of finite sets. ∎
+
+**Definition (`toSet`).** The set of naturals corresponding to an ideal element consists of those $n$ for which the complement of $\{n\}$ belongs to the element.
+
+**Theorem (`mem_toSet`).** Membership of $n$ in the corresponding set is membership of the complement of $\{n\}$ in the ideal element.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mem_compl_of_finite`).** If a finite set of naturals each have their singleton-complements in an ideal element, then the complement of that finite set belongs to the element.
+
+*Proof.* Induction on the finite set, using intersection of filters. ∎
+
+**Definition (`ofSet`).** An arbitrary subset of the naturals determines an ideal element consisting of those neighbourhoods whose complements are contained in the subset.
+
+*Proof.* Master, intersection, and upward closure follow from the corresponding set operations on complements. ∎
+
+**Theorem (`ofSet_mono`).** Larger subsets determine larger ideal elements in the approximation order.
+
+*Proof.* Containment of complements is preserved by enlarging the ambient set. ∎
+
+**Theorem (`ofSet_toSet`).** Passing from an ideal element to its set and back recovers the element.
+
+*Proof.* Membership of a neighbourhood rearranges via the finite-complement characterisation against the corresponding set. ∎
+
+**Definition (`predSet`).** The predecessor of a set of naturals consists of those $n$ with $n+1$ in the set.
+
+**Theorem (`mem_predSet`).** Membership in the predecessor set is membership of the successor in the original set.
+
+*Proof.* By definition. ∎
+
+**Definition (`interMap₂`).** Intersection of ideal elements is the binary approximable map relating neighbourhoods when their union is contained in the third.
+
+*Proof.* Domain, codomain, master, intersection, and monotonicity follow from the powerset neighbourhood axioms and union of sets. ∎
+
+**Theorem (`predSet_mono`).** Predecessor is monotone for set inclusion.
+
+*Proof.* Immediate. ∎
+
+**Definition (`predMap`).** The predecessor transformation is the approximable map relating neighbourhoods when the complement of the codomain neighbourhood is contained in the predecessor of the complement of the domain neighbourhood.
+
+*Proof.* As for other complement-based maps on the powerset system. ∎
+
+**Definition (`succSet`).** The successor of a set of naturals is the image under $n \mapsto n+1$.
+
+**Theorem (`succSet_mono`).** Successor is monotone for set inclusion.
+
+*Proof.* Images preserve inclusions. ∎
+
+**Definition (`succMap`).** The successor transformation is the approximable map relating neighbourhoods when the complement of the codomain neighbourhood is contained in the successor of the complement of the domain neighbourhood.
+
+*Proof.* As for the predecessor map. ∎
+
+**Theorem (`toSet_ofSet`).** Passing from a set to an ideal element and back recovers the set.
+
+*Proof.* Membership of a natural rearranges against singleton-complements. ∎
+
+**Definition (`equivSetNat`).** Ideal elements of the powerset system are order-isomorphic to arbitrary subsets of the naturals via the to-set / of-set correspondence.
+
+*Proof.* The two round-trips and the order correspondence follow from the preceding lemmas. ∎
+
+**Definition (`unionMap`).** Union of ideal elements is the binary approximable map relating neighbourhoods when their intersection is contained in the third.
+
+*Proof.* Dual to the intersection map. ∎
+
+**Theorem (`toSet_interMap₂`).** Under the set identification, the elementwise action of the intersection map is intersection of sets.
+
+*Proof.* Compare membership of a natural via singleton-complements and the defining relation. ∎
+
+**Theorem (`toSet_predMap`).** Under the set identification, the elementwise action of the predecessor map is the predecessor of sets.
+
+*Proof.* Compare membership via singleton-complements and the defining relation. ∎
+
+**Theorem (`toSet_succMap`).** Under the set identification, the elementwise action of the successor map is the successor of sets.
+
+*Proof.* Compare membership via singleton-complements and the defining relation. ∎
+
+**Theorem (`toSet_unionMap`).** Under the set identification, the elementwise action of the union map is union of sets.
+
+*Proof.* Compare membership via singleton-complements and the defining relation. ∎

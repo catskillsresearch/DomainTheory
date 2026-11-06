@@ -5,10 +5,10 @@
  -->
 <!-- Title: G Pages: 1 -->
 <svg width="540pt" height="198pt"
- viewBox="0.00 0.00 540.00 197.63" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ viewBox="0.00 0.00 540.00 198.41" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(0.27 0.27) rotate(0) translate(4 736)">
 <title>G</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-736 2018,-736 2018,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-736 2010,-736 2010,4 -4,4"/>
 <!-- D21 -->
 <g id="node1" class="node">
 <title>D21</title>
@@ -171,20 +171,20 @@
 <polygon fill="black" stroke="black" points="1423.26,-573.15 1428.84,-568.26 1421.43,-568.6 1423.26,-573.15"/>
 <text text-anchor="middle" x="1322.5" y="-605" font-family="Times,serif" font-size="10.00">1</text>
 </g>
-<!-- X220 -->
+<!-- PSet -->
 <g id="node35" class="node">
-<title>X220</title>
-<path fill="#e0e7ff" stroke="#4338ca" d="M1725.5,-561C1725.5,-561 1592.5,-561 1592.5,-561 1586.5,-561 1580.5,-555 1580.5,-549 1580.5,-549 1580.5,-505 1580.5,-505 1580.5,-499 1586.5,-493 1592.5,-493 1592.5,-493 1725.5,-493 1725.5,-493 1731.5,-493 1737.5,-499 1737.5,-505 1737.5,-505 1737.5,-549 1737.5,-549 1737.5,-555 1731.5,-561 1725.5,-561"/>
-<text text-anchor="middle" x="1659" y="-542.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.20 —</text>
-<text text-anchor="middle" x="1659" y="-522.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">powerset of the</text>
-<text text-anchor="middle" x="1659" y="-502.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">integers</text>
+<title>PSet</title>
+<path fill="#dcfce7" stroke="#15803d" d="M1718,-561C1718,-561 1592,-561 1592,-561 1586,-561 1580,-555 1580,-549 1580,-549 1580,-505 1580,-505 1580,-499 1586,-493 1592,-493 1592,-493 1718,-493 1718,-493 1724,-493 1730,-499 1730,-505 1730,-505 1730,-549 1730,-549 1730,-555 1724,-561 1718,-561"/>
+<text text-anchor="middle" x="1655" y="-542.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">Powerset</text>
+<text text-anchor="middle" x="1655" y="-522.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">neighbourhood</text>
+<text text-anchor="middle" x="1655" y="-502.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">system</text>
 </g>
-<!-- D21&#45;&gt;X220 -->
+<!-- D21&#45;&gt;PSet -->
 <g id="edge7" class="edge">
-<title>D21&#45;&gt;X220</title>
-<path fill="none" stroke="black" d="M937.11,-682.81C1065.5,-673.47 1348.28,-645.56 1574,-571 1580.11,-568.98 1586.33,-566.58 1592.48,-563.96"/>
-<polygon fill="black" stroke="black" points="1593.7,-566.11 1599.12,-561.05 1591.73,-561.62 1593.7,-566.11"/>
-<text text-anchor="middle" x="1464.5" y="-605" font-family="Times,serif" font-size="10.00">1</text>
+<title>D21&#45;&gt;PSet</title>
+<path fill="none" stroke="black" d="M937.25,-683.23C1065.87,-674.59 1349.03,-647.78 1574,-571 1579.74,-569.04 1585.57,-566.71 1591.32,-564.17"/>
+<polygon fill="black" stroke="black" points="1592.7,-566.23 1598.04,-561.09 1590.66,-561.78 1592.7,-566.23"/>
+<text text-anchor="middle" x="1465.5" y="-605" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- Tok2 -->
 <g id="node3" class="node">
@@ -194,7 +194,7 @@
 <text text-anchor="middle" x="220" y="-673.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">elements</text>
 </g>
 <!-- Tok2&#45;&gt;E23 -->
-<g id="edge20" class="edge">
+<g id="edge21" class="edge">
 <title>Tok2&#45;&gt;E23</title>
 <path fill="none" stroke="black" d="M220,-663.88C220,-638.84 220,-598.43 220,-568.18"/>
 <polygon fill="black" stroke="black" points="222.45,-568.11 220,-561.11 217.55,-568.11 222.45,-568.11"/>
@@ -203,63 +203,63 @@
 <!-- sMap -->
 <g id="node27" class="node">
 <title>sMap</title>
-<path fill="#dbeafe" stroke="#1d4ed8" d="M127,-400C127,-400 13,-400 13,-400 7,-400 1,-394 1,-388 1,-388 1,-344 1,-344 1,-338 7,-332 13,-332 13,-332 127,-332 127,-332 133,-332 139,-338 139,-344 139,-344 139,-388 139,-388 139,-394 133,-400 127,-400"/>
-<text text-anchor="middle" x="70" y="-381.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Prefixing map</text>
-<text text-anchor="middle" x="70" y="-361.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">and parity</text>
-<text text-anchor="middle" x="70" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">equations</text>
+<path fill="#dbeafe" stroke="#1d4ed8" d="M126,-400C126,-400 12,-400 12,-400 6,-400 0,-394 0,-388 0,-388 0,-344 0,-344 0,-338 6,-332 12,-332 12,-332 126,-332 126,-332 132,-332 138,-338 138,-344 138,-344 138,-388 138,-388 138,-394 132,-400 126,-400"/>
+<text text-anchor="middle" x="69" y="-381.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Prefixing map</text>
+<text text-anchor="middle" x="69" y="-361.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">and parity</text>
+<text text-anchor="middle" x="69" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">equations</text>
 </g>
 <!-- E23&#45;&gt;sMap -->
 <g id="edge16" class="edge">
 <title>E23&#45;&gt;sMap</title>
-<path fill="none" stroke="black" d="M188.56,-492.67C164.47,-467.14 131.23,-431.9 106.07,-405.23"/>
-<polygon fill="black" stroke="black" points="107.73,-403.43 101.15,-400.02 104.17,-406.79 107.73,-403.43"/>
+<path fill="none" stroke="black" d="M188.35,-492.67C164.1,-467.14 130.63,-431.9 105.31,-405.23"/>
+<polygon fill="black" stroke="black" points="106.95,-403.4 100.35,-400.02 103.4,-406.78 106.95,-403.4"/>
 <text text-anchor="middle" x="153.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- eqRun -->
 <g id="node29" class="node">
 <title>eqRun</title>
-<path fill="#dbeafe" stroke="#1d4ed8" d="M293.5,-400C293.5,-400 166.5,-400 166.5,-400 160.5,-400 154.5,-394 154.5,-388 154.5,-388 154.5,-344 154.5,-344 154.5,-338 160.5,-332 166.5,-332 166.5,-332 293.5,-332 293.5,-332 299.5,-332 305.5,-338 305.5,-344 305.5,-344 305.5,-388 305.5,-388 305.5,-394 299.5,-400 293.5,-400"/>
-<text text-anchor="middle" x="230" y="-381.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Uniqueness of</text>
-<text text-anchor="middle" x="230" y="-361.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">the erase&#45;ones</text>
-<text text-anchor="middle" x="230" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">map</text>
+<path fill="#dbeafe" stroke="#1d4ed8" d="M290.5,-400C290.5,-400 163.5,-400 163.5,-400 157.5,-400 151.5,-394 151.5,-388 151.5,-388 151.5,-344 151.5,-344 151.5,-338 157.5,-332 163.5,-332 163.5,-332 290.5,-332 290.5,-332 296.5,-332 302.5,-338 302.5,-344 302.5,-344 302.5,-388 302.5,-388 302.5,-394 296.5,-400 290.5,-400"/>
+<text text-anchor="middle" x="227" y="-381.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Uniqueness of</text>
+<text text-anchor="middle" x="227" y="-361.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">the erase&#45;ones</text>
+<text text-anchor="middle" x="227" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">map</text>
 </g>
 <!-- E24&#45;&gt;eqRun -->
 <g id="edge17" class="edge">
 <title>E24&#45;&gt;eqRun</title>
-<path fill="none" stroke="black" d="M363.32,-502.88C338.23,-477.31 297.43,-435.72 267.56,-405.28"/>
-<polygon fill="black" stroke="black" points="269.14,-403.39 262.49,-400.11 265.64,-406.82 269.14,-403.39"/>
-<text text-anchor="middle" x="316.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M362.88,-502.88C337.31,-477.31 295.72,-435.72 265.28,-405.28"/>
+<polygon fill="black" stroke="black" points="266.79,-403.33 260.11,-400.11 263.33,-406.79 266.79,-403.33"/>
+<text text-anchor="middle" x="315.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- DomO -->
 <g id="node7" class="node">
 <title>DomO</title>
-<path fill="#dbeafe" stroke="#1d4ed8" d="M447.5,-410C447.5,-410 330.5,-410 330.5,-410 324.5,-410 318.5,-404 318.5,-398 318.5,-398 318.5,-334 318.5,-334 318.5,-328 324.5,-322 330.5,-322 330.5,-322 447.5,-322 447.5,-322 453.5,-322 459.5,-328 459.5,-334 459.5,-334 459.5,-398 459.5,-398 459.5,-404 453.5,-410 447.5,-410"/>
-<text text-anchor="middle" x="389" y="-391.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Neighborhood</text>
-<text text-anchor="middle" x="389" y="-371.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">systems as</text>
-<text text-anchor="middle" x="389" y="-351.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">category</text>
-<text text-anchor="middle" x="389" y="-331.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">objects</text>
+<path fill="#dbeafe" stroke="#1d4ed8" d="M444.5,-410C444.5,-410 327.5,-410 327.5,-410 321.5,-410 315.5,-404 315.5,-398 315.5,-398 315.5,-334 315.5,-334 315.5,-328 321.5,-322 327.5,-322 327.5,-322 444.5,-322 444.5,-322 450.5,-322 456.5,-328 456.5,-334 456.5,-334 456.5,-398 456.5,-398 456.5,-404 450.5,-410 444.5,-410"/>
+<text text-anchor="middle" x="386" y="-391.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Neighborhood</text>
+<text text-anchor="middle" x="386" y="-371.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">systems as</text>
+<text text-anchor="middle" x="386" y="-351.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">category</text>
+<text text-anchor="middle" x="386" y="-331.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">objects</text>
 </g>
 <!-- idM&#45;&gt;DomO -->
-<g id="edge27" class="edge">
+<g id="edge28" class="edge">
 <title>idM&#45;&gt;DomO</title>
-<path fill="none" stroke="black" d="M511.51,-492.67C489.71,-470.31 460.65,-440.49 436.3,-415.52"/>
-<polygon fill="black" stroke="black" points="437.82,-413.57 431.18,-410.26 434.31,-416.99 437.82,-413.57"/>
-<text text-anchor="middle" x="474.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M510.88,-492.67C488.66,-470.31 459.03,-440.49 434.21,-415.52"/>
+<polygon fill="black" stroke="black" points="435.66,-413.5 428.99,-410.26 432.19,-416.96 435.66,-413.5"/>
+<text text-anchor="middle" x="472.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- P26 -->
 <g id="node9" class="node">
 <title>P26</title>
-<path fill="#dcfce7" stroke="#15803d" d="M585.5,-400C585.5,-400 484.5,-400 484.5,-400 478.5,-400 472.5,-394 472.5,-388 472.5,-388 472.5,-344 472.5,-344 472.5,-338 478.5,-332 484.5,-332 484.5,-332 585.5,-332 585.5,-332 591.5,-332 597.5,-338 597.5,-344 597.5,-344 597.5,-388 597.5,-388 597.5,-394 591.5,-400 585.5,-400"/>
-<text text-anchor="middle" x="535" y="-381.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">Prop 2.6 —</text>
-<text text-anchor="middle" x="535" y="-361.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">identity and</text>
-<text text-anchor="middle" x="535" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">composition</text>
+<path fill="#dcfce7" stroke="#15803d" d="M582.5,-400C582.5,-400 481.5,-400 481.5,-400 475.5,-400 469.5,-394 469.5,-388 469.5,-388 469.5,-344 469.5,-344 469.5,-338 475.5,-332 481.5,-332 481.5,-332 582.5,-332 582.5,-332 588.5,-332 594.5,-338 594.5,-344 594.5,-344 594.5,-388 594.5,-388 594.5,-394 588.5,-400 582.5,-400"/>
+<text text-anchor="middle" x="532" y="-381.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">Prop 2.6 —</text>
+<text text-anchor="middle" x="532" y="-361.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">identity and</text>
+<text text-anchor="middle" x="532" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">composition</text>
 </g>
 <!-- idM&#45;&gt;P26 -->
-<g id="edge28" class="edge">
+<g id="edge29" class="edge">
 <title>idM&#45;&gt;P26</title>
-<path fill="none" stroke="black" d="M542.11,-492.67C540.7,-467.78 538.77,-433.65 537.28,-407.25"/>
-<polygon fill="black" stroke="black" points="539.71,-406.87 536.87,-400.02 534.82,-407.14 539.71,-406.87"/>
-<text text-anchor="middle" x="542.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M541.48,-492.67C539.61,-467.78 537.03,-433.65 535.04,-407.25"/>
+<polygon fill="black" stroke="black" points="537.46,-406.81 534.49,-400.02 532.58,-407.18 537.46,-406.81"/>
+<text text-anchor="middle" x="541.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- T25 -->
 <g id="node8" class="node">
@@ -273,9 +273,9 @@
 <!-- DomO&#45;&gt;T25 -->
 <g id="edge15" class="edge">
 <title>DomO&#45;&gt;T25</title>
-<path fill="none" stroke="black" d="M390.62,-321.97C391.39,-301.65 392.31,-277.26 393.11,-256.1"/>
-<polygon fill="black" stroke="black" points="395.56,-256.15 393.38,-249.06 390.66,-255.96 395.56,-256.15"/>
-<text text-anchor="middle" x="395.5" y="-283" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M388.44,-321.97C389.59,-301.65 390.97,-277.26 392.16,-256.1"/>
+<polygon fill="black" stroke="black" points="394.61,-256.19 392.56,-249.06 389.72,-255.91 394.61,-256.19"/>
+<text text-anchor="middle" x="393.5" y="-283" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- hMap -->
 <g id="node31" class="node">
@@ -288,185 +288,185 @@
 <!-- P26&#45;&gt;hMap -->
 <g id="edge19" class="edge">
 <title>P26&#45;&gt;hMap</title>
-<path fill="none" stroke="black" d="M539.4,-331.67C542.69,-306.78 547.2,-272.65 550.68,-246.25"/>
-<polygon fill="black" stroke="black" points="553.15,-246.28 551.64,-239.02 548.29,-245.63 553.15,-246.28"/>
-<text text-anchor="middle" x="549.5" y="-283" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M537.03,-331.67C540.79,-306.78 545.94,-272.65 549.93,-246.25"/>
+<polygon fill="black" stroke="black" points="552.39,-246.3 551.02,-239.02 547.55,-245.57 552.39,-246.3"/>
+<text text-anchor="middle" x="547.5" y="-283" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- T27 -->
 <g id="node11" class="node">
 <title>T27</title>
-<path fill="#fee2e2" stroke="#b91c1c" d="M739.5,-410C739.5,-410 622.5,-410 622.5,-410 616.5,-410 610.5,-404 610.5,-398 610.5,-398 610.5,-334 610.5,-334 610.5,-328 616.5,-322 622.5,-322 622.5,-322 739.5,-322 739.5,-322 745.5,-322 751.5,-328 751.5,-334 751.5,-334 751.5,-398 751.5,-398 751.5,-404 745.5,-410 739.5,-410"/>
-<text text-anchor="middle" x="681" y="-391.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">Thm 2.7 —</text>
-<text text-anchor="middle" x="681" y="-371.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">isomorphisms</text>
-<text text-anchor="middle" x="681" y="-351.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">are</text>
-<text text-anchor="middle" x="681" y="-331.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">approximable</text>
+<path fill="#fee2e2" stroke="#b91c1c" d="M736.5,-410C736.5,-410 619.5,-410 619.5,-410 613.5,-410 607.5,-404 607.5,-398 607.5,-398 607.5,-334 607.5,-334 607.5,-328 613.5,-322 619.5,-322 619.5,-322 736.5,-322 736.5,-322 742.5,-322 748.5,-328 748.5,-334 748.5,-334 748.5,-398 748.5,-398 748.5,-404 742.5,-410 736.5,-410"/>
+<text text-anchor="middle" x="678" y="-391.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">Thm 2.7 —</text>
+<text text-anchor="middle" x="678" y="-371.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">isomorphisms</text>
+<text text-anchor="middle" x="678" y="-351.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">are</text>
+<text text-anchor="middle" x="678" y="-331.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">approximable</text>
 </g>
 <!-- ofIso&#45;&gt;T27 -->
-<g id="edge31" class="edge">
+<g id="edge32" class="edge">
 <title>ofIso&#45;&gt;T27</title>
-<path fill="none" stroke="black" d="M699.23,-482.97C696.04,-462.65 692.2,-438.26 688.88,-417.1"/>
-<polygon fill="black" stroke="black" points="691.28,-416.6 687.77,-410.06 686.44,-417.36 691.28,-416.6"/>
-<text text-anchor="middle" x="697.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M698.42,-482.97C694.84,-462.65 690.55,-438.26 686.82,-417.1"/>
+<polygon fill="black" stroke="black" points="689.21,-416.53 685.58,-410.06 684.38,-417.38 689.21,-416.53"/>
+<text text-anchor="middle" x="695.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- phi -->
 <g id="node23" class="node">
 <title>phi</title>
-<path fill="#dbeafe" stroke="#1d4ed8" d="M911.5,-410C911.5,-410 776.5,-410 776.5,-410 770.5,-410 764.5,-404 764.5,-398 764.5,-398 764.5,-334 764.5,-334 764.5,-328 770.5,-322 776.5,-322 776.5,-322 911.5,-322 911.5,-322 917.5,-322 923.5,-328 923.5,-334 923.5,-334 923.5,-398 923.5,-398 923.5,-404 917.5,-410 911.5,-410"/>
-<text text-anchor="middle" x="844" y="-391.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Neighbourhood</text>
-<text text-anchor="middle" x="844" y="-371.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">correspondence</text>
-<text text-anchor="middle" x="844" y="-351.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">of an order</text>
-<text text-anchor="middle" x="844" y="-331.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">isomorphism</text>
+<path fill="#dbeafe" stroke="#1d4ed8" d="M908.5,-410C908.5,-410 773.5,-410 773.5,-410 767.5,-410 761.5,-404 761.5,-398 761.5,-398 761.5,-334 761.5,-334 761.5,-328 767.5,-322 773.5,-322 773.5,-322 908.5,-322 908.5,-322 914.5,-322 920.5,-328 920.5,-334 920.5,-334 920.5,-398 920.5,-398 920.5,-404 914.5,-410 908.5,-410"/>
+<text text-anchor="middle" x="841" y="-391.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Neighbourhood</text>
+<text text-anchor="middle" x="841" y="-371.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">correspondence</text>
+<text text-anchor="middle" x="841" y="-351.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">of an order</text>
+<text text-anchor="middle" x="841" y="-331.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">isomorphism</text>
 </g>
 <!-- ofIso&#45;&gt;phi -->
-<g id="edge32" class="edge">
+<g id="edge33" class="edge">
 <title>ofIso&#45;&gt;phi</title>
-<path fill="none" stroke="black" d="M743.34,-482.97C761.45,-462.12 783.26,-436.98 801.95,-415.45"/>
-<polygon fill="black" stroke="black" points="803.89,-416.95 806.63,-410.06 800.19,-413.74 803.89,-416.95"/>
-<text text-anchor="middle" x="782.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M742.53,-482.97C760.24,-462.12 781.58,-436.98 799.86,-415.45"/>
+<polygon fill="black" stroke="black" points="801.77,-416.98 804.44,-410.06 798.04,-413.81 801.77,-416.98"/>
+<text text-anchor="middle" x="780.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- X28 -->
 <g id="node13" class="node">
 <title>X28</title>
-<path fill="#e0e7ff" stroke="#4338ca" d="M1074,-400C1074,-400 948,-400 948,-400 942,-400 936,-394 936,-388 936,-388 936,-344 936,-344 936,-338 942,-332 948,-332 948,-332 1074,-332 1074,-332 1080,-332 1086,-338 1086,-344 1086,-344 1086,-388 1086,-388 1086,-394 1080,-400 1074,-400"/>
-<text text-anchor="middle" x="1011" y="-381.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.8 —</text>
-<text text-anchor="middle" x="1011" y="-361.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">determined by</text>
-<text text-anchor="middle" x="1011" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">finite elements</text>
+<path fill="#e0e7ff" stroke="#4338ca" d="M1071,-400C1071,-400 945,-400 945,-400 939,-400 933,-394 933,-388 933,-388 933,-344 933,-344 933,-338 939,-332 945,-332 945,-332 1071,-332 1071,-332 1077,-332 1083,-338 1083,-344 1083,-344 1083,-388 1083,-388 1083,-394 1077,-400 1071,-400"/>
+<text text-anchor="middle" x="1008" y="-381.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.8 —</text>
+<text text-anchor="middle" x="1008" y="-361.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">determined by</text>
+<text text-anchor="middle" x="1008" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">finite elements</text>
 </g>
 <!-- ofMo&#45;&gt;X28 -->
-<g id="edge33" class="edge">
+<g id="edge34" class="edge">
 <title>ofMo&#45;&gt;X28</title>
-<path fill="none" stroke="black" d="M906.7,-482.97C928.37,-458.88 955.17,-429.07 976.18,-405.71"/>
-<polygon fill="black" stroke="black" points="978.26,-407.07 981.12,-400.23 974.61,-403.79 978.26,-407.07"/>
-<text text-anchor="middle" x="946.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M905.89,-482.97C927.1,-458.88 953.34,-429.07 973.91,-405.71"/>
+<polygon fill="black" stroke="black" points="975.96,-407.1 978.74,-400.23 972.28,-403.86 975.96,-407.1"/>
+<text text-anchor="middle" x="945.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- ofC -->
 <g id="node21" class="node">
 <title>ofC</title>
-<path fill="#dbeafe" stroke="#1d4ed8" d="M1259,-390C1259,-390 1111,-390 1111,-390 1105,-390 1099,-384 1099,-378 1099,-378 1099,-354 1099,-354 1099,-348 1105,-342 1111,-342 1111,-342 1259,-342 1259,-342 1265,-342 1271,-348 1271,-354 1271,-354 1271,-378 1271,-378 1271,-384 1265,-390 1259,-390"/>
-<text text-anchor="middle" x="1185" y="-371.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Continuous maps</text>
-<text text-anchor="middle" x="1185" y="-351.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">as approximable</text>
+<path fill="#dbeafe" stroke="#1d4ed8" d="M1256,-390C1256,-390 1108,-390 1108,-390 1102,-390 1096,-384 1096,-378 1096,-378 1096,-354 1096,-354 1096,-348 1102,-342 1108,-342 1108,-342 1256,-342 1256,-342 1262,-342 1268,-348 1268,-354 1268,-354 1268,-378 1268,-378 1268,-384 1262,-390 1256,-390"/>
+<text text-anchor="middle" x="1182" y="-371.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Continuous maps</text>
+<text text-anchor="middle" x="1182" y="-351.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">as approximable</text>
 </g>
 <!-- ofMo&#45;&gt;ofC -->
-<g id="edge34" class="edge">
+<g id="edge35" class="edge">
 <title>ofMo&#45;&gt;ofC</title>
-<path fill="none" stroke="black" d="M937.07,-486.67C939.4,-485.42 941.72,-484.19 944,-483 978.24,-465.1 1069.83,-421.44 1129.72,-393.09"/>
-<polygon fill="black" stroke="black" points="1130.86,-395.26 1136.13,-390.05 1128.76,-390.83 1130.86,-395.26"/>
-<text text-anchor="middle" x="1028.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M937.07,-486.68C939.41,-485.43 941.72,-484.2 944,-483 1005.52,-450.65 1077.4,-416.04 1125.94,-393.13"/>
+<polygon fill="black" stroke="black" points="1127.04,-395.32 1132.33,-390.12 1124.95,-390.89 1127.04,-395.32"/>
+<text text-anchor="middle" x="1024.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- X210 -->
 <g id="node16" class="node">
 <title>X210</title>
-<path fill="#e0e7ff" stroke="#4338ca" d="M1584.5,-400C1584.5,-400 1463.5,-400 1463.5,-400 1457.5,-400 1451.5,-394 1451.5,-388 1451.5,-388 1451.5,-344 1451.5,-344 1451.5,-338 1457.5,-332 1463.5,-332 1463.5,-332 1584.5,-332 1584.5,-332 1590.5,-332 1596.5,-338 1596.5,-344 1596.5,-344 1596.5,-388 1596.5,-388 1596.5,-394 1590.5,-400 1584.5,-400"/>
-<text text-anchor="middle" x="1524" y="-381.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.10 —</text>
-<text text-anchor="middle" x="1524" y="-361.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">intersection of</text>
-<text text-anchor="middle" x="1524" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">two maps</text>
+<path fill="#e0e7ff" stroke="#4338ca" d="M1581.5,-400C1581.5,-400 1460.5,-400 1460.5,-400 1454.5,-400 1448.5,-394 1448.5,-388 1448.5,-388 1448.5,-344 1448.5,-344 1448.5,-338 1454.5,-332 1460.5,-332 1460.5,-332 1581.5,-332 1581.5,-332 1587.5,-332 1593.5,-338 1593.5,-344 1593.5,-344 1593.5,-388 1593.5,-388 1593.5,-394 1587.5,-400 1581.5,-400"/>
+<text text-anchor="middle" x="1521" y="-381.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.10 —</text>
+<text text-anchor="middle" x="1521" y="-361.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">intersection of</text>
+<text text-anchor="middle" x="1521" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">two maps</text>
 </g>
 <!-- iMap&#45;&gt;X210 -->
-<g id="edge23" class="edge">
+<g id="edge24" class="edge">
 <title>iMap&#45;&gt;X210</title>
-<path fill="none" stroke="black" d="M1391.98,-482.97C1419.64,-458.67 1453.91,-428.57 1480.6,-405.12"/>
-<polygon fill="black" stroke="black" points="1482.53,-406.69 1486.18,-400.23 1479.3,-403.01 1482.53,-406.69"/>
-<text text-anchor="middle" x="1441.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M1391.17,-482.97C1418.37,-458.67 1452.07,-428.57 1478.32,-405.12"/>
+<polygon fill="black" stroke="black" points="1480.21,-406.72 1483.8,-400.23 1476.95,-403.06 1480.21,-406.72"/>
+<text text-anchor="middle" x="1440.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- X211 -->
 <g id="node18" class="node">
 <title>X211</title>
-<path fill="#e0e7ff" stroke="#4338ca" d="M1426,-400C1426,-400 1296,-400 1296,-400 1290,-400 1284,-394 1284,-388 1284,-388 1284,-344 1284,-344 1284,-338 1290,-332 1296,-332 1296,-332 1426,-332 1426,-332 1432,-332 1438,-338 1438,-344 1438,-344 1438,-388 1438,-388 1438,-394 1432,-400 1426,-400"/>
-<text text-anchor="middle" x="1361" y="-381.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.11 —</text>
-<text text-anchor="middle" x="1361" y="-361.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">directed unions</text>
-<text text-anchor="middle" x="1361" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">of elements</text>
+<path fill="#e0e7ff" stroke="#4338ca" d="M1423,-400C1423,-400 1293,-400 1293,-400 1287,-400 1281,-394 1281,-388 1281,-388 1281,-344 1281,-344 1281,-338 1287,-332 1293,-332 1293,-332 1423,-332 1423,-332 1429,-332 1435,-338 1435,-344 1435,-344 1435,-388 1435,-388 1435,-394 1429,-400 1423,-400"/>
+<text text-anchor="middle" x="1358" y="-381.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.11 —</text>
+<text text-anchor="middle" x="1358" y="-361.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">directed unions</text>
+<text text-anchor="middle" x="1358" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">of elements</text>
 </g>
 <!-- iSup&#45;&gt;X211 -->
-<g id="edge25" class="edge">
+<g id="edge26" class="edge">
 <title>iSup&#45;&gt;X211</title>
-<path fill="none" stroke="black" d="M1099.51,-486.61C1102.03,-485.38 1104.53,-484.17 1107,-483 1181.65,-447.56 1203.26,-445.25 1278,-410 1282.54,-407.86 1287.2,-405.61 1291.87,-403.3"/>
-<polygon fill="black" stroke="black" points="1293.07,-405.44 1298.25,-400.13 1290.89,-401.05 1293.07,-405.44"/>
-<text text-anchor="middle" x="1207.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M1099.52,-486.63C1102.04,-485.39 1104.54,-484.18 1107,-483 1180.43,-447.85 1201.48,-444.97 1275,-410 1279.53,-407.84 1284.18,-405.58 1288.86,-403.27"/>
+<polygon fill="black" stroke="black" points="1290.06,-405.4 1295.23,-400.09 1287.88,-401.02 1290.06,-405.4"/>
+<text text-anchor="middle" x="1205.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- iSup&#45;&gt;ofC -->
-<g id="edge26" class="edge">
+<g id="edge27" class="edge">
 <title>iSup&#45;&gt;ofC</title>
-<path fill="none" stroke="black" d="M1068.3,-482.97C1096.29,-455.15 1131.94,-419.73 1156.43,-395.39"/>
-<polygon fill="black" stroke="black" points="1158.24,-397.04 1161.48,-390.37 1154.79,-393.57 1158.24,-397.04"/>
-<text text-anchor="middle" x="1112.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M1073.03,-482.85C1083.73,-472.89 1094.89,-462.22 1105,-452 1122.99,-433.82 1142.32,-412.48 1157.11,-395.73"/>
+<polygon fill="black" stroke="black" points="1159.16,-397.11 1161.94,-390.23 1155.48,-393.87 1159.16,-397.11"/>
+<text text-anchor="middle" x="1116.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- X212 -->
 <g id="node20" class="node">
 <title>X212</title>
-<path fill="#e0e7ff" stroke="#4338ca" d="M1752,-400C1752,-400 1622,-400 1622,-400 1616,-400 1610,-394 1610,-388 1610,-388 1610,-344 1610,-344 1610,-338 1616,-332 1622,-332 1622,-332 1752,-332 1752,-332 1758,-332 1764,-338 1764,-344 1764,-344 1764,-388 1764,-388 1764,-394 1758,-400 1752,-400"/>
-<text text-anchor="middle" x="1687" y="-381.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.12 —</text>
-<text text-anchor="middle" x="1687" y="-361.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">directed unions</text>
-<text text-anchor="middle" x="1687" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">of maps</text>
+<path fill="#e0e7ff" stroke="#4338ca" d="M1749,-400C1749,-400 1619,-400 1619,-400 1613,-400 1607,-394 1607,-388 1607,-388 1607,-344 1607,-344 1607,-338 1613,-332 1619,-332 1619,-332 1749,-332 1749,-332 1755,-332 1761,-338 1761,-344 1761,-344 1761,-388 1761,-388 1761,-394 1755,-400 1749,-400"/>
+<text text-anchor="middle" x="1684" y="-381.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.12 —</text>
+<text text-anchor="middle" x="1684" y="-361.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">directed unions</text>
+<text text-anchor="middle" x="1684" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">of maps</text>
 </g>
 <!-- iSMap&#45;&gt;X212 -->
-<g id="edge24" class="edge">
+<g id="edge25" class="edge">
 <title>iSMap&#45;&gt;X212</title>
-<path fill="none" stroke="black" d="M1549.15,-482.97C1578.15,-458.57 1614.11,-428.32 1642.03,-404.83"/>
-<polygon fill="black" stroke="black" points="1643.72,-406.61 1647.5,-400.23 1640.57,-402.86 1643.72,-406.61"/>
-<text text-anchor="middle" x="1601.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M1548.33,-482.97C1576.88,-458.57 1612.27,-428.32 1639.75,-404.83"/>
+<polygon fill="black" stroke="black" points="1641.4,-406.64 1645.13,-400.23 1638.22,-402.91 1641.4,-406.64"/>
+<text text-anchor="middle" x="1599.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- X213 -->
 <g id="node22" class="node">
 <title>X213</title>
-<path fill="#e0e7ff" stroke="#4338ca" d="M1196,-249C1196,-249 1082,-249 1082,-249 1076,-249 1070,-243 1070,-237 1070,-237 1070,-173 1070,-173 1070,-167 1076,-161 1082,-161 1082,-161 1196,-161 1196,-161 1202,-161 1208,-167 1208,-173 1208,-173 1208,-237 1208,-237 1208,-243 1202,-249 1196,-249"/>
-<text text-anchor="middle" x="1139" y="-230.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.13 —</text>
-<text text-anchor="middle" x="1139" y="-210.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">approximable</text>
-<text text-anchor="middle" x="1139" y="-190.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">means</text>
-<text text-anchor="middle" x="1139" y="-170.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">continuous</text>
+<path fill="#e0e7ff" stroke="#4338ca" d="M1193,-249C1193,-249 1079,-249 1079,-249 1073,-249 1067,-243 1067,-237 1067,-237 1067,-173 1067,-173 1067,-167 1073,-161 1079,-161 1079,-161 1193,-161 1193,-161 1199,-161 1205,-167 1205,-173 1205,-173 1205,-237 1205,-237 1205,-243 1199,-249 1193,-249"/>
+<text text-anchor="middle" x="1136" y="-230.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.13 —</text>
+<text text-anchor="middle" x="1136" y="-210.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">approximable</text>
+<text text-anchor="middle" x="1136" y="-190.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">means</text>
+<text text-anchor="middle" x="1136" y="-170.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">continuous</text>
 </g>
 <!-- ofC&#45;&gt;X213 -->
-<g id="edge30" class="edge">
+<g id="edge31" class="edge">
 <title>ofC&#45;&gt;X213</title>
-<path fill="none" stroke="black" d="M1178.31,-341.88C1171.83,-319.47 1161.79,-284.76 1153.47,-256.03"/>
-<polygon fill="black" stroke="black" points="1155.81,-255.28 1151.51,-249.24 1151.1,-256.65 1155.81,-255.28"/>
-<text text-anchor="middle" x="1166.5" y="-283" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M1175.31,-341.88C1168.83,-319.47 1158.79,-284.76 1150.47,-256.03"/>
+<polygon fill="black" stroke="black" points="1152.81,-255.28 1148.51,-249.24 1148.1,-256.65 1152.81,-255.28"/>
+<text text-anchor="middle" x="1163.5" y="-283" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- O -->
 <g id="node25" class="node">
 <title>O</title>
-<path fill="#dbeafe" stroke="#1d4ed8" d="M1359,-249C1359,-249 1233,-249 1233,-249 1227,-249 1221,-243 1221,-237 1221,-237 1221,-173 1221,-173 1221,-167 1227,-161 1233,-161 1233,-161 1359,-161 1359,-161 1365,-161 1371,-167 1371,-173 1371,-173 1371,-237 1371,-237 1371,-243 1365,-249 1359,-249"/>
-<text text-anchor="middle" x="1296" y="-230.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">One&#45;token</text>
-<text text-anchor="middle" x="1296" y="-210.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Sierpiński</text>
-<text text-anchor="middle" x="1296" y="-190.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">neighbourhood</text>
-<text text-anchor="middle" x="1296" y="-170.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">system</text>
+<path fill="#dbeafe" stroke="#1d4ed8" d="M1356,-249C1356,-249 1230,-249 1230,-249 1224,-249 1218,-243 1218,-237 1218,-237 1218,-173 1218,-173 1218,-167 1224,-161 1230,-161 1230,-161 1356,-161 1356,-161 1362,-161 1368,-167 1368,-173 1368,-173 1368,-237 1368,-237 1368,-243 1362,-249 1356,-249"/>
+<text text-anchor="middle" x="1293" y="-230.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">One&#45;token</text>
+<text text-anchor="middle" x="1293" y="-210.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Sierpiński</text>
+<text text-anchor="middle" x="1293" y="-190.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">neighbourhood</text>
+<text text-anchor="middle" x="1293" y="-170.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">system</text>
 </g>
 <!-- ofC&#45;&gt;O -->
-<g id="edge29" class="edge">
+<g id="edge30" class="edge">
 <title>ofC&#45;&gt;O</title>
-<path fill="none" stroke="black" d="M1201.14,-341.88C1216.91,-319.28 1241.43,-284.17 1261.58,-255.3"/>
-<polygon fill="black" stroke="black" points="1263.82,-256.38 1265.81,-249.24 1259.8,-253.58 1263.82,-256.38"/>
-<text text-anchor="middle" x="1246.5" y="-283" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M1198.14,-341.88C1213.91,-319.28 1238.43,-284.17 1258.58,-255.3"/>
+<polygon fill="black" stroke="black" points="1260.82,-256.38 1262.81,-249.24 1256.8,-253.58 1260.82,-256.38"/>
+<text text-anchor="middle" x="1243.5" y="-283" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- X214 -->
 <g id="node24" class="node">
 <title>X214</title>
-<path fill="#e0e7ff" stroke="#4338ca" d="M914.5,-239C914.5,-239 773.5,-239 773.5,-239 767.5,-239 761.5,-233 761.5,-227 761.5,-227 761.5,-183 761.5,-183 761.5,-177 767.5,-171 773.5,-171 773.5,-171 914.5,-171 914.5,-171 920.5,-171 926.5,-177 926.5,-183 926.5,-183 926.5,-227 926.5,-227 926.5,-233 920.5,-239 914.5,-239"/>
-<text text-anchor="middle" x="844" y="-220.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.14 —</text>
-<text text-anchor="middle" x="844" y="-200.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">isomorphisms of</text>
-<text text-anchor="middle" x="844" y="-180.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">neighbourhoods</text>
+<path fill="#e0e7ff" stroke="#4338ca" d="M911.5,-239C911.5,-239 770.5,-239 770.5,-239 764.5,-239 758.5,-233 758.5,-227 758.5,-227 758.5,-183 758.5,-183 758.5,-177 764.5,-171 770.5,-171 770.5,-171 911.5,-171 911.5,-171 917.5,-171 923.5,-177 923.5,-183 923.5,-183 923.5,-227 923.5,-227 923.5,-233 917.5,-239 911.5,-239"/>
+<text text-anchor="middle" x="841" y="-220.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.14 —</text>
+<text text-anchor="middle" x="841" y="-200.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">isomorphisms of</text>
+<text text-anchor="middle" x="841" y="-180.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">neighbourhoods</text>
 </g>
 <!-- phi&#45;&gt;X214 -->
-<g id="edge35" class="edge">
+<g id="edge36" class="edge">
 <title>phi&#45;&gt;X214</title>
-<path fill="none" stroke="black" d="M844,-321.97C844,-298.49 844,-269.58 844,-246.5"/>
-<polygon fill="black" stroke="black" points="846.45,-246.23 844,-239.23 841.55,-246.23 846.45,-246.23"/>
-<text text-anchor="middle" x="847.5" y="-283" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M841,-321.97C841,-298.49 841,-269.58 841,-246.5"/>
+<polygon fill="black" stroke="black" points="843.45,-246.23 841,-239.23 838.55,-246.23 843.45,-246.23"/>
+<text text-anchor="middle" x="844.5" y="-283" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- X215 -->
 <g id="node26" class="node">
 <title>X215</title>
-<path fill="#e0e7ff" stroke="#4338ca" d="M1347.5,-88C1347.5,-88 1244.5,-88 1244.5,-88 1238.5,-88 1232.5,-82 1232.5,-76 1232.5,-76 1232.5,-12 1232.5,-12 1232.5,-6 1238.5,0 1244.5,0 1244.5,0 1347.5,0 1347.5,0 1353.5,0 1359.5,-6 1359.5,-12 1359.5,-12 1359.5,-76 1359.5,-76 1359.5,-82 1353.5,-88 1347.5,-88"/>
-<text text-anchor="middle" x="1296" y="-69.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.15 —</text>
-<text text-anchor="middle" x="1296" y="-49.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">opens</text>
-<text text-anchor="middle" x="1296" y="-29.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">classified by</text>
-<text text-anchor="middle" x="1296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">maps</text>
+<path fill="#e0e7ff" stroke="#4338ca" d="M1344.5,-88C1344.5,-88 1241.5,-88 1241.5,-88 1235.5,-88 1229.5,-82 1229.5,-76 1229.5,-76 1229.5,-12 1229.5,-12 1229.5,-6 1235.5,0 1241.5,0 1241.5,0 1344.5,0 1344.5,0 1350.5,0 1356.5,-6 1356.5,-12 1356.5,-12 1356.5,-76 1356.5,-76 1356.5,-82 1350.5,-88 1344.5,-88"/>
+<text text-anchor="middle" x="1293" y="-69.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.15 —</text>
+<text text-anchor="middle" x="1293" y="-49.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">opens</text>
+<text text-anchor="middle" x="1293" y="-29.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">classified by</text>
+<text text-anchor="middle" x="1293" y="-9.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">maps</text>
 </g>
 <!-- O&#45;&gt;X215 -->
 <g id="edge18" class="edge">
 <title>O&#45;&gt;X215</title>
-<path fill="none" stroke="black" d="M1296,-160.97C1296,-140.65 1296,-116.26 1296,-95.1"/>
-<polygon fill="black" stroke="black" points="1298.45,-95.06 1296,-88.06 1293.55,-95.06 1298.45,-95.06"/>
-<text text-anchor="middle" x="1299.5" y="-122" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M1293,-160.97C1293,-140.65 1293,-116.26 1293,-95.1"/>
+<polygon fill="black" stroke="black" points="1295.45,-95.06 1293,-88.06 1290.55,-95.06 1295.45,-95.06"/>
+<text text-anchor="middle" x="1296.5" y="-122" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- X216 -->
 <g id="node28" class="node">
@@ -477,11 +477,11 @@
 <text text-anchor="middle" x="69" y="-180.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">approximable</text>
 </g>
 <!-- sMap&#45;&gt;X216 -->
-<g id="edge36" class="edge">
+<g id="edge37" class="edge">
 <title>sMap&#45;&gt;X216</title>
-<path fill="none" stroke="black" d="M69.79,-331.67C69.63,-306.78 69.42,-272.65 69.25,-246.25"/>
-<polygon fill="black" stroke="black" points="71.7,-246 69.21,-239.02 66.8,-246.03 71.7,-246"/>
-<text text-anchor="middle" x="73.5" y="-283" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M69,-331.67C69,-306.78 69,-272.65 69,-246.25"/>
+<polygon fill="black" stroke="black" points="71.45,-246.01 69,-239.02 66.55,-246.02 71.45,-246.01"/>
+<text text-anchor="middle" x="72.5" y="-283" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- X217 -->
 <g id="node30" class="node">
@@ -491,11 +491,11 @@
 <text text-anchor="middle" x="232" y="-190.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">erase&#45;ones map</text>
 </g>
 <!-- eqRun&#45;&gt;X217 -->
-<g id="edge21" class="edge">
+<g id="edge22" class="edge">
 <title>eqRun&#45;&gt;X217</title>
-<path fill="none" stroke="black" d="M230.42,-331.67C230.77,-303.53 231.28,-263.6 231.62,-236.34"/>
-<polygon fill="black" stroke="black" points="234.07,-236.04 231.71,-229.01 229.17,-235.98 234.07,-236.04"/>
-<text text-anchor="middle" x="235.5" y="-283" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M228.05,-331.67C228.93,-303.53 230.19,-263.6 231.05,-236.34"/>
+<polygon fill="black" stroke="black" points="233.51,-236.09 231.28,-229.01 228.61,-235.93 233.51,-236.09"/>
+<text text-anchor="middle" x="233.5" y="-283" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- X218 -->
 <g id="node32" class="node">
@@ -506,7 +506,7 @@
 <text text-anchor="middle" x="556" y="-19.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">digits</text>
 </g>
 <!-- hMap&#45;&gt;X218 -->
-<g id="edge22" class="edge">
+<g id="edge23" class="edge">
 <title>hMap&#45;&gt;X218</title>
 <path fill="none" stroke="black" d="M556,-170.67C556,-145.78 556,-111.65 556,-85.25"/>
 <polygon fill="black" stroke="black" points="558.45,-85.01 556,-78.02 553.55,-85.02 558.45,-85.01"/>
@@ -515,57 +515,72 @@
 <!-- AMap2 -->
 <g id="node33" class="node">
 <title>AMap2</title>
-<path fill="#dbeafe" stroke="#1d4ed8" d="M1849,-722C1849,-722 1735,-722 1735,-722 1729,-722 1723,-716 1723,-710 1723,-710 1723,-666 1723,-666 1723,-660 1729,-654 1735,-654 1735,-654 1849,-654 1849,-654 1855,-654 1861,-660 1861,-666 1861,-666 1861,-710 1861,-710 1861,-716 1855,-722 1849,-722"/>
-<text text-anchor="middle" x="1792" y="-703.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Approximable</text>
-<text text-anchor="middle" x="1792" y="-683.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">maps of two</text>
-<text text-anchor="middle" x="1792" y="-663.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">arguments</text>
+<path fill="#dbeafe" stroke="#1d4ed8" d="M1841,-722C1841,-722 1727,-722 1727,-722 1721,-722 1715,-716 1715,-710 1715,-710 1715,-666 1715,-666 1715,-660 1721,-654 1727,-654 1727,-654 1841,-654 1841,-654 1847,-654 1853,-660 1853,-666 1853,-666 1853,-710 1853,-710 1853,-716 1847,-722 1841,-722"/>
+<text text-anchor="middle" x="1784" y="-703.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Approximable</text>
+<text text-anchor="middle" x="1784" y="-683.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">maps of two</text>
+<text text-anchor="middle" x="1784" y="-663.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">arguments</text>
 </g>
 <!-- X219 -->
 <g id="node34" class="node">
 <title>X219</title>
-<path fill="#e0e7ff" stroke="#4338ca" d="M1865,-561C1865,-561 1763,-561 1763,-561 1757,-561 1751,-555 1751,-549 1751,-549 1751,-505 1751,-505 1751,-499 1757,-493 1763,-493 1763,-493 1865,-493 1865,-493 1871,-493 1877,-499 1877,-505 1877,-505 1877,-549 1877,-549 1877,-555 1871,-561 1865,-561"/>
-<text text-anchor="middle" x="1814" y="-542.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.19 —</text>
-<text text-anchor="middle" x="1814" y="-522.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">maps of two</text>
-<text text-anchor="middle" x="1814" y="-502.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">arguments</text>
+<path fill="#e0e7ff" stroke="#4338ca" d="M1857,-561C1857,-561 1755,-561 1755,-561 1749,-561 1743,-555 1743,-549 1743,-549 1743,-505 1743,-505 1743,-499 1749,-493 1755,-493 1755,-493 1857,-493 1857,-493 1863,-493 1869,-499 1869,-505 1869,-505 1869,-549 1869,-549 1869,-555 1863,-561 1857,-561"/>
+<text text-anchor="middle" x="1806" y="-542.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.19 —</text>
+<text text-anchor="middle" x="1806" y="-522.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">maps of two</text>
+<text text-anchor="middle" x="1806" y="-502.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">arguments</text>
 </g>
 <!-- AMap2&#45;&gt;X219 -->
-<g id="edge1" class="edge">
-<title>AMap2&#45;&gt;X219</title>
-<path fill="none" stroke="black" d="M1796.61,-653.67C1800.06,-628.78 1804.78,-594.65 1808.43,-568.25"/>
-<polygon fill="black" stroke="black" points="1810.9,-568.28 1809.43,-561.02 1806.05,-567.61 1810.9,-568.28"/>
-<text text-anchor="middle" x="1806.5" y="-605" font-family="Times,serif" font-size="10.00">1</text>
-</g>
-<!-- AMap2&#45;&gt;X220 -->
 <g id="edge2" class="edge">
-<title>AMap2&#45;&gt;X220</title>
-<path fill="none" stroke="black" d="M1764.12,-653.67C1742.86,-628.25 1713.53,-593.19 1691.26,-566.56"/>
-<polygon fill="black" stroke="black" points="1692.99,-564.81 1686.62,-561.02 1689.23,-567.96 1692.99,-564.81"/>
-<text text-anchor="middle" x="1732.5" y="-605" font-family="Times,serif" font-size="10.00">1</text>
+<title>AMap2&#45;&gt;X219</title>
+<path fill="none" stroke="black" d="M1788.61,-653.67C1792.06,-628.78 1796.78,-594.65 1800.43,-568.25"/>
+<polygon fill="black" stroke="black" points="1802.9,-568.28 1801.43,-561.02 1798.05,-567.61 1802.9,-568.28"/>
+<text text-anchor="middle" x="1798.5" y="-605" font-family="Times,serif" font-size="10.00">1</text>
+</g>
+<!-- AMap2&#45;&gt;PSet -->
+<g id="edge1" class="edge">
+<title>AMap2&#45;&gt;PSet</title>
+<path fill="none" stroke="black" d="M1756.96,-653.67C1736.33,-628.25 1707.89,-593.19 1686.29,-566.56"/>
+<polygon fill="black" stroke="black" points="1688.1,-564.91 1681.79,-561.02 1684.29,-567.99 1688.1,-564.91"/>
+<text text-anchor="middle" x="1726.5" y="-605" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- X221 -->
-<g id="node36" class="node">
+<g id="node37" class="node">
 <title>X221</title>
-<path fill="#e0e7ff" stroke="#4338ca" d="M2002,-571C2002,-571 1902,-571 1902,-571 1896,-571 1890,-565 1890,-559 1890,-559 1890,-495 1890,-495 1890,-489 1896,-483 1902,-483 1902,-483 2002,-483 2002,-483 2008,-483 2014,-489 2014,-495 2014,-495 2014,-559 2014,-559 2014,-565 2008,-571 2002,-571"/>
-<text text-anchor="middle" x="1952" y="-552.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.21 —</text>
-<text text-anchor="middle" x="1952" y="-532.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">finite and</text>
-<text text-anchor="middle" x="1952" y="-512.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">infinite</text>
-<text text-anchor="middle" x="1952" y="-492.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">sequences</text>
+<path fill="#e0e7ff" stroke="#4338ca" d="M1994,-571C1994,-571 1894,-571 1894,-571 1888,-571 1882,-565 1882,-559 1882,-559 1882,-495 1882,-495 1882,-489 1888,-483 1894,-483 1894,-483 1994,-483 1994,-483 2000,-483 2006,-489 2006,-495 2006,-495 2006,-559 2006,-559 2006,-565 2000,-571 1994,-571"/>
+<text text-anchor="middle" x="1944" y="-552.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.21 —</text>
+<text text-anchor="middle" x="1944" y="-532.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">finite and</text>
+<text text-anchor="middle" x="1944" y="-512.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">infinite</text>
+<text text-anchor="middle" x="1944" y="-492.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">sequences</text>
 </g>
 <!-- AMap2&#45;&gt;X221 -->
 <g id="edge3" class="edge">
 <title>AMap2&#45;&gt;X221</title>
-<path fill="none" stroke="black" d="M1825.54,-653.67C1848.14,-631.22 1878.29,-601.24 1903.49,-576.2"/>
-<polygon fill="black" stroke="black" points="1905.23,-577.94 1908.46,-571.26 1901.77,-574.46 1905.23,-577.94"/>
-<text text-anchor="middle" x="1879.5" y="-605" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M1817.54,-653.67C1840.14,-631.22 1870.29,-601.24 1895.49,-576.2"/>
+<polygon fill="black" stroke="black" points="1897.23,-577.94 1900.46,-571.26 1893.77,-574.46 1897.23,-577.94"/>
+<text text-anchor="middle" x="1871.5" y="-605" font-family="Times,serif" font-size="10.00">1</text>
+</g>
+<!-- X220 -->
+<g id="node36" class="node">
+<title>X220</title>
+<path fill="#e0e7ff" stroke="#4338ca" d="M1919.5,-400C1919.5,-400 1786.5,-400 1786.5,-400 1780.5,-400 1774.5,-394 1774.5,-388 1774.5,-388 1774.5,-344 1774.5,-344 1774.5,-338 1780.5,-332 1786.5,-332 1786.5,-332 1919.5,-332 1919.5,-332 1925.5,-332 1931.5,-338 1931.5,-344 1931.5,-344 1931.5,-388 1931.5,-388 1931.5,-394 1925.5,-400 1919.5,-400"/>
+<text text-anchor="middle" x="1853" y="-381.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.20 —</text>
+<text text-anchor="middle" x="1853" y="-361.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">powerset of the</text>
+<text text-anchor="middle" x="1853" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">integers</text>
+</g>
+<!-- PSet&#45;&gt;X220 -->
+<g id="edge20" class="edge">
+<title>PSet&#45;&gt;X220</title>
+<path fill="none" stroke="black" d="M1696.51,-492.67C1728.56,-466.93 1772.91,-431.31 1806.22,-404.56"/>
+<polygon fill="black" stroke="black" points="1807.96,-406.31 1811.89,-400.02 1804.89,-402.49 1807.96,-406.31"/>
+<text text-anchor="middle" x="1762.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- X222 -->
-<g id="node37" class="node">
+<g id="node38" class="node">
 <title>X222</title>
-<path fill="#e0e7ff" stroke="#4338ca" d="M2001.5,-732C2001.5,-732 1886.5,-732 1886.5,-732 1880.5,-732 1874.5,-726 1874.5,-720 1874.5,-720 1874.5,-656 1874.5,-656 1874.5,-650 1880.5,-644 1886.5,-644 1886.5,-644 2001.5,-644 2001.5,-644 2007.5,-644 2013.5,-650 2013.5,-656 2013.5,-656 2013.5,-720 2013.5,-720 2013.5,-726 2007.5,-732 2001.5,-732"/>
-<text text-anchor="middle" x="1944" y="-713.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.22 —</text>
-<text text-anchor="middle" x="1944" y="-693.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">domains from</text>
-<text text-anchor="middle" x="1944" y="-673.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">closure</text>
-<text text-anchor="middle" x="1944" y="-653.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">properties</text>
+<path fill="#e0e7ff" stroke="#4338ca" d="M1993.5,-732C1993.5,-732 1878.5,-732 1878.5,-732 1872.5,-732 1866.5,-726 1866.5,-720 1866.5,-720 1866.5,-656 1866.5,-656 1866.5,-650 1872.5,-644 1878.5,-644 1878.5,-644 1993.5,-644 1993.5,-644 1999.5,-644 2005.5,-650 2005.5,-656 2005.5,-656 2005.5,-720 2005.5,-720 2005.5,-726 1999.5,-732 1993.5,-732"/>
+<text text-anchor="middle" x="1936" y="-713.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.22 —</text>
+<text text-anchor="middle" x="1936" y="-693.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">domains from</text>
+<text text-anchor="middle" x="1936" y="-673.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">closure</text>
+<text text-anchor="middle" x="1936" y="-653.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">properties</text>
 </g>
 </g>
 </svg>
