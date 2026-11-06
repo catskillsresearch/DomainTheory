@@ -1421,6 +1421,10 @@ NS_MAP_SHORT: dict[str, tuple[str, str]] = {
         "X215",
         "Exercise 2.15 — opens classified by maps",
     ),
+    "Prefixing map and parity equations": (
+        "sMap",
+        "Prefixing map and parity equations",
+    ),
     "Exercise 2.16 — prefixing is approximable": (
         "X216",
         "Exercise 2.16 — prefixing is approximable",

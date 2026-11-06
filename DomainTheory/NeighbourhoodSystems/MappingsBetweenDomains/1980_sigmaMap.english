@@ -1,0 +1,25 @@
+The approximable map that prefixes by a fixed string, and uniqueness of the parity map among solutions of its three equations.
+
+<!-- formalization -->
+
+**Definition (`SatisfiesParityEquations`).** An approximable map from binary trees to the two-token system satisfies the parity equations when it sends a one-prefixed element to true, a zero-one-prefixed element to false, and a zero-zero-prefixed element to the image of the unprefixed element.
+
+**Definition (`sigmaMap`).** Prefixing neighbourhoods by a fixed string determines an approximable endomap of the binary-tree system: $X$ relates to $Y$ when the prefix of $X$ is contained in $Y$.
+
+*Proof.* Domain and codomain membership are immediate; master uses the two masters; intersection and monotonicity follow from the corresponding properties of prefixed neighbourhoods. ∎
+
+**Theorem (`key`).** A map satisfying the parity equations agrees on bottoms of cones with the scan-value of the parity map.
+
+*Proof.* Induction on the string, using the three equations and comparison of bottoms under prefixing. ∎
+
+**Theorem (`eq_parityMap_of_satisfies`).** Any approximable map satisfying the parity equations equals the parity map.
+
+*Proof.* Compare neighbourhood relations via evaluation at principal filters and the preceding key lemma. ∎
+
+**Theorem (`parityMap_satisfies`).** The parity map satisfies the parity equations.
+
+*Proof.* Unpack the elementwise formula for the parity map on prefixed elements against the scan-append rules. ∎
+
+**Theorem (`toElementMap_sigmaMap`).** The elementwise action of the prefixing map is prefixing of ideal elements.
+
+*Proof.* Membership rearranges between the defining relation and the definition of prefixed elements. ∎
