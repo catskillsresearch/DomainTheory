@@ -1506,10 +1506,15 @@ NS_CON_SHORT: dict[str, tuple[str, str]] = {
         "P34",
         "Proposition 3.4 — pairing and projections",
     ),
+    "Approximable maps of two arguments": (
+        "AM2",
+        "Approximable maps of two arguments",
+    ),
     "Theorem 3.5 — separate approximability": (
         "T35",
         "Theorem 3.5 — separate approximability",
     ),
+
     "Constant approximable map": (
         "cMap",
         "Constant approximable map",
@@ -1528,10 +1533,23 @@ NS_CON_SHORT: dict[str, tuple[str, str]] = {
         "Proposition 3.7 — closure under substitution",
     ),
 
+    "Step neighbourhoods of maps": (
+        "step",
+        "Step neighbourhoods of maps",
+    ),
+    "Intersection of range neighbourhoods": (
+        "iYs",
+        "Intersection of range neighbourhoods",
+    ),
+    "Least map of a step list": (
+        "lMap",
+        "Least map of a step list",
+    ),
     "Definition 3.8 — function space": (
         "D38",
         "Definition 3.8 — function space",
     ),
+
     "Proposition 3.9 — consistent step neighbourhoods": (
         "P39",
         "Proposition 3.9 — consistent step neighbourhoods",

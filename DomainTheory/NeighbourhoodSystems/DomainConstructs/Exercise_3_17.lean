@@ -1,6 +1,6 @@
 module
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_16
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Definition_3_8
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.funSpace
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example_1_2
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6

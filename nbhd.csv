@@ -74,7 +74,7 @@ line,keyword,number,label,file
 1086,THEOREM,3.5,separate approximability,DomainConstructs/Theorem_3_5.lean
 1094,LEMMA,3.6,constant functions,DomainConstructs/Lemma_3_6.lean
 1129,PROPOSITION,3.7,closure under substitution,DomainConstructs/Proposition_3_7.lean
-1169,DEFINITION,3.8,function space,DomainConstructs/Definition_3_8.lean
+1169,DEFINITION,3.8,function space,DomainConstructs/funSpace.lean
 1181,PROPOSITION,3.9,consistent step neighbourhoods,DomainConstructs/Proposition_3_9.lean
 1273,THEOREM,3.10,elements are mappings,DomainConstructs/Theorem_3_10.lean
 1291,THEOREM,3.11,evaluation combinator,DomainConstructs/Theorem_3_11.lean

@@ -1,0 +1,51 @@
+Step neighbourhoods of approximable maps, finite intersections of steps, and the pointwise order on maps.
+
+<!-- formalization -->
+
+**Instance (`instPartialOrderApproximableMap`).** Approximable maps are partially ordered by inclusion of their neighbourhood relations.
+
+*Proof.* Reflexivity, transitivity, and antisymmetry follow from the corresponding properties of implication, with equality of maps by agreement of relations. ∎
+
+**Definition (`step`).** The step neighbourhood at a pair of neighbourhoods is the set of approximable maps relating those neighbourhoods.
+
+**Theorem (`mem_step`).** Membership in a step is the corresponding relation of the map.
+
+*Proof.* By definition. ∎
+
+**Definition (`stepFun`).** The step function of a finite list of neighbourhood pairs is the set of maps relating every pair in the list.
+
+**Theorem (`mem_stepFun`).** Membership in a step function is relation of every listed pair.
+
+*Proof.* By definition. ∎
+
+**Theorem (`stepFun_nil`).** The empty list yields the universal set of maps.
+
+*Proof.* There are no pairs to satisfy. ∎
+
+**Theorem (`stepFun_append`).** Concatenation of lists yields the intersection of the corresponding step functions.
+
+*Proof.* Unpack membership in the concatenated list. ∎
+
+**Theorem (`stepFun_cons`).** Prepending a pair yields the intersection of that step with the step function of the tail.
+
+*Proof.* Unpack membership in the cons list. ∎
+
+**Theorem (`stepFun_singleton`).** A singleton list recovers the corresponding step.
+
+*Proof.* Reduce via cons and the empty-list law. ∎
+
+**Theorem (`step_master_eq`).** The step at the two masters is the universal set of maps.
+
+*Proof.* Every approximable map relates the masters. ∎
+
+**Theorem (`stepFun_up_closed`).** Step functions are upward closed in the pointwise order on maps.
+
+*Proof.* Relations of a smaller map transport along the inequality. ∎
+
+**Theorem (`step_inter_right`).** Intersection of two steps with the same domain neighbourhood is the step at the intersection of the range neighbourhoods.
+
+*Proof.* One direction uses intersection on the right for the relation; the converse uses monotonicity toward each factor. ∎
+
+**Theorem (`step_subset`).** Steps nest when the domain neighbourhood shrinks and the range neighbourhood expands.
+
+*Proof.* Apply monotonicity of the relation. ∎

@@ -4,7 +4,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofMono
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot_le
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_26
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Definition_3_8
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.funSpace
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap2
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_le_iff

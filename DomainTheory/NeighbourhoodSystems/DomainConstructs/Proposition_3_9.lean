@@ -1,6 +1,7 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Definition_3_8
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.funSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.leastMap
 @[expose] public section
 
 section

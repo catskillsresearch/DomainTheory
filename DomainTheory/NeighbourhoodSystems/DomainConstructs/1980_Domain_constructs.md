@@ -11,7 +11,9 @@
 
 - [Proposition 3.4 — pairing and projections](1980_Proposition_3_4.md) [✓](../1980_REVISION.md)
 
+- [Approximable maps of two arguments](../MappingsBetweenDomains/1980_ApproximableMap2.md) [✓](../1980_REVISION.md)
 - [Theorem 3.5 — separate approximability](1980_Theorem_3_5.md) [✓](../1980_REVISION.md)
+
 
 - [Constant approximable map](1980_constMap.md) [✓](../1980_REVISION.md)
 
@@ -23,7 +25,12 @@
 - [Proposition 3.7 — closure under substitution](1980_Proposition_3_7.md) [✓](../1980_REVISION.md)
 
 
+- [Step neighbourhoods of maps](1980_step.md) [✓](../1980_REVISION.md)
+
+- [Intersection of range neighbourhoods](1980_interYs.md)
+- [Least map of a step list](1980_leastMap.md)
 - [Definition 3.8 — function space](1980_Definition_3_8.md)
+
 - [Proposition 3.9 — consistent step neighbourhoods](1980_Proposition_3_9.md)
 - [Theorem 3.10 — elements are mappings](1980_Theorem_3_10.md)
 - [Theorem 3.11 — evaluation combinator](1980_Theorem_3_11.md)
