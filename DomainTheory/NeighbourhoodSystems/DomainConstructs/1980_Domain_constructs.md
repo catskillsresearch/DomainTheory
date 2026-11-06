@@ -32,7 +32,7 @@
 - [Product isomorphisms](1980_prodIso.md) [✓](../1980_REVISION.md)
 - [Exercise 3.15 — product isomorphisms](1980_Exercise_3_15.md) [✓](../1980_REVISION.md)
 - [Infinite sequence system](1980_iterSys.md) [✓](../1980_REVISION.md)
-- [Exercise 3.16 — infinite sequences of elements](1980_Exercise_3_16.md)
+- [Exercise 3.16 — infinite sequences of elements](1980_Exercise_3_16.md) [✓](../1980_REVISION.md)
 - [Exercise 3.17 — embedding binary sequences](1980_Exercise_3_17.md)
 - [Exercise 3.18 — separated sum](1980_Exercise_3_18.md)
 - [Exercise 3.19 — induced maps on constructs](1980_Exercise_3_19.md)
