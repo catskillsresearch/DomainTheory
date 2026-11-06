@@ -1,25 +1,9 @@
 # Exercise 2.13
 
-**EXERCISE 2.13.** (For topologists.) Recall Exercise 1.22 where it was shown that any domain $|D|$ is a topological space. Prove from Exercise 2.9 that the functions $f : |D_0| \to |D_1|$ determined by approximable mappings are exactly *the continuous functions between these spaces.* (Hint: To prove continuity, remark that by 2.9
+@import "1980_Exercise_2_13.english" {code_block=false}
 
-$$
-f^{-1}[Y] = \bigcup \{ [X] \mid Y \in f(\uparrow X) \};
-$$
-
-hence, the inverse image of any open set is open. In the other direction, suppose that $f : |D_0| \to |D_1|$ is topologically continuous. Argue that for all $x \in |D_0|$ and all open subsets $U \subseteq |D_1|$ we have
-
-$$
-f(x) \in U \text{ iff } \exists X \in x.\ f(\uparrow X) \in U.
-$$
-
-This holds because an open subset of $|D_0|$ is always a union of basic open subsets of the form $[X']$ for $X \in D_0$ and because
-
-$$
-x = \bigcup \{ \uparrow X \mid X \in x \}
-$$
-
-for all $x \in |D_0|$.)
-
-**[NeighbourhoodSystems/MappingsBetweenDomains/Exercise_2_13.lean](Exercise_2_13.lean)**
+**[Exercise_2_13.lean](Exercise_2_13.lean)**
 
 @import "Exercise_2_13.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-05) — <a href="../1980_REVISION.md">1980 revision progress</a></p>
