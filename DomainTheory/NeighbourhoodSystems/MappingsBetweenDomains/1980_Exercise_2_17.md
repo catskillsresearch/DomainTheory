@@ -1,16 +1,9 @@
 # Exercise 2.17
 
-**EXERCISE 2.17.** Establish in detail that the mapping $g : \mathbb{B} \to \mathbb{B}$ of Exercise 2.4 is approximable. Is it uniquely determined by these equations:
-
-$$g(0x) = 0g(x),$$
-$$g(11x) = g(1x),$$
-$$g(10x) = 0x,$$
-$$g(1) = \bot$$
-
-or are some missing?
-
-<!-- page 35 -->
+@import "1980_Exercise_2_17.english" {code_block=false}
 
 **[Exercise_2_17.lean](Exercise_2_17.lean)**
 
 @import "Exercise_2_17.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-06) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

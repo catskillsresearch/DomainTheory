@@ -1,0 +1,16 @@
+**EXERCISE 2.17.** Establish in detail that the mapping $g : \mathbb{B} \to \mathbb{B}$ of Exercise 2.4 is approximable. Is it uniquely determined by these equations:
+
+$$g(0x) = 0g(x),$$
+$$g(11x) = g(1x),$$
+$$g(10x) = 0x,$$
+$$g(1) = \bot$$
+
+or are some missing?
+
+<!-- page 35 -->
+
+<!-- formalization -->
+
+**Theorem (`exercise_2_17`).** The erase-ones map is the unique approximable endomap of the binary-tree system satisfying the run equations, and those equations hold of the erase-ones map.
+
+*Proof.* Uniqueness among solutions of the run equations, and verification that the erase-ones map satisfies them. Approximability is the construction of the erase-ones map. ∎
