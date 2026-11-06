@@ -1,0 +1,15 @@
+Directed joins of ideal elements presented by an index type, and preservation of those joins by approximable maps.
+
+<!-- formalization -->
+
+**Definition (`iSupDirected`).** The directed supremum of a nonempty directed family of ideal elements, presented as a function on an index type, is the directed join of the range of that function.
+
+**Theorem (`mem_iSupDirected`).** A neighbourhood belongs to the indexed directed supremum if and only if it belongs to some term of the family.
+
+**Theorem (`iSupDirected_le`).** The indexed directed supremum is below any common upper bound of the family.
+
+**Theorem (`le_iSupDirected`).** Each term of the family is below the indexed directed supremum.
+
+**Theorem (`toElementMap_iSupDirected`).** The elementwise action of an approximable map preserves indexed directed suprema.
+
+*Proof.* Membership in the image of the join is membership for some term, transported by the defining formula for the elementwise action. ∎

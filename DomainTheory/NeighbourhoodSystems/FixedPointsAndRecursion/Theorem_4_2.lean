@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_11
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.iSupDirected
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofMono
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1

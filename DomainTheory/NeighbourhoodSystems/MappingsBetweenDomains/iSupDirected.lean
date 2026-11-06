@@ -1,0 +1,78 @@
+module
+
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.iUnion
+public import Mathlib.Data.Set.Basic
+public import Mathlib.Data.Set.Image
+
+@[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems
+open NeighborhoodSystem
+
+namespace NeighborhoodSystem
+
+section
+variable {α : Type*}
+
+/-- Indexed directed supremum of ideal elements (Exercise 2.11): the directed join of a
+nonempty directed family presented as a function on an index type. -/
+def iSupDirected {V : NeighborhoodSystem α} {I : Type*} [Nonempty I]
+    (a : I → V.Element) (hdir : ∀ i j, ∃ k, a i ≤ a k ∧ a j ≤ a k) : V.Element :=
+  V.sSupDirected (Set.range a) (Set.range_nonempty a) (by
+    rintro _ ⟨i, rfl⟩ _ ⟨j, rfl⟩
+    obtain ⟨k, hik, hjk⟩ := hdir i j
+    exact ⟨a k, ⟨k, rfl⟩, hik, hjk⟩)
+
+theorem mem_iSupDirected {V : NeighborhoodSystem α} {I : Type*} [Nonempty I]
+    (a : I → V.Element) (hdir : ∀ i j, ∃ k, a i ≤ a k ∧ a j ≤ a k) {Z : Set α} :
+    (iSupDirected a hdir).mem Z ↔ ∃ i, (a i).mem Z := by
+  constructor
+  · rintro ⟨s, ⟨i, rfl⟩, hsZ⟩; exact ⟨i, hsZ⟩
+  · rintro ⟨i, hi⟩; exact ⟨a i, ⟨i, rfl⟩, hi⟩
+
+theorem iSupDirected_le {V : NeighborhoodSystem α} {I : Type*} [Nonempty I]
+    (a : I → V.Element) (hdir : ∀ i j, ∃ k, a i ≤ a k ∧ a j ≤ a k) {y : V.Element}
+    (hy : ∀ i, a i ≤ y) : iSupDirected a hdir ≤ y := by
+  intro Z hZ
+  obtain ⟨i, hi⟩ := (mem_iSupDirected a hdir).mp hZ
+  exact hy i Z hi
+
+theorem le_iSupDirected {V : NeighborhoodSystem α} {I : Type*} [Nonempty I]
+    (a : I → V.Element) (hdir : ∀ i j, ∃ k, a i ≤ a k ∧ a j ≤ a k) (i : I) :
+    a i ≤ iSupDirected a hdir :=
+  fun _ hZ => (mem_iSupDirected a hdir).mpr ⟨i, hZ⟩
+
+end
+
+end NeighborhoodSystem
+
+namespace ApproximableMap
+
+section
+variable {α β : Type*}
+variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+
+/-- Approximable maps preserve indexed directed suprema. -/
+theorem toElementMap_iSupDirected (f : ApproximableMap V₀ V₁) {I : Type*} [Nonempty I]
+    (a : I → V₀.Element) (hdir : ∀ i j, ∃ k, a i ≤ a k ∧ a j ≤ a k) :
+    f.toElementMap (NeighborhoodSystem.iSupDirected a hdir) =
+      NeighborhoodSystem.iSupDirected (fun i => f.toElementMap (a i))
+        (fun i j => by
+          obtain ⟨k, hik, hjk⟩ := hdir i j
+          exact ⟨k, f.toElementMap_mono hik, f.toElementMap_mono hjk⟩) := by
+  apply Element.ext
+  intro Y
+  rw [mem_toElementMap, NeighborhoodSystem.mem_iSupDirected]
+  constructor
+  · rintro ⟨X, hX, hrel⟩
+    obtain ⟨i, hi⟩ := (NeighborhoodSystem.mem_iSupDirected a hdir).mp hX
+    exact ⟨i, X, hi, hrel⟩
+  · rintro ⟨i, X, hi, hrel⟩
+    exact ⟨X, (NeighborhoodSystem.mem_iSupDirected a hdir).mpr ⟨i, hi⟩, hrel⟩
+
+end
+
+end ApproximableMap
+
+end DomainTheory.NeighbourhoodSystems

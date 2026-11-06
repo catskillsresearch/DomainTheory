@@ -19,6 +19,7 @@
 - [Exercise 2.9 — directed union formula](1980_Exercise_2_9.md) [✓](../1980_REVISION.md)
 - [Pointwise intersection of approximable maps](1980_interMap.md) [✓](../1980_REVISION.md)
 - [Exercise 2.10 — intersection of two maps](1980_Exercise_2_10.md) [✓](../1980_REVISION.md)
+- [Indexed directed supremum of ideal elements](1980_iSupDirected.md) [✓](../1980_REVISION.md)
 - [Exercise 2.11 — directed unions of elements](1980_Exercise_2_11.md)
 - [Exercise 2.12 — directed unions of maps](1980_Exercise_2_12.md)
 - [Exercise 2.13 — approximable means continuous](1980_Exercise_2_13.md)

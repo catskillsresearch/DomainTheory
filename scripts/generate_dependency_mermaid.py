@@ -1381,6 +1381,10 @@ NS_MAP_SHORT: dict[str, tuple[str, str]] = {
         "X210",
         "Exercise 2.10 — intersection of two maps",
     ),
+    "Indexed directed supremum of ideal elements": (
+        "iSup",
+        "Indexed directed supremum of ideal elements",
+    ),
     "Exercise 2.11 — directed unions of elements": (
         "X211",
         "Exercise 2.11 — directed unions of elements",
@@ -1453,7 +1457,7 @@ def _ns_dom_kind_class(nid: str) -> str:
         return "cex"
     if nid in ("Tok2",):
         return "cexs"
-    if nid in ("idM", "DomO", "ofIso", "ofMo", "iMap"):
+    if nid in ("idM", "DomO", "ofIso", "ofMo", "iMap", "iSup"):
         return "cdef"
     return "cdef"
 
