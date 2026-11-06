@@ -24,7 +24,7 @@
 - [Evaluation combinator](1980_eval.md) [✓](../1980_REVISION.md)
 - [Theorem 3.11 — evaluation combinator](1980_Theorem_3_11.md) [✓](../1980_REVISION.md)
 - [Currying](1980_curry.md) [✓](../1980_REVISION.md)
-- [Theorem 3.12 — currying](1980_Theorem_3_12.md)
+- [Theorem 3.12 — currying](1980_Theorem_3_12.md) [✓](../1980_REVISION.md)
 - [Theorem 3.13 — pointwise order of maps](1980_Theorem_3_13.md)
 - [Exercise 3.14 — tagged product of tokens](1980_Exercise_3_14.md)
 - [Exercise 3.15 — product isomorphisms](1980_Exercise_3_15.md)
