@@ -4,14 +4,14 @@
 
 @import "1980_Fixed_points_and_recursion.mermaid"
 
-- [Introduction](1980_Introduction.md)
+- [Introduction](1980_Introduction.md) [✓](../1980_REVISION.md)
+- [Least fixed-point element](1980_fixElement.md)
 - [Theorem 4.1 — least fixed point](1980_Theorem_4_1.md)
 - [Theorem 4.2 — fix combinator](1980_Theorem_4_2.md)
 - [Example 4.3 — partial functions on integers](1980_Example_4_3.md)
 - [Example 4.4 — sequence domain](1980_Example_4_4.md)
 - [Definition 4.5 — Peano axioms](1980_Definition_4_5.md)
 - [Theorem 4.6 — Peano models isomorphic](1980_Theorem_4_6.md)
-- [Lecture IV exercises](1980_Lecture_IV_exercises.md)
 - [Exercise 4.7 — fixed point above a seed](1980_Exercise_4_7.md)
 - [Exercise 4.8 — fixed-point induction](1980_Exercise_4_8.md)
 - [Exercise 4.9 — fix as a fixed point](1980_Exercise_4_9.md)

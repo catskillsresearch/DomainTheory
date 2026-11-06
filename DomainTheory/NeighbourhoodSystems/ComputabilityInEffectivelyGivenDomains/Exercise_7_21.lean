@@ -165,268 +165,29 @@ end
 
 section
 set_option linter.unusedVariables false
+open NeighborhoodSystem Domain.Recursive ApproximableMap
 
-theorem example_721.{u_1, u_2} : And
-  (And
-    (∀ {α : Type u_1} {β : Type u_2} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-      {W : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
-      (Pf :
-        @DomainTheory.NeighbourhoodSystems.ComputablePresentation
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-          (@DomainTheory.NeighbourhoodSystems.funSpace α β V W))
-      (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α V)
-      (Q : @DomainTheory.NeighbourhoodSystems.ComputablePresentation β W),
-      (Domain.Recursive.REPred fun (s : Nat) =>
-          @DomainTheory.NeighbourhoodSystems.ApproximableMap₂.rel
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W) α β
-            (@DomainTheory.NeighbourhoodSystems.funSpace α β V W) V W (@DomainTheory.NeighbourhoodSystems.eval α β V W)
-            (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-              (@DomainTheory.NeighbourhoodSystems.funSpace α β V W) Pf (@Prod.fst Nat Nat (Nat.unpair s)))
-            (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P
-              (@Prod.fst Nat Nat (Nat.unpair (@Prod.snd Nat Nat (Nat.unpair s)))))
-            (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β W Q
-              (@Prod.snd Nat Nat (Nat.unpair (@Prod.snd Nat Nat (Nat.unpair s)))))) →
-        Domain.Recursive.REPred fun (w : Nat) =>
-          @DomainTheory.NeighbourhoodSystems.ApproximableMap₂.rel
-            (Set (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)) (Set α) (Set β)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-              (@DomainTheory.NeighbourhoodSystems.funSpace α β V W))
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain β W)
-            (@DomainTheory.NeighbourhoodSystems.papplyEval α β V W)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Ypd
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-              (@DomainTheory.NeighbourhoodSystems.funSpace α β V W) Pf (@Prod.fst Nat Nat (Nat.unpair w)))
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Ypd α V P
-              (@Prod.fst Nat Nat (Nat.unpair (@Prod.snd Nat Nat (Nat.unpair w)))))
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Ypd β W Q
-              (@Prod.snd Nat Nat (Nat.unpair (@Prod.snd Nat Nat (Nat.unpair w))))))
-    (∀ {α : Type u_1} {β : Type u_2} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-      {W : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
-      (Pf :
-        @DomainTheory.NeighbourhoodSystems.ComputablePresentation
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-          (@DomainTheory.NeighbourhoodSystems.funSpace α β V W))
-      (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α V)
-      (Q : @DomainTheory.NeighbourhoodSystems.ComputablePresentation β W) {Φc Ac Bc : Nat},
-      Iff
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap₂.rel
-          (Set (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)) (Set α) (Set β)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-            (@DomainTheory.NeighbourhoodSystems.funSpace α β V W))
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain β W)
-          (@DomainTheory.NeighbourhoodSystems.papplyEval α β V W)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Ypd
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-            (@DomainTheory.NeighbourhoodSystems.funSpace α β V W) Pf Φc)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Ypd α V P Ac)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Ypd β W Q Bc))
-        (∀ (g : Nat),
-          @Membership.mem Nat (List Nat) (@List.instMembership Nat) (Domain.Recursive.decodeList Φc) g →
-            ∀ (x : Nat),
-              @Membership.mem Nat (List Nat) (@List.instMembership Nat) (Domain.Recursive.decodeList Ac) x →
-                ∃ (y : Nat),
-                  And (@Membership.mem Nat (List Nat) (@List.instMembership Nat) (Domain.Recursive.decodeList Bc) y)
-                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap₂.rel
-                      (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W) α β
-                      (@DomainTheory.NeighbourhoodSystems.funSpace α β V W) V W
-                      (@DomainTheory.NeighbourhoodSystems.eval α β V W)
-                      (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X
-                        (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-                        (@DomainTheory.NeighbourhoodSystems.funSpace α β V W) Pf g)
-                      (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P x)
-                      (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β W Q y)))))
-  (∀ {α : Type u_1} {β : Type u_2} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    {W : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β} {X₀ : Set α} {Y₀ : Set β},
-    @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V X₀ →
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem β W Y₀ →
-        @DomainTheory.NeighbourhoodSystems.ApproximableMap₂.rel
-          (Set (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)) (Set α) (Set β)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-            (@DomainTheory.NeighbourhoodSystems.funSpace α β V W))
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain β W)
-          (@DomainTheory.NeighbourhoodSystems.papplyEval α β V W)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.upSet
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-            (@DomainTheory.NeighbourhoodSystems.funSpace α β V W)
-            (@DomainTheory.NeighbourhoodSystems.step α β V W X₀ Y₀))
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.upSet α V X₀)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.upSet β W Y₀)) :=
-  @And.intro
-  (And
-    (∀ {α : Type u_1} {β : Type u_2} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-      {W : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
-      (Pf :
-        @DomainTheory.NeighbourhoodSystems.ComputablePresentation
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-          (@DomainTheory.NeighbourhoodSystems.funSpace α β V W))
-      (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α V)
-      (Q : @DomainTheory.NeighbourhoodSystems.ComputablePresentation β W),
-      (Domain.Recursive.REPred fun (s : Nat) =>
-          @DomainTheory.NeighbourhoodSystems.ApproximableMap₂.rel
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W) α β
-            (@DomainTheory.NeighbourhoodSystems.funSpace α β V W) V W (@DomainTheory.NeighbourhoodSystems.eval α β V W)
-            (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-              (@DomainTheory.NeighbourhoodSystems.funSpace α β V W) Pf (@Prod.fst Nat Nat (Nat.unpair s)))
-            (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P
-              (@Prod.fst Nat Nat (Nat.unpair (@Prod.snd Nat Nat (Nat.unpair s)))))
-            (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β W Q
-              (@Prod.snd Nat Nat (Nat.unpair (@Prod.snd Nat Nat (Nat.unpair s)))))) →
-        Domain.Recursive.REPred fun (w : Nat) =>
-          @DomainTheory.NeighbourhoodSystems.ApproximableMap₂.rel
-            (Set (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)) (Set α) (Set β)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-              (@DomainTheory.NeighbourhoodSystems.funSpace α β V W))
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain β W)
-            (@DomainTheory.NeighbourhoodSystems.papplyEval α β V W)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Ypd
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-              (@DomainTheory.NeighbourhoodSystems.funSpace α β V W) Pf (@Prod.fst Nat Nat (Nat.unpair w)))
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Ypd α V P
-              (@Prod.fst Nat Nat (Nat.unpair (@Prod.snd Nat Nat (Nat.unpair w)))))
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Ypd β W Q
-              (@Prod.snd Nat Nat (Nat.unpair (@Prod.snd Nat Nat (Nat.unpair w))))))
-    (∀ {α : Type u_1} {β : Type u_2} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-      {W : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
-      (Pf :
-        @DomainTheory.NeighbourhoodSystems.ComputablePresentation
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-          (@DomainTheory.NeighbourhoodSystems.funSpace α β V W))
-      (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α V)
-      (Q : @DomainTheory.NeighbourhoodSystems.ComputablePresentation β W) {Φc Ac Bc : Nat},
-      Iff
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap₂.rel
-          (Set (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)) (Set α) (Set β)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-            (@DomainTheory.NeighbourhoodSystems.funSpace α β V W))
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain β W)
-          (@DomainTheory.NeighbourhoodSystems.papplyEval α β V W)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Ypd
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-            (@DomainTheory.NeighbourhoodSystems.funSpace α β V W) Pf Φc)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Ypd α V P Ac)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Ypd β W Q Bc))
-        (∀ (g : Nat),
-          @Membership.mem Nat (List Nat) (@List.instMembership Nat) (Domain.Recursive.decodeList Φc) g →
-            ∀ (x : Nat),
-              @Membership.mem Nat (List Nat) (@List.instMembership Nat) (Domain.Recursive.decodeList Ac) x →
-                ∃ (y : Nat),
-                  And (@Membership.mem Nat (List Nat) (@List.instMembership Nat) (Domain.Recursive.decodeList Bc) y)
-                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap₂.rel
-                      (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W) α β
-                      (@DomainTheory.NeighbourhoodSystems.funSpace α β V W) V W
-                      (@DomainTheory.NeighbourhoodSystems.eval α β V W)
-                      (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X
-                        (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-                        (@DomainTheory.NeighbourhoodSystems.funSpace α β V W) Pf g)
-                      (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P x)
-                      (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β W Q y)))))
-  (∀ {α : Type u_1} {β : Type u_2} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    {W : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β} {X₀ : Set α} {Y₀ : Set β},
-    @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α V X₀ →
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem β W Y₀ →
-        @DomainTheory.NeighbourhoodSystems.ApproximableMap₂.rel
-          (Set (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)) (Set α) (Set β)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-            (@DomainTheory.NeighbourhoodSystems.funSpace α β V W))
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain β W)
-          (@DomainTheory.NeighbourhoodSystems.papplyEval α β V W)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.upSet
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-            (@DomainTheory.NeighbourhoodSystems.funSpace α β V W)
-            (@DomainTheory.NeighbourhoodSystems.step α β V W X₀ Y₀))
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.upSet α V X₀)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.upSet β W Y₀))
-  (@And.intro
-    (∀ {α : Type u_1} {β : Type u_2} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-      {W : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
-      (Pf :
-        @DomainTheory.NeighbourhoodSystems.ComputablePresentation
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-          (@DomainTheory.NeighbourhoodSystems.funSpace α β V W))
-      (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α V)
-      (Q : @DomainTheory.NeighbourhoodSystems.ComputablePresentation β W),
-      (Domain.Recursive.REPred fun (s : Nat) =>
-          @DomainTheory.NeighbourhoodSystems.ApproximableMap₂.rel
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W) α β
-            (@DomainTheory.NeighbourhoodSystems.funSpace α β V W) V W (@DomainTheory.NeighbourhoodSystems.eval α β V W)
-            (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-              (@DomainTheory.NeighbourhoodSystems.funSpace α β V W) Pf (@Prod.fst Nat Nat (Nat.unpair s)))
-            (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P
-              (@Prod.fst Nat Nat (Nat.unpair (@Prod.snd Nat Nat (Nat.unpair s)))))
-            (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β W Q
-              (@Prod.snd Nat Nat (Nat.unpair (@Prod.snd Nat Nat (Nat.unpair s)))))) →
-        Domain.Recursive.REPred fun (w : Nat) =>
-          @DomainTheory.NeighbourhoodSystems.ApproximableMap₂.rel
-            (Set (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)) (Set α) (Set β)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-              (@DomainTheory.NeighbourhoodSystems.funSpace α β V W))
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain β W)
-            (@DomainTheory.NeighbourhoodSystems.papplyEval α β V W)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Ypd
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-              (@DomainTheory.NeighbourhoodSystems.funSpace α β V W) Pf (@Prod.fst Nat Nat (Nat.unpair w)))
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Ypd α V P
-              (@Prod.fst Nat Nat (Nat.unpair (@Prod.snd Nat Nat (Nat.unpair w)))))
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Ypd β W Q
-              (@Prod.snd Nat Nat (Nat.unpair (@Prod.snd Nat Nat (Nat.unpair w))))))
-    (∀ {α : Type u_1} {β : Type u_2} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-      {W : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
-      (Pf :
-        @DomainTheory.NeighbourhoodSystems.ComputablePresentation
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-          (@DomainTheory.NeighbourhoodSystems.funSpace α β V W))
-      (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α V)
-      (Q : @DomainTheory.NeighbourhoodSystems.ComputablePresentation β W) {Φc Ac Bc : Nat},
-      Iff
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap₂.rel
-          (Set (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)) (Set α) (Set β)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-            (@DomainTheory.NeighbourhoodSystems.funSpace α β V W))
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain β W)
-          (@DomainTheory.NeighbourhoodSystems.papplyEval α β V W)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Ypd
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-            (@DomainTheory.NeighbourhoodSystems.funSpace α β V W) Pf Φc)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Ypd α V P Ac)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Ypd β W Q Bc))
-        (∀ (g : Nat),
-          @Membership.mem Nat (List Nat) (@List.instMembership Nat) (Domain.Recursive.decodeList Φc) g →
-            ∀ (x : Nat),
-              @Membership.mem Nat (List Nat) (@List.instMembership Nat) (Domain.Recursive.decodeList Ac) x →
-                ∃ (y : Nat),
-                  And (@Membership.mem Nat (List Nat) (@List.instMembership Nat) (Domain.Recursive.decodeList Bc) y)
-                    (@DomainTheory.NeighbourhoodSystems.ApproximableMap₂.rel
-                      (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W) α β
-                      (@DomainTheory.NeighbourhoodSystems.funSpace α β V W) V W
-                      (@DomainTheory.NeighbourhoodSystems.eval α β V W)
-                      (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X
-                        (@DomainTheory.NeighbourhoodSystems.ApproximableMap α β V W)
-                        (@DomainTheory.NeighbourhoodSystems.funSpace α β V W) Pf g)
-                      (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P x)
-                      (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β W Q y))))
-    @DomainTheory.NeighbourhoodSystems.papplyEval_isComputable
-    @DomainTheory.NeighbourhoodSystems.papplyEval_rel_Ypd_iff)
-  @DomainTheory.NeighbourhoodSystems.papplyEval_step_witness
+/-- Scott's Exercise 7.21: pointwise application/eval on powerdomains. -/
+theorem example_721 :
+    (∀ {α β : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
+      (Pf : ComputablePresentation (funSpace V W)) (P : ComputablePresentation V)
+      (Q : ComputablePresentation W)
+      (heval : REPred (fun s => (eval V W).rel (Pf.X s.unpair.1)
+        (P.X s.unpair.2.unpair.1) (Q.X s.unpair.2.unpair.2))),
+      REPred (fun w => (papplyEval V W).rel ((funSpace V W).Ypd Pf w.unpair.1)
+        (V.Ypd P w.unpair.2.unpair.1) (W.Ypd Q w.unpair.2.unpair.2))) ∧
+    (∀ {α β : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
+      (Pf : ComputablePresentation (funSpace V W)) (P : ComputablePresentation V)
+      (Q : ComputablePresentation W) {Φc Ac Bc : ℕ},
+      (papplyEval V W).rel ((funSpace V W).Ypd Pf Φc) (V.Ypd P Ac) (W.Ypd Q Bc) ↔
+        ∀ g ∈ decodeList Φc, ∀ x ∈ decodeList Ac, ∃ y ∈ decodeList Bc,
+          (eval V W).rel (Pf.X g) (P.X x) (Q.X y)) ∧
+    (∀ {α β : Type*} {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
+      {X₀ : Set α} {Y₀ : Set β} (hX₀ : V.mem X₀) (hY₀ : W.mem Y₀),
+      (papplyEval V W).rel ((funSpace V W).upSet (step X₀ Y₀)) (V.upSet X₀) (W.upSet Y₀)) :=
+  ⟨@papplyEval_isComputable, ⟨@papplyEval_rel_Ypd_iff, @papplyEval_step_witness⟩⟩
 end
+
 
 section
 open NeighborhoodSystem Domain.Recursive Example61

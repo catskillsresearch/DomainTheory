@@ -213,16 +213,9 @@ theorem relateNToC1_bot : relateNToC1.toElementMap Example43.N.bot = C1.bot :=
   Example43.constLiftN_bot C1 oneElem
 end
 
-section
-set_option linter.unusedVariables false
-
-theorem example_425 : @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element Nat DomainTheory.NeighbourhoodSystems.Exercise425.C1)
-  (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap Nat Nat DomainTheory.NeighbourhoodSystems.Example43.N
-    DomainTheory.NeighbourhoodSystems.Exercise425.C1 DomainTheory.NeighbourhoodSystems.Exercise425.relateNToC1
-    (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bot Nat DomainTheory.NeighbourhoodSystems.Example43.N))
-  (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.bot Nat DomainTheory.NeighbourhoodSystems.Exercise425.C1) :=
-  DomainTheory.NeighbourhoodSystems.Exercise425.relateNToC1_bot
-end
+theorem example_425 :
+    relateNToC1.toElementMap Example43.N.bot = C1.bot :=
+  @relateNToC1_bot
 
 section
 

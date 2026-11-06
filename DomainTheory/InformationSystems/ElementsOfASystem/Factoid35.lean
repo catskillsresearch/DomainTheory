@@ -6,15 +6,9 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35.subset
 
 namespace DomainTheory.InformationSystems.InfoSys
 
-set_option linter.unusedVariables false
-
-theorem theorem_35.{u_1} : ∀ {α : Type u_1} [inst : DecidableEq α] (sys : @DomainTheory.InformationSystems.InfoSys α inst) {u : Finset α}
-  (hu :
-    @Membership.mem (Finset α) (Set (Finset α)) (@Set.instMembership (Finset α))
-      (@DomainTheory.InformationSystems.InfoSys.Con α inst sys) u),
-  @LE.le (Set α) (@Set.instLE α) (@SetLike.coe (Finset α) α (@Finset.instSetLike α) u)
-    (@DomainTheory.InformationSystems.InfoSys.Element.carrier α inst sys
-      (@DomainTheory.InformationSystems.InfoSys.closure α inst sys u hu)) :=
-  @DomainTheory.InformationSystems.InfoSys.subset_closure
+theorem theorem_35 :
+    ∀ {α : Type*} [DecidableEq α] (sys : InfoSys α) {u : Finset α} (hu : u ∈ sys.Con),
+      ↑u ⊆ (sys.closure u hu).carrier :=
+  @subset_closure
 
 end DomainTheory.InformationSystems.InfoSys

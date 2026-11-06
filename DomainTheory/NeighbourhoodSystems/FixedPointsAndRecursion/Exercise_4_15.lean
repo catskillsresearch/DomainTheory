@@ -48,102 +48,13 @@ end
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
 section
-set_option linter.unusedVariables false
 
-theorem example_415.{u_1} : And
-  (∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (f :
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V →
-        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-    @Monotone (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V))
-        (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V))
-        f →
-      ∃ (b : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-        And (@Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V) (f b) b)
-          (∀ (y : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-            @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V) (f y) y →
-              @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                    (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-                b y))
-  (∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (f :
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V →
-        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-    @Monotone (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V))
-        (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V))
-        f →
-      ∃ (m : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-        And (@Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V) (f m) m)
-          (∀ (y : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-            @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V) (f y) y →
-              @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                    (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-                  m y →
-                @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                    (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-                  y m)) :=
-  @And.intro
-  (∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (f :
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V →
-        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-    @Monotone (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V))
-        (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V))
-        f →
-      ∃ (b : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-        And (@Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V) (f b) b)
-          (∀ (y : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-            @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V) (f y) y →
-              @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                    (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-                b y))
-  (∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (f :
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V →
-        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-    @Monotone (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V))
-        (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V))
-        f →
-      ∃ (m : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-        And (@Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V) (f m) m)
-          (∀ (y : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V),
-            @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V) (f y) y →
-              @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                    (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-                  m y →
-                @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                  (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                    (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-                      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-                  y m))
-  @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.exists_least_fixedPoint
-  @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.exists_maximal_fixedPoint
+theorem example_415 :
+    (∀ {α : Type*} {V : NeighborhoodSystem α} (f : V.Element → V.Element),
+      Monotone f → ∃ b, f b = b ∧ ∀ y, f y = y → b ≤ y) ∧
+    (∀ {α : Type*} {V : NeighborhoodSystem α} (f : V.Element → V.Element),
+      Monotone f → ∃ m, f m = m ∧ ∀ y, f y = y → m ≤ y → y ≤ m) :=
+  ⟨@exists_least_fixedPoint, @exists_maximal_fixedPoint⟩
 end
 
 end DomainTheory.NeighbourhoodSystems.NeighborhoodSystem

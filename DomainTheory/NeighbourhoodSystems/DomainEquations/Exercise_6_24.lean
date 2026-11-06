@@ -21,17 +21,12 @@ end
 
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise624
-section
-set_option linter.unusedVariables false
+open DomainTheory.NeighbourhoodSystems.Exercise619
 
-theorem example_624 : ∃ (D : DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys) (E :
-  DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys),
-  And
-    (@DomainTheory.NeighbourhoodSystems.Subsystem DomainTheory.NeighbourhoodSystems.ExampleB.Str D.sys
-      (D.sum (D.prod E)).sys)
-    (@DomainTheory.NeighbourhoodSystems.Subsystem DomainTheory.NeighbourhoodSystems.ExampleB.Str E.sys (D.sum E).sys) :=
-  DomainTheory.NeighbourhoodSystems.Exercise624.exists_simultaneous_subsystems
-end
+/-- Scott's Exercise 6.24: simultaneous subsystem solutions. -/
+theorem example_624 :
+    ∃ D E : ScottSys, D.sys ◁ (D.sum (D.prod E)).sys ∧ E.sys ◁ (D.sum E).sys :=
+  @exists_simultaneous_subsystems
 
 end DomainTheory.NeighbourhoodSystems.Exercise624
 namespace DomainTheory.NeighbourhoodSystems

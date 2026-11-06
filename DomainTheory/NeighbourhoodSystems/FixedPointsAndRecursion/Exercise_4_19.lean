@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot_le
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
-
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.cond
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
 
@@ -276,192 +276,16 @@ theorem peano_nil_ne_cons (b : Bool) (σ : Str) : ([] : Str) ≠ b :: σ := by
 end
 
 section
-set_option linter.unusedVariables false
 
-theorem example_419 : And
-  (And
-    (And
-      (And
-        (And
-          (∀ (b : Bool) (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-            @Ne (List Bool) (@List.nil Bool) (@List.cons Bool b σ))
-          (∀ (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-            @Eq
-              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-                DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise419.T)
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
-                DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example12.Token
-                DomainTheory.NeighbourhoodSystems.Example44.C DomainTheory.NeighbourhoodSystems.Exercise419.T
-                DomainTheory.NeighbourhoodSystems.Exercise419.oneMap
-                (DomainTheory.NeighbourhoodSystems.Example44.strBot σ))
-              (DomainTheory.NeighbourhoodSystems.Exercise419.oneDef
-                (DomainTheory.NeighbourhoodSystems.Example44.strBot σ))))
-        (∀ (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-          @Eq
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-              DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise419.T)
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
-              DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example12.Token
-              DomainTheory.NeighbourhoodSystems.Example44.C DomainTheory.NeighbourhoodSystems.Exercise419.T
-              DomainTheory.NeighbourhoodSystems.Exercise419.oneMap
-              (DomainTheory.NeighbourhoodSystems.Example44.strElem σ))
-            (DomainTheory.NeighbourhoodSystems.Exercise419.oneDef
-              (DomainTheory.NeighbourhoodSystems.Example44.strElem σ))))
-      (∀ (σ τ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-        @Ne (List Bool) (@List.cons Bool Bool.false σ) (@List.cons Bool Bool.true τ)))
-    (∀ {b : Bool} {σ τ : DomainTheory.NeighbourhoodSystems.ExampleB.Str},
-      @Eq (List Bool) (@List.cons Bool b σ) (@List.cons Bool b τ) →
-        @Eq DomainTheory.NeighbourhoodSystems.ExampleB.Str σ τ))
-  (∀ (P : DomainTheory.NeighbourhoodSystems.ExampleB.Str → Prop),
-    P (@List.nil Bool) →
-      (∀ (b : Bool) (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str), P σ → P (@List.cons Bool b σ)) →
-        ∀ (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str), P σ) :=
-  @And.intro
-  (And
-    (And
-      (And
-        (And
-          (∀ (b : Bool) (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-            @Ne (List Bool) (@List.nil Bool) (@List.cons Bool b σ))
-          (∀ (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-            @Eq
-              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-                DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise419.T)
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
-                DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example12.Token
-                DomainTheory.NeighbourhoodSystems.Example44.C DomainTheory.NeighbourhoodSystems.Exercise419.T
-                DomainTheory.NeighbourhoodSystems.Exercise419.oneMap
-                (DomainTheory.NeighbourhoodSystems.Example44.strBot σ))
-              (DomainTheory.NeighbourhoodSystems.Exercise419.oneDef
-                (DomainTheory.NeighbourhoodSystems.Example44.strBot σ))))
-        (∀ (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-          @Eq
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-              DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise419.T)
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
-              DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example12.Token
-              DomainTheory.NeighbourhoodSystems.Example44.C DomainTheory.NeighbourhoodSystems.Exercise419.T
-              DomainTheory.NeighbourhoodSystems.Exercise419.oneMap
-              (DomainTheory.NeighbourhoodSystems.Example44.strElem σ))
-            (DomainTheory.NeighbourhoodSystems.Exercise419.oneDef
-              (DomainTheory.NeighbourhoodSystems.Example44.strElem σ))))
-      (∀ (σ τ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-        @Ne (List Bool) (@List.cons Bool Bool.false σ) (@List.cons Bool Bool.true τ)))
-    (∀ {b : Bool} {σ τ : DomainTheory.NeighbourhoodSystems.ExampleB.Str},
-      @Eq (List Bool) (@List.cons Bool b σ) (@List.cons Bool b τ) →
-        @Eq DomainTheory.NeighbourhoodSystems.ExampleB.Str σ τ))
-  (∀ (P : DomainTheory.NeighbourhoodSystems.ExampleB.Str → Prop),
-    P (@List.nil Bool) →
-      (∀ (b : Bool) (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str), P σ → P (@List.cons Bool b σ)) →
-        ∀ (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str), P σ)
-  (@And.intro
-    (And
-      (And
-        (And
-          (∀ (b : Bool) (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-            @Ne (List Bool) (@List.nil Bool) (@List.cons Bool b σ))
-          (∀ (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-            @Eq
-              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-                DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise419.T)
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
-                DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example12.Token
-                DomainTheory.NeighbourhoodSystems.Example44.C DomainTheory.NeighbourhoodSystems.Exercise419.T
-                DomainTheory.NeighbourhoodSystems.Exercise419.oneMap
-                (DomainTheory.NeighbourhoodSystems.Example44.strBot σ))
-              (DomainTheory.NeighbourhoodSystems.Exercise419.oneDef
-                (DomainTheory.NeighbourhoodSystems.Example44.strBot σ))))
-        (∀ (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-          @Eq
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-              DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise419.T)
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
-              DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example12.Token
-              DomainTheory.NeighbourhoodSystems.Example44.C DomainTheory.NeighbourhoodSystems.Exercise419.T
-              DomainTheory.NeighbourhoodSystems.Exercise419.oneMap
-              (DomainTheory.NeighbourhoodSystems.Example44.strElem σ))
-            (DomainTheory.NeighbourhoodSystems.Exercise419.oneDef
-              (DomainTheory.NeighbourhoodSystems.Example44.strElem σ))))
-      (∀ (σ τ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-        @Ne (List Bool) (@List.cons Bool Bool.false σ) (@List.cons Bool Bool.true τ)))
-    (∀ {b : Bool} {σ τ : DomainTheory.NeighbourhoodSystems.ExampleB.Str},
-      @Eq (List Bool) (@List.cons Bool b σ) (@List.cons Bool b τ) →
-        @Eq DomainTheory.NeighbourhoodSystems.ExampleB.Str σ τ)
-    (@And.intro
-      (And
-        (And
-          (∀ (b : Bool) (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-            @Ne (List Bool) (@List.nil Bool) (@List.cons Bool b σ))
-          (∀ (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-            @Eq
-              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-                DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise419.T)
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
-                DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example12.Token
-                DomainTheory.NeighbourhoodSystems.Example44.C DomainTheory.NeighbourhoodSystems.Exercise419.T
-                DomainTheory.NeighbourhoodSystems.Exercise419.oneMap
-                (DomainTheory.NeighbourhoodSystems.Example44.strBot σ))
-              (DomainTheory.NeighbourhoodSystems.Exercise419.oneDef
-                (DomainTheory.NeighbourhoodSystems.Example44.strBot σ))))
-        (∀ (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-          @Eq
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-              DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise419.T)
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
-              DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example12.Token
-              DomainTheory.NeighbourhoodSystems.Example44.C DomainTheory.NeighbourhoodSystems.Exercise419.T
-              DomainTheory.NeighbourhoodSystems.Exercise419.oneMap
-              (DomainTheory.NeighbourhoodSystems.Example44.strElem σ))
-            (DomainTheory.NeighbourhoodSystems.Exercise419.oneDef
-              (DomainTheory.NeighbourhoodSystems.Example44.strElem σ))))
-      (∀ (σ τ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-        @Ne (List Bool) (@List.cons Bool Bool.false σ) (@List.cons Bool Bool.true τ))
-      (@And.intro
-        (And
-          (∀ (b : Bool) (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-            @Ne (List Bool) (@List.nil Bool) (@List.cons Bool b σ))
-          (∀ (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-            @Eq
-              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-                DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise419.T)
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
-                DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example12.Token
-                DomainTheory.NeighbourhoodSystems.Example44.C DomainTheory.NeighbourhoodSystems.Exercise419.T
-                DomainTheory.NeighbourhoodSystems.Exercise419.oneMap
-                (DomainTheory.NeighbourhoodSystems.Example44.strBot σ))
-              (DomainTheory.NeighbourhoodSystems.Exercise419.oneDef
-                (DomainTheory.NeighbourhoodSystems.Example44.strBot σ))))
-        (∀ (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-          @Eq
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-              DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise419.T)
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
-              DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example12.Token
-              DomainTheory.NeighbourhoodSystems.Example44.C DomainTheory.NeighbourhoodSystems.Exercise419.T
-              DomainTheory.NeighbourhoodSystems.Exercise419.oneMap
-              (DomainTheory.NeighbourhoodSystems.Example44.strElem σ))
-            (DomainTheory.NeighbourhoodSystems.Exercise419.oneDef
-              (DomainTheory.NeighbourhoodSystems.Example44.strElem σ)))
-        (@And.intro
-          (∀ (b : Bool) (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-            @Ne (List Bool) (@List.nil Bool) (@List.cons Bool b σ))
-          (∀ (σ : DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-            @Eq
-              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-                DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise419.T)
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
-                DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.Example12.Token
-                DomainTheory.NeighbourhoodSystems.Example44.C DomainTheory.NeighbourhoodSystems.Exercise419.T
-                DomainTheory.NeighbourhoodSystems.Exercise419.oneMap
-                (DomainTheory.NeighbourhoodSystems.Example44.strBot σ))
-              (DomainTheory.NeighbourhoodSystems.Exercise419.oneDef
-                (DomainTheory.NeighbourhoodSystems.Example44.strBot σ)))
-          DomainTheory.NeighbourhoodSystems.Exercise419.peano_nil_ne_cons
-          DomainTheory.NeighbourhoodSystems.Exercise419.one_def_strBot)
-        DomainTheory.NeighbourhoodSystems.Exercise419.one_def_strElem)
-      DomainTheory.NeighbourhoodSystems.Exercise419.peano_cons_disjoint)
-    @DomainTheory.NeighbourhoodSystems.Exercise419.peano_cons_injective)
-  DomainTheory.NeighbourhoodSystems.Exercise419.peano_induction
+theorem example_419 :
+    (∀ (b : Bool) (σ : Str), ([] : Str) ≠ b :: σ) ∧
+    (∀ (σ : Str), oneMap.toElementMap (strBot σ) = oneDef (strBot σ)) ∧
+    (∀ (σ : Str), oneMap.toElementMap (strElem σ) = oneDef (strElem σ)) ∧
+    (∀ (σ τ : Str), (false :: σ) ≠ (true :: τ)) ∧
+    (∀ {b : Bool} {σ τ : Str}, b :: σ = b :: τ → σ = τ) ∧
+    (∀ (P : Str → Prop), P [] → (∀ b σ, P σ → P (b :: σ)) → ∀ σ, P σ) :=
+  ⟨peano_nil_ne_cons, one_def_strBot, one_def_strElem,
+    peano_cons_disjoint, @peano_cons_injective, peano_induction⟩
 end
 
 end DomainTheory.NeighbourhoodSystems.Exercise419

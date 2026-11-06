@@ -87,24 +87,14 @@ end
 
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise619
-section
-set_option linter.unusedVariables false
+open DomainTheory.NeighbourhoodSystems.ExampleB
 
-theorem example_622 : ∃ (N : DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys),
-  And
-    (@Membership.mem (List Bool) (Set DomainTheory.NeighbourhoodSystems.ExampleB.Str)
-      (@Set.instMembership DomainTheory.NeighbourhoodSystems.ExampleB.Str)
-      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master DomainTheory.NeighbourhoodSystems.ExampleB.Str
-        N.sys)
-      (@List.nil Bool))
-    (∃ (Γ : Set DomainTheory.NeighbourhoodSystems.ExampleB.Str) (h :
-      @Set.Nonempty DomainTheory.NeighbourhoodSystems.ExampleB.Str Γ),
-      @DomainTheory.NeighbourhoodSystems.Subsystem DomainTheory.NeighbourhoodSystems.ExampleB.Str
-        (DomainTheory.NeighbourhoodSystems.Exercise619.singletonSys Γ h).sys
-        ((DomainTheory.NeighbourhoodSystems.Exercise619.NStarExpr N).obj
-            (DomainTheory.NeighbourhoodSystems.Exercise619.singletonSys Γ h)).sys) :=
-  DomainTheory.NeighbourhoodSystems.Exercise619.NStar_over_N_exists
-end
+/-- Scott's Exercise 6.22: an N★ solution over a rooted N. -/
+theorem example_622 :
+    ∃ N : ScottSys, ([] : Str) ∈ N.sys.master ∧
+      ∃ (Γ : Set Str) (h : Γ.Nonempty),
+        (singletonSys Γ h).sys ◁ ((NStarExpr N).obj (singletonSys Γ h)).sys :=
+  @NStar_over_N_exists
 
 end DomainTheory.NeighbourhoodSystems.Exercise619
 namespace DomainTheory.NeighbourhoodSystems

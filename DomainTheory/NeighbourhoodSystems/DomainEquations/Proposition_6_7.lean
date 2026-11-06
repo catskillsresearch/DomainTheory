@@ -19,7 +19,8 @@ def lambek (A : TAlgebra T) (hA : IsInitial A) : Iso (T.obj A.carrier) A.carrier
         = (tStr A).str ⊚ T.map (hA.desc (tStr A)).hom := (hA.desc (tStr A)).comm
       _ = T.map A.str ⊚ T.map (hA.desc (tStr A)).hom := rfl
       _ = T.map (A.str ⊚ (hA.desc (tStr A)).hom) := (T.map_comp _ _).symm
-      _ = T.map ((𝟙 A.carrier)) := by rw [str_comp_desc A hA]
+      _ = T.map (AlgHom.id A).hom := by rw [str_comp_desc A hA]
+      _ = T.map (𝟙 A.carrier) := rfl
       _ = (𝟙 (T.obj A.carrier)) := T.map_id _
 end
 

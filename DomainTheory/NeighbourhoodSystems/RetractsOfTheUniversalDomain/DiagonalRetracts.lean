@@ -22,49 +22,13 @@ theorem exercise_8_20_assembly : D ⊴ prod D D ∧ D ⊴ funSpace D D :=
   ⟨D_trianglelefteq_prod D, D_trianglelefteq_funSpace D⟩
 end
 
-set_option linter.unusedVariables false
+open NeighborhoodSystem ApproximableMap
 
-theorem example_820.{u} : And
-  (And
-    (∀ {α : Type u} (D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-      And
-        (@DomainTheory.NeighbourhoodSystems.Trianglelefteq α (Sum α α) D
-          (@DomainTheory.NeighbourhoodSystems.prod α α D D))
-        (@DomainTheory.NeighbourhoodSystems.Trianglelefteq α
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D) D
-          (@DomainTheory.NeighbourhoodSystems.funSpace α α D D)))
-    (∀ {α : Type u} (D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-      @DomainTheory.NeighbourhoodSystems.Trianglelefteq α (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D) D
-        (@DomainTheory.NeighbourhoodSystems.funSpace α α D D)))
-  (∀ {α : Type u} (D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-    @DomainTheory.NeighbourhoodSystems.Trianglelefteq α (Sum α α) D (@DomainTheory.NeighbourhoodSystems.prod α α D D)) :=
-  @And.intro
-  (And
-    (∀ {α : Type u} (D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-      And
-        (@DomainTheory.NeighbourhoodSystems.Trianglelefteq α (Sum α α) D
-          (@DomainTheory.NeighbourhoodSystems.prod α α D D))
-        (@DomainTheory.NeighbourhoodSystems.Trianglelefteq α
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D) D
-          (@DomainTheory.NeighbourhoodSystems.funSpace α α D D)))
-    (∀ {α : Type u} (D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-      @DomainTheory.NeighbourhoodSystems.Trianglelefteq α (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D) D
-        (@DomainTheory.NeighbourhoodSystems.funSpace α α D D)))
-  (∀ {α : Type u} (D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-    @DomainTheory.NeighbourhoodSystems.Trianglelefteq α (Sum α α) D (@DomainTheory.NeighbourhoodSystems.prod α α D D))
-  (@And.intro
-    (∀ {α : Type u} (D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-      And
-        (@DomainTheory.NeighbourhoodSystems.Trianglelefteq α (Sum α α) D
-          (@DomainTheory.NeighbourhoodSystems.prod α α D D))
-        (@DomainTheory.NeighbourhoodSystems.Trianglelefteq α
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D) D
-          (@DomainTheory.NeighbourhoodSystems.funSpace α α D D)))
-    (∀ {α : Type u} (D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-      @DomainTheory.NeighbourhoodSystems.Trianglelefteq α (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D) D
-        (@DomainTheory.NeighbourhoodSystems.funSpace α α D D))
-    @DomainTheory.NeighbourhoodSystems.exercise_8_20_assembly @DomainTheory.NeighbourhoodSystems.D_trianglelefteq_funSpace)
-  @DomainTheory.NeighbourhoodSystems.D_trianglelefteq_prod
+theorem example_820 :
+    (∀ {α : Type*} (D : NeighborhoodSystem α), D ⊴ prod D D ∧ D ⊴ funSpace D D) ∧
+    (∀ {α : Type*} (D : NeighborhoodSystem α), D ⊴ funSpace D D) ∧
+    (∀ {α : Type*} (D : NeighborhoodSystem α), D ⊴ prod D D) :=
+  ⟨@exercise_8_20_assembly, @D_trianglelefteq_funSpace, @D_trianglelefteq_prod⟩
 
 section
 open NeighborhoodSystem ApproximableMap

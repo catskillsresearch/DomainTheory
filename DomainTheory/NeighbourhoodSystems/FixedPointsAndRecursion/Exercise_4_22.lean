@@ -79,16 +79,11 @@ theorem exists_peano_submodel (hzero : ∀ n, zero ≠ succ n) (hinj : Function.
 
 end
 
-section
-set_option linter.unusedVariables false
-
-theorem example_422.{u_1} : ∀ {M : Type u_1} (zero : M) (succ : M → M),
-  (∀ (n : M), @Ne M zero (succ n)) →
-    @Function.Injective M M succ →
-      Nonempty
-        (DomainTheory.NeighbourhoodSystems.PeanoModel (@DomainTheory.NeighbourhoodSystems.Exercise422.Nat' M zero succ)) :=
-  @DomainTheory.NeighbourhoodSystems.Exercise422.exists_peano_submodel
-end
+theorem example_422 :
+    ∀ {M : Type*} (zero : M) (succ : M → M),
+      (∀ n, zero ≠ succ n) → Function.Injective succ →
+        Nonempty (PeanoModel (Nat' zero succ)) :=
+  @exists_peano_submodel
 
 section
 variable {M : Type*} (zero : M) (succ : M → M)

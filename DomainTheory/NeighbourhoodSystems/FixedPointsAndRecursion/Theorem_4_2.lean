@@ -3,7 +3,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.iSupDirected
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofMono
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_1
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.fixElement
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_10
@@ -12,12 +12,10 @@ public import Mathlib.Tactic.Bound
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
-section
+
 variable {α : Type*} {V : NeighborhoodSystem α}
-open ApproximableMap
 
 def fixMap (V : NeighborhoodSystem α) : ApproximableMap (funSpace V V) V :=
   ofMono (fun W hW => (toApproxMap ((funSpace V V).principal hW)).fixElement)
@@ -25,10 +23,6 @@ def fixMap (V : NeighborhoodSystem α) : ApproximableMap (funSpace V V) V :=
       apply fixElement_mono
       exact (funSpaceEquiv V V).monotone
         (((funSpace V V).principal_le_iff hW hW').mpr hW'W))
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
@@ -67,35 +61,6 @@ theorem exists_principal_iterMap (V : NeighborhoodSystem α) (φ : (funSpace V V
       exact ⟨step_mem hVY hVX, Set.inter_subset_right⟩
     exact ⟨Y, hYg, hgYX⟩
 
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
-theorem fixElement_le_of_toElementMap_le (f : ApproximableMap V V) {z : V.Element}
-    (hz : f.toElementMap z ≤ z) : f.fixElement ≤ z := by
-  have key : ∀ n X, (f.iterMap n).rel V.master X → z.mem X := by
-    intro n
-    induction n with
-    | zero =>
-      intro X hn
-      obtain ⟨_, hXmem, hmX⟩ := hn
-      have hXmaster : X = V.master := Set.Subset.antisymm (V.sub_master hXmem) hmX
-      subst hXmaster
-      exact z.master_mem
-    | succ k ih =>
-      intro X hn
-      obtain ⟨W, hW, hWX⟩ := hn
-      exact hz X ⟨W, ih W hW, hWX⟩
-  rintro X ⟨n, hn⟩
-  exact key n X hn
-
-end ApproximableMap
-
-open ApproximableMap
-
 theorem fixMap_toElementMap_principal (V : NeighborhoodSystem α)
     {W : Set (ApproximableMap V V)} (hW : (funSpace V V).mem W) :
     (fixMap V).toElementMap ((funSpace V V).principal hW) =
@@ -124,6 +89,11 @@ theorem fixMap_least (V : NeighborhoodSystem α) (φ : (funSpace V V).Element) {
   rw [fixMap_toElementMap]
   exact fixElement_le_of_toElementMap_le (toApproxMap φ) hz
 
+theorem toElementMap_fixMap (V : NeighborhoodSystem α) (φ : (funSpace V V).Element) :
+    (toApproxMap φ).toElementMap ((fixMap V).toElementMap φ) = (fixMap V).toElementMap φ := by
+  rw [fixMap_toElementMap]
+  exact toElementMap_fixElement _
+
 theorem fixMap_toElementMap_toFilter (V : NeighborhoodSystem α) (f : ApproximableMap V V) :
     (fixMap V).toElementMap (toFilter f) = f.fixElement := by
   rw [fixMap_toElementMap]
@@ -131,11 +101,6 @@ theorem fixMap_toElementMap_toFilter (V : NeighborhoodSystem α) (f : Approximab
     have he := (funSpaceEquiv V V).apply_symm_apply f
     rwa [funSpaceEquiv_apply, funSpaceEquiv_symm_apply] at he
   rw [h]
-
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
 
 namespace ApproximableMap
 
@@ -189,82 +154,17 @@ theorem fixMap_eq_iSup (V : NeighborhoodSystem α) (φ : (funSpace V V).Element)
   rw [fixMap_toElementMap]
   exact fixElement_eq_iSupDirected (toApproxMap φ)
 
-end
-
-section
-variable {α : Type*} {V : NeighborhoodSystem α}
-
-namespace ApproximableMap
-
-theorem toElementMap_fixElement (f : ApproximableMap V V) :
-    f.toElementMap f.fixElement = f.fixElement := by
-  apply Element.ext
-  intro Y
-  constructor
-  · rintro ⟨X, ⟨n, hn⟩, hXY⟩
-    exact ⟨n + 1, ⟨X, hn, hXY⟩⟩
-  · rintro ⟨n, hn⟩
-    cases n with
-    | zero =>
-      obtain ⟨_, hYmem, hmY⟩ := hn
-      have hYmaster : Y = V.master := Set.Subset.antisymm (V.sub_master hYmem) hmY
-      subst hYmaster
-      exact ⟨V.master, f.fixElement.master_mem, f.master_rel⟩
-    | succ k =>
-      obtain ⟨Z, hZ, hZY⟩ := hn
-      exact ⟨Z, ⟨k, hZ⟩, hZY⟩
-
-end ApproximableMap
-end
+/-- Scott's Theorem 4.2: the fix combinator is approximable, least, and an iterate supremum. -/
+theorem theorem_42 :
+    (∀ {α : Type*} (V : NeighborhoodSystem α) (φ : (funSpace V V).Element),
+      (toApproxMap φ).toElementMap ((fixMap V).toElementMap φ) = (fixMap V).toElementMap φ) ∧
+    (∀ {α : Type*} (V : NeighborhoodSystem α) (φ : (funSpace V V).Element) {z : V.Element},
+      (toApproxMap φ).toElementMap z ≤ z → (fixMap V).toElementMap φ ≤ z) ∧
+    (∀ {α : Type*} (V : NeighborhoodSystem α) (φ : (funSpace V V).Element),
+      (fixMap V).toElementMap φ =
+        NeighborhoodSystem.iSupDirected ((toApproxMap φ).iterElem)
+          (fun i j => ⟨max i j, iterElem_mono _ (le_max_left i j),
+            iterElem_mono _ (le_max_right i j)⟩)) :=
+  ⟨@toElementMap_fixMap, @fixMap_least, @fixMap_eq_iSup⟩
 
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.ApproximableMap
-section
-set_option linter.unusedVariables false
-
-theorem theorem_41.{u_1} : And
-  (∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
-    {z : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V},
-    @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α V V f z) z →
-      @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement α V f) z)
-  (∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V),
-    @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α V V f
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement α V f))
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement α V f)) :=
-  @And.intro
-  (∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
-    {z : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V},
-    @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α V V f z) z →
-      @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement α V f) z)
-  (∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V),
-    @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α V V f
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement α V f))
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement α V f))
-  @DomainTheory.NeighbourhoodSystems.ApproximableMap.fixElement_le_of_toElementMap_le
-  @DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap_fixElement
-end
-
-end DomainTheory.NeighbourhoodSystems.ApproximableMap
-end

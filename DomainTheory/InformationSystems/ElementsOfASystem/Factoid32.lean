@@ -6,13 +6,9 @@ public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32.factoi
 
 namespace DomainTheory.InformationSystems.InfoSys
 
-set_option linter.unusedVariables false
-
-theorem theorem_32.{u_1} : ∀ {α : Type u_1} [inst : DecidableEq α] (sys : @DomainTheory.InformationSystems.InfoSys α inst)
-  (x : @DomainTheory.InformationSystems.InfoSys.Element α inst sys),
-  @Membership.mem α (Set α) (@Set.instMembership α)
-    (@DomainTheory.InformationSystems.InfoSys.Element.carrier α inst sys x)
-    (@DomainTheory.InformationSystems.InfoSys.bot α inst sys) :=
-  @DomainTheory.InformationSystems.InfoSys.factoid_3_2
+theorem theorem_32 :
+    ∀ {α : Type*} [DecidableEq α] (sys : InfoSys α) (x : sys.Element),
+      sys.bot ∈ x.carrier :=
+  @factoid_3_2
 
 end DomainTheory.InformationSystems.InfoSys

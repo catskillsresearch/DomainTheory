@@ -16,11 +16,8 @@ open NeighborhoodSystem
 
 theorem exercise813a : U ≅ᴰ V := ⟨effectiveIso812_UV.toDomainIso⟩
 
-set_option linter.unusedVariables false
-
-theorem example_813_a : @DomainTheory.NeighbourhoodSystems.Isomorphic Rat Nat DomainTheory.NeighbourhoodSystems.U
-  DomainTheory.NeighbourhoodSystems.V :=
-  DomainTheory.NeighbourhoodSystems.exercise813a
+theorem example_813_a : U ≅ᴰ V :=
+  exercise813a
 
 open NeighborhoodSystem
 
@@ -272,12 +269,8 @@ theorem entails_iff_evalSet_subset {φ ψ : Formula} :
     rw [h2, ← mem_evalSet_iff]
     exact h (by rw [mem_evalSet_iff, ← h1]; exact hv)
 
-set_option linter.unusedVariables false
-
-theorem example_813_b : ∀ {φ ψ : DomainTheory.NeighbourhoodSystems.Formula},
-  Iff (DomainTheory.NeighbourhoodSystems.Entails φ ψ)
-    (@LE.le (Set Nat) (@Set.instLE Nat) (DomainTheory.NeighbourhoodSystems.evalSet φ)
-      (DomainTheory.NeighbourhoodSystems.evalSet ψ)) :=
-  @DomainTheory.NeighbourhoodSystems.entails_iff_evalSet_subset
+theorem example_813_b :
+    ∀ {φ ψ : Formula}, Entails φ ψ ↔ evalSet φ ⊆ evalSet ψ :=
+  @entails_iff_evalSet_subset
 
 end DomainTheory.NeighbourhoodSystems

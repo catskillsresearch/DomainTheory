@@ -31,7 +31,7 @@ section
 open NeighborhoodSystem
 variable {α : Type*}
 
-theorem theorem_8_8_a.{u} {α : Type u} (D : NeighborhoodSystem α)
+theorem theorem_8_8_a {α : Type*} (D : NeighborhoodSystem α)
     [Countable {S : Set α // D.mem S}] :
     ∃ D' : NeighborhoodSystem ℚ, (D ≅ᴰ D') ∧ (D' ◁ U) := by
   have : Nonempty {S : Set α // D.mem S} := ⟨⟨D.master, D.master_mem⟩⟩
@@ -54,7 +54,7 @@ theorem theorem_8_8_a.{u} {α : Type u} (D : NeighborhoodSystem α)
       | succ n => rw [hen n]; exact (f n).2
   exact ⟨DprimeU D e hcover he0, isomorphic_DprimeU D e hcover he0, DprimeU_subsystem D e hcover he0⟩
 
-theorem theorem_8_8.{u} {α : Type u} (D : NeighborhoodSystem α)
+theorem theorem_8_8 {α : Type*} (D : NeighborhoodSystem α)
     [Countable {S : Set α // D.mem S}] : D ⊴ U := by
   obtain ⟨D', hiso, hsub⟩ := theorem_8_8_a D
   exact ⟨D', hsub, hiso⟩

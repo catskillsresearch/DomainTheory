@@ -192,33 +192,21 @@ theorem VX_zero : VX 0 = V.master := by
   rw [← VX_canonIdx 0, hc0]
   exact VX_VmasterIdx
 
-set_option linter.unusedVariables false
+theorem example_812_e_d : SplitSpec' V splitX812e :=
+  @hxSplit812e
 
-theorem example_812_e_d : @DomainTheory.NeighbourhoodSystems.SplitSpec' Rat Nat DomainTheory.NeighbourhoodSystems.V
-  DomainTheory.NeighbourhoodSystems.splitX812e :=
-  @DomainTheory.NeighbourhoodSystems.hxSplit812e
+theorem example_812_f : SplitSpec' U splitX812f :=
+  @hySplit812f
 
-theorem example_812_f : @DomainTheory.NeighbourhoodSystems.SplitSpec' Nat Rat DomainTheory.NeighbourhoodSystems.U
-  DomainTheory.NeighbourhoodSystems.splitX812f :=
-  @DomainTheory.NeighbourhoodSystems.hySplit812f
+theorem example_812_g1a : UX 0 = U.master :=
+  UX_zero
 
-theorem example_812_g1a : @Eq (Set Rat) (DomainTheory.NeighbourhoodSystems.UX (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
-  (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master Rat DomainTheory.NeighbourhoodSystems.U) :=
-  DomainTheory.NeighbourhoodSystems.UX_zero
+theorem example_812_g1b : VX 0 = V.master :=
+  VX_zero
 
-theorem example_812_g1b : @Eq (Set Nat) (DomainTheory.NeighbourhoodSystems.VX (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))
-  (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master Nat DomainTheory.NeighbourhoodSystems.V) :=
-  DomainTheory.NeighbourhoodSystems.VX_zero
-
-theorem example_812_g2 : ∀ {n m : Nat},
-  (∃ (k : Nat),
-      @Eq (Set Nat) (DomainTheory.NeighbourhoodSystems.VX k)
-        (@Union.union (Set Nat) (@Set.instUnion Nat) (DomainTheory.NeighbourhoodSystems.VX n)
-          (DomainTheory.NeighbourhoodSystems.VX m))) →
-    @Eq (Set Nat) (DomainTheory.NeighbourhoodSystems.VX (DomainTheory.NeighbourhoodSystems.Vunion n m))
-      (@Union.union (Set Nat) (@Set.instUnion Nat) (DomainTheory.NeighbourhoodSystems.VX n)
-        (DomainTheory.NeighbourhoodSystems.VX m)) :=
-  @DomainTheory.NeighbourhoodSystems.Vunion.spec'
+theorem example_812_g2 :
+    ∀ {n m : ℕ}, (∃ k, VX k = VX n ∪ VX m) → VX (Vunion n m) = VX n ∪ VX m :=
+  @Vunion.spec'
 
 namespace primrec
 open Domain.Recursive NeighborhoodSystem

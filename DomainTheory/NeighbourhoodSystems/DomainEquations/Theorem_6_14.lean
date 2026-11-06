@@ -154,271 +154,20 @@ end
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Theorem614
 section
-set_option linter.unusedVariables false
+universe w
+open CategoryTheory NeighborhoodSystem Exercise510 Theorem614
 
-theorem theorem_614.{w} : And
-  (∀ (s : DomainTheory.NeighbourhoodSystems.Theorem614.Setup.{w}),
-    ∃ (A :
-      @DomainTheory.NeighbourhoodSystems.TAlgebra.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-        DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T),
-      And
-        (Nonempty.{w + 1}
-          (@DomainTheory.NeighbourhoodSystems.Iso.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-            DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w}
-            (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj.{w + 1, w}
-              DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-              DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-              (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T A))
-            (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-              DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-              DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T A)))
-        (∀
-          (B :
-            @DomainTheory.NeighbourhoodSystems.TAlgebra.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-              DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T),
-          @DomainTheory.NeighbourhoodSystems.Exercise510.IsStrict.{w, w}
-              (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj.{w + 1, w}
-                  DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                  (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                    DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                    DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B)).carrier
-              (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                  DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B).carrier
-              (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj.{w + 1, w}
-                  DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                  (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                    DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                    DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B)).sys
-              (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                  DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B).sys
-              (@DomainTheory.NeighbourhoodSystems.TAlgebra.str.{w + 1, w}
-                DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B) →
-            Nonempty.{w + 1}
-              (@DomainTheory.NeighbourhoodSystems.AlgHom.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T A B)))
-  (∀ (s : DomainTheory.NeighbourhoodSystems.Theorem614.Setup.{w}),
-    (∀ (X : Set.{w} s.Tok),
-        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem.{w} s.Tok s.Γ X →
-          @Eq.{w + 1} (Set.{w} s.Tok) X (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master.{w} s.Tok s.Γ)) →
-      ∀
-        (B :
-          @DomainTheory.NeighbourhoodSystems.TAlgebra.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-            DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T),
-        @DomainTheory.NeighbourhoodSystems.Exercise510.IsStrict.{w, w}
-            (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj.{w + 1, w}
-                DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                  DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B)).carrier
-            (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B).carrier
-            (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj.{w + 1, w}
-                DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                  DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B)).sys
-            (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B).sys
-            (@DomainTheory.NeighbourhoodSystems.TAlgebra.str.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-              DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B) →
-          ∃ (g :
-            @DomainTheory.NeighbourhoodSystems.AlgHom.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-              DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-              (DomainTheory.NeighbourhoodSystems.Theorem614.colimAlg.{w} s) B),
-            And
-              (@DomainTheory.NeighbourhoodSystems.Exercise510.IsStrict.{w, w}
-                (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                    DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                    DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                    (DomainTheory.NeighbourhoodSystems.Theorem614.colimAlg.{w} s)).carrier
-                (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                    DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                    DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B).carrier
-                (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                    DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                    DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                    (DomainTheory.NeighbourhoodSystems.Theorem614.colimAlg.{w} s)).sys
-                (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                    DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                    DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B).sys
-                (@DomainTheory.NeighbourhoodSystems.AlgHom.hom.{w + 1, w}
-                  DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                  (DomainTheory.NeighbourhoodSystems.Theorem614.colimAlg.{w} s) B g))
-              (∀
-                (g' :
-                  @DomainTheory.NeighbourhoodSystems.AlgHom.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                    DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                    (DomainTheory.NeighbourhoodSystems.Theorem614.colimAlg.{w} s) B),
-                @DomainTheory.NeighbourhoodSystems.Exercise510.IsStrict.{w, w}
-                    (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                        DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                        DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                        (DomainTheory.NeighbourhoodSystems.Theorem614.colimAlg.{w} s)).carrier
-                    (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                        DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                        DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B).carrier
-                    (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                        DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                        DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                        (DomainTheory.NeighbourhoodSystems.Theorem614.colimAlg.{w} s)).sys
-                    (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                        DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                        DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B).sys
-                    (@DomainTheory.NeighbourhoodSystems.AlgHom.hom.{w + 1, w}
-                      DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                      DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                      (DomainTheory.NeighbourhoodSystems.Theorem614.colimAlg.{w} s) B g') →
-                  @Eq.{w + 1}
-                    (@DomainTheory.NeighbourhoodSystems.AlgHom.{w + 1, w}
-                      DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                      DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                      (DomainTheory.NeighbourhoodSystems.Theorem614.colimAlg.{w} s) B)
-                    g' g)) :=
-  @And.intro
-  (∀ (s : DomainTheory.NeighbourhoodSystems.Theorem614.Setup.{w}),
-    ∃ (A :
-      @DomainTheory.NeighbourhoodSystems.TAlgebra.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-        DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T),
-      And
-        (Nonempty.{w + 1}
-          (@DomainTheory.NeighbourhoodSystems.Iso.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-            DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w}
-            (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj.{w + 1, w}
-              DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-              DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-              (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T A))
-            (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-              DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-              DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T A)))
-        (∀
-          (B :
-            @DomainTheory.NeighbourhoodSystems.TAlgebra.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-              DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T),
-          @DomainTheory.NeighbourhoodSystems.Exercise510.IsStrict.{w, w}
-              (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj.{w + 1, w}
-                  DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                  (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                    DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                    DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B)).carrier
-              (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                  DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B).carrier
-              (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj.{w + 1, w}
-                  DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                  (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                    DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                    DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B)).sys
-              (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                  DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B).sys
-              (@DomainTheory.NeighbourhoodSystems.TAlgebra.str.{w + 1, w}
-                DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B) →
-            Nonempty.{w + 1}
-              (@DomainTheory.NeighbourhoodSystems.AlgHom.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T A B)))
-  (∀ (s : DomainTheory.NeighbourhoodSystems.Theorem614.Setup.{w}),
-    (∀ (X : Set.{w} s.Tok),
-        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem.{w} s.Tok s.Γ X →
-          @Eq.{w + 1} (Set.{w} s.Tok) X (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master.{w} s.Tok s.Γ)) →
-      ∀
-        (B :
-          @DomainTheory.NeighbourhoodSystems.TAlgebra.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-            DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T),
-        @DomainTheory.NeighbourhoodSystems.Exercise510.IsStrict.{w, w}
-            (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj.{w + 1, w}
-                DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                  DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B)).carrier
-            (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B).carrier
-            (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj.{w + 1, w}
-                DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                  DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B)).sys
-            (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B).sys
-            (@DomainTheory.NeighbourhoodSystems.TAlgebra.str.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-              DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B) →
-          ∃ (g :
-            @DomainTheory.NeighbourhoodSystems.AlgHom.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-              DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-              (DomainTheory.NeighbourhoodSystems.Theorem614.colimAlg.{w} s) B),
-            And
-              (@DomainTheory.NeighbourhoodSystems.Exercise510.IsStrict.{w, w}
-                (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                    DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                    DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                    (DomainTheory.NeighbourhoodSystems.Theorem614.colimAlg.{w} s)).carrier
-                (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                    DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                    DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B).carrier
-                (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                    DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                    DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                    (DomainTheory.NeighbourhoodSystems.Theorem614.colimAlg.{w} s)).sys
-                (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                    DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                    DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B).sys
-                (@DomainTheory.NeighbourhoodSystems.AlgHom.hom.{w + 1, w}
-                  DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                  DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                  (DomainTheory.NeighbourhoodSystems.Theorem614.colimAlg.{w} s) B g))
-              (∀
-                (g' :
-                  @DomainTheory.NeighbourhoodSystems.AlgHom.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                    DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                    (DomainTheory.NeighbourhoodSystems.Theorem614.colimAlg.{w} s) B),
-                @DomainTheory.NeighbourhoodSystems.Exercise510.IsStrict.{w, w}
-                    (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                        DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                        DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                        (DomainTheory.NeighbourhoodSystems.Theorem614.colimAlg.{w} s)).carrier
-                    (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                        DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                        DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B).carrier
-                    (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                        DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                        DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                        (DomainTheory.NeighbourhoodSystems.Theorem614.colimAlg.{w} s)).sys
-                    (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w}
-                        DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                        DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T B).sys
-                    (@DomainTheory.NeighbourhoodSystems.AlgHom.hom.{w + 1, w}
-                      DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                      DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                      (DomainTheory.NeighbourhoodSystems.Theorem614.colimAlg.{w} s) B g') →
-                  @Eq.{w + 1}
-                    (@DomainTheory.NeighbourhoodSystems.AlgHom.{w + 1, w}
-                      DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-                      DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} s.T
-                      (DomainTheory.NeighbourhoodSystems.Theorem614.colimAlg.{w} s) B)
-                    g' g))
-  DomainTheory.NeighbourhoodSystems.Theorem614.exists_algebra_with_hom.{w}
-  DomainTheory.NeighbourhoodSystems.Theorem614.exists_unique_strict_algHom.{w}
+theorem theorem_614 :
+    (∀ s : Setup.{w}, ∃ A : TAlgebra s.T,
+        Nonempty (Iso (s.T.obj A.carrier) A.carrier) ∧
+          ∀ B : TAlgebra s.T, IsStrict B.str → Nonempty (AlgHom A B)) ∧
+    (∀ (s : Setup.{w}) (_hΓ : ∀ X, s.Γ.mem X → X = s.Γ.master) (B : TAlgebra s.T) (_hk : IsStrict B.str),
+      ∃ g : AlgHom (colimAlg s) B, IsStrict g.hom ∧
+        ∀ g' : AlgHom (colimAlg s) B, IsStrict g'.hom → g' = g) :=
+  ⟨@exists_algebra_with_hom, @exists_unique_strict_algHom⟩
+
 end
+
 
 end DomainTheory.NeighbourhoodSystems.Theorem614
 namespace DomainTheory.NeighbourhoodSystems
@@ -483,6 +232,7 @@ end
 
 section
 universe u
+open CategoryTheory
 variable {Obj : Type u} [Category Obj] {T : Endofunctor Obj}
 
 abbrev tStr (A : TAlgebra T) : TAlgebra T where
@@ -494,37 +244,18 @@ def strHom (A : TAlgebra T) : AlgHom (tStr A) A where
   comm := rfl
 
 theorem str_comp_desc (A : TAlgebra T) (hA : IsInitial A) :
-    A.str ⊚ (hA.desc (tStr A)).hom = (𝟙 A.carrier) := by
+    A.str ⊚ (hA.desc (tStr A)).hom = (AlgHom.id A).hom := by
   have h : (strHom A).comp (hA.desc (tStr A)) = AlgHom.id A := by
     rw [hA.uniq A ((strHom A).comp (hA.desc (tStr A))), hA.uniq A (AlgHom.id A)]
   exact congrArg AlgHom.hom h
 
+/-- Scott's Theorem 6.7: the structure map recovers the identity via the initial desc. -/
+theorem theorem_67 (A : TAlgebra T) (hA : IsInitial A) :
+    A.str ⊚ (hA.desc (tStr A)).hom = (AlgHom.id A).hom :=
+  str_comp_desc A hA
+
 end
 
-section
-set_option linter.unusedVariables false
-
-theorem theorem_67.{u, u_1} : ∀ {Obj : Type u} [inst : CategoryTheory.Category.{u_1, u} Obj]
-  {T : @DomainTheory.NeighbourhoodSystems.Endofunctor Obj inst}
-  (A : @DomainTheory.NeighbourhoodSystems.TAlgebra Obj inst T)
-  (hA : @DomainTheory.NeighbourhoodSystems.IsInitial Obj inst T A),
-  @Eq
-    (@Quiver.Hom Obj (@CategoryTheory.CategoryStruct.toQuiver Obj (@CategoryTheory.Category.toCategoryStruct Obj inst))
-      (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier Obj inst T A)
-      (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier Obj inst T A))
-    (@DomainTheory.NeighbourhoodSystems.compAfter Obj inst
-      (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier Obj inst T A)
-      (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj Obj inst T
-        (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier Obj inst T A))
-      (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier Obj inst T A)
-      (@DomainTheory.NeighbourhoodSystems.TAlgebra.str Obj inst T A)
-      (@DomainTheory.NeighbourhoodSystems.AlgHom.hom Obj inst T A (@DomainTheory.NeighbourhoodSystems.tStr Obj inst T A)
-        (@DomainTheory.NeighbourhoodSystems.IsInitial.desc Obj inst T A hA
-          (@DomainTheory.NeighbourhoodSystems.tStr Obj inst T A))))
-    (@CategoryTheory.CategoryStruct.id Obj (@CategoryTheory.Category.toCategoryStruct Obj inst)
-      (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier Obj inst T A)) :=
-  @DomainTheory.NeighbourhoodSystems.str_comp_desc
-end
 
 section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510

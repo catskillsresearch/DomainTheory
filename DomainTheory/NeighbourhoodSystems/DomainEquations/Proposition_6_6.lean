@@ -35,16 +35,13 @@ theorem iso_hom_unique (hA : IsInitial A) (h : AlgHom A B) : h = hA.desc B :=
 end
 
 section
-set_option linter.unusedVariables false
+open CategoryTheory
 
-theorem theorem_66.{u, u_1} : ∀ {Obj : Type u} [inst : CategoryTheory.Category.{u_1, u} Obj]
-  {T : @DomainTheory.NeighbourhoodSystems.Endofunctor Obj inst}
-  {A B : @DomainTheory.NeighbourhoodSystems.TAlgebra Obj inst T}
-  (hA : @DomainTheory.NeighbourhoodSystems.IsInitial Obj inst T A)
-  (h : @DomainTheory.NeighbourhoodSystems.AlgHom Obj inst T A B),
-  @Eq (@DomainTheory.NeighbourhoodSystems.AlgHom Obj inst T A B) h
-    (@DomainTheory.NeighbourhoodSystems.IsInitial.desc Obj inst T A hA B) :=
-  @DomainTheory.NeighbourhoodSystems.iso_hom_unique
+/-- Scott's Proposition 6.6: the unique algebra homomorphism out of an initial algebra. -/
+theorem theorem_66 :
+    ∀ {Obj : Type*} [Category Obj] {T : Endofunctor Obj} {A B : TAlgebra T}
+      (hA : IsInitial A) (h : AlgHom A B), h = hA.desc B :=
+  @iso_hom_unique
 end
 
 section

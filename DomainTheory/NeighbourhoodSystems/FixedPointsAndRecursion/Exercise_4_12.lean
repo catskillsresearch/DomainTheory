@@ -73,122 +73,12 @@ theorem no_greatest_fixedPoint :
 end
 
 section
-set_option linter.unusedVariables false
 
-theorem example_412 : And
-  (∀
-    (x :
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.Example12.Token
-        DomainTheory.NeighbourhoodSystems.Exercise412.T),
-    @Eq
-      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.Example12.Token
-        DomainTheory.NeighbourhoodSystems.Exercise412.T)
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap DomainTheory.NeighbourhoodSystems.Example12.Token
-        DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise412.T
-        DomainTheory.NeighbourhoodSystems.Exercise412.T
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap DomainTheory.NeighbourhoodSystems.Example12.Token
-          DomainTheory.NeighbourhoodSystems.Exercise412.T)
-        x)
-      x)
-  (Not
-    (∃ (z :
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.Example12.Token
-        DomainTheory.NeighbourhoodSystems.Exercise412.T),
-      And
-        (@Eq
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-            DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise412.T)
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
-            DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Example12.Token
-            DomainTheory.NeighbourhoodSystems.Exercise412.T DomainTheory.NeighbourhoodSystems.Exercise412.T
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap DomainTheory.NeighbourhoodSystems.Example12.Token
-              DomainTheory.NeighbourhoodSystems.Exercise412.T)
-            z)
-          z)
-        (∀
-          (x :
-            @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-              DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise412.T),
-          @Eq
-              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-                DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise412.T)
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
-                DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Example12.Token
-                DomainTheory.NeighbourhoodSystems.Exercise412.T DomainTheory.NeighbourhoodSystems.Exercise412.T
-                (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap
-                  DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise412.T)
-                x)
-              x →
-            @LE.le
-              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-                DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise412.T)
-              (@Preorder.toLE
-                (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-                  DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise412.T)
-                (@PartialOrder.toPreorder
-                  (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-                    DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise412.T)
-                  (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement
-                    DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise412.T)))
-              x z))) :=
-  @And.intro
-  (∀
-    (x :
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.Example12.Token
-        DomainTheory.NeighbourhoodSystems.Exercise412.T),
-    @Eq
-      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.Example12.Token
-        DomainTheory.NeighbourhoodSystems.Exercise412.T)
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap DomainTheory.NeighbourhoodSystems.Example12.Token
-        DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise412.T
-        DomainTheory.NeighbourhoodSystems.Exercise412.T
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap DomainTheory.NeighbourhoodSystems.Example12.Token
-          DomainTheory.NeighbourhoodSystems.Exercise412.T)
-        x)
-      x)
-  (Not
-    (∃ (z :
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element DomainTheory.NeighbourhoodSystems.Example12.Token
-        DomainTheory.NeighbourhoodSystems.Exercise412.T),
-      And
-        (@Eq
-          (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-            DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise412.T)
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
-            DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Example12.Token
-            DomainTheory.NeighbourhoodSystems.Exercise412.T DomainTheory.NeighbourhoodSystems.Exercise412.T
-            (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap DomainTheory.NeighbourhoodSystems.Example12.Token
-              DomainTheory.NeighbourhoodSystems.Exercise412.T)
-            z)
-          z)
-        (∀
-          (x :
-            @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-              DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise412.T),
-          @Eq
-              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-                DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise412.T)
-              (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap
-                DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Example12.Token
-                DomainTheory.NeighbourhoodSystems.Exercise412.T DomainTheory.NeighbourhoodSystems.Exercise412.T
-                (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap
-                  DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise412.T)
-                x)
-              x →
-            @LE.le
-              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-                DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise412.T)
-              (@Preorder.toLE
-                (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-                  DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise412.T)
-                (@PartialOrder.toPreorder
-                  (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element
-                    DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise412.T)
-                  (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement
-                    DomainTheory.NeighbourhoodSystems.Example12.Token DomainTheory.NeighbourhoodSystems.Exercise412.T)))
-              x z)))
-  DomainTheory.NeighbourhoodSystems.Exercise412.idMap_fixed
-  DomainTheory.NeighbourhoodSystems.Exercise412.no_greatest_fixedPoint
+theorem example_412 :
+    (∀ (x : T.Element), (idMap T).toElementMap x = x) ∧
+    (¬ ∃ z : T.Element, (idMap T).toElementMap z = z ∧
+        ∀ x, (idMap T).toElementMap x = x → x ≤ z) :=
+  ⟨@idMap_fixed, @no_greatest_fixedPoint⟩
 end
 
 end DomainTheory.NeighbourhoodSystems.Exercise412

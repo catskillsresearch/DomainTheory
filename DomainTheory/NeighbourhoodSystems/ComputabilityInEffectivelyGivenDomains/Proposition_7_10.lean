@@ -321,14 +321,15 @@ end
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
 section
-set_option linter.unusedVariables false
+open NeighborhoodSystem
 
-theorem theorem_710.{u_1} : ∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α},
-  @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven α V →
-    @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven (Set α)
-      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain α V) :=
-  @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.PowerDomain_isEffectivelyGiven
+/-- Scott's Proposition 7.10: the powerdomain of an effectively given system is effectively given. -/
+theorem theorem_710 :
+    ∀ {α : Type*} {V : NeighborhoodSystem α},
+      V.IsEffectivelyGiven → V.PowerDomain.IsEffectivelyGiven :=
+  @PowerDomain_isEffectivelyGiven
 end
+
 
 end DomainTheory.NeighbourhoodSystems.NeighborhoodSystem
 namespace DomainTheory.NeighbourhoodSystems

@@ -221,35 +221,14 @@ theorem trianglelefteq_of_isInitial
 end
 
 section
-set_option linter.unusedVariables false
+universe w
 
-theorem theorem_616.{w} : ∀
-  (T :
-    @DomainTheory.NeighbourhoodSystems.Endofunctor.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-      DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w}),
-  DomainTheory.NeighbourhoodSystems.ContinuousOnMaps.{w} T →
-    ∀
-      (Dalg :
-        @DomainTheory.NeighbourhoodSystems.TAlgebra.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-          DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} T)
-      (hinit :
-        @DomainTheory.NeighbourhoodSystems.IsInitial.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-          DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} T Dalg)
-      (E : DomainTheory.NeighbourhoodSystems.DomainObj.{w})
-      (isoE :
-        @DomainTheory.NeighbourhoodSystems.Iso.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-          DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w}
-          (@DomainTheory.NeighbourhoodSystems.Endofunctor.obj.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-            DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} T E)
-          E),
-      @DomainTheory.NeighbourhoodSystems.Trianglelefteq.{w, w}
-        (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-            DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} T Dalg).carrier
-        E.carrier
-        (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier.{w + 1, w} DomainTheory.NeighbourhoodSystems.DomainObj.{w}
-            DomainTheory.NeighbourhoodSystems.instCategoryDomainObj.{w} T Dalg).sys
-        E.sys :=
-  DomainTheory.NeighbourhoodSystems.trianglelefteq_of_isInitial.{w}
+/-- Scott's Theorem 6.16: the initial algebra embeds in any carrier with a coalgebra isomorphism. -/
+theorem theorem_616 (T : Endofunctor DomainObj.{w}) (hT : ContinuousOnMaps T) (Dalg : TAlgebra T)
+    (hinit : IsInitial Dalg) (E : DomainObj.{w}) (isoE : Iso (T.obj E) E) :
+    Dalg.carrier.sys ⊴ E.sys :=
+  trianglelefteq_of_isInitial T hT Dalg hinit E isoE
+
 end
 
 section

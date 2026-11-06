@@ -1,3 +1,0 @@
-# Lecture IV exercises
-
-## EXERCISES

@@ -311,44 +311,15 @@ end FiniteDomain
 
 end
 
-set_option linter.unusedVariables false
+open NeighborhoodSystem ApproximableMap
 
-theorem example_814.{u} : And
-  (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E}
-    (h : @DomainTheory.NeighbourhoodSystems.ClosureOperator α E a)
-    (y : @DomainTheory.NeighbourhoodSystems.FixSet α E a),
-    Iff (@DomainTheory.NeighbourhoodSystems.IsCompactFix α E a h y)
-      (∃ (X : Set α) (hX : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α E X),
-        @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α E)
-          (@Subtype.val (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α E)
-            (fun (y : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α E) =>
-              @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α E)
-                (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α E E a y) y)
-            y)
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α E E a
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.principal α E X hX))))
-  (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-    @DomainTheory.NeighbourhoodSystems.ClosureOperator α E a → @DomainTheory.NeighbourhoodSystems.IsFinitary α E a) :=
-  @And.intro
-  (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E}
-    (h : @DomainTheory.NeighbourhoodSystems.ClosureOperator α E a)
-    (y : @DomainTheory.NeighbourhoodSystems.FixSet α E a),
-    Iff (@DomainTheory.NeighbourhoodSystems.IsCompactFix α E a h y)
-      (∃ (X : Set α) (hX : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α E X),
-        @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α E)
-          (@Subtype.val (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α E)
-            (fun (y : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α E) =>
-              @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α E)
-                (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α E E a y) y)
-            y)
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α E E a
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.principal α E X hX))))
-  (∀ {α : Type u} {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    {a : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E},
-    @DomainTheory.NeighbourhoodSystems.ClosureOperator α E a → @DomainTheory.NeighbourhoodSystems.IsFinitary α E a)
-  @DomainTheory.NeighbourhoodSystems.isCompactFix_iff @DomainTheory.NeighbourhoodSystems.isFinitary_of_isClosureOperator
+theorem example_814 :
+    (∀ {α : Type*} {E : NeighborhoodSystem α} {a : ApproximableMap E E}
+      (h : ClosureOperator a) (y : FixSet a),
+      IsCompactFix h y ↔
+        ∃ (X : Set α) (hX : E.mem X), y.1 = a.toElementMap (E.principal hX)) ∧
+    (∀ {α : Type*} {E : NeighborhoodSystem α} {a : ApproximableMap E E},
+      ClosureOperator a → IsFinitary a) :=
+  ⟨@isCompactFix_iff, @isFinitary_of_isClosureOperator⟩
 
 end DomainTheory.NeighbourhoodSystems

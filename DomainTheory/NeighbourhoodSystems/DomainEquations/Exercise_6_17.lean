@@ -573,22 +573,12 @@ def CisInitial : IsInitial Calg where
 end
 
 section
-set_option linter.unusedVariables false
+open Example44 Example62C ExampleB Exercise419 Exercise516
 
-theorem example_617 : ∀
-  (B :
-    @DomainTheory.NeighbourhoodSystems.TAlgebra DomainTheory.NeighbourhoodSystems.StrictDomainObj
-      DomainTheory.NeighbourhoodSystems.instCategoryStrictDomainObj DomainTheory.NeighbourhoodSystems.Tc)
-  (h' :
-    @DomainTheory.NeighbourhoodSystems.AlgHom DomainTheory.NeighbourhoodSystems.StrictDomainObj
-      DomainTheory.NeighbourhoodSystems.instCategoryStrictDomainObj DomainTheory.NeighbourhoodSystems.Tc
-      DomainTheory.NeighbourhoodSystems.Calg B),
-  @Eq
-    (@DomainTheory.NeighbourhoodSystems.AlgHom DomainTheory.NeighbourhoodSystems.StrictDomainObj
-      DomainTheory.NeighbourhoodSystems.instCategoryStrictDomainObj DomainTheory.NeighbourhoodSystems.Tc
-      DomainTheory.NeighbourhoodSystems.Calg B)
-    h' (DomainTheory.NeighbourhoodSystems.descAlgHom B) :=
-  DomainTheory.NeighbourhoodSystems.descAlgHom_uniq
+/-- Scott's Exercise 6.17: the initial `Tc`-algebra is unique. -/
+theorem example_617 (B : TAlgebra Tc) (h' : AlgHom Calg B) : h' = descAlgHom B :=
+  @descAlgHom_uniq B h'
+
 end
 
 end DomainTheory.NeighbourhoodSystems
@@ -2191,15 +2181,12 @@ theorem Cn_domain_equation (A : Type) [DecidableEq A] [Inhabited A] :
 end
 
 section
-set_option linter.unusedVariables false
+open Exercise617Gen
 
-theorem example_617_gen : ∀ (A : Type) [inst : DecidableEq A] [Inhabited A],
-  @DomainTheory.NeighbourhoodSystems.Isomorphic (DomainTheory.NeighbourhoodSystems.Exercise617Gen.Strn A)
-    (DomainTheory.NeighbourhoodSystems.Exercise617Gen.SigTok A
-      (DomainTheory.NeighbourhoodSystems.Exercise617Gen.Strn A))
-    (@DomainTheory.NeighbourhoodSystems.Exercise617Gen.Cn A inst)
-    (@DomainTheory.NeighbourhoodSystems.Exercise617Gen.CCn A inst) :=
-  DomainTheory.NeighbourhoodSystems.Exercise617Gen.Cn_domain_equation
+/-- Scott's Exercise 6.17 (general `A`): `Cn A` and `CCn A` are isomorphic domains. -/
+theorem example_617_gen (A : Type) [DecidableEq A] [Inhabited A] : Cn A ≅ᴰ CCn A :=
+  @Cn_domain_equation A _ _
+
 end
 
 section
@@ -2447,21 +2434,15 @@ end
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise618
 section
-set_option linter.unusedVariables false
+open Exercise510
 
-theorem example_618.{u_2, u_3, u_4, u_5} : ∀ {α : Type u_2} {β : Type u_3} {α' : Type u_4} {β' : Type u_5}
-  {V₀ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-  {V₁ : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
-  {V₀' : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α'}
-  {V₁' : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β'}
-  {f₀ : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α' V₀ V₀'}
-  {f₁ : @DomainTheory.NeighbourhoodSystems.ApproximableMap β β' V₁ V₁'},
-  @DomainTheory.NeighbourhoodSystems.Exercise510.IsStrict α α' V₀ V₀' f₀ →
-    @DomainTheory.NeighbourhoodSystems.Exercise510.IsStrict β β' V₁ V₁' f₁ →
-      @DomainTheory.NeighbourhoodSystems.Exercise510.IsStrict (Sum α β) (Sum α' β')
-        (@DomainTheory.NeighbourhoodSystems.prod α β V₀ V₁) (@DomainTheory.NeighbourhoodSystems.prod α' β' V₀' V₁')
-        (@DomainTheory.NeighbourhoodSystems.prodMap α β α' β' V₀ V₁ V₀' V₁' f₀ f₁) :=
-  @DomainTheory.NeighbourhoodSystems.Exercise618.isStrict_prodMap
+/-- Scott's Exercise 6.18: strictness is preserved by the product of two approximable maps. -/
+theorem example_618 {α β α' β' : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+    {V₀' : NeighborhoodSystem α'} {V₁' : NeighborhoodSystem β'} {f₀ : ApproximableMap V₀ V₀'}
+    {f₁ : ApproximableMap V₁ V₁'} :
+    IsStrict f₀ → IsStrict f₁ → IsStrict (prodMap f₀ f₁) :=
+  isStrict_prodMap
+
 end
 
 end DomainTheory.NeighbourhoodSystems.Exercise618

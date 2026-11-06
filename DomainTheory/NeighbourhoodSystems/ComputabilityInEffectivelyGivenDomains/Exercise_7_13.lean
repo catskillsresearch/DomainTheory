@@ -320,25 +320,16 @@ end InclStructure
 end
 
 section
-set_option linter.unusedVariables false
+open NeighborhoodSystem
 
-theorem example_713.{u_1} : And
-  (∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α V),
-    @DomainTheory.NeighbourhoodSystems.Isomorphic Nat α
-      (@DomainTheory.NeighbourhoodSystems.Exercise713.reconstruct α V P) V)
-  (∀ (I : DomainTheory.NeighbourhoodSystems.Exercise713.InclStructure),
-    @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven Nat I.toSystem) :=
-  @And.intro
-  (∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α V),
-    @DomainTheory.NeighbourhoodSystems.Isomorphic Nat α
-      (@DomainTheory.NeighbourhoodSystems.Exercise713.reconstruct α V P) V)
-  (∀ (I : DomainTheory.NeighbourhoodSystems.Exercise713.InclStructure),
-    @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven Nat I.toSystem)
-  (@DomainTheory.NeighbourhoodSystems.Exercise713.reconstruct_isomorphic)
-  DomainTheory.NeighbourhoodSystems.Exercise713.InclStructure.toSystem_isEffectivelyGiven
+/-- Scott's Exercise 7.13: reconstructing from a presentation; inclusion structures are effectively given. -/
+theorem example_713 :
+    (∀ {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V),
+      reconstruct P ≅ᴰ V) ∧
+    (∀ (I : InclStructure), I.toSystem.IsEffectivelyGiven) :=
+  ⟨@reconstruct_isomorphic, @InclStructure.toSystem_isEffectivelyGiven⟩
 end
+
 
 end DomainTheory.NeighbourhoodSystems.Exercise713
 end

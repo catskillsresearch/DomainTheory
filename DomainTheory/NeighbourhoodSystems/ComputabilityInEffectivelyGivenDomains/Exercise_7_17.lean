@@ -78,63 +78,20 @@ end
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Proposition77
 section
-set_option linter.unusedVariables false
+open NeighborhoodSystem Domain.Recursive ApproximableMap Example61
 
-theorem example_717.{u_1} : And
-  (∀ {α : Type u_1} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (hD : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α D X → @Set.Nonempty α X)
-    (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α D),
-    @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum (Prod (List Bool) α) (Prod (List Bool) α))
-      (Prod (List Bool) α)
-      (@DomainTheory.NeighbourhoodSystems.prod (Prod (List Bool) α) (Prod (List Bool) α)
-        (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
-        (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD))
-      (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
-      (@DomainTheory.NeighbourhoodSystems.prodPresentation (Prod (List Bool) α) (Prod (List Bool) α)
-        (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
-        (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
-        (@DomainTheory.NeighbourhoodSystems.Proposition77.dsharpPresentation α D P hD)
-        (@DomainTheory.NeighbourhoodSystems.Proposition77.dsharpPresentation α D P hD))
-      (@DomainTheory.NeighbourhoodSystems.Proposition77.dsharpPresentation α D P hD)
-      (@DomainTheory.NeighbourhoodSystems.Proposition77.pairSharpMap α D hD))
-  (∀ {α : Type u_1} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (hD : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α D X → @Set.Nonempty α X)
-    (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α D),
-    @DomainTheory.NeighbourhoodSystems.ComputableMap (Prod (List Bool) α) (Prod (List Bool) α)
-      (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
-      (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
-      (@DomainTheory.NeighbourhoodSystems.Proposition77.dsharpPresentation α D P hD)
-      (@DomainTheory.NeighbourhoodSystems.Proposition77.dsharpPresentation α D P hD)
-      (@DomainTheory.NeighbourhoodSystems.Proposition77.proj1Map α D hD)) :=
-  @And.intro
-  (∀ {α : Type u_1} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (hD : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α D X → @Set.Nonempty α X)
-    (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α D),
-    @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum (Prod (List Bool) α) (Prod (List Bool) α))
-      (Prod (List Bool) α)
-      (@DomainTheory.NeighbourhoodSystems.prod (Prod (List Bool) α) (Prod (List Bool) α)
-        (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
-        (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD))
-      (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
-      (@DomainTheory.NeighbourhoodSystems.prodPresentation (Prod (List Bool) α) (Prod (List Bool) α)
-        (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
-        (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
-        (@DomainTheory.NeighbourhoodSystems.Proposition77.dsharpPresentation α D P hD)
-        (@DomainTheory.NeighbourhoodSystems.Proposition77.dsharpPresentation α D P hD))
-      (@DomainTheory.NeighbourhoodSystems.Proposition77.dsharpPresentation α D P hD)
-      (@DomainTheory.NeighbourhoodSystems.Proposition77.pairSharpMap α D hD))
-  (∀ {α : Type u_1} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (hD : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α D X → @Set.Nonempty α X)
-    (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α D),
-    @DomainTheory.NeighbourhoodSystems.ComputableMap (Prod (List Bool) α) (Prod (List Bool) α)
-      (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
-      (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD)
-      (@DomainTheory.NeighbourhoodSystems.Proposition77.dsharpPresentation α D P hD)
-      (@DomainTheory.NeighbourhoodSystems.Proposition77.dsharpPresentation α D P hD)
-      (@DomainTheory.NeighbourhoodSystems.Proposition77.proj1Map α D hD))
-  @DomainTheory.NeighbourhoodSystems.Proposition77.pairSharp_isComputable
-  @DomainTheory.NeighbourhoodSystems.Proposition77.proj1_isComputable
+/-- Scott's Exercise 7.17 (part 1): pairing and second projection on D♯ are computable. -/
+theorem example_717 :
+    (∀ {α : Type*} {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
+      (P : ComputablePresentation D),
+      ComputableMap (prodPresentation (dsharpPresentation P hD) (dsharpPresentation P hD))
+        (dsharpPresentation P hD) (pairSharpMap hD)) ∧
+    (∀ {α : Type*} {D : NeighborhoodSystem α} (hD : ∀ X, D.mem X → X.Nonempty)
+      (P : ComputablePresentation D),
+      ComputableMap (dsharpPresentation P hD) (dsharpPresentation P hD) (proj1Map hD)) :=
+  ⟨@pairSharp_isComputable, @proj1_isComputable⟩
 end
+
 
 end DomainTheory.NeighbourhoodSystems.Proposition77
 namespace DomainTheory.NeighbourhoodSystems
@@ -733,25 +690,20 @@ end
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise717
 section
-set_option linter.unusedVariables false
+open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Proposition77
 
-theorem example_717_part2.{u_1, u_2} : ∀ {α : Type u_1} {β : Type u_2} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-  {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
-  {u : @DomainTheory.NeighbourhoodSystems.ApproximableMap α β D E}
-  {v :
-    @DomainTheory.NeighbourhoodSystems.ApproximableMap (Sum β β) β (@DomainTheory.NeighbourhoodSystems.prod β β E E) E}
-  (hD : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α D X → @Set.Nonempty α X)
-  (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α D)
-  (Q : @DomainTheory.NeighbourhoodSystems.ComputablePresentation β E),
-  @DomainTheory.NeighbourhoodSystems.ComputableMap α β D E P Q u →
-    @DomainTheory.NeighbourhoodSystems.ComputableMap (Sum β β) β (@DomainTheory.NeighbourhoodSystems.prod β β E E) E
-        (@DomainTheory.NeighbourhoodSystems.prodPresentation β β E E Q Q) Q v →
-      @DomainTheory.NeighbourhoodSystems.ComputableMap (Prod (List Bool) α) β
-        (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD) E
-        (@DomainTheory.NeighbourhoodSystems.Proposition77.dsharpPresentation α D P hD) Q
-        (@DomainTheory.NeighbourhoodSystems.Exercise717.gMap α β D E u v hD) :=
-  @DomainTheory.NeighbourhoodSystems.Exercise717.gMap_isComputable
+/-- Scott's Exercise 7.17 (part 2): the g-map is computable. -/
+theorem example_717_part2 :
+    ∀ {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
+      {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
+      (hD : ∀ X, D.mem X → X.Nonempty)
+      (P : ComputablePresentation D) (Q : ComputablePresentation E),
+      ComputableMap P Q u →
+        ComputableMap (prodPresentation Q Q) Q v →
+          ComputableMap (dsharpPresentation P hD) Q (gMap u v hD) :=
+  @gMap_isComputable
 end
+
 
 end DomainTheory.NeighbourhoodSystems.Exercise717
 namespace DomainTheory.NeighbourhoodSystems

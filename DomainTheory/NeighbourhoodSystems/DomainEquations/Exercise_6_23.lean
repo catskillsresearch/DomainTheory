@@ -79,87 +79,14 @@ end
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise619
 section
-set_option linter.unusedVariables false
+open NeighborhoodSystem ApproximableMap Example62 ExampleB Exercise510
 
-theorem example_623 : ∀ {N : DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys}
-  (hN :
-    @Membership.mem (List Bool) (Set DomainTheory.NeighbourhoodSystems.ExampleB.Str)
-      (@Set.instMembership DomainTheory.NeighbourhoodSystems.ExampleB.Str)
-      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.master DomainTheory.NeighbourhoodSystems.ExampleB.Str
-        N.sys)
-      (@List.nil Bool))
-  (B :
-    @DomainTheory.NeighbourhoodSystems.TAlgebra DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys
-      DomainTheory.NeighbourhoodSystems.Exercise619.instCategoryScottSys
-      (DomainTheory.NeighbourhoodSystems.Exercise619.TexpF N))
-  (g :
-    @DomainTheory.NeighbourhoodSystems.AlgHom DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys
-      DomainTheory.NeighbourhoodSystems.Exercise619.instCategoryScottSys
-      (DomainTheory.NeighbourhoodSystems.Exercise619.TexpF N)
-      (DomainTheory.NeighbourhoodSystems.Exercise619.ExpAlg N hN) B),
-  @LE.le
-    (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.ExampleB.Str
-      DomainTheory.NeighbourhoodSystems.ExampleB.Str (DomainTheory.NeighbourhoodSystems.Exercise619.Exp N hN).sys
-      (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys
-          DomainTheory.NeighbourhoodSystems.Exercise619.instCategoryScottSys
-          (DomainTheory.NeighbourhoodSystems.Exercise619.TexpF N) B).sys)
-    (@Preorder.toLE
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.ExampleB.Str
-        DomainTheory.NeighbourhoodSystems.ExampleB.Str (DomainTheory.NeighbourhoodSystems.Exercise619.Exp N hN).sys
-        (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys
-            DomainTheory.NeighbourhoodSystems.Exercise619.instCategoryScottSys
-            (DomainTheory.NeighbourhoodSystems.Exercise619.TexpF N) B).sys)
-      (@PartialOrder.toPreorder
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.ExampleB.Str
-          DomainTheory.NeighbourhoodSystems.ExampleB.Str (DomainTheory.NeighbourhoodSystems.Exercise619.Exp N hN).sys
-          (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys
-              DomainTheory.NeighbourhoodSystems.Exercise619.instCategoryScottSys
-              (DomainTheory.NeighbourhoodSystems.Exercise619.TexpF N) B).sys)
-        (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap
-          DomainTheory.NeighbourhoodSystems.ExampleB.Str DomainTheory.NeighbourhoodSystems.ExampleB.Str
-          (DomainTheory.NeighbourhoodSystems.Exercise619.Exp N hN).sys
-          (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys
-              DomainTheory.NeighbourhoodSystems.Exercise619.instCategoryScottSys
-              (DomainTheory.NeighbourhoodSystems.Exercise619.TexpF N) B).sys)))
-    (@DomainTheory.NeighbourhoodSystems.Exercise619.descMap N hN B)
-    (@Subtype.val
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.ExampleB.Str
-        DomainTheory.NeighbourhoodSystems.ExampleB.Str
-        (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys
-            DomainTheory.NeighbourhoodSystems.Exercise619.instCategoryScottSys
-            (DomainTheory.NeighbourhoodSystems.Exercise619.TexpF N)
-            (DomainTheory.NeighbourhoodSystems.Exercise619.ExpAlg N hN)).sys
-        (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys
-            DomainTheory.NeighbourhoodSystems.Exercise619.instCategoryScottSys
-            (DomainTheory.NeighbourhoodSystems.Exercise619.TexpF N) B).sys)
-      (fun
-          (f :
-            @DomainTheory.NeighbourhoodSystems.ApproximableMap DomainTheory.NeighbourhoodSystems.ExampleB.Str
-              DomainTheory.NeighbourhoodSystems.ExampleB.Str
-              (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier
-                  DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys
-                  DomainTheory.NeighbourhoodSystems.Exercise619.instCategoryScottSys
-                  (DomainTheory.NeighbourhoodSystems.Exercise619.TexpF N)
-                  (DomainTheory.NeighbourhoodSystems.Exercise619.ExpAlg N hN)).sys
-              (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier
-                  DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys
-                  DomainTheory.NeighbourhoodSystems.Exercise619.instCategoryScottSys
-                  (DomainTheory.NeighbourhoodSystems.Exercise619.TexpF N) B).sys) =>
-        @DomainTheory.NeighbourhoodSystems.Exercise510.IsStrict DomainTheory.NeighbourhoodSystems.ExampleB.Str
-          DomainTheory.NeighbourhoodSystems.ExampleB.Str
-          (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys
-              DomainTheory.NeighbourhoodSystems.Exercise619.instCategoryScottSys
-              (DomainTheory.NeighbourhoodSystems.Exercise619.TexpF N)
-              (DomainTheory.NeighbourhoodSystems.Exercise619.ExpAlg N hN)).sys
-          (@DomainTheory.NeighbourhoodSystems.TAlgebra.carrier DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys
-              DomainTheory.NeighbourhoodSystems.Exercise619.instCategoryScottSys
-              (DomainTheory.NeighbourhoodSystems.Exercise619.TexpF N) B).sys
-          f)
-      (@DomainTheory.NeighbourhoodSystems.AlgHom.hom DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys
-        DomainTheory.NeighbourhoodSystems.Exercise619.instCategoryScottSys
-        (DomainTheory.NeighbourhoodSystems.Exercise619.TexpF N)
-        (DomainTheory.NeighbourhoodSystems.Exercise619.ExpAlg N hN) B g)) :=
-  @DomainTheory.NeighbourhoodSystems.Exercise619.descMap_le_algHom
+/-- Scott's Exercise 6.23: the descending approximable map is below any algebra homomorphism. -/
+theorem example_623 {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master) (B : TAlgebra (TexpF N))
+    (g : AlgHom (ExpAlg N hN) B) :
+    descMap hN B ≤ g.hom.1 :=
+  @descMap_le_algHom _ hN B g
+
 end
 
 end DomainTheory.NeighbourhoodSystems.Exercise619

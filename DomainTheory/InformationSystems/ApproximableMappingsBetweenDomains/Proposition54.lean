@@ -6,14 +6,9 @@ public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains
 
 namespace DomainTheory.InformationSystems.InfoSys
 
-set_option linter.unusedVariables false
-
-theorem theorem_54.{u_1} : ∀ {α : Type u_1} [inst : DecidableEq α] (A : @DomainTheory.InformationSystems.InfoSys α inst)
-  (x : @DomainTheory.InformationSystems.InfoSys.Element α inst A),
-  @Eq (@DomainTheory.InformationSystems.InfoSys.Element α inst A)
-    (@DomainTheory.InformationSystems.InfoSys.ApproximableMap.toElement α α inst inst A A
-      (@DomainTheory.InformationSystems.InfoSys.idMap α inst A) x)
-    x :=
-  @DomainTheory.InformationSystems.InfoSys.idMap.toElement
+theorem theorem_54 :
+    ∀ {α : Type*} [DecidableEq α] (A : InfoSys α) (x : A.Element),
+      (idMap A).toElement x = x :=
+  @idMap.toElement
 
 end DomainTheory.InformationSystems.InfoSys

@@ -20,23 +20,14 @@ end ProjectionPair
 end
 
 section
-set_option linter.unusedVariables false
+open NeighborhoodSystem ApproximableMap
 
-theorem theorem_615.{u_1, u_2} : ∀ {α : Type u_1} {β : Type u_2} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-  {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
-  (i : @DomainTheory.NeighbourhoodSystems.ApproximableMap α β D E)
-  (j : @DomainTheory.NeighbourhoodSystems.ApproximableMap β α E D),
-  @Eq (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D)
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp α β α D E D j i)
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap α D) →
-    @LE.le (@DomainTheory.NeighbourhoodSystems.ApproximableMap β β E E)
-        (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.ApproximableMap β β E E)
-          (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.ApproximableMap β β E E)
-            (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap β β E E)))
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp β α β E D E i j)
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap β E) →
-      @DomainTheory.NeighbourhoodSystems.Trianglelefteq α β D E :=
-  @DomainTheory.NeighbourhoodSystems.trianglelefteq_of_projectionPair
+/-- Scott's Lemma 6.15: a projection pair yields a domain embedding. -/
+theorem theorem_615 :
+    ∀ {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
+      (i : ApproximableMap D E) (j : ApproximableMap E D),
+      j.comp i = idMap D → i.comp j ≤ idMap E → D ⊴ E :=
+  @trianglelefteq_of_projectionPair
 end
 
 end DomainTheory.NeighbourhoodSystems
@@ -122,48 +113,15 @@ end
 
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Subsystem
-section
-set_option linter.unusedVariables false
+open NeighborhoodSystem ApproximableMap
 
-theorem theorem_612.{u_1} : And
-  (∀ {α : Type u_1} {D E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (h : @DomainTheory.NeighbourhoodSystems.Subsystem α D E),
-    @LE.le (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-      (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-        (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-          (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap α α E E)))
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp α α α E D E
-        (@DomainTheory.NeighbourhoodSystems.Subsystem.inj α D E h)
-        (@DomainTheory.NeighbourhoodSystems.Subsystem.proj α D E h))
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap α E))
-  (∀ {α : Type u_1} {D E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (h : @DomainTheory.NeighbourhoodSystems.Subsystem α D E),
-    @Eq (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D)
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp α α α D E D
-        (@DomainTheory.NeighbourhoodSystems.Subsystem.proj α D E h)
-        (@DomainTheory.NeighbourhoodSystems.Subsystem.inj α D E h))
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap α D)) :=
-  @And.intro
-  (∀ {α : Type u_1} {D E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (h : @DomainTheory.NeighbourhoodSystems.Subsystem α D E),
-    @LE.le (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-      (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-        (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α E E)
-          (@DomainTheory.NeighbourhoodSystems.instPartialOrderApproximableMap α α E E)))
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp α α α E D E
-        (@DomainTheory.NeighbourhoodSystems.Subsystem.inj α D E h)
-        (@DomainTheory.NeighbourhoodSystems.Subsystem.proj α D E h))
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap α E))
-  (∀ {α : Type u_1} {D E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (h : @DomainTheory.NeighbourhoodSystems.Subsystem α D E),
-    @Eq (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α D D)
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.comp α α α D E D
-        (@DomainTheory.NeighbourhoodSystems.Subsystem.proj α D E h)
-        (@DomainTheory.NeighbourhoodSystems.Subsystem.inj α D E h))
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.idMap α D))
-  @DomainTheory.NeighbourhoodSystems.Subsystem.inj_comp_proj_le
-  @DomainTheory.NeighbourhoodSystems.Subsystem.proj_comp_inj
-end
+/-- Scott's Proposition 6.12: injection and projection form a projection pair. -/
+theorem theorem_612 :
+    (∀ {α : Type*} {D E : NeighborhoodSystem α} (h : D ◁ E),
+      h.inj.comp h.proj ≤ idMap E) ∧
+    (∀ {α : Type*} {D E : NeighborhoodSystem α} (h : D ◁ E),
+      h.proj.comp h.inj = idMap D) :=
+  ⟨@inj_comp_proj_le, @proj_comp_inj⟩
 
 end DomainTheory.NeighbourhoodSystems.Subsystem
 namespace DomainTheory.NeighbourhoodSystems

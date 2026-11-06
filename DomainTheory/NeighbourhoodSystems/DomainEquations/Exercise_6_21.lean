@@ -458,42 +458,16 @@ end
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise619
 section
-set_option linter.unusedVariables false
+open NeighborhoodSystem ApproximableMap Example62 ExampleB Exercise510
 
-theorem example_621 : And
-  (∀ (T : DomainTheory.NeighbourhoodSystems.Exercise619.GExpr),
-    T.RootedConst →
-      ∃ (Γ : Set DomainTheory.NeighbourhoodSystems.ExampleB.Str) (h :
-        @Set.Nonempty DomainTheory.NeighbourhoodSystems.ExampleB.Str Γ),
-        @DomainTheory.NeighbourhoodSystems.Subsystem DomainTheory.NeighbourhoodSystems.ExampleB.Str
-          (DomainTheory.NeighbourhoodSystems.Exercise619.singletonSys Γ h).sys
-          (T.obj (DomainTheory.NeighbourhoodSystems.Exercise619.singletonSys Γ h)).sys)
-  (∀ (T : DomainTheory.NeighbourhoodSystems.Exercise619.GExpr),
-    T.RootedConst →
-      ∃ (Γ : Set DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-        And
-          (@Membership.mem (List Bool) (Set DomainTheory.NeighbourhoodSystems.ExampleB.Str)
-            (@Set.instMembership DomainTheory.NeighbourhoodSystems.ExampleB.Str) Γ (@List.nil Bool))
-          (@Eq (Set DomainTheory.NeighbourhoodSystems.ExampleB.Str)
-            (DomainTheory.NeighbourhoodSystems.Exercise619.gFun T Γ) Γ)) :=
-  @And.intro
-  (∀ (T : DomainTheory.NeighbourhoodSystems.Exercise619.GExpr),
-    T.RootedConst →
-      ∃ (Γ : Set DomainTheory.NeighbourhoodSystems.ExampleB.Str) (h :
-        @Set.Nonempty DomainTheory.NeighbourhoodSystems.ExampleB.Str Γ),
-        @DomainTheory.NeighbourhoodSystems.Subsystem DomainTheory.NeighbourhoodSystems.ExampleB.Str
-          (DomainTheory.NeighbourhoodSystems.Exercise619.singletonSys Γ h).sys
-          (T.obj (DomainTheory.NeighbourhoodSystems.Exercise619.singletonSys Γ h)).sys)
-  (∀ (T : DomainTheory.NeighbourhoodSystems.Exercise619.GExpr),
-    T.RootedConst →
-      ∃ (Γ : Set DomainTheory.NeighbourhoodSystems.ExampleB.Str),
-        And
-          (@Membership.mem (List Bool) (Set DomainTheory.NeighbourhoodSystems.ExampleB.Str)
-            (@Set.instMembership DomainTheory.NeighbourhoodSystems.ExampleB.Str) Γ (@List.nil Bool))
-          (@Eq (Set DomainTheory.NeighbourhoodSystems.ExampleB.Str)
-            (DomainTheory.NeighbourhoodSystems.Exercise619.gFun T Γ) Γ))
-  DomainTheory.NeighbourhoodSystems.Exercise619.gExists_singleton_subsystem
-  DomainTheory.NeighbourhoodSystems.Exercise619.gExists_tok_fixedPoint
+/-- Scott's Exercise 6.21: rooted grammars admit a subsystem solution and a fixed-point set containing `[]`. -/
+theorem example_621 :
+    (∀ (T : GExpr), T.RootedConst →
+      ∃ (Γ : Set Str) (h : Γ.Nonempty),
+        (singletonSys Γ h).sys ◁ (T.obj (singletonSys Γ h)).sys) ∧
+    (∀ (T : GExpr), T.RootedConst → ∃ (Γ : Set Str), ([] : Str) ∈ Γ ∧ gFun T Γ = Γ) :=
+  ⟨@gExists_singleton_subsystem, @gExists_tok_fixedPoint⟩
+
 end
 
 end DomainTheory.NeighbourhoodSystems.Exercise619

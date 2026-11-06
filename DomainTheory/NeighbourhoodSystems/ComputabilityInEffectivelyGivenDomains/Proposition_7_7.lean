@@ -453,14 +453,16 @@ end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Proposition77
 section
 set_option linter.unusedVariables false
+open NeighborhoodSystem Domain.Recursive Example61
 
-theorem theorem_77.{u_1} : ∀ {α : Type u_1} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-  (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α D)
-  (hD : ∀ (X : Set α), @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.mem α D X → @Set.Nonempty α X),
-  @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsEffectivelyGiven (Prod (List Bool) α)
-    (@DomainTheory.NeighbourhoodSystems.Example61.Dsharp α D hD) :=
-  @DomainTheory.NeighbourhoodSystems.Proposition77.dsharp_isEffectivelyGiven
+/-- Scott's Proposition 7.7: D♯ is effectively given. -/
+theorem theorem_77 :
+    ∀ {α : Type*} {D : NeighborhoodSystem α} (P : ComputablePresentation D)
+      (hD : ∀ X, D.mem X → X.Nonempty),
+      (Dsharp D hD).IsEffectivelyGiven :=
+  @dsharp_isEffectivelyGiven
 end
+
 
 end DomainTheory.NeighbourhoodSystems.Proposition77
 namespace DomainTheory.NeighbourhoodSystems

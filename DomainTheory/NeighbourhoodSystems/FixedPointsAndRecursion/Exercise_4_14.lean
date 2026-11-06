@@ -53,38 +53,11 @@ theorem gfpSet_isFixed (f : Set A → Set A) (hf : Monotone f) :
 end
 
 section
-set_option linter.unusedVariables false
 
-theorem example_414.{u_1} : And
-  (∀ {A : Type u_1} (f : Set A → Set A) {y : Set A},
-    @Eq (Set A) (f y) y → @LE.le (Set A) (@Set.instLE A) y (@DomainTheory.NeighbourhoodSystems.Exercise414.gfpSet A f))
-  (∀ {A : Type u_1} (f : Set A → Set A),
-    @Monotone (Set A) (Set A)
-        (@PartialOrder.toPreorder (Set A)
-          (@SemilatticeInf.toPartialOrder (Set A)
-            (@Lattice.toSemilatticeInf (Set A) (@DistribLattice.toLattice (Set A) (@Set.instDistribLattice A)))))
-        (@PartialOrder.toPreorder (Set A)
-          (@SemilatticeInf.toPartialOrder (Set A)
-            (@Lattice.toSemilatticeInf (Set A) (@DistribLattice.toLattice (Set A) (@Set.instDistribLattice A)))))
-        f →
-      @Eq (Set A) (f (@DomainTheory.NeighbourhoodSystems.Exercise414.gfpSet A f))
-        (@DomainTheory.NeighbourhoodSystems.Exercise414.gfpSet A f)) :=
-  @And.intro
-  (∀ {A : Type u_1} (f : Set A → Set A) {y : Set A},
-    @Eq (Set A) (f y) y → @LE.le (Set A) (@Set.instLE A) y (@DomainTheory.NeighbourhoodSystems.Exercise414.gfpSet A f))
-  (∀ {A : Type u_1} (f : Set A → Set A),
-    @Monotone (Set A) (Set A)
-        (@PartialOrder.toPreorder (Set A)
-          (@SemilatticeInf.toPartialOrder (Set A)
-            (@Lattice.toSemilatticeInf (Set A) (@DistribLattice.toLattice (Set A) (@Set.instDistribLattice A)))))
-        (@PartialOrder.toPreorder (Set A)
-          (@SemilatticeInf.toPartialOrder (Set A)
-            (@Lattice.toSemilatticeInf (Set A) (@DistribLattice.toLattice (Set A) (@Set.instDistribLattice A)))))
-        f →
-      @Eq (Set A) (f (@DomainTheory.NeighbourhoodSystems.Exercise414.gfpSet A f))
-        (@DomainTheory.NeighbourhoodSystems.Exercise414.gfpSet A f))
-  @DomainTheory.NeighbourhoodSystems.Exercise414.gfpSet_greatest
-  @DomainTheory.NeighbourhoodSystems.Exercise414.gfpSet_isFixed
+theorem example_414 :
+    (∀ {A : Type*} (f : Set A → Set A) {y : Set A}, f y = y → y ⊆ gfpSet f) ∧
+    (∀ {A : Type*} (f : Set A → Set A), Monotone f → f (gfpSet f) = gfpSet f) :=
+  ⟨@gfpSet_greatest, @gfpSet_isFixed⟩
 end
 
 end DomainTheory.NeighbourhoodSystems.Exercise414

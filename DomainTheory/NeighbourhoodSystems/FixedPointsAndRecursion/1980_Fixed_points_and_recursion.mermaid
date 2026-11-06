@@ -3,6 +3,7 @@
 %% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
+  Least_fixed_point_elemen["Least fixed-point element"]
   Theorem_4_1___least_fixe["Theorem 4.1 — least fixed point"]
   Theorem_4_2___fix_combin["Theorem 4.2 — fix combinator"]
   Example_4_3___partial_fu["Example 4.3 — partial functions on integers"]
@@ -29,12 +30,12 @@ flowchart TB
   Exercise_4_24___Schroede["Exercise 4.24 — Schroeder-Bernstein theorem"]
   Exercise_4_25___unary_se["Exercise 4.25 — unary sequence domain"]
 
-  Theorem_4_1___least_fixe --> Example_4_3___partial_fu
-  Theorem_4_2___fix_combin --> Example_4_4___sequence_d
+  Theorem_4_2___fix_combin --> Example_4_3___partial_fu
+  Example_4_3___partial_fu --> Example_4_4___sequence_d
   Theorem_4_2___fix_combin --> Exercise_4_10___domain_a
   Exercise_4_10___domain_a --> Exercise_4_11___characte
   Exercise_4_7___fixed_poi --> Exercise_4_11___characte
-  Theorem_4_1___least_fixe --> Exercise_4_12___no_great
+  Example_4_3___partial_fu --> Exercise_4_12___no_great
   Exercise_4_9___fix_as_a --> Exercise_4_13___avoiding
   Exercise_4_13___avoiding --> Exercise_4_15___maximal
   Exercise_4_15___maximal --> Exercise_4_16___optimal
@@ -48,13 +49,13 @@ flowchart TB
   Exercise_4_14___greatest --> Exercise_4_22___inductiv
   Exercise_4_15___maximal --> Exercise_4_23___commutin
   Exercise_4_14___greatest --> Exercise_4_24___Schroede
-  Theorem_4_1___least_fixe --> Exercise_4_24___Schroede
+  Least_fixed_point_elemen --> Exercise_4_24___Schroede
   Example_4_3___partial_fu --> Exercise_4_25___unary_se
-  Theorem_4_2___fix_combin --> Exercise_4_25___unary_se
   Example_4_4___sequence_d --> Exercise_4_7___fixed_poi
   Exercise_4_7___fixed_poi --> Exercise_4_8___fixed_poi
-  Theorem_4_2___fix_combin --> Exercise_4_9___fix_as_a
-  Theorem_4_1___least_fixe --> Theorem_4_2___fix_combin
+  Example_4_3___partial_fu --> Exercise_4_9___fix_as_a
+  Least_fixed_point_elemen --> Theorem_4_1___least_fixe
+  Least_fixed_point_elemen --> Theorem_4_2___fix_combin
   Definition_4_5___Peano_a --> Theorem_4_6___Peano_mode
 
 %%{init: {"flowchart": {"wrappingWidth": 2000}}}%%

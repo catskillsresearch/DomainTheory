@@ -78,38 +78,22 @@ theorem fixMap_isComputable
 end
 
 section
-set_option linter.unusedVariables false
+open NeighborhoodSystem Domain.Recursive ApproximableMap
 
-theorem theorem_76.{u_1} : ∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-  (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α V) (gN incl eq : Nat → Nat)
-  (hgN :
-    ∀ (c : Nat),
-      Iff (@Eq Nat (gN c) (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
-        (@Set.Nonempty (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
-          (@DomainTheory.NeighbourhoodSystems.stepFun α α V V
-            (@DomainTheory.NeighbourhoodSystems.funListOf α α V V P P (Domain.Recursive.decodeList c)))))
-  (hgNp : Nat.Primrec gN)
-  (hincl :
-    ∀ (s : Nat),
-      Iff (@Eq Nat (incl s) (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
-        (@LE.le (Set α) (@Set.instLE α)
-          (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P (@Prod.fst Nat Nat (Nat.unpair s)))
-          (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P (@Prod.snd Nat Nat (Nat.unpair s)))))
-  (hinclp : Nat.Primrec incl)
-  (heq :
-    ∀ (s : Nat),
-      Iff (@Eq Nat (eq s) (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
-        (@Eq (Set α)
-          (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P (@Prod.fst Nat Nat (Nat.unpair s)))
-          (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X α V P (@Prod.snd Nat Nat (Nat.unpair s)))))
-  (heqp : Nat.Primrec eq),
-  @DomainTheory.NeighbourhoodSystems.ComputableMap (@DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V) α
-    (@DomainTheory.NeighbourhoodSystems.funSpace α α V V) V
-    (@DomainTheory.NeighbourhoodSystems.funPresentation α α V V P P gN incl incl eq hgN hgNp hincl hinclp hincl hinclp
-      heq heqp)
-    P (@DomainTheory.NeighbourhoodSystems.fixMap α V) :=
-  @DomainTheory.NeighbourhoodSystems.fixMap_isComputable
+/-- Scott's Theorem 7.6: the fixpoint map is computable. -/
+theorem theorem_76 :
+    ∀ {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
+      (gN incl eq : ℕ → ℕ)
+      (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf P P (decodeList c))
+        : Set (ApproximableMap V V)).Nonempty) (hgNp : Nat.Primrec gN)
+      (hincl : ∀ s, incl s = 1 ↔ P.X s.unpair.1 ⊆ P.X s.unpair.2) (hinclp : Nat.Primrec incl)
+      (heq : ∀ s, eq s = 1 ↔ P.X s.unpair.1 = P.X s.unpair.2) (heqp : Nat.Primrec eq),
+      ComputableMap
+        (funPresentation P P gN incl incl eq hgN hgNp hincl hinclp hincl hinclp heq heqp) P
+        (fixMap V) :=
+  @fixMap_isComputable
 end
+
 
 namespace Exercise722
 open Set Domain.Recursive
@@ -998,17 +982,14 @@ end Exercise722
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise722
 section
-set_option linter.unusedVariables false
+open NeighborhoodSystem Domain.Recursive ApproximableMap
 
-theorem example_722_presentation_inst47 : ∀ (n m : Nat),
-  Iff (@Eq Bool (DomainTheory.NeighbourhoodSystems.Exercise722.ssysConsistentB n m) Bool.true)
-    (∃ (k : Nat),
-      @LE.le (Set (List Bool)) (@Set.instLE (List Bool)) (DomainTheory.NeighbourhoodSystems.Exercise722.SsysX k)
-        (@Inter.inter (Set (List Bool)) (@Set.instInter (List Bool))
-          (DomainTheory.NeighbourhoodSystems.Exercise722.SsysX n)
-          (DomainTheory.NeighbourhoodSystems.Exercise722.SsysX m))) :=
-  DomainTheory.NeighbourhoodSystems.Exercise722.ssys_cons_char_iff
+/-- Consistency character for the Ssys presentation. -/
+theorem example_722_presentation_inst47 (n m : ℕ) :
+    ssysConsistentB n m = true ↔ ∃ k, SsysX k ⊆ SsysX n ∩ SsysX m :=
+  ssys_cons_char_iff n m
 end
+
 
 end DomainTheory.NeighbourhoodSystems.Exercise722
 namespace DomainTheory.NeighbourhoodSystems
@@ -1481,15 +1462,14 @@ end Exercise722
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise722
 section
-set_option linter.unusedVariables false
+open NeighborhoodSystem Domain.Recursive ApproximableMap
 
-theorem example_722_presentation : Domain.Recursive.RecDecidable₃ fun (n m k : Nat) =>
-  @Eq (Set (List Bool))
-    (@Inter.inter (Set (List Bool)) (@Set.instInter (List Bool)) (DomainTheory.NeighbourhoodSystems.Exercise722.SsysX n)
-      (DomainTheory.NeighbourhoodSystems.Exercise722.SsysX m))
-    (DomainTheory.NeighbourhoodSystems.Exercise722.SsysX k) :=
-  DomainTheory.NeighbourhoodSystems.Exercise722.Ssys_interEq_computable
+/-- Intersection equality for SsysX is recursively decidable. -/
+theorem example_722_presentation :
+    RecDecidable₃ (fun n m k => SsysX n ∩ SsysX m = SsysX k) :=
+  Ssys_interEq_computable
 end
+
 
 end DomainTheory.NeighbourhoodSystems.Exercise722
 namespace DomainTheory.NeighbourhoodSystems
@@ -1556,18 +1536,15 @@ end Exercise718
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise718
 section
-set_option linter.unusedVariables false
+open NeighborhoodSystem Domain.Recursive ApproximableMap
 
-theorem example_718.{u_1} : ∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-  (P : @DomainTheory.NeighbourhoodSystems.ComputablePresentation α V),
-  @DomainTheory.NeighbourhoodSystems.Exercise718.EffectivelyIsomorphic (Prod Nat α) (Prod Nat (Prod Nat α))
-    (@DomainTheory.NeighbourhoodSystems.iterSys α V)
-    (@DomainTheory.NeighbourhoodSystems.iterSys (Prod Nat α) (@DomainTheory.NeighbourhoodSystems.iterSys α V))
-    (@DomainTheory.NeighbourhoodSystems.iterPresentation α V P)
-    (@DomainTheory.NeighbourhoodSystems.iterPresentation (Prod Nat α) (@DomainTheory.NeighbourhoodSystems.iterSys α V)
-      (@DomainTheory.NeighbourhoodSystems.iterPresentation α V P)) :=
-  @DomainTheory.NeighbourhoodSystems.Exercise718.iterSys_effectivelyIsomorphic_iterIter
+/-- Scott's Exercise 7.18: iterate is effectively isomorphic to its iterate. -/
+theorem example_718 :
+    ∀ {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V),
+      EffectivelyIsomorphic (iterPresentation P) (iterPresentation (iterPresentation P)) :=
+  @iterSys_effectivelyIsomorphic_iterIter
 end
+
 
 end DomainTheory.NeighbourhoodSystems.Exercise718
 end

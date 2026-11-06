@@ -100,14 +100,13 @@ end
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise619
 section
-set_option linter.unusedVariables false
+open NeighborhoodSystem ApproximableMap ExampleB
 
-theorem example_619_part_b : ∀ {A₀ A₁ B₀ B₁ : DomainTheory.NeighbourhoodSystems.Exercise619.ScottSys},
-  @DomainTheory.NeighbourhoodSystems.Subsystem DomainTheory.NeighbourhoodSystems.ExampleB.Str A₀.sys B₀.sys →
-    @DomainTheory.NeighbourhoodSystems.Subsystem DomainTheory.NeighbourhoodSystems.ExampleB.Str A₁.sys B₁.sys →
-      @DomainTheory.NeighbourhoodSystems.Subsystem DomainTheory.NeighbourhoodSystems.ExampleB.Str (A₀.prod A₁).sys
-        (B₀.prod B₁).sys :=
-  @DomainTheory.NeighbourhoodSystems.Exercise619.prodTok_subsystem
+/-- Scott's Exercise 6.19(b): subsystems are preserved by `prod` on Scott systems. -/
+theorem example_619_part_b {A₀ A₁ B₀ B₁ : ScottSys} (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.sys) :
+    (A₀.prod A₁).sys ◁ (B₀.prod B₁).sys :=
+  @prodTok_subsystem _ _ _ _ h0 h1
+
 end
 
 end DomainTheory.NeighbourhoodSystems.Exercise619

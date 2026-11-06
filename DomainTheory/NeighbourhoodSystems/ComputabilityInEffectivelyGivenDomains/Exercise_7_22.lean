@@ -480,92 +480,16 @@ end Exercise722
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise722
 section
-set_option linter.unusedVariables false
+open NeighborhoodSystem ApproximableMap
 
-theorem example_722 : And
-  (And
-    (∀ (σ τ : List Bool),
-      @Eq
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (List Bool)
-          DomainTheory.NeighbourhoodSystems.Exercise722.Ssys)
-        (DomainTheory.NeighbourhoodSystems.Exercise722.emb
-          (@HAppend.hAppend (List Bool) (List Bool) (List Bool)
-            (@instHAppendOfAppend (List Bool) (@List.instAppend Bool)) σ τ))
-        (DomainTheory.NeighbourhoodSystems.Exercise722.mulElem (DomainTheory.NeighbourhoodSystems.Exercise722.emb σ)
-          (DomainTheory.NeighbourhoodSystems.Exercise722.emb τ)))
-    (∀
-      (x y z :
-        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (List Bool)
-          DomainTheory.NeighbourhoodSystems.Exercise722.Ssys),
-      @Eq
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (List Bool)
-          DomainTheory.NeighbourhoodSystems.Exercise722.Ssys)
-        (DomainTheory.NeighbourhoodSystems.Exercise722.mulElem
-          (DomainTheory.NeighbourhoodSystems.Exercise722.mulElem x y) z)
-        (DomainTheory.NeighbourhoodSystems.Exercise722.mulElem x
-          (DomainTheory.NeighbourhoodSystems.Exercise722.mulElem y z))))
-  (∀ (σ : List Bool),
-    @Eq
-      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (List Bool)
-        DomainTheory.NeighbourhoodSystems.Exercise722.Ssys)
-      (DomainTheory.NeighbourhoodSystems.Exercise722.mulElem
-        (DomainTheory.NeighbourhoodSystems.Exercise722.streamArrow σ)
-        (DomainTheory.NeighbourhoodSystems.Exercise722.streamArrow σ))
-      (DomainTheory.NeighbourhoodSystems.Exercise722.streamArrow σ)) :=
-  @And.intro
-  (And
-    (∀ (σ τ : List Bool),
-      @Eq
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (List Bool)
-          DomainTheory.NeighbourhoodSystems.Exercise722.Ssys)
-        (DomainTheory.NeighbourhoodSystems.Exercise722.emb
-          (@HAppend.hAppend (List Bool) (List Bool) (List Bool)
-            (@instHAppendOfAppend (List Bool) (@List.instAppend Bool)) σ τ))
-        (DomainTheory.NeighbourhoodSystems.Exercise722.mulElem (DomainTheory.NeighbourhoodSystems.Exercise722.emb σ)
-          (DomainTheory.NeighbourhoodSystems.Exercise722.emb τ)))
-    (∀
-      (x y z :
-        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (List Bool)
-          DomainTheory.NeighbourhoodSystems.Exercise722.Ssys),
-      @Eq
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (List Bool)
-          DomainTheory.NeighbourhoodSystems.Exercise722.Ssys)
-        (DomainTheory.NeighbourhoodSystems.Exercise722.mulElem
-          (DomainTheory.NeighbourhoodSystems.Exercise722.mulElem x y) z)
-        (DomainTheory.NeighbourhoodSystems.Exercise722.mulElem x
-          (DomainTheory.NeighbourhoodSystems.Exercise722.mulElem y z))))
-  (∀ (σ : List Bool),
-    @Eq
-      (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (List Bool)
-        DomainTheory.NeighbourhoodSystems.Exercise722.Ssys)
-      (DomainTheory.NeighbourhoodSystems.Exercise722.mulElem
-        (DomainTheory.NeighbourhoodSystems.Exercise722.streamArrow σ)
-        (DomainTheory.NeighbourhoodSystems.Exercise722.streamArrow σ))
-      (DomainTheory.NeighbourhoodSystems.Exercise722.streamArrow σ))
-  (@And.intro
-    (∀ (σ τ : List Bool),
-      @Eq
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (List Bool)
-          DomainTheory.NeighbourhoodSystems.Exercise722.Ssys)
-        (DomainTheory.NeighbourhoodSystems.Exercise722.emb
-          (@HAppend.hAppend (List Bool) (List Bool) (List Bool)
-            (@instHAppendOfAppend (List Bool) (@List.instAppend Bool)) σ τ))
-        (DomainTheory.NeighbourhoodSystems.Exercise722.mulElem (DomainTheory.NeighbourhoodSystems.Exercise722.emb σ)
-          (DomainTheory.NeighbourhoodSystems.Exercise722.emb τ)))
-    (∀
-      (x y z :
-        @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (List Bool)
-          DomainTheory.NeighbourhoodSystems.Exercise722.Ssys),
-      @Eq
-        (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element (List Bool)
-          DomainTheory.NeighbourhoodSystems.Exercise722.Ssys)
-        (DomainTheory.NeighbourhoodSystems.Exercise722.mulElem
-          (DomainTheory.NeighbourhoodSystems.Exercise722.mulElem x y) z)
-        (DomainTheory.NeighbourhoodSystems.Exercise722.mulElem x
-          (DomainTheory.NeighbourhoodSystems.Exercise722.mulElem y z)))
-    DomainTheory.NeighbourhoodSystems.Exercise722.emb_mul DomainTheory.NeighbourhoodSystems.Exercise722.mulElem_assoc)
-  DomainTheory.NeighbourhoodSystems.Exercise722.streamArrow_mul_self
+/-- Scott's Exercise 7.22: embedding, associativity, and stream-arrow idempotence. -/
+theorem example_722 :
+    (∀ (σ τ : List Bool), emb (σ ++ τ) = mulElem (emb σ) (emb τ)) ∧
+    (∀ (x y z : Ssys.Element), mulElem (mulElem x y) z = mulElem x (mulElem y z)) ∧
+    (∀ (σ : List Bool), mulElem (streamArrow σ) (streamArrow σ) = streamArrow σ) :=
+  ⟨@emb_mul, ⟨@mulElem_assoc, @streamArrow_mul_self⟩⟩
 end
+
 
 end DomainTheory.NeighbourhoodSystems.Exercise722
 namespace DomainTheory.NeighbourhoodSystems
@@ -901,13 +825,13 @@ end Exercise722
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise722
 section
-set_option linter.unusedVariables false
+open NeighborhoodSystem ApproximableMap
 
-theorem example_722_regular : @Ne (Set (List Bool))
-  (DomainTheory.NeighbourhoodSystems.Exercise722.denote DomainTheory.NeighbourhoodSystems.Exercise722.SExpr.sigma)
-  (DomainTheory.NeighbourhoodSystems.Exercise722.denote DomainTheory.NeighbourhoodSystems.Exercise722.containsZero) :=
-  DomainTheory.NeighbourhoodSystems.Exercise722.sigma_ne_containsZero
+/-- Scott's Exercise 7.22: Σ is distinct from the contains-zero language. -/
+theorem example_722_regular : denote (.sigma) ≠ denote containsZero :=
+  sigma_ne_containsZero
 end
+
 
 end DomainTheory.NeighbourhoodSystems.Exercise722
 namespace DomainTheory.NeighbourhoodSystems
@@ -1075,14 +999,14 @@ end Exercise722
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise722
 section
-set_option linter.unusedVariables false
+open NeighborhoodSystem ApproximableMap
 
-theorem example_722_cat : ∀ {σ₁ σ₂ : Type} (M₁ : NFA Bool σ₁) (M₂ : NFA Bool σ₂),
-  @Eq (Language Bool)
-    (@εNFA.accepts Bool (Sum σ₁ σ₂) (@DomainTheory.NeighbourhoodSystems.Exercise722.catEps σ₁ σ₂ M₁ M₂))
-    (DomainTheory.NeighbourhoodSystems.Exercise722.concat (@NFA.accepts Bool σ₁ M₁) (@NFA.accepts Bool σ₂ M₂)) :=
-  @DomainTheory.NeighbourhoodSystems.Exercise722.catEps_accepts
+/-- Scott's Exercise 7.22: ε-NFA concatenation accepts the concatenated language. -/
+theorem example_722_cat {σ₁ σ₂ : Type} (M₁ : NFA Bool σ₁) (M₂ : NFA Bool σ₂) :
+    (catEps M₁ M₂).accepts = concat M₁.accepts M₂.accepts :=
+  catEps_accepts M₁ M₂
 end
+
 
 end DomainTheory.NeighbourhoodSystems.Exercise722
 namespace DomainTheory.NeighbourhoodSystems
@@ -1167,15 +1091,16 @@ end Exercise722
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise722
 section
-set_option linter.unusedVariables false
+open NeighborhoodSystem ApproximableMap
 
-theorem example_722_dfa : ∀ {σ₁ σ₂ : Type} (M₁ : DFA Bool σ₁) (M₂ : DFA Bool σ₂) (a b : DomainTheory.NeighbourhoodSystems.Exercise722.SExpr),
-  @Eq (Language Bool) (@DFA.accepts Bool σ₁ M₁) (DomainTheory.NeighbourhoodSystems.Exercise722.denote a) →
-    @Eq (Language Bool) (@DFA.accepts Bool σ₂ M₂) (DomainTheory.NeighbourhoodSystems.Exercise722.denote b) →
-      @Eq (Language Bool) (@DFA.accepts Bool (Prod σ₁ σ₂) (@DFA.inter Bool σ₁ σ₂ M₁ M₂))
-        (DomainTheory.NeighbourhoodSystems.Exercise722.denote (a.cap b)) :=
-  @DomainTheory.NeighbourhoodSystems.Exercise722.interDFA_accepts
+/-- Scott's Exercise 7.22: DFA intersection matches the cap of denoted expressions. -/
+theorem example_722_dfa {σ₁ σ₂ : Type} (M₁ : DFA Bool σ₁) (M₂ : DFA Bool σ₂)
+    (a b : SExpr) :
+    M₁.accepts = denote a → M₂.accepts = denote b →
+      (M₁.inter M₂).accepts = denote (.cap a b) :=
+  interDFA_accepts M₁ M₂ a b
 end
+
 
 end DomainTheory.NeighbourhoodSystems.Exercise722
 namespace DomainTheory.NeighbourhoodSystems
@@ -1326,15 +1251,14 @@ end Exercise722
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise722
 section
-set_option linter.unusedVariables false
+open NeighborhoodSystem ApproximableMap
 
-theorem example_722_words : ∀ (n : Nat) {w : List Bool},
-  Iff
-    (@Membership.mem (List Bool) (List (List Bool)) (@List.instMembership (List Bool))
-      (DomainTheory.NeighbourhoodSystems.Exercise722.wordsUpTo n) w)
-    (@LE.le Nat instLENat (@List.length Bool w) n) :=
-  DomainTheory.NeighbourhoodSystems.Exercise722.mem_wordsUpTo
+/-- Scott's Exercise 7.22: wordsUpTo characterises length. -/
+theorem example_722_words (n : ℕ) {w : List Bool} :
+    w ∈ wordsUpTo n ↔ w.length ≤ n :=
+  mem_wordsUpTo n
 end
+
 
 end DomainTheory.NeighbourhoodSystems.Exercise722
 namespace DomainTheory.NeighbourhoodSystems

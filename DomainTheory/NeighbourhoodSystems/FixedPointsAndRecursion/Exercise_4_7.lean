@@ -53,88 +53,17 @@ end
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.ApproximableMap
 section
-set_option linter.unusedVariables false
 
-theorem example_407.{u_1} : And
-  (∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
-    {a : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V}
-    (ha :
-      @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-        a (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α V V f a)),
-    @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α V V f
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixAbove α V f a ha))
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixAbove α V f a ha))
-  (∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
-    {a : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V}
-    (ha :
-      @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-        a (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α V V f a))
-    {z : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V},
-    @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-        a z →
-      @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α V V f z) z →
-        @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixAbove α V f a ha) z) :=
-  @And.intro
-  (∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
-    {a : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V}
-    (ha :
-      @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-        a (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α V V f a)),
-    @Eq (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α V V f
-        (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixAbove α V f a ha))
-      (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixAbove α V f a ha))
-  (∀ {α : Type u_1} {V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    (f : @DomainTheory.NeighbourhoodSystems.ApproximableMap α α V V)
-    {a : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V}
-    (ha :
-      @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-        a (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α V V f a))
-    {z : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V},
-    @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-        (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-        a z →
-      @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.toElementMap α α V V f z) z →
-        @LE.le (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-          (@Preorder.toLE (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-            (@PartialOrder.toPreorder (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-              (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instPartialOrderElement α V)))
-          (@DomainTheory.NeighbourhoodSystems.ApproximableMap.fixAbove α V f a ha) z)
-  @DomainTheory.NeighbourhoodSystems.ApproximableMap.fixAbove_isFixed
-  @DomainTheory.NeighbourhoodSystems.ApproximableMap.fixAbove_least
+open NeighborhoodSystem
+
+theorem example_407 :
+    (∀ {α : Type*} {V : NeighborhoodSystem α} (f : ApproximableMap V V)
+      {a : V.Element} (ha : a ≤ f.toElementMap a),
+      f.toElementMap (f.fixAbove ha) = f.fixAbove ha) ∧
+    (∀ {α : Type*} {V : NeighborhoodSystem α} (f : ApproximableMap V V)
+      {a : V.Element} (ha : a ≤ f.toElementMap a) {z : V.Element},
+      a ≤ z → f.toElementMap z ≤ z → f.fixAbove ha ≤ z) :=
+  ⟨@fixAbove_isFixed, @fixAbove_least⟩
 end
 
 end DomainTheory.NeighbourhoodSystems.ApproximableMap

@@ -33,11 +33,11 @@ theorem trianglelefteq_iterSys : V ⊴ iterSys V :=
     (head_comp_embedIntoPow V) (embedIntoPow_comp_head_le V)
 end
 
-set_option linter.unusedVariables false
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
 
-theorem example_825_embed.{u_1} : ∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-  @DomainTheory.NeighbourhoodSystems.Trianglelefteq α (Prod Nat α) V (@DomainTheory.NeighbourhoodSystems.iterSys α V) :=
-  @DomainTheory.NeighbourhoodSystems.trianglelefteq_iterSys
+theorem example_825_embed :
+    ∀ {α : Type*} (V : NeighborhoodSystem α), V ⊴ iterSys V :=
+  @trianglelefteq_iterSys
 
 section
 open NeighborhoodSystem
@@ -88,14 +88,12 @@ theorem pow_prod_isomorphic (V : NeighborhoodSystem α) :
 
 end
 
-set_option linter.unusedVariables false
+open NeighborhoodSystem
 
-theorem example_825_pow.{u_1} : ∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α),
-  @DomainTheory.NeighbourhoodSystems.Isomorphic (Sum (Prod Nat α) (Prod Nat α)) (Prod Nat α)
-    (@DomainTheory.NeighbourhoodSystems.prod (Prod Nat α) (Prod Nat α) (@DomainTheory.NeighbourhoodSystems.iterSys α V)
-      (@DomainTheory.NeighbourhoodSystems.iterSys α V))
-    (@DomainTheory.NeighbourhoodSystems.iterSys α V) :=
-  @DomainTheory.NeighbourhoodSystems.pow_prod_isomorphic
+theorem example_825_pow :
+    ∀ {α : Type*} (V : NeighborhoodSystem α),
+      prod (iterSys V) (iterSys V) ≅ᴰ iterSys V :=
+  @pow_prod_isomorphic
 
 section
 open NeighborhoodSystem ApproximableMap
@@ -128,16 +126,10 @@ theorem funSpace_unitSys_isomorphic : funSpace unitSys unitSys ≅ᴰ unitSys :=
 
 end
 
-set_option linter.unusedVariables false
+open NeighborhoodSystem
 
-theorem example_825_unit : @DomainTheory.NeighbourhoodSystems.Isomorphic
-  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Unit Unit DomainTheory.NeighbourhoodSystems.unitSys
-    DomainTheory.NeighbourhoodSystems.unitSys)
-  Unit
-  (@DomainTheory.NeighbourhoodSystems.funSpace Unit Unit DomainTheory.NeighbourhoodSystems.unitSys
-    DomainTheory.NeighbourhoodSystems.unitSys)
-  DomainTheory.NeighbourhoodSystems.unitSys :=
-  DomainTheory.NeighbourhoodSystems.funSpace_unitSys_isomorphic
+theorem example_825_unit : funSpace unitSys unitSys ≅ᴰ unitSys :=
+  funSpace_unitSys_isomorphic
 
 open NeighborhoodSystem ApproximableMap
 
@@ -282,27 +274,11 @@ theorem exercise_8_25_main :
         (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator))) :=
   funSpace_self_isomorphic Dsol_isomorphic_funSpace_cCombinator hVV_cCombinator
 
-set_option linter.unusedVariables false
-
-theorem example_825_fixed_point : @DomainTheory.NeighbourhoodSystems.Isomorphic Rat
-  (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat
-    (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U
-      (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
-        (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator)))
-    (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U
-      (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
-        (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator))))
-  (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U
-    (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
-      (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator)))
-  (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat
-    (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U
-      (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
-        (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator)))
-    (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U
-      (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
-        (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator)))) :=
-  DomainTheory.NeighbourhoodSystems.exercise_8_25_main
+theorem example_825_fixed_point :
+    fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)) ≅ᴰ
+      funSpace (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)))
+        (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator))) :=
+  exercise_8_25_main
 
 theorem exercise_8_25 :
     fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)) ≅ᴰ
@@ -313,54 +289,11 @@ theorem exercise_8_25 :
 theorem exercise_8_25_universal : U ⊴ fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)) :=
   U_trianglelefteq_Dsol
 
-set_option linter.unusedVariables false
-
-theorem example_825 : And
-  (@DomainTheory.NeighbourhoodSystems.Isomorphic Rat
-    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat
-      (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U
-        (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
-          (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator)))
-      (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U
-        (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
-          (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator))))
-    (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U
-      (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
-        (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator)))
-    (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat
-      (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U
-        (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
-          (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator)))
-      (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U
-        (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
-          (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator)))))
-  (@DomainTheory.NeighbourhoodSystems.Trianglelefteq Rat Rat DomainTheory.NeighbourhoodSystems.U
-    (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U
-      (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
-        (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator)))) :=
-  @And.intro
-  (@DomainTheory.NeighbourhoodSystems.Isomorphic Rat
-    (@DomainTheory.NeighbourhoodSystems.ApproximableMap Rat Rat
-      (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U
-        (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
-          (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator)))
-      (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U
-        (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
-          (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator))))
-    (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U
-      (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
-        (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator)))
-    (@DomainTheory.NeighbourhoodSystems.funSpace Rat Rat
-      (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U
-        (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
-          (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator)))
-      (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U
-        (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
-          (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator)))))
-  (@DomainTheory.NeighbourhoodSystems.Trianglelefteq Rat Rat DomainTheory.NeighbourhoodSystems.U
-    (@DomainTheory.NeighbourhoodSystems.fixedNbhd Rat DomainTheory.NeighbourhoodSystems.U
-      (@DomainTheory.NeighbourhoodSystems.Exercise823.fixOp Rat DomainTheory.NeighbourhoodSystems.U
-        (DomainTheory.NeighbourhoodSystems.tOpMap DomainTheory.NeighbourhoodSystems.cCombinator))))
-  DomainTheory.NeighbourhoodSystems.exercise_8_25 DomainTheory.NeighbourhoodSystems.exercise_8_25_universal
+theorem example_825 :
+    (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)) ≅ᴰ
+      funSpace (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)))
+        (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)))) ∧
+    (U ⊴ fixedNbhd (Exercise823.fixOp (tOpMap cCombinator))) :=
+  ⟨exercise_8_25, exercise_8_25_universal⟩
 
 end DomainTheory.NeighbourhoodSystems

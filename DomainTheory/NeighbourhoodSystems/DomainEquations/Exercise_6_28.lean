@@ -25,38 +25,16 @@ theorem isomorphic_of_finite_system (hD : D.IsFinite) (hE : E.IsFinite)
 end
 
 section
-set_option linter.unusedVariables false
+open NeighborhoodSystem
 
-theorem example_628.{u_1, u_2} : And
-  (∀ {α : Type u_1} {β : Type u_2} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β},
-    @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsFinite α D →
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsFinite β E →
-        @DomainTheory.NeighbourhoodSystems.Trianglelefteq α β D E →
-          @DomainTheory.NeighbourhoodSystems.Trianglelefteq β α E D →
-            @DomainTheory.NeighbourhoodSystems.Isomorphic α β D E)
-  (∀ {α : Type u_1} {β : Type u_2} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
-    [Finite (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α D)]
-    [Finite (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β E)],
-    @DomainTheory.NeighbourhoodSystems.Trianglelefteq α β D E →
-      @DomainTheory.NeighbourhoodSystems.Trianglelefteq β α E D → @DomainTheory.NeighbourhoodSystems.Isomorphic α β D E) :=
-  @And.intro
-  (∀ {α : Type u_1} {β : Type u_2} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β},
-    @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsFinite α D →
-      @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.IsFinite β E →
-        @DomainTheory.NeighbourhoodSystems.Trianglelefteq α β D E →
-          @DomainTheory.NeighbourhoodSystems.Trianglelefteq β α E D →
-            @DomainTheory.NeighbourhoodSystems.Isomorphic α β D E)
-  (∀ {α : Type u_1} {β : Type u_2} {D : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α}
-    {E : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
-    [Finite (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α D)]
-    [Finite (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β E)],
-    @DomainTheory.NeighbourhoodSystems.Trianglelefteq α β D E →
-      @DomainTheory.NeighbourhoodSystems.Trianglelefteq β α E D → @DomainTheory.NeighbourhoodSystems.Isomorphic α β D E)
-  @DomainTheory.NeighbourhoodSystems.isomorphic_of_finite_system
-  @DomainTheory.NeighbourhoodSystems.isomorphic_of_trianglelefteq_both
+/-- Scott's Exercise 6.28: mutual embeddings of finite systems yield an isomorphism. -/
+theorem example_628 :
+    (∀ {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β},
+      D.IsFinite → E.IsFinite → D ⊴ E → E ⊴ D → D ≅ᴰ E) ∧
+    (∀ {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
+      [Finite D.Element] [Finite E.Element],
+      D ⊴ E → E ⊴ D → D ≅ᴰ E) :=
+  ⟨@isomorphic_of_finite_system, @isomorphic_of_trianglelefteq_both⟩
 end
 
 section

@@ -127,32 +127,18 @@ theorem computableElement_eq_decreasing_iUnion_principal {W : NeighborhoodSystem
 end
 
 section
-set_option linter.unusedVariables false
+open NeighborhoodSystem Domain.Recursive DomainTheory.NeighbourhoodSystems
 
-theorem example_714.{u_1} : ∀ {β : Type u_1} {W : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem β}
-  (Q : @DomainTheory.NeighbourhoodSystems.ComputablePresentation β W)
-  {y : @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element β W},
-  @DomainTheory.NeighbourhoodSystems.ComputableElement β W Q y →
-    ∃ (t : Nat → Nat),
-      And (Nat.Primrec t)
-        (And
-          (∀ (i : Nat),
-            @LE.le (Set β) (@Set.instLE β)
-              (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β W Q
-                (t
-                  (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) i
-                    (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))))
-              (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β W Q (t i)))
-          (∀ (Z : Set β),
-            Iff (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem β W y Z)
-              (∃ (i : Nat),
-                @DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element.mem β W
-                  (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.principal β W
-                    (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.X β W Q (t i))
-                    (@DomainTheory.NeighbourhoodSystems.ComputablePresentation.mem_X β W Q (t i)))
-                  Z))) :=
-  @DomainTheory.NeighbourhoodSystems.Exercise714.computableElement_eq_decreasing_iUnion_principal
+/-- Scott's Exercise 7.14: computable elements are decreasing unions of principals. -/
+theorem example_714 :
+    ∀ {β : Type*} {W : NeighborhoodSystem β} (Q : ComputablePresentation W) {y : W.Element},
+      ComputableElement Q y →
+        ∃ t : ℕ → ℕ, Nat.Primrec t ∧
+          (∀ i, Q.X (t (i + 1)) ⊆ Q.X (t i)) ∧
+          (∀ Z, y.mem Z ↔ ∃ i, (W.principal (Q.mem_X (t i))).mem Z) :=
+  @computableElement_eq_decreasing_iUnion_principal
 end
+
 
 section
 
