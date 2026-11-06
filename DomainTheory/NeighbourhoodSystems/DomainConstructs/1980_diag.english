@@ -1,0 +1,19 @@
+The diagonal approximable map into a product of a system with itself.
+
+<!-- formalization -->
+
+**Definition (`diag`).** The diagonal map of a neighbourhood system is the pairing of the identity with itself.
+
+*Proof.* By definition. ∎
+
+**Theorem (`diag_rel`).** The diagonal relates a neighbourhood to a product neighbourhood precisely when both projections of that product neighbourhood relate under the identity.
+
+*Proof.* Unpack the pairing relation. ∎
+
+**Theorem (`toElementMap_diag`).** Elementwise, the diagonal sends each ideal element to its self-pair.
+
+*Proof.* Apply the pairing and identity evaluations. ∎
+
+**Theorem (`proj₀_comp_diag`).** The first projection after the diagonal recovers the identity.
+
+*Proof.* Invoke the corresponding law for pairing with identities. ∎
