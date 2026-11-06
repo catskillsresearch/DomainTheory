@@ -18,6 +18,14 @@ The identity approximable map on a neighbourhood system, composition of approxim
 
 *Proof.* A neighbourhood of the image comes from a smaller neighbourhood of the input by upward closure; conversely the input neighbourhood itself witnesses the relation. ∎
 
+**Theorem (`toElementMap_comp`).** The elementwise action of a composite is the composite of the elementwise actions.
+
+*Proof.* Reassociate the witnessing intermediate neighbourhoods. ∎
+
+**Theorem (`commute_apply`).** If two endo-maps commute under composition, their elementwise actions commute.
+
+*Proof.* Apply the preceding theorem to both composites. ∎
+
 **Theorem (`comp_assoc`).** Composition of approximable maps is associative.
 
 *Proof.* Reassociate the witnessing intermediate neighbourhoods. ∎

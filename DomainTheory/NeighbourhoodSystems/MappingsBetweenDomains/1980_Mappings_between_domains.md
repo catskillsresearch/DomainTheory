@@ -11,7 +11,7 @@
 - [Identity approximable map](1980_Identity_approximable_map.md) [✓](../1980_REVISION.md)
 - [Neighborhood systems as category objects](1980_DomainObj.md) [✓](../1980_REVISION.md)
 - [Theorem 2.5 — category of approximable maps](1980_Theorem_2_5.md) [✓](../1980_REVISION.md)
-- [Proposition 2.6 — identity and composition](1980_Proposition_2_6.md)
+- [Proposition 2.6 — identity and composition](1980_Proposition_2_6.md) [✓](../1980_REVISION.md)
 - [Theorem 2.7 — isomorphisms are approximable](1980_Theorem_2_7.md)
 - [Lecture II exercises](1980_Lecture_II_exercises.md)
 - [Exercise 2.8 — determined by finite elements](1980_Exercise_2_8.md)
