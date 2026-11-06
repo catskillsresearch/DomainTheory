@@ -1,7 +1,9 @@
 # Exercise 2.8
 
-**EXERCISE 2.8.** With reference to the proof of 2.2 show that an approximable mapping is uniquely determined by its elementwise effect on finite elements. Moreover any arbitrary monotone function on finite elements of $|D_0|$ with values in $|D_1|$ comes from an approximable $f : D_0 \to D_1$.
+@import "1980_Exercise_2_8.english" {code_block=false}
 
 **[Exercise_2_8.lean](Exercise_2_8.lean)**
 
 @import "Exercise_2_8.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-05) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

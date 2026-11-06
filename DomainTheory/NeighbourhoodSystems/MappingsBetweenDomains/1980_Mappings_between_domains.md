@@ -15,7 +15,7 @@
 - [Order isomorphism as approximable map](1980_ofIso.md) [✓](../1980_REVISION.md)
 - [Theorem 2.7 — isomorphisms are approximable](1980_Theorem_2_7.md) [✓](../1980_REVISION.md)
 - [Monotone on principals as approximable map](1980_ofMono.md) [✓](../1980_REVISION.md)
-- [Exercise 2.8 — determined by finite elements](1980_Exercise_2_8.md)
+- [Exercise 2.8 — determined by finite elements](1980_Exercise_2_8.md) [✓](../1980_REVISION.md)
 - [Exercise 2.9 — directed union formula](1980_Exercise_2_9.md)
 - [Exercise 2.10 — intersection of two maps](1980_Exercise_2_10.md)
 - [Exercise 2.11 — directed unions of elements](1980_Exercise_2_11.md)
