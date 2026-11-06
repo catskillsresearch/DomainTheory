@@ -1,0 +1,7 @@
+Elementwise action of substituting approximable maps into a joint map out of a product.
+
+<!-- formalization -->
+
+**Theorem (`substitution_toElementMap`).** Composing a joint approximable map with a pairing of two maps, then evaluating elementwise, equals the binary elementwise action of the joint map at the images of the two components.
+
+*Proof.* Expand by the composition, pairing, and product–binary elementwise laws. ∎

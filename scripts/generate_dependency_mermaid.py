@@ -1519,10 +1519,15 @@ NS_CON_SHORT: dict[str, tuple[str, str]] = {
         "Lemma 3.6 — constant functions",
     ),
 
+    "Elementwise substitution": (
+        "subEM",
+        "Elementwise substitution",
+    ),
     "Proposition 3.7 — closure under substitution": (
         "P37",
         "Proposition 3.7 — closure under substitution",
     ),
+
     "Definition 3.8 — function space": (
         "D38",
         "Definition 3.8 — function space",
