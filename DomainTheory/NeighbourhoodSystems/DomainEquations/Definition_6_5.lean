@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition_6_4
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.DomainObj
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_10
 
 @[expose] public section
@@ -23,17 +24,6 @@ end
 section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
-
-section
-
-instance : Category DomainObj where
-  Hom D E := ApproximableMap D.sys E.sys
-  id D := ApproximableMap.idMap D.sys
-  comp f g := g.comp f
-  id_comp f := ApproximableMap.comp_idMap f
-  comp_id f := ApproximableMap.idMap_comp f
-  assoc f g h := (ApproximableMap.comp_assoc h g f).symm
-end
 
 section
 universe u

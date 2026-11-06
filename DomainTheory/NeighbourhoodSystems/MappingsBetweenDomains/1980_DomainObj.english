@@ -1,0 +1,13 @@
+Bundle neighbourhood systems as objects of the category whose morphisms are approximable maps.
+
+<!-- formalization -->
+
+**Definition (`DomainObj`).** A *domain object* is a token type together with a neighbourhood system on that type. (The name records the category-theoretic rôle: such a bundle is an object of the category below. The neighbourhood system itself is the presentation; the domain of ideal elements is $|D|$.)
+
+**Definition (`instCategoryDomainObj`).** Neighbourhood systems and approximable mappings form a category: morphisms are approximable maps between the underlying systems; the identity morphism is the identity approximable map; composition of morphisms is composition of approximable maps (in diagrammatic order). The unit and associativity laws are those already proved for identity and composition of approximable maps.
+
+*Proof.* Immediate from the corresponding facts for the identity map and composition. ∎
+
+**Theorem (`DomainObj.id_val`).** The identity morphism on a domain object is the identity approximable map of its neighbourhood system.
+
+**Theorem (`DomainObj.comp_val`).** Composition of morphisms of domain objects is composition of the underlying approximable maps.

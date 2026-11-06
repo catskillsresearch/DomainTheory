@@ -3,6 +3,7 @@ module
 public import Mathlib.CategoryTheory.Category.Basic
 
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NeighborhoodSystem
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.DomainObj
 public import Mathlib.Tactic.ToAdditive
 
 @[expose] public section
@@ -68,21 +69,6 @@ theorem subsystem_iff_subset_of_common {D₀ D₁ E : NeighborhoodSystem α}
 end Subsystem
 
 end
-
-end DomainTheory.NeighbourhoodSystems
-end
-
-section
-
-universe w
-
-namespace DomainTheory.NeighbourhoodSystems
-
-structure DomainObj : Type (w + 1) where
-
-  carrier : Type w
-
-  sys : NeighborhoodSystem carrier
 
 end DomainTheory.NeighbourhoodSystems
 end

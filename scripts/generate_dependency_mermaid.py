@@ -1341,6 +1341,10 @@ NS_MAP_SHORT: dict[str, tuple[str, str]] = {
         "idM",
         "Identity approximable map",
     ),
+    "Neighborhood systems as category objects": (
+        "DomO",
+        "Neighborhood systems as category objects",
+    ),
     "Theorem 2.5 — category of approximable maps": (
         "T25",
         "Theorem 2.5 — category of approximable maps",
@@ -1437,7 +1441,7 @@ def _ns_dom_kind_class(nid: str) -> str:
         return "cex"
     if nid in ("Tok2",):
         return "cexs"
-    if nid == "idM":
+    if nid in ("idM", "DomO"):
         return "cdef"
     return "cdef"
 
