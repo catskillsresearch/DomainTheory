@@ -69,7 +69,7 @@ def uncurry (h : ApproximableMap V₀ (funSpace V₁ V₂)) : ApproximableMap (p
   master_rel := by
     refine ⟨(prod V₀ V₁).master_mem, ?_⟩
     rw [show (prod V₀ V₁).master = prodNbhd V₀.master V₁.master from rfl,
-      inl_preimage_prodNbhd, inr_preimage_prodNbhd, step_master_eq]
+      prodNbhd.inl_preimage, prodNbhd.inr_preimage, step_master_eq]
     exact h.master_rel
   inter_right := by
     rintro W Z Z' ⟨hW, hrel⟩ ⟨_, hrel'⟩
@@ -83,8 +83,8 @@ def uncurry (h : ApproximableMap V₀ (funSpace V₁ V₂)) : ApproximableMap (p
     have hinl : Sum.inl ⁻¹' W₂ ⊆ Sum.inl ⁻¹' W := Set.preimage_mono hW₂W
     have hinr : Sum.inr ⁻¹' W₂ ⊆ Sum.inr ⁻¹' W := Set.preimage_mono hW₂W
     obtain ⟨A, B, hA, hB, rfl⟩ := hW₂
-    rw [inl_preimage_prodNbhd] at hinl ⊢
-    rw [inr_preimage_prodNbhd] at hinr ⊢
+    rw [prodNbhd.inl_preimage] at hinl ⊢
+    rw [prodNbhd.inr_preimage] at hinr ⊢
     refine ⟨prod_mem_prodNbhd hA hB, ?_⟩
     exact h.mono hrel hinl (step_subset hB hZ' hinr hZZ') hA (step_mem hB hZ')
 
@@ -104,7 +104,7 @@ theorem curry_uncurry (h : ApproximableMap V₀ (funSpace V₁ V₂)) : curry (u
 
     have hrel : (uncurry h).rel (prodNbhd X p.1) p.2 := this
     obtain ⟨_, hrel'⟩ := hrel
-    rw [inl_preimage_prodNbhd, inr_preimage_prodNbhd] at hrel'
+    rw [prodNbhd.inl_preimage, prodNbhd.inr_preimage] at hrel'
     exact hrel'
   · intro hrel
     have hX : V₀.mem X := h.rel_dom hrel
@@ -114,7 +114,7 @@ theorem curry_uncurry (h : ApproximableMap V₀ (funSpace V₁ V₂)) : curry (u
     intro p hp
     show (uncurry h).rel (prodNbhd X p.1) p.2
     refine ⟨prod_mem_prodNbhd hX (hL p hp).1, ?_⟩
-    rw [inl_preimage_prodNbhd, inr_preimage_prodNbhd]
+    rw [prodNbhd.inl_preimage, prodNbhd.inr_preimage]
     exact (rel_stepFun_iff h hX hL).mp hrel p hp
 
 theorem uncurry_curry (g : ApproximableMap (prod V₀ V₁) V₂) : uncurry (curry g) = g := by
@@ -122,12 +122,12 @@ theorem uncurry_curry (g : ApproximableMap (prod V₀ V₁) V₂) : uncurry (cur
   intro W Z
   constructor
   · rintro ⟨hW, _, _, hmem⟩
-    rw [prodNbhd_preimage hW]; exact hmem
+    rw [prodNbhd.preimage hW]; exact hmem
   · intro hrel
     have hW := g.rel_dom hrel
     refine ⟨hW, prod_mem_inl hW, step_mem (prod_mem_inr hW) (g.rel_cod hrel), ?_⟩
     show g.rel (prodNbhd (Sum.inl ⁻¹' W) (Sum.inr ⁻¹' W)) Z
-    rwa [← prodNbhd_preimage hW]
+    rwa [← prodNbhd.preimage hW]
 
 def curryEquiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     (V₂ : NeighborhoodSystem γ) :
@@ -177,13 +177,13 @@ theorem uncurry_eq (h : ApproximableMap V₀ (funSpace V₁ V₂)) :
   constructor
   · rintro ⟨W₀, hwW₀, hW₀, hrel⟩
     obtain ⟨X, Y, hX, hY, rfl⟩ := hW₀
-    rw [inl_preimage_prodNbhd] at hrel
-    rw [inr_preimage_prodNbhd] at hrel
+    rw [prodNbhd.inl_preimage] at hrel
+    rw [prodNbhd.inr_preimage] at hrel
     obtain ⟨hwX, hwY⟩ := (prod_mem_split hX hY).mp hwW₀
     exact ⟨Y, ⟨hY, hwY⟩, X, ⟨hX, hwX⟩, hrel⟩
   · rintro ⟨Y, ⟨hY, hwY⟩, X, ⟨hX, hwX⟩, hrel⟩
     refine ⟨prodNbhd X Y, (prod_mem_split hX hY).mpr ⟨hwX, hwY⟩, prod_mem_prodNbhd hX hY, ?_⟩
-    rw [inl_preimage_prodNbhd, inr_preimage_prodNbhd]
+    rw [prodNbhd.inl_preimage, prodNbhd.inr_preimage]
     exact hrel
 
 theorem curry_eval_comp (h : ApproximableMap V₀ (funSpace V₁ V₂)) :

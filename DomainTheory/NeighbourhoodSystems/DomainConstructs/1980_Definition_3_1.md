@@ -1,19 +1,9 @@
 # Definition 3.1
 
-**DEFINITION 3.1.** Let neighbourhood systems $\mathcal{D}_0$ and $\mathcal{D}_1$ be given over disjoint sets $\Delta_0$ and $\Delta_1$. The *product system* over $\Delta_0 \cup \Delta_1$ is defined by:
+@import "1980_Definition_3_1.english" {code_block=false}
 
-$$
-\mathcal{D}_0 \times \mathcal{D}_1 = \{X \cup Y \mid X \in \mathcal{D}_0 \text{ and } Y \in \mathcal{D}_1\}.
-$$
+**[prodNbhd.lean](prodNbhd.lean)**
 
-For elements $x \in |\mathcal{D}_0|$ and $y \in |\mathcal{D}_1|$ we also define:
+@import "prodNbhd.lean"
 
-$$
-\langle x, y \rangle = \{X \cup Y \mid X \in x \text{ and } Y \in y\}.
-$$
-
-$\square$
-
-**[Definition_3_1.lean](Definition_3_1.lean)**
-
-@import "Definition_3_1.lean"
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-06) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

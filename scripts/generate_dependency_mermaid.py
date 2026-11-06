@@ -36,6 +36,12 @@ NS_MAPPINGS_SVG = (
     / "MappingsBetweenDomains"
     / "1980_Mappings_between_domains.svg"
 )
+NS_CONSTRUCTS_SVG = (
+    DT
+    / "NeighbourhoodSystems"
+    / "DomainConstructs"
+    / "1980_Domain_constructs.svg"
+)
 
 DEPRECATED_MERMAID = DT / "1972_Continuous_lattices.mermaid"
 CL1972_SECTION_MERMAIDS = frozenset(
@@ -1479,11 +1485,126 @@ NS_MAP_SHORT: dict[str, tuple[str, str]] = {
     ),
 }
 
+NS_CON_SHORT: dict[str, tuple[str, str]] = {
+    "Definition 3.1 — product of systems": (
+        "D31",
+        "Definition 3.1 — product of systems",
+    ),
+    "Proposition 3.2 — elements of a product": (
+        "P32",
+        "Proposition 3.2 — elements of a product",
+    ),
+    "Definition 3.3 — projection mappings": (
+        "D33",
+        "Definition 3.3 — projection mappings",
+    ),
+    "Proposition 3.4 — pairing and projections": (
+        "P34",
+        "Proposition 3.4 — pairing and projections",
+    ),
+    "Theorem 3.5 — separate approximability": (
+        "T35",
+        "Theorem 3.5 — separate approximability",
+    ),
+    "Lemma 3.6 — constant functions": (
+        "L36",
+        "Lemma 3.6 — constant functions",
+    ),
+    "Proposition 3.7 — closure under substitution": (
+        "P37",
+        "Proposition 3.7 — closure under substitution",
+    ),
+    "Definition 3.8 — function space": (
+        "D38",
+        "Definition 3.8 — function space",
+    ),
+    "Proposition 3.9 — consistent step neighbourhoods": (
+        "P39",
+        "Proposition 3.9 — consistent step neighbourhoods",
+    ),
+    "Theorem 3.10 — elements are mappings": (
+        "T310",
+        "Theorem 3.10 — elements are mappings",
+    ),
+    "Theorem 3.11 — evaluation combinator": (
+        "T311",
+        "Theorem 3.11 — evaluation combinator",
+    ),
+    "Theorem 3.12 — currying": (
+        "T312",
+        "Theorem 3.12 — currying",
+    ),
+    "Theorem 3.13 — pointwise order of maps": (
+        "T313",
+        "Theorem 3.13 — pointwise order of maps",
+    ),
+    "Exercise 3.14 — tagged product of tokens": (
+        "X314",
+        "Exercise 3.14 — tagged product of tokens",
+    ),
+    "Exercise 3.15 — product isomorphisms": (
+        "X315",
+        "Exercise 3.15 — product isomorphisms",
+    ),
+    "Exercise 3.16 — infinite sequences of elements": (
+        "X316",
+        "Exercise 3.16 — infinite sequences of elements",
+    ),
+    "Exercise 3.17 — embedding binary sequences": (
+        "X317",
+        "Exercise 3.17 — embedding binary sequences",
+    ),
+    "Exercise 3.18 — separated sum": (
+        "X318",
+        "Exercise 3.18 — separated sum",
+    ),
+    "Exercise 3.19 — induced maps on constructs": (
+        "X319",
+        "Exercise 3.19 — induced maps on constructs",
+    ),
+    "Exercise 3.20 — sum and product functors": (
+        "X320",
+        "Exercise 3.20 — sum and product functors",
+    ),
+    "Exercise 3.21 — identity of step neighbourhoods": (
+        "X321",
+        "Exercise 3.21 — identity of step neighbourhoods",
+    ),
+    "Exercise 3.22 — composition combinator": (
+        "X322",
+        "Exercise 3.22 — composition combinator",
+    ),
+    "Exercise 3.23 — cartesian closed category": (
+        "X323",
+        "Exercise 3.23 — cartesian closed category",
+    ),
+    "Exercise 3.24 — function-space isomorphisms": (
+        "X324",
+        "Exercise 3.24 — function-space isomorphisms",
+    ),
+    "Exercise 3.25 — opens form a domain": (
+        "X325",
+        "Exercise 3.25 — opens form a domain",
+    ),
+    "Exercise 3.26 — conditional combinator": (
+        "X326",
+        "Exercise 3.26 — conditional combinator",
+    ),
+    "Exercise 3.27 — function space via closure": (
+        "X327",
+        "Exercise 3.27 — function space via closure",
+    ),
+    "Exercise 3.28 — minimal step function": (
+        "X328",
+        "Exercise 3.28 — minimal step function",
+    ),
+}
+
 
 def _ns_dom_kind_class(nid: str) -> str:
     if nid.startswith("D"):
         return "cdef"
-    if nid.startswith(("F", "P")):
+    if nid.startswith(("F", "P", "L")):
         return "cfac"
     if nid.startswith("X"):
         return "cex"
@@ -1515,6 +1636,8 @@ def ns_domains_compact_label(text: str, *, width: int = 15) -> str:
     s = re.sub(r"\bExercise\b", "Exer", s)
     s = re.sub(r"\bTheorems\b", "Thms", s)
     s = re.sub(r"\bTheorem\b", "Thm", s)
+    s = re.sub(r"\bLemmas\b", "Lems", s)
+    s = re.sub(r"\bLemma\b", "Lem", s)
     words = s.split()
     rows: list[str] = []
     cur = ""
@@ -1722,6 +1845,25 @@ def gen_ns_mappings_lecture(diagram: Path, modules: dict[str, Path], old: str) -
             "%% Display copy: Graphviz SVG (gold); no sibling .mermaid.",
         ],
         # Exercises are listed individually on this hub (unlike Domains §1).
+        aggregate_lecture_exercises=False,
+    )
+
+
+def gen_ns_constructs_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    """Item-level Lean deps for 1980_Domain_constructs (SVG gold copy)."""
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=NS_CON_SHORT,
+        companions={},
+        header=[
+            "%% Each box is one outline note from 1980_Domain_constructs.md.",
+            "%% Lean modules = that note's @import .lean files.",
+            "%% Arrowhead on the importer; label = direct-import count.",
+            "%% All cross-note Lean imports, then transitive reduction (keeps reachability).",
+            "%% Display copy: Graphviz SVG (gold); no sibling .mermaid.",
+        ],
         aggregate_lecture_exercises=False,
     )
 
@@ -1937,6 +2079,11 @@ def classify(mermaid: Path, text: str) -> str:
         "1980_Mappings_between_domains.svg",
     ):
         return "ns_mappings_lecture"
+    if mermaid.name in (
+        "1980_Domain_constructs.mermaid",
+        "1980_Domain_constructs.svg",
+    ):
+        return "ns_constructs_lecture"
     if index_md_is_outline_barrel(mermaid):
         return "note_outline"
     if mermaid.name == "1972_ContinuousLattices.mermaid":
@@ -2046,6 +2193,8 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
         return gen_ns_domains_lecture(mermaid, modules, old)
     if kind == "ns_mappings_lecture":
         return gen_ns_mappings_lecture(mermaid, modules, old)
+    if kind == "ns_constructs_lecture":
+        return gen_ns_constructs_lecture(mermaid, modules, old)
     if kind == "ns_items":
         return gen_neighborhood_items(mermaid, modules, old)
     if kind == "note_outline":
@@ -2392,7 +2541,7 @@ def main() -> None:
         if top.is_file():
             paths.append(top)
         # Section hubs with SVG gold copies (no .mermaid sibling).
-        for svg in (NS_DOMAINS_SVG, NS_MAPPINGS_SVG):
+        for svg in (NS_DOMAINS_SVG, NS_MAPPINGS_SVG, NS_CONSTRUCTS_SVG):
             if svg.is_file():
                 paths.append(svg.resolve())
 

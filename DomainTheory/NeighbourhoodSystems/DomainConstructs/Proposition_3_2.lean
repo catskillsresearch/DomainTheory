@@ -1,5 +1,5 @@
 module
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Definition_3_1
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodNbhd
 
 public import Mathlib.Algebra.Group.End
 public import Mathlib.Order.Hom.Basic
@@ -43,11 +43,11 @@ theorem pair_le_pair_iff {x x' : V₀.Element} {y y' : V₁.Element} :
     refine ⟨fun X hX => ?_, fun Y hY => ?_⟩
     · obtain ⟨X', Y', hX', hY', heq⟩ :=
         h (prodNbhd X V₁.master) ⟨X, V₁.master, hX, y.master_mem, rfl⟩
-      obtain ⟨rfl, _⟩ := prodNbhd_injective heq
+      obtain ⟨rfl, _⟩ := prodNbhd.injective heq
       exact hX'
     · obtain ⟨X', Y', hX', hY', heq⟩ :=
         h (prodNbhd V₀.master Y) ⟨V₀.master, Y, x.master_mem, hY, rfl⟩
-      obtain ⟨_, rfl⟩ := prodNbhd_injective heq
+      obtain ⟨_, rfl⟩ := prodNbhd.injective heq
       exact hY'
   · rintro ⟨hx, hy⟩ W ⟨X, Y, hX, hY, rfl⟩
     exact ⟨X, Y, hx X hX, hy Y hY, rfl⟩

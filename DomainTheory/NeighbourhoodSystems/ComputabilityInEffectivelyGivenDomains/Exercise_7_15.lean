@@ -80,7 +80,7 @@ noncomputable def smashPresentation : ScottPresentation (smash V₀ V₁) where
     dsimp only
     simp only [unpair_pair_fst, unpair_pair_snd]
     rw [smashEnum_eq_eff hc₀le hc₁le hc₀ hc₁, smashEnum_eq_eff hc₀le hc₁le hc₀ hc₁,
-      smashEnum_eq_eff hc₀le hc₁le hc₀ hc₁, prodNbhd_inter, prodNbhd_eq_iff]
+      smashEnum_eq_eff hc₀le hc₁le hc₀ hc₁, prodNbhd.inter, prodNbhd_eq_iff]
   cons_computable := by
     obtain ⟨f₀, hf₀p, hf₀e⟩ := proper₀_dec P₀
     obtain ⟨f₁, hf₁p, hf₁e⟩ := proper₁_dec P₁
@@ -115,16 +115,16 @@ noncomputable def smashPresentation : ScottPresentation (smash V₀ V₁) where
       by_cases hpa' : P₀.X t.unpair.1.unpair.1 ≠ V₀.master ∧ P₁.X t.unpair.1.unpair.2 ≠ V₁.master
       · by_cases hpb' : P₀.X t.unpair.2.unpair.1 ≠ V₀.master ∧ P₁.X t.unpair.2.unpair.2 ≠ V₁.master
         · refine Or.inr (Or.inr ⟨?_, ?_⟩)
-          · rw [smashEnum_proper hpa', smashEnum_proper hpb', prodNbhd_inter] at hk
+          · rw [smashEnum_proper hpa', smashEnum_proper hpb', prodNbhd.inter] at hk
             obtain ⟨A, B, hA, _, hkeq⟩ := smashEnum_eq_prodNbhd_mem (P₀ := P₀) (P₁ := P₁) k
             rw [hkeq] at hk
-            obtain ⟨hAsub, _⟩ := prodNbhd_subset_iff.mp hk
+            obtain ⟨hAsub, _⟩ := prodNbhd.subset_iff.mp hk
             obtain ⟨j₀, hj₀⟩ := P₀.surj hA
             exact ⟨j₀, by rw [hj₀]; exact hAsub⟩
-          · rw [smashEnum_proper hpa', smashEnum_proper hpb', prodNbhd_inter] at hk
+          · rw [smashEnum_proper hpa', smashEnum_proper hpb', prodNbhd.inter] at hk
             obtain ⟨A, B, _, hB, hkeq⟩ := smashEnum_eq_prodNbhd_mem (P₀ := P₀) (P₁ := P₁) k
             rw [hkeq] at hk
-            obtain ⟨_, hBsub⟩ := prodNbhd_subset_iff.mp hk
+            obtain ⟨_, hBsub⟩ := prodNbhd.subset_iff.mp hk
             obtain ⟨j₁, hj₁⟩ := P₁.surj hB
             exact ⟨j₁, by rw [hj₁]; exact hBsub⟩
         · exact Or.inr (Or.inl hpb')
@@ -149,7 +149,7 @@ noncomputable def smashPresentation : ScottPresentation (smash V₀ V₁) where
             rw [smashEnum_proper (by
                   rw [unpair_pair_fst, unpair_pair_snd, hp₀, hp₁]; exact ⟨hXne, hYne⟩),
               unpair_pair_fst, unpair_pair_snd, hp₀, hp₁, smashEnum_proper hpa',
-              smashEnum_proper hpb', prodNbhd_inter]
+              smashEnum_proper hpb', prodNbhd.inter]
         · refine ⟨t.unpair.1, ?_⟩
           rw [smashEnum_master (t := t.unpair.2) hpb',
             Set.inter_eq_left.mpr (smashEnum_subset_master t.unpair.1)]
@@ -169,7 +169,7 @@ def smashProj₀ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
   inter_right := by
     rintro W X' X'' ⟨hW, hX', hsub⟩ ⟨-, hX'', hsub'⟩
     obtain ⟨A, B, hA, _, rfl⟩ := smash_mem_prodNbhd_form hW
-    rw [inl_preimage_prodNbhd] at hsub hsub' ⊢
+    rw [prodNbhd.inl_preimage] at hsub hsub' ⊢
     exact ⟨hW, V₀.inter_mem hX' hX'' hA (Set.subset_inter hsub hsub'), Set.subset_inter hsub hsub'⟩
   mono := by
     rintro W W₂ X' X₂' ⟨_, _, hsub⟩ hW₂W hX'X₂' hW₂ hX₂'
@@ -187,7 +187,7 @@ def smashProj₁ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
   inter_right := by
     rintro W Y' Y'' ⟨hW, hY', hsub⟩ ⟨-, hY'', hsub'⟩
     obtain ⟨A, B, _, hB, rfl⟩ := smash_mem_prodNbhd_form hW
-    rw [inr_preimage_prodNbhd] at hsub hsub' ⊢
+    rw [prodNbhd.inr_preimage] at hsub hsub' ⊢
     exact ⟨hW, V₁.inter_mem hY' hY'' hB (Set.subset_inter hsub hsub'), Set.subset_inter hsub hsub'⟩
   mono := by
     rintro W W₂ Y' Y₂' ⟨_, _, hsub⟩ hW₂W hY'Y₂' hW₂ hY₂'
@@ -217,7 +217,7 @@ def smashPaired {V₂ : NeighborhoodSystem γ} (a : ApproximableMap V₂ V₀)
         · rw [Set.inter_eq_left.mpr (show prodNbhd A₁ B₁ ⊆ prodNbhd V₀.master V₁.master from
             (smash V₀ V₁).sub_master hW₁)]
           exact Or.inr ⟨A₁, B₁, rfl, hA₁, hB₁, ha₁, hb₁⟩
-        · rw [prodNbhd_inter]
+        · rw [prodNbhd.inter]
           exact Or.inr ⟨A₁ ∩ A₂, B₁ ∩ B₂, rfl,
             inter_ne_master_left (a.rel_cod ha₁) hA₁,
             inter_ne_master_left (b.rel_cod hb₁) hB₁,
@@ -233,7 +233,7 @@ def smashPaired {V₂ : NeighborhoodSystem γ} (a : ApproximableMap V₂ V₀)
     · left; exact Set.Subset.antisymm ((smash V₀ V₁).sub_master hW₂mem) hWW₂
     · rcases smash_mem_iff.mp hW₂mem with rfl | ⟨A₂, B₂, hA₂, hA₂ne, hB₂, hB₂ne, rfl⟩
       · left; rfl
-      · obtain ⟨hAA₂, hBB₂⟩ := prodNbhd_subset_iff.mp hWW₂
+      · obtain ⟨hAA₂, hBB₂⟩ := prodNbhd.subset_iff.mp hWW₂
         exact Or.inr ⟨A₂, B₂, rfl, hA₂ne, hB₂ne,
           a.mono ha hZ₂Z hAA₂ hZ₂mem hA₂, b.mono hb hZ₂Z hBB₂ hZ₂mem hB₂⟩
 
@@ -1109,8 +1109,8 @@ def smashMap (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁') :
         · rw [Set.inter_eq_left.mpr (show prodNbhd A'₁ B'₁ ⊆ prodNbhd V₀'.master V₁'.master from
             (smash V₀' V₁').sub_master hW'₁)]
           exact Or.inr ⟨A, B, A'₁, B'₁, hWAB, rfl, hA'₁, hB'₁, hf₁, hg₁⟩
-        · obtain ⟨rfl, rfl⟩ := prodNbhd_injective (hWAB.symm.trans hWAB₂)
-          rw [prodNbhd_inter]
+        · obtain ⟨rfl, rfl⟩ := prodNbhd.injective (hWAB.symm.trans hWAB₂)
+          rw [prodNbhd.inter]
           exact Or.inr ⟨A, B, A'₁ ∩ A'₂, B'₁ ∩ B'₂, hWAB, rfl,
             inter_ne_master_left (f.rel_cod hf₁) hA'₁,
             inter_ne_master_left (g.rel_cod hg₁) hB'₁,
@@ -1125,11 +1125,11 @@ def smashMap (f : ApproximableMap V₀ V₀') (g : ApproximableMap V₁ V₁') :
     rcases hd with rfl | ⟨A, B, A', B', rfl, rfl, hA', hB', hf, hg⟩
     · left; exact Set.Subset.antisymm ((smash V₀' V₁').sub_master hW'₂mem) hW'W'₂
     · obtain ⟨A₂, B₂, hA₂, hB₂, rfl⟩ := smash_mem_prodNbhd_form hW₂mem
-      obtain ⟨hA₂A, hB₂B⟩ := prodNbhd_subset_iff.mp hW₂W
+      obtain ⟨hA₂A, hB₂B⟩ := prodNbhd.subset_iff.mp hW₂W
       rcases smash_mem_iff.mp hW'₂mem with rfl |
         ⟨A'₂, B'₂, hA'₂, hA'₂ne, hB'₂, hB'₂ne, rfl⟩
       · left; rfl
-      · obtain ⟨hA'A'₂, hB'B'₂⟩ := prodNbhd_subset_iff.mp hW'W'₂
+      · obtain ⟨hA'A'₂, hB'B'₂⟩ := prodNbhd.subset_iff.mp hW'W'₂
         exact Or.inr ⟨A₂, B₂, A'₂, B'₂, rfl, rfl, hA'₂ne, hB'₂ne,
           f.mono hf hA₂A hA'A'₂ hA₂ hA'₂, g.mono hg hB₂B hB'B'₂ hB₂ hB'₂⟩
 
@@ -1582,10 +1582,10 @@ theorem smashMap_isComputable (P₀' : ComputablePresentation V₀') (P₁' : Co
     · rintro ⟨-, -, hd⟩
       rcases hd with hmaster | ⟨A, B, A', B', hWAB, hW'AB, -, -, hfr, hgr⟩
       · rw [smashEnum_proper hJPm] at hmaster
-        exact absurd (prodNbhd_injective hmaster).1 hJPm.1
+        exact absurd (prodNbhd.injective hmaster).1 hJPm.1
       · rw [smashEnum_proper hJPm] at hW'AB
-        obtain ⟨rfl, rfl⟩ := prodNbhd_injective (heq.symm.trans hWAB)
-        obtain ⟨rfl, rfl⟩ := prodNbhd_injective hW'AB
+        obtain ⟨rfl, rfl⟩ := prodNbhd.injective (heq.symm.trans hWAB)
+        obtain ⟨rfl, rfl⟩ := prodNbhd.injective hW'AB
         exact Or.inr ⟨hJPm, hfr, hgr⟩
     · rintro (hnp | ⟨-, hfr, hgr⟩)
       · exact absurd hJPm hnp
@@ -1624,9 +1624,9 @@ theorem smashPaired_isComputable {V₂ : NeighborhoodSystem γ} (P₂ : Computab
     · rintro ⟨-, -, hd⟩
       rcases hd with hmaster | ⟨A, B, hWAB, -, -, ha', hb'⟩
       · rw [smashEnum_proper hJPm] at hmaster
-        exact absurd (prodNbhd_injective hmaster).1 hJPm.1
+        exact absurd (prodNbhd.injective hmaster).1 hJPm.1
       · rw [smashEnum_proper hJPm] at hWAB
-        obtain ⟨rfl, rfl⟩ := prodNbhd_injective hWAB
+        obtain ⟨rfl, rfl⟩ := prodNbhd.injective hWAB
         exact Or.inr ⟨hJPm, ha', hb'⟩
     · rintro (hnp | ⟨-, ha', hb'⟩)
       · exact absurd hJPm hnp
@@ -1668,11 +1668,11 @@ theorem smashProj₀_isComputable :
   simp only [smashProj₀_rel, unpair_pair_fst, unpair_pair_snd]
   constructor
   · rintro ⟨-, -, hsub⟩
-    rw [smashEnum_eq_eff hc₀le hc₁le hc₀ hc₁, inl_preimage_prodNbhd] at hsub
+    rw [smashEnum_eq_eff hc₀le hc₁le hc₀ hc₁, prodNbhd.inl_preimage] at hsub
     exact hsub
   · intro h
     refine ⟨smashEnum_mem (P₀ := P₀) (P₁ := P₁) _, P₀.mem_X _, ?_⟩
-    rw [smashEnum_eq_eff hc₀le hc₁le hc₀ hc₁, inl_preimage_prodNbhd]
+    rw [smashEnum_eq_eff hc₀le hc₁le hc₀ hc₁, prodNbhd.inl_preimage]
     exact h
 
 theorem smashProj₁_isComputable :
@@ -1705,11 +1705,11 @@ theorem smashProj₁_isComputable :
   simp only [smashProj₁_rel, unpair_pair_fst, unpair_pair_snd]
   constructor
   · rintro ⟨-, -, hsub⟩
-    rw [smashEnum_eq_eff hc₀le hc₁le hc₀ hc₁, inr_preimage_prodNbhd] at hsub
+    rw [smashEnum_eq_eff hc₀le hc₁le hc₀ hc₁, prodNbhd.inr_preimage] at hsub
     exact hsub
   · intro h
     refine ⟨smashEnum_mem (P₀ := P₀) (P₁ := P₁) _, P₁.mem_X _, ?_⟩
-    rw [smashEnum_eq_eff hc₀le hc₁le hc₀ hc₁, inr_preimage_prodNbhd]
+    rw [smashEnum_eq_eff hc₀le hc₁le hc₀ hc₁, prodNbhd.inr_preimage]
     exact h
 
 theorem smash_isEffectivelyGivenS (h₀ : V₀.IsEffectivelyGiven) (h₁ : V₁.IsEffectivelyGiven) :

@@ -276,14 +276,14 @@ def mergeMap : ApproximableMap (prod C C) C where
     simp only [prod_master, shape, C_master, cone.nil]
   inter_right := by
     rintro W Z Z' ⟨b₀, σ, b₁, τ, rfl, hZ⟩ ⟨b₀', σ', b₁', τ', heq, hZ'⟩
-    obtain ⟨hX, hY⟩ := prodNbhd_injective heq
+    obtain ⟨hX, hY⟩ := prodNbhd.injective heq
     obtain ⟨rfl, rfl⟩ := shape_injective hX
     obtain ⟨rfl, rfl⟩ := shape_injective hY
     exact ⟨b₀, σ, b₁, τ, rfl, (mergeElem σ b₀ τ b₁).inter_mem hZ hZ'⟩
   mono := by
     rintro W W₂ Z Z' ⟨b₀, σ, b₁, τ, rfl, hZ⟩ hW₂W hZZ' hW₂ hZ'
     obtain ⟨P, Q, hP, hQ, rfl⟩ := hW₂
-    obtain ⟨hPsub, hQsub⟩ := prodNbhd_subset_iff.mp hW₂W
+    obtain ⟨hPsub, hQsub⟩ := prodNbhd.subset_iff.mp hW₂W
     obtain ⟨b₀', σ', hPeq, hle0⟩ := shape_refine hP hPsub
     obtain ⟨b₁', τ', hQeq, hle1⟩ := shape_refine hQ hQsub
     subst hPeq; subst hQeq
@@ -394,10 +394,10 @@ theorem prod_principal_pair (b₀ : Bool) (σ : Str) (b₁ : Bool) (τ : Str) :
   constructor
   · rintro ⟨hP, hsub⟩
     obtain ⟨X', Y', hX', hY', rfl⟩ := hP
-    obtain ⟨hsX, hsY⟩ := prodNbhd_subset_iff.mp hsub
+    obtain ⟨hsX, hsY⟩ := prodNbhd.subset_iff.mp hsub
     exact ⟨X', Y', ⟨hX', hsX⟩, ⟨hY', hsY⟩, rfl⟩
   · rintro ⟨X', Y', ⟨hX', hsX⟩, ⟨hY', hsY⟩, rfl⟩
-    exact ⟨prod_mem_prodNbhd hX' hY', prodNbhd_subset_iff.mpr ⟨hsX, hsY⟩⟩
+    exact ⟨prod_mem_prodNbhd hX' hY', prodNbhd.subset_iff.mpr ⟨hsX, hsY⟩⟩
 
 theorem prodMap_ext {f g : ApproximableMap (prod C C) C}
     (h : ∀ b₀ σ b₁ τ, f.toElementMap (pair (shapeElem b₀ σ) (shapeElem b₁ τ))

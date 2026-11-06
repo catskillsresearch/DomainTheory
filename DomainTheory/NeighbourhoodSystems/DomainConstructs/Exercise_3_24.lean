@@ -278,7 +278,7 @@ theorem prod_mem_nonempty (hn₀ : ∀ X, V₀.mem X → X.Nonempty) (_hn₁ : �
     (W : Set (α ⊕ β)) (hW : (prod V₀ V₁).mem W) : W.Nonempty := by
   obtain ⟨X, Y, hX, _, rfl⟩ := hW
   obtain ⟨a, ha⟩ := hn₀ X hX
-  exact ⟨Sum.inl a, mem_prodNbhd_inl.mpr ha⟩
+  exact ⟨Sum.inl a, prodNbhd.mem_inl.mpr ha⟩
 
 def distribMap (hn₀ : ∀ X, V₀.mem X → X.Nonempty) (hn₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
     (hn₂ : ∀ Z, V₂.mem Z → Z.Nonempty) :

@@ -29,14 +29,14 @@ def capMap : ApproximableMap (prod PN PN) PN where
     Set.subset_univ _, Set.subset_univ _⟩
   inter_right := by
     rintro W Z Z' ⟨X, Y, rfl, hX, hY, hZ, hXZ, hYZ⟩ ⟨X', Y', heq, _, _, hZ', hXZ', hYZ'⟩
-    obtain ⟨rfl, rfl⟩ := prodNbhd_injective heq
+    obtain ⟨rfl, rfl⟩ := prodNbhd.injective heq
     obtain ⟨k, hk⟩ := hZ; obtain ⟨k', hk'⟩ := hZ'; subst hk; subst hk'
     exact ⟨X, Y, rfl, hX, hY, ⟨myLor k k', nbhd_inter k k'⟩,
       Set.subset_inter hXZ hXZ', Set.subset_inter hYZ hYZ'⟩
   mono := by
     rintro W W' Z Z' ⟨X, Y, rfl, hX, hY, hZ, hXZ, hYZ⟩ hW'W hZZ' hW' hZ'
     obtain ⟨X', Y', hX', hY', rfl⟩ := hW'
-    obtain ⟨hXX', hYY'⟩ := prodNbhd_subset_iff.mp hW'W
+    obtain ⟨hXX', hYY'⟩ := prodNbhd.subset_iff.mp hW'W
     exact ⟨X', Y', rfl, hX', hY', hZ', hXX'.trans (hXZ.trans hZZ'), hYY'.trans (hYZ.trans hZZ')⟩
 
 end DomainTheory.NeighbourhoodSystems.Exercise723
@@ -73,13 +73,13 @@ def cupMap : ApproximableMap (prod PN PN) PN where
     Set.inter_subset_left.trans (Set.subset_univ _)⟩
   inter_right := by
     rintro W Z Z' ⟨X, Y, rfl, hX, hY, hZ, hXYZ⟩ ⟨X', Y', heq, _, _, hZ', hXYZ'⟩
-    obtain ⟨rfl, rfl⟩ := prodNbhd_injective heq
+    obtain ⟨rfl, rfl⟩ := prodNbhd.injective heq
     obtain ⟨k, hk⟩ := hZ; obtain ⟨k', hk'⟩ := hZ'; subst hk; subst hk'
     exact ⟨X, Y, rfl, hX, hY, ⟨myLor k k', nbhd_inter k k'⟩, Set.subset_inter hXYZ hXYZ'⟩
   mono := by
     rintro W W' Z Z' ⟨X, Y, rfl, hX, hY, hZ, hXYZ⟩ hW'W hZZ' hW' hZ'
     obtain ⟨X', Y', hX', hY', rfl⟩ := hW'
-    obtain ⟨hXX', hYY'⟩ := prodNbhd_subset_iff.mp hW'W
+    obtain ⟨hXX', hYY'⟩ := prodNbhd.subset_iff.mp hW'W
     exact ⟨X', Y', rfl, hX', hY', hZ',
       (Set.inter_subset_inter hXX' hYY').trans (hXYZ.trans hZZ')⟩
 end
@@ -148,7 +148,7 @@ def gMap : ApproximableMap (prod PN PN) PN where
     fun x hx => absurd (Set.mem_univ x) hx⟩
   inter_right := by
     rintro W Z Z' ⟨X, Y, rfl, hX, hY, hZ, hsub⟩ ⟨X', Y', heq, _, _, hZ', hsub'⟩
-    obtain ⟨rfl, rfl⟩ := prodNbhd_injective heq
+    obtain ⟨rfl, rfl⟩ := prodNbhd.injective heq
     obtain ⟨k, hk⟩ := hZ; obtain ⟨k', hk'⟩ := hZ'; subst hk; subst hk'
     refine ⟨X, Y, rfl, hX, hY, ⟨myLor k k', nbhd_inter k k'⟩, ?_⟩
     rw [compl_inter_nbhd]
@@ -156,7 +156,7 @@ def gMap : ApproximableMap (prod PN PN) PN where
   mono := by
     rintro W W' Z Z' ⟨X, Y, rfl, hX, hY, hZ, hsub⟩ hW'W hZZ' hW' hZ'
     obtain ⟨X', Y', hX', hY', rfl⟩ := hW'
-    obtain ⟨hXX', hYY'⟩ := prodNbhd_subset_iff.mp hW'W
+    obtain ⟨hXX', hYY'⟩ := prodNbhd.subset_iff.mp hW'W
     refine ⟨X', Y', rfl, hX', hY', hZ', ?_⟩
     calc Z'ᶜ ⊆ Zᶜ := compl_subset_compl_of_subset hZZ'
       _ ⊆ Fun Xᶜ Yᶜ := hsub
@@ -214,7 +214,7 @@ def plusMap : ApproximableMap (prod PN PN) PN where
     fun x hx => absurd (Set.mem_univ x) hx⟩
   inter_right := by
     rintro W Z Z' ⟨X, Y, rfl, hX, hY, hZ, hsub⟩ ⟨X', Y', heq, _, _, hZ', hsub'⟩
-    obtain ⟨rfl, rfl⟩ := prodNbhd_injective heq
+    obtain ⟨rfl, rfl⟩ := prodNbhd.injective heq
     obtain ⟨k, hk⟩ := hZ; obtain ⟨k', hk'⟩ := hZ'; subst hk; subst hk'
     refine ⟨X, Y, rfl, hX, hY, ⟨myLor k k', nbhd_inter k k'⟩, ?_⟩
     rw [compl_inter_nbhd]
@@ -222,7 +222,7 @@ def plusMap : ApproximableMap (prod PN PN) PN where
   mono := by
     rintro W W' Z Z' ⟨X, Y, rfl, hX, hY, hZ, hsub⟩ hW'W hZZ' hW' hZ'
     obtain ⟨X', Y', hX', hY', rfl⟩ := hW'
-    obtain ⟨hXX', hYY'⟩ := prodNbhd_subset_iff.mp hW'W
+    obtain ⟨hXX', hYY'⟩ := prodNbhd.subset_iff.mp hW'W
     refine ⟨X', Y', rfl, hX', hY', hZ', ?_⟩
     calc Z'ᶜ ⊆ Zᶜ := compl_subset_compl_of_subset hZZ'
       _ ⊆ Xᶜ +ˢ Yᶜ := hsub
@@ -557,7 +557,7 @@ theorem capMap_rel_iff (n m k : ℕ) :
     capMap.rel (prodNbhd (nbhd n) (nbhd m)) (nbhd k) ↔ nbhd n ⊆ nbhd k ∧ nbhd m ⊆ nbhd k := by
   constructor
   · rintro ⟨X, Y, heq, _, _, _, hXZ, hYZ⟩
-    obtain ⟨rfl, rfl⟩ := prodNbhd_injective heq
+    obtain ⟨rfl, rfl⟩ := prodNbhd.injective heq
     exact ⟨hXZ, hYZ⟩
   · rintro ⟨hXZ, hYZ⟩
     exact ⟨nbhd n, nbhd m, rfl, ⟨n, rfl⟩, ⟨m, rfl⟩, ⟨k, rfl⟩, hXZ, hYZ⟩
@@ -585,7 +585,7 @@ theorem cupMap_rel_iff (n m k : ℕ) :
   rw [← nbhd_inter n m]
   constructor
   · rintro ⟨X, Y, heq, _, _, _, hXYZ⟩
-    obtain ⟨rfl, rfl⟩ := prodNbhd_injective heq
+    obtain ⟨rfl, rfl⟩ := prodNbhd.injective heq
     exact hXYZ
   · intro h
     exact ⟨nbhd n, nbhd m, rfl, ⟨n, rfl⟩, ⟨m, rfl⟩, ⟨k, rfl⟩, h⟩
@@ -630,7 +630,7 @@ theorem gMap_rel_iff (n m k : ℕ) :
     gMap.rel (prodNbhd (nbhd n) (nbhd m)) (nbhd k) ↔ (nbhd k)ᶜ ⊆ Fun (nbhd n)ᶜ (nbhd m)ᶜ := by
   constructor
   · rintro ⟨X, Y, heq, _, _, _, hsub⟩
-    obtain ⟨rfl, rfl⟩ := prodNbhd_injective heq
+    obtain ⟨rfl, rfl⟩ := prodNbhd.injective heq
     exact hsub
   · intro h
     exact ⟨nbhd n, nbhd m, rfl, ⟨n, rfl⟩, ⟨m, rfl⟩, ⟨k, rfl⟩, h⟩
@@ -1036,7 +1036,7 @@ theorem plusMap_rel_iff (n m k : ℕ) :
   rw [nbhd_subset_iff_compl_subset_compl, compl_nbhd_plusIdx]
   constructor
   · rintro ⟨X, Y, heq, _, _, _, hsub⟩
-    obtain ⟨rfl, rfl⟩ := prodNbhd_injective heq
+    obtain ⟨rfl, rfl⟩ := prodNbhd.injective heq
     exact hsub
   · intro h
     exact ⟨nbhd n, nbhd m, rfl, ⟨n, rfl⟩, ⟨m, rfl⟩, ⟨k, rfl⟩, h⟩

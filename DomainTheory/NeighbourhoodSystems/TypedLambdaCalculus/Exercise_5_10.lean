@@ -50,7 +50,7 @@ def smash (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) : Neighb
   master := prodNbhd V₀.master V₁.master
   master_nonempty := by
     obtain ⟨a, ha⟩ := V₀.master_nonempty
-    exact ⟨Sum.inl a, mem_prodNbhd_inl.mpr ha⟩
+    exact ⟨Sum.inl a, prodNbhd.mem_inl.mpr ha⟩
   master_mem := Or.inl rfl
   inter_mem := by
     rintro W W' Z (rfl | ⟨X, Y, hX, hXne, hY, hYne, rfl⟩) hW' hZ hZsub
@@ -59,24 +59,24 @@ def smash (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) : Neighb
       · left; rw [Set.inter_self]
       · right
         refine ⟨X', Y', hX', hX'ne, hY', hY'ne, ?_⟩
-        rw [prodNbhd_inter, Set.inter_eq_right.mpr (V₀.sub_master hX'),
+        rw [prodNbhd.inter, Set.inter_eq_right.mpr (V₀.sub_master hX'),
           Set.inter_eq_right.mpr (V₁.sub_master hY')]
     ·
       rcases hW' with rfl | ⟨X', Y', hX', hX'ne, hY', hY'ne, rfl⟩
       · right
         refine ⟨X, Y, hX, hXne, hY, hYne, ?_⟩
-        rw [prodNbhd_inter, Set.inter_eq_left.mpr (V₀.sub_master hX),
+        rw [prodNbhd.inter, Set.inter_eq_left.mpr (V₀.sub_master hX),
           Set.inter_eq_left.mpr (V₁.sub_master hY)]
       ·
         right
-        rw [prodNbhd_inter] at hZsub ⊢
+        rw [prodNbhd.inter] at hZsub ⊢
         rcases hZ with hZeq | ⟨U, V, hU, _, hV, _, rfl⟩
         ·
           exfalso
           rw [hZeq] at hZsub
-          obtain ⟨hΔ₀, _⟩ := prodNbhd_subset_iff.mp hZsub
+          obtain ⟨hΔ₀, _⟩ := prodNbhd.subset_iff.mp hZsub
           exact hXne (Set.Subset.antisymm (V₀.sub_master hX) (hΔ₀.trans Set.inter_subset_left))
-        · obtain ⟨hUsub, hVsub⟩ := prodNbhd_subset_iff.mp hZsub
+        · obtain ⟨hUsub, hVsub⟩ := prodNbhd.subset_iff.mp hZsub
           refine ⟨X ∩ X', Y ∩ Y', ?_, ?_, ?_, ?_, rfl⟩
           · exact V₀.inter_mem hX hX' hU hUsub
           · exact inter_ne_master_left hX hXne
@@ -85,7 +85,7 @@ def smash (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) : Neighb
   sub_master := by
     rintro W (rfl | ⟨X, Y, hX, _, hY, _, rfl⟩)
     · exact subset_rfl
-    · exact prodNbhd_subset_iff.mpr ⟨V₀.sub_master hX, V₁.sub_master hY⟩
+    · exact prodNbhd.subset_iff.mpr ⟨V₀.sub_master hX, V₁.sub_master hY⟩
 
 @[simp] theorem smash_master :
     (smash V₀ V₁).master = prodNbhd V₀.master V₁.master := rfl
@@ -112,24 +112,24 @@ def smashPair (x : V₀.Element) (y : V₁.Element) : (smash V₀ V₁).Element 
       · left; rw [Set.inter_self]
       · right
         exact ⟨X', Y', hX', hX'ne, hY', hY'ne, by
-          rw [prodNbhd_inter, Set.inter_eq_right.mpr (V₀.sub_master (x.sub hX')),
+          rw [prodNbhd.inter, Set.inter_eq_right.mpr (V₀.sub_master (x.sub hX')),
             Set.inter_eq_right.mpr (V₁.sub_master (y.sub hY'))]⟩
     · rcases hW' with rfl | ⟨X', Y', hX', hX'ne, hY', hY'ne, rfl⟩
       · right
         exact ⟨X, Y, hX, hXne, hY, hYne, by
-          rw [prodNbhd_inter, Set.inter_eq_left.mpr (V₀.sub_master (x.sub hX)),
+          rw [prodNbhd.inter, Set.inter_eq_left.mpr (V₀.sub_master (x.sub hX)),
             Set.inter_eq_left.mpr (V₁.sub_master (y.sub hY))]⟩
       · right
         refine ⟨X ∩ X', Y ∩ Y', x.inter_mem hX hX', inter_ne_master_left (x.sub hX) hXne,
           y.inter_mem hY hY', inter_ne_master_right (y.sub hY) hYne, ?_⟩
-        rw [prodNbhd_inter]
+        rw [prodNbhd.inter]
   up_mem := by
     rintro W W' (rfl | ⟨X, Y, hX, hXne, hY, hYne, rfl⟩) hW' hsub
     · left
       exact Set.Subset.antisymm ((smash V₀ V₁).sub_master hW') hsub
     · rcases hW' with rfl | ⟨X', Y', hX', hX'ne, hY', hY'ne, rfl⟩
       · left; rfl
-      · obtain ⟨hXX', hYY'⟩ := prodNbhd_subset_iff.mp hsub
+      · obtain ⟨hXX', hYY'⟩ := prodNbhd.subset_iff.mp hsub
         right
         exact ⟨X', Y', x.up_mem hX hX' hXX', hX'ne, y.up_mem hY hY' hYY', hY'ne, rfl⟩
 
@@ -209,7 +209,7 @@ theorem smashPair_eq_bot_iff {x : V₀.Element} {y : V₁.Element} :
     have hmem : (smashPair x y).mem (prodNbhd X Y) :=
       Or.inr ⟨X, Y, hxX, hXne, hyY, hYne, rfl⟩
     rw [h, smash_mem_bot] at hmem
-    obtain ⟨hX, _⟩ := prodNbhd_injective hmem
+    obtain ⟨hX, _⟩ := prodNbhd.injective hmem
     exact hXne hX
   · intro h
     apply eq_bot_of_no_proper
@@ -450,9 +450,9 @@ theorem smashPair_principal_apply (g : ApproximableMap (smash V₀ V₁) V₂)
   constructor
   · rintro ⟨W, hW, hrel⟩
     rcases hW with rfl | ⟨A, B, ⟨_, hXA⟩, _, ⟨_, hYB⟩, _, rfl⟩
-    · exact g.mono hrel (prodNbhd_subset_iff.mpr ⟨V₀.sub_master hX, V₁.sub_master hY⟩) subset_rfl
+    · exact g.mono hrel (prodNbhd.subset_iff.mpr ⟨V₀.sub_master hX, V₁.sub_master hY⟩) subset_rfl
         (smash_mem_proper hX hXne hY hYne) (g.rel_cod hrel)
-    · exact g.mono hrel (prodNbhd_subset_iff.mpr ⟨hXA, hYB⟩) subset_rfl
+    · exact g.mono hrel (prodNbhd.subset_iff.mpr ⟨hXA, hYB⟩) subset_rfl
         (smash_mem_proper hX hXne hY hYne) (g.rel_cod hrel)
   · intro hrel
     exact ⟨prodNbhd X Y, Or.inr ⟨X, Y, ⟨hX, subset_rfl⟩, hXne, ⟨hY, subset_rfl⟩, hYne, rfl⟩, hrel⟩
@@ -532,7 +532,7 @@ def smashUncurryMap (h : StrictMap V₀ (strictFun V₁ V₂)) : StrictMap (smas
      master_rel := by
        refine ⟨(smash V₀ V₁).master_mem, ?_⟩
        rw [show (smash V₀ V₁).master = prodNbhd V₀.master V₁.master from rfl,
-         inl_preimage_prodNbhd, inr_preimage_prodNbhd, sstep_master_eq]
+         prodNbhd.inl_preimage, prodNbhd.inr_preimage, sstep_master_eq]
        exact h.1.master_rel
      inter_right := by
        rintro W Z Z' ⟨hW, hrel⟩ ⟨_, hrel'⟩
@@ -547,9 +547,9 @@ def smashUncurryMap (h : StrictMap V₀ (strictFun V₁ V₂)) : StrictMap (smas
        have hinr : Sum.inr ⁻¹' W₂ ⊆ Sum.inr ⁻¹' W := Set.preimage_mono hW₂W
        obtain ⟨A, B, hA, hB, rfl⟩ := smash_mem_prodNbhd_form hW₂
        refine ⟨hW₂, ?_⟩
-       rw [inl_preimage_prodNbhd] at hinl
-       rw [inr_preimage_prodNbhd] at hinr
-       rw [inl_preimage_prodNbhd, inr_preimage_prodNbhd]
+       rw [prodNbhd.inl_preimage] at hinl
+       rw [prodNbhd.inr_preimage] at hinr
+       rw [prodNbhd.inl_preimage, prodNbhd.inr_preimage]
        obtain ⟨f, hf⟩ := (strictFun_mem_iff.mp (h.1.rel_cod hrel)).2
        have hfB : f.1.rel B Z' := f.1.mono hf hinr hZZ' hB hZ'
        exact h.1.mono hrel hinl (sstep_subset hB hZ' hinr hZZ') hA
@@ -557,7 +557,7 @@ def smashUncurryMap (h : StrictMap V₀ (strictFun V₁ V₂)) : StrictMap (smas
    by
      rintro Z ⟨_, hrel⟩
      rw [show (smash V₀ V₁).master = prodNbhd V₀.master V₁.master from rfl,
-       inl_preimage_prodNbhd, inr_preimage_prodNbhd] at hrel
+       prodNbhd.inl_preimage, prodNbhd.inr_preimage] at hrel
      have huniv : sstep V₁.master Z = (Set.univ : Set (StrictMap V₁ V₂)) := h.2 hrel
      have hcb : (⟨constMap V₁ V₂.bot, isStrict_constBot⟩ : StrictMap V₁ V₂) ∈ sstep V₁.master Z := by
        rw [huniv]; exact Set.mem_univ _
@@ -572,11 +572,11 @@ theorem smashUncurry_curry (g : StrictMap (smash V₀ V₁) V₂) :
   constructor
   · rintro ⟨hW, hcurry⟩
     rcases hW with rfl | ⟨X, Y, hXp, hXne, hYp, hYne, rfl⟩
-    · simp only [inl_preimage_prodNbhd, inr_preimage_prodNbhd] at hcurry
+    · simp only [prodNbhd.inl_preimage, prodNbhd.inr_preimage] at hcurry
       obtain ⟨hXm, _, hsec⟩ := hcurry
       have hZ : Z = V₂.master := isStrict_smashSection g.2 hXm hsec
       rw [hZ]; exact g.1.master_rel
-    · simp only [inl_preimage_prodNbhd, inr_preimage_prodNbhd] at hcurry
+    · simp only [prodNbhd.inl_preimage, prodNbhd.inr_preimage] at hcurry
       obtain ⟨hX, _, hY, hmem⟩ := hcurry
       exact (smashPair_principal_apply g.1 hXp hXne hYp hYne).mp hmem
   · intro hrel
@@ -585,10 +585,10 @@ theorem smashUncurry_curry (g : StrictMap (smash V₀ V₁) V₂) :
     · have hZ : Z = V₂.master := g.2 hrel
       subst hZ
       refine ⟨Or.inl rfl, ?_⟩
-      simp only [inl_preimage_prodNbhd, inr_preimage_prodNbhd, sstep_master_eq]
+      simp only [prodNbhd.inl_preimage, prodNbhd.inr_preimage, sstep_master_eq]
       exact ⟨V₀.master_mem, (strictFun V₁ V₂).master_mem, Set.mem_univ _⟩
     · refine ⟨smash_mem_proper hXp hXne hYp hYne, ?_⟩
-      simp only [inl_preimage_prodNbhd, inr_preimage_prodNbhd]
+      simp only [prodNbhd.inl_preimage, prodNbhd.inr_preimage]
       have hsec : (smashSection g.1 hXp).rel Y Z :=
         ⟨hYp, (smashPair_principal_apply g.1 hXp hXne hYp hYne).mpr hrel⟩
       exact ⟨hXp, sstep_mem_of_mem
@@ -644,11 +644,11 @@ theorem section_uncurry_rel (h : StrictMap V₀ (strictFun V₁ V₂))
       · rintro ⟨hY', hmem⟩
         obtain ⟨_, hrel⟩ :=
           (smashPair_principal_apply (smashUncurryMap h).1 hX hXm hY hYm).mp hmem
-        simpa only [inl_preimage_prodNbhd, inr_preimage_prodNbhd] using hrel
+        simpa only [prodNbhd.inl_preimage, prodNbhd.inr_preimage] using hrel
       · intro hrel
         refine ⟨hY, (smashPair_principal_apply (smashUncurryMap h).1 hX hXm hY hYm).mpr ?_⟩
         refine ⟨smash_mem_proper hX hXm hY hYm, ?_⟩
-        simpa only [inl_preimage_prodNbhd, inr_preimage_prodNbhd] using hrel
+        simpa only [prodNbhd.inl_preimage, prodNbhd.inr_preimage] using hrel
 
 theorem smashCurry_uncurry (h : StrictMap V₀ (strictFun V₁ V₂)) :
     smashCurryMap (smashUncurryMap h) = h := by

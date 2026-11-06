@@ -42,7 +42,7 @@ def gSection (g : ApproximableMap (prod V₀ V₁) V₂) {X : Set α} (hX : V₀
   inter_right h h' := g.inter_right h h'
   mono := by
     intro Y Y' Z Z' h hY'Y hZZ' hY' hZ'
-    exact g.mono h (prodNbhd_subset_iff.mpr ⟨subset_rfl, hY'Y⟩) hZZ'
+    exact g.mono h (prodNbhd.subset_iff.mpr ⟨subset_rfl, hY'Y⟩) hZZ'
       (prod_mem_prodNbhd hX hY') hZ'
 
 @[simp] theorem gSection_rel {g : ApproximableMap (prod V₀ V₁) V₂} {X : Set α} (hX : V₀.mem X)
@@ -52,7 +52,7 @@ theorem gSection_le {g : ApproximableMap (prod V₀ V₁) V₂} {X X' : Set α}
     (hX : V₀.mem X) (hX' : V₀.mem X') (hX'X : X' ⊆ X) : gSection g hX ≤ gSection g hX' := by
   intro Y Z h
   have hY := (prod_mem_prodNbhd_iff.mp (g.rel_dom h)).2
-  exact g.mono h (prodNbhd_subset_iff.mpr ⟨hX'X, subset_rfl⟩) subset_rfl
+  exact g.mono h (prodNbhd.subset_iff.mpr ⟨hX'X, subset_rfl⟩) subset_rfl
     (prod_mem_prodNbhd hX' hY) (g.rel_cod h)
 
 theorem toElementMap₂_eval (φ : (funSpace V₁ V₂).Element) (x : V₁.Element) :

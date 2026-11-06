@@ -1,9 +1,9 @@
 # Domain constructs
 
-@import "1980_Domain_constructs.mermaid"
+@import "1980_Domain_constructs.svg" {code_block=false}
 
-- [Introduction](1980_Introduction.md)
-- [Definition 3.1 — product of systems](1980_Definition_3_1.md)
+- [Introduction](1980_Introduction.md) [✓](../1980_REVISION.md)
+- [Definition 3.1 — product of systems](1980_Definition_3_1.md) [✓](../1980_REVISION.md)
 - [Proposition 3.2 — elements of a product](1980_Proposition_3_2.md)
 - [Definition 3.3 — projection mappings](1980_Definition_3_3.md)
 - [Proposition 3.4 — pairing and projections](1980_Proposition_3_4.md)

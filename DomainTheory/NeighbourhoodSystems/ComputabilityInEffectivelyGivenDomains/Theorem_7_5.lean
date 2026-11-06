@@ -69,7 +69,7 @@ theorem evalMap_rel_prodNbhd_iff {F : Set (ApproximableMap V₀ V₁)} (hF : (fu
     (evalMap V₀ V₁).rel (prodNbhd F X) Y ↔ F ⊆ step X Y := by
   show (prod (funSpace V₀ V₁) V₀).mem (prodNbhd F X) ∧
     (eval V₀ V₁).rel (Sum.inl ⁻¹' prodNbhd F X) (Sum.inr ⁻¹' prodNbhd F X) Y ↔ _
-  rw [inl_preimage_prodNbhd, inr_preimage_prodNbhd]
+  rw [prodNbhd.inl_preimage, prodNbhd.inr_preimage]
   constructor
   · rintro ⟨_, _, _, _, hrel⟩ f hf; exact mem_step.mpr (hrel f hf)
   · intro hsub

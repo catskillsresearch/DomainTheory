@@ -2546,7 +2546,7 @@ theorem prod_nonempty {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : Nei
     ∀ W, (prod V₀ V₁).mem W → W.Nonempty := by
   rintro W ⟨X, Y, hX, _, rfl⟩
   obtain ⟨a, ha⟩ := h₀ X hX
-  exact ⟨Sum.inl a, mem_prodNbhd_inl.mpr ha⟩
+  exact ⟨Sum.inl a, prodNbhd.mem_inl.mpr ha⟩
 
 end Exercise618
 end

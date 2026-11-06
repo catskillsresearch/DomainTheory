@@ -1,0 +1,121 @@
+**DEFINITION 3.1.** Let neighbourhood systems $\mathcal{D}_0$ and $\mathcal{D}_1$ be given over disjoint sets $\Delta_0$ and $\Delta_1$. The *product system* over $\Delta_0 \cup \Delta_1$ is defined by:
+
+$$
+\mathcal{D}_0 \times \mathcal{D}_1 = \{X \cup Y \mid X \in \mathcal{D}_0 \text{ and } Y \in \mathcal{D}_1\}.
+$$
+
+For elements $x \in |\mathcal{D}_0|$ and $y \in |\mathcal{D}_1|$ we also define:
+
+$$
+\langle x, y \rangle = \{X \cup Y \mid X \in x \text{ and } Y \in y\}.
+$$
+
+$\square$
+
+<!-- formalization -->
+
+**Definition (`prodNbhd`).** The product of two sets of tokens is the disjoint union of their tagged copies in the sum type.
+
+**Theorem (`prodNbhd.mem_inl`).** A left-tagged token belongs to a product neighbourhood if and only if the untagged token belongs to the left factor.
+
+*Proof.* Unpack the image-union definition. ∎
+
+**Theorem (`prodNbhd.mem_inr`).** A right-tagged token belongs to a product neighbourhood if and only if the untagged token belongs to the right factor.
+
+*Proof.* Unpack the image-union definition. ∎
+
+**Theorem (`prodNbhd.inl_preimage`).** The left untagging of a product neighbourhood recovers the left factor.
+
+*Proof.* By the left-membership characterisation. ∎
+
+**Theorem (`prodNbhd.inr_preimage`).** The right untagging of a product neighbourhood recovers the right factor.
+
+*Proof.* By the right-membership characterisation. ∎
+
+**Theorem (`prodNbhd.injective`).** Equal product neighbourhoods have equal factors.
+
+*Proof.* Apply left and right untagging. ∎
+
+**Theorem (`prodNbhd.inter`).** Intersection of product neighbourhoods is the product of the intersections of the factors.
+
+*Proof.* Case analysis on left versus right tags. ∎
+
+**Theorem (`prodNbhd.subset_iff`).** Product neighbourhoods nest if and only if both factors nest.
+
+*Proof.* One direction evaluates at tagged tokens; the other uses monotonicity of the images. ∎
+
+**Definition (`prod`).** The product of two neighbourhood systems has as neighbourhoods the products of neighbourhoods from each factor, with master the product of the masters.
+
+*Proof.* Master nonempty and membership follow from the left factor; intersection and containment in the master use the product intersection and nesting laws. ∎
+
+**Theorem (`prod_mem_iff`).** A set is a product neighbourhood if and only if it is the product of neighbourhoods from each factor.
+
+*Proof.* By definition. ∎
+
+**Theorem (`prod_master`).** The master of a product system is the product of the masters.
+
+*Proof.* By definition. ∎
+
+**Theorem (`prod_mem_prodNbhd`).** The product of two neighbourhoods is a neighbourhood of the product system.
+
+*Proof.* Immediate from the membership characterisation. ∎
+
+**Theorem (`prod_mem_prodNbhd_iff`).** A product of sets is a product neighbourhood if and only if both factors are neighbourhoods.
+
+*Proof.* Injectivity of the product of sets recovers the factors from any witnessing decomposition. ∎
+
+**Theorem (`prodNbhd.preimage`).** Every neighbourhood of a product system equals the product of its left and right untaggings.
+
+*Proof.* Unpack the witnessing factors and apply the untagging identities. ∎
+
+**Definition (`NeighborhoodSystem.Element.fst`).** The first projection of a product ideal element consists of those left neighbourhoods whose product with the right master belongs to the element.
+
+*Proof.* Filter axioms follow from intersection and nesting of product neighbourhoods. ∎
+
+**Theorem (`mem_fst`).** Membership in the first projection is neighbourhood membership of the left factor together with membership of its product with the right master.
+
+*Proof.* By definition. ∎
+
+**Definition (`NeighborhoodSystem.Element.snd`).** The second projection of a product ideal element consists of those right neighbourhoods whose product with the left master belongs to the element.
+
+*Proof.* Dual to the first projection. ∎
+
+**Theorem (`mem_snd`).** Membership in the second projection is neighbourhood membership of the right factor together with membership of its product with the left master.
+
+*Proof.* By definition. ∎
+
+**Definition (`pair`).** The pairing of two ideal elements consists of those product neighbourhoods whose factors belong to the respective elements.
+
+*Proof.* Filter axioms follow from the corresponding operations on each factor and on product neighbourhoods. ∎
+
+**Theorem (`mem_pair`).** Membership in a pairing is witnessed by factors belonging to each argument.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mem_pair_prodNbhd`).** A product of sets belongs to a pairing if and only if each factor belongs to the corresponding argument.
+
+*Proof.* Injectivity of the product of sets. ∎
+
+**Theorem (`fst_pair`).** The first projection of a pairing recovers the left argument.
+
+*Proof.* Compare via the product-membership characterisation of the pairing. ∎
+
+**Theorem (`prod_mem_split`).** Membership of a product neighbourhood in an ideal element splits as membership of the two products against the opposite masters.
+
+*Proof.* One direction uses upward closure toward the masters; the converse intersects and recovers the factors. ∎
+
+**Theorem (`pair_fst_snd`).** Pairing the two projections of a product ideal element recovers the element.
+
+*Proof.* Compare via the splitting law. ∎
+
+**Theorem (`snd_pair`).** The second projection of a pairing recovers the right argument.
+
+*Proof.* Dual to the first-projection recovery. ∎
+
+**Theorem (`prod_mem_inl`).** The left untagging of a product neighbourhood is a neighbourhood of the left system.
+
+*Proof.* Unpack the witnessing factors. ∎
+
+**Theorem (`prod_mem_inr`).** The right untagging of a product neighbourhood is a neighbourhood of the right system.
+
+*Proof.* Unpack the witnessing factors. ∎

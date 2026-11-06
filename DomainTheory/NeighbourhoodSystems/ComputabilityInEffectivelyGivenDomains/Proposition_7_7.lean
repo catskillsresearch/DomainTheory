@@ -676,7 +676,7 @@ variable {α β γ α' β' : Type*}
 
 theorem prodNbhd_eq_iff {X X' : Set α} {Y Y' : Set β} :
     prodNbhd X Y = prodNbhd X' Y' ↔ X = X' ∧ Y = Y' :=
-  ⟨prodNbhd_injective, by rintro ⟨rfl, rfl⟩; rfl⟩
+  ⟨prodNbhd.injective, by rintro ⟨rfl, rfl⟩; rfl⟩
 end
 
 end DomainTheory.NeighbourhoodSystems

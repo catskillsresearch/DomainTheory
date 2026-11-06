@@ -95,13 +95,13 @@ def pairSharpMap : ApproximableMap (prod (Dsharp D hD) (Dsharp D hD)) (Dsharp D 
     ⟨Gamma D, Gamma D, MemS.gamma, MemS.gamma, rfl, embPair_subset_Gamma subset_rfl subset_rfl⟩⟩
   inter_right := by
     rintro V W W' ⟨hV, hW, A, B, hA, hB, rfl, hsub⟩ ⟨-, hW', A', B', hA', hB', heq, hsub'⟩
-    obtain ⟨rfl, rfl⟩ := prodNbhd_injective heq
+    obtain ⟨rfl, rfl⟩ := prodNbhd.injective heq
     exact ⟨hV, memS_inter hD hW hW' (MemS.pair hA hB) (Set.subset_inter hsub hsub'),
       A, B, hA, hB, rfl, Set.subset_inter hsub hsub'⟩
   mono := by
     rintro V V' W W' ⟨hV, hW, A, B, hA, hB, rfl, hsub⟩ hV'V hWW' hV'mem hW'mem
     obtain ⟨A', B', hA', hB', rfl⟩ := hV'mem
-    obtain ⟨hA'A, hB'B⟩ := prodNbhd_subset_iff.mp hV'V
+    obtain ⟨hA'A, hB'B⟩ := prodNbhd.subset_iff.mp hV'V
     exact ⟨prod_mem_prodNbhd hA' hB', hW'mem, A', B', hA', hB', rfl,
       (embPair_subset.mpr ⟨hA'A, hB'B⟩).trans (hsub.trans hWW')⟩
 
@@ -118,7 +118,7 @@ theorem pairSharpMap_toElementMap (x y : (Dsharp D hD).Element) :
   simp only [ApproximableMap.mem_toElementMap, pairSharpMap_rel, mem_pair]
   constructor
   · rintro ⟨V, ⟨A0, B0, hxA0, hyB0, rfl⟩, -, hW, A, B, -, -, heq, hsub⟩
-    obtain ⟨rfl, rfl⟩ := prodNbhd_injective heq
+    obtain ⟨rfl, rfl⟩ := prodNbhd.injective heq
     exact (pairSharp D hD x y).up_mem (Or.inr ⟨A0, B0, hxA0, hyB0, rfl⟩) hW hsub
   · intro hW
     rcases hW with rfl | ⟨P, Q, hxP, hyQ, rfl⟩
@@ -137,7 +137,7 @@ theorem pairSharp_rel_Vsharp_iff (P : ComputablePresentation D) (t k : ℕ) :
   rw [pairSharpMap_rel, prodPresentation_X, Vsharp_even]
   constructor
   · rintro ⟨-, -, A, B, -, -, heq, hsub⟩
-    obtain ⟨rfl, rfl⟩ := prodNbhd_injective heq
+    obtain ⟨rfl, rfl⟩ := prodNbhd.injective heq
     exact hsub
   · intro hsub
     exact ⟨prod_mem_prodNbhd (Vsharp_mem P _) (Vsharp_mem P _), Vsharp_mem P k,

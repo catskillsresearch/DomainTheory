@@ -63,7 +63,7 @@ def finJoinMap_prod : ApproximableMap (prod V V) V.PowerDomain := ofMap₂ (PDfi
     (finJoinMap_prod (V := V)).rel (prodNbhd X Y) W ↔
       (PDfinJoinApproxMap₂ (V := V)).rel X Y W := by
   dsimp [finJoinMap_prod, ofMap₂]
-  simp only [inl_preimage_prodNbhd, inr_preimage_prodNbhd]
+  simp only [prodNbhd.inl_preimage, prodNbhd.inr_preimage]
   exact ⟨fun ⟨_, h⟩ => h, fun h => ⟨prod_mem_prodNbhd hX hY, h⟩⟩
 
 end NeighborhoodSystem
@@ -401,7 +401,7 @@ theorem PDfinJoinApproxMap₂_isComputable (cons : ℕ → ℕ) (hconsp : Nat.Pr
     (Nat.Primrec.right.comp Nat.Primrec.left).pair Nat.Primrec.right
   refine REPred.of_iff (fun t => by
     dsimp [prodPresentation_X, finJoinMap_prod, ofMap₂]
-    simp only [inl_preimage_prodNbhd, inr_preimage_prodNbhd,
+    simp only [prodNbhd.inl_preimage, prodNbhd.inr_preimage,
       PDPresentation, unpair_pair_fst, unpair_pair_snd]
     constructor
     · rintro ⟨_, ⟨h1, h2⟩⟩

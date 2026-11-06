@@ -267,10 +267,10 @@ theorem gRel_interRight (hD : ∀ X, D.mem X → X.Nonempty) {W Z} (h : GRel u v
       have hmem : (prod E E).mem (prodNbhd (Z₁ ∩ Z₁') (Z₂ ∩ Z₂')) :=
         prod_mem_prodNbhd (gRel_cod hgP) (gRel_cod hgQ)
       have hv1 : v.rel (prodNbhd (Z₁ ∩ Z₁') (Z₂ ∩ Z₂')) Z :=
-        v.mono hvrel (prodNbhd_subset_iff.mpr ⟨Set.inter_subset_left, Set.inter_subset_left⟩)
+        v.mono hvrel (prodNbhd.subset_iff.mpr ⟨Set.inter_subset_left, Set.inter_subset_left⟩)
           subset_rfl hmem (v.rel_cod hvrel)
       have hv2 : v.rel (prodNbhd (Z₁ ∩ Z₁') (Z₂ ∩ Z₂')) Z' :=
-        v.mono hv' (prodNbhd_subset_iff.mpr ⟨Set.inter_subset_right, Set.inter_subset_right⟩)
+        v.mono hv' (prodNbhd.subset_iff.mpr ⟨Set.inter_subset_right, Set.inter_subset_right⟩)
           subset_rfl hmem (v.rel_cod hv')
       exact v.inter_right hv1 hv2
 

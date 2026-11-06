@@ -56,7 +56,7 @@ theorem grel_inSharp_pairSharp_imp_idMap_rel :
       obtain ⟨hPmem, hZ1mem, hPZ1⟩ := ihP
       obtain ⟨hQmem, hZ2mem, hQZ2⟩ := ihQ
       obtain ⟨-, hZmem, A, B, hAmem, hBmem, heq, hsub⟩ := hvrel
-      obtain ⟨rfl, rfl⟩ := prodNbhd_injective heq
+      obtain ⟨rfl, rfl⟩ := prodNbhd.injective heq
       exact ⟨MemS.pair hPmem hQmem, hZmem, (embPair_subset.mpr ⟨hPZ1, hQZ2⟩).trans hsub⟩
 
 noncomputable def iSharp : ApproximableMap (Dsharp U U_mem_nonempty) U :=
@@ -144,9 +144,9 @@ theorem pair_principal_eq_principal_prodNbhd {γ δ : Type*} {V₀ : Neighborhoo
   simp only [mem_pair, mem_principal, prod_mem_iff]
   constructor
   · rintro ⟨P', Q', ⟨hP', hPP'⟩, ⟨hQ', hQQ'⟩, rfl⟩
-    exact ⟨⟨P', Q', hP', hQ', rfl⟩, prodNbhd_subset_iff.mpr ⟨hPP', hQQ'⟩⟩
+    exact ⟨⟨P', Q', hP', hQ', rfl⟩, prodNbhd.subset_iff.mpr ⟨hPP', hQQ'⟩⟩
   · rintro ⟨⟨P', Q', hP', hQ', rfl⟩, hsub⟩
-    obtain ⟨hPP', hQQ'⟩ := prodNbhd_subset_iff.mp hsub
+    obtain ⟨hPP', hQQ'⟩ := prodNbhd.subset_iff.mp hsub
     exact ⟨P', Q', ⟨hP', hPP'⟩, ⟨hQ', hQQ'⟩, rfl⟩
 
 theorem pairSharp_principal {P Q : Set (List Bool × α)} (hP : MemS D P) (hQ : MemS D Q) :
@@ -159,7 +159,7 @@ theorem pairSharp_principal {P Q : Set (List Bool × α)} (hP : MemS D P) (hQ : 
     pairSharpMap_rel]
   constructor
   · rintro ⟨-, hW, A, B, hA, hB, heq, hsub⟩
-    obtain ⟨rfl, rfl⟩ := prodNbhd_injective heq
+    obtain ⟨rfl, rfl⟩ := prodNbhd.injective heq
     exact ⟨hW, hsub⟩
   · rintro ⟨hW, hsub⟩
     exact ⟨prod_mem_prodNbhd hP hQ, hW, P, Q, hP, hQ, rfl, hsub⟩

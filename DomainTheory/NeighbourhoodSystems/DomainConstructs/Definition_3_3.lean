@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Definition_3_1
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodNbhd
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap
 public import Mathlib.Data.Set.Basic
@@ -30,7 +30,7 @@ def paired (f : ApproximableMap V₂ V₀) (g : ApproximableMap V₂ V₁) :
     have hfX := f.inter_right hfP hfP'
     have hgY := g.inter_right hgP hgP'
     refine ⟨?_, ?_, ?_⟩
-    · rw [prodNbhd_preimage hP, prodNbhd_preimage hP', prodNbhd_inter]
+    · rw [prodNbhd.preimage hP, prodNbhd.preimage hP', prodNbhd.inter]
       exact prod_mem_prodNbhd (f.rel_cod hfX) (g.rel_cod hgY)
     · rw [Set.preimage_inter]; exact hfX
     · rw [Set.preimage_inter]; exact hgY
@@ -38,12 +38,12 @@ def paired (f : ApproximableMap V₂ V₀) (g : ApproximableMap V₂ V₁) :
     rintro Z Z₂ P P₂ ⟨_, hfP, hgP⟩ hZ₂Z hPP₂ hZ₂ hP₂
     obtain ⟨A, B, hA, hB, rfl⟩ := hP₂
     have hinl : Sum.inl ⁻¹' P ⊆ A := by
-      have := Set.preimage_mono (f := Sum.inl) hPP₂; rwa [inl_preimage_prodNbhd] at this
+      have := Set.preimage_mono (f := Sum.inl) hPP₂; rwa [prodNbhd.inl_preimage] at this
     have hinr : Sum.inr ⁻¹' P ⊆ B := by
-      have := Set.preimage_mono (f := Sum.inr) hPP₂; rwa [inr_preimage_prodNbhd] at this
+      have := Set.preimage_mono (f := Sum.inr) hPP₂; rwa [prodNbhd.inr_preimage] at this
     refine ⟨⟨A, B, hA, hB, rfl⟩, ?_, ?_⟩
-    · rw [inl_preimage_prodNbhd]; exact f.mono hfP hZ₂Z hinl hZ₂ hA
-    · rw [inr_preimage_prodNbhd]; exact g.mono hgP hZ₂Z hinr hZ₂ hB
+    · rw [prodNbhd.inl_preimage]; exact f.mono hfP hZ₂Z hinl hZ₂ hA
+    · rw [prodNbhd.inr_preimage]; exact g.mono hgP hZ₂Z hinr hZ₂ hB
 
 def proj₀ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
     ApproximableMap (prod V₀ V₁) V₀ where
@@ -54,7 +54,7 @@ def proj₀ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
   inter_right := by
     rintro W X' X'' ⟨hW, hX', hsub⟩ ⟨_, hX'', hsub'⟩
     obtain ⟨A, B, hA, _, rfl⟩ := hW
-    rw [inl_preimage_prodNbhd] at hsub hsub' ⊢
+    rw [prodNbhd.inl_preimage] at hsub hsub' ⊢
     exact ⟨⟨A, B, hA, ‹_›, rfl⟩, V₀.inter_mem hX' hX'' hA (Set.subset_inter hsub hsub'),
       Set.subset_inter hsub hsub'⟩
   mono := by
@@ -73,7 +73,7 @@ def proj₁ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
   inter_right := by
     rintro W Y' Y'' ⟨hW, hY', hsub⟩ ⟨_, hY'', hsub'⟩
     obtain ⟨A, B, _, hB, rfl⟩ := hW
-    rw [inr_preimage_prodNbhd] at hsub hsub' ⊢
+    rw [prodNbhd.inr_preimage] at hsub hsub' ⊢
     exact ⟨⟨A, B, ‹_›, hB, rfl⟩, V₁.inter_mem hY' hY'' hB (Set.subset_inter hsub hsub'),
       Set.subset_inter hsub hsub'⟩
   mono := by
@@ -95,9 +95,9 @@ def proj₁ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
   constructor
   · rintro ⟨W, hzW, hW, hX', hsub⟩
     obtain ⟨A, B, _, hB, rfl⟩ := hW
-    rw [inl_preimage_prodNbhd] at hsub
+    rw [prodNbhd.inl_preimage] at hsub
     refine ⟨hX', z.up_mem hzW (prod_mem_prodNbhd hX' V₁.master_mem) ?_⟩
-    exact prodNbhd_subset_iff.mpr ⟨hsub, V₁.sub_master hB⟩
+    exact prodNbhd.subset_iff.mpr ⟨hsub, V₁.sub_master hB⟩
   · rintro ⟨hX', hz⟩
     exact ⟨prodNbhd X' V₁.master, hz, prod_mem_prodNbhd hX' V₁.master_mem, hX', by simp⟩
 
@@ -108,9 +108,9 @@ def proj₁ (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
   constructor
   · rintro ⟨W, hzW, hW, hY', hsub⟩
     obtain ⟨A, B, hA, _, rfl⟩ := hW
-    rw [inr_preimage_prodNbhd] at hsub
+    rw [prodNbhd.inr_preimage] at hsub
     refine ⟨hY', z.up_mem hzW (prod_mem_prodNbhd V₀.master_mem hY') ?_⟩
-    exact prodNbhd_subset_iff.mpr ⟨V₀.sub_master hA, hsub⟩
+    exact prodNbhd.subset_iff.mpr ⟨V₀.sub_master hA, hsub⟩
   · rintro ⟨hY', hz⟩
     exact ⟨prodNbhd V₀.master Y', hz, prod_mem_prodNbhd V₀.master_mem hY', hY', by simp⟩
 
@@ -129,14 +129,14 @@ theorem toElementMap_paired (f : ApproximableMap V₂ V₀) (g : ApproximableMap
   intro P
   constructor
   · rintro ⟨Z, hwZ, hP, hfZ, hgZ⟩
-    exact ⟨Sum.inl ⁻¹' P, Sum.inr ⁻¹' P, ⟨Z, hwZ, hfZ⟩, ⟨Z, hwZ, hgZ⟩, prodNbhd_preimage hP⟩
+    exact ⟨Sum.inl ⁻¹' P, Sum.inr ⁻¹' P, ⟨Z, hwZ, hfZ⟩, ⟨Z, hwZ, hgZ⟩, prodNbhd.preimage hP⟩
   · rintro ⟨X, Y, ⟨Z₁, hwZ₁, hfZ₁⟩, ⟨Z₂, hwZ₂, hgZ₂⟩, rfl⟩
     refine ⟨Z₁ ∩ Z₂, w.inter_mem hwZ₁ hwZ₂, prod_mem_prodNbhd (f.rel_cod hfZ₁) (g.rel_cod hgZ₂),
       ?_, ?_⟩
-    · rw [inl_preimage_prodNbhd]
+    · rw [prodNbhd.inl_preimage]
       exact f.mono hfZ₁ Set.inter_subset_left subset_rfl (w.sub (w.inter_mem hwZ₁ hwZ₂))
         (f.rel_cod hfZ₁)
-    · rw [inr_preimage_prodNbhd]
+    · rw [prodNbhd.inr_preimage]
       exact g.mono hgZ₂ Set.inter_subset_right subset_rfl (w.sub (w.inter_mem hwZ₁ hwZ₂))
         (g.rel_cod hgZ₂)
 

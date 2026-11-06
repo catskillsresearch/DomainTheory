@@ -1406,7 +1406,7 @@ theorem andT_isComputable : ComputableMap (prodPresentation Tpres Tpres) Tpres a
       show ((prod Example23.T Example23.T).mem (prodNbhd (Tenum n) (Tenum m)) ∧
         andMap2.rel (Sum.inl ⁻¹' prodNbhd (Tenum n) (Tenum m))
           (Sum.inr ⁻¹' prodNbhd (Tenum n) (Tenum m)) (Tenum k)) ↔ _
-      rw [inl_preimage_prodNbhd, inr_preimage_prodNbhd]
+      rw [prodNbhd.inl_preimage, prodNbhd.inr_preimage]
       exact and_iff_right (prod_mem_prodNbhd (Tenum_mem n) (Tenum_mem m))
     rw [hstep]
     show (Example23.T.mem (Tenum n) ∧ Example23.T.mem (Tenum m) ∧ Example23.T.mem (Tenum k) ∧

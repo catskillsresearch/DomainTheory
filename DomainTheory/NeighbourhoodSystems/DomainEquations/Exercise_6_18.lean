@@ -71,7 +71,7 @@ def toS (z : (Dsharp D hD).Element) : (sumSys D hD).Element where
     · exfalso
       have hz := z.inter_mem hzPQ hzX'; rw [Set.inter_comm, embZero_inter_embPair] at hz
       obtain ⟨t, ht⟩ := memS_nonempty hD (z.sub hz); exact Set.notMem_empty t ht
-    · refine Or.inr (Or.inr ⟨P ∩ P', Q ∩ Q', ?_, ?_, by rw [inj₁_inter, prodNbhd_inter], ?_⟩)
+    · refine Or.inr (Or.inr ⟨P ∩ P', Q ∩ Q', ?_, ?_, by rw [inj₁_inter, prodNbhd.inter], ?_⟩)
       · have hz := z.inter_mem hzPQ hzPQ'; rw [embPair_inter] at hz
         exact (memS_embPair_inv hD (z.sub hz)).1
       · have hz := z.inter_mem hzPQ hzPQ'; rw [embPair_inter] at hz
@@ -93,7 +93,7 @@ def toS (z : (Dsharp D hD).Element) : (sumSys D hD).Element where
         exact absurd (hsub (ir_mem_inj₁.mpr hb)) ir_mem_inj₀
       · obtain ⟨P', Q', hP', hQ', rfl⟩ := hV'
         refine Or.inr (Or.inr ⟨P', Q', hP', hQ', rfl, ?_⟩)
-        obtain ⟨hPP, hQQ⟩ := prodNbhd_subset_iff.mp (inj₁_subset_inj₁.mp hsub)
+        obtain ⟨hPP, hQQ⟩ := prodNbhd.subset_iff.mp (inj₁_subset_inj₁.mp hsub)
         exact z.up_mem hzPQ (MemS.pair hP' hQ') (embPair_subset.mpr ⟨hPP, hQQ⟩)
 
 @[simp] theorem toS_mem_inj₀ {z : (Dsharp D hD).Element} {X : Set α} (hX : D.mem X) :
@@ -114,7 +114,7 @@ def toS (z : (Dsharp D hD).Element) : (sumSys D hD).Element where
     · exact absurd (h0 ▸ none_mem_sumMaster) none_mem_inj₁
     · obtain ⟨a, ha⟩ := hD X' hX'
       exact absurd (heq ▸ il_mem_inj₀.mpr ha) il_mem_inj₁
-    · obtain ⟨hPP, hQQ⟩ := prodNbhd_injective (inj₁_injective heq)
+    · obtain ⟨hPP, hQQ⟩ := prodNbhd.injective (inj₁_injective heq)
       rw [hPP, hQQ]; exact hz
   · intro hz; exact Or.inr (Or.inr ⟨P, Q, hP, hQ, rfl, hz⟩)
 
@@ -177,11 +177,11 @@ def fromS (s : (sumSys D hD).Element) : (Dsharp D hD).Element where
       have hs := s.inter_mem hsPQ hsX'; rw [Set.inter_comm, inj₀_inter_inj₁] at hs
       obtain ⟨t, ht⟩ := sumSys_mem_nonempty D hD (s.sub hs); exact Set.notMem_empty t ht
     · refine Or.inr (Or.inr ⟨P ∩ P', Q ∩ Q', ?_, ?_, by rw [embPair_inter], ?_⟩)
-      · have hs := s.inter_mem hsPQ hsPQ'; rw [inj₁_inter, prodNbhd_inter] at hs
+      · have hs := s.inter_mem hsPQ hsPQ'; rw [inj₁_inter, prodNbhd.inter] at hs
         exact (prod_mem_prodNbhd_iff.mp (sum_mem_inj₁_inv D hD (s.sub hs))).1
-      · have hs := s.inter_mem hsPQ hsPQ'; rw [inj₁_inter, prodNbhd_inter] at hs
+      · have hs := s.inter_mem hsPQ hsPQ'; rw [inj₁_inter, prodNbhd.inter] at hs
         exact (prod_mem_prodNbhd_iff.mp (sum_mem_inj₁_inv D hD (s.sub hs))).2
-      · have hs := s.inter_mem hsPQ hsPQ'; rw [inj₁_inter, prodNbhd_inter] at hs; exact hs
+      · have hs := s.inter_mem hsPQ hsPQ'; rw [inj₁_inter, prodNbhd.inter] at hs; exact hs
   up_mem := by
     rintro W W' (rfl | ⟨X, hX, rfl, hsX⟩ | ⟨P, Q, hP, hQ, rfl, hsPQ⟩) hW' hsub
     · exact Or.inl (Set.Subset.antisymm (memS_subset_gamma hW') hsub)
@@ -213,7 +213,7 @@ def fromS (s : (sumSys D hD).Element) : (Dsharp D hD).Element where
         refine Or.inr (Or.inr ⟨P', Q', hP', hQ', rfl, ?_⟩)
         obtain ⟨hPP, hQQ⟩ := embPair_subset.mp hsub
         exact s.up_mem hsPQ (Or.inr (Or.inr ⟨prodNbhd P' Q', prod_mem_prodNbhd hP' hQ', rfl⟩))
-          (inj₁_subset_inj₁.mpr (prodNbhd_subset_iff.mpr ⟨hPP, hQQ⟩))
+          (inj₁_subset_inj₁.mpr (prodNbhd.subset_iff.mpr ⟨hPP, hQQ⟩))
 
 @[simp] theorem fromS_mem_embZero {s : (sumSys D hD).Element} {X : Set α} (hX : D.mem X) :
     (fromS D hD s).mem (embZero X) ↔ s.mem (inj₀ X) := by

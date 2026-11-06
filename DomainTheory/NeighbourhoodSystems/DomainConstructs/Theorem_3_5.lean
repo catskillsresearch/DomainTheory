@@ -28,10 +28,10 @@ def ofMap₂ (f : ApproximableMap₂ V₀ V₁ V₂) : ApproximableMap (prod V�
     have hinl : Sum.inl ⁻¹' W₂ ⊆ Sum.inl ⁻¹' W := Set.preimage_mono hW₂W
     have hinr : Sum.inr ⁻¹' W₂ ⊆ Sum.inr ⁻¹' W := Set.preimage_mono hW₂W
     obtain ⟨A, B, hA, hB, rfl⟩ := hW₂
-    rw [inl_preimage_prodNbhd] at hinl
-    rw [inr_preimage_prodNbhd] at hinr
+    rw [prodNbhd.inl_preimage] at hinl
+    rw [prodNbhd.inr_preimage] at hinr
     refine ⟨⟨A, B, hA, hB, rfl⟩, ?_⟩
-    rw [inl_preimage_prodNbhd, inr_preimage_prodNbhd]
+    rw [prodNbhd.inl_preimage, prodNbhd.inr_preimage]
     exact f.mono hrel hinl hinr hZZ' hA hB hZ'
 
 def toMap₂ (f : ApproximableMap (prod V₀ V₁) V₂) : ApproximableMap₂ V₀ V₁ V₂ where
@@ -43,7 +43,7 @@ def toMap₂ (f : ApproximableMap (prod V₀ V₁) V₂) : ApproximableMap₂ V�
   inter_right h h' := f.inter_right h h'
   mono := by
     rintro X X' Y Y' Z Z' hrel hX'X hY'Y hZZ' hX' hY' hZ'
-    exact f.mono hrel (prodNbhd_subset_iff.mpr ⟨hX'X, hY'Y⟩) hZZ'
+    exact f.mono hrel (prodNbhd.subset_iff.mpr ⟨hX'X, hY'Y⟩) hZZ'
       (prod_mem_prodNbhd hX' hY') hZ'
 
 theorem ofMap₂_toMap₂ (f : ApproximableMap (prod V₀ V₁) V₂) : ofMap₂ (toMap₂ f) = f := by
@@ -51,9 +51,9 @@ theorem ofMap₂_toMap₂ (f : ApproximableMap (prod V₀ V₁) V₂) : ofMap₂
   intro W Z
   show (prod V₀ V₁).mem W ∧ f.rel (prodNbhd (Sum.inl ⁻¹' W) (Sum.inr ⁻¹' W)) Z ↔ _
   constructor
-  · rintro ⟨hW, hrel⟩; rwa [← prodNbhd_preimage hW] at hrel
+  · rintro ⟨hW, hrel⟩; rwa [← prodNbhd.preimage hW] at hrel
   · intro hrel
-    exact ⟨f.rel_dom hrel, by rwa [← prodNbhd_preimage (f.rel_dom hrel)]⟩
+    exact ⟨f.rel_dom hrel, by rwa [← prodNbhd.preimage (f.rel_dom hrel)]⟩
 
 theorem ApproximableMap₂.ext {f g : ApproximableMap₂ V₀ V₁ V₂}
     (h : ∀ X Y Z, f.rel X Y Z ↔ g.rel X Y Z) : f = g := by
@@ -66,7 +66,7 @@ theorem toMap₂_ofMap₂ (f : ApproximableMap₂ V₀ V₁ V₂) : toMap₂ (of
   apply ApproximableMap₂.ext
   intro X Y Z
   show (prod V₀ V₁).mem (prodNbhd X Y) ∧ f.rel _ _ Z ↔ _
-  rw [inl_preimage_prodNbhd, inr_preimage_prodNbhd]
+  rw [prodNbhd.inl_preimage, prodNbhd.inr_preimage]
   constructor
   · rintro ⟨_, hrel⟩; exact hrel
   · intro hrel

@@ -53,7 +53,7 @@ theorem exists_smash_witness {z : (prod D E).Element} (hx : z.fst ≠ D.bot) (hy
   obtain ⟨Y0, hY0, hY0ne⟩ := exists_mem_ne_master_of_ne_bot hy
   set A := Sum.inl ⁻¹' Z with hA
   set B := Sum.inr ⁻¹' Z with hB
-  have hZeq : Z = prodNbhd A B := prodNbhd_preimage (z.sub hzZ)
+  have hZeq : Z = prodNbhd A B := prodNbhd.preimage (z.sub hzZ)
   have hAmem : D.mem A := prod_mem_inl (z.sub hzZ)
   have hBmem : E.mem B := prod_mem_inr (z.sub hzZ)
   rw [hZeq] at hzZ
@@ -70,7 +70,7 @@ theorem exists_smash_witness {z : (prod D E).Element} (hx : z.fst ≠ D.bot) (hy
   · exact (prod_mem_split hX0'mem hY0'mem).mpr
       ⟨(mem_fst.mp hzfX0').2, (mem_snd.mp hzsY0').2⟩
   · rw [hZeq]
-    exact prodNbhd_subset_iff.mpr ⟨Set.inter_subset_right, Set.inter_subset_right⟩
+    exact prodNbhd.subset_iff.mpr ⟨Set.inter_subset_right, Set.inter_subset_right⟩
 
 theorem smashFadeInner_mem {z : (prod D E).Element} {Z : Set (α ⊕ β)} :
     (smashFadeInner.toElementMap z).mem Z ↔
@@ -163,16 +163,16 @@ theorem smash_subsystem_prod : Exercise510.smash D E ◁ prod D E where
       · left; rw [Set.inter_self]
       · right
         refine ⟨X', Y', hX', hX'ne, hY', hY'ne, ?_⟩
-        rw [prodNbhd_inter, Set.inter_eq_right.mpr (D.sub_master hX'),
+        rw [prodNbhd.inter, Set.inter_eq_right.mpr (D.sub_master hX'),
           Set.inter_eq_right.mpr (E.sub_master hY')]
     ·
       rcases hW' with rfl | ⟨X', Y', hX', hX'ne, hY', hY'ne, rfl⟩
       · right
         refine ⟨X, Y, hX, hXne, hY, hYne, ?_⟩
-        rw [prodNbhd_inter, Set.inter_eq_left.mpr (D.sub_master hX),
+        rw [prodNbhd.inter, Set.inter_eq_left.mpr (D.sub_master hX),
           Set.inter_eq_left.mpr (E.sub_master hY)]
       ·
-        rw [prodNbhd_inter] at hPint ⊢
+        rw [prodNbhd.inter] at hPint ⊢
         obtain ⟨hXX'mem, hYY'mem⟩ := prod_mem_prodNbhd_iff.mp hPint
         exact Or.inr ⟨X ∩ X', Y ∩ Y', hXX'mem, Exercise510.inter_ne_master_left hX hXne, hYY'mem,
           Exercise510.inter_ne_master_right hY hYne, rfl⟩

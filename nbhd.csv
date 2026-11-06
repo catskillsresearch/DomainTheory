@@ -67,7 +67,7 @@ line,keyword,number,label,file
 913,EXERCISE,2.20,powerset of the integers,MappingsBetweenDomains/Exercise_2_20.lean
 920,EXERCISE,2.21,finite and infinite sequences,MappingsBetweenDomains/Exercise_2_21.lean
 922,EXERCISE,2.22,domains from closure properties,MappingsBetweenDomains/Exercise_2_22.lean
-944,DEFINITION,3.1,product of systems,DomainConstructs/Definition_3_1.lean
+944,DEFINITION,3.1,product of systems,DomainConstructs/prodNbhd.lean
 958,PROPOSITION,3.2,elements of a product,DomainConstructs/Proposition_3_2.lean
 1008,DEFINITION,3.3,projection mappings,DomainConstructs/Definition_3_3.lean
 1036,PROPOSITION,3.4,pairing and projections,DomainConstructs/Proposition_3_4.lean

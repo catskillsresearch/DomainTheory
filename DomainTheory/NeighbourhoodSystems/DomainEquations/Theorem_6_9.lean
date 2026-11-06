@@ -469,7 +469,7 @@ theorem prod_dsharp_nonempty :
     ∀ V, (prod (Dsharp D hD) (Dsharp D hD)).mem V → V.Nonempty := by
   rintro V ⟨P, Q, hP, hQ, rfl⟩
   obtain ⟨t, ht⟩ := memS_nonempty hD hP
-  exact ⟨Sum.inl t, mem_prodNbhd_inl.mpr ht⟩
+  exact ⟨Sum.inl t, prodNbhd.mem_inl.mpr ht⟩
 
 end Equation
 

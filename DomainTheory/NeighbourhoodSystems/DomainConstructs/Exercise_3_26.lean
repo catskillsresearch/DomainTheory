@@ -49,7 +49,7 @@ theorem cond_components {W : Set (Example12.Token ⊕ (α ⊕ α))}
       V.mem (Sum.inl ⁻¹' (Sum.inr ⁻¹' W)) ∧ V.mem (Sum.inr ⁻¹' (Sum.inr ⁻¹' W)) := by
   obtain ⟨C, P, hC, hP, rfl⟩ := hW
   obtain ⟨X, Y, hX, hY, rfl⟩ := hP
-  simp only [inl_preimage_prodNbhd, inr_preimage_prodNbhd]
+  simp only [prodNbhd.inl_preimage, prodNbhd.inr_preimage]
   exact ⟨hC, hX, hY⟩
 end
 
@@ -113,7 +113,7 @@ def cond (V : NeighborhoodSystem α) : ApproximableMap (prod TD (prod V V)) V wh
   master_rel := by
     refine ⟨(prod TD (prod V V)).master_mem, V.master_mem, Or.inr (Or.inr ⟨?_, subset_rfl⟩)⟩
     show Sum.inl ⁻¹' (prod TD (prod V V)).master = Example12.master
-    rw [prod_master, inl_preimage_prodNbhd]; rfl
+    rw [prod_master, prodNbhd.inl_preimage]; rfl
   inter_right := by
     rintro W Z Z' ⟨hW, hZ, hg⟩ ⟨_, hZ', hg'⟩
     obtain ⟨_, hX, hY⟩ := cond_components V hW
@@ -156,7 +156,7 @@ theorem cond_bot (x y : V.Element) :
   · rintro ⟨W, hWmem, _, hZ, hg⟩
     obtain ⟨C, P, hCbot, hPmem, rfl⟩ := hWmem
     obtain ⟨X, Y, hXx, hYy, rfl⟩ := hPmem
-    simp only [condGuard, inl_preimage_prodNbhd, inr_preimage_prodNbhd] at hg
+    simp only [condGuard, prodNbhd.inl_preimage, prodNbhd.inr_preimage] at hg
     have hCm : C = Example12.master := hCbot
     rcases hg with ⟨hCz, _⟩ | ⟨hCo, _⟩ | ⟨_, hmZ⟩
     · exact absurd (hCm.symm.trans hCz) zero_ne_master.symm
@@ -170,7 +170,7 @@ theorem cond_bot (x y : V.Element) :
         ⟨V.master, V.master, x.master_mem, y.master_mem, rfl⟩, rfl⟩,
       prod_mem_prodNbhd Example12.mem_master (prod_mem_prodNbhd V.master_mem V.master_mem),
       V.master_mem, ?_⟩
-    exact Or.inr (Or.inr ⟨inl_preimage_prodNbhd _ _, subset_rfl⟩)
+    exact Or.inr (Or.inr ⟨prodNbhd.inl_preimage _ _, subset_rfl⟩)
 
 theorem cond_false (x y : V.Element) :
     (cond V).toElementMap (pair Example23.falseElt (pair x y)) = y := by
@@ -180,7 +180,7 @@ theorem cond_false (x y : V.Element) :
   · rintro ⟨W, hWmem, _, hZ, hg⟩
     obtain ⟨C, P, hCfalse, hPmem, rfl⟩ := hWmem
     obtain ⟨X, Y, hXx, hYy, rfl⟩ := hPmem
-    simp only [condGuard, inl_preimage_prodNbhd, inr_preimage_prodNbhd] at hg
+    simp only [condGuard, prodNbhd.inl_preimage, prodNbhd.inr_preimage] at hg
     rcases hg with ⟨hCz, _⟩ | ⟨_, hYZ⟩ | ⟨_, hmZ⟩
     · rcases hCfalse with hCm | hCo
       · exact absurd (hCm.symm.trans hCz) zero_ne_master.symm
@@ -192,8 +192,8 @@ theorem cond_false (x y : V.Element) :
     refine ⟨prodNbhd Example12.one (prodNbhd V.master Z), ⟨Example12.one, prodNbhd V.master Z,
       Or.inr rfl, ⟨V.master, Z, x.master_mem, hyZ, rfl⟩, rfl⟩,
       prod_mem_prodNbhd Example12.mem_one (prod_mem_prodNbhd V.master_mem hZ), hZ, ?_⟩
-    refine Or.inr (Or.inl ⟨inl_preimage_prodNbhd _ _, ?_⟩)
-    rw [inr_preimage_prodNbhd, inr_preimage_prodNbhd]
+    refine Or.inr (Or.inl ⟨prodNbhd.inl_preimage _ _, ?_⟩)
+    rw [prodNbhd.inr_preimage, prodNbhd.inr_preimage]
 
 theorem cond_toElementMap_mem (t : TD.Element) (x y : V.Element) {Z : Set α} :
     ((cond V).toElementMap (pair t (pair x y))).mem Z ↔
@@ -202,7 +202,7 @@ theorem cond_toElementMap_mem (t : TD.Element) (x y : V.Element) {Z : Set α} :
   · rintro ⟨W, hWmem, _, hZ, hg⟩
     obtain ⟨C, P, hCt, hPmem, rfl⟩ := hWmem
     obtain ⟨X, Y, hXx, hYy, rfl⟩ := hPmem
-    simp only [condGuard, inl_preimage_prodNbhd, inr_preimage_prodNbhd] at hg
+    simp only [condGuard, prodNbhd.inl_preimage, prodNbhd.inr_preimage] at hg
     rcases hg with ⟨hCz, hXZ⟩ | ⟨hCo, hYZ⟩ | ⟨_, hmZ⟩
     · exact Or.inl ⟨hCz ▸ hCt, x.up_mem hXx hZ hXZ⟩
     · exact Or.inr (Or.inl ⟨hCo ▸ hCt, y.up_mem hYy hZ hYZ⟩)
@@ -213,20 +213,20 @@ theorem cond_toElementMap_mem (t : TD.Element) (x y : V.Element) {Z : Set α} :
       refine ⟨prodNbhd Example12.zero (prodNbhd Z V.master), ⟨Example12.zero, prodNbhd Z V.master,
         ht0, ⟨Z, V.master, hxZ, y.master_mem, rfl⟩, rfl⟩,
         prod_mem_prodNbhd Example12.mem_zero (prod_mem_prodNbhd hZ V.master_mem), hZ, ?_⟩
-      refine Or.inl ⟨inl_preimage_prodNbhd _ _, ?_⟩
-      rw [inr_preimage_prodNbhd, inl_preimage_prodNbhd]
+      refine Or.inl ⟨prodNbhd.inl_preimage _ _, ?_⟩
+      rw [prodNbhd.inr_preimage, prodNbhd.inl_preimage]
     · have hZ : V.mem Z := y.sub hyZ
       refine ⟨prodNbhd Example12.one (prodNbhd V.master Z), ⟨Example12.one, prodNbhd V.master Z,
         ht1, ⟨V.master, Z, x.master_mem, hyZ, rfl⟩, rfl⟩,
         prod_mem_prodNbhd Example12.mem_one (prod_mem_prodNbhd V.master_mem hZ), hZ, ?_⟩
-      refine Or.inr (Or.inl ⟨inl_preimage_prodNbhd _ _, ?_⟩)
-      rw [inr_preimage_prodNbhd, inr_preimage_prodNbhd]
+      refine Or.inr (Or.inl ⟨prodNbhd.inl_preimage _ _, ?_⟩)
+      rw [prodNbhd.inr_preimage, prodNbhd.inr_preimage]
     · refine ⟨prodNbhd Example12.master (prodNbhd V.master V.master),
         ⟨Example12.master, prodNbhd V.master V.master, t.master_mem,
           ⟨V.master, V.master, x.master_mem, y.master_mem, rfl⟩, rfl⟩,
         prod_mem_prodNbhd Example12.mem_master (prod_mem_prodNbhd V.master_mem V.master_mem),
         V.master_mem, ?_⟩
-      exact Or.inr (Or.inr ⟨inl_preimage_prodNbhd _ _, subset_rfl⟩)
+      exact Or.inr (Or.inr ⟨prodNbhd.inl_preimage _ _, subset_rfl⟩)
 
 theorem cond_true (x y : V.Element) :
     (cond V).toElementMap (pair Example23.trueElt (pair x y)) = x := by
@@ -236,7 +236,7 @@ theorem cond_true (x y : V.Element) :
   · rintro ⟨W, hWmem, _, hZ, hg⟩
     obtain ⟨C, P, hCtrue, hPmem, rfl⟩ := hWmem
     obtain ⟨X, Y, hXx, hYy, rfl⟩ := hPmem
-    simp only [condGuard, inl_preimage_prodNbhd, inr_preimage_prodNbhd] at hg
+    simp only [condGuard, prodNbhd.inl_preimage, prodNbhd.inr_preimage] at hg
     rcases hg with ⟨_, hXZ⟩ | ⟨hCo, _⟩ | ⟨_, hmZ⟩
     · exact x.up_mem hXx hZ hXZ
     · rcases hCtrue with hCm | hCz
@@ -248,8 +248,8 @@ theorem cond_true (x y : V.Element) :
     refine ⟨prodNbhd Example12.zero (prodNbhd Z V.master), ⟨Example12.zero, prodNbhd Z V.master,
       Or.inr rfl, ⟨Z, V.master, hxZ, y.master_mem, rfl⟩, rfl⟩,
       prod_mem_prodNbhd Example12.mem_zero (prod_mem_prodNbhd hZ V.master_mem), hZ, ?_⟩
-    refine Or.inl ⟨inl_preimage_prodNbhd _ _, ?_⟩
-    rw [inr_preimage_prodNbhd, inl_preimage_prodNbhd]
+    refine Or.inl ⟨prodNbhd.inl_preimage _ _, ?_⟩
+    rw [prodNbhd.inr_preimage, prodNbhd.inl_preimage]
 end
 
 section
