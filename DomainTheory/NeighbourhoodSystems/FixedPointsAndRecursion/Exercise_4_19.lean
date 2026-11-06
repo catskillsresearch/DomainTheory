@@ -4,7 +4,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.cond
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.fixMap
 
 @[expose] public section
 

@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_3
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.fixMap
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NestedOrDisjoint
 
 @[expose] public section

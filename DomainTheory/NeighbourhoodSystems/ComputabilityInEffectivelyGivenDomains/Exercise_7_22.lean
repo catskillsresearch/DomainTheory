@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.fixMap
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_19
 public import Mathlib.Computability.EpsilonNFA
 public import Mathlib.Data.Fintype.Option

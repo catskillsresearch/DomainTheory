@@ -3,7 +3,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot_le
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap
 
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.fixMap
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot
 public import Mathlib.Order.Bounds.Defs
 public import Mathlib.Basic.ExistsUnique

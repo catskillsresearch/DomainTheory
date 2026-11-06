@@ -1,0 +1,55 @@
+The fix combinator as an approximable map on the function space, characterised as a directed supremum of iterates from bottom.
+
+<!-- formalization -->
+
+**Definition (`fixMap`).** The fix combinator sends each function-space neighbourhood to the least fixed-point element of its principal map, and extends by the monotone-extension principle to an approximable map from the function space into the domain.
+
+*Proof.* Monotonicity of the assignment on principals follows from monotonicity of least fixed-point elements under the function-space order isomorphism. ∎
+
+**Definition (`iterElem`).** The $n$-th iterate element of an endomap is the elementwise action of the $n$-th iterate map on the bottom element.
+
+*Proof.* By definition. ∎
+
+**Theorem (`exists_principal_iterMap`).** If an iterate of the recovered map relates the master to a neighbourhood, some neighbourhood of the function-space element has the same relation for the principal of that neighbourhood.
+
+*Proof.* Induct on the stage: the master neighbourhood works at stage zero; at a successor, intersect the inductive neighbourhood with the witnessing step and compare iterates by monotonicity. ∎
+
+**Theorem (`fixMap_toElementMap_principal`).** On a principal function-space element, the fix combinator evaluates to the least fixed-point element of the recovered principal map.
+
+*Proof.* Invoke the evaluation law for the monotone extension on principals. ∎
+
+**Theorem (`fixMap_toElementMap`).** On an arbitrary function-space element, the fix combinator evaluates to the least fixed-point element of the recovered map.
+
+*Proof.* Compare membership via the principal-witness characterisation of the elementwise image, using monotonicity of least fixed-point elements one way and the principal-iterate existence lemma the other. ∎
+
+**Theorem (`fixMap_least`).** If the recovered map sends an ideal element into itself, the value of the fix combinator lies below that element.
+
+*Proof.* Rewrite via the evaluation law and apply leastness of the least fixed-point element. ∎
+
+**Theorem (`toElementMap_fixMap`).** The value of the fix combinator is a fixed point of the recovered map.
+
+*Proof.* Rewrite via the evaluation law and apply the fixed-point law for the least fixed-point element. ∎
+
+**Theorem (`fixMap_toElementMap_toFilter`).** On the principal filter of an endomap, the fix combinator recovers that map’s least fixed-point element.
+
+*Proof.* Rewrite via the evaluation law and cancel the round trip through the function-space isomorphism. ∎
+
+**Theorem (`iterElem_eq_iterate`).** Iterate elements agree with ordinary iteration of the elementwise map on the bottom element.
+
+*Proof.* Induct on the stage, using the identity law at zero and the composition law for elementwise images at successors. ∎
+
+**Theorem (`mem_iterElem`).** Membership in an iterate element is master-relatedness under the corresponding iterate map.
+
+*Proof.* Unpack the elementwise image of bottom, whose only neighbourhood is the master. ∎
+
+**Theorem (`iterElem_mono`).** Iterate elements increase with the stage.
+
+*Proof.* Transport master-relatedness monotonicity of iterates through the membership characterisation. ∎
+
+**Theorem (`fixElement_eq_iSupDirected`).** The least fixed-point element is the directed supremum of the iterate elements.
+
+*Proof.* Compare membership with the directed-supremum membership law via the iterate-element characterisation. ∎
+
+**Theorem (`fixMap_eq_iSup`).** The value of the fix combinator is the directed supremum of the iterate elements of the recovered map.
+
+*Proof.* Rewrite via the evaluation law and apply the directed-supremum characterisation of the least fixed-point element. ∎

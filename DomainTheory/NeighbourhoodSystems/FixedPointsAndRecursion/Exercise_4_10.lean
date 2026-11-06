@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Theorem_4_2
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.fixMap
 public import Mathlib.Tactic.Monotonicity.Lemmas
 public import Mathlib.Tactic.Bound
 

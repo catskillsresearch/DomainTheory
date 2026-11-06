@@ -5,6 +5,7 @@ flowchart TB
 
   Least_fixed_point_elemen["Least fixed-point element"]
   Theorem_4_1___least_fixe["Theorem 4.1 — least fixed point"]
+  Fix_combinator["Fix combinator"]
   Theorem_4_2___fix_combin["Theorem 4.2 — fix combinator"]
   Example_4_3___partial_fu["Example 4.3 — partial functions on integers"]
   Example_4_4___sequence_d["Example 4.4 — sequence domain"]
@@ -30,9 +31,9 @@ flowchart TB
   Exercise_4_24___Schroede["Exercise 4.24 — Schroeder-Bernstein theorem"]
   Exercise_4_25___unary_se["Exercise 4.25 — unary sequence domain"]
 
-  Theorem_4_2___fix_combin --> Example_4_3___partial_fu
+  Fix_combinator --> Example_4_3___partial_fu
   Example_4_3___partial_fu --> Example_4_4___sequence_d
-  Theorem_4_2___fix_combin --> Exercise_4_10___domain_a
+  Fix_combinator --> Exercise_4_10___domain_a
   Exercise_4_10___domain_a --> Exercise_4_11___characte
   Exercise_4_7___fixed_poi --> Exercise_4_11___characte
   Example_4_3___partial_fu --> Exercise_4_12___no_great
@@ -54,8 +55,9 @@ flowchart TB
   Example_4_4___sequence_d --> Exercise_4_7___fixed_poi
   Exercise_4_7___fixed_poi --> Exercise_4_8___fixed_poi
   Example_4_3___partial_fu --> Exercise_4_9___fix_as_a
+  Least_fixed_point_elemen --> Fix_combinator
   Least_fixed_point_elemen --> Theorem_4_1___least_fixe
-  Least_fixed_point_elemen --> Theorem_4_2___fix_combin
+  Fix_combinator --> Theorem_4_2___fix_combin
   Definition_4_5___Peano_a --> Theorem_4_6___Peano_mode
 
 %%{init: {"flowchart": {"wrappingWidth": 2000}}}%%
