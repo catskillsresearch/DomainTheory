@@ -34,7 +34,8 @@
 - [Definition 3.8 — function space](1980_Definition_3_8.md) [✓](../1980_REVISION.md)
 
 
-- [Proposition 3.9 — consistent step neighbourhoods](1980_Proposition_3_9.md)
+- [Proposition 3.9 — consistent step neighbourhoods](1980_Proposition_3_9.md) [✓](../1980_REVISION.md)
+
 - [Theorem 3.10 — elements are mappings](1980_Theorem_3_10.md)
 - [Theorem 3.11 — evaluation combinator](1980_Theorem_3_11.md)
 - [Theorem 3.12 — currying](1980_Theorem_3_12.md)

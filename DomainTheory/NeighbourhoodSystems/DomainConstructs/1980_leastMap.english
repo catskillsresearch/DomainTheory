@@ -1,4 +1,4 @@
-The least approximable map forced by a consistent finite list of domain–range neighbourhood pairs.
+The least approximable map forced by a consistent finite list of domain–range neighbourhood pairs, and its minimality among maps in the corresponding step neighbourhood.
 
 <!-- formalization -->
 
@@ -9,3 +9,19 @@ The least approximable map forced by a consistent finite list of domain–range 
 **Theorem (`leastMap_rel`).** Membership in the least-map relation is domain and range neighbourhood membership together with containment of the range intersection.
 
 *Proof.* By definition. ∎
+
+**Theorem (`leastMap_mem_stepFun`).** The least map belongs to the step function of its defining list.
+
+*Proof.* Evaluate the relation at each listed pair using containment of the range intersection in that pair's range. ∎
+
+**Theorem (`rel_interYs`).** Every map in a step function relates a domain neighbourhood to the associated range intersection.
+
+*Proof.* By induction on the list, using monotonicity and intersection on the right when the domain neighbourhood sits under a listed domain factor. ∎
+
+**Theorem (`leastMap_le`).** The least map is below every map in its step function.
+
+*Proof.* Transport the range-intersection relation along containment into the target neighbourhood. ∎
+
+**Theorem (`stepFun_subset_step_iff`).** Under consistency, a step function is contained in a step if and only if the associated range intersection is contained in the step's range neighbourhood.
+
+*Proof.* Forward, evaluate at the least map; reverse, use the range-intersection relation for an arbitrary map in the step function. ∎
