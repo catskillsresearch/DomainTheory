@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_4
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_5
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap2
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 @[expose] public section
 

@@ -1,7 +1,8 @@
 module
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_10
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_5
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap2
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.ProjectionMappings
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6
 @[expose] public section
 

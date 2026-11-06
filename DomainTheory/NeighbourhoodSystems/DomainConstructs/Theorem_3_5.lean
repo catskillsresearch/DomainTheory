@@ -1,94 +1,23 @@
 module
+
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap2
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.ProjectionMappings
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodEquiv
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
-section
 open NeighborhoodSystem
-variable {α β γ δ : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
-variable {V₂ : NeighborhoodSystem γ}
 open ApproximableMap
 
-def ofMap₂ (f : ApproximableMap₂ V₀ V₁ V₂) : ApproximableMap (prod V₀ V₁) V₂ where
-  rel W Z := (prod V₀ V₁).mem W ∧ f.rel (Sum.inl ⁻¹' W) (Sum.inr ⁻¹' W) Z
-  rel_dom h := h.1
-  rel_cod h := f.rel_cod h.2
-  master_rel := by
-    refine ⟨(prod V₀ V₁).master_mem, ?_⟩
-    simpa using f.master_rel
-  inter_right := by rintro W Z Z' ⟨hW, hrel⟩ ⟨_, hrel'⟩; exact ⟨hW, f.inter_right hrel hrel'⟩
-  mono := by
-    rintro W W₂ Z Z' ⟨_, hrel⟩ hW₂W hZZ' hW₂ hZ'
-    have hinl : Sum.inl ⁻¹' W₂ ⊆ Sum.inl ⁻¹' W := Set.preimage_mono hW₂W
-    have hinr : Sum.inr ⁻¹' W₂ ⊆ Sum.inr ⁻¹' W := Set.preimage_mono hW₂W
-    obtain ⟨A, B, hA, hB, rfl⟩ := hW₂
-    rw [prodNbhd.inl_preimage] at hinl
-    rw [prodNbhd.inr_preimage] at hinr
-    refine ⟨⟨A, B, hA, hB, rfl⟩, ?_⟩
-    rw [prodNbhd.inl_preimage, prodNbhd.inr_preimage]
-    exact f.mono hrel hinl hinr hZZ' hA hB hZ'
+/-- Scott's Theorem 3.5: joint approximable maps out of a product correspond to binary
+    approximable maps, and the correspondence agrees elementwise with pairing. -/
+theorem theorem_3_5 :
+    (∀ {α β γ : Type*} (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
+      (V₂ : NeighborhoodSystem γ),
+      Nonempty (ApproximableMap (prod V₀ V₁) V₂ ≃ ApproximableMap₂ V₀ V₁ V₂)) ∧
+    (∀ {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+      {V₂ : NeighborhoodSystem γ} (f : ApproximableMap (prod V₀ V₁) V₂)
+      (x : V₀.Element) (y : V₁.Element),
+      (toMap₂ f).toElementMap₂ x y = f.toElementMap (pair x y)) :=
+  ⟨fun {_ _ _} V₀ V₁ V₂ => ⟨map₂Equiv V₀ V₁ V₂⟩, toElementMap₂_toMap₂⟩
 
-def toMap₂ (f : ApproximableMap (prod V₀ V₁) V₂) : ApproximableMap₂ V₀ V₁ V₂ where
-  rel X Y Z := f.rel (prodNbhd X Y) Z
-  rel_dom₀ h := (prod_mem_prodNbhd_iff.mp (f.rel_dom h)).1
-  rel_dom₁ h := (prod_mem_prodNbhd_iff.mp (f.rel_dom h)).2
-  rel_cod h := f.rel_cod h
-  master_rel := f.master_rel
-  inter_right h h' := f.inter_right h h'
-  mono := by
-    rintro X X' Y Y' Z Z' hrel hX'X hY'Y hZZ' hX' hY' hZ'
-    exact f.mono hrel (prodNbhd.subset_iff.mpr ⟨hX'X, hY'Y⟩) hZZ'
-      (prod_mem_prodNbhd hX' hY') hZ'
-
-theorem ofMap₂_toMap₂ (f : ApproximableMap (prod V₀ V₁) V₂) : ofMap₂ (toMap₂ f) = f := by
-  apply ApproximableMap.ext
-  intro W Z
-  show (prod V₀ V₁).mem W ∧ f.rel (prodNbhd (Sum.inl ⁻¹' W) (Sum.inr ⁻¹' W)) Z ↔ _
-  constructor
-  · rintro ⟨hW, hrel⟩; rwa [← prodNbhd.preimage hW] at hrel
-  · intro hrel
-    exact ⟨f.rel_dom hrel, by rwa [← prodNbhd.preimage (f.rel_dom hrel)]⟩
-
-theorem ApproximableMap₂.ext {f g : ApproximableMap₂ V₀ V₁ V₂}
-    (h : ∀ X Y Z, f.rel X Y Z ↔ g.rel X Y Z) : f = g := by
-  obtain ⟨rf, _, _, _, _, _, _⟩ := f
-  obtain ⟨rg, _, _, _, _, _, _⟩ := g
-  have : rf = rg := by funext X Y Z; exact propext (h X Y Z)
-  subst this; rfl
-
-theorem toMap₂_ofMap₂ (f : ApproximableMap₂ V₀ V₁ V₂) : toMap₂ (ofMap₂ f) = f := by
-  apply ApproximableMap₂.ext
-  intro X Y Z
-  show (prod V₀ V₁).mem (prodNbhd X Y) ∧ f.rel _ _ Z ↔ _
-  rw [prodNbhd.inl_preimage, prodNbhd.inr_preimage]
-  constructor
-  · rintro ⟨_, hrel⟩; exact hrel
-  · intro hrel
-    exact ⟨prod_mem_prodNbhd (f.rel_dom₀ hrel) (f.rel_dom₁ hrel), hrel⟩
-
-def map₂Equiv (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ) :
-    ApproximableMap (prod V₀ V₁) V₂ ≃ ApproximableMap₂ V₀ V₁ V₂ where
-  toFun := toMap₂
-  invFun := ofMap₂
-  left_inv := ofMap₂_toMap₂
-  right_inv := toMap₂_ofMap₂
-
-theorem toElementMap₂_toMap₂ (f : ApproximableMap (prod V₀ V₁) V₂) (x : V₀.Element) (y : V₁.Element) :
-    (toMap₂ f).toElementMap₂ x y = f.toElementMap (pair x y) := by
-  apply Element.ext
-  intro Z
-  constructor
-  · rintro ⟨X, Y, hX, hY, hrel⟩
-    exact ⟨prodNbhd X Y, ⟨X, Y, hX, hY, rfl⟩, hrel⟩
-  · rintro ⟨W, ⟨X, Y, hX, hY, rfl⟩, hrel⟩
-    exact ⟨X, Y, hX, hY, hrel⟩
-
-end
 end DomainTheory.NeighbourhoodSystems
-end

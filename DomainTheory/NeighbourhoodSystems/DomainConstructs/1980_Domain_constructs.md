@@ -11,7 +11,8 @@
 
 - [Proposition 3.4 — pairing and projections](1980_Proposition_3_4.md) [✓](../1980_REVISION.md)
 
-- [Theorem 3.5 — separate approximability](1980_Theorem_3_5.md)
+- [Theorem 3.5 — separate approximability](1980_Theorem_3_5.md) [✓](../1980_REVISION.md)
+
 - [Lemma 3.6 — constant functions](1980_Lemma_3_6.md)
 - [Proposition 3.7 — closure under substitution](1980_Proposition_3_7.md)
 - [Definition 3.8 — function space](1980_Definition_3_8.md)

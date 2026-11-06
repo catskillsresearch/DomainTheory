@@ -1,4 +1,4 @@
-Approximable mappings of two arguments as ternary neighbourhood relations, and their elementwise action on pairs of ideal elements.
+Approximable mappings of two arguments as ternary neighbourhood relations, their elementwise action on pairs of ideal elements, and the correspondence with approximable maps out of a product.
 
 <!-- formalization -->
 
@@ -19,3 +19,31 @@ Approximable mappings of two arguments as ternary neighbourhood relations, and t
 **Theorem (`toElementMap₂_mono`).** The elementwise action is monotone in each argument for the approximation order.
 
 *Proof.* Membership witnesses transport along the inequalities. ∎
+
+**Theorem (`ApproximableMap₂.ext`).** Ternary relations that agree on all triples of neighbourhoods determine equal binary approximable maps.
+
+*Proof.* Unpack the structure and compare the relation fields. ∎
+
+**Definition (`ofMap₂`).** A binary approximable map determines an approximable map out of the product by relating a product neighbourhood to a codomain neighbourhood when the ternary relation holds of the two untagged factors.
+
+*Proof.* Approximable-map axioms follow from the ternary axioms and the product neighbourhood laws. ∎
+
+**Definition (`toMap₂`).** An approximable map out of a product determines a binary approximable map by evaluating at products of neighbourhoods.
+
+*Proof.* The ternary axioms follow from the unary ones and nesting of product neighbourhoods. ∎
+
+**Theorem (`ofMap₂_toMap₂`).** Converting a product map to a binary map and back recovers the original.
+
+*Proof.* Compare relations using recovery of a product neighbourhood from its untaggings. ∎
+
+**Theorem (`toMap₂_ofMap₂`).** Converting a binary map to a product map and back recovers the original.
+
+*Proof.* Compare ternary relations using untagging of a product of neighbourhoods. ∎
+
+**Definition (`map₂Equiv`).** Approximable maps out of a product are equivalent to binary approximable maps via the two conversions.
+
+*Proof.* The round-trip identities. ∎
+
+**Theorem (`toElementMap₂_toMap₂`).** The elementwise action of the binary form of a product map at a pair of ideal elements equals the unary elementwise action at their pairing.
+
+*Proof.* Compare membership by unpacking product neighbourhoods into factors. ∎

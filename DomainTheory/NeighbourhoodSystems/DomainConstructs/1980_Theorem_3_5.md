@@ -1,13 +1,9 @@
 # Theorem 3.5
-**[NeighbourhoodSystems/DomainConstructs/Theorem_3_5.lean](Theorem_3_5.lean)**
+
+@import "1980_Theorem_3_5.english" {code_block=false}
+
+**[Theorem_3_5.lean](Theorem_3_5.lean)**
 
 @import "Theorem_3_5.lean"
 
-**THEOREM 3.5.** An elementwise function
-$$f : |D_0 \times D_1| \to |D_2|$$
-of two arguments comes from an approximable mapping iff for each fixed $a \in |D_0|$ and each fixed $b \in |D_1|$ the transformations
-$$x \mapsto f(x, b) \quad \text{and} \quad y \mapsto f(a, y)$$
-come from approximable mappings of one argument.
-
-*Proof:* As this is the first time we have had to deal with constants in functions, a lemma is useful.
-
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-06) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

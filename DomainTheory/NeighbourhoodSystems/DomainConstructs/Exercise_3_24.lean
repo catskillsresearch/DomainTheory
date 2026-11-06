@@ -3,7 +3,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_10
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_4
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_5
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap2
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_16
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_18
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_19
