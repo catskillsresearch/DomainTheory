@@ -22,7 +22,7 @@
 - [Indexed directed supremum of ideal elements](1980_iSupDirected.md) [✓](../1980_REVISION.md)
 - [Exercise 2.11 — directed unions of elements](1980_Exercise_2_11.md) [✓](../1980_REVISION.md)
 - [Directed supremum of approximable maps](1980_iSupMap.md) [✓](../1980_REVISION.md)
-- [Exercise 2.12 — directed unions of maps](1980_Exercise_2_12.md)
+- [Exercise 2.12 — directed unions of maps](1980_Exercise_2_12.md) [✓](../1980_REVISION.md)
 - [Exercise 2.13 — approximable means continuous](1980_Exercise_2_13.md)
 - [Exercise 2.14 — isomorphisms of neighbourhoods](1980_Exercise_2_14.md)
 - [Exercise 2.15 — opens classified by maps](1980_Exercise_2_15.md)
