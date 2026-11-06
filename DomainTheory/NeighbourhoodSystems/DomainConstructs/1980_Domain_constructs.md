@@ -20,7 +20,8 @@
 
 - [Elementwise substitution](1980_substitution_toElementMap.md) [✓](../1980_REVISION.md)
 
-- [Proposition 3.7 — closure under substitution](1980_Proposition_3_7.md)
+- [Proposition 3.7 — closure under substitution](1980_Proposition_3_7.md) [✓](../1980_REVISION.md)
+
 
 - [Definition 3.8 — function space](1980_Definition_3_8.md)
 - [Proposition 3.9 — consistent step neighbourhoods](1980_Proposition_3_9.md)
