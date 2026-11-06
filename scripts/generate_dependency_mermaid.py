@@ -1490,6 +1490,10 @@ NS_CON_SHORT: dict[str, tuple[str, str]] = {
         "D31",
         "Definition 3.1 — product of systems",
     ),
+    "Product element order isomorphism": (
+        "pEq",
+        "Product element order isomorphism",
+    ),
     "Proposition 3.2 — elements of a product": (
         "P32",
         "Proposition 3.2 — elements of a product",

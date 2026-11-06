@@ -4,7 +4,9 @@
 
 - [Introduction](1980_Introduction.md) [✓](../1980_REVISION.md)
 - [Definition 3.1 — product of systems](1980_Definition_3_1.md) [✓](../1980_REVISION.md)
-- [Proposition 3.2 — elements of a product](1980_Proposition_3_2.md)
+- [Product element order isomorphism](1980_prodEquiv.md) [✓](../1980_REVISION.md)
+- [Proposition 3.2 — elements of a product](1980_Proposition_3_2.md) [✓](../1980_REVISION.md)
+
 - [Definition 3.3 — projection mappings](1980_Definition_3_3.md)
 - [Proposition 3.4 — pairing and projections](1980_Proposition_3_4.md)
 - [Theorem 3.5 — separate approximability](1980_Theorem_3_5.md)

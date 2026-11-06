@@ -1,0 +1,19 @@
+Order isomorphism between product ideal elements and pairs of factor ideal elements.
+
+<!-- formalization -->
+
+**Definition (`prodEquiv`).** Ideal elements of a product neighbourhood system are order-isomorphic to pairs of ideal elements of the factors: forward projection sends an element to its two projections, and the inverse pairs them again.
+
+*Proof.* The round-trip identities are the pairing–projection recovery laws; the order equivalence unpacks membership of product neighbourhoods via the splitting characterisation. ∎
+
+**Theorem (`prodEquiv.apply`).** The isomorphism sends a product ideal element to the pair of its projections.
+
+*Proof.* By definition. ∎
+
+**Theorem (`prodEquiv.symm_apply`).** The inverse isomorphism sends a pair of ideal elements to their pairing.
+
+*Proof.* By definition. ∎
+
+**Theorem (`pair_le_pair_iff`).** A pairing approximates another if and only if each factor approximates the corresponding factor.
+
+*Proof.* Forward, evaluate at products against opposite masters and recover the factors by injectivity; reverse, apply the two inequalities to the witnessing factors of a product neighbourhood. ∎
