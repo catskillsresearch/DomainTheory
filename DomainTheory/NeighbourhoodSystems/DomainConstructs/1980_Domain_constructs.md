@@ -29,7 +29,8 @@
 
 - [Intersection of range neighbourhoods](1980_interYs.md) [✓](../1980_REVISION.md)
 
-- [Least map of a step list](1980_leastMap.md)
+- [Least map of a step list](1980_leastMap.md) [✓](../1980_REVISION.md)
+
 - [Definition 3.8 — function space](1980_Definition_3_8.md)
 
 - [Proposition 3.9 — consistent step neighbourhoods](1980_Proposition_3_9.md)

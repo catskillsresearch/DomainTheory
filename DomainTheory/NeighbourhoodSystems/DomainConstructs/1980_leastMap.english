@@ -1,0 +1,11 @@
+The least approximable map forced by a consistent finite list of domain–range neighbourhood pairs.
+
+<!-- formalization -->
+
+**Definition (`leastMap`).** Given a list of neighbourhood pairs that are neighbourhoods of the respective systems, and a consistency hypothesis that the associated range intersections are always neighbourhoods, the least map relates a domain neighbourhood to a range neighbourhood precisely when the range intersection for that domain neighbourhood is contained in the range neighbourhood.
+
+*Proof.* Domain and codomain membership are immediate; the masters relate by containment in the master; intersection on the right uses the consistency hypothesis; monotonicity uses antitonicity of the range intersection. ∎
+
+**Theorem (`leastMap_rel`).** Membership in the least-map relation is domain and range neighbourhood membership together with containment of the range intersection.
+
+*Proof.* By definition. ∎
