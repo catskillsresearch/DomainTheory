@@ -1,5 +1,5 @@
 module
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_11
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.eval
 
 @[expose] public section
 
@@ -10,6 +10,28 @@ open NeighborhoodSystem ApproximableMap
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 section
 variable {V₂ : NeighborhoodSystem γ}
+
+def gSection (g : ApproximableMap (prod V₀ V₁) V₂) {X : Set α} (hX : V₀.mem X) :
+    ApproximableMap V₁ V₂ where
+  rel Y Z := g.rel (prodNbhd X Y) Z
+  rel_dom h := (prod_mem_prodNbhd_iff.mp (g.rel_dom h)).2
+  rel_cod h := g.rel_cod h
+  master_rel := g.rel_master (prod_mem_prodNbhd hX V₁.master_mem)
+  inter_right h h' := g.inter_right h h'
+  mono := by
+    intro Y Y' Z Z' h hY'Y hZZ' hY' hZ'
+    exact g.mono h (prodNbhd.subset_iff.mpr ⟨subset_rfl, hY'Y⟩) hZZ'
+      (prod_mem_prodNbhd hX hY') hZ'
+
+@[simp] theorem gSection_rel {g : ApproximableMap (prod V₀ V₁) V₂} {X : Set α} (hX : V₀.mem X)
+    {Y : Set β} {Z : Set γ} : (gSection g hX).rel Y Z ↔ g.rel (prodNbhd X Y) Z := Iff.rfl
+
+theorem gSection_le {g : ApproximableMap (prod V₀ V₁) V₂} {X X' : Set α}
+    (hX : V₀.mem X) (hX' : V₀.mem X') (hX'X : X' ⊆ X) : gSection g hX ≤ gSection g hX' := by
+  intro Y Z h
+  have hY := (prod_mem_prodNbhd_iff.mp (g.rel_dom h)).2
+  exact g.mono h (prodNbhd.subset_iff.mpr ⟨hX'X, subset_rfl⟩) subset_rfl
+    (prod_mem_prodNbhd hX' hY) (g.rel_cod h)
 
 def curry (g : ApproximableMap (prod V₀ V₁) V₂) : ApproximableMap V₀ (funSpace V₁ V₂) where
   rel X W := ∃ hX : V₀.mem X, (funSpace V₁ V₂).mem W ∧ gSection g hX ∈ W

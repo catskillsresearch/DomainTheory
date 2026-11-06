@@ -1,0 +1,23 @@
+Evaluation of an approximable map at an argument, as a binary approximable map on the function space.
+
+<!-- formalization -->
+
+**Definition (`eval`).** Evaluation relates a function-space neighbourhood, a domain neighbourhood, and a codomain neighbourhood precisely when every map in the former relates the latter two.
+
+*Proof.* Domain and codomain membership unpack the conjuncts; the masters relate by the masters of each system and the master law for each map; intersection on the right and monotonicity use the corresponding laws for each map in the function-space neighbourhood. ∎
+
+**Definition (`evalMap`).** Evaluation as a joint approximable map out of the product of a function space with its domain is the product form of binary evaluation.
+
+*Proof.* Apply the product encoding of binary approximable maps. ∎
+
+**Theorem (`toElementMap₂_eval`).** Binary evaluation of an ideal element of a function space at an ideal element of the domain recovers application of the corresponding approximable map.
+
+*Proof.* Compare membership: upward closure with a step neighbourhood yields one inclusion; the converse witnesses evaluation at that step. ∎
+
+**Theorem (`evalMap_apply`).** Joint evaluation at a paired ideal element equals application of the recovered approximable map.
+
+*Proof.* Unpack the product encoding and apply the binary evaluation identity. ∎
+
+**Theorem (`toElementMap_evalMap_comp_paired`).** Evaluation after pairing a map into a function space with a map into the domain acts elementwise by applying the recovered value of the first to the value of the second.
+
+*Proof.* Compose the elementwise pairing and evaluation identities. ∎

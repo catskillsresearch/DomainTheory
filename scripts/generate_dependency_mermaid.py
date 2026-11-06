@@ -1562,7 +1562,10 @@ NS_CON_SHORT: dict[str, tuple[str, str]] = {
         "T310",
         "Theorem 3.10 — elements are mappings",
     ),
-
+    "Evaluation combinator": (
+        "eval",
+        "Evaluation combinator",
+    ),
     "Theorem 3.11 — evaluation combinator": (
         "T311",
         "Theorem 3.11 — evaluation combinator",
