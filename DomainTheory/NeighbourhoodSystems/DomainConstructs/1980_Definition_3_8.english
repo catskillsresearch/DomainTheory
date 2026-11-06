@@ -1,0 +1,37 @@
+**DEFINITION 3.8.** Given neighbourhood systems $D_0$ and $D_1$, the *function space* $(D_0 \to D_1)$ is the system whose set of tokens is the set of approximable mappings of Definition 2.1 and whose neighbourhoods are finite non-empty intersections of sets of the form
+
+$$
+[X, Y] = \{f : D_0 \to D_1 \mid X f Y\},
+$$
+
+where $X \in D_0$ and $Y \in D_1$. $\square$
+
+We have been calling our mappings "approximable" for a long time now without saying exactly how they can be approximated! Definition 3.8 supplies the missing key, because once a domain has been defined, then the general theory gives an explicit meaning to the word approximation. We still have to verify, however, that the mappings do correspond to the elements of the domain.
+
+<!-- page 43 -->
+
+<!-- formalization -->
+
+**Definition (`funSpace`).** The function space of two neighbourhood systems has as tokens the approximable maps between them, and as neighbourhoods the nonempty step functions of finite lists of neighbourhood pairs from the respective systems, with master the universal set.
+
+*Proof.* The master is nonempty via the constant map at the bottom; intersection of neighbourhoods concatenates the witnessing lists; every neighbourhood sits in the master. ∎
+
+**Theorem (`funSpace_master`).** The master of a function space is the universal set of maps.
+
+*Proof.* By definition. ∎
+
+**Theorem (`funSpace_mem_iff`).** A set of maps is a function-space neighbourhood if and only if it is a nonempty step function of neighbourhood pairs.
+
+*Proof.* By definition. ∎
+
+**Theorem (`funSpace_mem_up_closed`).** Function-space neighbourhoods are upward closed in the pointwise order on maps.
+
+*Proof.* Unpack as a step function and apply upward closure of step functions. ∎
+
+**Theorem (`step_mem`).** Every step at neighbourhoods of the factor systems is a function-space neighbourhood.
+
+*Proof.* Realise it as a singleton step function, witnessed nonempty by the constant map at the principal filter of the range neighbourhood. ∎
+
+**Theorem (`mem_stepFun_iff`).** An ideal element of the function space meets a step function if and only if it meets every corresponding step.
+
+*Proof.* By induction on the list, using intersection and upward closure in the filter of neighbourhoods. ∎

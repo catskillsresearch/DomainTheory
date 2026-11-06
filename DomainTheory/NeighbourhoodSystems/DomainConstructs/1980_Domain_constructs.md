@@ -31,7 +31,8 @@
 
 - [Least map of a step list](1980_leastMap.md) [✓](../1980_REVISION.md)
 
-- [Definition 3.8 — function space](1980_Definition_3_8.md)
+- [Definition 3.8 — function space](1980_Definition_3_8.md) [✓](../1980_REVISION.md)
+
 
 - [Proposition 3.9 — consistent step neighbourhoods](1980_Proposition_3_9.md)
 - [Theorem 3.10 — elements are mappings](1980_Theorem_3_10.md)
