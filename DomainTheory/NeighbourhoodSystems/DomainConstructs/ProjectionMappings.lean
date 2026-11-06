@@ -140,12 +140,25 @@ theorem toElementMap_paired (f : ApproximableMap V₂ V₀) (g : ApproximableMap
       exact g.mono hgZ₂ Set.inter_subset_right subset_rfl (w.sub (w.inter_mem hwZ₁ hwZ₂))
         (g.rel_cod hgZ₂)
 
+theorem proj₀_comp_paired (f : ApproximableMap V₂ V₀) (g : ApproximableMap V₂ V₁) :
+    (proj₀ V₀ V₁).comp (paired f g) = f := by
+  apply ext_of_toElementMap
+  intro w
+  rw [toElementMap_comp, toElementMap_paired, toElementMap_proj₀, fst_pair]
+
+theorem proj₁_comp_paired (f : ApproximableMap V₂ V₀) (g : ApproximableMap V₂ V₁) :
+    (proj₁ V₀ V₁).comp (paired f g) = g := by
+  apply ext_of_toElementMap
+  intro w
+  rw [toElementMap_comp, toElementMap_paired, toElementMap_proj₁, snd_pair]
+
 theorem paired_proj (h : ApproximableMap V₂ (prod V₀ V₁)) :
     paired ((proj₀ V₀ V₁).comp h) ((proj₁ V₀ V₁).comp h) = h := by
   apply ext_of_toElementMap
   intro w
   rw [toElementMap_paired, toElementMap_comp, toElementMap_comp, toElementMap_proj₀,
     toElementMap_proj₁, pair_fst_snd]
+
 
 end
 end DomainTheory.NeighbourhoodSystems

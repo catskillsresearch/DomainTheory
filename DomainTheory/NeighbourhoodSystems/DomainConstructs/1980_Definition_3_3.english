@@ -72,6 +72,14 @@ holds for all $X \in \mathcal{D}_0$, $Y \in \mathcal{D}_1$, and $Z \in \mathcal{
 
 *Proof.* Compare membership by unpacking and reconstructing product neighbourhoods from the two component witnesses. ∎
 
+**Theorem (`proj₀_comp_paired`).** Composing the left projection with a paired map recovers the left component.
+
+*Proof.* Compare elementwise actions using the paired and projection laws. ∎
+
+**Theorem (`proj₁_comp_paired`).** Composing the right projection with a paired map recovers the right component.
+
+*Proof.* Dual to the left case. ∎
+
 **Theorem (`paired_proj`).** Pairing the two projections composed with a map into a product recovers that map.
 
 *Proof.* Compare elementwise actions using the preceding laws and the pairing–projection recovery. ∎
