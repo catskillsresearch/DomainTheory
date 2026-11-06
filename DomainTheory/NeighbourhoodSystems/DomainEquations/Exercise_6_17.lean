@@ -10,7 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition_6_6
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot_le
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NestedOrDisjoint
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_16
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.iterSys
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_20
 
 @[expose] public section

@@ -1635,6 +1635,7 @@ import DomainTheory.NeighbourhoodSystems.DomainConstructs.diag
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_14
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodIso
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_15
+import DomainTheory.NeighbourhoodSystems.DomainConstructs.iterSys
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_16
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_17
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_18

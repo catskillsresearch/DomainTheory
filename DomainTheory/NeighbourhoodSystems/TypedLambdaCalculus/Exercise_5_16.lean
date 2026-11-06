@@ -8,7 +8,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_16
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.iterSys
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_le_iff
 
 @[expose] public section

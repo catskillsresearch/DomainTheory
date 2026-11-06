@@ -1602,6 +1602,10 @@ NS_CON_SHORT: dict[str, tuple[str, str]] = {
         "X315",
         "Exercise 3.15 — product isomorphisms",
     ),
+    "Infinite sequence system": (
+        "iter",
+        "Infinite sequence system",
+    ),
     "Exercise 3.16 — infinite sequences of elements": (
         "X316",
         "Exercise 3.16 — infinite sequences of elements",

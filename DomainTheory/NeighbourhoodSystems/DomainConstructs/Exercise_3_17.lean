@@ -1,5 +1,5 @@
 module
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_16
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.iterSys
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.funSpace
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example_1_2

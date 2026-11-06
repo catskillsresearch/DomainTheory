@@ -1,0 +1,143 @@
+The infinite sequence neighbourhood system, its sequence elements, and the isomorphism with a product.
+
+<!-- formalization -->
+
+**Definition (`fiber`).** The fibre of a set of indexed tokens at an index is the set of tokens appearing with that index.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mem_fiber`).** Membership in a fibre is membership of the indexed pair in the underlying set.
+
+*Proof.* By definition. ∎
+
+**Theorem (`eq_of_fiber_eq`).** Two sets of indexed tokens are equal when all fibres agree.
+
+*Proof.* Compare membership of indexed pairs via the fibres. ∎
+
+**Theorem (`fiber_inter`).** Fibres commute with intersection.
+
+*Proof.* By definition. ∎
+
+**Theorem (`fiber_mono`).** Fibres preserve inclusion.
+
+*Proof.* Apply the ambient inclusion to an indexed pair. ∎
+
+**Definition (`single`).** The single-index neighbourhood at an index with a domain neighbourhood is the set of indexed tokens that lie in that neighbourhood at the chosen index and in the master elsewhere.
+
+*Proof.* By definition. ∎
+
+**Theorem (`fiber_single_self`).** The fibre of a single-index neighbourhood at its own index recovers the domain neighbourhood.
+
+*Proof.* Unpack the definition at that index. ∎
+
+**Theorem (`fiber_single_ne`).** A fibre of a single-index neighbourhood at a different index is the master.
+
+*Proof.* Unpack the definition off that index. ∎
+
+**Definition (`iterSys`).** The infinite sequence system consists of those sets of indexed tokens whose fibres are neighbourhoods and that are eventually the master.
+
+*Proof.* The master is the constant master fibre; intersection preserves fibrewise membership and eventual masters; subsets of neighbourhoods remain below the master fibrewise. ∎
+
+**Theorem (`iterSys_master`).** The master of the sequence system is the set of pairs whose token lies in the base master.
+
+*Proof.* By definition. ∎
+
+**Theorem (`fiber_iterSys_master`).** Every fibre of the sequence master is the base master.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mem_iterSys`).** Membership in the sequence system is fibrewise neighbourhood membership together with an eventual master.
+
+*Proof.* By definition. ∎
+
+**Theorem (`interUpTo_subset_master`).** Finite initial intersections of a sequence of sets in the sequence system lie below the master.
+
+*Proof.* By induction on the number of factors. ∎
+
+**Theorem (`reconstruct_subset`).** The finite initial intersection of single-index neighbourhoods built from the fibres of a sequence neighbourhood is contained in that neighbourhood.
+
+*Proof.* On indices below the cutoff, unpack the corresponding single; beyond the cutoff, use the eventual master. ∎
+
+**Theorem (`single_inter`).** Intersection of single-index neighbourhoods at a common index is the single at the intersection of the domains.
+
+*Proof.* Compare fibres. ∎
+
+**Theorem (`single_master`).** The single-index neighbourhood at the master is the sequence master.
+
+*Proof.* Compare fibres. ∎
+
+**Theorem (`single_mem`).** A single-index neighbourhood at a neighbourhood is itself a sequence neighbourhood.
+
+*Proof.* Fibres are the given neighbourhood or the master; after that index they are the master. ∎
+
+**Theorem (`single_mono`).** Singles are monotone in the domain neighbourhood.
+
+*Proof.* Compare the defining cases. ∎
+
+**Definition (`component`).** The component of a sequence element at an index is the ideal element whose neighbourhoods are those for which the corresponding single belongs to the sequence element.
+
+*Proof.* Filter axioms follow from those of the sequence element together with the single intersection and nesting laws. ∎
+
+**Theorem (`mem_component`).** Membership in a component is base neighbourhood membership together with membership of the corresponding single in the sequence element.
+
+*Proof.* By definition. ∎
+
+**Definition (`ofSeq`).** A sequence of ideal elements determines a sequence-system element consisting of those sequence neighbourhoods whose fibres belong to the corresponding terms.
+
+*Proof.* Filter axioms follow fibrewise from the terms, using fibre intersection and monotonicity. ∎
+
+**Theorem (`mem_ofSeq`).** Membership in the sequence of a family is sequence-neighbourhood membership together with fibrewise membership in the terms.
+
+*Proof.* By definition. ∎
+
+**Theorem (`component_ofSeq`).** Components of a sequence recover the terms.
+
+*Proof.* Compare membership via the fibre of the single at the chosen index. ∎
+
+**Theorem (`ofSeq_mono`).** Pointwise approximation of sequences yields approximation of the corresponding sequence elements.
+
+*Proof.* Apply each term to the corresponding fibre. ∎
+
+**Theorem (`subset_single`).** A sequence neighbourhood is contained in the single built from each of its fibres.
+
+*Proof.* On the chosen index unpack the fibre; off it use the master bound. ∎
+
+**Theorem (`ofSeq_component`).** Reassembling the components of a sequence element recovers that element.
+
+*Proof.* One inclusion uses finite reconstruction from singles; the other embeds via singles containing the neighbourhood. ∎
+
+**Theorem (`le_of_component_le`).** Pointwise approximation of components yields approximation of sequence elements.
+
+*Proof.* Transport through the sequence reconstruction. ∎
+
+**Definition (`iterSeqEquiv`).** Ideal elements of the sequence system are order-isomorphic to arbitrary sequences of base ideal elements.
+
+*Proof.* The round trips are the component and sequence reconstructions; order equivalence is the pointwise comparison. ∎
+
+**Definition (`natShiftEquiv`).** Sequences are order-isomorphic to a head paired with the tail sequence.
+
+*Proof.* Split and reassemble by cases on zero; order equivalence compares the head and the shifted terms. ∎
+
+**Definition (`iterProdIso`).** Ideal elements of the sequence system are order-isomorphic to those of the product of the base with the sequence system.
+
+*Proof.* Compose the sequence isomorphism, the head–tail shift, product congruence, and the product-element isomorphism. ∎
+
+**Definition (`projN`).** Projection at an index relates a sequence neighbourhood to a base neighbourhood precisely when the fibre at that index is contained in the latter.
+
+*Proof.* Domain and codomain membership unpack the conjuncts; the masters relate by the master fibre; intersection on the right and monotonicity use the base laws with fibre monotonicity. ∎
+
+**Theorem (`subset_of_fiber_subset`).** Fibrewise inclusion implies inclusion of indexed-token sets.
+
+*Proof.* Apply the fibre inclusion at the index of a pair. ∎
+
+**Theorem (`projN_rel`).** Membership in a projection relation is sequence membership, base membership, and fibre containment.
+
+*Proof.* By definition. ∎
+
+**Theorem (`toElementMap_projN`).** Projection at an index acts elementwise as the corresponding component.
+
+*Proof.* Compare membership via singles and fibre containment. ∎
+
+**Theorem (`iter_isomorphic`).** The sequence system is isomorphic to its product with the base.
+
+*Proof.* Invoke the corresponding element order isomorphism. ∎
