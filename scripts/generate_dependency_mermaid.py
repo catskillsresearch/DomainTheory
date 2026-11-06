@@ -1461,6 +1461,10 @@ NS_MAP_SHORT: dict[str, tuple[str, str]] = {
         "X220",
         "Exercise 2.20 — powerset of the integers",
     ),
+    "Finite and infinite sequence neighbourhood system": (
+        "C",
+        "Finite and infinite sequence neighbourhood system",
+    ),
     "Exercise 2.21 — finite and infinite sequences": (
         "X221",
         "Exercise 2.21 — finite and infinite sequences",

@@ -1,0 +1,93 @@
+The neighbourhood system of finite and infinite binary sequences, with cones and terminator singletons as tokens, the empty total sequence above bottom, and left-biased approximable juxtaposition.
+
+<!-- formalization -->
+
+**Theorem (`cone_not_subset_singleton`).** No cone is contained in a singleton.
+
+*Proof.* A cone contains both a string and a proper extension, which cannot both lie in one singleton. ∎
+
+**Theorem (`cone_ne_singleton`).** No cone equals a singleton.
+
+*Proof.* Equality would force the cone into the singleton. ∎
+
+**Theorem (`cone_singleton_nd`).** A cone and a singleton are nested or disjoint.
+
+*Proof.* If the cone tip prefixes the singleton string then the singleton sits in the cone; otherwise their intersection is empty. ∎
+
+**Definition (`memC`).** A set of strings is a neighbourhood of the enlarged system when it is a cone or a singleton.
+
+**Theorem (`singleton_cone_nd`).** A singleton and a cone are nested or disjoint.
+
+*Proof.* Dual to the cone–singleton case via the prefix relation. ∎
+
+**Theorem (`singleton_singleton_nd`).** Two singletons are nested or disjoint.
+
+*Proof.* Equal strings give nesting; unequal strings give empty intersection. ∎
+
+**Theorem (`nestedOrDisjoint_C`).** Any two neighbourhoods of the enlarged system are nested or disjoint.
+
+*Proof.* Case analysis on cones versus singletons, using the four nested-or-disjoint lemmas. ∎
+
+**Definition (`C`).** The enlarged neighbourhood system on binary strings has master the universe and neighbourhoods the cones together with the terminator singletons.
+
+*Proof.* Nested-or-disjoint construction with the empty-cone master. ∎
+
+**Theorem (`C_mem`).** Membership in the enlarged system is the cone-or-singleton predicate.
+
+*Proof.* By definition. ∎
+
+**Theorem (`C_master`).** The master of the enlarged system is the universe.
+
+*Proof.* By definition. ∎
+
+**Theorem (`memC_cone`).** Every cone is a neighbourhood of the enlarged system.
+
+*Proof.* One of the two alternatives in the neighbourhood predicate. ∎
+
+**Theorem (`memC_singleton`).** Every singleton is a neighbourhood of the enlarged system.
+
+*Proof.* The other alternative in the neighbourhood predicate. ∎
+
+**Theorem (`prepend_mono`).** Prepending a fixed string is monotone for set inclusion.
+
+*Proof.* Immediate from the definition of prepend. ∎
+
+**Theorem (`prepend_singleton`).** Prepending a string to a singleton yields the singleton of the concatenation.
+
+*Proof.* Unpack membership in the prepended set. ∎
+
+**Theorem (`memC_prepend`).** Prepending a string to a neighbourhood of the enlarged system yields a neighbourhood.
+
+*Proof.* Prepending to a cone yields a cone; prepending to a singleton yields a singleton. ∎
+
+**Theorem (`prepend_subset_cone`).** The prepend of any set under a string sits inside that string’s cone.
+
+*Proof.* Concatenation witnesses the prefix relation. ∎
+
+**Definition (`singletonElt`).** The ideal element associated to a finite total sequence is the principal filter of its terminator singleton.
+
+**Definition (`Lambda`).** The empty total sequence is the singleton element of the empty string.
+
+**Theorem (`subset_singleton_eq`).** A neighbourhood contained in a singleton equals that singleton.
+
+*Proof.* Cones never sit in singletons; a singleton contained in another forces equality of tips. ∎
+
+**Definition (`juxtapose`).** Juxtaposition is the binary approximable map relating neighbourhoods when either the left is a cone contained in the result, or the left is a singleton whose prepend of the right neighbourhood sits in the result.
+
+*Proof.* Domain, codomain, master, intersection, and monotonicity follow from the neighbourhood axioms, injectivity of cones, and the prepend lemmas. ∎
+
+**Theorem (`bot_lt_Lambda`).** Bottom is strictly below the empty total sequence.
+
+*Proof.* Bottom’s only neighbourhood is the master, which cannot equal the empty singleton. ∎
+
+**Theorem (`isTotal_singletonElt`).** Every finite terminator element is total.
+
+*Proof.* Any neighbourhood of a larger element meeting the terminator singleton must recover that singleton by the subset-singleton law. ∎
+
+**Theorem (`juxtapose_cone`).** Juxtaposing a cone principal on the left with any right argument recovers that cone principal.
+
+*Proof.* Unpack the defining relation: the cone branch forces containment in the result, and the singleton branch is impossible for a cone left argument. ∎
+
+**Theorem (`juxtapose_singleton_mem`).** Membership in the juxtaposition of a terminator element with a right argument is witnessed by a neighbourhood of the right whose prepend under the terminator tip sits in the result.
+
+*Proof.* Compare the defining relation against the singleton left argument. ∎
