@@ -1,0 +1,63 @@
+Pointwise order and bounded supremum of approximable maps.
+
+<!-- formalization -->
+
+**Definition (`MapsBounded`).** A set of approximable maps is bounded when some approximable map dominates every member.
+
+*Proof.* By definition. ∎
+
+**Definition (`PointwiseBounded`).** A set of approximable maps is pointwise bounded when, at every ideal element of the domain, the set of values is bounded in the codomain.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mapsBounded_principal`).** Pointwise boundedness implies boundedness of the values at every principal ideal element.
+
+*Proof.* Specialise pointwise boundedness at the principal. ∎
+
+**Definition (`supOnPrincipal`).** At a domain neighbourhood, the supremum on principals of a pointwise-bounded family is the codomain supremum of the values of the family at that principal.
+
+*Proof.* Apply the codomain supremum using the principal boundedness. ∎
+
+**Theorem (`supOnPrincipal_mono`).** Shrinking the domain neighbourhood raises the supremum on principals.
+
+*Proof.* Bound the larger supremum below by comparing values via monotonicity of each map at nested principals. ∎
+
+**Definition (`sSupMaps`).** The pointwise supremum of a pointwise-bounded family is the monotone approximable map determined by the supremum on principals.
+
+*Proof.* Apply the monotone-to-approximable encoding with the principal-supremum comparison. ∎
+
+**Theorem (`le_iff_toElementMap_le`).** Approximation of approximable maps is equivalent to pointwise approximation of their values.
+
+*Proof.* Forward, apply a relating neighbourhood at each argument; converse, evaluate at the principal of a relating domain neighbourhood. ∎
+
+**Theorem (`le_sSupMaps`).** Each member of a pointwise-bounded family is below the pointwise supremum.
+
+*Proof.* A relating neighbourhood of a member belongs to its value at the corresponding principal, hence to the principal supremum. ∎
+
+**Theorem (`sSupMaps_le`).** The pointwise supremum is below every common upper bound of the family.
+
+*Proof.* Bound the principal supremum by the value of the upper bound at that principal, using pointwise approximation. ∎
+
+**Theorem (`mapsBounded_iff_pointwiseBounded`).** Boundedness of a family of maps is equivalent to pointwise boundedness of its values.
+
+*Proof.* Forward, apply pointwise approximation at each argument; converse, take the pointwise supremum as a common upper bound. ∎
+
+**Theorem (`toElementMap_sSupMaps_principal`).** The value of the pointwise supremum at a principal is the supremum on that principal.
+
+*Proof.* Unpack the monotone encoding at principals. ∎
+
+**Theorem (`toElementMap_sSupMaps`).** The value of the pointwise supremum at an ideal element is the codomain supremum of the values of the family there.
+
+*Proof.* Compare via principals below the argument and the membership of each family member under the pointwise supremum. ∎
+
+**Theorem (`toElementMap_sSupMaps'`).** Under mere boundedness of the family, the same pointwise-supremum identity holds after converting to pointwise boundedness.
+
+*Proof.* Apply the previous identity via the boundedness equivalence. ∎
+
+**Theorem (`toFilter_le_iff`).** Approximation of maps is equivalent to approximation of their principal filters in the function space.
+
+*Proof.* Unpack the order isomorphism between maps and function-space elements. ∎
+
+**Theorem (`mapsBounded_to_filters`).** Boundedness of a family of maps implies boundedness of the corresponding filters in the function space.
+
+*Proof.* The filter of a common upper bound dominates each converted filter. ∎

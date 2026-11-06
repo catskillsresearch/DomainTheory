@@ -1660,6 +1660,7 @@ import DomainTheory.NeighbourhoodSystems.DomainConstructs.eval
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_11
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.curry
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
+import DomainTheory.NeighbourhoodSystems.DomainConstructs.sSupMaps
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_5
 import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition_6_10

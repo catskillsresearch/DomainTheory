@@ -1578,6 +1578,10 @@ NS_CON_SHORT: dict[str, tuple[str, str]] = {
         "T312",
         "Theorem 3.12 — currying",
     ),
+    "Pointwise supremum of maps": (
+        "sSup",
+        "Pointwise supremum of maps",
+    ),
     "Theorem 3.13 — pointwise order of maps": (
         "T313",
         "Theorem 3.13 — pointwise order of maps",
