@@ -1,0 +1,93 @@
+The token neighbourhood system of a family closed under nonempty intersections (and, for the representation, directed unions), with finite tokens, closure, and the order isomorphism between ideal elements and members of the family.
+
+<!-- formalization -->
+
+**Definition (`Cl`).** The closure of a set of tokens is the intersection of all members of the family that contain it.
+
+**Theorem (`Cl_mem`).** If a set is contained in some member of an intersection-closed family, then its closure belongs to the family.
+
+*Proof.* The family of containing members is nonempty and contained in the ambient family, so the intersection axiom applies. ∎
+
+**Theorem (`Cl_subset`).** The closure of a set contained in a family member is contained in that member.
+
+*Proof.* The member belongs to the intersecting family defining the closure. ∎
+
+**Definition (`IsTok`).** A set is a token for the family when it is finite and contained in some member of the family.
+
+**Definition (`Tok`).** Tokens are the finite sets contained in members of the family, packaged as a subtype.
+
+**Definition (`nbhd`).** The basic neighbourhood of a set of tokens consists of those tokens whose closures contain the set.
+
+**Theorem (`mem_nbhd`).** Membership in a basic neighbourhood is containment of the generating set in the closure of the token.
+
+*Proof.* By definition. ∎
+
+**Definition (`botTok`).** The empty token is the empty set, which is finite and contained in any nonempty family’s chosen member.
+
+**Theorem (`nbhd_empty`).** The basic neighbourhood of the empty set is the universe of tokens.
+
+*Proof.* Every closure contains the empty set. ∎
+
+**Theorem (`subset_Cl`).** Every set is contained in its closure.
+
+*Proof.* Each intersecting member contains the set by construction. ∎
+
+**Theorem (`nbhd_subset_iff`).** Basic neighbourhoods nest exactly when the larger generator sits in the closure of the smaller token.
+
+*Proof.* One direction evaluates at the token itself; the other uses monotonicity of closure under containment in a family member. ∎
+
+**Definition (`reprSystem`).** The token neighbourhood system has as neighbourhoods the basic neighbourhoods of tokens, with master the universe of tokens.
+
+*Proof.* The empty token witnesses a nonempty master; intersecting basic neighbourhoods is the basic neighbourhood of the union of tokens, using closure under nonempty intersections. ∎
+
+**Theorem (`mem_reprSystem`).** A set of tokens is a neighbourhood if and only if it is a basic neighbourhood of some token.
+
+*Proof.* By definition. ∎
+
+**Theorem (`reprSystem_master`).** The master of the token neighbourhood system is the universe of tokens.
+
+*Proof.* By definition. ∎
+
+**Theorem (`directed_step`).** Two basic neighbourhoods of an ideal element admit a common refinement whose closures dominate both closures.
+
+*Proof.* Their intersection is again a basic neighbourhood, and evaluating at the refining token yields the two containments. ∎
+
+**Definition (`famC`).** The family associated to an ideal element consists of the closures of tokens belonging to that element.
+
+**Theorem (`mem_nbhd_bot`).** Every ideal element contains the basic neighbourhood of the empty token.
+
+*Proof.* That neighbourhood is the master. ∎
+
+**Definition (`ofC`).** A member of the ambient family determines the ideal element of neighbourhoods containing a basic neighbourhood of some token inside the member.
+
+*Proof.* Master, intersection, and upward closure follow from the corresponding token and neighbourhood operations. ∎
+
+**Definition (`toC`).** An ideal element determines the union of the closures of its tokens.
+
+**Theorem (`mem_toC`).** A point belongs to the set associated to an ideal element if and only if it lies in the closure of some token of that element.
+
+*Proof.* Unpack the union. ∎
+
+**Theorem (`exists_tok_of_finite_subset`).** Every finite subset of the set associated to an ideal element sits in the closure of some token of that element.
+
+*Proof.* Induction on the finite set, joining tokens via the directed-step lemma. ∎
+
+**Theorem (`mem_nbhd_iff`).** An ideal element contains the basic neighbourhood of a token if and only if that token sits in the associated set.
+
+*Proof.* One direction uses containment in the closure; the converse extracts a refining token from the finite-subset lemma and applies neighbourhood monotonicity. ∎
+
+**Theorem (`toC_mem`).** Under directed-union closure of the ambient family, the set associated to an ideal element belongs to the family.
+
+*Proof.* The family of closures of tokens of the element is nonempty and directed under inclusion, so the directed-union axiom applies. ∎
+
+**Theorem (`ofC_toC`).** Passing from an ideal element to its associated set and back recovers the element.
+
+*Proof.* Compare neighbourhood membership via the basic-neighbourhood characterisation against the associated set. ∎
+
+**Theorem (`toC_ofC`).** Passing from a family member to an ideal element and back recovers the member.
+
+*Proof.* One inclusion uses containment of tokens in the member; the other uses singleton tokens. ∎
+
+**Definition (`reprIso`).** Ideal elements of the token neighbourhood system are order-isomorphic to members of the ambient family via the to-set / of-set correspondence.
+
+*Proof.* The two round-trips and the order correspondence follow from the preceding lemmas. ∎

@@ -1469,6 +1469,10 @@ NS_MAP_SHORT: dict[str, tuple[str, str]] = {
         "X221",
         "Exercise 2.21 — finite and infinite sequences",
     ),
+    "Token neighbourhood system of a closed family": (
+        "rSys",
+        "Token neighbourhood system of a closed family",
+    ),
     "Exercise 2.22 — domains from closure properties": (
         "X222",
         "Exercise 2.22 — domains from closure properties",

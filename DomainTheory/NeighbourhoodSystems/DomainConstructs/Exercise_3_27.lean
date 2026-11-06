@@ -1,5 +1,5 @@
 module
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_22
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.reprSystem
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6
 public import Mathlib.Order.Directed

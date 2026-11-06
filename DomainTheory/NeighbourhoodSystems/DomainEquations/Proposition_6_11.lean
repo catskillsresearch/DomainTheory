@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_22
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.reprSystem
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition_6_10
 
