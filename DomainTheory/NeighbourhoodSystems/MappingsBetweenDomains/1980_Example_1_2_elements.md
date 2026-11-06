@@ -1,7 +1,9 @@
 # Two-token ideal elements
 
-Ideal elements of the two-token neighbourhood system of Example 1.2: the unique partial element $\perp$, the two totals determined by $\{0\}$ and $\{1\}$, and the classification and order facts among them.
+@import "1980_Example_1_2_elements.english" {code_block=false}
 
 **[Example_1_2_elements.lean](Example_1_2_elements.lean)**
 
 @import "Example_1_2_elements.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-05) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

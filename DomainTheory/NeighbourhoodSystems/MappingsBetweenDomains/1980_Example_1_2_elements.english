@@ -1,0 +1,27 @@
+Ideal elements of the two-token neighbourhood system of Example 1.2: the unique partial element $\perp$, the two totals determined by $\{0\}$ and $\{1\}$, and the classification and order facts among them.
+
+<!-- formalization -->
+
+**Definition (`bot`).** The least ideal element: the filter consisting of the master neighbourhood alone.
+
+**Definition (`elemZero`).** The principal filter of the neighbourhood $\{0\}$.
+
+**Definition (`elemOne`).** The principal filter of the neighbourhood $\{1\}$.
+
+**Theorem (`mem_zero_of_mem`).** Any ideal element containing $\{0\}$ equals the principal of $\{0\}$.
+
+**Theorem (`mem_one_of_mem`).** Any ideal element containing $\{1\}$ equals the principal of $\{1\}$.
+
+**Theorem (`bot_lt_elemZero`).** The bottom element strictly approximates the principal of $\{0\}$.
+
+**Theorem (`bot_lt_elemOne`).** The bottom element strictly approximates the principal of $\{1\}$.
+
+**Theorem (`element_classification`).** Every ideal element is bottom, the principal of $\{0\}$, or the principal of $\{1\}$.
+
+*Proof.* Case on membership of the two singletons; otherwise only the master remains. ∎
+
+**Theorem (`bot_is_unique_partial`).** Bottom is the unique element that is neither principal of $\{0\}$ nor of $\{1\}$.
+
+**Theorem (`not_elemZero_le_elemOne`).** The two total principals are incomparable.
+
+**Theorem (`eq_bot_of_le_elemZero_of_le_elemOne`).** Anything below both totals is bottom.
