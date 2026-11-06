@@ -9,8 +9,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.sig
 namespace DomainTheory.NeighbourhoodSystems.Example24
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
 
-section
-
 def runMap : ApproximableMap B B where
   rel X Y := ∃ σ, X = cone σ ∧ B.mem Y ∧ cone (out σ) ⊆ Y
   rel_dom := fun ⟨σ, hX, _, _⟩ => ⟨σ, hX⟩
@@ -32,34 +30,16 @@ def runMap : ApproximableMap B B where
       rw [← hX'cone, ← hX]; exact hX'X
     have hcone : cone (out σ') ⊆ cone (out σ) := cone.subset_cone.mpr (out_mono hpre)
     exact ⟨σ', hX'cone, hY'mem, (hcone.trans hYsub).trans hYY'⟩
-end
-
-section
 
 theorem out_append_false (τ : Str) : out ([false] ++ τ) = false :: out τ := rfl
-end
-
-section
 
 theorem out_append_trueFalse (τ : Str) : out ([true, false] ++ τ) = false :: τ := rfl
-end
-
-section
 
 theorem out_append_trueTrue (τ : Str) : out ([true, true] ++ τ) = out ([true] ++ τ) := rfl
-end
-
-section
 
 theorem out_true_false (t : Str) : out (true :: false :: t) = false :: t := rfl
-end
-
-section
 
 theorem out_true_true (t : Str) : out (true :: true :: t) = out (true :: t) := rfl
-end
-
-section
 
 theorem key (g : ApproximableMap B B) (hg : SatisfiesRunEquations g) :
     ∀ σ : Str, g.toElementMap (sigmaElt σ B.bot) = sigmaElt (out σ) B.bot
@@ -82,9 +62,6 @@ theorem key (g : ApproximableMap B B) (hg : SatisfiesRunEquations g) :
   | false :: t => by
       rw [out_false, show (false :: t : Str) = [false] ++ t from rfl, sigmaElt_append, hg.zero,
         key g hg t, show (false :: out t : Str) = [false] ++ out t from rfl, sigmaElt_append]
-end
-
-section
 
 theorem runMap_rel_cone (σ : Str) (Y : Set Str) :
     runMap.rel (cone σ) Y ↔ B.mem Y ∧ cone (out σ) ⊆ Y := by
@@ -94,6 +71,5 @@ theorem runMap_rel_cone (σ : Str) (Y : Set Str) :
     exact ⟨hYmem, hsub⟩
   · rintro ⟨hYmem, hsub⟩
     exact ⟨σ, rfl, hYmem, hsub⟩
-end
 
 end DomainTheory.NeighbourhoodSystems.Example24
