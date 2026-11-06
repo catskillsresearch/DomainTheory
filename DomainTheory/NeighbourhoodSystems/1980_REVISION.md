@@ -8,7 +8,7 @@ Tracks the [revision ethos](../../README.md#revision): Mathlib-style library lem
 | --- | --- | --- | --- |
 | 0 | Introduction | [1980_Introduction.md](1980_Introduction.md) | **complete** (2026-11-04) |
 | 1 | Domains given by neighbourhoods | [DomainsGivenByNeighbourhoods/1980_Domains_given_by_neighbourhoods.md](DomainsGivenByNeighbourhoods/1980_Domains_given_by_neighbourhoods.md) | **complete** (2026-11-05) |
-| 2 | Mappings between domains | [MappingsBetweenDomains/1980_Mappings_between_domains.md](MappingsBetweenDomains/1980_Mappings_between_domains.md) | pending |
+| 2 | Mappings between domains | [MappingsBetweenDomains/1980_Mappings_between_domains.md](MappingsBetweenDomains/1980_Mappings_between_domains.md) | **complete** (2026-11-06) |
 | 3 | Domain constructs | [DomainConstructs/1980_Domain_constructs.md](DomainConstructs/1980_Domain_constructs.md) | pending |
 | 4 | Fixed points and recursion | [FixedPointsAndRecursion/1980_Fixed_points_and_recursion.md](FixedPointsAndRecursion/1980_Fixed_points_and_recursion.md) | pending |
 | 5 | Typed $\lambda$-calculus | [TypedLambdaCalculus/1980_Typed_lambda-calculus.md](TypedLambdaCalculus/1980_Typed_lambda-calculus.md) | pending |

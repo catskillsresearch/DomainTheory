@@ -43,3 +43,5 @@
 - [Exercise 2.21 — finite and infinite sequences](1980_Exercise_2_21.md) [✓](../1980_REVISION.md)
 - [Token neighbourhood system of a closed family](1980_reprSystem.md) [✓](../1980_REVISION.md)
 - [Exercise 2.22 — domains from closure properties](1980_Exercise_2_22.md) [✓](../1980_REVISION.md)
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-06) — <a href="../1980_REVISION.md">1980 revision progress</a></p>
