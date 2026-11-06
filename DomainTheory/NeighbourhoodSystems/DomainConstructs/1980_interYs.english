@@ -1,0 +1,29 @@
+The intersection of range neighbourhoods forced by a finite list of domain–range pairs, relative to a master range neighbourhood.
+
+<!-- formalization -->
+
+**Definition (`interYs`).** Relative to a master range neighbourhood, a list of domain–range pairs sends a domain neighbourhood to those master tokens that lie in every listed range whenever the domain neighbourhood is contained in the corresponding domain factor.
+
+**Theorem (`interYs_nil`).** The empty list returns the master range neighbourhood.
+
+*Proof.* By definition. ∎
+
+**Theorem (`interYs_cons`).** Prepending a pair intersects the implication-set for that pair with the value on the tail.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mem_interYs`).** A token belongs to the intersection precisely when it belongs to the master and, for every listed pair containing the domain neighbourhood, belongs to that pair's range.
+
+*Proof.* By induction on the list. ∎
+
+**Theorem (`interYs_antitone`).** Shrinking the domain neighbourhood enlarges the resulting range intersection.
+
+*Proof.* Containment hypotheses become harder when the domain neighbourhood grows. ∎
+
+**Theorem (`interYs_subset_master`).** The intersection is always contained in the master.
+
+*Proof.* Unpack the membership characterisation. ∎
+
+**Theorem (`interYs_subset_of_mem`).** Evaluating at a listed domain factor recovers containment in that pair's range.
+
+*Proof.* Instantiate the membership characterisation at that pair with reflexive containment. ∎
