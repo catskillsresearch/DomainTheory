@@ -46,7 +46,7 @@ theorem isFinitaryProjection_retractionOfSubsystem (h : D ◁ E) :
 end Subsystem
 end
 
-open NeighborhoodSystem ApproximableMap ApproximableMap₂
+open NeighborhoodSystem ApproximableMap
 
 theorem fin2_zero_ne_zero_one : ({0} : Set (Fin 2)) ≠ ({0, 1} : Set (Fin 2)) := by
   intro h

@@ -1,38 +1,22 @@
 module
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodNbhd
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.constMap
+
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
-section
 open NeighborhoodSystem
-variable {α β γ δ : Type*}
-variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 open ApproximableMap
 
-def constMap (V₀ : NeighborhoodSystem α) (b : V₁.Element) : ApproximableMap V₀ V₁ where
-  rel X Y := V₀.mem X ∧ b.mem Y
-  rel_dom h := h.1
-  rel_cod h := b.sub h.2
-  master_rel := ⟨V₀.master_mem, b.master_mem⟩
-  inter_right := by rintro X Y Y' ⟨hX, hY⟩ ⟨_, hY'⟩; exact ⟨hX, b.inter_mem hY hY'⟩
-  mono := by
-    rintro X X' Y Y' ⟨_, hY⟩ _ hYY' hX' hY'
-    exact ⟨hX', b.up_mem hY hY' hYY'⟩
+/-- Scott's Lemma 3.6: the constant approximable map at an ideal element has the membership
+    relation of that element, and acts elementwise as the constant function. -/
+theorem lemma_3_6 :
+    (∀ {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+      {b : V₁.Element} {X : Set α} {Y : Set β},
+      (constMap V₀ b).rel X Y ↔ V₀.mem X ∧ b.mem Y) ∧
+    (∀ {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+      (b : V₁.Element) (x : V₀.Element),
+      (constMap V₀ b).toElementMap x = b) :=
+  ⟨@constMap_rel, @toElementMap_constMap⟩
 
-@[simp] theorem constMap_rel {b : V₁.Element} {X : Set α} {Y : Set β} :
-    (constMap V₀ b).rel X Y ↔ V₀.mem X ∧ b.mem Y := Iff.rfl
-
-@[simp] theorem toElementMap_constMap (b : V₁.Element) (x : V₀.Element) :
-    (constMap V₀ b).toElementMap x = b := by
-  apply Element.ext
-  intro Y
-  constructor
-  · rintro ⟨X, _, _, hbY⟩; exact hbY
-  · intro hbY; exact ⟨V₀.master, x.master_mem, V₀.master_mem, hbY⟩
-
-end
 end DomainTheory.NeighbourhoodSystems
-end

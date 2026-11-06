@@ -1,0 +1,15 @@
+Constant approximable maps valued at a fixed ideal element.
+
+<!-- formalization -->
+
+**Definition (`constMap`).** The constant approximable map at an ideal element relates a domain neighbourhood to a codomain neighbourhood precisely when the latter belongs to that element.
+
+*Proof.* Domain and codomain membership, master, intersection on the right, and monotonicity follow from the filter axioms of the value. ∎
+
+**Theorem (`constMap_rel`).** Membership in the constant-map relation is domain neighbourhood membership together with membership of the value in the codomain neighbourhood.
+
+*Proof.* By definition. ∎
+
+**Theorem (`toElementMap_constMap`).** The elementwise action of a constant map is the constant function with that value.
+
+*Proof.* Compare membership: the forward direction unpacks a witnessing domain neighbourhood; the converse evaluates at the domain master. ∎

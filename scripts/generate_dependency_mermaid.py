@@ -1510,10 +1510,15 @@ NS_CON_SHORT: dict[str, tuple[str, str]] = {
         "T35",
         "Theorem 3.5 — separate approximability",
     ),
+    "Constant approximable map": (
+        "cMap",
+        "Constant approximable map",
+    ),
     "Lemma 3.6 — constant functions": (
         "L36",
         "Lemma 3.6 — constant functions",
     ),
+
     "Proposition 3.7 — closure under substitution": (
         "P37",
         "Proposition 3.7 — closure under substitution",
