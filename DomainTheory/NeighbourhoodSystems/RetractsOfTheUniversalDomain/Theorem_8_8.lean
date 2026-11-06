@@ -21,7 +21,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.VCo
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem_7_5
 public import Mathlib.Data.Nat.Bitwise
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_26
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.cond
 
 @[expose] public section
 

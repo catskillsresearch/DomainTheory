@@ -11,7 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NestedOrDisjoint
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.iterSys
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_20
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodFunctor
 
 @[expose] public section
 

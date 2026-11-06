@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.EmbeddingsIntoU
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_26
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.cond
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6

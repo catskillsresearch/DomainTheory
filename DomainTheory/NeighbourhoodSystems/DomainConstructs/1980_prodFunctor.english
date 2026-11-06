@@ -1,0 +1,19 @@
+Functoriality of the product of approximable maps, and uniqueness of the categorical pairing.
+
+<!-- formalization -->
+
+**Theorem (`paired_unique`).** A map into a product that recovers given factors after the two projections equals the pairing of those factors.
+
+*Proof.* Rewrite via the projection–pairing round trip. ∎
+
+**Theorem (`proj_paired`).** The projections after a pairing recover the paired factors.
+
+*Proof.* Invoke the projection laws for pairing. ∎
+
+**Theorem (`prodMap_comp`).** The product of maps preserves composition in each factor.
+
+*Proof.* Compare elementwise via the product-map evaluation. ∎
+
+**Theorem (`prodMap_id`).** The product of identity maps is the identity on the product.
+
+*Proof.* Compare elementwise via the product-map evaluation and the pairing of components. ∎

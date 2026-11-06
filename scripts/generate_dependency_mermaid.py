@@ -1634,37 +1634,73 @@ NS_CON_SHORT: dict[str, tuple[str, str]] = {
         "X319",
         "Exercise 3.19 — induced maps on constructs",
     ),
+    "Product functor": (
+        "pFun",
+        "Product functor",
+    ),
     "Exercise 3.20 — sum and product functors": (
         "X320",
         "Exercise 3.20 — sum and product functors",
+    ),
+    "Identity of step neighbourhoods": (
+        "sEq",
+        "Identity of step neighbourhoods",
     ),
     "Exercise 3.21 — identity of step neighbourhoods": (
         "X321",
         "Exercise 3.21 — identity of step neighbourhoods",
     ),
+    "Composition combinator": (
+        "comp",
+        "Composition combinator",
+    ),
     "Exercise 3.22 — composition combinator": (
         "X322",
         "Exercise 3.22 — composition combinator",
+    ),
+    "Cartesian closed category": (
+        "ccc",
+        "Cartesian closed category",
     ),
     "Exercise 3.23 — cartesian closed category": (
         "X323",
         "Exercise 3.23 — cartesian closed category",
     ),
+    "Function-space isomorphisms": (
+        "fsIso",
+        "Function-space isomorphisms",
+    ),
     "Exercise 3.24 — function-space isomorphisms": (
         "X324",
         "Exercise 3.24 — function-space isomorphisms",
+    ),
+    "Opens form a domain": (
+        "opens",
+        "Opens form a domain",
     ),
     "Exercise 3.25 — opens form a domain": (
         "X325",
         "Exercise 3.25 — opens form a domain",
     ),
+    "Conditional combinator": (
+        "cond",
+        "Conditional combinator",
+    ),
     "Exercise 3.26 — conditional combinator": (
         "X326",
         "Exercise 3.26 — conditional combinator",
     ),
+    "Function space via closure": (
+        "gClos",
+        "Function space via closure",
+    ),
     "Exercise 3.27 — function space via closure": (
         "X327",
         "Exercise 3.27 — function space via closure",
+    ),
+    "Minimal step function": (
+        "lStep",
+        "Minimal step function",
     ),
     "Exercise 3.28 — minimal step function": (
         "X328",
