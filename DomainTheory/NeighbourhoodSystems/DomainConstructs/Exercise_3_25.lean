@@ -1,22 +1,16 @@
 module
+
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.opensDomain
 
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise325
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
-section
-set_option linter.unusedVariables false
-
-theorem example_325.{u_1} : ∀ {α : Type u_1} (V : DomainTheory.NeighbourhoodSystems.NeighborhoodSystem α)
-  (f :
-    @DomainTheory.NeighbourhoodSystems.ApproximableMap α Unit V
-      DomainTheory.NeighbourhoodSystems.Exercise325.sierpinski),
-  @IsOpen (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.Element α V)
-    (@DomainTheory.NeighbourhoodSystems.NeighborhoodSystem.instTopologicalSpaceElement α V)
-    (@DomainTheory.NeighbourhoodSystems.Exercise325.openOfMap α V f) :=
-  @DomainTheory.NeighbourhoodSystems.Exercise325.openOfMap_isOpen
-end
+/-- Scott's Exercise 3.25: opens of a domain arise from maps into Sierpiński. -/
+theorem example_325 :
+    ∀ {α : Type*} (V : NeighborhoodSystem α) (f : ApproximableMap V sierpinski),
+      IsOpen (openOfMap V f) :=
+  @openOfMap_isOpen
 
 end DomainTheory.NeighbourhoodSystems.Exercise325
-end

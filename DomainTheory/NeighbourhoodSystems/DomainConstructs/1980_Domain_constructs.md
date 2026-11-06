@@ -57,3 +57,5 @@
 - [Exercise 3.27 — function space via closure](1980_Exercise_3_27.md) [✓](../1980_REVISION.md)
 - [Minimal step function](1980_leastStepMap.md) [✓](../1980_REVISION.md)
 - [Exercise 3.28 — minimal step function](1980_Exercise_3_28.md) [✓](../1980_REVISION.md)
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-06) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

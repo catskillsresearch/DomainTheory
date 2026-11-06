@@ -7,7 +7,7 @@
 - [Introduction](1980_Introduction.md) [✓](1980_REVISION.md)
 - [Domains given by neighbourhoods](DomainsGivenByNeighbourhoods/1980_Domains_given_by_neighbourhoods.md) [✓](1980_REVISION.md)
 - [Mappings between domains](MappingsBetweenDomains/1980_Mappings_between_domains.md) [✓](1980_REVISION.md)
-- [Domain constructs](DomainConstructs/1980_Domain_constructs.md)
+- [Domain constructs](DomainConstructs/1980_Domain_constructs.md) [✓](1980_REVISION.md)
 - [Fixed points and recursion](FixedPointsAndRecursion/1980_Fixed_points_and_recursion.md)
 - [Typed $\lambda$-calculus](TypedLambdaCalculus/1980_Typed_lambda-calculus.md)
 - [Domain equations](DomainEquations/1980_Introduction_to_domain_equations.md)
