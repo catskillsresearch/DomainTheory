@@ -38,6 +38,6 @@
 - [Approximable maps of two arguments](1980_ApproximableMap2.md) [✓](../1980_REVISION.md)
 - [Exercise 2.19 — maps of two arguments](1980_Exercise_2_19.md) [✓](../1980_REVISION.md)
 - [Powerset neighbourhood system](1980_powerSet.md) [✓](../1980_REVISION.md)
-- [Exercise 2.20 — powerset of the integers](1980_Exercise_2_20.md)
+- [Exercise 2.20 — powerset of the integers](1980_Exercise_2_20.md) [✓](../1980_REVISION.md)
 - [Exercise 2.21 — finite and infinite sequences](1980_Exercise_2_21.md)
 - [Exercise 2.22 — domains from closure properties](1980_Exercise_2_22.md)
