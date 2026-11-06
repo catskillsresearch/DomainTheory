@@ -1,0 +1,65 @@
+The insert-zero approximable map on binary trees, its left inverse that drops alternate bits, and the failure of surjectivity and injectivity for those maps.
+
+<!-- formalization -->
+
+**Definition (`hOut`).** Insert a zero after each bit of a string.
+
+**Theorem (`hOut_nil`).** Inserting zeros into the empty string yields empty.
+
+**Theorem (`hOut_cons`).** Inserting zeros after a leading bit yields that bit, a zero, and the recursively expanded tail.
+
+**Theorem (`hOut_append`).** Inserting zeros is monotone for string prefix.
+
+*Proof.* Induction on the prefix. ∎
+
+**Theorem (`hOut_mono`).** Prefix-comparable strings remain so after inserting zeros.
+
+*Proof.* Unpack the prefix witness and apply the append form. ∎
+
+**Definition (`kOut`).** Drop every other bit of a string, truncating a lone leftover bit to empty.
+
+**Theorem (`kOut_nil`).** Dropping alternate bits of empty yields empty.
+
+**Theorem (`kOut_single`).** A singleton string drops to empty.
+
+**Theorem (`kOut_cons`).** Dropping alternate bits after two leading bits keeps the first and continues on the remainder.
+
+**Definition (`hMap`).** The approximable endomap of the binary-tree system that relates a cone on $\sigma$ to neighbourhoods containing the cone on the zero-inserted string.
+
+*Proof.* Master, intersection, and monotonicity follow from injectivity of cones and monotonicity of the insert-zero string map. ∎
+
+**Theorem (`kOut_append`).** Dropping alternate bits is monotone for string prefix.
+
+*Proof.* Induction on the shape of the prefix. ∎
+
+**Theorem (`kOut_mono`).** Prefix-comparable strings remain so after dropping alternate bits.
+
+*Proof.* Unpack the prefix witness and apply the append form. ∎
+
+**Definition (`kMap`).** The approximable endomap that relates a cone on $\sigma$ to neighbourhoods containing the cone on the alternate-bit drop of $\sigma$.
+
+*Proof.* As for the insert-zero map, using monotonicity of the drop string map. ∎
+
+**Theorem (`kOut_hOut`).** Dropping alternate bits after inserting zeros recovers the original string.
+
+*Proof.* Induction on the string. ∎
+
+**Theorem (`kMap_comp_hMap`).** Composition of the drop map after the insert-zero map is the identity approximable map.
+
+*Proof.* Compare neighbourhood relations using the string identity and monotonicity of the drop map. ∎
+
+**Theorem (`toElementMap_hMap_cone`).** The elementwise action of the insert-zero map on a principal cone is the principal cone of the zero-inserted string.
+
+*Proof.* Unpack the defining relation at the cone. ∎
+
+**Theorem (`toElementMap_kMap_cone`).** The elementwise action of the drop map on a principal cone is the principal cone of the alternate-bit drop.
+
+*Proof.* Unpack the defining relation at the cone. ∎
+
+**Theorem (`hMap_not_surjective`).** The elementwise action of the insert-zero map is not surjective.
+
+*Proof.* A left inverse would force an impossible string identity on a two-bit cone in the image. ∎
+
+**Theorem (`kMap_not_injective`).** The elementwise action of the drop map is not injective.
+
+*Proof.* Distinct one-bit principals collapse under the drop map. ∎

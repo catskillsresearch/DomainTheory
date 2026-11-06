@@ -33,6 +33,7 @@
 - [Exercise 2.16 — prefixing is approximable](1980_Exercise_2_16.md) [✓](../1980_REVISION.md)
 - [Uniqueness of the erase-ones map](1980_eq_runMap.md) [✓](../1980_REVISION.md)
 - [Exercise 2.17 — erase-ones map](1980_Exercise_2_17.md) [✓](../1980_REVISION.md)
+- [Insert-zero map and left inverse](1980_hMap.md) [✓](../1980_REVISION.md)
 - [Exercise 2.18 — doubling binary digits](1980_Exercise_2_18.md)
 - [Exercise 2.19 — maps of two arguments](1980_Exercise_2_19.md)
 - [Exercise 2.20 — powerset of the integers](1980_Exercise_2_20.md)

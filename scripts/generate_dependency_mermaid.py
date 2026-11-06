@@ -1437,6 +1437,10 @@ NS_MAP_SHORT: dict[str, tuple[str, str]] = {
         "X217",
         "Exercise 2.17 — erase-ones map",
     ),
+    "Insert-zero map and left inverse": (
+        "hMap",
+        "Insert-zero map and left inverse",
+    ),
     "Exercise 2.18 — doubling binary digits": (
         "X218",
         "Exercise 2.18 — doubling binary digits",

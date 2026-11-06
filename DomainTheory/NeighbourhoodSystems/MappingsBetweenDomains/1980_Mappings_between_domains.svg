@@ -172,7 +172,7 @@
 <text text-anchor="middle" x="1322.5" y="-605" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- X220 -->
-<g id="node33" class="node">
+<g id="node34" class="node">
 <title>X220</title>
 <path fill="#e0e7ff" stroke="#4338ca" d="M1725.5,-561C1725.5,-561 1592.5,-561 1592.5,-561 1586.5,-561 1580.5,-555 1580.5,-549 1580.5,-549 1580.5,-505 1580.5,-505 1580.5,-499 1586.5,-493 1592.5,-493 1592.5,-493 1725.5,-493 1725.5,-493 1731.5,-493 1737.5,-499 1737.5,-505 1737.5,-505 1737.5,-549 1737.5,-549 1737.5,-555 1731.5,-561 1725.5,-561"/>
 <text text-anchor="middle" x="1659" y="-542.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.20 —</text>
@@ -240,7 +240,7 @@
 <text text-anchor="middle" x="389" y="-331.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">objects</text>
 </g>
 <!-- idM&#45;&gt;DomO -->
-<g id="edge25" class="edge">
+<g id="edge26" class="edge">
 <title>idM&#45;&gt;DomO</title>
 <path fill="none" stroke="black" d="M511.51,-492.67C489.71,-470.31 460.65,-440.49 436.3,-415.52"/>
 <polygon fill="black" stroke="black" points="437.82,-413.57 431.18,-410.26 434.31,-416.99 437.82,-413.57"/>
@@ -255,7 +255,7 @@
 <text text-anchor="middle" x="535" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">composition</text>
 </g>
 <!-- idM&#45;&gt;P26 -->
-<g id="edge26" class="edge">
+<g id="edge27" class="edge">
 <title>idM&#45;&gt;P26</title>
 <path fill="none" stroke="black" d="M542.11,-492.67C540.7,-467.78 538.77,-433.65 537.28,-407.25"/>
 <polygon fill="black" stroke="black" points="539.71,-406.87 536.87,-400.02 534.82,-407.14 539.71,-406.87"/>
@@ -277,20 +277,20 @@
 <polygon fill="black" stroke="black" points="395.56,-256.15 393.38,-249.06 390.66,-255.96 395.56,-256.15"/>
 <text text-anchor="middle" x="395.5" y="-283" font-family="Times,serif" font-size="10.00">1</text>
 </g>
-<!-- X218 -->
+<!-- hMap -->
 <g id="node31" class="node">
-<title>X218</title>
-<path fill="#e0e7ff" stroke="#4338ca" d="M621,-239C621,-239 489,-239 489,-239 483,-239 477,-233 477,-227 477,-227 477,-183 477,-183 477,-177 483,-171 489,-171 489,-171 621,-171 621,-171 627,-171 633,-177 633,-183 633,-183 633,-227 633,-227 633,-233 627,-239 621,-239"/>
-<text text-anchor="middle" x="555" y="-220.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.18 —</text>
-<text text-anchor="middle" x="555" y="-200.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">doubling binary</text>
-<text text-anchor="middle" x="555" y="-180.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">digits</text>
+<title>hMap</title>
+<path fill="#dbeafe" stroke="#1d4ed8" d="M623,-239C623,-239 489,-239 489,-239 483,-239 477,-233 477,-227 477,-227 477,-183 477,-183 477,-177 483,-171 489,-171 489,-171 623,-171 623,-171 629,-171 635,-177 635,-183 635,-183 635,-227 635,-227 635,-233 629,-239 623,-239"/>
+<text text-anchor="middle" x="556" y="-220.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Insert&#45;zero map</text>
+<text text-anchor="middle" x="556" y="-200.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">and left</text>
+<text text-anchor="middle" x="556" y="-180.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">inverse</text>
 </g>
-<!-- P26&#45;&gt;X218 -->
+<!-- P26&#45;&gt;hMap -->
 <g id="edge16" class="edge">
-<title>P26&#45;&gt;X218</title>
-<path fill="none" stroke="black" d="M539.19,-331.67C542.32,-306.78 546.62,-272.65 549.94,-246.25"/>
-<polygon fill="black" stroke="black" points="552.4,-246.27 550.85,-239.02 547.54,-245.65 552.4,-246.27"/>
-<text text-anchor="middle" x="548.5" y="-283" font-family="Times,serif" font-size="10.00">1</text>
+<title>P26&#45;&gt;hMap</title>
+<path fill="none" stroke="black" d="M539.4,-331.67C542.69,-306.78 547.2,-272.65 550.68,-246.25"/>
+<polygon fill="black" stroke="black" points="553.15,-246.28 551.64,-239.02 548.29,-245.63 553.15,-246.28"/>
+<text text-anchor="middle" x="549.5" y="-283" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- T27 -->
 <g id="node11" class="node">
@@ -302,7 +302,7 @@
 <text text-anchor="middle" x="681" y="-331.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">approximable</text>
 </g>
 <!-- ofIso&#45;&gt;T27 -->
-<g id="edge29" class="edge">
+<g id="edge30" class="edge">
 <title>ofIso&#45;&gt;T27</title>
 <path fill="none" stroke="black" d="M699.23,-482.97C696.04,-462.65 692.2,-438.26 688.88,-417.1"/>
 <polygon fill="black" stroke="black" points="691.28,-416.6 687.77,-410.06 686.44,-417.36 691.28,-416.6"/>
@@ -318,7 +318,7 @@
 <text text-anchor="middle" x="844" y="-331.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">isomorphism</text>
 </g>
 <!-- ofIso&#45;&gt;phi -->
-<g id="edge30" class="edge">
+<g id="edge31" class="edge">
 <title>ofIso&#45;&gt;phi</title>
 <path fill="none" stroke="black" d="M743.34,-482.97C761.45,-462.12 783.26,-436.98 801.95,-415.45"/>
 <polygon fill="black" stroke="black" points="803.89,-416.95 806.63,-410.06 800.19,-413.74 803.89,-416.95"/>
@@ -333,7 +333,7 @@
 <text text-anchor="middle" x="1011" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">finite elements</text>
 </g>
 <!-- ofMo&#45;&gt;X28 -->
-<g id="edge31" class="edge">
+<g id="edge32" class="edge">
 <title>ofMo&#45;&gt;X28</title>
 <path fill="none" stroke="black" d="M906.7,-482.97C928.37,-458.88 955.17,-429.07 976.18,-405.71"/>
 <polygon fill="black" stroke="black" points="978.26,-407.07 981.12,-400.23 974.61,-403.79 978.26,-407.07"/>
@@ -347,7 +347,7 @@
 <text text-anchor="middle" x="1185" y="-351.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">as approximable</text>
 </g>
 <!-- ofMo&#45;&gt;ofC -->
-<g id="edge32" class="edge">
+<g id="edge33" class="edge">
 <title>ofMo&#45;&gt;ofC</title>
 <path fill="none" stroke="black" d="M937.07,-486.67C939.4,-485.42 941.72,-484.19 944,-483 978.24,-465.1 1069.83,-421.44 1129.72,-393.09"/>
 <polygon fill="black" stroke="black" points="1130.86,-395.26 1136.13,-390.05 1128.76,-390.83 1130.86,-395.26"/>
@@ -362,7 +362,7 @@
 <text text-anchor="middle" x="1524" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">two maps</text>
 </g>
 <!-- iMap&#45;&gt;X210 -->
-<g id="edge21" class="edge">
+<g id="edge22" class="edge">
 <title>iMap&#45;&gt;X210</title>
 <path fill="none" stroke="black" d="M1391.98,-482.97C1419.64,-458.67 1453.91,-428.57 1480.6,-405.12"/>
 <polygon fill="black" stroke="black" points="1482.53,-406.69 1486.18,-400.23 1479.3,-403.01 1482.53,-406.69"/>
@@ -377,14 +377,14 @@
 <text text-anchor="middle" x="1361" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">of elements</text>
 </g>
 <!-- iSup&#45;&gt;X211 -->
-<g id="edge23" class="edge">
+<g id="edge24" class="edge">
 <title>iSup&#45;&gt;X211</title>
 <path fill="none" stroke="black" d="M1099.51,-486.61C1102.03,-485.38 1104.53,-484.17 1107,-483 1181.65,-447.56 1203.26,-445.25 1278,-410 1282.54,-407.86 1287.2,-405.61 1291.87,-403.3"/>
 <polygon fill="black" stroke="black" points="1293.07,-405.44 1298.25,-400.13 1290.89,-401.05 1293.07,-405.44"/>
 <text text-anchor="middle" x="1207.5" y="-444" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- iSup&#45;&gt;ofC -->
-<g id="edge24" class="edge">
+<g id="edge25" class="edge">
 <title>iSup&#45;&gt;ofC</title>
 <path fill="none" stroke="black" d="M1068.3,-482.97C1096.29,-455.15 1131.94,-419.73 1156.43,-395.39"/>
 <polygon fill="black" stroke="black" points="1158.24,-397.04 1161.48,-390.37 1154.79,-393.57 1158.24,-397.04"/>
@@ -399,7 +399,7 @@
 <text text-anchor="middle" x="1687" y="-341.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">of maps</text>
 </g>
 <!-- iSMap&#45;&gt;X212 -->
-<g id="edge22" class="edge">
+<g id="edge23" class="edge">
 <title>iSMap&#45;&gt;X212</title>
 <path fill="none" stroke="black" d="M1549.15,-482.97C1578.15,-458.57 1614.11,-428.32 1642.03,-404.83"/>
 <polygon fill="black" stroke="black" points="1643.72,-406.61 1647.5,-400.23 1640.57,-402.86 1643.72,-406.61"/>
@@ -415,7 +415,7 @@
 <text text-anchor="middle" x="1139" y="-170.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">continuous</text>
 </g>
 <!-- ofC&#45;&gt;X213 -->
-<g id="edge28" class="edge">
+<g id="edge29" class="edge">
 <title>ofC&#45;&gt;X213</title>
 <path fill="none" stroke="black" d="M1178.31,-341.88C1171.83,-319.47 1161.79,-284.76 1153.47,-256.03"/>
 <polygon fill="black" stroke="black" points="1155.81,-255.28 1151.51,-249.24 1151.1,-256.65 1155.81,-255.28"/>
@@ -431,7 +431,7 @@
 <text text-anchor="middle" x="1296" y="-170.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">system</text>
 </g>
 <!-- ofC&#45;&gt;O -->
-<g id="edge27" class="edge">
+<g id="edge28" class="edge">
 <title>ofC&#45;&gt;O</title>
 <path fill="none" stroke="black" d="M1201.14,-341.88C1216.91,-319.28 1241.43,-284.17 1261.58,-255.3"/>
 <polygon fill="black" stroke="black" points="1263.82,-256.38 1265.81,-249.24 1259.8,-253.58 1263.82,-256.38"/>
@@ -446,7 +446,7 @@
 <text text-anchor="middle" x="844" y="-180.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">neighbourhoods</text>
 </g>
 <!-- phi&#45;&gt;X214 -->
-<g id="edge33" class="edge">
+<g id="edge34" class="edge">
 <title>phi&#45;&gt;X214</title>
 <path fill="none" stroke="black" d="M844,-321.97C844,-298.49 844,-269.58 844,-246.5"/>
 <polygon fill="black" stroke="black" points="846.45,-246.23 844,-239.23 841.55,-246.23 846.45,-246.23"/>
@@ -477,7 +477,7 @@
 <text text-anchor="middle" x="69" y="-180.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">approximable</text>
 </g>
 <!-- sMap&#45;&gt;X216 -->
-<g id="edge34" class="edge">
+<g id="edge35" class="edge">
 <title>sMap&#45;&gt;X216</title>
 <path fill="none" stroke="black" d="M69.79,-331.67C69.63,-306.78 69.42,-272.65 69.25,-246.25"/>
 <polygon fill="black" stroke="black" points="71.7,-246 69.21,-239.02 66.8,-246.03 71.7,-246"/>
@@ -497,8 +497,23 @@
 <polygon fill="black" stroke="black" points="234.07,-236.04 231.71,-229.01 229.17,-235.98 234.07,-236.04"/>
 <text text-anchor="middle" x="235.5" y="-283" font-family="Times,serif" font-size="10.00">1</text>
 </g>
-<!-- X219 -->
+<!-- X218 -->
 <g id="node32" class="node">
+<title>X218</title>
+<path fill="#e0e7ff" stroke="#4338ca" d="M622,-78C622,-78 490,-78 490,-78 484,-78 478,-72 478,-66 478,-66 478,-22 478,-22 478,-16 484,-10 490,-10 490,-10 622,-10 622,-10 628,-10 634,-16 634,-22 634,-22 634,-66 634,-66 634,-72 628,-78 622,-78"/>
+<text text-anchor="middle" x="556" y="-59.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.18 —</text>
+<text text-anchor="middle" x="556" y="-39.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">doubling binary</text>
+<text text-anchor="middle" x="556" y="-19.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">digits</text>
+</g>
+<!-- hMap&#45;&gt;X218 -->
+<g id="edge21" class="edge">
+<title>hMap&#45;&gt;X218</title>
+<path fill="none" stroke="black" d="M556,-170.67C556,-145.78 556,-111.65 556,-85.25"/>
+<polygon fill="black" stroke="black" points="558.45,-85.01 556,-78.02 553.55,-85.02 558.45,-85.01"/>
+<text text-anchor="middle" x="559.5" y="-122" font-family="Times,serif" font-size="10.00">1</text>
+</g>
+<!-- X219 -->
+<g id="node33" class="node">
 <title>X219</title>
 <path fill="#e0e7ff" stroke="#4338ca" d="M1710,-722C1710,-722 1608,-722 1608,-722 1602,-722 1596,-716 1596,-710 1596,-710 1596,-666 1596,-666 1596,-660 1602,-654 1608,-654 1608,-654 1710,-654 1710,-654 1716,-654 1722,-660 1722,-666 1722,-666 1722,-710 1722,-710 1722,-716 1716,-722 1710,-722"/>
 <text text-anchor="middle" x="1659" y="-703.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.19 —</text>
@@ -513,7 +528,7 @@
 <text text-anchor="middle" x="1662.5" y="-605" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- X221 -->
-<g id="node34" class="node">
+<g id="node35" class="node">
 <title>X221</title>
 <path fill="#e0e7ff" stroke="#4338ca" d="M1863,-571C1863,-571 1763,-571 1763,-571 1757,-571 1751,-565 1751,-559 1751,-559 1751,-495 1751,-495 1751,-489 1757,-483 1763,-483 1763,-483 1863,-483 1863,-483 1869,-483 1875,-489 1875,-495 1875,-495 1875,-559 1875,-559 1875,-565 1869,-571 1863,-571"/>
 <text text-anchor="middle" x="1813" y="-552.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.21 —</text>
@@ -529,7 +544,7 @@
 <text text-anchor="middle" x="1743.5" y="-605" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- X222 -->
-<g id="node35" class="node">
+<g id="node36" class="node">
 <title>X222</title>
 <path fill="#e0e7ff" stroke="#4338ca" d="M1862.5,-732C1862.5,-732 1747.5,-732 1747.5,-732 1741.5,-732 1735.5,-726 1735.5,-720 1735.5,-720 1735.5,-656 1735.5,-656 1735.5,-650 1741.5,-644 1747.5,-644 1747.5,-644 1862.5,-644 1862.5,-644 1868.5,-644 1874.5,-650 1874.5,-656 1874.5,-656 1874.5,-720 1874.5,-720 1874.5,-726 1868.5,-732 1862.5,-732"/>
 <text text-anchor="middle" x="1805" y="-713.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 2.22 —</text>
