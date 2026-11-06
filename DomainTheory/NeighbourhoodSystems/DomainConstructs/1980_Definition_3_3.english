@@ -1,0 +1,77 @@
+**DEFINITION 3.3.** *Projection mappings*
+
+$$
+p_0 : \mathcal{D}_0 \times \mathcal{D}_1 \to \mathcal{D}_0 \quad \text{and} \quad p_1 : \mathcal{D}_0 \times \mathcal{D}_1 \to \mathcal{D}_1
+$$
+
+are defined as relations where
+
+$$
+(X \cup Y)\ p_0\ X' \text{ iff } X \subseteq X', \quad \text{and} \quad (X \cup Y)\ p_1\ Y' \text{ iff } Y \subseteq Y'
+$$
+
+hold for all $X, X' \in \mathcal{D}_0$ and $Y, Y' \in \mathcal{D}_1$. Given $f : \mathcal{D}_2 \to \mathcal{D}_0$ and $g : \mathcal{D}_2 \to \mathcal{D}_1$, the *paired mapping*
+
+$$
+\langle f, g \rangle : \mathcal{D}_2 \to \mathcal{D}_0 \times \mathcal{D}_1
+$$
+
+is defined as a relation where
+
+$$
+Z\ \langle f, g \rangle\ (X \cup Y) \text{ iff } Z\ f\ X \text{ and } Z\ g\ Y
+$$
+
+holds for all $X \in \mathcal{D}_0$, $Y \in \mathcal{D}_1$, and $Z \in \mathcal{D}_2$. $\square$
+
+<!-- page 39 -->
+
+<!-- formalization -->
+
+**Definition (`paired`).** The pairing of two approximable maps into the factors of a product is the approximable map into the product that relates a neighbourhood to a product neighbourhood precisely when each component map relates it to the corresponding untagged factor.
+
+*Proof.* Domain and codomain membership, master, intersection on the right, and monotonicity follow from the corresponding axioms of the components together with the product neighbourhood laws. ∎
+
+**Definition (`proj₀`).** The left projection from a product system relates a product neighbourhood to a left neighbourhood precisely when the left untagging of the product neighbourhood is contained in that neighbourhood.
+
+*Proof.* Approximable-map axioms follow from the product neighbourhood structure and left untagging. ∎
+
+**Theorem (`proj₀_rel`).** Membership in the left-projection relation is product membership, left neighbourhood membership, and containment of the left untagging.
+
+*Proof.* By definition. ∎
+
+**Definition (`proj₁`).** The right projection from a product system relates a product neighbourhood to a right neighbourhood precisely when the right untagging of the product neighbourhood is contained in that neighbourhood.
+
+*Proof.* Dual to the left projection. ∎
+
+**Theorem (`proj₁_rel`).** Membership in the right-projection relation is product membership, right neighbourhood membership, and containment of the right untagging.
+
+*Proof.* By definition. ∎
+
+**Theorem (`paired_rel`).** Membership in the paired-map relation is product membership together with the two component relations on the untagged factors.
+
+*Proof.* By definition. ∎
+
+**Theorem (`toElementMap_proj₀`).** The elementwise action of the left projection recovers the first projection of a product ideal element.
+
+*Proof.* Compare membership via upward closure toward products with the right master, and conversely evaluate at that product. ∎
+
+**Theorem (`toElementMap_proj₁`).** The elementwise action of the right projection recovers the second projection of a product ideal element.
+
+*Proof.* Dual to the left projection. ∎
+
+**Theorem (`toElementMap_proj₀_pair`).** The left projection sends a pairing of ideal elements to the left argument.
+
+*Proof.* Compose the elementwise projection law with recovery of the left factor from a pairing. ∎
+
+**Theorem (`toElementMap_proj₁_pair`).** The right projection sends a pairing of ideal elements to the right argument.
+
+*Proof.* Dual to the left case. ∎
+
+**Theorem (`toElementMap_paired`).** The elementwise action of a paired map is the pairing of the elementwise actions of the components.
+
+*Proof.* Compare membership by unpacking and reconstructing product neighbourhoods from the two component witnesses. ∎
+
+**Theorem (`paired_proj`).** Pairing the two projections composed with a map into a product recovers that map.
+
+*Proof.* Compare elementwise actions using the preceding laws and the pairing–projection recovery. ∎

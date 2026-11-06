@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Definition_3_3
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.ProjectionMappings
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6
 
 @[expose] public section

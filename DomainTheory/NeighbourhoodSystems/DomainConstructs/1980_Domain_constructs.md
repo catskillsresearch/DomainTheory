@@ -7,7 +7,8 @@
 - [Product element order isomorphism](1980_prodEquiv.md) [✓](../1980_REVISION.md)
 - [Proposition 3.2 — elements of a product](1980_Proposition_3_2.md) [✓](../1980_REVISION.md)
 
-- [Definition 3.3 — projection mappings](1980_Definition_3_3.md)
+- [Definition 3.3 — projection mappings](1980_Definition_3_3.md) [✓](../1980_REVISION.md)
+
 - [Proposition 3.4 — pairing and projections](1980_Proposition_3_4.md)
 - [Theorem 3.5 — separate approximability](1980_Theorem_3_5.md)
 - [Lemma 3.6 — constant functions](1980_Lemma_3_6.md)

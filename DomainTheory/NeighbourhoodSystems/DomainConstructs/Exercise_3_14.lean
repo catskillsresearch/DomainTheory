@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_4
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Definition_3_3
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.ProjectionMappings
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodEquiv
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot
 @[expose] public section

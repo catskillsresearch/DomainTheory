@@ -69,7 +69,7 @@ line,keyword,number,label,file
 922,EXERCISE,2.22,domains from closure properties,MappingsBetweenDomains/Exercise_2_22.lean
 944,DEFINITION,3.1,product of systems,DomainConstructs/prodNbhd.lean
 958,PROPOSITION,3.2,elements of a product,DomainConstructs/Proposition_3_2.lean
-1008,DEFINITION,3.3,projection mappings,DomainConstructs/Definition_3_3.lean
+1008,DEFINITION,3.3,projection mappings,DomainConstructs/ProjectionMappings.lean
 1036,PROPOSITION,3.4,pairing and projections,DomainConstructs/Proposition_3_4.lean
 1086,THEOREM,3.5,separate approximability,DomainConstructs/Theorem_3_5.lean
 1094,LEMMA,3.6,constant functions,DomainConstructs/Lemma_3_6.lean

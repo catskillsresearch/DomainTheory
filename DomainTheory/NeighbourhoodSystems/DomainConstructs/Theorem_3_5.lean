@@ -2,7 +2,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap2
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Definition_3_3
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.ProjectionMappings
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodEquiv
 @[expose] public section
 
