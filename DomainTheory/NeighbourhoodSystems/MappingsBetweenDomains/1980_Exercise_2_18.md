@@ -1,16 +1,9 @@
 # Exercise 2.18
 
-**EXERCISE 2.18.** What is the meaning in words of the approximable mapping $h : \mathbb{B} \to \mathbb{B}$, where
-
-$$h(0x) = 00h(x), \text{ and}$$
-$$h(1x) = 10h(x),$$
-
-for all elements $x \in |\mathbb{B}|$? Is $h$ an isomorphism? Does there exist a map $k : \mathbb{B} \to \mathbb{B}$ where
-
-$$k \circ h = I_{\mathbb{B}},$$
-
-and is $k$ one-one?
+@import "1980_Exercise_2_18.english" {code_block=false}
 
 **[Exercise_2_18.lean](Exercise_2_18.lean)**
 
 @import "Exercise_2_18.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-06) — <a href="../1980_REVISION.md">1980 revision progress</a></p>
