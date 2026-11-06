@@ -1,5 +1,5 @@
 module
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.idMap
 
 public import Mathlib.Data.Set.Operations
 public import Mathlib.Data.Set.Basic

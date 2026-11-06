@@ -1337,6 +1337,10 @@ NS_MAP_SHORT: dict[str, tuple[str, str]] = {
         "E24",
         "Example 2.4 — erase a run of ones",
     ),
+    "Identity approximable map": (
+        "idM",
+        "Identity approximable map",
+    ),
     "Theorem 2.5 — category of approximable maps": (
         "T25",
         "Theorem 2.5 — category of approximable maps",
@@ -1431,8 +1435,10 @@ def _ns_dom_kind_class(nid: str) -> str:
         return "cthm"
     if nid == "EX":
         return "cex"
-    if nid == "Tok2":
+    if nid in ("Tok2",):
         return "cexs"
+    if nid == "idM":
+        return "cdef"
     return "cdef"
 
 

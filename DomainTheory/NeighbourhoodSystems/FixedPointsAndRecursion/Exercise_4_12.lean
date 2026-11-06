@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Theorem_2_5
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.idMap
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_1_2_elements
 

@@ -1,0 +1,31 @@
+The identity approximable map on a neighbourhood system, composition of approximable maps, and the category laws (units and associativity).
+
+<!-- formalization -->
+
+**Definition (`idMap`).** The identity approximable map on a neighbourhood system relates neighbourhoods $X$ and $Y$ precisely when $X\subseteq Y$.
+
+*Proof.* Master, intersection, and monotonicity are immediate from the corresponding properties of neighbourhoods and inclusion. ∎
+
+**Theorem (`idMap_rel`).** The relation of the identity map is membership of both arguments together with inclusion.
+
+**Definition (`comp`).** The composition of approximable maps relates $X$ to $Z$ when some intermediate neighbourhood $Y$ is related by the first map to $X$ and by the second to $Z$.
+
+*Proof.* Master uses the two master relations; intersection and monotonicity follow by intersecting or shrinking the intermediate neighbourhoods via the component maps. ∎
+
+**Theorem (`comp_rel`).** Composition relates $X$ to $Z$ if and only if such an intermediate neighbourhood exists.
+
+**Theorem (`toElementMap_idMap`).** The elementwise action of the identity map is the identity on ideal elements.
+
+*Proof.* A neighbourhood of the image comes from a smaller neighbourhood of the input by upward closure; conversely the input neighbourhood itself witnesses the relation. ∎
+
+**Theorem (`comp_assoc`).** Composition of approximable maps is associative.
+
+*Proof.* Reassociate the witnessing intermediate neighbourhoods. ∎
+
+**Theorem (`comp_idMap`).** Composing on the right with the identity leaves a map unchanged.
+
+*Proof.* An intermediate neighbourhood related by identity is a supersets of the input, so monotonicity recovers the original relation, and conversely the input neighbourhood itself serves as intermediate. ∎
+
+**Theorem (`idMap_comp`).** Composing on the left with the identity leaves a map unchanged.
+
+*Proof.* Dual to the right-unit law: the intermediate neighbourhood may be taken to be the output neighbourhood. ∎
