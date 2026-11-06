@@ -5,7 +5,7 @@
 $$g(0x) = 0g(x),$$
 $$g(11x) = g(1x),$$
 $$g(10x) = 0x,$$
-$$g(1) = \bot,$$
+$$g(1) = \bot$$
 
 or are some missing?
 

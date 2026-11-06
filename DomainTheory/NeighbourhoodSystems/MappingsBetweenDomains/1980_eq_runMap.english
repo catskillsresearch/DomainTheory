@@ -1,0 +1,23 @@
+Uniqueness of the erase-ones approximable map among solutions of the run equations, and verification that the erase-ones map satisfies those equations.
+
+<!-- formalization -->
+
+**Theorem (`eq_runMap_of_satisfies`).** Any approximable endomap of the binary-tree system that satisfies the run equations equals the erase-ones map.
+
+*Proof.* Compare neighbourhood relations via evaluation at principal filters and the key lemma relating solutions of the equations to the erase-ones string map. ∎
+
+**Theorem (`runMap_toElementMap_mem`).** Membership in the elementwise image of the erase-ones map is witnessed by a cone whose erased output is contained in the neighbourhood.
+
+*Proof.* Unpack the defining relation on cones. ∎
+
+**Theorem (`runMap_toElementMap_sigmaElt`).** Membership in the image of a prefixed ideal element under the erase-ones map is membership after erasing ones from the concatenated string.
+
+*Proof.* Transport the cone formula through prefixing of neighbourhoods and monotonicity of the erase-ones string map. ∎
+
+**Theorem (`sigmaElt_runMap_toElementMap`).** Membership after prefixing the erase-ones image is membership for a cone whose output is prefixed by the fixed string.
+
+*Proof.* Reassociate prefixing of neighbourhoods with the elementwise membership formula. ∎
+
+**Theorem (`runMap_satisfies`).** The erase-ones map satisfies the run equations.
+
+*Proof.* Compare the prefixed membership formulae against the string identities for leading zero, two ones, one-zero, and a lone one on bottom. ∎

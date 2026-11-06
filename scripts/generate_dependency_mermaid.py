@@ -1337,6 +1337,10 @@ NS_MAP_SHORT: dict[str, tuple[str, str]] = {
         "E24",
         "Example 2.4 — erase a run of ones",
     ),
+    "Uniqueness of the erase-ones map": (
+        "eqRun",
+        "Uniqueness of the erase-ones map",
+    ),
     "Identity approximable map": (
         "idM",
         "Identity approximable map",
@@ -1429,13 +1433,9 @@ NS_MAP_SHORT: dict[str, tuple[str, str]] = {
         "X216",
         "Exercise 2.16 — prefixing is approximable",
     ),
-    "Exercise 2.17 — equations for erase-ones": (
+    "Exercise 2.17 — erase-ones map": (
         "X217",
-        "Exercise 2.17 — equations for erase-ones",
-    ),
-    "Exercise 2.17 — uniqueness of the erase-ones map": (
-        "X217b",
-        "Exercise 2.17 — uniqueness of the erase-ones map",
+        "Exercise 2.17 — erase-ones map",
     ),
     "Exercise 2.18 — doubling binary digits": (
         "X218",

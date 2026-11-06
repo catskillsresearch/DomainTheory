@@ -19,6 +19,36 @@ Aside from our being able to define particular functions outright, we can combin
 
 <!-- formalization -->
 
+**Definition (`SatisfiesRunEquations`).** An approximable endomap of the binary-tree system satisfies the run equations when it intertwines a leading zero with the image, collapses two leading ones to one, sends a leading one-zero to a leading zero, and sends a lone leading one on bottom to bottom.
+
+**Definition (`del`).** Erase a leading run of ones from a string, leaving a leading zero or the empty string.
+
+**Theorem (`del_nil`).** Erasing ones from the empty string yields empty.
+
+**Theorem (`del_true`).** Erasing ones after a leading one continues on the tail.
+
+**Theorem (`del_false`).** A leading zero is left intact by the erase-ones string map.
+
+**Definition (`out`).** Erase the first run of ones in a string, copying zeros and deleting a leading run of ones via the delete map.
+
+**Theorem (`out_nil`).** The erase-ones string map sends empty to empty.
+
+**Theorem (`out_false`).** A leading zero is preserved and the remainder is erased recursively.
+
+**Theorem (`out_true`).** A leading one is deleted by the delete map on the tail.
+
+**Theorem (`del_append`).** Deleting ones is monotone for string prefix.
+
+*Proof.* Induction on the prefix. ∎
+
+**Theorem (`out_append`).** The erase-ones string map is monotone for string prefix.
+
+*Proof.* Induction, using monotonicity of the delete map on a leading one. ∎
+
+**Theorem (`out_mono`).** Prefix-comparable strings have erase-ones images that remain prefix-comparable.
+
+*Proof.* Unpack the prefix witness and apply the append form. ∎
+
 **Definition (`runMap`).** The approximable mapping on the binary-tree system that relates a cone on $\sigma$ to neighbourhoods containing the cone on the string obtained by erasing the first run of ones in $\sigma$.
 
 *Proof.* Master, intersection, and monotonicity follow from injectivity of cones and monotonicity of the erase-ones string map. ∎
