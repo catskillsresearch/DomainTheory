@@ -1,0 +1,19 @@
+The approximable map induced by an order isomorphism of ideal elements, recovering the isomorphism elementwise, and sending principal filters to principal filters.
+
+<!-- formalization -->
+
+**Definition (`ofIso`).** An order isomorphism of ideal elements induces an approximable map: a neighbourhood $X$ relates to $Y$ when $Y$ belongs to the image of the principal filter of $X$.
+
+*Proof.* Domain and codomain membership are immediate; the master relation uses the two masters; intersection and monotonicity follow from the corresponding properties of the image filter and monotonicity of the isomorphism. ∎
+
+**Theorem (`exists_principal_eq_apply_principal`).** An order isomorphism of ideal elements sends each principal filter to a principal filter.
+
+*Proof.* Form the directed family of preimages of principals below the image of the given principal; its directed supremum recovers that principal, and membership of the original neighbourhood yields a principal that equals the image. ∎
+
+**Theorem (`toElementMap_ofIso`).** The elementwise action of the induced map is the original isomorphism.
+
+*Proof.* One inequality is monotonicity on principals; the reverse uses the inverse isomorphism and the defining relation. ∎
+
+**Theorem (`exists_approximable_of_iso`).** Every order isomorphism of ideal elements arises as the elementwise action of some approximable map.
+
+*Proof.* Take the induced map and the preceding recovery theorem. ∎

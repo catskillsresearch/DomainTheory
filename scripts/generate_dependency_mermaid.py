@@ -1315,7 +1315,7 @@ NS_DOM_SHORT: dict[str, tuple[str, str]] = {
     "Lecture I exercises": ("EX", "Lecture I exercises"),
 }
 
-# Lecture II hub: outline notes (Lecture II exercises hub has no Lean; exercises are separate boxes).
+# Lecture II hub: outline notes; exercises are separate boxes (no exercises hub note).
 NS_MAP_SHORT: dict[str, tuple[str, str]] = {
     "Definition 2.1 — approximable mapping": (
         "D21",
@@ -1352,6 +1352,10 @@ NS_MAP_SHORT: dict[str, tuple[str, str]] = {
     "Proposition 2.6 — identity and composition": (
         "P26",
         "Proposition 2.6 — identity and composition",
+    ),
+    "Order isomorphism as approximable map": (
+        "ofIso",
+        "Order isomorphism as approximable map",
     ),
     "Theorem 2.7 — isomorphisms are approximable": (
         "T27",
@@ -1441,7 +1445,7 @@ def _ns_dom_kind_class(nid: str) -> str:
         return "cex"
     if nid in ("Tok2",):
         return "cexs"
-    if nid in ("idM", "DomO"):
+    if nid in ("idM", "DomO", "ofIso"):
         return "cdef"
     return "cdef"
 

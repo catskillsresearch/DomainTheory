@@ -52,7 +52,6 @@ line,keyword,number,label,file
 682,THEOREM,2.5,category of approximable maps,MappingsBetweenDomains/Theorem_2_5.lean
 731,PROPOSITION,2.6,identity and composition,MappingsBetweenDomains/Proposition_2_6.lean
 743,THEOREM,2.7,isomorphisms are approximable,MappingsBetweenDomains/Theorem_2_7.lean
-767,EXERCISES,,Lecture II exercises,
 769,EXERCISE,2.8,determined by finite elements,MappingsBetweenDomains/Exercise_2_8.lean
 773,EXERCISE,2.9,directed union formula,MappingsBetweenDomains/Exercise_2_9.lean
 781,EXERCISE,2.10,intersection of two maps,MappingsBetweenDomains/Exercise_2_10.lean
