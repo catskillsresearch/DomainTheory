@@ -6,7 +6,7 @@
 - [Definition 2.1 — approximable mapping](1980_Definition_2_1.md) [✓](../1980_REVISION.md)
 - [Proposition 2.2 — elementwise action](1980_Proposition_2_2.md) [✓](../1980_REVISION.md)
 - [Two-token ideal elements](1980_Example_1_2_elements.md) [✓](../1980_REVISION.md)
-- [Example 2.3 — parity of leading zeros](1980_Example_2_3.md)
+- [Example 2.3 — parity of leading zeros](1980_Example_2_3.md) [✓](../1980_REVISION.md)
 - [Example 2.4 — erase a run of ones](1980_Example_2_4.md)
 - [Theorem 2.5 — category of approximable maps](1980_Theorem_2_5.md)
 - [Proposition 2.6 — identity and composition](1980_Proposition_2_6.md)
