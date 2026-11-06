@@ -1,20 +1,6 @@
 # Exercise 2.22
 
-**EXERCISE 2.22.** (For set theorists). We have remarked in Exercise 1.18 and in Exercise 2.11 that any domain $|D|$, as a family of sets (in fact, a family of subsets of the set $D$ itself), is closed under the intersection of an arbitrary non-empty sub family and under the union of any directed sub family. For those familiar with the subject matter, the example of the (proper) ideals of a commutative ring (with unit) is also seen to be such a family. What is the abstract situation? Let $\mathbf{C}$ be *any* family of sets with these closure properties. It is to be shown that $\mathbf{C}$ is inclusion-isomorphic to a domain. (Hint: Let $\Delta$ be the set of finite sets included in sets in $\mathbf{C}$. For $F \in \Delta$, define its "closure" by the equation:
-
-$$\overline{F} = \bigcap \{ X \in \mathbf{C} \mid F \subseteq X \}.$$
-
-Every $\overline{F} \in \mathbf{C}$, and these will prove to be the "finite" elements of $\mathbf{C}$. The neighbourhood system $\mathcal{D}$ over $\Delta$ can be taken to be the sets of the form
-
-$$C(F) = \{ G \in \Delta \mid F \subseteq \overline{G} \}$$
-
-for $F \in \Delta$. Notice that for all $X \in \mathbf{C}$
-
-$$X = \bigcup \{ \overline{F} \mid F \subseteq X \text{ and } F \in \Delta \}.$$)
-
-Check that approximable functions on these families are just those preserving directed unions.
-
-<!-- page 37 -->
+@import "1980_Exercise_2_22.english" {code_block=false}
 
 **LECTURE III**
 
@@ -25,3 +11,5 @@ Having now seen a number of domains presented through their neighbourhood system
 **[Exercise_2_22.lean](Exercise_2_22.lean)**
 
 @import "Exercise_2_22.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-06) — <a href="../1980_REVISION.md">1980 revision progress</a></p>
