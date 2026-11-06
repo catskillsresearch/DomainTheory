@@ -23,6 +23,18 @@ Aside from our being able to define particular functions outright, we can combin
 
 *Proof.* Master, intersection, and monotonicity follow from injectivity of cones and monotonicity of the erase-ones string map. ∎
 
-**Theorem (`runMap_rel_cone`).** On cones, the relation is membership of a neighbourhood containing the erased output cone.
+**Theorem (`out_append_false`).** Erasing ones after a leading zero yields a leading zero followed by the erased remainder.
 
-**Theorem (`key`).** Any approximable map satisfying the run equations acts on finite approximations by the erase-ones string map.
+**Theorem (`out_append_trueFalse`).** A leading one followed by a zero erases to that zero and the rest of the string.
+
+**Theorem (`out_append_trueTrue`).** Two leading ones erase the same as a single leading one followed by the same tail.
+
+**Theorem (`out_true_false`).** Cons form of the one-then-zero case.
+
+**Theorem (`out_true_true`).** Cons form of the two-ones case.
+
+**Theorem (`key`).** Any approximable map satisfying the run equations acts on finite approximations $\sigma\perp$ by the erase-ones string map.
+
+*Proof.* Induction on $\sigma$, using the run equations at each of the empty, lone-one, one-zero, two-ones, and leading-zero cases, together with the string identities above. ∎
+
+**Theorem (`runMap_rel_cone`).** On cones, the relation is membership of a neighbourhood containing the erased output cone.

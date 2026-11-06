@@ -4,17 +4,25 @@ Ideal elements of the two-token neighbourhood system of Example 1.2: the unique 
 
 **Definition (`bot`).** The least ideal element: the filter consisting of the master neighbourhood alone.
 
+**Definition (`elemOne`).** The principal filter of the neighbourhood $\{1\}$.
+
+**Theorem (`zero_not_subset_one`).** The singleton $\{0\}$ is not contained in $\{1\}$.
+
 **Definition (`elemZero`).** The principal filter of the neighbourhood $\{0\}$.
 
-**Definition (`elemOne`).** The principal filter of the neighbourhood $\{1\}$.
+**Theorem (`zero_ne_master`).** The singleton $\{0\}$ is not the master set.
+
+**Theorem (`one_ne_master`).** The singleton $\{1\}$ is not the master set.
 
 **Theorem (`mem_zero_of_mem`).** Any ideal element containing $\{0\}$ equals the principal of $\{0\}$.
 
 **Theorem (`mem_one_of_mem`).** Any ideal element containing $\{1\}$ equals the principal of $\{1\}$.
 
-**Theorem (`bot_lt_elemZero`).** The bottom element strictly approximates the principal of $\{0\}$.
+**Theorem (`zero_ne_one`).** The singletons $\{0\}$ and $\{1\}$ are distinct.
 
 **Theorem (`bot_lt_elemOne`).** The bottom element strictly approximates the principal of $\{1\}$.
+
+**Theorem (`bot_lt_elemZero`).** The bottom element strictly approximates the principal of $\{0\}$.
 
 **Theorem (`element_classification`).** Every ideal element is bottom, the principal of $\{0\}$, or the principal of $\{1\}$.
 
@@ -22,6 +30,8 @@ Ideal elements of the two-token neighbourhood system of Example 1.2: the unique 
 
 **Theorem (`bot_is_unique_partial`).** Bottom is the unique element that is neither principal of $\{0\}$ nor of $\{1\}$.
 
-**Theorem (`not_elemZero_le_elemOne`).** The two total principals are incomparable.
+**Theorem (`not_elemOne_le_elemZero`).** The principal of $\{1\}$ does not approximate the principal of $\{0\}$.
+
+**Theorem (`not_elemZero_le_elemOne`).** The principal of $\{0\}$ does not approximate the principal of $\{1\}$.
 
 **Theorem (`eq_bot_of_le_elemZero_of_le_elemOne`).** Anything below both totals is bottom.
