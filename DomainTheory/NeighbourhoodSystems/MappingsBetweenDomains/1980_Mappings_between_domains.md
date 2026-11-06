@@ -30,7 +30,7 @@
 - [One-token Sierpiński neighbourhood system](1980_O.md) [✓](../1980_REVISION.md)
 - [Exercise 2.15 — opens classified by maps](1980_Exercise_2_15.md) [✓](../1980_REVISION.md)
 - [Prefixing map and parity equations](1980_sigmaMap.md) [✓](../1980_REVISION.md)
-- [Exercise 2.16 — prefixing is approximable](1980_Exercise_2_16.md)
+- [Exercise 2.16 — prefixing is approximable](1980_Exercise_2_16.md) [✓](../1980_REVISION.md)
 - [Exercise 2.17 — equations for erase-ones](1980_Exercise_2_17.md)
 - [Exercise 2.17 — uniqueness of the erase-ones map](1980_Exercise_2_17b.md)
 - [Exercise 2.18 — doubling binary digits](1980_Exercise_2_18.md)
