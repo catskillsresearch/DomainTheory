@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition_6_10
 
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_18
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.sumSys
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
 
 @[expose] public section

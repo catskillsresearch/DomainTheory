@@ -1,0 +1,223 @@
+The separated sum of two neighbourhood systems, with injections and left-inverse projections.
+
+<!-- formalization -->
+
+**Definition (`il`).** The left tag of a token is that token placed in the left summand, then wrapped as a defined optional token.
+
+*Proof.* By definition. ∎
+
+**Definition (`inj₀`).** The left injection of a set is the image of that set under left tagging.
+
+*Proof.* By definition. ∎
+
+**Theorem (`il_mem_inj₀`).** A left-tagged token lies in a left injection precisely when the token lies in the underlying set.
+
+*Proof.* Unpack the image. ∎
+
+**Definition (`ir`).** The right tag of a token is that token placed in the right summand, then wrapped as a defined optional token.
+
+*Proof.* By definition. ∎
+
+**Definition (`inj₁`).** The right injection of a set is the image of that set under right tagging.
+
+*Proof.* By definition. ∎
+
+**Theorem (`ir_mem_inj₀`).** A right-tagged token never lies in a left injection.
+
+*Proof.* The tags disagree. ∎
+
+**Theorem (`none_mem_inj₀`).** The undefined token never lies in a left injection.
+
+*Proof.* Left injections contain only left-tagged tokens. ∎
+
+**Theorem (`ir_mem_inj₁`).** A right-tagged token lies in a right injection precisely when the token lies in the underlying set.
+
+*Proof.* Unpack the image. ∎
+
+**Theorem (`il_mem_inj₁`).** A left-tagged token never lies in a right injection.
+
+*Proof.* The tags disagree. ∎
+
+**Theorem (`none_mem_inj₁`).** The undefined token never lies in a right injection.
+
+*Proof.* Right injections contain only right-tagged tokens. ∎
+
+**Theorem (`inj₀_inter`).** Left injection commutes with intersection.
+
+*Proof.* Compare membership by cases on optional tagged tokens. ∎
+
+**Theorem (`inj₀_inter_inj₁`).** A left injection meets a right injection emptily.
+
+*Proof.* No optional tagged token can belong to both. ∎
+
+**Theorem (`inj₀_nonempty`).** Left injection preserves nonempty sets.
+
+*Proof.* Map a witness under left tagging. ∎
+
+**Theorem (`inj₀_subset_inj₀`).** Inclusion of left injections is equivalent to inclusion of the underlying sets.
+
+*Proof.* Transport membership through left tagging. ∎
+
+**Theorem (`inj₁_inter`).** Right injection commutes with intersection.
+
+*Proof.* Compare membership by cases on optional tagged tokens. ∎
+
+**Theorem (`inj₁_nonempty`).** Right injection preserves nonempty sets.
+
+*Proof.* Map a witness under right tagging. ∎
+
+**Theorem (`inj₁_subset_inj₁`).** Inclusion of right injections is equivalent to inclusion of the underlying sets.
+
+*Proof.* Transport membership through right tagging. ∎
+
+**Definition (`sumMaster`).** The sum master is the undefined token together with the left and right injections of the two masters.
+
+*Proof.* By definition. ∎
+
+**Theorem (`none_mem_sumMaster`).** The undefined token belongs to the sum master.
+
+*Proof.* It is inserted by definition. ∎
+
+**Theorem (`il_injective`).** Left tagging is injective.
+
+*Proof.* Optional and summand constructors are injective. ∎
+
+**Theorem (`il_preimage_inj₀`).** Preimaging a left injection under left tagging recovers the underlying set.
+
+*Proof.* Apply injectivity of left tagging. ∎
+
+**Theorem (`inj₀_subset_sumMaster`).** The left injection of a neighbourhood lies below the sum master.
+
+*Proof.* Bound the underlying set by the left master and embed. ∎
+
+**Theorem (`inj₁_subset_sumMaster`).** The right injection of a neighbourhood lies below the sum master.
+
+*Proof.* Bound the underlying set by the right master and embed. ∎
+
+**Theorem (`ir_injective`).** Right tagging is injective.
+
+*Proof.* Optional and summand constructors are injective. ∎
+
+**Theorem (`ir_preimage_inj₁`).** Preimaging a right injection under right tagging recovers the underlying set.
+
+*Proof.* Apply injectivity of right tagging. ∎
+
+**Definition (`leftPart`).** The left part of a sum set relative to the left system is the set of left tokens that are either present as left tags or belong to the left master whenever a right tag or the undefined token appears.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mem_leftPart`).** Membership in a left part unpacks as left-tag membership or the master-and-cross-witness clause.
+
+*Proof.* By definition. ∎
+
+**Definition (`rightPart`).** The right part of a sum set relative to the right system is symmetric to the left part.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mem_rightPart`).** Membership in a right part unpacks as right-tag membership or the master-and-cross-witness clause.
+
+*Proof.* By definition. ∎
+
+**Theorem (`leftPart_inj₀`).** The left part of a left injection recovers the underlying set.
+
+*Proof.* Cross witnesses are absent from left injections. ∎
+
+**Theorem (`leftPart_mono`).** Left parts are monotone in the sum set.
+
+*Proof.* Apply the ambient inclusion to each clause. ∎
+
+**Theorem (`rightPart_inj₁`).** The right part of a right injection recovers the underlying set.
+
+*Proof.* Cross witnesses are absent from right injections. ∎
+
+**Theorem (`leftPart_inj₁`).** The left part of a nonempty right injection is the left master.
+
+*Proof.* A right-tag witness forces the master clause for every left token in the master. ∎
+
+**Theorem (`leftPart_sumMaster`).** The left part of the sum master is the left master.
+
+*Proof.* The undefined token forces the master clause; left tags recover the left master injection. ∎
+
+**Theorem (`rightPart_inj₀`).** The right part of a nonempty left injection is the right master.
+
+*Proof.* Symmetric to the left-part fact for right injections. ∎
+
+**Theorem (`rightPart_mono`).** Right parts are monotone in the sum set.
+
+*Proof.* Apply the ambient inclusion to each clause. ∎
+
+**Theorem (`rightPart_sumMaster`).** The right part of the sum master is the right master.
+
+*Proof.* Symmetric to the left-part fact for the sum master. ∎
+
+**Theorem (`sumMaster_inter_inj₀`).** Intersecting the sum master with a left-injected neighbourhood recovers that injection.
+
+*Proof.* The injection already lies below the sum master. ∎
+
+**Theorem (`sumMaster_inter_inj₁`).** Intersecting the sum master with a right-injected neighbourhood recovers that injection.
+
+*Proof.* The injection already lies below the sum master. ∎
+
+**Definition (`sum`).** Under the standing nonempty-neighbourhood hypotheses, the separated sum consists of the sum master together with all left and right injections of neighbourhoods.
+
+*Proof.* The master is the sum master; subsets of neighbourhoods stay below it via the injection bounds; intersection is checked by cases on the three kinds of sum neighbourhoods, using emptiness of mixed injections and nonempty fibres to rule out impossible lower bounds. ∎
+
+**Definition (`inMap₀`).** The left injection map relates a left neighbourhood to a sum neighbourhood precisely when the left injection of the former is contained in the latter.
+
+*Proof.* Domain and codomain membership unpack the witnesses; the masters relate by the left-master bound; intersection on the right and monotonicity use the sum intersection law and monotonicity of left injection. ∎
+
+**Definition (`inMap₁`).** The right injection map is symmetric to the left injection map.
+
+*Proof.* Symmetric to the left case. ∎
+
+**Theorem (`leftPart_mem`).** The left part of a sum neighbourhood is a left neighbourhood.
+
+*Proof.* Case on the three kinds of sum neighbourhoods and apply the left-part identities. ∎
+
+**Definition (`outMap₀`).** The left projection relates a sum neighbourhood to a left neighbourhood precisely when the left part of the former is contained in the latter.
+
+*Proof.* Domain and codomain membership unpack the witnesses; the masters relate by the left-part identity for the sum master; intersection on the right and monotonicity use left-part membership and monotonicity. ∎
+
+**Theorem (`rightPart_mem`).** The right part of a sum neighbourhood is a right neighbourhood.
+
+*Proof.* Case on the three kinds of sum neighbourhoods and apply the right-part identities. ∎
+
+**Definition (`outMap₁`).** The right projection is symmetric to the left projection.
+
+*Proof.* Symmetric to the left case. ∎
+
+**Theorem (`inj₀_injective`).** Left injection of sets is injective.
+
+*Proof.* Compare inclusions both ways. ∎
+
+**Theorem (`inj₁_injective`).** Right injection of sets is injective.
+
+*Proof.* Compare inclusions both ways. ∎
+
+**Theorem (`outMap₀_comp_inMap₀`).** The left projection after the left injection recovers the identity on the left system.
+
+*Proof.* Compare relations via the left-part identity for left injections. ∎
+
+**Theorem (`outMap₁_comp_inMap₁`).** The right projection after the right injection recovers the identity on the right system.
+
+*Proof.* Compare relations via the right-part identity for right injections. ∎
+
+**Theorem (`eq_sumMaster_of_subset`).** A sum neighbourhood containing the sum master equals the sum master.
+
+*Proof.* Apply the master bound in the other direction. ∎
+
+**Theorem (`mem_subset_inj₀`).** A sum neighbourhood contained in a left injection is itself a left injection of a left neighbourhood.
+
+*Proof.* The master and right-injection cases are impossible by tag mismatches. ∎
+
+**Theorem (`mem_subset_inj₁`).** A sum neighbourhood contained in a right injection is itself a right injection of a right neighbourhood.
+
+*Proof.* Symmetric to the left case. ∎
+
+**Theorem (`not_inj₀_subset_inj₁`).** A nonempty left injection cannot lie below a right injection.
+
+*Proof.* A left-tagged witness cannot belong to a right injection. ∎
+
+**Theorem (`not_inj₁_subset_inj₀`).** A nonempty right injection cannot lie below a left injection.
+
+*Proof.* A right-tagged witness cannot belong to a left injection. ∎

@@ -1618,6 +1618,10 @@ NS_CON_SHORT: dict[str, tuple[str, str]] = {
         "X317",
         "Exercise 3.17 — embedding binary sequences",
     ),
+    "Sum system": (
+        "sum",
+        "Sum system",
+    ),
     "Exercise 3.18 — separated sum": (
         "X318",
         "Exercise 3.18 — separated sum",

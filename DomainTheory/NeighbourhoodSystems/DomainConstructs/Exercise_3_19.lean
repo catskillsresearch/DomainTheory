@@ -1,5 +1,5 @@
 module
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_18
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.sumSys
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.ProjectionMappings
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_4
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6

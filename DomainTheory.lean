@@ -1639,6 +1639,7 @@ import DomainTheory.NeighbourhoodSystems.DomainConstructs.iterSys
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_16
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.embBinSeq
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_17
+import DomainTheory.NeighbourhoodSystems.DomainConstructs.sumSys
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_18
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_19
 import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_20
