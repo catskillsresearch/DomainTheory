@@ -1,0 +1,13 @@
+**EXERCISE 2.10.** Carry out the proof of Proposition 2.6; and in addition show that, if $f, g : D_0 \to D_1$ are two approximable mappings, there exists $h : D_0 \to D_1$ such that
+
+$$
+h(x) = f(x) \cap g(x)
+$$
+
+for all $x \in |D_0|$.
+
+<!-- formalization -->
+
+**Theorem (`exercise_2_10`).** The pointwise intersection of two approximable maps acts elementwise by intersection of filters.
+
+*Proof.* This is the membership characterization of the pointwise meet. (The identity and composition laws of Proposition 2.6 are packaged separately.) ∎
