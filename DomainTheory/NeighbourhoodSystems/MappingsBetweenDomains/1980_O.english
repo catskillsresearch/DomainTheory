@@ -1,0 +1,77 @@
+The one-token Sierpiński neighbourhood system, and the correspondence between its approximable maps and open subsets of a domain.
+
+<!-- formalization -->
+
+**Definition (`memO`).** A subset of the one-token set is a Sierpiński neighbourhood when it is the whole set or empty.
+
+**Theorem (`nestedOrDisjoint_O`).** Any two Sierpiński neighbourhoods are nested or disjoint.
+
+*Proof.* Case analysis on the two alternatives. ∎
+
+**Theorem (`subMaster_O`).** Every Sierpiński neighbourhood is contained in the universe.
+
+*Proof.* Immediate. ∎
+
+**Definition (`O`).** The one-token Sierpiński neighbourhood system has master the universe and neighbourhoods the universe and the empty set.
+
+**Theorem (`O_mem`).** Membership in the Sierpiński system is the Sierpiński neighbourhood predicate.
+
+*Proof.* By definition. ∎
+
+**Theorem (`O_master`).** The master of the Sierpiński system is the universe.
+
+*Proof.* By definition. ∎
+
+**Theorem (`O_mem_empty`).** The empty set is a Sierpiński neighbourhood.
+
+*Proof.* One of the two alternatives in the neighbourhood predicate. ∎
+
+**Theorem (`O_inter_mem`).** The intersection of two Sierpiński neighbourhoods is a Sierpiński neighbourhood.
+
+*Proof.* Intersecting with the universe leaves the other factor; intersecting with empty yields empty. ∎
+
+**Definition (`botElt`).** The bottom ideal element of the Sierpiński system is the bottom filter.
+
+**Theorem (`mem_botElt`).** A neighbourhood belongs to the bottom element if and only if it is the universe.
+
+*Proof.* Specialise the characterisation of the bottom filter to the Sierpiński master. ∎
+
+**Definition (`topElt`).** The top ideal element of the Sierpiński system is the principal filter of the empty neighbourhood.
+
+**Definition (`mapToOpen`).** An approximable map into the Sierpiński system determines the set of ideal elements sent to top.
+
+**Theorem (`mem_empty_iff_eq_top`).** An ideal element of the Sierpiński system contains the empty neighbourhood if and only if it is top.
+
+*Proof.* The empty set is minimal among neighbourhoods, so membership characterises the corresponding principal; the converse is immediate. ∎
+
+**Theorem (`element_eq_bot_or_top`).** Every ideal element of the Sierpiński system is bottom or top.
+
+*Proof.* If it contains empty it is top; otherwise its neighbourhoods are forced to be those of bottom. ∎
+
+**Theorem (`O_ext`).** Ideal elements of the Sierpiński system that agree on membership of empty are equal.
+
+*Proof.* Both are bottom or both are top by the preceding dichotomy. ∎
+
+**Theorem (`isOpen_mapToOpen`).** The set of points sent to top by an approximable map into the Sierpiński system is open.
+
+*Proof.* It is the preimage of the basic open of the empty neighbourhood under the continuous elementwise action. ∎
+
+**Theorem (`univ_ne_empty`).** The universe of the one-token set is nonempty.
+
+*Proof.* It contains the unique token. ∎
+
+**Definition (`openToMap`).** An open set of ideal elements induces an approximable map into the Sierpiński system: a neighbourhood relates to a Sierpiński neighbourhood when the latter is empty only if the principal of the former lies in the open.
+
+*Proof.* Domain, codomain, and master are immediate; intersection and monotonicity use the filter and upper-set properties of opens. ∎
+
+**Theorem (`toElementMap_openToMap_principal_mem_empty`).** Under the induced map, the image of a principal contains empty if and only if that principal lies in the open.
+
+*Proof.* Unpack the defining relation at the principal. ∎
+
+**Theorem (`mem_mapToOpen_openToMap`).** Points belonging to the open recovered from the map induced by an open are exactly the points of that open.
+
+*Proof.* One direction uses the principal-membership law and that opens are upper sets; the converse extracts a basic open neighbourhood from the open-filter property. ∎
+
+**Theorem (`openToMap_mapToOpen`).** The map induced by the open recovered from an approximable map into the Sierpiński system recovers that map.
+
+*Proof.* Compare on principals via the empty-membership characterisation and uniqueness of Sierpiński elements by empty-membership. ∎

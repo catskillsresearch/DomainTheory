@@ -1413,6 +1413,10 @@ NS_MAP_SHORT: dict[str, tuple[str, str]] = {
         "X214",
         "Exercise 2.14 — isomorphisms of neighbourhoods",
     ),
+    "One-token Sierpiński neighbourhood system": (
+        "O",
+        "One-token Sierpiński neighbourhood system",
+    ),
     "Exercise 2.15 — opens classified by maps": (
         "X215",
         "Exercise 2.15 — opens classified by maps",
