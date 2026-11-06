@@ -2,19 +2,16 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap2
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap
-public import Mathlib.Algebra.Group.End
-public import Mathlib.Basic.Finite.Defs
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Data.Set.Basic
 public import Mathlib.Data.Set.Finite.Basic
 public import Mathlib.Order.BooleanAlgebra.Set
 public import Mathlib.Data.Set.Image
+
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise220
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
-
-section
 
 def powerSet : NeighborhoodSystem ℕ where
   mem X := Xᶜ.Finite
@@ -25,39 +22,21 @@ def powerSet : NeighborhoodSystem ℕ where
     intro X Y _ hX hY _ _
     rw [Set.compl_inter]; exact hX.union hY
   sub_master := fun _ => Set.subset_univ _
-end
 
-section
 @[simp] theorem mem_powerSet {X : Set ℕ} : powerSet.mem X ↔ Xᶜ.Finite := Iff.rfl
-end
 
-section
 @[simp] theorem powerSet_master : powerSet.master = (Set.univ : Set ℕ) := rfl
-end
-
-section
 
 theorem mem_compl_singleton (n : ℕ) : powerSet.mem ({n}ᶜ) := by
   rw [mem_powerSet, compl_compl]; exact Set.finite_singleton n
-end
-
-section
 
 theorem powerSet_inter_mem {A B : Set ℕ} (hA : powerSet.mem A) (hB : powerSet.mem B) :
     powerSet.mem (A ∩ B) := by
   rw [mem_powerSet, Set.compl_inter]; exact hA.union hB
-end
-
-section
 
 def toSet (x : powerSet.Element) : Set ℕ := {n | x.mem ({n}ᶜ)}
-end
 
-section
 @[simp] theorem mem_toSet {x : powerSet.Element} {n : ℕ} : n ∈ toSet x ↔ x.mem ({n}ᶜ) := Iff.rfl
-end
-
-section
 
 theorem mem_compl_of_finite (x : powerSet.Element) {t : Set ℕ} (ht : t.Finite)
     (h : ∀ n ∈ t, x.mem ({n}ᶜ)) : x.mem (tᶜ) := by
@@ -70,9 +49,6 @@ theorem mem_compl_of_finite (x : powerSet.Element) {t : Set ℕ} (ht : t.Finite)
     rw [hcompl]
     exact x.inter_mem (h a (Set.mem_insert a s))
       (ih (fun n hn => h n (Set.mem_insert_of_mem a hn)))
-end
-
-section
 
 def ofSet (S : Set ℕ) : powerSet.Element where
   mem Z := powerSet.mem Z ∧ Zᶜ ⊆ S
@@ -85,15 +61,10 @@ def ofSet (S : Set ℕ) : powerSet.Element where
   up_mem := by
     rintro Z W ⟨hZ, hZS⟩ hW hZW
     exact ⟨hW, (Set.compl_subset_compl.mpr hZW).trans hZS⟩
-end
-
-section
 
 theorem ofSet_mono {S S' : Set ℕ} (h : S ⊆ S') : ofSet S ≤ ofSet S' :=
   fun _ hZ => ⟨hZ.1, hZ.2.trans h⟩
-end
 
-section
 theorem ofSet_toSet (x : powerSet.Element) : ofSet (toSet x) = x := by
   apply Element.ext
   intro Z
@@ -106,18 +77,10 @@ theorem ofSet_toSet (x : powerSet.Element) : ofSet (toSet x) = x := by
     intro n hn
     rw [mem_toSet]
     exact x.up_mem hZ (mem_compl_singleton n) (Set.subset_compl_singleton_iff.mpr hn)
-end
-
-section
 
 def predSet (S : Set ℕ) : Set ℕ := {n | n + 1 ∈ S}
-end
 
-section
 @[simp] theorem mem_predSet {S : Set ℕ} {n : ℕ} : n ∈ predSet S ↔ n + 1 ∈ S := Iff.rfl
-end
-
-section
 
 def interMap₂ : ApproximableMap₂ powerSet powerSet powerSet where
   rel X Y Z := powerSet.mem X ∧ powerSet.mem Y ∧ powerSet.mem Z ∧ X ∪ Y ⊆ Z
@@ -132,13 +95,8 @@ def interMap₂ : ApproximableMap₂ powerSet powerSet powerSet where
   mono := by
     rintro X X' Y Y' Z Z' ⟨_, _, _, hsub⟩ hX'X hY'Y hZZ' hX' hY' hZ'
     exact ⟨hX', hY', hZ', (Set.union_subset_union hX'X hY'Y).trans (hsub.trans hZZ')⟩
-end
 
-section
 theorem predSet_mono {S T : Set ℕ} (h : S ⊆ T) : predSet S ⊆ predSet T := fun _ hn => h hn
-end
-
-section
 
 def predMap : ApproximableMap powerSet powerSet where
   rel X Z := powerSet.mem X ∧ powerSet.mem Z ∧ Zᶜ ⊆ predSet Xᶜ
@@ -156,18 +114,10 @@ def predMap : ApproximableMap powerSet powerSet where
     refine ⟨hX', hZ', ?_⟩
     exact (Set.compl_subset_compl.mpr hZZ').trans
       (hsub.trans (predSet_mono (Set.compl_subset_compl.mpr hX'X)))
-end
-
-section
 
 def succSet (S : Set ℕ) : Set ℕ := (· + 1) '' S
-end
 
-section
 theorem succSet_mono {S T : Set ℕ} (h : S ⊆ T) : succSet S ⊆ succSet T := Set.image_mono h
-end
-
-section
 
 def succMap : ApproximableMap powerSet powerSet where
   rel X Z := powerSet.mem X ∧ powerSet.mem Z ∧ Zᶜ ⊆ succSet Xᶜ
@@ -185,9 +135,7 @@ def succMap : ApproximableMap powerSet powerSet where
     refine ⟨hX', hZ', ?_⟩
     exact (Set.compl_subset_compl.mpr hZZ').trans
       (hsub.trans (succSet_mono (Set.compl_subset_compl.mpr hX'X)))
-end
 
-section
 theorem toSet_ofSet (S : Set ℕ) : toSet (ofSet S) = S := by
   ext n
   simp only [mem_toSet]
@@ -197,9 +145,6 @@ theorem toSet_ofSet (S : Set ℕ) : toSet (ofSet S) = S := by
     exact hsub (Set.mem_singleton n)
   · intro hn
     exact ⟨mem_compl_singleton n, by rw [compl_compl]; exact Set.singleton_subset_iff.mpr hn⟩
-end
-
-section
 
 def equivSetNat : powerSet.Element ≃o Set ℕ where
   toFun := toSet
@@ -215,9 +160,6 @@ def equivSetNat : powerSet.Element ≃o Set ℕ where
       rwa [ofSet_toSet, ofSet_toSet] at hmono
     · intro h n hn
       exact h _ hn
-end
-
-section
 
 def unionMap : ApproximableMap₂ powerSet powerSet powerSet where
   rel X Y Z := powerSet.mem X ∧ powerSet.mem Y ∧ powerSet.mem Z ∧ X ∩ Y ⊆ Z
@@ -231,9 +173,7 @@ def unionMap : ApproximableMap₂ powerSet powerSet powerSet where
   mono := by
     rintro X X' Y Y' Z Z' ⟨_, _, _, hsub⟩ hX'X hY'Y hZZ' hX' hY' hZ'
     exact ⟨hX', hY', hZ', (Set.inter_subset_inter hX'X hY'Y).trans (hsub.trans hZZ')⟩
-end
 
-section
 theorem toSet_interMap₂ (x y : powerSet.Element) :
     toSet (interMap₂.toElementMap₂ x y) = toSet x ∩ toSet y := by
   ext k
@@ -247,9 +187,7 @@ theorem toSet_interMap₂ (x y : powerSet.Element) :
   · rintro ⟨hkx, hky⟩
     exact ⟨{k}ᶜ, {k}ᶜ, hkx, hky, mem_compl_singleton k, mem_compl_singleton k,
       mem_compl_singleton k, Set.union_subset subset_rfl subset_rfl⟩
-end
 
-section
 theorem toSet_predMap (x : powerSet.Element) :
     toSet (predMap.toElementMap x) = predSet (toSet x) := by
   ext k
@@ -266,9 +204,7 @@ theorem toSet_predMap (x : powerSet.Element) :
     rw [Set.mem_singleton_iff] at ha; subst ha
     rw [mem_predSet, compl_compl]
     exact Set.mem_singleton (a + 1)
-end
 
-section
 theorem toSet_succMap (x : powerSet.Element) :
     toSet (succMap.toElementMap x) = succSet (toSet x) := by
   ext k
@@ -284,9 +220,7 @@ theorem toSet_succMap (x : powerSet.Element) :
     intro a ha
     rw [Set.mem_singleton_iff] at ha; subst ha
     exact ⟨m, by rw [compl_compl]; exact Set.mem_singleton m, rfl⟩
-end
 
-section
 theorem toSet_unionMap (x y : powerSet.Element) :
     toSet (unionMap.toElementMap₂ x y) = toSet x ∪ toSet y := by
   ext k
@@ -303,6 +237,5 @@ theorem toSet_unionMap (x y : powerSet.Element) :
         mem_compl_singleton k, Set.inter_subset_left⟩
     · exact ⟨Set.univ, {k}ᶜ, x.master_mem, hky, powerSet.master_mem, mem_compl_singleton k,
         mem_compl_singleton k, Set.inter_subset_right⟩
-end
 
 end DomainTheory.NeighbourhoodSystems.Exercise220
