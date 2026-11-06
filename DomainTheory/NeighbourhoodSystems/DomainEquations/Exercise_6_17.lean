@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_16
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Exercise_2_12
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.iSupMap
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofIso
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem_6_16
 

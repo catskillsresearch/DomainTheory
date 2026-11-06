@@ -1,0 +1,11 @@
+The directed join of a nonempty directed family of approximable maps, acting elementwise by directed union of the images.
+
+<!-- formalization -->
+
+**Definition (`iSupMap`).** The directed supremum of a nonempty directed family of approximable maps relates neighbourhoods when some member of the family does.
+
+*Proof.* Master uses any index; intersection finds a common upper bound in the directed family; monotonicity is inherited from any witnessing member. ∎
+
+**Theorem (`mem_toElementMap_iSupMap`).** Membership in the elementwise image of the directed supremum is membership in the image of some member of the family.
+
+*Proof.* Reassociate the witnessing neighbourhood and index. ∎
