@@ -1586,6 +1586,10 @@ NS_CON_SHORT: dict[str, tuple[str, str]] = {
         "T313",
         "Theorem 3.13 — pointwise order of maps",
     ),
+    "Diagonal map": (
+        "diag",
+        "Diagonal map",
+    ),
     "Exercise 3.14 — tagged product of tokens": (
         "X314",
         "Exercise 3.14 — tagged product of tokens",

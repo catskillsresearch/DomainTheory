@@ -1,7 +1,9 @@
 module
-public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Exercise_3_14
 
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodEquiv
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.DomainIso
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot
+
 @[expose] public section
 
 section
