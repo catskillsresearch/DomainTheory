@@ -5,8 +5,8 @@
 @import "1980_Fixed_points_and_recursion.mermaid"
 
 - [Introduction](1980_Introduction.md) [✓](../1980_REVISION.md)
-- [Least fixed-point element](1980_fixElement.md)
-- [Theorem 4.1 — least fixed point](1980_Theorem_4_1.md)
+- [Least fixed-point element](1980_fixElement.md) [✓](../1980_REVISION.md)
+- [Theorem 4.1 — least fixed point](1980_Theorem_4_1.md) [✓](../1980_REVISION.md)
 - [Theorem 4.2 — fix combinator](1980_Theorem_4_2.md)
 - [Example 4.3 — partial functions on integers](1980_Example_4_3.md)
 - [Example 4.4 — sequence domain](1980_Example_4_4.md)

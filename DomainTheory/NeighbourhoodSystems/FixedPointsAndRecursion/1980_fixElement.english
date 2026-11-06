@@ -1,1 +1,55 @@
 Iterates of an endomap and the least fixed-point element they generate.
+
+<!-- formalization -->
+
+**Definition (`iterMap`).** The iterates of an approximable endomap are the identity at stage zero and composition of the map with the preceding iterate at each successor stage.
+
+*Proof.* By recursion on the stage. ∎
+
+**Theorem (`iterMap_zero`).** The zero-th iterate is the identity map.
+
+*Proof.* By definition. ∎
+
+**Theorem (`iterMap_succ`).** The successor iterate is the map composed with the preceding iterate.
+
+*Proof.* By definition. ∎
+
+**Theorem (`comp_mono`).** Composition of approximable endomaps is monotone in each factor.
+
+*Proof.* Unpack a composite relation into an intermediate neighbourhood and apply the two inequalities. ∎
+
+**Theorem (`iterMap_mono_map`).** Larger endomaps have larger iterates at every stage.
+
+*Proof.* Induct on the stage, using monotonicity of composition at successor steps. ∎
+
+**Theorem (`iter_comm`).** An endomap commutes with each of its iterates under composition.
+
+*Proof.* Induct on the stage, using the unit laws for the identity and associativity of composition. ∎
+
+**Theorem (`rel_master_succ`).** A neighbourhood related to the master by an iterate remains related after one further iterate.
+
+*Proof.* Rewrite the successor iterate via the commutation law and insert the master-to-master relation of the map. ∎
+
+**Theorem (`rel_master_mono`).** Master-relatedness under iterates is preserved when the stage increases.
+
+*Proof.* Induct along the inequality of stages, using the successor step. ∎
+
+**Definition (`fixElement`).** The least fixed-point element of an endomap consists of those neighbourhoods related to the master by some iterate of the map.
+
+*Proof.* The master belongs via the identity iterate; upward closure uses monotonicity of the relation; intersection closure equalises stages by the master-relatedness monotonicity and closes under the right-intersection law of the iterate. ∎
+
+**Theorem (`mem_fixElement`).** Membership in the least fixed-point element is existence of a witnessing iterate relating the master to the neighbourhood.
+
+*Proof.* By definition. ∎
+
+**Theorem (`fixElement_mono`).** Larger endomaps have larger least fixed-point elements.
+
+*Proof.* Apply monotonicity of iterates stagewise. ∎
+
+**Theorem (`fixElement_le_of_toElementMap_le`).** If the map sends an ideal element into itself, then the least fixed-point element lies below that element.
+
+*Proof.* Show by induction on the stage that every neighbourhood related to the master by an iterate belongs to the given upper bound, using the identity case for the master and the postfixedness hypothesis at successors. ∎
+
+**Theorem (`toElementMap_fixElement`).** The least fixed-point element is a fixed point of the endomap.
+
+*Proof.* Compare membership: a neighbourhood reached by a positive iterate witnesses membership after applying the map, and conversely a successor witness unpacks to a related neighbourhood already in the fixed-point element; the zero stage recovers the master via the master relation. ∎

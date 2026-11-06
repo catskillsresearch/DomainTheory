@@ -58,3 +58,9 @@ Because the element we have shown to exist in 4.1 is a least element, it is uniq
 
 The least fixed-point construction and its fixed-point / leastness laws are with the
 [least fixed-point element](1980_fixElement.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`theorem_41`).** Every approximable endomap has a least fixed point: its least fixed-point element is fixed by the map and lies below every postfixed point.
+
+*Proof.* Invoke the fixed-point law and the leastness law for the least fixed-point element. ∎
