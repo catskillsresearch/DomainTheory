@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise_7_14
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.computableWitness
 
 @[expose] public section
 
