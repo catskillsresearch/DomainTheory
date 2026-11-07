@@ -1,11 +1,9 @@
 # Exercise 4.7
 
-**EXERCISE 4.7.** Formula 4.2(iii) shows how to find the *least* fixed point of $f : D \to D$. Suppose on the other hand that $a \in |D|$ is such that $a \subseteq f(a)$. Will there be a fixed point $x = f(x)$ with $a \subseteq x$?
-
-<!-- page 67 -->
-
-(Hint: How do we know $\bigsqcup_{n=0}^{\infty} f^n(\bot) \in |D|$ ?)
+@import "1980_Exercise_4_7.english" {code_block=false}
 
 **[Exercise_4_7.lean](Exercise_4_7.lean)**
 
 @import "Exercise_4_7.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-06) — <a href="../1980_REVISION.md">1980 revision progress</a></p>
