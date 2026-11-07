@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise_7_18
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.dsharpEffective_more
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.listCombinators
 
 @[expose] public section
 

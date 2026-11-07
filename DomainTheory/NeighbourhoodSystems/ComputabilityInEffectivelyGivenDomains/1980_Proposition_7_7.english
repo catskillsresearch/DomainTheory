@@ -42,7 +42,7 @@ $$V_m \ \mathrm{proj}_0 \ V_k \text{ iff } k = 0 \text{ or } \exists n \in \math
 
 The reader should write out other cases. $\square$
 
-The development is with the [effectively given lists](1980_dsharpEffective.md) and [list combinators](1980_dsharpEffective_more.md) peers.
+The development is with the [effectively given lists](1980_dsharpEffective.md) and [list combinators](1980_listCombinators.md) peers.
 
 <!-- formalization -->
 

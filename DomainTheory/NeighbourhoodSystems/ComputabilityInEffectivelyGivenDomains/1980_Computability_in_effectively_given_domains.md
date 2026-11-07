@@ -18,7 +18,7 @@
 - [Computable fixpoint](1980_fixComputable.md)
 - [Theorem 7.6 — fix is computable](1980_Theorem_7_6.md)
 - [Effectively given lists](1980_dsharpEffective.md)
-- [List combinators](1980_dsharpEffective_more.md)
+- [List combinators](1980_listCombinators.md)
 - [Proposition 7.7 — lists effectively given](1980_Proposition_7_7.md)
 - [Powerset neighbourhoods](1980_powersetNbhd.md)
 - [Example 7.8 — powerset effectively given](1980_Example_7_8.md)

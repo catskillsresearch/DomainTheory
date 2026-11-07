@@ -1,6 +1,8 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.dsharpEffective
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_18
 
 @[expose] public section
 

@@ -2,6 +2,8 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition_7_7
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition_7_3
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.sumSys
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.inducedMaps
 
 @[expose] public section
 
@@ -698,7 +700,7 @@ theorem sumMap_isComputable {V₀' : NeighborhoodSystem α'} {V₁' : Neighborho
     (hf : ComputableMap P₀ Q₀ f) (hg : ComputableMap P₁ Q₁ g) :
     ComputableMap (sumPresentation P₀ P₁ (h₀ := h₀) (h₁ := h₁))
       (sumPresentation Q₀ Q₁ (h₀ := h₀') (h₁ := h₁'))
-      (sumMap (h₀ := h₀) (h₁ := h₁) (h₀' := h₀') (h₁' := h₁') f g) := by
+      (sumMap f g) := by
   constructor
   have hf' : REPred (fun u => f.rel (P₀.X u.unpair.1) (Q₀.X u.unpair.2)) := hf.out
   have hg' : REPred (fun u => g.rel (P₁.X u.unpair.1) (Q₁.X u.unpair.2)) := hg.out

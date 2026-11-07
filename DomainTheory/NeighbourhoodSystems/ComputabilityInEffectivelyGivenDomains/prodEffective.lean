@@ -2,6 +2,9 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition_7_7
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition_7_3
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.ProjectionMappings
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.inducedMaps
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodNbhd
 
 @[expose] public section
 

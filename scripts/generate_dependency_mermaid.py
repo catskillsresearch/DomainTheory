@@ -2421,7 +2421,7 @@ NS_COMP_SHORT: dict[str, tuple[str, str]] = {
         "Effectively given lists",
     ),
     "List combinators": (
-        "dSh2",
+        "lComb",
         "List combinators",
     ),
     "Proposition 7.7 — lists effectively given": (
