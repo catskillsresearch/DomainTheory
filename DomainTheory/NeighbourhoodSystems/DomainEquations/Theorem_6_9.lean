@@ -10,7 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition_6_8
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 section
 variable {α β γ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
@@ -58,7 +58,7 @@ theorem nonempty_algHom_of_continuousOnMaps
 end
 
 section
-open Exercise510
+open SmashProduct
 
 /-- Scott's Theorem 6.9: continuous functors yield a strict algebra homomorphism. -/
 theorem theorem_69 :
@@ -78,7 +78,7 @@ universe w
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 structure StrictDomainObj : Type (w + 1) where
 
@@ -94,7 +94,7 @@ end
 section
 namespace DomainTheory.NeighbourhoodSystems
 section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 instance : Category StrictDomainObj where
   Hom D E := StrictMap D.sys E.sys

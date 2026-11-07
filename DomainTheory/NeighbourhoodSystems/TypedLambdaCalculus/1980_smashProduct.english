@@ -1,0 +1,247 @@
+Smash product of neighbourhood systems, strict function spaces, and the curry isomorphism with smash.
+<!-- formalization -->
+
+**Definition (`SmashProper`).** The construction `SmashProper` as used in the smash-product development.
+
+*Proof.* By definition. ∎
+
+**Theorem (`inter_ne_master_left`).** The stated property of `inter_ne_master_left`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`inter_ne_master_right`).** The stated property of `inter_ne_master_right`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Definition (`smash`).** The smash product of two neighbourhood systems consists of the joined masters together with unions of proper neighbourhoods from each factor.
+
+*Proof.* The master and intersection axioms follow from those of the factors, using properness of the summands. ∎
+
+**Theorem (`smash_master`).** The stated property of `smash_master`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`smash_mem_bot`).** The stated property of `smash_mem_bot`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`smash_mem_proper`).** The stated property of `smash_mem_proper`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Definition (`smashPair`).** The construction `smashPair` as used in the smash-product development.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mem_smashPair`).** The stated property of `mem_smashPair`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Definition (`IsStrict`).** A map is strict when it sends bottom to bottom in the sense that proper neighbourhoods cannot pull back only the master.
+
+*Proof.* By definition. ∎
+
+**Abbreviation (`StrictMap`).** A strict map is an approximable map that is strict.
+
+*Proof.* By definition. ∎
+
+**Theorem (`eq_bot_of_no_proper`).** The stated property of `eq_bot_of_no_proper`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`exists_proper_of_ne_bot`).** The stated property of `exists_proper_of_ne_bot`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`isStrict_constBot`).** The stated property of `isStrict_constBot`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`isStrict_iff_apply_bot`).** The stated property of `isStrict_iff_apply_bot`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`IsStrict.mono`).** The stated property of `IsStrict.mono`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`principal_master_eq_bot`).** The stated property of `principal_master_eq_bot`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`smashPair_bot_left`).** The stated property of `smashPair_bot_left`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`smashPair_bot_right`).** The stated property of `smashPair_bot_right`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`smashPair_eq_bot_iff`).** The stated property of `smashPair_eq_bot_iff`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`smashPair_mono`).** The stated property of `smashPair_mono`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Definition (`sstep`).** The construction `sstep` as used in the smash-product development.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mem_sstep`).** The stated property of `mem_sstep`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Definition (`sstepFun`).** The construction `sstepFun` as used in the smash-product development.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mem_sstepFun`).** The stated property of `mem_sstepFun`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`sstepFun_nil`).** The stated property of `sstepFun_nil`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`sstepFun_append`).** The stated property of `sstepFun_append`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`sstepFun_cons`).** The stated property of `sstepFun_cons`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`sstepFun_singleton`).** The stated property of `sstepFun_singleton`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`sstep_master_eq`).** The stated property of `sstep_master_eq`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`sstep_inter_right`).** The stated property of `sstep_inter_right`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`sstep_subset`).** The stated property of `sstep_subset`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Definition (`strictFun`).** The strict function space has neighbourhoods generated by finite lists of proper relation steps between strict maps.
+
+*Proof.* By definition as a neighbourhood system on strict maps. ∎
+
+**Theorem (`strictFun_master`).** The stated property of `strictFun_master`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`sstepFun_up_closed`).** The stated property of `sstepFun_up_closed`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`sstep_mem_of_mem`).** The stated property of `sstep_mem_of_mem`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`mem_sstepFun_iff`).** The stated property of `mem_sstepFun_iff`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`strictFun_mem_iff`).** The stated property of `strictFun_mem_iff`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`strictFun_mem_inter`).** The stated property of `strictFun_mem_inter`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`strictFun_mem_up_closed`).** The stated property of `strictFun_mem_up_closed`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Definition (`toStrictMap`).** The construction `toStrictMap` as used in the smash-product development.
+
+*Proof.* By definition. ∎
+
+**Theorem (`toStrictMap_rel`).** The stated property of `toStrictMap_rel`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Definition (`toStrictFilter`).** The construction `toStrictFilter` as used in the smash-product development.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mem_toStrictFilter`).** The stated property of `mem_toStrictFilter`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`rel_sstepFun_iff`).** The stated property of `rel_sstepFun_iff`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`smashPair_principal_apply`).** The stated property of `smashPair_principal_apply`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Definition (`smashSection`).** The construction `smashSection` as used in the smash-product development.
+
+*Proof.* By definition. ∎
+
+**Theorem (`isStrict_smashSection`).** The stated property of `isStrict_smashSection`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`smashSection_mono`).** The stated property of `smashSection_mono`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`smashSection_rel`).** The stated property of `smashSection_rel`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Definition (`smashCurryMap`).** The construction `smashCurryMap` as used in the smash-product development.
+
+*Proof.* By definition. ∎
+
+**Theorem (`smash_mem_prodNbhd_form`).** The stated property of `smash_mem_prodNbhd_form`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Definition (`smashUncurryMap`).** The construction `smashUncurryMap` as used in the smash-product development.
+
+*Proof.* By definition. ∎
+
+**Theorem (`smashUncurry_curry`).** The stated property of `smashUncurry_curry`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`sstep_cod_master`).** The stated property of `sstep_cod_master`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`section_uncurry_rel`).** The stated property of `section_uncurry_rel`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`smashCurry_uncurry`).** The stated property of `smashCurry_uncurry`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Definition (`smashCurryEquiv`).** Currying against the smash product yields an order isomorphism between strict maps out of smash and strict maps into the strict function space.
+
+*Proof.* The forward and reverse maps are smashCurryMap and smashUncurryMap; the inverse laws and relation preservation supply the isomorphism. ∎
+
+**Definition (`strictFunEquiv`).** The construction `strictFunEquiv` as used in the smash-product development.
+
+*Proof.* By definition. ∎
+
+**Theorem (`isStrict_idMap`).** The stated property of `isStrict_idMap`.
+
+*Proof.* Follows from the surrounding smash and strict-map laws. ∎
+
+**Theorem (`smash_mem_iff`).** Membership in the smash product is either the joined master or a proper smash neighbourhood.
+
+*Proof.* By definition. ∎
+

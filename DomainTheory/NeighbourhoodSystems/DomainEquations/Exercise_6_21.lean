@@ -10,7 +10,7 @@ section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
 open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
-open DomainTheory.NeighbourhoodSystems.Exercise510
+open DomainTheory.NeighbourhoodSystems.SmashProduct
 section
 namespace Exercise619
 variable {D₀ D₁ : NeighborhoodSystem Str}
@@ -458,7 +458,7 @@ end
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise619
 section
-open NeighborhoodSystem ApproximableMap Example62 ExampleB Exercise510
+open NeighborhoodSystem ApproximableMap Example62 ExampleB SmashProduct
 
 /-- Scott's Exercise 6.21: rooted grammars admit a subsystem solution and a fixed-point set containing `[]`. -/
 theorem example_621 :
@@ -474,7 +474,7 @@ end DomainTheory.NeighbourhoodSystems.Exercise619
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
 open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
-open DomainTheory.NeighbourhoodSystems.Exercise510
+open DomainTheory.NeighbourhoodSystems.SmashProduct
 
 section
 namespace Exercise619

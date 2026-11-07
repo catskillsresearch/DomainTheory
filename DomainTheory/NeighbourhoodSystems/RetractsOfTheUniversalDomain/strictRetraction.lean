@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_10
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.smashProduct
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition_8_3
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.fixOfO
 
@@ -51,8 +51,8 @@ theorem strictRetraction_apply_bot (φ : (funSpace D E).Element) :
     exact ⟨E.master_mem, Or.inl rfl⟩
 
 theorem isStrict_toApproxMap_of_fixed {φ : (funSpace D E).Element}
-    (hφ : strictRetraction.toElementMap φ = φ) : Exercise510.IsStrict (toApproxMap φ) := by
-  rw [Exercise510.isStrict_iff_apply_bot]
+    (hφ : strictRetraction.toElementMap φ = φ) : SmashProduct.IsStrict (toApproxMap φ) := by
+  rw [SmashProduct.isStrict_iff_apply_bot]
   have h := strictRetraction_apply_bot φ
   rwa [hφ] at h
 
@@ -76,9 +76,9 @@ theorem toApproxMap_toFilter (f : ApproximableMap D E) : toApproxMap (toFilter f
 theorem toFilter_toApproxMap (φ : (funSpace D E).Element) : toFilter (toApproxMap φ) = φ :=
   (funSpaceEquiv D E).left_inv φ
 
-theorem strictRetraction_fixed_of_isStrict {f : ApproximableMap D E} (hf : Exercise510.IsStrict f) :
+theorem strictRetraction_fixed_of_isStrict {f : ApproximableMap D E} (hf : SmashProduct.IsStrict f) :
     strictRetraction.toElementMap (toFilter f) = toFilter f := by
-  have hbot : f.toElementMap D.bot = E.bot := Exercise510.isStrict_iff_apply_bot.mp hf
+  have hbot : f.toElementMap D.bot = E.bot := SmashProduct.isStrict_iff_apply_bot.mp hf
   have key : toApproxMap (strictRetraction.toElementMap (toFilter f)) = f := by
     apply ext_of_toElementMap
     intro y
@@ -89,7 +89,7 @@ theorem strictRetraction_fixed_of_isStrict {f : ApproximableMap D E} (hf : Exerc
 
 def strictRetractionFixIso :
     {φ : (funSpace D E).Element // strictRetraction.toElementMap φ = φ} ≃o
-      Exercise510.StrictMap D E where
+      SmashProduct.StrictMap D E where
   toFun φ := ⟨toApproxMap φ.1, isStrict_toApproxMap_of_fixed φ.2⟩
   invFun f := ⟨toFilter f.1, strictRetraction_fixed_of_isStrict f.2⟩
   left_inv φ := Subtype.ext (toFilter_toApproxMap φ.1)
@@ -133,10 +133,10 @@ theorem isRetraction_strictRetraction : Retraction (strictRetraction (D := D) (E
 
 theorem example84b_strict :
     IsProjection (strictRetraction (D := D) (E := E)) ∧
-      Nonempty ((Exercise510.strictFun D E).Element ≃o
+      Nonempty ((SmashProduct.strictFun D E).Element ≃o
         {φ : (funSpace D E).Element // strictRetraction.toElementMap φ = φ}) :=
   ⟨⟨isRetraction_strictRetraction, strictRetraction_le_idMap⟩,
-    ⟨strictRetractionFixIso.trans (Exercise510.strictFunEquiv D E).symm |>.symm⟩⟩
+    ⟨strictRetractionFixIso.trans (SmashProduct.strictFunEquiv D E).symm |>.symm⟩⟩
 end
 
 end DomainTheory.NeighbourhoodSystems

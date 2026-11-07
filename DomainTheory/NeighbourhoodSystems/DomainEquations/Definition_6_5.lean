@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition_6_4
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.DomainObj
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_10
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.smashProduct
 
 @[expose] public section
 
@@ -23,7 +23,7 @@ end
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 section
 universe u

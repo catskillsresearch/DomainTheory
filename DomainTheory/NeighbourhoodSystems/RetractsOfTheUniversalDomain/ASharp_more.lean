@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.ASh
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 Exercise510
+open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 SmashProduct
 
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 variable {hD : ∀ X, D.mem X → X.Nonempty}

@@ -32,7 +32,7 @@ end DomainTheory.NeighbourhoodSystems.Exercise624
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
 open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
-open DomainTheory.NeighbourhoodSystems.Exercise510
+open DomainTheory.NeighbourhoodSystems.SmashProduct
 
 section
 namespace Exercise619

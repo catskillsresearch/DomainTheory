@@ -10,7 +10,7 @@ section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
 section
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.Exercise510
+open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.SmashProduct
 namespace Exercise619
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 section Uniqueness
@@ -27,7 +27,7 @@ end Exercise619
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.Exercise510
+open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.SmashProduct
 
 namespace Exercise619
 
@@ -79,7 +79,7 @@ end
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise619
 section
-open NeighborhoodSystem ApproximableMap Example62 ExampleB Exercise510
+open NeighborhoodSystem ApproximableMap Example62 ExampleB SmashProduct
 
 /-- Scott's Exercise 6.23: the descending approximable map is below any algebra homomorphism. -/
 theorem example_623 {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master) (B : TAlgebra (TexpF N))

@@ -1015,7 +1015,7 @@ end
 
 section
 variable {α β γ : Type*}
-open Exercise510
+open SmashProduct
 
 section Smash
 
@@ -1117,7 +1117,7 @@ end
 
 section
 variable {α β γ : Type*}
-open Exercise510
+open SmashProduct
 
 section Smash
 

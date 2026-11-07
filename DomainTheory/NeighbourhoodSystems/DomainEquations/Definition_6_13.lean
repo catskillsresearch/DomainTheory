@@ -50,7 +50,7 @@ end
 namespace Exercise619
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
 open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
-open DomainTheory.NeighbourhoodSystems.Exercise510
+open DomainTheory.NeighbourhoodSystems.SmashProduct
 
 section
 
@@ -64,7 +64,7 @@ end
 end Exercise619
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
 open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
-open DomainTheory.NeighbourhoodSystems.Exercise510
+open DomainTheory.NeighbourhoodSystems.SmashProduct
 
 section
 namespace Exercise619

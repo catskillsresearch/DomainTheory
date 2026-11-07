@@ -9,7 +9,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 section
 universe w
 namespace Theorem614
@@ -155,7 +155,7 @@ end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Theorem614
 section
 universe w
-open CategoryTheory NeighborhoodSystem Exercise510 Theorem614
+open CategoryTheory NeighborhoodSystem SmashProduct Theorem614
 
 theorem theorem_614 :
     (∀ s : Setup.{w}, ∃ A : TAlgebra s.T,
@@ -172,7 +172,7 @@ end
 end DomainTheory.NeighbourhoodSystems.Theorem614
 namespace DomainTheory.NeighbourhoodSystems
 section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 open Example62C in
 
@@ -258,7 +258,7 @@ end
 
 
 section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 theorem botStrict_rel {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
     {X : Set α} {Y : Set β} :

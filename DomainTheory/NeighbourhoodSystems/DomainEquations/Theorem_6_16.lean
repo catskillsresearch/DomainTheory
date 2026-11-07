@@ -10,7 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem_6_9
 section
 namespace DomainTheory.NeighbourhoodSystems
 section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 universe w
 
 theorem trianglelefteq_of_isInitial
@@ -232,7 +232,7 @@ theorem theorem_616 (T : Endofunctor DomainObj.{w}) (hT : ContinuousOnMaps T) (D
 end
 
 section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 abbrev tcObj (D : StrictDomainObj.{w}) : StrictDomainObj.{w} where
   carrier := Option (Unit ⊕ D.carrier ⊕ D.carrier)

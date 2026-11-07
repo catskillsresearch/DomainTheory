@@ -18,7 +18,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodFunctor
 section
 namespace DomainTheory.NeighbourhoodSystems
 section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 open Example62C in
 
@@ -52,7 +52,7 @@ abbrev Cobj : StrictDomainObj.{0} := ⟨Str, C, C_nonempty⟩
 end
 
 section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 namespace Example62C
 
@@ -90,7 +90,7 @@ end Example62C
 end
 
 section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 section Initial
 
@@ -151,7 +151,7 @@ section
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 section Initial
 
@@ -170,7 +170,7 @@ end
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 section
 section Initial
@@ -583,7 +583,7 @@ end
 
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 section
 variable {A : Type} [DecidableEq A]
@@ -2222,7 +2222,7 @@ end
 
 end DomainTheory.NeighbourhoodSystems.Exercise617Gen
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 section
 namespace Exercise618
@@ -2434,7 +2434,7 @@ end
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise618
 section
-open Exercise510
+open SmashProduct
 
 /-- Scott's Exercise 6.18: strictness is preserved by the product of two approximable maps. -/
 theorem example_618 {α β α' β' : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
@@ -2448,7 +2448,7 @@ end
 end DomainTheory.NeighbourhoodSystems.Exercise618
 namespace DomainTheory.NeighbourhoodSystems
 section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 namespace Exercise618
 
@@ -2518,7 +2518,7 @@ end Exercise618
 end
 
 section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 namespace Exercise618
 
@@ -2533,7 +2533,7 @@ end Exercise618
 end
 
 section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 namespace Exercise618
 

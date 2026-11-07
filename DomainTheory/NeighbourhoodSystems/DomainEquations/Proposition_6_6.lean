@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_10
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.smashProduct
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition_6_8
@@ -12,7 +12,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.pri
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 section
 universe u
 variable {Obj : Type u} [Category Obj] {T : Endofunctor Obj} {A B : TAlgebra T}

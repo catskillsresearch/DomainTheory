@@ -13,7 +13,7 @@ section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
 open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
-open DomainTheory.NeighbourhoodSystems.Exercise510
+open DomainTheory.NeighbourhoodSystems.SmashProduct
 section
 namespace Exercise627
 variable {D₀ D₁ : NeighborhoodSystem Str}
@@ -310,7 +310,7 @@ end
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise627
 section
-open NeighborhoodSystem Exercise619 Exercise510 ExampleB
+open NeighborhoodSystem Exercise619 SmashProduct ExampleB
 
 theorem example_627 :
     (∀ (D₀ D₁ : NeighborhoodSystem Str), otimesTok D₀ D₁ ⊴ prodTok D₀ D₁) ∧
@@ -340,7 +340,7 @@ universe w
 namespace DomainTheory.NeighbourhoodSystems
 namespace Theorem614
 
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 variable {α : Type w}
 
@@ -367,7 +367,7 @@ end
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 section
 universe w

@@ -10,7 +10,7 @@ open NeighborhoodSystem Domain.Recursive Example61
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 section
 variable {α β γ : Type*}
-open Exercise510
+open SmashProduct
 
 section Smash
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
@@ -1156,7 +1156,7 @@ variable {V : NeighborhoodSystem α} (P : ScottPresentation V)
 
 end ScottPresentation
 
-open Exercise510
+open SmashProduct
 
 section Iterate
 
@@ -1179,7 +1179,7 @@ theorem NeighborhoodSystem.IsEffectivelyGiven.toS {V : NeighborhoodSystem α}
     (h : V.IsEffectivelyGiven) : V.IsEffectivelyGivenS :=
   h.elim fun P => ⟨P.toScott⟩
 
-open Exercise510
+open SmashProduct
 
 section Iterate
 
@@ -1722,7 +1722,7 @@ end Smash
 end
 
 section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise510
+open NeighborhoodSystem Domain.Recursive ApproximableMap SmashProduct
 
 /-- Scott's Exercise 7.15: effective givenness for iterate, coalesced sum, and smash. -/
 theorem example_715 :

@@ -1999,6 +1999,10 @@ NS_LAM_SHORT: dict[str, tuple[str, str]] = {
         "X509",
         "Exercise 5.9 — common fixed points",
     ),
+    "Smash product": (
+        "smash",
+        "Smash product",
+    ),
     "Exercise 5.10 — smash product": (
         "X510",
         "Exercise 5.10 — smash product",

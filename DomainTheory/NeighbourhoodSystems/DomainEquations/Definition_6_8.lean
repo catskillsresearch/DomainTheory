@@ -1,13 +1,13 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_10
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.smashProduct
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition_6_5
 
 @[expose] public section
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 section
 
 def ContinuousOnMaps (T : Endofunctor DomainObj) : Prop :=

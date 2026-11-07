@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_10
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.smashProduct
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition_8_3
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9

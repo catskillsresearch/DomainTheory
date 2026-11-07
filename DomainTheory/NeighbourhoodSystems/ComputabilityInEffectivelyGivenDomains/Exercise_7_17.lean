@@ -126,7 +126,7 @@ end Proposition77
 end
 
 section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
+open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 SmashProduct Proposition77
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 namespace Exercise717
@@ -142,7 +142,7 @@ end Exercise717
 end
 
 section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Exercise510 Proposition77
+open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 SmashProduct Proposition77
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 namespace Exercise717

@@ -9,7 +9,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem_6_14
 section
 namespace DomainTheory.NeighbourhoodSystems
 section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise510
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 namespace Exercise618
 variable {α : Type*} {V : NeighborhoodSystem α}
 
