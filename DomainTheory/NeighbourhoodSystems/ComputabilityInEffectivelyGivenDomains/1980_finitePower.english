@@ -1,0 +1,47 @@
+Finite joins of elements, and singletons, are elements of the powerdomain.
+
+<!-- formalization -->
+
+**Definition (`PDfinJoinZero`).** As set out for this part of the library.
+
+*Proof.* By the membership rule for a finite join and the one-element case. ∎
+
+**Definition (`PDmemFinJoin`).** As set out for this part of the library.
+
+*Proof.* By the membership rule for a finite join and the one-element case. ∎
+
+**Definition (`PDfinJoinSucc`).** As set out for this part of the library.
+
+*Proof.* By the membership rule for a finite join and the one-element case. ∎
+
+**Definition (`PDfinJoin`).** As set out for this part of the library.
+
+*Proof.* By the membership rule for a finite join and the one-element case. ∎
+
+**Theorem (`PDmem_finJoinZero`).** As set out for this part of the library.
+
+*Proof.* By the membership rule for a finite join and the one-element case. ∎
+
+**Definition (`PDsingleton`).** As set out for this part of the library.
+
+*Proof.* By the membership rule for a finite join and the one-element case. ∎
+
+**Theorem (`PDmem_finJoinSucc`).** As set out for this part of the library.
+
+*Proof.* By the membership rule for a finite join and the one-element case. ∎
+
+**Theorem (`PDmem_singleton`).** As set out for this part of the library.
+
+*Proof.* By the membership rule for a finite join and the one-element case. ∎
+
+**Theorem (`PDmem_finJoin`).** As set out for this part of the library.
+
+*Proof.* By the membership rule for a finite join and the one-element case. ∎
+
+**Theorem (`PDmem_finJoin_iUnion`).** As set out for this part of the library.
+
+*Proof.* By the membership rule for a finite join and the one-element case. ∎
+
+**Theorem (`PDmem_down`).** As set out for this part of the library.
+
+*Proof.* By the membership rule for a finite join and the one-element case. ∎

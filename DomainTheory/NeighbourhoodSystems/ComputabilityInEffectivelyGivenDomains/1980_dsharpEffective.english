@@ -1,0 +1,299 @@
+The list domain over an effectively given neighbourhood system is effectively given.
+
+<!-- formalization -->
+
+**Definition (`consB`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Definition (`eqB`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Definition (`intI`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`le_pair_left`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Definition (`listGetStp`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Definition (`listGet`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`listGetStp_pair`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`listGet_foldl_zero`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`listGet_foldl`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`listGet_encodeList`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`max_sq_le_pair`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`memS_sub_embPair`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`memS_sub_embZero`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`nat_shape`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Definition (`packT`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`eqB_packT`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`consB_packT`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`intI_packT`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Definition (`dsharpStep`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`dsharpStep_i0`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`dsharpStep_j0`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`dsharpStep_ll`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`dsharpStep_ln`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`dsharpStep_nl`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`dsharpStep_nn`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`pair_lt_succ_sq`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`pair_lt_pair_of_lt`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`primrec_listGet`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`primrec_listGet₂`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`primrec_dsharpStep`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Definition (`rtbl`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Definition (`gOf`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Definition (`gList`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`gOf_def`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`getD_gList`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`rtbl_eq_encode`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`listGet_rtbl`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`rtbl_eq_rec`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`primrec_rtbl`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`primrec_gOf`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`unpair_fst_le`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Definition (`Vsharp`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`Vsharp_succ`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`Vsharp_even`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`Vsharp_even_inter_even`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`Vsharp_odd`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`Vsharp_odd_inter_even`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`Vsharp_even_inter_odd`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`Vsharp_odd_inter_odd`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`Vsharp_zero`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`Vsharp_eq_Gamma_iff`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`Vsharp_mem`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`Vsharp_inter_zero`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`Vsharp_nonempty`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`Vsharp_surj`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`Vsharp_zero_inter`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`exists_sub_embPair_iff`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`exists_sub_embZero_iff`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`dsharp_decider_spec`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`dsharp_intI_correct`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`dsharp_interEq_iff`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Definition (`dsharpPresentation`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`dsharp_isEffectivelyGiven`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`dsharpPresentation_X`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Definition (`inSharpMap`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`inSharpMap_rel`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Definition (`proj0Map`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`proj0Map_rel`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`inSharpMap_toElementMap`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`inSharp_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`proj0_rel_Vsharp_iff`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`proj0_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`proj0_toElementMap_pairSharp`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+
+**Theorem (`gList_length`).** As set out for this part of the library.
+
+*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎

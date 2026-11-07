@@ -1,0 +1,19 @@
+Identity, composition, application, and principal elements stay inside the computable maps and computable elements.
+
+<!-- formalization -->
+
+**Theorem (`apply_isComputableElement`).** As set out for this part of the library.
+
+*Proof.* By projecting and composing the recursively enumerable relations. ∎
+
+**Theorem (`comp_isComputable`).** As set out for this part of the library.
+
+*Proof.* By projecting and composing the recursively enumerable relations. ∎
+
+**Theorem (`idMap_isComputable`).** As set out for this part of the library.
+
+*Proof.* By projecting and composing the recursively enumerable relations. ∎
+
+**Theorem (`principal_isComputableElement`).** As set out for this part of the library.
+
+*Proof.* By projecting and composing the recursively enumerable relations. ∎

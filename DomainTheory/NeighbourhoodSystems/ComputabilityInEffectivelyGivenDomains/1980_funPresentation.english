@@ -1,0 +1,503 @@
+The function space of effectively given systems is effectively given, and evaluation and currying are computable.
+
+<!-- formalization -->
+
+**Definition (`interList`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`interList_nil`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`funPair`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`funPair_fst`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`funPair_snd`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`bitSelect`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`bitSelect_nil`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`andFoldl_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`andFoldl_one`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`appendStep`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`appendStp`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`appendCode`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`appendStp_eq`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`botMap`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`botMap_rel`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`condSet`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`condSet_nil`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`condSet_subset`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`consPairChar`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`consUpd`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`consStp`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`consCharAt`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`decodeList_appendStep`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`decodeList_encodeList`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`decodeList_foldl_appendStp`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`decodeList_appendCode`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`funImpChar`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`funConsChar`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`funListOf`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`Xenum`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`Xenum_neg`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`Xenum_pos`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`funListOf_cons`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`exists_funListOf`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`funListOf_valid`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`Xenum_mem`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`Xenum_nonempty`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`idxchain`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`interFrom`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`interIdx`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`interYsStp`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`interYsIdx`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`mem_condSet`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`condSet_cons_neg`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`condSet_cons_pos`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`condFoldl_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`condSet_eq_interYs`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`primrec_appendCode`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`primrec_consPairChar`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`primrec_interIdx`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`primrec_interYsStp`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`primrec_interYsIdx`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`rel_interYs_funList`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`interYs_funList_mem_of_nonempty`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`selectFn_isOne`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`interYsIdx_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`selectFn_mul_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`stepFun_funListOf_appendCode`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`Xenum_inter_eq`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`consPairChar_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`stepFun_funListOf_eq_univ_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`stepFun_funListOf_subset_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`subStp`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`primrec_subStp`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`subChar`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`primrec_subChar`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`subChar_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`trivStp`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`primrec_trivStp`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`trivialChar`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`eqEnumChar`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`interEqChar`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`primrec_trivialChar`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`primrec_eqEnumChar`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`primrec_interEqChar`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`trivialChar_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`eqEnumChar_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`interEqChar_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`funPresentation`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`interList_cons`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`mem_interList`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`rel_interList_of_selection`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`interList_mem_of_stepFun_nonempty`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`stepFun_funListOf_nonempty_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`mem_interFrom`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`interFrom_subset`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`interFrom_mem_of_witness`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`interFrom_eq_of_foldl`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`idxchain_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`bitSelect_cons`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`bitSelect_sublist`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`exists_bitSelect_lt`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`forall_sublist_iff_forall_bitmask`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`consUpd_eval`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`consUpd_foldl_flag_zero`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`consUpd_foldl_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`consCharAt_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`primrec_consStp`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`primrec_consCharAt`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`consFold_decidable`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`interList_X_eq_interFrom`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`antecedent_cons_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`funConsequent_eq`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`funCons_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`funCons_decidable`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`selectFn_one_iff_imp`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`funConsChar_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`primrec_funImpChar`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`primrec_funConsChar`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`funSpace_isEffectivelyGiven`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`Xenum_singleton`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`consChain_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`evalMap_rel_prodNbhd_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`evalMap_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`funListOf_append`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`interList_subset_base`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`mem_Xenum_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`Xenum_isComputableElement_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`isComputableElement_funPresentation_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`mem_Xenum_iff_map`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`curry_rel_Xenum_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`curry_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Definition (`curryStepCode`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`curryIso_apply`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+
+**Theorem (`primrec_curryStepCode`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎

@@ -7,6 +7,7 @@ public import Mathlib.Data.Rat.Defs
 import Mathlib.Tactic.Ring
 import Lean.Elab.Tactic.Omega
 import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 @[expose] public section
 

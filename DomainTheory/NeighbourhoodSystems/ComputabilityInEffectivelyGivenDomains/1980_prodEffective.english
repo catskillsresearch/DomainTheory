@@ -1,0 +1,31 @@
+The product of effectively given neighbourhood systems is effectively given, and the product combinators are computable.
+
+<!-- formalization -->
+
+**Definition (`prodPresentation`).** As set out for this part of the library.
+
+*Proof.* By the pairing enumeration of the product and the closure of recursively enumerable relations under composition. ∎
+
+**Theorem (`prodPresentation_X`).** As set out for this part of the library.
+
+*Proof.* By the pairing enumeration of the product and the closure of recursively enumerable relations under composition. ∎
+
+**Theorem (`paired_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the pairing enumeration of the product and the closure of recursively enumerable relations under composition. ∎
+
+**Theorem (`prod_isEffectivelyGiven`).** As set out for this part of the library.
+
+*Proof.* By the pairing enumeration of the product and the closure of recursively enumerable relations under composition. ∎
+
+**Theorem (`proj₀_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the pairing enumeration of the product and the closure of recursively enumerable relations under composition. ∎
+
+**Theorem (`proj₁_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the pairing enumeration of the product and the closure of recursively enumerable relations under composition. ∎
+
+**Theorem (`prodMap_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the pairing enumeration of the product and the closure of recursively enumerable relations under composition. ∎

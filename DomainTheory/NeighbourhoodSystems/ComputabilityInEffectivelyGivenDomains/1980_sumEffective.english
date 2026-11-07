@@ -1,0 +1,115 @@
+The sum of effectively given neighbourhood systems is effectively given, and the sum combinators are computable.
+
+<!-- formalization -->
+
+**Definition (`sumEnum`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`sumEnum_zero`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`sumEnum_one`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`inj₀_eq_iff`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`inj₀_eq_inj₁_elim`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`inj₀_ne_inj₁_of_nonempty`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`inj₀_ne_sumMaster`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`inj₁_eq_iff`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`inj₁_ne_sumMaster`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`recDec_setEq₀`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`recDec_setEq₁`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`sumEnum_master`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`sumEnum_mem`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`sumEnum_nonempty`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`sumEnum_subset_sumMaster`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`sumEnum_inter_sumMaster`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`sumMaster_inter_sumEnum`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`tag_trichotomy`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`sumEnum_eq_iff`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`eqSEdec`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Definition (`sumPresentation`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`sum_isEffectivelyGiven`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`sumPresentation_X`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`inMap₀_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`inMap₁_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`outMap₀_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`outMap₁_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+
+**Theorem (`sumMap_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎

@@ -1,0 +1,365 @@
+module
+
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition_7_10
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition_7_11
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.funSpace
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.funSpaceEquiv
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.idMap
+
+@[expose] public section
+
+section
+namespace DomainTheory.NeighbourhoodSystems
+section
+open NeighborhoodSystem Domain.Recursive ApproximableMap
+variable {α β γ : Type*}
+variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
+
+def PFmap (f : ApproximableMap V W) : ApproximableMap V.PowerDomain W.PowerDomain where
+  rel A B := V.PDmem A ∧ W.PDmem B ∧ ∀ X ∈ A, ∃ Y ∈ B, f.rel X Y
+  rel_dom h := h.1
+  rel_cod h := h.2.1
+  master_rel := by
+    refine ⟨V.PDmem_master, W.PDmem_master, ?_⟩
+    rintro X ⟨hXmem, hXsub⟩
+    exact ⟨W.master, ⟨W.master_mem, subset_rfl⟩,
+      f.mono f.master_rel hXsub subset_rfl hXmem W.master_mem⟩
+  inter_right := by
+    rintro A B B' ⟨hA, hB, hbody⟩ ⟨-, hB', hbody'⟩
+    refine ⟨hA, W.PDmem_inter hB hB', ?_⟩
+    intro X hX
+    obtain ⟨Y, hYB, hrel⟩ := hbody X hX
+    obtain ⟨Y', hY'B', hrel'⟩ := hbody' X hX
+    have hinmem : W.mem (Y ∩ Y') := f.rel_cod (f.inter_right hrel hrel')
+    exact ⟨Y ∩ Y', Set.mem_inter
+      (W.PDmem_down hB hYB Set.inter_subset_left hinmem)
+      (W.PDmem_down hB' hY'B' Set.inter_subset_right hinmem),
+      f.inter_right hrel hrel'⟩
+  mono := by
+    rintro A A' B B' ⟨_, _, hbody⟩ hA'A hBB' hA' hB'
+    refine ⟨hA', hB', ?_⟩
+    intro X hX
+    obtain ⟨Y, hYB, hrel⟩ := hbody X (hA'A hX)
+    exact ⟨Y, hBB' hYB, hrel⟩
+
+@[simp] theorem PFmap_rel {f : ApproximableMap V W} {A : Set (Set α)} {B : Set (Set β)} :
+    (PFmap f).rel A B ↔ V.PDmem A ∧ W.PDmem B ∧ ∀ X ∈ A, ∃ Y ∈ B, f.rel X Y := Iff.rfl
+
+def PFmapComb (V : NeighborhoodSystem α) (W : NeighborhoodSystem β) :
+    ApproximableMap (funSpace V W) (funSpace V.PowerDomain W.PowerDomain) where
+  rel Φ Ψ := (funSpace V W).mem Φ ∧ (funSpace V.PowerDomain W.PowerDomain).mem Ψ ∧
+    ∀ f ∈ Φ, PFmap f ∈ Ψ
+  rel_dom h := h.1
+  rel_cod h := h.2.1
+  master_rel :=
+    ⟨(funSpace V W).master_mem, (funSpace V.PowerDomain W.PowerDomain).master_mem,
+      fun _ _ => Set.mem_univ _⟩
+  inter_right := by
+    rintro Φ Ψ Ψ' ⟨hΦ, hΨ, hbody⟩ ⟨-, hΨ', hbody'⟩
+    obtain ⟨f₀, hf₀⟩ := hΦ.2
+    obtain ⟨⟨L₂, hL₂, rfl⟩, -⟩ := hΨ
+    obtain ⟨⟨L₂', hL₂', rfl⟩, -⟩ := hΨ'
+    refine ⟨hΦ, ⟨⟨L₂ ++ L₂', ?_, (stepFun_append _ _).symm⟩,
+        ⟨PFmap f₀, Set.mem_inter (hbody f₀ hf₀) (hbody' f₀ hf₀)⟩⟩,
+      fun f hf => Set.mem_inter (hbody f hf) (hbody' f hf)⟩
+    intro q hq
+    rcases List.mem_append.mp hq with hq' | hq'
+    · exact hL₂ q hq'
+    · exact hL₂' q hq'
+  mono := by
+    rintro Φ Φ' Ψ Ψ' ⟨_, _, hbody⟩ hΦ'Φ hΨΨ' hΦ' hΨ'
+    exact ⟨hΦ', hΨ', fun f hf => hΨΨ' (hbody f (hΦ'Φ hf))⟩
+
+end
+
+section
+open NeighborhoodSystem Domain.Recursive ApproximableMap
+variable {α β γ : Type*}
+
+namespace NeighborhoodSystem
+
+variable (V : NeighborhoodSystem α)
+
+end NeighborhoodSystem
+
+variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
+
+@[simp] theorem PFmapComb_rel {Φ : Set (ApproximableMap V W)}
+    {Ψ : Set (ApproximableMap V.PowerDomain W.PowerDomain)} :
+    (PFmapComb V W).rel Φ Ψ ↔
+      (funSpace V W).mem Φ ∧ (funSpace V.PowerDomain W.PowerDomain).mem Ψ ∧
+        ∀ f ∈ Φ, PFmap f ∈ Ψ := Iff.rfl
+end
+
+section
+open NeighborhoodSystem Domain.Recursive ApproximableMap
+variable {α β γ : Type*}
+
+namespace NeighborhoodSystem
+
+variable (V : NeighborhoodSystem α)
+
+theorem PDmem_mem {A : Set (Set α)} (hA : V.PDmem A) {X : Set α} (hX : X ∈ A) : V.mem X := by
+  obtain ⟨L, hL, rfl⟩ := hA
+  obtain ⟨X', _, hXmem, _⟩ := (V.mem_PDunion).mp hX
+  exact hXmem
+
+end NeighborhoodSystem
+end
+
+section
+open NeighborhoodSystem Domain.Recursive ApproximableMap
+variable {α β γ : Type*}
+variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β} {U : NeighborhoodSystem γ}
+
+theorem PFmap_idMap (V : NeighborhoodSystem α) : PFmap (idMap V) = idMap V.PowerDomain := by
+  apply ApproximableMap.ext
+  intro A B
+  simp only [PFmap_rel, idMap_rel]
+  constructor
+  · rintro ⟨hA, hB, hbody⟩
+    refine ⟨hA, hB, ?_⟩
+    intro X hX
+    obtain ⟨Y, hYB, hXmem, _, hXY⟩ := hbody X hX
+    exact V.PDmem_down hB hYB hXY hXmem
+  · rintro ⟨hA, hB, hsub⟩
+    refine ⟨hA, hB, ?_⟩
+    intro X hX
+    exact ⟨X, hsub hX, V.PDmem_mem hA hX, V.PDmem_mem hA hX, subset_rfl⟩
+
+theorem PFmap_rel_Ypd_iff (P : ComputablePresentation V) (Q : ComputablePresentation W)
+    (f : ApproximableMap V W) {c d : ℕ} :
+    (PFmap f).rel (V.Ypd P c) (W.Ypd Q d) ↔
+      ∀ a ∈ decodeList c, ∃ b ∈ decodeList d, f.rel (P.X a) (Q.X b) := by
+  constructor
+  · rintro ⟨-, -, hbody⟩ a ha
+    have hXin : P.X a ∈ V.Ypd P c := (V.mem_Ypd P).mpr ⟨a, ha, P.mem_X a, subset_rfl⟩
+    obtain ⟨Y, hYin, hrel⟩ := hbody (P.X a) hXin
+    obtain ⟨b, hb, hYmem, hYsub⟩ := (W.mem_Ypd Q).mp hYin
+    exact ⟨b, hb, f.mono hrel subset_rfl hYsub (P.mem_X a) (Q.mem_X b)⟩
+  · intro hgen
+    refine ⟨V.Ypd_isPDmem P c, W.Ypd_isPDmem Q d, ?_⟩
+    rintro X hXin
+    obtain ⟨a, ha, hXmem, hXsub⟩ := (V.mem_Ypd P).mp hXin
+    obtain ⟨b, hb, hrel⟩ := hgen a ha
+    exact ⟨Q.X b, (W.mem_Ypd Q).mpr ⟨b, hb, Q.mem_X b, subset_rfl⟩,
+      f.mono hrel hXsub subset_rfl hXmem (Q.mem_X b)⟩
+
+theorem PFmap_rel_fin (f : ApproximableMap V W) {L₁ : List (Set α)} {L₂ : List (Set β)}
+    (hL₁ : ∀ X ∈ L₁, V.mem X) (hL₂ : ∀ Y ∈ L₂, W.mem Y) :
+    (PFmap f).rel (⋃ X ∈ L₁, V.upSet X) (⋃ Y ∈ L₂, W.upSet Y)
+      ↔ ∀ X ∈ L₁, ∃ Y ∈ L₂, f.rel X Y := by
+  constructor
+  · rintro ⟨-, -, hbody⟩ X hX
+    have hXin : X ∈ ⋃ X' ∈ L₁, V.upSet X' :=
+      (V.mem_PDunion).mpr ⟨X, hX, hL₁ X hX, subset_rfl⟩
+    obtain ⟨Z, hZin, hrel⟩ := hbody X hXin
+    obtain ⟨Y, hY, hZmem, hZsub⟩ := (W.mem_PDunion).mp hZin
+    exact ⟨Y, hY, f.mono hrel subset_rfl hZsub (hL₁ X hX) (hL₂ Y hY)⟩
+  · intro hgen
+    refine ⟨⟨L₁, hL₁, rfl⟩, ⟨L₂, hL₂, rfl⟩, ?_⟩
+    rintro Z hZin
+    obtain ⟨X, hX, hZmem, hZsub⟩ := (V.mem_PDunion).mp hZin
+    obtain ⟨Y, hY, hrel⟩ := hgen X hX
+    exact ⟨Y, (W.mem_PDunion).mpr ⟨Y, hY, hL₂ Y hY, subset_rfl⟩,
+      f.mono hrel hZsub subset_rfl hZmem (hL₂ Y hY)⟩
+
+theorem bExists_decodeList_re {R : ℕ → ℕ → Prop} (hR : REPred₂ R) :
+    REPred₂ (fun d a => ∃ b ∈ decodeList d, R a b) := by
+  have hmem : RecDecidable₂ (fun d b => b ∈ decodeList d) := by
+    have heq : RecDecidable₂ (fun e b => e = b) :=
+      RecDecidable.natEq Nat.Primrec.left Nat.Primrec.right
+    have hbase : RecDecidable₂ (fun d b => ∃ e ∈ decodeList d, e = b) := heq.bExistsList
+    refine RecDecidable.of_iff (fun t => ?_) hbase
+    constructor
+    · intro h; exact ⟨_, h, rfl⟩
+    · rintro ⟨e, he, rfl⟩; exact he
+  have hpart1 : REPred (fun w : ℕ => w.unpair.1 ∈ decodeList w.unpair.2.unpair.1) := by
+    have hg : Nat.Primrec (fun w : ℕ => Nat.pair w.unpair.2.unpair.1 w.unpair.1) :=
+      (Nat.Primrec.left.comp Nat.Primrec.right).pair Nat.Primrec.left
+    refine RecDecidable.re (RecDecidable.of_iff (fun w => ?_) (hmem.comp hg))
+    simp only [unpair_pair_fst, unpair_pair_snd]
+  have hpart2 : REPred (fun w : ℕ => R w.unpair.2.unpair.2 w.unpair.1) := by
+    have hg : Nat.Primrec (fun w : ℕ => Nat.pair w.unpair.2.unpair.2 w.unpair.1) :=
+      (Nat.Primrec.right.comp Nat.Primrec.right).pair Nat.Primrec.left
+    refine REPred.of_iff (fun w => ?_) (REPred.comp hR hg)
+    simp only [unpair_pair_fst, unpair_pair_snd]
+  refine REPred.of_iff (fun s => ?_) (hpart1.and hpart2).proj
+  simp only [unpair_pair_fst, unpair_pair_snd]
+
+theorem PFmap_isComputable_Ypd (P : ComputablePresentation V) (Q : ComputablePresentation W)
+    {f : ApproximableMap V W} (hf : ComputableMap P Q f) :
+    REPred₂ (fun c d => (PFmap f).rel (V.Ypd P c) (W.Ypd Q d)) := by
+  have hR : REPred₂ (fun a b => f.rel (P.X a) (Q.X b)) := hf.out
+  have hInner : REPred₂ (fun d a => ∃ b ∈ decodeList d, f.rel (P.X a) (Q.X b)) :=
+    bExists_decodeList_re hR
+  have hForall := REPred.forall_mem_decodeList₂ hInner
+  have hswap : Nat.Primrec (fun s : ℕ => Nat.pair s.unpair.2 s.unpair.1) :=
+    Nat.Primrec.right.pair Nat.Primrec.left
+  refine REPred.of_iff (fun s => ?_) (hForall.comp hswap)
+  simp only [unpair_pair_fst, unpair_pair_snd]
+  exact PFmap_rel_Ypd_iff P Q f
+
+theorem PFmap_isComputable (P : ComputablePresentation V) (Q : ComputablePresentation W)
+    (consV : ℕ → ℕ) (hconsVp : Nat.Primrec consV)
+    (hconsVs : ∀ a b, consV (Nat.pair a b) = 1 ↔ ∃ k, P.X k ⊆ P.X a ∩ P.X b)
+    (consW : ℕ → ℕ) (hconsWp : Nat.Primrec consW)
+    (hconsWs : ∀ a b, consW (Nat.pair a b) = 1 ↔ ∃ k, Q.X k ⊆ Q.X a ∩ Q.X b)
+    {f : ApproximableMap V W} (hf : ComputableMap P Q f) :
+    ComputableMap (V.PDPresentation P consV hconsVp hconsVs)
+      (W.PDPresentation Q consW hconsWp hconsWs) (PFmap f) := by
+  exact ⟨PFmap_isComputable_Ypd P Q hf⟩
+
+theorem comp_witness (f : ApproximableMap V W) (g : ApproximableMap W U) (C : Set (Set γ)) :
+    ∀ (L : List (Set α)), (∀ X ∈ L, V.mem X) →
+      (∀ X ∈ L, ∃ Z, Z ∈ C ∧ ∃ Y, f.rel X Y ∧ g.rel Y Z) →
+      ∃ M : List (Set β), (∀ Y ∈ M, W.mem Y) ∧
+        (∀ X ∈ L, ∃ Y ∈ M, f.rel X Y) ∧ (∀ Y ∈ M, ∃ Z ∈ C, g.rel Y Z) := by
+  intro L
+  induction L with
+  | nil =>
+    intro _ _
+    refine ⟨[], ?_, ?_, ?_⟩
+    · intro Y hY; cases hY
+    · intro X hX; cases hX
+    · intro Y hY; cases hY
+  | cons X L ih =>
+    intro hL hpre
+    obtain ⟨Zx, hZxC, Yx, hfx, hgx⟩ := hpre X (List.mem_cons.mpr (Or.inl rfl))
+    obtain ⟨M, hMmem, hfM, hgM⟩ :=
+      ih (fun X' hX' => hL X' (List.mem_cons.mpr (Or.inr hX')))
+         (fun X' hX' => hpre X' (List.mem_cons.mpr (Or.inr hX')))
+    refine ⟨Yx :: M, ?_, ?_, ?_⟩
+    · intro Y hY
+      rcases List.mem_cons.mp hY with rfl | hY'
+      · exact f.rel_cod hfx
+      · exact hMmem Y hY'
+    · intro X' hX'
+      rcases List.mem_cons.mp hX' with rfl | hX''
+      · exact ⟨Yx, List.mem_cons.mpr (Or.inl rfl), hfx⟩
+      · obtain ⟨Y, hYM, hrel⟩ := hfM X' hX''
+        exact ⟨Y, List.mem_cons.mpr (Or.inr hYM), hrel⟩
+    · intro Y hY
+      rcases List.mem_cons.mp hY with rfl | hY'
+      · exact ⟨Zx, hZxC, hgx⟩
+      · exact hgM Y hY'
+
+theorem PFmap_comp (g : ApproximableMap W U) (f : ApproximableMap V W) :
+    PFmap (g.comp f) = (PFmap g).comp (PFmap f) := by
+  apply ApproximableMap.ext
+  intro A C
+  simp only [PFmap_rel, comp_rel]
+  constructor
+  · rintro ⟨hA, hC, hbody⟩
+    obtain ⟨L, hL, rfl⟩ := hA
+    have hpre : ∀ X ∈ L, ∃ Z, Z ∈ C ∧ ∃ Y, f.rel X Y ∧ g.rel Y Z := by
+      intro X hX
+      obtain ⟨Z, hZC, Y, hfXY, hgYZ⟩ :=
+        hbody X ((V.mem_PDunion).mpr ⟨X, hX, hL X hX, subset_rfl⟩)
+      exact ⟨Z, hZC, Y, hfXY, hgYZ⟩
+    obtain ⟨M, hMmem, hfL, hgM⟩ := comp_witness f g C L hL hpre
+    refine ⟨⋃ Y ∈ M, W.upSet Y,
+      ⟨⟨L, hL, rfl⟩, ⟨M, hMmem, rfl⟩, ?_⟩, ⟨M, hMmem, rfl⟩, hC, ?_⟩
+    · intro X hX
+      obtain ⟨X', hX', hXmem, hXsub⟩ := (V.mem_PDunion).mp hX
+      obtain ⟨Y, hYM, hrel⟩ := hfL X' hX'
+      exact ⟨Y, (W.mem_PDunion).mpr ⟨Y, hYM, hMmem Y hYM, subset_rfl⟩,
+        f.mono hrel hXsub subset_rfl hXmem (hMmem Y hYM)⟩
+    · intro Y hY
+      obtain ⟨Y', hY', hYmem, hYsub⟩ := (W.mem_PDunion).mp hY
+      obtain ⟨Z, hZC, hrel⟩ := hgM Y' hY'
+      exact ⟨Z, hZC, g.mono hrel hYsub subset_rfl hYmem (g.rel_cod hrel)⟩
+  · rintro ⟨B, ⟨hA, hB, hfAB⟩, _, hC, hgBC⟩
+    refine ⟨hA, hC, ?_⟩
+    intro X hX
+    obtain ⟨Y, hYB, hfXY⟩ := hfAB X hX
+    obtain ⟨Z, hZC, hgYZ⟩ := hgBC Y hYB
+    exact ⟨Z, hZC, Y, hfXY, hgYZ⟩
+
+theorem gather_witnesses (f : ApproximableMap V W) :
+    ∀ (L₁ : List (Set α)) (L₂ : List (Set β)), (∀ X ∈ L₁, ∃ Y ∈ L₂, f.rel X Y) →
+      ∃ M : List (Set α × Set β), (∀ p ∈ M, p.1 ∈ L₁ ∧ p.2 ∈ L₂ ∧ f.rel p.1 p.2) ∧
+        ∀ X ∈ L₁, ∃ Y ∈ L₂, (X, Y) ∈ M := by
+  intro L₁
+  induction L₁ with
+  | nil => intro L₂ _; exact ⟨[], by simp, by simp⟩
+  | cons X L₁ ih =>
+    intro L₂ h
+    obtain ⟨Y, hY, hrel⟩ := h X (List.mem_cons.mpr (Or.inl rfl))
+    obtain ⟨M, hMprop, hMwit⟩ := ih L₂ (fun X' hX' => h X' (List.mem_cons.mpr (Or.inr hX')))
+    refine ⟨(X, Y) :: M, ?_, ?_⟩
+    · rintro p hp
+      rcases List.mem_cons.mp hp with rfl | hp'
+      · exact ⟨List.mem_cons.mpr (Or.inl rfl), hY, hrel⟩
+      · obtain ⟨hX1, hY1, hrel1⟩ := hMprop p hp'
+        exact ⟨List.mem_cons.mpr (Or.inr hX1), hY1, hrel1⟩
+    · intro X' hX'
+      rcases List.mem_cons.mp hX' with rfl | hX''
+      · exact ⟨Y, hY, List.mem_cons.mpr (Or.inl rfl)⟩
+      · obtain ⟨Y', hY', hmem⟩ := hMwit X' hX''
+        exact ⟨Y', hY', List.mem_cons.mpr (Or.inr hmem)⟩
+
+theorem exists_stepFun_forall_PFmap_rel (f : ApproximableMap V W) :
+    ∀ (L : List (Set (Set α) × Set (Set β))),
+      (∀ p ∈ L, V.PDmem p.1 ∧ W.PDmem p.2) → (∀ p ∈ L, (PFmap f).rel p.1 p.2) →
+      ∃ M : List (Set α × Set β), (∀ p ∈ M, V.mem p.1 ∧ W.mem p.2) ∧
+        (∀ p ∈ M, f.rel p.1 p.2) ∧
+        ∀ g : ApproximableMap V W, (∀ p ∈ M, g.rel p.1 p.2) → ∀ p ∈ L, (PFmap g).rel p.1 p.2 := by
+  intro L
+  induction L with
+  | nil => intro _ _; exact ⟨[], by simp, by simp, by simp⟩
+  | cons p L ih =>
+    intro hL hf
+    obtain ⟨hA, hB⟩ := hL p (List.mem_cons.mpr (Or.inl rfl))
+    obtain ⟨L₁, hL₁, hAeq⟩ := hA
+    obtain ⟨L₂, hL₂, hBeq⟩ := hB
+    have hrelAB : (PFmap f).rel p.1 p.2 := hf p (List.mem_cons.mpr (Or.inl rfl))
+    rw [hAeq, hBeq] at hrelAB
+    have hgen := (PFmap_rel_fin f hL₁ hL₂).mp hrelAB
+    obtain ⟨M₀, hM₀prop, hM₀wit⟩ := gather_witnesses f L₁ L₂ hgen
+    obtain ⟨M, hMmem, hMrel, hMgen⟩ :=
+      ih (fun p' hp' => hL p' (List.mem_cons.mpr (Or.inr hp')))
+         (fun p' hp' => hf p' (List.mem_cons.mpr (Or.inr hp')))
+    refine ⟨M₀ ++ M, ?_, ?_, ?_⟩
+    · intro q hq
+      rcases List.mem_append.mp hq with hq' | hq'
+      · obtain ⟨hq1, hq2, _⟩ := hM₀prop q hq'
+        exact ⟨hL₁ q.1 hq1, hL₂ q.2 hq2⟩
+      · exact hMmem q hq'
+    · intro q hq
+      rcases List.mem_append.mp hq with hq' | hq'
+      · exact (hM₀prop q hq').2.2
+      · exact hMrel q hq'
+    · intro g hg p' hp'
+      rcases List.mem_cons.mp hp' with rfl | hp''
+      · rw [hAeq, hBeq]
+        refine (PFmap_rel_fin g hL₁ hL₂).mpr ?_
+        intro X hX
+        obtain ⟨Y, hY, hmem⟩ := hM₀wit X hX
+        exact ⟨Y, hY, hg (X, Y) (List.mem_append.mpr (Or.inl hmem))⟩
+      · exact hMgen g (fun q hq => hg q (List.mem_append.mpr (Or.inr hq))) p' hp''
+
+theorem PFmapComb_toElementMap (f : ApproximableMap V W) :
+    (PFmapComb V W).toElementMap (toFilter f) = toFilter (PFmap f) := by
+  apply Element.ext
+  intro Ψ
+  simp only [mem_toElementMap, mem_toFilter, PFmapComb_rel]
+  constructor
+  · rintro ⟨Φ, ⟨_, hΦf⟩, _, hΨmem, hbody⟩
+    exact ⟨hΨmem, hbody f hΦf⟩
+  · rintro ⟨hΨmem, hfΨ⟩
+    obtain ⟨⟨L₂, hL₂, rfl⟩, -⟩ := hΨmem
+    obtain ⟨M, hMmem, hMrel, hMgen⟩ :=
+      exists_stepFun_forall_PFmap_rel f L₂ hL₂ (mem_stepFun.mp hfΨ)
+    have hΦmem : (funSpace V W).mem (stepFun M) := ⟨⟨M, hMmem, rfl⟩, f, mem_stepFun.mpr hMrel⟩
+    have hΨmem' : (funSpace V.PowerDomain W.PowerDomain).mem (stepFun L₂) :=
+      ⟨⟨L₂, hL₂, rfl⟩, PFmap f, hfΨ⟩
+    exact ⟨stepFun M, ⟨hΦmem, mem_stepFun.mpr hMrel⟩, hΦmem, hΨmem',
+      fun g hg => mem_stepFun.mpr (hMgen g (mem_stepFun.mp hg))⟩
+
+end
+
+
+
+end DomainTheory.NeighbourhoodSystems
+end

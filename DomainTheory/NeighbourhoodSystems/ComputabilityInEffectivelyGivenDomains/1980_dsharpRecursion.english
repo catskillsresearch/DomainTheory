@@ -1,0 +1,131 @@
+Pairing, projection, and the recursion map on the list domain are computable.
+
+<!-- formalization -->
+
+**Definition (`GRel`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`embZero_ne_embPair_of_memS`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gRel_cod`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gRel_dom`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gRel_embPair_inv`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gRel_embZero_inv`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gRel_gamma_inv`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gRel_interRight`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gRel_master`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gRel_mono`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Definition (`gMap`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gMap_rel`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Definition (`gStep`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Definition (`gEval`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gEval_pair`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gMap_in`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gMap_pair`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gMap_strict`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gStep_gamma`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gStep_leaf`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gStep_node`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gEval_out`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`listGet_rtbl_gEval`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`pair_le_pair_right`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`pair_lt_pair_left`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`pair_lt_pair_of_lt_le`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gEval_complete`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`primrec_gStep`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`unpair_snd_snd_fst_le`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`unpair_snd_snd_snd_le`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gEval_sound`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎
+
+**Theorem (`gMap_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the effective presentation of the list domain and the evaluation of the recursion along a finite chain. ∎

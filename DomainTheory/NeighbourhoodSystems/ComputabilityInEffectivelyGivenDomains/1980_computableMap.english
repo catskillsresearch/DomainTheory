@@ -1,0 +1,11 @@
+Computable elements and computable approximable maps on effectively given domains.
+
+<!-- formalization -->
+
+**Definition (`ComputableElement`).** As set out for this part of the library.
+
+*Proof.* By the definition of recursive enumerability of the neighbourhood relation. ∎
+
+**Definition (`ComputableMap`).** As set out for this part of the library.
+
+*Proof.* By the definition of recursive enumerability of the neighbourhood relation. ∎

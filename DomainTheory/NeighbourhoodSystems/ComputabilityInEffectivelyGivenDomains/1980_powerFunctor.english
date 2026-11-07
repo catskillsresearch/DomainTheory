@@ -1,0 +1,67 @@
+The powerdomain construction sends an approximable map to an approximable map, preserving identity and composition, and the result is computable.
+
+<!-- formalization -->
+
+**Definition (`PFmap`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of the direct image and the enumeration of the powerdomain. ∎
+
+**Theorem (`PFmap_rel`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of the direct image and the enumeration of the powerdomain. ∎
+
+**Definition (`PFmapComb`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of the direct image and the enumeration of the powerdomain. ∎
+
+**Theorem (`PFmapComb_rel`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of the direct image and the enumeration of the powerdomain. ∎
+
+**Theorem (`PDmem_mem`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of the direct image and the enumeration of the powerdomain. ∎
+
+**Theorem (`PFmap_idMap`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of the direct image and the enumeration of the powerdomain. ∎
+
+**Theorem (`PFmap_rel_Ypd_iff`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of the direct image and the enumeration of the powerdomain. ∎
+
+**Theorem (`PFmap_rel_fin`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of the direct image and the enumeration of the powerdomain. ∎
+
+**Theorem (`bExists_decodeList_re`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of the direct image and the enumeration of the powerdomain. ∎
+
+**Theorem (`PFmap_isComputable_Ypd`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of the direct image and the enumeration of the powerdomain. ∎
+
+**Theorem (`PFmap_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of the direct image and the enumeration of the powerdomain. ∎
+
+**Theorem (`comp_witness`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of the direct image and the enumeration of the powerdomain. ∎
+
+**Theorem (`PFmap_comp`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of the direct image and the enumeration of the powerdomain. ∎
+
+**Theorem (`gather_witnesses`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of the direct image and the enumeration of the powerdomain. ∎
+
+**Theorem (`exists_stepFun_forall_PFmap_rel`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of the direct image and the enumeration of the powerdomain. ∎
+
+**Theorem (`PFmapComb_toElementMap`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of the direct image and the enumeration of the powerdomain. ∎

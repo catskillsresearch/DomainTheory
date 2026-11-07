@@ -1,0 +1,143 @@
+An effective isomorphism is a computable pair of inverse approximable maps, and an iterate is effectively isomorphic to its iterate.
+
+<!-- formalization -->
+
+**Definition (`EffectiveIso`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Definition (`EffectivelyIsomorphic`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Definition (`fiber2`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`mem_fiber2`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`fiber2_inter`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`fiber2_master`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`fiber2_mono`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`mem_fiber2_of_mem`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Definition (`reindexF`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`fiber2_reindexF`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Definition (`reindexG`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`fiber_reindexG`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`exists_inner_bound`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`pair_lt_pair_of_lt`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`reindexF_mem`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`reindexF_subset_iff`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Definition (`Fmap`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`Fmap_rel`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`reindexG_mem`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`reindexG_subset_iff`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Definition (`Gmap`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`Gmap_rel`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`Fmap_comp_Gmap`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`Gmap_comp_Fmap`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`fiber2_iterEnum_iter`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`Gmap_rel_enum_iff`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`Gmap_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`masterIdx_iterPresentation`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`Fmap_rel_enum_iff`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`Fmap_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Definition (`iterIterEffectiveIso`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Definition (`toDomainIso`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`EffectivelyIsomorphic.isomorphic`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`iterSys_effectivelyIsomorphic_iterIter`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+
+**Theorem (`iterSys_isomorphic_iterIter`).** As set out for this part of the library.
+
+*Proof.* By the reindexing isomorphism and the computability of both directions. ∎

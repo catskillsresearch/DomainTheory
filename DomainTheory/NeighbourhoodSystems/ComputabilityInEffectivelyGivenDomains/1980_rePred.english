@@ -1,0 +1,1135 @@
+Recursively enumerable and recursively decidable predicates on the natural numbers, together with the primitive-recursive coding of lists used to present neighbourhoods.
+
+<!-- formalization -->
+
+**Theorem (`amGM`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`iter_sq_le`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`lt_of_mul_lt_mul_left'`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`lt_iter_succ_sq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`lt_succ_sqrt`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`sqrt_le`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`sqrt_eq_of`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`sqrt_add_eq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`unpair_pair`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`unpair_pair_fst`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`unpair_pair_snd`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`selectFn`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`selectFn_one`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`selectFn_zero`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`selectFn_ite`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`RecDecidable`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`REPred`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`REPred₂`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`RecDecidable₂`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`RecDecidable₃`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`encodeList`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`foldStep`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`foldCode`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`halfParity`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`isOne`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`isOne_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`isOne_one`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`isOne_zero`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`allListStp`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`allListChar`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`bExistsFn`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`bForallFn`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`existsListStp`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`existsListChar`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`isBinDigit`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`allBinDigitsChar`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`isZero`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`le_pair_right`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`listLenStp`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`listLenChar`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`lowOr`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`lorStep`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`mapPairStep`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`mapPairStp`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`mapPairCode`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`mulBit`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`decodeFuelOkCharBody`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`decodeFuelOkChar`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`myLor`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`natEqChar`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`natEqChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`codeBound`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`listEqStpNonzero`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`listEqStp`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`listEqChar`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`listEqStep`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`nthStp`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`nthCode`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`appendListTabFn`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`decodeFuelOkCharLookup`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`dropListTabFn`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`reForallF`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`reForallStp`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`reForallChar`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`sqrt_le_add`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`pair_unpair`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`tabStep`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`tabCode`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`appendListCode`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`dropCode`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`fuelTableStep`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`fuelTable`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`takeListTabFn`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`takeCode`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`unpair_snd_le`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Definition (`decodeList`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_id`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`rec_add`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`rec_mul`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_add`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_mul`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`rec_pred`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_pred`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`rec_sub`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_sub`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`nat_mul_eq_one`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_add₂`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_mul₂`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_sub₂`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_selectFn`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`RecDecidable.of_iff`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`RecDecidable.comp`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`RecDecidable.and`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`RecDecidable.natEq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`RecDecidable.not`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`RecDecidable.em`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`RecDecidable.or`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`RecDecidable.re`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`RecDecidable₂.re`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`REPred.of_iff`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`REPred.comp`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`REPred.and`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`REPred.proj`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`REPred.or`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`le_pair_left`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`encodeList_length_le`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`foldStep_zero`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`foldStep_pos`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`rec_const_iterate`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`foldStep_iterate`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`foldCode_eq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`unpair_left_le`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`pair_le_pair_left`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`pair_le_pair_right'`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`pair_le_pair`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`decodeList_zero`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`decodeList_succ`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`encodeList_decodeList`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`foldCode_eq'`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_foldStepPacked`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_foldCode`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`isOne_le_one`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`isOne_of_ne_one`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_isOne`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`isZero_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`isZero_le_one`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_isZero`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_le`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`bForallFn_le_one`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`bForallFn_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`bExistsFn_le_one`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`bExistsFn_congr`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`bExistsFn_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_bExistsFn`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_bExistsFn_param`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`decodeList_encodeList`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`reForallStp_eq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`reForallChar_eq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`reForallF_foldl_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`reForallChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_reForallStp`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_reForallChar`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`REPred.forall_mem_decodeList`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`lowOr_eq_mod`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`lor_low_rec`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`lorStep_iter_spec`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`myLor_eq_lor`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`allListStp_eq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`allListChar_eq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`allList_foldl_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`allListChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`allListChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_allListStp`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`isBinDigit_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_isBinDigit`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`allBinDigitsChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`allBinDigitsChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_allBinDigitsChar`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`nthStp_val`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`nthCode_foldl`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`nthCode_eq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_nthStp`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_nthCode`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`tabStep_val`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`decodeList_tabCode_aux`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`decodeList_tabCode`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`getD_eq_getElem_cf`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`getD_eq_default_cf`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`getD_map_range_cf`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`tabCode_nth_lt`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`tabCode_nth_ge`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_tabStep`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_tabCode`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_tagCase4`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`mulBit_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`mulBit_le_one`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_mulBit`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`decodeFuelOkCharBody_eq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_decodeFuelOkCharBody`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`decodeFuelOkCharBody_local`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`listLenStp_eq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`listLenChar_eq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_listLenStp`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_listLenChar`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`natEqChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`natEqChar_eq_zero_or_one`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_natEqChar`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`listEqStp_acc`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`decodeList_eq_nil_iff`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`selectFn_eq_one_iff_zero`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`listEqStep_zero`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`listEqStep_succ`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`listEq_foldl_zero`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`listEq_foldl_end_iff`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`listEqChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`listEq_foldl_flag_le_one`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`listEqChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_listEqStpNonzero`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_listEqStp`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_listEqChar`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`list_eq_of_getD`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`getD_take_cf`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`getD_drop_cf`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`isZero_succ_sub_len1`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`isZero_succ_sub_len1_zero`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`appendListTabFn_eq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`takeCode_eq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`dropCode_eq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`encodeList_take_le`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`encodeList_drop_le`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`takeCode_le`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`dropCode_le`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_takeListTabFn`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_min`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_takeCode`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_dropListTabFn`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_dropCode`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`pair_lt_pair_zero_right`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`codeBound_ge`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`RecDecidable₂.swap`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`RecDecidable.bExists`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`RecDecidable.bForall`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`RecDecidable.of_zero_one_char`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`RecDecidable₂.of_paired_zero_one_char`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`RecDecidable₃.of_triple_zero_one_char`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`codeBound_succ`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`codeBound_zero`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`decodeFuelOkChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`decodeList_length_le`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`decodeList_mapPairStep`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`eqZero_bit`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`eq_of_le_one_iff_one`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`existsListStp_eq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`existsListChar_eq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`existsListChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`existsList_foldl_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`existsListChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`fuelTableStep_nth`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`fuelTable_succ_nth`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`fuelTable_zero_nth`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`fuelTable_eq_of_recursion`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`decodeFuelOkChar_fuelTable_eq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`geTwo_bit`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`getD_append_cf`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`getD_append_right_cf`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`appendListCode_eq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`halfParity_spec`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`mapPairStp_eq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`decodeList_foldl_mapPairStp`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`decodeList_mapPairCode`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_allListChar`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`RecDecidable₂.bForallList`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_appendListTabFn`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_appendListCode`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_bForallFn_param`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_codeBound`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_decodeFuelOkChar`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_decodeFuelOkCharLookup`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_existsListStp`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_existsListChar`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`RecDecidable₂.bExistsList`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_fuelTable`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_decodeFuelOkChar2`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_halfParity`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_div2`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_ite`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_mapPairStp`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_mapPairCode`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`REPred.forall_mem_decodeList₂`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_max`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_max_one`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_mod2`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_lowOr`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_lorStep`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_myLor`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`recDecidable_of_forall`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`rePred_of_forall`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`recDecidable₂_of_forall`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`recPow_eq`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_pow`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_pow₂`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`primrec_two_pow`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+
+**Theorem (`selectFn_isOne_one_sub_sigma`).** As set out for this part of the library.
+
+*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎

@@ -1,0 +1,59 @@
+A computable element is the decreasing union of the principal elements named by a primitive-recursive sequence of indices.
+
+<!-- formalization -->
+
+**Definition (`tFun`).** As set out for this part of the library.
+
+*Proof.* By enumerating the neighbourhoods that contain the element and thinning them to a decreasing chain. ∎
+
+**Theorem (`repred_exists_primrec_range`).** As set out for this part of the library.
+
+*Proof.* By enumerating the neighbourhoods that contain the element and thinning them to a decreasing chain. ∎
+
+**Theorem (`tFun_zero`).** As set out for this part of the library.
+
+*Proof.* By enumerating the neighbourhoods that contain the element and thinning them to a decreasing chain. ∎
+
+**Theorem (`tFun_succ`).** As set out for this part of the library.
+
+*Proof.* By enumerating the neighbourhoods that contain the element and thinning them to a decreasing chain. ∎
+
+**Theorem (`primrec_tFun`).** As set out for this part of the library.
+
+*Proof.* By enumerating the neighbourhoods that contain the element and thinning them to a decreasing chain. ∎
+
+**Theorem (`computableElement_eq_decreasing_iUnion_principal`).** As set out for this part of the library.
+
+*Proof.* By enumerating the neighbourhoods that contain the element and thinning them to a decreasing chain. ∎
+
+**Theorem (`repred_range_primrec`).** As set out for this part of the library.
+
+*Proof.* By enumerating the neighbourhoods that contain the element and thinning them to a decreasing chain. ∎
+
+**Theorem (`repred₂_exists_primrec_enum`).** As set out for this part of the library.
+
+*Proof.* By enumerating the neighbourhoods that contain the element and thinning them to a decreasing chain. ∎
+
+**Theorem (`PDmem_upSet_inter`).** As set out for this part of the library.
+
+*Proof.* By enumerating the neighbourhoods that contain the element and thinning them to a decreasing chain. ∎
+
+**Theorem (`upSetUnion_cons`).** As set out for this part of the library.
+
+*Proof.* By enumerating the neighbourhoods that contain the element and thinning them to a decreasing chain. ∎
+
+**Theorem (`upSetUnion_nil`).** As set out for this part of the library.
+
+*Proof.* By enumerating the neighbourhoods that contain the element and thinning them to a decreasing chain. ∎
+
+**Theorem (`PDmem_upSet_inter_biUnion`).** As set out for this part of the library.
+
+*Proof.* By enumerating the neighbourhoods that contain the element and thinning them to a decreasing chain. ∎
+
+**Theorem (`PDmem_biUnion_inter`).** As set out for this part of the library.
+
+*Proof.* By enumerating the neighbourhoods that contain the element and thinning them to a decreasing chain. ∎
+
+**Theorem (`PDmem_inter`).** As set out for this part of the library.
+
+*Proof.* By enumerating the neighbourhoods that contain the element and thinning them to a decreasing chain. ∎

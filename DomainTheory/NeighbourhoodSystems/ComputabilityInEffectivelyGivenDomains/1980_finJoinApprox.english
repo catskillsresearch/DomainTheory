@@ -1,0 +1,87 @@
+The singleton and binary join maps into the powerdomain are approximable, and the binary join is computable.
+
+<!-- formalization -->
+
+**Theorem (`PDsingleton_mono`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Definition (`PDsingletonApproxMap`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Theorem (`PDsingletonApproxMap_rel`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Definition (`PDsingletonMeet`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Theorem (`PDsingletonMeet_mem`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Definition (`PDfinJoinApproxMap₂`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Definition (`finJoinMap_prod`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Theorem (`finJoinMap_prod_rel`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Theorem (`PDext`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Theorem (`PDfinJoinApproxMap₂_rel_iff`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Theorem (`PDfinJoin_pair`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Theorem (`PDfinJoin_inter_two`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Theorem (`PDfinJoinApproxMap₂_rel_PD`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Theorem (`PDsingletonApproxMap_rel_Ypd_iff`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Theorem (`PDsingletonApproxMap_toElementMap`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Theorem (`PDfinJoinApproxMap₂_toElementMap`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Theorem (`PDsingleton_principal`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Theorem (`ext_of_principal`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Theorem (`finJoinMap_prod_toElementMap`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Theorem (`singleton_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎
+
+**Theorem (`PDfinJoinApproxMap₂_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the relation of the join map to the two singleton maps and the computable presentation of the powerdomain. ∎

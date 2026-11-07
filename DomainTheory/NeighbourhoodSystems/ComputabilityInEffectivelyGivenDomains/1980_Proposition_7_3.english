@@ -1,0 +1,13 @@
+**PROPOSITION 7.3.** The identity map on an effectively given domain is computable; the composition of computable mappings on effectively given domains is again computable. $\square$
+
+The proofs for 7.3 are so trivial they are hardly worth an exercise. Note the immediate and useful consequence: if $f : D \to E$ is computable and $x \in |D|$ is computable, then $f(x) \in |E|$ is also computable. The next result is, however, worth working out even though it is quite easy.
+
+<!-- page 120 -->
+
+The development is with the [computable maps form a category](1980_computableCategory.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`proposition_73`).** Application of a computable map to a computable element is computable; composition of computable maps is computable; the identity map of an effectively given domain is computable; and each principal neighbourhood of a presentation is a computable element.
+
+*Proof.* The four facts of the computable-category peer. ∎

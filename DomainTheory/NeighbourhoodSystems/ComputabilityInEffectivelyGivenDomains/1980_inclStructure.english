@@ -1,0 +1,115 @@
+An inclusion structure on the integers determines a neighbourhood system, and every computable presentation reconstructs its system.
+
+<!-- formalization -->
+
+**Definition (`InclStructure`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Definition (`CONS`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Definition (`MEET`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Definition (`toNbhd`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Theorem (`mem_toNbhd`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Theorem (`toNbhd_inter_eq_iff`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Theorem (`toNbhd_subset_iff`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Theorem (`toNbhd_subset_inter_iff`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Theorem (`toNbhd_top`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Definition (`toSystem`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Theorem (`toSystem_mem`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Theorem (`meet_iff_interEq`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Definition (`ofPresentation`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Theorem (`ofPresentation_INCL`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Theorem (`mem_ofPresentation_toNbhd`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Theorem (`ofPresentation_toNbhd_eq_iff`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Definition (`reconstruct`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Definition (`reconElem`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Definition (`reconElemInv`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Definition (`reconIso`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Definition (`toPresentation`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Theorem (`axiom_i`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Theorem (`axiom_ii`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Theorem (`axiom_iii`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Theorem (`axiom_iv`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Theorem (`ofPresentation_toPresentation_INCL`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Theorem (`reconstruct_isomorphic`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+
+**Theorem (`toSystem_isEffectivelyGiven`).** As set out for this part of the library.
+
+*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎

@@ -1,0 +1,75 @@
+The iterate of an effectively given neighbourhood system is effectively given.
+
+<!-- formalization -->
+
+**Definition (`iterIdx`).** As set out for this part of the library.
+
+*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+
+**Definition (`iterEnum`).** As set out for this part of the library.
+
+*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+
+**Theorem (`fiber_iterEnum`).** As set out for this part of the library.
+
+*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+
+**Theorem (`exists_list_fiber`).** As set out for this part of the library.
+
+*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+
+**Definition (`interG`).** As set out for this part of the library.
+
+*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+
+**Theorem (`iterIdx_ge`).** As set out for this part of the library.
+
+*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+
+**Theorem (`iterEnum_inter_eq_iff`).** As set out for this part of the library.
+
+*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+
+**Theorem (`iterEnum_mem`).** As set out for this part of the library.
+
+*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+
+**Definition (`iterInter`).** As set out for this part of the library.
+
+*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+
+**Theorem (`iterInter_idx_ge`).** As set out for this part of the library.
+
+*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+
+**Theorem (`iterInter_idx_lt`).** As set out for this part of the library.
+
+*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+
+**Theorem (`iterEnum_cons_iff`).** As set out for this part of the library.
+
+*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+
+**Theorem (`primrec_iterIdx_proj`).** As set out for this part of the library.
+
+*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+
+**Theorem (`primrec_interG`).** As set out for this part of the library.
+
+*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+
+**Definition (`iterPresentation`).** As set out for this part of the library.
+
+*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+
+**Theorem (`iterPresentation_X`).** As set out for this part of the library.
+
+*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+
+**Theorem (`iterSys_isEffectivelyGiven`).** As set out for this part of the library.
+
+*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+
+**Theorem (`projN_isComputable`).** As set out for this part of the library.
+
+*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎

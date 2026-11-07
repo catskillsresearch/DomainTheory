@@ -1,0 +1,111 @@
+The coalesced sum of effectively given neighbourhood systems is effectively given, and its injections and projections are computable.
+
+<!-- formalization -->
+
+**Definition (`osum`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Theorem (`osum_master`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Definition (`osumEnum`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Theorem (`osumEnum_left`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Theorem (`osumEnum_master`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Theorem (`osumEnum_right`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Theorem (`osumEnum_mem`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Theorem (`osumEnum_nonempty`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Theorem (`osumEnum_subset_master`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Definition (`osumOutMap₀`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Definition (`osumOutMap₁`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Definition (`osumPresentation`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Theorem (`osumPresentation_X`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Theorem (`osum_eq_master_of_inj₀master`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Definition (`osumInMap₀`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Theorem (`osum_eq_master_of_inj₁master`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Definition (`osumInMap₁`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Theorem (`osum_mem_subset_inj₀`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Theorem (`osum_mem_subset_inj₁`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Definition (`osumMap`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Theorem (`osumInMap₀_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Theorem (`osumInMap₁_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Theorem (`osumMap_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Theorem (`osumOutMap₀_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Theorem (`osumOutMap₁_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Theorem (`osum_isEffectivelyGivenS`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+
+**Theorem (`osum_mem_iff`).** As set out for this part of the library.
+
+*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎

@@ -1,0 +1,47 @@
+A Scott presentation records intersection equality and consistency as recursively decidable relations.
+
+<!-- formalization -->
+
+**Definition (`ScottPresentation`).** As set out for this part of the library.
+
+*Proof.* By the presentation of intersection equality and the consistency condition. ∎
+
+**Definition (`ComputableMapS`).** As set out for this part of the library.
+
+*Proof.* By the presentation of intersection equality and the consistency condition. ∎
+
+**Definition (`NeighborhoodSystem.IsEffectivelyGivenS`).** As set out for this part of the library.
+
+*Proof.* By the presentation of intersection equality and the consistency condition. ∎
+
+**Definition (`inclShuffle`).** As set out for this part of the library.
+
+*Proof.* By the presentation of intersection equality and the consistency condition. ∎
+
+**Theorem (`primrec_inclShuffle`).** As set out for this part of the library.
+
+*Proof.* By the presentation of intersection equality and the consistency condition. ∎
+
+**Theorem (`incl_computable`).** As set out for this part of the library.
+
+*Proof.* By the presentation of intersection equality and the consistency condition. ∎
+
+**Definition (`swapPair`).** As set out for this part of the library.
+
+*Proof.* By the presentation of intersection equality and the consistency condition. ∎
+
+**Theorem (`primrec_swapPair`).** As set out for this part of the library.
+
+*Proof.* By the presentation of intersection equality and the consistency condition. ∎
+
+**Theorem (`eq_computable`).** As set out for this part of the library.
+
+*Proof.* By the presentation of intersection equality and the consistency condition. ∎
+
+**Definition (`ComputablePresentation.toScott`).** As set out for this part of the library.
+
+*Proof.* By the presentation of intersection equality and the consistency condition. ∎
+
+**Theorem (`NeighborhoodSystem.IsEffectivelyGiven.toS`).** As set out for this part of the library.
+
+*Proof.* By the presentation of intersection equality and the consistency condition. ∎

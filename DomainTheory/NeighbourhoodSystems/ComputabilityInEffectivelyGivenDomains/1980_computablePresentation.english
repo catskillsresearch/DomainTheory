@@ -1,0 +1,47 @@
+A computable presentation of a neighbourhood system: an enumeration of the neighbourhoods for which intersection and consistency are recursively decidable.
+
+<!-- formalization -->
+
+**Definition (`ComputablePresentation`).** As set out for this part of the library.
+
+*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
+
+**Definition (`NeighborhoodSystem.IsEffectivelyGiven`).** As set out for this part of the library.
+
+*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
+
+**Definition (`inclShuffle`).** As set out for this part of the library.
+
+*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
+
+**Definition (`reindexInvolutive`).** As set out for this part of the library.
+
+*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
+
+**Definition (`swapPair`).** As set out for this part of the library.
+
+*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
+
+**Definition (`unitPresentation`).** As set out for this part of the library.
+
+*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
+
+**Theorem (`primrec_inclShuffle`).** As set out for this part of the library.
+
+*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
+
+**Theorem (`primrec_swapPair`).** As set out for this part of the library.
+
+*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
+
+**Theorem (`incl_computable`).** As set out for this part of the library.
+
+*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
+
+**Theorem (`eq_computable`).** As set out for this part of the library.
+
+*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
+
+**Theorem (`unitSys_isEffectivelyGiven`).** As set out for this part of the library.
+
+*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎

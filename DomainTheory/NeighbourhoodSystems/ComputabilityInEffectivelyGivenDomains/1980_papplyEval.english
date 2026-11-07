@@ -1,0 +1,35 @@
+Evaluation distributes over the powerdomain of a function space.
+
+<!-- formalization -->
+
+**Definition (`papplyEval`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of pointwise application and the enumeration of finite sets of indices. ∎
+
+**Theorem (`papplyEval_rel`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of pointwise application and the enumeration of finite sets of indices. ∎
+
+**Definition (`papplyB`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of pointwise application and the enumeration of finite sets of indices. ∎
+
+**Definition (`papply`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of pointwise application and the enumeration of finite sets of indices. ∎
+
+**Theorem (`papplyEval_rel_Ypd_iff`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of pointwise application and the enumeration of finite sets of indices. ∎
+
+**Theorem (`papplyEval_step_witness`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of pointwise application and the enumeration of finite sets of indices. ∎
+
+**Theorem (`re_forallG_forallX_existsY`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of pointwise application and the enumeration of finite sets of indices. ∎
+
+**Theorem (`papplyEval_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the neighbourhood relation of pointwise application and the enumeration of finite sets of indices. ∎

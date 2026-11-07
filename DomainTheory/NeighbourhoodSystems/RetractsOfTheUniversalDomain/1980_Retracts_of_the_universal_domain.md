@@ -1,6 +1,6 @@
 # Retracts of the universal domain
 
-@import "1980_Retracts_of_the_universal_domain.mermaid"
+@import "1980_Retracts_of_the_universal_domain.svg" {code_block=false}
 
 - [Introduction](1980_Introduction.md)
 - [Definition 8.1 — retraction](1980_Definition_8_1.md)

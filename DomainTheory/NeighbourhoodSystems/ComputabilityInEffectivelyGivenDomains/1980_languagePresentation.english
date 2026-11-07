@@ -1,0 +1,343 @@
+Formal languages, coded by expressions, form a partially effectively given neighbourhood system.
+
+<!-- formalization -->
+
+**Definition (`boolNat`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`boolNat_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`boolNat_zero_one`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`encodeListBool`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`SExpr.encode`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`natBool`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`decodeListBool`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`decodeFuel`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`SExpr.decode`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`SsysX`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`SsysX_mem`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`decodeFuel_pair_cap_isSome_iff`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`decodeFuel_pair_cat_isSome_iff`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`decodeFuel_succ_cap`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`decodeFuel_succ_cat`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`decodeFuel_succ_junk`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`decodeFuel_succ_not_sigma`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`decodeFuel_succ_sigma`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`decodeFuel_succ_single`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`decodeListBool_encodeListBool`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`natBinDigit_of_natBool_some`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`natBool_isSome_iff`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`mapM_natBool_isSome_iff`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`decodeListBool_isSome_iff`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`decodeFuelOkChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`safeDecodeActive`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`SsysX_eq_denote_safe`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`safeDecodeActive_nonempty`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`consistentB_safe_sigma`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`consistentB_sigma_safe`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`sexprDepth`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`decodeFuel_encode`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`SExpr.index`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`SExpr.decode_index`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`SsysX_surj`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`ssysActive`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`safeDecodeActive_inactive`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`ssysConsistentB`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`ssysConsistentB_iff`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`ssys_cons_positivity`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`ssys_inter_nonempty_iff_consistent`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`ssys_cons_iff`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`ssys_cons_char_iff`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`decidableSsysCons`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`example_722_presentation_inst47`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`PartiallyEffectivelyGiven`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`c9b5_encodeListBool_eq`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`c9b5_sexprDepth_eq`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`c9b5_sexprGodelEncode_eq`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`decodeFuel_depth_le`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`natBool_eq_some_iff`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`mapM_natBool_eq_some`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`decodeListBool_eq_some`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`decodeFuel_sound`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`ssysActiveChar`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`primrec_ssysActiveChar`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`ssysActiveChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`ssysActiveChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`ssysActive_exists_decode`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`ssysCanonicalCode`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`ssysConsChar`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`ssysConsChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`ssysConsChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`ssysConsChar_zero_one`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`ssysConsistentBChar`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`primrec_ssysConsistentBChar`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`ssysConsistentBChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`ssysConsistentBChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`ssysConsChar_eq_ssysConsistentBChar`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`primrec_ssysConsChar`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`ssysInterEqChar`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`ssys_cons_char_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`Ssys_cons_computable_of_primrec_ssysConsChar`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`Ssys_cons_computable`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Definition (`SsysPres`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`c9b5_boolNat_eq`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`ssysCanonicalCode_eq`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`sexprDepth_safeDecodeActive_le`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`ssys_interEq_iff`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`ssysInterEqChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`ssysInterEqChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`primrec_ssysInterEqChar`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`Ssys_interEq_computable`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`Ssys_partially_effectively_given`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+
+**Theorem (`example_722_presentation`).** As set out for this part of the library.
+
+*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎

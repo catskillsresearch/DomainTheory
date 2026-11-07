@@ -1,0 +1,39 @@
+The powerset of the naturals is a neighbourhood system whose neighbourhoods are the cofinite complements of finite sets of bits.
+
+<!-- formalization -->
+
+**Definition (`nbhd`).** As set out for this part of the library.
+
+*Proof.* By the bitwise presentation of intersection and the master neighbourhood. ∎
+
+**Theorem (`mem_nbhd`).** As set out for this part of the library.
+
+*Proof.* By the bitwise presentation of intersection and the master neighbourhood. ∎
+
+**Theorem (`nbhd_injective`).** As set out for this part of the library.
+
+*Proof.* By the bitwise presentation of intersection and the master neighbourhood. ∎
+
+**Theorem (`nbhd_inter`).** As set out for this part of the library.
+
+*Proof.* By the bitwise presentation of intersection and the master neighbourhood. ∎
+
+**Theorem (`nbhd_zero`).** As set out for this part of the library.
+
+*Proof.* By the bitwise presentation of intersection and the master neighbourhood. ∎
+
+**Definition (`PN`).** As set out for this part of the library.
+
+*Proof.* By the bitwise presentation of intersection and the master neighbourhood. ∎
+
+**Definition (`PNpres`).** As set out for this part of the library.
+
+*Proof.* By the bitwise presentation of intersection and the master neighbourhood. ∎
+
+**Theorem (`PN_consistent`).** As set out for this part of the library.
+
+*Proof.* By the bitwise presentation of intersection and the master neighbourhood. ∎
+
+**Theorem (`PN_isEffectivelyGiven`).** As set out for this part of the library.
+
+*Proof.* By the bitwise presentation of intersection and the master neighbourhood. ∎

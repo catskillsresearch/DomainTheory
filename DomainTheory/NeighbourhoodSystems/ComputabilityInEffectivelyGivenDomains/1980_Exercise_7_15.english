@@ -1,0 +1,9 @@
+**EXERCISE 7.15.** Finish the proof of 7.4 and establish similar results for the constructs $(D_0 \otimes D_1)$, $(D_0 \oplus D_1)$ and $D^\infty$. Take into account the various appropriate combinators.
+
+The development is with the [Scott presentation](1980_scottPresentation.md), [effective smash](1980_smashEffective.md), [coalesced sum](1980_coalescedSum.md), and [effective iterate](1980_iterEffective.md) peers.
+
+<!-- formalization -->
+
+**Theorem (`example_715`).** The iterate, the coalesced sum, and the smash product of effectively given neighbourhood systems are effectively given.
+
+*Proof.* By the effective iterate, the coalesced sum, and the effective smash. ∎

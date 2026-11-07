@@ -1,0 +1,391 @@
+Gödel coding and primitive-recursive decision procedures for the regular-language expressions of Exercise 7.22.
+
+<!-- formalization -->
+
+**Theorem (`consistentB_iff_Ssys`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`example_722_decide`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`denote_eq_empty_iff`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`nfa_accepts_nonempty_iff`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`nfa_accepts_nonempty_iff_short`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`pathStateAt_last`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`acceptFin`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`startFin`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`stepFinSingle`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`stepFin`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`diffNFA`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`evalFin`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`subsetB`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`interEqB`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`coe_acceptFin`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`coe_startFin`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`coe_stepFinSingle`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`coe_stepFin`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`coe_foldl_stepFin`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`coe_evalFin`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`denote_iff_evalFin`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`diffNFA_evalFrom`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`diffNFA_eval`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`diffNFA_mem_accepts_iff`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`exists_diff_word_short`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`subsetB_iff`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`interEqB_iff`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`example_722_equiv`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`autStateCardFuelCharBody`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`autStateCardFuelChar`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`c9b5_boolNat`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`c9b5_encodeListBool`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`c9b5_sexprDepth`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`c9b5_sexprGodelEncode`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`capCode`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`autStateCardFuelCharLookup`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`subsetBoundChar`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`subsetGuardChar`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`matchesBCatG`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`matchesBCatGLookup`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`matchesBCharBody`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`matchesBChar`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`decideNonemptyBChar`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`consistentBChar`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`matchesBCharBodyLookup`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`subsetBChar`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`interEqChar`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`c9b6_decodeListBool`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`c9b5_decodeList_encodeListBool`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`c9b5_boolNat_injective`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`c9b5_decodeList_injective`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`c9b5_map_boolNat_eq_iff`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`c9b5_takeCode_encodeListBool`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`c9b5_dropCode_encodeListBool`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`c9b5_listEqChar_encodeListBool`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`autStateCardFuelCharBody_eq`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`autStateCardFuelChar_eq_autStateCard`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`primrec_autStateCardFuelCharBody`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`autStateCardFuelCharBody_local`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`matchesBCharBody_eq`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`c9b5_matchesBCatG_char`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`matchesBChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`primrec_matchesBCatG`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`primrec_matchesBCharBody`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`matchesBChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`matchesBCharBody_local`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`c9b6_allBinDigitsChar_encodeListBool`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`c9b6_encodeListBool_lt_codeBound`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`c9b6_boolNat_decide_eq`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`c9b6_encodeListBool_decodeListBool_of_allBin`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`c9b6_matchesBChar_of_allBin`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`decideNonemptyBChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`c9b6_sexprGodelEncode_cap`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`subsetGuardChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`subsetBChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`consistentBChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`decideNonemptyBChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`consistentBChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`autStateCardFuelChar_fuelTable_eq`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`interEqChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`matchesBChar_fuelTable_eq`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`primrec_autStateCardFuelChar`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`primrec_autStateCardFuelCharLookup`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`primrec_autStateCardFuelChar2`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`primrec_matchesBCatGLookup`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`primrec_matchesBChar`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`primrec_decideNonemptyBChar`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`primrec_consistentBChar`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`primrec_matchesBCharBodyLookup`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`primrec_matchesBChar2`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`primrec_decideNonemptyBChar2`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`primrec_consistentBChar2`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`primrec_subsetBChar`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`primrec_interEqChar`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`subsetBChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Theorem (`interEqChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+
+**Definition (`ConsistencyPresentation`).** As set out for this part of the library.
+
+*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎

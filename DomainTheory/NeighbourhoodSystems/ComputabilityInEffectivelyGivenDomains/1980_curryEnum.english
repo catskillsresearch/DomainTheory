@@ -1,0 +1,19 @@
+Currying is a computable map of function spaces, and its neighbourhood relation is decidable.
+
+<!-- formalization -->
+
+**Theorem (`curryComb_rel_recDecidable`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of the two function spaces and the reduction of curry to the product presentation. ∎
+
+**Theorem (`curryComb_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of the two function spaces and the reduction of curry to the product presentation. ∎
+
+**Theorem (`toApproxMap_principal_mem`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of the two function spaces and the reduction of curry to the product presentation. ∎
+
+**Theorem (`curryComb_rel`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of the two function spaces and the reduction of curry to the product presentation. ∎

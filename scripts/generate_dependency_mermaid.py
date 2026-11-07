@@ -60,6 +60,18 @@ NS_EQUATIONS_SVG = (
     / "DomainEquations"
     / "1980_Introduction_to_domain_equations.svg"
 )
+NS_COMP_SVG = (
+    DT
+    / "NeighbourhoodSystems"
+    / "ComputabilityInEffectivelyGivenDomains"
+    / "1980_Computability_in_effectively_given_domains.svg"
+)
+NS_RET_SVG = (
+    DT
+    / "NeighbourhoodSystems"
+    / "RetractsOfTheUniversalDomain"
+    / "1980_Retracts_of_the_universal_domain.svg"
+)
 
 DEPRECATED_MERMAID = DT / "1972_Continuous_lattices.mermaid"
 CL1972_SECTION_MERMAIDS = frozenset(
@@ -2346,6 +2358,350 @@ NS_EQ_SHORT: dict[str, tuple[str, str]] = {
     ),
 }
 
+# Lecture VII hub: outline notes; exercises are separate boxes.
+NS_COMP_SHORT: dict[str, tuple[str, str]] = {
+    "Recursive predicates": (
+        "reP",
+        "Recursive predicates",
+    ),
+    "Computable presentation": (
+        "cPres",
+        "Computable presentation",
+    ),
+    "Definition 7.1 — computable presentation": (
+        "D71",
+        "Definition 7.1 — computable presentation",
+    ),
+    "Computable map": (
+        "cMap",
+        "Computable map",
+    ),
+    "Definition 7.2 — computable mapping": (
+        "D72",
+        "Definition 7.2 — computable mapping",
+    ),
+    "Computable maps form a category": (
+        "cCat",
+        "Computable maps form a category",
+    ),
+    "Proposition 7.3 — computable maps form a category": (
+        "P73",
+        "Proposition 7.3 — computable maps form a category",
+    ),
+    "Effective sum": (
+        "sEff",
+        "Effective sum",
+    ),
+    "Effective product": (
+        "pEff",
+        "Effective product",
+    ),
+    "Theorem 7.4 — sum and product effective": (
+        "T74",
+        "Theorem 7.4 — sum and product effective",
+    ),
+    "Function-space presentation": (
+        "fPres",
+        "Function-space presentation",
+    ),
+    "Theorem 7.5 — function space effective": (
+        "T75",
+        "Theorem 7.5 — function space effective",
+    ),
+    "Computable fixpoint": (
+        "fComp",
+        "Computable fixpoint",
+    ),
+    "Theorem 7.6 — fix is computable": (
+        "T76",
+        "Theorem 7.6 — fix is computable",
+    ),
+    "Effectively given lists": (
+        "dShp",
+        "Effectively given lists",
+    ),
+    "List combinators": (
+        "dSh2",
+        "List combinators",
+    ),
+    "Proposition 7.7 — lists effectively given": (
+        "P77",
+        "Proposition 7.7 — lists effectively given",
+    ),
+    "Powerset neighbourhoods": (
+        "pNbh",
+        "Powerset neighbourhoods",
+    ),
+    "Example 7.8 — powerset effectively given": (
+        "E78",
+        "Example 7.8 — powerset effectively given",
+    ),
+    "Power domain": (
+        "pDom",
+        "Power domain",
+    ),
+    "Definition 7.9 — power domain": (
+        "D79",
+        "Definition 7.9 — power domain",
+    ),
+    "Effective powerdomain": (
+        "pEffD",
+        "Effective powerdomain",
+    ),
+    "Proposition 7.10 — power domain effective": (
+        "P710",
+        "Proposition 7.10 — power domain effective",
+    ),
+    "Finite powerdomain elements": (
+        "fPow",
+        "Finite powerdomain elements",
+    ),
+    "Definition 7.11 — finite sets of elements": (
+        "D711",
+        "Definition 7.11 — finite sets of elements",
+    ),
+    "Finite-join approximation": (
+        "fJoin",
+        "Finite-join approximation",
+    ),
+    "V-shape counterexample": (
+        "vShp",
+        "V-shape counterexample",
+    ),
+    "Proposition 7.12 — finite sets are approximable": (
+        "P712",
+        "Proposition 7.12 — finite sets are approximable",
+    ),
+    "Inclusion structures": (
+        "incl",
+        "Inclusion structures",
+    ),
+    "Exercise 7.13 — axiomatic neighbourhood structure": (
+        "X713",
+        "Exercise 7.13 — axiomatic neighbourhood structure",
+    ),
+    "Computable witnesses": (
+        "cWit",
+        "Computable witnesses",
+    ),
+    "Exercise 7.14 — primitive recursive witnesses": (
+        "X714",
+        "Exercise 7.14 — primitive recursive witnesses",
+    ),
+    "Scott presentation": (
+        "sPres",
+        "Scott presentation",
+    ),
+    "Effective smash": (
+        "smEff",
+        "Effective smash",
+    ),
+    "Coalesced sum": (
+        "cSum",
+        "Coalesced sum",
+    ),
+    "Effective iterate": (
+        "iter",
+        "Effective iterate",
+    ),
+    "Exercise 7.15 — further constructs effective": (
+        "X715",
+        "Exercise 7.15 — further constructs effective",
+    ),
+    "Curry enumeration": (
+        "cEnum",
+        "Curry enumeration",
+    ),
+    "Exercise 7.16 — curry as an enumeration": (
+        "X716",
+        "Exercise 7.16 — curry as an enumeration",
+    ),
+    "List recursion": (
+        "dRec",
+        "List recursion",
+    ),
+    "Exercise 7.17 — recursion over lists": (
+        "X717",
+        "Exercise 7.17 — recursion over lists",
+    ),
+    "Effective isomorphism": (
+        "eIso",
+        "Effective isomorphism",
+    ),
+    "Exercise 7.18 — effective isomorphism": (
+        "X718",
+        "Exercise 7.18 — effective isomorphism",
+    ),
+    "Powerdomain functor": (
+        "pFun",
+        "Powerdomain functor",
+    ),
+    "Exercise 7.19 — power domain functor": (
+        "X719",
+        "Exercise 7.19 — power domain functor",
+    ),
+    "Powerdomain union": (
+        "pUn",
+        "Powerdomain union",
+    ),
+    "Exercise 7.20 — union on power domains": (
+        "X720",
+        "Exercise 7.20 — union on power domains",
+    ),
+    "Pointwise application": (
+        "pApp",
+        "Pointwise application",
+    ),
+    "Exercise 7.21 — distributing the power domain": (
+        "X721",
+        "Exercise 7.21 — distributing the power domain",
+    ),
+    "Regular languages": (
+        "rLang",
+        "Regular languages",
+    ),
+    "Regular-language codes": (
+        "rCode",
+        "Regular-language codes",
+    ),
+    "Language presentation": (
+        "lPres",
+        "Language presentation",
+    ),
+    "Exercise 7.22 — domain of formal languages": (
+        "X722",
+        "Exercise 7.22 — domain of formal languages",
+    ),
+    "Graph map": (
+        "gFun",
+        "Graph map",
+    ),
+    "Exercise 7.23 — graph and fun computable": (
+        "X723",
+        "Exercise 7.23 — graph and fun computable",
+    ),
+    "LUCID histories": (
+        "lucid",
+        "LUCID histories",
+    ),
+    "Exercise 7.24 — LUCID history domain": (
+        "X724",
+        "Exercise 7.24 — LUCID history domain",
+    ),
+}
+
+# Lecture VIII hub: outline notes; exercises are separate boxes.
+NS_RET_SHORT: dict[str, tuple[str, str]] = {
+    "Definition 8.1 — retraction": (
+        "D81",
+        "Definition 8.1 — retraction",
+    ),
+    "Proposition 8.2 — retractions from subdomains": (
+        "P82",
+        "Proposition 8.2 — retractions from subdomains",
+    ),
+    "Definition 8.3 — projections": (
+        "D83",
+        "Definition 8.3 — projections",
+    ),
+    "Examples 8.4 — check, fade, and smash": (
+        "E84",
+        "Examples 8.4 — check, fade, and smash",
+    ),
+    "Theorem 8.5 — finitary projection test": (
+        "T85",
+        "Theorem 8.5 — finitary projection test",
+    ),
+    "Theorem 8.6 — sub combinator": (
+        "T86",
+        "Theorem 8.6 — sub combinator",
+    ),
+    "Definition 8.7 — interval presentation of U": (
+        "D87",
+        "Definition 8.7 — interval presentation of U",
+    ),
+    "Theorem 8.8 — universality of U": (
+        "T88",
+        "Theorem 8.8 — universality of U",
+    ),
+    "Definition 8.9 — constructs on projections": (
+        "D89",
+        "Definition 8.9 — constructs on projections",
+    ),
+    "Proposition 8.10 — constructs preserve projections": (
+        "P810",
+        "Proposition 8.10 — constructs preserve projections",
+    ),
+    "Exercise 8.11 — retraction on intervals": (
+        "X811",
+        "Exercise 8.11 — retraction on intervals",
+    ),
+    "Exercise 8.12 — integer presentation of U": (
+        "X812",
+        "Exercise 8.12 — integer presentation of U",
+    ),
+    "Exercise 8.13 — Boolean-algebra filters": (
+        "X813",
+        "Exercise 8.13 — Boolean-algebra filters",
+    ),
+    "Exercise 8.14 — closure operators": (
+        "X814",
+        "Exercise 8.14 — closure operators",
+    ),
+    "Exercise 8.15 — domain of subsystems": (
+        "X815",
+        "Exercise 8.15 — domain of subsystems",
+    ),
+    "Exercise 8.16 — order of projections": (
+        "X816",
+        "Exercise 8.16 — order of projections",
+    ),
+    "Exercise 8.17 — explicit embeddings into U": (
+        "X817",
+        "Exercise 8.17 — explicit embeddings into U",
+    ),
+    "Exercise 8.18 — missing proofs of 8.10": (
+        "X818",
+        "Exercise 8.18 — missing proofs of 8.10",
+    ),
+    "Exercise 8.19 — closure under sum and product": (
+        "X819",
+        "Exercise 8.19 — closure under sum and product",
+    ),
+    "Exercise 8.20 — self-embeddings of a domain": (
+        "X820",
+        "Exercise 8.20 — self-embeddings of a domain",
+    ),
+    "Exercise 8.21 — lists of a projection": (
+        "X821",
+        "Exercise 8.21 — lists of a projection",
+    ),
+    "Exercise 8.22 — comparing B and C": (
+        "X822",
+        "Exercise 8.22 — comparing B and C",
+    ),
+    "Exercise 8.23 — initial algebra inside U": (
+        "X823",
+        "Exercise 8.23 — initial algebra inside U",
+    ),
+    "Exercise 8.24 — coupled domain equations": (
+        "X824",
+        "Exercise 8.24 — coupled domain equations",
+    ),
+    "Exercise 8.25 — reflexive function space": (
+        "X825",
+        "Exercise 8.25 — reflexive function space",
+    ),
+    "Exercise 8.26 — untyped calculus in U": (
+        "X826",
+        "Exercise 8.26 — untyped calculus in U",
+    ),
+    "Exercise 8.27 — infinite cartesian products": (
+        "X827",
+        "Exercise 8.27 — infinite cartesian products",
+    ),
+}
+
 
 def _ns_dom_kind_class(nid: str) -> str:
     if nid.startswith("D"):
@@ -2693,6 +3049,48 @@ def gen_ns_equations_lecture(diagram: Path, modules: dict[str, Path], old: str) 
     )
 
 
+def gen_ns_computability_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    """Item-level Lean deps for 1980_Computability_in_effectively_given_domains (SVG gold copy)."""
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=NS_COMP_SHORT,
+        companions={},
+        header=[
+            "%% Each box is one outline note from 1980_Computability_in_effectively_given_domains.md.",
+            "%% Lean modules = that note's @import .lean files.",
+            "%% Arrowhead on the importer; label = direct-import count.",
+            "%% All cross-note Lean imports, then transitive reduction (keeps reachability).",
+            "%% Display copy: Graphviz SVG (gold); no sibling .mermaid.",
+            "%% Layout: TB — top-down reading order.",
+        ],
+        aggregate_lecture_exercises=False,
+        rankdir="TB",
+    )
+
+
+def gen_ns_retracts_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    """Item-level Lean deps for 1980_Retracts_of_the_universal_domain (SVG gold copy)."""
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=NS_RET_SHORT,
+        companions={},
+        header=[
+            "%% Each box is one outline note from 1980_Retracts_of_the_universal_domain.md.",
+            "%% Lean modules = that note's @import .lean files.",
+            "%% Arrowhead on the importer; label = direct-import count.",
+            "%% All cross-note Lean imports, then transitive reduction (keeps reachability).",
+            "%% Display copy: Graphviz SVG (gold); no sibling .mermaid.",
+            "%% Layout: TB — top-down reading order.",
+        ],
+        aggregate_lecture_exercises=False,
+        rankdir="TB",
+    )
+
+
 def cl1972_outline_box_modules(child: Path, title: str) -> set[str]:
     if re.match(r"(?i)introduction\s*$", title.strip()):
         return set()
@@ -2924,6 +3322,16 @@ def classify(mermaid: Path, text: str) -> str:
         "1980_Introduction_to_domain_equations.svg",
     ):
         return "ns_equations_lecture"
+    if mermaid.name in (
+        "1980_Computability_in_effectively_given_domains.mermaid",
+        "1980_Computability_in_effectively_given_domains.svg",
+    ):
+        return "ns_computability_lecture"
+    if mermaid.name in (
+        "1980_Retracts_of_the_universal_domain.mermaid",
+        "1980_Retracts_of_the_universal_domain.svg",
+    ):
+        return "ns_retracts_lecture"
     if index_md_is_outline_barrel(mermaid):
         return "note_outline"
     if mermaid.name == "1972_ContinuousLattices.mermaid":
@@ -3041,6 +3449,10 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
         return gen_ns_lambda_lecture(mermaid, modules, old)
     if kind == "ns_equations_lecture":
         return gen_ns_equations_lecture(mermaid, modules, old)
+    if kind == "ns_computability_lecture":
+        return gen_ns_computability_lecture(mermaid, modules, old)
+    if kind == "ns_retracts_lecture":
+        return gen_ns_retracts_lecture(mermaid, modules, old)
     if kind == "ns_items":
         return gen_neighborhood_items(mermaid, modules, old)
     if kind == "note_outline":
@@ -3394,6 +3806,8 @@ def main() -> None:
             NS_FIXPOINTS_SVG,
             NS_LAMBDA_SVG,
             NS_EQUATIONS_SVG,
+            NS_COMP_SVG,
+            NS_RET_SVG,
         ):
             if svg.is_file():
                 paths.append(svg.resolve())

@@ -1,0 +1,47 @@
+The powerdomain of a neighbourhood system consists of the neighbourhoods that are finite unions of upper sets.
+
+<!-- formalization -->
+
+**Definition (`PDmem`).** As set out for this part of the library.
+
+*Proof.* By the upper-set presentation of the powerdomain and the dagger embedding. ∎
+
+**Definition (`dagger`).** As set out for this part of the library.
+
+*Proof.* By the upper-set presentation of the powerdomain and the dagger embedding. ∎
+
+**Theorem (`PDmem_union`).** As set out for this part of the library.
+
+*Proof.* By the upper-set presentation of the powerdomain and the dagger embedding. ∎
+
+**Theorem (`dagger_isomorphic`).** As set out for this part of the library.
+
+*Proof.* By the upper-set presentation of the powerdomain and the dagger embedding. ∎
+
+**Theorem (`dagger_upSet_inter`).** As set out for this part of the library.
+
+*Proof.* By the upper-set presentation of the powerdomain and the dagger embedding. ∎
+
+**Theorem (`mem_PDunion`).** As set out for this part of the library.
+
+*Proof.* By the upper-set presentation of the powerdomain and the dagger embedding. ∎
+
+**Theorem (`PDmem_empty`).** As set out for this part of the library.
+
+*Proof.* By the upper-set presentation of the powerdomain and the dagger embedding. ∎
+
+**Theorem (`PDmem_iff_fin`).** As set out for this part of the library.
+
+*Proof.* By the upper-set presentation of the powerdomain and the dagger embedding. ∎
+
+**Theorem (`PDmem_upSet`).** As set out for this part of the library.
+
+*Proof.* By the upper-set presentation of the powerdomain and the dagger embedding. ∎
+
+**Theorem (`PDmem_master`).** As set out for this part of the library.
+
+*Proof.* By the upper-set presentation of the powerdomain and the dagger embedding. ∎
+
+**Theorem (`upSet_inter_nonempty_iff`).** As set out for this part of the library.
+
+*Proof.* By the upper-set presentation of the powerdomain and the dagger embedding. ∎

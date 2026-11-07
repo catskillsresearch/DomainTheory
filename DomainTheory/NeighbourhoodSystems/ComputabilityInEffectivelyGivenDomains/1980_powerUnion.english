@@ -1,0 +1,27 @@
+Union of neighbourhoods is a computable map on the powerdomain.
+
+<!-- formalization -->
+
+**Definition (`unionMap`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions and the presentation of the powerdomain. ∎
+
+**Theorem (`unionMap_rel`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions and the presentation of the powerdomain. ∎
+
+**Theorem (`unionMap_rel_Ypd_iff`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions and the presentation of the powerdomain. ∎
+
+**Theorem (`ypd_zero_subset_inter`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions and the presentation of the powerdomain. ∎
+
+**Theorem (`unionMap_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions and the presentation of the powerdomain. ∎
+
+**Theorem (`unionMap_rel_fin`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions and the presentation of the powerdomain. ∎

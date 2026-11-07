@@ -1,0 +1,43 @@
+Pairing and the projections on the list domain are computable.
+
+<!-- formalization -->
+
+**Definition (`proj1Map`).** As set out for this part of the library.
+
+*Proof.* By reducing the combinators to the decidable inclusion of enumerated list neighbourhoods. ∎
+
+**Theorem (`proj1Map_rel`).** As set out for this part of the library.
+
+*Proof.* By reducing the combinators to the decidable inclusion of enumerated list neighbourhoods. ∎
+
+**Definition (`pairSharpMap`).** As set out for this part of the library.
+
+*Proof.* By reducing the combinators to the decidable inclusion of enumerated list neighbourhoods. ∎
+
+**Theorem (`pairSharpMap_rel`).** As set out for this part of the library.
+
+*Proof.* By reducing the combinators to the decidable inclusion of enumerated list neighbourhoods. ∎
+
+**Theorem (`pairSharpMap_toElementMap`).** As set out for this part of the library.
+
+*Proof.* By reducing the combinators to the decidable inclusion of enumerated list neighbourhoods. ∎
+
+**Theorem (`pairSharp_rel_Vsharp_iff`).** As set out for this part of the library.
+
+*Proof.* By reducing the combinators to the decidable inclusion of enumerated list neighbourhoods. ∎
+
+**Theorem (`pairSharp_isComputable`).** As set out for this part of the library.
+
+*Proof.* By reducing the combinators to the decidable inclusion of enumerated list neighbourhoods. ∎
+
+**Theorem (`proj1_rel_Vsharp_iff`).** As set out for this part of the library.
+
+*Proof.* By reducing the combinators to the decidable inclusion of enumerated list neighbourhoods. ∎
+
+**Theorem (`proj1_isComputable`).** As set out for this part of the library.
+
+*Proof.* By reducing the combinators to the decidable inclusion of enumerated list neighbourhoods. ∎
+
+**Theorem (`proj1_toElementMap_pairSharp`).** As set out for this part of the library.
+
+*Proof.* By reducing the combinators to the decidable inclusion of enumerated list neighbourhoods. ∎

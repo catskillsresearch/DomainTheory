@@ -1,0 +1,579 @@
+Expressions, automata, and the neighbourhood system of formal languages.
+
+<!-- formalization -->
+
+**Definition (`concat`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`InS`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`mem_concat`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`Ssys_master_mem`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`Ssys_master_nonempty`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`Ssys_sub_master`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`concat_mono`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`concat_nonempty`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`InS.nonempty`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`Ssys_inter_mem`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`Ssys`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`Ssys_mem`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`mulElem`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`mem_mulElem`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`emb`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`mem_emb`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`prependMap`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`repeatWord`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`repeatWord_zero`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`powerLang`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`mem_powerLang`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`streamArrow`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`streamElemMem`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`streamElem`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`append_mem_concat`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`concat_assoc`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`mulElem_assoc`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`repeatWord_add`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`repeatWord_eq_empty`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`InS_powerLang_empty`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`mem_streamElem`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`streamElem_powers_of_mul`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`streamElem_mul_self_mem`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`streamElem_idempotent`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`Ssys_isPositive`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`Ssys_master`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`concat_singleton`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`emb_injective`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`emb_mul`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`mulElem_bot_le`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`mulElem_mono_right`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`powerLang_concat`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`prependMap_toElementMap`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`repeatWord_succ`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`streamArrow_eq`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`prependMap_iterElem_mul_streamArrow_le`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`streamArrow_le_mul_self`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`streamArrow_mul_self_le`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`streamArrow_mul_self`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`streamArrow_containsZero_pow_four`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`streamArrow_mul_self_append_true`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`streamArrow_mul_self_self`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`SExpr`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`sexprOfNatFuel`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`sexprOfNat`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`sexprToNat`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`snd_lt_pair_of_pos_fst`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`sexprOfNatFuel_sexprToNat`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (``).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`denote`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`denote_sigma`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`denote_single`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`denote_cat`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`denote_cap`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`matchesB`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`mem_concat_iff_split`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`matchesB_iff`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`decidableMemDenote`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (``).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`emptyExpr`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`denote_emptyExpr`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`containsZero`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`InS_denote_of_nonempty`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`InS_exists_denote`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`denote_catSigmaSigma`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`empty_iff_equiv_emptyExpr`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`inS_eq_range_denote`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`inS_iff_exists_denote`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`interEq_iff`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`mem_denote_sigma`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`sigma_ne_containsZero`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`example_722_regular`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`catEps`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`catEps_step_inl_some`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`catEps_step_inl_none`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`catEps_step_inr_some`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`catEps_step_inr_none`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`catEps_start`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`catEps_accept`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`catEps_mem_εClosure_iff`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`catEps_mem_eval_iff`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`catEps_accepts`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`example_722_cat`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`sigmaDFA`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`sigmaDFA_accepts`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`SingleState`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`singleDFA`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`complDFA_accepts`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`inter_eval`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`interDFA_accepts`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`example_722_dfa`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`sigmaDFA_accepts_denote`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`singleDFA_evalFrom_none`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`singleDFA_evalFrom`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`singleDFA_accepts`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`singleDFA_accepts_denote`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`wordsUpTo`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`anyMatchesB`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`mem_wordsUpTo`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`example_722_words`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`pathStateAtAux`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`pathStateAt`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`PathSplit`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`NFAinter`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`NFAinter_mem_eval_iff`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`NFAinter_mem_accepts_iff`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`autState`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`dfaToNFA_eval`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`dfaToNFA_accepts`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`instFintypeAutState`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`instDecidableEqAutState`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`autStateCard`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`pathStateAt_zero`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`accepts_card_zero`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`autStateCard_eq_card`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`decideNonemptyB`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`decideEmptyB`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`mem_accepts_of_path`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`pathAppend`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`pathStateAt_succ`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`pathAppend_take_drop`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`accepts_skip_loop`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`accepts_shorten_step`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`exists_accepted_word_short`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`toNFA`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`toNFA_accepts`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`denote_nonempty_iff_short`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`decideNonemptyB_iff`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`decideEmptyB_iff`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`decidableEmptyDenote`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Definition (`consistentB`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`consistentB_iff`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`capNonempty_iff_consistent`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎
+
+**Theorem (`autStateCard_le_card`).** As set out for this part of the library.
+
+*Proof.* By the denotation of expressions and the constructions on automata. ∎

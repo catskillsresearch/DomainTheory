@@ -1,0 +1,95 @@
+The smash product is enumerated by pairing neighbourhoods, collapsing a factor that is the master, and its combinators are computable.
+
+<!-- formalization -->
+
+**Definition (`smashEnum`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Theorem (`smashEnum_master`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Theorem (`smashEnum_proper`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Theorem (`smashEnum_eq_eff`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Theorem (`smashEnum_eq_prodNbhd_mem`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Theorem (`smashEnum_mem`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Theorem (`smashEnum_subset_master`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Theorem (`proper₀_dec`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Theorem (`proper₁_dec`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Definition (`smashPresentation`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Theorem (`smashPresentation_X`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Definition (`smashProj₀`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Theorem (`smashProj₀_rel`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Definition (`smashProj₁`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Theorem (`smashProj₁_rel`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Definition (`smashPaired`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Theorem (`smashPaired_rel`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Definition (`smashMap`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Theorem (`smashMap_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Theorem (`smashPaired_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Theorem (`smashProj₀_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Theorem (`smashProj₁_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+
+**Theorem (`smash_isEffectivelyGivenS`).** As set out for this part of the library.
+
+*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎

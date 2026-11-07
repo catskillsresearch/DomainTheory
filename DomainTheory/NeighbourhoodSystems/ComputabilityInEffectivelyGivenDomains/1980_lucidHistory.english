@@ -1,0 +1,807 @@
+The domain of histories is effectively given, and the lifted connectives are computable.
+
+<!-- formalization -->
+
+**Definition (`Gamma`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`star`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`streamCons`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`streamCons_zero`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`streamCons_succ`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`cons`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`consSet`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`cons_injective`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`mem_consSet`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`consSet_empty`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`consSet_inter`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`consSet_inter_ne`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`consSet_nonempty`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`consSet_subset_of_subset`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`consSet_subset`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`nbhd`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`nbhd_nil`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`nbhd_cons`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`Lmem`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`mem_nbhd`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`L_nestedOrDisjoint`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`L`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`Lenum`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Lenum_mem`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Lenum_surj`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Lenum_zero`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`isPrefixChar`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`LenumConsChar`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`LenumConsCharP`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`LenumInter`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`LenumInterEqChar`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`LenumInterEqCharP`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`isPrefixChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`isPrefixChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`isPrefixChar_eq_zero_or_one`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`LenumConsChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`LenumConsChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`LenumConsCharP_le_one`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`mulBit_eq_zero_or_one`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`LenumInterEqChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`LenumInterEqChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`LenumInterEqCharP_le_one`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`nbhd_nonempty`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`primrec_isPrefixChar`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`primrec_LenumInterEqChar`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`primrec_LenumInterEqCharP`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`primrec_isPrefixChar_swap`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`primrec_LenumConsChar`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`primrec_LenumConsCharP`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`primrec_LenumInter`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`star_ne_cons`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`star_not_mem_consSet`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`nbhd_subset_iff`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Lenum_subset_iff`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Lenum_cons_iff`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`LenumInter_spec`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Lenum_cons_charP_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Lenum_cons_computable`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`nbhd_injective`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Lenum_interEq_iff`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Lenum_interEq_charP_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Lenum_interEq_computable`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`Lpres`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`LFunData`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (``).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`cons_inl`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`cons_inr`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`L_mem`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`L_master`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`LenumSubsetChar`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`finPrefix`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`finPrefix_zero`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`HasMin`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`bitToNat`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`bitToNat_false`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`bitToNat_true`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`embStr`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`embStr_nil`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`Tenum`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Tenum_zero`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Tenum_one`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Tenum_two`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Tenum_eq_canon`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Tenum_mem`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Tenum_ne_empty`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Tenum_surj`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`TeqChar`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`TinterCode`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`andCode`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`andFn`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`andFn_zero`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`eq_master_of_master_subset`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`exists_cons_prefix_of_prefix_of_length_lt`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`exists_extend_of_not_hasMin`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`buildData`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`finPrefix_length`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`finPrefix_succ`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`finPrefix_prefix_succ`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`finPrefix_prefix_of_le`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`finPrefix_take`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`master_ne_one_T`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`master_ne_zero_T`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`andFn_master`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`nbhd_finPrefix_antitone`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`notCode`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`notFn`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`notFn_master`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`notFn_zero`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`LFunData.ofPresentation`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`one_inter_zero_T`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`postcompose`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`LFunData.pres`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`primrec_TeqChar`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`primrec_TinterCode`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`principal_hasMin`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`pwArg`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`pwFst`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`pwSnd`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`pointwiseBin`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`streamElement`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`finPrefix_eq_of_streamElement_eq`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`streamElement_injective`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`streamElement_not_hasMin`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`subset_iff_eq_or_eq_master`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`toElement`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`toElement_injective`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`toStream`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`buildData_succ`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`buildData_eq_finPrefix`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`mem_nbhd_finPrefix_toStream`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`exists_finPrefix_subset_of_mem`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`toElement_surjective`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`toElement_bijective`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`gammaEquivElement`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`zero_inter_one_T`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Tenum_inter_eq`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Tenum_inter_eq_TinterCode'`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Tenum_inter_eq_TinterCode`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Tpres_cons_iff`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Tpres_cons_computable`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`zero_ne_one_T`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Tenum_injOn`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Tenum_interEq_iff`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Tenum_interEq_iff'`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Tpres_interEq_computable`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`Tpres`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`LTdata`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`LTpres`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`andFn_one`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`andFn_mem`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`andMap2`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`andT`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`notFn_one`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`notFn_mem`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`notT`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`bitToNat_injective`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`embStr_cons`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`embStr_prefix_iff`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`cone_subset_cone_iff_nbhd_embStr`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`sigmaBot_le_iff_toElement_inl_embStr`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`primrec_notCode`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`notFn_Tenum`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`notT_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`primrec_andCode`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`andFn_Tenum`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`andT_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`postcompose_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`pointwiseBin_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`notT_lifted_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`andT_lifted_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`deMorganT_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Gamma_cases`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`L_isEffectivelyGiven`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`LenumSubsetChar_le_one`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Lenum_subset_char_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`T_isEffectivelyGiven`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`TeqChar_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`embStr_injective`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`primrec_LenumSubsetChar`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Lenum_subset_recDecidable`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`codePair`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`chainDec`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`fixPStep`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`fixStp`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`fixChainChar`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`gLastOf`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Definition (`gStepsOK`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`Xenum_codePair`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`fixPStep_foldl_fst`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`fixPStep_foldl_snd`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`fixStp_eq`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`fixChainChar_eq`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`fixChainChar_spec`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`gStepsOK_complete`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`gStepsOK_sound`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`fixElement_mem_iff_chain`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`fixMap_rel_iff`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`leastMap_Xenum_rel`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`chainDec_iff_gStepsOK`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`primrec_fixStp`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+
+**Theorem (`primrec_fixChainChar`).** As set out for this part of the library.
+
+*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎

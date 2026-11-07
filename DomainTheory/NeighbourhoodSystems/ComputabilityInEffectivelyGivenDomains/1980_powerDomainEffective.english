@@ -1,0 +1,167 @@
+The powerdomain of an effectively given neighbourhood system is effectively given.
+
+<!-- formalization -->
+
+**Definition (`PowerDomain`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`PowerDomain_mem`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`PowerDomain_master`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Definition (`UPX`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`UPX_def`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Definition (`Ypd`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`Ypd_def`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Definition (`innerInterStp`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Definition (`innerInterCode`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`innerInterStp_eq`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`innerInterCode_eq`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`mem_UPX`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`UPX_cons`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`UPX_nil`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`Ypd_cons_code`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`Ypd_zero`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`PDmem_exists_Ypd_aux`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`PDmem_exists_Ypd`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`mem_Ypd`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`Ypd_isPDmem`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Definition (`outerInterStp`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Definition (`interCode`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`outerInterStp_eq`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`interCode_eq`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`primrec_innerInterStp`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`primrec_outerInterStp`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`primrec_interCode`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`subCode_computable`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`upSet_inter_eq_empty_of_not_cons`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`Ypd_innerstep`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`Ypd_innerfoldl`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`Ypd_innerInterCode`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`Ypd_outerfoldl`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`Ypd_interCode`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`upSet_subset_Ypd_iff`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`Ypd_subset_iff`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`Ypd_eq_iff`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`eqCode_computable`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`Ypd_interEq_computable`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Definition (`PDPresentation`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎
+
+**Theorem (`NeighborhoodSystem.PowerDomain_isEffectivelyGiven`).** As set out for this part of the library.
+
+*Proof.* By the code of finite unions of enumerated neighbourhoods and the primitive-recursive intersection. ∎

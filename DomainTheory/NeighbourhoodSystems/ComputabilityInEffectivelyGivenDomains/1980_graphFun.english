@@ -1,0 +1,519 @@
+The graph of a computable endomap of the powerset is a computable element of the function space.
+
+<!-- formalization -->
+
+**Definition (`capMap`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`halfIter`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`halfIter_zero`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`bitAt`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`cupMap`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`sumSet`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`compl_inter_nbhd`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`compl_subset_compl_of_subset`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`elemSet`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`mem_elemSet`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`bitsCode`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`bitsList`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`bitsStep`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`gMap`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`funMap`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`nextCellStep`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`orUpTo`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`plusIdx`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`plusStep`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`sumSet_mono`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`plusMap`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`tagStep`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`tagCode`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`tagOfBits`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`GraphIdx`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`GraphIdx_mono`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`graphMap`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`unnumPair`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`unnum1`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`unnum2`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`untagRef`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`untagStep`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`untagState`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`untagList`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Definition (`untagVal`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`lt_of_testBit_true`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`halfIter_succ`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`primrec_halfIter`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`primrec_bitAt`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`bitAt_le_one`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`bitAt_eq_one_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`compl_nbhd`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`exists_combined_witness`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`mem_bitsList`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`nbhd_mem_iff_subset_elemSet`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`elemSet_re_of_isComputableElement`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`mem_decodeList_bitsCode`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`primrec_bitsStep`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`bitsStep_unpair11`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`bitsStep_unpair21`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`bitsStep_unpair22`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`bitsStep_iter_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`primrec_bitsCode`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`isComputableElement_of_elemSet_re`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`isComputableElement_iff_elemSet_re`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`unnum_snd_lt_of_fst_succ`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`bitAt_swap_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`capMap_rel_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`capMap_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`cupMap_rel_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`cupMap_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`decodeList_injective`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`forall_rel_iff_subset_step`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`gMap_rel_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`graphMap_rel_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`mem_bitsCodeList`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`mem_compl_nbhd`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`compl_nbhd_subset_Fun_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`compl_nbhd_subset_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`mem_sumSet`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`nbhd_subset_iff_compl_subset_compl`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`nbhd_subset_iff_myLor_eq`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`nextCellStep_eq`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`plusStep_unpair11`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`plusStep_unpair12`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`plusStep_unpair21`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`plusStep_unpair22`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`plusStep_iter_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`primrec_nextCellStep`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`primrec_plusStep`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`primrec_plusIdx`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`primrec_tri`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`primrec_num`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`primrec_tagStep`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`primrec_tagCode`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`primrec_tagOfBits`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`primrec_unnumPair`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`primrec_unnum1`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`primrec_unnum2`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`primrec_untagStep`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`primrec_untagState`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`primrec_untagList`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`primrec_untagVal`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`tag_eq_foldr`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`tag_eq_foldl_reverse`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`tagCode_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`tagOfBits_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`testBit_orUpTo`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`testBit_orUpTo_self`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`plusIdx_testBit`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`compl_nbhd_plusIdx`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`plusMap_rel_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`plusMap_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`unnumPair_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`unnum1_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`unnum2_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`untagList_bitAt_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`untagRef_succ_case`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`untagRef_zero_case`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`tag_untagRef`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`untagStep_cont`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`untagStep_done`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`untagStep_halt`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`untagStep_of_done_iterate`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`untagStep_iter_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`untagState_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`decodeList_untagList`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`untagVal_and_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`untagVal_spec`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`tag_untagList_untagVal`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`mem_Fun_compl_nbhd_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`mem_Fun_compl_nbhd_iff'`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`mem_Fun_compl_nbhd_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`mem_GraphIdx_iff`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`graphIdx_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`graphMap_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`testBit_imp_mem_Fun_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`gMap_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+
+**Theorem (`funMap_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎

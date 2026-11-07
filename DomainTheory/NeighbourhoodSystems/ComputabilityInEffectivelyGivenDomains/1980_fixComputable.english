@@ -1,0 +1,7 @@
+The fixpoint combinator on an effectively given domain is a computable map.
+
+<!-- formalization -->
+
+**Theorem (`fixMap_isComputable`).** As set out for this part of the library.
+
+*Proof.* By the chain characterization of the fixpoint relation and the enumerability of finite chains. ∎

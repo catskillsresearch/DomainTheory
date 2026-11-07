@@ -1,0 +1,63 @@
+The V-shaped neighbourhood system does not embed into its powerdomain.
+
+<!-- formalization -->
+
+**Definition (`HasTop`).** As set out for this part of the library.
+
+*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+
+**Theorem (`ft_inter`).** As set out for this part of the library.
+
+*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+
+**Definition (`improperTop`).** As set out for this part of the library.
+
+*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+
+**Theorem (`tf_inter`).** As set out for this part of the library.
+
+*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+
+**Definition (`Vshape`).** As set out for this part of the library.
+
+*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+
+**Theorem (`Vshape_mem_false`).** As set out for this part of the library.
+
+*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+
+**Theorem (`Vshape_mem_true`).** As set out for this part of the library.
+
+*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+
+**Theorem (`Vshape_not_mem_empty`).** As set out for this part of the library.
+
+*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+
+**Theorem (`Vshape_not_hasTop`).** As set out for this part of the library.
+
+*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+
+**Theorem (`hasTop_of_inter_closed`).** As set out for this part of the library.
+
+*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+
+**Theorem (`hasTop_of_iso`).** As set out for this part of the library.
+
+*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+
+**Theorem (`powerDomain_hasTop`).** As set out for this part of the library.
+
+*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+
+**Theorem (`subsystem_inter_closed`).** As set out for this part of the library.
+
+*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+
+**Theorem (`hasTop_of_trianglelefteq_powerDomain`).** As set out for this part of the library.
+
+*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+
+**Theorem (`vshape_not_trianglelefteq_powerDomain`).** As set out for this part of the library.
+
+*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
