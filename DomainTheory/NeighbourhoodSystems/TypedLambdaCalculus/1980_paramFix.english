@@ -1,0 +1,35 @@
+Parametric least fixed points and the recursion operator on the function space.
+
+<!-- formalization -->
+
+**Definition (`ApproximableMap.pfix`).** The parametric least-fixed-point map composes the fix combinator with the curry of a binary endomap.
+
+*Proof.* By definition. ∎
+
+**Definition (`ApproximableMap.recOp`).** The recursion operator curries the composite of a binary endomap with the pairing of the second projection and evaluation.
+
+*Proof.* By definition. ∎
+
+**Definition (`ApproximableMap.section₂`).** The section of a binary endomap at a first-argument value is the recovered map after currying.
+
+*Proof.* By definition. ∎
+
+**Theorem (`ApproximableMap.pfix_apply`).** The parametric least-fixed-point map evaluates to the least fixed-point element of the corresponding section.
+
+*Proof.* Unfold the definitions and apply the composition and fix-combinator evaluation laws. ∎
+
+**Theorem (`ApproximableMap.recOp_apply`).** The recursion operator evaluates by pairing an argument with the recovered function’s value at that argument.
+
+*Proof.* Unfold curry and apply the composition, pairing, projection, and evaluation laws. ∎
+
+**Theorem (`ApproximableMap.section₂_apply`).** A section evaluates by pairing the fixed first argument with the free second argument into the original map.
+
+*Proof.* Unfold the definition and apply the curry evaluation law. ∎
+
+**Theorem (`ApproximableMap.pfix_isFixed`).** The parametric least fixed point is fixed by the original map when paired with the section parameter.
+
+*Proof.* Rewrite via the sectional evaluation laws and apply the fixed-point law for least fixed-point elements. ∎
+
+**Theorem (`ApproximableMap.pfix_eq_fixElement_recOp`).** The parametric least-fixed-point map equals the map recovered from the least fixed-point element of the recursion operator.
+
+*Proof.* Show the recursion-operator fix yields a postfixed point for each section, hence lies above the parametric fix; conversely, the filter of the parametric fix is a postfixed point of the recursion operator, so the recursion-operator fix lies below it after transport through the function-space equivalence. ∎

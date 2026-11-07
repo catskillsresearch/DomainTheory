@@ -1942,6 +1942,10 @@ NS_LAM_SHORT: dict[str, tuple[str, str]] = {
         "Proposition 5.3 — simultaneous fixed points",
     ),
 
+    "Parametric fixed point": (
+        "paramFix",
+        "Parametric fixed point",
+    ),
     "Proposition 5.4 — fixed point under a parameter": (
         "P54",
         "Proposition 5.4 — fixed point under a parameter",
@@ -1950,6 +1954,7 @@ NS_LAM_SHORT: dict[str, tuple[str, str]] = {
         "Tbl55",
         "Table 5.5 — table of combinators",
     ),
+
     "Theorem 5.6 — partial recursive functions": (
         "T56",
         "Theorem 5.6 — partial recursive functions",
