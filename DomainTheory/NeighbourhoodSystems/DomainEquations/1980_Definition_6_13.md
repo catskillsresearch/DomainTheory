@@ -17,3 +17,5 @@ is approximable. $\square$
 
 We can now state an existence theorem that covers in fairly wide generality the examples of this lecture.
 
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-07) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

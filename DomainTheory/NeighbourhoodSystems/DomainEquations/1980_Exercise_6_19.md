@@ -17,3 +17,5 @@ Are these correct up to isomorphism? Now generate all constructs $T(X)$ formed b
 @import "sumProdTok.lean" {code_block=false}
 
 @import "Exercise_6_19.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-07) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

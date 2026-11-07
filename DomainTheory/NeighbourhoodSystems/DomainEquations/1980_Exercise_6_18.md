@@ -13,3 +13,5 @@ $$
 
 (I do not know whether all solutions must be of the form $\mathcal{D}^\infty \times E$.)
 
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-07) — <a href="../1980_REVISION.md">1980 revision progress</a></p>
