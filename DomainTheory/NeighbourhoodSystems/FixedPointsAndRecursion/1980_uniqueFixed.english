@@ -1,0 +1,7 @@
+Under Eilenberg’s hypotheses on approximating maps below the identity, an approximable endomap has exactly one fixed point, namely its least fixed point.
+
+<!-- formalization -->
+
+**Theorem (`f_unique_fixedPoint`).** If approximable maps $a_n$ rise from bottom to the identity and commute with $f$ on the stated scheme, there is a unique element $x$ with $f(x) = x$.
+
+*Proof.* Show every fixed $x$ lies below and above the least fixed point of $f$ by induction on stages using the LUB hypothesis and the commutation law. ∎

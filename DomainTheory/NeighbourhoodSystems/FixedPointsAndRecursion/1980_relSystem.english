@@ -1,0 +1,79 @@
+The neighbourhood system of neighbourhoods of a fixed element, with embedding, restriction, the induced endomap, and the inclusion into the ambient domain.
+
+<!-- formalization -->
+
+**Definition (`ApproximableMap.relSystem`).** The relative neighbourhood system of an element has the same master as the ambient system and neighbourhoods precisely those belonging to that element.
+
+*Proof.* By definition. ∎
+
+**Theorem (`ApproximableMap.relSystem_mem`).** Membership in the relative system is membership in the element.
+
+*Proof.* By definition. ∎
+
+**Theorem (`ApproximableMap.relSystem_master`).** The relative master is the ambient master.
+
+*Proof.* By definition. ∎
+
+**Definition (`ApproximableMap.embed`).** Embedding a relative element into the ambient domain records ambient neighbourhoods that contain a relative neighbourhood of the element.
+
+*Proof.* Intersection and upward closure unpack the ambient and relative element laws. ∎
+
+**Theorem (`ApproximableMap.embed_le`).** An embedded relative element lies below the seed element.
+
+*Proof.* Upward-close a witnessing neighbourhood of the seed. ∎
+
+**Theorem (`ApproximableMap.embed_mono`).** Embedding is monotone.
+
+*Proof.* Apply the relative inequality to the witnessing neighbourhood. ∎
+
+**Theorem (`ApproximableMap.le_of_embed_le`).** An inequality of embeddings recovers an inequality of relative elements.
+
+*Proof.* Test membership by embedding a principal witness and unpacking. ∎
+
+**Definition (`ApproximableMap.relMap`).** An endomap that fixes a seed induces an endomap of the relative system by relating only neighbourhoods of that seed.
+
+*Proof.* Codomain membership uses the fixed-point hypothesis; the remaining approximability laws unpack those of the ambient map. ∎
+
+**Definition (`ApproximableMap.restrict`).** Restricting an ambient element below the seed yields a relative element with the same neighbourhoods.
+
+*Proof.* By definition. ∎
+
+**Theorem (`ApproximableMap.embed_restrict`).** Embedding the restriction of an element below the seed recovers that element.
+
+*Proof.* Compare membership both ways. ∎
+
+**Theorem (`ApproximableMap.restrict_embed`).** Restricting an embedding recovers the relative element.
+
+*Proof.* Compare membership both ways. ∎
+
+**Definition (`ApproximableMap.relIso`).** Relative elements are order-isomorphic to ambient elements below the seed via embed and restrict.
+
+*Proof.* Assemble the mutual inverses and the embedding monotonicity laws. ∎
+
+**Theorem (`ApproximableMap.fixElement_below_unique`).** A fixed point below the least fixed-point element equals that least fixed point.
+
+*Proof.* Leastness of the least fixed-point element yields the reverse inequality. ∎
+
+**Theorem (`ApproximableMap.relMap_toElementMap_embed`).** Embedding intertwines the relative endomap with the ambient endomap.
+
+*Proof.* Compare membership of neighbourhoods under the two composite evaluations. ∎
+
+**Theorem (`ApproximableMap.relMap_unique_fixed`).** The unique fixed point of the relative endomap on the least fixed-point seed is the restricted least fixed-point element.
+
+*Proof.* The embedded relative fixed point is an ambient fixed point below the least fixed point, hence equals it; transport back by restriction. ∎
+
+**Definition (`ApproximableMap.inclMap`).** Inclusion from the relative system to the ambient domain relates a relative neighbourhood to an ambient neighbourhood containing it.
+
+*Proof.* Approximability unpacks ambient intersection and inclusion. ∎
+
+**Theorem (`ApproximableMap.inclMap_toElementMap`).** Inclusion evaluates as embedding.
+
+*Proof.* Compare membership. ∎
+
+**Theorem (`ApproximableMap.inclMap_bot`).** Inclusion sends relative bottom to ambient bottom.
+
+*Proof.* Unpack embedding of bottom. ∎
+
+**Theorem (`ApproximableMap.inclMap_intertwine`).** Inclusion intertwines the relative endomap with the ambient endomap.
+
+*Proof.* Compose the inclusion-as-embedding law with the relative–ambient intertwining law. ∎

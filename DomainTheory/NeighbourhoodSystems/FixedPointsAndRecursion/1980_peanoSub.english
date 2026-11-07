@@ -1,0 +1,41 @@
+Least-fixed-point generated subsets carrying full Peano axioms.
+<!-- formalization -->
+**Definition (`genOp`).** Generated set $\{0\}\cup s''x$ for a carrier with successor $s$.
+
+*Proof.* As in the formal module. ∎
+**Definition (`natPeano`).** The standard Peano model on $\mathbb{N}$.
+
+*Proof.* As in the formal module. ∎
+**Definition (`nats`).** Least fixed set of the generator operator.
+
+*Proof.* As in the formal module. ∎
+**Definition (`Nat'`).** Subtype of elements in the least generated set.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`nats_induction`).** Induction principle for membership in the least generated set.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`succ_mem_nats`).** Successor of a generated element is generated.
+
+*Proof.* As in the formal module. ∎
+**Definition (`subSucc`).** Successor on the generated subtype.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`zero_mem_nats`).** Zero lies in the least generated set.
+
+*Proof.* As in the formal module. ∎
+**Definition (`subZero`).** Zero as an element of the generated subtype.
+
+*Proof.* As in the formal module. ∎
+**Definition (`peanoSub`).** Peano structure on the generated subtype from partial data.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`exists_peano_submodel`).** A full Peano model exists on the generated subtype.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`genOp_monotone`).** The generator operator is monotone.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`genOp_nats`).** The least generated set is fixed by the generator operator.
+
+*Proof.* As in the formal module. ∎

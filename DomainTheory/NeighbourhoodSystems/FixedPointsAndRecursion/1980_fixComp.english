@@ -1,0 +1,11 @@
+For approximable endomaps $f$ and $g$, the least fixed point of $f \circ g$ maps to that of $g \circ f$ under $f$, and conversely by symmetry.
+
+<!-- formalization -->
+
+**Theorem (`comp_fixElement_isFixed`).** The composite $f \circ g$ fixes the image under $f$ of the least fixed point of $g \circ f$.
+
+*Proof.* Apply the composition law for elementwise images and the fixed-point law for the least fixed point of $g \circ f$. ∎
+
+**Theorem (`fixElement_comp_comm`).** The least fixed points of $f \circ g$ and $g \circ f$ are related by $f$ on the elementwise order.
+
+*Proof.* Use leastness and the preceding fixed-point transfer, then symmetry with roles reversed. ∎

@@ -1,0 +1,10 @@
+**EXERCISE 4.18.** In Example 4.3 there are many unproved assertions about $N$ and $F$. These should be checked. In particular, the isomorphism theorem of 4.6 could be proved by constructing a simple domain $M$ from $\mathbf{M}$ in the way $N$ is constructed from $\mathbf{N}$.
+
+Classification of number-domain elements, injectivity of numerals and the successor map, and distinguished constants are with the
+[Number-domain checks](1980_numberDomainCheck.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`example_418`).** Each element of the number domain is bottom or a numeral; numerals and successor action are injective; zero is not a successor numeral nor the successor image of a numeral.
+
+*Proof.* Combine element classification with the numeral, successor, and constant distinction lemmas from the number-domain checks. ∎

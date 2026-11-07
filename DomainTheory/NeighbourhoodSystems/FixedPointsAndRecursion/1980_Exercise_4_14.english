@@ -1,0 +1,10 @@
+**EXERCISE 4.14.** Need a monotone function $f : PA \to PA$ always have a *maximum* fixed point?
+
+The greatest powerset fixed point and its fixed-point characterisation are with the
+[Greatest powerset fixed point](1980_gfpSet.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`example_414`).** Every exact fixed set lies inside the greatest fixed-point set, and under monotonicity that set is itself fixed.
+
+*Proof.* Invoke the greatestness and fixed-point laws for the greatest powerset fixed point. ∎

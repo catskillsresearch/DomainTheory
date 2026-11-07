@@ -1,0 +1,86 @@
+Head-test maps, unary numerals, and Peano axioms on the sequence domain.
+<!-- formalization -->
+**Definition (`headValC`).** Head-test evaluation on strings for cone versus singleton branches.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`headValC_nil`).** Head-test on the empty string returns the default.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`headValC_false`).** Head-test on a false prefix returns the first branch.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`headValC_true`).** Head-test on a true prefix returns the second branch.
+
+*Proof.* As in the formal module. ∎
+**Definition (`T`).** The two-element token domain for sequence values.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`headValC_bot_le`).** Head-test on bottom prefixes is monotone in the prefix order.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`not_cone_subset_singleton`).** A cone neighbourhood is never contained in a singleton.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`cone_ne_singleton`).** Cone and singleton neighbourhoods are distinct.
+
+*Proof.* As in the formal module. ∎
+**Definition (`liftC`).** Universal approximable map from the sequence domain using head-test values.
+
+*Proof.* As in the formal module. ∎
+**Definition (`emptyMap`).** Constant false head-tests with bottom on cones.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`liftC_strBot`).** The lift sends stratum bottoms to cone values.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`liftC_strElem`).** The lift sends stratum elements to singleton values.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`emptyMap_strElem`).** Empty map values on stratum elements.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`emptyMap_strBot`).** Empty map values on stratum bottoms.
+
+*Proof.* As in the formal module. ∎
+**Definition (`oneMap`).** Map sending cones to bottom/false/true pattern.
+
+*Proof.* As in the formal module. ∎
+**Definition (`zeroMap`).** Map with true on singleton tails and mixed cones.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`zeroMap_strElem`).** Zero map on stratum elements.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`zeroMap_strBot`).** Zero map on stratum bottoms.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`oneMap_strElem`).** One map on stratum elements.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`oneMap_strBot`).** One map on stratum bottoms.
+
+*Proof.* As in the formal module. ∎
+**Definition (`oneDef`).** Fixed-point-style definition of the numeral one map.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`condT_bot`).** Conditional with bottom first argument is bottom.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`one_def_strBot`).** The simple one map agrees with the fixed-point definition on stratum bottoms.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`one_def_strElem`).** The simple one map agrees with the fixed-point definition on stratum elements.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`peano_cons_disjoint`).** Prefixes false and true yield distinct strings.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`peano_cons_injective`).** Equality of conses implies equality of tails.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`peano_induction`).** Induction on finite bit-strings.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`peano_nil_ne_cons`).** The empty string is not a cons.
+
+*Proof.* As in the formal module. ∎

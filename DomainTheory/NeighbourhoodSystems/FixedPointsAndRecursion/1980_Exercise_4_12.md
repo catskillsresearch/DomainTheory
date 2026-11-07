@@ -1,7 +1,9 @@
 # Exercise 4.12
 
-**EXERCISE 4.12.** Need an approximable $f : D \to D$ have a maximum fixed point? Give an example where there are many fixed points.
+@import "1980_Exercise_4_12.english" {code_block=false}
 
 **[Exercise_4_12.lean](Exercise_4_12.lean)**
 
 @import "Exercise_4_12.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-07) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

@@ -1,0 +1,10 @@
+**EXERCISE 4.19.** There are many unproved assertions in Example 4.4! In particular discuss "Peano's Axioms" for $\{0,1\}^*$. Show, moreover, that $\mathrm{one} : C \to T$ can be defined from the rest of the structure by a fixed-point equation.
+
+The development is with the
+[Peano structure on sequences](1980_seqPeano.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`example_419`).** Finite bit-strings satisfy Peano’s axioms; the explicit one-map agrees with the fixed-point definition of the numeral one on each stratum.
+
+*Proof.* Combine the Peano lemmas and the stratum comparison theorems from the sequence Peano peer. ∎

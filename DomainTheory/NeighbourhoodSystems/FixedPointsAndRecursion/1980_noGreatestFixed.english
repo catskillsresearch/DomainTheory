@@ -1,0 +1,35 @@
+The identity endomap on Example 1.2 has every element fixed but no greatest among those fixed points.
+
+<!-- formalization -->
+
+**Definition (`noGreatestFixedDomain`).** The neighbourhood system for Exercise 4.12 is the Example 1.2 token domain.
+
+*Proof.* By definition. ∎
+
+**Theorem (`one_ne_zero`).** The one and zero tokens are distinct.
+
+*Proof.* Distinctness of numeric tokens. ∎
+
+**Theorem (`one_ne_master`).** The one token is not the master token.
+
+*Proof.* Membership in the one token neighbourhood refutes zero lying in it. ∎
+
+**Theorem (`zero_ne_master`).** The zero token is not the master token.
+
+*Proof.* Membership in the zero token neighbourhood refutes one lying in it. ∎
+
+**Theorem (`elemOne_not_le_elemZero`).** The one element does not lie below the zero element.
+
+*Proof.* Any way-one below relation at the one token forces incompatibility with master or zero classification. ∎
+
+**Theorem (`elemZero_not_le_elemOne`).** The zero element does not lie below the one element.
+
+*Proof.* Any way-zero below relation at the zero token forces incompatibility with master or one classification. ∎
+
+**Theorem (`idMap_fixed`).** Every element is fixed by the identity approximable map.
+
+*Proof.* The identity element map fixes every element. ∎
+
+**Theorem (`no_greatest_fixedPoint`).** No element is a greatest common bound of all fixed points of the identity map.
+
+*Proof.* Any purported greatest fixed point would have to dominate both the zero and one elements; token classification of elements rules out each of the three cases. ∎

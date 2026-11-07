@@ -1,0 +1,23 @@
+The optimal fixed point over a nonempty set of exact fixed points is the monotone least fixed point above the infimum fixed-point bound.
+
+<!-- formalization -->
+
+**Definition (`NeighborhoodSystem.optimalFix`).** Given a nonempty family of exact fixed points, the optimal fixed point is the monotone fixed point built from the infimum fixed-point inequality.
+
+*Proof.* Well-defined from the seed inequality supplied for the infimum. ∎
+
+**Theorem (`NeighborhoodSystem.optimalFix_isFixed`).** The optimal fixed point is an exact fixed point.
+
+*Proof.* Apply the monotone fixed-point fixed-point law. ∎
+
+**Theorem (`NeighborhoodSystem.optimalFix_le_sInf`).** The optimal fixed point lies below the infimum of the given fixed-point set.
+
+*Proof.* The monotone fixed point lies below its seed. ∎
+
+**Theorem (`NeighborhoodSystem.optimalFix_le`).** The optimal fixed point lies below every member of the fixed-point set.
+
+*Proof.* Transitivity through the infimum bound. ∎
+
+**Theorem (`NeighborhoodSystem.optimalFix_consistent`).** The optimal fixed point shares an upper bound with every member of the fixed-point set.
+
+*Proof.* Each member bounds the optimal point from above. ∎

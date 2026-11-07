@@ -1,115 +1,15 @@
 module
 
-public import Mathlib.Algebra.Group.Nat.Defs
-public import Mathlib.Algebra.Group.Pointwise.Set.Basic
-public import Mathlib.Algebra.Group.Submonoid.Basic
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_14
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.genSubmonoid
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise417
-open Pointwise
-open DomainTheory.NeighbourhoodSystems.Exercise414
-
-section
-variable {S : Type*} [Monoid S]
-
-def F (a b : S) (x : Set S) : Set S := {1} ∪ {a, b} ∪ x * x
-
-theorem base_subset_F (a b : S) (x : Set S) : {1} ∪ {a, b} ⊆ F a b x :=
-  Set.subset_union_left
-
-theorem one_mem_F (a b : S) (x : Set S) : (1 : S) ∈ F a b x :=
-  base_subset_F a b x (Set.mem_union_left _ rfl)
-
-theorem self_mul_subset_F (a b : S) (x : Set S) : x * x ⊆ F a b x :=
-  Set.subset_union_right
-
-def preFixSubmonoid (a b : S) {x : Set S} (hx : F a b x ⊆ x) : Submonoid S where
-  carrier := x
-  one_mem' := hx (one_mem_F a b x)
-  mul_mem' := by
-    intro s t hs ht
-    exact hx (self_mul_subset_F a b x (Set.mul_mem_mul hs ht))
-
-theorem F_monotone (a b : S) : Monotone (F a b) := by
-  intro x y hxy
-  exact Set.union_subset_union (le_refl _) (Set.mul_subset_mul hxy hxy)
-
-theorem F_one_one_singleton : F (1 : ℕ) 1 ({1} : Set ℕ) = {1} := by
-  unfold F
-  rw [Set.singleton_mul_singleton]
-  simp
-
-theorem F_univ (a b : S) : F a b (Set.univ : Set S) = Set.univ := by
-  apply Set.Subset.antisymm (Set.subset_univ _)
-  intro s _
-  exact self_mul_subset_F a b _ (Set.mem_mul.mpr ⟨1, trivial, s, trivial, one_mul s⟩)
-
-theorem a_mem_F (a b : S) (x : Set S) : a ∈ F a b x :=
-  base_subset_F a b x (Set.mem_union_right _ (Set.mem_insert _ _))
-
-theorem b_mem_F (a b : S) (x : Set S) : b ∈ F a b x :=
-  base_subset_F a b x (Set.mem_union_right _ (Set.mem_insert_of_mem _ rfl))
-end
-end DomainTheory.NeighbourhoodSystems.Exercise417
-
-section
-namespace DomainTheory.NeighbourhoodSystems.Exercise417
-open Pointwise
-open DomainTheory.NeighbourhoodSystems.Exercise414
-section
-variable {S : Type*} [Monoid S]
-
-theorem fixedPoint_not_unique :
-    ∃ x y : Set ℕ, F 1 1 x = x ∧ F 1 1 y = y ∧ x ≠ y := by
-  refine ⟨{1}, Set.univ, F_one_one_singleton, F_univ 1 1, ?_⟩
-  intro h
-  have h2 : (2 : ℕ) ∈ ({1} : Set ℕ) := by rw [h]; exact Set.mem_univ 2
-  simp at h2
-
-theorem leastSolution_eq (a b : S) :
-    F a b (lfpSet (F a b)) = lfpSet (F a b) :=
-  lfpSet_isFixed (F a b) (F_monotone a b)
-
-theorem lfpSet_eq_closure (a b : S) :
-    lfpSet (F a b) = (Submonoid.closure ({a, b} : Set S) : Set S) := by
-  apply Set.Subset.antisymm
-  ·
-    have hclosed : F a b (Submonoid.closure ({a, b} : Set S)) ⊆
-        (Submonoid.closure ({a, b} : Set S) : Set S) := by
-      apply Set.union_subset
-      · apply Set.union_subset
-        · rintro s rfl; exact (Submonoid.closure ({a, b} : Set S)).one_mem
-        · intro s hs
-          rcases hs with rfl | rfl
-          · exact Submonoid.subset_closure (Set.mem_insert _ _)
-          · exact Submonoid.subset_closure (Set.mem_insert_of_mem _ rfl)
-      · rintro s ⟨t, ht, u, hu, rfl⟩
-        exact (Submonoid.closure ({a, b} : Set S)).mul_mem ht hu
-    exact lfpSet_subset (F a b) hclosed
-  ·
-    have hfix : F a b (lfpSet (F a b)) ⊆ lfpSet (F a b) :=
-      le_of_eq (leastSolution_eq a b)
-    have ha : a ∈ lfpSet (F a b) := hfix (a_mem_F a b _)
-    have hb : b ∈ lfpSet (F a b) := hfix (b_mem_F a b _)
-    have hmem : ({a, b} : Set S) ⊆ lfpSet (F a b) := by
-      intro s hs
-      rcases Set.mem_insert_iff.mp hs with h | h
-      · rw [h]; exact ha
-      · rw [Set.mem_singleton_iff.mp h]; exact hb
-    exact (Submonoid.closure_le (S := preFixSubmonoid a b hfix)).mpr hmem
-
-end
-
-section
+namespace DomainTheory.NeighbourhoodSystems
 
 theorem example_417 :
     (∃ x y : Set ℕ, F 1 1 x = x ∧ F 1 1 y = y ∧ x ≠ y) ∧
     (∀ {S : Type*} [Monoid S] (a b : S),
       lfpSet (F a b) = (Submonoid.closure ({a, b} : Set S) : Set S)) :=
   ⟨fixedPoint_not_unique, @lfpSet_eq_closure⟩
-end
 
-end DomainTheory.NeighbourhoodSystems.Exercise417
-end
+end DomainTheory.NeighbourhoodSystems

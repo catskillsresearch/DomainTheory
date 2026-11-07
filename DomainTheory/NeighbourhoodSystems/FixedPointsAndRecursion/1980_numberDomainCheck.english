@@ -1,0 +1,31 @@
+Elements of the number neighbourhood domain are bottom or principal numerals; numerals and the successor approximable map are injective on indices; zero is distinct from successors.
+
+<!-- formalization -->
+
+**Theorem (`singleton_inter_eq_empty`).** Distinct singleton neighbourhood sets have empty intersection.
+
+*Proof.* Extensionality on indices. ∎
+
+**Theorem (`natElem_injective`).** Equal numerals determine equal natural numbers.
+
+*Proof.* Read membership in one numeral’s singleton neighbourhood. ∎
+
+**Theorem (`natElem_zero_ne_succ`).** Zero and any positive numeral are unequal.
+
+*Proof.* Transfer injectivity through successor indices. ∎
+
+**Theorem (`not_N_mem_empty`).** The empty set is not a valid neighbourhood.
+
+*Proof.* Cases on the membership predicate. ∎
+
+**Theorem (`element_classification`).** Every element is bottom or a numeral.
+
+*Proof.* Case on presence of a singleton neighbourhood; otherwise master and bot axioms force bottom. ∎
+
+**Theorem (`succMap_injective`).** Equal successor images imply equal indices.
+
+*Proof.* Compare numerals after unfolding successor on numerals. ∎
+
+**Theorem (`zero_ne_succMap`).** Zero is not the successor image of a numeral.
+
+*Proof.* Reduce to the zero-versus-successor numeral distinction. ∎

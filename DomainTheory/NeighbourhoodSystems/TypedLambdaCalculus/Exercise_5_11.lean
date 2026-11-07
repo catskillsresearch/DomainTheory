@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_25
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.unarySeq
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.fixMap
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofIso
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6

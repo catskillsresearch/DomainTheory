@@ -1,0 +1,27 @@
+The approximable operator Ψ that evaluates a functional at a map by applying that map to the functional’s value, and the characterisation of the fix combinator as Ψ’s least fixed point.
+
+<!-- formalization -->
+
+**Definition (`bigPsi`).** The operator Ψ on functionals is the curry of evaluation composed with pairing the first projection against evaluation of function-space maps.
+
+*Proof.* By definition. ∎
+
+**Theorem (`bigPsi_apply`).** Applying Ψ to a functional and then to a map yields the map applied to the functional at that map.
+
+*Proof.* Unpack the curry, composition, pairing, projection, and evaluation laws. ∎
+
+**Theorem (`toApproxMap_toFilter_fixMap`).** The approximable map recovered from the filtered fix combinator is the fix combinator itself.
+
+*Proof.* Invoke the function-space equivalence unit. ∎
+
+**Theorem (`bigPsi_fix`).** The filtered fix combinator is a fixed point of Ψ.
+
+*Proof.* Compare recovered maps via the evaluation law for Ψ and the fixed-point law for the fix combinator. ∎
+
+**Theorem (`bigPsi_least`).** Among postfixed points of Ψ, the filtered fix combinator is least.
+
+*Proof.* A postfix inequality for Ψ yields a postfix inequality at each map, so the least-fixed-point law for each map places the fix combinator below the functional. ∎
+
+**Theorem (`fix_eq_fixElement_bigPsi`).** The filtered fix combinator is the least fixed-point element of Ψ.
+
+*Proof.* Combine leastness of the filtered fix combinator among postfixed points of Ψ with leastness of the least fixed-point element. ∎

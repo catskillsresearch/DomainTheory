@@ -1,0 +1,43 @@
+Least and greatest fixed points of monotone set operators as intersections of pre-fixed points and unions of post-fixed points.
+
+<!-- formalization -->
+
+**Definition (`gfpSet`).** The greatest fixed-point set of a power-set endomap is the union of all post-fixed sets.
+
+*Proof.* By definition. ∎
+
+**Definition (`lfpSet`).** The least fixed-point set of a power-set endomap is the intersection of all pre-fixed sets.
+
+*Proof.* By definition. ∎
+
+**Theorem (`lfpSet_subset`).** The least fixed-point set lies inside every pre-fixed set.
+
+*Proof.* Immediate from the universal quantifier in the definition. ∎
+
+**Theorem (`f_subset_lfpSet`).** Under monotonicity, the image of the least fixed-point set lies inside it.
+
+*Proof.* Any pre-fixed set absorbs its image via monotonicity, so membership in the least fixed-point set propagates. ∎
+
+**Theorem (`lfpSet_isFixed`).** Under monotonicity, the least fixed-point set is a fixed point.
+
+*Proof.* Subset inclusions both ways from the two preceding lemmas. ∎
+
+**Theorem (`lfpSet_least`).** The least fixed-point set lies inside every exact fixed set.
+
+*Proof.* A fixed set is pre-fixed. ∎
+
+**Theorem (`subset_gfpSet`).** Every post-fixed set lies inside the greatest fixed-point set.
+
+*Proof.* Exhibit the post-fixed set as witness in the union. ∎
+
+**Theorem (`gfpSet_greatest`).** Every exact fixed set lies inside the greatest fixed-point set.
+
+*Proof.* A fixed set is post-fixed. ∎
+
+**Theorem (`gfpSet_subset_f`).** Under monotonicity, the greatest fixed-point set lies inside its image.
+
+*Proof.* Witness membership via a post-fixed set contained in its image. ∎
+
+**Theorem (`gfpSet_isFixed`).** Under monotonicity, the greatest fixed-point set is a fixed point.
+
+*Proof.* Subset inclusions both ways using post-fixed absorption and monotonicity. ∎

@@ -1,13 +1,9 @@
 # Exercise 4.15
 
-**EXERCISE 4.15.** (For set theorists.) Let $f : |D| \to |D|$ be a monotone function on (the elements of) a domain. Show that $f$ has a *maximal* fixed point (i.e. a fixed point that cannot be extended to a larger fixed point). (Hint: By Zorn's Lemma consider a maximal chain
-
-$$
-C \subseteq \{ x \in |D| \mid x \sqsubseteq f(x) \},
-$$
-
-and use 2.11 to remark that $\bigsqcup C \in |D|$.) Now argue that $f$ has a <u>least</u> fixed point.
+@import "1980_Exercise_4_15.english" {code_block=false}
 
 **[Exercise_4_15.lean](Exercise_4_15.lean)**
 
 @import "Exercise_4_15.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-07) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

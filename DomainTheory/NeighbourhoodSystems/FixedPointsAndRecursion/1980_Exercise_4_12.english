@@ -1,0 +1,10 @@
+**EXERCISE 4.12.** Need an approximable $f : D \to D$ have a maximum fixed point? Give an example where there are many fixed points.
+
+The counterexample and non-existence of a greatest fixed point are with the
+[No greatest fixed point](1980_noGreatestFixed.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`example_412`).** On Example 1.2, the identity map fixes every element, yet no element is a greatest fixed point.
+
+*Proof.* Invoke the universal fixed-point law for the identity and the non-existence of a greatest common fixed point. ∎

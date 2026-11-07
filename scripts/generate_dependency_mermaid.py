@@ -1775,69 +1775,137 @@ NS_FIX_SHORT: dict[str, tuple[str, str]] = {
         "X408",
         "Exercise 4.8 — fixed-point induction",
     ),
+    "Psi operator": (
+        "psi",
+        "Psi operator",
+    ),
     "Exercise 4.9 — fix as a fixed point": (
         "X409",
         "Exercise 4.9 — fix as a fixed point",
+    ),
+    "Domain above an element": (
+        "rel",
+        "Domain above an element",
     ),
     "Exercise 4.10 — domain above an element": (
         "X410",
         "Exercise 4.10 — domain above an element",
     ),
+    "Uniform fix uniqueness": (
+        "unif",
+        "Uniform fix uniqueness",
+    ),
     "Exercise 4.11 — characterizing the fix combinator": (
         "X411",
         "Exercise 4.11 — characterizing the fix combinator",
+    ),
+    "No greatest fixed point": (
+        "nogfp",
+        "No greatest fixed point",
     ),
     "Exercise 4.12 — no greatest fixed point": (
         "X412",
         "Exercise 4.12 — no greatest fixed point",
     ),
+    "Monotone fixed-point operator": (
+        "monofix",
+        "Monotone fixed-point operator",
+    ),
     "Exercise 4.13 — avoiding the natural numbers": (
         "X413",
         "Exercise 4.13 — avoiding the natural numbers",
+    ),
+    "Greatest powerset fixed point": (
+        "gfp",
+        "Greatest powerset fixed point",
     ),
     "Exercise 4.14 — greatest powerset fixed point": (
         "X414",
         "Exercise 4.14 — greatest powerset fixed point",
     ),
+    "Maximal fixed points": (
+        "maxfix",
+        "Maximal fixed points",
+    ),
     "Exercise 4.15 — maximal fixed points": (
         "X415",
         "Exercise 4.15 — maximal fixed points",
+    ),
+    "Optimal fixed point": (
+        "optfix",
+        "Optimal fixed point",
     ),
     "Exercise 4.16 — optimal fixed point": (
         "X416",
         "Exercise 4.16 — optimal fixed point",
     ),
+    "Generated submonoid": (
+        "gensub",
+        "Generated submonoid",
+    ),
     "Exercise 4.17 — generated submonoid": (
         "X417",
         "Exercise 4.17 — generated submonoid",
+    ),
+    "Number-domain checks": (
+        "numchk",
+        "Number-domain checks",
     ),
     "Exercise 4.18 — checking the number domain": (
         "X418",
         "Exercise 4.18 — checking the number domain",
     ),
+    "Peano structure on sequences": (
+        "seqpeano",
+        "Peano structure on sequences",
+    ),
     "Exercise 4.19 — Peano axioms for sequences": (
         "X419",
         "Exercise 4.19 — Peano axioms for sequences",
+    ),
+    "Fix of a composite": (
+        "fixcomp",
+        "Fix of a composite",
     ),
     "Exercise 4.20 — fix of a composite": (
         "X420",
         "Exercise 4.20 — fix of a composite",
     ),
+    "Order as a fixed point": (
+        "ordfix",
+        "Order as a fixed point",
+    ),
     "Exercise 4.21 — order as a fixed point": (
         "X421",
         "Exercise 4.21 — order as a fixed point",
+    ),
+    "Inductive Peano submodel": (
+        "peanosub",
+        "Inductive Peano submodel",
     ),
     "Exercise 4.22 — inductive subset of a model": (
         "X422",
         "Exercise 4.22 — inductive subset of a model",
     ),
+    "Unique fixed point": (
+        "uniqfix",
+        "Unique fixed point",
+    ),
     "Exercise 4.23 — commuting with the iterates": (
         "X423",
         "Exercise 4.23 — commuting with the iterates",
     ),
+    "Schroeder-Bernstein": (
+        "sb",
+        "Schroeder-Bernstein",
+    ),
     "Exercise 4.24 — Schroeder-Bernstein theorem": (
         "X424",
         "Exercise 4.24 — Schroeder-Bernstein theorem",
+    ),
+    "Unary sequence domain": (
+        "unary",
+        "Unary sequence domain",
     ),
     "Exercise 4.25 — unary sequence domain": (
         "X425",

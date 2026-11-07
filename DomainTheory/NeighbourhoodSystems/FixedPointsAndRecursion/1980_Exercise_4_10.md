@@ -1,15 +1,9 @@
 # Exercise 4.10
 
-**EXERCISE 4.10.** Given a domain $D$ and an element $a \in |D|$, construct a domain $D_a$ where
-
-$$
-|D_a| = \{x \in |D| \mid x \sqsubseteq a\}.
-$$
-
-Show that if $f : D \to D$ is approximable, then $f$ can be restricted to an approximable map $f' : D_{\mathrm{fix}(f)} \to D_{\mathrm{fix}(f)}$ where $f'(x) = f(x)$ for all $x \in |D_{\mathrm{fix}(f)}|$. How many fixed points does $f'$ have in $|D_{\mathrm{fix}(f)}|$?
-
-<!-- page 68 -->
+@import "1980_Exercise_4_10.english" {code_block=false}
 
 **[Exercise_4_10.lean](Exercise_4_10.lean)**
 
 @import "Exercise_4_10.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-07) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

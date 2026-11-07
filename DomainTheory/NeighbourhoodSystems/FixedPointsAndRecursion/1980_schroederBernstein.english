@@ -1,0 +1,41 @@
+Schroeder–Bernstein via Tarski’s least fixed set.
+<!-- formalization -->
+**Definition (`sbOp`).** Tarski operator: outside the range of $g$ union $g(f(X))$.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`sbOp_monotone`).** The Tarski operator is monotone.
+
+*Proof.* As in the formal module. ∎
+**Definition (`sbSet`).** Least fixed set of the Tarski operator.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`sbSet_isFixed`).** The Schroeder set is a fixed point of the operator.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`g_f_mem_of_mem`).** If $a$ is in the fixed set then $g(f(a))$ is too.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`mem_range_of_not_mem`).** Elements outside the fixed set lie in the range of $g$.
+
+*Proof.* As in the formal module. ∎
+**Definition (`sbFun`).** Bijection candidate: $f$ on the fixed set, chosen preimage elsewhere.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`g_sbFun_not_mem`).** Off the fixed set, $g$ inverts the chosen map.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`sbFun_mem`).** On the fixed set the candidate map is $f$.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`sbFun_injective`).** The candidate map is injective if $f$ is.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`sbFun_surjective`).** The candidate map is surjective if $g$ is injective.
+
+*Proof.* As in the formal module. ∎
+**Definition (`schroeder_bernstein_equiv`).** Equivalence from the candidate bijection.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`schroeder_bernstein`).** Injective embeddings yield a bijection $A\to B$.
+
+*Proof.* As in the formal module. ∎

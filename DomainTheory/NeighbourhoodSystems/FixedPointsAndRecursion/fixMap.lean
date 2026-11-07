@@ -154,4 +154,20 @@ theorem fixMap_eq_iSup (V : NeighborhoodSystem α) (φ : (funSpace V V).Element)
   rw [fixMap_toElementMap]
   exact fixElement_eq_iSupDirected (toApproxMap φ)
 
+theorem fixMap_fixed (V : NeighborhoodSystem α) (φ : (funSpace V V).Element) :
+    (toApproxMap φ).toElementMap ((fixMap V).toElementMap φ) = (fixMap V).toElementMap φ := by
+  rw [fixMap_toElementMap]
+  exact toElementMap_fixElement (toApproxMap φ)
+
+theorem fixMap_unique (V : NeighborhoodSystem α) (fax : ApproximableMap (funSpace V V) V)
+    (h_fix : ∀ φ, (toApproxMap φ).toElementMap (fax.toElementMap φ) = fax.toElementMap φ)
+    (h_least : ∀ (φ : (funSpace V V).Element) (z : V.Element),
+      (toApproxMap φ).toElementMap z ≤ z → fax.toElementMap φ ≤ z) :
+    fax = fixMap V := by
+  apply ext_of_toElementMap
+  intro φ
+  apply le_antisymm
+  · exact h_least φ _ (le_of_eq (fixMap_fixed V φ))
+  · exact fixMap_least V φ (le_of_eq (h_fix φ))
+
 end DomainTheory.NeighbourhoodSystems

@@ -1,0 +1,47 @@
+Monotone endomaps admit a least fixed point as the infimum of pre-fixed points; primitive recursion on ℕ is unique; chain unions lie below upper bounds.
+
+<!-- formalization -->
+
+**Definition (`NeighborhoodSystem.preFix`).** For an endomap on elements, the pre-fixed points are those with image below the point.
+
+*Proof.* By definition. ∎
+
+**Theorem (`NeighborhoodSystem.mem_preFix`).** Membership in the pre-fixed set is equivalent to the pre-fix inequality.
+
+*Proof.* By definition. ∎
+
+**Definition (`NeighborhoodSystem.monoFix`).** Given a pre-fixed seed, the monotone fixed point is the infimum of all pre-fixed points.
+
+*Proof.* Nonempty pre-fixed set supplies the seed for the infimum. ∎
+
+**Theorem (`NeighborhoodSystem.exists_unique_nat_rec`).** For any set with seed and unary operation, there is a unique ℕ-indexed sequence starting at the seed and stepping by the operation.
+
+*Proof.* Recursion defines a witness; extensionality on ℕ proves uniqueness. ∎
+
+**Theorem (`NeighborhoodSystem.monoFix_le_preFix`).** The monotone fixed point lies below every pre-fixed point.
+
+*Proof.* Infimum comparison against the pre-fixed set. ∎
+
+**Theorem (`NeighborhoodSystem.monoFix_le`).** The monotone fixed point lies below the chosen seed pre-fixed point.
+
+*Proof.* Specialise the pre-fixed bound with the seed. ∎
+
+**Theorem (`NeighborhoodSystem.monoFix_least`).** The monotone fixed point is below every exact fixed point.
+
+*Proof.* A fixed point is pre-fixed; apply the pre-fixed bound. ∎
+
+**Theorem (`NeighborhoodSystem.monoFix_preFix`).** Under monotonicity, the image of the monotone fixed point is again pre-fixed.
+
+*Proof.* Every pre-fixed point dominates the fixed point; monotonicity transports the inequality into the pre-fixed set, which the fixed point infimum bounds from below. ∎
+
+**Theorem (`NeighborhoodSystem.monoFix_isFixed`).** Under monotonicity, the monotone fixed point from a pre-fixed seed is a fixed point.
+
+*Proof.* Image below and above the fixed point from pre-fix lemmas, then antisymmetry. ∎
+
+**Theorem (`NeighborhoodSystem.nat_iterate_unique`).** The successor iteration starting at zero that adds one each step equals the identity on ℕ.
+
+*Proof.* Induction on the index using the step and base hypotheses. ∎
+
+**Theorem (`NeighborhoodSystem.chainUnion_le`).** The chain union of a nonempty chain lies below any upper bound of its members.
+
+*Proof.* Each member of the union comes from some chain element below the bound. ∎

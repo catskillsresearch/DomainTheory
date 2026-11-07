@@ -53,3 +53,11 @@ The fix combinator as an approximable map on the function space, characterised a
 **Theorem (`fixMap_eq_iSup`).** The value of the fix combinator is the directed supremum of the iterate elements of the recovered map.
 
 *Proof.* Rewrite via the evaluation law and apply the directed-supremum characterisation of the least fixed-point element. ∎
+
+**Theorem (`fixMap_fixed`).** The value of the fix combinator is a fixed point of the map recovered from each function-space element.
+
+*Proof.* Rewrite via the evaluation law and apply the fixed-point law for the least fixed-point element of the recovered map. ∎
+
+**Theorem (`fixMap_unique`).** Any approximable map on the function space that is fixed-point and least on each principal agrees with the fix combinator.
+
+*Proof.* Compare below using the fix combinator’s fixed-point and leastness laws against the assumed laws pointwise on principals. ∎

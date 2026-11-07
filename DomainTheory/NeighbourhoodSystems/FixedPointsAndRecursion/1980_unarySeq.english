@@ -1,0 +1,83 @@
+Unary neighbourhood system, cons map, and comparison with the number domain.
+<!-- formalization -->
+**Definition (`shift`).** Successor neighbourhood shift on subsets of $\mathbb{N}$.
+
+*Proof.* As in the formal module. ∎
+**Definition (`tail`).** Tail neighbourhood $\{m\mid n\le m\}$.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`mem_tail`).** Characterisation of tail membership.
+
+*Proof.* As in the formal module. ∎
+**Definition (`memC1`).** Neighbourhoods are tails or singletons.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`memC1_singleton`).** Singletons are valid neighbourhoods.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`memC1_tail`).** Tails are valid neighbourhoods.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`shift_mono`).** Shift is monotone in neighbourhood inclusion.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`shift_singleton`).** Shift sends $\{n\}$ to $\{n+1\}$.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`shift_tail`).** Shift sends tail $n$ to tail $n+1$.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`memC1_shift`).** Shift preserves the unary neighbourhood class.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`singleton_tail_nd`).** Singleton and tail are nested, reversed, or disjoint.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`nestedOrDisjoint`).** Unary neighbourhoods form a nested-or-disjoint family.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`tail_zero`).** Tail from zero is the universe.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`memC1_univ`).** The universe is a unary neighbourhood.
+
+*Proof.* As in the formal module. ∎
+**Definition (`C1`).** Unary sequence neighbourhood system on $\mathbb{N}$.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`C1_mem`).** Membership characterisation for unary neighbourhoods.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`C1_master`).** Master neighbourhood is the universe.
+
+*Proof.* As in the formal module. ∎
+**Definition (`consMap`).** Approximable shift-by-successor on unary neighbourhoods.
+
+*Proof.* As in the formal module. ∎
+**Definition (`infElt`).** Least fixed point of the cons map.
+
+*Proof.* As in the formal module. ∎
+**Definition (`oneBot`).** Principal element for a tail neighbourhood.
+
+*Proof.* As in the formal module. ∎
+**Definition (`oneElem`).** Principal element for a singleton neighbourhood.
+
+*Proof.* As in the formal module. ∎
+**Definition (`relateNToC1`).** Constant numeral lift from the number domain.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`consMap_oneBot`).** Cons map increments the tail index.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`consMap_oneElem`).** Cons map increments the singleton index.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`infElt_eq`).** The infinite element is fixed by the cons map.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`relateNToC1_bot`).** The lift sends bottom to bottom.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`relateNToC1_natElem`).** The lift sends numerals to singleton principals.
+
+*Proof.* As in the formal module. ∎

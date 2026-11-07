@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_14
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.gfpSet
 public import Mathlib.Algebra.FreeMonoid.Basic
 public import Mathlib.Algebra.Group.Pointwise.Set.Basic
 
@@ -12,7 +12,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise515
 
 open Pointwise
 
-open DomainTheory.NeighbourhoodSystems.Exercise414
+open DomainTheory.NeighbourhoodSystems
 
 variable {S : Type*} [Monoid S]
 
@@ -26,7 +26,7 @@ end
 section
 namespace DomainTheory.NeighbourhoodSystems.Exercise515
 open Pointwise
-open DomainTheory.NeighbourhoodSystems.Exercise414
+open DomainTheory.NeighbourhoodSystems
 
 section
 variable {S : Type*} [Monoid S]

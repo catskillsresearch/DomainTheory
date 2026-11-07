@@ -1,0 +1,15 @@
+Zorn's lemma on post-fixed points yields maximal fixed points; least fixed points follow from the monotone intersection operator; an infimum of fixed points is mapped below itself.
+
+<!-- formalization -->
+
+**Theorem (`NeighborhoodSystem.exists_maximal_fixedPoint`).** Every monotone endomap has a fixed point maximal among fixed points that lie above it.
+
+*Proof.* Zorn on the set of post-fixed points, using chain unions for upper bounds and monotonicity to close under $f$. ∎
+
+**Theorem (`NeighborhoodSystem.exists_least_fixedPoint`).** Every monotone endomap has a least fixed point.
+
+*Proof.* Build the monotone intersection fixed point from a maximal fixed point seed. ∎
+
+**Theorem (`NeighborhoodSystem.f_sInf_le`).** Under monotonicity, if every member of a nonempty fixed-point set is exactly fixed, then the image of their infimum lies below the infimum.
+
+*Proof.* Compare the image to each member via monotonicity and the fixed-point identities. ∎

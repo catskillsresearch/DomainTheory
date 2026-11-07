@@ -1,0 +1,12 @@
+**EXERCISE 4.20.** For approximable $f, g : D \to D$ prove that
+
+$$\mathrm{fix}(f \circ g) = f(\mathrm{fix}(g \circ f)).$$
+
+The development is with the
+[Fix of a composite](1980_fixComp.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`example_420`).** For approximable $f,g$, $\\mathrm{fix}(f\\circ g)=f(\\mathrm{fix}(g\\circ f))$.
+
+*Proof.* Apply the composite fixed-point commutation law. ∎

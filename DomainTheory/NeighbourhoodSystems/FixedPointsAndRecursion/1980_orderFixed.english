@@ -1,0 +1,56 @@
+Order, successor towers, and multiplication as powerset least fixed points.
+<!-- formalization -->
+**Definition (`leOp`).** The order operator unions the diagonal with one-step successor pairs from a relation.
+
+*Proof.* As in the formal module. ∎
+**Definition (`leRel`).** The standard less-than-or-equal relation on $\mathbb{N}\times\mathbb{N}$.
+
+*Proof.* As in the formal module. ∎
+**Definition (`mulOp`).** For fixed $n$, multiply a set by adjoining $0$ and all $n+m$ with $m$ in the set.
+
+*Proof.* As in the formal module. ∎
+**Definition (`succImage`).** Successor image $x^+ = \{k\mid \exists j\in x,\ k=j+1\}$.
+
+*Proof.* As in the formal module. ∎
+**Definition (`upSet`).** The upward-closed set $\{k\mid m\le k\}$.
+
+*Proof.* As in the formal module. ∎
+**Definition (`addIso`).** Isomorphism between $\mathbb{N}$ and integers at least $m$.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`addIso_apply`).** The addition isomorphism sends $n$ to $m+n$.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`addIso_succ`).** The addition isomorphism commutes with successor.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`addIso_zero`).** The addition isomorphism sends $0$ to $m$.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`leOp_monotone`).** The order operator is monotone on subsets of pairs.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`leRel_isFixed`).** The standard order is a fixed point of the order operator.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`mem_fixedPoint_iff`).** Membership in a fixed order relation is equivalent to $n\le m$.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`leOp_unique`).** Every fixed point of the order operator equals the standard order.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`mulOp_monotone`).** The multiplication operator is monotone.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`mulOp_lfp_eq_multiples`).** The least fixed set for $n$ is the set of multiples of $n$.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`upSet_succ`).** Successor shift of an upward set is the successor image.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`upSet_zero`).** The upward set from $0$ is the universe.
+
+*Proof.* As in the formal module. ∎
+**Theorem (`upSet_unique`).** The upward-set tower is uniquely determined by zero and successor image.
+
+*Proof.* As in the formal module. ∎

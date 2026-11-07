@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_11
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_19
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.seqPeano
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.fixMap
 public import Mathlib.Data.Nat.Bits
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6

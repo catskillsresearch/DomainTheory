@@ -1,0 +1,27 @@
+Uniform characterisation of the least fixed-point assignment across domains, with commuting-map and iterate lemmas used in the uniqueness argument.
+
+<!-- formalization -->
+
+**Theorem (`fix_unique_of_uniform`).** Any assignment of fixed points to endomaps that is natural under strict intertwining maps equals the least fixed-point element on every domain.
+
+*Proof.* Apply the assignment on the relative system of the least fixed-point element, use uniqueness of the relative fixed point, and transport along inclusion. ∎
+
+**Theorem (`ApproximableMap.iterElem_le_fixElement`).** Every iterate element from bottom lies below the least fixed-point element.
+
+*Proof.* Unpack least-fixed-point membership. ∎
+
+**Theorem (`ApproximableMap.fixElement_uniform`).** A strict intertwining map sends least fixed points to least fixed points.
+
+*Proof.* Compare images of iterates and use leastness on both sides. ∎
+
+**Theorem (`ApproximableMap.commuting_least_common_fixed`).** Commuting endomaps have a least common fixed point.
+
+*Proof.* Take the fixed point of one map above the least fixed point of the other, using the fixed-point-above-a-seed construction. ∎
+
+**Theorem (`ApproximableMap.fixElement_eq_of_commuting_bot`).** Commuting endomaps that agree at bottom have the same least fixed point.
+
+*Proof.* Show each least fixed point is fixed by the other map via iterate shifting. ∎
+
+**Theorem (`ApproximableMap.fixElement_iterTwice`).** The least fixed point of a map equals that of the map composed with itself.
+
+*Proof.* Compare iterate chains using the double-step identity for iterate elements. ∎
