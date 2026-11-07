@@ -3,7 +3,7 @@
 @import "1980_Typed_lambda-calculus.svg" {code_block=false}
 
 - [Introduction](1980_Introduction.md) [✓](../1980_REVISION.md)
-- [Theorem 5.1 — terms denote approximable maps](1980_Theorem_5_1.md)
+- [Theorem 5.1 — terms denote approximable maps](1980_Theorem_5_1.md) [✓](../1980_REVISION.md)
 - [Theorem 5.2 — beta conversion](1980_Theorem_5_2.md)
 - [Proposition 5.3 — simultaneous fixed points](1980_Proposition_5_3.md)
 - [Proposition 5.4 — fixed point under a parameter](1980_Proposition_5_4.md)
