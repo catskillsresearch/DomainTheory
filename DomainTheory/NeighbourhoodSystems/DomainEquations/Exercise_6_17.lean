@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.seqPeano
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_16
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.seqNegMerge
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.iSupMap
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofIso
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem_6_16
@@ -94,7 +94,7 @@ open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashP
 
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 Exercise516
+open Example44 Example62C ExampleB Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -155,7 +155,7 @@ open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashP
 
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 Exercise516
+open Example44 Example62C ExampleB Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -175,7 +175,7 @@ open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashP
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 Exercise516
+open Example44 Example62C ExampleB Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -189,7 +189,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 Exercise516
+open Example44 Example62C ExampleB Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -203,7 +203,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 Exercise516
+open Example44 Example62C ExampleB Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -219,7 +219,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 Exercise516
+open Example44 Example62C ExampleB Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -237,7 +237,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 Exercise516
+open Example44 Example62C ExampleB Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -253,7 +253,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 Exercise516
+open Example44 Example62C ExampleB Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -267,7 +267,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 Exercise516
+open Example44 Example62C ExampleB Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -279,7 +279,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 Exercise516
+open Example44 Example62C ExampleB Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -361,7 +361,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 Exercise516
+open Example44 Example62C ExampleB Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -406,7 +406,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 Exercise516
+open Example44 Example62C ExampleB Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -424,7 +424,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 Exercise516
+open Example44 Example62C ExampleB Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -459,7 +459,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 Exercise516
+open Example44 Example62C ExampleB Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -476,7 +476,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 Exercise516
+open Example44 Example62C ExampleB Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -493,7 +493,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 Exercise516
+open Example44 Example62C ExampleB Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -540,7 +540,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 Exercise516
+open Example44 Example62C ExampleB Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -573,7 +573,7 @@ def CisInitial : IsInitial Calg where
 end
 
 section
-open Example44 Example62C ExampleB Exercise419 Exercise516
+open Example44 Example62C ExampleB Exercise419 SeqNegMerge
 
 /-- Scott's Exercise 6.17: the initial `Tc`-algebra is unique. -/
 theorem example_617 (B : TAlgebra Tc) (h' : AlgHom Calg B) : h' = descAlgHom B :=

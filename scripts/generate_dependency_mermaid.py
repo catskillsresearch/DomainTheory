@@ -2055,6 +2055,10 @@ NS_LAM_SHORT: dict[str, tuple[str, str]] = {
         "X515",
         "Exercise 5.15 — star of a word",
     ),
+    "Sequence negation and merge": (
+        "seqNeg",
+        "Sequence negation and merge",
+    ),
     "Exercise 5.16 — negation of sequences": (
         "X516",
         "Exercise 5.16 — negation of sequences",

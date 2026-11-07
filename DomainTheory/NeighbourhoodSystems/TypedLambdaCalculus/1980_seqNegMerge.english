@@ -1,0 +1,431 @@
+Negation, doubling, merge, and the Thue–Morse sequence on the domain of binary streams.
+
+<!-- formalization -->
+
+**Definition (`flip`).** Bitwise negation of a finite boolean string.
+
+*Proof.* By definition. ∎
+
+**Theorem (`flip_nil`).** The named base or successor case.
+
+*Proof.* By unfolding the definition. ∎
+
+**Theorem (`flip_cons`).** The named base or successor case.
+
+*Proof.* By unfolding the definition. ∎
+
+**Theorem (`flip_flip`).** The named law for flip, double, or tail.
+
+*Proof.* Unfold the string operations and the map laws. ∎
+
+**Definition (`double`).** Doubling inserts a copy of each bit.
+
+*Proof.* By definition. ∎
+
+**Theorem (`double_nil`).** The named base or successor case.
+
+*Proof.* By unfolding the definition. ∎
+
+**Theorem (`double_cons`).** The named base or successor case.
+
+*Proof.* By unfolding the definition. ∎
+
+**Theorem (`double_append`).** The named comparison or prefix law for stream principals.
+
+*Proof.* Unpack principal order via cones and singletons. ∎
+
+**Theorem (`double_prefix`).** The named comparison or prefix law for stream principals.
+
+*Proof.* Unpack principal order via cones and singletons. ∎
+
+**Theorem (`flip_prefix`).** The named comparison or prefix law for stream principals.
+
+*Proof.* Unpack principal order via cones and singletons. ∎
+
+**Theorem (`not_strElem_le_strBot`).** The named comparison or prefix law for stream principals.
+
+*Proof.* Unpack principal order via cones and singletons. ∎
+
+**Theorem (`strBot_le_strBot_iff`).** The named comparison or prefix law for stream principals.
+
+*Proof.* Unpack principal order via cones and singletons. ∎
+
+**Theorem (`strBot_le_strElem_iff`).** The named comparison or prefix law for stream principals.
+
+*Proof.* Unpack principal order via cones and singletons. ∎
+
+**Theorem (`strElem_le_strElem_iff`).** The named comparison or prefix law for stream principals.
+
+*Proof.* Unpack principal order via cones and singletons. ∎
+
+**Definition (`tailSing`).** The singular tail of a string, bottom on empty.
+
+*Proof.* By definition. ∎
+
+**Theorem (`tail_hsing`).** The named law for flip, double, or tail.
+
+*Proof.* Unfold the string operations and the map laws. ∎
+
+**Theorem (`tail_prefix`).** The named comparison or prefix law for stream principals.
+
+*Proof.* Unpack principal order via cones and singletons. ∎
+
+**Theorem (`tail_hcone`).** The named law for flip, double, or tail.
+
+*Proof.* Unfold the string operations and the map laws. ∎
+
+**Definition (`tailMap`).** The approximable tail map on the stream domain.
+
+*Proof.* By definition. ∎
+
+**Theorem (`tailMap_strBot`).** The named law for flip, double, or tail.
+
+*Proof.* Unfold the string operations and the map laws. ∎
+
+**Theorem (`tailMap_strElem`).** The named law for flip, double, or tail.
+
+*Proof.* Unfold the string operations and the map laws. ∎
+
+**Theorem (`neg_hcone`).** The named law for stream negation.
+
+*Proof.* Use the approximable-map presentation of negation. ∎
+
+**Theorem (`neg_hsing`).** The named law for stream negation.
+
+*Proof.* Use the approximable-map presentation of negation. ∎
+
+**Definition (`negMap`).** The approximable negation map on streams.
+
+*Proof.* By definition. ∎
+
+**Theorem (`negMap_strBot`).** The named law for stream negation.
+
+*Proof.* Use the approximable-map presentation of negation. ∎
+
+**Theorem (`negMap_strElem`).** The named law for stream negation.
+
+*Proof.* Use the approximable-map presentation of negation. ∎
+
+**Theorem (`d_hcone`).** The named law for flip, double, or tail.
+
+*Proof.* Unfold the string operations and the map laws. ∎
+
+**Theorem (`d_hsing`).** The named law for flip, double, or tail.
+
+*Proof.* Unfold the string operations and the map laws. ∎
+
+**Definition (`dMap`).** The approximable doubling map on streams.
+
+*Proof.* By definition. ∎
+
+**Theorem (`dMap_strBot`).** The named law for flip, double, or tail.
+
+*Proof.* Unfold the string operations and the map laws. ∎
+
+**Theorem (`dMap_strElem`).** The named law for flip, double, or tail.
+
+*Proof.* Unfold the string operations and the map laws. ∎
+
+**Definition (`shape`).** The neighbourhood shape for a total/partial flag and a finite prefix.
+
+*Proof.* By definition. ∎
+
+**Theorem (`memC_shape`).** The named law for merge or shapes.
+
+*Proof.* Case on the merge/shape definitions. ∎
+
+**Definition (`shapeElem`).** The principal element of a shape neighbourhood.
+
+*Proof.* By definition. ∎
+
+**Theorem (`shapeElem_true`).** The named law for merge or shapes.
+
+*Proof.* Case on the merge/shape definitions. ∎
+
+**Theorem (`shapeElem_false`).** The named law for merge or shapes.
+
+*Proof.* Case on the merge/shape definitions. ∎
+
+**Definition (`SLe`).** The comparison relation used to merge two shaped streams.
+
+*Proof.* By definition. ∎
+
+**Definition (`mergeVal`).** The finite merge of two flagged strings.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mergeVal_nil`).** The named base or successor case.
+
+*Proof.* By unfolding the definition. ∎
+
+**Theorem (`mergeVal_cons_nil`).** The named base or successor case.
+
+*Proof.* By unfolding the definition. ∎
+
+**Theorem (`mergeVal_cons_cons`).** The named base or successor case.
+
+*Proof.* By unfolding the definition. ∎
+
+**Theorem (`SLe_cons2`).** The named law for merge or shapes.
+
+*Proof.* Case on the merge/shape definitions. ∎
+
+**Theorem (`SLe_cons_inv`).** The named law for merge or shapes.
+
+*Proof.* Case on the merge/shape definitions. ∎
+
+**Definition (`mergeElem`).** The stream element of a merged pair of shapes.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mergeVal_SLe`).** The named law for merge or shapes.
+
+*Proof.* Case on the merge/shape definitions. ∎
+
+**Theorem (`shapeElem_le_iff`).** The named comparison or prefix law for stream principals.
+
+*Proof.* Unpack principal order via cones and singletons. ∎
+
+**Theorem (`mergeElem_mono`).** The named law for merge or shapes.
+
+*Proof.* Case on the merge/shape definitions. ∎
+
+**Theorem (`shape_injective`).** The named law for merge or shapes.
+
+*Proof.* Case on the merge/shape definitions. ∎
+
+**Theorem (`shape_refine`).** The named law for merge or shapes.
+
+*Proof.* Case on the merge/shape definitions. ∎
+
+**Definition (`mergeMap`).** The approximable merge of a product of streams.
+
+*Proof.* By definition. ∎
+
+**Theorem (`consMap_shapeElem`).** The named law for merge or shapes.
+
+*Proof.* Case on the merge/shape definitions. ∎
+
+**Theorem (`map_ext_C`).** The named extensionality or constructor law.
+
+*Proof.* Compare approximable maps on principals. ∎
+
+**Theorem (`memC_eq_shape`).** The named law for merge or shapes.
+
+*Proof.* Case on the merge/shape definitions. ∎
+
+**Theorem (`mergeMap_pair`).** The named law for merge or shapes.
+
+*Proof.* Case on the merge/shape definitions. ∎
+
+**Theorem (`mergeVal_diag`).** The named law for merge or shapes.
+
+*Proof.* Case on the merge/shape definitions. ∎
+
+**Theorem (`mergeElem_diag`).** The named law for merge or shapes.
+
+*Proof.* Case on the merge/shape definitions. ∎
+
+**Theorem (`mergeMap_diag`).** The named law for merge or shapes.
+
+*Proof.* Case on the merge/shape definitions. ∎
+
+**Theorem (`negMap_comp_negMap`).** The named law for stream negation.
+
+*Proof.* Use the approximable-map presentation of negation. ∎
+
+**Theorem (`negMap_negMap`).** The named law for stream negation.
+
+*Proof.* Use the approximable-map presentation of negation. ∎
+
+**Theorem (`neg_cons_false`).** The named law for stream negation.
+
+*Proof.* Use the approximable-map presentation of negation. ∎
+
+**Theorem (`neg_cons_true`).** The named law for stream negation.
+
+*Proof.* Use the approximable-map presentation of negation. ∎
+
+**Theorem (`prod_principal_pair`).** The named law for flip, double, or tail.
+
+*Proof.* Unfold the string operations and the map laws. ∎
+
+**Theorem (`prodMap_ext`).** The named extensionality or constructor law.
+
+*Proof.* Compare approximable maps on principals. ∎
+
+**Theorem (`mergeMap_cons`).** The named base or successor case.
+
+*Proof.* By unfolding the definition. ∎
+
+**Theorem (`tailMap_consMap_strBot`).** The named law for flip, double, or tail.
+
+*Proof.* Unfold the string operations and the map laws. ∎
+
+**Theorem (`tailMap_consMap_strElem`).** The named law for flip, double, or tail.
+
+*Proof.* Unfold the string operations and the map laws. ∎
+
+**Definition (`expand`).** The Thue–Morse expansion step on a finite string.
+
+*Proof.* By definition. ∎
+
+**Theorem (`expand_nil`).** The named base or successor case.
+
+*Proof.* By unfolding the definition. ∎
+
+**Theorem (`expand_cons`).** The named base or successor case.
+
+*Proof.* By unfolding the definition. ∎
+
+**Definition (`tm`).** The Thue–Morse bit of a natural number.
+
+*Proof.* By definition. ∎
+
+**Definition (`tmOp`).** The operator whose fixed point is the Thue–Morse stream.
+
+*Proof.* By definition. ∎
+
+**Theorem (`tm_zero`).** The named base or successor case.
+
+*Proof.* By unfolding the definition. ∎
+
+**Definition (`tmList`).** The finite Thue–Morse prefix of a given length.
+
+*Proof.* By definition. ∎
+
+**Theorem (`tmList_zero`).** The named base or successor case.
+
+*Proof.* By unfolding the definition. ∎
+
+**Definition (`tElt`).** The Thue–Morse stream element.
+
+*Proof.* By definition. ∎
+
+**Theorem (`cone_univ_iff`).** The named stream fact.
+
+*Proof.* Follows from the surrounding stream and fixed-point laws. ∎
+
+**Theorem (`expand_append`).** The named law for the Thue–Morse stream.
+
+*Proof.* Use the binary-bit and fixed-point characterisations. ∎
+
+**Theorem (`iterate_expand_cons`).** The named base or successor case.
+
+*Proof.* By unfolding the definition. ∎
+
+**Theorem (`mergeVal_snd_false`).** The named law for merge or shapes.
+
+*Proof.* Case on the merge/shape definitions. ∎
+
+**Theorem (`strBot_mem_cone`).** The named comparison or prefix law for stream principals.
+
+*Proof.* Unpack principal order via cones and singletons. ∎
+
+**Theorem (`strBot_nil`).** The named base or successor case.
+
+*Proof.* By unfolding the definition. ∎
+
+**Theorem (`tElt_unfold`).** The named law for the Thue–Morse stream.
+
+*Proof.* Use the binary-bit and fixed-point characterisations. ∎
+
+**Theorem (`tmList_length`).** The named law for the Thue–Morse stream.
+
+*Proof.* Use the binary-bit and fixed-point characterisations. ∎
+
+**Theorem (`tmList_succ`).** The named base or successor case.
+
+*Proof.* By unfolding the definition. ∎
+
+**Theorem (`tmList_prefix`).** The named comparison or prefix law for stream principals.
+
+*Proof.* Unpack principal order via cones and singletons. ∎
+
+**Theorem (`tmOp_strBot`).** The named law for the Thue–Morse stream.
+
+*Proof.* Use the binary-bit and fixed-point characterisations. ∎
+
+**Theorem (`tm_two_mul`).** The named law for the Thue–Morse stream.
+
+*Proof.* Use the binary-bit and fixed-point characterisations. ∎
+
+**Theorem (`tm_two_mul_add_one`).** The named law for the Thue–Morse stream.
+
+*Proof.* Use the binary-bit and fixed-point characterisations. ∎
+
+**Theorem (`expand_tmList`).** The named law for the Thue–Morse stream.
+
+*Proof.* Use the binary-bit and fixed-point characterisations. ∎
+
+**Theorem (`expand_iterate_eq`).** The named law for the Thue–Morse stream.
+
+*Proof.* Use the binary-bit and fixed-point characterisations. ∎
+
+**Theorem (`weave_head`).** The named stream fact.
+
+*Proof.* Follows from the surrounding stream and fixed-point laws. ∎
+
+**Theorem (`tmOp_strBot_expand`).** The named law for the Thue–Morse stream.
+
+*Proof.* Use the binary-bit and fixed-point characterisations. ∎
+
+**Theorem (`iterElem_succ_eq`).** The named stream fact.
+
+*Proof.* Follows from the surrounding stream and fixed-point laws. ∎
+
+**Definition (`Overlap`).** A periodic overlap predicate on Thue–Morse bits.
+
+*Proof.* By definition. ∎
+
+**Theorem (`append_three_period`).** The named law for flip, double, or tail.
+
+*Proof.* Unfold the string operations and the map laws. ∎
+
+**Theorem (`tmList_getElem?`).** The named law for the Thue–Morse stream.
+
+*Proof.* Use the binary-bit and fixed-point characterisations. ∎
+
+**Theorem (`tm_of_eq_two_mul`).** The named law for the Thue–Morse stream.
+
+*Proof.* Use the binary-bit and fixed-point characterisations. ∎
+
+**Theorem (`tm_of_eq_two_mul_add_one`).** The named law for the Thue–Morse stream.
+
+*Proof.* Use the binary-bit and fixed-point characterisations. ∎
+
+**Theorem (`tm_two_mul_ne`).** The named law for the Thue–Morse stream.
+
+*Proof.* Use the binary-bit and fixed-point characterisations. ∎
+
+**Theorem (`odd_of_consec_eq`).** The named law for flip, double, or tail.
+
+*Proof.* Unfold the string operations and the map laws. ∎
+
+**Theorem (`no_three_consec`).** The named stream fact.
+
+*Proof.* Follows from the surrounding stream and fixed-point laws. ∎
+
+**Theorem (`no_overlap`).** The named law for the Thue–Morse stream.
+
+*Proof.* Use the binary-bit and fixed-point characterisations. ∎
+
+**Theorem (`no_cube`).** The named law for the Thue–Morse stream.
+
+*Proof.* Use the binary-bit and fixed-point characterisations. ∎
+
+**Theorem (`tmList_le_tElt`).** The named comparison or prefix law for stream principals.
+
+*Proof.* Unpack principal order via cones and singletons. ∎
+
+**Theorem (`tElt_digit`).** The named law for the Thue–Morse stream.
+
+*Proof.* Use the binary-bit and fixed-point characterisations. ∎
+
+**Theorem (`tElt_mem_cone_iff`).** The named law for the Thue–Morse stream.
+
+*Proof.* Use the binary-bit and fixed-point characterisations. ∎
+
+**Theorem (`tElt_cube_free`).** The named law for the Thue–Morse stream.
+
+*Proof.* Use the binary-bit and fixed-point characterisations. ∎

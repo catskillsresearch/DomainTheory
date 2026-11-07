@@ -37,4 +37,5 @@
 - [Exercise 5.14 — functions as graphs](1980_Exercise_5_14.md) [✓](../1980_REVISION.md)
 - [Language star](1980_langStar.md) [✓](../1980_REVISION.md)
 - [Exercise 5.15 — star of a word](1980_Exercise_5_15.md) [✓](../1980_REVISION.md)
-- [Exercise 5.16 — negation of sequences](1980_Exercise_5_16.md)
+- [Sequence negation and merge](1980_seqNegMerge.md) [✓](../1980_REVISION.md)
+- [Exercise 5.16 — negation of sequences](1980_Exercise_5_16.md) [✓](../1980_REVISION.md)
