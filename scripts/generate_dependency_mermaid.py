@@ -1767,6 +1767,10 @@ NS_FIX_SHORT: dict[str, tuple[str, str]] = {
         "chain",
         "Iterate-chain supremum",
     ),
+    "Fixed-point induction": (
+        "ind",
+        "Fixed-point induction",
+    ),
     "Exercise 4.8 — fixed-point induction": (
         "X408",
         "Exercise 4.8 — fixed-point induction",

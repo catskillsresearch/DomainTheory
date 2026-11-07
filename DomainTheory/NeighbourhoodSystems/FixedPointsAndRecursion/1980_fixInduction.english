@@ -1,0 +1,11 @@
+Fixed-point induction along iterate chains from bottom, and equality of commuting maps at the least fixed point.
+
+<!-- formalization -->
+
+**Theorem (`ApproximableMap.fix_induction`).** A property of elements that holds at bottom, is preserved by an endomap, and is closed under directed chain-suprema holds at the least fixed point of that map.
+
+*Proof.* The iterate elements from bottom satisfy the property by induction on the step index; the least fixed point is their chain supremum, so the supremum hypothesis applies. ∎
+
+**Theorem (`ApproximableMap.fix_induction_eq`).** Two maps that agree at bottom and each commute with an endomap agree at that endomap’s least fixed point.
+
+*Proof.* Apply fixed-point induction to equality of the two element maps, using the commutation laws at the successor step and directed-supremum continuity for the chain-supremum step. ∎
