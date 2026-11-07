@@ -50,7 +50,7 @@ Proposition 6.11 library: subsystems of a fixed neighbourhood system form a doma
 
 **Definition (`subIso`).** Order isomorphism between subsystems of $E$ and families in `subFam`.
 
-*Proof.* Forward and backward maps are `{X \mid D.\mathrm{mem}\,X\}$ and `ofMem`; order preserved by Scott's subset remark. ∎
+*Proof.* Forward and backward maps are $\{X \mid D.\mathrm{mem}\,X\}$ and $\mathrm{ofMem}$; order preserved by Scott's subset remark. ∎
 
 **Definition (`unionSys`).** System whose neighbourhoods appear in some member of a directed subfamily.
 

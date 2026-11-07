@@ -1,35 +1,35 @@
-Library for $\\mathcal{U}+\mathcal{U}$, $\\mathcal{U}\\times\\mathcal{U}$, $\\mathcal{U}\\to\\mathcal{U}$: nonemptiness of $\\mathcal{U}$-neighbourhoods, effective-presentability of these constructs, their chosen presentations, and the lambda-combinator map used in Definition 8.9.
+Library for $\mathcal{U}+\mathcal{U}$, $\mathcal{U}\times\mathcal{U}$, $\mathcal{U}\to\mathcal{U}$: nonemptiness of $\mathcal{U}$-neighbourhoods, effective-presentability of these constructs, their chosen presentations, and the lambda-combinator map used in Definition 8.9.
 
 <!-- formalization -->
 
-**Theorem (`U_mem_nonempty`).** Every neighbourhood in $\\mathcal{U}$ is nonempty.
+**Theorem (`U_mem_nonempty`).** Every neighbourhood in $\mathcal{U}$ is nonempty.
 
-*Proof.* From the interval presentation of $\\mathcal{U}$. ∎
+*Proof.* From the interval presentation of $\mathcal{U}$. ∎
 
-**Theorem (`funSpaceUU_isEffectivelyGiven`).** $\\mathcal{U}\\to\\mathcal{U}$ is effectively given.
+**Theorem (`funSpaceUU_isEffectivelyGiven`).** $\mathcal{U}\to\mathcal{U}$ is effectively given.
 
-*Proof.* From effective-presentability of $\\mathcal{U}$ and the function-space construct. ∎
+*Proof.* From effective-presentability of $\mathcal{U}$ and the function-space construct. ∎
 
-**Definition (`funSpaceUUPresentation`).** A chosen computable presentation of $\\mathcal{U}\\to\\mathcal{U}$.
+**Definition (`funSpaceUUPresentation`).** A chosen computable presentation of $\mathcal{U}\to\mathcal{U}$.
 
-*Proof.* Classical choice on `funSpaceUU_isEffectivelyGiven`. ∎
+*Proof.* Choose any witness that the function space is effectively given. ∎
 
-**Definition (`lamComb`).** The approximable endomap on $(\\mathcal{U}\\to\\mathcal{U})$ used in the arrow combinator.
+**Definition (`lamComb`).** The approximable endomap on $(\mathcal{U}\to\mathcal{U})$ used in the arrow combinator.
 
-*Proof.* Currying of evaluation preceded by $a$ and postcomposed with $b$. ∎
+*Proof.* Curry evaluation composed with the indicated product and composition maps. ∎
 
-**Theorem (`prodUU_isEffectivelyGiven`).** $\\mathcal{U}\\times\\mathcal{U}$ is effectively given.
+**Theorem (`prodUU_isEffectivelyGiven`).** $\mathcal{U}\times\mathcal{U}$ is effectively given.
 
-*Proof.* Product of effectively given $\\mathcal{U}$ with itself. ∎
+*Proof.* Product of effectively given $\mathcal{U}$ with itself. ∎
 
-**Definition (`prodUUPresentation`).** A chosen computable presentation of $\\mathcal{U}\\times\\mathcal{U}$.
+**Definition (`prodUUPresentation`).** A chosen computable presentation of $\mathcal{U}\times\mathcal{U}$.
 
-*Proof.* Classical choice on `prodUU_isEffectivelyGiven`. ∎
+*Proof.* Choose any witness that the product is effectively given. ∎
 
-**Theorem (`sumUU_isEffectivelyGiven`).** $\\mathcal{U}+\mathcal{U}$ is effectively given.
+**Theorem (`sumUU_isEffectivelyGiven`).** $\mathcal{U}+\mathcal{U}$ is effectively given.
 
-*Proof.* Sum of effectively given $\\mathcal{U}$ with itself. ∎
+*Proof.* Sum of effectively given $\mathcal{U}$ with itself. ∎
 
-**Definition (`sumUUPresentation`).** A chosen computable presentation of $\\mathcal{U}+\mathcal{U}$.
+**Definition (`sumUUPresentation`).** A chosen computable presentation of $\mathcal{U}+\mathcal{U}$.
 
-*Proof.* Classical choice on `sumUU_isEffectivelyGiven`. ∎
+*Proof.* Choose any witness that the sum is effectively given. ∎

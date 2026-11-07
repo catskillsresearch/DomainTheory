@@ -10,10 +10,10 @@ for all $a, b : \mathcal{U} \to \mathcal{U}$. $\square$
 
 <!-- formalization -->
 
-**Definition (`iPlus`)**, **Definition (`jPlus`)**, **Definition (`iTimes`)**, **Definition (`jTimes`)**, **Definition (`iArrow`)**, **Definition (`jArrow`).** The six computable maps witnessing $\\mathcal{U}+\mathcal{U}$, $\\mathcal{U}\times\mathcal{U}$, and $\\mathcal{U}\to\mathcal{U}$ as subdomains of $\\mathcal{U}$.
+**Definition (`iPlus`)**, **Definition (`jPlus`)**, **Definition (`iTimes`)**, **Definition (`jTimes`)**, **Definition (`iArrow`)**, **Definition (`jArrow`).** The six computable maps witnessing $\mathcal{U}+\mathcal{U}$, $\mathcal{U}\times\mathcal{U}$, and $\mathcal{U}\to\mathcal{U}$ as subdomains of $\mathcal{U}$.
 
-*Proof.* From `theorem_8_8_b_strong` on the corresponding $\\mathcal{U}$-construct presentations. ∎
+*Proof.* From `theorem_8_8_b_strong` on the corresponding $\mathcal{U}$-construct presentations. ∎
 
-**Theorem (`definition_89`).** Scott's six projection-pair equations hold for the chosen $i_\*, j_\*$.
+**Theorem (`definition_89`).** Scott's six projection-pair equations hold for the chosen $i_\ast$, $j_\ast$.
 
-*Proof.* Conjunction of the individual $j.comp i$ and $i.comp j \le I$ lemmas. ∎
+*Proof.* Conjunction of the individual composite-identity and composite-below-identity lemmas for the six maps. ∎
