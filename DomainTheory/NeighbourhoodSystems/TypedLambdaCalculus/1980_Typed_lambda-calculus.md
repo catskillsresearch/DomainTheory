@@ -35,5 +35,6 @@
 - [Exercise 5.13 — powerset isomorphisms](1980_Exercise_5_13b.md) [✓](../1980_REVISION.md)
 - [Set graphs](1980_setGraph.md) [✓](../1980_REVISION.md)
 - [Exercise 5.14 — functions as graphs](1980_Exercise_5_14.md) [✓](../1980_REVISION.md)
-- [Exercise 5.15 — star of a word](1980_Exercise_5_15.md)
+- [Language star](1980_langStar.md) [✓](../1980_REVISION.md)
+- [Exercise 5.15 — star of a word](1980_Exercise_5_15.md) [✓](../1980_REVISION.md)
 - [Exercise 5.16 — negation of sequences](1980_Exercise_5_16.md)

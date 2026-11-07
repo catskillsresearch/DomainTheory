@@ -1,0 +1,103 @@
+Kleene star of languages in a monoid, Arden's least-fixed-point law, and Park's least solution of the two-variable language equations.
+
+<!-- formalization -->
+
+**Definition (`kpow`).** The $n$th power of a set of monoid elements is the unit for zero and left multiplication by the set for successors.
+
+*Proof.* By definition. ∎
+
+**Theorem (`kpow_zero`).** The zeroth power is the unit set.
+
+*Proof.* By definition. ∎
+
+**Theorem (`kpow_succ`).** The successor power left-multiplies by the set.
+
+*Proof.* By definition. ∎
+
+**Definition (`G`).** The Arden operator left-multiplies by a fixed set and unions a fixed remainder.
+
+*Proof.* By definition. ∎
+
+**Definition (`star`).** The star of a set collects all finite powers.
+
+*Proof.* By definition. ∎
+
+**Definition (`parkA`).** Park's $A$ coefficient is $a$ union $b$ times star of $a$ times $b$.
+
+*Proof.* By definition. ∎
+
+**Definition (`parkC`).** Park's $C$ coefficient is $c$ union $b$ times star of $a$ times $d$.
+
+*Proof.* By definition. ∎
+
+**Definition (`parkX`).** Park's $x$-solution is the star of $A$ times $C$.
+
+*Proof.* By definition. ∎
+
+**Definition (`parkY`).** Park's $y$-solution is the star of $a$ times the union of $b$ times $x$ with $d$.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mem_kpow_singleton`).** Membership in a power of a singleton is equality with the corresponding power of the generator.
+
+*Proof.* Induction on the exponent. ∎
+
+**Theorem (`mem_star`).** Membership in the star is existence of a power membership.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mem_star_singleton`).** Membership in the star of a singleton is equality with some power of the generator.
+
+*Proof.* Transport the singleton power characterisation. ∎
+
+**Theorem (`smul_assoc`).** Pointwise multiplication of sets is associative.
+
+*Proof.* Unpack products and reassociate the monoid multiplication. ∎
+
+**Theorem (`smul_union`).** Left multiplication distributes over union.
+
+*Proof.* Case on which summand supplies the right factor. ∎
+
+**Theorem (`star_eq`).** The star equals the unit union the set times the star.
+
+*Proof.* Compare powers with the unit and successor cases. ∎
+
+**Theorem (`star_mul_subset_prefixed`).** If a set absorbs left multiplication by $z$ after union with $v$, then star of $z$ times $v$ sits inside it.
+
+*Proof.* Induct on the power, using absorption of left multiplication. ∎
+
+**Theorem (`sunion_mul`).** Right multiplication distributes over union.
+
+*Proof.* Case on which summand supplies the left factor. ∎
+
+**Theorem (`star_mul_isFixed`).** Star of $z$ times $v$ is a fixed point of the Arden operator for $z$ and $v$.
+
+*Proof.* Expand the star equation and redistribute. ∎
+
+**Theorem (`arden`).** The least fixed point of the Arden operator is star of $z$ times $v$.
+
+*Proof.* The star product is a fixed point and least among prefixed points. ∎
+
+**Theorem (`parkX_eq`).** Park's $x$ satisfies the first language equation.
+
+*Proof.* The star fixed-point law for Park's $A$ and $C$, redistributed. ∎
+
+**Theorem (`parkY_eq`).** Park's $y$ satisfies the second language equation.
+
+*Proof.* The star fixed-point law for $a$ against the $y$-body, redistributed. ∎
+
+**Theorem (`park_least`).** Any solution of the two language equations dominates Park's solution.
+
+*Proof.* Prefixedness of the Park coefficients under any solution, then Arden. ∎
+
+**Theorem (`park_solves`).** Park's pair solves the two language equations.
+
+*Proof.* The two Park equation laws. ∎
+
+**Theorem (`part1`).** For singletons, the least fixed point of left multiplication by $e$ union $\{e'\}$ is the star of $\{e\}$ times $\{e'\}$.
+
+*Proof.* Arden's lemma on singletons. ∎
+
+**Theorem (`part1_freeMonoid`).** The singleton Arden law specialises to the free monoid on booleans.
+
+*Proof.* Specialise the singleton Arden law. ∎

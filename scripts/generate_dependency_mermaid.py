@@ -2047,6 +2047,10 @@ NS_LAM_SHORT: dict[str, tuple[str, str]] = {
         "X514",
         "Exercise 5.14 — functions as graphs",
     ),
+    "Language star": (
+        "langStar",
+        "Language star",
+    ),
     "Exercise 5.15 — star of a word": (
         "X515",
         "Exercise 5.15 — star of a word",
