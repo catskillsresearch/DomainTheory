@@ -2039,6 +2039,10 @@ NS_LAM_SHORT: dict[str, tuple[str, str]] = {
         "X513b",
         "Exercise 5.13 — powerset isomorphisms",
     ),
+    "Set graphs": (
+        "setGraph",
+        "Set graphs",
+    ),
     "Exercise 5.14 — functions as graphs": (
         "X514",
         "Exercise 5.14 — functions as graphs",

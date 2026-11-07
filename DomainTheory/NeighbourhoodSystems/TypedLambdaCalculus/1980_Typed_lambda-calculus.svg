@@ -27,38 +27,38 @@
 <!-- T52 -->
 <g id="node3" class="node">
 <title>T52</title>
-<path fill="#fee2e2" stroke="#b91c1c" d="M367,-76C367,-76 232,-76 232,-76 226,-76 220,-70 220,-64 220,-64 220,-40 220,-40 220,-34 226,-28 232,-28 232,-28 367,-28 367,-28 373,-28 379,-34 379,-40 379,-40 379,-64 379,-64 379,-70 373,-76 367,-76"/>
-<text text-anchor="middle" x="299.5" y="-57.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">Thm 5.2 — beta</text>
-<text text-anchor="middle" x="299.5" y="-37.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">conversion</text>
+<path fill="#fee2e2" stroke="#b91c1c" d="M367,-112C367,-112 232,-112 232,-112 226,-112 220,-106 220,-100 220,-100 220,-76 220,-76 220,-70 226,-64 232,-64 232,-64 367,-64 367,-64 373,-64 379,-70 379,-76 379,-76 379,-100 379,-100 379,-106 373,-112 367,-112"/>
+<text text-anchor="middle" x="299.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">Thm 5.2 — beta</text>
+<text text-anchor="middle" x="299.5" y="-73.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">conversion</text>
 </g>
 <!-- beta&#45;&gt;T52 -->
 <g id="edge2" class="edge">
 <title>beta&#45;&gt;T52</title>
-<path fill="none" stroke="black" d="M143.03,-103.93C152.41,-101.41 162,-98.72 171,-96 188.61,-90.68 207.42,-84.48 225.04,-78.44"/>
-<polygon fill="black" stroke="black" points="226.16,-80.64 231.98,-76.05 224.57,-76.01 226.16,-80.64"/>
-<text text-anchor="middle" x="194.5" y="-93" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M166.04,-106.74C181.33,-104.58 197.39,-102.31 212.86,-100.12"/>
+<polygon fill="black" stroke="black" points="213.33,-102.53 219.92,-99.12 212.64,-97.67 213.33,-102.53"/>
+<text text-anchor="middle" x="194.5" y="-106" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- simFix -->
 <g id="node4" class="node">
 <title>simFix</title>
-<path fill="#dbeafe" stroke="#1d4ed8" d="M347.5,-140C347.5,-140 251.5,-140 251.5,-140 245.5,-140 239.5,-134 239.5,-128 239.5,-128 239.5,-104 239.5,-104 239.5,-98 245.5,-92 251.5,-92 251.5,-92 347.5,-92 347.5,-92 353.5,-92 359.5,-98 359.5,-104 359.5,-104 359.5,-128 359.5,-128 359.5,-134 353.5,-140 347.5,-140"/>
-<text text-anchor="middle" x="299.5" y="-121.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Paired fixed</text>
-<text text-anchor="middle" x="299.5" y="-101.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">point</text>
+<path fill="#dbeafe" stroke="#1d4ed8" d="M347.5,-176C347.5,-176 251.5,-176 251.5,-176 245.5,-176 239.5,-170 239.5,-164 239.5,-164 239.5,-140 239.5,-140 239.5,-134 245.5,-128 251.5,-128 251.5,-128 347.5,-128 347.5,-128 353.5,-128 359.5,-134 359.5,-140 359.5,-140 359.5,-164 359.5,-164 359.5,-170 353.5,-176 347.5,-176"/>
+<text text-anchor="middle" x="299.5" y="-157.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Paired fixed</text>
+<text text-anchor="middle" x="299.5" y="-137.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">point</text>
 </g>
 <!-- P53 -->
 <g id="node5" class="node">
 <title>P53</title>
-<path fill="#dcfce7" stroke="#15803d" d="M565,-150C565,-150 453,-150 453,-150 447,-150 441,-144 441,-138 441,-138 441,-94 441,-94 441,-88 447,-82 453,-82 453,-82 565,-82 565,-82 571,-82 577,-88 577,-94 577,-94 577,-138 577,-138 577,-144 571,-150 565,-150"/>
-<text text-anchor="middle" x="509" y="-131.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">Prop 5.3 —</text>
-<text text-anchor="middle" x="509" y="-111.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">simultaneous</text>
-<text text-anchor="middle" x="509" y="-91.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">fixed points</text>
+<path fill="#dcfce7" stroke="#15803d" d="M565,-186C565,-186 453,-186 453,-186 447,-186 441,-180 441,-174 441,-174 441,-130 441,-130 441,-124 447,-118 453,-118 453,-118 565,-118 565,-118 571,-118 577,-124 577,-130 577,-130 577,-174 577,-174 577,-180 571,-186 565,-186"/>
+<text text-anchor="middle" x="509" y="-167.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">Prop 5.3 —</text>
+<text text-anchor="middle" x="509" y="-147.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">simultaneous</text>
+<text text-anchor="middle" x="509" y="-127.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">fixed points</text>
 </g>
 <!-- simFix&#45;&gt;P53 -->
-<g id="edge16" class="edge">
+<g id="edge17" class="edge">
 <title>simFix&#45;&gt;P53</title>
-<path fill="none" stroke="black" d="M359.68,-116C382.69,-116 409.3,-116 433.58,-116"/>
-<polygon fill="black" stroke="black" points="433.7,-118.45 440.7,-116 433.7,-113.55 433.7,-118.45"/>
-<text text-anchor="middle" x="404.5" y="-119" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M359.68,-152C382.69,-152 409.3,-152 433.58,-152"/>
+<polygon fill="black" stroke="black" points="433.7,-154.45 440.7,-152 433.7,-149.55 433.7,-154.45"/>
+<text text-anchor="middle" x="404.5" y="-155" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- paramFix -->
 <g id="node6" class="node">
@@ -70,18 +70,18 @@
 <!-- P54 -->
 <g id="node7" class="node">
 <title>P54</title>
-<path fill="#dcfce7" stroke="#15803d" d="M344,-244C344,-244 255,-244 255,-244 249,-244 243,-238 243,-232 243,-232 243,-168 243,-168 243,-162 249,-156 255,-156 255,-156 344,-156 344,-156 350,-156 356,-162 356,-168 356,-168 356,-232 356,-232 356,-238 350,-244 344,-244"/>
-<text text-anchor="middle" x="299.5" y="-225.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">Prop 5.4 —</text>
-<text text-anchor="middle" x="299.5" y="-205.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">fixed point</text>
-<text text-anchor="middle" x="299.5" y="-185.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">under a</text>
-<text text-anchor="middle" x="299.5" y="-165.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">parameter</text>
+<path fill="#dcfce7" stroke="#15803d" d="M344,-280C344,-280 255,-280 255,-280 249,-280 243,-274 243,-268 243,-268 243,-204 243,-204 243,-198 249,-192 255,-192 255,-192 344,-192 344,-192 350,-192 356,-198 356,-204 356,-204 356,-268 356,-268 356,-274 350,-280 344,-280"/>
+<text text-anchor="middle" x="299.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">Prop 5.4 —</text>
+<text text-anchor="middle" x="299.5" y="-241.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">fixed point</text>
+<text text-anchor="middle" x="299.5" y="-221.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">under a</text>
+<text text-anchor="middle" x="299.5" y="-201.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#14532d">parameter</text>
 </g>
 <!-- paramFix&#45;&gt;P54 -->
 <g id="edge12" class="edge">
 <title>paramFix&#45;&gt;P54</title>
-<path fill="none" stroke="black" d="M141.65,-226.64C170.5,-221.74 205.93,-215.72 235.82,-210.64"/>
-<polygon fill="black" stroke="black" points="236.4,-213.03 242.89,-209.44 235.58,-208.2 236.4,-213.03"/>
-<text text-anchor="middle" x="194.5" y="-221" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M141.65,-236C170.5,-236 205.93,-236 235.82,-236"/>
+<polygon fill="black" stroke="black" points="235.89,-238.45 242.89,-236 235.89,-233.55 235.89,-238.45"/>
+<text text-anchor="middle" x="194.5" y="-239" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- Tbl55 -->
 <g id="node8" class="node">
@@ -93,9 +93,9 @@
 <!-- Tbl55&#45;&gt;simFix -->
 <g id="edge1" class="edge">
 <title>Tbl55&#45;&gt;simFix</title>
-<path fill="none" stroke="black" d="M163.64,-151.62C186.18,-145.67 210.6,-139.22 232.4,-133.46"/>
-<polygon fill="black" stroke="black" points="233.23,-135.78 239.37,-131.62 231.98,-131.04 233.23,-135.78"/>
-<text text-anchor="middle" x="194.5" y="-147" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M163.64,-164.72C186.18,-162.6 210.6,-160.29 232.4,-158.24"/>
+<polygon fill="black" stroke="black" points="232.63,-160.67 239.37,-157.58 232.17,-155.8 232.63,-160.67"/>
+<text text-anchor="middle" x="194.5" y="-165" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- numRec -->
 <g id="node9" class="node">
@@ -116,77 +116,77 @@
 <!-- lamArg -->
 <g id="node11" class="node">
 <title>lamArg</title>
-<path fill="#dbeafe" stroke="#1d4ed8" d="M357.5,-392C357.5,-392 241.5,-392 241.5,-392 235.5,-392 229.5,-386 229.5,-380 229.5,-380 229.5,-336 229.5,-336 229.5,-330 235.5,-324 241.5,-324 241.5,-324 357.5,-324 357.5,-324 363.5,-324 369.5,-330 369.5,-336 369.5,-336 369.5,-380 369.5,-380 369.5,-386 363.5,-392 357.5,-392"/>
-<text text-anchor="middle" x="299.5" y="-373.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Number&#45;stack</text>
-<text text-anchor="middle" x="299.5" y="-353.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">argument</text>
-<text text-anchor="middle" x="299.5" y="-333.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">encoding</text>
+<path fill="#dbeafe" stroke="#1d4ed8" d="M357.5,-428C357.5,-428 241.5,-428 241.5,-428 235.5,-428 229.5,-422 229.5,-416 229.5,-416 229.5,-372 229.5,-372 229.5,-366 235.5,-360 241.5,-360 241.5,-360 357.5,-360 357.5,-360 363.5,-360 369.5,-366 369.5,-372 369.5,-372 369.5,-416 369.5,-416 369.5,-422 363.5,-428 357.5,-428"/>
+<text text-anchor="middle" x="299.5" y="-409.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Number&#45;stack</text>
+<text text-anchor="middle" x="299.5" y="-389.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">argument</text>
+<text text-anchor="middle" x="299.5" y="-369.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">encoding</text>
 </g>
 <!-- iterStack&#45;&gt;lamArg -->
 <g id="edge6" class="edge">
 <title>iterStack&#45;&gt;lamArg</title>
-<path fill="none" stroke="black" d="M161.54,-381.26C181.25,-377.91 202.53,-374.3 222.3,-370.94"/>
-<polygon fill="black" stroke="black" points="222.74,-373.35 229.23,-369.76 221.92,-368.52 222.74,-373.35"/>
-<text text-anchor="middle" x="194.5" y="-379" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M161.54,-394C181.17,-394 202.35,-394 222.04,-394"/>
+<polygon fill="black" stroke="black" points="222.23,-396.45 229.23,-394 222.23,-391.55 222.23,-396.45"/>
+<text text-anchor="middle" x="194.5" y="-397" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- diag -->
 <g id="node22" class="node">
 <title>diag</title>
-<path fill="#dbeafe" stroke="#1d4ed8" d="M355,-308C355,-308 244,-308 244,-308 238,-308 232,-302 232,-296 232,-296 232,-272 232,-272 232,-266 238,-260 244,-260 244,-260 355,-260 355,-260 361,-260 367,-266 367,-272 367,-272 367,-296 367,-296 367,-302 361,-308 355,-308"/>
-<text text-anchor="middle" x="299.5" y="-289.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Diagonal and</text>
-<text text-anchor="middle" x="299.5" y="-269.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">map stacks</text>
+<path fill="#dbeafe" stroke="#1d4ed8" d="M355,-344C355,-344 244,-344 244,-344 238,-344 232,-338 232,-332 232,-332 232,-308 232,-308 232,-302 238,-296 244,-296 244,-296 355,-296 355,-296 361,-296 367,-302 367,-308 367,-308 367,-332 367,-332 367,-338 361,-344 355,-344"/>
+<text text-anchor="middle" x="299.5" y="-325.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Diagonal and</text>
+<text text-anchor="middle" x="299.5" y="-305.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">map stacks</text>
 </g>
 <!-- iterStack&#45;&gt;diag -->
 <g id="edge5" class="edge">
 <title>iterStack&#45;&gt;diag</title>
-<path fill="none" stroke="black" d="M157.6,-359.92C162.19,-357.34 166.69,-354.69 171,-352 193.33,-338.08 195.11,-328.98 218,-316 220.87,-314.37 223.85,-312.78 226.88,-311.25"/>
-<polygon fill="black" stroke="black" points="227.98,-313.44 233.18,-308.16 225.82,-309.04 227.98,-313.44"/>
-<text text-anchor="middle" x="194.5" y="-339" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M161.54,-367.81C182.09,-360.63 204.34,-352.87 224.81,-345.72"/>
+<polygon fill="black" stroke="black" points="225.87,-347.95 231.68,-343.33 224.26,-343.32 225.87,-347.95"/>
+<text text-anchor="middle" x="194.5" y="-360" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- partrecSch -->
 <g id="node12" class="node">
 <title>partrecSch</title>
-<path fill="#dbeafe" stroke="#1d4ed8" d="M578,-399C578,-399 440,-399 440,-399 434,-399 428,-393 428,-387 428,-387 428,-343 428,-343 428,-337 434,-331 440,-331 440,-331 578,-331 578,-331 584,-331 590,-337 590,-343 590,-343 590,-387 590,-387 590,-393 584,-399 578,-399"/>
-<text text-anchor="middle" x="509" y="-380.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Partial&#45;recursive</text>
-<text text-anchor="middle" x="509" y="-360.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">scheme</text>
-<text text-anchor="middle" x="509" y="-340.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">realizers</text>
+<path fill="#dbeafe" stroke="#1d4ed8" d="M578,-435C578,-435 440,-435 440,-435 434,-435 428,-429 428,-423 428,-423 428,-379 428,-379 428,-373 434,-367 440,-367 440,-367 578,-367 578,-367 584,-367 590,-373 590,-379 590,-379 590,-423 590,-423 590,-429 584,-435 578,-435"/>
+<text text-anchor="middle" x="509" y="-416.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Partial&#45;recursive</text>
+<text text-anchor="middle" x="509" y="-396.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">scheme</text>
+<text text-anchor="middle" x="509" y="-376.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">realizers</text>
 </g>
 <!-- lamArg&#45;&gt;partrecSch -->
 <g id="edge7" class="edge">
 <title>lamArg&#45;&gt;partrecSch</title>
-<path fill="none" stroke="black" d="M369.59,-360.33C385.89,-360.88 403.48,-361.47 420.47,-362.05"/>
-<polygon fill="black" stroke="black" points="420.64,-364.5 427.71,-362.29 420.8,-359.61 420.64,-364.5"/>
-<text text-anchor="middle" x="404.5" y="-364" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M369.59,-396.33C385.89,-396.88 403.48,-397.47 420.47,-398.05"/>
+<polygon fill="black" stroke="black" points="420.64,-400.5 427.71,-398.29 420.8,-395.61 420.64,-400.5"/>
+<text text-anchor="middle" x="404.5" y="-400" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- partrec -->
 <g id="node13" class="node">
 <title>partrec</title>
-<path fill="#dbeafe" stroke="#1d4ed8" d="M757,-399C757,-399 649,-399 649,-399 643,-399 637,-393 637,-387 637,-387 637,-343 637,-343 637,-337 643,-331 649,-331 649,-331 757,-331 757,-331 763,-331 769,-337 769,-343 769,-343 769,-387 769,-387 769,-393 763,-399 757,-399"/>
-<text text-anchor="middle" x="703" y="-380.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Partial</text>
-<text text-anchor="middle" x="703" y="-360.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">recursive</text>
-<text text-anchor="middle" x="703" y="-340.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">λ&#45;definability</text>
+<path fill="#dbeafe" stroke="#1d4ed8" d="M757,-435C757,-435 649,-435 649,-435 643,-435 637,-429 637,-423 637,-423 637,-379 637,-379 637,-373 643,-367 649,-367 649,-367 757,-367 757,-367 763,-367 769,-373 769,-379 769,-379 769,-423 769,-423 769,-429 763,-435 757,-435"/>
+<text text-anchor="middle" x="703" y="-416.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Partial</text>
+<text text-anchor="middle" x="703" y="-396.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">recursive</text>
+<text text-anchor="middle" x="703" y="-376.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">λ&#45;definability</text>
 </g>
 <!-- partrecSch&#45;&gt;partrec -->
 <g id="edge14" class="edge">
 <title>partrecSch&#45;&gt;partrec</title>
-<path fill="none" stroke="black" d="M590.03,-365C603.23,-365 616.84,-365 629.83,-365"/>
-<polygon fill="black" stroke="black" points="629.98,-367.45 636.98,-365 629.98,-362.55 629.98,-367.45"/>
-<text text-anchor="middle" x="613.5" y="-368" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M590.03,-401C603.23,-401 616.84,-401 629.83,-401"/>
+<polygon fill="black" stroke="black" points="629.98,-403.45 636.98,-401 629.98,-398.55 629.98,-403.45"/>
+<text text-anchor="middle" x="613.5" y="-404" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- T56 -->
 <g id="node14" class="node">
 <title>T56</title>
-<path fill="#fee2e2" stroke="#b91c1c" d="M917,-409C917,-409 828,-409 828,-409 822,-409 816,-403 816,-397 816,-397 816,-333 816,-333 816,-327 822,-321 828,-321 828,-321 917,-321 917,-321 923,-321 929,-327 929,-333 929,-333 929,-397 929,-397 929,-403 923,-409 917,-409"/>
-<text text-anchor="middle" x="872.5" y="-390.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">Thm 5.6 —</text>
-<text text-anchor="middle" x="872.5" y="-370.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">partial</text>
-<text text-anchor="middle" x="872.5" y="-350.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">recursive</text>
-<text text-anchor="middle" x="872.5" y="-330.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">functions</text>
+<path fill="#fee2e2" stroke="#b91c1c" d="M917,-445C917,-445 828,-445 828,-445 822,-445 816,-439 816,-433 816,-433 816,-369 816,-369 816,-363 822,-357 828,-357 828,-357 917,-357 917,-357 923,-357 929,-363 929,-369 929,-369 929,-433 929,-433 929,-439 923,-445 917,-445"/>
+<text text-anchor="middle" x="872.5" y="-426.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">Thm 5.6 —</text>
+<text text-anchor="middle" x="872.5" y="-406.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">partial</text>
+<text text-anchor="middle" x="872.5" y="-386.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">recursive</text>
+<text text-anchor="middle" x="872.5" y="-366.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#7f1d1d">functions</text>
 </g>
 <!-- partrec&#45;&gt;T56 -->
 <g id="edge13" class="edge">
 <title>partrec&#45;&gt;T56</title>
-<path fill="none" stroke="black" d="M769.24,-365C782.26,-365 795.91,-365 808.84,-365"/>
-<polygon fill="black" stroke="black" points="808.94,-367.45 815.94,-365 808.94,-362.55 808.94,-367.45"/>
-<text text-anchor="middle" x="792.5" y="-368" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M769.24,-401C782.26,-401 795.91,-401 808.84,-401"/>
+<polygon fill="black" stroke="black" points="808.94,-403.45 815.94,-401 808.94,-398.55 808.94,-403.45"/>
+<text text-anchor="middle" x="792.5" y="-404" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- multiLam -->
 <g id="node15" class="node">
@@ -198,17 +198,17 @@
 <!-- X507 -->
 <g id="node16" class="node">
 <title>X507</title>
-<path fill="#e0e7ff" stroke="#4338ca" d="M369,-476C369,-476 230,-476 230,-476 224,-476 218,-470 218,-464 218,-464 218,-420 218,-420 218,-414 224,-408 230,-408 230,-408 369,-408 369,-408 375,-408 381,-414 381,-420 381,-420 381,-464 381,-464 381,-470 375,-476 369,-476"/>
-<text text-anchor="middle" x="299.5" y="-457.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 5.7 —</text>
-<text text-anchor="middle" x="299.5" y="-437.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">currying the</text>
-<text text-anchor="middle" x="299.5" y="-417.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">lambda notation</text>
+<path fill="#e0e7ff" stroke="#4338ca" d="M369,-512C369,-512 230,-512 230,-512 224,-512 218,-506 218,-500 218,-500 218,-456 218,-456 218,-450 224,-444 230,-444 230,-444 369,-444 369,-444 375,-444 381,-450 381,-456 381,-456 381,-500 381,-500 381,-506 375,-512 369,-512"/>
+<text text-anchor="middle" x="299.5" y="-493.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 5.7 —</text>
+<text text-anchor="middle" x="299.5" y="-473.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">currying the</text>
+<text text-anchor="middle" x="299.5" y="-453.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">lambda notation</text>
 </g>
 <!-- multiLam&#45;&gt;X507 -->
 <g id="edge8" class="edge">
 <title>multiLam&#45;&gt;X507</title>
-<path fill="none" stroke="black" d="M162.14,-458.72C177.81,-456.8 194.45,-454.76 210.53,-452.79"/>
-<polygon fill="black" stroke="black" points="211.22,-455.17 217.87,-451.89 210.62,-450.31 211.22,-455.17"/>
-<text text-anchor="middle" x="194.5" y="-458" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M162.14,-471.57C177.81,-472.31 194.45,-473.09 210.53,-473.85"/>
+<polygon fill="black" stroke="black" points="210.76,-476.31 217.87,-474.2 210.99,-471.42 210.76,-476.31"/>
+<text text-anchor="middle" x="194.5" y="-476" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- combComp -->
 <g id="node17" class="node">
@@ -220,17 +220,17 @@
 <!-- X508 -->
 <g id="node18" class="node">
 <title>X508</title>
-<path fill="#e0e7ff" stroke="#4338ca" d="M358,-560C358,-560 241,-560 241,-560 235,-560 229,-554 229,-548 229,-548 229,-504 229,-504 229,-498 235,-492 241,-492 241,-492 358,-492 358,-492 364,-492 370,-498 370,-504 370,-504 370,-548 370,-548 370,-554 364,-560 358,-560"/>
-<text text-anchor="middle" x="299.5" y="-541.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 5.8 —</text>
-<text text-anchor="middle" x="299.5" y="-521.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">combinatory</text>
-<text text-anchor="middle" x="299.5" y="-501.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">completeness</text>
+<path fill="#e0e7ff" stroke="#4338ca" d="M358,-596C358,-596 241,-596 241,-596 235,-596 229,-590 229,-584 229,-584 229,-540 229,-540 229,-534 235,-528 241,-528 241,-528 358,-528 358,-528 364,-528 370,-534 370,-540 370,-540 370,-584 370,-584 370,-590 364,-596 358,-596"/>
+<text text-anchor="middle" x="299.5" y="-577.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 5.8 —</text>
+<text text-anchor="middle" x="299.5" y="-557.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">combinatory</text>
+<text text-anchor="middle" x="299.5" y="-537.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">completeness</text>
 </g>
 <!-- combComp&#45;&gt;X508 -->
 <g id="edge3" class="edge">
 <title>combComp&#45;&gt;X508</title>
-<path fill="none" stroke="black" d="M156.21,-530.03C177.14,-529.43 200.21,-528.78 221.57,-528.18"/>
-<polygon fill="black" stroke="black" points="221.82,-530.62 228.75,-527.97 221.68,-525.72 221.82,-530.62"/>
-<text text-anchor="middle" x="194.5" y="-532" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M156.21,-541.86C177.14,-544.83 200.21,-548.09 221.57,-551.11"/>
+<polygon fill="black" stroke="black" points="221.47,-553.57 228.75,-552.13 222.16,-548.72 221.47,-553.57"/>
+<text text-anchor="middle" x="194.5" y="-550" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- X509 -->
 <g id="node19" class="node">
@@ -249,31 +249,31 @@
 <!-- X510 -->
 <g id="node21" class="node">
 <title>X510</title>
-<path fill="#e0e7ff" stroke="#4338ca" d="M361.5,-624C361.5,-624 237.5,-624 237.5,-624 231.5,-624 225.5,-618 225.5,-612 225.5,-612 225.5,-588 225.5,-588 225.5,-582 231.5,-576 237.5,-576 237.5,-576 361.5,-576 361.5,-576 367.5,-576 373.5,-582 373.5,-588 373.5,-588 373.5,-612 373.5,-612 373.5,-618 367.5,-624 361.5,-624"/>
-<text text-anchor="middle" x="299.5" y="-605.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 5.10 —</text>
-<text text-anchor="middle" x="299.5" y="-585.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">smash product</text>
+<path fill="#e0e7ff" stroke="#4338ca" d="M361.5,-664C361.5,-664 237.5,-664 237.5,-664 231.5,-664 225.5,-658 225.5,-652 225.5,-652 225.5,-628 225.5,-628 225.5,-622 231.5,-616 237.5,-616 237.5,-616 361.5,-616 361.5,-616 367.5,-616 373.5,-622 373.5,-628 373.5,-628 373.5,-652 373.5,-652 373.5,-658 367.5,-664 361.5,-664"/>
+<text text-anchor="middle" x="299.5" y="-645.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 5.10 —</text>
+<text text-anchor="middle" x="299.5" y="-625.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">smash product</text>
 </g>
 <!-- smash&#45;&gt;X510 -->
-<g id="edge17" class="edge">
+<g id="edge18" class="edge">
 <title>smash&#45;&gt;X510</title>
-<path fill="none" stroke="black" d="M144.01,-655.9C153.08,-653.42 162.33,-650.75 171,-648 191.05,-641.63 212.56,-633.9 232.09,-626.51"/>
-<polygon fill="black" stroke="black" points="232.97,-628.8 238.64,-624.02 231.22,-624.22 232.97,-628.8"/>
-<text text-anchor="middle" x="194.5" y="-643" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M160.65,-659.51C179.36,-656.86 199.54,-654 218.53,-651.32"/>
+<polygon fill="black" stroke="black" points="218.88,-653.74 225.47,-650.33 218.19,-648.89 218.88,-653.74"/>
+<text text-anchor="middle" x="194.5" y="-658" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- X511 -->
 <g id="node23" class="node">
 <title>X511</title>
-<path fill="#e0e7ff" stroke="#4338ca" d="M560.5,-315C560.5,-315 457.5,-315 457.5,-315 451.5,-315 445.5,-309 445.5,-303 445.5,-303 445.5,-259 445.5,-259 445.5,-253 451.5,-247 457.5,-247 457.5,-247 560.5,-247 560.5,-247 566.5,-247 572.5,-253 572.5,-259 572.5,-259 572.5,-303 572.5,-303 572.5,-309 566.5,-315 560.5,-315"/>
-<text text-anchor="middle" x="509" y="-296.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 5.11 —</text>
-<text text-anchor="middle" x="509" y="-276.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">stack</text>
-<text text-anchor="middle" x="509" y="-256.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">combinators</text>
+<path fill="#e0e7ff" stroke="#4338ca" d="M560.5,-351C560.5,-351 457.5,-351 457.5,-351 451.5,-351 445.5,-345 445.5,-339 445.5,-339 445.5,-295 445.5,-295 445.5,-289 451.5,-283 457.5,-283 457.5,-283 560.5,-283 560.5,-283 566.5,-283 572.5,-289 572.5,-295 572.5,-295 572.5,-339 572.5,-339 572.5,-345 566.5,-351 560.5,-351"/>
+<text text-anchor="middle" x="509" y="-332.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 5.11 —</text>
+<text text-anchor="middle" x="509" y="-312.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">stack</text>
+<text text-anchor="middle" x="509" y="-292.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">combinators</text>
 </g>
 <!-- diag&#45;&gt;X511 -->
 <g id="edge4" class="edge">
 <title>diag&#45;&gt;X511</title>
-<path fill="none" stroke="black" d="M367.01,-283.04C389.79,-282.71 415.32,-282.34 438.34,-282.01"/>
-<polygon fill="black" stroke="black" points="438.43,-284.46 445.39,-281.91 438.36,-279.56 438.43,-284.46"/>
-<text text-anchor="middle" x="404.5" y="-286" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M367.01,-319.04C389.79,-318.71 415.32,-318.34 438.34,-318.01"/>
+<polygon fill="black" stroke="black" points="438.43,-320.46 445.39,-317.91 438.36,-315.56 438.43,-320.46"/>
+<text text-anchor="middle" x="404.5" y="-321" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- while -->
 <g id="node24" class="node">
@@ -285,17 +285,17 @@
 <!-- X512 -->
 <g id="node25" class="node">
 <title>X512</title>
-<path fill="#e0e7ff" stroke="#4338ca" d="M349.5,-708C349.5,-708 249.5,-708 249.5,-708 243.5,-708 237.5,-702 237.5,-696 237.5,-696 237.5,-652 237.5,-652 237.5,-646 243.5,-640 249.5,-640 249.5,-640 349.5,-640 349.5,-640 355.5,-640 361.5,-646 361.5,-652 361.5,-652 361.5,-696 361.5,-696 361.5,-702 355.5,-708 349.5,-708"/>
-<text text-anchor="middle" x="299.5" y="-689.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 5.12 —</text>
-<text text-anchor="middle" x="299.5" y="-669.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">while</text>
-<text text-anchor="middle" x="299.5" y="-649.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">combinator</text>
+<path fill="#e0e7ff" stroke="#4338ca" d="M349.5,-748C349.5,-748 249.5,-748 249.5,-748 243.5,-748 237.5,-742 237.5,-736 237.5,-736 237.5,-692 237.5,-692 237.5,-686 243.5,-680 249.5,-680 249.5,-680 349.5,-680 349.5,-680 355.5,-680 361.5,-686 361.5,-692 361.5,-692 361.5,-736 361.5,-736 361.5,-742 355.5,-748 349.5,-748"/>
+<text text-anchor="middle" x="299.5" y="-729.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 5.12 —</text>
+<text text-anchor="middle" x="299.5" y="-709.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">while</text>
+<text text-anchor="middle" x="299.5" y="-689.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">combinator</text>
 </g>
 <!-- while&#45;&gt;X512 -->
-<g id="edge18" class="edge">
+<g id="edge19" class="edge">
 <title>while&#45;&gt;X512</title>
-<path fill="none" stroke="black" d="M144.15,-710.4C170.71,-704.14 202.43,-696.66 230.19,-690.11"/>
-<polygon fill="black" stroke="black" points="230.9,-692.46 237.15,-688.47 229.78,-687.69 230.9,-692.46"/>
-<text text-anchor="middle" x="194.5" y="-702" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M144.15,-721.28C170.6,-720.03 202.16,-718.54 229.83,-717.24"/>
+<polygon fill="black" stroke="black" points="230.27,-719.67 237.15,-716.89 230.04,-714.78 230.27,-719.67"/>
+<text text-anchor="middle" x="194.5" y="-722" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- natPair -->
 <g id="node26" class="node">
@@ -328,51 +328,64 @@
 <text text-anchor="middle" x="299.5" y="-817.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">isomorphisms</text>
 </g>
 <!-- natPair&#45;&gt;powerset -->
-<g id="edge11" class="edge">
+<g id="edge10" class="edge">
 <title>natPair&#45;&gt;powerset</title>
 <path fill="none" stroke="black" d="M164.54,-804.2C183.09,-808.05 202.87,-812.15 221.38,-815.99"/>
 <polygon fill="black" stroke="black" points="221.33,-818.49 228.68,-817.51 222.33,-813.69 221.33,-818.49"/>
 <text text-anchor="middle" x="194.5" y="-813" font-family="Times,serif" font-size="10.00">1</text>
 </g>
-<!-- X514 -->
+<!-- setGraph -->
 <g id="node30" class="node">
-<title>X514</title>
-<path fill="#e0e7ff" stroke="#4338ca" d="M349.5,-792C349.5,-792 249.5,-792 249.5,-792 243.5,-792 237.5,-786 237.5,-780 237.5,-780 237.5,-736 237.5,-736 237.5,-730 243.5,-724 249.5,-724 249.5,-724 349.5,-724 349.5,-724 355.5,-724 361.5,-730 361.5,-736 361.5,-736 361.5,-780 361.5,-780 361.5,-786 355.5,-792 349.5,-792"/>
-<text text-anchor="middle" x="299.5" y="-773.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 5.14 —</text>
-<text text-anchor="middle" x="299.5" y="-753.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">functions as</text>
-<text text-anchor="middle" x="299.5" y="-733.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">graphs</text>
+<title>setGraph</title>
+<path fill="#dbeafe" stroke="#1d4ed8" d="M346.17,-792C346.17,-792 252.83,-792 252.83,-792 248.17,-792 243.5,-787.33 243.5,-782.67 243.5,-782.67 243.5,-773.33 243.5,-773.33 243.5,-768.67 248.17,-764 252.83,-764 252.83,-764 346.17,-764 346.17,-764 350.83,-764 355.5,-768.67 355.5,-773.33 355.5,-773.33 355.5,-782.67 355.5,-782.67 355.5,-787.33 350.83,-792 346.17,-792"/>
+<text text-anchor="middle" x="299.5" y="-773.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#1e3a8a">Set graphs</text>
 </g>
-<!-- natPair&#45;&gt;X514 -->
-<g id="edge10" class="edge">
-<title>natPair&#45;&gt;X514</title>
-<path fill="none" stroke="black" d="M164.54,-776.96C186.07,-773.91 209.26,-770.63 230.2,-767.67"/>
-<polygon fill="black" stroke="black" points="230.62,-770.08 237.2,-766.67 229.93,-765.23 230.62,-770.08"/>
-<text text-anchor="middle" x="194.5" y="-776" font-family="Times,serif" font-size="10.00">1</text>
+<!-- natPair&#45;&gt;setGraph -->
+<g id="edge11" class="edge">
+<title>natPair&#45;&gt;setGraph</title>
+<path fill="none" stroke="black" d="M164.54,-784.32C188.19,-783.2 213.84,-781.99 236.3,-780.93"/>
+<polygon fill="black" stroke="black" points="236.6,-783.37 243.48,-780.6 236.37,-778.48 236.6,-783.37"/>
+<text text-anchor="middle" x="194.5" y="-786" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- X513b -->
 <g id="node29" class="node">
 <title>X513b</title>
-<path fill="#e0e7ff" stroke="#4338ca" d="M567.5,-866C567.5,-866 450.5,-866 450.5,-866 444.5,-866 438.5,-860 438.5,-854 438.5,-854 438.5,-810 438.5,-810 438.5,-804 444.5,-798 450.5,-798 450.5,-798 567.5,-798 567.5,-798 573.5,-798 579.5,-804 579.5,-810 579.5,-810 579.5,-854 579.5,-854 579.5,-860 573.5,-866 567.5,-866"/>
-<text text-anchor="middle" x="509" y="-847.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 5.13 —</text>
-<text text-anchor="middle" x="509" y="-827.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">powerset</text>
-<text text-anchor="middle" x="509" y="-807.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">isomorphisms</text>
+<path fill="#e0e7ff" stroke="#4338ca" d="M567.5,-881C567.5,-881 450.5,-881 450.5,-881 444.5,-881 438.5,-875 438.5,-869 438.5,-869 438.5,-825 438.5,-825 438.5,-819 444.5,-813 450.5,-813 450.5,-813 567.5,-813 567.5,-813 573.5,-813 579.5,-819 579.5,-825 579.5,-825 579.5,-869 579.5,-869 579.5,-875 573.5,-881 567.5,-881"/>
+<text text-anchor="middle" x="509" y="-862.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 5.13 —</text>
+<text text-anchor="middle" x="509" y="-842.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">powerset</text>
+<text text-anchor="middle" x="509" y="-822.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">isomorphisms</text>
 </g>
 <!-- powerset&#45;&gt;X513b -->
 <g id="edge15" class="edge">
 <title>powerset&#45;&gt;X513b</title>
-<path fill="none" stroke="black" d="M370.17,-832C389.76,-832 411.17,-832 431.16,-832"/>
-<polygon fill="black" stroke="black" points="431.16,-834.45 438.16,-832 431.16,-829.55 431.16,-834.45"/>
-<text text-anchor="middle" x="404.5" y="-835" font-family="Times,serif" font-size="10.00">1</text>
+<path fill="none" stroke="black" d="M370.17,-837.04C389.76,-838.45 411.17,-840 431.16,-841.45"/>
+<polygon fill="black" stroke="black" points="431,-843.89 438.16,-841.95 431.35,-839 431,-843.89"/>
+<text text-anchor="middle" x="404.5" y="-842" font-family="Times,serif" font-size="10.00">1</text>
+</g>
+<!-- X514 -->
+<g id="node31" class="node">
+<title>X514</title>
+<path fill="#e0e7ff" stroke="#4338ca" d="M559,-797C559,-797 459,-797 459,-797 453,-797 447,-791 447,-785 447,-785 447,-741 447,-741 447,-735 453,-729 459,-729 459,-729 559,-729 559,-729 565,-729 571,-735 571,-741 571,-741 571,-785 571,-785 571,-791 565,-797 559,-797"/>
+<text text-anchor="middle" x="509" y="-778.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 5.14 —</text>
+<text text-anchor="middle" x="509" y="-758.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">functions as</text>
+<text text-anchor="middle" x="509" y="-738.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">graphs</text>
+</g>
+<!-- setGraph&#45;&gt;X514 -->
+<g id="edge16" class="edge">
+<title>setGraph&#45;&gt;X514</title>
+<path fill="none" stroke="black" d="M355.56,-774.02C381.35,-772.16 412.33,-769.92 439.61,-767.94"/>
+<polygon fill="black" stroke="black" points="440.02,-770.37 446.83,-767.42 439.67,-765.48 440.02,-770.37"/>
+<text text-anchor="middle" x="404.5" y="-773" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- X515 -->
-<g id="node31" class="node">
+<g id="node32" class="node">
 <title>X515</title>
 <path fill="#e0e7ff" stroke="#4338ca" d="M144,-876C144,-876 27,-876 27,-876 21,-876 15,-870 15,-864 15,-864 15,-840 15,-840 15,-834 21,-828 27,-828 27,-828 144,-828 144,-828 150,-828 156,-834 156,-840 156,-840 156,-864 156,-864 156,-870 150,-876 144,-876"/>
 <text text-anchor="middle" x="85.5" y="-857.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 5.15 —</text>
 <text text-anchor="middle" x="85.5" y="-837.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">star of a word</text>
 </g>
 <!-- X516 -->
-<g id="node32" class="node">
+<g id="node33" class="node">
 <title>X516</title>
 <path fill="#e0e7ff" stroke="#4338ca" d="M135.5,-960C135.5,-960 35.5,-960 35.5,-960 29.5,-960 23.5,-954 23.5,-948 23.5,-948 23.5,-904 23.5,-904 23.5,-898 29.5,-892 35.5,-892 35.5,-892 135.5,-892 135.5,-892 141.5,-892 147.5,-898 147.5,-904 147.5,-904 147.5,-948 147.5,-948 147.5,-954 141.5,-960 135.5,-960"/>
 <text text-anchor="middle" x="85.5" y="-941.6" font-family="Helvetica,sans-Serif" font-size="18.00" fill="#312e81">Exer 5.16 —</text>

@@ -1,0 +1,63 @@
+Tagging finite sequences by iterated Cantor pairing, and the Fun/Graph correspondence between subsets of naturals and approximable set-maps.
+
+<!-- formalization -->
+
+**Definition (`tag`).** Tagging a list against a payload iterates the Cantor pairing with successors on the list entries and zero on the empty list.
+
+*Proof.* By definition. ∎
+
+**Theorem (`tag_nil`).** Tagging the empty list is pairing zero with the payload.
+
+*Proof.* By definition. ∎
+
+**Theorem (`tag_cons`).** Tagging a cons cell pairs the successor of the head with the tag of the tail.
+
+*Proof.* By definition. ∎
+
+**Definition (`entries`).** The entry set of a list is the set of its members.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mem_entries`).** Membership in the entry set is list membership.
+
+*Proof.* By definition. ∎
+
+**Definition (`Fun`).** The function of a code set sends an input set to those payloads whose tagged finite witnesses lie in the code and whose entries lie in the input.
+
+*Proof.* By definition. ∎
+
+**Definition (`Graph`).** The graph of a set-map collects tags of finite witnesses whose payload lies in the map of their entry set.
+
+*Proof.* By definition. ∎
+
+**Definition (`IsApprox`).** A set-map is approximable when it is monotone and every output has a finite witness from the input.
+
+*Proof.* By definition. ∎
+
+**Theorem (`Fun_isApprox`).** The function of any code is approximable.
+
+*Proof.* Monotonicity uses input enlargement; finite witnesses are the same lists used in the membership. ∎
+
+**Theorem (`Fun_mono`).** Enlarging the code or the input enlarges the function value.
+
+*Proof.* Transport the finite witness. ∎
+
+**Theorem (`num_succ_left_gt`).** A second component is strictly below a pairing whose first component is a successor.
+
+*Proof.* Expand via the triangular successor. ∎
+
+**Theorem (`tag_injective`).** Equal tags force equal lists and equal payloads.
+
+*Proof.* Induction on the first list, using injectivity of pairing. ∎
+
+**Theorem (`Fun_Graph`).** For an approximable set-map, the function of its graph recovers the map.
+
+*Proof.* One inclusion uses injectivity of tags and monotonicity; the other uses the finite-witness property. ∎
+
+**Theorem (`tag_surjective`).** Every natural is a tag of some list and payload.
+
+*Proof.* Strong induction via unpairing and the strict decrease of the second component on successors. ∎
+
+**Theorem (`id_le_Graph_Fun`).** Every code is contained in the graph of its function.
+
+*Proof.* Surjectivity of tags supplies a witness whose membership is preserved. ∎

@@ -1,0 +1,38 @@
+**EXERCISE 5.14.** Show that there are approximable mappings
+
+$$
+\mathrm{graph} : (P\mathbf{N} \to P\mathbf{N}) \to P\mathbf{N} \quad \text{and} \quad \mathrm{fun} : P\mathbf{N} \to (P\mathbf{N} \to P\mathbf{N}),
+$$
+
+where we have
+
+$$
+\mathrm{fun} \circ \mathrm{graph} = \lambda f.\, f, \quad \text{and} \quad \mathrm{graph} \circ \mathrm{fun} \supseteq \lambda x.\, x.
+$$
+
+(Hint: Using the notation
+
+$$
+[n_0, n_1, \ldots, n_k] = \mathrm{num}(n_0, [n_1, \ldots, n_k])
+$$
+
+two such combinators can be given by formulae
+
+$$
+\mathrm{fun}(u)(x) = \{m \mid \exists n_0, \ldots, n_{k-1} \in x.\ [n_0+1, \ldots, n_{k-1}+1, 0, m] \in u\}
+$$
+
+$$
+\mathrm{graph}(f) = \{[n_0+1, \ldots, n_{k-1}+1, 0, m] \mid m \in f(\{n_0, \ldots, n_{k-1}\})\}
+$$
+
+where $k$ is variable — meaning all finite sequences are to be considered.)
+
+The development is with the
+[set graphs](1980_setGraph.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`example_514`).** The function of any code is approximable; for approximable set-maps, the function of the graph recovers the map; and every code sits inside the graph of its function.
+
+*Proof.* The Fun/Graph laws from the set-graphs peer. ∎

@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_14
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.setGraph
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem_7_5
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition_7_12
@@ -18,7 +18,7 @@ open DomainTheory.NeighbourhoodSystems Example78 NeighborhoodSystem Domain.Recur
 
 open DomainTheory.NeighbourhoodSystems.NatPair (tri num numP unnum nextCell numP_unnum)
 
-open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun_mono entries
+open DomainTheory.NeighbourhoodSystems.SetGraph (tag tag_nil tag_cons Fun Fun_mono entries
   num_succ_left_gt tag_injective)
 
 def capMap : ApproximableMap (prod PN PN) PN where
@@ -46,7 +46,7 @@ section
 namespace DomainTheory.NeighbourhoodSystems.Exercise723
 open DomainTheory.NeighbourhoodSystems Example78 NeighborhoodSystem Domain.Recursive
 open DomainTheory.NeighbourhoodSystems.NatPair (tri num numP unnum nextCell numP_unnum)
-open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun_mono entries
+open DomainTheory.NeighbourhoodSystems.SetGraph (tag tag_nil tag_cons Fun Fun_mono entries
   num_succ_left_gt tag_injective)
 
 section

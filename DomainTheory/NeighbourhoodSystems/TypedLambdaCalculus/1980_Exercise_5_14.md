@@ -1,35 +1,9 @@
 # Exercise 5.14
 
-**EXERCISE 5.14.** Show that there are approximable mappings
-
-$$
-\mathrm{graph} : (P\mathbf{N} \to P\mathbf{N}) \to P\mathbf{N} \quad \text{and} \quad \mathrm{fun} : P\mathbf{N} \to (P\mathbf{N} \to P\mathbf{N}),
-$$
-
-where we have
-
-$$
-\mathrm{fun} \circ \mathrm{graph} = \lambda f.\, f, \quad \text{and} \quad \mathrm{graph} \circ \mathrm{fun} \supseteq \lambda x.\, x.
-$$
-
-(Hint: Using the notation
-
-$$
-[n_0, n_1, \ldots, n_k] = \mathrm{num}(n_0, [n_1, \ldots, n_k])
-$$
-
-two such combinators can be given by formulae
-
-$$
-\mathrm{fun}(u)(x) = \{m \mid \exists n_0, \ldots, n_{k-1} \in x.\ [n_0+1, \ldots, n_{k-1}+1, 0, m] \in u\}
-$$
-
-$$
-\mathrm{graph}(f) = \{[n_0+1, \ldots, n_{k-1}+1, 0, m] \mid m \in f(\{n_0, \ldots, n_{k-1}\})\}
-$$
-
-where $k$ is variable — meaning all finite sequences are to be considered.)
+@import "1980_Exercise_5_14.english" {code_block=false}
 
 **[Exercise_5_14.lean](Exercise_5_14.lean)**
 
 @import "Exercise_5_14.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-07) — <a href="../1980_REVISION.md">1980 revision progress</a></p>
