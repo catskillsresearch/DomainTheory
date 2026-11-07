@@ -1,11 +1,11 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_4
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.RunMap
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Example24
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
+namespace DomainTheory.NeighbourhoodSystems.RunMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem BitDom
 
 section
 
@@ -117,4 +117,4 @@ theorem runMap_satisfies : SatisfiesRunEquations runMap where
       rw [show out ([true] ++ ([] : Str)) = ([] : Str) from rfl, cone.nil, hY, B_master]
 end
 
-end DomainTheory.NeighbourhoodSystems.Example24
+end DomainTheory.NeighbourhoodSystems.RunMap

@@ -5,7 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.liftDomain
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise619
-open NeighborhoodSystem ExampleB
+open NeighborhoodSystem BitDom
 
 theorem example_626 :
     (∀ {D : NeighborhoodSystem Str} {hD : ∀ X, D.mem X → X.Nonempty} (z : (liftTok D hD).Element),

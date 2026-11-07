@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.functorTokens
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap ExampleB Exercise619
+open NeighborhoodSystem ApproximableMap BitDom Exercise619
 
 /-- Scott's Exercise 6.20: `λΓ. tok(T({Γ}))` is continuous, hence a fixed point exists. -/
 theorem example_620 :

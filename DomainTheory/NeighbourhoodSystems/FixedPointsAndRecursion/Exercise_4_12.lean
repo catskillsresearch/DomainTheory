@@ -5,7 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.noGreate
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap Example12 Example12.neighborhoodSystem
+open NeighborhoodSystem ApproximableMap TwoToken TwoToken.neighborhoodSystem
 
 theorem example_412 :
     (∀ (x : noGreatestFixedDomain.Element),

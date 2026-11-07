@@ -11,7 +11,7 @@ import Mathlib.Data.Set.Insert
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise221
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem BitDom
 
 theorem cone_not_subset_singleton (σ τ : Str) : ¬ cone σ ⊆ ({τ} : Set Str) := by
   intro h

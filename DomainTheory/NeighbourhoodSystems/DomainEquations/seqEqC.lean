@@ -6,7 +6,7 @@ import Mathlib.Data.Set.Finite.Basic
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
+open NeighborhoodSystem ApproximableMap BitDom SeqDom SeqEqB
 
 
 def t0 {α β γ : Type*} (a : α) : Option (α ⊕ β ⊕ γ) := some (Sum.inl a)
@@ -156,7 +156,7 @@ variable {V₀ V₁ V₂}
   Set.mem_insert _ _
 
 
-namespace Example62C
+namespace SeqEqC
 
 theorem C_nonempty : ∀ X, C.mem X → X.Nonempty := by
   rintro X (⟨σ, rfl⟩ | ⟨σ, rfl⟩)
@@ -164,8 +164,8 @@ theorem C_nonempty : ∀ X, C.mem X → X.Nonempty := by
   · exact ⟨σ, rfl⟩
 
 theorem embBit_singleton (b : Bool) (σ : Str) : embBit b ({σ} : Set Str) = {(b :: σ : Str)} := by
-  rw [embBit_eq_prepend, Example44.prepend_singleton]; rfl
-end Example62C
+  rw [embBit_eq_prepend, SeqDom.prepend_singleton]; rfl
+end SeqEqC
 
 theorem eq_master3_of_subset {W : Set (Option (α ⊕ β ⊕ γ))}
     (hsub : master3 V₀ V₁ V₂ ⊆ W) (hsub' : W ⊆ master3 V₀ V₁ V₂) : W = master3 V₀ V₁ V₂ :=
@@ -200,7 +200,7 @@ theorem master3_inter_j2 {Z : Set γ} (hZ : V₂.mem Z) :
     (master3 V₀ V₁ V₂ ∩ j2 Z : Set (Option (α ⊕ β ⊕ γ))) = j2 Z :=
   Set.inter_eq_right.mpr (j2_subset_master3 hZ)
 
-namespace Example62C
+namespace SeqEqC
 
 theorem memC_cases {W : Set Str} (hW : C.mem W) :
     W = Set.univ ∨ W = ({[]} : Set Str)
@@ -222,7 +222,7 @@ theorem memC_cases {W : Set Str} (hW : C.mem W) :
         exact Or.inr (Or.inr (Or.inr ⟨{σ'}, memC_singleton σ', (embBit_singleton true σ').symm⟩))
 
 theorem memC_embBit (b : Bool) {X : Set Str} (hX : C.mem X) : C.mem (embBit b X) := by
-  rw [embBit_eq_prepend]; exact Example44.memC_prepend [b] hX
+  rw [embBit_eq_prepend]; exact SeqDom.memC_prepend [b] hX
 
 theorem memC_embBit_inv {b : Bool} {W : Set Str} (h : C.mem (embBit b W)) : C.mem W := by
   rcases h with ⟨σ, hσ⟩ | ⟨σ, hσ⟩
@@ -250,7 +250,7 @@ theorem singleton_nil_ne_univ : ({[]} : Set Str) ≠ Set.univ := by
   have hmem : ([true] : Str) ∈ ({[]} : Set Str) := h ▸ Set.mem_univ _
   rw [Set.mem_singleton_iff] at hmem; exact absurd hmem (by simp)
 
-end Example62C
+end SeqEqC
 
 def sum3 (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : NeighborhoodSystem γ)
     (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty)
@@ -320,7 +320,7 @@ def sum3 (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) (V₂ : N
         · exact Or.inr (Or.inr (Or.inr ⟨Zc ∩ Z', V₂.inter_mem hZc hZ' hZ2 (j2_subset_j2.mp hZsub), rfl⟩))
 
 
-namespace Example62C
+namespace SeqEqC
 
 theorem unitSys_nonempty : ∀ X, unitSys.mem X → X.Nonempty := by
   rintro X rfl; exact Set.univ_nonempty
@@ -634,7 +634,7 @@ theorem C_domain_equation :
     C ≅ᴰ sum3 unitSys C C unitSys_nonempty C_nonempty C_nonempty :=
   ⟨ccEquiv⟩
 
-end Example62C
+end SeqEqC
 
 theorem j0_injective {X X' : Set α}
     (h : (j0 X : Set (Option (α ⊕ β ⊕ γ))) = j0 X') : X = X' :=

@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.coalesceSmash
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap Example62 ExampleB SmashProduct Exercise619
+open NeighborhoodSystem ApproximableMap SeqEqB BitDom SmashProduct Exercise619
 
 /-- Scott's Exercise 6.21: rooted grammars admit a subsystem solution and a fixed-point set containing `[]`. -/
 theorem example_621 :

@@ -5,7 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.cond
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise326
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Example23
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Truth
 
 /-- Scott's Exercise 3.26: conditional at true, false, and bottom. -/
 theorem example_326 :

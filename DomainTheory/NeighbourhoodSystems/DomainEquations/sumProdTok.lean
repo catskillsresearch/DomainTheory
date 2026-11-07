@@ -8,7 +8,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.seqEqB
 
 
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap Example62 ExampleB
+open NeighborhoodSystem ApproximableMap SeqEqB BitDom
 
 namespace Exercise619
 
@@ -48,8 +48,8 @@ end DomainTheory.NeighbourhoodSystems
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
-open NeighborhoodSystem ApproximableMap Example62 ExampleB
+open NeighborhoodSystem ApproximableMap BitDom SeqDom SeqEqB
+open NeighborhoodSystem ApproximableMap SeqEqB BitDom
 section
 namespace Exercise619
 variable {D₀ D₁ : NeighborhoodSystem Str}

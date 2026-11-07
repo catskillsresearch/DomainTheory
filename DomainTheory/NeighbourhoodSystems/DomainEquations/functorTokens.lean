@@ -10,14 +10,14 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap ExampleB Example62
+open NeighborhoodSystem ApproximableMap BitDom SeqEqB
 open DomainTheory.NeighbourhoodSystems.Exercise619
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
+open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 open DomainTheory.NeighbourhoodSystems.SmashProduct
 
 namespace Exercise619
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
+open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 open DomainTheory.NeighbourhoodSystems.SmashProduct
 
 section
@@ -31,7 +31,7 @@ end
 
 end Exercise619
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
+open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 open DomainTheory.NeighbourhoodSystems.SmashProduct
 
 section

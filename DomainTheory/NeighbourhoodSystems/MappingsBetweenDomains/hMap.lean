@@ -8,7 +8,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.pri
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise218
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem BitDom ApproximableMap
 
 section
 

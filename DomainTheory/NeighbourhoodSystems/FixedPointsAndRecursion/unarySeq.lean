@@ -167,7 +167,7 @@ end
 
 section
 
-def relateNToC1 : ApproximableMap Example43.N C1 := Example43.constLiftN C1 oneElem
+def relateNToC1 : ApproximableMap NatDom.N C1 := NatDom.constLiftN C1 oneElem
 end
 
 section
@@ -208,15 +208,15 @@ end
 
 section
 
-theorem relateNToC1_bot : relateNToC1.toElementMap Example43.N.bot = C1.bot :=
-  Example43.constLiftN_bot C1 oneElem
+theorem relateNToC1_bot : relateNToC1.toElementMap NatDom.N.bot = C1.bot :=
+  NatDom.constLiftN_bot C1 oneElem
 end
 
 section
 
 theorem relateNToC1_natElem (n : ℕ) :
-    relateNToC1.toElementMap (Example43.natElem n) = oneElem n :=
-  Example43.constLiftN_natElem C1 oneElem n
+    relateNToC1.toElementMap (NatDom.natElem n) = oneElem n :=
+  NatDom.constLiftN_natElem C1 oneElem n
 end
 
 end DomainTheory.NeighbourhoodSystems.Exercise425

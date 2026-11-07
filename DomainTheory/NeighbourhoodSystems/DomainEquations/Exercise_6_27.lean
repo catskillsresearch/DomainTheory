@@ -5,7 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.embeddingCompare
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise627
-open NeighborhoodSystem Exercise619 SmashProduct ExampleB
+open NeighborhoodSystem Exercise619 SmashProduct BitDom
 
 theorem example_627 :
     (∀ (D₀ D₁ : NeighborhoodSystem Str), otimesTok D₀ D₁ ⊴ prodTok D₀ D₁) ∧

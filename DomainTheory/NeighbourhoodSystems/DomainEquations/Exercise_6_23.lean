@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.exprDomain
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap Example62 ExampleB SmashProduct Exercise619
+open NeighborhoodSystem ApproximableMap SeqEqB BitDom SmashProduct Exercise619
 
 /-- Scott's Exercise 6.23: the descending approximable map is below any algebra homomorphism. -/
 theorem example_623 {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master) (B : TAlgebra (TexpF N))

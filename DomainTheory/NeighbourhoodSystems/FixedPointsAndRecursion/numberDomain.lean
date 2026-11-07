@@ -1,11 +1,11 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Truth
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NestedOrDisjoint
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Example43
+namespace DomainTheory.NeighbourhoodSystems.NatDom
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 section
@@ -38,10 +38,10 @@ theorem nestedOrDisjoint : NestedOrDisjoint memN := by
       exact h hkm
 end
 
-end DomainTheory.NeighbourhoodSystems.Example43
+end DomainTheory.NeighbourhoodSystems.NatDom
 
 section
-namespace DomainTheory.NeighbourhoodSystems.Example43
+namespace DomainTheory.NeighbourhoodSystems.NatDom
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 section
 
@@ -60,7 +60,7 @@ end
 
 section
 
-abbrev T : NeighborhoodSystem Example12.Token := Example23.T
+abbrev T : NeighborhoodSystem TwoToken.Token := Truth.T
 end
 
 section
@@ -152,8 +152,8 @@ end
 section
 
 def zeroVal : ℕ → T.Element
-  | 0 => Example23.trueElt
-  | (_ + 1) => Example23.falseElt
+  | 0 => Truth.trueElt
+  | (_ + 1) => Truth.falseElt
 end
 
 section
@@ -266,15 +266,15 @@ end
 
 section
 
-theorem zeroMap_natElem_succ (n : ℕ) : zeroMap.toElementMap (natElem (n + 1)) = Example23.falseElt :=
+theorem zeroMap_natElem_succ (n : ℕ) : zeroMap.toElementMap (natElem (n + 1)) = Truth.falseElt :=
   constLiftN_natElem T zeroVal (n + 1)
 end
 
 section
 
-theorem zeroMap_natElem_zero : zeroMap.toElementMap (natElem 0) = Example23.trueElt :=
+theorem zeroMap_natElem_zero : zeroMap.toElementMap (natElem 0) = Truth.trueElt :=
   constLiftN_natElem T zeroVal 0
 end
 
-end DomainTheory.NeighbourhoodSystems.Example43
+end DomainTheory.NeighbourhoodSystems.NatDom
 end

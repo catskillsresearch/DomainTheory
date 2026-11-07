@@ -3,7 +3,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.sumSys
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.inducedMaps
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.ProjectionMappings
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_4
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_2_3
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Truth
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 @[expose] public section
 
@@ -15,37 +15,37 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 section
 variable {α : Type*}
 
-abbrev TD : NeighborhoodSystem Example12.Token := Example12.neighborhoodSystem
+abbrev TD : NeighborhoodSystem TwoToken.Token := TwoToken.neighborhoodSystem
 
-theorem Tmem_eq_one {C : Set Example12.Token} (hC : Example12.mem C) (h : C ⊆ Example12.one) :
-    C = Example12.one := by
-  rcases (Example12.mem_iff C).mp hC with rfl | rfl | rfl
-  · exact absurd (h (Set.mem_univ 0)) (by simp [Example12.one])
-  · exact absurd (h (by simp [Example12.zero] : (0 : Example12.Token) ∈ Example12.zero))
-      (by simp [Example12.one])
+theorem Tmem_eq_one {C : Set TwoToken.Token} (hC : TwoToken.mem C) (h : C ⊆ TwoToken.one) :
+    C = TwoToken.one := by
+  rcases (TwoToken.mem_iff C).mp hC with rfl | rfl | rfl
+  · exact absurd (h (Set.mem_univ 0)) (by simp [TwoToken.one])
+  · exact absurd (h (by simp [TwoToken.zero] : (0 : TwoToken.Token) ∈ TwoToken.zero))
+      (by simp [TwoToken.one])
   · rfl
 
-theorem Tmem_eq_zero {C : Set Example12.Token} (hC : Example12.mem C) (h : C ⊆ Example12.zero) :
-    C = Example12.zero := by
-  rcases (Example12.mem_iff C).mp hC with rfl | rfl | rfl
-  · exact absurd (h (Set.mem_univ 1)) (by simp [Example12.zero])
+theorem Tmem_eq_zero {C : Set TwoToken.Token} (hC : TwoToken.mem C) (h : C ⊆ TwoToken.zero) :
+    C = TwoToken.zero := by
+  rcases (TwoToken.mem_iff C).mp hC with rfl | rfl | rfl
+  · exact absurd (h (Set.mem_univ 1)) (by simp [TwoToken.zero])
   · rfl
-  · exact absurd (h (by simp [Example12.one] : (1 : Example12.Token) ∈ Example12.one))
-      (by simp [Example12.zero])
+  · exact absurd (h (by simp [TwoToken.one] : (1 : TwoToken.Token) ∈ TwoToken.one))
+      (by simp [TwoToken.zero])
 
-def condGuard (V : NeighborhoodSystem α) (W : Set (Example12.Token ⊕ (α ⊕ α))) (Z : Set α) : Prop :=
-  (Sum.inl ⁻¹' W = Example12.zero ∧ Sum.inl ⁻¹' (Sum.inr ⁻¹' W) ⊆ Z) ∨
-  (Sum.inl ⁻¹' W = Example12.one ∧ Sum.inr ⁻¹' (Sum.inr ⁻¹' W) ⊆ Z) ∨
-  (Sum.inl ⁻¹' W = Example12.master ∧ V.master ⊆ Z)
+def condGuard (V : NeighborhoodSystem α) (W : Set (TwoToken.Token ⊕ (α ⊕ α))) (Z : Set α) : Prop :=
+  (Sum.inl ⁻¹' W = TwoToken.zero ∧ Sum.inl ⁻¹' (Sum.inr ⁻¹' W) ⊆ Z) ∨
+  (Sum.inl ⁻¹' W = TwoToken.one ∧ Sum.inr ⁻¹' (Sum.inr ⁻¹' W) ⊆ Z) ∨
+  (Sum.inl ⁻¹' W = TwoToken.master ∧ V.master ⊆ Z)
 end
 
 section
 variable {α : Type*}
 variable (V : NeighborhoodSystem α)
 
-theorem cond_components {W : Set (Example12.Token ⊕ (α ⊕ α))}
+theorem cond_components {W : Set (TwoToken.Token ⊕ (α ⊕ α))}
     (hW : (prod TD (prod V V)).mem W) :
-    Example12.mem (Sum.inl ⁻¹' W) ∧
+    TwoToken.mem (Sum.inl ⁻¹' W) ∧
       V.mem (Sum.inl ⁻¹' (Sum.inr ⁻¹' W)) ∧ V.mem (Sum.inr ⁻¹' (Sum.inr ⁻¹' W)) := by
   obtain ⟨C, P, hC, hP, rfl⟩ := hW
   obtain ⟨X, Y, hX, hY, rfl⟩ := hP
@@ -56,23 +56,23 @@ end
 section
 variable {α : Type*}
 
-theorem one_ne_master : (Example12.one : Set Example12.Token) ≠ Example12.master := by
+theorem one_ne_master : (TwoToken.one : Set TwoToken.Token) ≠ TwoToken.master := by
   intro h
   have h0 := Set.ext_iff.mp h 0
-  simp [Example12.one, Example12.master] at h0
+  simp [TwoToken.one, TwoToken.master] at h0
 
-theorem zero_ne_master : (Example12.zero : Set Example12.Token) ≠ Example12.master := by
+theorem zero_ne_master : (TwoToken.zero : Set TwoToken.Token) ≠ TwoToken.master := by
   intro h
   have h1 := Set.ext_iff.mp h 1
-  simp [Example12.zero, Example12.master] at h1
+  simp [TwoToken.zero, TwoToken.master] at h1
 end
 
 section
 variable {α : Type*}
 variable (V : NeighborhoodSystem α)
 
-theorem condGuard_master {W : Set (Example12.Token ⊕ (α ⊕ α))} {Z : Set α} (hg : condGuard V W Z)
-    (hC : Sum.inl ⁻¹' W = Example12.master) : V.master ⊆ Z := by
+theorem condGuard_master {W : Set (TwoToken.Token ⊕ (α ⊕ α))} {Z : Set α} (hg : condGuard V W Z)
+    (hC : Sum.inl ⁻¹' W = TwoToken.master) : V.master ⊆ Z := by
   rcases hg with ⟨hC', _⟩ | ⟨hC', _⟩ | ⟨_, h⟩
   · exact absurd (hC.symm.trans hC') zero_ne_master.symm
   · exact absurd (hC.symm.trans hC') one_ne_master.symm
@@ -82,25 +82,25 @@ end
 section
 variable {α : Type*}
 
-theorem zero_ne_one : (Example12.zero : Set Example12.Token) ≠ Example12.one := by
+theorem zero_ne_one : (TwoToken.zero : Set TwoToken.Token) ≠ TwoToken.one := by
   intro h
   have h0 := Set.ext_iff.mp h 0
-  simp [Example12.zero, Example12.one] at h0
+  simp [TwoToken.zero, TwoToken.one] at h0
 end
 
 section
 variable {α : Type*}
 variable (V : NeighborhoodSystem α)
 
-theorem condGuard_one {W : Set (Example12.Token ⊕ (α ⊕ α))} {Z : Set α} (hg : condGuard V W Z)
-    (hC : Sum.inl ⁻¹' W = Example12.one) : Sum.inr ⁻¹' (Sum.inr ⁻¹' W) ⊆ Z := by
+theorem condGuard_one {W : Set (TwoToken.Token ⊕ (α ⊕ α))} {Z : Set α} (hg : condGuard V W Z)
+    (hC : Sum.inl ⁻¹' W = TwoToken.one) : Sum.inr ⁻¹' (Sum.inr ⁻¹' W) ⊆ Z := by
   rcases hg with ⟨hC', _⟩ | ⟨_, h⟩ | ⟨hC', _⟩
   · exact absurd (hC.symm.trans hC') zero_ne_one.symm
   · exact h
   · exact absurd (hC.symm.trans hC') one_ne_master
 
-theorem condGuard_zero {W : Set (Example12.Token ⊕ (α ⊕ α))} {Z : Set α} (hg : condGuard V W Z)
-    (hC : Sum.inl ⁻¹' W = Example12.zero) : Sum.inl ⁻¹' (Sum.inr ⁻¹' W) ⊆ Z := by
+theorem condGuard_zero {W : Set (TwoToken.Token ⊕ (α ⊕ α))} {Z : Set α} (hg : condGuard V W Z)
+    (hC : Sum.inl ⁻¹' W = TwoToken.zero) : Sum.inl ⁻¹' (Sum.inr ⁻¹' W) ⊆ Z := by
   rcases hg with ⟨_, h⟩ | ⟨hC', _⟩ | ⟨hC', _⟩
   · exact h
   · exact absurd (hC.symm.trans hC') zero_ne_one
@@ -112,7 +112,7 @@ def cond (V : NeighborhoodSystem α) : ApproximableMap (prod TD (prod V V)) V wh
   rel_cod h := h.2.1
   master_rel := by
     refine ⟨(prod TD (prod V V)).master_mem, V.master_mem, Or.inr (Or.inr ⟨?_, subset_rfl⟩)⟩
-    show Sum.inl ⁻¹' (prod TD (prod V V)).master = Example12.master
+    show Sum.inl ⁻¹' (prod TD (prod V V)).master = TwoToken.master
     rw [prod_master, prodNbhd.inl_preimage]; rfl
   inter_right := by
     rintro W Z Z' ⟨hW, hZ, hg⟩ ⟨_, hZ', hg'⟩
@@ -140,16 +140,16 @@ def cond (V : NeighborhoodSystem α) : ApproximableMap (prod TD (prod V V)) V wh
     · exact Or.inr (Or.inl ⟨Tmem_eq_one hC₂ (hCsub.trans hCo.subset),
         (hYsub.trans hYZ).trans hZZ₂⟩)
     · have hmZ₂ : V.master ⊆ Z₂ := hmZ.trans hZZ₂
-      rcases (Example12.mem_iff (Sum.inl ⁻¹' W₂)).mp hC₂ with hC₂m | hC₂z | hC₂o
+      rcases (TwoToken.mem_iff (Sum.inl ⁻¹' W₂)).mp hC₂ with hC₂m | hC₂z | hC₂o
       · exact Or.inr (Or.inr ⟨hC₂m, hmZ₂⟩)
       · exact Or.inl ⟨hC₂z, (V.sub_master hX₂).trans hmZ₂⟩
       · exact Or.inr (Or.inl ⟨hC₂o, (V.sub_master hY₂).trans hmZ₂⟩)
 
-@[simp] theorem cond_rel {W : Set (Example12.Token ⊕ (α ⊕ α))} {Z : Set α} :
+@[simp] theorem cond_rel {W : Set (TwoToken.Token ⊕ (α ⊕ α))} {Z : Set α} :
     (cond V).rel W Z ↔ (prod TD (prod V V)).mem W ∧ V.mem Z ∧ condGuard V W Z := Iff.rfl
 
 theorem cond_bot (x y : V.Element) :
-    (cond V).toElementMap (pair Example23.botElt (pair x y)) = V.bot := by
+    (cond V).toElementMap (pair Truth.botElt (pair x y)) = V.bot := by
   apply Element.ext
   intro Z
   constructor
@@ -157,7 +157,7 @@ theorem cond_bot (x y : V.Element) :
     obtain ⟨C, P, hCbot, hPmem, rfl⟩ := hWmem
     obtain ⟨X, Y, hXx, hYy, rfl⟩ := hPmem
     simp only [condGuard, prodNbhd.inl_preimage, prodNbhd.inr_preimage] at hg
-    have hCm : C = Example12.master := hCbot
+    have hCm : C = TwoToken.master := hCbot
     rcases hg with ⟨hCz, _⟩ | ⟨hCo, _⟩ | ⟨_, hmZ⟩
     · exact absurd (hCm.symm.trans hCz) zero_ne_master.symm
     · exact absurd (hCm.symm.trans hCo) one_ne_master.symm
@@ -165,15 +165,15 @@ theorem cond_bot (x y : V.Element) :
   · intro hbZ
     rw [mem_bot] at hbZ
     subst hbZ
-    refine ⟨prodNbhd Example12.master (prodNbhd V.master V.master),
-      ⟨Example12.master, prodNbhd V.master V.master, rfl,
+    refine ⟨prodNbhd TwoToken.master (prodNbhd V.master V.master),
+      ⟨TwoToken.master, prodNbhd V.master V.master, rfl,
         ⟨V.master, V.master, x.master_mem, y.master_mem, rfl⟩, rfl⟩,
-      prod_mem_prodNbhd Example12.mem_master (prod_mem_prodNbhd V.master_mem V.master_mem),
+      prod_mem_prodNbhd TwoToken.mem_master (prod_mem_prodNbhd V.master_mem V.master_mem),
       V.master_mem, ?_⟩
     exact Or.inr (Or.inr ⟨prodNbhd.inl_preimage _ _, subset_rfl⟩)
 
 theorem cond_false (x y : V.Element) :
-    (cond V).toElementMap (pair Example23.falseElt (pair x y)) = y := by
+    (cond V).toElementMap (pair Truth.falseElt (pair x y)) = y := by
   apply Element.ext
   intro Z
   constructor
@@ -189,15 +189,15 @@ theorem cond_false (x y : V.Element) :
     · rw [Set.Subset.antisymm (V.sub_master hZ) hmZ]; exact y.master_mem
   · intro hyZ
     have hZ : V.mem Z := y.sub hyZ
-    refine ⟨prodNbhd Example12.one (prodNbhd V.master Z), ⟨Example12.one, prodNbhd V.master Z,
+    refine ⟨prodNbhd TwoToken.one (prodNbhd V.master Z), ⟨TwoToken.one, prodNbhd V.master Z,
       Or.inr rfl, ⟨V.master, Z, x.master_mem, hyZ, rfl⟩, rfl⟩,
-      prod_mem_prodNbhd Example12.mem_one (prod_mem_prodNbhd V.master_mem hZ), hZ, ?_⟩
+      prod_mem_prodNbhd TwoToken.mem_one (prod_mem_prodNbhd V.master_mem hZ), hZ, ?_⟩
     refine Or.inr (Or.inl ⟨prodNbhd.inl_preimage _ _, ?_⟩)
     rw [prodNbhd.inr_preimage, prodNbhd.inr_preimage]
 
 theorem cond_toElementMap_mem (t : TD.Element) (x y : V.Element) {Z : Set α} :
     ((cond V).toElementMap (pair t (pair x y))).mem Z ↔
-      (t.mem Example12.zero ∧ x.mem Z) ∨ (t.mem Example12.one ∧ y.mem Z) ∨ Z = V.master := by
+      (t.mem TwoToken.zero ∧ x.mem Z) ∨ (t.mem TwoToken.one ∧ y.mem Z) ∨ Z = V.master := by
   constructor
   · rintro ⟨W, hWmem, _, hZ, hg⟩
     obtain ⟨C, P, hCt, hPmem, rfl⟩ := hWmem
@@ -210,26 +210,26 @@ theorem cond_toElementMap_mem (t : TD.Element) (x y : V.Element) {Z : Set α} :
   · intro h
     rcases h with ⟨ht0, hxZ⟩ | ⟨ht1, hyZ⟩ | rfl
     · have hZ : V.mem Z := x.sub hxZ
-      refine ⟨prodNbhd Example12.zero (prodNbhd Z V.master), ⟨Example12.zero, prodNbhd Z V.master,
+      refine ⟨prodNbhd TwoToken.zero (prodNbhd Z V.master), ⟨TwoToken.zero, prodNbhd Z V.master,
         ht0, ⟨Z, V.master, hxZ, y.master_mem, rfl⟩, rfl⟩,
-        prod_mem_prodNbhd Example12.mem_zero (prod_mem_prodNbhd hZ V.master_mem), hZ, ?_⟩
+        prod_mem_prodNbhd TwoToken.mem_zero (prod_mem_prodNbhd hZ V.master_mem), hZ, ?_⟩
       refine Or.inl ⟨prodNbhd.inl_preimage _ _, ?_⟩
       rw [prodNbhd.inr_preimage, prodNbhd.inl_preimage]
     · have hZ : V.mem Z := y.sub hyZ
-      refine ⟨prodNbhd Example12.one (prodNbhd V.master Z), ⟨Example12.one, prodNbhd V.master Z,
+      refine ⟨prodNbhd TwoToken.one (prodNbhd V.master Z), ⟨TwoToken.one, prodNbhd V.master Z,
         ht1, ⟨V.master, Z, x.master_mem, hyZ, rfl⟩, rfl⟩,
-        prod_mem_prodNbhd Example12.mem_one (prod_mem_prodNbhd V.master_mem hZ), hZ, ?_⟩
+        prod_mem_prodNbhd TwoToken.mem_one (prod_mem_prodNbhd V.master_mem hZ), hZ, ?_⟩
       refine Or.inr (Or.inl ⟨prodNbhd.inl_preimage _ _, ?_⟩)
       rw [prodNbhd.inr_preimage, prodNbhd.inr_preimage]
-    · refine ⟨prodNbhd Example12.master (prodNbhd V.master V.master),
-        ⟨Example12.master, prodNbhd V.master V.master, t.master_mem,
+    · refine ⟨prodNbhd TwoToken.master (prodNbhd V.master V.master),
+        ⟨TwoToken.master, prodNbhd V.master V.master, t.master_mem,
           ⟨V.master, V.master, x.master_mem, y.master_mem, rfl⟩, rfl⟩,
-        prod_mem_prodNbhd Example12.mem_master (prod_mem_prodNbhd V.master_mem V.master_mem),
+        prod_mem_prodNbhd TwoToken.mem_master (prod_mem_prodNbhd V.master_mem V.master_mem),
         V.master_mem, ?_⟩
       exact Or.inr (Or.inr ⟨prodNbhd.inl_preimage _ _, subset_rfl⟩)
 
 theorem cond_true (x y : V.Element) :
-    (cond V).toElementMap (pair Example23.trueElt (pair x y)) = x := by
+    (cond V).toElementMap (pair Truth.trueElt (pair x y)) = x := by
   apply Element.ext
   intro Z
   constructor
@@ -245,9 +245,9 @@ theorem cond_true (x y : V.Element) :
     · rw [Set.Subset.antisymm (V.sub_master hZ) hmZ]; exact x.master_mem
   · intro hxZ
     have hZ : V.mem Z := x.sub hxZ
-    refine ⟨prodNbhd Example12.zero (prodNbhd Z V.master), ⟨Example12.zero, prodNbhd Z V.master,
+    refine ⟨prodNbhd TwoToken.zero (prodNbhd Z V.master), ⟨TwoToken.zero, prodNbhd Z V.master,
       Or.inr rfl, ⟨Z, V.master, hxZ, y.master_mem, rfl⟩, rfl⟩,
-      prod_mem_prodNbhd Example12.mem_zero (prod_mem_prodNbhd hZ V.master_mem), hZ, ?_⟩
+      prod_mem_prodNbhd TwoToken.mem_zero (prod_mem_prodNbhd hZ V.master_mem), hZ, ?_⟩
     refine Or.inl ⟨prodNbhd.inl_preimage _ _, ?_⟩
     rw [prodNbhd.inr_preimage, prodNbhd.inl_preimage]
 end
@@ -257,25 +257,25 @@ variable {α β : Type*}
 variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 
-theorem Tmem_ge_master {C : Set Example12.Token} (hC : Example12.mem C)
-    (h : Example12.master ⊆ C) : C = Example12.master :=
-  Set.Subset.antisymm (Example12.neighborhoodSystem.sub_master hC) h
+theorem Tmem_ge_master {C : Set TwoToken.Token} (hC : TwoToken.mem C)
+    (h : TwoToken.master ⊆ C) : C = TwoToken.master :=
+  Set.Subset.antisymm (TwoToken.neighborhoodSystem.sub_master hC) h
 
-theorem Tmem_ge_one {C : Set Example12.Token} (hC : Example12.mem C)
-    (h : Example12.one ⊆ C) : C = Example12.one ∨ C = Example12.master := by
-  rcases (Example12.mem_iff C).mp hC with rfl | rfl | rfl
+theorem Tmem_ge_one {C : Set TwoToken.Token} (hC : TwoToken.mem C)
+    (h : TwoToken.one ⊆ C) : C = TwoToken.one ∨ C = TwoToken.master := by
+  rcases (TwoToken.mem_iff C).mp hC with rfl | rfl | rfl
   · exact Or.inr rfl
-  · exact absurd (h (by simp [Example12.one] : (1 : Example12.Token) ∈ Example12.one))
-      (by simp [Example12.zero])
+  · exact absurd (h (by simp [TwoToken.one] : (1 : TwoToken.Token) ∈ TwoToken.one))
+      (by simp [TwoToken.zero])
   · exact Or.inl rfl
 
-theorem Tmem_ge_zero {C : Set Example12.Token} (hC : Example12.mem C)
-    (h : Example12.zero ⊆ C) : C = Example12.zero ∨ C = Example12.master := by
-  rcases (Example12.mem_iff C).mp hC with rfl | rfl | rfl
+theorem Tmem_ge_zero {C : Set TwoToken.Token} (hC : TwoToken.mem C)
+    (h : TwoToken.zero ⊆ C) : C = TwoToken.zero ∨ C = TwoToken.master := by
+  rcases (TwoToken.mem_iff C).mp hC with rfl | rfl | rfl
   · exact Or.inr rfl
   · exact Or.inl rfl
-  · exact absurd (h (by simp [Example12.zero] : (0 : Example12.Token) ∈ Example12.zero))
-      (by simp [Example12.one])
+  · exact absurd (h (by simp [TwoToken.zero] : (0 : TwoToken.Token) ∈ TwoToken.zero))
+      (by simp [TwoToken.one])
 
 def condSumEmb (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty) :
@@ -289,18 +289,18 @@ def condSum (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     ApproximableMap (prod TD (prod V₀ V₁)) (sum V₀ V₁ h₀ h₁) :=
   (cond (sum V₀ V₁ h₀ h₁)).comp (condSumEmb V₀ V₁ h₀ h₁)
 
-theorem inter_in_oneset {C C' : Set Example12.Token} (hc : C = Example12.master ∨ C = Example12.one)
-    (hc' : C' = Example12.master ∨ C' = Example12.one) :
-    C ∩ C' = Example12.master ∨ C ∩ C' = Example12.one := by
+theorem inter_in_oneset {C C' : Set TwoToken.Token} (hc : C = TwoToken.master ∨ C = TwoToken.one)
+    (hc' : C' = TwoToken.master ∨ C' = TwoToken.one) :
+    C ∩ C' = TwoToken.master ∨ C ∩ C' = TwoToken.one := by
   rcases hc with rfl | rfl <;> rcases hc' with rfl | rfl
   · exact Or.inl (Set.inter_self _)
   · exact Or.inr (Set.univ_inter _)
   · exact Or.inr (Set.inter_univ _)
   · exact Or.inr (Set.inter_self _)
 
-theorem inter_in_zeroset {C C' : Set Example12.Token} (hc : C = Example12.master ∨ C = Example12.zero)
-    (hc' : C' = Example12.master ∨ C' = Example12.zero) :
-    C ∩ C' = Example12.master ∨ C ∩ C' = Example12.zero := by
+theorem inter_in_zeroset {C C' : Set TwoToken.Token} (hc : C = TwoToken.master ∨ C = TwoToken.zero)
+    (hc' : C' = TwoToken.master ∨ C' = TwoToken.zero) :
+    C ∩ C' = TwoToken.master ∨ C ∩ C' = TwoToken.zero := by
   rcases hc with rfl | rfl <;> rcases hc' with rfl | rfl
   · exact Or.inl (Set.inter_self _)
   · exact Or.inr (Set.univ_inter _)
@@ -308,14 +308,14 @@ theorem inter_in_zeroset {C C' : Set Example12.Token} (hc : C = Example12.master
   · exact Or.inr (Set.inter_self _)
 
 def whichGuard (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
-    (W : Set (Option (α ⊕ β))) (C : Set Example12.Token) : Prop :=
-  ((∃ X, V₀.mem X ∧ W = inj₀ X) ∧ (C = Example12.master ∨ C = Example12.zero)) ∨
-  ((∃ Y, V₁.mem Y ∧ W = inj₁ Y) ∧ (C = Example12.master ∨ C = Example12.one)) ∨
-  (W = sumMaster V₀ V₁ ∧ C = Example12.master)
+    (W : Set (Option (α ⊕ β))) (C : Set TwoToken.Token) : Prop :=
+  ((∃ X, V₀.mem X ∧ W = inj₀ X) ∧ (C = TwoToken.master ∨ C = TwoToken.zero)) ∨
+  ((∃ Y, V₁.mem Y ∧ W = inj₁ Y) ∧ (C = TwoToken.master ∨ C = TwoToken.one)) ∨
+  (W = sumMaster V₀ V₁ ∧ C = TwoToken.master)
 
-theorem whichGuard_left {W : Set (Option (α ⊕ β))} {C : Set Example12.Token} {X : Set α}
+theorem whichGuard_left {W : Set (Option (α ⊕ β))} {C : Set TwoToken.Token} {X : Set α}
     (hg : whichGuard V₀ V₁ W C) (hW : W = inj₀ X) (hX : X.Nonempty) :
-    C = Example12.master ∨ C = Example12.zero := by
+    C = TwoToken.master ∨ C = TwoToken.zero := by
   rcases hg with ⟨_, hc⟩ | ⟨⟨Y, _, hWY⟩, _⟩ | ⟨hWsm, _⟩
   · exact hc
   · refine absurd (hW.symm.trans hWY) ?_
@@ -323,8 +323,8 @@ theorem whichGuard_left {W : Set (Option (α ⊕ β))} {C : Set Example12.Token}
   · refine absurd (hW.symm.trans hWsm) ?_
     intro h; exact none_mem_inj₀ (h ▸ none_mem_sumMaster)
 
-theorem whichGuard_masterC {W : Set (Option (α ⊕ β))} {C : Set Example12.Token}
-    (hg : whichGuard V₀ V₁ W C) (hW : W = sumMaster V₀ V₁) : C = Example12.master := by
+theorem whichGuard_masterC {W : Set (Option (α ⊕ β))} {C : Set TwoToken.Token}
+    (hg : whichGuard V₀ V₁ W C) (hW : W = sumMaster V₀ V₁) : C = TwoToken.master := by
   rcases hg with ⟨⟨X, _, hWX⟩, _⟩ | ⟨⟨Y, _, hWY⟩, _⟩ | ⟨_, hc⟩
   · refine absurd (hW.symm.trans hWX) ?_
     intro h; exact none_mem_inj₀ (h ▸ none_mem_sumMaster)
@@ -332,9 +332,9 @@ theorem whichGuard_masterC {W : Set (Option (α ⊕ β))} {C : Set Example12.Tok
     intro h; exact none_mem_inj₁ (h ▸ none_mem_sumMaster)
   · exact hc
 
-theorem whichGuard_right {W : Set (Option (α ⊕ β))} {C : Set Example12.Token} {Y : Set β}
+theorem whichGuard_right {W : Set (Option (α ⊕ β))} {C : Set TwoToken.Token} {Y : Set β}
     (hg : whichGuard V₀ V₁ W C) (hW : W = inj₁ Y) (hY : Y.Nonempty) :
-    C = Example12.master ∨ C = Example12.one := by
+    C = TwoToken.master ∨ C = TwoToken.one := by
   rcases hg with ⟨⟨X, _, hWX⟩, _⟩ | ⟨_, hc⟩ | ⟨hWsm, _⟩
   · refine absurd (hW.symm.trans hWX) ?_
     intro h; exact not_inj₁_subset_inj₀ hY h.subset
@@ -345,27 +345,27 @@ theorem whichGuard_right {W : Set (Option (α ⊕ β))} {C : Set Example12.Token
 def whichMap (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
     (h₀ : ∀ X, V₀.mem X → X.Nonempty) (h₁ : ∀ Y, V₁.mem Y → Y.Nonempty) :
     ApproximableMap (sum V₀ V₁ h₀ h₁) TD where
-  rel W C := (sum V₀ V₁ h₀ h₁).mem W ∧ Example12.mem C ∧ whichGuard V₀ V₁ W C
+  rel W C := (sum V₀ V₁ h₀ h₁).mem W ∧ TwoToken.mem C ∧ whichGuard V₀ V₁ W C
   rel_dom h := h.1
   rel_cod h := h.2.1
-  master_rel := ⟨(sum V₀ V₁ h₀ h₁).master_mem, Example12.mem_master, Or.inr (Or.inr ⟨rfl, rfl⟩)⟩
+  master_rel := ⟨(sum V₀ V₁ h₀ h₁).master_mem, TwoToken.mem_master, Or.inr (Or.inr ⟨rfl, rfl⟩)⟩
   inter_right := by
     rintro W C C' ⟨hW, _, hg⟩ ⟨_, _, hg'⟩
     rcases hg with ⟨⟨X, hX, rfl⟩, hc⟩ | ⟨⟨Y, hY, rfl⟩, hc⟩ | ⟨rfl, hc⟩
     · have hor := inter_in_zeroset hc (whichGuard_left hg' rfl (h₀ X hX))
       refine ⟨Or.inr (Or.inl ⟨X, hX, rfl⟩), ?_, Or.inl ⟨⟨X, hX, rfl⟩, hor⟩⟩
       rcases hor with h | h
-      · rw [h]; exact Example12.mem_master
-      · rw [h]; exact Example12.mem_zero
+      · rw [h]; exact TwoToken.mem_master
+      · rw [h]; exact TwoToken.mem_zero
     · have hor := inter_in_oneset hc (whichGuard_right hg' rfl (h₁ Y hY))
       refine ⟨Or.inr (Or.inr ⟨Y, hY, rfl⟩), ?_, Or.inr (Or.inl ⟨⟨Y, hY, rfl⟩, hor⟩)⟩
       rcases hor with h | h
-      · rw [h]; exact Example12.mem_master
-      · rw [h]; exact Example12.mem_one
+      · rw [h]; exact TwoToken.mem_master
+      · rw [h]; exact TwoToken.mem_one
     · have hc' := whichGuard_masterC hg' rfl
       subst hc; subst hc'
       rw [Set.inter_self]
-      exact ⟨Or.inl rfl, Example12.mem_master, Or.inr (Or.inr ⟨rfl, rfl⟩)⟩
+      exact ⟨Or.inl rfl, TwoToken.mem_master, Or.inr (Or.inr ⟨rfl, rfl⟩)⟩
   mono := by
     rintro W W₂ C C₂ ⟨hW, hC, hg⟩ hW₂W hCC₂ hW₂ hC₂
     refine ⟨hW₂, hC₂, ?_⟩
@@ -381,7 +381,7 @@ def whichMap (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β)
       · exact Or.inl (Tmem_ge_master hC₂ hCC₂)
       · exact Or.symm (Tmem_ge_one hC₂ hCC₂)
     · subst hc
-      have hC₂m : C₂ = Example12.master := Tmem_ge_master hC₂ hCC₂
+      have hC₂m : C₂ = TwoToken.master := Tmem_ge_master hC₂ hCC₂
       rcases hW₂ with rfl | ⟨X₂, hX₂, rfl⟩ | ⟨Y₂, hY₂, rfl⟩
       · exact Or.inr (Or.inr ⟨rfl, hC₂m⟩)
       · exact Or.inl ⟨⟨X₂, hX₂, rfl⟩, Or.inl hC₂m⟩
@@ -404,16 +404,16 @@ variable {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 
 theorem condSum_bot (x : V₀.Element) (y : V₁.Element) :
-    (condSum V₀ V₁ h₀ h₁).toElementMap (pair Example23.botElt (pair x y)) = (sum V₀ V₁ h₀ h₁).bot := by
+    (condSum V₀ V₁ h₀ h₁).toElementMap (pair Truth.botElt (pair x y)) = (sum V₀ V₁ h₀ h₁).bot := by
   rw [condSum, toElementMap_comp, condSumEmb_toElementMap, cond_bot]
 
 theorem condSum_false (x : V₀.Element) (y : V₁.Element) :
-    (condSum V₀ V₁ h₀ h₁).toElementMap (pair Example23.falseElt (pair x y))
+    (condSum V₀ V₁ h₀ h₁).toElementMap (pair Truth.falseElt (pair x y))
       = (inMap₁ (h₀ := h₀) (h₁ := h₁)).toElementMap y := by
   rw [condSum, toElementMap_comp, condSumEmb_toElementMap, cond_false]
 
 theorem condSum_true (x : V₀.Element) (y : V₁.Element) :
-    (condSum V₀ V₁ h₀ h₁).toElementMap (pair Example23.trueElt (pair x y))
+    (condSum V₀ V₁ h₀ h₁).toElementMap (pair Truth.trueElt (pair x y))
       = (inMap₀ (h₀ := h₀) (h₁ := h₁)).toElementMap x := by
   rw [condSum, toElementMap_comp, condSumEmb_toElementMap, cond_true]
 
@@ -500,7 +500,7 @@ theorem sum_element_trichotomy (x : (sum V₀ V₁ h₀ h₁).Element) :
   · exact absurd ⟨Y, hY, hxW⟩ hR
 
 theorem which_mem_one {x : (sum V₀ V₁ h₀ h₁).Element} :
-    ((whichMap V₀ V₁ h₀ h₁).toElementMap x).mem Example12.one
+    ((whichMap V₀ V₁ h₀ h₁).toElementMap x).mem TwoToken.one
       ↔ ∃ Y, V₁.mem Y ∧ x.mem (inj₁ Y) := by
   constructor
   · rintro ⟨W, hWx, _, _, hg⟩
@@ -511,11 +511,11 @@ theorem which_mem_one {x : (sum V₀ V₁ h₀ h₁).Element} :
     · exact ⟨Y, hY, hWx⟩
     · exact absurd hc one_ne_master
   · rintro ⟨Y, hY, hWx⟩
-    exact ⟨inj₁ Y, hWx, Or.inr (Or.inr ⟨Y, hY, rfl⟩), Example12.mem_one,
+    exact ⟨inj₁ Y, hWx, Or.inr (Or.inr ⟨Y, hY, rfl⟩), TwoToken.mem_one,
       Or.inr (Or.inl ⟨⟨Y, hY, rfl⟩, Or.inr rfl⟩)⟩
 
 theorem which_mem_zero {x : (sum V₀ V₁ h₀ h₁).Element} :
-    ((whichMap V₀ V₁ h₀ h₁).toElementMap x).mem Example12.zero
+    ((whichMap V₀ V₁ h₀ h₁).toElementMap x).mem TwoToken.zero
       ↔ ∃ X, V₀.mem X ∧ x.mem (inj₀ X) := by
   constructor
   · rintro ⟨W, hWx, _, _, hg⟩
@@ -526,7 +526,7 @@ theorem which_mem_zero {x : (sum V₀ V₁ h₀ h₁).Element} :
       · exact absurd h zero_ne_one
     · exact absurd hc zero_ne_master
   · rintro ⟨X, hX, hWx⟩
-    exact ⟨inj₀ X, hWx, Or.inr (Or.inl ⟨X, hX, rfl⟩), Example12.mem_zero,
+    exact ⟨inj₀ X, hWx, Or.inr (Or.inl ⟨X, hX, rfl⟩), TwoToken.mem_zero,
       Or.inl ⟨⟨X, hX, rfl⟩, Or.inr rfl⟩⟩
 
 theorem cond_which (x : (sum V₀ V₁ h₀ h₁).Element) :

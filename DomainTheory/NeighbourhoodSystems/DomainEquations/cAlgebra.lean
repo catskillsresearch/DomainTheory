@@ -20,7 +20,7 @@ namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
-open Example62C in
+open SeqEqC in
 
 abbrev Tc : Endofunctor StrictDomainObj.{w} where
   obj := tcObj
@@ -31,9 +31,9 @@ abbrev Tc : Endofunctor StrictDomainObj.{w} where
   map_comp {D E F} g f := Subtype.ext (by
     show sumMap3 (idMap unitSys) (g.1.comp f.1) (g.1.comp f.1)
       = (sumMap3 (idMap unitSys) g.1 g.1).comp (sumMap3 (idMap unitSys) f.1 f.1)
-    have h := sumMap3_comp (h₀ := Example62C.unitSys_nonempty) (h₁ := D.nonempty) (h₂ := D.nonempty)
-      (h₀' := Example62C.unitSys_nonempty) (h₁' := E.nonempty) (h₂' := E.nonempty)
-      (h₀'' := Example62C.unitSys_nonempty) (h₁'' := F.nonempty) (h₂'' := F.nonempty)
+    have h := sumMap3_comp (h₀ := SeqEqC.unitSys_nonempty) (h₁ := D.nonempty) (h₂ := D.nonempty)
+      (h₀' := SeqEqC.unitSys_nonempty) (h₁' := E.nonempty) (h₂' := E.nonempty)
+      (h₀'' := SeqEqC.unitSys_nonempty) (h₁'' := F.nonempty) (h₂'' := F.nonempty)
       (idMap unitSys) g.1 g.1 (idMap unitSys) f.1 f.1
     rw [idMap_comp] at h
     exact h)
@@ -41,11 +41,11 @@ abbrev Tc : Endofunctor StrictDomainObj.{w} where
 @[simp] theorem Tc_obj (D : StrictDomainObj.{w}) : Tc.obj D = tcObj D := rfl
 
 @[simp] theorem Tc_map_val {D E : StrictDomainObj.{w}} (f : (D ⟶ E)) :
-    (Tc.map f).1 = sumMap3 (h₀ := Example62C.unitSys_nonempty) (h₁ := D.nonempty) (h₂ := D.nonempty)
-      (h₀' := Example62C.unitSys_nonempty) (h₁' := E.nonempty) (h₂' := E.nonempty)
+    (Tc.map f).1 = sumMap3 (h₀ := SeqEqC.unitSys_nonempty) (h₁ := D.nonempty) (h₂ := D.nonempty)
+      (h₀' := SeqEqC.unitSys_nonempty) (h₁' := E.nonempty) (h₂' := E.nonempty)
       (idMap unitSys) f.1 f.1 := rfl
 
-open Example44 Example62C ExampleB in
+open SeqDom SeqEqC BitDom in
 
 abbrev Cobj : StrictDomainObj.{0} := ⟨Str, C, C_nonempty⟩
 
@@ -54,9 +54,9 @@ end
 section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
-namespace Example62C
+namespace SeqEqC
 
-open Example44 ExampleB Example62
+open SeqDom BitDom SeqEqB
 
 @[simp] theorem ccEquiv_apply (x : C.Element) : ccEquiv x = toCC x := rfl
 
@@ -86,7 +86,7 @@ theorem consMap_not_mem_nil {b : Bool} {z : C.Element} :
   have := hsub ⟨a, rfl, ha⟩
   rw [Set.mem_singleton_iff] at this; exact absurd this (by simp)
 
-end Example62C
+end SeqEqC
 end
 
 section
@@ -94,18 +94,18 @@ open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashP
 
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
 def descE : B.carrier.sys.Element :=
-  B.str.1.toElementMap (sinj0 (h₀ := Example62C.unitSys_nonempty) (h₁ := B.carrier.nonempty)
+  B.str.1.toElementMap (sinj0 (h₀ := SeqEqC.unitSys_nonempty) (h₁ := B.carrier.nonempty)
     (h₂ := B.carrier.nonempty) unitSys.bot)
 
 def descF (b : Bool) (y : B.carrier.sys.Element) : B.carrier.sys.Element :=
   B.str.1.toElementMap (cond b
-    (sinj2 (h₀ := Example62C.unitSys_nonempty) (h₁ := B.carrier.nonempty) (h₂ := B.carrier.nonempty) y)
-    (sinj1 (h₀ := Example62C.unitSys_nonempty) (h₁ := B.carrier.nonempty) (h₂ := B.carrier.nonempty) y))
+    (sinj2 (h₀ := SeqEqC.unitSys_nonempty) (h₁ := B.carrier.nonempty) (h₂ := B.carrier.nonempty) y)
+    (sinj1 (h₀ := SeqEqC.unitSys_nonempty) (h₁ := B.carrier.nonempty) (h₂ := B.carrier.nonempty) y))
 
 theorem descF_mono (b : Bool) {y y' : B.carrier.sys.Element} (h : y ≤ y') :
     descF B b y ≤ descF B b y' := by
@@ -155,7 +155,7 @@ open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashP
 
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -175,7 +175,7 @@ open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashP
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -189,7 +189,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -203,7 +203,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -219,13 +219,13 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
 theorem ccEquiv_comp_symm :
-    (ofIso ccEquiv).comp (ofIso ccEquiv.symm) = idMap (sum3 unitSys C C Example62C.unitSys_nonempty
-      Example62C.C_nonempty Example62C.C_nonempty) := by
+    (ofIso ccEquiv).comp (ofIso ccEquiv.symm) = idMap (sum3 unitSys C C SeqEqC.unitSys_nonempty
+      SeqEqC.C_nonempty SeqEqC.C_nonempty) := by
   apply ext_of_toElementMap
   intro s
   rw [toElementMap_comp, toElementMap_ofIso, toElementMap_ofIso, toElementMap_idMap]
@@ -237,7 +237,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -253,7 +253,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -267,7 +267,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -279,20 +279,20 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
 theorem genKeyBot (g : ApproximableMap C B.carrier.sys) :
-    B.str.1.toElementMap ((sumMap3 (h₀ := Example62C.unitSys_nonempty) (h₁ := Example62C.C_nonempty)
-        (h₂ := Example62C.C_nonempty) (h₀' := Example62C.unitSys_nonempty) (h₁' := B.carrier.nonempty)
+    B.str.1.toElementMap ((sumMap3 (h₀ := SeqEqC.unitSys_nonempty) (h₁ := SeqEqC.C_nonempty)
+        (h₂ := SeqEqC.C_nonempty) (h₀' := SeqEqC.unitSys_nonempty) (h₁' := B.carrier.nonempty)
         (h₂' := B.carrier.nonempty) (idMap unitSys) g g).toElementMap (toCC (strBot [])))
       = B.carrier.sys.bot := by
-  have hb : toCC (strBot []) = (sum3 unitSys C C Example62C.unitSys_nonempty Example62C.C_nonempty
-      Example62C.C_nonempty).bot := by
-    rw [← C_bot_eq_strBot_nil, ← Example62C.ccEquiv_apply]; exact ccEquiv.map_bot
-  rw [hb, isStrict_iff_apply_bot.mp (isStrict_sumMap3 (h₀ := Example62C.unitSys_nonempty)
-    (h₁ := Example62C.C_nonempty) (h₂ := Example62C.C_nonempty) (idMap unitSys) g g)]
+  have hb : toCC (strBot []) = (sum3 unitSys C C SeqEqC.unitSys_nonempty SeqEqC.C_nonempty
+      SeqEqC.C_nonempty).bot := by
+    rw [← C_bot_eq_strBot_nil, ← SeqEqC.ccEquiv_apply]; exact ccEquiv.map_bot
+  rw [hb, isStrict_iff_apply_bot.mp (isStrict_sumMap3 (h₀ := SeqEqC.unitSys_nonempty)
+    (h₁ := SeqEqC.C_nonempty) (h₂ := SeqEqC.C_nonempty) (idMap unitSys) g g)]
   exact isStrict_iff_apply_bot.mp B.str.2
 
 end Initial
@@ -307,22 +307,22 @@ theorem isStrict_ofIso {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : Ne
 end
 
 section
-open Example44 Example62C in
+open SeqDom SeqEqC in
 
 abbrev cStr : ((Tc.obj Cobj) ⟶ Cobj) :=
   ⟨ofIso (by exact ccEquiv.symm), isStrict_ofIso _⟩
 end
 
 section
-open Example44 Example62C in
+open SeqDom SeqEqC in
 
 abbrev Calg : TAlgebra Tc := ⟨Cobj, cStr⟩
 end
 
 section
-namespace Example62C
+namespace SeqEqC
 
-open Example44 ExampleB Example62
+open SeqDom BitDom SeqEqB
 
 theorem toCC_consMap (b : Bool) (z : C.Element) :
     toCC ((consMap b).toElementMap z)
@@ -355,19 +355,19 @@ theorem toCC_consMap (b : Bool) (z : C.Element) :
       · exact Or.inl rfl
       · exact Or.inr (Or.inr (Or.inr ⟨Y, hY, rfl, (consMap_mem_embBit hY).mpr hz⟩))
 
-end Example62C
+end SeqEqC
 end
 
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
 theorem genKey (g : ApproximableMap C B.carrier.sys) (b : Bool) (w : C.Element) :
-    B.str.1.toElementMap ((sumMap3 (h₀ := Example62C.unitSys_nonempty) (h₁ := Example62C.C_nonempty)
-        (h₂ := Example62C.C_nonempty) (h₀' := Example62C.unitSys_nonempty) (h₁' := B.carrier.nonempty)
+    B.str.1.toElementMap ((sumMap3 (h₀ := SeqEqC.unitSys_nonempty) (h₁ := SeqEqC.C_nonempty)
+        (h₂ := SeqEqC.C_nonempty) (h₀' := SeqEqC.unitSys_nonempty) (h₁' := B.carrier.nonempty)
         (h₂' := B.carrier.nonempty) (idMap unitSys) g g).toElementMap
       (toCC ((consMap b).toElementMap w)))
       = descF B b (g.toElementMap w) := by
@@ -380,9 +380,9 @@ end Initial
 end
 
 section
-namespace Example62C
+namespace SeqEqC
 
-open Example44 ExampleB Example62
+open SeqDom BitDom SeqEqB
 
 theorem toCC_strElem_nil :
     toCC (strElem []) = sinj0 (V₁ := C) (V₂ := C) (h₀ := unitSys_nonempty) (h₁ := C_nonempty)
@@ -400,19 +400,19 @@ theorem toCC_strElem_nil :
     · obtain rfl : X = Set.univ := hX
       exact Or.inr (Or.inl ⟨rfl, memC_singleton [], subset_rfl⟩)
 
-end Example62C
+end SeqEqC
 end
 
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
 theorem genKey0 (g : ApproximableMap C B.carrier.sys) :
-    B.str.1.toElementMap ((sumMap3 (h₀ := Example62C.unitSys_nonempty) (h₁ := Example62C.C_nonempty)
-        (h₂ := Example62C.C_nonempty) (h₀' := Example62C.unitSys_nonempty) (h₁' := B.carrier.nonempty)
+    B.str.1.toElementMap ((sumMap3 (h₀ := SeqEqC.unitSys_nonempty) (h₁ := SeqEqC.C_nonempty)
+        (h₂ := SeqEqC.C_nonempty) (h₀' := SeqEqC.unitSys_nonempty) (h₁' := B.carrier.nonempty)
         (h₂' := B.carrier.nonempty) (idMap unitSys) g g).toElementMap (toCC (strElem [])))
       = descE B := by
   rw [toCC_strElem_nil, sumMap3_sinj0, toElementMap_idMap]
@@ -424,13 +424,13 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
 theorem descMap_satisfiesRec :
-    descMap B = (B.str.1.comp (sumMap3 (h₀ := Example62C.unitSys_nonempty)
-        (h₁ := Example62C.C_nonempty) (h₂ := Example62C.C_nonempty) (h₀' := Example62C.unitSys_nonempty)
+    descMap B = (B.str.1.comp (sumMap3 (h₀ := SeqEqC.unitSys_nonempty)
+        (h₁ := SeqEqC.C_nonempty) (h₂ := SeqEqC.C_nonempty) (h₀' := SeqEqC.unitSys_nonempty)
         (h₁' := B.carrier.nonempty) (h₂' := B.carrier.nonempty) (idMap unitSys) (descMap B)
         (descMap B))).comp (ofIso ccEquiv) := by
   apply map_ext_C
@@ -439,7 +439,7 @@ theorem descMap_satisfiesRec :
     cases σ with
     | nil => exact (genKeyBot B (descMap B)).symm
     | cons b σ =>
-      rw [Example62C.ccEquiv_apply, ← consMap_strBot]
+      rw [SeqEqC.ccEquiv_apply, ← consMap_strBot]
       have h := genKey B (descMap B) b (strBot σ)
       rw [descMap_strBot] at h
       exact h.symm
@@ -448,7 +448,7 @@ theorem descMap_satisfiesRec :
     cases σ with
     | nil => exact (genKey0 B (descMap B)).symm
     | cons b σ =>
-      rw [Example62C.ccEquiv_apply, ← consMap_strElem]
+      rw [SeqEqC.ccEquiv_apply, ← consMap_strElem]
       have h := genKey B (descMap B) b (strElem σ)
       rw [descMap_strElem] at h
       exact h.symm
@@ -459,13 +459,13 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
 theorem descComm : (descMap B).comp (ofIso ccEquiv.symm)
-    = B.str.1.comp (sumMap3 (h₀ := Example62C.unitSys_nonempty) (h₁ := Example62C.C_nonempty)
-        (h₂ := Example62C.C_nonempty) (h₀' := Example62C.unitSys_nonempty) (h₁' := B.carrier.nonempty)
+    = B.str.1.comp (sumMap3 (h₀ := SeqEqC.unitSys_nonempty) (h₁ := SeqEqC.C_nonempty)
+        (h₂ := SeqEqC.C_nonempty) (h₀' := SeqEqC.unitSys_nonempty) (h₁' := B.carrier.nonempty)
         (h₂' := B.carrier.nonempty) (idMap unitSys) (descMap B) (descMap B)) := by
   conv_lhs => rw [descMap_satisfiesRec B]
   rw [comp_assoc, ccEquiv_comp_symm, comp_idMap]
@@ -476,7 +476,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -493,13 +493,13 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
 theorem rec_determines (g : ApproximableMap C B.carrier.sys)
-    (hg : g = (B.str.1.comp (sumMap3 (h₀ := Example62C.unitSys_nonempty) (h₁ := Example62C.C_nonempty)
-        (h₂ := Example62C.C_nonempty) (h₀' := Example62C.unitSys_nonempty) (h₁' := B.carrier.nonempty)
+    (hg : g = (B.str.1.comp (sumMap3 (h₀ := SeqEqC.unitSys_nonempty) (h₁ := SeqEqC.C_nonempty)
+        (h₂ := SeqEqC.C_nonempty) (h₀' := SeqEqC.unitSys_nonempty) (h₁' := B.carrier.nonempty)
         (h₂' := B.carrier.nonempty) (idMap unitSys) g g)).comp (ofIso ccEquiv)) :
     g = descMap B := by
   have hbot : ∀ σ, g.toElementMap (strBot σ) = descVal B B.carrier.sys.bot σ := by
@@ -507,11 +507,11 @@ theorem rec_determines (g : ApproximableMap C B.carrier.sys)
     induction σ with
     | nil =>
       conv_lhs => rw [hg]
-      rw [toElementMap_comp, toElementMap_comp, toElementMap_ofIso, Example62C.ccEquiv_apply]
+      rw [toElementMap_comp, toElementMap_comp, toElementMap_ofIso, SeqEqC.ccEquiv_apply]
       exact genKeyBot B g
     | cons b σ ih =>
       conv_lhs => rw [hg]
-      rw [toElementMap_comp, toElementMap_comp, toElementMap_ofIso, Example62C.ccEquiv_apply,
+      rw [toElementMap_comp, toElementMap_comp, toElementMap_ofIso, SeqEqC.ccEquiv_apply,
         ← consMap_strBot]
       have h := genKey B g b (strBot σ)
       rw [ih] at h
@@ -521,11 +521,11 @@ theorem rec_determines (g : ApproximableMap C B.carrier.sys)
     induction σ with
     | nil =>
       conv_lhs => rw [hg]
-      rw [toElementMap_comp, toElementMap_comp, toElementMap_ofIso, Example62C.ccEquiv_apply]
+      rw [toElementMap_comp, toElementMap_comp, toElementMap_ofIso, SeqEqC.ccEquiv_apply]
       exact genKey0 B g
     | cons b σ ih =>
       conv_lhs => rw [hg]
-      rw [toElementMap_comp, toElementMap_comp, toElementMap_ofIso, Example62C.ccEquiv_apply,
+      rw [toElementMap_comp, toElementMap_comp, toElementMap_ofIso, SeqEqC.ccEquiv_apply,
         ← consMap_strElem]
       have h := genKey B g b (strElem σ)
       rw [ih] at h
@@ -540,7 +540,7 @@ end
 section
 section Initial
 
-open Example44 Example62C ExampleB Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -549,8 +549,8 @@ theorem descAlgHom_uniq (h' : AlgHom Calg B) : h' = descAlgHom B := by
   have hg : hom.1 = descMap B := by
     refine rec_determines B hom.1 ?_
     have hc : hom.1.comp (ofIso ccEquiv.symm)
-        = B.str.1.comp (sumMap3 (h₀ := Example62C.unitSys_nonempty) (h₁ := Example62C.C_nonempty)
-          (h₂ := Example62C.C_nonempty) (h₀' := Example62C.unitSys_nonempty) (h₁' := B.carrier.nonempty)
+        = B.str.1.comp (sumMap3 (h₀ := SeqEqC.unitSys_nonempty) (h₁ := SeqEqC.C_nonempty)
+          (h₂ := SeqEqC.C_nonempty) (h₀' := SeqEqC.unitSys_nonempty) (h₁' := B.carrier.nonempty)
           (h₂' := B.carrier.nonempty) (idMap unitSys) hom.1 hom.1) :=
       congrArg Subtype.val comm
     have h2 := congrArg (fun m => m.comp (ofIso ccEquiv)) hc

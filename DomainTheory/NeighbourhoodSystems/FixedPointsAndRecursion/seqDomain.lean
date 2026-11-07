@@ -6,8 +6,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Nes
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Example44
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
+namespace DomainTheory.NeighbourhoodSystems.SeqDom
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap BitDom
 
 section
 
@@ -82,11 +82,11 @@ theorem nestedOrDisjoint : NestedOrDisjoint memC := by
       exact h h2
 end
 
-end DomainTheory.NeighbourhoodSystems.Example44
+end DomainTheory.NeighbourhoodSystems.SeqDom
 
 section
-namespace DomainTheory.NeighbourhoodSystems.Example44
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB
+namespace DomainTheory.NeighbourhoodSystems.SeqDom
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap BitDom
 section
 
 abbrev C : NeighborhoodSystem Str :=
@@ -189,4 +189,4 @@ section
 theorem prepend_subset_self : True := trivial
 end
 
-end DomainTheory.NeighbourhoodSystems.Example44
+end DomainTheory.NeighbourhoodSystems.SeqDom

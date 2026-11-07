@@ -6,10 +6,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.seqEqB
 
 namespace DomainTheory.NeighbourhoodSystems
 
-namespace Example62A
-open NeighborhoodSystem ApproximableMap ExampleB
+namespace SeqEqA
+open NeighborhoodSystem ApproximableMap BitDom
 
-open NeighborhoodSystem ApproximableMap ExampleB
+open NeighborhoodSystem ApproximableMap BitDom
 
 variable {β : Type*} {n : ℕ}
 variable {n : ℕ}
@@ -484,5 +484,5 @@ def aaEquiv (hn : 0 < n) : (Asys n hn).Element ≃o (AAsys hn).Element where
 theorem A_domain_equation (hn : 0 < n) : Asys n hn ≅ᴰ AAsys hn := ⟨aaEquiv hn⟩
 
 
-end Example62A
+end SeqEqA
 end DomainTheory.NeighbourhoodSystems

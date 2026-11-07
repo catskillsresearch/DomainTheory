@@ -19,30 +19,10 @@ flowchart LR
 
 The intention is that 0 and 1 can be completely specified and that they can be identified with the total elements. As we shall see, there is only one partial element: either we give no information (the neighbourhood $\{0, 1\}$), or we decide between 0 and 1 (by giving $\{0\}$ or $\{1\}$). $\square$
 
+The development is with the [two-token system](1980_TwoToken.md) peer.
+
 <!-- formalization -->
 
-**Definition (`Token`).** The token set is a two-element type, standing for $\Delta=\{0,1\}$.
+**Theorem (`example_1_2`).** There is a neighbourhood system on $\{0,1\}$ whose master set is the full token set and whose neighbourhoods are exactly $\{\{0,1\},\{0\},\{1\}\}$.
 
-**Definition (`master`).** The master set is the full set of tokens.
-
-**Definition (`zero`).** The singleton neighbourhood $\{0\}$.
-
-**Definition (`one`).** The singleton neighbourhood $\{1\}$.
-
-**Definition (`mem`).** A subset of the token set belongs to the family precisely when it equals the master set or one of the two singletons.
-
-**Theorem (`mem_iff`).** A set is a neighbourhood if and only if it equals $\Delta$, $\{0\}$, or $\{1\}$.
-
-*Proof.* Immediate from the three-element family. ∎
-
-**Theorem (`inter_eq`).** The intersection of any two neighbourhoods is again $\Delta$, $\{0\}$, $\{1\}$, or empty.
-
-*Proof.* Case analysis on the two factors, using the absorption and disjointness facts for the master and the two singletons. ∎
-
-**Definition (`neighborhoodSystem`).** The neighbourhood system on the two-token carrier with this membership predicate and master set.
-
-*Proof.* The master is nonempty and a neighbourhood; every neighbourhood lies in the master; if two neighbourhoods meet in a set containing a third neighbourhood, their intersection cannot be empty, so by the preceding classification it is again a neighbourhood. ∎
-
-**Theorem (`example_1_2`).** There is a neighbourhood system on $\{0,1\}$ whose master set is the full token set and whose neighbourhoods are exactly $\{\{0,1\}$, $\{0\}$, and $\{1\}$.
-
-*Proof.* Take the system just constructed; the master and membership claims are the definitions together with `mem_iff`. ∎
+*Proof.* By the two-token neighbourhood system. ∎

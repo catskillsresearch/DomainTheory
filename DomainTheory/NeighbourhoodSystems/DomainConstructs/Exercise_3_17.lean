@@ -5,7 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.embBinSeq
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise317
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem BitDom ApproximableMap
 
 /-- Scott's Exercise 3.17: embedding of binary sequences with a left inverse. -/
 theorem example_317 :

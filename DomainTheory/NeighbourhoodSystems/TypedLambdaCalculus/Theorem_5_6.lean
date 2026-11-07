@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.partrecLam
 
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
-open DomainTheory.NeighbourhoodSystems.Example43 (N natElem)
+open DomainTheory.NeighbourhoodSystems.NatDom (N natElem)
 open DomainTheory.NeighbourhoodSystems.PartrecLam
 
 /-- Scott's Theorem 5.6: every unary partial recursive function is realized by a

@@ -7,7 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.functorTokens
 
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem DomainTheory.NeighbourhoodSystems.Exercise619
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
+open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 
 section
 namespace Exercise624
@@ -145,7 +145,7 @@ end
 section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem DomainTheory.NeighbourhoodSystems.Exercise619
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
+open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 section
 namespace Exercise624
 

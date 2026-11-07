@@ -297,9 +297,9 @@ end Exercise824
 
 end DomainTheory.NeighbourhoodSystems
 
-namespace DomainTheory.NeighbourhoodSystems.Example15
+namespace DomainTheory.NeighbourhoodSystems.P4
 
-end DomainTheory.NeighbourhoodSystems.Example15
+end DomainTheory.NeighbourhoodSystems.P4
 namespace DomainTheory.NeighbourhoodSystems.Exercise722
 
 instance Ssys_countable : Countable {S : Set (List Bool) // Ssys.mem S} := by
@@ -319,12 +319,12 @@ instance Ssys_countable : Countable {S : Set (List Bool) // Ssys.mem S} := by
     (Equiv.subtypeEquivRight fun _ => Ssys_mem.symm)
 
 end DomainTheory.NeighbourhoodSystems.Exercise722
-namespace DomainTheory.NeighbourhoodSystems.Example15
+namespace DomainTheory.NeighbourhoodSystems.P4
 
 theorem P4_embeds : neighborhoodSystem ⊴ U :=
   theorem_8_8 neighborhoodSystem
 
-end DomainTheory.NeighbourhoodSystems.Example15
+end DomainTheory.NeighbourhoodSystems.P4
 namespace DomainTheory.NeighbourhoodSystems.Exercise722
 
 theorem Ssys_embeds : Ssys ⊴ U :=

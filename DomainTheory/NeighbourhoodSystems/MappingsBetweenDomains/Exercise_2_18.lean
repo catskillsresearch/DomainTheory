@@ -10,7 +10,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise218
 left inverse is not injective. -/
 theorem example_218 :
     (¬ Function.Surjective hMap.toElementMap) ∧
-    (kMap.comp hMap = ApproximableMap.idMap ExampleB.B) ∧
+    (kMap.comp hMap = ApproximableMap.idMap BitDom.B) ∧
     (¬ Function.Injective kMap.toElementMap) :=
   ⟨hMap_not_surjective, kMap_comp_hMap, kMap_not_injective⟩
 

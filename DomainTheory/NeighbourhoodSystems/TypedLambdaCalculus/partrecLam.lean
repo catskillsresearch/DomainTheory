@@ -7,7 +7,7 @@ public import Mathlib.Computability.PartrecBasis
 
 namespace DomainTheory.NeighbourhoodSystems.PartrecLam
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-open DomainTheory.NeighbourhoodSystems.Example43 (N natElem zeroElt succMap predMap zeroMap
+open DomainTheory.NeighbourhoodSystems.NatDom (N natElem zeroElt succMap predMap zeroMap
   succMap_natElem succMap_bot predMap_natElem_succ predMap_natElem_zero predMap_bot
   zeroMap_natElem_zero zeroMap_natElem_succ zeroMap_bot constLiftN)
 open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)

@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example_1_5
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.P4
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Element
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.interUpTo
 import Mathlib.Data.Set.BooleanAlgebra
@@ -27,7 +27,7 @@ theorem Element.mem_interUpTo {α : Type*} {V : NeighborhoodSystem α} (x : V.El
 end NeighborhoodSystem
 
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.Example15
+namespace DomainTheory.NeighbourhoodSystems.P4
 section
 
 open NeighborhoodSystem
@@ -43,5 +43,5 @@ theorem consistent_iff_inter_nonempty (X : ℕ → Set Token) (n : ℕ) :
 
 end
 
-end DomainTheory.NeighbourhoodSystems.Example15
+end DomainTheory.NeighbourhoodSystems.P4
 end

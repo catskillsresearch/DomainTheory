@@ -7,8 +7,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.seqEqRegular
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62 Example62A Example62C Example62Regular
+open DomainTheory.NeighbourhoodSystems
+open NeighborhoodSystem ApproximableMap BitDom SeqDom SeqEqB SeqEqA SeqEqC PeriodicTree
 
 /-- Scott's Example 6.2: the staple sequence domains satisfy domain equations
 `B ≅ B + B`, `C ≅ {{Λ}} + C + C`, and (for `n > 0`) `A^n ≅ A^n + A^n`; eventually periodic
@@ -21,5 +21,3 @@ theorem example_62 :
   ⟨B_domain_equation, C_domain_equation,
     fun hn => A_domain_equation hn,
     fun L => isRegular_iff_exists_eventuallyPeriodic L⟩
-
-end DomainTheory.NeighbourhoodSystems

@@ -1,0 +1,25 @@
+The three-token nested neighbourhood system.
+
+<!-- formalization -->
+**Definition (`Token`).** The token set is a three-element type, standing for $\Delta=\{0,1,2\}$.
+
+**Definition (`master`).** The master set is the full set of tokens.
+
+**Definition (`twelve`).** The intermediate neighbourhood $\{1,2\}$.
+
+**Definition (`two`).** The singleton neighbourhood $\{2\}$.
+
+**Definition (`mem`).** A subset of the token set belongs to the family precisely when it equals the master set, $\{1,2\}$, or $\{2\}$.
+
+**Theorem (`mem_iff`).** A set is a neighbourhood if and only if it equals $\Delta$, $\{1,2\}$, or $\{2\}$.
+
+*Proof.* Immediate from the three-element family. ∎
+
+**Theorem (`inter_eq`).** The intersection of any two neighbourhoods is again $\Delta$, $\{1,2\}$, or $\{2\}$.
+
+*Proof.* Case analysis on the two factors, using absorption of the master and the nesting $\{2\}\subseteq\{1,2\}$. ∎
+
+**Definition (`neighborhoodSystem`).** The neighbourhood system on the three-token carrier with this membership predicate and master set.
+
+*Proof.* The master is nonempty and a neighbourhood; every neighbourhood lies in the master; the intersection of any two neighbourhoods is again a neighbourhood by the preceding classification. ∎
+

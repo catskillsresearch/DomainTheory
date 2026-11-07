@@ -14,7 +14,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.pri
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems.SeqNegMerge
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44 Exercise419
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap BitDom SeqDom Exercise419
 
 abbrev flip (σ : Str) : Str := σ.map not
 
@@ -558,7 +558,7 @@ open DomainTheory.NeighbourhoodSystems
 def Overlap (i p : ℕ) : Prop := 1 ≤ p ∧ ∀ k, k ≤ p → tm (i + k) = tm (i + p + k)
 
 open DomainTheory.NeighbourhoodSystems
-open Example44 ExampleB NeighborhoodSystem
+open SeqDom BitDom NeighborhoodSystem
 
 theorem append_three_period {α : Type*} (a : List α) (m : ℕ) (hm : m < 2 * a.length) :
     (a ++ (a ++ a))[m]? = (a ++ (a ++ a))[m + a.length]? := by
@@ -745,7 +745,7 @@ theorem tElt_mem_cone_iff (σ : Str) : tElt.mem (cone σ) ↔ σ = tmList σ.len
     exact h _ hmem
 
 open DomainTheory.NeighbourhoodSystems
-open Example44 ExampleB NeighborhoodSystem
+open SeqDom BitDom NeighborhoodSystem
 
 theorem tElt_cube_free (u a : Str) (ha : a ≠ []) :
     ¬ strBot (u ++ a ++ a ++ a) ≤ tElt := by

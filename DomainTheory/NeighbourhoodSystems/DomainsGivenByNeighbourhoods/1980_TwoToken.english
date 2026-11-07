@@ -1,0 +1,25 @@
+The two-token neighbourhood system on $\Delta=\{0,1\}$.
+
+<!-- formalization -->
+**Definition (`Token`).** The token set is a two-element type, standing for $\Delta=\{0,1\}$.
+
+**Definition (`master`).** The master set is the full set of tokens.
+
+**Definition (`zero`).** The singleton neighbourhood $\{0\}$.
+
+**Definition (`one`).** The singleton neighbourhood $\{1\}$.
+
+**Definition (`mem`).** A subset of the token set belongs to the family precisely when it equals the master set or one of the two singletons.
+
+**Theorem (`mem_iff`).** A set is a neighbourhood if and only if it equals $\Delta$, $\{0\}$, or $\{1\}$.
+
+*Proof.* Immediate from the three-element family. ∎
+
+**Theorem (`inter_eq`).** The intersection of any two neighbourhoods is again $\Delta$, $\{0\}$, $\{1\}$, or empty.
+
+*Proof.* Case analysis on the two factors, using the absorption and disjointness facts for the master and the two singletons. ∎
+
+**Definition (`neighborhoodSystem`).** The neighbourhood system on the two-token carrier with this membership predicate and master set.
+
+*Proof.* The master is nonempty and a neighbourhood; every neighbourhood lies in the master; if two neighbourhoods meet in a set containing a third neighbourhood, their intersection cannot be empty, so by the preceding classification it is again a neighbourhood. ∎
+

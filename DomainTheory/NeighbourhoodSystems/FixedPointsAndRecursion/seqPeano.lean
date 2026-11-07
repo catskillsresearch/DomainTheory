@@ -8,14 +8,14 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.seqDomai
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise419
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap BitDom SeqDom
 
 section
 variable {β : Type*}
 
-notation "𝕥" => Example23.trueElt
+notation "𝕥" => Truth.trueElt
 
-notation "𝕗" => Example23.falseElt
+notation "𝕗" => Truth.falseElt
 
 def headValC (V : NeighborhoodSystem β) (z a0 a1 : V.Element) : Str → V.Element
   | [] => z
@@ -31,7 +31,7 @@ def headValC (V : NeighborhoodSystem β) (z a0 a1 : V.Element) : Str → V.Eleme
 @[simp] theorem headValC_true (V : NeighborhoodSystem β) (z a0 a1 : V.Element) (σ : Str) :
     headValC V z a0 a1 (true :: σ) = a1 := rfl
 
-abbrev T : NeighborhoodSystem Example12.Token := Example23.T
+abbrev T : NeighborhoodSystem TwoToken.Token := Truth.T
 
 theorem headValC_bot_le (V : NeighborhoodSystem β) (z' a0 a1 : V.Element) {σ τ : Str}
     (h : σ <+: τ) : headValC V V.bot a0 a1 σ ≤ headValC V z' a0 a1 τ := by
@@ -210,7 +210,7 @@ end
 end DomainTheory.NeighbourhoodSystems.Exercise419
 section
 namespace DomainTheory.NeighbourhoodSystems.Exercise419
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap ExampleB Example44
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap BitDom SeqDom
 section
 variable {β : Type*}
 

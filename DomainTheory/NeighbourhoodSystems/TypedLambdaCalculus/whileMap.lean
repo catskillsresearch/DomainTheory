@@ -71,15 +71,15 @@ theorem whileMap_rec (x : V.Element) :
   rw [hfix] at this
   exact this
 
-theorem whileMap_bot {x : V.Element} (hx : p.toElementMap x = Example23.botElt) :
+theorem whileMap_bot {x : V.Element} (hx : p.toElementMap x = Truth.botElt) :
     (whileMap V p f).toElementMap x = V.bot := by
   rw [whileMap_rec, hx, Exercise326.cond_bot]
 
-theorem whileMap_false {x : V.Element} (hx : p.toElementMap x = Example23.falseElt) :
+theorem whileMap_false {x : V.Element} (hx : p.toElementMap x = Truth.falseElt) :
     (whileMap V p f).toElementMap x = x := by
   rw [whileMap_rec, hx, Exercise326.cond_false]
 
-theorem whileMap_true {x : V.Element} (hx : p.toElementMap x = Example23.trueElt) :
+theorem whileMap_true {x : V.Element} (hx : p.toElementMap x = Truth.trueElt) :
     (whileMap V p f).toElementMap x = (whileMap V p f).toElementMap (f.toElementMap x) := by
   rw [whileMap_rec, hx, Exercise326.cond_true]
 

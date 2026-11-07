@@ -5,7 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.C
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise221
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem BitDom
 
 /-- Scott's Exercise 2.21: system `C` has finite totals strictly above `⊥`, juxtaposition is
     left-biased on cones, and on total finite left arguments it prepends neighbourhoods of the

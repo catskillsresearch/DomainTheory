@@ -9,7 +9,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exa
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise113
 
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem BitDom
 
 def prefixSeq (p : ℕ → Bool) : ℕ → Str
   | 0 => []

@@ -1,0 +1,45 @@
+Parity of leading zeros before the first one, as an approximable map from the binary-tree system into the two-token truth domain.
+
+<!-- formalization -->
+
+**Definition (`T`).** The two-token neighbourhood system of Example 1.2, used as the output domain.
+
+**Definition (`botElt`).** The undefined element of $|T|$.
+
+**Theorem (`botElt_le`).** Undefined approximates every element of $|T|$.
+
+**Definition (`falseElt`).** The total element of $|T|$ standing for a negative outcome.
+
+**Definition (`scan`).** Reading a finite binary string left to right, return the parity of the number of leading zeros before the first one, or undefined if no one appears.
+
+**Theorem (`scan_nil`).** The empty string scans to undefined.
+
+**Theorem (`scan_true`).** A string beginning with one scans to true (even parity of leading zeros).
+
+**Theorem (`scan_false`).** A leading zero flips the scanned parity of the remainder.
+
+**Theorem (`scan_append`).** Once a string has a definite scan value, appending any suffix leaves that value unchanged.
+
+**Definition (`trueElt`).** The total element of $|T|$ standing for a positive outcome.
+
+**Definition (`valElt`).** Interpret an optional boolean as undefined, true, or false in $|T|$.
+
+**Theorem (`valElt_scan_mono`).** Extending a string can only refine the scanned value in the approximation order.
+
+**Definition (`parityMap`).** The approximable mapping from the binary-tree system to $T$ that relates a cone on $\sigma$ to a neighbourhood belonging to the scanned value of $\sigma$.
+
+*Proof.* Master, intersection, and monotonicity follow from the corresponding properties of ideal elements and the scan-extension lemma. ∎
+
+**Theorem (`eq_botElt_of_le`).** Anything below both true and false is undefined.
+
+**Theorem (`parityMap_rel_cone`).** On cones, the relation is exactly membership of the scanned value.
+
+**Theorem (`parityMap_toElementMap_mem`).** The elementwise action holds of $Y$ precisely when some cone in the input element scans to a value containing $Y$.
+
+**Theorem (`parityMap_toElementMap_sigmaElt`).** After a fixed prefix $\sigma$, the elementwise action on $\sigma x$ is scanning $\sigma$ concatenated with a cone from $x$.
+
+**Theorem (`scan_append_falseFalse`).** Two leading zeros leave the scan of the remainder unchanged.
+
+**Theorem (`scan_append_falseTrue`).** A leading zero followed by a one scans to false.
+
+**Theorem (`scan_append_true`).** A leading one scans to true regardless of the rest.

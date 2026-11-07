@@ -10,9 +10,9 @@ import Mathlib.Data.Set.Finite.Basic
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap ExampleB
+open NeighborhoodSystem ApproximableMap BitDom
 
-namespace Example62
+namespace SeqEqB
 
 /-! ### Prepending a single bit: `bX = {bw' ∣ w' ∈ X}`. -/
 
@@ -353,5 +353,5 @@ with `1`, the two non-bottom cases giving the two summands. -/
 theorem B_domain_equation : B ≅ᴰ sum B B B_nonempty B_nonempty :=
   ⟨bbEquiv⟩
 
-end Example62
+end SeqEqB
 end DomainTheory.NeighbourhoodSystems

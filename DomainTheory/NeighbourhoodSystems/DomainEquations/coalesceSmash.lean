@@ -11,7 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
+open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 open DomainTheory.NeighbourhoodSystems.SmashProduct
 section
 namespace Exercise619

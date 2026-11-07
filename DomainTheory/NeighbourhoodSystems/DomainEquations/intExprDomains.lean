@@ -16,7 +16,7 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
 
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
+open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 
 namespace Exercise619
 
@@ -53,7 +53,7 @@ end
 section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
+open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 
 section
 namespace Exercise619
@@ -103,7 +103,7 @@ end Exercise619
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.SmashProduct
+open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
 namespace Exercise619
 
@@ -319,7 +319,7 @@ end Exercise619
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.SmashProduct
+open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
 namespace Exercise619
 
@@ -340,7 +340,7 @@ end Exercise619
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.SmashProduct
+open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
 namespace Exercise619
 
@@ -467,7 +467,7 @@ end Exercise619
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.SmashProduct
+open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
 namespace Exercise619
 
@@ -486,7 +486,7 @@ end Exercise619
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.SmashProduct
+open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
 namespace Exercise619
 
@@ -501,7 +501,7 @@ end Exercise619
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.SmashProduct
+open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
 namespace Exercise619
 
@@ -759,7 +759,7 @@ end Exercise619
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.SmashProduct
+open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
 namespace Exercise619
 
@@ -779,7 +779,7 @@ end Exercise619
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.SmashProduct
+open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
 namespace Exercise619
 

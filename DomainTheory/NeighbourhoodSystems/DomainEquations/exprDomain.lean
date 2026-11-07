@@ -11,7 +11,7 @@ section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
 section
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.SmashProduct
+open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 namespace Exercise619
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 section Uniqueness
@@ -28,7 +28,7 @@ end Exercise619
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB DomainTheory.NeighbourhoodSystems.SmashProduct
+open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
 namespace Exercise619
 
@@ -80,5 +80,5 @@ end
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise619
 section
-open NeighborhoodSystem ApproximableMap Example62 ExampleB SmashProduct
+open NeighborhoodSystem ApproximableMap SeqEqB BitDom SmashProduct
 

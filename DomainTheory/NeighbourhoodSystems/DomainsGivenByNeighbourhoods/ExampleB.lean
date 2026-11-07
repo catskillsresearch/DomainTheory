@@ -8,7 +8,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Ele
 @[expose] public section
 
 section
-namespace DomainTheory.NeighbourhoodSystems.ExampleB
+namespace DomainTheory.NeighbourhoodSystems.BitDom
 section
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
@@ -79,5 +79,5 @@ theorem bot_mem_cone_iff {σ : Str} : B.bot.mem (cone σ) ↔ σ = [] := by
   · intro h; rw [h]
 end
 
-end DomainTheory.NeighbourhoodSystems.ExampleB
+end DomainTheory.NeighbourhoodSystems.BitDom
 end

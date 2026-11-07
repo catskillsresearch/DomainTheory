@@ -18,7 +18,7 @@ theorem theorem_616 (T : Endofunctor DomainObj.{w}) (hT : ContinuousOnMaps T) (D
     Dalg.carrier.sys ⊴ E.sys :=
   trianglelefteq_of_isInitial T hT Dalg hinit E isoE
 
-open Example62C
+open SeqEqC
 
 theorem sum3_nonempty {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
     {V₂ : NeighborhoodSystem γ} {h₀ : ∀ X, V₀.mem X → X.Nonempty}
@@ -32,15 +32,15 @@ theorem sum3_nonempty {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : 
 
 abbrev tcObj (D : StrictDomainObj.{w}) : StrictDomainObj.{w} where
   carrier := Option (Unit ⊕ D.carrier ⊕ D.carrier)
-  sys := sum3 unitSys D.sys D.sys Example62C.unitSys_nonempty D.nonempty D.nonempty
+  sys := sum3 unitSys D.sys D.sys SeqEqC.unitSys_nonempty D.nonempty D.nonempty
   nonempty := sum3_nonempty
 
 @[simp] theorem tcObj_sys (D : StrictDomainObj.{w}) :
-    (tcObj D).sys = sum3 unitSys D.sys D.sys Example62C.unitSys_nonempty D.nonempty D.nonempty := rfl
+    (tcObj D).sys = sum3 unitSys D.sys D.sys SeqEqC.unitSys_nonempty D.nonempty D.nonempty := rfl
 
 section ShapeLemmas
 
-open Example62C
+open SeqEqC
 
 variable {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
   {V₂ : NeighborhoodSystem γ} {h₀ : ∀ X, V₀.mem X → X.Nonempty}
@@ -77,7 +77,7 @@ end ShapeLemmas
 
 section SumInj
 
-open Example62C
+open SeqEqC
 
 variable {α β γ : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
@@ -178,7 +178,7 @@ end SumInj
 
 section SumInjMap
 
-open Example62C
+open SeqEqC
 
 variable {α β γ α' β' γ' : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
@@ -204,7 +204,7 @@ end SumInjMap
 
 section SumMap3
 
-open Example62C
+open SeqEqC
 
 variable {α β γ α' β' γ' : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
@@ -431,7 +431,7 @@ end SumMap3
 
 section SumInjMap
 
-open Example62C
+open SeqEqC
 
 variable {α β γ α' β' γ' : Type*}
   {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
@@ -527,12 +527,12 @@ theorem sumMap3_sinj2 (f₀ : ApproximableMap V₀ V₀') (f₁ : ApproximableMa
 
 end SumInjMap
 
-open Example62C in
+open SeqEqC in
 
 def tcMapHom {D E : StrictDomainObj.{w}} (f : (D ⟶ E)) :
     ((tcObj D) ⟶ (tcObj E)) :=
-  ⟨sumMap3 (h₀ := Example62C.unitSys_nonempty) (h₁ := D.nonempty) (h₂ := D.nonempty)
-      (h₀' := Example62C.unitSys_nonempty) (h₁' := E.nonempty) (h₂' := E.nonempty)
+  ⟨sumMap3 (h₀ := SeqEqC.unitSys_nonempty) (h₁ := D.nonempty) (h₂ := D.nonempty)
+      (h₀' := SeqEqC.unitSys_nonempty) (h₁' := E.nonempty) (h₂' := E.nonempty)
       (idMap unitSys) f.1 f.1, isStrict_sumMap3 _ _ _⟩
 
 end DomainTheory.NeighbourhoodSystems

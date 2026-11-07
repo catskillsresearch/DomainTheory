@@ -21,9 +21,9 @@ variable {α : Type u} {E : NeighborhoodSystem α}
 noncomputable def funToPair : ApproximableMap (funSpace TD E) (prod E E) :=
   paired
     ((evalMap TD E).comp
-      (paired (idMap (funSpace TD E)) (constMap (funSpace TD E) Example23.trueElt)))
+      (paired (idMap (funSpace TD E)) (constMap (funSpace TD E) Truth.trueElt)))
     ((evalMap TD E).comp
-      (paired (idMap (funSpace TD E)) (constMap (funSpace TD E) Example23.falseElt)))
+      (paired (idMap (funSpace TD E)) (constMap (funSpace TD E) Truth.falseElt)))
 
 end Prod
 
@@ -58,14 +58,14 @@ section General
 
 variable {α β γ δ : Type*}
 
-theorem TD_bot_eq_botElt : TD.bot = Example23.botElt :=
-  le_antisymm (NeighborhoodSystem.bot_le _ _) (Example23.botElt_le _)
+theorem TD_bot_eq_botElt : TD.bot = Truth.botElt :=
+  le_antisymm (NeighborhoodSystem.bot_le _ _) (Truth.botElt_le _)
 
 end General
 
 theorem TD_trichotomy (t : TD.Element) :
-    t = Example23.botElt ∨ t = Example23.trueElt ∨ t = Example23.falseElt :=
-  Example12.neighborhoodSystem.element_classification t
+    t = Truth.botElt ∨ t = Truth.trueElt ∨ t = Truth.falseElt :=
+  TwoToken.neighborhoodSystem.element_classification t
 
 section General
 
@@ -229,8 +229,8 @@ variable {α : Type u} {E : NeighborhoodSystem α}
 
 theorem toElementMap_funToPair (φ : (funSpace TD E).Element) :
     (funToPair (E := E)).toElementMap φ
-      = pair ((toApproxMap φ).toElementMap Example23.trueElt)
-          ((toApproxMap φ).toElementMap Example23.falseElt) := by
+      = pair ((toApproxMap φ).toElementMap Truth.trueElt)
+          ((toApproxMap φ).toElementMap Truth.falseElt) := by
   simp only [funToPair, toElementMap_paired, toElementMap_comp, toElementMap_idMap,
     toElementMap_constMap, evalMap_apply]
 
@@ -315,7 +315,7 @@ variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSyst
 variable {h₀ : ∀ X, V₀.mem X → X.Nonempty} {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty}
 
 theorem which_bot_le :
-    (whichMap V₀ V₁ h₀ h₁).toElementMap (sum V₀ V₁ h₀ h₁).bot ≤ Example23.botElt := by
+    (whichMap V₀ V₁ h₀ h₁).toElementMap (sum V₀ V₁ h₀ h₁).bot ≤ Truth.botElt := by
   rw [← TD_bot_eq_botElt]
   refine toElementMap_bot_le _ ?_
   intro Y hg
@@ -323,13 +323,13 @@ theorem which_bot_le :
 
 theorem which_inMap₀_le_trueElt (x : V₀.Element) :
     (whichMap V₀ V₁ h₀ h₁).toElementMap ((inMap₀ (h₀ := h₀) (h₁ := h₁)).toElementMap x)
-      ≤ Example23.trueElt := by
+      ≤ Truth.trueElt := by
   intro Z hZ
-  rcases (Example12.mem_iff Z).mp
+  rcases (TwoToken.mem_iff Z).mp
       (((whichMap V₀ V₁ h₀ h₁).toElementMap
         ((inMap₀ (h₀ := h₀) (h₁ := h₁)).toElementMap x)).sub hZ) with rfl | rfl | rfl
-  · exact Example23.trueElt.master_mem
-  · show Example23.trueElt.mem Example12.zero
+  · exact Truth.trueElt.master_mem
+  · show Truth.trueElt.mem TwoToken.zero
     exact Or.inr rfl
   · exfalso
     obtain ⟨Y, hY, hmem⟩ := which_mem_one.mp hZ
@@ -338,17 +338,17 @@ theorem which_inMap₀_le_trueElt (x : V₀.Element) :
 
 theorem which_inMap₁_le_falseElt (y : V₁.Element) :
     (whichMap V₀ V₁ h₀ h₁).toElementMap ((inMap₁ (h₀ := h₀) (h₁ := h₁)).toElementMap y)
-      ≤ Example23.falseElt := by
+      ≤ Truth.falseElt := by
   intro Z hZ
-  rcases (Example12.mem_iff Z).mp
+  rcases (TwoToken.mem_iff Z).mp
       (((whichMap V₀ V₁ h₀ h₁).toElementMap
         ((inMap₁ (h₀ := h₀) (h₁ := h₁)).toElementMap y)).sub hZ) with rfl | rfl | rfl
-  · exact Example23.falseElt.master_mem
+  · exact Truth.falseElt.master_mem
   · exfalso
     obtain ⟨X, hX, hmem⟩ := which_mem_zero.mp hZ
     obtain ⟨Y, _, hY0, _, hsub⟩ := hmem
     exact not_inj₁_subset_inj₀ (h₁ Y hY0) hsub
-  · show Example23.falseElt.mem Example12.one
+  · show Truth.falseElt.mem TwoToken.one
     exact Or.inr rfl
 
 end SumHelpers

@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.sumProdTok
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap ExampleB Exercise619
+open NeighborhoodSystem ApproximableMap BitDom Exercise619
 
 /-- Scott's Exercise 6.19: product and sum token neighbourhood systems are isomorphic to `prod` and `sum`. -/
 theorem example_619 :

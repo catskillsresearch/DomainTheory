@@ -17,54 +17,10 @@ This example is instructive, since it shows that a non-trivial mapping can trans
 
 Aside from our being able to define particular functions outright, we can combine functions in many different ways; the idea of composition is probably the most basic scheme of combination, and there is a technical name for a family of structures with mappings that can be so combined.
 
+The development is with the [erase a run of ones](1980_RunMap.md) peer.
+
 <!-- formalization -->
 
-**Definition (`SatisfiesRunEquations`).** An approximable endomap of the binary-tree system satisfies the run equations when it intertwines a leading zero with the image, collapses two leading ones to one, sends a leading one-zero to a leading zero, and sends a lone leading one on bottom to bottom.
+**Theorem (`example_2_4`).** Erasing a leading zero, a leading one-zero, or two leading ones behaves as for the erase-ones string map, and the approximable endomap of the binary-tree system satisfies the run equations.
 
-**Definition (`del`).** Erase a leading run of ones from a string, leaving a leading zero or the empty string.
-
-**Theorem (`del_nil`).** Erasing ones from the empty string yields empty.
-
-**Theorem (`del_true`).** Erasing ones after a leading one continues on the tail.
-
-**Theorem (`del_false`).** A leading zero is left intact by the erase-ones string map.
-
-**Definition (`out`).** Erase the first run of ones in a string, copying zeros and deleting a leading run of ones via the delete map.
-
-**Theorem (`out_nil`).** The erase-ones string map sends empty to empty.
-
-**Theorem (`out_false`).** A leading zero is preserved and the remainder is erased recursively.
-
-**Theorem (`out_true`).** A leading one is deleted by the delete map on the tail.
-
-**Theorem (`del_append`).** Deleting ones is monotone for string prefix.
-
-*Proof.* Induction on the prefix. ∎
-
-**Theorem (`out_append`).** The erase-ones string map is monotone for string prefix.
-
-*Proof.* Induction, using monotonicity of the delete map on a leading one. ∎
-
-**Theorem (`out_mono`).** Prefix-comparable strings have erase-ones images that remain prefix-comparable.
-
-*Proof.* Unpack the prefix witness and apply the append form. ∎
-
-**Definition (`runMap`).** The approximable mapping on the binary-tree system that relates a cone on $\sigma$ to neighbourhoods containing the cone on the string obtained by erasing the first run of ones in $\sigma$.
-
-*Proof.* Master, intersection, and monotonicity follow from injectivity of cones and monotonicity of the erase-ones string map. ∎
-
-**Theorem (`out_append_false`).** Erasing ones after a leading zero yields a leading zero followed by the erased remainder.
-
-**Theorem (`out_append_trueFalse`).** A leading one followed by a zero erases to that zero and the rest of the string.
-
-**Theorem (`out_append_trueTrue`).** Two leading ones erase the same as a single leading one followed by the same tail.
-
-**Theorem (`out_true_false`).** Cons form of the one-then-zero case.
-
-**Theorem (`out_true_true`).** Cons form of the two-ones case.
-
-**Theorem (`key`).** Any approximable map satisfying the run equations acts on finite approximations $\sigma\perp$ by the erase-ones string map.
-
-*Proof.* Induction on $\sigma$, using the run equations at each of the empty, lone-one, one-zero, two-ones, and leading-zero cases, together with the string identities above. ∎
-
-**Theorem (`runMap_rel_cone`).** On cones, the relation is membership of a neighbourhood containing the erased output cone.
+*Proof.* By the string identities and the run-equation witness of the erase-ones peer. ∎

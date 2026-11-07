@@ -8,7 +8,7 @@ public import Mathlib.Data.Set.Finite.Basic
 
 namespace DomainTheory.NeighbourhoodSystems
 
-namespace Example62Regular
+namespace PeriodicTree
 open Language
 
 
@@ -79,5 +79,5 @@ theorem isRegular_iff_exists_eventuallyPeriodic (L : Language (Fin n)) :
   · rintro ⟨a, hEP, rfl⟩
     exact (eventuallyPeriodic_iff_isRegular a).mp hEP
 
-end Example62Regular
+end PeriodicTree
 end DomainTheory.NeighbourhoodSystems

@@ -1,0 +1,55 @@
+The finite binary-tree neighbourhood system on seven tokens.
+
+<!-- formalization -->
+**Definition (`Token`).** The token set is a seven-element type standing for $\Delta=\{\Lambda,0,1,00,01,10,11\}$.
+
+**Definition (`leaf00`), (`leaf01`), (`leaf10`), (`leaf11`).** The four singleton neighbourhoods at the leaves of the tree.
+
+**Definition (`left`).** The left-branch neighbourhood $\{0,00,01\}$.
+
+**Definition (`right`).** The right-branch neighbourhood $\{1,10,11\}$.
+
+**Definition (`master`).** The master set is the full set of tokens.
+
+**Definition (`mem`).** A subset belongs to the family precisely when it equals the master set, the left or right branch, or one of the four leaves.
+
+**Theorem (`mem_iff`).** A set is a neighbourhood if and only if it is one of those seven sets.
+
+*Proof.* Immediate from the seven-element family. ∎
+
+**Theorem (`not_mem_empty`).** The empty set is not a neighbourhood.
+
+*Proof.* Each of the seven neighbourhoods contains a distinguished token, so none equals the empty set. ∎
+
+**Theorem (`inter_master`), (`master_inter`).** Intersection with the master absorbs.
+
+*Proof.* The master is the full token set. ∎
+
+**Theorem (`left_inter_right`), (`right_inter_left`).** The two branches are disjoint.
+
+*Proof.* Direct membership check on the seven tokens. ∎
+
+**Theorem (`left_inter_leaf00`), (`left_inter_leaf01`), (`leaf00_inter_left`), (`leaf01_inter_left`).** Each left leaf sits inside the left branch.
+
+*Proof.* Direct membership check on the seven tokens. ∎
+
+**Theorem (`right_inter_leaf10`), (`right_inter_leaf11`), (`leaf10_inter_right`), (`leaf11_inter_right`).** Each right leaf sits inside the right branch.
+
+*Proof.* Direct membership check on the seven tokens. ∎
+
+**Theorem (`left_inter_leaf10`), (`left_inter_leaf11`), (`leaf10_inter_left`), (`leaf11_inter_left`), (`right_inter_leaf00`), (`right_inter_leaf01`), (`leaf00_inter_right`), (`leaf01_inter_right`).** A leaf of one branch misses the other branch.
+
+*Proof.* Direct membership check on the seven tokens. ∎
+
+**Theorem (`leaf00_inter_leaf01`), (`leaf00_inter_leaf10`), (`leaf00_inter_leaf11`), (`leaf01_inter_leaf00`), (`leaf01_inter_leaf10`), (`leaf01_inter_leaf11`), (`leaf10_inter_leaf00`), (`leaf10_inter_leaf01`), (`leaf10_inter_leaf11`), (`leaf11_inter_leaf00`), (`leaf11_inter_leaf01`), (`leaf11_inter_leaf10`).** Distinct leaves are pairwise disjoint.
+
+*Proof.* Direct membership check on the seven tokens. ∎
+
+**Theorem (`inter_mem_or_empty`).** The intersection of any two neighbourhoods is again a neighbourhood, or else empty.
+
+*Proof.* Case analysis on the two factors, assembling absorption by the master, self-intersection, the branch and leaf lemmas above, and the empty intersections. ∎
+
+**Definition (`neighborhoodSystem`).** The neighbourhood system on this token carrier with the membership predicate and master set above.
+
+*Proof.* The master is nonempty and a neighbourhood; every neighbourhood lies in the master; if two neighbourhoods meet in a set containing a third neighbourhood, their intersection cannot be empty (the empty set is not a neighbourhood), so by the preceding classification it is again a neighbourhood. ∎
+

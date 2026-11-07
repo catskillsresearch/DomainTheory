@@ -4,11 +4,9 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
-open Domain.Recursive NeighborhoodSystem
+open DomainTheory.NeighbourhoodSystems
+open Domain.Recursive
 
 /-- Scott's Example 7.8: the powerset of the naturals is effectively given. -/
 theorem example_78 : PN.IsEffectivelyGiven :=
   PN_isEffectivelyGiven
-
-end DomainTheory.NeighbourhoodSystems

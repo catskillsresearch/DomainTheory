@@ -15,7 +15,7 @@ import Mathlib.Tactic.Ring
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap ExampleB Example44 Example62
+open NeighborhoodSystem ApproximableMap BitDom SeqDom SeqEqB
 
 namespace Exercise822
 

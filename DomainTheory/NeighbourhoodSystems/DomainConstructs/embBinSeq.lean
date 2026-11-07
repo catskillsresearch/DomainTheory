@@ -2,7 +2,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.iterSys
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.step
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ExampleB
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example_1_2
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.TwoToken
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 @[expose] public section
 
@@ -10,26 +10,26 @@ section
 namespace DomainTheory.NeighbourhoodSystems.Exercise317
 section
 
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ExampleB ApproximableMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem BitDom ApproximableMap
 
-abbrev T : NeighborhoodSystem Example12.Token := Example12.neighborhoodSystem
+abbrev T : NeighborhoodSystem TwoToken.Token := TwoToken.neighborhoodSystem
 
-abbrev Token := Example12.Token
+abbrev Token := TwoToken.Token
 
 theorem T_nbhd_nonempty {F : Set Token} (hF : T.mem F) : F.Nonempty := by
-  rcases (Example12.mem_iff F).mp hF with rfl | rfl | rfl
-  · exact ⟨0, by simp [Example12.master]⟩
-  · exact ⟨0, by simp [Example12.zero]⟩
-  · exact ⟨1, by simp [Example12.one]⟩
+  rcases (TwoToken.mem_iff F).mp hF with rfl | rfl | rfl
+  · exact ⟨0, by simp [TwoToken.master]⟩
+  · exact ⟨0, by simp [TwoToken.zero]⟩
+  · exact ⟨1, by simp [TwoToken.one]⟩
 
 def bitNbhd : Bool → Set Token
-  | false => Example12.zero
-  | true => Example12.one
+  | false => TwoToken.zero
+  | true => TwoToken.one
 
 theorem bitNbhd_mem (b : Bool) : T.mem (bitNbhd b) := by
   cases b
-  · exact Example12.mem_zero
-  · exact Example12.mem_one
+  · exact TwoToken.mem_zero
+  · exact TwoToken.mem_one
 
 def encSet (σ : Str) : Set (ℕ × Token) := {p | ∀ b, σ[p.1]? = some b → p.2 ∈ bitNbhd b}
 
@@ -60,7 +60,7 @@ theorem encSet_agree {τ τ' : Str} {W : Set (ℕ × Token)} (hW : (iterSys T).m
   have h1 : t ∈ bitNbhd b := (h ht) b hb
   have h2 : t ∈ bitNbhd b' := (h' ht) b' hb'
   by_contra hne
-  cases b <;> cases b' <;> simp_all [bitNbhd, Example12.zero, Example12.one]
+  cases b <;> cases b' <;> simp_all [bitNbhd, TwoToken.zero, TwoToken.one]
 
 theorem encSet_anti {σ σ' : Str} (h : σ <+: σ') : encSet σ' ⊆ encSet σ := by
   obtain ⟨t, rfl⟩ := h
@@ -130,8 +130,8 @@ def g : ApproximableMap (iterSys T) B where
 
 theorem exists_not_mem_bitNbhd (b : Bool) : ∃ t : Token, t ∉ bitNbhd b := by
   cases b
-  · exact ⟨1, by simp [bitNbhd, Example12.zero]⟩
-  · exact ⟨0, by simp [bitNbhd, Example12.one]⟩
+  · exact ⟨1, by simp [bitNbhd, TwoToken.zero]⟩
+  · exact ⟨0, by simp [bitNbhd, TwoToken.one]⟩
 
 theorem fg_le_id : f.comp g ≤ idMap (iterSys T) := by
   intro W Z

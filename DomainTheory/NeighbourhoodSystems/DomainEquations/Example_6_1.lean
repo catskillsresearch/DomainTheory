@@ -4,7 +4,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.indefProduct
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem IndefProduct
 
 /-- Scott's Example 6.1: the indefinite product domain `D♯` is a neighbourhood system
@@ -14,5 +14,3 @@ theorem example_61 :
       (∀ {W : Set (List Bool × α)}, (Dsharp D hD).mem W ↔ MemS D W) ∧
         (Dsharp D hD).master = Gamma D :=
   fun D hD => ⟨Dsharp_mem (D := D) (hD := hD), Dsharp_master (D := D) (hD := hD)⟩
-
-end DomainTheory.NeighbourhoodSystems

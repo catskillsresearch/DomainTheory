@@ -47,12 +47,12 @@ theorem eq (a b : ApproximableMap U U) :
 theorem toElementMap_mem (a b : ApproximableMap U U) (x : U.Element) {Z : Set ℚ} :
     ((sumComb a b).toElementMap x).mem Z ↔
       (((whichMap U U U_mem_nonempty U_mem_nonempty).toElementMap (jPlus.toElementMap x)).mem
-          Example12.zero ∧
+          TwoToken.zero ∧
         (iPlus.toElementMap ((inMap₀ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
           (a.toElementMap ((outMap₀ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
             (jPlus.toElementMap x))))).mem Z) ∨
       (((whichMap U U U_mem_nonempty U_mem_nonempty).toElementMap (jPlus.toElementMap x)).mem
-          Example12.one ∧
+          TwoToken.one ∧
         (iPlus.toElementMap ((inMap₁ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
           (b.toElementMap ((outMap₁ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
             (jPlus.toElementMap x))))).mem Z) ∨
@@ -68,9 +68,9 @@ theorem toElementMap_of_left {a b : ApproximableMap U U} {x : U.Element}
         (a.toElementMap ((outMap₀ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
           (jPlus.toElementMap x)))) := by
   have hz : ((whichMap U U U_mem_nonempty U_mem_nonempty).toElementMap
-      (jPlus.toElementMap x)).mem Example12.zero := which_mem_zero.mpr hL
+      (jPlus.toElementMap x)).mem TwoToken.zero := which_mem_zero.mpr hL
   have hno : ¬ ((whichMap U U U_mem_nonempty U_mem_nonempty).toElementMap
-      (jPlus.toElementMap x)).mem Example12.one :=
+      (jPlus.toElementMap x)).mem TwoToken.one :=
     fun h => not_sum_reaches_both hL (which_mem_one.mp h)
   apply Element.ext
   intro Z
@@ -87,12 +87,12 @@ theorem toElementMap_of_neither {a b : ApproximableMap U U} {x : U.Element}
     (hN : ∀ W, (jPlus.toElementMap x).mem W → W = (sum U U U_mem_nonempty U_mem_nonempty).master) :
     (sumComb a b).toElementMap x = U.bot := by
   have hnz : ¬ ((whichMap U U U_mem_nonempty U_mem_nonempty).toElementMap
-      (jPlus.toElementMap x)).mem Example12.zero := by
+      (jPlus.toElementMap x)).mem TwoToken.zero := by
     rw [which_mem_zero]
     rintro ⟨X, _, hX⟩
     exact inj₀_ne_sumMaster (hN _ hX)
   have hno : ¬ ((whichMap U U U_mem_nonempty U_mem_nonempty).toElementMap
-      (jPlus.toElementMap x)).mem Example12.one := by
+      (jPlus.toElementMap x)).mem TwoToken.one := by
     rw [which_mem_one]
     rintro ⟨Y, _, hY⟩
     exact inj₁_ne_sumMaster (hN _ hY)
@@ -114,9 +114,9 @@ theorem toElementMap_of_right {a b : ApproximableMap U U} {x : U.Element}
         (b.toElementMap ((outMap₁ (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)).toElementMap
           (jPlus.toElementMap x)))) := by
   have ho : ((whichMap U U U_mem_nonempty U_mem_nonempty).toElementMap
-      (jPlus.toElementMap x)).mem Example12.one := which_mem_one.mpr hR
+      (jPlus.toElementMap x)).mem TwoToken.one := which_mem_one.mpr hR
   have hnz : ¬ ((whichMap U U U_mem_nonempty U_mem_nonempty).toElementMap
-      (jPlus.toElementMap x)).mem Example12.zero :=
+      (jPlus.toElementMap x)).mem TwoToken.zero :=
     fun h => not_sum_reaches_both (which_mem_zero.mp h) hR
   apply Element.ext
   intro Z

@@ -1,10 +1,10 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Example_1_2
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.TwoToken
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Example12
+namespace DomainTheory.NeighbourhoodSystems.TwoToken
 
 namespace neighborhoodSystem
 section
@@ -208,4 +208,4 @@ end
 
 end neighborhoodSystem
 
-end DomainTheory.NeighbourhoodSystems.Example12
+end DomainTheory.NeighbourhoodSystems.TwoToken

@@ -14,7 +14,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6
 
 namespace DomainTheory.NeighbourhoodSystems.NumRecSchemes
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-open DomainTheory.NeighbourhoodSystems.Example43 (N natElem zeroElt succMap predMap zeroMap
+open DomainTheory.NeighbourhoodSystems.NatDom (N natElem zeroElt succMap predMap zeroMap
   succMap_natElem succMap_bot predMap_natElem_succ predMap_natElem_zero predMap_bot
   zeroMap_natElem_zero zeroMap_natElem_succ zeroMap_bot constLiftN constLiftN_natElem)
 open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
@@ -37,8 +37,8 @@ def strictProj₀ : ApproximableMap (prod N N) N :=
     (paired (zeroMap.comp (proj₁ N N))
       (paired (proj₀ N N) (proj₀ N N)))
 
-theorem T_bot_eq : (Example43.T).bot = Example23.botElt :=
-  le_antisymm ((Example43.T).bot_le _) (Example23.botElt_le _)
+theorem T_bot_eq : (NatDom.T).bot = Truth.botElt :=
+  le_antisymm ((NatDom.T).bot_le _) (Truth.botElt_le _)
 
 section Mu
 variable (f : ApproximableMap (prod N N) N)

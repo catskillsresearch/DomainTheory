@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.intExprDomains
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open Exercise619 ExampleB
+open Exercise619 BitDom
 
 /-- Scott's Exercise 6.22: an N★ solution over a rooted N. -/
 theorem example_622 :

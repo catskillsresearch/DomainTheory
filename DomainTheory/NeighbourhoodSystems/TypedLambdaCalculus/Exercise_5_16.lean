@@ -5,7 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.seqNegMerge
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap ExampleB Example44 SeqNegMerge
+open NeighborhoodSystem ApproximableMap BitDom SeqDom SeqNegMerge
 
 /-- Scott's Exercise 5.16: negation is an involution, merge on the diagonal is doubling,
 and the Thue–Morse stream is cube-free. -/

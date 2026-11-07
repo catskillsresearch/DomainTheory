@@ -5,7 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.numberDo
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap Example43
+open NeighborhoodSystem ApproximableMap NatDom
 
 theorem singleton_inter_eq_empty {n m : ℕ} (hmn : m ≠ n) :
     ({n} : Set ℕ) ∩ {m} = ∅ := by

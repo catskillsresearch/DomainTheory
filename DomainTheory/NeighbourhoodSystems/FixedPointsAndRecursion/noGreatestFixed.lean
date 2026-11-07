@@ -1,44 +1,44 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.idMap
-public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Example_1_2_elements
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.TwoTokenElements
 
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap Example12 Example12.neighborhoodSystem
+open NeighborhoodSystem ApproximableMap TwoToken TwoToken.neighborhoodSystem
 
-abbrev noGreatestFixedDomain : NeighborhoodSystem Example12.Token := Example12.neighborhoodSystem
+abbrev noGreatestFixedDomain : NeighborhoodSystem TwoToken.Token := TwoToken.neighborhoodSystem
 
-theorem one_ne_zero : (Example12.one) ≠ Example12.zero := by
+theorem one_ne_zero : (TwoToken.one) ≠ TwoToken.zero := by
   intro h
-  rw [Example12.one, Example12.zero, Set.ext_iff] at h
-  have h1 : (1 : Example12.Token) = 0 := (h 1).mp rfl
+  rw [TwoToken.one, TwoToken.zero, Set.ext_iff] at h
+  have h1 : (1 : TwoToken.Token) = 0 := (h 1).mp rfl
   exact absurd h1 (by decide)
 
-theorem one_ne_master : (Example12.one) ≠ Example12.master := by
+theorem one_ne_master : (TwoToken.one) ≠ TwoToken.master := by
   intro h
-  rw [Example12.one, Example12.master, Set.ext_iff] at h
-  have h0 : (0 : Example12.Token) ∈ ({1} : Set Example12.Token) := (h 0).mpr (Set.mem_univ 0)
+  rw [TwoToken.one, TwoToken.master, Set.ext_iff] at h
+  have h0 : (0 : TwoToken.Token) ∈ ({1} : Set TwoToken.Token) := (h 0).mpr (Set.mem_univ 0)
   simp only [Set.mem_singleton_iff] at h0
   exact absurd h0 (by decide)
 
-theorem zero_ne_master : (Example12.zero) ≠ Example12.master := by
+theorem zero_ne_master : (TwoToken.zero) ≠ TwoToken.master := by
   intro h
-  rw [Example12.zero, Example12.master, Set.ext_iff] at h
-  have h1 : (1 : Example12.Token) ∈ ({0} : Set Example12.Token) := (h 1).mpr (Set.mem_univ 1)
+  rw [TwoToken.zero, TwoToken.master, Set.ext_iff] at h
+  have h1 : (1 : TwoToken.Token) ∈ ({0} : Set TwoToken.Token) := (h 1).mpr (Set.mem_univ 1)
   simp only [Set.mem_singleton_iff] at h1
   exact absurd h1 (by decide)
 
 theorem elemOne_not_le_elemZero : ¬ elemOne ≤ elemZero := by
   intro h
-  rcases h Example12.one (Or.inr rfl) with hm | hz
+  rcases h TwoToken.one (Or.inr rfl) with hm | hz
   · exact one_ne_master hm
   · exact one_ne_zero hz
 
 theorem elemZero_not_le_elemOne : ¬ elemZero ≤ elemOne := by
   intro h
-  rcases h Example12.zero (Or.inr rfl) with hm | ho
+  rcases h TwoToken.zero (Or.inr rfl) with hm | ho
   · exact zero_ne_master hm
   · exact one_ne_zero ho.symm
 

@@ -15,7 +15,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6
 
 namespace DomainTheory.NeighbourhoodSystems.PartrecLam
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-open DomainTheory.NeighbourhoodSystems.Example43 (N natElem zeroElt succMap predMap zeroMap
+open DomainTheory.NeighbourhoodSystems.NatDom (N natElem zeroElt succMap predMap zeroMap
   succMap_natElem succMap_bot predMap_natElem_succ predMap_natElem_zero predMap_bot
   zeroMap_natElem_zero zeroMap_natElem_succ zeroMap_bot constLiftN)
 open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
@@ -61,8 +61,8 @@ def tupleMap : (n : ℕ) → (Fin n → ApproximableMap 𝒩 N) → Approximable
   | 0, _ => constMap 𝒩 𝒩.bot
   | n + 1, gs => (push N).comp (paired (gs 0) (tupleMap n (fun i => gs i.succ)))
 
-theorem T_bot_eq : (Example43.T).bot = Example23.botElt :=
-  le_antisymm ((Example43.T).bot_le _) (Example23.botElt_le _)
+theorem T_bot_eq : (NatDom.T).bot = Truth.botElt :=
+  le_antisymm ((NatDom.T).bot_le _) (Truth.botElt_le _)
 
 theorem argElem_argLike {n : ℕ} (a : Fin n → Option ℕ) : ArgLike (argElem a) := by
   intro j

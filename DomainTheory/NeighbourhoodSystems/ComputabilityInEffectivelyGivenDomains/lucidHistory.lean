@@ -567,7 +567,7 @@ def Lpres : ComputablePresentation L where
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
+open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 variable {β γ δ : Type*}
 
 structure LFunData {V : NeighborhoodSystem β} (P : ComputablePresentation V) where
@@ -640,7 +640,7 @@ end
 
 section
 
-def embStr (σ : ExampleB.Str) : List ℕ := σ.map bitToNat
+def embStr (σ : BitDom.Str) : List ℕ := σ.map bitToNat
 end
 
 section
@@ -648,15 +648,15 @@ section
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
+open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 
 def Tenum (n : ℕ) : Set Token :=
   match n with
-  | 0 => Example12.master
+  | 0 => TwoToken.master
   | 1 => zero
   | _ => one
 
-@[simp] theorem Tenum_zero : Tenum 0 = Example12.master := rfl
+@[simp] theorem Tenum_zero : Tenum 0 = TwoToken.master := rfl
 
 @[simp] theorem Tenum_one : Tenum 1 = zero := rfl
 
@@ -670,18 +670,18 @@ theorem Tenum_eq_canon (n : ℕ) : Tenum n = Tenum (min n 2) := by
     rw [show min (n + 2) 2 = 2 from by omega]
     rfl
 
-theorem Tenum_mem (n : ℕ) : Example23.T.mem (Tenum n) := by
+theorem Tenum_mem (n : ℕ) : Truth.T.mem (Tenum n) := by
   rcases n with _ | _ | n
-  · exact Example12.mem_master
-  · exact Example12.mem_zero
-  · exact Example12.mem_one
+  · exact TwoToken.mem_master
+  · exact TwoToken.mem_zero
+  · exact TwoToken.mem_one
 
 theorem Tenum_ne_empty (n : ℕ) : Tenum n ≠ (∅ : Set Token) := by
   intro h
-  exact Example12.not_mem_empty (h ▸ Tenum_mem n)
+  exact TwoToken.not_mem_empty (h ▸ Tenum_mem n)
 
-theorem Tenum_surj {Y : Set Token} (hY : Example23.T.mem Y) : ∃ n, Tenum n = Y := by
-  rcases (Example12.mem_iff Y).mp hY with rfl | rfl | rfl
+theorem Tenum_surj {Y : Set Token} (hY : Truth.T.mem Y) : ∃ n, Tenum n = Y := by
+  rcases (TwoToken.mem_iff Y).mp hY with rfl | rfl | rfl
   · exact ⟨0, rfl⟩
   · exact ⟨1, rfl⟩
   · exact ⟨2, rfl⟩
@@ -693,12 +693,12 @@ def TinterCode (a b : ℕ) : ℕ := if a = 0 then b else if b = 0 then a else if
 def andCode (a b : ℕ) : ℕ := if a = 1 then b else if a = 2 then 2 else 0
 
 noncomputable def andFn (X Y : Set Token) : Set Token :=
-  if X = zero then Y else if X = one then one else Example12.master
+  if X = zero then Y else if X = one then one else TwoToken.master
 
 theorem andFn_zero (Y : Set Token) : andFn zero Y = Y := by unfold andFn; rw [ite_eq_left rfl]
 
-theorem eq_master_of_master_subset {Y : Set Token} (h : Example12.master ⊆ Y) :
-    Y = Example12.master := (Set.univ_subset_iff.mp h : Y = Set.univ)
+theorem eq_master_of_master_subset {Y : Set Token} (h : TwoToken.master ⊆ Y) :
+    Y = TwoToken.master := (Set.univ_subset_iff.mp h : Y = Set.univ)
 
 end
 
@@ -779,19 +779,19 @@ theorem finPrefix_take (f : ℕ → ℕ) {n m : ℕ} (h : n ≤ m) :
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
+open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 
-theorem master_ne_one_T : Example12.master ≠ one := by
+theorem master_ne_one_T : TwoToken.master ≠ one := by
   intro h
-  have h1 : (0 : Token) ∈ Example12.master := by simp [Example12.master]
+  have h1 : (0 : Token) ∈ TwoToken.master := by simp [TwoToken.master]
   rw [h] at h1; simp [one] at h1
 
-theorem master_ne_zero_T : Example12.master ≠ zero := by
+theorem master_ne_zero_T : TwoToken.master ≠ zero := by
   intro h
-  have h1 : (1 : Token) ∈ Example12.master := by simp [Example12.master]
+  have h1 : (1 : Token) ∈ TwoToken.master := by simp [TwoToken.master]
   rw [h] at h1; simp [zero] at h1
 
-theorem andFn_master (Y : Set Token) : andFn Example12.master Y = Example12.master := by
+theorem andFn_master (Y : Set Token) : andFn TwoToken.master Y = TwoToken.master := by
   unfold andFn; rw [ite_eq_right master_ne_zero_T, ite_eq_right master_ne_one_T]
 
 end
@@ -804,14 +804,14 @@ theorem nbhd_finPrefix_antitone (f : ℕ → ℕ) {n m : ℕ} (h : n ≤ m) :
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
+open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 
 def notCode (c : ℕ) : ℕ := if c = 1 then 2 else if c = 2 then 1 else 0
 
 noncomputable def notFn (X : Set Token) : Set Token :=
-  if X = zero then one else if X = one then zero else Example12.master
+  if X = zero then one else if X = one then zero else TwoToken.master
 
-theorem notFn_master : notFn Example12.master = Example12.master := by
+theorem notFn_master : notFn TwoToken.master = TwoToken.master := by
   unfold notFn; rw [ite_eq_right master_ne_zero_T, ite_eq_right master_ne_one_T]
 
 theorem notFn_zero : notFn zero = one := by unfold notFn; rw [ite_eq_left rfl]
@@ -819,7 +819,7 @@ theorem notFn_zero : notFn zero = one := by unfold notFn; rw [ite_eq_left rfl]
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
+open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 variable {β γ δ : Type*}
 
 noncomputable def LFunData.ofPresentation {V : NeighborhoodSystem β} (P : ComputablePresentation V) :
@@ -842,14 +842,14 @@ noncomputable def LFunData.ofPresentation {V : NeighborhoodSystem β} (P : Compu
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
+open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 
 theorem one_inter_zero_T : one ∩ zero = (∅ : Set Token) := by
   ext t; fin_cases t <;> simp [zero, one]
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
+open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 variable {β γ δ : Type*}
 
 def postcompose {V₁ : NeighborhoodSystem β} {V₂ : NeighborhoodSystem γ}
@@ -864,7 +864,7 @@ def LFunData.pres {V : NeighborhoodSystem β} {P : ComputablePresentation V} (d 
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
+open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 
 theorem primrec_TeqChar {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
     Nat.Primrec (fun n => TeqChar (f n) (g n)) :=
@@ -902,7 +902,7 @@ theorem principal_hasMin (l : List ℕ) : HasMin (L.principal (mem_nbhd l)) :=
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
+open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 variable {β γ δ : Type*}
 
 def pwArg (V₀ : NeighborhoodSystem β) (V₁ : NeighborhoodSystem γ) :
@@ -987,20 +987,20 @@ theorem streamElement_not_hasMin (f : ℕ → ℕ) : ¬ HasMin (streamElement f)
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
+open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 
-theorem subset_iff_eq_or_eq_master {X' X : Set Token} (hX' : Example23.T.mem X')
-    (hX : Example23.T.mem X) (h : X' ⊆ X) : X' = X ∨ X = Example12.master := by
-  rcases (Example12.mem_iff X).mp hX with rfl | rfl | rfl
+theorem subset_iff_eq_or_eq_master {X' X : Set Token} (hX' : Truth.T.mem X')
+    (hX : Truth.T.mem X) (h : X' ⊆ X) : X' = X ∨ X = TwoToken.master := by
+  rcases (TwoToken.mem_iff X).mp hX with rfl | rfl | rfl
   · exact Or.inr rfl
   · refine Or.inl ?_
-    rcases (Example12.mem_iff X').mp hX' with rfl | rfl | rfl
-    · exact absurd (show (1 : Token) ∈ zero from h (by simp [Example12.master])) (by simp [zero])
+    rcases (TwoToken.mem_iff X').mp hX' with rfl | rfl | rfl
+    · exact absurd (show (1 : Token) ∈ zero from h (by simp [TwoToken.master])) (by simp [zero])
     · rfl
     · exact absurd (show (1 : Token) ∈ zero from h (by simp [one])) (by simp [zero])
   · refine Or.inl ?_
-    rcases (Example12.mem_iff X').mp hX' with rfl | rfl | rfl
-    · exact absurd (show (0 : Token) ∈ one from h (by simp [Example12.master])) (by simp [one])
+    rcases (TwoToken.mem_iff X').mp hX' with rfl | rfl | rfl
+    · exact absurd (show (0 : Token) ∈ one from h (by simp [TwoToken.master])) (by simp [one])
     · exact absurd (show (0 : Token) ∈ one from h (by simp [zero])) (by simp [one])
     · rfl
 end
@@ -1103,7 +1103,7 @@ noncomputable def gammaEquivElement : Gamma ≃ L.Element :=
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
+open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 
 theorem zero_inter_one_T : zero ∩ one = (∅ : Set Token) := by
   ext t; fin_cases t <;> simp [zero, one]
@@ -1112,13 +1112,13 @@ theorem Tenum_inter_eq {a b : ℕ} (ha : a ≤ 2) (hb : b ≤ 2) :
     Tenum a ∩ Tenum b = if a = 0 then Tenum b else if b = 0 then Tenum a
       else if a = b then Tenum a else (∅ : Set Token) := by
   interval_cases a <;> interval_cases b <;>
-    simp [Tenum, Example12.master, Set.univ_inter, Set.inter_univ, Set.inter_self,
+    simp [Tenum, TwoToken.master, Set.univ_inter, Set.inter_univ, Set.inter_self,
       zero_inter_one_T, one_inter_zero_T]
 
 theorem Tenum_inter_eq_TinterCode' {a b : ℕ} (ha : a ≤ 2) (hb : b ≤ 2) :
     Tenum a ∩ Tenum b = if TinterCode a b = 3 then (∅ : Set Token) else Tenum (TinterCode a b) := by
   interval_cases a <;> interval_cases b <;>
-    simp [Tenum, TinterCode, Example12.master, Set.univ_inter, Set.inter_univ, Set.inter_self,
+    simp [Tenum, TinterCode, TwoToken.master, Set.univ_inter, Set.inter_univ, Set.inter_self,
       zero_inter_one_T, one_inter_zero_T]
 
 theorem Tenum_inter_eq_TinterCode (n m : ℕ) :
@@ -1188,7 +1188,7 @@ theorem Tpres_interEq_computable : RecDecidable₃ (fun n m k => Tenum n ∩ Ten
     (fun t => Tenum_interEq_iff' t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2)
     (RecDecidable.natEq ha hb)
 
-def Tpres : ComputablePresentation Example23.T where
+def Tpres : ComputablePresentation Truth.T where
   X := Tenum
   mem_X := Tenum_mem
   surj := Tenum_surj
@@ -1206,81 +1206,81 @@ def Tpres : ComputablePresentation Example23.T where
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
+open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 variable {β γ δ : Type*}
 
 noncomputable def LTdata : LFunData Tpres := LFunData.ofPresentation Tpres
 
-noncomputable def LTpres : ComputablePresentation (funSpace L Example23.T) := LTdata.pres
+noncomputable def LTpres : ComputablePresentation (funSpace L Truth.T) := LTdata.pres
 
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
+open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 
 theorem andFn_one (Y : Set Token) : andFn one Y = one := by
   unfold andFn; rw [ite_eq_right (Ne.symm zero_ne_one_T), ite_eq_left rfl]
 
-theorem andFn_mem {X Y : Set Token} (hX : Example23.T.mem X) (hY : Example23.T.mem Y) :
-    Example23.T.mem (andFn X Y) := by
-  rcases (Example12.mem_iff X).mp hX with rfl | rfl | rfl
-  · rw [andFn_master]; exact Example12.mem_master
+theorem andFn_mem {X Y : Set Token} (hX : Truth.T.mem X) (hY : Truth.T.mem Y) :
+    Truth.T.mem (andFn X Y) := by
+  rcases (TwoToken.mem_iff X).mp hX with rfl | rfl | rfl
+  · rw [andFn_master]; exact TwoToken.mem_master
   · rw [andFn_zero]; exact hY
-  · rw [andFn_one]; exact Example12.mem_one
+  · rw [andFn_one]; exact TwoToken.mem_one
 
-noncomputable def andMap2 : ApproximableMap₂ Example23.T Example23.T Example23.T where
-  rel X Y Z := Example23.T.mem X ∧ Example23.T.mem Y ∧ Example23.T.mem Z ∧ andFn X Y ⊆ Z
+noncomputable def andMap2 : ApproximableMap₂ Truth.T Truth.T Truth.T where
+  rel X Y Z := Truth.T.mem X ∧ Truth.T.mem Y ∧ Truth.T.mem Z ∧ andFn X Y ⊆ Z
   rel_dom₀ h := h.1
   rel_dom₁ h := h.2.1
   rel_cod h := h.2.2.1
-  master_rel := ⟨Example12.mem_master, Example12.mem_master, Example12.mem_master, by
-    show andFn Example12.master Example12.master ⊆ Example12.master
+  master_rel := ⟨TwoToken.mem_master, TwoToken.mem_master, TwoToken.mem_master, by
+    show andFn TwoToken.master TwoToken.master ⊆ TwoToken.master
     rw [andFn_master]⟩
   inter_right := by
     rintro X Y Z Z' ⟨hX, hY, hZ, hsub⟩ ⟨_, _, hZ', hsub'⟩
-    exact ⟨hX, hY, Example23.T.inter_mem hZ hZ' (andFn_mem hX hY) (Set.subset_inter hsub hsub'),
+    exact ⟨hX, hY, Truth.T.inter_mem hZ hZ' (andFn_mem hX hY) (Set.subset_inter hsub hsub'),
       Set.subset_inter hsub hsub'⟩
   mono := by
     rintro X X' Y Y' Z Z' ⟨hX, hY, hZ, hsub⟩ hX'X hY'Y hZZ' hX' hY' hZ'
     refine ⟨hX', hY', hZ', ?_⟩
-    rcases (Example12.mem_iff X).mp hX with rfl | rfl | rfl
+    rcases (TwoToken.mem_iff X).mp hX with rfl | rfl | rfl
     · rw [andFn_master] at hsub
-      have hZ'master : Z' = Example12.master := eq_master_of_master_subset (hsub.trans hZZ')
-      rw [hZ'master, Example12.master]; exact Set.subset_univ _
+      have hZ'master : Z' = TwoToken.master := eq_master_of_master_subset (hsub.trans hZZ')
+      rw [hZ'master, TwoToken.master]; exact Set.subset_univ _
     · rw [andFn_zero] at hsub
       have hX'eq : X' = zero :=
-        (subset_iff_eq_or_eq_master hX' Example12.mem_zero hX'X).resolve_right
+        (subset_iff_eq_or_eq_master hX' TwoToken.mem_zero hX'X).resolve_right
           master_ne_zero_T.symm
       rw [hX'eq, andFn_zero]
       exact (hY'Y.trans hsub).trans hZZ'
     · rw [andFn_one] at hsub
       have hX'eq : X' = one :=
-        (subset_iff_eq_or_eq_master hX' Example12.mem_one hX'X).resolve_right
+        (subset_iff_eq_or_eq_master hX' TwoToken.mem_one hX'X).resolve_right
           master_ne_one_T.symm
       rw [hX'eq, andFn_one]
       exact hsub.trans hZZ'
 
-noncomputable def andT : ApproximableMap (prod Example23.T Example23.T) Example23.T :=
+noncomputable def andT : ApproximableMap (prod Truth.T Truth.T) Truth.T :=
   ofMap₂ andMap2
 
 theorem notFn_one : notFn one = zero := by
   unfold notFn; rw [ite_eq_right (Ne.symm zero_ne_one_T), ite_eq_left rfl]
 
-theorem notFn_mem {X : Set Token} (hX : Example23.T.mem X) : Example23.T.mem (notFn X) := by
-  rcases (Example12.mem_iff X).mp hX with rfl | rfl | rfl
-  · rw [notFn_master]; exact Example12.mem_master
-  · rw [notFn_zero]; exact Example12.mem_one
-  · rw [notFn_one]; exact Example12.mem_zero
+theorem notFn_mem {X : Set Token} (hX : Truth.T.mem X) : Truth.T.mem (notFn X) := by
+  rcases (TwoToken.mem_iff X).mp hX with rfl | rfl | rfl
+  · rw [notFn_master]; exact TwoToken.mem_master
+  · rw [notFn_zero]; exact TwoToken.mem_one
+  · rw [notFn_one]; exact TwoToken.mem_zero
 
-noncomputable def notT : ApproximableMap Example23.T Example23.T where
-  rel X Y := Example23.T.mem X ∧ Example23.T.mem Y ∧ notFn X ⊆ Y
+noncomputable def notT : ApproximableMap Truth.T Truth.T where
+  rel X Y := Truth.T.mem X ∧ Truth.T.mem Y ∧ notFn X ⊆ Y
   rel_dom h := h.1
   rel_cod h := h.2.1
-  master_rel := ⟨Example12.mem_master, Example12.mem_master, by
-    show notFn Example12.master ⊆ Example12.master; rw [notFn_master]⟩
+  master_rel := ⟨TwoToken.mem_master, TwoToken.mem_master, by
+    show notFn TwoToken.master ⊆ TwoToken.master; rw [notFn_master]⟩
   inter_right := by
     rintro X Y Y' ⟨hX, hY, hsub⟩ ⟨_, hY', hsub'⟩
-    exact ⟨hX, Example23.T.inter_mem hY hY' (notFn_mem hX) (Set.subset_inter hsub hsub'),
+    exact ⟨hX, Truth.T.inter_mem hY hY' (notFn_mem hX) (Set.subset_inter hsub hsub'),
       Set.subset_inter hsub hsub'⟩
   mono := by
     rintro X X' Y Y' ⟨hX, hY, hsub⟩ hX'X hYY' hX' hY'
@@ -1288,8 +1288,8 @@ noncomputable def notT : ApproximableMap Example23.T Example23.T where
     rcases subset_iff_eq_or_eq_master hX' hX hX'X with heq | heq
     · rw [heq]; exact hsub.trans hYY'
     · rw [heq, notFn_master] at hsub
-      have hY'master : Y' = Example12.master := eq_master_of_master_subset (hsub.trans hYY')
-      rw [hY'master, Example12.master]; exact Set.subset_univ _
+      have hY'master : Y' = TwoToken.master := eq_master_of_master_subset (hsub.trans hYY')
+      rw [hY'master, TwoToken.master]; exact Set.subset_univ _
 
 end
 
@@ -1297,9 +1297,9 @@ section
 theorem bitToNat_injective : Function.Injective bitToNat := by
   intro a b h; cases a <;> cases b <;> simp_all [bitToNat]
 
-theorem embStr_cons (b : Bool) (s : ExampleB.Str) : embStr (b :: s) = bitToNat b :: embStr s := rfl
+theorem embStr_cons (b : Bool) (s : BitDom.Str) : embStr (b :: s) = bitToNat b :: embStr s := rfl
 
-theorem embStr_prefix_iff : ∀ σ τ : ExampleB.Str, embStr σ <+: embStr τ ↔ σ <+: τ := by
+theorem embStr_prefix_iff : ∀ σ τ : BitDom.Str, embStr σ <+: embStr τ ↔ σ <+: τ := by
   intro σ
   induction σ with
   | nil => intro τ; simp
@@ -1311,19 +1311,19 @@ theorem embStr_prefix_iff : ∀ σ τ : ExampleB.Str, embStr σ <+: embStr τ �
       rw [embStr_cons, embStr_cons, List.cons_prefix_cons, List.cons_prefix_cons,
         bitToNat_injective.eq_iff, ih t]
 
-theorem cone_subset_cone_iff_nbhd_embStr (σ τ : ExampleB.Str) :
-    ExampleB.cone σ ⊆ ExampleB.cone τ ↔ nbhd (embStr σ) ⊆ nbhd (embStr τ) := by
-  rw [ExampleB.cone.subset_cone, nbhd_subset_iff, embStr_prefix_iff]
+theorem cone_subset_cone_iff_nbhd_embStr (σ τ : BitDom.Str) :
+    BitDom.cone σ ⊆ BitDom.cone τ ↔ nbhd (embStr σ) ⊆ nbhd (embStr τ) := by
+  rw [BitDom.cone.subset_cone, nbhd_subset_iff, embStr_prefix_iff]
 
-theorem sigmaBot_le_iff_toElement_inl_embStr (σ τ : ExampleB.Str) :
-    ExampleB.sigmaBot σ ≤ ExampleB.sigmaBot τ ↔
+theorem sigmaBot_le_iff_toElement_inl_embStr (σ τ : BitDom.Str) :
+    BitDom.sigmaBot σ ≤ BitDom.sigmaBot τ ↔
       toElement (Sum.inl (embStr σ)) ≤ toElement (Sum.inl (embStr τ)) := by
-  show ExampleB.sigmaBot σ ≤ ExampleB.sigmaBot τ ↔
+  show BitDom.sigmaBot σ ≤ BitDom.sigmaBot τ ↔
       L.principal (L_mem.mpr (mem_nbhd (embStr σ))) ≤
         L.principal (L_mem.mpr (mem_nbhd (embStr τ)))
-  rw [ExampleB.sigmaBot_le_iff, L.principal_le_iff, nbhd_subset_iff, embStr_prefix_iff]
+  rw [BitDom.sigmaBot_le_iff, L.principal_le_iff, nbhd_subset_iff, embStr_prefix_iff]
 
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
+open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 
 theorem primrec_notCode {f : ℕ → ℕ} (hf : Nat.Primrec f) : Nat.Primrec (fun n => notCode (f n)) := by
   refine (primrec_selectFn (primrec_TeqChar hf (Nat.Primrec.const 1)) (Nat.Primrec.const 2)
@@ -1355,7 +1355,7 @@ theorem notT_isComputable : ComputableMap Tpres Tpres notT := by
       (Tpres.incl_computable.comp hcomp)
   have hiff : ∀ n m, notT.rel (Tenum n) (Tenum m) ↔ Tenum (notCode (min n 2)) ⊆ Tenum m := by
     intro n m
-    show (Example23.T.mem (Tenum n) ∧ Example23.T.mem (Tenum m) ∧ notFn (Tenum n) ⊆ Tenum m) ↔ _
+    show (Truth.T.mem (Tenum n) ∧ Truth.T.mem (Tenum m) ∧ notFn (Tenum n) ⊆ Tenum m) ↔ _
     rw [notFn_Tenum]
     exact ⟨fun h => h.2.2, fun h => ⟨Tenum_mem n, Tenum_mem m, h⟩⟩
   have key : RecDecidable₂ (fun n m => notT.rel (Tenum n) (Tenum m)) :=
@@ -1403,13 +1403,13 @@ theorem andT_isComputable : ComputableMap (prodPresentation Tpres Tpres) Tpres a
     intro n m k
     have hstep : andT.rel (prodNbhd (Tenum n) (Tenum m)) (Tenum k) ↔
         andMap2.rel (Tenum n) (Tenum m) (Tenum k) := by
-      show ((prod Example23.T Example23.T).mem (prodNbhd (Tenum n) (Tenum m)) ∧
+      show ((prod Truth.T Truth.T).mem (prodNbhd (Tenum n) (Tenum m)) ∧
         andMap2.rel (Sum.inl ⁻¹' prodNbhd (Tenum n) (Tenum m))
           (Sum.inr ⁻¹' prodNbhd (Tenum n) (Tenum m)) (Tenum k)) ↔ _
       rw [prodNbhd.inl_preimage, prodNbhd.inr_preimage]
       exact and_iff_right (prod_mem_prodNbhd (Tenum_mem n) (Tenum_mem m))
     rw [hstep]
-    show (Example23.T.mem (Tenum n) ∧ Example23.T.mem (Tenum m) ∧ Example23.T.mem (Tenum k) ∧
+    show (Truth.T.mem (Tenum n) ∧ Truth.T.mem (Tenum m) ∧ Truth.T.mem (Tenum k) ∧
       andFn (Tenum n) (Tenum m) ⊆ Tenum k) ↔ _
     rw [andFn_Tenum n m]
     exact ⟨fun h => h.2.2.2, fun h => ⟨Tenum_mem n, Tenum_mem m, Tenum_mem k, h⟩⟩
@@ -1475,8 +1475,8 @@ theorem deMorganT_isComputable :
     ComputableMap (prodPresentation LTpres LTpres) LTpres
       ((postcompose notT).comp (pointwiseBin andT)
         |>.comp (paired
-          (postcompose notT |>.comp (proj₀ (funSpace L Example23.T) (funSpace L Example23.T)))
-          (postcompose notT |>.comp (proj₁ (funSpace L Example23.T) (funSpace L Example23.T))))) :=
+          (postcompose notT |>.comp (proj₀ (funSpace L Truth.T) (funSpace L Truth.T)))
+          (postcompose notT |>.comp (proj₁ (funSpace L Truth.T) (funSpace L Truth.T))))) :=
   comp_isComputable
     (paired_isComputable
       (comp_isComputable (proj₀_isComputable LTpres LTpres) notT_lifted_isComputable)
@@ -1520,9 +1520,9 @@ theorem Lenum_subset_char_eq_one_iff (n m : ℕ) :
 end
 
 section
-open DomainTheory.NeighbourhoodSystems.Example12 (Token zero one)
+open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 
-theorem T_isEffectivelyGiven : Example23.T.IsEffectivelyGiven := ⟨Tpres⟩
+theorem T_isEffectivelyGiven : Truth.T.IsEffectivelyGiven := ⟨Tpres⟩
 
 theorem TeqChar_eq_one_iff (a b : ℕ) : TeqChar a b = 1 ↔ a = b := by
   unfold TeqChar isZero; omega

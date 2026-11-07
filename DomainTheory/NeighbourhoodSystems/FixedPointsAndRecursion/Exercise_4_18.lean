@@ -5,7 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.numberDo
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap Example43
+open NeighborhoodSystem ApproximableMap NatDom
 
 theorem example_418 :
     (∀ x : N.Element, x = N.bot ∨ ∃ n, x = natElem n) ∧

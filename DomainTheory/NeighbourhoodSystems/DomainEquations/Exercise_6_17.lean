@@ -7,7 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.cAlgebraGen
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open Example44 Example62C ExampleB Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
 open Exercise617Gen
 
 /-- Scott's Exercise 6.17: the initial `Tc`-algebra is unique. -/
