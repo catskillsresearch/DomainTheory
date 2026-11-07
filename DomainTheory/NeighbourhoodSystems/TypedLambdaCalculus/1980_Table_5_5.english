@@ -188,3 +188,7 @@ The reader will have noted that there are some combinators not appearing in Tabl
 **Theorem (`ApproximableMap.secFixX_isFixed`).** The sectional least fixed point is fixed by the original map when paired with the section parameter.
 
 *Proof.* Rewrite via the sectional evaluation laws and apply the fixed-point law for least fixed-point elements. ∎
+
+**Theorem (`ApproximableMap.fixElement_paired_eq`).** The least fixed point of a paired pair of binary maps is the pair whose second coordinate is the least fixed point of the outer operator and whose first coordinate is the sectional least fixed point at that second coordinate.
+
+*Proof.* Show the sectional pair is a fixed point of the paired map, then that it lies below the least fixed point by comparing sections and the outer operator against the least paired fixed point’s components. ∎
