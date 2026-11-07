@@ -1739,6 +1739,10 @@ NS_FIX_SHORT: dict[str, tuple[str, str]] = {
         "E43",
         "Example 4.3 — partial functions on integers",
     ),
+    "Sequence domain": (
+        "seq",
+        "Sequence domain",
+    ),
     "Example 4.4 — sequence domain": (
         "E44",
         "Example 4.4 — sequence domain",

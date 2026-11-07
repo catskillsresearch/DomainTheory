@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_4
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.seqDomain
 public import Mathlib.Computability.MyhillNerode
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example_6_1
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodIso
