@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 namespace Exercise718
 open NeighborhoodSystem Domain.Recursive ApproximableMap
@@ -35,7 +35,7 @@ def EffectivelyIsomorphic {V : NeighborhoodSystem α} {W : NeighborhoodSystem β
 end
 
 end Exercise718
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61
+open NeighborhoodSystem Domain.Recursive ApproximableMap IndefProduct
 
 section
 variable {α : Type*}

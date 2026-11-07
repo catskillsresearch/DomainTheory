@@ -1,0 +1,131 @@
+Indefinite product domain: embeddings of atoms and pairs, the generated neighbourhood system, and its characterisation as Scott’s D♯.
+
+<!-- formalization -->
+
+**Definition (`Gamma`).** As defined.
+
+*Proof.* By definition. ∎
+
+**Definition (`embL`).** As defined.
+
+*Proof.* By definition. ∎
+
+**Definition (`embR`).** As defined.
+
+*Proof.* By definition. ∎
+
+**Definition (`embPair`).** As defined.
+
+*Proof.* By definition. ∎
+
+**Definition (`embZero`).** As defined.
+
+*Proof.* By definition. ∎
+
+**Definition (`MemS`).** As defined.
+
+*Proof.* By definition. ∎
+
+**Theorem (`mem_embZero`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`mem_embL`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`mem_embR`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`mem_embPair`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`mem_Gamma`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`Gamma_nonempty`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`embPair_inter`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`embPair_nonempty`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`embPair_subset`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`embPair_injective`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`embPair_subset_Gamma`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`embZero_inter`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`embZero_inter_embPair`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`embZero_nonempty`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`embZero_subset`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`embZero_injective`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`embZero_subset_Gamma`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`memS_nonempty`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`memS_subset_gamma`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`memS_inter`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Definition (`Dsharp`).** As defined.
+
+*Proof.* By definition. ∎
+
+**Theorem (`Dsharp_mem`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`Dsharp_master`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`memS_embPair_inv`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`memS_embZero_inv`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎
+
+**Theorem (`prod_dsharp_nonempty`).** The named law for embeddings, MemS, or D♯.
+
+*Proof.* Unpack the definitions and the neighbourhood-system axioms. ∎

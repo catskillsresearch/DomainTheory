@@ -1,0 +1,11 @@
+**PROPOSITION 6.6.** Any two initial $T$-algebras are uniquely isomorphic. $\square$
+
+Slightly more interesting is the behaviour of $T$ on initial algebras.
+
+The [initial iso](1980_initialIso.md) peer records the library names for the isomorphism and uniqueness lemmas.
+
+<!-- formalization -->
+
+**Theorem (`proposition_66`).** Every homomorphism from an initial algebra agrees with the canonical homomorphism furnished by initiality.
+
+*Proof.* Invoke uniqueness of homomorphisms from an initial algebra. ∎

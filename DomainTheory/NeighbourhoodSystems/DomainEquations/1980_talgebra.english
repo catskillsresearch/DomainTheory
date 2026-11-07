@@ -1,0 +1,9 @@
+T-algebras and homomorphisms (Def 6.4 library).
+
+**Definition (`TAlgebra`).** A T-algebra is an object together with a structure map from the image under the functor to the object.
+
+*Proof.* By definition. ∎
+
+**Definition (`AlgHom`).** A homomorphism of T-algebras is a morphism between carriers making the structure square commute.
+
+*Proof.* By definition. ∎

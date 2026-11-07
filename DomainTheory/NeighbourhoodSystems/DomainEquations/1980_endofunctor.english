@@ -1,0 +1,9 @@
+Endofunctors and isomorphisms on the bespoke category of domains (Def 6.3 library).
+
+**Definition (`Endofunctor`).** An endofunctor assigns to each object an object and to each morphism a morphism, such that identities and compositions are preserved.
+
+*Proof.* By definition. ∎
+
+**Definition (`Iso`).** An isomorphism consists of mutually inverse morphisms between two objects.
+
+*Proof.* By definition. ∎

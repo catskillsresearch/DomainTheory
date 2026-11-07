@@ -6,9 +6,9 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 open NeighborhoodSystem Domain.Recursive ApproximableMap
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61
+open NeighborhoodSystem Domain.Recursive ApproximableMap IndefProduct
 section
 variable {α : Type*}
 namespace Proposition77
@@ -78,7 +78,7 @@ end
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Proposition77
 section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61
+open NeighborhoodSystem Domain.Recursive ApproximableMap IndefProduct
 
 /-- Scott's Exercise 7.17 (part 1): pairing and second projection on D♯ are computable. -/
 theorem example_717 :
@@ -96,7 +96,7 @@ end
 end DomainTheory.NeighbourhoodSystems.Proposition77
 namespace DomainTheory.NeighbourhoodSystems
 section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61
+open NeighborhoodSystem Domain.Recursive ApproximableMap IndefProduct
 variable {α : Type*}
 
 namespace Proposition77
@@ -126,7 +126,7 @@ end Proposition77
 end
 
 section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 SmashProduct Proposition77
+open NeighborhoodSystem Domain.Recursive ApproximableMap IndefProduct SmashProduct Proposition77
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 namespace Exercise717
@@ -142,7 +142,7 @@ end Exercise717
 end
 
 section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 SmashProduct Proposition77
+open NeighborhoodSystem Domain.Recursive ApproximableMap IndefProduct SmashProduct Proposition77
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 namespace Exercise717
@@ -690,7 +690,7 @@ end
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Exercise717
 section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61 Proposition77
+open NeighborhoodSystem Domain.Recursive ApproximableMap IndefProduct Proposition77
 
 /-- Scott's Exercise 7.17 (part 2): the g-map is computable. -/
 theorem example_717_part2 :

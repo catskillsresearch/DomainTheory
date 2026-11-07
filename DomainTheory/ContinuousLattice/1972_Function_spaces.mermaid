@@ -5,11 +5,11 @@ flowchart LR
 
   Induced_pi_topology_on["Induced pi topology on C(X, Y)"]
   Definition_3_1__Function["Definition 3.1: Function space"]
-  Elements_of___D__to_D["Elements of [D \to D']"]
+  Elements_of___D__to_D["Elements of [D → D']"]
   Step_function__pointwise["Step function (pointwise)"]
   Step_map___overrightarro["Step map \overrightarrow{e}[e,e']"]
   Proposition_3_2["Proposition 3.2"]
-  Product_topology_on___D["Product topology on [D \to D']"]
+  Product_topology_on___D["Product topology on [D → D']"]
   Theorem_3_3["Theorem 3.3"]
   Corollary_3_4["Corollary 3.4"]
   Scott_functional_abstrac["Scott functional abstraction"]
@@ -28,15 +28,14 @@ flowchart LR
   Proposition_3_14["Proposition 3.14"]
 
   Elements_of___D__to_D --> Corollary_3_4
-  Definition_3_6 --> Definition_3_11__Project
+  Elements_of___D__to_D --> Definition_3_11__Project
   Induced_pi_topology_on --> Definition_3_1__Function
   Retractions_and_extensio --> Definition_3_6
   Definition_3_1__Function --> Elements_of___D__to_D
   Definition_3_6 --> Function_space_retractio
-  Definition_3_6 --> Lemma_3_9
   Proposition_3_8 --> Lemma_3_9
   Step_map___overrightarro --> Product_topology_on___D
-  Definition_3_6 --> Proposition_3_10
+  Elements_of___D__to_D --> Proposition_3_10
   Definition_3_11__Project --> Proposition_3_12
   Definition_3_6 --> Proposition_3_13
   Elements_of___D__to_D --> Proposition_3_14
@@ -46,7 +45,7 @@ flowchart LR
   Elements_of___D__to_D --> Proposition_3_8
   Elements_of___D__to_D --> Retractions_and_extensio
   Elements_of___D__to_D --> Scott_functional_abstrac
-  Definition_3_6 --> Scott_subspace_extension
+  Elements_of___D__to_D --> Scott_subspace_extension
   Elements_of___D__to_D --> Step_function__pointwise
   Step_function__pointwise --> Step_map___overrightarro
   Product_topology_on___D --> Theorem_3_3

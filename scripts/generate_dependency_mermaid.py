@@ -54,6 +54,12 @@ NS_LAMBDA_SVG = (
     / "TypedLambdaCalculus"
     / "1980_Typed_lambda-calculus.svg"
 )
+NS_EQUATIONS_SVG = (
+    DT
+    / "NeighbourhoodSystems"
+    / "DomainEquations"
+    / "1980_Introduction_to_domain_equations.svg"
+)
 
 DEPRECATED_MERMAID = DT / "1972_Continuous_lattices.mermaid"
 CL1972_SECTION_MERMAIDS = frozenset(
@@ -2065,6 +2071,281 @@ NS_LAM_SHORT: dict[str, tuple[str, str]] = {
     ),
 }
 
+# Lecture VI hub: outline notes; exercises are separate boxes.
+NS_EQ_COMPANIONS: dict[str, tuple[str, ...]] = {
+    "Definition 6.10 — subdomain": ("subdomain",),
+    "Proposition 6.11 — lattice of subsystems": ("subsystemLattice",),
+    "Proposition 6.12 — projection pair": ("projectionPair",),
+    "Definition 6.13 — continuity on domains": ("continuousOnDomains",),
+    "Theorem 6.14 — existence of initial algebras": ("existsInitial",),
+    "Lemma 6.15 — subdomains from projection pairs": ("projPairSubdomain",),
+    "Theorem 6.16 — initial algebra is minimal": ("minimalInitial",),
+    "Exercise 6.19 — strict sum and product": ("sumProdTok",),
+    "Exercise 6.20 — tokens of a functor": ("functorTokens",),
+    "Exercise 6.21 — coalesced sum and smash": ("coalesceSmash",),
+    "Exercise 6.22 — equations for the integers": ("intExprDomains",),
+    "Exercise 6.23 — syntactic expression domain": ("exprDomain",),
+    "Exercise 6.24 — recursive domain equations": ("recDomainEq",),
+    "Exercise 6.25 — projection pair laws": ("projPairLaws",),
+    "Exercise 6.26 — lifting a domain": ("liftDomain",),
+    "Exercise 6.27 — which embeddings hold": ("embeddingCompare",),
+    "Exercise 6.28 — finite embeddings cancel": ("finiteEmbedCancel",),
+    "Exercise 6.29 — infinitary sum and product": ("infSumProd",),
+    "Exercise 6.17 — algebras for sequence domains": ("cAlgebra", "cAlgebraGen"),
+    "Exercise 6.18 — infinite product as initial": ("iterProdInitial",),
+}
+
+NS_EQ_SHORT: dict[str, tuple[str, str]] = {
+    "Indefinite product": (
+        "indef",
+        "Indefinite product",
+    ),
+    "Example 6.1 — indefinite product": (
+        "E61",
+        "Example 6.1 — indefinite product",
+    ),
+    "seqEqB — B equation": (
+        "B62",
+        "seqEqB — B equation",
+    ),
+    "seqEqA — A^n equation": (
+        "A62",
+        "seqEqA — A^n equation",
+    ),
+    "seqEqC — C equation": (
+        "C62",
+        "seqEqC — C equation",
+    ),
+    "seqEqRegular — regular trees": (
+        "R62",
+        "seqEqRegular — regular trees",
+    ),
+    "Example 6.2 — sequence domain equations": (
+        "E62",
+        "Example 6.2 — sequence domain equations",
+    ),
+    "Endofunctor": (
+        "Endo",
+        "Endofunctor",
+    ),
+    "Definition 6.3 — functor": (
+        "D63",
+        "Definition 6.3 — functor",
+    ),
+    "T-algebra": (
+        "TAlg",
+        "T-algebra",
+    ),
+    "Definition 6.4 — algebra for a functor": (
+        "D64",
+        "Definition 6.4 — algebra for a functor",
+    ),
+    "Initial algebra": (
+        "InitA",
+        "Initial algebra",
+    ),
+    "Definition 6.5 — initial algebra": (
+        "D65",
+        "Definition 6.5 — initial algebra",
+    ),
+    "Initial iso": (
+        "InitI",
+        "Initial iso",
+    ),
+    "Proposition 6.6 — uniqueness of initial algebras": (
+        "P66",
+        "Proposition 6.6 — uniqueness of initial algebras",
+    ),
+    "Lambek": (
+        "Lamb",
+        "Lambek",
+    ),
+    "Proposition 6.7 — functor preserves initiality": (
+        "P67",
+        "Proposition 6.7 — functor preserves initiality",
+    ),
+    "Continuous on maps": (
+        "ContM",
+        "Continuous on maps",
+    ),
+    "Definition 6.8 — continuity on maps": (
+        "D68",
+        "Definition 6.8 — continuity on maps",
+    ),
+    "Initial homomorphism": (
+        "InitH",
+        "Initial homomorphism",
+    ),
+    "Theorem 6.9 — homomorphism from initial algebra": (
+        "T69",
+        "Theorem 6.9 — homomorphism from initial algebra",
+    ),
+    "Subdomain": (
+        "Subd",
+        "Subdomain",
+    ),
+    "Definition 6.10 — subdomain": (
+        "D610",
+        "Definition 6.10 — subdomain",
+    ),
+    "Subsystem lattice": (
+        "SubL",
+        "Subsystem lattice",
+    ),
+    "Proposition 6.11 — lattice of subsystems": (
+        "P611",
+        "Proposition 6.11 — lattice of subsystems",
+    ),
+    "Projection pair library": (
+        "ProjP",
+        "Projection pair library",
+    ),
+    "Proposition 6.12 — projection pair": (
+        "P612",
+        "Proposition 6.12 — projection pair",
+    ),
+    "Continuous on domains": (
+        "ContD",
+        "Continuous on domains",
+    ),
+    "Definition 6.13 — continuity on domains": (
+        "D613",
+        "Definition 6.13 — continuity on domains",
+    ),
+    "Exists initial": (
+        "ExIn",
+        "Exists initial",
+    ),
+    "Theorem 6.14 — existence of initial algebras": (
+        "T614",
+        "Theorem 6.14 — existence of initial algebras",
+    ),
+    "Proj pair subdomain": (
+        "PPSub",
+        "Proj pair subdomain",
+    ),
+    "Lemma 6.15 — subdomains from projection pairs": (
+        "L615",
+        "Lemma 6.15 — subdomains from projection pairs",
+    ),
+    "Minimal initial": (
+        "MinIn",
+        "Minimal initial",
+    ),
+    "Theorem 6.16 — initial algebra is minimal": (
+        "T616",
+        "Theorem 6.16 — initial algebra is minimal",
+    ),
+    "sumProdTok — strict sum/product": (
+        "sPrd",
+        "sumProdTok — strict sum/product",
+    ),
+    "functorTokens — FExpr algebra": (
+        "fTok",
+        "functorTokens — FExpr algebra",
+    ),
+    "coalesceSmash — ⊕ and ⊗": (
+        "cSmh",
+        "coalesceSmash — ⊕ and ⊗",
+    ),
+    "intExprDomains — integer equations": (
+        "iExp",
+        "intExprDomains — integer equations",
+    ),
+    "exprDomain — syntactic Exp": (
+        "xDom",
+        "exprDomain — syntactic Exp",
+    ),
+    "recDomainEq — simultaneous solutions": (
+        "rDEq",
+        "recDomainEq — simultaneous solutions",
+    ),
+    "projPairLaws — projection pair laws": (
+        "pPLw",
+        "projPairLaws — projection pair laws",
+    ),
+    "liftDomain — lifting a domain": (
+        "lDom",
+        "liftDomain — lifting a domain",
+    ),
+    "embeddingCompare — which embeddings hold": (
+        "embC",
+        "embeddingCompare — which embeddings hold",
+    ),
+    "finiteEmbedCancel — finite mutual embeddings": (
+        "fEmb",
+        "finiteEmbedCancel — finite mutual embeddings",
+    ),
+    "infSumProd — infinitary sum and product": (
+        "iSPd",
+        "infSumProd — infinitary sum and product",
+    ),
+    "cAlgebra — C initial algebra": (
+        "cAlg",
+        "cAlgebra — C initial algebra",
+    ),
+    "cAlgebraGen — Cn over A": (
+        "cGen",
+        "cAlgebraGen — Cn over A",
+    ),
+    "iterProdInitial — D^∞ initial": (
+        "iterI",
+        "iterProdInitial — D^∞ initial",
+    ),
+    "Exercise 6.17 — algebras for sequence domains": (
+        "X617",
+        "Exercise 6.17 — algebras for sequence domains",
+    ),
+    "Exercise 6.18 — infinite product as initial": (
+        "X618",
+        "Exercise 6.18 — infinite product as initial",
+    ),
+    "Exercise 6.19 — strict sum and product": (
+        "X619",
+        "Exercise 6.19 — strict sum and product",
+    ),
+    "Exercise 6.20 — tokens of a functor": (
+        "X620",
+        "Exercise 6.20 — tokens of a functor",
+    ),
+    "Exercise 6.21 — coalesced sum and smash": (
+        "X621",
+        "Exercise 6.21 — coalesced sum and smash",
+    ),
+    "Exercise 6.22 — equations for the integers": (
+        "X622",
+        "Exercise 6.22 — equations for the integers",
+    ),
+    "Exercise 6.23 — syntactic expression domain": (
+        "X623",
+        "Exercise 6.23 — syntactic expression domain",
+    ),
+    "Exercise 6.24 — recursive domain equations": (
+        "X624",
+        "Exercise 6.24 — recursive domain equations",
+    ),
+    "Exercise 6.25 — projection pair laws": (
+        "X625",
+        "Exercise 6.25 — projection pair laws",
+    ),
+    "Exercise 6.26 — lifting a domain": (
+        "X626",
+        "Exercise 6.26 — lifting a domain",
+    ),
+    "Exercise 6.27 — which embeddings hold": (
+        "X627",
+        "Exercise 6.27 — which embeddings hold",
+    ),
+    "Exercise 6.28 — finite embeddings cancel": (
+        "X628",
+        "Exercise 6.28 — finite embeddings cancel",
+    ),
+    "Exercise 6.29 — infinitary sum and product": (
+        "X629",
+        "Exercise 6.29 — infinitary sum and product",
+    ),
+}
+
 
 def _ns_dom_kind_class(nid: str) -> str:
     if nid.startswith("D"):
@@ -2391,6 +2672,27 @@ def gen_ns_lambda_lecture(diagram: Path, modules: dict[str, Path], old: str) -> 
     )
 
 
+def gen_ns_equations_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    """Item-level Lean deps for 1980_Introduction_to_domain_equations (SVG gold copy)."""
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=NS_EQ_SHORT,
+        companions=NS_EQ_COMPANIONS,
+        header=[
+            "%% Each box is one outline note from 1980_Introduction_to_domain_equations.md.",
+            "%% Lean modules = that note's @import .lean files.",
+            "%% Arrowhead on the importer; label = direct-import count.",
+            "%% All cross-note Lean imports, then transitive reduction (keeps reachability).",
+            "%% Display copy: Graphviz SVG (gold); no sibling .mermaid.",
+            "%% Layout: TB — top-down reading order.",
+        ],
+        aggregate_lecture_exercises=False,
+        rankdir="TB",
+    )
+
+
 def cl1972_outline_box_modules(child: Path, title: str) -> set[str]:
     if re.match(r"(?i)introduction\s*$", title.strip()):
         return set()
@@ -2617,6 +2919,11 @@ def classify(mermaid: Path, text: str) -> str:
         "1980_Typed_lambda-calculus.svg",
     ):
         return "ns_lambda_lecture"
+    if mermaid.name in (
+        "1980_Introduction_to_domain_equations.mermaid",
+        "1980_Introduction_to_domain_equations.svg",
+    ):
+        return "ns_equations_lecture"
     if index_md_is_outline_barrel(mermaid):
         return "note_outline"
     if mermaid.name == "1972_ContinuousLattices.mermaid":
@@ -2732,6 +3039,8 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
         return gen_ns_fixpoints_lecture(mermaid, modules, old)
     if kind == "ns_lambda_lecture":
         return gen_ns_lambda_lecture(mermaid, modules, old)
+    if kind == "ns_equations_lecture":
+        return gen_ns_equations_lecture(mermaid, modules, old)
     if kind == "ns_items":
         return gen_neighborhood_items(mermaid, modules, old)
     if kind == "note_outline":
@@ -3084,6 +3393,7 @@ def main() -> None:
             NS_CONSTRUCTS_SVG,
             NS_FIXPOINTS_SVG,
             NS_LAMBDA_SVG,
+            NS_EQUATIONS_SVG,
         ):
             if svg.is_file():
                 paths.append(svg.resolve())

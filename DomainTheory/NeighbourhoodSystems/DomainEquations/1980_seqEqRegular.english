@@ -1,0 +1,55 @@
+Eventually periodic selector trees and regular languages.
+
+<!-- formalization -->
+
+**Definition (`Tree`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Definition (`pos`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Definition (`select`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Definition (`child`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Definition (`treeLang`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Definition (`EventuallyPeriodic`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Theorem (`select_append`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`select_cons`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`treeLang_eq_pos`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`treeLang_injective`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`treeLang_select`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`eventuallyPeriodic_iff_isRegular`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`isRegular_iff_exists_eventuallyPeriodic`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎

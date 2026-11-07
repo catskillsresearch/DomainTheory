@@ -104,7 +104,7 @@ def fixIso :
 
 theorem isFinitary : IsFinitary (subApprox (E := E)) :=
   ⟨_, _, ⟨fixIso.trans
-    ((finitaryProjectionSubsystemEquiv E).trans (Proposition611.subsystemReprIso E))⟩⟩
+    ((finitaryProjectionSubsystemEquiv E).trans (SubsystemLattice.subsystemReprIso E))⟩⟩
 
 end subApprox
 

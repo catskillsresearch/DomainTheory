@@ -1,7 +1,5 @@
 # Retracts of the universal domain
 
-**Dependency diagram.** Each box is one item. The arrowhead is on the item that imports. An arrow already implied by a longer path is left out. The introduction has no Lean file, so it is not shown. Blue is a definition, green a proposition, amber an example, red a theorem, and indigo an exercise.
-
 @import "1980_Retracts_of_the_universal_domain.mermaid"
 
 - [Introduction](1980_Introduction.md)

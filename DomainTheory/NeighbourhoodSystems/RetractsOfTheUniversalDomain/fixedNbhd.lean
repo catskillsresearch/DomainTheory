@@ -6,6 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.iSupDirected
 
 @[expose] public section
 

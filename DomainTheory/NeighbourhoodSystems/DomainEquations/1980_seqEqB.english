@@ -1,0 +1,103 @@
+Sequence domain B: bit embeddings and the equation B ≅ B + B.
+
+<!-- formalization -->
+
+**Definition (`embBit`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Theorem (`embBit_eq_prepend`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`embBit_cone`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`memB_embBit`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`nil_not_mem_embBit`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`embBit_ne_univ`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`embBit_inter`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`embBit_inter_ne`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`embBit_subset`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`embBit_injective`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`embBit_nonempty`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`memB_embBit_inv`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`embBit_ne`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`B_nonempty`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`memB_cases`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Definition (`BB`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Theorem (`sum_mem_inj`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`sum_mem_inj`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`sum_mem_nonempty`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Definition (`toBB`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Definition (`fromBB`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Theorem (`fromBB_toBB`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`toBB_fromBB`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Definition (`bbEquiv`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Theorem (`B_domain_equation`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎

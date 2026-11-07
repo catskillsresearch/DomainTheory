@@ -10,4 +10,6 @@ Would a similar generalization be possible for $\oplus$ and $\otimes$?
 
 **[Exercise_6_29.lean](Exercise_6_29.lean)**
 
+@import "infSumProd.lean" {code_block=false}
+
 @import "Exercise_6_29.lean"

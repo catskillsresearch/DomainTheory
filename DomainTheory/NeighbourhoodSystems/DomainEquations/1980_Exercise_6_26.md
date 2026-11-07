@@ -1,6 +1,8 @@
 # Exercise 6.26
 **[NeighbourhoodSystems/DomainEquations/Exercise_6_26.lean](Exercise_6_26.lean)**
 
+@import "liftDomain.lean" {code_block=false}
+
 @import "Exercise_6_26.lean"
 
 **EXERCISE 6.26.** For systems $\mathcal{D}$ as in 6.19 define

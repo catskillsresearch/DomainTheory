@@ -1,6 +1,8 @@
 # Exercise 6.23
 **[NeighbourhoodSystems/DomainEquations/Exercise_6_23.lean](Exercise_6_23.lean)**
 
+@import "exprDomain.lean" {code_block=false}
+
 @import "Exercise_6_23.lean"
 
 **EXERCISE 6.23.** Construe the initial solution to

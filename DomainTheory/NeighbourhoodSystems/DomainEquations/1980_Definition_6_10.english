@@ -1,0 +1,23 @@
+**DEFINITION 6.10.** For two neighbourhood systems $D$ and $E$ we write
+
+$$
+D \triangleleft E
+$$
+
+to mean that these are neighbourhood systems over the same set of tokens $\Delta$ and not only is $D \subseteq E$ but whenever $X, Y \in D$ and $X \cap Y \in E$, then $X \cap Y \in D$. $\square$
+
+For the subdomain relation $D \triangleleft E$ to hold, $D$ has to be a smaller family of neighbourhoods, but the notion of consistency in $D$ also has to be the same as in $E$. Note that if $D_0 \triangleleft E$ and $D_1 \triangleleft E$ then
+
+$$
+D_0 \triangleleft D_1 \text{ iff } D_0 \subseteq D_1.
+$$
+
+It is also easy to prove that the union of a directed family of subdomains of $E$ is again a subdomain. As a consequence of this remark we have:
+
+The [subdomain](1980_subdomain.md) peer records the library names.
+
+<!-- formalization -->
+
+**Theorem (`definition_610`).** The subdomain relation is equivalent to equality of masters, inclusion of neighbourhood families, and inheritance of consistency for intersections admitted by the superdomain.
+
+*Proof.* Unfold the subdomain structure in both directions. ∎

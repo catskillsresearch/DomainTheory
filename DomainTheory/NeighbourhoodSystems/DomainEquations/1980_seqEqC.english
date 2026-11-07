@@ -1,0 +1,199 @@
+Sequence domain C: three-way sum tags and the equation C ≅ 𝟙 + C + C.
+
+<!-- formalization -->
+
+**Definition (`t0`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Definition (`j0`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Definition (`t1`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Definition (`j1`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Definition (`t2`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Definition (`j2`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Theorem (`j0_inter_j0`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`j0_inter_j1`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`j0_inter_j2`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`j0_nonempty`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`j0_subset_j0`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`j1_inter_j1`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`j1_inter_j2`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`j1_nonempty`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`j1_subset_j1`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`j1_injective`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`j2_inter_j2`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`j2_nonempty`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`j2_subset_j2`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`j2_injective`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Definition (`master3`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Theorem (`C_nonempty`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`embBit_singleton`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`eq_master3_of_subset`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`j0_subset_master3`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`j1_subset_master3`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`j2_subset_master3`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`master3_inter_j0`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`master3_inter_j1`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`master3_inter_j2`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`memC_cases`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`memC_embBit`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`memC_embBit_inv`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`singleton_nil_inter_embBit`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`singleton_nil_ne_embBit`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`singleton_nil_ne_univ`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Definition (`sum3`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Theorem (`unitSys_nonempty`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Definition (`CC`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Theorem (`sum3_mem_j1_inv`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`sum3_mem_j2_inv`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`sum3_mem_nonempty`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Definition (`toCC`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Definition (`fromCC`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Theorem (`fromCC_toCC`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`toCC_fromCC`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Definition (`ccEquiv`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Theorem (`C_domain_equation`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`j0_injective`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎

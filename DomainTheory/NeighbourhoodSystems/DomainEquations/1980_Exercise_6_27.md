@@ -1,6 +1,8 @@
 # Exercise 6.27
 **[NeighbourhoodSystems/DomainEquations/Exercise_6_27.lean](Exercise_6_27.lean)**
 
+@import "embeddingCompare.lean" {code_block=false}
+
 @import "Exercise_6_27.lean"
 
 **EXERCISE 6.27.** Which of the following relationships are true:

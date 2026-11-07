@@ -1,0 +1,13 @@
+Definition 6.8 library: functors continuous on strict function spaces.
+
+**Definition (`ContinuousOnMaps`).** For every pair of domains, the induced map on strict approximable functions is itself approximable, with action agreeing with the functor on underlying maps.
+
+*Proof.* By definition. ∎
+
+**Theorem (`ContinuousOnMaps.isStrict_map`).** A functor continuous on maps sends strict maps to strict maps.
+
+*Proof.* From the witnessing equation, whose value is a strict map. ∎
+
+**Theorem (`continuousOnMaps_id`).** The identity functor is continuous on maps.
+
+*Proof.* The identity on the strict function space witnesses continuity. ∎

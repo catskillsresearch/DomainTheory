@@ -21,10 +21,11 @@ flowchart TB
   LAWY["A law of Y"]
 
   DOL --> DEFTHM
+  Theorem_2_2___the_conver --> DEFTHM
   Theorem_2_3___the_reduct --> DEFTHM
   SEQ --> DOL
   Theorem_2_5___the_first --> DOL
-  Theorem_2_2___the_conver --> GRA
+  LAM --> GRA
   MEAN --> LAM
   DEFTHM --> LAWY
   EXT --> MEAN
@@ -32,9 +33,9 @@ flowchart TB
   LAM --> Term_avoidance
   LAM --> Theorem_2_1___the_contin
   Theorem_2_1___the_contin --> Theorem_2_2___the_conver
-  Theorem_2_2___the_conver --> Theorem_2_3___the_reduct
+  Theorem_2_1___the_contin --> Theorem_2_3___the_reduct
   Term_avoidance --> Theorem_2_4___the_combin
-  Theorem_2_2___the_conver --> Theorem_2_4___the_combin
+  Theorem_2_1___the_contin --> Theorem_2_4___the_combin
   YC --> Theorem_2_5___the_first
   Theorem_2_4___the_combin --> YC
 

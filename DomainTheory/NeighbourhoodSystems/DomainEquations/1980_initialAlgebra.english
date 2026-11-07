@@ -1,0 +1,33 @@
+Initial T-algebras, the category of homomorphisms, and the identity endofunctor (Def 6.5 library).
+
+**Definition (`IsInitial`).** A T-algebra is initial when it has a chosen homomorphism into every algebra and that homomorphism is unique.
+
+*Proof.* By definition. ∎
+
+**Definition (`AlgHom.comp`).** Composition of algebra homomorphisms is composition of the underlying morphisms, with the commutativity law inherited from functoriality and the squares for the factors.
+
+*Proof.* Apply associativity, the commutative squares, and preservation of composition by the functor. ∎
+
+**Definition (`AlgHom.id`).** The identity morphism on the carrier is an algebra homomorphism.
+
+*Proof.* Uses identity laws and the functor’s preservation of identity. ∎
+
+**Theorem (`AlgHom.id_hom`).** The underlying morphism of the identity homomorphism is the identity on the carrier.
+
+*Proof.* By definition. ∎
+
+**Theorem (`AlgHom.comp_hom`).** The underlying morphism of a composite homomorphism is the composite of the underlying morphisms.
+
+*Proof.* By definition. ∎
+
+**Definition (`idEndofunctor`).** The identity endofunctor fixes objects and morphisms.
+
+*Proof.* By definition. ∎
+
+**Theorem (`idEndofunctor_obj`).** The identity endofunctor leaves each object unchanged.
+
+*Proof.* By definition. ∎
+
+**Theorem (`idEndofunctor_map`).** The identity endofunctor leaves each morphism unchanged.
+
+*Proof.* By definition. ∎

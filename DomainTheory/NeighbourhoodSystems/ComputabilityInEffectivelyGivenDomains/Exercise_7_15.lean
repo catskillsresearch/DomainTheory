@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 section
 variable {α β γ : Type*}

@@ -14,11 +14,14 @@ flowchart TB
   CODE["Code enumerator"]
   DEF["Theorem 2.6: Definability"]
 
+  Elementary_definitions --> CONST
   Primitive_recursion --> DCOMP
-  DCOMP --> ISRE
-  ISRE --> FIN
-  FIN --> PAIR
-  PAIR --> CONST
-  CONST --> CODE
   CODE --> DEF
+  CONST --> DEF
+  FIN --> DEF
+  ISRE --> DEF
+  PAIR --> DEF
+  Primitive_recursion --> FIN
+  Elementary_definitions --> ISRE
+  Elementary_definitions --> PAIR
   Elementary_definitions --> Primitive_recursion

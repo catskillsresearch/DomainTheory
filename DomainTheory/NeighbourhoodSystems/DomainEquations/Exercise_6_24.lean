@@ -1,60 +1,16 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_23
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition_6_13
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.recDomainEq
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem DomainTheory.NeighbourhoodSystems.Exercise619
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
-section
-namespace Exercise624
 
-theorem exists_simultaneous_subsystems :
-    ∃ D E : ScottSys, D.sys ◁ (D.sum (D.prod E)).sys ∧ E.sys ◁ (D.sum E).sys :=
-  ⟨Dsol, Esol, Dsol_subsystem, Esol_subsystem⟩
-
-end Exercise624
-end
-
-end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.Exercise624
-open DomainTheory.NeighbourhoodSystems.Exercise619
+open Exercise619
 
 /-- Scott's Exercise 6.24: simultaneous subsystem solutions. -/
 theorem example_624 :
     ∃ D E : ScottSys, D.sys ◁ (D.sum (D.prod E)).sys ∧ E.sys ◁ (D.sum E).sys :=
-  @exists_simultaneous_subsystems
+  ⟨Exercise624.Dsol, Exercise624.Esol, Exercise624.Dsol_subsystem, Exercise624.Esol_subsystem⟩
 
-end DomainTheory.NeighbourhoodSystems.Exercise624
-namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
-open DomainTheory.NeighbourhoodSystems.Example62 DomainTheory.NeighbourhoodSystems.ExampleB
-open DomainTheory.NeighbourhoodSystems.SmashProduct
-
-section
-namespace Exercise619
-
-variable {D : NeighborhoodSystem Str}
-
-def liftTokMaster (D : NeighborhoodSystem Str) : Set Str := insert [] (embBit false D.master)
-
-theorem embF_subset_liftTokMaster {X : Set Str} (hX : D.mem X) :
-    embBit false X ⊆ liftTokMaster D :=
-  (embBit_subset.mpr (D.sub_master hX)).trans (Set.subset_insert _ _)
-
-theorem liftTokMaster_inter_embF {X : Set Str} (hX : D.mem X) :
-    liftTokMaster D ∩ embBit false X = embBit false X :=
-  Set.inter_eq_right.mpr (embF_subset_liftTokMaster hX)
-
-theorem nil_mem_liftTokMaster : ([] : Str) ∈ liftTokMaster D := Set.mem_insert _ _
-
-theorem embF_ne_liftTokMaster {X : Set Str} : embBit false X ≠ liftTokMaster D := fun h =>
-  nil_not_mem_embBit (h.symm ▸ nil_mem_liftTokMaster)
-
-end Exercise619
-end
 end DomainTheory.NeighbourhoodSystems
-end

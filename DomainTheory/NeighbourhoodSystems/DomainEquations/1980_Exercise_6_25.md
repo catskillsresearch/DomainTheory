@@ -1,6 +1,8 @@
 # Exercise 6.25
 **[NeighbourhoodSystems/DomainEquations/Exercise_6_25.lean](Exercise_6_25.lean)**
 
+@import "projPairLaws.lean" {code_block=false}
+
 @import "Exercise_6_25.lean"
 
 **EXERCISE 6.25.** For a projection pair $g : \mathcal{D} \to \mathcal{E}$ and $h : \mathcal{E} \to \mathcal{D}$ show that for $x \in |\mathcal{D}|$ and $y \in |\mathcal{E}|$ we have:

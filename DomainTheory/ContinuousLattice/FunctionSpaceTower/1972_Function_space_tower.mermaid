@@ -8,21 +8,19 @@ flowchart TB
   The_projection_on_a_func["The projection on a function space"]
   Projections_of_the_tower["Projections of the tower"]
   FunctionSpaceTower_DInf["DInf"]
-  DInfFn["DInfFn"]
   Proof_that_the_limit_and["Proof that the limit and its function space are inverse"]
   Theorem_4_4["Theorem 4.4"]
   Lemma_4_5["Lemma 4.5"]
   Proof_of_4_4_concluded["Proof of 4.4 concluded"]
 
   The_tower_of_lattices --> Conjugation
-  The_projection_on_a_func --> DInfFn
-  The_projection_on_a_func --> FunctionSpaceTower_DInf
-  The_projection_on_a_func --> Lemma_4_5
+  Projections_of_the_tower --> FunctionSpaceTower_DInf
+  Proof_that_the_limit_and --> Lemma_4_5
   The_projection_on_a_func --> Projections_of_the_tower
-  The_projection_on_a_func --> Proof_of_4_4_concluded
-  The_projection_on_a_func --> Proof_that_the_limit_and
+  Theorem_4_4 --> Proof_of_4_4_concluded
+  FunctionSpaceTower_DInf --> Proof_that_the_limit_and
   Conjugation --> The_projection_on_a_func
-  The_projection_on_a_func --> Theorem_4_4
+  Proof_that_the_limit_and --> Theorem_4_4
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827

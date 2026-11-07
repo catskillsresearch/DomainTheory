@@ -1,5 +1,8 @@
 # Exercise 6.20
+
 **[NeighbourhoodSystems/DomainEquations/Exercise_6_20.lean](Exercise_6_20.lean)**
+
+@import "functorTokens.lean" {code_block=false}
 
 @import "Exercise_6_20.lean"
 

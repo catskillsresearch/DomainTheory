@@ -1,8 +1,8 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.iterStack
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_17
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_29
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.iterProdInitial
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.projPairSubdomain
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 
 @[expose] public section

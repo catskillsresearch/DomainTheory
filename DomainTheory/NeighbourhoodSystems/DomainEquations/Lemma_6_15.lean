@@ -1,150 +1,20 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_29
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.projPairSubdomain
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap
-section
+
+open NeighborhoodSystem ApproximableMap Subsystem
+
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
-section ProjectionPair
-variable (i : ApproximableMap D E) (j : ApproximableMap E D)
-
-theorem trianglelefteq_of_projectionPair (hji : j.comp i = idMap D)
-    (hij : i.comp j ≤ idMap E) : D ⊴ E :=
-  ⟨Dprime i j, Dprime_subsystem i j, ⟨dprimeEquiv i j hji hij⟩⟩
-
-end ProjectionPair
-end
-
-section
-open NeighborhoodSystem ApproximableMap
 
 /-- Scott's Lemma 6.15: a projection pair yields a domain embedding. -/
-theorem theorem_615 :
+theorem lemma_615 :
     ∀ {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
       (i : ApproximableMap D E) (j : ApproximableMap E D),
       j.comp i = idMap D → i.comp j ≤ idMap E → D ⊴ E :=
   @trianglelefteq_of_projectionPair
-end
 
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems
-namespace Subsystem
-open NeighborhoodSystem ApproximableMap
-
-section
-variable {α : Type*}
-variable {D E : NeighborhoodSystem α}
-
-structure ProjectionPair (D E : NeighborhoodSystem α) where
-
-  inj : ApproximableMap D E
-
-  proj : ApproximableMap E D
-
-  proj_comp_inj : proj.comp inj = idMap D
-
-  inj_comp_proj_le : inj.comp proj ≤ idMap E
-end
-
-end Subsystem
-open NeighborhoodSystem ApproximableMap
-
-section
-variable {α : Type*}
-
-namespace Subsystem
-
-variable {D E : NeighborhoodSystem α}
-
-def inj (h : D ◁ E) : ApproximableMap D E where
-  rel X Y := D.mem X ∧ E.mem Y ∧ X ⊆ Y
-  rel_dom hr := hr.1
-  rel_cod hr := hr.2.1
-  master_rel := ⟨D.master_mem, E.master_mem, h.master_eq.subset⟩
-  inter_right := by
-    rintro X Y Y' ⟨hX, hY, hXY⟩ ⟨_, hY', hXY'⟩
-    exact ⟨hX, E.inter_mem hY hY' (h.sub hX) (Set.subset_inter hXY hXY'),
-      Set.subset_inter hXY hXY'⟩
-  mono := by
-    rintro X X' Y Y' ⟨_, _, hXY⟩ hX'X hYY' hX' hY'
-    exact ⟨hX', hY', (hX'X.trans hXY).trans hYY'⟩
-
-@[simp] theorem inj_rel (h : D ◁ E) {X Y : Set α} :
-    (h.inj).rel X Y ↔ D.mem X ∧ E.mem Y ∧ X ⊆ Y := Iff.rfl
-
-def proj (h : D ◁ E) : ApproximableMap E D where
-  rel Y X := E.mem Y ∧ D.mem X ∧ Y ⊆ X
-  rel_dom hr := hr.1
-  rel_cod hr := hr.2.1
-  master_rel := ⟨E.master_mem, D.master_mem, h.master_eq.symm.subset⟩
-  inter_right := by
-    rintro Y X X' ⟨hY, hX, hYX⟩ ⟨_, hX', hYX'⟩
-    have hEinter : E.mem (X ∩ X') :=
-      E.inter_mem (h.sub hX) (h.sub hX') hY (Set.subset_inter hYX hYX')
-    exact ⟨hY, h.inter_closed hX hX' hEinter, Set.subset_inter hYX hYX'⟩
-  mono := by
-    rintro Y Y' X X' ⟨_, _, hYX⟩ hY'Y hXX' hY' hX'
-    exact ⟨hY', hX', (hY'Y.trans hYX).trans hXX'⟩
-
-@[simp] theorem proj_rel (h : D ◁ E) {Y X : Set α} :
-    (h.proj).rel Y X ↔ E.mem Y ∧ D.mem X ∧ Y ⊆ X := Iff.rfl
-
-theorem inj_comp_proj_le (h : D ◁ E) : h.inj.comp h.proj ≤ idMap E := by
-  intro Y Y' hr
-  obtain ⟨X, ⟨hEY, _, hYX⟩, _, hEY', hXY'⟩ := hr
-  exact ⟨hEY, hEY', hYX.trans hXY'⟩
-
-theorem proj_comp_inj (h : D ◁ E) : h.proj.comp h.inj = idMap D := by
-  apply ApproximableMap.ext
-  intro X Z
-  rw [comp_rel, idMap_rel]
-  constructor
-  · rintro ⟨Y, ⟨hX, _, hXY⟩, _, hZ, hYZ⟩
-    exact ⟨hX, hZ, hXY.trans hYZ⟩
-  · rintro ⟨hX, hZ, hXZ⟩
-    exact ⟨Z, ⟨hX, h.sub hZ, hXZ⟩, h.sub hZ, hZ, subset_rfl⟩
-
-end Subsystem
-end
-
-end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.Subsystem
-open NeighborhoodSystem ApproximableMap
-
-/-- Scott's Proposition 6.12: injection and projection form a projection pair. -/
-theorem theorem_612 :
-    (∀ {α : Type*} {D E : NeighborhoodSystem α} (h : D ◁ E),
-      h.inj.comp h.proj ≤ idMap E) ∧
-    (∀ {α : Type*} {D E : NeighborhoodSystem α} (h : D ◁ E),
-      h.proj.comp h.inj = idMap D) :=
-  ⟨@inj_comp_proj_le, @proj_comp_inj⟩
-
-end DomainTheory.NeighbourhoodSystems.Subsystem
-namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap Subsystem
-
-section
-variable {α : Type*} {D E : NeighborhoodSystem α}
-
-namespace Subsystem.ProjectionPair
-
-def lowerSet (P : ProjectionPair D E) (y : E.Element) : Set D.Element :=
-  {x | P.inj.toElementMap x ≤ y}
-
-@[simp] theorem mem_lowerSet (P : ProjectionPair D E) {y : E.Element} {x : D.Element} :
-    x ∈ P.lowerSet y ↔ P.inj.toElementMap x ≤ y := Iff.rfl
-
-def upperSet (P : ProjectionPair D E) (x : D.Element) : Set E.Element :=
-  {y | x ≤ P.proj.toElementMap y}
-
-@[simp] theorem mem_upperSet (P : ProjectionPair D E) {x : D.Element} {y : E.Element} :
-    y ∈ P.upperSet x ↔ x ≤ P.proj.toElementMap y := Iff.rfl
-
-end Subsystem.ProjectionPair
-end
-end DomainTheory.NeighbourhoodSystems
-end

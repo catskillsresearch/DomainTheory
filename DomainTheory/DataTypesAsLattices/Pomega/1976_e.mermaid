@@ -3,14 +3,11 @@
 %% Arrowhead on the importer. An arrow implied by a longer path is omitted.
 flowchart TB
 
-  Definition_of__e_n["Definition of e_n"]
   Bit_tests_and_relation_s["Bit tests and relation scans"]
   Primitive_recursive_stru["Primitive recursive structure"]
   Coding_finite_subsets["Coding finite subsets"]
   Density_of_finite_sets_i["Density of finite sets in Pω"]
 
-  Definition_of__e_n --> Bit_tests_and_relation_s
-  Definition_of__e_n --> Coding_finite_subsets
-  Coding_finite_subsets --> Density_of_finite_sets_i
-  Primitive_recursive_stru --> Density_of_finite_sets_i
+  Bit_tests_and_relation_s --> Coding_finite_subsets
+  Bit_tests_and_relation_s --> Density_of_finite_sets_i
   Bit_tests_and_relation_s --> Primitive_recursive_stru

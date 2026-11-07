@@ -1,0 +1,163 @@
+Sequence domain A^n: tuple embeddings and the equation A^n ≅ A^n + A^n.
+
+<!-- formalization -->
+
+**Definition (`slotPre`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Definition (`embTuple`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Definition (`MemA`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Definition (`prodN`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Theorem (`prodN_injective`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`prodN_inter`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`prodN_subset`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Definition (`npow`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Theorem (`embTuple_nonempty`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`memA_nonempty`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`nil_not_mem_embTuple`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`embTuple_ne_univ`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`npow_nonempty`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`slot_list_inj`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`slotPre_inj`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`embTuple_inter`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`embTuple_inter_ne`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`embTuple_ne`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`embTuple_subset`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`embTuple_injective`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`memA_tuple_inv`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`tag_eq_of_subset`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`memA_inter`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Definition (`Asys`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Definition (`Apow`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Theorem (`apowNe`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Definition (`AAsys`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Theorem (`aa_mem_inj`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`aa_mem_inj`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`aa_mem_nonempty`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`apow_mem_prodN`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`aa_mem_inj`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`aa_mem_inj`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`apow_mem_prodN_inv`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Definition (`toAA`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Definition (`fromAA`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Theorem (`fromAA_toAA`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Theorem (`toAA_fromAA`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎
+
+**Definition (`aaEquiv`).** As in the library.
+
+*Proof.* By definition. ∎
+
+**Theorem (`A_domain_equation`).** As in the library.
+
+*Proof.* Assemble the preceding lemmas on embeddings, neighbourhood shape, and the order-isomorphism. ∎

@@ -3,7 +3,7 @@ module
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise_7_19
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Definition_7_11
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition_7_10
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example_6_1
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.indefProduct
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem_6_9
@@ -190,7 +190,7 @@ end
 
 
 section
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 variable {α : Type*}
 
 namespace Proposition77
@@ -207,7 +207,7 @@ end Proposition77
 end
 
 section
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 variable {α : Type*}
 
 namespace Proposition77
@@ -219,7 +219,7 @@ end Proposition77
 end
 
 section
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 variable {α : Type*}
 
 namespace Proposition77
@@ -271,7 +271,7 @@ end Proposition77
 end
 
 section
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 variable {α : Type*}
 
 namespace Proposition77
@@ -286,7 +286,7 @@ end Proposition77
 end
 
 section
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 variable {α : Type*}
 
 namespace Proposition77
@@ -328,7 +328,7 @@ end Proposition77
 end
 
 section
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 variable {α : Type*}
 
 namespace Proposition77
@@ -344,7 +344,7 @@ end Proposition77
 end
 
 section
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 variable {α : Type*}
 
 namespace Proposition77
@@ -366,7 +366,7 @@ end Proposition77
 end
 
 section
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 variable {α : Type*}
 
 namespace Proposition77
@@ -452,7 +452,7 @@ end Proposition77
 end
 
 section
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 variable {α : Type*}
 
 namespace Proposition77
@@ -480,7 +480,7 @@ end Proposition77
 end
 
 section
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 variable {α : Type*}
 
 namespace Proposition77
@@ -511,7 +511,7 @@ end Proposition77
 end
 
 section
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 variable {α : Type*}
 
 namespace Proposition77
@@ -593,7 +593,7 @@ end Proposition77
 end
 
 section
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 variable {α : Type*}
 
 namespace Proposition77
@@ -666,7 +666,7 @@ end Proposition77
 end
 
 section
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 variable {α : Type*}
 
 namespace Proposition77

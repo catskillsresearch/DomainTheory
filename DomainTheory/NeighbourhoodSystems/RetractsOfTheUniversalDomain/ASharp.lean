@@ -14,7 +14,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap Example61 Proposition77 Exercise717 SmashProduct
+open NeighborhoodSystem ApproximableMap IndefProduct Proposition77 Exercise717 SmashProduct
 
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 

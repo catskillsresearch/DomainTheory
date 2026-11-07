@@ -5,13 +5,10 @@ flowchart TD
 
   Compatibility["Compatibility"]
   InverseLimit["InverseLimit"]
-  Projections_from_the_lim["Projections from the limit"]
-  The_mediating_map["The mediating map"]
   Projections_along_the_to["Projections along the tower"]
   Tower_step_adjunction["Tower step adjunction"]
   Embeddings_along_the_tow["Embeddings along the tower"]
   Coordinates_of_an_embedd["Coordinates of an embedding"]
-  Embeddings_into_the_limi["Embeddings into the limit"]
   Order_on_the_inverse_l["Order on the inverse limit"]
   Strict_order_on_the_i["Strict order on the inverse limit"]
   The_limit_lattice["The limit lattice"]
@@ -21,20 +18,20 @@ flowchart TD
   Corollary_4_3["Corollary 4.3"]
   The_function_space_tower["The function space tower"]
 
-  The_mediating_map --> Coordinates_of_an_embedd
+  Embeddings_along_the_tow --> Coordinates_of_an_embedd
+  Projections_along_the_to --> Coordinates_of_an_embedd
   Topology_of_the_inverse --> Corollary_4_3
   InverseLimit --> Embeddings_along_the_tow
-  The_mediating_map --> Embeddings_into_the_limi
   Compatibility --> InverseLimit
   InverseLimit --> Order_on_the_inverse_l
   InverseLimit --> Projections_along_the_to
-  InverseLimit --> Projections_from_the_lim
   Topology_of_the_inverse --> Proposition_4_1
-  The_mediating_map --> Proposition_4_2
-  Projections_from_the_lim --> Strict_order_on_the_i
+  The_limit_lattice --> Proposition_4_2
+  Order_on_the_inverse_l --> Strict_order_on_the_i
   Proposition_4_1 --> The_function_space_tower
   Proposition_4_2 --> The_function_space_tower
-  Projections_from_the_lim --> The_limit_lattice
-  Projections_from_the_lim --> The_mediating_map
-  The_mediating_map --> Topology_of_the_inverse
+  Coordinates_of_an_embedd --> The_limit_lattice
+  Strict_order_on_the_i --> The_limit_lattice
+  Tower_step_adjunction --> The_limit_lattice
+  The_limit_lattice --> Topology_of_the_inverse
   Compatibility --> Tower_step_adjunction

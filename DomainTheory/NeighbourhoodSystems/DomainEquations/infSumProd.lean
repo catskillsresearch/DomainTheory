@@ -1,0 +1,730 @@
+module
+
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.sumProdTok
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Definition_6_10
+import Mathlib.Data.Set.Finite.Basic
+
+@[expose] public section
+
+section
+namespace DomainTheory.NeighbourhoodSystems
+section
+open NeighborhoodSystem
+namespace Exercise629
+universe u v
+variable {ι : Type u} {α : ι → Type v}
+
+def iprodNbhd (X : ∀ i, Set (α i)) : Set (Σ i, α i) := {p | p.2 ∈ X p.1}
+
+@[simp] theorem mem_iprodNbhd {X : ∀ i, Set (α i)} {i : ι} {a : α i} :
+    (⟨i, a⟩ : Σ i, α i) ∈ iprodNbhd X ↔ a ∈ X i := Iff.rfl
+
+variable {D : ∀ i, NeighborhoodSystem (α i)}
+
+def FinSupp (D : ∀ i, NeighborhoodSystem (α i)) (X : ∀ i, Set (α i)) : Prop :=
+  ∃ l : List ι, ∀ i, i ∉ l → X i = (D i).master
+
+theorem FinSupp.inter {X X' : ∀ i, Set (α i)}
+    (hX : FinSupp D X) (hX' : FinSupp D X') : FinSupp D (fun i => X i ∩ X' i) := by
+  obtain ⟨l, hl⟩ := hX; obtain ⟨l', hl'⟩ := hX'
+  refine ⟨l ++ l', fun i hi => ?_⟩
+  rw [List.mem_append, not_or] at hi
+  simp only [hl i hi.1, hl' i hi.2, Set.inter_self]
+
+theorem iprodNbhd_injective {X X' : ∀ i, Set (α i)} (h : iprodNbhd X = iprodNbhd X') : X = X' := by
+  funext i; apply Set.ext; intro a
+  simpa only [mem_iprodNbhd] using Set.ext_iff.mp h ⟨i, a⟩
+
+theorem iprodNbhd_inter (X X' : ∀ i, Set (α i)) :
+    iprodNbhd X ∩ iprodNbhd X' = iprodNbhd (fun i => X i ∩ X' i) := by
+  apply Set.ext; rintro ⟨i, a⟩; simp [iprodNbhd, Set.mem_inter_iff]
+
+theorem iprodNbhd_subset_iff {X X' : ∀ i, Set (α i)} :
+    iprodNbhd X ⊆ iprodNbhd X' ↔ ∀ i, X i ⊆ X' i := by
+  constructor
+  · intro h i a ha; exact h (show (⟨i, a⟩ : Σ i, α i) ∈ iprodNbhd X from ha)
+  · rintro h ⟨i, a⟩ ha; exact h i ha
+
+theorem FinSupp.master : FinSupp D (fun i => (D i).master) := ⟨[], fun _ _ => rfl⟩
+
+section IndexedProduct
+variable [Nonempty ι]
+variable (D) in
+
+def iprod : NeighborhoodSystem (Σ i, α i) where
+  mem W := ∃ X : ∀ i, Set (α i), (∀ i, (D i).mem (X i)) ∧ FinSupp D X ∧ W = iprodNbhd X
+  master := iprodNbhd (fun i => (D i).master)
+  master_nonempty := by
+    cases ‹Nonempty ι› with
+    | intro i =>
+      obtain ⟨a, ha⟩ := (D i).master_nonempty
+      exact ⟨⟨i, a⟩, ha⟩
+  master_mem := ⟨fun i => (D i).master, fun i => (D i).master_mem, FinSupp.master, rfl⟩
+  sub_master := by
+    rintro W ⟨X, hX, _, rfl⟩
+    exact iprodNbhd_subset_iff.mpr fun i => (D i).sub_master (hX i)
+  inter_mem := by
+    rintro W W' Z ⟨X, hX, hXf, rfl⟩ ⟨X', hX', hX'f, rfl⟩ ⟨ZZ, hZZ, _, rfl⟩ hsub
+    rw [iprodNbhd_inter] at hsub ⊢
+    refine ⟨fun i => X i ∩ X' i, fun i => ?_, hXf.inter hX'f, rfl⟩
+    have : ZZ i ⊆ X i ∩ X' i := iprodNbhd_subset_iff.mp hsub i
+    exact (D i).inter_mem (hX i) (hX' i) (hZZ i) this
+
+end IndexedProduct
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+def updTuple (D : ∀ i, NeighborhoodSystem (α i)) (i : ι) (U : Set (α i)) : ∀ j, Set (α j) :=
+  Function.update (fun j => (D j).master) i U
+
+end Iso
+
+end IndexedProduct
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+omit [Nonempty ι] in
+@[simp] theorem updTuple_apply_self (i : ι) (U : Set (α i)) : updTuple D i U i = U := by
+  simp [updTuple]
+
+end Iso
+
+end IndexedProduct
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+def fromPi (D : ∀ i, NeighborhoodSystem (α i)) (x : ∀ i, (D i).Element) : (iprod D).Element where
+  mem W := ∃ X : ∀ i, Set (α i), (∀ i, (x i).mem (X i)) ∧ FinSupp D X ∧ W = iprodNbhd X
+  sub := by rintro W ⟨X, hX, hXf, rfl⟩; exact ⟨X, fun i => (x i).sub (hX i), hXf, rfl⟩
+  master_mem := ⟨fun i => (D i).master, fun i => (x i).master_mem, FinSupp.master, rfl⟩
+  inter_mem := by
+    rintro W W' ⟨X, hX, hXf, rfl⟩ ⟨X', hX', hX'f, rfl⟩
+    exact ⟨fun i => X i ∩ X' i, fun i => (x i).inter_mem (hX i) (hX' i), hXf.inter hX'f,
+      iprodNbhd_inter X X'⟩
+  up_mem := by
+    rintro W W' ⟨X, hX, _, rfl⟩ hW' hsub
+    obtain ⟨X', hX'mem, hX'f, rfl⟩ := hW'
+    rw [iprodNbhd_subset_iff] at hsub
+    exact ⟨X', fun i => (x i).up_mem (hX i) (hX'mem i) (hsub i), hX'f, rfl⟩
+
+end Iso
+
+end IndexedProduct
+
+def injI (i : ι) (X : Set (α i)) : Set (Option (Σ i, α i)) :=
+  (fun a => (some ⟨i, a⟩ : Option (Σ i, α i))) '' X
+
+theorem none_not_mem_injI {i : ι} {X : Set (α i)} : (none : Option (Σ i, α i)) ∉ injI i X := by
+  rintro ⟨a, _, heq⟩; simp at heq
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+def restrictTo (D : ∀ i, NeighborhoodSystem (α i)) (l : List ι) (X : ∀ i, Set (α i)) :
+    ∀ j, Set (α j) := fun j => if j ∈ l then X j else (D j).master
+
+end Iso
+
+end IndexedProduct
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+def slice (D : ∀ i, NeighborhoodSystem (α i)) (i : ι) (U : Set (α i)) : Set (Σ i, α i) :=
+  iprodNbhd (updTuple D i U)
+
+end Iso
+
+end IndexedProduct
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+theorem iprod_mem_slice_inv {i : ι} {U : Set (α i)} (h : (iprod D).mem (slice D i U)) :
+    (D i).mem U := by
+  obtain ⟨X, hX, _, heq⟩ := h
+  have hXeq : updTuple D i U = X := iprodNbhd_injective heq
+  have hi := hX i
+  rwa [← hXeq, updTuple_apply_self] at hi
+
+end Iso
+
+end IndexedProduct
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+omit [Nonempty ι] in
+theorem slice_eq (i : ι) (U : Set (α i)) : slice D i U = iprodNbhd (updTuple D i U) := rfl
+
+end Iso
+
+end IndexedProduct
+
+@[simp] theorem some_mem_injI {i : ι} {a : α i} {X : Set (α i)} :
+    (some ⟨i, a⟩ : Option (Σ i, α i)) ∈ injI i X ↔ a ∈ X := by
+  constructor
+  · rintro ⟨b, hb, heq⟩
+    simp only [Option.some.injEq, Sigma.mk.injEq, heq_eq_eq, true_and] at heq
+    rwa [heq] at hb
+  · intro ha; exact ⟨a, ha, rfl⟩
+
+theorem index_of_some_mem_injI {i k : ι} {a : α k} {X : Set (α i)}
+    (hmem : (some ⟨k, a⟩ : Option (Σ i, α i)) ∈ injI i X) : k = i := by
+  obtain ⟨b, _, heq⟩ := hmem
+  simp only [Option.some.injEq] at heq
+  exact (congrArg Sigma.fst heq).symm
+
+theorem injI_inter_same (i : ι) (X Y : Set (α i)) : injI i X ∩ injI i Y = injI i (X ∩ Y) := by
+  apply Set.ext
+  rintro (_ | ⟨k, a⟩)
+  · constructor
+    · rintro ⟨h, _⟩; exact absurd h none_not_mem_injI
+    · intro h; exact absurd h none_not_mem_injI
+  · constructor
+    · rintro ⟨hx, hy⟩
+      obtain rfl := index_of_some_mem_injI hx
+      exact some_mem_injI.mpr ⟨some_mem_injI.mp hx, some_mem_injI.mp hy⟩
+    · intro h
+      obtain rfl := index_of_some_mem_injI h
+      have h' := some_mem_injI.mp h
+      exact ⟨some_mem_injI.mpr h'.1, some_mem_injI.mpr h'.2⟩
+
+theorem injI_subset_iff {i : ι} {X Y : Set (α i)} : injI i X ⊆ injI i Y ↔ X ⊆ Y := by
+  constructor
+  · intro h a ha; exact some_mem_injI.mp (h (some_mem_injI.mpr ha))
+  · intro h; rintro w ⟨a, ha, rfl⟩; exact ⟨a, h ha, rfl⟩
+
+def iotimes [Nonempty ι] (D : ∀ i, NeighborhoodSystem (α i)) : NeighborhoodSystem (Σ i, α i) where
+  mem W := W = iprodNbhd (fun i => (D i).master) ∨
+    ∃ X : ∀ i, Set (α i), (∀ i, (D i).mem (X i)) ∧ (∀ i, X i ≠ (D i).master) ∧
+      FinSupp D X ∧ W = iprodNbhd X
+  master := iprodNbhd (fun i => (D i).master)
+  master_nonempty := by
+    cases ‹Nonempty ι› with
+    | intro i =>
+      obtain ⟨a, ha⟩ := (D i).master_nonempty
+      exact ⟨⟨i, a⟩, ha⟩
+  master_mem := Or.inl rfl
+  sub_master := by
+    rintro W (rfl | ⟨X, hX, _, _, rfl⟩)
+    · exact subset_rfl
+    · exact iprodNbhd_subset_iff.mpr fun i => (D i).sub_master (hX i)
+  inter_mem := by
+    rintro W W' Z hW hW' hZ hsub
+    rcases hW with rfl | ⟨X, hX, hXne, hXf, rfl⟩
+    · have hW'sub : W' ⊆ iprodNbhd (fun i => (D i).master) := by
+        rcases hW' with rfl | ⟨X', hX', _, _, rfl⟩
+        · exact subset_rfl
+        · exact iprodNbhd_subset_iff.mpr fun i => (D i).sub_master (hX' i)
+      rw [Set.inter_eq_right.mpr hW'sub]; exact hW'
+    · rcases hW' with rfl | ⟨X', hX', hX'ne, hX'f, rfl⟩
+      · rw [Set.inter_eq_left.mpr (iprodNbhd_subset_iff.mpr fun i => (D i).sub_master (hX i))]
+        exact Or.inr ⟨X, hX, hXne, hXf, rfl⟩
+      · rw [iprodNbhd_inter] at hsub ⊢
+        obtain ⟨ZZ, hZZmem, rfl⟩ : ∃ ZZ, (∀ i, (D i).mem (ZZ i)) ∧ Z = iprodNbhd ZZ := by
+          rcases hZ with rfl | ⟨ZZ, hZZ, _, _, rfl⟩
+          · exact ⟨fun i => (D i).master, fun i => (D i).master_mem, rfl⟩
+          · exact ⟨ZZ, hZZ, rfl⟩
+        refine Or.inr ⟨fun i => X i ∩ X' i, fun i => ?_, fun i => ?_, ?_, rfl⟩
+        · exact (D i).inter_mem (hX i) (hX' i) (hZZmem i) (iprodNbhd_subset_iff.mp hsub i)
+        · intro heq
+          exact hXne i (Set.Subset.antisymm ((D i).sub_master (hX i))
+            (by rw [← heq]; exact Set.inter_subset_left))
+        · exact hXf.inter hX'f
+
+def sumMasterI (D : ∀ i, NeighborhoodSystem (α i)) : Set (Option (Σ i, α i)) :=
+  insert none ((fun p => (some p : Option (Σ i, α i))) '' iprodNbhd (fun i => (D i).master))
+
+theorem injI_subset_sumMasterI {i : ι} {X : Set (α i)} (hX : (D i).mem X) :
+    injI i X ⊆ sumMasterI D := by
+  rintro w ⟨a, ha, rfl⟩
+  exact Set.mem_insert_iff.mpr (Or.inr ⟨⟨i, a⟩, (D i).sub_master hX ha, rfl⟩)
+
+theorem none_mem_sumMasterI : (none : Option (Σ i, α i)) ∈ sumMasterI D := Set.mem_insert _ _
+
+def ioplus (D : ∀ i, NeighborhoodSystem (α i))
+    (hne : ∀ i, ∀ X : Set (α i), (D i).mem X → X.Nonempty) :
+    NeighborhoodSystem (Option (Σ i, α i)) where
+  mem W := W = sumMasterI D ∨ ∃ i, ∃ X : Set (α i), (D i).mem X ∧ X ≠ (D i).master ∧ W = injI i X
+  master := sumMasterI D
+  master_nonempty := ⟨none, none_mem_sumMasterI⟩
+  master_mem := Or.inl rfl
+  sub_master := by
+    rintro W (rfl | ⟨i, X, hX, _, rfl⟩)
+    · exact subset_rfl
+    · exact injI_subset_sumMasterI hX
+  inter_mem := by
+    rintro W W' Z hW hW' hZ hsub
+    rcases hW with rfl | ⟨i, X, hX, hXne, rfl⟩
+    · have hsub' : W' ⊆ sumMasterI D := by
+        rcases hW' with rfl | ⟨j, Y, hY, _, rfl⟩
+        · exact subset_rfl
+        · exact injI_subset_sumMasterI hY
+      rw [Set.inter_eq_right.mpr hsub']; exact hW'
+    · rcases hW' with rfl | ⟨j, Y, hY, hYne, rfl⟩
+      · rw [Set.inter_eq_left.mpr (injI_subset_sumMasterI hX)]
+        exact Or.inr ⟨i, X, hX, hXne, rfl⟩
+      · rcases hZ with rfl | ⟨k, Wk, hWk, _, rfl⟩
+        · exact absurd (hsub none_mem_sumMasterI).1 none_not_mem_injI
+        · obtain ⟨w, hw⟩ := hne k Wk hWk
+          have hmemZ := hsub (some_mem_injI.mpr hw)
+          obtain rfl := index_of_some_mem_injI hmemZ.1
+          obtain rfl := index_of_some_mem_injI hmemZ.2
+          rw [injI_inter_same] at hsub ⊢
+          exact Or.inr ⟨k, X ∩ Y, (D k).inter_mem hX hY hWk (injI_subset_iff.mp hsub),
+            fun heq => hXne (Set.Subset.antisymm ((D k).sub_master hX)
+              (heq ▸ Set.inter_subset_left)), rfl⟩
+
+def isum (D : ∀ i, NeighborhoodSystem (α i))
+    (hne : ∀ i, ∀ X : Set (α i), (D i).mem X → X.Nonempty) :
+    NeighborhoodSystem (Option (Σ i, α i)) where
+  mem W := W = sumMasterI D ∨ ∃ i, ∃ X : Set (α i), (D i).mem X ∧ W = injI i X
+  master := sumMasterI D
+  master_nonempty := ⟨none, none_mem_sumMasterI⟩
+  master_mem := Or.inl rfl
+  sub_master := by
+    rintro W (rfl | ⟨i, X, hX, rfl⟩)
+    · exact subset_rfl
+    · exact injI_subset_sumMasterI hX
+  inter_mem := by
+    rintro W W' Z hW hW' hZ hsub
+    rcases hW with rfl | ⟨i, X, hX, rfl⟩
+    · have hsub' : W' ⊆ sumMasterI D := by
+        rcases hW' with rfl | ⟨j, Y, hY, rfl⟩
+        · exact subset_rfl
+        · exact injI_subset_sumMasterI hY
+      rw [Set.inter_eq_right.mpr hsub']; exact hW'
+    · rcases hW' with rfl | ⟨j, Y, hY, rfl⟩
+      · rw [Set.inter_eq_left.mpr (injI_subset_sumMasterI hX)]
+        exact Or.inr ⟨i, X, hX, rfl⟩
+      ·
+        rcases hZ with rfl | ⟨k, Wk, hWk, rfl⟩
+        · exact absurd (hsub none_mem_sumMasterI).1 none_not_mem_injI
+        · obtain ⟨w, hw⟩ := hne k Wk hWk
+          have hmemZ := hsub (some_mem_injI.mpr hw)
+          obtain rfl := index_of_some_mem_injI hmemZ.1
+          obtain rfl := index_of_some_mem_injI hmemZ.2
+          rw [injI_inter_same] at hsub ⊢
+          exact Or.inr ⟨k, X ∩ Y, (D k).inter_mem hX hY hWk (injI_subset_iff.mp hsub), rfl⟩
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+omit [Nonempty ι] in
+theorem updTuple_apply_ne {i j : ι} (U : Set (α i)) (h : j ≠ i) :
+    updTuple D i U j = (D j).master := by
+  simp [updTuple, Function.update_of_ne h]
+
+end Iso
+
+end IndexedProduct
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+theorem fromPi_mem_slice (x : ∀ i, (D i).Element) (i : ι) (U : Set (α i)) :
+    (fromPi D x).mem (slice D i U) ↔ (x i).mem U := by
+  constructor
+  · rintro ⟨X, hX, _, heq⟩
+    have hXeq : updTuple D i U = X := iprodNbhd_injective heq
+    have hi := hX i
+    rwa [← hXeq, updTuple_apply_self] at hi
+  · intro hU
+    refine ⟨updTuple D i U, fun j => ?_, ⟨[i], fun j hj => ?_⟩, rfl⟩
+    · by_cases h : j = i
+      · subst h; rw [updTuple_apply_self]; exact hU
+      · rw [updTuple_apply_ne U h]; exact (x j).master_mem
+    · exact updTuple_apply_ne U fun h => hj (List.mem_singleton.mpr h)
+
+end Iso
+
+end IndexedProduct
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+omit [Nonempty ι] in
+theorem iprodNbhd_restrictTo_cons {X : ∀ i, Set (α i)} (hXsub : ∀ i, X i ⊆ (D i).master)
+    (a : ι) (l : List ι) :
+    iprodNbhd (restrictTo D (a :: l) X) = slice D a (X a) ∩ iprodNbhd (restrictTo D l X) := by
+  rw [slice_eq, iprodNbhd_inter]
+  congr 1; funext j
+  show (if j ∈ a :: l then X j else (D j).master)
+      = updTuple D a (X a) j ∩ (if j ∈ l then X j else (D j).master)
+  by_cases hja : j = a
+  · subst hja
+    rw [updTuple_apply_self]
+    by_cases hjl : j ∈ l
+    · rw [ite_eq_left List.mem_cons_self, ite_eq_left hjl, Set.inter_self]
+    · rw [ite_eq_left List.mem_cons_self, ite_eq_right hjl, Set.inter_eq_left.mpr (hXsub j)]
+  · rw [updTuple_apply_ne (X a) hja]
+    by_cases hjl : j ∈ l
+    · rw [ite_eq_left (List.mem_cons_of_mem a hjl), ite_eq_left hjl, Set.inter_eq_right.mpr (hXsub j)]
+    · rw [ite_eq_right fun h => (List.mem_cons.mp h).elim hja hjl, ite_eq_right hjl, Set.inter_self]
+
+end Iso
+
+end IndexedProduct
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+omit [Nonempty ι] in
+
+theorem iprodNbhd_subset_slice {X : ∀ i, Set (α i)} (hX : ∀ i, (D i).mem (X i)) (i : ι) :
+    iprodNbhd X ⊆ slice D i (X i) := by
+  rw [slice_eq, iprodNbhd_subset_iff]
+  intro j
+  by_cases h : j = i
+  · subst h; rw [updTuple_apply_self]
+  · rw [updTuple_apply_ne (X i) h]; exact (D j).sub_master (hX j)
+
+end Iso
+
+end IndexedProduct
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+theorem iprod_mem_slice {i : ι} {U : Set (α i)} (hU : (D i).mem U) :
+    (iprod D).mem (slice D i U) := by
+  refine ⟨updTuple D i U, fun j => ?_, ⟨[i], fun j hj => ?_⟩, rfl⟩
+  · by_cases h : j = i
+    · subst h; rw [updTuple_apply_self]; exact hU
+    · rw [updTuple_apply_ne U h]; exact (D j).master_mem
+  · exact updTuple_apply_ne U fun h => hj (List.mem_singleton.mpr h)
+
+end Iso
+
+end IndexedProduct
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+omit [Nonempty ι] in
+
+theorem slice_inter (i : ι) (U U' : Set (α i)) :
+    slice D i U ∩ slice D i U' = slice D i (U ∩ U') := by
+  rw [slice_eq, slice_eq, slice_eq, iprodNbhd_inter]
+  congr 1; funext j
+  by_cases h : j = i
+  · subst h; rw [updTuple_apply_self, updTuple_apply_self, updTuple_apply_self]
+  · rw [updTuple_apply_ne U h, updTuple_apply_ne U' h, updTuple_apply_ne (U ∩ U') h,
+      Set.inter_self]
+
+end Iso
+
+end IndexedProduct
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+omit [Nonempty ι] in
+
+theorem slice_subset (i : ι) {U U' : Set (α i)} (hUU' : U ⊆ U') : slice D i U ⊆ slice D i U' := by
+  rw [slice_eq, slice_eq, iprodNbhd_subset_iff]
+  intro j
+  by_cases h : j = i
+  · subst h; rw [updTuple_apply_self, updTuple_apply_self]; exact hUU'
+  · rw [updTuple_apply_ne U h, updTuple_apply_ne U' h]
+
+end Iso
+
+end IndexedProduct
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+def proj (z : (iprod D).Element) (i : ι) : (D i).Element where
+  mem U := (D i).mem U ∧ z.mem (slice D i U)
+  sub h := h.1
+  master_mem := ⟨(D i).master_mem, by
+    have : slice D i (D i).master = (iprod D).master := by
+      show iprodNbhd (updTuple D i (D i).master) = iprodNbhd (fun j => (D j).master)
+      congr 1; funext j
+      by_cases h : j = i
+      · subst h; rw [updTuple_apply_self]
+      · rw [updTuple_apply_ne (D i).master h]
+    rw [this]; exact z.master_mem⟩
+  inter_mem := by
+    rintro U U' ⟨_, hzU⟩ ⟨_, hzU'⟩
+    have hz := z.inter_mem hzU hzU'
+    rw [slice_inter] at hz
+    exact ⟨iprod_mem_slice_inv (z.sub hz), hz⟩
+  up_mem := by
+    rintro U U' ⟨_, hzU⟩ hU' hUU'
+    exact ⟨hU', z.up_mem hzU (iprod_mem_slice hU') (slice_subset i hUU')⟩
+
+end Iso
+
+end IndexedProduct
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+theorem proj_fromPi (x : ∀ i, (D i).Element) (i : ι) : proj (fromPi D x) i = x i := by
+  apply Element.ext
+  intro U
+  constructor
+  · rintro ⟨_, hz⟩; exact (fromPi_mem_slice x i U).mp hz
+  · intro hU; exact ⟨(x i).sub hU, (fromPi_mem_slice x i U).mpr hU⟩
+
+end Iso
+
+end IndexedProduct
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+theorem z_mem_iprodNbhd_restrictTo (z : (iprod D).Element) {X : ∀ i, Set (α i)}
+    (hXsub : ∀ i, X i ⊆ (D i).master) (hslice : ∀ i, z.mem (slice D i (X i))) (l : List ι) :
+    z.mem (iprodNbhd (restrictTo D l X)) := by
+  induction l with
+  | nil =>
+    have : restrictTo D [] X = fun j => (D j).master := by
+      funext j; rw [restrictTo]; exact ite_eq_right List.not_mem_nil
+    rw [this]; exact z.master_mem
+  | cons a l ih =>
+    rw [iprodNbhd_restrictTo_cons hXsub a l]
+    exact z.inter_mem (hslice a) ih
+
+end Iso
+
+end IndexedProduct
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+theorem z_mem_of_slices (z : (iprod D).Element) {X : ∀ i, Set (α i)}
+    (hXmem : ∀ i, (D i).mem (X i)) (hXf : FinSupp D X)
+    (hslice : ∀ i, z.mem (slice D i (X i))) : z.mem (iprodNbhd X) := by
+  obtain ⟨l, hl⟩ := hXf
+  have hsub : ∀ i, X i ⊆ (D i).master := fun i => (D i).sub_master (hXmem i)
+  have key := z_mem_iprodNbhd_restrictTo z hsub hslice l
+  have heq : restrictTo D l X = X := by
+    funext j
+    rw [restrictTo]
+    by_cases h : j ∈ l
+    · rw [ite_eq_left h]
+    · rw [ite_eq_right h]; exact (hl j h).symm
+  rwa [heq] at key
+
+end Iso
+
+end IndexedProduct
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+theorem fromPi_toPi (z : (iprod D).Element) : fromPi D (fun i => proj z i) = z := by
+  apply Element.ext
+  intro W
+  constructor
+  · rintro ⟨X, hX, hXf, rfl⟩
+    exact z_mem_of_slices z (fun i => (hX i).1) hXf (fun i => (hX i).2)
+  · intro hW
+    obtain ⟨X, hXmem, hXf, rfl⟩ := z.sub hW
+    exact ⟨X, fun i => ⟨hXmem i, z.up_mem hW (iprod_mem_slice (hXmem i))
+      (iprodNbhd_subset_slice hXmem i)⟩, hXf, rfl⟩
+
+end Iso
+
+end IndexedProduct
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+section Iso
+
+variable [DecidableEq ι]
+
+def iprodEquiv (D : ∀ i, NeighborhoodSystem (α i)) :
+    (iprod D).Element ≃o (∀ i, (D i).Element) where
+  toFun z := fun i => proj z i
+  invFun x := fromPi D x
+  left_inv z := fromPi_toPi z
+  right_inv x := funext fun i => proj_fromPi x i
+  map_rel_iff' := by
+    intro z z'
+    constructor
+    · intro h W hzW
+      obtain ⟨X, hXmem, hXf, rfl⟩ := z.sub hzW
+      refine z_mem_of_slices z' hXmem hXf fun i => ?_
+      have hzi : (proj z i).mem (X i) :=
+        ⟨hXmem i, z.up_mem hzW (iprod_mem_slice (hXmem i)) (iprodNbhd_subset_slice hXmem i)⟩
+      exact ((h i) (X i) hzi).2
+    · intro h i U hU
+      exact ⟨hU.1, h _ hU.2⟩
+
+end Iso
+
+end IndexedProduct
+
+theorem injI_inter_ne {i j : ι} (h : i ≠ j) (X : Set (α i)) (Y : Set (α j)) :
+    injI i X ∩ injI j Y = ∅ := by
+  apply Set.eq_empty_iff_forall_notMem.mpr
+  rintro (_ | ⟨k, a⟩) ⟨hw1, hw2⟩
+  · exact none_not_mem_injI hw1
+  · exact h ((index_of_some_mem_injI hw1).symm.trans (index_of_some_mem_injI hw2))
+
+theorem injI_nonempty {i : ι} {X : Set (α i)} (hX : X.Nonempty) : (injI i X).Nonempty := by
+  obtain ⟨a, ha⟩ := hX; exact ⟨some ⟨i, a⟩, some_mem_injI.mpr ha⟩
+
+theorem iotimes_only_master [Infinite ι] (D : ∀ i, NeighborhoodSystem (α i)) :
+    ∀ W, (iotimes D).mem W → W = (iotimes D).master := by
+  rintro W (rfl | ⟨X, _, hXne, ⟨l, hl⟩, rfl⟩)
+  · rfl
+  ·
+
+    refine absurd ((List.finite_toSet l).subset (fun i _ => ?_)) Set.infinite_univ
+    exact not_not.mp fun hni => hXne i (hl i hni)
+
+theorem iotimes_subsingleton [Infinite ι] (D : ∀ i, NeighborhoodSystem (α i)) :
+    Subsingleton (iotimes D).Element := by
+  refine ⟨fun x y => ?_⟩
+  apply Element.ext
+  intro W
+  constructor
+  · intro hx; rw [iotimes_only_master D W (x.sub hx)]; exact y.master_mem
+  · intro hy; rw [iotimes_only_master D W (y.sub hy)]; exact x.master_mem
+
+section IndexedProduct
+
+variable [Nonempty ι]
+
+theorem iprod_mem_iprodNbhd {X : ∀ i, Set (α i)} (hX : ∀ i, (D i).mem (X i))
+    (hXf : FinSupp D X) : (iprod D).mem (iprodNbhd X) :=
+  ⟨X, hX, hXf, rfl⟩
+
+end IndexedProduct
+
+theorem isum_summand_unique {hne : ∀ i, ∀ X : Set (α i), (D i).mem X → X.Nonempty}
+    (z : (isum D hne).Element) {i j : ι} {X : Set (α i)} {Y : Set (α j)}
+    (hX : z.mem (injI i X)) (hY : z.mem (injI j Y)) : i = j := by
+
+  have hz := z.inter_mem hX hY
+  rcases z.sub hz with h0 | ⟨k, W, hWmem, hWeq⟩
+  · rw [Set.ext_iff] at h0
+    exact absurd ((h0 none).mpr none_mem_sumMasterI).1 none_not_mem_injI
+  · obtain ⟨w, hw⟩ := hne k W hWmem
+    rw [Set.ext_iff] at hWeq
+    have hmem := (hWeq (some ⟨k, w⟩)).mpr (some_mem_injI.mpr hw)
+    obtain rfl := index_of_some_mem_injI hmem.1
+    obtain rfl := index_of_some_mem_injI hmem.2
+    rfl
+
+theorem isum_trichotomy {hne : ∀ i, ∀ X : Set (α i), (D i).mem X → X.Nonempty}
+    (z : (isum D hne).Element) :
+    (∃ i, ∃ X : Set (α i), (D i).mem X ∧ z.mem (injI i X)) ∨
+      (∀ W, z.mem W → W = (isum D hne).master) := by
+  by_cases h : ∃ i, ∃ X : Set (α i), (D i).mem X ∧ z.mem (injI i X)
+  · exact Or.inl h
+  · refine Or.inr fun W hW => ?_
+    rcases z.sub hW with rfl | ⟨i, X, hX, rfl⟩
+    · rfl
+    · exact absurd ⟨i, X, hX, hW⟩ h
+
+end Exercise629
+end
+
+end DomainTheory.NeighbourhoodSystems

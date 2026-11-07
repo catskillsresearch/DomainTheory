@@ -1,0 +1,13 @@
+Uniqueness and isomorphism of initial algebras (Proposition 6.6 library).
+
+**Theorem (`comp_desc_eq_id`).** Composing the two canonical homomorphisms between initial algebras in opposite directions yields the identity.
+
+*Proof.* Both composites and the identity are homomorphisms into an initial algebra; uniqueness forces agreement. ∎
+
+**Definition (`initialIso`).** For initial algebras, the forward and backward canonical homomorphisms assemble an isomorphism of carriers.
+
+*Proof.* The inverse laws reduce to the round-trip identities from the previous lemma. ∎
+
+**Theorem (`iso_hom_unique`).** Every homomorphism from an initial algebra equals the canonical one.
+
+*Proof.* By initiality. ∎

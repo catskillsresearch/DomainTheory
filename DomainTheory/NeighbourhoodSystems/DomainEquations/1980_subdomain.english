@@ -1,0 +1,29 @@
+Definition 6.10 library: the subdomain relation $\triangleleft$ on neighbourhood systems over a common token set.
+
+**Definition (`Subsystem`).** $D \triangleleft E$ means $D$ and $E$ share the same master set, every neighbourhood of $D$ belongs to $E$, and whenever $X,Y \in D$ with $X \cap Y \in E$, then $X \cap Y \in D$.
+
+*Proof.* This is the intended mathematical content of Scott's clause (ii) together with $D \subseteq E$. ∎
+
+**Definition (`◁`).** Infix notation for the subdomain proposition `Subsystem D E`.
+
+*Proof.* Notation only. ∎
+
+**Theorem (`NeighborhoodSystem.ext`).** Two systems agreeing on membership and master are equal.
+
+*Proof.* Extensionality on the membership field and the master token. ∎
+
+**Theorem (`Subsystem.antisymm`).** Mutual subdomain forces equality of systems.
+
+*Proof.* Compare memberships via each inclusion map and identify masters. ∎
+
+**Theorem (`Subsystem.refl`).** Every system is a subdomain of itself.
+
+*Proof.* Reflexivity of inclusion and intersection closure. ∎
+
+**Theorem (`Subsystem.trans`).** Subdomain is transitive.
+
+*Proof.* Chain master equalities and neighbourhood inclusions; intersection closure passes along the chain. ∎
+
+**Theorem (`Subsystem.subsystem_iff_subset_of_common`).** For two subdomains of a common superdomain, subdomain order coincides with neighbourhood inclusion.
+
+*Proof.* One direction is the subdomain map; the converse builds the intersection-closure clause from shared context. ∎

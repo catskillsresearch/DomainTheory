@@ -1,226 +1,15 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.supChain
-
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition_6_7
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem_6_9
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.minimalInitial
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.strictDomainObj
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.seqNegMerge
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.smashProduct
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
-section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
-universe w
 
-theorem trianglelefteq_of_isInitial
-    (T : Endofunctor DomainObj.{w}) (hT : ContinuousOnMaps T)
-    (Dalg : TAlgebra T) (hinit : IsInitial Dalg)
-    (E : DomainObj.{w}) (isoE : Iso (T.obj E) E) :
-    Dalg.carrier.sys ⊴ E.sys := by
-
-  let isoD : Iso (T.obj Dalg.carrier) Dalg.carrier := lambek Dalg hinit
-
-  have hi : IsStrict isoD.hom := isStrict_of_comp_eq_id isoD.inv_hom_id
-  have hj : IsStrict isoD.inv := isStrict_of_comp_eq_id isoD.hom_inv_id
-  have hu : IsStrict isoE.hom := isStrict_of_comp_eq_id isoE.inv_hom_id
-  have hv : IsStrict isoE.inv := isStrict_of_comp_eq_id isoE.hom_inv_id
-
-  have hji : isoD.inv.comp isoD.hom = idMap (T.obj Dalg.carrier).sys := isoD.hom_inv_id
-  have hvu : isoE.inv.comp isoE.hom = idMap (T.obj E).sys := isoE.hom_inv_id
-  have huv : isoE.hom.comp isoE.inv = idMap E.sys := isoE.inv_hom_id
-
-  obtain ⟨ΦDE, hΦDE⟩ := hT Dalg.carrier E
-  obtain ⟨ΦED, hΦED⟩ := hT E Dalg.carrier
-  obtain ⟨ΦEE, hΦEE⟩ := hT E E
-
-  let Oph := (homOp T Dalg.carrier E isoD.inv isoE.hom hj hu).comp ΦDE
-  let Opg := (homOp T E Dalg.carrier isoE.inv isoD.hom hv hi).comp ΦED
-  let Opk := (homOp T E E isoE.inv isoE.hom hv hu).comp ΦEE
-
-  let H : ℕ → ApproximableMap Dalg.carrier.sys E.sys := fun n => (toStrictMap (Oph.iterElem n)).1
-  let G : ℕ → ApproximableMap E.sys Dalg.carrier.sys := fun n => (toStrictMap (Opg.iterElem n)).1
-  let K : ℕ → ApproximableMap E.sys E.sys := fun n => (toStrictMap (Opk.iterElem n)).1
-
-  have iterElem_zero : ∀ {γ : Type w} {V : NeighborhoodSystem γ} (f : ApproximableMap V V),
-      f.iterElem 0 = V.bot := by
-    intro γ V f
-    show (f.iterMap 0).toElementMap V.bot = V.bot
-    rw [iterMap_zero, toElementMap_idMap]
-
-  have H_succ : ∀ n, H (n + 1)
-      = isoE.hom.comp ((T.map (X := Dalg.carrier) (Y := E) (H n)).comp isoD.inv) := by
-    intro n
-    show (toStrictMap (Oph.iterElem (n + 1))).1 = _
-    rw [iterElem_succ]
-    exact opStep T Dalg.carrier E isoD.inv isoE.hom hj hu ΦDE hΦDE (Oph.iterElem n)
-  have G_succ : ∀ n, G (n + 1)
-      = isoD.hom.comp ((T.map (X := E) (Y := Dalg.carrier) (G n)).comp isoE.inv) := by
-    intro n
-    show (toStrictMap (Opg.iterElem (n + 1))).1 = _
-    rw [iterElem_succ]
-    exact opStep T E Dalg.carrier isoE.inv isoD.hom hv hi ΦED hΦED (Opg.iterElem n)
-  have K_succ : ∀ n, K (n + 1)
-      = isoE.hom.comp ((T.map (X := E) (Y := E) (K n)).comp isoE.inv) := by
-    intro n
-    show (toStrictMap (Opk.iterElem (n + 1))).1 = _
-    rw [iterElem_succ]
-    exact opStep T E E isoE.inv isoE.hom hv hu ΦEE hΦEE (Opk.iterElem n)
-
-  have H_mono : ∀ {n m : ℕ}, n ≤ m → H n ≤ H m := fun hnm =>
-    toStrictMap_mono (iterElem_mono Oph hnm)
-  have G_mono : ∀ {n m : ℕ}, n ≤ m → G n ≤ G m := fun hnm =>
-    toStrictMap_mono (iterElem_mono Opg hnm)
-
-  have key : ∀ (a : ApproximableMap (T.obj Dalg.carrier).sys (T.obj E).sys)
-      (b : ApproximableMap (T.obj E).sys (T.obj Dalg.carrier).sys),
-      (isoE.hom.comp (a.comp isoD.inv)).comp (isoD.hom.comp (b.comp isoE.inv))
-        = isoE.hom.comp ((a.comp b).comp isoE.inv) := by
-    intro a b
-    rw [comp_assoc isoE.hom (a.comp isoD.inv) (isoD.hom.comp (b.comp isoE.inv)),
-        comp_assoc a isoD.inv (isoD.hom.comp (b.comp isoE.inv)),
-        ← comp_assoc isoD.inv isoD.hom (b.comp isoE.inv), hji, idMap_comp,
-        ← comp_assoc a b isoE.inv]
-
-  have hTcomp : ∀ (p : ApproximableMap Dalg.carrier.sys E.sys)
-      (q : ApproximableMap E.sys Dalg.carrier.sys),
-      (T.map (X := Dalg.carrier) (Y := E) p).comp (T.map (X := E) (Y := Dalg.carrier) q)
-        = T.map (X := E) (Y := E) (p.comp q) :=
-    fun p q => (T.map_comp (X := E) (Y := Dalg.carrier) (Z := E) p q).symm
-
-  have ladder : ∀ n, (H n).comp (G n) = K n := by
-    intro n
-    induction n with
-    | zero =>
-      apply ApproximableMap.ext
-      intro X Z
-      have hH0 : ∀ {P Q}, (H 0).rel P Q ↔ Dalg.carrier.sys.mem P ∧ Q = E.sys.master := by
-        intro P Q
-        show (toStrictMap (Oph.iterElem 0)).1.rel P Q ↔ _
-        rw [iterElem_zero]; exact botStrict_rel
-      have hG0 : ∀ {P Q}, (G 0).rel P Q ↔ E.sys.mem P ∧ Q = Dalg.carrier.sys.master := by
-        intro P Q
-        show (toStrictMap (Opg.iterElem 0)).1.rel P Q ↔ _
-        rw [iterElem_zero]; exact botStrict_rel
-      have hK0 : ∀ {P Q}, (K 0).rel P Q ↔ E.sys.mem P ∧ Q = E.sys.master := by
-        intro P Q
-        show (toStrictMap (Opk.iterElem 0)).1.rel P Q ↔ _
-        rw [iterElem_zero]; exact botStrict_rel
-      constructor
-      · rintro ⟨Y, hG, hHr⟩
-        rw [hG0] at hG; rw [hH0] at hHr
-        obtain ⟨hEX, rfl⟩ := hG
-        obtain ⟨_, rfl⟩ := hHr
-        rw [hK0]; exact ⟨hEX, rfl⟩
-      · intro hK
-        rw [hK0] at hK
-        obtain ⟨hEX, rfl⟩ := hK
-        exact ⟨Dalg.carrier.sys.master,
-          (hG0).mpr ⟨hEX, rfl⟩, (hH0).mpr ⟨Dalg.carrier.sys.master_mem, rfl⟩⟩
-    | succ n ih =>
-      rw [H_succ n, G_succ n, key, K_succ n, hTcomp (H n) (G n), ih]
-
-  let hh := (toStrictMap Oph.fixElement).1
-  let gg := (toStrictMap Opg.fixElement).1
-  let kk := (toStrictMap Opk.fixElement).1
-  have H_fix_rel : ∀ X Y, hh.rel X Y ↔ ∃ n, (H n).rel X Y := by
-    intro X Y
-    show (toStrictMap Oph.fixElement).1.rel X Y ↔ _
-    rw [toStrictMap_rel, Oph.fixElement_eq_iSupDirected, NeighborhoodSystem.mem_iSupDirected]
-    constructor
-    · rintro ⟨n, hn⟩; exact ⟨n, hn⟩
-    · rintro ⟨n, hn⟩; exact ⟨n, hn⟩
-  have G_fix_rel : ∀ X Y, gg.rel X Y ↔ ∃ n, (G n).rel X Y := by
-    intro X Y
-    show (toStrictMap Opg.fixElement).1.rel X Y ↔ _
-    rw [toStrictMap_rel, Opg.fixElement_eq_iSupDirected, NeighborhoodSystem.mem_iSupDirected]
-    constructor
-    · rintro ⟨n, hn⟩; exact ⟨n, hn⟩
-    · rintro ⟨n, hn⟩; exact ⟨n, hn⟩
-  have K_fix_rel : ∀ X Y, kk.rel X Y ↔ ∃ n, (K n).rel X Y := by
-    intro X Y
-    show (toStrictMap Opk.fixElement).1.rel X Y ↔ _
-    rw [toStrictMap_rel, Opk.fixElement_eq_iSupDirected, NeighborhoodSystem.mem_iSupDirected]
-    constructor
-    · rintro ⟨n, hn⟩; exact ⟨n, hn⟩
-    · rintro ⟨n, hn⟩; exact ⟨n, hn⟩
-
-  have hgk : hh.comp gg = kk := by
-    apply ApproximableMap.ext
-    intro X Z
-    constructor
-    · rintro ⟨Y, hgXY, hhYZ⟩
-      rw [G_fix_rel] at hgXY
-      rw [H_fix_rel] at hhYZ
-      obtain ⟨m, hm⟩ := hgXY
-      obtain ⟨n, hn⟩ := hhYZ
-      rw [K_fix_rel]
-      refine ⟨max m n, ?_⟩
-      rw [← ladder (max m n)]
-      exact ⟨Y, G_mono (le_max_left m n) X Y hm, H_mono (le_max_right m n) Y Z hn⟩
-    · intro hk
-      rw [K_fix_rel] at hk
-      obtain ⟨p, hp⟩ := hk
-      rw [← ladder p] at hp
-      obtain ⟨Y, hG, hHr⟩ := hp
-      exact ⟨Y, (G_fix_rel X Y).mpr ⟨p, hG⟩, (H_fix_rel Y Z).mpr ⟨p, hHr⟩⟩
-
-  have hk_le : kk ≤ idMap E.sys := by
-    have hstepeq : (toStrictMap (Opk.toElementMap
-        (toStrictFilter (⟨idMap E.sys, isStrict_idMap⟩ : StrictMap E.sys E.sys)))).1
-          = idMap E.sys := by
-      have hs := opStep T E E isoE.inv isoE.hom hv hu ΦEE hΦEE
-        (toStrictFilter (⟨idMap E.sys, isStrict_idMap⟩ : StrictMap E.sys E.sys))
-      have hmapid : T.map (X := E) (Y := E) (idMap E.sys) = idMap (T.obj E).sys := T.map_id E
-      rw [hs, show (toStrictMap (toStrictFilter
-          (⟨idMap E.sys, isStrict_idMap⟩ : StrictMap E.sys E.sys))).1 = idMap E.sys from
-          congrArg Subtype.val (toStrictMap_toStrictFilter _),
-        hmapid, idMap_comp, huv]
-    have hfp : Opk.toElementMap (toStrictFilter (⟨idMap E.sys, isStrict_idMap⟩ : StrictMap E.sys E.sys))
-        = toStrictFilter (⟨idMap E.sys, isStrict_idMap⟩ : StrictMap E.sys E.sys) := by
-      calc Opk.toElementMap (toStrictFilter ⟨idMap E.sys, isStrict_idMap⟩)
-          = toStrictFilter (toStrictMap (Opk.toElementMap
-              (toStrictFilter ⟨idMap E.sys, isStrict_idMap⟩))) :=
-            (toStrictFilter_toStrictMap _).symm
-        _ = toStrictFilter (⟨idMap E.sys, isStrict_idMap⟩ : StrictMap E.sys E.sys) := by
-            congr 1
-            apply Subtype.ext
-            rw [hstepeq]
-        _ = toStrictFilter ⟨idMap E.sys, isStrict_idMap⟩ := rfl
-    have hle : Opk.fixElement ≤ toStrictFilter (⟨idMap E.sys, isStrict_idMap⟩ : StrictMap E.sys E.sys) :=
-      fixElement_le_of_toElementMap_le Opk (le_of_eq hfp)
-    have hmono := toStrictMap_mono hle
-    show (toStrictMap Opk.fixElement).1 ≤ idMap E.sys
-    refine le_of_le_of_eq hmono ?_
-    exact congrArg Subtype.val (toStrictMap_toStrictFilter _)
-
-  let Balg : TAlgebra T := ⟨E, isoE.hom⟩
-  have h_fixeq : hh = isoE.hom.comp ((T.map (X := Dalg.carrier) (Y := E) hh).comp isoD.inv) := by
-    have hs := opStep T Dalg.carrier E isoD.inv isoE.hom hj hu ΦDE hΦDE Oph.fixElement
-    rw [toElementMap_fixElement] at hs
-    exact hs
-  have h_comm : hh.comp isoD.hom = isoE.hom.comp (T.map (X := Dalg.carrier) (Y := E) hh) := by
-    conv_lhs => rw [h_fixeq]
-    rw [comp_assoc, comp_assoc, hji, comp_idMap]
-  let h_alg : AlgHom Dalg Balg := { hom := hh, comm := h_comm }
-  have g_fixeq : gg = isoD.hom.comp ((T.map (X := E) (Y := Dalg.carrier) gg).comp isoE.inv) := by
-    have hs := opStep T E Dalg.carrier isoE.inv isoD.hom hv hi ΦED hΦED Opg.fixElement
-    rw [toElementMap_fixElement] at hs
-    exact hs
-  have g_comm : gg.comp isoE.hom = isoD.hom.comp (T.map (X := E) (Y := Dalg.carrier) gg) := by
-    conv_lhs => rw [g_fixeq]
-    rw [comp_assoc, comp_assoc, hvu, comp_idMap]
-  let g_alg : AlgHom Balg Dalg := { hom := gg, comm := g_comm }
-
-  have hgh_id : gg.comp hh = idMap Dalg.carrier.sys := by
-    have huniq : g_alg.comp h_alg = AlgHom.id Dalg := by
-      rw [hinit.uniq Dalg (g_alg.comp h_alg), hinit.uniq Dalg (AlgHom.id Dalg)]
-    exact congrArg AlgHom.hom huniq
-
-  exact trianglelefteq_of_projectionPair hh gg hgh_id (le_of_eq_of_le hgk hk_le)
-end
-
-section
 universe w
 
 /-- Scott's Theorem 6.16: the initial algebra embeds in any carrier with a coalgebra isomorphism. -/
@@ -229,10 +18,17 @@ theorem theorem_616 (T : Endofunctor DomainObj.{w}) (hT : ContinuousOnMaps T) (D
     Dalg.carrier.sys ⊴ E.sys :=
   trianglelefteq_of_isInitial T hT Dalg hinit E isoE
 
-end
+open Example62C
 
-section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
+theorem sum3_nonempty {α β γ : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
+    {V₂ : NeighborhoodSystem γ} {h₀ : ∀ X, V₀.mem X → X.Nonempty}
+    {h₁ : ∀ Y, V₁.mem Y → Y.Nonempty} {h₂ : ∀ Z, V₂.mem Z → Z.Nonempty} :
+    ∀ W, (sum3 V₀ V₁ V₂ h₀ h₁ h₂).mem W → W.Nonempty := by
+  rintro W (rfl | ⟨X, hX, rfl⟩ | ⟨Y, hY, rfl⟩ | ⟨Z, hZ, rfl⟩)
+  · exact ⟨none, none_mem_master3⟩
+  · exact j0_nonempty (h₀ X hX)
+  · exact j1_nonempty (h₁ Y hY)
+  · exact j2_nonempty (h₂ Z hZ)
 
 abbrev tcObj (D : StrictDomainObj.{w}) : StrictDomainObj.{w} where
   carrier := Option (Unit ⊕ D.carrier ⊕ D.carrier)
@@ -739,6 +535,4 @@ def tcMapHom {D E : StrictDomainObj.{w}} (f : (D ⟶ E)) :
       (h₀' := Example62C.unitSys_nonempty) (h₁' := E.nonempty) (h₂' := E.nonempty)
       (idMap unitSys) f.1 f.1, isStrict_sumMap3 _ _ _⟩
 
-end
 end DomainTheory.NeighbourhoodSystems
-end

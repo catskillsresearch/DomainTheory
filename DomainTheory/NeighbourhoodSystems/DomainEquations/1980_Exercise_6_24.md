@@ -1,6 +1,8 @@
 # Exercise 6.24
 **[NeighbourhoodSystems/DomainEquations/Exercise_6_24.lean](Exercise_6_24.lean)**
 
+@import "recDomainEq.lean" {code_block=false}
+
 @import "Exercise_6_24.lean"
 
 **EXERCISE 6.24.** Show that there must exist domains satisfying:

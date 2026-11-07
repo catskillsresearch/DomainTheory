@@ -1,0 +1,17 @@
+Lambek's lemma: the structure map of an initial algebra is an isomorphism (Proposition 6.7 library).
+
+**Definition (`tStr`).** Applying the functor to an algebra yields the algebra with carrier and structure map given by functorial action.
+
+*Proof.* By definition. ∎
+
+**Definition (`strHom`).** The structure map is a homomorphism from the algebra obtained by functorial rearrangement.
+
+*Proof.* The commutativity square holds by reflexivity. ∎
+
+**Theorem (`str_comp_desc`).** Composing the structure map with the canonical descent homomorphism yields the identity on the carrier.
+
+*Proof.* Both sides are homomorphisms into an initial algebra; uniqueness identifies them. ∎
+
+**Definition (`lambek`).** The structure map and its descent inverse form an isomorphism between the functor image of the carrier and the carrier itself.
+
+*Proof.* One inverse law is the preceding theorem; the other uses the homomorphism square and functoriality. ∎

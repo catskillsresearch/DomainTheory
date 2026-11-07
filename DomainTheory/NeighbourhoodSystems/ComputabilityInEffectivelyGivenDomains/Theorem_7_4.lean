@@ -8,7 +8,7 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 section
 variable {α β γ α' β' : Type*}
@@ -907,7 +907,7 @@ theorem prodMap_isComputable {V₀' : NeighborhoodSystem α'} {V₁' : Neighborh
 end
 
 section
-open NeighborhoodSystem Domain.Recursive ApproximableMap Example61
+open NeighborhoodSystem Domain.Recursive ApproximableMap IndefProduct
 
 /-- Scott's Theorem 7.4: effective givenness and computability for sum and product. -/
 theorem theorem_74 :

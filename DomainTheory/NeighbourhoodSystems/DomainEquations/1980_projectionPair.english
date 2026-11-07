@@ -1,0 +1,33 @@
+Proposition 6.12 library: injection and projection maps for a subdomain.
+
+**Definition (`ProjectionPair`).** A pair of approximable maps with $j \circ i = I_D$ and $i \circ j \subseteq I_E$.
+
+*Proof.* Structure recording the laws. ∎
+
+**Definition (`Subsystem.inj`).** Relation $X\,i\,Y \leftrightarrow X \in D \land Y \in E \land X \subseteq Y$.
+
+*Proof.* Standard approximable-map axioms; intersection uses subdomain inclusion into $E$. ∎
+
+**Theorem (`Subsystem.inj_rel`).** Unfolding lemma for the injection relation.
+
+*Proof.* Definition. ∎
+
+**Definition (`Subsystem.proj`).** Relation $Y\,j\,X \leftrightarrow Y \in E \land X \in D \land Y \subseteq X$; intersection output uses subdomain consistency.
+
+*Proof.* Approximable-map axioms with `inter_closed` on $D$. ∎
+
+**Theorem (`Subsystem.proj_rel`).** Unfolding lemma for the projection relation.
+
+*Proof.* Definition. ∎
+
+**Theorem (`Subsystem.inj_comp_proj_le`).** $i \circ j \subseteq I_E$.
+
+*Proof.* A round trip through a common $D$-neighbourhood refines $Y \subseteq Y'$ on $E$. ∎
+
+**Theorem (`Subsystem.proj_comp_inj`).** $j \circ i = I_D$.
+
+*Proof.* Relational extensionality; round trips collapse to $\subseteq$ on $D$. ∎
+
+**Definition (`Subsystem.projectionPair`).** Bundle the maps and laws for $D \triangleleft E$.
+
+*Proof.* Fields filled from `inj`, `proj`, and the two composition laws. ∎

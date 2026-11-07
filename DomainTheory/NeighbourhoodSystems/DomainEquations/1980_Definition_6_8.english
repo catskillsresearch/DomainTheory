@@ -1,0 +1,15 @@
+**DEFINITION 6.8.** On the category of domains and strict approximable maps a functor $T$ is *continuous on maps* if for any systems $D$ and $E$ the induced mapping
+
+$$
+\lambda f.\, T(f) : (D \to_\bot E) \to (T(D) \to_\bot T(E))
+$$
+
+is approximable.
+
+The [continuous on maps](1980_continuousOnMaps.md) peer records the library names.
+
+<!-- formalization -->
+
+**Theorem (`definition_68`).** A functor is continuous on maps exactly when, for all domains $D$ and $E$, the induced map on strict approximable functions is approximable with action $T(f)$.
+
+*Proof.* This is the definition packaged as a biconditional. ∎

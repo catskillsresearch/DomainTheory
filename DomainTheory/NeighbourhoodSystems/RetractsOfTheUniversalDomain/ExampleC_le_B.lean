@@ -1,14 +1,15 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_17
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition_6_12
-public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_29
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.projPairSubdomain
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.Example_6_2
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot_le
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NestedOrDisjoint
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
+import Mathlib.Tactic.Ring
 
 @[expose] public section
 

@@ -1,4 +1,6 @@
 # Definition 6.13
+@import "1980_continuousOnDomains.md"
+
 **[NeighbourhoodSystems/DomainEquations/Definition_6_13.lean](Definition_6_13.lean)**
 
 @import "Definition_6_13.lean"

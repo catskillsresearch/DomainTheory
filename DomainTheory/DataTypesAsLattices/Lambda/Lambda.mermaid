@@ -4,7 +4,6 @@
 flowchart TB
 
   N21["abs"]
-  N1["Comb"]
   N6["condC"]
   condC_more["condC_more"]
   N5["condSet"]
@@ -14,34 +13,17 @@ flowchart TB
   N23["curry3"]
   N24["curryFin"]
   N25["dcondSet"]
-  dcondSet_more["dcondSet_more"]
   N109["diagApp_isScottContinuous"]
-  N49["dollarC"]
-  N54["dollarStep"]
-  N53["dollarStepBody"]
-  N26["dollarStepTerm"]
-  N78["e_one"]
+  distributive_functions["distributive_functions"]
   Enumeration["Enumeration"]
-  N27["envSet"]
-  N81["eq_2_10"]
   N82["eq_2_11"]
-  N84["eq_2_12"]
   N85["eq_2_13"]
   N148["eq_2_14"]
   N151["eq_2_15"]
   N86["eq_2_16"]
   N191["eq_2_17"]
   N241["eq_2_18"]
-  N171["eq_2_22"]
-  N164["eq_2_23_ge"]
-  N166["eq_2_23_one"]
-  N168["eq_2_23_zero"]
-  N195["eq_2_24"]
-  N177["eq_2_25"]
-  N178["eq_2_27"]
   N93["eq_2_28"]
-  N94["eq_2_5"]
-  N95["eq_2_6"]
   N96["eq_2_7_bot"]
   N97["eq_2_7_mix"]
   N98["eq_2_7_pos"]
@@ -49,8 +31,7 @@ flowchart TB
   N100["eq_2_7_zero"]
   N101["eq_2_9"]
   N28["erase"]
-  N103["exists_least_mem"]
-  N104["exists_least_not_mem"]
+  eta2["eta2"]
   Extend["Extend"]
   N133["fix_param_isScottContinuous"]
   FixedPoint["FixedPoint"]
@@ -58,115 +39,65 @@ flowchart TB
   N15["FUN"]
   Graph["Graph"]
   N112["graph_const_isScottContinuous"]
+  graph_model["graph_model"]
   N127["id_isScottContinuous"]
   N30["interC"]
   N31["interp"]
   N29["interStep"]
   N13["IsCombinatory"]
   N132["iterateBot_param_isScottContinuous"]
-  N2["Kcomb"]
   Kcomb_more["Kcomb_more"]
-  N14["mem_ofNat"]
-  N136["mem_seqFunLt"]
+  Language["Language"]
   N34["nestApplyFin"]
   N35["ofComb"]
-  N7["ofNat"]
   ofNat_more["ofNat_more"]
   N147["omega_first_recursion"]
   N36["omegaComb"]
-  N240["pair_eq_right"]
-  N149["pair_one_zero"]
-  N150["pair_zero_zero"]
   Pomega["Pomega"]
-  N9["predC"]
   predC_more["predC_more"]
-  N8["predSet"]
   predSet_more["predSet_more"]
-  N41["primRecHat"]
-  N38["primRecStep"]
-  N39["primRecStepTerm"]
-  N40["primRecVal"]
-  N43["rename"]
+  primitive_recursion["primitive_recursion"]
+  Retracts["Retracts"]
   N3["Scomb"]
   Scomb_more["Scomb_more"]
   N18["ScottContinuousFin"]
-  N46["seq2"]
-  N47["seqCons"]
-  N48["seqFun"]
-  seqFun_more["seqFun_more"]
-  N51["seqFunLt"]
-  seqFunLt_more["seqFunLt_more"]
-  N52["seqShift"]
-  seqShift_more["seqShift_more"]
+  sequences["sequences"]
   N130["SKK_eq_I"]
-  N11["sucC"]
   sucC_more["sucC_more"]
-  N10["succSet"]
   succSet_more["succSet_more"]
-  N4["Term"]
-  N58["termDollarStep"]
-  N57["termDollarStepBody"]
-  N56["termShift"]
   N220["theorem_2_1"]
   N226["theorem_2_2"]
   N227["theorem_2_3"]
   N231["theorem_2_4"]
   N235["theorem_2_5"]
   N59["topRec"]
-  N239["triangle_eq_zero"]
   N242["union_via_cond"]
-  N243["xi_star"]
   N37["Ycomb"]
-  Ycomb_more["Ycomb_more"]
   N19["Ymap"]
-  N20["Yterm"]
-  N12["zeroC"]
 
   Continuous -->|"2"| Extend
-  N14 -->|"1"| Extend
-  N7 -->|"1"| Extend
-  Pomega -->|"1"| Extend
-  Graph -->|"4"| Kcomb_more
+  Language -->|"1"| Extend
+  Graph -->|"3"| Kcomb_more
+  Language -->|"1"| Kcomb_more
   N112 -->|"1"| Kcomb_more
   N127 -->|"1"| Kcomb_more
-  N2 -->|"1"| Kcomb_more
   N64 -->|"1"| Kcomb_more
-  Pomega -->|"1"| Kcomb_more
-  Pomega -->|"1"| N10
-  N14 -->|"1"| N100
+  Retracts -->|"1"| Kcomb_more
+  Graph -->|"1"| Language
   N5 -->|"1"| N100
-  N7 -->|"1"| N100
   Pomega -->|"1"| N100
   Graph -->|"1"| N101
   Pomega -->|"1"| N101
-  Pomega -->|"1"| N103
-  Pomega -->|"1"| N104
-  Continuous -->|"2"| N109
+  Continuous -->|"1"| N109
   FixedPoint -->|"1"| N109
-  Graph -->|"2"| N109
+  Graph -->|"1"| N109
   Pomega -->|"1"| N109
-  Graph -->|"1"| N11
-  N10 -->|"1"| N11
-  Pomega -->|"1"| N11
-  Continuous -->|"3"| N112
+  Continuous -->|"2"| N112
   Graph -->|"1"| N112
-  Pomega -->|"1"| N112
-  N7 -->|"1"| N12
-  Pomega -->|"1"| N12
   Continuous -->|"2"| N127
-  Pomega -->|"1"| N127
-  Graph -->|"1"| N13
-  N11 -->|"1"| N13
-  N12 -->|"1"| N13
-  N2 -->|"1"| N13
   N3 -->|"1"| N13
   N6 -->|"1"| N13
-  N9 -->|"1"| N13
-  Pomega -->|"1"| N13
-  Graph -->|"2"| N130
   Kcomb_more -->|"1"| N130
-  N2 -->|"1"| N130
-  N3 -->|"1"| N130
   Scomb_more -->|"1"| N130
   Continuous -->|"1"| N132
   FixedPoint -->|"2"| N132
@@ -177,71 +108,22 @@ flowchart TB
   FixedPoint -->|"2"| N133
   N132 -->|"1"| N133
   Pomega -->|"1"| N133
-  Graph -->|"1"| N136
-  N14 -->|"1"| N136
-  N51 -->|"1"| N136
-  N7 -->|"1"| N136
-  Pomega -->|"1"| N136
-  N7 -->|"1"| N14
-  Continuous -->|"1"| N147
-  FixedPoint -->|"2"| N147
-  Graph -->|"5"| N147
+  FixedPoint -->|"1"| N147
   N36 -->|"1"| N147
-  Pomega -->|"2"| N147
   FixedPoint -->|"1"| N148
   Graph -->|"3"| N148
   N127 -->|"1"| N148
   N147 -->|"1"| N148
   N36 -->|"1"| N148
   Pomega -->|"1"| N148
-  Pomega -->|"1"| N149
   Graph -->|"2"| N15
   Pomega -->|"1"| N15
-  Pomega -->|"1"| N150
   Graph -->|"1"| N151
-  N14 -->|"1"| N151
-  N149 -->|"1"| N151
-  N150 -->|"1"| N151
+  Language -->|"1"| N151
   N5 -->|"1"| N151
-  N7 -->|"1"| N151
   Pomega -->|"1"| N151
   Graph -->|"2"| N16
   Pomega -->|"1"| N16
-  Graph -->|"1"| N164
-  N14 -->|"1"| N164
-  N46 -->|"1"| N164
-  N5 -->|"1"| N164
-  N7 -->|"1"| N164
-  N8 -->|"1"| N164
-  Pomega -->|"1"| N164
-  Graph -->|"1"| N166
-  N14 -->|"1"| N166
-  N46 -->|"1"| N166
-  N7 -->|"1"| N166
-  Pomega -->|"1"| N166
-  Graph -->|"1"| N168
-  N14 -->|"1"| N168
-  N46 -->|"1"| N168
-  N7 -->|"1"| N168
-  Pomega -->|"1"| N168
-  Graph -->|"2"| N171
-  N47 -->|"1"| N171
-  N5 -->|"1"| N171
-  N8 -->|"1"| N171
-  Pomega -->|"1"| N171
-  Graph -->|"2"| N177
-  N48 -->|"1"| N177
-  N49 -->|"1"| N177
-  Pomega -->|"1"| N177
-  seqFun_more -->|"1"| N177
-  FixedPoint -->|"1"| N178
-  Graph -->|"1"| N178
-  N177 -->|"1"| N178
-  N38 -->|"1"| N178
-  N40 -->|"1"| N178
-  N41 -->|"1"| N178
-  N49 -->|"1"| N178
-  Pomega -->|"1"| N178
   Continuous -->|"1"| N18
   Pomega -->|"1"| N18
   Continuous -->|"1"| N19
@@ -250,167 +132,54 @@ flowchart TB
   N133 -->|"1"| N19
   Pomega -->|"1"| N19
   Graph -->|"1"| N191
-  N10 -->|"1"| N191
-  N14 -->|"1"| N191
+  Language -->|"1"| N191
   N30 -->|"1"| N191
   N5 -->|"1"| N191
-  N7 -->|"1"| N191
-  N8 -->|"1"| N191
   Pomega -->|"1"| N191
-  FixedPoint -->|"2"| N195
-  Graph -->|"2"| N195
-  N10 -->|"1"| N195
-  N14 -->|"1"| N195
-  N235 -->|"1"| N195
-  N37 -->|"1"| N195
-  N48 -->|"1"| N195
-  N49 -->|"1"| N195
-  N5 -->|"1"| N195
-  N52 -->|"1"| N195
-  N53 -->|"1"| N195
-  N54 -->|"1"| N195
-  N7 -->|"1"| N195
-  N8 -->|"1"| N195
-  Pomega -->|"1"| N195
-  seqShift_more -->|"1"| N195
-  Graph -->|"1"| N2
-  Pomega -->|"1"| N2
-  Graph -->|"3"| N20
-  N27 -->|"1"| N20
-  N31 -->|"1"| N20
-  N36 -->|"1"| N20
-  N37 -->|"1"| N20
-  N4 -->|"1"| N20
-  Pomega -->|"1"| N20
-  Graph -->|"3"| N21
-  Kcomb_more -->|"1"| N21
-  N1 -->|"1"| N21
   N130 -->|"1"| N21
-  N2 -->|"1"| N21
-  N27 -->|"1"| N21
-  N3 -->|"1"| N21
   N35 -->|"1"| N21
-  Pomega -->|"1"| N21
-  Scomb_more -->|"1"| N21
-  Continuous -->|"1"| N22
-  Graph -->|"3"| N22
+  Graph -->|"1"| N22
   N112 -->|"1"| N22
-  Pomega -->|"1"| N22
-  Continuous -->|"1"| N220
-  Enumeration -->|"1"| N220
-  N27 -->|"1"| N220
   N31 -->|"1"| N220
-  N4 -->|"1"| N220
-  Pomega -->|"1"| N220
-  Enumeration -->|"1"| N226
-  Graph -->|"4"| N226
+  Graph -->|"1"| N226
   N220 -->|"1"| N226
-  N27 -->|"1"| N226
-  N31 -->|"1"| N226
-  N4 -->|"1"| N226
-  N43 -->|"1"| N226
-  Pomega -->|"1"| N226
-  Continuous -->|"1"| N227
-  Graph -->|"3"| N227
-  N18 -->|"1"| N227
   N22 -->|"1"| N227
   N23 -->|"1"| N227
   N24 -->|"1"| N227
-  N34 -->|"1"| N227
-  Pomega -->|"1"| N227
-  Continuous -->|"1"| N23
-  Graph -->|"3"| N23
+  Graph -->|"1"| N23
   N112 -->|"1"| N23
-  Pomega -->|"1"| N23
-  Enumeration -->|"1"| N231
-  Graph -->|"1"| N231
-  N11 -->|"1"| N231
-  N12 -->|"1"| N231
-  N13 -->|"1"| N231
-  N2 -->|"1"| N231
   N28 -->|"1"| N231
-  N3 -->|"1"| N231
-  N31 -->|"1"| N231
-  N35 -->|"1"| N231
-  N4 -->|"1"| N231
-  N6 -->|"1"| N231
-  N9 -->|"1"| N231
-  N95 -->|"1"| N231
-  Pomega -->|"1"| N231
-  predC_more -->|"1"| N231
-  Continuous -->|"1"| N235
-  FixedPoint -->|"1"| N235
-  Graph -->|"2"| N235
   N147 -->|"1"| N235
   N37 -->|"1"| N235
-  Pomega -->|"1"| N235
-  Ycomb_more -->|"1"| N235
-  Pomega -->|"1"| N239
-  Continuous -->|"1"| N24
-  Graph -->|"3"| N24
+  Graph -->|"1"| N24
   N112 -->|"1"| N24
   N18 -->|"1"| N24
   N34 -->|"1"| N24
-  Pomega -->|"1"| N24
-  N239 -->|"1"| N240
-  Pomega -->|"1"| N240
   Graph -->|"1"| N241
-  N103 -->|"1"| N241
-  N104 -->|"1"| N241
-  N240 -->|"1"| N241
+  Language -->|"1"| N241
   Pomega -->|"2"| N241
   Graph -->|"2"| N242
   Kcomb_more -->|"1"| N242
-  N12 -->|"1"| N242
+  Language -->|"1"| N242
   N151 -->|"1"| N242
-  N2 -->|"1"| N242
   N6 -->|"1"| N242
   Pomega -->|"1"| N242
   condC_more -->|"1"| N242
-  Graph -->|"1"| N243
-  Pomega -->|"1"| N243
-  N1 -->|"1"| N25
-  N13 -->|"1"| N25
-  N14 -->|"1"| N25
-  N4 -->|"1"| N25
-  Pomega -->|"1"| N25
-  Enumeration -->|"1"| N26
-  Graph -->|"2"| N26
-  N10 -->|"1"| N26
-  N27 -->|"1"| N26
-  N31 -->|"1"| N26
-  N4 -->|"1"| N26
-  N5 -->|"1"| N26
-  N56 -->|"1"| N26
-  N57 -->|"1"| N26
-  N58 -->|"1"| N26
-  Pomega -->|"1"| N26
-  Pomega -->|"1"| N27
+  FixedPoint -->|"1"| N25
+  N127 -->|"1"| N25
+  N5 -->|"1"| N25
   Enumeration -->|"1"| N28
-  Graph -->|"1"| N28
-  N1 -->|"1"| N28
-  N11 -->|"1"| N28
-  N12 -->|"1"| N28
   N21 -->|"1"| N28
-  N27 -->|"1"| N28
   N31 -->|"1"| N28
-  N35 -->|"1"| N28
-  N4 -->|"1"| N28
-  N6 -->|"1"| N28
-  N9 -->|"1"| N28
-  Pomega -->|"1"| N28
   condC_more -->|"1"| N28
   predC_more -->|"1"| N28
   sucC_more -->|"1"| N28
   Continuous -->|"1"| N29
   FixedPoint -->|"1"| N29
   Graph -->|"3"| N29
-  N10 -->|"1"| N29
+  Language -->|"1"| N29
   N112 -->|"1"| N29
-  N14 -->|"1"| N29
   N5 -->|"1"| N29
-  N7 -->|"1"| N29
-  N8 -->|"1"| N29
   Pomega -->|"1"| N29
   succSet_more -->|"1"| N29
   Graph -->|"2"| N3
@@ -418,354 +187,183 @@ flowchart TB
   Continuous -->|"1"| N30
   FixedPoint -->|"3"| N30
   Graph -->|"4"| N30
-  N10 -->|"1"| N30
+  Language -->|"1"| N30
   N112 -->|"1"| N30
   N127 -->|"1"| N30
   N29 -->|"1"| N30
   N5 -->|"1"| N30
-  N7 -->|"1"| N30
-  N8 -->|"1"| N30
   Pomega -->|"1"| N30
   predSet_more -->|"1"| N30
   succSet_more -->|"1"| N30
-  Continuous -->|"4"| N31
-  Enumeration -->|"1"| N31
+  Continuous -->|"2"| N31
   FixedPoint -->|"1"| N31
-  Graph -->|"3"| N31
-  N10 -->|"1"| N31
+  Graph -->|"1"| N31
   N112 -->|"1"| N31
   N127 -->|"1"| N31
-  N14 -->|"1"| N31
-  N27 -->|"1"| N31
-  N4 -->|"1"| N31
   N5 -->|"1"| N31
   N64 -->|"1"| N31
-  N7 -->|"1"| N31
-  N8 -->|"1"| N31
-  Pomega -->|"2"| N31
   predSet_more -->|"1"| N31
   succSet_more -->|"1"| N31
   Graph -->|"2"| N34
   Pomega -->|"1"| N34
-  Continuous -->|"1"| N35
   FixedPoint -->|"1"| N35
-  Graph -->|"2"| N35
-  N1 -->|"1"| N35
-  N11 -->|"1"| N35
-  N12 -->|"1"| N35
+  Graph -->|"1"| N35
   N127 -->|"1"| N35
   N13 -->|"1"| N35
-  N2 -->|"1"| N35
-  N27 -->|"1"| N35
-  N3 -->|"1"| N35
-  N6 -->|"1"| N35
   N64 -->|"1"| N35
-  N9 -->|"1"| N35
-  Pomega -->|"1"| N35
-  Continuous -->|"1"| N36
-  FixedPoint -->|"1"| N36
-  Graph -->|"4"| N36
+  Graph -->|"1"| N36
   N109 -->|"1"| N36
   N112 -->|"1"| N36
-  Pomega -->|"1"| N36
-  Graph -->|"2"| N37
-  N1 -->|"1"| N37
-  N13 -->|"1"| N37
-  N14 -->|"1"| N37
+  N231 -->|"1"| N37
   N36 -->|"1"| N37
-  N4 -->|"1"| N37
-  Pomega -->|"1"| N37
-  Continuous -->|"1"| N38
-  FixedPoint -->|"1"| N38
-  Graph -->|"5"| N38
-  N112 -->|"1"| N38
-  N127 -->|"1"| N38
-  N226 -->|"1"| N38
-  N27 -->|"1"| N38
-  N31 -->|"1"| N38
-  N39 -->|"1"| N38
-  N4 -->|"1"| N38
-  N5 -->|"1"| N38
-  N8 -->|"1"| N38
-  Pomega -->|"1"| N38
-  predSet_more -->|"1"| N38
-  Enumeration -->|"1"| N39
-  Graph -->|"3"| N39
-  N226 -->|"1"| N39
-  N27 -->|"1"| N39
-  N31 -->|"1"| N39
-  N4 -->|"1"| N39
-  N5 -->|"1"| N39
-  N8 -->|"1"| N39
-  Pomega -->|"1"| N39
-  Graph -->|"1"| N4
-  FixedPoint -->|"2"| N40
-  Graph -->|"1"| N40
-  N100 -->|"1"| N40
-  N14 -->|"1"| N40
-  N38 -->|"1"| N40
-  N5 -->|"1"| N40
-  N7 -->|"1"| N40
-  N8 -->|"1"| N40
-  N99 -->|"1"| N40
-  Pomega -->|"1"| N40
-  predSet_more -->|"1"| N40
-  N14 -->|"1"| N41
-  N40 -->|"1"| N41
-  N7 -->|"1"| N41
-  Pomega -->|"1"| N41
-  Enumeration -->|"1"| N43
-  Graph -->|"1"| N43
-  N4 -->|"1"| N43
-  Continuous -->|"3"| N46
-  FixedPoint -->|"1"| N46
-  Graph -->|"3"| N46
-  N5 -->|"1"| N46
-  N7 -->|"1"| N46
-  N8 -->|"1"| N46
-  Pomega -->|"2"| N46
-  predSet_more -->|"1"| N46
-  Continuous -->|"1"| N47
-  FixedPoint -->|"1"| N47
-  Graph -->|"3"| N47
-  N127 -->|"1"| N47
-  N5 -->|"1"| N47
-  N8 -->|"1"| N47
-  Pomega -->|"1"| N47
-  predSet_more -->|"1"| N47
-  Graph -->|"1"| N48
-  N1 -->|"1"| N48
-  N13 -->|"1"| N48
-  N14 -->|"1"| N48
-  N4 -->|"1"| N48
-  Pomega -->|"1"| N48
-  FixedPoint -->|"2"| N49
-  Graph -->|"3"| N49
-  N112 -->|"1"| N49
-  N13 -->|"1"| N49
-  N231 -->|"1"| N49
-  N235 -->|"1"| N49
-  N26 -->|"1"| N49
-  N31 -->|"1"| N49
-  N37 -->|"1"| N49
-  N48 -->|"1"| N49
-  N54 -->|"1"| N49
-  N57 -->|"1"| N49
-  N58 -->|"1"| N49
-  Pomega -->|"1"| N49
-  Ycomb_more -->|"1"| N49
-  seqFun_more -->|"1"| N49
   Continuous -->|"2"| N5
-  N7 -->|"1"| N5
-  Pomega -->|"1"| N5
-  Graph -->|"1"| N51
-  N1 -->|"1"| N51
-  N13 -->|"1"| N51
-  N14 -->|"1"| N51
-  N4 -->|"1"| N51
-  Pomega -->|"1"| N51
-  Graph -->|"1"| N52
-  N1 -->|"1"| N52
-  N13 -->|"1"| N52
-  N14 -->|"1"| N52
-  N4 -->|"1"| N52
-  N48 -->|"1"| N52
-  Pomega -->|"1"| N52
-  Continuous -->|"1"| N53
-  FixedPoint -->|"1"| N53
-  Graph -->|"2"| N53
-  N127 -->|"1"| N53
-  N14 -->|"1"| N53
-  N5 -->|"1"| N53
-  N52 -->|"1"| N53
-  N7 -->|"1"| N53
-  N8 -->|"1"| N53
-  Pomega -->|"1"| N53
-  predSet_more -->|"1"| N53
-  seqShift_more -->|"1"| N53
-  Continuous -->|"1"| N54
-  FixedPoint -->|"2"| N54
-  Graph -->|"4"| N54
-  N112 -->|"1"| N54
-  N48 -->|"1"| N54
-  N51 -->|"1"| N54
-  N53 -->|"1"| N54
-  Pomega -->|"1"| N54
-  seqFunLt_more -->|"1"| N54
-  seqFun_more -->|"1"| N54
-  Continuous -->|"1"| N56
-  Enumeration -->|"1"| N56
-  FixedPoint -->|"1"| N56
-  Graph -->|"4"| N56
-  N10 -->|"1"| N56
-  N112 -->|"1"| N56
-  N4 -->|"1"| N56
-  N52 -->|"1"| N56
-  N7 -->|"1"| N56
-  Pomega -->|"1"| N56
-  succSet_more -->|"1"| N56
-  Continuous -->|"1"| N57
-  FixedPoint -->|"1"| N57
-  Graph -->|"2"| N57
-  N127 -->|"1"| N57
-  N14 -->|"1"| N57
-  N5 -->|"1"| N57
-  N53 -->|"1"| N57
-  N56 -->|"1"| N57
-  N7 -->|"1"| N57
-  N8 -->|"1"| N57
-  Pomega -->|"1"| N57
-  predSet_more -->|"1"| N57
-  Continuous -->|"1"| N58
-  FixedPoint -->|"2"| N58
-  Graph -->|"4"| N58
-  N112 -->|"1"| N58
-  N48 -->|"1"| N58
-  N51 -->|"1"| N58
-  N54 -->|"1"| N58
-  N57 -->|"1"| N58
-  Pomega -->|"1"| N58
-  seqFunLt_more -->|"1"| N58
-  seqFun_more -->|"1"| N58
+  Language -->|"1"| N5
   Continuous -->|"2"| N59
-  N10 -->|"1"| N59
-  N14 -->|"1"| N59
-  N7 -->|"1"| N59
+  Language -->|"1"| N59
   Pomega -->|"1"| N59
-  Graph -->|"1"| N6
   N5 -->|"1"| N6
   Pomega -->|"1"| N6
   Continuous -->|"2"| N64
-  Pomega -->|"1"| N64
-  Pomega -->|"1"| N7
-  Pomega -->|"1"| N78
-  Pomega -->|"1"| N8
-  Graph -->|"1"| N81
-  Pomega -->|"1"| N81
   Graph -->|"2"| N82
   Pomega -->|"2"| N82
-  Graph -->|"1"| N84
-  Pomega -->|"2"| N84
   Graph -->|"1"| N85
   Pomega -->|"1"| N85
   FixedPoint -->|"2"| N86
-  N14 -->|"1"| N86
+  Language -->|"1"| N86
   N59 -->|"1"| N86
-  N7 -->|"1"| N86
   Pomega -->|"1"| N86
-  Graph -->|"1"| N9
-  N8 -->|"1"| N9
-  Pomega -->|"1"| N9
-  Continuous -->|"1"| N93
-  FixedPoint -->|"3"| N93
-  Graph -->|"5"| N93
+  FixedPoint -->|"2"| N93
+  Graph -->|"1"| N93
   N112 -->|"1"| N93
+  N127 -->|"1"| N93
   N16 -->|"1"| N93
   N19 -->|"1"| N93
-  Pomega -->|"2"| N93
-  N10 -->|"1"| N94
-  N14 -->|"1"| N94
-  N7 -->|"1"| N94
-  N14 -->|"1"| N95
-  N7 -->|"1"| N95
-  N8 -->|"1"| N95
-  Pomega -->|"1"| N95
   N5 -->|"1"| N96
   Pomega -->|"1"| N96
-  N14 -->|"1"| N97
+  Language -->|"1"| N97
   N5 -->|"1"| N97
-  N7 -->|"1"| N97
   Pomega -->|"1"| N97
   N5 -->|"1"| N98
   Pomega -->|"1"| N98
-  N14 -->|"1"| N99
   N5 -->|"1"| N99
-  N7 -->|"1"| N99
   Pomega -->|"1"| N99
-  Continuous -->|"1"| Scomb_more
   FixedPoint -->|"1"| Scomb_more
-  Graph -->|"4"| Scomb_more
+  Graph -->|"2"| Scomb_more
   N112 -->|"1"| Scomb_more
   N3 -->|"1"| Scomb_more
-  Pomega -->|"1"| Scomb_more
-  FixedPoint -->|"1"| Ycomb_more
-  Graph -->|"3"| Ycomb_more
-  N109 -->|"1"| Ycomb_more
-  N13 -->|"1"| Ycomb_more
-  N20 -->|"1"| Ycomb_more
-  N231 -->|"1"| Ycomb_more
-  N31 -->|"1"| Ycomb_more
-  N36 -->|"1"| Ycomb_more
-  N37 -->|"1"| Ycomb_more
-  Pomega -->|"1"| Ycomb_more
-  Continuous -->|"1"| condC_more
-  Graph -->|"4"| condC_more
+  Retracts -->|"1"| Scomb_more
+  Graph -->|"2"| condC_more
   N112 -->|"1"| condC_more
-  N5 -->|"1"| condC_more
   N6 -->|"1"| condC_more
-  Pomega -->|"1"| condC_more
-  Continuous -->|"1"| dcondSet_more
-  FixedPoint -->|"1"| dcondSet_more
-  N127 -->|"1"| dcondSet_more
-  N25 -->|"1"| dcondSet_more
-  N5 -->|"1"| dcondSet_more
-  N7 -->|"1"| dcondSet_more
-  N8 -->|"1"| dcondSet_more
-  Pomega -->|"1"| dcondSet_more
-  predSet_more -->|"1"| dcondSet_more
-  N12 -->|"1"| ofNat_more
+  N235 -->|"1"| distributive_functions
+  sequences -->|"1"| distributive_functions
+  Continuous -->|"1"| eta2
+  FixedPoint -->|"1"| eta2
+  Graph -->|"4"| eta2
+  N112 -->|"1"| eta2
+  Pomega -->|"1"| eta2
+  Graph -->|"1"| graph_model
+  Pomega -->|"2"| graph_model
+  Language -->|"1"| ofNat_more
   N13 -->|"1"| ofNat_more
-  N7 -->|"1"| ofNat_more
   Pomega -->|"1"| ofNat_more
   sucC_more -->|"1"| ofNat_more
   succSet_more -->|"1"| ofNat_more
-  Graph -->|"3"| predC_more
-  N9 -->|"1"| predC_more
-  Pomega -->|"1"| predC_more
+  Graph -->|"1"| predC_more
   predSet_more -->|"1"| predC_more
   Continuous -->|"2"| predSet_more
-  N7 -->|"1"| predSet_more
-  N8 -->|"1"| predSet_more
-  Pomega -->|"1"| predSet_more
-  Graph -->|"1"| seqFunLt_more
-  N136 -->|"1"| seqFunLt_more
-  N14 -->|"1"| seqFunLt_more
-  N5 -->|"1"| seqFunLt_more
-  N51 -->|"1"| seqFunLt_more
-  N52 -->|"1"| seqFunLt_more
-  N56 -->|"1"| seqFunLt_more
-  N7 -->|"1"| seqFunLt_more
-  N8 -->|"1"| seqFunLt_more
-  Pomega -->|"1"| seqFunLt_more
-  seqShift_more -->|"1"| seqFunLt_more
-  Continuous -->|"3"| seqFun_more
-  Graph -->|"1"| seqFun_more
-  N136 -->|"1"| seqFun_more
-  N14 -->|"1"| seqFun_more
-  N48 -->|"1"| seqFun_more
-  N51 -->|"1"| seqFun_more
-  N7 -->|"1"| seqFun_more
-  Pomega -->|"1"| seqFun_more
-  Continuous -->|"1"| seqShift_more
-  FixedPoint -->|"1"| seqShift_more
-  Graph -->|"3"| seqShift_more
-  N10 -->|"1"| seqShift_more
-  N112 -->|"1"| seqShift_more
-  N48 -->|"1"| seqShift_more
-  N52 -->|"1"| seqShift_more
-  N7 -->|"1"| seqShift_more
-  Pomega -->|"1"| seqShift_more
-  seqFun_more -->|"1"| seqShift_more
-  succSet_more -->|"1"| seqShift_more
-  Graph -->|"3"| sucC_more
-  N11 -->|"1"| sucC_more
-  Pomega -->|"1"| sucC_more
+  Language -->|"1"| predSet_more
+  Enumeration -->|"1"| primitive_recursion
+  Graph -->|"1"| primitive_recursion
+  Language -->|"1"| primitive_recursion
+  N100 -->|"1"| primitive_recursion
+  N226 -->|"1"| primitive_recursion
+  N99 -->|"1"| primitive_recursion
+  Pomega -->|"1"| primitive_recursion
+  distributive_functions -->|"1"| primitive_recursion
+  Continuous -->|"1"| sequences
+  FixedPoint -->|"1"| sequences
+  Graph -->|"2"| sequences
+  N112 -->|"1"| sequences
+  N127 -->|"1"| sequences
+  N13 -->|"1"| sequences
+  predSet_more -->|"1"| sequences
+  succSet_more -->|"1"| sequences
+  Graph -->|"1"| sucC_more
   succSet_more -->|"1"| sucC_more
   Continuous -->|"2"| succSet_more
-  N10 -->|"1"| succSet_more
-  N14 -->|"1"| succSet_more
-  N7 -->|"1"| succSet_more
-  Pomega -->|"1"| succSet_more
+  Language -->|"1"| succSet_more
 
   classDef file fill:#dbeafe,stroke:#1d4ed8,color:#1e3a8a
   classDef ext fill:#f3f4f6,stroke:#374151,color:#111827
+  class Continuous ext
+  class Enumeration ext
+  class Extend file
+  class FixedPoint ext
+  class Graph ext
+  class Kcomb_more file
+  class Language file
+  class N100 file
+  class N101 file
+  class N109 file
+  class N112 file
+  class N127 file
+  class N13 file
+  class N130 file
+  class N132 file
+  class N133 file
+  class N147 file
+  class N148 file
+  class N15 file
+  class N151 file
+  class N16 file
+  class N18 file
+  class N19 file
+  class N191 file
+  class N21 file
+  class N22 file
+  class N220 file
+  class N226 file
+  class N227 file
+  class N23 file
+  class N231 file
+  class N235 file
+  class N24 file
+  class N241 file
+  class N242 file
+  class N25 file
+  class N28 file
+  class N29 file
+  class N3 file
+  class N30 file
+  class N31 file
+  class N34 file
+  class N35 file
+  class N36 file
+  class N37 file
+  class N5 file
+  class N59 file
+  class N6 file
+  class N64 file
+  class N82 file
+  class N85 file
+  class N86 file
+  class N93 file
+  class N96 file
+  class N97 file
+  class N98 file
+  class N99 file
+  class Pomega ext
+  class Retracts ext
+  class Scomb_more file
+  class condC_more file
+  class distributive_functions file
+  class eta2 file
+  class graph_model file
+  class ofNat_more file
+  class predC_more file
+  class predSet_more file
+  class primitive_recursion file
+  class sequences file
+  class sucC_more file
+  class succSet_more file

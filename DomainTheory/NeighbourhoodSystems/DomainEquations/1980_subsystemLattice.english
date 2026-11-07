@@ -1,0 +1,73 @@
+Proposition 6.11 library: subsystems of a fixed neighbourhood system form a domain.
+
+**Definition (`subFam`).** Families of neighbourhoods arising as $\{X \mid D.\mathrm{mem}\,X\}$ for some $D \triangleleft E$.
+
+*Proof.* Definition from the subdomain/data pairing. ∎
+
+**Theorem (`subFam_inter_closed`).** Members of `subFam` are closed under intersections consistent in $E$.
+
+*Proof.* Apply the subdomain intersection clause of the witness system. ∎
+
+**Theorem (`subFam_master_mem`).** Every member of `subFam` contains the master neighbourhood of $E$.
+
+*Proof.* Master membership in the witness system, rewound along master equality. ∎
+
+**Theorem (`subFam_mem_E`).** Neighbourhoods in a member of `subFam` lie in $E$.
+
+*Proof.* Subdomain inclusion from the witness. ∎
+
+**Definition (`interSys`).** System whose neighbourhoods lie in every family of a nonempty family from `subFam`.
+
+*Proof.* Pointwise intersection membership defines a neighbourhood system over $E$'s tokens. ∎
+
+**Theorem (`interSys_nbset`).** The neighbourhood family of `interSys` is the set-theoretic intersection of the family.
+
+*Proof.* Characterization of membership in a global intersection. ∎
+
+**Theorem (`interSys_subsystem`).** `interSys` is a subdomain of $E$.
+
+*Proof.* Master fixed to $E$; inclusion and intersection inheritance from `subFam` lemmas. ∎
+
+**Definition (`ofMem`).** Rebuild a neighbourhood system from a family in `subFam`.
+
+*Proof.* Membership is literal membership in the family; axioms from `subFam` closure. ∎
+
+**Theorem (`ofMem_subsystem`).** `ofMem` recovers a subdomain of $E$.
+
+*Proof.* Reflexivity of the data packaged with `subFam` membership. ∎
+
+**Definition (`subPartialOrder`).** Subsystems of $E$ ordered by subdomain.
+
+*Proof.* Reflexivity, transitivity, and antisymmetry from subdomain lemmas. ∎
+
+**Theorem (`subFam_nonempty`).** `subFam E` is nonempty.
+
+*Proof.* The full family $\{X \mid E.\mathrm{mem}\,X\}$ arises from $E$ itself. ∎
+
+**Theorem (`subFam_sInter_mem`).** Nonempty families in `subFam` have their intersection in `subFam`.
+
+*Proof.* Realize the intersection as `interSys`. ∎
+
+**Definition (`subIso`).** Order isomorphism between subsystems of $E$ and families in `subFam`.
+
+*Proof.* Forward and backward maps are `{X \mid D.\mathrm{mem}\,X\}$ and `ofMem`; order preserved by Scott's subset remark. ∎
+
+**Definition (`unionSys`).** System whose neighbourhoods appear in some member of a directed subfamily.
+
+*Proof.* Existential membership over the directed family; intersection uses directedness. ∎
+
+**Theorem (`unionSys_nbset`).** Neighbourhood family equals the set-theoretic directed union.
+
+*Proof.* Membership reformulation of `⋃₀`. ∎
+
+**Theorem (`unionSys_subsystem`).** Directed unions of subdomains yield a subdomain.
+
+*Proof.* Scott's remark realized via `unionSys`. ∎
+
+**Theorem (`subFam_sUnion_mem`).** Directed unions of families in `subFam` remain in `subFam`.
+
+*Proof.* Witness `unionSys` and its subdomain law. ∎
+
+**Definition (`subsystemReprIso`).** Subsystems of $E$ are order-isomorphic to the representable domain built from `subFam E`.
+
+*Proof.* Compose `subIso` with the representation isomorphism of Exercise 2.22 using intersection and union closure. ∎

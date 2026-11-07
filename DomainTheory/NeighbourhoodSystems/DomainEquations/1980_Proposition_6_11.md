@@ -1,14 +1,6 @@
 # Proposition 6.11
 
-**PROPOSITION 6.11.** For a given neighbourhood system $E$, the set of subsystems
-
-$$
-\{D \mid D \triangleleft E\}
-$$
-
-forms a domain in its own right. $\square$
-
-The subdomain relationship implies a mapping relationship between the domains.
+@import "1980_Proposition_6_11.english" {code_block=false}
 
 **[Proposition_6_11.lean](Proposition_6_11.lean)**
 

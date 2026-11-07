@@ -1,6 +1,8 @@
 # Exercise 6.28
 **[NeighbourhoodSystems/DomainEquations/Exercise_6_28.lean](Exercise_6_28.lean)**
 
+@import "finiteEmbedCancel.lean" {code_block=false}
+
 @import "Exercise_6_28.lean"
 
 **EXERCISE 6.28.** (Suggested by G. Plotkin). Show that if $\mathcal{D}$ and $\mathcal{E}$ are *finite* systems and

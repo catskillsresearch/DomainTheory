@@ -1,26 +1,40 @@
-%% Cross-exercise Lean imports among Lecture I solutions.
-%% Arrowhead on the importer. Exercises with no peer edges are independent of the others.
-flowchart LR
+%% Each box is one outline note from 1980_Lecture_I_exercises.md.
+%% Lean modules = transitive closure of that note's @import Lean files.
+%% Arrowhead on the importer. An arrow implied by a longer path is omitted.
+flowchart TB
 
-  E12["Exercise 1.12"]
-  E13["Exercise 1.13"]
-  E14["Exercise 1.14"]
-  E15["Exercise 1.15"]
-  E16["Exercise 1.16"]
-  E17["Exercise 1.17"]
-  E18["Exercise 1.18"]
-  E19["Exercise 1.19"]
-  E20["Exercise 1.20"]
-  E21["Exercise 1.21"]
-  E22["Exercise 1.22"]
-  E23["Exercise 1.23"]
-  E24["Exercise 1.24"]
-  E25["Exercise 1.25"]
-  E26["Exercise 1.26"]
-  E27["Exercise 1.27"]
+  Exercise_1_12___final_se["Exercise 1.12 — final segments of integers"]
+  Exercise_1_13___infinite["Exercise 1.13 — infinite binary tree"]
+  Exercise_1_14___finite_n["Exercise 1.14 — finite nonempty subsets"]
+  Exercise_1_15___finite_e["Exercise 1.15 — finite elements without chains"]
+  Exercise_1_16___cofinite["Exercise 1.16 — cofinite integer subsets"]
+  Exercise_1_17___rational["Exercise 1.17 — rational open intervals"]
+  Exercise_1_18___consiste["Exercise 1.18 — consistency of neighbourhood families"]
+  Exercise_1_19___positive["Exercise 1.19 — positive neighbourhood systems"]
+  Exercise_1_20___upward_c["Exercise 1.20 — upward closed neighbourhoods"]
+  Exercise_1_21___complete["Exercise 1.21 — complete neighbourhood systems"]
+  Exercise_1_22___topology["Exercise 1.22 — topology of a domain"]
+  Exercise_1_23___decidabl["Exercise 1.23 — decidable total elements"]
+  Exercise_1_24___extendin["Exercise 1.24 — extending partial elements"]
+  Exercise_1_25___final_se["Exercise 1.25 — final segments of ordinals"]
+  Exercise_1_26___ideals_o["Exercise 1.26 — ideals of a ring"]
+  Exercise_1_27___suprema["Exercise 1.27 — suprema of bounded sets"]
 
-  E13 --> E23
-  E19 --> E18
-  E19 --> E20
-  E19 --> E21
-  E18 --> E27
+  Exercise_1_12___final_se --> Exercise_1_13___infinite
+  Exercise_1_13___infinite --> Exercise_1_14___finite_n
+  Exercise_1_13___infinite --> Exercise_1_15___finite_e
+  Exercise_1_12___final_se --> Exercise_1_16___cofinite
+  Exercise_1_12___final_se --> Exercise_1_17___rational
+  Exercise_1_12___final_se --> Exercise_1_18___consiste
+  Exercise_1_12___final_se --> Exercise_1_19___positive
+  Exercise_1_15___finite_e --> Exercise_1_20___upward_c
+  Exercise_1_18___consiste --> Exercise_1_20___upward_c
+  Exercise_1_15___finite_e --> Exercise_1_21___complete
+  Exercise_1_18___consiste --> Exercise_1_21___complete
+  Exercise_1_12___final_se --> Exercise_1_22___topology
+  Exercise_1_13___infinite --> Exercise_1_23___decidabl
+  Exercise_1_18___consiste --> Exercise_1_23___decidabl
+  Exercise_1_12___final_se --> Exercise_1_24___extendin
+  Exercise_1_12___final_se --> Exercise_1_25___final_se
+  Exercise_1_12___final_se --> Exercise_1_26___ideals_o
+  Exercise_1_18___consiste --> Exercise_1_27___suprema

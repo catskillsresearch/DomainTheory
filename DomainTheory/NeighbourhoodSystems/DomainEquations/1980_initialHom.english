@@ -1,0 +1,13 @@
+Theorem 6.9 library: post/pre-composition on strict function spaces and existence of algebra homomorphisms.
+
+**Definition (`homOpComp`, `homOp`).** For strict post- and pre-composition with domain maps, the operator \(g \mapsto k \circ g \circ j\) is an approximable self-map of the strict function space.
+
+*Proof.* Built by monotonic extension from its action on principal neighbourhoods. ∎
+
+**Theorem (`homOp_apply_filter`).** The approximable operator realizes strict post/pre-composition on filters of strict maps.
+
+*Proof.* By comparison on single-step neighbourhoods through the strict function-space representation. ∎
+
+**Theorem (`nonempty_algHom_of_continuousOnMaps`).** If \(T\) is continuous on maps and \(D \cong T(D)\), then every strict \(T\)-algebra admits a strict homomorphism from \(D\).
+
+*Proof.* The homomorphism equation is a fixed-point equation for an approximable operator; a least fixed point yields the desired homomorphism. ∎

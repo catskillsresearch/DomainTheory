@@ -8,7 +8,7 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 section
 namespace DomainTheory.NeighbourhoodSystems
 section
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 variable {α : Type*}
 namespace Proposition77
 
@@ -29,7 +29,7 @@ end Proposition77
 end
 
 section
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 variable {α : Type*}
 
 namespace Proposition77
@@ -148,7 +148,7 @@ end Proposition77
 end
 
 section
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 variable {α : Type*}
 
 namespace Proposition77
@@ -453,7 +453,7 @@ end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.Proposition77
 section
 set_option linter.unusedVariables false
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 
 /-- Scott's Proposition 7.7: D♯ is effectively given. -/
 theorem theorem_77 :
@@ -466,7 +466,7 @@ end
 
 end DomainTheory.NeighbourhoodSystems.Proposition77
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem Domain.Recursive Example61
+open NeighborhoodSystem Domain.Recursive IndefProduct
 
 section
 variable {α : Type*}

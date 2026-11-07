@@ -1,5 +1,8 @@
 module
 
+public import Mathlib.Data.Set.Basic
+public import Mathlib.Data.Set.Insert
+
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition_8_2
 
 @[expose] public section

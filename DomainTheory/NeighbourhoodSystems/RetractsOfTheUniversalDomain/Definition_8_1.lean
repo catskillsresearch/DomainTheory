@@ -1,8 +1,11 @@
 module
 
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.projectionPair
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma_6_15
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ElementOrder
+public import Mathlib.Order.Hom.Basic
 
 @[expose] public section
 
