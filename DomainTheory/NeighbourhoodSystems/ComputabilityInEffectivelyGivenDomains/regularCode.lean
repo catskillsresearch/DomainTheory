@@ -29,7 +29,6 @@ end
 end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.RegularLanguage
-section
 set_option linter.unusedVariables false
 
 theorem example_722_decide : ∀ (a b : DomainTheory.NeighbourhoodSystems.RegularLanguage.SExpr),
@@ -41,7 +40,6 @@ theorem example_722_decide : ∀ (a b : DomainTheory.NeighbourhoodSystems.Regula
             (DomainTheory.NeighbourhoodSystems.RegularLanguage.denote a)
             (DomainTheory.NeighbourhoodSystems.RegularLanguage.denote b))) :=
   DomainTheory.NeighbourhoodSystems.RegularLanguage.consistentB_iff_Ssys
-end
 
 end DomainTheory.NeighbourhoodSystems.RegularLanguage
 namespace DomainTheory.NeighbourhoodSystems
@@ -98,16 +96,11 @@ end ShortWord
 
 end
 
-section
-
 def acceptFin : (e : SExpr) → Finset (autState e)
   | .sigma => Finset.univ
   | .single σ => {(some ⟨σ.length, Nat.lt_succ_self _⟩ : SingleState σ)}
   | .cap a b => (acceptFin a) ×ˢ (acceptFin b)
   | .cat a b => (acceptFin b).image (inr : autState b → autState a ⊕ autState b)
-end
-
-section
 
 def startFin : (e : SExpr) → Finset (autState e)
   | .sigma => Finset.univ
@@ -118,9 +111,6 @@ def startFin : (e : SExpr) → Finset (autState e)
       then (startFin a).image (inl : autState a → autState a ⊕ autState b) ∪
         (startFin b).image (inr : autState b → autState a ⊕ autState b)
       else (startFin a).image (inl : autState a → autState a ⊕ autState b)
-end
-
-section
 
 def stepFinSingle : (e : SExpr) → autState e → Bool → Finset (autState e)
   | .sigma => fun _ _ => Finset.univ
@@ -134,41 +124,24 @@ def stepFinSingle : (e : SExpr) → autState e → Bool → Finset (autState e)
             (startFin b).image (inr : autState b → autState a ⊕ autState b)
           else (stepFinSingle a s' c).image (inl : autState a → autState a ⊕ autState b)
       | inr s' => (stepFinSingle b s' c).image (inr : autState b → autState a ⊕ autState b)
-end
-
-section
 
 def stepFin (e : SExpr) (S : Finset (autState e)) (c : Bool) : Finset (autState e) :=
   S.biUnion (fun s => stepFinSingle e s c)
-end
-
-section
 
 def diffNFA (e1 e2 : SExpr) : NFA Bool (Finset (autState e1) × Finset (autState e2)) where
   step S c := {(stepFin e1 S.1 c, stepFin e2 S.2 c)}
   start := {(startFin e1, startFin e2)}
   accept := {S | (S.1 ∩ acceptFin e1).Nonempty ∧ S.2 ∩ acceptFin e2 = ∅}
-end
-
-section
 
 def evalFin (e : SExpr) (w : List Bool) : Finset (autState e) :=
   w.foldl (stepFin e) (startFin e)
-end
-
-section
 
 def subsetB (e1 e2 : SExpr) : Bool :=
   (wordsUpTo (Fintype.card (Finset (autState e1) × Finset (autState e2)))).all
     (fun w => !matchesB e1 w || matchesB e2 w)
-end
-
-section
 
 def interEqB (e1 e2 : SExpr) : Bool := subsetB e1 e2 && subsetB e2 e1
-end
 
-section
 theorem coe_acceptFin : ∀ e : SExpr, (↑(acceptFin e) : Set (autState e)) = (toNFA e).accept
   | .sigma => by
       show (↑(Finset.univ : Finset Unit) : Set Unit) = sigmaDFA.toNFA.accept
@@ -189,9 +162,7 @@ theorem coe_acceptFin : ∀ e : SExpr, (↑(acceptFin e) : Set (autState e)) = (
       show (↑((acceptFin b).image (inr : autState b → autState a ⊕ autState b)) :
         Set (autState a ⊕ autState b)) = inr '' (toNFA b).accept
       rw [Finset.coe_image, coe_acceptFin b]
-end
 
-section
 theorem coe_startFin : ∀ e : SExpr, (↑(startFin e) : Set (autState e)) = (toNFA e).start
   | .sigma => by
       show (↑(Finset.univ : Finset Unit) : Set Unit) = sigmaDFA.toNFA.start
@@ -239,9 +210,7 @@ theorem coe_startFin : ∀ e : SExpr, (↑(startFin e) : Set (autState e)) = (to
           · exact ⟨q, hq, rfl⟩
           · cases heq
             exact absurd ⟨q, Finset.mem_inter.mpr ⟨hq2, hq1⟩⟩ hne
-end
 
-section
 theorem coe_stepFinSingle : ∀ (e : SExpr) (s : autState e) (c : Bool),
     (↑(stepFinSingle e s c) : Set (autState e)) = (toNFA e).step s c
   | .sigma, s, c => by
@@ -307,9 +276,7 @@ theorem coe_stepFinSingle : ∀ (e : SExpr) (s : autState e) (c : Bool),
       · rintro (⟨q, hq, rfl⟩ | ⟨⟨q, _, hqmem⟩, _⟩)
         · exact ⟨q, hq, rfl⟩
         · exact absurd hqmem (by simp)
-end
 
-section
 theorem coe_stepFin (e : SExpr) (S : Finset (autState e)) (c : Bool) :
     (↑(stepFin e S c) : Set (autState e)) = (toNFA e).stepSet ↑S c := by
   ext x
@@ -321,9 +288,7 @@ theorem coe_stepFin (e : SExpr) (S : Finset (autState e)) (c : Bool) :
     exact ⟨s, hs, by rw [← coe_stepFinSingle e s c]; exact Finset.mem_coe.mpr hx⟩
   · rintro ⟨s, hs, hx⟩
     exact ⟨s, hs, by rw [← coe_stepFinSingle e s c] at hx; exact Finset.mem_coe.mp hx⟩
-end
 
-section
 theorem coe_foldl_stepFin (e : SExpr) (w : List Bool) (S : Finset (autState e)) :
     (↑(w.foldl (stepFin e) S) : Set (autState e)) = (toNFA e).evalFrom ↑S w := by
   induction w generalizing S with
@@ -331,17 +296,12 @@ theorem coe_foldl_stepFin (e : SExpr) (w : List Bool) (S : Finset (autState e)) 
   | cons c w ih =>
     show (↑(w.foldl (stepFin e) (stepFin e S c)) : Set (autState e)) = _
     rw [ih (stepFin e S c), NFA.evalFrom_cons, coe_stepFin e S c]
-end
 
-section
 theorem coe_evalFin (e : SExpr) (w : List Bool) :
     (↑(evalFin e w) : Set (autState e)) = (toNFA e).eval w := by
   show (↑(w.foldl (stepFin e) (startFin e)) : Set (autState e))
     = (toNFA e).evalFrom (toNFA e).start w
   rw [coe_foldl_stepFin e w (startFin e), coe_startFin e]
-end
-
-section
 
 theorem denote_iff_evalFin (e : SExpr) (w : List Bool) :
     w ∈ denote e ↔ (evalFin e w ∩ acceptFin e).Nonempty := by
@@ -357,9 +317,7 @@ theorem denote_iff_evalFin (e : SExpr) (w : List Bool) :
     refine ⟨s, ?_, ?_⟩
     · rw [← Finset.mem_coe, coe_acceptFin] at hs2; exact hs2
     · rw [← Finset.mem_coe, coe_evalFin] at hs1; exact hs1
-end
 
-section
 theorem diffNFA_evalFrom (e1 e2 : SExpr) (w : List Bool)
     (S1 : Finset (autState e1)) (S2 : Finset (autState e2)) :
     (diffNFA e1 e2).evalFrom {(S1, S2)} w =
@@ -371,17 +329,12 @@ theorem diffNFA_evalFrom (e1 e2 : SExpr) (w : List Bool)
     rw [NFA.stepSet_singleton]
     show (diffNFA e1 e2).evalFrom {(stepFin e1 S1 c, stepFin e2 S2 c)} w = _
     exact ih (stepFin e1 S1 c) (stepFin e2 S2 c)
-end
 
-section
 theorem diffNFA_eval (e1 e2 : SExpr) (w : List Bool) :
     (diffNFA e1 e2).eval w = {(evalFin e1 w, evalFin e2 w)} := by
   show (diffNFA e1 e2).evalFrom (diffNFA e1 e2).start w = _
   show (diffNFA e1 e2).evalFrom {(startFin e1, startFin e2)} w = _
   exact diffNFA_evalFrom e1 e2 w (startFin e1) (startFin e2)
-end
-
-section
 
 theorem diffNFA_mem_accepts_iff (e1 e2 : SExpr) (w : List Bool) :
     w ∈ (diffNFA e1 e2).accepts ↔ w ∈ denote e1 ∧ w ∉ denote e2 := by
@@ -400,9 +353,6 @@ theorem diffNFA_mem_accepts_iff (e1 e2 : SExpr) (w : List Bool) :
       by_contra hcontra
       exact h2 ((denote_iff_evalFin e2 w).mpr (Finset.nonempty_iff_ne_empty.mpr hcontra))
     · rw [diffNFA_eval]; rfl
-end
-
-section
 
 theorem exists_diff_word_short {e1 e2 : SExpr} (h : ¬ denote e1 ⊆ denote e2) :
     ∃ w, w.length < Fintype.card (Finset (autState e1) × Finset (autState e2)) ∧
@@ -413,9 +363,7 @@ theorem exists_diff_word_short {e1 e2 : SExpr} (h : ¬ denote e1 ⊆ denote e2) 
     exact ⟨x, (diffNFA_mem_accepts_iff e1 e2 x).mpr ⟨hx1, hx2⟩⟩
   obtain ⟨w, hlen, hmem⟩ := exists_accepted_word_short hne
   exact ⟨w, hlen, (diffNFA_mem_accepts_iff e1 e2 w).mp hmem⟩
-end
 
-section
 theorem subsetB_iff (e1 e2 : SExpr) : subsetB e1 e2 = true ↔ denote e1 ⊆ denote e2 := by
   unfold subsetB
   rw [List.all_eq_true]
@@ -439,18 +387,14 @@ theorem subsetB_iff (e1 e2 : SExpr) : subsetB e1 e2 = true ↔ denote e1 ⊆ den
         intro hc
         exact hw1 ((matchesB_iff e1 w).mp hc)
       simp [he1]
-end
 
-section
 theorem interEqB_iff (e1 e2 : SExpr) : interEqB e1 e2 = true ↔ denote e1 = denote e2 := by
   unfold interEqB
   rw [Bool.and_eq_true, subsetB_iff, subsetB_iff, ← Set.Subset.antisymm_iff]
-end
 
 end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.RegularLanguage
-section
 set_option linter.unusedVariables false
 
 theorem example_722_equiv : ∀ (e1 e2 : DomainTheory.NeighbourhoodSystems.RegularLanguage.SExpr),
@@ -458,7 +402,6 @@ theorem example_722_equiv : ∀ (e1 e2 : DomainTheory.NeighbourhoodSystems.Regul
     (@Eq (Set (List Bool)) (DomainTheory.NeighbourhoodSystems.RegularLanguage.denote e1)
       (DomainTheory.NeighbourhoodSystems.RegularLanguage.denote e2)) :=
   DomainTheory.NeighbourhoodSystems.RegularLanguage.interEqB_iff
-end
 
 end DomainTheory.NeighbourhoodSystems.RegularLanguage
 
@@ -466,58 +409,6 @@ namespace Domain.Recursive
 open DomainTheory.NeighbourhoodSystems RegularLanguage
 open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -537,9 +428,7 @@ def autStateCardFuelCharBody (prev : ℕ → ℕ) (c : ℕ) : ℕ :=
       (selectFn (isOne (3 - c.unpair.1))
         subAdd
         (selectFn (isOne (4 - c.unpair.1)) subMul 0)))
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -552,9 +441,7 @@ open DomainTheory.NeighbourhoodSystems.RegularLanguage
 def autStateCardFuelChar : ℕ → ℕ → ℕ
   | 0, _ => 0
   | fuel + 1, c => autStateCardFuelCharBody (autStateCardFuelChar fuel) c
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -565,9 +452,7 @@ open DomainTheory.NeighbourhoodSystems RegularLanguage
 open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 def c9b5_boolNat (b : Bool) : ℕ := if b then 1 else 0
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -578,9 +463,7 @@ open DomainTheory.NeighbourhoodSystems RegularLanguage
 open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 def c9b5_encodeListBool (σ : List Bool) : ℕ := encodeList (σ.map c9b5_boolNat)
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -595,9 +478,7 @@ def c9b5_sexprDepth : SExpr → ℕ
   | .single _ => 1
   | .cat a b => 1 + max (c9b5_sexprDepth a) (c9b5_sexprDepth b)
   | .cap a b => 1 + max (c9b5_sexprDepth a) (c9b5_sexprDepth b)
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -612,9 +493,7 @@ def c9b5_sexprGodelEncode : SExpr → ℕ
   | .single σ => Nat.pair 1 (c9b5_encodeListBool σ)
   | .cat a b => Nat.pair 2 (Nat.pair (c9b5_sexprGodelEncode a) (c9b5_sexprGodelEncode b))
   | .cap a b => Nat.pair 3 (Nat.pair (c9b5_sexprGodelEncode a) (c9b5_sexprGodelEncode b))
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -631,17 +510,7 @@ set_option maxHeartbeats 800000 in
 set_option maxHeartbeats 800000 in
 
 def capCode (a b : ℕ) : ℕ := Nat.pair 3 (Nat.pair a b)
-end
 
-
-
-
-
-
-
-
-
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -653,16 +522,7 @@ open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 def autStateCardFuelCharLookup (w : ℕ) : ℕ :=
   autStateCardFuelCharBody (fun c' => nthCode w.unpair.1 c' 0) w.unpair.2
-end
 
-
-
-
-
-
-
-
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -680,9 +540,7 @@ set_option maxHeartbeats 800000 in
 
 def subsetBoundChar (fuel c1 c2 : ℕ) : ℕ :=
   2 ^ (autStateCardFuelChar fuel c1) * 2 ^ (autStateCardFuelChar fuel c2)
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -700,17 +558,7 @@ set_option maxHeartbeats 800000 in
 
 def subsetGuardChar (fuel c1 c2 i : ℕ) : ℕ :=
   mulBit (allBinDigitsChar i) (isOne (1 - (listLenChar i - subsetBoundChar fuel c1 c2)))
-end
 
-
-
-
-
-
-
-
-
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -726,9 +574,7 @@ def matchesBCatG (prev : ℕ → ℕ) (p : ℕ) : ℕ :=
   let cw := p.unpair.2.unpair.2
   mulBit (prev (Nat.pair c.unpair.2.unpair.1 (takeCode i cw)))
         (prev (Nat.pair c.unpair.2.unpair.2 (dropCode i cw)))
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -746,9 +592,7 @@ set_option maxHeartbeats 800000 in
 
 def matchesBCatGLookup (w : ℕ) : ℕ :=
   matchesBCatG (fun p' => nthCode w.unpair.1 p' 0) w.unpair.2
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -769,9 +613,7 @@ def matchesBCharBody (prev : ℕ → ℕ) (c cw : ℕ) : ℕ :=
       (selectFn (isOne (3 - c.unpair.1))
         catExist
         (selectFn (isOne (4 - c.unpair.1)) capAnd 0)))
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -785,9 +627,7 @@ def matchesBChar : ℕ → ℕ → ℕ → ℕ
   | 0, _, _ => 0
   | fuel + 1, c, cw =>
       matchesBCharBody (fun p => matchesBChar fuel p.unpair.1 p.unpair.2) c cw
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -807,9 +647,7 @@ def decideNonemptyBChar (fuel : ℕ) (c_e : ℕ) : ℕ :=
   bExistsFn (fun p =>
       mulBit (allBinDigitsChar p.unpair.1) (matchesBChar fuel p.unpair.2 p.unpair.1))
     c_e (codeBound (autStateCardFuelChar fuel c_e))
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -827,9 +665,7 @@ set_option maxHeartbeats 800000 in
 
 def consistentBChar (fuel : ℕ) (c1 c2 : ℕ) : ℕ :=
   decideNonemptyBChar fuel (capCode c1 c2)
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -847,9 +683,7 @@ set_option maxHeartbeats 800000 in
 
 def matchesBCharBodyLookup (w : ℕ) : ℕ :=
   matchesBCharBody (fun p' => nthCode w.unpair.1 p' 0) w.unpair.2.unpair.1 w.unpair.2.unpair.2
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -872,9 +706,7 @@ set_option maxHeartbeats 800000 in
           (matchesBChar fuel p.unpair.2.unpair.2 p.unpair.1) 1)
         1)
     (Nat.pair c1 c2) (codeBound (subsetBoundChar fuel c1 c2))
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -894,11 +726,7 @@ set_option maxHeartbeats 800000 in
 
 @[irreducible] def interEqChar (fuel c1 c2 : ℕ) : ℕ :=
   mulBit (subsetBChar fuel c1 c2) (subsetBChar fuel c2 c1)
-end
 
-
-
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -916,9 +744,6 @@ set_option maxHeartbeats 800000 in
 
 def c9b6_decodeListBool (c : ℕ) : List Bool :=
   (decodeList c).map fun n => decide (n = 1)
-end
-
-section
 
 private theorem c9b5_decodeList_encodeListBool (σ : List Bool) :
     decodeList (c9b5_encodeListBool σ) = σ.map c9b5_boolNat := by
@@ -1398,51 +1223,20 @@ theorem subsetBChar_eq_one_iff {fuel : ℕ} {e1 e2 : SExpr}
             (c9b5_encodeListBool (c9b6_decodeListBool i))
           omega
         rw [hc1', selectFn_zero]
-end
 
-
-
-
-
-
-
-
-
-section
 theorem consistentBChar_eq_one_iff {fuel : ℕ} {a b : SExpr}
     (h : c9b5_sexprDepth (.cap a b) ≤ fuel) :
     consistentBChar fuel (c9b5_sexprGodelEncode a) (c9b5_sexprGodelEncode b) = 1 ↔
       (denote (.cap a b)).Nonempty := by
   simp only [consistentBChar, ← c9b6_sexprGodelEncode_cap]
   exact decideNonemptyBChar_eq_one_iff h
-end
 
-section
 theorem decideNonemptyBChar_le_one (fuel c_e : ℕ) : decideNonemptyBChar fuel c_e ≤ 1 :=
   bExistsFn_le_one _ _ _
-end
-
-section
 
 theorem consistentBChar_le_one (fuel c1 c2 : ℕ) : consistentBChar fuel c1 c2 ≤ 1 :=
   decideNonemptyBChar_le_one _ _
-end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-section
 theorem autStateCardFuelChar_fuelTable_eq :
     ∀ fuel bound c, c ≤ bound →
       nthCode (fuelTable autStateCardFuelCharLookup bound fuel) c 0 = autStateCardFuelChar fuel c :=
@@ -1450,15 +1244,7 @@ theorem autStateCardFuelChar_fuelTable_eq :
     (fun _ => rfl) (fun _ _ => rfl)
     (fun table c => by unfold autStateCardFuelCharLookup; simp)
     autStateCardFuelCharBody_local
-end
 
-
-
-
-
-
-
-section
 theorem interEqChar_eq_one_iff {fuel : ℕ} {e1 e2 : SExpr}
     (h1 : c9b5_sexprDepth e1 ≤ fuel) (h2 : c9b5_sexprDepth e2 ≤ fuel) :
     interEqChar fuel (c9b5_sexprGodelEncode e1) (c9b5_sexprGodelEncode e2) = 1 ↔
@@ -1466,12 +1252,7 @@ theorem interEqChar_eq_one_iff {fuel : ℕ} {e1 e2 : SExpr}
   unfold interEqChar
   rw [mulBit_eq_one_iff, subsetBChar_eq_one_iff h1 h2, subsetBChar_eq_one_iff h2 h1,
     ← Set.Subset.antisymm_iff]
-end
 
-
-
-
-section
 theorem matchesBChar_fuelTable_eq :
     ∀ fuel bound code, code ≤ bound →
       nthCode (fuelTable matchesBCharBodyLookup bound fuel) code 0 =
@@ -1483,21 +1264,13 @@ theorem matchesBChar_fuelTable_eq :
     (fun table code => by unfold matchesBCharBodyLookup; simp)
     (fun f g code h => matchesBCharBody_local f g code.unpair.1 code.unpair.2 (by
       simpa [pair_unpair] using h))
-end
 
-
-
-
-
-section
 theorem primrec_autStateCardFuelChar : ∀ fuel, Nat.Primrec (fun c => autStateCardFuelChar fuel c)
   | 0 => Nat.Primrec.const 0
   | fuel + 1 => by
     simpa [autStateCardFuelChar] using
       primrec_autStateCardFuelCharBody (primrec_autStateCardFuelChar fuel)
-end
 
-section
 theorem primrec_autStateCardFuelCharLookup : Nat.Primrec autStateCardFuelCharLookup := by
   have hleft : Nat.Primrec (fun w => nthCode w.unpair.1 w.unpair.2.unpair.2.unpair.1 0) :=
     (primrec_nthCode.comp (Nat.Primrec.pair Nat.Primrec.left
@@ -1559,17 +1332,6 @@ theorem primrec_autStateCardFuelCharLookup : Nat.Primrec autStateCardFuelCharLoo
     have h23' : (3 - (t + 4) : ℕ) = 0 := Nat.sub_eq_zero_of_le (by omega)
     have h34' : (4 - (t + 4) : ℕ) = 0 := Nat.sub_eq_zero_of_le (by omega)
     simp only [h01', h12', h23', h34', isOne_zero, selectFn_zero]
-end
-
-
-
-
-
-
-
-
-
-section
 
 theorem primrec_autStateCardFuelChar2 :
     Nat.Primrec (fun s => autStateCardFuelChar s.unpair.1 s.unpair.2) := by
@@ -1585,16 +1347,7 @@ theorem primrec_autStateCardFuelChar2 :
       fun s => by simp
   exact hnth.of_eq fun s =>
     autStateCardFuelChar_fuelTable_eq s.unpair.1 s.unpair.2 s.unpair.2 (le_refl _)
-end
 
-
-
-
-
-
-
-
-section
 theorem primrec_matchesBCatGLookup : Nat.Primrec matchesBCatGLookup := by
   have hi : Nat.Primrec (fun w => w.unpair.2.unpair.1) := Nat.Primrec.left.comp Nat.Primrec.right
   have hc : Nat.Primrec (fun w => w.unpair.2.unpair.2.unpair.1) :=
@@ -1625,17 +1378,13 @@ theorem primrec_matchesBCatGLookup : Nat.Primrec matchesBCatGLookup := by
       simp only [unpair_pair_fst, unpair_pair_snd]
   exact (primrec_mul₂ h1 h2).of_eq fun w => by
     dsimp [matchesBCatGLookup, matchesBCatG, mulBit]
-end
 
-section
 theorem primrec_matchesBChar : ∀ fuel, Nat.Primrec (fun t => matchesBChar fuel t.unpair.1 t.unpair.2)
   | 0 => Nat.Primrec.const 0
   | fuel + 1 => by
     simpa [matchesBChar] using
       primrec_matchesBCharBody (primrec_matchesBChar fuel)
-end
 
-section
 theorem primrec_decideNonemptyBChar (fuel : ℕ) :
     Nat.Primrec (fun c_e => decideNonemptyBChar fuel c_e) := by
   have hg : Nat.Primrec (fun w =>
@@ -1649,17 +1398,13 @@ theorem primrec_decideNonemptyBChar (fuel : ℕ) :
       (primrec_codeBound.comp (primrec_autStateCardFuelChar fuel))
   refine ((primrec_bExistsFn hg).comp hpack).of_eq fun c_e => ?_
   simp [decideNonemptyBChar]
-end
 
-section
 theorem primrec_consistentBChar (fuel : ℕ) :
     Nat.Primrec (fun t => consistentBChar fuel t.unpair.1 t.unpair.2) :=
   (primrec_decideNonemptyBChar fuel).comp
     (Nat.Primrec.pair (Nat.Primrec.const 3)
       (Nat.Primrec.pair Nat.Primrec.left Nat.Primrec.right))
-end
 
-section
 set_option maxHeartbeats 4000000 in
 theorem primrec_matchesBCharBodyLookup : Nat.Primrec matchesBCharBodyLookup := by
   have htable : Nat.Primrec (fun w => w.unpair.1) := Nat.Primrec.left
@@ -1741,9 +1486,6 @@ theorem primrec_matchesBCharBodyLookup : Nat.Primrec matchesBCharBodyLookup := b
     have h23' : (3 - (t + 4) : ℕ) = 0 := Nat.sub_eq_zero_of_le (by omega)
     have h34' : (4 - (t + 4) : ℕ) = 0 := Nat.sub_eq_zero_of_le (by omega)
     simp only [h01', h12', h23', h34', isOne_zero, selectFn_zero]
-end
-
-section
 
 theorem primrec_matchesBChar2 :
     Nat.Primrec (fun s => matchesBChar s.unpair.1 s.unpair.2.unpair.1 s.unpair.2.unpair.2) := by
@@ -1759,9 +1501,7 @@ theorem primrec_matchesBChar2 :
       fun s => by simp
   exact hnth.of_eq fun s => by
     rw [matchesBChar_fuelTable_eq s.unpair.1 s.unpair.2 s.unpair.2 (le_refl _)]
-end
 
-section
 theorem primrec_decideNonemptyBChar2 :
     Nat.Primrec (fun s => decideNonemptyBChar s.unpair.1 s.unpair.2) := by
   have hg : Nat.Primrec (fun u => mulBit (allBinDigitsChar u.unpair.2.unpair.1)
@@ -1779,9 +1519,6 @@ theorem primrec_decideNonemptyBChar2 :
       (primrec_codeBound.comp primrec_autStateCardFuelChar2)
   exact (hbe.comp hpack).of_eq fun s => by
     simp only [unpair_pair_fst, unpair_pair_snd, decideNonemptyBChar]
-end
-
-section
 
 theorem primrec_consistentBChar2 :
     Nat.Primrec (fun s => consistentBChar s.unpair.1 s.unpair.2.unpair.1 s.unpair.2.unpair.2) := by
@@ -1793,21 +1530,7 @@ theorem primrec_consistentBChar2 :
           (Nat.Primrec.right.comp Nat.Primrec.right)))
   exact (primrec_decideNonemptyBChar2.comp hpack).of_eq fun s => by
     simp only [unpair_pair_fst, unpair_pair_snd, consistentBChar, capCode]
-end
 
-
-
-
-
-
-
-
-
-
-
-
-
-section
 theorem primrec_subsetBChar :
     Nat.Primrec (fun s => subsetBChar s.unpair.1 s.unpair.2.unpair.1 s.unpair.2.unpair.2) := by
   have hg : Nat.Primrec (fun u => selectFn
@@ -1879,9 +1602,7 @@ theorem primrec_subsetBChar :
       (primrec_codeBound.comp hbnd)
   exact (hb.comp hpack).of_eq fun s => by
     simp only [unpair_pair_fst, unpair_pair_snd, subsetBChar]
-end
 
-section
 theorem primrec_interEqChar :
     Nat.Primrec (fun s => interEqChar s.unpair.1 s.unpair.2.unpair.1 s.unpair.2.unpair.2) := by
   have hswap : Nat.Primrec (fun s : ℕ =>
@@ -1895,19 +1616,12 @@ theorem primrec_interEqChar :
       simp only [unpair_pair_fst, unpair_pair_snd]
   exact (primrec_mulBit.comp (Nat.Primrec.pair h1 h2)).of_eq fun s => by
     simp only [unpair_pair_fst, unpair_pair_snd, interEqChar]
-end
 
-
-
-section
 theorem subsetBChar_le_one (fuel c1 c2 : ℕ) : subsetBChar fuel c1 c2 ≤ 1 := by
   unfold subsetBChar; exact bForallFn_le_one _ _ _
-end
 
-section
 theorem interEqChar_le_one (fuel c1 c2 : ℕ) : interEqChar fuel c1 c2 ≤ 1 := by
   unfold interEqChar; exact mulBit_le_one (subsetBChar_le_one _ _ _) (subsetBChar_le_one _ _ _)
-end
 
 end Domain.Recursive
 

@@ -305,8 +305,6 @@ def PDPresentation (cons : ℕ → ℕ) (hconsp : Nat.Primrec cons)
 end NeighborhoodSystem
 end
 
-section
-
 theorem NeighborhoodSystem.PowerDomain_isEffectivelyGiven {α : Type*} {V : NeighborhoodSystem α}
     (h : V.IsEffectivelyGiven) : V.PowerDomain.IsEffectivelyGiven := by
   obtain ⟨P⟩ := h
@@ -315,6 +313,5 @@ theorem NeighborhoodSystem.PowerDomain_isEffectivelyGiven {α : Type*} {V : Neig
   have hb := hconss (Nat.pair a b)
   simp only [unpair_pair_fst, unpair_pair_snd] at hb
   exact hb.symm
-end
 
 end DomainTheory.NeighbourhoodSystems

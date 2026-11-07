@@ -14,44 +14,23 @@ import Mathlib.Tactic.IntervalCases
 namespace DomainTheory.NeighbourhoodSystems.LucidHistory
 open NeighborhoodSystem Domain.Recursive
 
-section
-
 abbrev Gamma : Type := List ℕ ⊕ (ℕ → ℕ)
-end
-
-section
 
 def star : Gamma := Sum.inl []
-end
-
-section
 
 def streamCons (i : ℕ) (s : ℕ → ℕ) : ℕ → ℕ
   | 0 => i
   | n + 1 => s n
-end
 
-section
 @[simp] theorem streamCons_zero (i : ℕ) (s : ℕ → ℕ) : streamCons i s 0 = i := rfl
-end
 
-section
 @[simp] theorem streamCons_succ (i : ℕ) (s : ℕ → ℕ) (n : ℕ) : streamCons i s (n + 1) = s n := rfl
-end
-
-section
 
 def cons (i : ℕ) : Gamma → Gamma
   | .inl l => .inl (i :: l)
   | .inr s => .inr (streamCons i s)
-end
-
-section
 
 def consSet (i : ℕ) (X : Set Gamma) : Set Gamma := {z | ∃ γ ∈ X, z = cons i γ}
-end
-
-section
 
 theorem cons_injective {i j : ℕ} {γ δ : Gamma} (h : cons i γ = cons j δ) : i = j ∧ γ = δ := by
   cases γ with
@@ -70,19 +49,13 @@ theorem cons_injective {i j : ℕ} {γ δ : Gamma} (h : cons i γ = cons j δ) :
       refine ⟨hi, ?_⟩
       have hs : s = s' := funext fun n => by simpa using congrFun heq (n + 1)
       rw [hs]
-end
 
-section
 @[simp] theorem mem_consSet {i : ℕ} {X : Set Gamma} {z : Gamma} :
     z ∈ consSet i X ↔ ∃ γ ∈ X, z = cons i γ := Iff.rfl
-end
 
-section
 @[simp] theorem consSet_empty (i : ℕ) : consSet i (∅ : Set Gamma) = ∅ := by
   ext z; simp [mem_consSet]
-end
 
-section
 theorem consSet_inter (i : ℕ) (X X' : Set Gamma) :
     consSet i X ∩ consSet i X' = consSet i (X ∩ X') := by
   ext z
@@ -93,62 +66,38 @@ theorem consSet_inter (i : ℕ) (X X' : Set Gamma) :
     exact ⟨γ, ⟨hγ, hγγ' ▸ hγ'⟩, rfl⟩
   · rintro ⟨γ, ⟨hγ, hγ'⟩, rfl⟩
     exact ⟨⟨γ, hγ, rfl⟩, ⟨γ, hγ', rfl⟩⟩
-end
 
-section
 theorem consSet_inter_ne {i j : ℕ} (h : i ≠ j) (X Y : Set Gamma) :
     consSet i X ∩ consSet j Y = ∅ := by
   ext z
   simp only [Set.mem_inter_iff, mem_consSet, Set.mem_empty_iff_false, iff_false, not_and]
   rintro ⟨γ, -, rfl⟩ ⟨γ', -, heq⟩
   exact h (cons_injective heq).1
-end
 
-section
 theorem consSet_nonempty {i : ℕ} {X : Set Gamma} (h : X.Nonempty) : (consSet i X).Nonempty := by
   obtain ⟨γ, hγ⟩ := h; exact ⟨cons i γ, γ, hγ, rfl⟩
-end
 
-section
 theorem consSet_subset_of_subset {i : ℕ} {X X' : Set Gamma} (h : X ⊆ X') :
     consSet i X ⊆ consSet i X' := by
   rintro z ⟨γ, hγ, rfl⟩; exact ⟨γ, h hγ, rfl⟩
-end
-
-section
 
 theorem consSet_subset {i : ℕ} {X X' : Set Gamma} :
     consSet i X ⊆ consSet i X' ↔ X ⊆ X' := by
   refine ⟨fun h γ hγ => ?_, consSet_subset_of_subset⟩
   obtain ⟨γ', hγ', heq⟩ := h ⟨γ, hγ, rfl⟩
   rwa [(cons_injective heq.symm).2] at hγ'
-end
-
-section
 
 def nbhd : List ℕ → Set Gamma
   | [] => Set.univ
   | i :: l => consSet i (nbhd l)
-end
 
-section
 @[simp] theorem nbhd_nil : nbhd [] = (Set.univ : Set Gamma) := rfl
-end
 
-section
 @[simp] theorem nbhd_cons (i : ℕ) (l : List ℕ) : nbhd (i :: l) = consSet i (nbhd l) := rfl
-end
-
-section
 
 def Lmem (X : Set Gamma) : Prop := ∃ l, X = nbhd l
-end
 
-section
 @[simp] theorem mem_nbhd (l : List ℕ) : Lmem (nbhd l) := ⟨l, rfl⟩
-end
-
-section
 
 theorem L_nestedOrDisjoint : NestedOrDisjoint Lmem := by
   rintro X Y ⟨l, rfl⟩ ⟨l', rfl⟩
@@ -165,119 +114,74 @@ theorem L_nestedOrDisjoint : NestedOrDisjoint Lmem := by
         · exact Or.inr (Or.inl (by rw [nbhd_cons, nbhd_cons]; exact consSet_subset_of_subset h2))
         · exact Or.inr (Or.inr (by rw [nbhd_cons, nbhd_cons, consSet_inter, h3, consSet_empty]))
       · exact Or.inr (Or.inr (by rw [nbhd_cons, nbhd_cons]; exact consSet_inter_ne hij _ _))
-end
 
 end DomainTheory.NeighbourhoodSystems.LucidHistory
 
 section
 namespace DomainTheory.NeighbourhoodSystems.LucidHistory
 open NeighborhoodSystem Domain.Recursive
-section
 
 abbrev L : NeighborhoodSystem Gamma :=
   NeighborhoodSystem.ofNestedOrDisjoint Lmem Set.univ Set.univ_nonempty
     (mem_nbhd []) L_nestedOrDisjoint
     (fun {X} _ => Set.subset_univ X)
-end
-
-section
 
 def Lenum (n : ℕ) : Set Gamma := nbhd (decodeList n)
-end
 
-section
 @[simp] theorem Lenum_mem (n : ℕ) : Lmem (Lenum n) := mem_nbhd (decodeList n)
-end
 
-section
 theorem Lenum_surj {Y : Set Gamma} (hY : Lmem Y) : ∃ n, Lenum n = Y := by
   obtain ⟨l, rfl⟩ := hY
   exact ⟨encodeList l, by unfold Lenum; rw [decodeList_encodeList]⟩
-end
-
-section
 
 theorem Lenum_zero : Lenum 0 = Set.univ := by unfold Lenum; rw [decodeList_zero]; rfl
-end
-
-section
 
 def isPrefixChar (m n : ℕ) : ℕ := listEqChar (takeCode (listLenChar m) n) m
-end
-
-section
 
 def LenumConsChar (n m : ℕ) : ℕ :=
   isPrefixChar m n + isPrefixChar n m - isPrefixChar m n * isPrefixChar n m
-end
-
-section
 
 def LenumConsCharP (t : ℕ) : ℕ := LenumConsChar t.unpair.1 t.unpair.2
-end
 
-section
 def LenumInter (n m : ℕ) : ℕ := selectFn (isPrefixChar m n) n m
-end
-
-section
 
 def LenumInterEqChar (n m k : ℕ) : ℕ :=
   mulBit (isPrefixChar m n) (listEqChar k n) + mulBit (isPrefixChar n m) (listEqChar k m)
     - mulBit (isPrefixChar m n) (listEqChar k n) * mulBit (isPrefixChar n m) (listEqChar k m)
-end
-
-section
 
 def LenumInterEqCharP (t : ℕ) : ℕ :=
   LenumInterEqChar t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2
-end
 
-section
 theorem isPrefixChar_eq_one_iff (m n : ℕ) :
     isPrefixChar m n = 1 ↔ decodeList m <+: decodeList n := by
   unfold isPrefixChar
   rw [listEqChar_eq_one_iff, takeCode_eq, listLenChar_eq, List.prefix_iff_eq_take]
   exact eq_comm
-end
 
-section
 theorem isPrefixChar_le_one (m n : ℕ) : isPrefixChar m n ≤ 1 := listEqChar_le_one _ _
-end
 
-section
 theorem isPrefixChar_eq_zero_or_one (m n : ℕ) :
     isPrefixChar m n = 0 ∨ isPrefixChar m n = 1 := by
   have := isPrefixChar_le_one m n; omega
-end
 
-section
 theorem LenumConsChar_eq_one_iff (n m : ℕ) :
     LenumConsChar n m = 1 ↔ isPrefixChar m n = 1 ∨ isPrefixChar n m = 1 := by
   unfold LenumConsChar
   rcases isPrefixChar_eq_zero_or_one m n with ha | ha <;>
     rcases isPrefixChar_eq_zero_or_one n m with hb | hb <;> simp [ha, hb]
-end
 
-section
 theorem LenumConsChar_le_one (n m : ℕ) : LenumConsChar n m ≤ 1 := by
   unfold LenumConsChar
   rcases isPrefixChar_eq_zero_or_one m n with ha | ha <;>
     rcases isPrefixChar_eq_zero_or_one n m with hb | hb <;> simp [ha, hb]
-end
 
-section
 theorem LenumConsCharP_le_one (t : ℕ) : LenumConsCharP t ≤ 1 :=
   LenumConsChar_le_one _ _
-end
 
-section
 theorem mulBit_eq_zero_or_one {a b : ℕ} (ha : a ≤ 1) (hb : b ≤ 1) :
     mulBit a b = 0 ∨ mulBit a b = 1 := by
   have := mulBit_le_one ha hb; omega
-end
 
-section
 theorem LenumInterEqChar_eq_one_iff (n m k : ℕ) :
     LenumInterEqChar n m k = 1 ↔
       (isPrefixChar m n = 1 ∧ decodeList k = decodeList n) ∨
@@ -290,28 +194,20 @@ theorem LenumInterEqChar_eq_one_iff (n m k : ℕ) :
       rcases mulBit_eq_zero_or_one (isPrefixChar_le_one n m) (listEqChar_le_one k m) with hb | hb <;>
         simp [ha, hb]
   rw [hstep, mulBit_eq_one_iff, mulBit_eq_one_iff, listEqChar_eq_one_iff, listEqChar_eq_one_iff]
-end
 
-section
 theorem LenumInterEqChar_le_one (n m k : ℕ) : LenumInterEqChar n m k ≤ 1 := by
   unfold LenumInterEqChar
   rcases mulBit_eq_zero_or_one (isPrefixChar_le_one m n) (listEqChar_le_one k n) with ha | ha <;>
     rcases mulBit_eq_zero_or_one (isPrefixChar_le_one n m) (listEqChar_le_one k m) with hb | hb <;>
       simp [ha, hb]
-end
 
-section
 theorem LenumInterEqCharP_le_one (t : ℕ) : LenumInterEqCharP t ≤ 1 :=
   LenumInterEqChar_le_one _ _ _
-end
 
-section
 theorem nbhd_nonempty : ∀ l : List ℕ, (nbhd l).Nonempty
   | [] => ⟨star, trivial⟩
   | _ :: l => consSet_nonempty (nbhd_nonempty l)
-end
 
-section
 theorem primrec_isPrefixChar : Nat.Primrec (fun t => isPrefixChar t.unpair.1 t.unpair.2) := by
   have hlen : Nat.Primrec (fun t : ℕ => listLenChar t.unpair.1) := primrec_listLenChar.comp Nat.Primrec.left
   have htake : Nat.Primrec (fun t : ℕ => takeCode (listLenChar t.unpair.1) t.unpair.2) :=
@@ -319,9 +215,7 @@ theorem primrec_isPrefixChar : Nat.Primrec (fun t => isPrefixChar t.unpair.1 t.u
       simp only [unpair_pair_fst, unpair_pair_snd]
   exact (primrec_listEqChar.comp (Nat.Primrec.pair htake Nat.Primrec.left)).of_eq fun t => by
     simp only [isPrefixChar, unpair_pair_fst, unpair_pair_snd]
-end
 
-section
 theorem primrec_LenumInterEqChar :
     Nat.Primrec (fun t => LenumInterEqChar t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2) := by
   have hn : Nat.Primrec (fun t : ℕ => t.unpair.1) := Nat.Primrec.left
@@ -347,22 +241,15 @@ theorem primrec_LenumInterEqChar :
     (primrec_mulBit.comp (Nat.Primrec.pair hpnm hekm)).of_eq fun t => by simp only [unpair_pair_fst, unpair_pair_snd]
   exact (primrec_sub₂ (primrec_add₂ ha hb) (primrec_mul₂ ha hb)).of_eq fun t => by
     simp only [LenumInterEqChar]
-end
 
-section
 theorem primrec_LenumInterEqCharP : Nat.Primrec LenumInterEqCharP :=
   primrec_LenumInterEqChar.of_eq fun t => by simp only [LenumInterEqCharP]
-end
-
-section
 
 theorem primrec_isPrefixChar_swap :
     Nat.Primrec (fun t => isPrefixChar t.unpair.2 t.unpair.1) :=
   (primrec_isPrefixChar.comp (Nat.Primrec.pair Nat.Primrec.right Nat.Primrec.left)).of_eq
     fun t => by simp only [unpair_pair_fst, unpair_pair_snd]
-end
 
-section
 theorem primrec_LenumConsChar :
     Nat.Primrec (fun t => LenumConsChar t.unpair.1 t.unpair.2) := by
   have ha : Nat.Primrec (fun t : ℕ => isPrefixChar t.unpair.2 t.unpair.1) :=
@@ -370,31 +257,19 @@ theorem primrec_LenumConsChar :
   have hb : Nat.Primrec (fun t : ℕ => isPrefixChar t.unpair.1 t.unpair.2) := primrec_isPrefixChar
   exact (primrec_sub₂ (primrec_add₂ ha hb) (primrec_mul₂ ha hb)).of_eq fun t => by
     simp only [LenumConsChar]
-end
 
-section
 theorem primrec_LenumConsCharP : Nat.Primrec LenumConsCharP :=
   primrec_LenumConsChar.of_eq fun t => by simp only [LenumConsCharP]
-end
 
-section
 theorem primrec_LenumInter : Nat.Primrec (fun t => LenumInter t.unpair.1 t.unpair.2) :=
   (primrec_selectFn primrec_isPrefixChar_swap Nat.Primrec.left Nat.Primrec.right).of_eq
     fun t => by simp only [LenumInter]
-end
-
-section
 
 theorem star_ne_cons (i : ℕ) (γ : Gamma) : star ≠ cons i γ := by
   cases γ <;> simp [star, cons]
-end
 
-section
 theorem star_not_mem_consSet (i : ℕ) (X : Set Gamma) : star ∉ consSet i X := by
   rintro ⟨γ, -, heq⟩; exact star_ne_cons i γ heq
-end
-
-section
 
 theorem nbhd_subset_iff : ∀ (l l' : List ℕ), nbhd l ⊆ nbhd l' ↔ l' <+: l := by
   intro l
@@ -428,15 +303,9 @@ theorem nbhd_subset_iff : ∀ (l l' : List ℕ), nbhd l ⊆ nbhd l' ↔ l' <+: l
         · intro h
           rw [List.cons_prefix_cons] at h
           exact absurd h.1.symm hij
-end
-
-section
 
 theorem Lenum_subset_iff (n m : ℕ) : Lenum n ⊆ Lenum m ↔ isPrefixChar m n = 1 := by
   unfold Lenum; rw [nbhd_subset_iff, isPrefixChar_eq_one_iff]
-end
-
-section
 
 theorem Lenum_cons_iff (n m : ℕ) :
     (∃ k, Lenum k ⊆ Lenum n ∩ Lenum m) ↔ isPrefixChar m n = 1 ∨ isPrefixChar n m = 1 := by
@@ -452,9 +321,7 @@ theorem Lenum_cons_iff (n m : ℕ) :
   · rintro (hp | hp)
     · exact ⟨n, Set.subset_inter subset_rfl ((Lenum_subset_iff n m).mpr hp)⟩
     · exact ⟨m, Set.subset_inter ((Lenum_subset_iff m n).mpr hp) subset_rfl⟩
-end
 
-section
 theorem LenumInter_spec {n m : ℕ} (h : ∃ k, Lenum k ⊆ Lenum n ∩ Lenum m) :
     Lenum (LenumInter n m) = Lenum n ∩ Lenum m := by
   unfold LenumInter
@@ -467,33 +334,22 @@ theorem LenumInter_spec {n m : ℕ} (h : ∃ k, Lenum k ⊆ Lenum n ∩ Lenum m)
     exact (Set.inter_eq_right.mpr ((Lenum_subset_iff m n).mpr hp)).symm
   · rw [h1, selectFn_one]
     exact (Set.inter_eq_left.mpr ((Lenum_subset_iff n m).mpr h1)).symm
-end
 
-section
 theorem Lenum_cons_charP_eq_one_iff (n m : ℕ) :
     (∃ k, Lenum k ⊆ Lenum n ∩ Lenum m) ↔ LenumConsCharP (Nat.pair n m) = 1 := by
   unfold LenumConsCharP
   rw [unpair_pair_fst, unpair_pair_snd, LenumConsChar_eq_one_iff]
   exact Lenum_cons_iff n m
-end
-
-section
 
 theorem Lenum_cons_computable : RecDecidable₂ (fun n m => ∃ k, Lenum k ⊆ Lenum n ∩ Lenum m) :=
   RecDecidable₂.of_paired_zero_one_char primrec_LenumConsCharP
     (fun t => by have := LenumConsCharP_le_one t; omega)
     Lenum_cons_charP_eq_one_iff
-end
-
-section
 
 theorem nbhd_injective {l l' : List ℕ} (h : nbhd l = nbhd l') : l = l' := by
   have h1 : l' <+: l := (nbhd_subset_iff l l').mp h.subset
   have h2 : l <+: l' := (nbhd_subset_iff l' l).mp h.symm.subset
   exact (h1.eq_of_length (h1.length_le.antisymm h2.length_le)).symm
-end
-
-section
 
 theorem Lenum_interEq_iff (n m k : ℕ) :
     Lenum n ∩ Lenum m = Lenum k ↔
@@ -533,26 +389,18 @@ theorem Lenum_interEq_iff (n m k : ℕ) :
     · rintro (⟨hp, -⟩ | ⟨hp, -⟩)
       · exact absurd hp h1
       · exact absurd hp h2
-end
 
-section
 theorem Lenum_interEq_charP_eq_one_iff (n m k : ℕ) :
     Lenum n ∩ Lenum m = Lenum k ↔ LenumInterEqCharP (Nat.pair n (Nat.pair m k)) = 1 := by
   unfold LenumInterEqCharP
   simp only [unpair_pair_fst, unpair_pair_snd]
   rw [LenumInterEqChar_eq_one_iff]
   exact Lenum_interEq_iff n m k
-end
-
-section
 
 theorem Lenum_interEq_computable : RecDecidable₃ (fun n m k => Lenum n ∩ Lenum m = Lenum k) :=
   RecDecidable₃.of_triple_zero_one_char primrec_LenumInterEqCharP
     (fun t => by have := LenumInterEqCharP_le_one t; omega)
     Lenum_interEq_charP_eq_one_iff
-end
-
-section
 
 def Lpres : ComputablePresentation L where
   X := Lenum
@@ -565,7 +413,6 @@ def Lpres : ComputablePresentation L where
   inter_spec h := LenumInter_spec h
   masterIdx := 0
   masterIdx_spec := Lenum_zero
-end
 
 section
 open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
@@ -587,68 +434,34 @@ structure LFunData {V : NeighborhoodSystem β} (P : ComputablePresentation V) wh
   heq1p : Nat.Primrec eq1
 end
 
-section
 instance : Nonempty Gamma := ⟨Sum.inl []⟩
-end
 
-section
 @[simp] theorem cons_inl (i : ℕ) (l : List ℕ) : cons i (.inl l) = .inl (i :: l) := rfl
-end
 
-section
 @[simp] theorem cons_inr (i : ℕ) (s : ℕ → ℕ) : cons i (.inr s) = .inr (streamCons i s) := rfl
-end
 
-section
 @[simp] theorem L_mem {X : Set Gamma} : L.mem X ↔ Lmem X := Iff.rfl
-end
 
-section
 @[simp] theorem L_master : L.master = Set.univ := rfl
-end
-
-section
 
 def LenumSubsetChar (t : ℕ) : ℕ := isPrefixChar t.unpair.2 t.unpair.1
-end
-
-section
 
 def finPrefix (f : ℕ → ℕ) (n : ℕ) : List ℕ := (List.range n).map f
-end
 
-section
 @[simp] theorem finPrefix_zero (f : ℕ → ℕ) : finPrefix f 0 = [] := rfl
-end
-
-section
 
 def HasMin (x : L.Element) : Prop := ∃ X, x.mem X ∧ ∀ Y, x.mem Y → X ⊆ Y
-end
-
-section
 
 def bitToNat (b : Bool) : ℕ := if b then 1 else 0
-end
 
-section
 @[simp] theorem bitToNat_false : bitToNat false = 0 := rfl
-end
 
-section
 @[simp] theorem bitToNat_true : bitToNat true = 1 := rfl
-end
-
-section
 
 def embStr (σ : BitDom.Str) : List ℕ := σ.map bitToNat
-end
 
-section
 @[simp] theorem embStr_nil : embStr [] = [] := rfl
-end
 
-section
 open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 
 def Tenum (n : ℕ) : Set Token :=
@@ -701,19 +514,12 @@ theorem andFn_zero (Y : Set Token) : andFn zero Y = Y := by unfold andFn; rw [it
 theorem eq_master_of_master_subset {Y : Set Token} (h : TwoToken.master ⊆ Y) :
     Y = TwoToken.master := (Set.univ_subset_iff.mp h : Y = Set.univ)
 
-end
-
-section
-
 theorem exists_cons_prefix_of_prefix_of_length_lt {l l' : List ℕ} (h : l <+: l')
     (hlt : l.length < l'.length) : ∃ i, l ++ [i] <+: l' := by
   obtain ⟨r, hr⟩ := h
   cases r with
   | nil => simp [← hr] at hlt
   | cons i r' => exact ⟨i, r', by rw [← hr]; simp⟩
-end
-
-section
 
 theorem exists_extend_of_not_hasMin {x : L.Element} (hx : ¬ HasMin x) {l : List ℕ}
     (hl : x.mem (nbhd l)) : ∃ i, x.mem (nbhd (l ++ [i])) := by
@@ -734,9 +540,6 @@ theorem exists_extend_of_not_hasMin {x : L.Element} (hx : ¬ HasMin x) {l : List
     rw [hdisj] at hxmem
     obtain ⟨l'', hl''⟩ := x.sub hxmem
     exact (nbhd_nonempty l'').ne_empty hl''.symm
-end
-
-section
 
 noncomputable def buildData (x : L.Element) (hx : ¬ HasMin x) :
     ∀ n : ℕ, {l : List ℕ // x.mem (nbhd l) ∧ l.length = n} :=
@@ -747,39 +550,27 @@ noncomputable def buildData (x : L.Element) (hx : ¬ HasMin x) :
           Classical.choose_spec (exists_extend_of_not_hasMin hx prev.2.1),
           by rw [List.length_append, List.length_singleton, prev.2.2]⟩)
       n
-end
 
-section
 theorem finPrefix_length (f : ℕ → ℕ) (n : ℕ) : (finPrefix f n).length = n := by
   unfold finPrefix; rw [List.length_map, List.length_range]
-end
 
-section
 theorem finPrefix_succ (f : ℕ → ℕ) (n : ℕ) :
     finPrefix f (n + 1) = finPrefix f n ++ [f n] := by
   unfold finPrefix; rw [List.range_succ, List.map_append, List.map_singleton]
-end
 
-section
 theorem finPrefix_prefix_succ (f : ℕ → ℕ) (n : ℕ) : finPrefix f n <+: finPrefix f (n + 1) := by
   rw [finPrefix_succ]; exact List.prefix_append _ _
-end
 
-section
 theorem finPrefix_prefix_of_le (f : ℕ → ℕ) {n m : ℕ} (h : n ≤ m) :
     finPrefix f n <+: finPrefix f m := by
   induction h with
   | refl => exact List.prefix_refl _
   | step _ ih => exact ih.trans (finPrefix_prefix_succ f _)
-end
 
-section
 theorem finPrefix_take (f : ℕ → ℕ) {n m : ℕ} (h : n ≤ m) :
     (finPrefix f m).take n = finPrefix f n := by
   unfold finPrefix; rw [← List.map_take, List.take_range, min_eq_left h]
-end
 
-section
 open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 
 theorem master_ne_one_T : TwoToken.master ≠ one := by
@@ -795,16 +586,10 @@ theorem master_ne_zero_T : TwoToken.master ≠ zero := by
 theorem andFn_master (Y : Set Token) : andFn TwoToken.master Y = TwoToken.master := by
   unfold andFn; rw [ite_eq_right master_ne_zero_T, ite_eq_right master_ne_one_T]
 
-end
-
-section
-
 theorem nbhd_finPrefix_antitone (f : ℕ → ℕ) {n m : ℕ} (h : n ≤ m) :
     nbhd (finPrefix f m) ⊆ nbhd (finPrefix f n) :=
   (nbhd_subset_iff _ _).mpr (finPrefix_prefix_of_le f h)
-end
 
-section
 open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 
 def notCode (c : ℕ) : ℕ := if c = 1 then 2 else if c = 2 then 1 else 0
@@ -816,8 +601,6 @@ theorem notFn_master : notFn TwoToken.master = TwoToken.master := by
   unfold notFn; rw [ite_eq_right master_ne_zero_T, ite_eq_right master_ne_one_T]
 
 theorem notFn_zero : notFn zero = one := by unfold notFn; rw [ite_eq_left rfl]
-
-end
 
 section
 open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
@@ -842,12 +625,10 @@ noncomputable def LFunData.ofPresentation {V : NeighborhoodSystem β} (P : Compu
   heq1p := P.eq_computable.choose_spec.1
 end
 
-section
 open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 
 theorem one_inter_zero_T : one ∩ zero = (∅ : Set Token) := by
   ext t; fin_cases t <;> simp [zero, one]
-end
 
 section
 open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
@@ -864,7 +645,6 @@ def LFunData.pres {V : NeighborhoodSystem β} {P : ComputablePresentation V} (d 
 
 end
 
-section
 open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 
 theorem primrec_TeqChar {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
@@ -895,12 +675,8 @@ theorem primrec_TinterCode {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Pr
       · have : isZero ((f n - g n) + (g n - f n)) = 0 := by unfold isZero; omega
         rw [ite_eq_right h2, this, selectFn_zero]
 
-end
-
-section
 theorem principal_hasMin (l : List ℕ) : HasMin (L.principal (mem_nbhd l)) :=
   ⟨nbhd l, ⟨mem_nbhd l, subset_rfl⟩, fun _ hY => hY.2⟩
-end
 
 section
 open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
@@ -927,8 +703,6 @@ def pointwiseBin {V₀ : NeighborhoodSystem β} {V₁ : NeighborhoodSystem γ} {
 
 end
 
-section
-
 def streamElement (f : ℕ → ℕ) : L.Element where
   mem Z := L.mem Z ∧ ∃ n, nbhd (finPrefix f n) ⊆ Z
   sub h := h.1
@@ -944,9 +718,6 @@ def streamElement (f : ℕ → ℕ) : L.Element where
   up_mem := by
     rintro X Y ⟨-, n, hn⟩ hYmem hXY
     exact ⟨hYmem, n, hn.trans hXY⟩
-end
-
-section
 
 theorem finPrefix_eq_of_streamElement_eq {f₁ f₂ : ℕ → ℕ} (heq : streamElement f₁ = streamElement f₂) :
     ∀ n, finPrefix f₁ n = finPrefix f₂ n := by
@@ -961,9 +732,6 @@ theorem finPrefix_eq_of_streamElement_eq {f₁ f₂ : ℕ → ℕ} (heq : stream
     List.prefix_iff_eq_take.mp hpre
   rw [finPrefix_length] at hpre'
   rw [hpre', finPrefix_take f₂ hlen]
-end
-
-section
 
 theorem streamElement_injective : Function.Injective streamElement := by
   intro f₁ f₂ heq
@@ -972,9 +740,6 @@ theorem streamElement_injective : Function.Injective streamElement := by
   have h1 := hpre (n + 1)
   rw [finPrefix_succ, finPrefix_succ, hpre n] at h1
   simpa using List.append_cancel_left h1
-end
-
-section
 
 theorem streamElement_not_hasMin (f : ℕ → ℕ) : ¬ HasMin (streamElement f) := by
   rintro ⟨X, ⟨-, n, hXsub⟩, hmin⟩
@@ -985,9 +750,7 @@ theorem streamElement_not_hasMin (f : ℕ → ℕ) : ¬ HasMin (streamElement f)
   have hlen := congrArg List.length (nbhd_injective heq)
   rw [finPrefix_length, finPrefix_length] at hlen
   omega
-end
 
-section
 open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 
 theorem subset_iff_eq_or_eq_master {X' X : Set Token} (hX' : Truth.T.mem X')
@@ -1004,16 +767,10 @@ theorem subset_iff_eq_or_eq_master {X' X : Set Token} (hX' : Truth.T.mem X')
     · exact absurd (show (0 : Token) ∈ one from h (by simp [TwoToken.master])) (by simp [one])
     · exact absurd (show (0 : Token) ∈ one from h (by simp [zero])) (by simp [one])
     · rfl
-end
-
-section
 
 def toElement : Gamma → L.Element
   | .inl l => L.principal (L_mem.mpr (mem_nbhd l))
   | .inr f => streamElement f
-end
-
-section
 
 theorem toElement_injective : Function.Injective toElement := by
   rintro (l₁ | f₁) (l₂ | f₂) heq
@@ -1024,33 +781,21 @@ theorem toElement_injective : Function.Injective toElement := by
   · have heq' : streamElement f₁ = L.principal (mem_nbhd l₂) := heq
     exact absurd (principal_hasMin l₂) (heq' ▸ streamElement_not_hasMin f₁)
   · exact congrArg Sum.inr (streamElement_injective heq)
-end
-
-section
 
 noncomputable def toStream (x : L.Element) (hx : ¬ HasMin x) (n : ℕ) : ℕ :=
   Classical.choose (exists_extend_of_not_hasMin hx (buildData x hx n).2.1)
-end
 
-section
 theorem buildData_succ (x : L.Element) (hx : ¬ HasMin x) (n : ℕ) :
     (buildData x hx (n + 1)).1 = (buildData x hx n).1 ++ [toStream x hx n] := rfl
-end
 
-section
 theorem buildData_eq_finPrefix (x : L.Element) (hx : ¬ HasMin x) :
     ∀ n, (buildData x hx n).1 = finPrefix (toStream x hx) n
   | 0 => rfl
   | n + 1 => by rw [buildData_succ, finPrefix_succ, buildData_eq_finPrefix x hx n]
-end
 
-section
 theorem mem_nbhd_finPrefix_toStream (x : L.Element) (hx : ¬ HasMin x) (n : ℕ) :
     x.mem (nbhd (finPrefix (toStream x hx) n)) :=
   buildData_eq_finPrefix x hx n ▸ (buildData x hx n).2.1
-end
-
-section
 
 theorem exists_finPrefix_subset_of_mem (x : L.Element) (hx : ¬ HasMin x) {Z : Set Gamma}
     (hZ : x.mem Z) : ∃ n, nbhd (finPrefix (toStream x hx) n) ⊆ Z := by
@@ -1071,9 +816,6 @@ theorem exists_finPrefix_subset_of_mem (x : L.Element) (hx : ¬ HasMin x) {Z : S
     rw [hdisj] at hinter
     obtain ⟨l', hl'⟩ := x.sub hinter
     exact (nbhd_nonempty l').ne_empty hl'.symm
-end
-
-section
 
 theorem toElement_surjective : Function.Surjective toElement := by
   intro x
@@ -1089,21 +831,13 @@ theorem toElement_surjective : Function.Surjective toElement := by
         exact x.up_mem (mem_nbhd_finPrefix_toStream x hx n) hZmem hn
       · intro hZ
         exact ⟨x.sub hZ, exists_finPrefix_subset_of_mem x hx hZ⟩⟩
-end
-
-section
 
 theorem toElement_bijective : Function.Bijective toElement :=
   ⟨toElement_injective, toElement_surjective⟩
-end
-
-section
 
 noncomputable def gammaEquivElement : Gamma ≃ L.Element :=
   Equiv.ofBijective toElement toElement_bijective
-end
 
-section
 open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 
 theorem zero_inter_one_T : zero ∩ one = (∅ : Set Token) := by
@@ -1204,8 +938,6 @@ def Tpres : ComputablePresentation Truth.T where
   masterIdx := 0
   masterIdx_spec := rfl
 
-end
-
 section
 open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 variable {β γ δ : Type*}
@@ -1216,7 +948,6 @@ noncomputable def LTpres : ComputablePresentation (funSpace L Truth.T) := LTdata
 
 end
 
-section
 open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 
 theorem andFn_one (Y : Set Token) : andFn one Y = one := by
@@ -1291,8 +1022,6 @@ noncomputable def notT : ApproximableMap Truth.T Truth.T where
     · rw [heq, notFn_master] at hsub
       have hY'master : Y' = TwoToken.master := eq_master_of_master_subset (hsub.trans hYY')
       rw [hY'master, TwoToken.master]; exact Set.subset_univ _
-
-end
 
 section
 theorem bitToNat_injective : Function.Injective bitToNat := by
@@ -1485,8 +1214,6 @@ theorem deMorganT_isComputable :
     (comp_isComputable andT_lifted_isComputable notT_lifted_isComputable)
 end
 
-section
-
 theorem Gamma_cases (γ : Gamma) : γ = star ∨ ∃ i γ', γ = cons i γ' := by
   cases γ with
   | inl l =>
@@ -1499,28 +1226,17 @@ theorem Gamma_cases (γ : Gamma) : γ = star ∨ ∃ i γ', γ = cons i γ' := b
     congr 1
     funext n
     cases n <;> rfl
-end
-
-section
 
 theorem L_isEffectivelyGiven : L.IsEffectivelyGiven := ⟨Lpres⟩
-end
 
-
-
-section
 theorem LenumSubsetChar_le_one (t : ℕ) : LenumSubsetChar t ≤ 1 :=
   isPrefixChar_le_one _ _
-end
 
-section
 theorem Lenum_subset_char_eq_one_iff (n m : ℕ) :
     Lenum n ⊆ Lenum m ↔ LenumSubsetChar (Nat.pair n m) = 1 := by
   unfold LenumSubsetChar
   rw [unpair_pair_fst, unpair_pair_snd, Lenum_subset_iff]
-end
 
-section
 open DomainTheory.NeighbourhoodSystems.TwoToken (Token zero one)
 
 theorem T_isEffectivelyGiven : Truth.T.IsEffectivelyGiven := ⟨Tpres⟩
@@ -1528,26 +1244,16 @@ theorem T_isEffectivelyGiven : Truth.T.IsEffectivelyGiven := ⟨Tpres⟩
 theorem TeqChar_eq_one_iff (a b : ℕ) : TeqChar a b = 1 ↔ a = b := by
   unfold TeqChar isZero; omega
 
-end
-
-section
-
 theorem embStr_injective : Function.Injective embStr :=
   List.map_injective_iff.mpr bitToNat_injective
-end
 
-section
 theorem primrec_LenumSubsetChar : Nat.Primrec LenumSubsetChar :=
   primrec_isPrefixChar_swap.of_eq fun t => by simp only [LenumSubsetChar]
-end
-
-section
 
 theorem Lenum_subset_recDecidable : RecDecidable₂ (fun n m => Lenum n ⊆ Lenum m) :=
   RecDecidable₂.of_paired_zero_one_char primrec_LenumSubsetChar
     (fun t => by have := LenumSubsetChar_le_one t; omega)
     Lenum_subset_char_eq_one_iff
-end
 
 end DomainTheory.NeighbourhoodSystems.LucidHistory
 namespace DomainTheory.NeighbourhoodSystems

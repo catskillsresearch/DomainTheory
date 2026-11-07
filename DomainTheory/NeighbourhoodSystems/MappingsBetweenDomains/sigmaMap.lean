@@ -9,15 +9,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.sig
 namespace DomainTheory.NeighbourhoodSystems.SigmaMap
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem BitDom
 
-section
-
 structure SatisfiesParityEquations (g : ApproximableMap B Truth.T) : Prop where
   one : ∀ x : B.Element, g.toElementMap (sigmaElt [true] x) = Truth.trueElt
   zeroOne : ∀ x : B.Element, g.toElementMap (sigmaElt [false, true] x) = Truth.falseElt
   zeroZero : ∀ x : B.Element, g.toElementMap (sigmaElt [false, false] x) = g.toElementMap x
-end
-
-section
 
 /-- Approximable map that prefixes neighbourhoods by a fixed string. -/
 def sigmaMap (σ : Str) : ApproximableMap B B where
@@ -33,9 +28,6 @@ def sigmaMap (σ : Str) : ApproximableMap B B where
   mono := by
     rintro X X' Y Y' ⟨_, _, hsub⟩ hX'X hYY' hX' hY'
     exact ⟨hX', hY', ((prepend_mono σ hX'X).trans hsub).trans hYY'⟩
-end
-
-section
 
 theorem key (g : ApproximableMap B Truth.T) (hg : SatisfiesParityEquations g) :
     ∀ σ : Str, g.toElementMap (sigmaElt σ B.bot) = Truth.valElt (Truth.scan σ)
@@ -72,9 +64,6 @@ theorem key (g : ApproximableMap B Truth.T) (hg : SatisfiesParityEquations g) :
   | (false :: false :: t) => by
       rw [show (false :: false :: t : Str) = [false, false] ++ t from rfl, sigmaElt_append,
         hg.zeroZero, key g hg t, Truth.scan_append_falseFalse]
-end
-
-section
 
 theorem eq_parityMap_of_satisfies {g : ApproximableMap B Truth.T}
     (hg : SatisfiesParityEquations g) : g = Truth.parityMap := by
@@ -87,9 +76,6 @@ theorem eq_parityMap_of_satisfies {g : ApproximableMap B Truth.T}
     rw [← sigmaElt_bot, key g hg σ, Truth.parityMap_rel_cone]
   · exact ⟨fun hr => absurd (g.rel_dom hr) hX,
       fun hr => absurd (Truth.parityMap.rel_dom hr) hX⟩
-end
-
-section
 
 theorem parityMap_satisfies : SatisfiesParityEquations Truth.parityMap where
   one x := by
@@ -119,9 +105,6 @@ theorem parityMap_satisfies : SatisfiesParityEquations Truth.parityMap where
       exact ⟨τ, hτ, by rwa [Truth.scan_append_falseFalse] at hval⟩
     · rintro ⟨τ, hτ, hval⟩
       exact ⟨τ, hτ, by rwa [Truth.scan_append_falseFalse]⟩
-end
-
-section
 
 theorem toElementMap_sigmaMap (σ : Str) (x : B.Element) :
     (sigmaMap σ).toElementMap x = sigmaElt σ x := by
@@ -132,6 +115,5 @@ theorem toElementMap_sigmaMap (σ : Str) (x : B.Element) :
     exact ⟨hY, X, hxX, hsub⟩
   · rintro ⟨hY, X, hxX, hsub⟩
     exact ⟨X, hxX, x.sub hxX, hY, hsub⟩
-end
 
 end DomainTheory.NeighbourhoodSystems.SigmaMap

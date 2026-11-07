@@ -7,9 +7,7 @@ import Mathlib.Tactic.Attr.Core
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems.BitDom
-section
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
@@ -77,7 +75,4 @@ theorem sigmaElt_nil (x : B.Element) : sigmaElt [] x = x := by
   · intro hY
     exact ⟨x.sub hY, Y, hY, by rw [prepend_nil]⟩
 
-end
-
 end DomainTheory.NeighbourhoodSystems.BitDom
-end

@@ -13,8 +13,6 @@ import Mathlib.Tactic.Ring
 namespace Domain.Recursive
 open DomainTheory.NeighbourhoodSystems
 
-section
-
 theorem amGM : ∀ {a b : ℕ}, 4 * a * b ≤ (a + b) * (a + b)
   | 0, _ => by rw [Nat.mul_zero, Nat.zero_mul]; exact Nat.zero_le _
   | _, 0 => by rw [Nat.mul_zero]; exact Nat.zero_le _
@@ -22,9 +20,6 @@ theorem amGM : ∀ {a b : ℕ}, 4 * a * b ≤ (a + b) * (a + b)
     simpa only [Nat.mul_add, Nat.add_mul, show (4 : ℕ) = 1 + 1 + 1 + 1 from rfl, Nat.one_mul,
       Nat.mul_one, Nat.add_assoc, Nat.add_left_comm, Nat.add_le_add_iff_left]
       using Nat.add_le_add_right (@amGM a b) 4
-end
-
-section
 
 theorem iter_sq_le (n guess : ℕ) : Nat.sqrt.iter n guess * Nat.sqrt.iter n guess ≤ n := by
   unfold Nat.sqrt.iter
@@ -37,17 +32,11 @@ theorem iter_sq_le (n guess : ℕ) : Nat.sqrt.iter n guess * Nat.sqrt.iter n gue
     omega
   termination_by guess
   decreasing_by exact h
-end
-
-section
 
 theorem lt_of_mul_lt_mul_left' {a b c : ℕ} (h : a * b < a * c) : b < c := by
   rcases Nat.lt_or_ge b c with hbc | hbc
   · exact hbc
   · exact absurd h (Nat.not_lt.mpr (Nat.mul_le_mul_left a hbc))
-end
-
-section
 
 theorem lt_iter_succ_sq (n guess : ℕ) (hn : n < (guess + 1) * (guess + 1)) :
     n < (Nat.sqrt.iter n guess + 1) * (Nat.sqrt.iter n guess + 1) := by
@@ -73,9 +62,6 @@ theorem lt_iter_succ_sq (n guess : ℕ) (hn : n < (guess + 1) * (guess + 1)) :
     exact hn
   termination_by guess
   decreasing_by exact h
-end
-
-section
 
 theorem lt_succ_sqrt (n : ℕ) : n < (Nat.sqrt n + 1) * (Nat.sqrt n + 1) := by
   rcases Nat.lt_or_ge 1 n with h | h
@@ -92,9 +78,6 @@ theorem lt_succ_sqrt (n : ℕ) : n < (Nat.sqrt n + 1) * (Nat.sqrt n + 1) := by
   · rw [Nat.sqrt, ite_eq_left h]
     exact Nat.lt_of_lt_of_le (Nat.lt_succ_self n)
       (Nat.le_mul_of_pos_right (n + 1) (Nat.succ_pos n))
-end
-
-section
 
 theorem sqrt_le (n : ℕ) : Nat.sqrt n * Nat.sqrt n ≤ n := by
   rcases Nat.lt_or_ge 1 n with h | h
@@ -103,9 +86,6 @@ theorem sqrt_le (n : ℕ) : Nat.sqrt n * Nat.sqrt n ≤ n := by
   · rw [Nat.sqrt, ite_eq_left h]
     calc n * n ≤ 1 * n := Nat.mul_le_mul_right n h
       _ = n := Nat.one_mul n
-end
-
-section
 
 theorem sqrt_eq_of {m q : ℕ} (h1 : q * q ≤ m) (h2 : m < (q + 1) * (q + 1)) : Nat.sqrt m = q := by
   have hle := sqrt_le m
@@ -125,17 +105,11 @@ theorem sqrt_eq_of {m q : ℕ} (h1 : q * q ≤ m) (h2 : m < (q + 1) * (q + 1)) :
       omega
     · exact hh
   omega
-end
-
-section
 
 theorem sqrt_add_eq (q a : ℕ) (h : a ≤ q + q) : Nat.sqrt (q * q + a) = q := by
   refine sqrt_eq_of (Nat.le_add_right _ _) ?_
   have expand : (q + 1) * (q + 1) = q * q + q + q + 1 := Nat.succ_mul_succ q q
   omega
-end
-
-section
 
 theorem unpair_pair (a b : ℕ) : Nat.unpair (Nat.pair a b) = (a, b) := by
   rw [Nat.pair]
@@ -154,163 +128,84 @@ theorem unpair_pair (a b : ℕ) : Nat.unpair (Nat.pair a b) = (a, b) := by
     have e2 : ¬ a + b < a := by omega
     have e3 : a + b - a = b := by omega
     simp only [Nat.unpair, ae, e1, ite_eq_right e2, e3]
-end
 
-section
 @[simp] theorem unpair_pair_fst (a b : ℕ) : (Nat.pair a b).unpair.1 = a := by rw [unpair_pair]
-end
 
-section
 @[simp] theorem unpair_pair_snd (a b : ℕ) : (Nat.pair a b).unpair.2 = b := by rw [unpair_pair]
-end
-
-section
 
 def selectFn (c a b : ℕ) : ℕ := c * a + (1 - c) * b
-end
 
-section
 @[simp] theorem selectFn_one (a b : ℕ) : selectFn 1 a b = a := by simp [selectFn]
-end
 
-section
 @[simp] theorem selectFn_zero (a b : ℕ) : selectFn 0 a b = b := by simp [selectFn]
-end
 
-section
 @[simp] theorem selectFn_ite {c : Prop} [Decidable c] (a b : ℕ) :
     selectFn (if c then 1 else 0) a b = if c then a else b := by
   split <;> simp [selectFn]
-end
-
-section
 
 def RecDecidable (p : ℕ → Prop) : Prop :=
   ∃ f : ℕ → ℕ, Nat.Primrec f ∧ ∀ n, p n ↔ f n = 1
-end
-
-section
 
 def REPred (p : ℕ → Prop) : Prop :=
   ∃ q : ℕ → Prop, RecDecidable q ∧ ∀ n, p n ↔ ∃ i, q (Nat.pair i n)
-end
-
-section
 
 def REPred₂ (r : ℕ → ℕ → Prop) : Prop :=
   REPred fun t => r t.unpair.1 t.unpair.2
-end
-
-section
 
 def RecDecidable₂ (r : ℕ → ℕ → Prop) : Prop :=
   RecDecidable fun t => r t.unpair.1 t.unpair.2
-end
-
-section
 
 def RecDecidable₃ (r : ℕ → ℕ → ℕ → Prop) : Prop :=
   RecDecidable fun t => r t.unpair.1 t.unpair.2.unpair.1 t.unpair.2.unpair.2
-end
-
-section
 
 def encodeList : List ℕ → ℕ
   | [] => 0
   | a :: l => Nat.pair a (encodeList l) + 1
-end
-
-section
 
 def foldStep (stp : ℕ → ℕ) (params s : ℕ) : ℕ :=
   selectFn (1 - s.unpair.1) s
     (Nat.pair (s.unpair.1 - 1).unpair.2
       (stp (Nat.pair (s.unpair.1 - 1).unpair.1 (Nat.pair s.unpair.2 params))))
-end
-
-section
 
 def foldCode (stp : ℕ → ℕ) (params z c : ℕ) : ℕ :=
   ((foldStep stp params)^[c] (Nat.pair c z)).unpair.2
-end
-
-section
 
 def halfParity (n : ℕ) : ℕ :=
   Nat.rec (motive := fun _ => ℕ) 0
     (fun _ ih => Nat.pair (ih.unpair.1 + ih.unpair.2) (1 - ih.unpair.2)) n
-end
-
-section
 
 def isOne (v : ℕ) : ℕ := 1 - ((v - 1) + (1 - v))
-end
 
-section
 theorem isOne_eq_one_iff (v : ℕ) : isOne v = 1 ↔ v = 1 := by
   unfold isOne; constructor <;> (intro h; omega)
-end
 
-section
 @[simp] theorem isOne_one : isOne 1 = 1 := (isOne_eq_one_iff 1).2 rfl
-end
 
-section
 @[simp] theorem isOne_zero : isOne 0 = 0 := by unfold isOne; omega
-end
-
-section
 
 def allListStp (g : ℕ → ℕ) (w : ℕ) : ℕ :=
   selectFn w.unpair.2.unpair.1 (isOne (g (Nat.pair w.unpair.1 w.unpair.2.unpair.2))) 0
-end
-
-section
 
 def allListChar (g : ℕ → ℕ) (p c : ℕ) : ℕ := foldCode (allListStp g) p 1 c
-end
-
-section
 
 def bExistsFn (g : ℕ → ℕ) (n N : ℕ) : ℕ :=
   Nat.rec (motive := fun _ => ℕ) 0 (fun i ih => selectFn ih 1 (isOne (g (Nat.pair i n)))) N
-end
-
-section
 
 def bForallFn (g : ℕ → ℕ) (n N : ℕ) : ℕ :=
   Nat.rec (motive := fun _ => ℕ) 1 (fun i ih => selectFn ih (isOne (g (Nat.pair i n))) 0) N
-end
-
-section
 
 def existsListStp (g : ℕ → ℕ) (w : ℕ) : ℕ :=
   selectFn w.unpair.2.unpair.1 1 (isOne (g (Nat.pair w.unpair.1 w.unpair.2.unpair.2)))
-end
-
-section
 
 def existsListChar (g : ℕ → ℕ) (p c : ℕ) : ℕ := foldCode (existsListStp g) p 0 c
-end
-
-section
 
 def isBinDigit (n : ℕ) : ℕ :=
   selectFn (isOne (1 - n)) 1 (selectFn (isOne (2 - n)) 1 0)
-end
-
-section
 
 def allBinDigitsChar (c : ℕ) : ℕ :=
   allListChar (fun t => isBinDigit t.unpair.1) 0 c
-end
-
-section
 
 def isZero (n : ℕ) : ℕ := 1 - min n 1
-end
-
-section
 
 theorem le_pair_right (a b : ℕ) : b ≤ Nat.pair a b := by
   have hbb : b ≤ b * b := by
@@ -319,56 +214,33 @@ theorem le_pair_right (a b : ℕ) : b ≤ Nat.pair a b := by
     · exact Nat.le_mul_of_pos_left b h
   unfold Nat.pair
   split <;> omega
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 def listLenStp (w : ℕ) : ℕ := w.unpair.2.unpair.1 + 1
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 def listLenChar (c : ℕ) : ℕ := foldCode listLenStp 0 0 c
-end
-
-section
 
 def lowOr (x y : ℕ) : ℕ := 1 - (1 - (x % 2 + y % 2))
-end
-
-section
 
 def lorStep (s : ℕ) : ℕ :=
   Nat.pair (Nat.pair (s.unpair.1.unpair.1 / 2) (s.unpair.1.unpair.2 / 2))
     (Nat.pair (2 * s.unpair.2.unpair.1)
       (s.unpair.2.unpair.2 + s.unpair.2.unpair.1 * lowOr s.unpair.1.unpair.1 s.unpair.1.unpair.2))
-end
-
-section
 
 def mapPairStep (n acc x : ℕ) : ℕ := Nat.pair (Nat.pair n x) acc + 1
-end
-
-section
 
 def mapPairStp (w : ℕ) : ℕ :=
   mapPairStep w.unpair.2.unpair.2 w.unpair.2.unpair.1 w.unpair.1
-end
-
-section
 
 def mapPairCode (n c : ℕ) : ℕ := foldCode mapPairStp n 0 c
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 def mulBit (a b : ℕ) : ℕ := a * b
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 def decodeFuelOkCharBody (prev : ℕ → ℕ) (c : ℕ) : ℕ :=
@@ -378,43 +250,25 @@ def decodeFuelOkCharBody (prev : ℕ → ℕ) (c : ℕ) : ℕ :=
     (selectFn (isOne (2 - c.unpair.1)) (allBinDigitsChar c.unpair.2)
       (selectFn (isOne (3 - c.unpair.1)) sub
         (selectFn (isOne (4 - c.unpair.1)) sub 0)))
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 def decodeFuelOkChar : ℕ → ℕ → ℕ
   | 0, _ => 0
   | fuel + 1, c => decodeFuelOkCharBody (decodeFuelOkChar fuel) c
-end
-
-section
 
 def myLor (a b : ℕ) : ℕ :=
   (lorStep^[a + b] (Nat.pair (Nat.pair a b) (Nat.pair 1 0))).unpair.2.unpair.2
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 def natEqChar (a b : ℕ) : ℕ := 1 - ((a - b) + (b - a))
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 @[simp] theorem natEqChar_eq_one_iff (a b : ℕ) : natEqChar a b = 1 ↔ a = b := by
   unfold natEqChar; omega
-end
 
-
-
-
-
-
-
-
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -430,9 +284,7 @@ set_option maxHeartbeats 800000 in
 def codeBound : ℕ → ℕ
   | 0 => 1
   | n + 1 => Nat.pair 1 (codeBound n) + 1
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 def listEqStpNonzero (w : ℕ) : ℕ :=
@@ -440,30 +292,22 @@ def listEqStpNonzero (w : ℕ) : ℕ :=
     (selectFn w.unpair.2.unpair.1.unpair.1
       (natEqChar w.unpair.1 ((w.unpair.2.unpair.1.unpair.2 - 1).unpair.1)) 0)
     ((w.unpair.2.unpair.1.unpair.2 - 1).unpair.2)
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 def listEqStp (w : ℕ) : ℕ :=
   selectFn (isZero w.unpair.2.unpair.1.unpair.2) (Nat.pair 0 0) (listEqStpNonzero w)
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 def listEqChar (c1 c2 : ℕ) : ℕ :=
   let r := foldCode listEqStp 0 (Nat.pair 1 c2) c1
   mulBit r.unpair.1 (isZero r.unpair.2)
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 def listEqStep (st x : ℕ) : ℕ := listEqStp (Nat.pair x (Nat.pair st 0))
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 def nthStp (w : ℕ) : ℕ :=
@@ -471,15 +315,11 @@ def nthStp (w : ℕ) : ℕ :=
     (selectFn (1 - ((w.unpair.2.unpair.1.unpair.1 - w.unpair.2.unpair.2)
         + (w.unpair.2.unpair.2 - w.unpair.2.unpair.1.unpair.1)))
       w.unpair.1 w.unpair.2.unpair.1.unpair.2)
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 def nthCode (c i d : ℕ) : ℕ := (foldCode nthStp i (Nat.pair 0 d) c).unpair.2
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -493,17 +333,12 @@ def appendListTabFn (w : ℕ) : ℕ :=
   selectFn (isZero ((i + 1) - len1))
     (nthCode p.unpair.1 i 0)
     (nthCode p.unpair.2.unpair.1 (i - len1) 0)
-end
 
-
-section
 set_option maxHeartbeats 800000 in
 
 def decodeFuelOkCharLookup (w : ℕ) : ℕ :=
   decodeFuelOkCharBody (fun c' => nthCode w.unpair.1 c' 0) w.unpair.2
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -512,39 +347,24 @@ set_option maxHeartbeats 800000 in
 
 def dropListTabFn (w : ℕ) : ℕ :=
   nthCode (w.unpair.2.unpair.2) (w.unpair.1 + w.unpair.2.unpair.1) 0
-end
-
-section
 
 def reForallF (qc : ℕ → ℕ) (acc x : ℕ) : ℕ :=
   Nat.pair (acc.unpair.1 - 1).unpair.2
     (selectFn acc.unpair.2 (isOne (qc (Nat.pair (acc.unpair.1 - 1).unpair.1 x))) 0)
-end
-
-section
 
 def reForallStp (qc : ℕ → ℕ) (w : ℕ) : ℕ :=
   Nat.pair (w.unpair.2.unpair.1.unpair.1 - 1).unpair.2
     (selectFn w.unpair.2.unpair.1.unpair.2
       (isOne (qc (Nat.pair (w.unpair.2.unpair.1.unpair.1 - 1).unpair.1 w.unpair.1))) 0)
-end
-
-section
 
 def reForallChar (qc : ℕ → ℕ) (w c : ℕ) : ℕ :=
   (foldCode (reForallStp qc) 0 (Nat.pair w 1) c).unpair.2
-end
-
-section
 
 theorem sqrt_le_add (n : ℕ) : n ≤ Nat.sqrt n * Nat.sqrt n + Nat.sqrt n + Nat.sqrt n := by
   have h := lt_succ_sqrt n
   have e : (Nat.sqrt n + 1) * (Nat.sqrt n + 1)
       = Nat.sqrt n * Nat.sqrt n + Nat.sqrt n + Nat.sqrt n + 1 := Nat.succ_mul_succ _ _
   omega
-end
-
-section
 
 theorem pair_unpair (n : ℕ) : Nat.pair (Nat.unpair n).1 (Nat.unpair n).2 = n := by
   have sm : Nat.sqrt n * Nat.sqrt n + (n - Nat.sqrt n * Nat.sqrt n) = n :=
@@ -563,26 +383,18 @@ theorem pair_unpair (n : ℕ) : Nat.pair (Nat.unpair n).1 (Nat.unpair n).2 = n :
     show Nat.pair (Nat.sqrt n) (n - Nat.sqrt n * Nat.sqrt n - Nat.sqrt n) = n
     rw [Nat.pair, ite_eq_right hlt]
     omega
-end
 
-
-
-section
 set_option maxHeartbeats 800000 in
 
 def tabStep (g : ℕ → ℕ) (w : ℕ) : ℕ :=
   Nat.pair (g (Nat.pair (w.unpair.1.unpair.1 - 1 - w.unpair.2.unpair.1) w.unpair.1.unpair.2))
     w.unpair.2.unpair.2 + 1
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 def tabCode (g : ℕ → ℕ) (a B : ℕ) : ℕ :=
   Nat.rec (motive := fun _ => ℕ) 0 (fun y IH => tabStep g (Nat.pair a (Nat.pair y IH))) B
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -593,9 +405,7 @@ def appendListCode (c1 c2 : ℕ) : ℕ :=
   let len1 := listLenChar c1
   let len2 := listLenChar c2
   tabCode appendListTabFn (Nat.pair (len1 + len2) (Nat.pair c1 (Nat.pair c2 len1))) (len1 + len2)
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -605,25 +415,19 @@ set_option maxHeartbeats 800000 in
 def dropCode (n c : ℕ) : ℕ :=
   let len := listLenChar c
   tabCode dropListTabFn (Nat.pair (len - n) (Nat.pair n c)) (len - n)
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 def fuelTableStep (bodyLookup : ℕ → ℕ) (bound prevTable : ℕ) : ℕ :=
   tabCode (fun w => bodyLookup (Nat.pair w.unpair.2 w.unpair.1))
     (Nat.pair (bound + 1) prevTable) (bound + 1)
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 def fuelTable (bodyLookup : ℕ → ℕ) (bound fuel : ℕ) : ℕ :=
   Nat.rec (motive := fun _ => ℕ) (tabCode (fun _ => 0) (Nat.pair (bound + 1) 0) (bound + 1))
     (fun _ prevTable => fuelTableStep bodyLookup bound prevTable) fuel
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -631,9 +435,7 @@ set_option maxHeartbeats 800000 in
 set_option maxHeartbeats 800000 in
 
 def takeListTabFn (w : ℕ) : ℕ := nthCode (w.unpair.2.unpair.2) w.unpair.1 0
-end
 
-section
 set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
@@ -644,34 +446,15 @@ def takeCode (n c : ℕ) : ℕ :=
   let len := listLenChar c
   let B := Nat.min n len
   tabCode takeListTabFn (Nat.pair B (Nat.pair n c)) B
-end
-
-
-
-
-
-
-
-
-
-
-section
 
 theorem unpair_snd_le (n : ℕ) : n.unpair.2 ≤ n := by
   have h := le_pair_right n.unpair.1 n.unpair.2
   rwa [pair_unpair] at h
-end
-
-section
 
 def decodeList : ℕ → List ℕ
   | 0 => []
   | (c + 1) => c.unpair.1 :: decodeList c.unpair.2
 decreasing_by exact Nat.lt_succ_of_le (unpair_snd_le c)
-end
-
-
-section
 
 theorem primrec_id : Nat.Primrec id :=
   (Nat.Primrec.left.pair Nat.Primrec.right).of_eq fun n => pair_unpair n
@@ -2176,19 +1959,12 @@ theorem codeBound_ge (n c : ℕ) (hlen : (decodeList c).length ≤ n)
       simp only [codeBound]
       omega
 
-end
-
-section
-
 theorem RecDecidable₂.swap {r : ℕ → ℕ → Prop} (hr : RecDecidable₂ r) :
     RecDecidable₂ (fun a b => r b a) := by
   have hswap : Nat.Primrec (fun t => Nat.pair t.unpair.2 t.unpair.1) :=
     Nat.Primrec.right.pair Nat.Primrec.left
   refine RecDecidable.of_iff (fun t => ?_) (hr.comp hswap)
   simp only [unpair_pair_fst, unpair_pair_snd]
-end
-
-section
 
 theorem RecDecidable.bExists {p : ℕ → Prop} (hp : RecDecidable p) {bound : ℕ → ℕ}
     (hb : Nat.Primrec bound) :
@@ -2208,9 +1984,6 @@ theorem RecDecidable.bExists {p : ℕ → Prop} (hp : RecDecidable p) {bound : �
     show (∃ i, i < bound n ∧ p (Nat.pair i n)) ↔ bExistsFn f n (bound n) = 1
     rw [bExistsFn_eq_one_iff]
     exact ⟨fun ⟨i, hi, h⟩ => ⟨i, hi, (hfspec _).mp h⟩, fun ⟨i, hi, h⟩ => ⟨i, hi, (hfspec _).mpr h⟩⟩
-end
-
-section
 
 theorem RecDecidable.bForall {p : ℕ → Prop} (hp : RecDecidable p) {bound : ℕ → ℕ}
     (hb : Nat.Primrec bound) :
@@ -2231,16 +2004,10 @@ theorem RecDecidable.bForall {p : ℕ → Prop} (hp : RecDecidable p) {bound : �
     show (∀ i, i < bound n → p (Nat.pair i n)) ↔ bForallFn f n (bound n) = 1
     rw [bForallFn_eq_one_iff]
     exact ⟨fun h i hi => (hfspec _).mp (h i hi), fun h i hi => (hfspec _).mpr (h i hi)⟩
-end
-
-section
 
 theorem RecDecidable.of_zero_one_char {p : ℕ → Prop} {f : ℕ → ℕ} (hf : Nat.Primrec f)
     (_h01 : ∀ n, f n = 0 ∨ f n = 1) (hfe : ∀ n, p n ↔ f n = 1) : RecDecidable p :=
   ⟨f, hf, hfe⟩
-end
-
-section
 
 theorem RecDecidable₂.of_paired_zero_one_char {r : ℕ → ℕ → Prop} {f : ℕ → ℕ} (hf : Nat.Primrec f)
     (h01 : ∀ t, f t = 0 ∨ f t = 1) (hfe : ∀ n m, r n m ↔ f (Nat.pair n m) = 1) :
@@ -2248,9 +2015,6 @@ theorem RecDecidable₂.of_paired_zero_one_char {r : ℕ → ℕ → Prop} {f : 
   unfold RecDecidable₂
   refine RecDecidable.of_zero_one_char hf h01 (fun t => ?_)
   rw [hfe, pair_unpair]
-end
-
-section
 
 theorem RecDecidable₃.of_triple_zero_one_char {r : ℕ → ℕ → ℕ → Prop} {f : ℕ → ℕ}
     (hf : Nat.Primrec f) (h01 : ∀ t, f t = 0 ∨ f t = 1)
@@ -2259,20 +2023,11 @@ theorem RecDecidable₃.of_triple_zero_one_char {r : ℕ → ℕ → ℕ → Pro
   unfold RecDecidable₃
   refine RecDecidable.of_zero_one_char hf h01 (fun t => ?_)
   rw [hfe, pair_unpair, pair_unpair]
-end
 
-section
 theorem codeBound_succ (n : ℕ) : codeBound (n + 1) = Nat.pair 1 (codeBound n) + 1 := rfl
-end
 
-section
 theorem codeBound_zero : codeBound 0 = 1 := rfl
-end
 
-
-
-
-section
 theorem decodeFuelOkChar_le_one : ∀ fuel c, decodeFuelOkChar fuel c ≤ 1
   | 0, _ => by simp [decodeFuelOkChar]
   | fuel + 1, c => by
@@ -2293,9 +2048,6 @@ theorem decodeFuelOkChar_le_one : ∀ fuel c, decodeFuelOkChar fuel c ≤ 1
         (decodeFuelOkChar_le_one fuel c.unpair.2.unpair.2)
     | _ + 4 =>
       simp
-end
-
-section
 
 theorem decodeList_length_le (c : ℕ) : (decodeList c).length ≤ c := by
   induction c using Nat.strong_induction_on with
@@ -2307,35 +2059,23 @@ theorem decodeList_length_le (c : ℕ) : (decodeList c).length ≤ c := by
       have hle := unpair_snd_le d
       have := ih d.unpair.2 (Nat.lt_succ_of_le hle)
       omega
-end
 
-section
 theorem decodeList_mapPairStep (n acc x : ℕ) :
     decodeList (mapPairStep n acc x) = Nat.pair n x :: decodeList acc := by
   unfold mapPairStep; rw [decodeList_succ, unpair_pair_fst, unpair_pair_snd]
-end
-
-section
 
 theorem eqZero_bit (a : ℕ) : 1 - a = if a = 0 then 1 else 0 := by split <;> omega
-end
-
-section
 
 theorem eq_of_le_one_iff_one {x y : ℕ} (hx : x ≤ 1) (hy : y ≤ 1) (h : x = 1 ↔ y = 1) : x = y := by
   by_cases hx1 : x = 1
   · have hy1 := h.mp hx1; omega
   · have hy1 : y ≠ 1 := fun hy1 => hx1 (h.mpr hy1)
     omega
-end
 
-section
 theorem existsListStp_eq (g : ℕ → ℕ) (acc x p : ℕ) :
     existsListStp g (Nat.pair x (Nat.pair acc p)) = selectFn acc 1 (isOne (g (Nat.pair x p))) := by
   unfold existsListStp; simp only [unpair_pair_fst, unpair_pair_snd]
-end
 
-section
 theorem existsListChar_eq (g : ℕ → ℕ) (p c : ℕ) :
     existsListChar g p c
       = List.foldl (fun acc x => selectFn acc 1 (isOne (g (Nat.pair x p)))) 0 (decodeList c) := by
@@ -2343,9 +2083,7 @@ theorem existsListChar_eq (g : ℕ → ℕ) (p c : ℕ) :
       = (fun acc x => selectFn acc 1 (isOne (g (Nat.pair x p)))) := by
     funext acc x; exact existsListStp_eq g acc x p
   unfold existsListChar; rw [foldCode_eq', hfun]
-end
 
-section
 theorem existsListChar_le_one (g : ℕ → ℕ) (p c : ℕ) : existsListChar g p c ≤ 1 := by
   have h : ∀ (l : List ℕ) (z : ℕ), z ≤ 1 →
       List.foldl (fun acc x => existsListStp g (Nat.pair x (Nat.pair acc p))) z l ≤ 1 := by
@@ -2363,9 +2101,6 @@ theorem existsListChar_le_one (g : ℕ → ℕ) (p c : ℕ) : existsListChar g p
   unfold existsListChar
   rw [foldCode_eq']
   exact h (decodeList c) 0 (Nat.zero_le 1)
-end
-
-section
 
 theorem existsList_foldl_eq_one_iff (g : ℕ → ℕ) (p : ℕ) :
     ∀ (l : List ℕ) (acc : ℕ), acc ≤ 1 →
@@ -2402,38 +2137,27 @@ theorem existsList_foldl_eq_one_iff (g : ℕ → ℕ) (p : ℕ) :
           · rw [h, selectFn_zero, isOne_eq_one_iff]; exact hyg
           · rw [h, selectFn_one]
         · exact Or.inr ⟨y, hy', hyg⟩
-end
 
-section
 theorem existsListChar_eq_one_iff (g : ℕ → ℕ) (p c : ℕ) :
     existsListChar g p c = 1 ↔ ∃ x ∈ decodeList c, g (Nat.pair x p) = 1 := by
   rw [existsListChar_eq, existsList_foldl_eq_one_iff g p (decodeList c) 0 (Nat.zero_le 1)]
   simp only [Nat.zero_ne_one, false_or]
-end
 
-section
 theorem fuelTableStep_nth {bodyLookup : ℕ → ℕ} {bound prevTable i : ℕ} (hi : i ≤ bound) (d : ℕ) :
     nthCode (fuelTableStep bodyLookup bound prevTable) i d = bodyLookup (Nat.pair prevTable i) := by
   unfold fuelTableStep
   rw [tabCode_nth_lt (show i < bound + 1 by omega)]
   simp only [unpair_pair_fst, unpair_pair_snd]
-end
 
-section
 theorem fuelTable_succ_nth {bodyLookup : ℕ → ℕ} {bound fuel i : ℕ} (hi : i ≤ bound) (d : ℕ) :
     nthCode (fuelTable bodyLookup bound (fuel + 1)) i d =
       bodyLookup (Nat.pair (fuelTable bodyLookup bound fuel) i) :=
   fuelTableStep_nth hi d
-end
 
-section
 theorem fuelTable_zero_nth {bodyLookup : ℕ → ℕ} {bound i : ℕ} (hi : i ≤ bound) (d : ℕ) :
     nthCode (fuelTable bodyLookup bound 0) i d = 0 := by
   show nthCode (tabCode (fun _ => 0) (Nat.pair (bound + 1) 0) (bound + 1)) i d = 0
   rw [tabCode_nth_lt (show i < bound + 1 by omega)]
-end
-
-section
 
 theorem fuelTable_eq_of_recursion {F : ℕ → ℕ → ℕ} {Body : (ℕ → ℕ) → ℕ → ℕ} {bodyLookup : ℕ → ℕ}
     (hF0 : ∀ c, F 0 c = 0) (hFsucc : ∀ fuel c, F (fuel + 1) c = Body (F fuel) c)
@@ -2447,10 +2171,7 @@ theorem fuelTable_eq_of_recursion {F : ℕ → ℕ → ℕ} {Body : (ℕ → ℕ
     intro bound c hc
     rw [fuelTable_succ_nth hc, hlookup, hFsucc]
     exact hlocal _ _ c fun c' hc' => ih bound c' (le_trans hc' hc)
-end
 
-
-section
 theorem decodeFuelOkChar_fuelTable_eq :
     ∀ fuel bound c, c ≤ bound →
       nthCode (fuelTable decodeFuelOkCharLookup bound fuel) c 0 = decodeFuelOkChar fuel c :=
@@ -2458,14 +2179,8 @@ theorem decodeFuelOkChar_fuelTable_eq :
     (fun _ => rfl) (fun _ _ => rfl)
     (fun table c => by unfold decodeFuelOkCharLookup; simp)
     decodeFuelOkCharBody_local
-end
-
-section
 
 theorem geTwo_bit (a : ℕ) : 1 - (2 - a) = if 2 ≤ a then 1 else 0 := by split <;> omega
-end
-
-section
 
 theorem getD_append_cf {β : Type*} (l l' : List β) (d : β) :
     ∀ {n : ℕ}, n < l.length → (l ++ l').getD n d = l.getD n d := by
@@ -2478,9 +2193,6 @@ theorem getD_append_cf {β : Type*} (l l' : List β) (d : β) :
     | succ m =>
       rw [List.cons_append, List.getD_cons_succ, List.getD_cons_succ]
       exact ih (by rw [List.length_cons] at h; omega)
-end
-
-section
 
 theorem getD_append_right_cf {β : Type*} (l l' : List β) (d : β) :
     ∀ {n : ℕ}, l.length ≤ n → (l ++ l').getD n d = l'.getD (n - l.length) d := by
@@ -2493,9 +2205,7 @@ theorem getD_append_right_cf {β : Type*} (l l' : List β) (d : β) :
     | succ m =>
       rw [List.cons_append, List.getD_cons_succ, List.length_cons, Nat.succ_sub_succ]
       exact ih (by rw [List.length_cons] at h; omega)
-end
 
-section
 theorem appendListCode_eq (c1 c2 : ℕ) :
     decodeList (appendListCode c1 c2) = decodeList c1 ++ decodeList c2 := by
   unfold appendListCode
@@ -2523,9 +2233,7 @@ theorem appendListCode_eq (c1 c2 : ℕ) :
   · have hge : (decodeList c1).length + (decodeList c2).length ≤ i := Nat.le_of_not_gt hi
     rw [getD_eq_default_cf _ d (by rw [List.length_map, List.length_range]; exact hge),
       getD_eq_default_cf _ d (by rw [List.length_append]; exact hge)]
-end
 
-section
 theorem halfParity_spec (n : ℕ) : halfParity n = Nat.pair (n / 2) (n % 2) := by
   induction n with
   | zero => rfl
@@ -2534,16 +2242,11 @@ theorem halfParity_spec (n : ℕ) : halfParity n = Nat.pair (n / 2) (n % 2) := b
         = Nat.pair ((n + 1) / 2) ((n + 1) % 2)
     rw [ih, unpair_pair_fst, unpair_pair_snd]
     congr 1 <;> omega
-end
 
-
-section
 theorem mapPairStp_eq (n acc x : ℕ) :
     mapPairStp (Nat.pair x (Nat.pair acc n)) = mapPairStep n acc x := by
   unfold mapPairStp; simp only [unpair_pair_fst, unpair_pair_snd]
-end
 
-section
 theorem decodeList_foldl_mapPairStp (n : ℕ) (el : List ℕ) (acc : ℕ) :
     decodeList (List.foldl (fun acc x => mapPairStp (Nat.pair x (Nat.pair acc n))) acc el)
       = (el.map (Nat.pair n ·)).reverse ++ decodeList acc := by
@@ -2552,26 +2255,18 @@ theorem decodeList_foldl_mapPairStp (n : ℕ) (el : List ℕ) (acc : ℕ) :
   | cons e el ih =>
     rw [List.foldl_cons, ih, mapPairStp_eq, decodeList_mapPairStep, List.map_cons,
       List.reverse_cons, List.append_assoc, List.singleton_append]
-end
 
-section
 theorem decodeList_mapPairCode (n c : ℕ) :
     decodeList (mapPairCode n c) = ((decodeList c).map (Nat.pair n ·)).reverse := by
   unfold mapPairCode
   rw [foldCode_eq']
   have h := decodeList_foldl_mapPairStp n (decodeList c) 0
   rwa [decodeList_zero, List.append_nil] at h
-end
 
-
-section
 theorem primrec_allListChar {g : ℕ → ℕ} (hg : Nat.Primrec g) :
     Nat.Primrec (fun t => allListChar g t.unpair.2 t.unpair.1) :=
   (primrec_foldCode (primrec_allListStp hg) Nat.Primrec.right (Nat.Primrec.const 1)
     Nat.Primrec.left).of_eq fun _ => rfl
-end
-
-section
 
 theorem RecDecidable₂.bForallList {q : ℕ → ℕ → Prop} (hq : RecDecidable₂ q) :
     RecDecidable₂ (fun c p => ∀ e ∈ decodeList c, q e p) := by
@@ -2583,9 +2278,7 @@ theorem RecDecidable₂.bForallList {q : ℕ → ℕ → Prop} (hq : RecDecidabl
   have := hgs (Nat.pair e t.unpair.2)
   simp only [unpair_pair_fst, unpair_pair_snd] at this
   exact this
-end
 
-section
 theorem primrec_appendListTabFn : Nat.Primrec appendListTabFn := by
   have hi := Nat.Primrec.left
   have hp := Nat.Primrec.right
@@ -2600,9 +2293,7 @@ theorem primrec_appendListTabFn : Nat.Primrec appendListTabFn := by
   exact (primrec_selectFn hlt hleft hright).of_eq fun w => by
     unfold appendListTabFn
     simp only [unpair_pair_fst, unpair_pair_snd]
-end
 
-section
 theorem primrec_appendListCode : Nat.Primrec (fun t => appendListCode t.unpair.1 t.unpair.2) := by
   have hc1 := Nat.Primrec.left
   have hc2 := Nat.Primrec.right
@@ -2614,11 +2305,6 @@ theorem primrec_appendListCode : Nat.Primrec (fun t => appendListCode t.unpair.1
   refine ((primrec_tabCode primrec_appendListTabFn).comp hr).of_eq fun t => by
     unfold appendListCode
     simp only [unpair_pair_fst, unpair_pair_snd]
-end
-
-
-
-section
 
 theorem primrec_bForallFn_param {g : ℕ → ℕ} (hg : Nat.Primrec g) :
     Nat.Primrec (fun t => bForallFn (fun p => g (Nat.pair t.unpair.1.unpair.1 p))
@@ -2637,9 +2323,7 @@ theorem primrec_bForallFn_param {g : ℕ → ℕ} (hg : Nat.Primrec g) :
   refine (hprec.comp (Nat.Primrec.left.pair Nat.Primrec.right)).of_eq fun t => ?_
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
   rfl
-end
 
-section
 theorem primrec_codeBound : Nat.Primrec codeBound := by
   have hstep : Nat.Primrec (fun w => Nat.pair 1 w.unpair.2 + 1) :=
     primrec_add₂ (Nat.Primrec.pair (Nat.Primrec.const 1) Nat.Primrec.right)
@@ -2653,17 +2337,13 @@ theorem primrec_codeBound : Nat.Primrec codeBound := by
       simp only [unpair_pair_snd] at ih ⊢
       simp [codeBound, ih]
   exact (Nat.Primrec.prec1 1 hstep).of_eq haux
-end
 
-section
 theorem primrec_decodeFuelOkChar : ∀ fuel, Nat.Primrec (fun c => decodeFuelOkChar fuel c)
   | 0 => Nat.Primrec.const 0
   | fuel + 1 => by
     simpa [decodeFuelOkChar] using
       primrec_decodeFuelOkCharBody (primrec_decodeFuelOkChar fuel)
-end
 
-section
 theorem primrec_decodeFuelOkCharLookup : Nat.Primrec decodeFuelOkCharLookup := by
   have hleft : Nat.Primrec (fun w => nthCode w.unpair.1 w.unpair.2.unpair.2.unpair.1 0) :=
     (primrec_nthCode.comp (Nat.Primrec.pair Nat.Primrec.left
@@ -2723,9 +2403,7 @@ theorem primrec_decodeFuelOkCharLookup : Nat.Primrec decodeFuelOkCharLookup := b
     have h23' : (3 - (t + 4) : ℕ) = 0 := Nat.sub_eq_zero_of_le (by omega)
     have h34' : (4 - (t + 4) : ℕ) = 0 := Nat.sub_eq_zero_of_le (by omega)
     simp only [h01', h12', h23', h34', isOne_zero, selectFn_zero]
-end
 
-section
 theorem primrec_existsListStp {g : ℕ → ℕ} (hg : Nat.Primrec g) :
     Nat.Primrec (existsListStp g) := by
   have hacc : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.1) :=
@@ -2736,16 +2414,11 @@ theorem primrec_existsListStp {g : ℕ → ℕ} (hg : Nat.Primrec g) :
   have hcall : Nat.Primrec (fun w : ℕ => isOne (g (Nat.pair w.unpair.1 w.unpair.2.unpair.2))) :=
     primrec_isOne.comp (hg.comp (hx.pair hp))
   exact (primrec_selectFn hacc (Nat.Primrec.const 1) hcall).of_eq fun _ => rfl
-end
 
-section
 theorem primrec_existsListChar {g : ℕ → ℕ} (hg : Nat.Primrec g) :
     Nat.Primrec (fun t => existsListChar g t.unpair.2 t.unpair.1) :=
   (primrec_foldCode (primrec_existsListStp hg) Nat.Primrec.right (Nat.Primrec.const 0)
     Nat.Primrec.left).of_eq fun _ => rfl
-end
-
-section
 
 theorem RecDecidable₂.bExistsList {q : ℕ → ℕ → Prop} (hq : RecDecidable₂ q) :
     RecDecidable₂ (fun c p => ∃ e ∈ decodeList c, q e p) := by
@@ -2757,9 +2430,7 @@ theorem RecDecidable₂.bExistsList {q : ℕ → ℕ → Prop} (hq : RecDecidabl
   have := hgs (Nat.pair e t.unpair.2)
   simp only [unpair_pair_fst, unpair_pair_snd] at this
   exact this
-end
 
-section
 set_option maxHeartbeats 1000000 in
 
 theorem primrec_fuelTable {bodyLookup : ℕ → ℕ} (hbodyLookup : Nat.Primrec bodyLookup) :
@@ -2790,10 +2461,6 @@ theorem primrec_fuelTable {bodyLookup : ℕ → ℕ} (hbodyLookup : Nat.Primrec 
   refine (Nat.Primrec.prec hf hg).of_eq fun t => ?_
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
   exact haux t.unpair.1 t.unpair.2
-end
-
-
-section
 
 theorem primrec_decodeFuelOkChar2 : Nat.Primrec (fun s => decodeFuelOkChar s.unpair.1 s.unpair.2) := by
   have hft := primrec_fuelTable primrec_decodeFuelOkCharLookup
@@ -2807,9 +2474,7 @@ theorem primrec_decodeFuelOkChar2 : Nat.Primrec (fun s => decodeFuelOkChar s.unp
       (Nat.Primrec.pair hcomp (Nat.Primrec.pair Nat.Primrec.right (Nat.Primrec.const 0)))).of_eq
       fun s => by simp
   exact hnth.of_eq fun s => decodeFuelOkChar_fuelTable_eq s.unpair.1 s.unpair.2 s.unpair.2 (le_refl _)
-end
 
-section
 theorem primrec_halfParity : Nat.Primrec halfParity := by
   have hIH : Nat.Primrec (fun w => w.unpair.2.unpair.2) := Nat.Primrec.right.comp Nat.Primrec.right
   have hstep : Nat.Primrec (fun w => Nat.pair (w.unpair.2.unpair.2.unpair.1 + w.unpair.2.unpair.2.unpair.2)
@@ -2820,22 +2485,15 @@ theorem primrec_halfParity : Nat.Primrec halfParity := by
     ((Nat.Primrec.const 0).pair primrec_id)).of_eq (fun n => ?_)
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd, id_eq]
   rfl
-end
 
-section
 theorem primrec_div2 : Nat.Primrec (fun n => n / 2) :=
   (Nat.Primrec.left.comp primrec_halfParity).of_eq fun n => by
     rw [halfParity_spec, unpair_pair_fst]
-end
-
-section
 
 theorem primrec_ite {c t f : ℕ → ℕ} (hc : Nat.Primrec c) (ht : Nat.Primrec t) (hf : Nat.Primrec f) :
     Nat.Primrec (fun n => selectFn (c n) (t n) (f n)) :=
   primrec_selectFn hc ht hf
-end
 
-section
 theorem primrec_mapPairStp : Nat.Primrec mapPairStp := by
   have h1 : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
   have h21 : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.1) :=
@@ -2843,15 +2501,10 @@ theorem primrec_mapPairStp : Nat.Primrec mapPairStp := by
   have h22 : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.2) :=
     Nat.Primrec.right.comp Nat.Primrec.right
   exact (Nat.Primrec.succ.comp ((h22.pair h1).pair h21)).of_eq (fun _ => rfl)
-end
 
-section
 theorem primrec_mapPairCode : Nat.Primrec (fun t => mapPairCode t.unpair.1 t.unpair.2) :=
   (primrec_foldCode primrec_mapPairStp Nat.Primrec.left (Nat.Primrec.const 0)
     Nat.Primrec.right).of_eq (fun _ => rfl)
-end
-
-section
 
 theorem REPred.forall_mem_decodeList₂ {p : ℕ → ℕ → Prop} (hp : REPred₂ p) :
     REPred (fun t => ∀ e ∈ decodeList t.unpair.2, p t.unpair.1 e) := by
@@ -2868,17 +2521,6 @@ theorem REPred.forall_mem_decodeList₂ {p : ℕ → ℕ → Prop} (hp : REPred�
   · intro hall e he
     simpa only [unpair_pair_fst, unpair_pair_snd]
       using hall (Nat.pair t.unpair.1 e) ⟨e, he, rfl⟩
-end
-
-
-
-
-
-
-
-
-
-section
 
 theorem primrec_max {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
     Nat.Primrec (fun n => Nat.max (f n) (g n)) := by
@@ -2890,32 +2532,23 @@ theorem primrec_max {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g
       have hpos : 0 < f n - g n := Nat.sub_pos_of_lt hlt
       have hmin : min (f n - g n) 1 = 1 := Nat.min_eq_right (Nat.succ_le_iff.mpr hpos)
       simp [hmin, Nat.max_eq_left (Nat.le_of_lt hlt)]
-end
-
-section
 
 theorem primrec_max_one : Nat.Primrec (fun n => Nat.max n 1) := by
   refine (primrec_selectFn (primrec_isOne.comp (primrec_sub₂ (Nat.Primrec.const 1) primrec_id))
     (Nat.Primrec.const 1) primrec_id).of_eq fun n => by
     unfold selectFn isOne Nat.max
     rcases n with _ | n <;> simp
-end
 
-section
 theorem primrec_mod2 : Nat.Primrec (fun n => n % 2) :=
   (Nat.Primrec.right.comp primrec_halfParity).of_eq fun n => by
     rw [halfParity_spec, unpair_pair_snd]
-end
 
-section
 theorem primrec_lowOr : Nat.Primrec (fun t => lowOr t.unpair.1 t.unpair.2) := by
   have hx : Nat.Primrec (fun t : ℕ => t.unpair.1 % 2) := primrec_mod2.comp Nat.Primrec.left
   have hy : Nat.Primrec (fun t : ℕ => t.unpair.2 % 2) := primrec_mod2.comp Nat.Primrec.right
   exact (primrec_sub₂ (Nat.Primrec.const 1)
     (primrec_sub₂ (Nat.Primrec.const 1) (primrec_add₂ hx hy))).of_eq fun _ => rfl
-end
 
-section
 theorem primrec_lorStep : Nat.Primrec lorStep := by
   have hA : Nat.Primrec (fun s : ℕ => s.unpair.1.unpair.1) := Nat.Primrec.left.comp Nat.Primrec.left
   have hB : Nat.Primrec (fun s : ℕ => s.unpair.1.unpair.2) := Nat.Primrec.right.comp Nat.Primrec.left
@@ -2927,9 +2560,6 @@ theorem primrec_lorStep : Nat.Primrec lorStep := by
   exact (((primrec_div2.comp hA).pair (primrec_div2.comp hB)).pair
     ((primrec_mul₂ (Nat.Primrec.const 2) hW).pair
       (primrec_add₂ hAcc (primrec_mul₂ hW hlow)))).of_eq fun _ => rfl
-end
-
-section
 
 theorem primrec_myLor : Nat.Primrec (fun t => myLor t.unpair.1 t.unpair.2) := by
   have hbase : Nat.Primrec
@@ -2946,35 +2576,20 @@ theorem primrec_myLor : Nat.Primrec (fun t => myLor t.unpair.1 t.unpair.2) := by
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd, id_eq]
   rw [rec_const_iterate]
   rfl
-end
-
-section
 
 theorem recDecidable_of_forall {p : ℕ → Prop} (h : ∀ n, p n) : RecDecidable p :=
   ⟨fun _ => 1, Nat.Primrec.const 1, fun n => ⟨fun _ => rfl, fun _ => h n⟩⟩
-end
-
-section
 
 theorem rePred_of_forall {p : ℕ → Prop} (h : ∀ n, p n) : REPred p :=
   (recDecidable_of_forall h).re
-end
-
-section
 
 theorem recDecidable₂_of_forall {r : ℕ → ℕ → Prop} (h : ∀ n m, r n m) : RecDecidable₂ r :=
   recDecidable_of_forall (fun t => h t.unpair.1 t.unpair.2)
-end
-
-section
 
 theorem recPow_eq (b : ℕ) :
     ∀ e, Nat.rec (motive := fun _ => ℕ) 1 (fun _ ih => ih * b) e = b ^ e
   | 0 => (pow_zero b).symm
   | e + 1 => by rw [pow_succ]; exact congrArg (· * b) (recPow_eq b e)
-end
-
-section
 
 theorem primrec_pow : Nat.Primrec (Nat.unpaired fun b e => b ^ e) := by
   have hg : Nat.Primrec (fun w => w.unpair.2.unpair.2 * w.unpair.1) :=
@@ -2982,26 +2597,16 @@ theorem primrec_pow : Nat.Primrec (Nat.unpaired fun b e => b ^ e) := by
   refine (Nat.Primrec.prec (Nat.Primrec.const 1) hg).of_eq (fun p => ?_)
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
   exact recPow_eq p.unpair.1 p.unpair.2
-end
-
-section
 
 theorem primrec_pow₂ {f g : ℕ → ℕ} (hf : Nat.Primrec f) (hg : Nat.Primrec g) :
     Nat.Primrec (fun n => f n ^ g n) :=
   (primrec_pow.comp (hf.pair hg)).of_eq fun n => by
     simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
-end
-
-
-
-section
 
 theorem primrec_two_pow {g : ℕ → ℕ} (hg : Nat.Primrec g) : Nat.Primrec (fun n => 2 ^ g n) :=
   (primrec_pow.comp ((Nat.Primrec.const 2).pair hg)).of_eq fun n => by
     simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd]
-end
 
-section
 theorem selectFn_isOne_one_sub_sigma (u : ℕ) :
     selectFn (isOne (1 - u)) 1 0 = 1 ↔ u = 0 := by
   constructor
@@ -3013,6 +2618,5 @@ theorem selectFn_isOne_one_sub_sigma (u : ℕ) :
   · intro hu
     subst hu
     simp [isOne_one, selectFn_one]
-end
 
 end Domain.Recursive

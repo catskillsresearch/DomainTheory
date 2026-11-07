@@ -6,7 +6,6 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.fixInduc
 
 open DomainTheory.NeighbourhoodSystems
 
-section
 open NeighborhoodSystem ApproximableMap
 
 theorem example_408 :

@@ -7,7 +7,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Two
 namespace DomainTheory.NeighbourhoodSystems.TwoToken
 
 namespace neighborhoodSystem
-section
 
 open NeighborhoodSystem
 
@@ -45,7 +44,6 @@ def elemOne : neighborhoodSystem.Element where
       · exact Or.inl rfl
       · exact absurd hXY one_not_subset_zero
       · exact Or.inr rfl
-end
 
 end neighborhoodSystem
 theorem zero_not_subset_one : ¬zero ⊆ one := by
@@ -54,7 +52,6 @@ theorem zero_not_subset_one : ¬zero ⊆ one := by
   simp [one] at this
 
 namespace neighborhoodSystem
-section
 
 open NeighborhoodSystem
 
@@ -80,7 +77,6 @@ def elemZero : neighborhoodSystem.Element where
       · exact Or.inl rfl
       · exact Or.inr rfl
       · exact absurd hXY zero_not_subset_one
-end
 
 end neighborhoodSystem
 theorem zero_ne_master : zero ≠ master := by
@@ -138,8 +134,6 @@ theorem zero_ne_one : zero ≠ (one : Set Token) := by
   have h0 : (0 : Token) ∈ zero := by simp [zero]
   rw [h] at h0
   simp [one] at h0
-
-section
 
 open NeighborhoodSystem
 
@@ -204,7 +198,6 @@ theorem eq_bot_of_le_elemZero_of_le_elemOne {a : neighborhoodSystem.Element}
   · rfl
   · exact absurd h1 not_elemZero_le_elemOne
   · exact absurd h0 not_elemOne_le_elemZero
-end
 
 end neighborhoodSystem
 

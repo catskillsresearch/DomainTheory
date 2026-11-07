@@ -9,7 +9,6 @@ import Mathlib.Data.Fintype.Powerset
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap Subsystem
 section

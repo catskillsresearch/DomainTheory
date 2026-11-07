@@ -9,7 +9,6 @@ import Mathlib.Tactic.SetLike
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 namespace NeighborhoodSystem
 
@@ -28,7 +27,6 @@ end NeighborhoodSystem
 
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.P4
-section
 
 open NeighborhoodSystem
 
@@ -41,7 +39,4 @@ theorem consistent_iff_inter_nonempty (X : ℕ → Set Token) (n : ℕ) :
   · intro h
     exact ⟨_, h, subset_rfl⟩
 
-end
-
 end DomainTheory.NeighbourhoodSystems.P4
-end

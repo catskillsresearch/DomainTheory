@@ -41,13 +41,11 @@ end
 
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.PeanoModel
-section
 
 theorem theorem_46 :
     ∀ {M N : Type*} (P : PeanoModel M) (Q : PeanoModel N),
       ∃ e : M ≃ N, e P.zero = Q.zero ∧ ∀ m, e (P.succ m) = Q.succ (e m) :=
   @peano_models_isomorphic
-end
 
 end DomainTheory.NeighbourhoodSystems.PeanoModel
 end

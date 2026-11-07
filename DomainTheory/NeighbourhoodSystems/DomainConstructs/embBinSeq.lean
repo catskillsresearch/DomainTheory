@@ -6,9 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Two
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems.EmbBinSeq
-section
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem BitDom ApproximableMap
 
@@ -174,13 +172,10 @@ theorem gf_eq_id : g.comp f = idMap B := by
     exact ⟨encSet σ, ⟨σ, rfl, encSet_mem σ, subset_rfl⟩,
       encSet_mem σ, τ, rfl, encSet_anti hpre⟩
 
-
 theorem f_injective : Function.Injective f.toElementMap := by
   intro x y hxy
   have : (g.comp f).toElementMap x = (g.comp f).toElementMap y := by
     rw [toElementMap_comp, toElementMap_comp, hxy]
   rwa [gf_eq_id, toElementMap_idMap, toElementMap_idMap] at this
-end
 
 end DomainTheory.NeighbourhoodSystems.EmbBinSeq
-end

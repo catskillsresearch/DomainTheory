@@ -7,7 +7,6 @@ public import Mathlib.Data.Fintype.Basic
 public import Mathlib.Tactic.FinCases
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems.BinTree
 
 abbrev Token := Fin 7
@@ -193,4 +192,3 @@ def neighborhoodSystem : NeighborhoodSystem Token where
       exact absurd hZ not_mem_empty
 
 end DomainTheory.NeighbourhoodSystems.BinTree
-end

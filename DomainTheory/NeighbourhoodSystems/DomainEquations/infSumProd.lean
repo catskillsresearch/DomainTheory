@@ -6,7 +6,6 @@ import Mathlib.Data.Set.Finite.Basic
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem

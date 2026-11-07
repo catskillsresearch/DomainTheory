@@ -9,7 +9,6 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem DomainTheory.NeighbourhoodSystems.FunctorTokens
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 
-section
 namespace RecDomainEq
 
 def Fsol (D E : ScottSys) : ScottSys := D.sum (D.prod E)
@@ -137,16 +136,12 @@ theorem exists_double_fixedPoint :
   ⟨GammaD, GammaE, nil_mem_GammaD, nil_mem_GammaE, fTok_GammaD_GammaE, gTok_GammaD_GammaE⟩
 
 end RecDomainEq
-end
 end DomainTheory.NeighbourhoodSystems
 end
 
-
-section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem DomainTheory.NeighbourhoodSystems.FunctorTokens
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
-section
 namespace RecDomainEq
 
 theorem exists_simultaneous_subsystems :
@@ -154,6 +149,5 @@ theorem exists_simultaneous_subsystems :
   ⟨Dsol, Esol, Dsol_subsystem, Esol_subsystem⟩
 
 end RecDomainEq
-end
 
 end DomainTheory.NeighbourhoodSystems

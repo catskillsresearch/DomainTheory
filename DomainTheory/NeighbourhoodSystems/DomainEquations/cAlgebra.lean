@@ -14,10 +14,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodFunctor
 
 @[expose] public section
 
-
 section
 namespace DomainTheory.NeighbourhoodSystems
-section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 open SeqEqC in
@@ -49,9 +47,6 @@ open SeqDom SeqEqC BitDom in
 
 abbrev Cobj : StrictDomainObj.{0} := ⟨Str, C, C_nonempty⟩
 
-end
-
-section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 namespace SeqEqC
@@ -87,7 +82,6 @@ theorem consMap_not_mem_nil {b : Bool} {z : C.Element} :
   rw [Set.mem_singleton_iff] at this; exact absurd this (by simp)
 
 end SeqEqC
-end
 
 section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
@@ -168,7 +162,6 @@ end Initial
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
@@ -298,28 +291,20 @@ theorem genKeyBot (g : ApproximableMap C B.carrier.sys) :
 end Initial
 end
 
-section
-
 theorem isStrict_ofIso {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
     (e : V₀.Element ≃o V₁.Element) : IsStrict (ofIso e) := by
   rw [isStrict_iff_apply_bot, toElementMap_ofIso]
   exact e.map_bot
-end
 
-section
 open SeqDom SeqEqC in
 
 abbrev cStr : ((Tc.obj Cobj) ⟶ Cobj) :=
   ⟨ofIso (by exact ccEquiv.symm), isStrict_ofIso _⟩
-end
 
-section
 open SeqDom SeqEqC in
 
 abbrev Calg : TAlgebra Tc := ⟨Cobj, cStr⟩
-end
 
-section
 namespace SeqEqC
 
 open SeqDom BitDom SeqEqB
@@ -356,7 +341,6 @@ theorem toCC_consMap (b : Bool) (z : C.Element) :
       · exact Or.inr (Or.inr (Or.inr ⟨Y, hY, rfl, (consMap_mem_embBit hY).mpr hz⟩))
 
 end SeqEqC
-end
 
 section
 section Initial
@@ -379,7 +363,6 @@ theorem genKey (g : ApproximableMap C B.carrier.sys) (b : Bool) (w : C.Element) 
 end Initial
 end
 
-section
 namespace SeqEqC
 
 open SeqDom BitDom SeqEqB
@@ -401,7 +384,6 @@ theorem toCC_strElem_nil :
       exact Or.inr (Or.inl ⟨rfl, memC_singleton [], subset_rfl⟩)
 
 end SeqEqC
-end
 
 section
 section Initial
@@ -565,11 +547,7 @@ theorem descAlgHom_uniq (h' : AlgHom Calg B) : h' = descAlgHom B := by
 end Initial
 end
 
-section
-
 def CisInitial : IsInitial Calg where
   desc := descAlgHom
   uniq := fun B h => descAlgHom_uniq B h
-end
-
 

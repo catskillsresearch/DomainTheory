@@ -126,19 +126,12 @@ theorem computableElement_eq_decreasing_iUnion_principal {W : NeighborhoodSystem
     exact y.up_mem (ht_mem i) hWZ hsub
 end
 
-
-
-section
-
 theorem repred_range_primrec {r : ℕ → ℕ} (hr : Nat.Primrec r) :
     REPred (fun n => ∃ i, r i = n) := by
   refine ⟨fun t => r t.unpair.1 = t.unpair.2,
     RecDecidable.natEq (hr.comp Nat.Primrec.left) Nat.Primrec.right, fun n => ?_⟩
   refine exists_congr (fun i => ?_)
   simp only [unpair_pair_fst, unpair_pair_snd]
-end
-
-section
 
 theorem repred₂_exists_primrec_enum {p : ℕ → ℕ → Prop} (hp : REPred₂ p) {a b : ℕ}
     (hab : p a b) :
@@ -163,7 +156,6 @@ theorem repred₂_exists_primrec_enum {p : ℕ → ℕ → Prop} (hp : REPred₂
     change (pf i).unpair.1 = n at hs
     change (pf i).unpair.2 = m at hr
     rw [← hs, ← hr]; exact (pair_unpair _).symm
-end
 
 end DomainTheory.NeighbourhoodSystems.ComputableWitness
 namespace DomainTheory.NeighbourhoodSystems

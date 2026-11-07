@@ -5,7 +5,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
 /-- Scott's Theorem 7.5: function space effective givenness and computability. -/
@@ -57,6 +56,5 @@ theorem theorem_75 :
           hincl1 hincl1p heq1 heq1p) φ ↔ ComputableMap P₀ P₁ (toApproxMap φ)) :=
   ⟨@Xenum_isComputableElement_iff, ⟨@funSpace_isEffectivelyGiven, ⟨@curry_isComputable,
     ⟨@evalMap_isComputable, @isComputableElement_funPresentation_iff⟩⟩⟩⟩
-end
 
 end DomainTheory.NeighbourhoodSystems

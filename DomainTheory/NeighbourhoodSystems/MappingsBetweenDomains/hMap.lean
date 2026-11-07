@@ -10,22 +10,13 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.pri
 namespace DomainTheory.NeighbourhoodSystems.HMap
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem BitDom ApproximableMap
 
-section
-
 def hOut : Str → Str
   | [] => []
   | b :: t => b :: false :: hOut t
-end
 
-section
 @[simp] theorem hOut_nil : hOut [] = [] := rfl
-end
 
-section
 @[simp] theorem hOut_cons (b : Bool) (t : Str) : hOut (b :: t) = b :: false :: hOut t := rfl
-end
-
-section
 
 theorem hOut_append (σ t : Str) : hOut σ <+: hOut (σ ++ t) := by
   induction σ with
@@ -34,36 +25,21 @@ theorem hOut_append (σ t : Str) : hOut σ <+: hOut (σ ++ t) := by
     simp only [List.cons_append, hOut_cons]
     obtain ⟨u, hu⟩ := ih
     exact ⟨u, by rw [List.cons_append, List.cons_append, hu]⟩
-end
-
-section
 
 theorem hOut_mono {σ σ' : Str} (h : σ <+: σ') : hOut σ <+: hOut σ' := by
   obtain ⟨t, rfl⟩ := h
   exact hOut_append σ t
-end
-
-section
 
 def kOut : Str → Str
   | [] => []
   | [_] => []
   | b :: _ :: t => b :: kOut t
-end
 
-section
 @[simp] theorem kOut_nil : kOut [] = [] := rfl
-end
 
-section
 @[simp] theorem kOut_single (b : Bool) : kOut [b] = [] := rfl
-end
 
-section
 @[simp] theorem kOut_cons (b c : Bool) (t : Str) : kOut (b :: c :: t) = b :: kOut t := rfl
-end
-
-section
 
 /-- Approximable map inserting a zero after each bit. -/
 def hMap : ApproximableMap B B where
@@ -86,9 +62,6 @@ def hMap : ApproximableMap B B where
       apply cone.subset_cone.mp; rw [← hX'cone, ← hX]; exact hX'X
     have hcone : cone (hOut σ') ⊆ cone (hOut σ) := cone.subset_cone.mpr (hOut_mono hpre)
     exact ⟨σ', hX'cone, hY'mem, (hcone.trans hYsub).trans hYY'⟩
-end
-
-section
 
 theorem kOut_append (σ t : Str) : kOut σ <+: kOut (σ ++ t) := by
   induction σ using kOut.induct with
@@ -98,16 +71,10 @@ theorem kOut_append (σ t : Str) : kOut σ <+: kOut (σ ++ t) := by
     simp only [List.cons_append, kOut_cons]
     obtain ⟨u, hu⟩ := ih
     exact ⟨u, by rw [List.cons_append, hu]⟩
-end
-
-section
 
 theorem kOut_mono {σ σ' : Str} (h : σ <+: σ') : kOut σ <+: kOut σ' := by
   obtain ⟨t, rfl⟩ := h
   exact kOut_append σ t
-end
-
-section
 
 /-- Left inverse (on the image of `hMap`) that drops every other bit. -/
 def kMap : ApproximableMap B B where
@@ -130,17 +97,11 @@ def kMap : ApproximableMap B B where
       apply cone.subset_cone.mp; rw [← hX'cone, ← hX]; exact hX'X
     have hcone : cone (kOut σ') ⊆ cone (kOut σ) := cone.subset_cone.mpr (kOut_mono hpre)
     exact ⟨σ', hX'cone, hY'mem, (hcone.trans hYsub).trans hYY'⟩
-end
-
-section
 
 theorem kOut_hOut (σ : Str) : kOut (hOut σ) = σ := by
   induction σ with
   | nil => rfl
   | cons b t ih => simp only [hOut_cons, kOut_cons, ih]
-end
-
-section
 
 theorem kMap_comp_hMap : kMap.comp hMap = idMap B := by
   apply ApproximableMap.ext
@@ -158,9 +119,6 @@ theorem kMap_comp_hMap : kMap.comp hMap = idMap B := by
     refine ⟨cone (hOut σ), ⟨σ, hXcone, memB_cone (hOut σ), subset_rfl⟩, hOut σ, rfl, hZmem, ?_⟩
     rw [kOut_hOut, hXcone] at *
     exact hXZ
-end
-
-section
 
 theorem toElementMap_hMap_cone (σ : Str) :
     hMap.toElementMap (B.principal (memB_cone σ)) = B.principal (memB_cone (hOut σ)) := by
@@ -174,9 +132,6 @@ theorem toElementMap_hMap_cone (σ : Str) :
     exact ⟨hYmem, hsub⟩
   · rintro ⟨hYmem, hsub⟩
     exact ⟨σ, rfl, hYmem, hsub⟩
-end
-
-section
 
 theorem toElementMap_kMap_cone (σ : Str) :
     kMap.toElementMap (B.principal (memB_cone σ)) = B.principal (memB_cone (kOut σ)) := by
@@ -190,9 +145,6 @@ theorem toElementMap_kMap_cone (σ : Str) :
     exact ⟨hYmem, hsub⟩
   · rintro ⟨hYmem, hsub⟩
     exact ⟨σ, rfl, hYmem, hsub⟩
-end
-
-section
 
 theorem hMap_not_surjective : ¬ Function.Surjective hMap.toElementMap := by
   intro hsurj
@@ -203,9 +155,6 @@ theorem hMap_not_surjective : ¬ Function.Surjective hMap.toElementMap := by
   rw [← hkhx, toElementMap_hMap_cone] at hx
   have hcone := cone.injective (B.principal_injective (memB_cone _) (memB_cone _) hx)
   simp at hcone
-end
-
-section
 
 theorem kMap_not_injective : ¬ Function.Injective kMap.toElementMap := by
   intro hinj
@@ -215,6 +164,5 @@ theorem kMap_not_injective : ¬ Function.Injective kMap.toElementMap := by
   have h2 := hinj h1
   have hcone := cone.injective (B.principal_injective (memB_cone _) (memB_cone _) h2)
   simp at hcone
-end
 
 end DomainTheory.NeighbourhoodSystems.HMap

@@ -9,38 +9,21 @@ public import Mathlib.Tactic.Ring
 namespace DomainTheory.NeighbourhoodSystems
 open DomainTheory.NeighbourhoodSystems
 
-section
-
 def leOp (u : Set (ℕ × ℕ)) : Set (ℕ × ℕ) :=
   {p | p.1 = p.2} ∪ {p | ∃ m, (p.1, m) ∈ u ∧ p.2 = m + 1}
-end
-
-section
 
 def leRel : Set (ℕ × ℕ) := {p | p.1 ≤ p.2}
-end
-
-section
 
 def mulOp (n : ℕ) (u : Set ℕ) : Set ℕ := {0} ∪ {k | ∃ m ∈ u, k = n + m}
-end
-
-section
 
 def succImage (x : Set ℕ) : Set ℕ := {k | ∃ j ∈ x, k = j + 1}
-end
-
-section
 
 def upSet (m : ℕ) : Set ℕ := {k | m ≤ k}
-end
 
 end DomainTheory.NeighbourhoodSystems
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 open DomainTheory.NeighbourhoodSystems
-section
 
 def addIso (m : ℕ) : ℕ ≃ {k : ℕ // k ∈ upSet m} where
   toFun n := ⟨m + n, Nat.le_add_right m n⟩
@@ -49,33 +32,19 @@ def addIso (m : ℕ) : ℕ ≃ {k : ℕ // k ∈ upSet m} where
   right_inv := by
     rintro ⟨k, hk⟩
     exact Subtype.ext (Nat.add_sub_of_le hk)
-end
-
-section
 
 theorem addIso_apply (m n : ℕ) : (addIso m n : ℕ) = m + n := rfl
-end
-
-section
 
 theorem addIso_succ (m n : ℕ) : (addIso m (n + 1) : ℕ) = (addIso m n : ℕ) + 1 := by
   simp only [addIso_apply]; omega
-end
-
-section
 
 theorem addIso_zero (m : ℕ) : (addIso m 0 : ℕ) = m := by simp [addIso]
-end
 
-section
 theorem leOp_monotone : Monotone leOp := by
   intro u v huv p hp
   rcases hp with hp | ⟨m, hm, hpm⟩
   · exact Or.inl hp
   · exact Or.inr ⟨m, huv hm, hpm⟩
-end
-
-section
 
 theorem leRel_isFixed : leOp leRel = leRel := by
   apply Set.Subset.antisymm
@@ -88,9 +57,6 @@ theorem leRel_isFixed : leOp leRel = leRel := by
     · refine Or.inr ⟨m - 1, ?_, ?_⟩
       · change n ≤ m - 1; omega
       · omega
-end
-
-section
 
 theorem mem_fixedPoint_iff {u : Set (ℕ × ℕ)} (hu : leOp u = u) (n m : ℕ) :
     (n, m) ∈ u ↔ n ≤ m := by
@@ -115,24 +81,16 @@ theorem mem_fixedPoint_iff {u : Set (ℕ × ℕ)} (hu : leOp u = u) (n m : ℕ) 
       rcases Nat.eq_or_lt_of_le h with h' | h'
       · exact Or.inl h'
       · exact Or.inr ⟨k, ih.mpr (Nat.lt_succ_iff.mp h'), rfl⟩
-end
-
-section
 
 theorem leOp_unique {u : Set (ℕ × ℕ)} (hu : leOp u = u) : u = leRel := by
   ext ⟨n, m⟩
   rw [mem_fixedPoint_iff hu]
   rfl
-end
 
-section
 theorem mulOp_monotone (n : ℕ) : Monotone (mulOp n) := by
   rintro u v huv k (hk | ⟨m, hm, rfl⟩)
   · exact Or.inl hk
   · exact Or.inr ⟨m, huv hm, rfl⟩
-end
-
-section
 
 theorem mulOp_lfp_eq_multiples (n : ℕ) :
     lfpSet (mulOp n) = {k | ∃ i, k = n * i} := by
@@ -153,9 +111,6 @@ theorem mulOp_lfp_eq_multiples (n : ℕ) :
     | succ j ih =>
       rw [← hfix]
       exact Or.inr ⟨n * j, ih, by ring⟩
-end
-
-section
 
 theorem upSet_succ (m : ℕ) : upSet (m + 1) = succImage (upSet m) := by
   ext k
@@ -165,15 +120,9 @@ theorem upSet_succ (m : ℕ) : upSet (m + 1) = succImage (upSet m) := by
     exact ⟨k - 1, by omega, by omega⟩
   · rintro ⟨j, hj, rfl⟩
     omega
-end
-
-section
 
 theorem upSet_zero : upSet 0 = Set.univ := by
   ext k; simp [upSet]
-end
-
-section
 
 theorem upSet_unique (s : ℕ → Set ℕ) (h0 : s 0 = Set.univ)
     (hsucc : ∀ m, s (m + 1) = succImage (s m)) : s = upSet := by
@@ -181,6 +130,5 @@ theorem upSet_unique (s : ℕ → Set ℕ) (h0 : s 0 = Set.univ)
   induction m with
   | zero => rw [h0, upSet_zero]
   | succ k ih => rw [hsucc k, ih, upSet_succ]
-end
 
 end DomainTheory.NeighbourhoodSystems

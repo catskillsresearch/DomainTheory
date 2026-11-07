@@ -44,8 +44,6 @@ theorem headValC_bot_le (V : NeighborhoodSystem β) (z' a0 a1 : V.Element) {σ �
     · rw [List.cons_append]; exact le_of_eq rfl
 end
 
-section
-
 theorem not_cone_subset_singleton (τ σ : Str) : ¬ cone τ ⊆ ({σ} : Set Str) := by
   intro h
   have h1 : τ ∈ ({σ} : Set Str) := h (by simp [cone.mem])
@@ -53,14 +51,10 @@ theorem not_cone_subset_singleton (τ σ : Str) : ¬ cone τ ⊆ ({σ} : Set Str
   rw [Set.mem_singleton_iff] at h1 h2
   have : τ = τ ++ [true] := h1.trans h2.symm
   simp at this
-end
-
-section
 
 theorem cone_ne_singleton (τ σ : Str) : cone τ ≠ ({σ} : Set Str) := by
   intro h
   exact not_cone_subset_singleton τ σ (h ▸ subset_rfl)
-end
 
 section
 variable {β : Type*}
@@ -208,7 +202,6 @@ theorem condT_bot (x y : T.Element) :
     exact Or.inr (Or.inr h)
 end
 end DomainTheory.NeighbourhoodSystems.SeqPeano
-section
 namespace DomainTheory.NeighbourhoodSystems.SeqPeano
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap BitDom SeqDom
 section
@@ -245,19 +238,11 @@ theorem one_def_strElem (σ : Str) : oneMap.toElementMap (strElem σ) = oneDef (
 
 end
 
-section
-
 theorem peano_cons_disjoint (σ τ : Str) : (false :: σ) ≠ (true :: τ) := by
   simp
-end
-
-section
 
 theorem peano_cons_injective {b : Bool} {σ τ : Str} (h : b :: σ = b :: τ) : σ = τ :=
   (List.cons.injEq b σ b τ).mp h |>.2
-end
-
-section
 
 theorem peano_induction (P : Str → Prop) (hnil : P []) (hcons : ∀ b σ, P σ → P (b :: σ)) :
     ∀ σ, P σ := by
@@ -265,12 +250,8 @@ theorem peano_induction (P : Str → Prop) (hnil : P []) (hcons : ∀ b σ, P σ
   induction σ with
   | nil => exact hnil
   | cons b σ ih => exact hcons b σ ih
-end
-
-section
 
 theorem peano_nil_ne_cons (b : Bool) (σ : Str) : ([] : Str) ≠ b :: σ := by
   simp
-end
 
 end DomainTheory.NeighbourhoodSystems.SeqPeano

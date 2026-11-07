@@ -18,59 +18,34 @@ namespace DomainTheory.NeighbourhoodSystems
 namespace RegularLanguage
 open NeighborhoodSystem ApproximableMap
 
-section
-
 def concat (X Y : Set (List Bool)) : Set (List Bool) := {w | ∃ a ∈ X, ∃ b ∈ Y, a ++ b = w}
-end
-
-section
 
 inductive InS : Set (List Bool) → Prop
   | univ : InS Set.univ
   | singleton (σ : List Bool) : InS {σ}
   | mul {X Y : Set (List Bool)} : InS X → InS Y → InS (concat X Y)
   | inter {X Y : Set (List Bool)} : InS X → InS Y → (X ∩ Y).Nonempty → InS (X ∩ Y)
-end
 
-section
 @[simp] theorem mem_concat {X Y : Set (List Bool)} {w : List Bool} :
     w ∈ concat X Y ↔ ∃ a ∈ X, ∃ b ∈ Y, a ++ b = w := Iff.rfl
-end
-
-section
 
 theorem Ssys_master_mem : InS Set.univ := InS.univ
-end
-
-section
 
 theorem Ssys_master_nonempty : (Set.univ : Set (List Bool)).Nonempty := by
   exact ⟨[], Set.mem_univ []⟩
-end
-
-section
 
 theorem Ssys_sub_master {X : Set (List Bool)} (_h : InS X) : X ⊆ Set.univ :=
   Set.subset_univ _
-end
-
-section
 
 theorem concat_mono {X X' Y Y' : Set (List Bool)} (hX : X ⊆ X') (hY : Y ⊆ Y') :
     concat X Y ⊆ concat X' Y' := by
   rintro w ⟨a, ha, b, hb, rfl⟩; exact ⟨a, hX ha, b, hY hb, rfl⟩
-end
-
-section
 
 theorem concat_nonempty {X Y : Set (List Bool)} (hX : X.Nonempty) (hY : Y.Nonempty) :
     (concat X Y).Nonempty := by
   obtain ⟨a, ha⟩ := hX
   obtain ⟨b, hb⟩ := hY
   exact ⟨a ++ b, a, ha, b, hb, rfl⟩
-end
-
-section
 
 theorem InS.nonempty {X : Set (List Bool)} (h : InS X) : X.Nonempty := by
   induction h with
@@ -78,14 +53,10 @@ theorem InS.nonempty {X : Set (List Bool)} (h : InS X) : X.Nonempty := by
   | singleton σ => exact ⟨σ, rfl⟩
   | mul _ _ ihX ihY => exact concat_nonempty ihX ihY
   | inter _ _ hne _ _ => exact hne
-end
-
-section
 
 theorem Ssys_inter_mem {X Y Z : Set (List Bool)}
     (hX : InS X) (hY : InS Y) (hZ : InS Z) (hZsub : Z ⊆ X ∩ Y) : InS (X ∩ Y) :=
   InS.inter hX hY (hZ.nonempty.mono hZsub)
-end
 
 end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
@@ -94,7 +65,6 @@ section
 namespace DomainTheory.NeighbourhoodSystems
 namespace RegularLanguage
 open NeighborhoodSystem ApproximableMap
-section
 
 def Ssys : NeighborhoodSystem (List Bool) where
   mem := InS
@@ -103,13 +73,8 @@ def Ssys : NeighborhoodSystem (List Bool) where
   master_mem := Ssys_master_mem
   inter_mem := Ssys_inter_mem
   sub_master := Ssys_sub_master
-end
 
-section
 @[simp] theorem Ssys_mem {X : Set (List Bool)} : Ssys.mem X ↔ InS X := Iff.rfl
-end
-
-section
 
 def mulElem (x y : Ssys.Element) : Ssys.Element where
   mem Z := InS Z ∧ ∃ X, x.mem X ∧ ∃ Y, y.mem Y ∧ concat X Y ⊆ Z
@@ -130,14 +95,9 @@ def mulElem (x y : Ssys.Element) : Ssys.Element where
   up_mem := by
     rintro Z W ⟨_, X, hX, Y, hY, hsub⟩ hW hZW
     exact ⟨hW, X, hX, Y, hY, hsub.trans hZW⟩
-end
 
-section
 @[simp] theorem mem_mulElem {x y : Ssys.Element} {Z : Set (List Bool)} :
     (mulElem x y).mem Z ↔ InS Z ∧ ∃ X, x.mem X ∧ ∃ Y, y.mem Y ∧ concat X Y ⊆ Z := Iff.rfl
-end
-
-section
 
 def emb (σ : List Bool) : Ssys.Element where
   mem X := InS X ∧ σ ∈ X
@@ -149,14 +109,9 @@ def emb (σ : List Bool) : Ssys.Element where
   up_mem := by
     rintro X Y ⟨_, hσ⟩ hY hsub
     exact ⟨hY, hsub hσ⟩
-end
 
-section
 @[simp] theorem mem_emb {σ : List Bool} {X : Set (List Bool)} :
     (emb σ).mem X ↔ InS X ∧ σ ∈ X := Iff.rfl
-end
-
-section
 
 def prependMap (σ : List Bool) : ApproximableMap Ssys Ssys where
   rel Y Z := InS Y ∧ InS Z ∧ concat {σ} Y ⊆ Z
@@ -172,42 +127,23 @@ def prependMap (σ : List Bool) : ApproximableMap Ssys Ssys where
   mono := by
     rintro Y Y' Z Z' ⟨_, hZ, hsub⟩ hYY' hZZ' hY' hZ'
     exact ⟨hY', hZ', (concat_mono (Set.Subset.refl _) hYY').trans (hsub.trans hZZ')⟩
-end
-
-section
 
 def repeatWord (w : List Bool) : ℕ → List Bool
   | 0 => []
   | n + 1 => w ++ repeatWord w n
-end
 
-section
 @[simp] theorem repeatWord_zero (w : List Bool) : repeatWord w 0 = [] := rfl
-end
-
-section
 
 def powerLang (w : List Bool) : Set (List Bool) :=
   {u | ∃ n, repeatWord w n = u}
-end
 
-section
 @[simp] theorem mem_powerLang {w u : List Bool} :
     u ∈ powerLang w ↔ ∃ n, repeatWord w n = u := Iff.rfl
-end
-
-section
 
 def streamArrow (σ : List Bool) : Ssys.Element := (prependMap σ).fixElement
-end
-
-section
 
 def streamElemMem (w : List Bool) (Z : Set (List Bool)) : Prop :=
   InS Z ∧ ∀ n, repeatWord w n ∈ Z
-end
-
-section
 
 def streamElem (w : List Bool) : Ssys.Element where
   mem Z := streamElemMem w Z
@@ -222,9 +158,6 @@ def streamElem (w : List Bool) : Ssys.Element where
     intro X Y hX hInSY hsub
     obtain ⟨_hXIn, hXw⟩ := hX
     exact ⟨hInSY, fun n => hsub (hXw n)⟩
-end
-
-section
 
 theorem append_mem_concat {X Y : Set (List Bool)} {a b : List Bool} (ha : a ∈ X) (hb : b ∈ Y) :
     a ++ b ∈ concat X Y := ⟨a, ha, b, hb, rfl⟩
@@ -327,20 +260,12 @@ example (h : InS (powerLang [false, true])) :
         (mulElem (streamElem [false, true]) (streamElem [false, true])) =
       mulElem (streamElem [false, true]) (streamElem [false, true]) := by
   rw [streamElem_idempotent _ h, streamElem_idempotent _ h]
-end
-
-section
 
 theorem Ssys_isPositive : Ssys.IsPositive := by
   intro X Y hX hY
   exact ⟨fun h => h.nonempty, fun h => InS.inter hX hY h⟩
-end
 
-section
 theorem Ssys_master : Ssys.master = Set.univ := rfl
-end
-
-section
 
 theorem concat_singleton (a b : List Bool) : concat {a} {b} = {a ++ b} := by
   ext w
@@ -348,17 +273,11 @@ theorem concat_singleton (a b : List Bool) : concat {a} {b} = {a ++ b} := by
   constructor
   · rintro ⟨a', rfl, b', rfl, rfl⟩; rfl
   · rintro rfl; exact ⟨a, rfl, b, rfl, rfl⟩
-end
-
-section
 
 theorem emb_injective : Function.Injective emb := by
   intro σ τ h
   have hmem : (emb τ).mem {σ} := h ▸ (⟨InS.singleton σ, rfl⟩ : (emb σ).mem {σ})
   exact (Set.mem_singleton_iff.mp hmem.2).symm
-end
-
-section
 
 theorem emb_mul (σ τ : List Bool) : emb (σ ++ τ) = mulElem (emb σ) (emb τ) := by
   apply NeighborhoodSystem.Element.ext
@@ -372,9 +291,6 @@ theorem emb_mul (σ τ : List Bool) : emb (σ ++ τ) = mulElem (emb σ) (emb τ)
     subst hw; exact hστ
   · rintro ⟨hZ, X, ⟨_, hσX⟩, Y, ⟨_, hτY⟩, hsub⟩
     exact ⟨hZ, hsub (append_mem_concat hσX hτY)⟩
-end
-
-section
 
 theorem mulElem_bot_le (y : Ssys.Element) : mulElem Ssys.bot y ≤ y := by
   rintro Z ⟨hInS, X, hX, Y, hY, hsub⟩
@@ -382,23 +298,15 @@ theorem mulElem_bot_le (y : Ssys.Element) : mulElem Ssys.bot y ≤ y := by
   subst hX
   refine y.up_mem hY hInS fun w hw => hsub ?_
   simpa using append_mem_concat (Set.mem_univ ([] : List Bool)) hw
-end
-
-section
 
 theorem mulElem_mono_right (x : Ssys.Element) : Monotone (mulElem x) := by
   rintro y y' hyy' Z ⟨hInS, X, hX, Y, hY, hsub⟩
   exact ⟨hInS, X, hX, Y, hyy' Y hY, hsub⟩
-end
 
-section
 theorem powerLang_concat (w : List Bool) :
     concat (powerLang w) (powerLang w) ⊆ powerLang w := by
   rintro u ⟨a, ⟨m, hm⟩, b, ⟨n, hn⟩, rfl⟩
   exact ⟨m + n, by rw [repeatWord_add, hm, hn]⟩
-end
-
-section
 
 theorem prependMap_toElementMap (σ : List Bool) (y : Ssys.Element) :
     (prependMap σ).toElementMap y = mulElem (emb σ) y := by
@@ -410,22 +318,14 @@ theorem prependMap_toElementMap (σ : List Bool) (y : Ssys.Element) :
   · rintro ⟨hInSZ, X, ⟨_, hσX⟩, Y, hY, hsub⟩
     refine ⟨Y, hY, y.sub hY, hInSZ, ?_⟩
     exact (concat_mono (Set.singleton_subset_iff.mpr hσX) (Set.Subset.refl _)).trans hsub
-end
 
-section
 theorem repeatWord_succ (w : List Bool) (n : ℕ) :
     repeatWord w (n + 1) = w ++ repeatWord w n := rfl
-end
-
-section
 
 theorem streamArrow_eq (σ : List Bool) :
     mulElem (emb σ) (streamArrow σ) = streamArrow σ := by
   rw [← prependMap_toElementMap]
   exact toElementMap_fixElement (prependMap σ)
-end
-
-section
 
 theorem prependMap_iterElem_mul_streamArrow_le (σ : List Bool) :
     ∀ n, mulElem ((prependMap σ).iterElem n) (streamArrow σ) ≤ streamArrow σ
@@ -446,9 +346,6 @@ theorem prependMap_iterElem_mul_streamArrow_le (σ : List Bool) :
           ≤ mulElem (emb σ) (streamArrow σ) :=
             mulElem_mono_right (emb σ) (prependMap_iterElem_mul_streamArrow_le σ n)
         _ = streamArrow σ := streamArrow_eq σ
-end
-
-section
 
 theorem streamArrow_le_mul_self (σ : List Bool) :
     streamArrow σ ≤ mulElem (streamArrow σ) (streamArrow σ) := by
@@ -457,9 +354,6 @@ theorem streamArrow_le_mul_self (σ : List Bool) :
       mulElem (streamArrow σ) (streamArrow σ) := by
     rw [prependMap_toElementMap, ← mulElem_assoc, streamArrow_eq]
   exact le_of_eq heq
-end
-
-section
 
 theorem streamArrow_mul_self_le (σ : List Bool) :
     mulElem (streamArrow σ) (streamArrow σ) ≤ streamArrow σ := by
@@ -467,14 +361,10 @@ theorem streamArrow_mul_self_le (σ : List Bool) :
   obtain ⟨n, hn⟩ := (mem_fixElement (prependMap σ)).mp hX
   have hXn : ((prependMap σ).iterElem n).mem X := (mem_iterElem (prependMap σ) n).mpr hn
   exact prependMap_iterElem_mul_streamArrow_le σ n Z ⟨hInSZ, X, hXn, Y, hY, hsub⟩
-end
-
-section
 
 theorem streamArrow_mul_self (σ : List Bool) :
     mulElem (streamArrow σ) (streamArrow σ) = streamArrow σ :=
   le_antisymm (streamArrow_mul_self_le σ) (streamArrow_le_mul_self σ)
-end
 
 end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
@@ -482,32 +372,21 @@ namespace DomainTheory.NeighbourhoodSystems
 namespace RegularLanguage
 open NeighborhoodSystem ApproximableMap
 
-section
-
 theorem streamArrow_containsZero_pow_four :
     mulElem
         (mulElem (streamArrow [false, true]) (streamArrow [false, true]))
         (mulElem (streamArrow [false, true]) (streamArrow [false, true]))
       = mulElem (streamArrow [false, true]) (streamArrow [false, true]) := by
   rw [streamArrow_mul_self, streamArrow_mul_self]
-end
-
-section
 
 theorem streamArrow_mul_self_append_true (σ : List Bool) :
     mulElem (streamArrow (σ ++ [true])) (streamArrow (σ ++ [true])) =
       streamArrow (σ ++ [true]) :=
   streamArrow_mul_self (σ ++ [true])
-end
-
-section
 
 theorem streamArrow_mul_self_self (σ : List Bool) :
     mulElem (mulElem (streamArrow σ) (streamArrow σ)) (streamArrow σ) = streamArrow σ := by
   rw [streamArrow_mul_self, streamArrow_mul_self]
-end
-
-section
 
 inductive SExpr : Type
   | sigma : SExpr
@@ -515,9 +394,6 @@ inductive SExpr : Type
   | cat : SExpr → SExpr → SExpr
   | cap : SExpr → SExpr → SExpr
   deriving DecidableEq
-end
-
-section
 
 def sexprOfNatFuel : ℕ → ℕ → Option SExpr
   | 0, _ => none
@@ -534,21 +410,15 @@ def sexprOfNatFuel : ℕ → ℕ → Option SExpr
       | some a, some b => some (.cap a b)
       | _, _ => none
     | _ => none
-end
 
-section
 def sexprOfNat (n : ℕ) : Option SExpr := sexprOfNatFuel (n + 1) n
-end
 
-section
 def sexprToNat : SExpr → ℕ
   | .sigma => Nat.pair 0 0
   | .single σ => Nat.pair 1 (Encodable.encode σ)
   | .cat a b => Nat.pair 2 (Nat.pair (sexprToNat a) (sexprToNat b))
   | .cap a b => Nat.pair 3 (Nat.pair (sexprToNat a) (sexprToNat b))
-end
 
-section
 theorem snd_lt_pair_of_pos_fst {a b : ℕ} (ha : 0 < a) : b < Nat.pair a b := by
   rw [Nat.pair]
   split_ifs with h
@@ -563,9 +433,7 @@ theorem snd_lt_pair_of_pos_fst {a b : ℕ} (ha : 0 < a) : b < Nat.pair a b := by
       have : a ≤ a * a + a := Nat.le_add_left _ _
       omega
     omega
-end
 
-section
 theorem sexprOfNatFuel_sexprToNat (e : SExpr) :
     ∀ fuel, sexprToNat e < fuel → sexprOfNatFuel fuel (sexprToNat e) = some e := by
   induction e with
@@ -611,50 +479,31 @@ theorem sexprOfNatFuel_sexprToNat (e : SExpr) :
           simpa [sexprToNat] using snd_lt_pair_of_pos_fst (a := 3) (b := Nat.pair (sexprToNat a) (sexprToNat b)) (by omega)
         omega
       simp [sexprToNat, sexprOfNatFuel, Nat.unpair_pair, iha _ ha, ihb _ hb]
-end
 
-section
 instance : Encodable SExpr where
   encode := sexprToNat
   decode := sexprOfNat
   encodek e := sexprOfNatFuel_sexprToNat e (sexprToNat e + 1) (Nat.lt_succ_self _)
-end
-
-section
 
 def denote : SExpr → Set (List Bool)
   | .sigma => Set.univ
   | .single σ => {σ}
   | .cat a b => concat (denote a) (denote b)
   | .cap a b => denote a ∩ denote b
-end
 
-section
 @[simp] theorem denote_sigma : denote .sigma = Set.univ := rfl
-end
 
-section
 @[simp] theorem denote_single (σ : List Bool) : denote (.single σ) = {σ} := rfl
-end
 
-section
 @[simp] theorem denote_cat (a b : SExpr) : denote (.cat a b) = concat (denote a) (denote b) := rfl
-end
 
-section
 @[simp] theorem denote_cap (a b : SExpr) : denote (.cap a b) = denote a ∩ denote b := rfl
-end
-
-section
 
 def matchesB : SExpr → List Bool → Bool
   | .sigma, _ => true
   | .single σ, w => decide (w = σ)
   | .cat a b, w => (List.range (w.length + 1)).any (fun i => matchesB a (w.take i) && matchesB b (w.drop i))
   | .cap a b, w => matchesB a w && matchesB b w
-end
-
-section
 
 theorem mem_concat_iff_split {X Y : Set (List Bool)} {w : List Bool} :
     w ∈ concat X Y ↔ ∃ i, i ≤ w.length ∧ w.take i ∈ X ∧ w.drop i ∈ Y := by
@@ -665,9 +514,6 @@ theorem mem_concat_iff_split {X Y : Set (List Bool)} {w : List Bool} :
     · rw [List.drop_left]; exact hb
   · rintro ⟨i, _, hpre, hsuf⟩
     exact ⟨w.take i, hpre, w.drop i, hsuf, w.take_append_drop i⟩
-end
-
-section
 
 theorem matchesB_iff (e : SExpr) (w : List Bool) : matchesB e w = true ↔ w ∈ denote e := by
   induction e generalizing w with
@@ -684,38 +530,22 @@ theorem matchesB_iff (e : SExpr) (w : List Bool) : matchesB e w = true ↔ w ∈
   | cap a b iha ihb =>
     simp only [matchesB, Bool.and_eq_true, denote_cap, Set.mem_inter_iff]
     rw [iha, ihb]
-end
-
-section
 
 instance decidableMemDenote (e : SExpr) : DecidablePred (· ∈ denote e) :=
   fun w => decidable_of_iff (matchesB e w = true) (matchesB_iff e w)
-end
 
-section
 instance : Countable SExpr := inferInstance
-end
-
-section
 
 def emptyExpr : SExpr := .cap (.single [false]) (.single [true])
-end
 
-section
 @[simp] theorem denote_emptyExpr : denote emptyExpr = (∅ : Set (List Bool)) := by
   ext w
   simp only [emptyExpr, denote_cap, denote_single, Set.mem_inter_iff, Set.mem_singleton_iff,
     Set.mem_empty_iff_false, iff_false, not_and]
   rintro rfl
   decide
-end
-
-section
 
 def containsZero : SExpr := .cat .sigma (.cat (.single [false]) .sigma)
-end
-
-section
 
 theorem InS_denote_of_nonempty : ∀ {e : SExpr}, (denote e).Nonempty → InS (denote e)
   | .sigma, _ => InS.univ
@@ -729,9 +559,6 @@ theorem InS_denote_of_nonempty : ∀ {e : SExpr}, (denote e).Nonempty → InS (d
     have ha : (denote a).Nonempty := h.mono Set.inter_subset_left
     have hb : (denote b).Nonempty := h.mono Set.inter_subset_right
     exact InS.inter (InS_denote_of_nonempty ha) (InS_denote_of_nonempty hb) h
-end
-
-section
 
 theorem InS_exists_denote {X : Set (List Bool)} (h : InS X) : ∃ e : SExpr, denote e = X := by
   induction h with
@@ -745,24 +572,16 @@ theorem InS_exists_denote {X : Set (List Bool)} (h : InS X) : ∃ e : SExpr, den
     obtain ⟨ea, rfl⟩ := iha
     obtain ⟨eb, rfl⟩ := ihb
     exact ⟨.cap ea eb, rfl⟩
-end
-
-section
 
 theorem denote_catSigmaSigma : denote (.cat .sigma .sigma) = denote .sigma := by
   ext w
   simp only [denote_cat, denote_sigma, mem_concat, Set.mem_univ, iff_true]
   exact ⟨[], trivial, w, trivial, rfl⟩
-end
-
-section
 
 theorem empty_iff_equiv_emptyExpr (a b : SExpr) :
     denote (.cap a b) = (∅ : Set (List Bool)) ↔ denote (.cap a b) = denote emptyExpr := by
   rw [denote_emptyExpr]
-end
 
-section
 theorem inS_eq_range_denote : {X | InS X} = denote '' {e | (denote e).Nonempty} := by
   ext X
   simp only [Set.mem_ofPred_eq, Set.mem_image]
@@ -772,9 +591,6 @@ theorem inS_eq_range_denote : {X | InS X} = denote '' {e | (denote e).Nonempty} 
     exact ⟨e, by rw [he]; exact h.nonempty, he⟩
   · rintro ⟨e, hne, rfl⟩
     exact InS_denote_of_nonempty hne
-end
-
-section
 
 theorem inS_iff_exists_denote {X : Set (List Bool)} :
     InS X ↔ ∃ e : SExpr, denote e = X ∧ X.Nonempty := by
@@ -784,40 +600,27 @@ theorem inS_iff_exists_denote {X : Set (List Bool)} :
     exact ⟨e, he, h.nonempty⟩
   · rintro ⟨e, rfl, hne⟩
     exact InS_denote_of_nonempty hne
-end
-
-section
 
 theorem interEq_iff (a b k : SExpr) :
     denote a ∩ denote b = denote k ↔ denote (.cap a b) = denote k := by
   rw [denote_cap]
-end
-
-section
 
 theorem mem_denote_sigma (w : List Bool) : w ∈ denote .sigma := Set.mem_univ w
-end
-
-section
 
 theorem sigma_ne_containsZero : denote .sigma ≠ denote containsZero := by
   intro h
   have h1 : ([true] : List Bool) ∈ denote .sigma := mem_denote_sigma _
   rw [h] at h1
   exact absurd h1 (by decide)
-end
 
 end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.RegularLanguage
-section
 open NeighborhoodSystem ApproximableMap
 
 /-- Scott's Exercise 7.22: Σ is distinct from the contains-zero language. -/
 theorem example_722_regular : denote (.sigma) ≠ denote containsZero :=
   sigma_ne_containsZero
-end
-
 
 end DomainTheory.NeighbourhoodSystems.RegularLanguage
 namespace DomainTheory.NeighbourhoodSystems
@@ -984,40 +787,27 @@ end
 end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.RegularLanguage
-section
 open NeighborhoodSystem ApproximableMap
 
 /-- Scott's Exercise 7.22: ε-NFA concatenation accepts the concatenated language. -/
 theorem example_722_cat {σ₁ σ₂ : Type} (M₁ : NFA Bool σ₁) (M₂ : NFA Bool σ₂) :
     (catEps M₁ M₂).accepts = concat M₁.accepts M₂.accepts :=
   catEps_accepts M₁ M₂
-end
-
 
 end DomainTheory.NeighbourhoodSystems.RegularLanguage
 namespace DomainTheory.NeighbourhoodSystems
 namespace RegularLanguage
 open scoped Computability
 
-section
-
 def sigmaDFA : DFA Bool Unit where
   step _ _ := ()
   start := ()
   accept := Set.univ
-end
 
-section
 @[simp] theorem sigmaDFA_accepts : sigmaDFA.accepts = Set.univ :=
   Set.eq_univ_of_forall fun _ => Set.mem_univ _
-end
-
-section
 
 abbrev SingleState (σ : List Bool) : Type := Option (Fin (σ.length + 1))
-end
-
-section
 
 def singleDFA (σ : List Bool) : DFA Bool (SingleState σ) where
   step s b := s.bind fun i =>
@@ -1026,9 +816,6 @@ def singleDFA (σ : List Bool) : DFA Bool (SingleState σ) where
     else none
   start := some ⟨0, by omega⟩
   accept := {some ⟨σ.length, by omega⟩}
-end
-
-section
 
 theorem complDFA_accepts {σ : Type} (M : DFA Bool σ) (a : SExpr) (h : M.accepts = denote a) :
     (Mᶜ).accepts = (denote a)ᶜ := by
@@ -1042,9 +829,6 @@ example (σ : List Bool) : Fintype (SingleState σ) := by unfold SingleState; in
 example (σ : List Bool) : DecidableEq (SingleState σ) := by unfold SingleState; infer_instance
 example {σ₁ σ₂ : Type} [Fintype σ₁] [Fintype σ₂] : Fintype (σ₁ × σ₂) := inferInstance
 example {σ₁ σ₂ : Type} [DecidableEq σ₁] [DecidableEq σ₂] : DecidableEq (σ₁ × σ₂) := inferInstance
-end
-
-section
 
 theorem inter_eval {σ₁ σ₂ : Type} (M₁ : DFA Bool σ₁) (M₂ : DFA Bool σ₂) (w : List Bool) :
     (M₁.inter M₂).eval w = (M₁.eval w, M₂.eval w) := by
@@ -1053,9 +837,6 @@ theorem inter_eval {σ₁ σ₂ : Type} (M₁ : DFA Bool σ₁) (M₂ : DFA Bool
   | append_singleton w a ih =>
     rw [DFA.eval_append_singleton, DFA.eval_append_singleton, DFA.eval_append_singleton, ih]
     rfl
-end
-
-section
 
 theorem interDFA_accepts {σ₁ σ₂ : Type} (M₁ : DFA Bool σ₁) (M₂ : DFA Bool σ₂)
     (a b : SExpr) (h₁ : M₁.accepts = denote a) (h₂ : M₂.accepts = denote b) :
@@ -1071,12 +852,10 @@ theorem interDFA_accepts {σ₁ σ₂ : Type} (M₁ : DFA Bool σ₁) (M₂ : DF
     show (M₁.inter M₂).eval w ∈ (M₁.inter M₂).accept
     rw [inter_eval]
     exact hw
-end
 
 end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.RegularLanguage
-section
 open NeighborhoodSystem ApproximableMap
 
 /-- Scott's Exercise 7.22: DFA intersection matches the cap of denoted expressions. -/
@@ -1085,29 +864,20 @@ theorem example_722_dfa {σ₁ σ₂ : Type} (M₁ : DFA Bool σ₁) (M₂ : DFA
     M₁.accepts = denote a → M₂.accepts = denote b →
       (M₁.inter M₂).accepts = denote (.cap a b) :=
   interDFA_accepts M₁ M₂ a b
-end
-
 
 end DomainTheory.NeighbourhoodSystems.RegularLanguage
 namespace DomainTheory.NeighbourhoodSystems
 namespace RegularLanguage
 open scoped Computability
 
-section
 theorem sigmaDFA_accepts_denote : sigmaDFA.accepts = denote .sigma := by
   rw [sigmaDFA_accepts, denote_sigma]
-end
-
-section
 
 theorem singleDFA_evalFrom_none (σ : List Bool) (w : List Bool) :
     (singleDFA σ).evalFrom none w = none := by
   induction w with
   | nil => rfl
   | cons b w ih => rw [DFA.evalFrom_cons]; exact ih
-end
-
-section
 
 theorem singleDFA_evalFrom (σ : List Bool) (w : List Bool) (k : Fin (σ.length + 1)) :
     (singleDFA σ).evalFrom (some k) w =
@@ -1152,9 +922,6 @@ theorem singleDFA_evalFrom (σ : List Bool) (w : List Bool) (k : Fin (σ.length 
       have hd : List.drop (k : ℕ) σ = [] := by
         rw [List.drop_eq_nil_iff]; have := k.isLt; omega
       rw [hd]; exact (by simp : ¬ (b :: w) <+: [])
-end
-
-section
 
 theorem singleDFA_accepts (σ : List Bool) : (singleDFA σ).accepts = {σ} := by
   ext w
@@ -1173,29 +940,19 @@ theorem singleDFA_accepts (σ : List Bool) : (singleDFA σ).accepts = {σ} := by
     constructor
     · intro hcontra; exact absurd hcontra (by simp)
     · intro hw; subst hw; exact absurd List.prefix_rfl h
-end
 
-section
 theorem singleDFA_accepts_denote (σ : List Bool) : (singleDFA σ).accepts = denote (.single σ) := by
   rw [singleDFA_accepts]; exact (denote_single σ).symm
-end
-
-section
 
 def wordsUpTo : ℕ → List (List Bool)
   | 0 => [[]]
   | n + 1 =>
     (wordsUpTo n) ++ (wordsUpTo n).flatMap fun w => [[false] ++ w, [true] ++ w]
-end
-
-section
 
 def anyMatchesB (e : SExpr) (ws : List (List Bool)) : Bool := ws.any (matchesB e)
 
 #eval anyMatchesB .sigma (wordsUpTo 0)
-end
 
-section
 theorem mem_wordsUpTo (n : ℕ) {w : List Bool} : w ∈ wordsUpTo n ↔ w.length ≤ n := by
   induction n generalizing w with
   | zero =>
@@ -1231,20 +988,16 @@ theorem mem_wordsUpTo (n : ℕ) {w : List Bool} : w ∈ wordsUpTo n ↔ w.length
           cases hd with
           | false => exact Or.inl rfl
           | true => exact Or.inr rfl
-end
 
 end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.RegularLanguage
-section
 open NeighborhoodSystem ApproximableMap
 
 /-- Scott's Exercise 7.22: wordsUpTo characterises length. -/
 theorem example_722_words (n : ℕ) {w : List Bool} :
     w ∈ wordsUpTo n ↔ w.length ≤ n :=
   mem_wordsUpTo n
-end
-
 
 end DomainTheory.NeighbourhoodSystems.RegularLanguage
 namespace DomainTheory.NeighbourhoodSystems

@@ -5,7 +5,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
 /-- Scott's Theorem 7.6: the fixpoint map is computable. -/
@@ -20,6 +19,5 @@ theorem theorem_76 :
         (funPresentation P P gN incl incl eq hgN hgNp hincl hinclp hincl hinclp heq heqp) P
         (fixMap V) :=
   @fixMap_isComputable
-end
 
 end DomainTheory.NeighbourhoodSystems

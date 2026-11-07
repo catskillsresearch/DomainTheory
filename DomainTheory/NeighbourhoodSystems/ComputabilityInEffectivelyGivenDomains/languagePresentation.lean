@@ -16,48 +16,31 @@ open Set Domain.Recursive
 
 def SsysX_default : Set (List Bool) := Set.univ
 
-section
 def boolNat (b : Bool) : ℕ := if b then 1 else 0
-end
 
-section
 theorem boolNat_eq_one_iff (b : Bool) : boolNat b = 1 ↔ b := by
   cases b <;> simp [boolNat]
-end
 
-section
 theorem boolNat_zero_one (b : Bool) : boolNat b = 0 ∨ boolNat b = 1 := by
   cases b <;> simp [boolNat]
-end
 
-section
 def encodeListBool (σ : List Bool) : ℕ := encodeList (σ.map boolNat)
-end
-
-section
 
 def SExpr.encode : SExpr → ℕ
   | .sigma => Nat.pair 0 0
   | .single σ => Nat.pair 1 (encodeListBool σ)
   | .cat a b => Nat.pair 2 (Nat.pair (encode a) (encode b))
   | .cap a b => Nat.pair 3 (Nat.pair (encode a) (encode b))
-end
 
 end RegularLanguage
 namespace RegularLanguage
 open Set Domain.Recursive
 
-section
 def natBool (n : ℕ) : Option Bool :=
   match n with | 0 => some false | 1 => some true | _ => none
-end
 
-section
 def decodeListBool (n : ℕ) : Option (List Bool) :=
   (decodeList n).mapM natBool
-end
-
-section
 
 def decodeFuel (fuel : ℕ) (n : ℕ) : Option SExpr :=
   match fuel with
@@ -75,23 +58,15 @@ def decodeFuel (fuel : ℕ) (n : ℕ) : Option SExpr :=
       | some a, some b => some (.cap a b)
       | _, _ => none
     | _ => none
-end
-
-section
 
 def SExpr.decode (n : ℕ) : Option SExpr := decodeFuel (n.unpair.2 + 1) n.unpair.1
-end
-
-section
 
 def SsysX (n : ℕ) : Set (List Bool) :=
   match SExpr.decode n with
   | none => SsysX_default
   | some e =>
     if decideNonemptyB e then denote e else SsysX_default
-end
 
-section
 theorem SsysX_mem (n : ℕ) : InS (SsysX n) := by
   unfold SsysX
   cases hdec : SExpr.decode n with
@@ -102,69 +77,51 @@ theorem SsysX_mem (n : ℕ) : InS (SsysX n) := by
       exact InS_denote_of_nonempty ((decideNonemptyB_iff e).1 h)
     · simp [h]
       exact InS.univ
-end
 
-section
 theorem decodeFuel_pair_cap_isSome_iff (fuel c : ℕ) :
     (match decodeFuel fuel c.unpair.2.unpair.1, decodeFuel fuel c.unpair.2.unpair.2 with
       | some a, some b => some (SExpr.cap a b) | _, _ => none).isSome = true ↔
       (decodeFuel fuel c.unpair.2.unpair.1).isSome = true ∧
         (decodeFuel fuel c.unpair.2.unpair.2).isSome = true := by
   cases decodeFuel fuel c.unpair.2.unpair.1 <;> cases decodeFuel fuel c.unpair.2.unpair.2 <;> simp
-end
 
-section
 theorem decodeFuel_pair_cat_isSome_iff (fuel c : ℕ) :
     (match decodeFuel fuel c.unpair.2.unpair.1, decodeFuel fuel c.unpair.2.unpair.2 with
       | some a, some b => some (SExpr.cat a b) | _, _ => none).isSome = true ↔
       (decodeFuel fuel c.unpair.2.unpair.1).isSome = true ∧
         (decodeFuel fuel c.unpair.2.unpair.2).isSome = true := by
   cases decodeFuel fuel c.unpair.2.unpair.1 <;> cases decodeFuel fuel c.unpair.2.unpair.2 <;> simp
-end
 
-section
 theorem decodeFuel_succ_cap (fuel c : ℕ) (h : c.unpair.1 = 3) :
     decodeFuel (fuel + 1) c =
       match decodeFuel fuel c.unpair.2.unpair.1, decodeFuel fuel c.unpair.2.unpair.2 with
       | some a, some b => some (.cap a b)
       | _, _ => none := by
   simp [decodeFuel, h]
-end
 
-section
 theorem decodeFuel_succ_cat (fuel c : ℕ) (h : c.unpair.1 = 2) :
     decodeFuel (fuel + 1) c =
       match decodeFuel fuel c.unpair.2.unpair.1, decodeFuel fuel c.unpair.2.unpair.2 with
       | some a, some b => some (.cat a b)
       | _, _ => none := by
   simp [decodeFuel, h]
-end
 
-section
 theorem decodeFuel_succ_junk (fuel c : ℕ) (h : 4 ≤ c.unpair.1) :
     decodeFuel (fuel + 1) c = none := by
   match tag : c.unpair.1 with
   | 0 | 1 | 2 | 3 => omega
   | t + 4 => simp [decodeFuel, tag]
-end
 
-section
 theorem decodeFuel_succ_not_sigma (fuel c : ℕ) (h : c.unpair.1 = 0) (hσ : c.unpair.2 ≠ 0) :
     decodeFuel (fuel + 1) c = none := by simp [decodeFuel, h, hσ]
-end
 
-section
 theorem decodeFuel_succ_sigma (fuel c : ℕ) (h : c.unpair.1 = 0) (hσ : c.unpair.2 = 0) :
     decodeFuel (fuel + 1) c = some .sigma := by simp [decodeFuel, h, hσ]
-end
 
-section
 theorem decodeFuel_succ_single (fuel c : ℕ) (h : c.unpair.1 = 1) :
     decodeFuel (fuel + 1) c = (decodeListBool c.unpair.2).map (.single ·) := by
   simp [decodeFuel, h]
-end
 
-section
 theorem decodeListBool_encodeListBool (σ : List Bool) :
     decodeListBool (encodeListBool σ) = some σ := by
   simp [decodeListBool, encodeListBool, decodeList_encodeList, List.mapM_map]
@@ -172,27 +129,21 @@ theorem decodeListBool_encodeListBool (σ : List Bool) :
   | nil => rfl
   | cons b bs ih =>
     cases b <;> simp [boolNat, natBool, ih]
-end
 
-section
 theorem natBinDigit_of_natBool_some (n : ℕ) {b : Bool} (h : natBool n = some b) :
     n = 0 ∨ n = 1 := by
   match n with
   | 0 => simp [natBool] at h; exact Or.inl rfl
   | 1 => simp [natBool] at h; exact Or.inr rfl
   | n + 2 => simp [natBool] at h
-end
 
-section
 theorem natBool_isSome_iff (n : ℕ) :
     (natBool n).isSome = true ↔ n = 0 ∨ n = 1 := by
   match n with
   | 0 => simp [natBool]
   | 1 => simp [natBool]
   | n + 2 => simp [natBool]
-end
 
-section
 theorem mapM_natBool_isSome_iff (l : List ℕ) :
     (l.mapM natBool).isSome = true ↔ ∀ x ∈ l, x = 0 ∨ x = 1 := by
   induction l with
@@ -227,16 +178,10 @@ theorem mapM_natBool_isSome_iff (l : List ℕ) :
         cases htx : xs.mapM natBool with
         | none => simp [htx] at hxs
         | some ts => simp
-end
-
-section
 
 theorem decodeListBool_isSome_iff (n : ℕ) :
     (decodeListBool n).isSome = true ↔ allBinDigitsChar n = 1 := by
   simp only [decodeListBool, mapM_natBool_isSome_iff, allBinDigitsChar_eq_one_iff]
-end
-
-section
 
 theorem decodeFuelOkChar_eq_one_iff (fuel c : ℕ) :
     decodeFuelOkChar fuel c = 1 ↔ (decodeFuel fuel c).isSome = true := by
@@ -273,21 +218,16 @@ theorem decodeFuelOkChar_eq_one_iff (fuel c : ℕ) :
     | t + 4 =>
       rw [decodeFuel_succ_junk fuel c (by omega)]
       simp
-end
 
 end RegularLanguage
 namespace RegularLanguage
 open Set Domain.Recursive
 
-section
-
 def safeDecodeActive (n : ℕ) : SExpr :=
   match SExpr.decode n with
   | none => .sigma
   | some e => if decideNonemptyB e then e else .sigma
-end
 
-section
 theorem SsysX_eq_denote_safe (n : ℕ) : SsysX n = denote (safeDecodeActive n) := by
   unfold SsysX safeDecodeActive
   cases hdec : SExpr.decode n with
@@ -296,9 +236,7 @@ theorem SsysX_eq_denote_safe (n : ℕ) : SsysX n = denote (safeDecodeActive n) :
     by_cases hb : decideNonemptyB e = true
     · simp [hb]
     · simp [hb, denote_sigma, SsysX_default]
-end
 
-section
 theorem safeDecodeActive_nonempty (n : ℕ) : (denote (safeDecodeActive n)).Nonempty := by
   unfold safeDecodeActive
   cases hdec : SExpr.decode n with
@@ -307,30 +245,21 @@ theorem safeDecodeActive_nonempty (n : ℕ) : (denote (safeDecodeActive n)).None
     by_cases hb : decideNonemptyB e = true
     · simp [hb]; exact (decideNonemptyB_iff e).mp hb
     · simp [hb, denote_sigma]
-end
 
-section
 theorem consistentB_safe_sigma (n : ℕ) : consistentB (safeDecodeActive n) .sigma = true := by
   rw [consistentB_iff, denote_cap, denote_sigma, Set.inter_univ]
   exact safeDecodeActive_nonempty n
-end
 
-section
 theorem consistentB_sigma_safe (m : ℕ) : consistentB .sigma (safeDecodeActive m) = true := by
   rw [consistentB_iff, denote_cap, denote_sigma, Set.univ_inter]
   exact safeDecodeActive_nonempty m
-end
-
-section
 
 def sexprDepth : SExpr → ℕ
   | .sigma => 1
   | .single _ => 1
   | .cat a b => 1 + max (sexprDepth a) (sexprDepth b)
   | .cap a b => 1 + max (sexprDepth a) (sexprDepth b)
-end
 
-section
 theorem decodeFuel_encode {fuel : ℕ} {e : SExpr} (h : sexprDepth e ≤ fuel) :
     decodeFuel fuel (SExpr.encode e) = some e := by
   induction e generalizing fuel with
@@ -366,20 +295,13 @@ theorem decodeFuel_encode {fuel : ℕ} {e : SExpr} (h : sexprDepth e ≤ fuel) :
         simp only [sexprDepth] at h ⊢
         omega
       simp [decodeFuel, SExpr.encode, iha ha, ihb hb]
-end
-
-section
 
 def SExpr.index (e : SExpr) : ℕ := Nat.pair (encode e) (sexprDepth e)
-end
 
-section
 theorem SExpr.decode_index (e : SExpr) : decode (index e) = some e := by
   simp [decode, index]
   exact decodeFuel_encode (Nat.le_succ (sexprDepth e))
-end
 
-section
 theorem SsysX_surj {Y : Set (List Bool)} (hY : InS Y) : ∃ n, SsysX n = Y := by
   obtain ⟨e, he, hne⟩ := inS_iff_exists_denote.mp hY
   refine ⟨SExpr.index e, ?_⟩
@@ -388,17 +310,12 @@ theorem SsysX_surj {Y : Set (List Bool)} (hY : InS Y) : ∃ n, SsysX n = Y := by
   have hne' : (denote e).Nonempty := he ▸ hne
   have hb : decideNonemptyB e = true := (decideNonemptyB_iff e).2 hne'
   simp [hb, he]
-end
-
-section
 
 def ssysActive (n : ℕ) : Bool :=
   match SExpr.decode n with
   | none => false
   | some e => decideNonemptyB e
-end
 
-section
 theorem safeDecodeActive_inactive (n : ℕ) (h : ssysActive n = false) : safeDecodeActive n = .sigma := by
   dsimp only [ssysActive, safeDecodeActive] at h ⊢
   cases hdec : SExpr.decode n with
@@ -408,9 +325,6 @@ theorem safeDecodeActive_inactive (n : ℕ) (h : ssysActive n = false) : safeDec
     · exfalso
       simp [hdec, hb] at h
     · simp [hb]
-end
-
-section
 
 def ssysConsistentB (n m : ℕ) : Bool :=
   if !ssysActive n || !ssysActive m then true
@@ -418,9 +332,7 @@ def ssysConsistentB (n m : ℕ) : Bool :=
     match SExpr.decode n, SExpr.decode m with
     | some a, some b => consistentB a b
     | _, _ => true
-end
 
-section
 theorem ssysConsistentB_iff (n m : ℕ) :
     ssysConsistentB n m = true ↔
       consistentB (safeDecodeActive n) (safeDecodeActive m) = true := by
@@ -459,9 +371,7 @@ theorem ssysConsistentB_iff (n m : ℕ) :
     constructor
     · intro _; rw [safeDecodeActive_inactive n hn', consistentB_sigma_safe m]
     · intro _; unfold ssysConsistentB; simp [hn']
-end
 
-section
 theorem ssys_cons_positivity (n m : ℕ) :
     (∃ k, SsysX k ⊆ SsysX n ∩ SsysX m) ↔ (SsysX n ∩ SsysX m).Nonempty := by
   constructor
@@ -472,47 +382,34 @@ theorem ssys_cons_positivity (n m : ℕ) :
       (Ssys_isPositive (Ssys_mem.mpr (SsysX_mem n)) (Ssys_mem.mpr (SsysX_mem m))).2 hne
     obtain ⟨k, hk⟩ := SsysX_surj hIn
     exact ⟨k, hk.subset⟩
-end
 
-section
 theorem ssys_inter_nonempty_iff_consistent (n m : ℕ) :
     (SsysX n ∩ SsysX m).Nonempty ↔ consistentB (safeDecodeActive n) (safeDecodeActive m) = true := by
   rw [SsysX_eq_denote_safe, SsysX_eq_denote_safe, ← denote_cap, consistentB_iff]
-end
 
-section
 theorem ssys_cons_iff (n m : ℕ) :
     (∃ k, SsysX k ⊆ SsysX n ∩ SsysX m) ↔
       consistentB (safeDecodeActive n) (safeDecodeActive m) = true := by
   rw [ssys_cons_positivity, ssys_inter_nonempty_iff_consistent]
-end
 
-section
 theorem ssys_cons_char_iff (n m : ℕ) :
     ssysConsistentB n m = true ↔ ∃ k, SsysX k ⊆ SsysX n ∩ SsysX m := by
   rw [ssysConsistentB_iff, ssys_cons_iff]
-end
-
-section
 
 instance decidableSsysCons (n m : ℕ) :
     Decidable (∃ k, SsysX k ⊆ SsysX n ∩ SsysX m) :=
   decidable_of_iff (ssysConsistentB n m = true) (ssys_cons_char_iff n m)
-end
 
 end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
 
 namespace DomainTheory.NeighbourhoodSystems.RegularLanguage
-section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
 /-- Consistency character for the Ssys presentation. -/
 theorem example_722_presentation_inst47 (n m : ℕ) :
     ssysConsistentB n m = true ↔ ∃ k, SsysX k ⊆ SsysX n ∩ SsysX m :=
   ssys_cons_char_iff n m
-end
-
 
 end DomainTheory.NeighbourhoodSystems.RegularLanguage
 
@@ -520,7 +417,6 @@ namespace DomainTheory.NeighbourhoodSystems
 namespace RegularLanguage
 open Set Domain.Recursive
 
-section
 set_option maxHeartbeats 5000000
 
 class PartiallyEffectivelyGiven (V : NeighborhoodSystem α) : Prop where
@@ -980,20 +876,15 @@ theorem Ssys_interEq_computable :
 
 theorem Ssys_partially_effectively_given : PartiallyEffectivelyGiven Ssys := ⟨⟨SsysPres⟩⟩
 
-end
-
 end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
 
 namespace DomainTheory.NeighbourhoodSystems.RegularLanguage
-section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
 /-- Intersection equality for SsysX is recursively decidable. -/
 theorem example_722_presentation :
     RecDecidable₃ (fun n m k => SsysX n ∩ SsysX m = SsysX k) :=
   Ssys_interEq_computable
-end
-
 
 end DomainTheory.NeighbourhoodSystems.RegularLanguage

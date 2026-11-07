@@ -8,7 +8,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.pri
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.FunctorTokens
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom

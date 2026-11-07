@@ -6,7 +6,6 @@ public import Mathlib.Tactic.Bound
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap
 section

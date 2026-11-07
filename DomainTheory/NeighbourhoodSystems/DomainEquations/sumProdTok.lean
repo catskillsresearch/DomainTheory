@@ -5,8 +5,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.seqEqB
 
 @[expose] public section
 
-
-
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap SeqEqB BitDom
 
@@ -44,9 +42,6 @@ theorem sumTokMaster_inter_embT {Y : Set Str} (hY : D₁.mem Y) :
 end FunctorTokens
 end DomainTheory.NeighbourhoodSystems
 
-
-
-section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap BitDom SeqDom SeqEqB
 open NeighborhoodSystem ApproximableMap SeqEqB BitDom

@@ -6,7 +6,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 open DomainTheory.NeighbourhoodSystems
 
-section
 open NeighborhoodSystem ApproximableMap
 open DomainTheory.NeighbourhoodSystems.RegularLanguage
 /-- Scott's Exercise 7.22: embedding, associativity, and stream-arrow idempotence. -/

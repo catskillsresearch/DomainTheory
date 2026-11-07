@@ -70,10 +70,7 @@ def finJoinMap_prod : ApproximableMap (prod V V) V.PowerDomain := ofMap₂ (PDfi
 end NeighborhoodSystem
 end
 
-section
 open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-end
 
 section
 open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
@@ -229,10 +226,7 @@ theorem PDsingleton_principal {X : Set α} (hX : V.mem X) :
 end NeighborhoodSystem
 end
 
-section
 open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-end
 
 section
 open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
@@ -263,10 +257,7 @@ theorem finJoinMap_prod_toElementMap (x y : V.Element) :
 end NeighborhoodSystem
 end
 
-section
 open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-end
 
 section
 open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
@@ -312,10 +303,6 @@ theorem PDfinJoinApproxMap₂_isComputable (cons : ℕ → ℕ) (hconsp : Nat.Pr
 end NeighborhoodSystem
 end
 
-section
 open NeighborhoodSystem ApproximableMap ApproximableMap₂ Domain.Recursive
-
-end
-
 
 end DomainTheory.NeighbourhoodSystems

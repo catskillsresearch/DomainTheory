@@ -4,8 +4,6 @@ public import Mathlib.Data.Set.Defs
 
 @[expose] public section
 
-section
-
 namespace DomainTheory.NeighbourhoodSystems
 
 structure NeighborhoodSystem (α : Type*) where
@@ -23,4 +21,3 @@ structure NeighborhoodSystem (α : Type*) where
   sub_master : ∀ {X : Set α}, mem X → X ⊆ master
 
 end DomainTheory.NeighbourhoodSystems
-end

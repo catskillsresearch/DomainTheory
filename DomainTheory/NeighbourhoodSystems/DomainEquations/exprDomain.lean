@@ -5,9 +5,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.continuousOnMaps
 
 @[expose] public section
 
-
-
-section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.FunctorTokens
 section
@@ -79,6 +76,5 @@ end
 
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems.FunctorTokens
-section
 open NeighborhoodSystem ApproximableMap SeqEqB BitDom SmashProduct
 

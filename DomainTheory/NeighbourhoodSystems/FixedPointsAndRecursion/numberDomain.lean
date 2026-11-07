@@ -8,20 +8,11 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Nes
 namespace DomainTheory.NeighbourhoodSystems.NatDom
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
-section
-
 def memN (X : Set ℕ) : Prop := X = Set.univ ∨ ∃ n, X = {n}
-end
 
-section
 theorem memN_singleton (n : ℕ) : memN ({n} : Set ℕ) := Or.inr ⟨n, rfl⟩
-end
 
-section
 theorem memN_univ : memN (Set.univ : Set ℕ) := Or.inl rfl
-end
-
-section
 
 theorem nestedOrDisjoint : NestedOrDisjoint memN := by
   rintro X Y (rfl | ⟨n, rfl⟩) (rfl | ⟨m, rfl⟩)
@@ -36,67 +27,39 @@ theorem nestedOrDisjoint : NestedOrDisjoint memN := by
         not_and]
       rintro rfl hkm
       exact h hkm
-end
 
 end DomainTheory.NeighbourhoodSystems.NatDom
 
-section
 namespace DomainTheory.NeighbourhoodSystems.NatDom
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-section
 
 abbrev N : NeighborhoodSystem ℕ :=
   NeighborhoodSystem.ofNestedOrDisjoint memN Set.univ Set.univ_nonempty memN_univ nestedOrDisjoint
     (fun _ => Set.subset_univ _)
-end
 
-section
 @[simp] theorem N_mem {X : Set ℕ} : N.mem X ↔ memN X := Iff.rfl
-end
 
-section
 @[simp] theorem N_master : N.master = (Set.univ : Set ℕ) := rfl
-end
-
-section
 
 abbrev T : NeighborhoodSystem TwoToken.Token := Truth.T
-end
-
-section
 
 def natElem (n : ℕ) : N.Element := N.principal (N_mem.mpr (memN_singleton n))
-end
-
-section
 
 def predVal : ℕ → N.Element
   | 0 => N.bot
   | (k + 1) => natElem k
-end
-
-section
 
 theorem singleton_nat_inj {n m : ℕ} (h : ({n} : Set ℕ) = {m}) : n = m := by
   have h1 : n ∈ ({n} : Set ℕ) := rfl
   rw [h] at h1
   exact h1
-end
-
-section
 
 theorem univ_ne_singleton (n : ℕ) : (Set.univ : Set ℕ) ≠ {n} := by
   intro h
   have h1 : (n + 1) ∈ ({n} : Set ℕ) := h ▸ Set.mem_univ (n + 1)
   exact Nat.succ_ne_self n h1
-end
-
-section
 
 theorem singleton_ne_univ (n : ℕ) : ({n} : Set ℕ) ≠ Set.univ := fun h => univ_ne_singleton n h.symm
-end
-
-section
 
 def constLiftN {β : Type*} (V : NeighborhoodSystem β) (val : ℕ → V.Element) :
     ApproximableMap N V where
@@ -132,41 +95,20 @@ def constLiftN {β : Type*} (V : NeighborhoodSystem β) (val : ℕ → V.Element
       · have hkn : k = n := Set.mem_singleton_iff.mp (Set.singleton_subset_iff.mp hX'X)
         subst hkn
         exact Or.inr ⟨k, rfl, (val k).up_mem hY hY' hYY'⟩
-end
-
-section
 
 def predMap : ApproximableMap N N := constLiftN N predVal
-end
-
-section
 
 def succMap : ApproximableMap N N := constLiftN N (fun n => natElem (n + 1))
-end
-
-section
 
 def zeroElt : N.Element := natElem 0
-end
-
-section
 
 def zeroVal : ℕ → T.Element
   | 0 => Truth.trueElt
   | (_ + 1) => Truth.falseElt
-end
-
-section
 
 def zeroMap : ApproximableMap N T := constLiftN T zeroVal
-end
-
-section
 
 theorem N_bot_mem {X : Set ℕ} : N.bot.mem X ↔ X = Set.univ := NeighborhoodSystem.mem_bot N
-end
-
-section
 
 theorem constLiftN_bot {β : Type*} (V : NeighborhoodSystem β) (val : ℕ → V.Element) :
     (constLiftN V val).toElementMap N.bot = V.bot := by
@@ -183,9 +125,6 @@ theorem constLiftN_bot {β : Type*} (V : NeighborhoodSystem β) (val : ℕ → V
     rw [V.mem_bot] at hY
     subst hY
     exact ⟨Set.univ, N_bot_mem.mpr rfl, Or.inl ⟨rfl, rfl⟩⟩
-end
-
-section
 
 theorem mem_natElem_iff {n : ℕ} {Y : Set ℕ} :
     (natElem n).mem Y ↔ Y = Set.univ ∨ Y = {n} := by
@@ -200,9 +139,6 @@ theorem mem_natElem_iff {n : ℕ} {Y : Set ℕ} :
   · rintro (rfl | rfl)
     · exact ⟨memN_univ, Set.subset_univ _⟩
     · exact ⟨memN_singleton n, subset_rfl⟩
-end
-
-section
 
 theorem constLiftN_natElem {β : Type*} (V : NeighborhoodSystem β) (val : ℕ → V.Element) (n : ℕ) :
     (constLiftN V val).toElementMap (natElem n) = val n := by
@@ -219,62 +155,33 @@ theorem constLiftN_natElem {β : Type*} (V : NeighborhoodSystem β) (val : ℕ �
         subst hnk; exact hY
   · intro hY
     exact ⟨{n}, mem_natElem_iff.mpr (Or.inr rfl), Or.inr ⟨n, rfl, hY⟩⟩
-end
-
-section
 
 theorem predMap_bot : predMap.toElementMap N.bot = N.bot :=
   constLiftN_bot N predVal
-end
-
-section
 
 theorem predMap_natElem_succ (k : ℕ) : predMap.toElementMap (natElem (k + 1)) = natElem k :=
   constLiftN_natElem N predVal (k + 1)
-end
-
-section
 
 theorem predMap_natElem_zero : predMap.toElementMap (natElem 0) = N.bot :=
   constLiftN_natElem N predVal 0
-end
-
-section
 
 theorem succMap_bot : succMap.toElementMap N.bot = N.bot :=
   constLiftN_bot N (fun n => natElem (n + 1))
-end
-
-section
 
 theorem succMap_natElem (n : ℕ) : succMap.toElementMap (natElem n) = natElem (n + 1) :=
   constLiftN_natElem N (fun n => natElem (n + 1)) n
-end
-
-section
 
 theorem predMap_succMap_natElem (n : ℕ) :
     predMap.toElementMap (succMap.toElementMap (natElem n)) = natElem n := by
   rw [succMap_natElem, predMap_natElem_succ]
-end
-
-section
 
 theorem zeroMap_bot : zeroMap.toElementMap N.bot = T.bot :=
   constLiftN_bot T zeroVal
-end
-
-section
 
 theorem zeroMap_natElem_succ (n : ℕ) : zeroMap.toElementMap (natElem (n + 1)) = Truth.falseElt :=
   constLiftN_natElem T zeroVal (n + 1)
-end
-
-section
 
 theorem zeroMap_natElem_zero : zeroMap.toElementMap (natElem 0) = Truth.trueElt :=
   constLiftN_natElem T zeroVal 0
-end
 
 end DomainTheory.NeighbourhoodSystems.NatDom
-end

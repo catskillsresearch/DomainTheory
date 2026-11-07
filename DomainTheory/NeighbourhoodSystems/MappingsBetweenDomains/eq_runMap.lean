@@ -7,8 +7,6 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.RunMap
 namespace DomainTheory.NeighbourhoodSystems.RunMap
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem BitDom
 
-section
-
 theorem eq_runMap_of_satisfies {g : ApproximableMap B B} (hg : SatisfiesRunEquations g) :
     g = runMap := by
   apply ApproximableMap.ext
@@ -21,9 +19,6 @@ theorem eq_runMap_of_satisfies {g : ApproximableMap B B} (hg : SatisfiesRunEquat
     show (B.principal (memB_cone (out σ))).mem Y ↔ B.mem Y ∧ cone (out σ) ⊆ Y
     exact B.mem_principal (memB_cone (out σ))
   · exact ⟨fun hr => absurd (g.rel_dom hr) hX, fun hr => absurd (runMap.rel_dom hr) hX⟩
-end
-
-section
 
 theorem runMap_toElementMap_mem (x : B.Element) (Y : Set Str) :
     (runMap.toElementMap x).mem Y ↔ ∃ τ, x.mem (cone τ) ∧ B.mem Y ∧ cone (out τ) ⊆ Y := by
@@ -33,9 +28,6 @@ theorem runMap_toElementMap_mem (x : B.Element) (Y : Set Str) :
     exact ⟨τ, hX, (runMap_rel_cone τ Y).mp hrel⟩
   · rintro ⟨τ, hτ, hYmem, hsub⟩
     exact ⟨cone τ, hτ, (runMap_rel_cone τ Y).mpr ⟨hYmem, hsub⟩⟩
-end
-
-section
 
 theorem runMap_toElementMap_sigmaElt (σ : Str) (x : B.Element) (Y : Set Str) :
     (runMap.toElementMap (sigmaElt σ x)).mem Y ↔
@@ -48,9 +40,6 @@ theorem runMap_toElementMap_sigmaElt (σ : Str) (x : B.Element) (Y : Set Str) :
   · rintro ⟨τ, hτ, hYmem, hsub⟩
     exact ⟨cone (σ ++ τ), ⟨memB_cone _, cone τ, hτ, (prepend_cone σ τ).le⟩,
       (runMap_rel_cone (σ ++ τ) Y).mpr ⟨hYmem, hsub⟩⟩
-end
-
-section
 
 theorem sigmaElt_runMap_toElementMap (τ₀ : Str) (x : B.Element) (Y : Set Str) :
     (sigmaElt τ₀ (runMap.toElementMap x)).mem Y ↔
@@ -66,9 +55,6 @@ theorem sigmaElt_runMap_toElementMap (τ₀ : Str) (x : B.Element) (Y : Set Str)
       (runMap_toElementMap_mem x _).mpr ⟨τ, hτ, memB_cone _, subset_rfl⟩, ?_⟩
     rw [prepend_cone]
     exact hsub
-end
-
-section
 
 theorem runMap_satisfies : SatisfiesRunEquations runMap where
   zero x := by
@@ -115,6 +101,5 @@ theorem runMap_satisfies : SatisfiesRunEquations runMap where
       rw [mem_bot] at hY
       refine ⟨[], bot_mem_cone_iff.mpr rfl, hY ▸ B.master_mem, ?_⟩
       rw [show out ([true] ++ ([] : Str)) = ([] : Str) from rfl, cone.nil, hY, B_master]
-end
 
 end DomainTheory.NeighbourhoodSystems.RunMap

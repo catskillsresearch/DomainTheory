@@ -9,27 +9,15 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Nes
 namespace DomainTheory.NeighbourhoodSystems.SeqDom
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap BitDom
 
-section
-
 def memC (X : Set Str) : Prop := (∃ σ, X = cone σ) ∨ (∃ σ, X = {σ})
-end
 
-section
 theorem memC_cone (σ : Str) : memC (cone σ) := Or.inl ⟨σ, rfl⟩
-end
 
-section
 theorem memC_singleton (σ : Str) : memC ({σ} : Set Str) := Or.inr ⟨σ, rfl⟩
-end
-
-section
 
 theorem prepend_mono (σ : Str) {X X' : Set Str} (h : X' ⊆ X) : prepend σ X' ⊆ prepend σ X := by
   rintro w ⟨τ, hτ, rfl⟩
   exact ⟨τ, h hτ, rfl⟩
-end
-
-section
 
 theorem prepend_singleton (σ τ : Str) : prepend σ {τ} = {σ ++ τ} := by
   ext w
@@ -37,15 +25,9 @@ theorem prepend_singleton (σ τ : Str) : prepend σ {τ} = {σ ++ τ} := by
   constructor
   · rintro ⟨t, rfl, rfl⟩; rfl
   · rintro rfl; exact ⟨τ, rfl, rfl⟩
-end
-
-section
 
 theorem singleton_subset_cone {σ τ : Str} : ({τ} : Set Str) ⊆ cone σ ↔ σ <+: τ := by
   rw [Set.singleton_subset_iff, cone.mem]
-end
-
-section
 
 theorem singleton_cone_nd (σ τ : Str) :
     ({τ} : Set Str) ⊆ cone σ ∨ cone σ ⊆ {τ} ∨ ({τ} : Set Str) ∩ cone σ = ∅ := by
@@ -57,9 +39,6 @@ theorem singleton_cone_nd (σ τ : Str) :
       iff_false, not_and]
     rintro rfl hτ
     exact h hτ
-end
-
-section
 
 theorem nestedOrDisjoint : NestedOrDisjoint memC := by
   rintro X Y (⟨σ, rfl⟩ | ⟨σ, rfl⟩) (⟨τ, rfl⟩ | ⟨τ, rfl⟩)
@@ -80,38 +59,25 @@ theorem nestedOrDisjoint : NestedOrDisjoint memC := by
         not_and]
       rintro rfl h2
       exact h h2
-end
 
 end DomainTheory.NeighbourhoodSystems.SeqDom
 
-section
 namespace DomainTheory.NeighbourhoodSystems.SeqDom
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap BitDom
-section
 
 abbrev C : NeighborhoodSystem Str :=
   NeighborhoodSystem.ofNestedOrDisjoint memC Set.univ
     ⟨[], Set.mem_univ _⟩ (Or.inl ⟨[], cone.nil.symm⟩) nestedOrDisjoint
     (fun _ => Set.subset_univ _)
-end
 
-section
 @[simp] theorem C_mem {X : Set Str} : C.mem X ↔ memC X := Iff.rfl
-end
 
-section
 @[simp] theorem C_master : C.master = (Set.univ : Set Str) := rfl
-end
-
-section
 
 theorem memC_prepend (σ : Str) {X : Set Str} (hX : memC X) : memC (prepend σ X) := by
   rcases hX with ⟨ρ, rfl⟩ | ⟨ρ, rfl⟩
   · exact Or.inl ⟨σ ++ ρ, prepend_cone σ ρ⟩
   · exact Or.inr ⟨σ ++ ρ, prepend_singleton σ ρ⟩
-end
-
-section
 
 def consMap (b : Bool) : ApproximableMap C C where
   rel X Y := memC X ∧ memC Y ∧ prepend [b] X ⊆ Y
@@ -128,31 +94,16 @@ def consMap (b : Bool) : ApproximableMap C C where
   mono := by
     rintro X X' Y Y' ⟨hX, hY, hsub⟩ hX'X hYY' hX' hY'
     exact ⟨hX', hY', (prepend_mono [b] hX'X).trans (hsub.trans hYY')⟩
-end
-
-section
 
 def altElt : C.Element := ((consMap false).comp (consMap true)).fixElement
-end
-
-section
 
 def strBot (σ : Str) : C.Element := C.principal (C_mem.mpr (memC_cone σ))
-end
-
-section
 
 def strElem (σ : Str) : C.Element := C.principal (C_mem.mpr (memC_singleton σ))
-end
-
-section
 
 theorem altElt_eq : (consMap false).toElementMap ((consMap true).toElementMap altElt) = altElt := by
   have h := toElementMap_fixElement ((consMap false).comp (consMap true))
   rwa [toElementMap_comp] at h
-end
-
-section
 
 theorem consMap_strBot (b : Bool) (σ : Str) :
     (consMap b).toElementMap (strBot σ) = strBot (b :: σ) := by
@@ -166,9 +117,6 @@ theorem consMap_strBot (b : Bool) (σ : Str) :
   · rintro ⟨hY, hsub⟩
     refine ⟨cone σ, ⟨memC_cone σ, subset_rfl⟩, memC_cone σ, hY, ?_⟩
     rw [prepend_cone]; exact hsub
-end
-
-section
 
 theorem consMap_strElem (b : Bool) (σ : Str) :
     (consMap b).toElementMap (strElem σ) = strElem (b :: σ) := by
@@ -182,11 +130,7 @@ theorem consMap_strElem (b : Bool) (σ : Str) :
   · rintro ⟨hY, hsub⟩
     refine ⟨{σ}, ⟨memC_singleton σ, subset_rfl⟩, memC_singleton σ, hY, ?_⟩
     rw [prepend_singleton]; exact hsub
-end
-
-section
 
 theorem prepend_subset_self : True := trivial
-end
 
 end DomainTheory.NeighbourhoodSystems.SeqDom

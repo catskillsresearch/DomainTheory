@@ -5,9 +5,7 @@ public import Mathlib.Data.Fintype.Powerset
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems.P4
-section
 
 open NeighborhoodSystem
 
@@ -38,7 +36,4 @@ def neighborhoodSystem : NeighborhoodSystem Token where
   inter_mem := P4_inter_mem
   sub_master := P4_sub_master
 
-end
-
 end DomainTheory.NeighbourhoodSystems.P4
-end

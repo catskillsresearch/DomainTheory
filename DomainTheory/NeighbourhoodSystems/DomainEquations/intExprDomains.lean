@@ -8,10 +8,6 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.iSupMap
 
 @[expose] public section
 
-
-
-section
-
 namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.FunctorTokens
@@ -48,14 +44,12 @@ def Cnat : ScottSys where
 end FunctorTokens
 
 end DomainTheory.NeighbourhoodSystems
-end
 
 section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.FunctorTokens
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 
-section
 namespace FunctorTokens
 
 def Cone : ScottSys := singletonSys ({([] : Str)} : Set Str) ⟨[], rfl⟩
@@ -100,7 +94,6 @@ theorem M_eq_solution :
   gExists_singleton_subsystem MExpr MExpr_rooted
 
 end FunctorTokens
-end
 
 section
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
@@ -485,7 +478,6 @@ end Uniqueness
 end FunctorTokens
 end
 
-section
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
 namespace FunctorTokens
@@ -498,7 +490,6 @@ theorem Subsystem.inj_isStrict {α : Type*} {D E : NeighborhoodSystem α} (h : D
   exact Set.Subset.antisymm (E.sub_master hYE) (by rw [← h.master_eq]; exact hsub)
 
 end FunctorTokens
-end
 
 section
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
@@ -758,7 +749,6 @@ end Uniqueness
 end FunctorTokens
 end
 
-section
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
 namespace FunctorTokens
@@ -776,7 +766,6 @@ theorem Subsystem.self_proj {α : Type*} {D : NeighborhoodSystem α} (h : D ◁ 
   rw [Subsystem.proj_rel, idMap_rel]
 
 end FunctorTokens
-end
 
 section
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct

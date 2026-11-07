@@ -5,7 +5,6 @@ import Mathlib.Data.Set.Basic
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 
 /-- Neighbourhoods are nested or pairwise disjoint. -/
@@ -30,4 +29,3 @@ def NeighborhoodSystem.ofNestedOrDisjoint {α : Type*} (mem : Set α → Prop) (
       rwa [← Set.subset_empty_iff.mp hZsub]
 
 end DomainTheory.NeighbourhoodSystems
-end

@@ -5,9 +5,7 @@ public import Mathlib.Data.List.Basic
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems.BitDom
-section
 
 abbrev Str := List Bool
 
@@ -52,7 +50,4 @@ theorem injective {σ τ : Str} (h : BitDom.cone σ = BitDom.cone τ) : σ = τ 
 
 end cone
 
-end
-
 end DomainTheory.NeighbourhoodSystems.BitDom
-end

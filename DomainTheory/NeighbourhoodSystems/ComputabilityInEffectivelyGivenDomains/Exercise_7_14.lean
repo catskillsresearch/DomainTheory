@@ -6,7 +6,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 open DomainTheory.NeighbourhoodSystems
 
-section
 open NeighborhoodSystem Domain.Recursive DomainTheory.NeighbourhoodSystems
 open DomainTheory.NeighbourhoodSystems.ComputableWitness
 /-- Scott's Exercise 7.14: computable elements are decreasing unions of principals. -/

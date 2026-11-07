@@ -39,7 +39,6 @@ open Classical in
 end
 end DomainTheory.NeighbourhoodSystems
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 open DomainTheory.NeighbourhoodSystems Function
 section

@@ -9,39 +9,20 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Nes
 namespace DomainTheory.NeighbourhoodSystems.UnarySeq
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
-section
-
 def shift (X : Set ℕ) : Set ℕ := {k | ∃ m ∈ X, k = m + 1}
-end
-
-section
 
 def tail (n : ℕ) : Set ℕ := {m | n ≤ m}
-end
 
-section
 @[simp] theorem mem_tail {n k : ℕ} : k ∈ tail n ↔ n ≤ k := Iff.rfl
-end
-
-section
 
 def memC1 (X : Set ℕ) : Prop := (∃ n, X = tail n) ∨ (∃ n, X = {n})
-end
 
-section
 theorem memC1_singleton (n : ℕ) : memC1 ({n} : Set ℕ) := Or.inr ⟨n, rfl⟩
-end
 
-section
 theorem memC1_tail (n : ℕ) : memC1 (tail n) := Or.inl ⟨n, rfl⟩
-end
 
-section
 theorem shift_mono {X X' : Set ℕ} (h : X' ⊆ X) : shift X' ⊆ shift X := by
   rintro k ⟨m, hm, rfl⟩; exact ⟨m, h hm, rfl⟩
-end
-
-section
 
 theorem shift_singleton (n : ℕ) : shift ({n} : Set ℕ) = {n + 1} := by
   ext k
@@ -49,9 +30,6 @@ theorem shift_singleton (n : ℕ) : shift ({n} : Set ℕ) = {n + 1} := by
   constructor
   · rintro ⟨m, rfl, rfl⟩; rfl
   · rintro rfl; exact ⟨n, rfl, rfl⟩
-end
-
-section
 
 theorem shift_tail (n : ℕ) : shift (tail n) = tail (n + 1) := by
   ext k
@@ -59,17 +37,11 @@ theorem shift_tail (n : ℕ) : shift (tail n) = tail (n + 1) := by
   constructor
   · rintro ⟨m, hm, rfl⟩; omega
   · intro h; exact ⟨k - 1, by omega, by omega⟩
-end
-
-section
 
 theorem memC1_shift {X : Set ℕ} (hX : memC1 X) : memC1 (shift X) := by
   rcases hX with ⟨n, rfl⟩ | ⟨n, rfl⟩
   · exact Or.inl ⟨n + 1, shift_tail n⟩
   · exact Or.inr ⟨n + 1, shift_singleton n⟩
-end
-
-section
 
 theorem singleton_tail_nd (n k : ℕ) :
     ({k} : Set ℕ) ⊆ tail n ∨ tail n ⊆ {k} ∨ ({k} : Set ℕ) ∩ tail n = ∅ := by
@@ -80,9 +52,6 @@ theorem singleton_tail_nd (n k : ℕ) :
     simp only [Set.mem_inter_iff, Set.mem_singleton_iff, mem_tail, Set.mem_empty_iff_false,
       iff_false, not_and]
     rintro rfl hw; exact h hw
-end
-
-section
 
 theorem nestedOrDisjoint : NestedOrDisjoint memC1 := by
   rintro X Y (⟨n, rfl⟩ | ⟨n, rfl⟩) (⟨m, rfl⟩ | ⟨m, rfl⟩)
@@ -104,37 +73,23 @@ theorem nestedOrDisjoint : NestedOrDisjoint memC1 := by
       simp only [Set.mem_inter_iff, Set.mem_singleton_iff, Set.mem_empty_iff_false, iff_false,
         not_and]
       rintro rfl h2; exact h h2
-end
 
-section
 theorem tail_zero : tail 0 = Set.univ := by ext k; simp [tail]
-end
 
-section
 theorem memC1_univ : memC1 (Set.univ : Set ℕ) := Or.inl ⟨0, tail_zero.symm⟩
-end
 
 end DomainTheory.NeighbourhoodSystems.UnarySeq
-section
 namespace DomainTheory.NeighbourhoodSystems.UnarySeq
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-section
 
 def C1 : NeighborhoodSystem ℕ :=
   NeighborhoodSystem.ofNestedOrDisjoint memC1 Set.univ Set.univ_nonempty
     memC1_univ nestedOrDisjoint
     (fun _ => Set.subset_univ _)
-end
 
-section
 @[simp] theorem C1_mem {X : Set ℕ} : C1.mem X ↔ memC1 X := Iff.rfl
-end
 
-section
 @[simp] theorem C1_master : C1.master = (Set.univ : Set ℕ) := rfl
-end
-
-section
 
 def consMap : ApproximableMap C1 C1 where
   rel X Y := memC1 X ∧ memC1 Y ∧ shift X ⊆ Y
@@ -148,29 +103,14 @@ def consMap : ApproximableMap C1 C1 where
   mono := by
     rintro X X' Y Y' ⟨hX, hY, hsub⟩ hX'X hYY' hX' hY'
     exact ⟨hX', hY', (shift_mono hX'X).trans (hsub.trans hYY')⟩
-end
-
-section
 
 def infElt : C1.Element := consMap.fixElement
-end
-
-section
 
 def oneBot (n : ℕ) : C1.Element := C1.principal (memC1_tail n)
-end
-
-section
 
 def oneElem (n : ℕ) : C1.Element := C1.principal (memC1_singleton n)
-end
-
-section
 
 def relateNToC1 : ApproximableMap NatDom.N C1 := NatDom.constLiftN C1 oneElem
-end
-
-section
 
 theorem consMap_oneBot (n : ℕ) : consMap.toElementMap (oneBot n) = oneBot (n + 1) := by
   apply Element.ext
@@ -183,9 +123,6 @@ theorem consMap_oneBot (n : ℕ) : consMap.toElementMap (oneBot n) = oneBot (n +
   · rintro ⟨hY, hsub⟩
     refine ⟨tail n, ⟨memC1_tail n, subset_rfl⟩, memC1_tail n, hY, ?_⟩
     rw [shift_tail]; exact hsub
-end
-
-section
 
 theorem consMap_oneElem (n : ℕ) : consMap.toElementMap (oneElem n) = oneElem (n + 1) := by
   apply Element.ext
@@ -198,25 +135,15 @@ theorem consMap_oneElem (n : ℕ) : consMap.toElementMap (oneElem n) = oneElem (
   · rintro ⟨hY, hsub⟩
     refine ⟨{n}, ⟨memC1_singleton n, subset_rfl⟩, memC1_singleton n, hY, ?_⟩
     rw [shift_singleton]; exact hsub
-end
-
-section
 
 theorem infElt_eq : consMap.toElementMap infElt = infElt :=
   toElementMap_fixElement consMap
-end
-
-section
 
 theorem relateNToC1_bot : relateNToC1.toElementMap NatDom.N.bot = C1.bot :=
   NatDom.constLiftN_bot C1 oneElem
-end
-
-section
 
 theorem relateNToC1_natElem (n : ℕ) :
     relateNToC1.toElementMap (NatDom.natElem n) = oneElem n :=
   NatDom.constLiftN_natElem C1 oneElem n
-end
 
 end DomainTheory.NeighbourhoodSystems.UnarySeq

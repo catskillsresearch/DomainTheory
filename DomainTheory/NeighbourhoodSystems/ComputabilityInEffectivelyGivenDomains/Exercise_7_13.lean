@@ -6,7 +6,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 open DomainTheory.NeighbourhoodSystems
 
-section
 open NeighborhoodSystem
 open DomainTheory.NeighbourhoodSystems.InclStructure
 /-- Scott's Exercise 7.13: reconstructing from a presentation; inclusion structures are effectively given. -/

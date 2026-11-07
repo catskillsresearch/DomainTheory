@@ -5,7 +5,6 @@ public import Mathlib.Order.BourbakiWitt
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem Domain.Recursive
 
@@ -35,7 +34,6 @@ structure InclStructure where
     ∀ j, INCL j (meetIdx n m) ↔ (INCL j n ∧ INCL j m)
 
 end DomainTheory.NeighbourhoodSystems
-end
 
 section
 namespace DomainTheory.NeighbourhoodSystems
@@ -318,8 +316,6 @@ theorem toSystem_isEffectivelyGiven : I.toSystem.IsEffectivelyGiven := ⟨I.toPr
 
 end InclStructure
 end
-
-
 
 end DomainTheory.NeighbourhoodSystems
 end

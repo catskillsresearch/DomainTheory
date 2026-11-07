@@ -4,9 +4,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.sig
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems.BitDom
-section
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
@@ -19,7 +17,4 @@ theorem mem_iff_exists_sigmaBot (x : B.Element) {Z : Set Str} :
   · rintro ⟨σ, hcone, hZmem, hsub⟩
     exact x.up_mem hcone hZmem hsub
 
-end
-
 end DomainTheory.NeighbourhoodSystems.BitDom
-end

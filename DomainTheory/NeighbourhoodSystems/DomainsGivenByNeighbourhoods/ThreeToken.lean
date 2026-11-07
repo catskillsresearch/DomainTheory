@@ -7,7 +7,6 @@ public import Mathlib.Tactic.FinCases
 public import Mathlib.Data.Fintype.Basic
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems.ThreeToken
 
 abbrev Token := Fin 3
@@ -84,4 +83,3 @@ def neighborhoodSystem : NeighborhoodSystem Token where
     · rw [h]; exact mem_two
 
 end DomainTheory.NeighbourhoodSystems.ThreeToken
-end

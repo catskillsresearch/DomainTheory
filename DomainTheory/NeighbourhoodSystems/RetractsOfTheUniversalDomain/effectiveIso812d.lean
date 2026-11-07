@@ -50,7 +50,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.XPs
 
 namespace DomainTheory.NeighbourhoodSystems
 
-section
 open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso

@@ -20,14 +20,11 @@ open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Functo
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 open DomainTheory.NeighbourhoodSystems.SmashProduct
 
-section
-
 structure ScottSys where
 
   sys : NeighborhoodSystem Str
 
   ne : ∀ X, sys.mem X → X.Nonempty
-end
 
 end FunctorTokens
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.FunctorTokens
@@ -55,14 +52,12 @@ theorem embBit_not_subset_cross {b b' : Bool} (h : b ≠ b') {X Y : Set Str} (hX
 end FunctorTokens
 end
 
-section
 namespace FunctorTokens
 
 def ScottSys.prod (A₀ A₁ : ScottSys) : ScottSys :=
   ⟨prodTok A₀.sys A₁.sys, prodTok_nonempty⟩
 
 end FunctorTokens
-end
 
 section
 namespace FunctorTokens
@@ -111,14 +106,12 @@ def singletonSys (Γ : Set Str) (h : Γ.Nonempty) : ScottSys where
 end FunctorTokens
 end
 
-section
 namespace FunctorTokens
 
 def ScottSys.sum (A₀ A₁ : ScottSys) : ScottSys :=
   ⟨sumTok A₀.sys A₁.sys A₀.ne A₁.ne, sumTok_nonempty⟩
 
 end FunctorTokens
-end
 
 section
 namespace FunctorTokens

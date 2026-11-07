@@ -10,7 +10,6 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem_6_9
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
@@ -162,6 +161,5 @@ theorem papplyEval_isComputable {V : NeighborhoodSystem α} {W : NeighborhoodSys
   exact papplyEval_rel_Ypd_iff Pf P Q
 
 end
-
 
 end DomainTheory.NeighbourhoodSystems

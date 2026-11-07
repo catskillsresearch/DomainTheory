@@ -27,7 +27,6 @@ public import Mathlib.Basic.Finite.Defs
 
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems
 
 def NeighborhoodSystem.IsPositive {α : Type*} (V : NeighborhoodSystem α) : Prop :=
@@ -58,9 +57,6 @@ def NeighborhoodSystem.ofPositive {α : Type*} (mem : Set α → Prop) (master :
     exact (pos hX hY).mpr (hZne.mono hZsub)
 
 end DomainTheory.NeighbourhoodSystems
-end
-
-section
 
 set_option linter.unusedSimpArgs false
 
@@ -96,8 +92,6 @@ theorem exists_total_ge (x : V.Element) : ∃ t, V.IsTotal t ∧ x ≤ t := by
       x le_rfl
   exact ⟨m, fun y hy => hmax hy, hxm⟩
 
-
-
 end
 
 end NeighborhoodSystem
@@ -122,8 +116,6 @@ end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
-
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
@@ -132,9 +124,6 @@ def appendSeq {α : Type*} (X1 : ℕ → Set α) (n1 : ℕ) (X2 : ℕ → Set α
   fun i => if i < n1 then X1 i else X2 (i - n1)
 
 end DomainTheory.NeighbourhoodSystems
-end
-
-section
 
 set_option linter.unusedSimpArgs false
 
@@ -150,31 +139,14 @@ theorem appendSeq_mem {α : Type*} {C : Set (Set α)} {X1 : ℕ → Set α} {n1 
   · rw [ite_eq_right h]; exact h2 (i - n1) (by omega)
 
 end DomainTheory.NeighbourhoodSystems
-end
-
-section
 
 set_option linter.unusedSimpArgs false
 
-end
-
-section
+set_option linter.unusedSimpArgs false
 
 set_option linter.unusedSimpArgs false
 
-end
-
-section
-
 set_option linter.unusedSimpArgs false
-
-end
-
-section
-
-set_option linter.unusedSimpArgs false
-
-end
 
 section
 
@@ -313,17 +285,9 @@ end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
-
 set_option linter.unusedSimpArgs false
 
-end
-
-section
-
 set_option linter.unusedSimpArgs false
-
-end
 
 section
 
@@ -402,33 +366,17 @@ end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems
 end
 
-section
-
 set_option linter.unusedSimpArgs false
 
 namespace DomainTheory.NeighbourhoodSystems
 
-
 end DomainTheory.NeighbourhoodSystems
-end
-
-section
 
 set_option linter.unusedSimpArgs false
 
-end
-
-section
-
 set_option linter.unusedSimpArgs false
 
-end
-
-section
-
 set_option linter.unusedSimpArgs false
-
-end
 
 namespace DomainTheory.NeighbourhoodSystems
 namespace NeighborhoodSystem
@@ -557,8 +505,6 @@ theorem toPower_principal {X : Set α} (hX : V.mem X) :
   · rintro ⟨⟨W, hWmem, rfl⟩, hsub⟩
     exact ⟨W, ⟨hWmem, (V.upSet_subset_iff hX).mp hsub⟩, rfl⟩
 
-
-
 end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems
 
@@ -624,8 +570,6 @@ theorem tokenSystem_isPositive : V.tokenSystem.IsPositive := by
 
 theorem tokenSystem_toToken_bijective : Function.Bijective V.toToken :=
   V.tokenIso.bijective
-
-
 
 end
 
@@ -708,8 +652,6 @@ theorem le_iff_isOpen_imp (x y : V.Element) :
 theorem specializes_iff_le (x y : V.Element) : y ⤳ x ↔ x ≤ y := by
   rw [specializes_iff_forall_open]
   exact (V.le_iff_isOpen_imp x y).symm
-
-
 
 end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems
@@ -796,8 +738,6 @@ theorem le_sSup (X : Set V.Element) (hX : V.Bounded X) {x : V.Element} (hx : x �
 theorem sSup_le (X : Set V.Element) (hX : V.Bounded X) {z : V.Element}
     (hz : ∀ x ∈ X, x ≤ z) : V.sSup X hX ≤ z :=
   V.sInf_le (V.upperBounds X) (V.upperBounds_nonempty hX) hz
-
-
 
 end
 

@@ -7,7 +7,6 @@ public import Mathlib.Tactic.FinCases
 public import Mathlib.Data.Fintype.Basic
 @[expose] public section
 
-section
 namespace DomainTheory.NeighbourhoodSystems.TwoToken
 
 abbrev Token := Fin 2
@@ -114,4 +113,3 @@ def neighborhoodSystem : NeighborhoodSystem Token where
       exact absurd hZ not_mem_empty
 
 end DomainTheory.NeighbourhoodSystems.TwoToken
-end

@@ -6,7 +6,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 open DomainTheory.NeighbourhoodSystems
 
-section
 set_option linter.unusedVariables false
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 

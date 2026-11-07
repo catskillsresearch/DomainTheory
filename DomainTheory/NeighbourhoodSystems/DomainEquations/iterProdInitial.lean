@@ -89,7 +89,6 @@ theorem iterProdIso_symm_pair (a : V.Element) (b : (iterSys V).Element) :
 end IterProdInitial
 end
 
-section
 namespace IterProdInitial
 
 theorem iterSys_nonempty {α : Type*} {V : NeighborhoodSystem α}
@@ -100,7 +99,6 @@ theorem iterSys_nonempty {α : Type*} {V : NeighborhoodSystem α}
   exact ⟨(0, a), ha⟩
 
 end IterProdInitial
-end
 
 section
 namespace IterProdInitial
@@ -224,7 +222,6 @@ theorem isStrict_prodMap {α β α' β' : Type*} {V₀ : NeighborhoodSystem α} 
 end IterProdInitial
 end
 
-
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems
 section
@@ -297,7 +294,6 @@ end Target
 end IterProdInitial
 end
 
-section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 namespace IterProdInitial
@@ -310,7 +306,6 @@ theorem prod_nonempty {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : Nei
   exact ⟨Sum.inl a, prodNbhd.mem_inl.mpr ha⟩
 
 end IterProdInitial
-end
 
 section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
@@ -507,7 +502,6 @@ def descAlgHom (Dom : StrictDomainObj.{w}) (B : TAlgebra (prodFunctor Dom)) :
     show (descMap B.str.1).comp (imap Dom.sys)
        = B.str.1.comp (prodMap (idMap Dom.sys) (descMap B.str.1))
     exact descMap_comm B.str.1
-
 
 def iterIsInitial (Dom : StrictDomainObj) : IsInitial (iterAlg Dom) where
   desc := descAlgHom Dom
