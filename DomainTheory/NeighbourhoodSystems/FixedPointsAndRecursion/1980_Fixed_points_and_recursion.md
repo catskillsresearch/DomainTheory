@@ -12,7 +12,7 @@
 - [Sequence domain](1980_seqDomain.md) [✓](../1980_REVISION.md)
 - [Example 4.4 — sequence domain](1980_Example_4_4.md) [✓](../1980_REVISION.md)
 - [Definition 4.5 — Peano axioms](1980_Definition_4_5.md) [✓](../1980_REVISION.md)
-- [Theorem 4.6 — Peano models isomorphic](1980_Theorem_4_6.md)
+- [Theorem 4.6 — Peano models isomorphic](1980_Theorem_4_6.md) [✓](../1980_REVISION.md)
 - [Exercise 4.7 — fixed point above a seed](1980_Exercise_4_7.md)
 - [Exercise 4.8 — fixed-point induction](1980_Exercise_4_8.md)
 - [Exercise 4.9 — fix as a fixed point](1980_Exercise_4_9.md)
