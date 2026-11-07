@@ -1979,6 +1979,10 @@ NS_LAM_SHORT: dict[str, tuple[str, str]] = {
         "Theorem 5.6 — partial recursive functions",
     ),
 
+    "Multi-argument λ-abstraction": (
+        "multiLam",
+        "Multi-argument λ-abstraction",
+    ),
     "Exercise 5.7 — currying the lambda notation": (
         "X507",
         "Exercise 5.7 — currying the lambda notation",

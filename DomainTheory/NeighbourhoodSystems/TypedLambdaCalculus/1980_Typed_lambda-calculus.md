@@ -18,8 +18,8 @@
 - [Partial-recursive scheme realizers](1980_partrecSchemes.md) [✓](../1980_REVISION.md)
 - [Partial recursive λ-definability](1980_partrecLam.md) [✓](../1980_REVISION.md)
 - [Theorem 5.6 — partial recursive functions](1980_Theorem_5_6.md) [✓](../1980_REVISION.md)
-
-- [Exercise 5.7 — currying the lambda notation](1980_Exercise_5_7.md)
+- [Multi-argument λ-abstraction](1980_multiLam.md) [✓](../1980_REVISION.md)
+- [Exercise 5.7 — currying the lambda notation](1980_Exercise_5_7.md) [✓](../1980_REVISION.md)
 - [Exercise 5.8 — combinatory completeness](1980_Exercise_5_8.md)
 - [Exercise 5.9 — common fixed points](1980_Exercise_5_9.md)
 - [Exercise 5.10 — smash product](1980_Exercise_5_10.md)

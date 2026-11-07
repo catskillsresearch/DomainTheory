@@ -1,0 +1,14 @@
+**EXERCISE 5.7.** Find definitions of
+
+$$\lambda x, y.\, \tau \quad \text{and} \quad \sigma(x, y)$$
+
+which use only $\lambda v$ with one variable and applications only to one argument at a time. Note that use must be made of the combinators $p_0$, $p_1$, pair. Generalize the result to functions of many variables.
+
+The development is with the
+[multi-argument λ-abstraction](1980_multiLam.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`example_507`).** Binary λ-abstraction and application are curry and successive evaluation; uncurry inverts curry; pairing is recovered from its projections; ternary curry evaluates by nested pairs.
+
+*Proof.* Assemble `lam_two_vars`, `app_two_args`, `uncurry_lam_two_vars`, `surjective_pairing`, and `curry₃_apply` from the multi-argument λ peer. ∎

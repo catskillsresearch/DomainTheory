@@ -1,0 +1,31 @@
+Multi-argument λ-abstraction and application via iterated curry and uncurry, together with the pairing reconstruction used to simulate simultaneous arguments.
+
+<!-- formalization -->
+
+**Definition (`curry₃`).** Ternary curry is the double curry of a map on a nested product.
+
+*Proof.* By definition. ∎
+
+**Theorem (`app_two_args`).** Applying a binary map to a pair equals evaluating its curry at the two components in succession.
+
+*Proof.* The curry evaluation law. ∎
+
+**Theorem (`curry₃_apply`).** A thrice-curried map evaluates by nesting three arguments as a pair of pairs.
+
+*Proof.* Apply the curry evaluation law twice. ∎
+
+**Theorem (`lam_two_vars`).** The single-variable λ-abstraction of a binary map recovers the map on pairs when applied to both arguments.
+
+*Proof.* The curry evaluation law. ∎
+
+**Theorem (`surjective_pairing`).** Pairing the two projections of a product element recovers that element.
+
+*Proof.* Unpack the projections and reassemble with the pairing identity. ∎
+
+**Theorem (`uncurry_apply`).** Uncurry evaluates by applying the curried map to the two components of a pair.
+
+*Proof.* Expand uncurry as evaluation against the paired projections. ∎
+
+**Theorem (`uncurry_lam_two_vars`).** Uncurry is a left inverse of curry on binary maps.
+
+*Proof.* The standard uncurry–curry law. ∎
