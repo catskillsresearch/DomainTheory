@@ -52,3 +52,5 @@
 - [Exercise 4.24 — Schroeder-Bernstein theorem](1980_Exercise_4_24.md) [✓](../1980_REVISION.md)
 - [Unary sequence domain](1980_unarySeq.md) [✓](../1980_REVISION.md)
 - [Exercise 4.25 — unary sequence domain](1980_Exercise_4_25.md) [✓](../1980_REVISION.md)
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-07) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

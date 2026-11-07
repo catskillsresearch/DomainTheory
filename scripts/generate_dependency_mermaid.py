@@ -1971,6 +1971,8 @@ def write_ns_domains_graphviz_svg(
     node_labels: dict[str, str],
     edges: dict[tuple[str, str], int],
     order: list[str],
+    *,
+    rankdir: str = "TB",
 ) -> None:
     """Compact Graphviz SVG — Mermaid/dagre leaves too much whitespace when fit-scaled."""
     import subprocess
@@ -1982,13 +1984,18 @@ def write_ns_domains_graphviz_svg(
         "cex": ("#e0e7ff", "#4338ca", "#312e81"),
         "cthm": ("#fee2e2", "#b91c1c", "#7f1d1d"),
     }
+    # TB: cap width, allow height. LR: cap height, allow width (many roots stack
+    # vertically instead of spreading across the page).
+    if rankdir.upper() == "LR":
+        size = 'size="16,8!", ratio=compress'
+        sep = "ranksep=0.55, nodesep=0.22"
+    else:
+        size = 'size="7.5,18!", ratio=compress'
+        sep = "ranksep=0.85, nodesep=0.18"
     lines = [
         "digraph G {",
-        # size caps width so fit-to-viewport preview keeps fontsize readable.
-        # Larger ranksep + taller size envelope stretches the diagram down the page
-        # (aspect ~1) without changing width-fit label scale much.
-        '  graph [rankdir=TB, ranksep=0.85, nodesep=0.18, splines=true,',
-        '         size="7.5,18!", ratio=compress, bgcolor="white", fontname="Helvetica"];',
+        f'  graph [rankdir={rankdir}, {sep}, splines=true,',
+        f'         {size}, bgcolor="white", fontname="Helvetica"];',
         '  node [shape=box, style="filled,rounded", fontname="Helvetica", fontsize=18,',
         '        margin="0.1,0.06", width=0, height=0];',
         "  edge [fontsize=10, arrowsize=0.7];",
@@ -2022,6 +2029,7 @@ def gen_ns_outline_svg_lecture(
     companions: dict[str, tuple[str, ...]],
     header: list[str],
     aggregate_lecture_exercises: bool = True,
+    rankdir: str = "TB",
 ) -> str:
     """Item-level Lean deps for a 1980 section hub (SVG gold copy).
 
@@ -2104,20 +2112,23 @@ def gen_ns_outline_svg_lecture(
     class_assigns = [f"  class {nid} {_ns_dom_kind_class(nid)}" for nid in order]
     init = [ln for ln in style if INIT_LINE.match(ln.strip())]
     svg_path = diagram.with_suffix(".svg") if diagram.suffix == ".mermaid" else diagram
-    write_ns_domains_graphviz_svg(svg_path, node_labels, edges, order)
+    write_ns_domains_graphviz_svg(
+        svg_path, node_labels, edges, order, rankdir=rankdir
+    )
 
     # SVG is the gold copy: Graphviz already wrote the file. Return that content so
     # main's write_text is a no-op (and does not clobber the SVG with stale ``old``).
     if diagram.suffix == ".svg":
         return svg_path.read_text(encoding="utf-8")
 
+    flow = "flowchart LR" if rankdir.upper() == "LR" else "flowchart TB"
     return emit_flowchart(
         header,
         node_labels,
         edges,
         init + class_defs + class_assigns,
         labeled=True,
-        flowchart="flowchart TB",
+        flowchart=flow,
         node_order=order,
     )
 
@@ -2195,8 +2206,10 @@ def gen_ns_fixpoints_lecture(diagram: Path, modules: dict[str, Path], old: str) 
             "%% Arrowhead on the importer; label = direct-import count.",
             "%% All cross-note Lean imports, then transitive reduction (keeps reachability).",
             "%% Display copy: Graphviz SVG (gold); no sibling .mermaid.",
+            "%% Layout: LR — many independent peers stack as roots on the left.",
         ],
         aggregate_lecture_exercises=False,
+        rankdir="LR",
     )
 
 
@@ -2887,11 +2900,13 @@ def main() -> None:
     changed = 0
     unknown: list[Path] = []
     for mermaid in paths:
+        # Read before regenerate: SVG writers update the file in place inside
+        # regenerate_one, so comparing after would always look unchanged.
+        old = mermaid.read_text(encoding="utf-8", errors="ignore")
         new = regenerate_one(mermaid, modules)
         if new is None:
             unknown.append(mermaid)
             continue
-        old = mermaid.read_text(encoding="utf-8", errors="ignore")
         if new != old:
             changed += 1
             if args.write:
