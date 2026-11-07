@@ -1,0 +1,39 @@
+Least fixed point of an endomap above a seed that lies below its image, obtained as the directed supremum of the iterates from that seed.
+
+<!-- formalization -->
+
+**Definition (`ApproximableMap.iterFrom`).** The $n$-fold iterate of an endomap from a seed is the $n$-fold application of its element map to that seed.
+
+*Proof.* By definition. ∎
+
+**Theorem (`ApproximableMap.iterFrom_zero`).** The zero-fold iterate is the seed.
+
+*Proof.* By definition. ∎
+
+**Theorem (`ApproximableMap.iterFrom_succ`).** The successor iterate applies the element map once more.
+
+*Proof.* Unpack iteration at a successor. ∎
+
+**Theorem (`ApproximableMap.iterFrom_step`).** If the seed lies below its image, successive iterates are increasing.
+
+*Proof.* Induct on the step index, using monotonicity of the element map. ∎
+
+**Theorem (`ApproximableMap.iterFrom_mono`).** If the seed lies below its image, iterates are monotone in the step index.
+
+*Proof.* Induct along the inequality of indices, chaining the one-step increase. ∎
+
+**Definition (`ApproximableMap.fixAbove`).** The least fixed point above a seed below its image is the directed supremum of the iterates from that seed.
+
+*Proof.* Directedness of the iterates follows from monotonicity in the step index. ∎
+
+**Theorem (`ApproximableMap.fixAbove_isFixed`).** The directed supremum of the iterates from such a seed is a fixed point of the endomap.
+
+*Proof.* Compare both directions: applying the map sends each iterate to the next, hence into the supremum; each iterate lies below the image of the supremum by monotonicity of the map and of the iterates. ∎
+
+**Theorem (`ApproximableMap.fixAbove_least`).** Among postfixed points above the seed, that directed supremum is least.
+
+*Proof.* Induct on the iterate index: the seed lies below the postfixed point, and the inductive step uses monotonicity of the map together with the postfix inequality. ∎
+
+**Theorem (`ApproximableMap.le_fixAbove`).** The seed lies below the directed supremum of its iterates.
+
+*Proof.* The zero-fold iterate is the seed and lies below every directed supremum of the iterates. ∎

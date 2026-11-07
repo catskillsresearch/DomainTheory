@@ -1755,9 +1755,17 @@ NS_FIX_SHORT: dict[str, tuple[str, str]] = {
         "T46",
         "Theorem 4.6 — Peano models isomorphic",
     ),
+    "Fixed point above a seed": (
+        "above",
+        "Fixed point above a seed",
+    ),
     "Exercise 4.7 — fixed point above a seed": (
         "X407",
         "Exercise 4.7 — fixed point above a seed",
+    ),
+    "Iterate-chain supremum": (
+        "chain",
+        "Iterate-chain supremum",
     ),
     "Exercise 4.8 — fixed-point induction": (
         "X408",

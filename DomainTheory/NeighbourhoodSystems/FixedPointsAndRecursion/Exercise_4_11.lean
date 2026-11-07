@@ -1,7 +1,8 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_10
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.fixAbove
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.supChain
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.fixMap
 
 @[expose] public section

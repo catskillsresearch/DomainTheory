@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.supChain
 
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Proposition_6_7
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem_6_9

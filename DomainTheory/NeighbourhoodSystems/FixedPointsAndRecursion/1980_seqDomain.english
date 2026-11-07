@@ -81,27 +81,3 @@ The neighbourhood system of finite or infinite binary sequences, with bit-cons m
 **Theorem (`prepend_subset_self`).** The trivial assertion holds.
 
 *Proof.* Immediate. ∎
-
-**Definition (`ApproximableMap.iterFrom`).** The $n$-fold iterate of an endomap from a seed is the $n$-fold application of its element map to that seed.
-
-*Proof.* By definition. ∎
-
-**Theorem (`ApproximableMap.iterFrom_zero`).** The zero-fold iterate is the seed.
-
-*Proof.* By definition. ∎
-
-**Theorem (`ApproximableMap.iterFrom_succ`).** The successor iterate applies the element map once more.
-
-*Proof.* Unpack iteration at a successor. ∎
-
-**Theorem (`ApproximableMap.iterFrom_step`).** If the seed lies below its image, successive iterates are increasing.
-
-*Proof.* Induct on the step index, using monotonicity of the element map. ∎
-
-**Theorem (`ApproximableMap.iterFrom_mono`).** If the seed lies below its image, iterates are monotone in the step index.
-
-*Proof.* Induct along the inequality of indices, chaining the one-step increase. ∎
-
-**Definition (`ApproximableMap.fixAbove`).** The least fixed point above a seed below its image is the directed supremum of the iterates from that seed.
-
-*Proof.* Directedness of the iterates follows from monotonicity in the step index. ∎

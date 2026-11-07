@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise_4_7
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.supChain
 
 @[expose] public section
 
