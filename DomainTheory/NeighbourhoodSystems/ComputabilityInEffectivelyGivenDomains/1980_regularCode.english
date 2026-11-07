@@ -2,390 +2,332 @@ Gödel coding and primitive-recursive decision procedures for the regular-langua
 
 <!-- formalization -->
 
-**Theorem (`consistentB_iff_Ssys`).** As set out for this part of the library.
+**Theorem (`consistentB_iff_Ssys`).** The condition consistent b holds exactly when ssys holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Expand both conditions in consistent b iff ssys; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-**Theorem (`example_722_decide`).** As set out for this part of the library.
+**Theorem (`example_722_decide`).** Scott’s example example 722 decide has the claimed language-theoretic or computability property.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Following the defining recursion for example 722 decide and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`denote_eq_empty_iff`).** As set out for this part of the library.
+**Theorem (`denote_eq_empty_iff`).** The set or language in denote eq empty iff is empty exactly under the stated absence-of-witness condition.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* An element of the set in denote eq empty iff would provide exactly the forbidden witness, while any such witness produces an element; hence emptiness is equivalent to its absence. ∎
 
-**Theorem (`nfa_accepts_nonempty_iff`).** As set out for this part of the library.
+**Theorem (`nfa_accepts_nonempty_iff`).** The set or language nfa accepts nonempty iff has an element under the hypotheses of the theorem.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Choose witnesses from the nonempty input sets in nfa accepts nonempty iff and combine them using the defining construction. ∎
 
-**Theorem (`nfa_accepts_nonempty_iff_short`).** As set out for this part of the library.
+**Theorem (`nfa_accepts_nonempty_iff_short`).** The language in nfa accepts nonempty iff short is nonempty exactly when it accepts a word shorter than the number of available automaton states.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Repeatedly remove a loop from any longer accepting path for nfa accepts nonempty iff short; finiteness of the state set guarantees a repeated state until a short accepted word remains. ∎
 
-**Theorem (`pathStateAt_last`).** As set out for this part of the library.
+**Theorem (`pathStateAt_last`).** For the objects in path state at last, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Following the defining recursion for path state at last and applying the preceding component lemmas yields the claimed result. ∎
 
-**Definition (`acceptFin`).** As set out for this part of the library.
+**Definition (`acceptFin`).** The finite accepting-state set of an expression automaton is computed recursively from the expression.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+**Definition (`startFin`).** The finite initial-state set of an expression automaton is computed recursively from the expression.
 
-**Definition (`startFin`).** As set out for this part of the library.
+**Definition (`stepFinSingle`).** The state transformer step fin single performs one stage of the finite numerical computation encoded in its state.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+**Definition (`stepFin`).** The state transformer step fin performs one stage of the finite numerical computation encoded in its state.
 
-**Definition (`stepFinSingle`).** As set out for this part of the library.
+**Definition (`diffNFA`).** The automaton diff nfa has the recursively specified state space, transitions, initial states, and accepting states.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+**Definition (`evalFin`).** The finite state set reached after reading a word is obtained by folding the finite transition operation from the finite start set.
 
-**Definition (`stepFin`).** As set out for this part of the library.
+**Definition (`subsetB`).** The set subset b consists exactly of the elements admitted by its defining membership condition.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+**Definition (`interEqB`).** Language equality is tested by checking inclusion in both directions.
 
-**Definition (`diffNFA`).** As set out for this part of the library.
+**Theorem (`coe_acceptFin`).** For the objects in accept fin, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Following the defining recursion for accept fin and applying the preceding component lemmas yields the claimed result. ∎
 
-**Definition (`evalFin`).** As set out for this part of the library.
+**Theorem (`coe_startFin`).** For the objects in start fin, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Following the defining recursion for start fin and applying the preceding component lemmas yields the claimed result. ∎
 
-**Definition (`subsetB`).** As set out for this part of the library.
+**Theorem (`coe_stepFinSingle`).** For the objects in step fin single, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Following the defining recursion for step fin single and applying the preceding component lemmas yields the claimed result. ∎
 
-**Definition (`interEqB`).** As set out for this part of the library.
+**Theorem (`coe_stepFin`).** For the objects in step fin, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Following the defining recursion for step fin and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`coe_acceptFin`).** As set out for this part of the library.
+**Theorem (`coe_foldl_stepFin`).** For the objects in foldl step fin, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Following the defining recursion for foldl step fin and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`coe_startFin`).** As set out for this part of the library.
+**Theorem (`coe_evalFin`).** Evaluating the automaton or finite transition system in eval fin yields the stated reachable state after reading the word.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Induction on the input word tracks the reachable states for eval fin; the accepting-state condition then gives the stated language. ∎
 
-**Theorem (`coe_stepFinSingle`).** As set out for this part of the library.
+**Theorem (`denote_iff_evalFin`).** Evaluating the automaton or finite transition system in denote iff eval fin yields the stated reachable state after reading the word.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Induction on the input word tracks the reachable states for denote iff eval fin; the accepting-state condition then gives the stated language. ∎
 
-**Theorem (`coe_stepFin`).** As set out for this part of the library.
+**Theorem (`diffNFA_evalFrom`).** Evaluating the automaton or finite transition system in diff nfa eval from yields the stated reachable state after reading the word.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Induction on the input word tracks the reachable states for diff nfa eval from; the accepting-state condition then gives the stated language. ∎
 
-**Theorem (`coe_foldl_stepFin`).** As set out for this part of the library.
+**Theorem (`diffNFA_eval`).** Evaluating the automaton or finite transition system in diff nfa eval yields the stated reachable state after reading the word.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Induction on the input word tracks the reachable states for diff nfa eval; the accepting-state condition then gives the stated language. ∎
 
-**Theorem (`coe_evalFin`).** As set out for this part of the library.
+**Theorem (`diffNFA_mem_accepts_iff`).** Membership in diff nfa mem accepts iff is equivalent to the explicit witness condition given by the construction.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Expanding the membership definition of diff nfa mem accepts iff exposes exactly the witnesses and equations occurring on the other side. ∎
 
-**Theorem (`denote_iff_evalFin`).** As set out for this part of the library.
+**Theorem (`exists_diff_word_short`).** The language in diff word short is nonempty exactly when it accepts a word shorter than the number of available automaton states.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Repeatedly remove a loop from any longer accepting path for diff word short; finiteness of the state set guarantees a repeated state until a short accepted word remains. ∎
 
-**Theorem (`diffNFA_evalFrom`).** As set out for this part of the library.
+**Theorem (`subsetB_iff`).** The condition subset b holds exactly when the finite witness condition holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Expand both conditions in subset b iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-**Theorem (`diffNFA_eval`).** As set out for this part of the library.
+**Theorem (`interEqB_iff`).** The intersection in inter eq b iff equals the indexed neighbourhood or language exactly under the stated finite comparison condition.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Use the same witnesses in both directions for inter eq b iff, combining their inclusion proofs pointwise and using nonemptiness where intersection closure requires it. ∎
 
-**Theorem (`diffNFA_mem_accepts_iff`).** As set out for this part of the library.
+**Theorem (`example_722_equiv`).** Scott’s example example 722 equiv has the claimed language-theoretic or computability property.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Compare membership or numerical components in example 722 equiv; the defining equations reduce both sides to the same data. ∎
 
-**Theorem (`exists_diff_word_short`).** As set out for this part of the library.
+**Definition (`autStateCardFuelCharBody`).** This is the one-step numerical recurrence computing the number of automaton states represented by an expression code.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+**Definition (`autStateCardFuelChar`).** This fuel-bounded numerical function computes the automaton-state count associated with an expression code.
 
-**Theorem (`subsetB_iff`).** As set out for this part of the library.
+**Definition (`c9b5_boolNat`).** A Boolean digit is numerically encoded by zero or one.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+**Definition (`c9b5_encodeListBool`).** The coding function c9b5 encode list bool assigns its finite list, expression, pair, or tagged value a natural-number index by pairing and list coding.
 
-**Theorem (`interEqB_iff`).** As set out for this part of the library.
+**Definition (`c9b5_sexprDepth`).** The coded expression depth is computed recursively, with leaves of depth one and binary depth one plus the maximum child depth.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+**Definition (`c9b5_sexprGodelEncode`).** The coding function c9b5 sexpr godel encode assigns its finite list, expression, pair, or tagged value a natural-number index by pairing and list coding.
 
-**Theorem (`example_722_equiv`).** As set out for this part of the library.
+**Definition (`capCode`).** The coding function cap code assigns its finite list, expression, pair, or tagged value a natural-number index by pairing and list coding.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+**Definition (`autStateCardFuelCharLookup`).** The numerical characteristic function aut state card fuel char lookup encodes its Boolean or relational test by zero and one.
 
-**Definition (`autStateCardFuelCharBody`).** As set out for this part of the library.
+**Definition (`subsetBoundChar`).** The numerical characteristic function subset bound char encodes its Boolean or relational test by zero and one.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+**Definition (`subsetGuardChar`).** The numerical characteristic function subset guard char encodes its Boolean or relational test by zero and one.
 
-**Definition (`autStateCardFuelChar`).** As set out for this part of the library.
+**Definition (`matchesBCatG`).** The bounded concatenation-search function tests all splits of a coded word using the preceding matching approximation.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+**Definition (`matchesBCatGLookup`).** The lookup form unpacks a single paired argument and applies the bounded concatenation-search function.
 
-**Definition (`c9b5_boolNat`).** As set out for this part of the library.
+**Definition (`matchesBCharBody`).** The numerical characteristic function matches bchar body encodes its Boolean or relational test by zero and one.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+**Definition (`matchesBChar`).** This fuel-bounded characteristic function returns one exactly when the coded word matches the coded expression.
 
-**Definition (`c9b5_encodeListBool`).** As set out for this part of the library.
+**Definition (`decideNonemptyBChar`).** The numerical characteristic function decide nonempty bchar encodes its Boolean or relational test by zero and one.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+**Definition (`consistentBChar`).** The numerical characteristic function consistent bchar encodes its Boolean or relational test by zero and one.
 
-**Definition (`c9b5_sexprDepth`).** As set out for this part of the library.
+**Definition (`matchesBCharBodyLookup`).** The numerical characteristic function matches bchar body lookup encodes its Boolean or relational test by zero and one.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+**Definition (`subsetBChar`).** This bounded characteristic function tests inclusion between the languages denoted by two expression codes.
 
-**Definition (`c9b5_sexprGodelEncode`).** As set out for this part of the library.
+**Definition (`interEqChar`).** This bounded characteristic function tests equality between the languages denoted by two expression codes.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+**Definition (`c9b6_decodeListBool`).** The decoding operation c9b6 decode list bool recovers the finite list, expression, or tagged value represented by its numerical input, returning failure when the code is malformed.
 
-**Definition (`capCode`).** As set out for this part of the library.
+**Theorem (`c9b5_decodeList_encodeListBool`).** For the objects in c9b5 decode list encode list bool, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Following the defining recursion for c9b5 decode list encode list bool and applying the preceding component lemmas yields the claimed result. ∎
 
-**Definition (`autStateCardFuelCharLookup`).** As set out for this part of the library.
+**Theorem (`c9b5_boolNat_injective`).** The construction c9b5 bool nat injective sends equal outputs only from equal inputs.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Equality of two values of c9b5 bool nat injective determines their outer form and then each component, so the original inputs coincide. ∎
 
-**Definition (`subsetBoundChar`).** As set out for this part of the library.
+**Theorem (`c9b5_decodeList_injective`).** The construction c9b5 decode list injective sends equal outputs only from equal inputs.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Equality of two values of c9b5 decode list injective determines their outer form and then each component, so the original inputs coincide. ∎
 
-**Definition (`subsetGuardChar`).** As set out for this part of the library.
+**Theorem (`c9b5_map_boolNat_eq_iff`).** The condition c9b5 map bool nat eq holds exactly when the finite witness condition holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Expand both conditions in c9b5 map bool nat eq iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-**Definition (`matchesBCatG`).** As set out for this part of the library.
+**Theorem (`c9b5_takeCode_encodeListBool`).** For the objects in c9b5 take code encode list bool, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Following the defining recursion for c9b5 take code encode list bool and applying the preceding component lemmas yields the claimed result. ∎
 
-**Definition (`matchesBCatGLookup`).** As set out for this part of the library.
+**Theorem (`c9b5_dropCode_encodeListBool`).** For the objects in c9b5 drop code encode list bool, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Following the defining recursion for c9b5 drop code encode list bool and applying the preceding component lemmas yields the claimed result. ∎
 
-**Definition (`matchesBCharBody`).** As set out for this part of the library.
+**Theorem (`c9b5_listEqChar_encodeListBool`).** For the objects in c9b5 list eq char encode list bool, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Following the defining recursion for c9b5 list eq char encode list bool and applying the preceding component lemmas yields the claimed result. ∎
 
-**Definition (`matchesBChar`).** As set out for this part of the library.
+**Theorem (`autStateCardFuelCharBody_eq`).** The value of aut state card fuel char body eq equals the value described by aut state card fuel char body eq.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Compare membership or numerical components in aut state card fuel char body eq; the defining equations reduce both sides to the same data. ∎
 
-**Definition (`decideNonemptyBChar`).** As set out for this part of the library.
+**Theorem (`autStateCardFuelChar_eq_autStateCard`).** The value of aut state card fuel char equals the value described by aut state card.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Compare membership or numerical components in aut state card fuel char eq aut state card; the defining equations reduce both sides to the same data. ∎
 
-**Definition (`consistentBChar`).** As set out for this part of the library.
+**Theorem (`primrec_autStateCardFuelCharBody`).** The numerical function aut state card fuel char body is primitive recursive.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of aut state card fuel char body. ∎
 
-**Definition (`matchesBCharBodyLookup`).** As set out for this part of the library.
+**Theorem (`autStateCardFuelCharBody_local`).** For the objects in aut state card fuel char body local, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Following the defining recursion for aut state card fuel char body local and applying the preceding component lemmas yields the claimed result. ∎
 
-**Definition (`subsetBChar`).** As set out for this part of the library.
+**Theorem (`matchesBCharBody_eq`).** The value of matches bchar body eq equals the value described by matches bchar body eq.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Compare membership or numerical components in matches bchar body eq; the defining equations reduce both sides to the same data. ∎
 
-**Definition (`interEqChar`).** As set out for this part of the library.
+**Theorem (`c9b5_matchesBCatG_char`).** For the objects in c9b5 matches bcat g char, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Following the defining recursion for c9b5 matches bcat g char and applying the preceding component lemmas yields the claimed result. ∎
 
-**Definition (`c9b6_decodeListBool`).** As set out for this part of the library.
+**Theorem (`matchesBChar_eq_one_iff`).** The zero–one test matches bchar returns one exactly when the mathematical condition encoded in its definition holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Separate the possible zero–one values occurring in matches bchar eq one iff; the value one survives precisely in the case described by the defining predicate. ∎
 
-**Theorem (`c9b5_decodeList_encodeListBool`).** As set out for this part of the library.
+**Theorem (`primrec_matchesBCatG`).** The numerical function matches bcat g is primitive recursive.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of matches bcat g. ∎
 
-**Theorem (`c9b5_boolNat_injective`).** As set out for this part of the library.
+**Theorem (`primrec_matchesBCharBody`).** The numerical function matches bchar body is primitive recursive.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of matches bchar body. ∎
 
-**Theorem (`c9b5_decodeList_injective`).** As set out for this part of the library.
+**Theorem (`matchesBChar_le_one`).** For every input, matches bchar takes one of the two values zero and one.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Each Boolean-valued component of matches bchar le one is zero or one, and the defining Boolean combination preserves that range. ∎
 
-**Theorem (`c9b5_map_boolNat_eq_iff`).** As set out for this part of the library.
+**Theorem (`matchesBCharBody_local`).** For the objects in matches bchar body local, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Following the defining recursion for matches bchar body local and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`c9b5_takeCode_encodeListBool`).** As set out for this part of the library.
+**Theorem (`c9b6_allBinDigitsChar_encodeListBool`).** For the objects in c9b6 all bin digits char encode list bool, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Following the defining recursion for c9b6 all bin digits char encode list bool and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`c9b5_dropCode_encodeListBool`).** As set out for this part of the library.
+**Theorem (`c9b6_encodeListBool_lt_codeBound`).** The natural number c9b6 encode list bool lt code bound lies strictly below its finite bound.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Following the defining recursion for c9b6 encode list bool lt code bound and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`c9b5_listEqChar_encodeListBool`).** As set out for this part of the library.
+**Theorem (`c9b6_boolNat_decide_eq`).** The value of c9b6 bool nat decide eq equals the value described by c9b6 bool nat decide eq.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Compare membership or numerical components in c9b6 bool nat decide eq; the defining equations reduce both sides to the same data. ∎
 
-**Theorem (`autStateCardFuelCharBody_eq`).** As set out for this part of the library.
+**Theorem (`c9b6_encodeListBool_decodeListBool_of_allBin`).** The hypotheses all bin imply c9b6 encode list bool decode list bool.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Following the defining recursion for c9b6 encode list bool decode list bool of all bin and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`autStateCardFuelChar_eq_autStateCard`).** As set out for this part of the library.
+**Theorem (`c9b6_matchesBChar_of_allBin`).** The hypotheses all bin imply c9b6 matches bchar.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Following the defining recursion for c9b6 matches bchar of all bin and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`primrec_autStateCardFuelCharBody`).** As set out for this part of the library.
+**Theorem (`decideNonemptyBChar_eq_one_iff`).** The zero–one test decide nonempty bchar returns one exactly when the mathematical condition encoded in its definition holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Separate the possible zero–one values occurring in decide nonempty bchar eq one iff; the value one survives precisely in the case described by the defining predicate. ∎
 
-**Theorem (`autStateCardFuelCharBody_local`).** As set out for this part of the library.
+**Theorem (`c9b6_sexprGodelEncode_cap`).** For the objects in c9b6 sexpr godel encode cap, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Following the defining recursion for c9b6 sexpr godel encode cap and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`matchesBCharBody_eq`).** As set out for this part of the library.
+**Theorem (`subsetGuardChar_le_one`).** For every input, subset guard char takes one of the two values zero and one.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Each Boolean-valued component of subset guard char le one is zero or one, and the defining Boolean combination preserves that range. ∎
 
-**Theorem (`c9b5_matchesBCatG_char`).** As set out for this part of the library.
+**Theorem (`subsetBChar_eq_one_iff`).** The zero–one test subset bchar returns one exactly when the mathematical condition encoded in its definition holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Separate the possible zero–one values occurring in subset bchar eq one iff; the value one survives precisely in the case described by the defining predicate. ∎
 
-**Theorem (`matchesBChar_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`consistentBChar_eq_one_iff`).** The zero–one test consistent bchar returns one exactly when the mathematical condition encoded in its definition holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Separate the possible zero–one values occurring in consistent bchar eq one iff; the value one survives precisely in the case described by the defining predicate. ∎
 
-**Theorem (`primrec_matchesBCatG`).** As set out for this part of the library.
+**Theorem (`decideNonemptyBChar_le_one`).** For every input, decide nonempty bchar takes one of the two values zero and one.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Each Boolean-valued component of decide nonempty bchar le one is zero or one, and the defining Boolean combination preserves that range. ∎
 
-**Theorem (`primrec_matchesBCharBody`).** As set out for this part of the library.
+**Theorem (`consistentBChar_le_one`).** For every input, consistent bchar takes one of the two values zero and one.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Each Boolean-valued component of consistent bchar le one is zero or one, and the defining Boolean combination preserves that range. ∎
 
-**Theorem (`matchesBChar_le_one`).** As set out for this part of the library.
+**Theorem (`autStateCardFuelChar_fuelTable_eq`).** The value of aut state card fuel char fuel table eq equals the value described by aut state card fuel char fuel table eq.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Compare membership or numerical components in aut state card fuel char fuel table eq; the defining equations reduce both sides to the same data. ∎
 
-**Theorem (`matchesBCharBody_local`).** As set out for this part of the library.
+**Theorem (`interEqChar_eq_one_iff`).** The zero–one test inter eq char returns one exactly when the mathematical condition encoded in its definition holds.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Separate the possible zero–one values occurring in inter eq char eq one iff; the value one survives precisely in the case described by the defining predicate. ∎
 
-**Theorem (`c9b6_allBinDigitsChar_encodeListBool`).** As set out for this part of the library.
+**Theorem (`matchesBChar_fuelTable_eq`).** The value of matches bchar fuel table eq equals the value described by matches bchar fuel table eq.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Compare membership or numerical components in matches bchar fuel table eq; the defining equations reduce both sides to the same data. ∎
 
-**Theorem (`c9b6_encodeListBool_lt_codeBound`).** As set out for this part of the library.
+**Theorem (`primrec_autStateCardFuelChar`).** The numerical function aut state card fuel char is primitive recursive.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of aut state card fuel char. ∎
 
-**Theorem (`c9b6_boolNat_decide_eq`).** As set out for this part of the library.
+**Theorem (`primrec_autStateCardFuelCharLookup`).** The numerical function aut state card fuel char lookup is primitive recursive.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of aut state card fuel char lookup. ∎
 
-**Theorem (`c9b6_encodeListBool_decodeListBool_of_allBin`).** As set out for this part of the library.
+**Theorem (`primrec_autStateCardFuelChar2`).** The numerical function aut state card fuel char2 is primitive recursive.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of aut state card fuel char2. ∎
 
-**Theorem (`c9b6_matchesBChar_of_allBin`).** As set out for this part of the library.
+**Theorem (`primrec_matchesBCatGLookup`).** The numerical function matches bcat glookup is primitive recursive.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of matches bcat glookup. ∎
 
-**Theorem (`decideNonemptyBChar_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`primrec_matchesBChar`).** The numerical function matches bchar is primitive recursive.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of matches bchar. ∎
 
-**Theorem (`c9b6_sexprGodelEncode_cap`).** As set out for this part of the library.
+**Theorem (`primrec_decideNonemptyBChar`).** The numerical function decide nonempty bchar is primitive recursive.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of decide nonempty bchar. ∎
 
-**Theorem (`subsetGuardChar_le_one`).** As set out for this part of the library.
+**Theorem (`primrec_consistentBChar`).** The numerical function consistent bchar is primitive recursive.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of consistent bchar. ∎
 
-**Theorem (`subsetBChar_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`primrec_matchesBCharBodyLookup`).** The numerical function matches bchar body lookup is primitive recursive.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of matches bchar body lookup. ∎
 
-**Theorem (`consistentBChar_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`primrec_matchesBChar2`).** The numerical function matches bchar2 is primitive recursive.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of matches bchar2. ∎
 
-**Theorem (`decideNonemptyBChar_le_one`).** As set out for this part of the library.
+**Theorem (`primrec_decideNonemptyBChar2`).** The numerical function decide nonempty bchar2 is primitive recursive.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of decide nonempty bchar2. ∎
 
-**Theorem (`consistentBChar_le_one`).** As set out for this part of the library.
+**Theorem (`primrec_consistentBChar2`).** The numerical function consistent bchar2 is primitive recursive.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of consistent bchar2. ∎
 
-**Theorem (`autStateCardFuelChar_fuelTable_eq`).** As set out for this part of the library.
+**Theorem (`primrec_subsetBChar`).** The numerical function subset bchar is primitive recursive.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of subset bchar. ∎
 
-**Theorem (`interEqChar_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`primrec_interEqChar`).** The numerical function inter eq char is primitive recursive.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of inter eq char. ∎
 
-**Theorem (`matchesBChar_fuelTable_eq`).** As set out for this part of the library.
+**Theorem (`subsetBChar_le_one`).** For every input, subset bchar takes one of the two values zero and one.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Each Boolean-valued component of subset bchar le one is zero or one, and the defining Boolean combination preserves that range. ∎
 
-**Theorem (`primrec_autStateCardFuelChar`).** As set out for this part of the library.
+**Theorem (`interEqChar_le_one`).** For every input, inter eq char takes one of the two values zero and one.
 
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+*Proof.* Each Boolean-valued component of inter eq char le one is zero or one, and the defining Boolean combination preserves that range. ∎
 
-**Theorem (`primrec_autStateCardFuelCharLookup`).** As set out for this part of the library.
-
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
-
-**Theorem (`primrec_autStateCardFuelChar2`).** As set out for this part of the library.
-
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
-
-**Theorem (`primrec_matchesBCatGLookup`).** As set out for this part of the library.
-
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
-
-**Theorem (`primrec_matchesBChar`).** As set out for this part of the library.
-
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
-
-**Theorem (`primrec_decideNonemptyBChar`).** As set out for this part of the library.
-
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
-
-**Theorem (`primrec_consistentBChar`).** As set out for this part of the library.
-
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
-
-**Theorem (`primrec_matchesBCharBodyLookup`).** As set out for this part of the library.
-
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
-
-**Theorem (`primrec_matchesBChar2`).** As set out for this part of the library.
-
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
-
-**Theorem (`primrec_decideNonemptyBChar2`).** As set out for this part of the library.
-
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
-
-**Theorem (`primrec_consistentBChar2`).** As set out for this part of the library.
-
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
-
-**Theorem (`primrec_subsetBChar`).** As set out for this part of the library.
-
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
-
-**Theorem (`primrec_interEqChar`).** As set out for this part of the library.
-
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
-
-**Theorem (`subsetBChar_le_one`).** As set out for this part of the library.
-
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
-
-**Theorem (`interEqChar_le_one`).** As set out for this part of the library.
-
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
-
-**Definition (`ConsistencyPresentation`).** As set out for this part of the library.
-
-*Proof.* By the Gödel coding of expressions and the primitive-recursive list operations. ∎
+**Definition (`ConsistencyPresentation`).** A consistency presentation consists of an enumeration of all neighbourhoods, proofs that the enumerated sets are neighbourhoods, surjectivity of the enumeration, and a recursive decision procedure for finite consistency.

@@ -1,79 +1,79 @@
-Library development supporting Scott's neighbourhood-system formalization.
+This peer proves that the sharp transform preserves projections, finitarity, and computability, then develops order isomorphisms for function spaces and derives self-similarity equations for domains.
 
 <!-- formalization -->
 
-**Theorem (`le_idMap_of_le`).** As set out for this part of the library.
+**Theorem (`aSharp.le_idMap_of_le`).** If \(a\) lies below the identity on the universal domain, then its sharp transform also lies below the identity.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Monotonicity of structural sharp recursion places the inner sharp action below the identity on the sharp domain. Composing with the universal embedding–projection pair preserves the inequality, and that pair's reverse composite lies below the universal identity. ∎
 
-**Theorem (`isFinitary`).** As set out for this part of the library.
+**Theorem (`aSharp.isFinitary`).** If \(a\) is a finitary projection, then its sharp transform is finitary.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The forward and backward sharp combinators exhibit the sharp transform as the projection associated with the sharp fixed neighbourhood system, which has the required finite presentation. ∎
 
-**Theorem (`isComputable`).** As set out for this part of the library.
+**Theorem (`aSharp.isComputable`).** If \(a\) is computable, then its sharp transform is computable.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The induced inner sharp action is computable because sharp inclusion, sharp pairing, and \(a\) are computable. Compose it with the computable universal projection and embedding. ∎
 
-**Theorem (`toElementMap_aSharp`).** As set out for this part of the library.
+**Theorem (`toElementMap_aSharp`).** On elements, the sharp transform sends \(x\) first through the universal projection, then through the inner sharp action, and finally through the universal embedding.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Element maps carry composition to successive application. ∎
 
-**Theorem (`isRetraction_aSharp`).** As set out for this part of the library.
+**Theorem (`isRetraction_aSharp`).** If the inner sharp action of \(a\) is idempotent, then the sharp transform of \(a\) is idempotent.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* In the square of the sharp transform, the middle projection–embedding pair cancels to the identity, and the two remaining inner actions collapse to one by idempotence. ∎
 
-**Theorem (`isProjection_aSharp`).** As set out for this part of the library.
+**Theorem (`isProjection_aSharp`).** If \(a\) is a projection, then its sharp transform is a projection.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Idempotence of \(a\) gives idempotence of its inner sharp action and hence of its sharp transform; the inequality \(a\leq\mathrm{id}\) gives the corresponding inequality for the transform. ∎
 
-**Theorem (`isFinitaryProjection_aSharp`).** As set out for this part of the library.
+**Theorem (`isFinitaryProjection_aSharp`).** The sharp transform of a finitary projection is again a finitary projection.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The transform is a projection by the preceding result and is finitary by the sharp combinator presentation. ∎
 
-**Theorem (`ofIso_comp_ofIso_symm`).** As set out for this part of the library.
+**Theorem (`ofIso_comp_ofIso_symm`).** For an order isomorphism \(e:V_0\cong V'_0\), the approximable maps induced by \(e^{-1}\) and then \(e\) compose to the identity on \(V'_0\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Their element maps apply \(e^{-1}\) and then \(e\), which are mutually inverse. ∎
 
-**Theorem (`funSpaceCongr_hij`).** As set out for this part of the library.
+**Theorem (`funSpaceCongr_hij`).** The two function-space maps induced contravariantly by an order isomorphism of source domains and covariantly by an order isomorphism of target domains compose to the identity on the primed function space.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Composition of exponential maps reduces to composition in the source and target components; both component composites are identities by the inverse laws for the two order isomorphisms. ∎
 
-**Theorem (`ofIso_symm_comp_ofIso`).** As set out for this part of the library.
+**Theorem (`ofIso_symm_comp_ofIso`).** For an order isomorphism \(e:V_0\cong V'_0\), the approximable maps induced by \(e\) and then \(e^{-1}\) compose to the identity on \(V_0\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Their element maps apply \(e\) and then \(e^{-1}\), which are mutually inverse. ∎
 
-**Theorem (`funSpaceCongr_hji`).** As set out for this part of the library.
+**Theorem (`funSpaceCongr_hji`).** The function-space maps induced in the two opposite directions compose to the identity on the unprimed function space.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Reduce composition of exponential maps to the source and target component composites, each of which is the identity by the inverse laws. ∎
 
-**Definition (`orderIsoOfMutualInverse`).** As set out for this part of the library.
+**Definition (`orderIsoOfMutualInverse`).** Two approximable maps \(i:D\to E\) and \(j:E\to D\) whose composites are identities determine an order isomorphism between the element posets of \(D\) and \(E\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Use their element maps as the forward and inverse functions. The composite equations give the inverse laws, and monotonicity in both directions reflects as well as preserves order. ∎
 
-**Definition (`funSpaceCongrOrderIso`).** As set out for this part of the library.
+**Definition (`funSpaceCongrOrderIso`).** Order isomorphisms \(V_0\cong V'_0\) and \(V_1\cong V'_1\) induce an order isomorphism \([V_0\to V_1]\cong[V'_0\to V'_1]\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Use the exponential maps obtained by transporting arguments contravariantly and values covariantly; the two preceding function-space inverse equations show that these maps are mutual inverses. ∎
 
-**Theorem (`curry_isomorphic`).** As set out for this part of the library.
+**Theorem (`curry_isomorphic`).** The function-space domains \([V_0\times V_1\to V_2]\) and \([V_0\to[V_1\to V_2]]\) are isomorphic.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The standard currying order isomorphism supplies the domain isomorphism. ∎
 
-**Theorem (`funSpace_congr`).** As set out for this part of the library.
+**Theorem (`funSpace_congr`).** Isomorphic source domains and isomorphic target domains have isomorphic function-space domains.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Choose order isomorphisms witnessing the two domain isomorphisms and apply the induced function-space order isomorphism. ∎
 
-**Theorem (`funSpace_congr_left`).** As set out for this part of the library.
+**Theorem (`funSpace_congr_left`).** Replacing the source of a function-space domain by an isomorphic domain preserves its isomorphism type.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Apply function-space congruence to the given source isomorphism and the identity isomorphism of the target. ∎
 
-**Theorem (`funSpace_congr_right`).** As set out for this part of the library.
+**Theorem (`funSpace_congr_right`).** Replacing the target of a function-space domain by an isomorphic domain preserves its isomorphism type.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Apply function-space congruence to the identity isomorphism of the source and the given target isomorphism. ∎
 
-**Theorem (`prod_self_isomorphic`).** As set out for this part of the library.
+**Theorem (`prod_self_isomorphic`).** If \(D\cong[D\to V]\) and \(V\times V\cong V\), then \(D\times D\cong D\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Replace each copy of \(D\) by \([D\to V]\), identify their product with \([D\to V\times V]\), replace \(V\times V\) by \(V\), and finally use the inverse of the original isomorphism. ∎
 
-**Theorem (`funSpace_self_isomorphic`).** As set out for this part of the library.
+**Theorem (`funSpace_self_isomorphic`).** If \(D\cong[D\to V]\) and \(V\times V\cong V\), then \(D\cong[D\to D]\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* First obtain \(D\times D\cong D\). Replace the codomain \(D\) by \([D\to V]\), uncurry to obtain functions on \(D\times D\), replace that product by \(D\), and use the original isomorphism; reversing the resulting isomorphism gives the claim. ∎

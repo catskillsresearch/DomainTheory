@@ -2,26 +2,24 @@ Union of neighbourhoods is a computable map on the powerdomain.
 
 <!-- formalization -->
 
-**Definition (`unionMap`).** As set out for this part of the library.
+**Definition (`unionMap`).** Define union on the iterated powerdomain by relating a family of families to a target family when every neighbourhood occurring in a source member is contained in some target member.
 
-*Proof.* By the code of finite unions and the presentation of the powerdomain. ∎
+**Theorem (`unionMap_rel`).** The union relation holds exactly when its arguments are valid powerdomain neighbourhoods and every neighbourhood occurring in the source is contained in a member of the target.
 
-**Theorem (`unionMap_rel`).** As set out for this part of the library.
+*Proof.* This equivalence is the relation by which union on the iterated powerdomain is defined. ∎
 
-*Proof.* By the code of finite unions and the presentation of the powerdomain. ∎
+**Theorem (`unionMap_rel_Ypd_iff`).** For canonical presented neighbourhoods, union holds exactly when every doubly decoded source index is contained in a basic neighbourhood indexed by the decoded target list.
 
-**Theorem (`unionMap_rel_Ypd_iff`).** As set out for this part of the library.
+*Proof.* Given the union relation, apply it to canonical basic members selected by the two source indices, then choose a basic target generator below the resulting member. Conversely, represent arbitrary source members by decoded basic generators and compose their inclusions with the assumed inclusion into a decoded target generator. ∎
 
-*Proof.* By the code of finite unions and the presentation of the powerdomain. ∎
+**Theorem (`ypd_zero_subset_inter`).** The zeroth presented powerdomain neighbourhood, which is empty, is contained in the intersection of any two presented powerdomain neighbourhoods.
 
-**Theorem (`ypd_zero_subset_inter`).** As set out for this part of the library.
+*Proof.* The zeroth code decodes to the empty family, which is contained in every set and hence in the stated intersection. ∎
 
-*Proof.* By the code of finite unions and the presentation of the powerdomain. ∎
+**Theorem (`unionMap_isComputable`).** Union from the iterated powerdomain to the powerdomain is computable for the canonical powerdomain presentations.
 
-**Theorem (`unionMap_isComputable`).** As set out for this part of the library.
+*Proof.* By the canonical-code characterization, the union relation is a finite succession of universal list quantifiers followed by existence of a target index satisfying decidable basic inclusion. This predicate is decidable, and therefore recursively enumerable. ∎
 
-*Proof.* By the code of finite unions and the presentation of the powerdomain. ∎
+**Theorem (`unionMap_rel_fin`).** For finitely generated upper families, union holds exactly when every generator in every source list is contained in a target generator.
 
-**Theorem (`unionMap_rel_fin`).** As set out for this part of the library.
-
-*Proof.* By the code of finite unions and the presentation of the powerdomain. ∎
+*Proof.* Forward, apply union to each source generator and then choose a target generator below the resulting target member. Reverse, choose generators below an arbitrary source family and one of its members; the assumed generator inclusion, followed by these two containments, supplies the required target witness. ∎

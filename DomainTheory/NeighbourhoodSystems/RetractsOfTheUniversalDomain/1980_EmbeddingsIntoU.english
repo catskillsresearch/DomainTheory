@@ -1,39 +1,39 @@
-Library development supporting Scott's neighbourhood-system formalization.
+This peer develops universality for neighbourhood systems and records the principal embeddings of function, product, and sum domains into Scott's universal domain.
 
 <!-- formalization -->
 
-**Definition (`IsUniversal`).** As set out for this part of the library.
+**Definition (`IsUniversal`).** A neighbourhood system is universal when every neighbourhood system with countably many neighbourhoods is isomorphic to a subsystem of it.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* This is the defining universal embedding property. ∎
 
-**Theorem (`trianglelefteq_of_isomorphic_left`).** As set out for this part of the library.
+**Theorem (`trianglelefteq_of_isomorphic_left`).** If a domain is isomorphic to a second domain and the second is isomorphic to a subsystem of a third, then the first is isomorphic to a subsystem of the third.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Compose the first isomorphism with the isomorphism witnessing the given subsystem representation. ∎
 
-**Theorem (`trianglelefteq_trans`).** As set out for this part of the library.
+**Theorem (`trianglelefteq_trans`).** Being isomorphic to a subsystem is transitive.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Turn the two subsystem embeddings into projection pairs, compose those pairs, recover a subsystem representation of the composite, and compose its isomorphism with the original one. ∎
 
-**Theorem (`U_isUniversal`).** As set out for this part of the library.
+**Theorem (`U_isUniversal`).** Scott's domain \(U\) is universal for neighbourhood systems with countably many neighbourhoods.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Every such system has an isomorphic copy whose neighbourhoods form a subsystem of \(U\). ∎
 
-**Theorem (`funSpaceUU_trianglelefteq_U`).** As set out for this part of the library.
+**Theorem (`funSpaceUU_trianglelefteq_U`).** The function-space domain \([U\to U]\) is isomorphic to a subsystem of \(U\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The canonical arrow injection and projection form a projection pair, hence exhibit the function space as a retract and therefore as an isomorphic subsystem. ∎
 
-**Theorem (`isUniversal_of_isomorphic`).** As set out for this part of the library.
+**Theorem (`isUniversal_of_isomorphic`).** Any domain isomorphic to a universal domain is itself universal.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The isomorphism makes the original universal domain an isomorphic subsystem of the target; transitivity then transports every universal embedding to the target. ∎
 
-**Theorem (`V.isUniversal`).** As set out for this part of the library.
+**Theorem (`V.isUniversal`).** The effectively presented domain \(V\) is universal.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The effective isomorphism between \(U\) and \(V\) is in particular a domain isomorphism, so universality transfers from \(U\). ∎
 
-**Theorem (`prodUU_trianglelefteq_U`).** As set out for this part of the library.
+**Theorem (`prodUU_trianglelefteq_U`).** The product domain \(U\times U\) is isomorphic to a subsystem of \(U\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The canonical product injection and projection form a projection pair, which yields the required subsystem representation. ∎
 
-**Theorem (`sumUU_trianglelefteq_U`).** As set out for this part of the library.
+**Theorem (`sumUU_trianglelefteq_U`).** The separated sum of two copies of \(U\) is isomorphic to a subsystem of \(U\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The canonical sum injection and projection form a projection pair, using the nonemptiness of every neighbourhood of \(U\). ∎

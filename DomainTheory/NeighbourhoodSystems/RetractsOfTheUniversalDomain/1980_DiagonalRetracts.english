@@ -1,15 +1,15 @@
-Library development supporting Scott's neighbourhood-system formalization.
+This peer records the two canonical diagonal retractions: every neighbourhood system is a retract of both its self-product and its self-function space.
 
 <!-- formalization -->
 
-**Theorem (`exercise_8_20_assembly`).** As set out for this part of the library.
+**Theorem (`exercise_8_20_assembly`).** For every neighbourhood system \(D\), the domain \(D\) is a retract of \(D\times D\), and it is also a retract of the function-space domain \([D\to D]\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Use the first-coordinate embedding for the product and the constant-function embedding for the function space. ∎
 
-**Theorem (`example_820`).** As set out for this part of the library.
+**Theorem (`example_820`).** The conjunction of the preceding two retraction assertions holds uniformly for every neighbourhood system; in particular, each assertion also holds separately.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Combine the uniform product and function-space retractions, and obtain the two remaining conjuncts by projection. ∎
 
-**Theorem (`trianglelefteq_prod_snd`).** As set out for this part of the library.
+**Theorem (`trianglelefteq_prod_snd`).** For neighbourhood systems \(A\) and \(B\), the second factor \(B\) is a retract of \(A\times B\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Embed \(b\) as \((\bot,b)\) and project to the second coordinate. Projection after embedding is the identity, while embedding after projection lies below the identity on the product. ∎

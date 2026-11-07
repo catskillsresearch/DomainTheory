@@ -2,1134 +2,1026 @@ Recursively enumerable and recursively decidable predicates on the natural numbe
 
 <!-- formalization -->
 
-**Theorem (`amGM`).** As set out for this part of the library.
+**Theorem (`amGM`).** For natural numbers, four times their product is at most the square of their sum.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Expanding the square reduces the inequality to nonnegativity of the square of the difference of the two numbers. ∎
 
-**Theorem (`iter_sq_le`).** As set out for this part of the library.
+**Theorem (`iter_sq_le`).** Every value returned by the square-root iteration has square at most the input.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction over the square-root iteration uses the arithmetic–geometric mean inequality to show that each positive update remains below the input after squaring; the zero branch is immediate. ∎
 
-**Theorem (`lt_of_mul_lt_mul_left'`).** As set out for this part of the library.
+**Theorem (`lt_of_mul_lt_mul_left'`).** A strict inequality after multiplication by a common natural factor implies the corresponding strict inequality of the other factors.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* A strict product inequality forces the common factor to be positive; cancellation of that positive factor then gives the strict inequality between the remaining factors. ∎
 
-**Theorem (`lt_iter_succ_sq`).** As set out for this part of the library.
+**Theorem (`lt_iter_succ_sq`).** If the input lies below the square of one more than an initial guess, it also lies below the square of one more than the resulting square-root iterate.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the iteration compares the arithmetic-mean update with the preceding guess; the arithmetic–geometric mean estimate and cancellation of a positive factor preserve the strict upper-square bound. ∎
 
-**Theorem (`lt_succ_sqrt`).** As set out for this part of the library.
+**Theorem (`lt_succ_sqrt`).** Every natural number is strictly below the square of one more than its square root.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The square root satisfies the lower-square bound, and the next consecutive square is therefore strictly above the input by the interval characterization. ∎
 
-**Theorem (`sqrt_le`).** As set out for this part of the library.
+**Theorem (`sqrt_le`).** The square of the natural square root of a number is at most that number.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The square-root iteration already has square at most the input, and the natural square root is the iteration begun from the input itself. ∎
 
-**Theorem (`sqrt_eq_of`).** As set out for this part of the library.
+**Theorem (`sqrt_eq_of`).** If a number lies between two consecutive squares beginning at the square of a given integer, its natural square root is that integer.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The two hypotheses place the number in the unique interval from one square up to the next consecutive square. ∎
 
-**Theorem (`sqrt_add_eq`).** As set out for this part of the library.
+**Theorem (`sqrt_add_eq`).** Adding at most twice an integer to its square does not change its natural square root.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The hypothesis places the added term below twice the base, so the result lies from the base square up to, but not including, the next square; the square-root interval characterization applies. ∎
 
-**Theorem (`unpair_pair`).** As set out for this part of the library.
+**Theorem (`unpair_pair`).** Unpairing a paired pair of natural numbers recovers the original ordered pair.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Substitution of the explicit pairing formula identifies its square-root block; the resulting quotient and offset calculations recover both entries. ∎
 
-**Theorem (`unpair_pair_fst`).** As set out for this part of the library.
+**Theorem (`unpair_pair_fst`).** The first component obtained by unpairing a paired pair is its first entry.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Taking first components in the pairing inverse identity recovers the first entry. ∎
 
-**Theorem (`unpair_pair_snd`).** As set out for this part of the library.
+**Theorem (`unpair_pair_snd`).** The second component obtained by unpairing a paired pair is its second entry.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Taking second components in the pairing inverse identity recovers the second entry. ∎
 
-**Definition (`selectFn`).** As set out for this part of the library.
+**Definition (`selectFn`).** This selector returns its first value when its numerical control is one and its second value when the control is zero.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Theorem (`selectFn_one`).** A selector controlled by one returns its first value.
 
-**Theorem (`selectFn_one`).** As set out for this part of the library.
+*Proof.* Substitution of control one cancels the second summand and leaves the first value. ∎
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Theorem (`selectFn_zero`).** A selector controlled by zero returns its second value.
 
-**Theorem (`selectFn_zero`).** As set out for this part of the library.
+*Proof.* Substitution of control zero cancels the first summand and leaves the second value. ∎
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Theorem (`selectFn_ite`).** A zero-one control obtained from a proposition makes numerical selection agree with ordinary case distinction.
 
-**Theorem (`selectFn_ite`).** As set out for this part of the library.
+*Proof.* In the true case the Boolean control is one and in the false case it is zero; the two selector equations settle the cases. ∎
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`RecDecidable`).** A predicate on natural numbers is recursively decidable when a primitive-recursive characteristic function takes the value one exactly on its true instances.
 
-**Definition (`RecDecidable`).** As set out for this part of the library.
+**Definition (`REPred`).** A predicate on natural numbers is recursively enumerable when membership is the existence of a numerical witness satisfying a recursively decidable relation.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`REPred₂`).** A binary predicate is recursively enumerable when its pullback along the fixed pairing of natural numbers is recursively enumerable.
 
-**Definition (`REPred`).** As set out for this part of the library.
+**Definition (`RecDecidable₂`).** A binary predicate is recursively decidable when its pullback along the fixed pairing of natural numbers is recursively decidable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`RecDecidable₃`).** A ternary predicate is recursively decidable when the predicate obtained by nested pairing is recursively decidable.
 
-**Definition (`REPred₂`).** As set out for this part of the library.
+**Definition (`encodeList`).** The empty list is coded by zero, and a nonempty list is coded by pairing its head with the code of its tail and then taking the successor.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`foldStep`).** A coded fold step either leaves a terminal state fixed or removes the next coded list entry and updates the accumulator with the given step operation.
 
-**Definition (`RecDecidable₂`).** As set out for this part of the library.
+**Definition (`foldCode`).** The fold of a coded list iterates the coded fold step for a bounded number of stages and returns the resulting accumulator.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`halfParity`).** This primitive recursion simultaneously records the quotient and remainder of a natural number on division by two.
 
-**Definition (`RecDecidable₃`).** As set out for this part of the library.
+**Definition (`isOne`).** This zero-one characteristic function has value one exactly at the natural number one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Theorem (`isOne_eq_one_iff`).** The characteristic of one has value one exactly at the input one.
 
-**Definition (`encodeList`).** As set out for this part of the library.
+*Proof.* Expanding the two truncated differences shows that their sum vanishes exactly when the input is neither below nor above one. ∎
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Theorem (`isOne_one`).** The characteristic of one evaluates to one at one.
 
-**Definition (`foldStep`).** As set out for this part of the library.
+*Proof.* Substituting one makes both truncated differences zero, leaving one. ∎
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Theorem (`isOne_zero`).** The characteristic of one evaluates to zero at zero.
 
-**Definition (`foldCode`).** As set out for this part of the library.
+*Proof.* Substituting zero makes the second truncated difference one, which is subtracted from one. ∎
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`allListStp`).** This fold step preserves a success flag precisely when the current coded list entry satisfies the given characteristic function.
 
-**Definition (`halfParity`).** As set out for this part of the library.
+**Definition (`allListChar`).** This characteristic function tests whether every entry of a coded list satisfies a given numerical predicate.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`bExistsFn`).** This bounded search characteristic records whether some index below the bound satisfies the given numerical predicate.
 
-**Definition (`isOne`).** As set out for this part of the library.
+**Definition (`bForallFn`).** This bounded search characteristic records whether every index below the bound satisfies the given numerical predicate.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`existsListStp`).** This fold step records whether the current coded list entry or an earlier entry satisfies the given characteristic function.
 
-**Theorem (`isOne_eq_one_iff`).** As set out for this part of the library.
+**Definition (`existsListChar`).** This characteristic function tests whether some entry of a coded list satisfies a given numerical predicate.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`isBinDigit`).** This characteristic function recognizes exactly the two binary digits zero and one.
 
-**Theorem (`isOne_one`).** As set out for this part of the library.
+**Definition (`allBinDigitsChar`).** This characteristic function tests whether every entry of a coded list is a binary digit.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`isZero`).** This zero-one characteristic function has value one exactly at zero.
 
-**Theorem (`isOne_zero`).** As set out for this part of the library.
+**Theorem (`le_pair_right`).** Each component of a paired natural number is at most the pair code.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Expanding the pairing formula leaves the second component plus nonnegative terms. ∎
 
-**Definition (`allListStp`).** As set out for this part of the library.
+**Definition (`listLenStp`).** This fold step increments the accumulated length by one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`listLenChar`).** This numerical function computes the length of the list represented by a code.
 
-**Definition (`allListChar`).** As set out for this part of the library.
+**Definition (`lowOr`).** This operation computes the lowest binary digit of the bitwise disjunction of two natural numbers.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`lorStep`).** This state transition removes the lowest bits of two numbers while accumulating their bitwise disjunction.
 
-**Definition (`bExistsFn`).** As set out for this part of the library.
+**Definition (`mapPairStep`).** This operation adjoins the pair formed from a fixed parameter and a list entry to an accumulated list code.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`mapPairStp`).** This packed fold step applies the operation that pairs every list entry with a fixed parameter.
 
-**Definition (`bForallFn`).** As set out for this part of the library.
+**Definition (`mapPairCode`).** This operation codes the list obtained by pairing a fixed natural number with every entry of a coded list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`mulBit`).** This operation combines two zero-one values by multiplication, thereby representing conjunction.
 
-**Definition (`existsListStp`).** As set out for this part of the library.
+**Definition (`decodeFuelOkCharBody`).** This one-stage characteristic interprets a tagged code using previously computed values for its recursive subcodes.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`decodeFuelOkChar`).** This fuel-bounded characteristic evaluates well-formedness of coded expressions by recursion on the available fuel.
 
-**Definition (`existsListChar`).** As set out for this part of the library.
+**Definition (`myLor`).** This operation computes binary disjunction by repeatedly consuming the low bits of its two arguments.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`natEqChar`).** This zero-one characteristic function recognizes equality of two natural numbers.
 
-**Definition (`isBinDigit`).** As set out for this part of the library.
+**Theorem (`natEqChar_eq_one_iff`).** The natural-number equality characteristic has value one exactly when its two arguments are equal.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The two opposite truncated differences vanish simultaneously exactly when the arguments are equal. ∎
 
-**Definition (`allBinDigitsChar`).** As set out for this part of the library.
+**Definition (`codeBound`).** This recursively defined bound dominates every code of a sufficiently short list of binary digits.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`listEqStpNonzero`).** This comparison step consumes one entry from a nonempty remaining list code and preserves the equality flag exactly when the entries agree.
 
-**Definition (`isZero`).** As set out for this part of the library.
+**Definition (`listEqStp`).** This comparison step handles the empty-list case and otherwise advances the coded list comparison.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`listEqChar`).** This characteristic function tests equality of the two lists represented by given codes.
 
-**Theorem (`le_pair_right`).** As set out for this part of the library.
+**Definition (`listEqStep`).** This unpacked comparison step applies one coded-list equality update to a state and a new entry.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`nthStp`).** This fold step counts list positions and retains the entry at the requested index, using a prescribed default if none is found.
 
-**Definition (`listLenStp`).** As set out for this part of the library.
+**Definition (`nthCode`).** This operation returns the requested entry of a coded list, or a prescribed default beyond its length.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`appendListTabFn`).** This table entry function reads first from one coded list and then from a second, with the split determined by the first length.
 
-**Definition (`listLenChar`).** As set out for this part of the library.
+**Definition (`decodeFuelOkCharLookup`).** This table-based evaluator performs one tagged well-formedness step using prior values stored in a coded table.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`dropListTabFn`).** This table entry function reads a coded list after shifting its index by the number of entries to discard.
 
-**Definition (`lowOr`).** As set out for this part of the library.
+**Definition (`reForallF`).** This update consumes one witness code and preserves a success flag when the corresponding decidable relation holds.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`reForallStp`).** This packed update advances the witness-list test for universal membership in a recursively enumerable predicate.
 
-**Definition (`lorStep`).** As set out for this part of the library.
+**Definition (`reForallChar`).** This characteristic checks a list of proposed witnesses against the corresponding entries of another coded list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Theorem (`sqrt_le_add`).** Every natural number is at most the square of its natural square root plus twice that square root.
 
-**Definition (`mapPairStep`).** As set out for this part of the library.
+*Proof.* The input is below the next square, whose expansion is the square-root square plus twice the square root plus one; natural-number discreteness removes the final one. ∎
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Theorem (`pair_unpair`).** Pairing the two components obtained by unpairing a natural number recovers that number.
 
-**Definition (`mapPairStp`).** As set out for this part of the library.
+*Proof.* The square-root bounds locate the number in its triangular pairing block; substituting the resulting quotient and offset reconstructs it. ∎
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`tabStep`).** This recursion step adjoins the next value of a finite numerical table to its code.
 
-**Definition (`mapPairCode`).** As set out for this part of the library.
+**Definition (`tabCode`).** This operation codes the finite table of values of a numerical function below a given bound.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`appendListCode`).** This operation produces a code for the concatenation of two coded lists.
 
-**Definition (`mulBit`).** As set out for this part of the library.
+**Definition (`dropCode`).** This operation produces a code for the list obtained after deleting a prescribed initial segment.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`fuelTableStep`).** This operation constructs the next finite table of fuel-bounded values from the preceding table.
 
-**Definition (`decodeFuelOkCharBody`).** As set out for this part of the library.
+**Definition (`fuelTable`).** This primitive recursion builds the finite table of all fuel-bounded values below a prescribed code bound.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`takeListTabFn`).** This table entry function reads an entry of a coded list at the table index.
 
-**Definition (`decodeFuelOkChar`).** As set out for this part of the library.
+**Definition (`takeCode`).** This operation produces a code for the prescribed initial segment of a coded list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Theorem (`unpair_snd_le`).** The second component obtained by unpairing a natural number is at most that number.
 
-**Definition (`myLor`).** As set out for this part of the library.
+*Proof.* The second component is bounded by its reconstructed pair, and pairing the two unpaired components returns the original number. ∎
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+**Definition (`decodeList`).** Zero decodes to the empty list, while a successor code decodes by unpairing its predecessor into the head and the code of the tail.
 
-**Definition (`natEqChar`).** As set out for this part of the library.
+**Theorem (`primrec_id`).** The numerical function defining id is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The identity is the first projection after pairing the input with zero, hence is primitive recursive. ∎
 
-**Theorem (`natEqChar_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`rec_add`).** The displayed primitive recursion computes add on natural numbers.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the second argument matches zero with the initial value and each successor with one further increment. ∎
 
-**Definition (`codeBound`).** As set out for this part of the library.
+**Theorem (`rec_mul`).** The displayed primitive recursion computes mul on natural numbers.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the second argument turns the successor equation into one further addition, matching multiplication by a successor. ∎
 
-**Definition (`listEqStpNonzero`).** As set out for this part of the library.
+**Theorem (`primrec_add`).** The numerical function defining add is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Primitive recursion from the first input, adding one at each successor of the second, computes addition. ∎
 
-**Definition (`listEqStp`).** As set out for this part of the library.
+**Theorem (`primrec_mul`).** The numerical function defining mul is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The mul construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Definition (`listEqChar`).** As set out for this part of the library.
+**Theorem (`rec_pred`).** The displayed primitive recursion computes pred on natural numbers.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The zero clause returns zero, while at a successor the recursion returns the preceding index. ∎
 
-**Definition (`listEqStep`).** As set out for this part of the library.
+**Theorem (`primrec_pred`).** The numerical function defining pred is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Primitive recursion returns the predecessor stage at each successor and zero at the base. ∎
 
-**Definition (`nthStp`).** As set out for this part of the library.
+**Theorem (`rec_sub`).** The displayed primitive recursion computes sub on natural numbers.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the second argument matches zero subtraction and one further predecessor at each successor. ∎
 
-**Definition (`nthCode`).** As set out for this part of the library.
+**Theorem (`primrec_sub`).** The numerical function defining sub is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Primitive recursion from the first input applies predecessor once for each unit of the second input. ∎
 
-**Definition (`appendListTabFn`).** As set out for this part of the library.
+**Theorem (`nat_mul_eq_one`).** A product of natural numbers is one exactly when both factors are one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Unique factorization of one in the natural numbers forces each factor to be one, and the converse is immediate by multiplication. ∎
 
-**Definition (`decodeFuelOkCharLookup`).** As set out for this part of the library.
+**Theorem (`primrec_add₂`).** The numerical function defining add₂ is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The add₂ construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Definition (`dropListTabFn`).** As set out for this part of the library.
+**Theorem (`primrec_mul₂`).** The numerical function defining mul₂ is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The mul₂ construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Definition (`reForallF`).** As set out for this part of the library.
+**Theorem (`primrec_sub₂`).** The numerical function defining sub₂ is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The sub₂ construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Definition (`reForallStp`).** As set out for this part of the library.
+**Theorem (`primrec_selectFn`).** The numerical function defining selectFn is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The select function construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Definition (`reForallChar`).** As set out for this part of the library.
+**Theorem (`RecDecidable.of_iff`).** A predicate pointwise equivalent to a recursively decidable predicate is recursively decidable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Use the same primitive-recursive characteristic and replace its truth specification by the given pointwise equivalence. ∎
 
-**Theorem (`sqrt_le_add`).** As set out for this part of the library.
+**Theorem (`RecDecidable.comp`).** The pullback of a recursively decidable predicate along a primitive-recursive function is recursively decidable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Compose the witnessing zero–one characteristic with the primitive-recursive input function. ∎
 
-**Theorem (`pair_unpair`).** As set out for this part of the library.
+**Theorem (`RecDecidable.and`).** The conjunction of two recursively decidable predicates is recursively decidable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Multiply the two zero–one characteristic functions, so the result is one exactly when both original predicates hold. ∎
 
-**Definition (`tabStep`).** As set out for this part of the library.
+**Theorem (`RecDecidable.natEq`).** Equality of the values of two primitive-recursive natural-number functions is recursively decidable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Compare the two primitive-recursive values in both directions by truncated subtraction; both differences vanish exactly when the values are equal. ∎
 
-**Definition (`tabCode`).** As set out for this part of the library.
+**Theorem (`RecDecidable.not`).** The complement of a recursively decidable predicate is recursively decidable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Subtract the zero–one characteristic from one; this exchanges its accepting and rejecting values. ∎
 
-**Definition (`appendListCode`).** As set out for this part of the library.
+**Theorem (`RecDecidable.em`).** Every instance of a recursively decidable predicate either holds or fails.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The witnessing characteristic has a definite natural value; its specification decides whether the predicate holds. ∎
 
-**Definition (`dropCode`).** As set out for this part of the library.
+**Theorem (`RecDecidable.or`).** The disjunction of two recursively decidable predicates is recursively decidable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Use the zero–one test of the sum of the two characteristics; the sum is positive exactly when at least one predicate holds. ∎
 
-**Definition (`fuelTableStep`).** As set out for this part of the library.
+**Theorem (`RecDecidable.re`).** Every recursively decidable predicate is recursively enumerable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Introduce a dummy existential witness and use the original decidable predicate as the witness relation. ∎
 
-**Definition (`fuelTable`).** As set out for this part of the library.
+**Theorem (`RecDecidable₂.re`).** Every recursively decidable binary relation is recursively enumerable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Apply the decidable-to-enumerable conversion after encoding the two arguments by pairing. ∎
 
-**Definition (`takeListTabFn`).** As set out for this part of the library.
+**Theorem (`REPred.of_iff`).** A predicate pointwise equivalent to a recursively enumerable predicate is recursively enumerable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Keep the same decidable witness relation and transport its existential characterization through the pointwise equivalence. ∎
 
-**Definition (`takeCode`).** As set out for this part of the library.
+**Theorem (`REPred.comp`).** The pullback of a recursively enumerable predicate along a primitive-recursive function is recursively enumerable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Apply the primitive-recursive input map to the object coordinate while retaining the existential witness coordinate. ∎
 
-**Theorem (`unpair_snd_le`).** As set out for this part of the library.
+**Theorem (`REPred.and`).** The conjunction of two recursively enumerable predicates is recursively enumerable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Multiply the two zero–one characteristic functions, so the result is one exactly when both original predicates hold. ∎
 
-**Definition (`decodeList`).** As set out for this part of the library.
+**Theorem (`REPred.proj`).** Existential projection of a recursively enumerable predicate along the first paired coordinate is recursively enumerable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Pair the input with an existential witness and absorb the witness into the existential quantifier already present in recursive enumerability. ∎
 
-**Theorem (`primrec_id`).** As set out for this part of the library.
+**Theorem (`REPred.or`).** The disjunction of two recursively enumerable predicates is recursively enumerable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Combine the two zero–one characteristics by bounded addition, which is positive exactly when at least one predicate holds. ∎
 
-**Theorem (`rec_add`).** As set out for this part of the library.
+**Theorem (`le_pair_left`).** Each component of a paired natural number is at most the pair code.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Expanding the pairing formula leaves the first component plus nonnegative terms. ∎
 
-**Theorem (`rec_mul`).** As set out for this part of the library.
+**Theorem (`encodeList_length_le`).** The length of a finite list is at most its natural-number code.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the list uses the tail bound and the fact that a pair code dominates its second component. ∎
 
-**Theorem (`primrec_add`).** As set out for this part of the library.
+**Theorem (`foldStep_zero`).** The coded finite fold agrees with repeated application of its step function to the decoded list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* A zero remaining code activates the terminal branch, which preserves the packed accumulator state. ∎
 
-**Theorem (`primrec_mul`).** As set out for this part of the library.
+**Theorem (`foldStep_pos`).** The coded finite fold agrees with repeated application of its step function to the decoded list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* For a successor list code, subtracting one exposes its paired head and tail; the nonempty branch advances the tail and updates the accumulator. ∎
 
-**Theorem (`rec_pred`).** As set out for this part of the library.
+**Theorem (`rec_const_iterate`).** The displayed primitive recursion computes const iterate on natural numbers.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the iteration count identifies the base state and one further application of the function. ∎
 
-**Theorem (`primrec_pred`).** As set out for this part of the library.
+**Theorem (`foldStep_iterate`).** The coded finite fold agrees with repeated application of its step function to the decoded list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the fuel follows the empty-list fixed point or consumes one encoded head; the length bound guarantees enough fuel for the tail. ∎
 
-**Theorem (`rec_sub`).** As set out for this part of the library.
+**Theorem (`foldCode_eq`).** The coded finite fold agrees with repeated application of its step function to the decoded list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The code supplies at least the decoded list length as fuel, so the fold-step iteration theorem yields the ordinary left fold. ∎
 
-**Theorem (`primrec_sub`).** As set out for this part of the library.
+**Theorem (`unpair_left_le`).** The first component obtained by unpairing a natural number is at most that number.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The first component is bounded by its pair code, and pairing the two unpaired components reconstructs the original number. ∎
 
-**Theorem (`nat_mul_eq_one`).** As set out for this part of the library.
+**Theorem (`pair_le_pair_left`).** Increasing the first component while fixing the second cannot decrease the pair code.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Strict monotonicity of pairing in the first coordinate handles the strict case, while equality is immediate. ∎
 
-**Theorem (`primrec_add₂`).** As set out for this part of the library.
+**Theorem (`pair_le_pair_right'`).** Increasing the second component while fixing the first cannot decrease the pair code.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Strict monotonicity of pairing in the second coordinate handles the strict case, while equality is immediate. ∎
 
-**Theorem (`primrec_mul₂`).** As set out for this part of the library.
+**Theorem (`pair_le_pair`).** Increasing both components cannot decrease the pair code.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* First increase the first coordinate and then the second, composing the two coordinatewise monotonicity results. ∎
 
-**Theorem (`primrec_sub₂`).** As set out for this part of the library.
+**Theorem (`decodeList_zero`).** Zero decodes to the empty list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The zero clause of decoding is the empty list. ∎
 
-**Theorem (`primrec_selectFn`).** As set out for this part of the library.
+**Theorem (`decodeList_succ`).** A successor code decodes to the first unpaired component of its predecessor followed by the decoding of the second component.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The successor clause unpairs the predecessor into the head and recursively decoded tail. ∎
 
-**Theorem (`RecDecidable.of_iff`).** As set out for this part of the library.
+**Theorem (`encodeList_decodeList`).** Encoding the list decoded from a natural number recovers that number.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Strong induction on the code uses the strictly smaller tail component and reconstruction by pairing. ∎
 
-**Theorem (`RecDecidable.comp`).** As set out for this part of the library.
+**Theorem (`foldCode_eq'`).** The coded finite fold agrees with repeated application of its step function to the decoded list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Encode the decoded list without changing the code, then apply the coded-fold theorem to that list. ∎
 
-**Theorem (`RecDecidable.and`).** As set out for this part of the library.
+**Theorem (`primrec_foldStepPacked`).** The numerical function defining foldStepPacked is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The foldStepPacked construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`RecDecidable.natEq`).** As set out for this part of the library.
+**Theorem (`primrec_foldCode`).** The numerical function defining foldCode is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The foldCode construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`RecDecidable.not`).** As set out for this part of the library.
+**Theorem (`isOne_le_one`).** The characteristic of one is always at most one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Its definition subtracts a natural number from one, so truncated subtraction cannot exceed one. ∎
 
-**Theorem (`RecDecidable.em`).** As set out for this part of the library.
+**Theorem (`isOne_of_ne_one`).** At every input other than one, the characteristic of one is zero.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* If the input is below or above one, one of the two opposite truncated differences is positive, forcing the final subtraction to zero. ∎
 
-**Theorem (`RecDecidable.or`).** As set out for this part of the library.
+**Theorem (`primrec_isOne`).** The numerical function defining isOne is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The isOne construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`RecDecidable.re`).** As set out for this part of the library.
+**Theorem (`isZero_eq_one_iff`).** The zero characteristic has value one exactly at zero.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The minimum with one is zero exactly at zero; subtracting it from one gives the claimed truth condition. ∎
 
-**Theorem (`RecDecidable₂.re`).** As set out for this part of the library.
+**Theorem (`isZero_le_one`).** The zero characteristic is always at most one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* It is obtained by truncated subtraction from one, and therefore cannot exceed one. ∎
 
-**Theorem (`REPred.of_iff`).** As set out for this part of the library.
+**Theorem (`primrec_isZero`).** The numerical function defining isZero is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The isZero construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`REPred.comp`).** As set out for this part of the library.
+**Theorem (`primrec_le`).** The numerical function defining le is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The le construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`REPred.and`).** As set out for this part of the library.
+**Theorem (`bForallFn_le_one`).** The bounded universal characteristic is always at most one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the bound starts at one and each new selector returns either zero or a one-characteristic, both at most one. ∎
 
-**Theorem (`REPred.proj`).** As set out for this part of the library.
+**Theorem (`bForallFn_eq_one_iff`).** The bounded universal characteristic is one exactly when the tested function is one at every index below the bound.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the bound separates the previous indices from the new final index; the binary accumulator remains one precisely when both parts succeed. ∎
 
-**Theorem (`REPred.or`).** As set out for this part of the library.
+**Theorem (`bExistsFn_le_one`).** The bounded existential characteristic is always at most one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the bound observes that an already successful search stays at one, while an unsuccessful search takes the next one-characteristic, which is binary. ∎
 
-**Theorem (`le_pair_left`).** As set out for this part of the library.
+**Theorem (`bExistsFn_congr`).** Two bounded existential searches agree when their tested values agree at every index below the bound.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the bound uses agreement on all earlier indices for the recursive value and agreement at the new final index for the next update. ∎
 
-**Theorem (`encodeList_length_le`).** As set out for this part of the library.
+**Theorem (`bExistsFn_eq_one_iff`).** The bounded existential characteristic is one exactly when some index below the bound has tested value one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the bound splits a witness below the previous bound from the newly added final index and follows the two selector cases. ∎
 
-**Theorem (`foldStep_zero`).** As set out for this part of the library.
+**Theorem (`primrec_bExistsFn`).** The numerical function defining bExistsFn is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The bExists function construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`foldStep_pos`).** As set out for this part of the library.
+**Theorem (`primrec_bExistsFn_param`).** The numerical function defining bExistsFn param is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The bExists function param construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`rec_const_iterate`).** As set out for this part of the library.
+**Theorem (`decodeList_encodeList`).** Decoding the code of a finite list recovers the list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the list or code uses the successor coding equation and the fact that unpairing a freshly paired head and tail recovers both components. ∎
 
-**Theorem (`foldStep_iterate`).** As set out for this part of the library.
+**Theorem (`reForallStp_eq`).** Unpacking one universal-witness step yields the update that consumes the next witness and list entry.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Unpairing the current list entry, witness code and flag gives exactly the unpacked witness-checking update. ∎
 
-**Theorem (`foldCode_eq`).** As set out for this part of the library.
+**Theorem (`reForallChar_eq`).** The coded universal-witness characteristic is the final flag of the corresponding fold over the decoded list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The coded-fold equation turns the packed step into the unpacked witness-checking update over the decoded list. ∎
 
-**Theorem (`unpair_left_le`).** As set out for this part of the library.
+**Theorem (`reForallF_foldl_eq_one_iff`).** The characteristic value is one exactly when every finite condition encoded in its arguments holds.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the candidate list tracks the binary flag and aligns each entry with the same-position witness obtained by decoding the witness code. ∎
 
-**Theorem (`pair_le_pair_left`).** As set out for this part of the library.
+**Theorem (`reForallChar_eq_one_iff`).** The characteristic value is one exactly when every finite condition encoded in its arguments holds.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Specializing the fold characterization to initial flag one leaves exactly the pointwise witness checks below the decoded length. ∎
 
-**Theorem (`pair_le_pair_right'`).** As set out for this part of the library.
+**Theorem (`primrec_reForallStp`).** The numerical function defining reForallStp is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The reForall step construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`pair_le_pair`).** As set out for this part of the library.
+**Theorem (`primrec_reForallChar`).** The numerical function defining reForallChar is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The reForall characteristic construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`decodeList_zero`).** As set out for this part of the library.
+**Theorem (`REPred.forall_mem_decodeList`).** If a predicate is recursively enumerable, then the property that every member of a decoded finite list satisfies it is recursively enumerable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Encode one witness for each list position into a witness list; the universal witness checker verifies all positions, and conversely each accepted position supplies a witness for the corresponding member. ∎
 
-**Theorem (`decodeList_succ`).** As set out for this part of the library.
+**Theorem (`lowOr_eq_mod`).** The recursive binary-digit calculation agrees with ordinary quotient, remainder, or bitwise disjunction.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The four possible pairs of low bits agree with the low bit of binary disjunction. ∎
 
-**Theorem (`encodeList_decodeList`).** As set out for this part of the library.
+**Theorem (`lor_low_rec`).** The recursive binary-digit calculation agrees with ordinary quotient, remainder, or bitwise disjunction.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Division by two shifts every test bit down one place, while the remainder formula restores the low disjunction bit. ∎
 
-**Theorem (`foldCode_eq'`).** As set out for this part of the library.
+**Theorem (`lorStep_iter_spec`).** After the specified number of binary-disjunction steps, both inputs have been divided by the corresponding power of two, the place value equals that power, and the accumulator plus the unprocessed high part equals the original disjunction.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the iteration count tracks the halved inputs, doubling place value, and accumulated low bits; the one-step binary recurrence preserves the invariant. ∎
 
-**Theorem (`primrec_foldStepPacked`).** As set out for this part of the library.
+**Theorem (`myLor_eq_lor`).** The recursive binary-digit calculation agrees with ordinary quotient, remainder, or bitwise disjunction.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* After enough halvings both remaining inputs are zero, so the iteration invariant identifies the accumulator with the full binary disjunction. ∎
 
-**Theorem (`primrec_foldCode`).** As set out for this part of the library.
+**Theorem (`allListStp_eq`).** Unpacking one universal-list step yields conjunction of the old flag with the current entry test.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Unpairing the packed entry, accumulator and parameter gives the selector that conjoins the old flag with the current test. ∎
 
-**Theorem (`isOne_le_one`).** As set out for this part of the library.
+**Theorem (`allListChar_eq`).** The universal-list characteristic is the conjunction fold of the entry tests over the decoded list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The coded-fold equation and the unpacked step equation identify the characteristic with the displayed conjunction fold. ∎
 
-**Theorem (`isOne_of_ne_one`).** As set out for this part of the library.
+**Theorem (`allList_foldl_eq_one_iff`).** The characteristic value is one exactly when every finite condition encoded in its arguments holds.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the list uses the binary accumulator: success after the head and tail means initial success and every entry test equals one. ∎
 
-**Theorem (`primrec_isOne`).** As set out for this part of the library.
+**Theorem (`allListChar_eq_one_iff`).** The characteristic value is one exactly when every finite condition encoded in its arguments holds.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Apply the conjunction-fold characterization with initial accumulator one. ∎
 
-**Theorem (`isZero_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`allListChar_le_one`).** The characteristic function always takes a value at most one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the decoded list preserves the bound because each update returns either zero or a one-characteristic. ∎
 
-**Theorem (`isZero_le_one`).** As set out for this part of the library.
+**Theorem (`primrec_allListStp`).** The numerical function defining allListStp is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The allList step construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`primrec_isZero`).** As set out for this part of the library.
+**Theorem (`isBinDigit_eq_one_iff`).** The characteristic value is one exactly when every finite condition encoded in its arguments holds.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The cases zero and one activate an accepting selector branch, while every value at least two reaches the rejecting branch. ∎
 
-**Theorem (`primrec_le`).** As set out for this part of the library.
+**Theorem (`primrec_isBinDigit`).** The numerical function defining isBinDigit is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The isBinDigit construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`bForallFn_le_one`).** As set out for this part of the library.
+**Theorem (`allBinDigitsChar_eq_one_iff`).** The characteristic value is one exactly when every finite condition encoded in its arguments holds.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The universal-list characterization says every decoded entry passes the binary-digit test, whose truth condition is being zero or one. ∎
 
-**Theorem (`bForallFn_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`allBinDigitsChar_le_one`).** The characteristic function always takes a value at most one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* This is the universal-list bound specialized to the binary-digit characteristic. ∎
 
-**Theorem (`bExistsFn_le_one`).** As set out for this part of the library.
+**Theorem (`primrec_allBinDigitsChar`).** The numerical function defining allBinDigitsChar is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The allBinDigits characteristic construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`bExistsFn_congr`).** As set out for this part of the library.
+**Theorem (`nthStp_val`).** The coded lookup returns the corresponding table entry in range and the prescribed default outside the range.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Unpairing the state increments the running position and selects the current entry exactly when that position equals the requested index. ∎
 
-**Theorem (`bExistsFn_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`nthCode_foldl`).** The coded lookup returns the corresponding table entry in range and the prescribed default outside the range.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the list compares the requested index with the running position, preserving the previous result before the position and replacing it exactly at equality. ∎
 
-**Theorem (`primrec_bExistsFn`).** As set out for this part of the library.
+**Theorem (`nthCode_eq`).** The coded lookup returns the corresponding table entry in range and the prescribed default outside the range.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The coded-fold equation starts the lookup fold at position zero, so the fold specification is ordinary list lookup with the given default. ∎
 
-**Theorem (`primrec_bExistsFn_param`).** As set out for this part of the library.
+**Theorem (`primrec_nthStp`).** The numerical function defining nthStp is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The nth step construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`decodeList_encodeList`).** As set out for this part of the library.
+**Theorem (`primrec_nthCode`).** The numerical function defining nthCode is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The nthCode construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`reForallStp_eq`).** As set out for this part of the library.
+**Theorem (`tabStep_val`).** One table-building step adjoins the value at the next descending index to the accumulated table code.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Unpairing the bound, parameter, stage and prior code exposes the next descending table index and adjoins its value. ∎
 
-**Theorem (`reForallChar_eq`).** As set out for this part of the library.
+**Theorem (`decodeList_tabCode_aux`).** Decoding a partially built table yields the mapped interval of indices from the remaining bound through the processed entries.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the number of table entries shows that each step prepends the next descending index value to the already decoded suffix. ∎
 
-**Theorem (`reForallF_foldl_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`decodeList_tabCode`).** Decoding a complete table code yields the values of the function on all indices below the bound.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Specialize the auxiliary decoding formula to the full bound, where the descending range becomes the ordinary initial range. ∎
 
-**Theorem (`reForallChar_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`getD_eq_getElem_cf`).** The coded lookup returns the corresponding table entry in range and the prescribed default outside the range.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the list and index reduces in-range defaulted lookup to ordinary indexed lookup. ∎
 
-**Theorem (`primrec_reForallStp`).** As set out for this part of the library.
+**Theorem (`getD_eq_default_cf`).** The coded lookup returns the corresponding table entry in range and the prescribed default outside the range.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the list and index shows that an index at least the length repeatedly passes the head and eventually returns the default. ∎
 
-**Theorem (`primrec_reForallChar`).** As set out for this part of the library.
+**Theorem (`getD_map_range_cf`).** The coded lookup returns the corresponding table entry in range and the prescribed default outside the range.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The mapped range has the prescribed length, and in-range lookup first selects its index from the range and then applies the map. ∎
 
-**Theorem (`REPred.forall_mem_decodeList`).** As set out for this part of the library.
+**Theorem (`tabCode_nth_lt`).** The coded lookup returns the corresponding table entry in range and the prescribed default outside the range.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Decode the table as the mapped initial range and apply the in-range lookup formula. ∎
 
-**Theorem (`lowOr_eq_mod`).** As set out for this part of the library.
+**Theorem (`tabCode_nth_ge`).** The coded lookup returns the corresponding table entry in range and the prescribed default outside the range.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Decode the table as a list of the bound length and apply the out-of-range default formula. ∎
 
-**Theorem (`lor_low_rec`).** As set out for this part of the library.
+**Theorem (`primrec_tabStep`).** The numerical function defining tabStep is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The tabStep construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`lorStep_iter_spec`).** As set out for this part of the library.
+**Theorem (`primrec_tabCode`).** The numerical function defining tabCode is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The tabCode construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`myLor_eq_lor`).** As set out for this part of the library.
+**Theorem (`primrec_tagCase4`).** The numerical function defining tagCase4 is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The tagCase4 construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`allListStp_eq`).** As set out for this part of the library.
+**Theorem (`mulBit_eq_one_iff`).** The product of two binary characteristics is one exactly when both are one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* A product of natural numbers equals one only when both factors equal one, and the converse follows by multiplication. ∎
 
-**Theorem (`allListChar_eq`).** As set out for this part of the library.
+**Theorem (`mulBit_le_one`).** The product of two characteristics bounded by one is itself bounded by one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Each factor is zero or one; checking the four possible pairs gives a product no larger than one. ∎
 
-**Theorem (`allList_foldl_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`primrec_mulBit`).** The numerical function defining mulBit is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The mulBit construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`allListChar_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`decodeFuelOkCharBody_eq`).** The fuel-decoding body recognizes the four tags as the base, binary-list, conjunction and conjunction cases, and rejects every larger tag.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* A case split on tags zero through three yields the base test, binary-list test and two recursive conjunction cases; all larger tags return zero. ∎
 
-**Theorem (`allListChar_le_one`).** As set out for this part of the library.
+**Theorem (`primrec_decodeFuelOkCharBody`).** The numerical function defining decodeFuelOkCharBody is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The decodeFuelOk characteristicBody construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`primrec_allListStp`).** As set out for this part of the library.
+**Theorem (`decodeFuelOkCharBody_local`).** The fuel-decoding body has the same value for two prior-stage functions that agree on every code no larger than the current code.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Only the two recursive subcodes can inspect the supplied functions, and both subcodes are no larger than the current code. ∎
 
-**Theorem (`isBinDigit_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`listLenStp_eq`).** One packed length step increments the accumulated length by one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Unpairing the packed state exposes the accumulated length, to which the step adds one. ∎
 
-**Theorem (`primrec_isBinDigit`).** As set out for this part of the library.
+**Theorem (`listLenChar_eq`).** The coded length function returns the length of the decoded list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The coded fold becomes a fold that increments once per entry; induction on the decoded list shows that this fold counts its entries. ∎
 
-**Theorem (`allBinDigitsChar_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`primrec_listLenStp`).** The numerical function defining listLenStp is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The listLen step construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`allBinDigitsChar_le_one`).** As set out for this part of the library.
+**Theorem (`primrec_listLenChar`).** The numerical function defining listLenChar is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The listLen characteristic construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`primrec_allBinDigitsChar`).** As set out for this part of the library.
+**Theorem (`natEqChar_le_one`).** The natural-number equality characteristic is always at most one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* It is a truncated subtraction from one, so its value cannot exceed one. ∎
 
-**Theorem (`nthStp_val`).** As set out for this part of the library.
+**Theorem (`natEqChar_eq_zero_or_one`).** The natural-number equality characteristic is always zero or one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The sum of opposite differences is either zero, leaving one, or positive, making the truncated subtraction zero. ∎
 
-**Theorem (`nthCode_foldl`).** As set out for this part of the library.
+**Theorem (`primrec_natEqChar`).** The numerical function defining natEqChar is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The natEq characteristic construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`nthCode_eq`).** As set out for this part of the library.
+**Theorem (`listEqStp_acc`).** A packed list-comparison step fails on an empty remainder and otherwise compares the next entries while advancing the remainder.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Unpairing the state and separating whether the remaining code is zero gives exactly the failure branch and the nonempty comparison branch. ∎
 
-**Theorem (`primrec_nthStp`).** As set out for this part of the library.
+**Theorem (`decodeList_eq_nil_iff`).** A natural number decodes to the empty list exactly when it is zero.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Encoding both sides shows that an empty decoded list has code zero; the converse is the zero decoding equation. ∎
 
-**Theorem (`primrec_nthCode`).** As set out for this part of the library.
+**Theorem (`selectFn_eq_one_iff_zero`).** The characteristic value is one exactly when every finite condition encoded in its arguments holds.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The assumed binary control leaves the zero and one cases; direct evaluation gives conjunction in the one case and failure in the zero case. ∎
 
-**Theorem (`tabStep_val`).** As set out for this part of the library.
+**Theorem (`listEqStep_zero`).** Comparing another entry after the second coded list is exhausted produces a failed empty state.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The zero remainder activates the empty-remainder branch and returns the failed empty state. ∎
 
-**Theorem (`decodeList_tabCode_aux`).** As set out for this part of the library.
+**Theorem (`listEqStep_succ`).** With a nonempty second coded list, one comparison step combines the old flag with equality of the heads and advances to the tail code.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The zero test rejects the successor remainder; unpairing its predecessor supplies the next head and tail, and the equality characteristic updates the flag. ∎
 
-**Theorem (`decodeList_tabCode`).** As set out for this part of the library.
+**Theorem (`listEq_foldl_zero`).** The coded finite fold agrees with repeated application of its step function to the decoded list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* After the second list is exhausted the next comparison sets the flag to zero, and induction shows that every remaining step preserves failure. ∎
 
-**Theorem (`getD_eq_getElem_cf`).** As set out for this part of the library.
+**Theorem (`listEq_foldl_end_iff`).** The coded finite fold agrees with repeated application of its step function to the decoded list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the first list compares heads while both lists are nonempty, fails if the second ends early, and requires both successful flag and empty remainder at the end. ∎
 
-**Theorem (`getD_eq_default_cf`).** As set out for this part of the library.
+**Theorem (`listEqChar_eq_one_iff`).** The characteristic value is one exactly when every finite condition encoded in its arguments holds.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The final product is one exactly when the comparison flag is one and the remainder is empty; the fold characterization turns this into equality of decoded lists. ∎
 
-**Theorem (`getD_map_range_cf`).** As set out for this part of the library.
+**Theorem (`listEq_foldl_flag_le_one`).** The characteristic function always takes a value at most one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the first list preserves the binary flag because every comparison update uses binary selection and equality characteristic. ∎
 
-**Theorem (`tabCode_nth_lt`).** As set out for this part of the library.
+**Theorem (`listEqChar_le_one`).** The characteristic function always takes a value at most one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Both the final comparison flag and empty-remainder test are at most one, so their product is at most one. ∎
 
-**Theorem (`tabCode_nth_ge`).** As set out for this part of the library.
+**Theorem (`primrec_listEqStpNonzero`).** The numerical function defining listEqStpNonzero is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The listEq stepNonzero construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`primrec_tabStep`).** As set out for this part of the library.
+**Theorem (`primrec_listEqStp`).** The numerical function defining listEqStp is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The listEq step construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`primrec_tabCode`).** As set out for this part of the library.
+**Theorem (`primrec_listEqChar`).** The numerical function defining listEqChar is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The listEq characteristic construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`primrec_tagCase4`).** As set out for this part of the library.
+**Theorem (`list_eq_of_getD`).** The coded lookup returns the corresponding table entry in range and the prescribed default outside the range.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* List extensionality uses equality of lengths and the assumed equality of defaulted lookups at every in-range position. ∎
 
-**Theorem (`mulBit_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`getD_take_cf`).** The coded lookup returns the corresponding table entry in range and the prescribed default outside the range.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Below the take length, lookup in the prefix agrees with lookup in the original list; beyond it, both use the default. ∎
 
-**Theorem (`mulBit_le_one`).** As set out for this part of the library.
+**Theorem (`getD_drop_cf`).** The coded lookup returns the corresponding table entry in range and the prescribed default outside the range.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Lookup after dropping shifts the original index by the number discarded, with the default covering indices beyond the remaining suffix. ∎
 
-**Theorem (`primrec_mulBit`).** As set out for this part of the library.
+**Theorem (`isZero_succ_sub_len1`).** The zero test of one plus a truncated length difference records whether the first list is no longer than the second.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The truncated length difference is zero exactly when the first length does not exceed the second, and adding one makes the zero test reject precisely the opposite case. ∎
 
-**Theorem (`decodeFuelOkCharBody_eq`).** As set out for this part of the library.
+**Theorem (`isZero_succ_sub_len1_zero`).** The same length test is zero precisely when the first list is strictly longer than the second.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Natural-number subtraction is positive exactly in the strict-length case, and the zero characteristic rejects every positive successor. ∎
 
-**Theorem (`primrec_decodeFuelOkCharBody`).** As set out for this part of the library.
+**Theorem (`appendListTabFn_eq`).** The coding operation agrees with concatenation or adjoining an entry to a finite list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Below the first length the table reads the first list; at and above the split it reads the second list at the shifted index. ∎
 
-**Theorem (`decodeFuelOkCharBody_local`).** As set out for this part of the library.
+**Theorem (`takeCode_eq`).** Decoding the prefix code gives the requested initial segment of the decoded list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Decode the generated table and compare each position with lookup in the original list to identify the requested prefix. ∎
 
-**Theorem (`listLenStp_eq`).** As set out for this part of the library.
+**Theorem (`dropCode_eq`).** Decoding the suffix code gives the decoded list after deleting the requested number of initial entries.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Decode the generated table and use shifted lookup to identify the suffix remaining after the requested deletion. ∎
 
-**Theorem (`listLenChar_eq`).** As set out for this part of the library.
+**Theorem (`encodeList_take_le`).** The code of an initial segment of a list is at most the code of the whole list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* A prefix is a sublist of the original list, and induction on the coding shows that encoding is monotone under removal of a tail. ∎
 
-**Theorem (`primrec_listLenStp`).** As set out for this part of the library.
+**Theorem (`encodeList_drop_le`).** The code of a final segment of a list is at most the code of the whole list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* A suffix is obtained by repeated removal of heads, each of which cannot increase the list code. ∎
 
-**Theorem (`primrec_listLenChar`).** As set out for this part of the library.
+**Theorem (`takeCode_le`).** A prefix code is at most the original list code.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Replace the generated code by the encoding of the decoded prefix and apply the prefix-code bound. ∎
 
-**Theorem (`natEqChar_le_one`).** As set out for this part of the library.
+**Theorem (`dropCode_le`).** A suffix code is at most the original list code.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Replace the generated code by the encoding of the decoded suffix and apply the suffix-code bound. ∎
 
-**Theorem (`natEqChar_eq_zero_or_one`).** As set out for this part of the library.
+**Theorem (`primrec_takeListTabFn`).** The numerical function defining takeListTabFn is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The takeListTab function construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`primrec_natEqChar`).** As set out for this part of the library.
+**Theorem (`primrec_min`).** The numerical function defining min is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The min construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`listEqStp_acc`).** As set out for this part of the library.
+**Theorem (`primrec_takeCode`).** The numerical function defining takeCode is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The takeCode construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`decodeList_eq_nil_iff`).** As set out for this part of the library.
+**Theorem (`primrec_dropListTabFn`).** The numerical function defining dropListTabFn is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The dropListTab function construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`selectFn_eq_one_iff_zero`).** As set out for this part of the library.
+**Theorem (`primrec_dropCode`).** The numerical function defining dropCode is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The dropCode construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`listEqStep_zero`).** As set out for this part of the library.
+**Theorem (`pair_lt_pair_zero_right`).** Pairing zero with a strictly smaller second component gives a strictly smaller code.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Strict monotonicity of pairing in the second coordinate applies with first coordinate zero. ∎
 
-**Theorem (`listEqStep_succ`).** As set out for this part of the library.
+**Theorem (`codeBound_ge`).** The recursive code bound dominates every binary-list code of the prescribed length.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the length bounds the head binary digit and invokes the previous bound on the tail code before applying monotonicity of pairing. ∎
 
-**Theorem (`listEq_foldl_zero`).** As set out for this part of the library.
+**Theorem (`RecDecidable₂.swap`).** Swapping the arguments of a recursively decidable binary relation preserves recursive decidability.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Precompose the paired characteristic with the primitive-recursive permutation that exchanges the two coordinates. ∎
 
-**Theorem (`listEq_foldl_end_iff`).** As set out for this part of the library.
+**Theorem (`RecDecidable.bExists`).** Bounded existential quantification of a recursively decidable relation is recursively decidable when the bound is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* A primitive-recursive bounded search accumulates disjunction of the characteristic values below the primitive-recursive bound. ∎
 
-**Theorem (`listEqChar_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`RecDecidable.bForall`).** Bounded universal quantification of a recursively decidable relation is recursively decidable when the bound is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Encode the finitely many witnesses in one list, then use the decidable list checker to verify each corresponding entry; existential quantification over that witness list gives recursive enumerability. ∎
 
-**Theorem (`listEq_foldl_flag_le_one`).** As set out for this part of the library.
+**Theorem (`RecDecidable.of_zero_one_char`).** A primitive-recursive zero–one function that equals one exactly on a predicate makes that predicate recursively decidable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Take the supplied primitive-recursive zero–one function as the characteristic; its assumed one-value condition is exactly the required specification. ∎
 
-**Theorem (`listEqChar_le_one`).** As set out for this part of the library.
+**Theorem (`RecDecidable₂.of_paired_zero_one_char`).** A primitive-recursive characteristic on paired arguments makes the corresponding binary relation recursively decidable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Use the supplied primitive-recursive function directly as the characteristic after pairing the two arguments. ∎
 
-**Theorem (`primrec_listEqStpNonzero`).** As set out for this part of the library.
+**Theorem (`RecDecidable₃.of_triple_zero_one_char`).** A primitive-recursive characteristic on nested triples makes the corresponding ternary relation recursively decidable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Use the supplied primitive-recursive function directly after encoding the three arguments by nested pairing. ∎
 
-**Theorem (`primrec_listEqStp`).** As set out for this part of the library.
+**Theorem (`codeBound_succ`).** The code bound at a successor is obtained by pairing one with the previous bound and then taking the successor.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The successor equation is the defining recursive step of the code bound. ∎
 
-**Theorem (`primrec_listEqChar`).** As set out for this part of the library.
+**Theorem (`codeBound_zero`).** The code bound at zero is zero.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The zero equation is the base clause of the code bound. ∎
 
-**Theorem (`list_eq_of_getD`).** As set out for this part of the library.
+**Theorem (`decodeFuelOkChar_le_one`).** The characteristic function always takes a value at most one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on fuel separates the tag cases; constants and binary-list tests are bounded by one, while recursive conjunction multiplies two values already bounded by one. ∎
 
-**Theorem (`getD_take_cf`).** As set out for this part of the library.
+**Theorem (`decodeList_length_le`).** The length of the list decoded from a natural number is at most that number.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Strong induction on the code removes the strictly smaller tail code and adds one entry, while the pairing bounds control the resulting length. ∎
 
-**Theorem (`getD_drop_cf`).** As set out for this part of the library.
+**Theorem (`decodeList_mapPairStep`).** Decoding one map-pair step prepends the pair of the fixed parameter and current entry to the decoded accumulator.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The adjoining decoding equation shows that one map step prepends the pair of the fixed parameter and current entry. ∎
 
-**Theorem (`isZero_succ_sub_len1`).** As set out for this part of the library.
+**Theorem (`eqZero_bit`).** The displayed binary control is one exactly in its zero case.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* A value bounded by one is zero or one, and direct evaluation of the one-characteristic of its complement distinguishes the cases. ∎
 
-**Theorem (`isZero_succ_sub_len1_zero`).** As set out for this part of the library.
+**Theorem (`eq_of_le_one_iff_one`).** For a natural number bounded by one, having one-characteristic equal to one is equivalent to being one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The bound leaves only zero and one, and evaluation of the characteristic distinguishes those two values. ∎
 
-**Theorem (`appendListTabFn_eq`).** As set out for this part of the library.
+**Theorem (`existsListStp_eq`).** Unpacking one existential-list step yields disjunction of the old flag with the current entry test.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Unpairing the packed arguments yields the selector that preserves prior success or tests the current entry. ∎
 
-**Theorem (`takeCode_eq`).** As set out for this part of the library.
+**Theorem (`existsListChar_eq`).** The existential-list characteristic is the disjunction fold of the entry tests over the decoded list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The coded-fold equation and unpacked existential step identify the characteristic with a disjunction fold over the decoded list. ∎
 
-**Theorem (`dropCode_eq`).** As set out for this part of the library.
+**Theorem (`existsListChar_le_one`).** The characteristic function always takes a value at most one.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the decoded list preserves binary values because a successful accumulator remains one and failure defers to the next one-characteristic. ∎
 
-**Theorem (`encodeList_take_le`).** As set out for this part of the library.
+**Theorem (`existsList_foldl_eq_one_iff`).** The characteristic value is one exactly when every finite condition encoded in its arguments holds.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the list splits a witness at the head from a witness in the tail while tracking whether success was already present. ∎
 
-**Theorem (`encodeList_drop_le`).** As set out for this part of the library.
+**Theorem (`existsListChar_eq_one_iff`).** The characteristic value is one exactly when every finite condition encoded in its arguments holds.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Apply the existential-fold characterization with initial flag zero. ∎
 
-**Theorem (`takeCode_le`).** As set out for this part of the library.
+**Theorem (`fuelTableStep_nth`).** The coded lookup returns the corresponding table entry in range and the prescribed default outside the range.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Decode the newly built table and use in-range lookup to identify each entry with one application of the body to the corresponding prior-table lookup. ∎
 
-**Theorem (`dropCode_le`).** As set out for this part of the library.
+**Theorem (`fuelTable_succ_nth`).** The coded lookup returns the corresponding table entry in range and the prescribed default outside the range.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The successor recursion equation replaces the old table by one table-building step, so the preceding lookup formula applies. ∎
 
-**Theorem (`primrec_takeListTabFn`).** As set out for this part of the library.
+**Theorem (`fuelTable_zero_nth`).** The coded lookup returns the corresponding table entry in range and the prescribed default outside the range.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* At zero fuel the table code is zero, whose decoded list is empty, so every lookup returns the default. ∎
 
-**Theorem (`primrec_min`).** As set out for this part of the library.
+**Theorem (`fuelTable_eq_of_recursion`).** Any table family with the same zero table and the same successor lookup recurrence as the fuel table agrees with it at every fuel and bounded index.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on fuel uses the supplied zero table at the base and the supplied lookup recurrence to identify each successor table extensionally. ∎
 
-**Theorem (`primrec_takeCode`).** As set out for this part of the library.
+**Theorem (`decodeFuelOkChar_fuelTable_eq`).** Lookup in the fuel table equals the fuel-bounded decoding characteristic.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The fuel table satisfies the same base and successor lookup equations as fuel-bounded decoding, so uniqueness of that recursion identifies them. ∎
 
-**Theorem (`primrec_dropListTabFn`).** As set out for this part of the library.
+**Theorem (`geTwo_bit`).** The displayed binary control recognizes values at least two.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Separate values below two from successors at least two; truncated subtraction and the one-characteristic give the corresponding binary values. ∎
 
-**Theorem (`primrec_dropCode`).** As set out for this part of the library.
+**Theorem (`getD_append_cf`).** The coded lookup returns the corresponding table entry in range and the prescribed default outside the range.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Split whether the index lies below the first length; concatenated lookup uses the first list there and shifted lookup in the second list otherwise. ∎
 
-**Theorem (`pair_lt_pair_zero_right`).** As set out for this part of the library.
+**Theorem (`getD_append_right_cf`).** The coded lookup returns the corresponding table entry in range and the prescribed default outside the range.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* An index at least the first length passes through the first list, and lookup continues in the second list at the shifted index. ∎
 
-**Theorem (`codeBound_ge`).** As set out for this part of the library.
+**Theorem (`appendListCode_eq`).** The coding operation agrees with concatenation or adjoining an entry to a finite list.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Decode the generated table and split each lookup at the first length; the left and shifted-right formulas agree with concatenation. ∎
 
-**Theorem (`RecDecidable₂.swap`).** As set out for this part of the library.
+**Theorem (`halfParity_spec`).** The recursive binary-digit calculation agrees with ordinary quotient, remainder, or bitwise disjunction.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the input follows the two-state parity recursion, alternating the remainder and incrementing the quotient every second step. ∎
 
-**Theorem (`RecDecidable.bExists`).** As set out for this part of the library.
+**Theorem (`mapPairStp_eq`).** Unpacking a coded map step adjoins the pair of the fixed parameter and current entry to the accumulated list code.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Unpairing the packed state recovers the fixed parameter, accumulator and current entry, after which one paired entry is adjoined. ∎
 
-**Theorem (`RecDecidable.bForall`).** As set out for this part of the library.
+**Theorem (`decodeList_foldl_mapPairStp`).** Decoding the map-pair fold gives the reversed mapped input followed by the decoded accumulator.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the input list uses the one-step decoding equation and records reversal because each mapped pair is prepended. ∎
 
-**Theorem (`RecDecidable.of_zero_one_char`).** As set out for this part of the library.
+**Theorem (`decodeList_mapPairCode`).** Decoding a map-pair code gives the decoded input list with the fixed parameter paired to every entry.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The coded-fold equation and the map-step decoding formula show by induction that every decoded entry is paired with the fixed parameter. ∎
 
-**Theorem (`RecDecidable₂.of_paired_zero_one_char`).** As set out for this part of the library.
+**Theorem (`primrec_allListChar`).** The numerical function defining allListChar is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The allList characteristic construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`RecDecidable₃.of_triple_zero_one_char`).** As set out for this part of the library.
+**Theorem (`RecDecidable₂.bForallList`).** Universal satisfaction of a recursively decidable binary relation over every entry of a decoded finite list is recursively decidable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Encode the finitely many witnesses in one list, then use the decidable list checker to verify each corresponding entry; existential quantification over that witness list gives recursive enumerability. ∎
 
-**Theorem (`codeBound_succ`).** As set out for this part of the library.
+**Theorem (`primrec_appendListTabFn`).** The numerical function defining appendListTabFn is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The appendListTab function construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`codeBound_zero`).** As set out for this part of the library.
+**Theorem (`primrec_appendListCode`).** The numerical function defining appendListCode is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The appendListCode construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`decodeFuelOkChar_le_one`).** As set out for this part of the library.
+**Theorem (`primrec_bForallFn_param`).** The numerical function defining bForallFn param is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The bForall function param construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`decodeList_length_le`).** As set out for this part of the library.
+**Theorem (`primrec_codeBound`).** The numerical function defining codeBound is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The codeBound construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`decodeList_mapPairStep`).** As set out for this part of the library.
+**Theorem (`primrec_decodeFuelOkChar`).** The numerical function defining decodeFuelOkChar is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The decodeFuelOk characteristic construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`eqZero_bit`).** As set out for this part of the library.
+**Theorem (`primrec_decodeFuelOkCharLookup`).** The numerical function defining decodeFuelOkCharLookup is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The decodeFuelOk characteristicLookup construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`eq_of_le_one_iff_one`).** As set out for this part of the library.
+**Theorem (`primrec_existsListStp`).** The numerical function defining existsListStp is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The existsList step construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`existsListStp_eq`).** As set out for this part of the library.
+**Theorem (`primrec_existsListChar`).** The numerical function defining existsListChar is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The existsList characteristic construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`existsListChar_eq`).** As set out for this part of the library.
+**Theorem (`RecDecidable₂.bExistsList`).** Existence of an entry in a decoded finite list satisfying a recursively decidable binary relation is recursively decidable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* A bounded primitive recursion accumulates the disjunction of the characteristic values below the bound, giving a recursive decision procedure for bounded existence. ∎
 
-**Theorem (`existsListChar_le_one`).** As set out for this part of the library.
+**Theorem (`primrec_fuelTable`).** The numerical function defining fuelTable is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The fuelTable construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`existsList_foldl_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`primrec_decodeFuelOkChar2`).** The numerical function defining decodeFuelOkChar2 is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The decodeFuelOk characteristic2 construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`existsListChar_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`primrec_halfParity`).** The numerical function defining halfParity is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The halfParity construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`fuelTableStep_nth`).** As set out for this part of the library.
+**Theorem (`primrec_div2`).** The numerical function defining div2 is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The div2 construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`fuelTable_succ_nth`).** As set out for this part of the library.
+**Theorem (`primrec_ite`).** The numerical function defining ite is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The ite construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`fuelTable_zero_nth`).** As set out for this part of the library.
+**Theorem (`primrec_mapPairStp`).** The numerical function defining mapPairStp is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The mapPair step construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`fuelTable_eq_of_recursion`).** As set out for this part of the library.
+**Theorem (`primrec_mapPairCode`).** The numerical function defining mapPairCode is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The mapPairCode construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`decodeFuelOkChar_fuelTable_eq`).** As set out for this part of the library.
+**Theorem (`REPred.forall_mem_decodeList₂`).** If a binary relation is recursively enumerable, then requiring it between a fixed input and every member of a decoded finite list is recursively enumerable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Pair the fixed outer argument into the binary relation, apply finite-list universal closure, and use primitive-recursive reassociation of the paired inputs. ∎
 
-**Theorem (`geTwo_bit`).** As set out for this part of the library.
+**Theorem (`primrec_max`).** The numerical function defining max is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The max construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`getD_append_cf`).** As set out for this part of the library.
+**Theorem (`primrec_max_one`).** The numerical function defining max one is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The max one construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`getD_append_right_cf`).** As set out for this part of the library.
+**Theorem (`primrec_mod2`).** The numerical function defining mod2 is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The mod2 construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`appendListCode_eq`).** As set out for this part of the library.
+**Theorem (`primrec_lowOr`).** The numerical function defining lowOr is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The lowOr construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`halfParity_spec`).** As set out for this part of the library.
+**Theorem (`primrec_lorStep`).** The numerical function defining lorStep is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The lorStep construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`mapPairStp_eq`).** As set out for this part of the library.
+**Theorem (`primrec_myLor`).** The numerical function defining myLor is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The myLor construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`decodeList_foldl_mapPairStp`).** As set out for this part of the library.
+**Theorem (`recDecidable_of_forall`).** An everywhere-true predicate on natural numbers is recursively decidable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The constant-one characteristic is primitive recursive and accepts every input, matching the hypothesis pointwise. ∎
 
-**Theorem (`decodeList_mapPairCode`).** As set out for this part of the library.
+**Theorem (`rePred_of_forall`).** An everywhere-true predicate on natural numbers is recursively enumerable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* First decide it by the constant-one characteristic, then use the standard inclusion of decidable predicates among recursively enumerable predicates. ∎
 
-**Theorem (`primrec_allListChar`).** As set out for this part of the library.
+**Theorem (`recDecidable₂_of_forall`).** An everywhere-true binary predicate on natural numbers is recursively decidable.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* After pairing the two arguments, the predicate remains universally true and is decided by the constant-one characteristic. ∎
 
-**Theorem (`RecDecidable₂.bForallList`).** As set out for this part of the library.
+**Theorem (`recPow_eq`).** The primitive recursion that repeatedly multiplies by the base computes natural-number exponentiation.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* Induction on the exponent uses the zero exponent equation and one further multiplication in the successor case. ∎
 
-**Theorem (`primrec_appendListTabFn`).** As set out for this part of the library.
+**Theorem (`primrec_pow`).** The numerical function defining pow is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The pow construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`primrec_appendListCode`).** As set out for this part of the library.
+**Theorem (`primrec_pow₂`).** The numerical function defining pow₂ is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The pow₂ construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`primrec_bForallFn_param`).** As set out for this part of the library.
+**Theorem (`primrec_two_pow`).** The numerical function defining two pow is primitive recursive.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The two pow construction is assembled from primitive-recursive projections, constants, pairing, composition and its displayed bounded fold or primitive recursion. ∎
 
-**Theorem (`primrec_codeBound`).** As set out for this part of the library.
+**Theorem (`selectFn_isOne_one_sub_sigma`).** For binary inputs, the nested selector returns zero exactly in the exceptional control configuration and one otherwise.
 
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_decodeFuelOkChar`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_decodeFuelOkCharLookup`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_existsListStp`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_existsListChar`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`RecDecidable₂.bExistsList`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_fuelTable`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_decodeFuelOkChar2`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_halfParity`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_div2`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_ite`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_mapPairStp`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_mapPairCode`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`REPred.forall_mem_decodeList₂`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_max`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_max_one`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_mod2`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_lowOr`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_lorStep`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_myLor`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`recDecidable_of_forall`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`rePred_of_forall`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`recDecidable₂_of_forall`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`recPow_eq`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_pow`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_pow₂`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`primrec_two_pow`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
-
-**Theorem (`selectFn_isOne_one_sub_sigma`).** As set out for this part of the library.
-
-*Proof.* By the primitive-recursive combinators and the coding identities for pairs and lists. ∎
+*Proof.* The binary input sum is zero, one or at least two; evaluating truncated subtraction and the one-characteristic in these cases gives the selected value. ∎

@@ -2,30 +2,38 @@ The product of effectively given neighbourhood systems is effectively given, and
 
 <!-- formalization -->
 
-**Definition (`prodPresentation`).** As set out for this part of the library.
+**Definition (`prodEnum`).** The product enumeration pairs an index from each factor and returns the corresponding product neighbourhood.
 
-*Proof.* By the pairing enumeration of the product and the closure of recursively enumerable relations under composition. ∎
+**Theorem (`prodEnum_apply`).** The neighbourhood at a paired product index is the product of the two neighbourhoods at its component indices.
 
-**Theorem (`prodPresentation_X`).** As set out for this part of the library.
+*Proof.* Both product coordinates reduce to the corresponding facts in the two factor presentations. ∎
 
-*Proof.* By the pairing enumeration of the product and the closure of recursively enumerable relations under composition. ∎
+**Theorem (`prodNbhd_eq_iff`).** Two product neighbourhoods are equal exactly when their left components and their right components are respectively equal.
 
-**Theorem (`paired_isComputable`).** As set out for this part of the library.
+*Proof.* Both product coordinates reduce to the corresponding facts in the two factor presentations. ∎
 
-*Proof.* By the pairing enumeration of the product and the closure of recursively enumerable relations under composition. ∎
+**Definition (`prodPresentation`).** Pairing the two factor enumerations gives a computable presentation of the product neighbourhood system.
 
-**Theorem (`prod_isEffectivelyGiven`).** As set out for this part of the library.
+**Theorem (`prodPresentation_X`).** The product presentation enumerates the product of the neighbourhoods named by the two components of an index.
 
-*Proof.* By the pairing enumeration of the product and the closure of recursively enumerable relations under composition. ∎
+*Proof.* Both product coordinates reduce to the corresponding facts in the two factor presentations. ∎
 
-**Theorem (`proj₀_isComputable`).** As set out for this part of the library.
+**Theorem (`paired_isComputable`).** Pairing two computable approximable maps with common source gives a computable map into the product.
 
-*Proof.* By the pairing enumeration of the product and the closure of recursively enumerable relations under composition. ∎
+*Proof.* The required relation is obtained from recursively enumerable or decidable index relations by pairing, composition, conjunction, and projection. ∎
 
-**Theorem (`proj₁_isComputable`).** As set out for this part of the library.
+**Theorem (`prod_isEffectivelyGiven`).** The product of two effectively given neighbourhood systems is effectively given.
 
-*Proof.* By the pairing enumeration of the product and the closure of recursively enumerable relations under composition. ∎
+*Proof.* Both product coordinates reduce to the corresponding facts in the two factor presentations. ∎
 
-**Theorem (`prodMap_isComputable`).** As set out for this part of the library.
+**Theorem (`proj₀_isComputable`).** The first projection from an effectively presented product is computable.
 
-*Proof.* By the pairing enumeration of the product and the closure of recursively enumerable relations under composition. ∎
+*Proof.* The required relation is obtained from recursively enumerable or decidable index relations by pairing, composition, conjunction, and projection. ∎
+
+**Theorem (`proj₁_isComputable`).** The second projection from an effectively presented product is computable.
+
+*Proof.* The required relation is obtained from recursively enumerable or decidable index relations by pairing, composition, conjunction, and projection. ∎
+
+**Theorem (`prodMap_isComputable`).** The product of two computable approximable maps is computable.
+
+*Proof.* The required relation is obtained from recursively enumerable or decidable index relations by pairing, composition, conjunction, and projection. ∎

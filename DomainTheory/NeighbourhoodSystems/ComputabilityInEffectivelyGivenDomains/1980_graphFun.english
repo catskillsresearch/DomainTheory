@@ -2,518 +2,460 @@ The graph of a computable endomap of the powerset is a computable element of the
 
 <!-- formalization -->
 
-**Definition (`capMap`).** As set out for this part of the library.
+**Definition (`capMap`).** The map cap map relates basic source and target neighbourhoods by the mathematical operation expressed in its defining relation.
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Definition (`halfIter`).** Repeated halving applies integer division by two the specified number of times.
 
-**Definition (`halfIter`).** As set out for this part of the library.
+**Theorem (`halfIter_zero`).** At input zero, half iter has the initial value specified by its definition.
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+*Proof.* The relevant clause of the recursive definition of half iter zero gives this equation immediately. ∎
 
-**Theorem (`halfIter_zero`).** As set out for this part of the library.
+**Definition (`bitAt`).** The bit at position k of n is the remainder modulo two after halving n exactly k times.
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Definition (`cupMap`).** The map cup map relates basic source and target neighbourhoods by the mathematical operation expressed in its defining relation.
 
-**Definition (`bitAt`).** As set out for this part of the library.
+**Definition (`sumSet`).** The set sum set consists exactly of the elements admitted by its defining membership condition.
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`compl_inter_nbhd`).** The construction compl inter nbhd preserves the specified intersection of sets or neighbourhoods.
 
-**Definition (`cupMap`).** As set out for this part of the library.
+*Proof.* Use the same witnesses in both directions for compl inter nbhd, combining their inclusion proofs pointwise and using nonemptiness where intersection closure requires it. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`compl_subset_compl_of_subset`).** The hypotheses subset imply compl subset compl.
 
-**Definition (`sumSet`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for compl subset compl of subset and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Definition (`elemSet`).** The set elem set consists exactly of the elements admitted by its defining membership condition.
 
-**Theorem (`compl_inter_nbhd`).** As set out for this part of the library.
+**Theorem (`mem_elemSet`).** The element described by elem set belongs to the set or neighbourhood specified by its hypotheses.
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+*Proof.* The required witness for elem set is supplied directly by the defining membership condition. ∎
 
-**Theorem (`compl_subset_compl_of_subset`).** As set out for this part of the library.
+**Definition (`bitsCode`).** The coding function bits code assigns its finite list, expression, pair, or tagged value a natural-number index by pairing and list coding.
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Definition (`bitsList`).** The bits list is the finite list extracted from, or encoded by, the given numerical data.
 
-**Definition (`elemSet`).** As set out for this part of the library.
+**Definition (`bitsStep`).** The state transformer bits step performs one stage of the finite numerical computation encoded in its state.
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Definition (`gMap`).** The map g map relates basic source and target neighbourhoods by the mathematical operation expressed in its defining relation.
 
-**Theorem (`mem_elemSet`).** As set out for this part of the library.
+**Definition (`funMap`).** The map fun map relates basic source and target neighbourhoods by the mathematical operation expressed in its defining relation.
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Definition (`nextCellStep`).** The state transformer next cell step performs one stage of the finite numerical computation encoded in its state.
 
-**Definition (`bitsCode`).** As set out for this part of the library.
+**Definition (`orUpTo`).** Starting from one number, successively insert the bits of the other through the specified bound.
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Definition (`plusIdx`).** The sum-set neighbourhood index is obtained by the bounded bitwise accumulation determined by the two input indices.
 
-**Definition (`bitsList`).** As set out for this part of the library.
+**Definition (`plusStep`).** The state transformer plus step performs one stage of the finite numerical computation encoded in its state.
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`sumSet_mono`).** Enlarging the input sets in sum set mono can only enlarge its resulting set or element.
 
-**Definition (`bitsStep`).** As set out for this part of the library.
+*Proof.* Transport every witness for sum set mono along the assumed inclusions; the same witness then belongs to the enlarged result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Definition (`plusMap`).** The map plus map relates basic source and target neighbourhoods by the mathematical operation expressed in its defining relation.
 
-**Definition (`gMap`).** As set out for this part of the library.
+**Definition (`tagStep`).** The state transformer tag step performs one stage of the finite numerical computation encoded in its state.
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Definition (`tagCode`).** The coding function tag code assigns its finite list, expression, pair, or tagged value a natural-number index by pairing and list coding.
 
-**Definition (`funMap`).** As set out for this part of the library.
+**Definition (`tagOfBits`).** The set bits of an index are decoded as a finite list and nested as tags around a terminal value.
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Definition (`GraphIdx`).** The construction graph idx is obtained by recursive clauses on its finite inputs.
 
-**Definition (`nextCellStep`).** As set out for this part of the library.
+**Theorem (`GraphIdx_mono`).** Enlarging the input sets in graph idx mono can only enlarge its resulting set or element.
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+*Proof.* Transport every witness for graph idx mono along the assumed inclusions; the same witness then belongs to the enlarged result. ∎
 
-**Definition (`orUpTo`).** As set out for this part of the library.
+**Definition (`graphMap`).** The map graph map relates basic source and target neighbourhoods by the mathematical operation expressed in its defining relation.
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Definition (`unnumPair`).** Iterating the successor-cell operation reconstructs the pair encoded by the inverse numerical enumeration.
 
-**Definition (`plusIdx`).** As set out for this part of the library.
+**Definition (`unnum1`).** The first inverse-enumeration coordinate is the first component of the reconstructed pair.
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Definition (`unnum2`).** The second inverse-enumeration coordinate is the second component of the reconstructed pair.
 
-**Definition (`plusStep`).** As set out for this part of the library.
+**Definition (`untagRef`).** A tagged natural number is decoded recursively into its finite list of tags and terminal value.
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Definition (`untagStep`).** The state transformer untag step performs one stage of the finite numerical computation encoded in its state.
 
-**Theorem (`sumSet_mono`).** As set out for this part of the library.
+**Definition (`untagState`).** The bounded tag-decoding state is obtained by iterating the tag-removal transition sufficiently many times.
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Definition (`untagList`).** The untag list is the finite list extracted from, or encoded by, the given numerical data.
 
-**Definition (`plusMap`).** As set out for this part of the library.
+**Definition (`untagVal`).** The terminal value of a tagged code is extracted from the completed decoding state.
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`lt_of_testBit_true`).** The hypotheses test bit true imply lt.
 
-**Definition (`tagStep`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for lt of test bit true and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`halfIter_succ`).** At a successor input, half iter succ satisfies its recursive step equation.
 
-**Definition (`tagCode`).** As set out for this part of the library.
+*Proof.* The relevant clause of the recursive definition of half iter succ gives this equation immediately. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`primrec_halfIter`).** The numerical function half iter is primitive recursive.
 
-**Definition (`tagOfBits`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of half iter. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`primrec_bitAt`).** The numerical function bit at is primitive recursive.
 
-**Definition (`GraphIdx`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of bit at. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`bitAt_le_one`).** For every input, bit at takes one of the two values zero and one.
 
-**Theorem (`GraphIdx_mono`).** As set out for this part of the library.
+*Proof.* Each Boolean-valued component of bit at le one is zero or one, and the defining Boolean combination preserves that range. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`bitAt_eq_one_iff`).** The zero–one test bit at returns one exactly when the mathematical condition encoded in its definition holds.
 
-**Definition (`graphMap`).** As set out for this part of the library.
+*Proof.* Separate the possible zero–one values occurring in bit at eq one iff; the value one survives precisely in the case described by the defining predicate. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`compl_nbhd`).** For the objects in compl nbhd, the named equality, inclusion, or finite-witness relation holds.
 
-**Definition (`unnumPair`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for compl nbhd and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`exists_combined_witness`).** For the objects in combined witness, the named equality, inclusion, or finite-witness relation holds.
 
-**Definition (`unnum1`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for combined witness and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`mem_bitsList`).** The element described by bits list belongs to the set or neighbourhood specified by its hypotheses.
 
-**Definition (`unnum2`).** As set out for this part of the library.
+*Proof.* The required witness for bits list is supplied directly by the defining membership condition. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`nbhd_mem_iff_subset_elemSet`).** Membership in nbhd mem iff subset elem set is equivalent to the explicit witness condition given by the construction.
 
-**Definition (`untagRef`).** As set out for this part of the library.
+*Proof.* Expanding the membership definition of nbhd mem iff subset elem set exposes exactly the witnesses and equations occurring on the other side. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`elemSet_re_of_isComputableElement`).** The map or element elem set re of is computable element is computable with respect to the presentations appearing in its domain and codomain.
 
-**Definition (`untagStep`).** As set out for this part of the library.
+*Proof.* Reduce the relation for elem set re of is computable element to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`mem_decodeList_bitsCode`).** The element described by list bits code belongs to the set or neighbourhood specified by its hypotheses.
 
-**Definition (`untagState`).** As set out for this part of the library.
+*Proof.* The required witness for list bits code is supplied directly by the defining membership condition. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`primrec_bitsStep`).** The numerical function bits step is primitive recursive.
 
-**Definition (`untagList`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of bits step. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`bitsStep_unpair11`).** For the objects in bits step unpair11, the named equality, inclusion, or finite-witness relation holds.
 
-**Definition (`untagVal`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for bits step unpair11 and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`bitsStep_unpair21`).** For the objects in bits step unpair21, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`lt_of_testBit_true`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for bits step unpair21 and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`bitsStep_unpair22`).** For the objects in bits step unpair22, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`halfIter_succ`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for bits step unpair22 and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`bitsStep_iter_spec`).** The numerical construction bits step iter spec computes exactly the finite object described by its specification.
 
-**Theorem (`primrec_halfIter`).** As set out for this part of the library.
+*Proof.* Induction over the bounded iteration for bits step iter spec maintains the recorded accumulator invariant and yields the claimed final components. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`primrec_bitsCode`).** The numerical function bits code is primitive recursive.
 
-**Theorem (`primrec_bitAt`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of bits code. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`isComputableElement_of_elemSet_re`).** The relation element of elem set re is recursively decidable.
 
-**Theorem (`bitAt_le_one`).** As set out for this part of the library.
+*Proof.* Reduce the relation for element of elem set re to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`isComputableElement_iff_elemSet_re`).** The relation element iff elem set re is recursively decidable.
 
-**Theorem (`bitAt_eq_one_iff`).** As set out for this part of the library.
+*Proof.* Reduce the relation for element iff elem set re to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`unnum_snd_lt_of_fst_succ`).** At a successor input, unnum snd lt of fst succ satisfies its recursive step equation.
 
-**Theorem (`compl_nbhd`).** As set out for this part of the library.
+*Proof.* The relevant clause of the recursive definition of unnum snd lt of fst succ gives this equation immediately. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`bitAt_swap_isComputable`).** The map or element bit at swap is computable is computable with respect to the presentations appearing in its domain and codomain.
 
-**Theorem (`exists_combined_witness`).** As set out for this part of the library.
+*Proof.* Reduce the relation for bit at swap is computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`capMap_rel_iff`).** The condition cap map rel holds exactly when the finite witness condition holds.
 
-**Theorem (`mem_bitsList`).** As set out for this part of the library.
+*Proof.* Expand both conditions in cap map rel iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`capMap_isComputable`).** The map or element cap map is computable is computable with respect to the presentations appearing in its domain and codomain.
 
-**Theorem (`nbhd_mem_iff_subset_elemSet`).** As set out for this part of the library.
+*Proof.* Reduce the relation for cap map is computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`cupMap_rel_iff`).** The condition cup map rel holds exactly when the finite witness condition holds.
 
-**Theorem (`elemSet_re_of_isComputableElement`).** As set out for this part of the library.
+*Proof.* Expand both conditions in cup map rel iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`cupMap_isComputable`).** The map or element cup map is computable is computable with respect to the presentations appearing in its domain and codomain.
 
-**Theorem (`mem_decodeList_bitsCode`).** As set out for this part of the library.
+*Proof.* Reduce the relation for cup map is computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`decodeList_injective`).** The construction list injective sends equal outputs only from equal inputs.
 
-**Theorem (`primrec_bitsStep`).** As set out for this part of the library.
+*Proof.* Equality of two values of list injective determines their outer form and then each component, so the original inputs coincide. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`forall_rel_iff_subset_step`).** The condition forall rel holds exactly when subset step holds.
 
-**Theorem (`bitsStep_unpair11`).** As set out for this part of the library.
+*Proof.* Expand both conditions in rel iff subset step; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`gMap_rel_iff`).** The condition g map rel holds exactly when the finite witness condition holds.
 
-**Theorem (`bitsStep_unpair21`).** As set out for this part of the library.
+*Proof.* Expand both conditions in g map rel iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`graphMap_rel_iff`).** The condition graph map rel holds exactly when the finite witness condition holds.
 
-**Theorem (`bitsStep_unpair22`).** As set out for this part of the library.
+*Proof.* Expand both conditions in graph map rel iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`mem_bitsCodeList`).** The element described by bits code list belongs to the set or neighbourhood specified by its hypotheses.
 
-**Theorem (`bitsStep_iter_spec`).** As set out for this part of the library.
+*Proof.* The required witness for bits code list is supplied directly by the defining membership condition. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`mem_compl_nbhd`).** The element described by compl nbhd belongs to the set or neighbourhood specified by its hypotheses.
 
-**Theorem (`primrec_bitsCode`).** As set out for this part of the library.
+*Proof.* The required witness for compl nbhd is supplied directly by the defining membership condition. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`compl_nbhd_subset_Fun_iff`).** The condition compl nbhd subset fun holds exactly when the finite witness condition holds.
 
-**Theorem (`isComputableElement_of_elemSet_re`).** As set out for this part of the library.
+*Proof.* Expand both conditions in compl nbhd subset fun iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`compl_nbhd_subset_iff`).** The inclusion in compl nbhd subset iff holds exactly when the finite prefix, complement, or numerical condition on the right holds.
 
-**Theorem (`isComputableElement_iff_elemSet_re`).** As set out for this part of the library.
+*Proof.* Translate both inclusions in compl nbhd subset iff into the relevant finite prefix or complement condition, and use antisymmetry for the converse direction. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`mem_sumSet`).** The element described by sum set belongs to the set or neighbourhood specified by its hypotheses.
 
-**Theorem (`unnum_snd_lt_of_fst_succ`).** As set out for this part of the library.
+*Proof.* The required witness for sum set is supplied directly by the defining membership condition. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`nbhd_subset_iff_compl_subset_compl`).** The inclusion in nbhd subset iff compl subset compl holds exactly when the finite prefix, complement, or numerical condition on the right holds.
 
-**Theorem (`bitAt_swap_isComputable`).** As set out for this part of the library.
+*Proof.* Translate both inclusions in nbhd subset iff compl subset compl into the relevant finite prefix or complement condition, and use antisymmetry for the converse direction. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`nbhd_subset_iff_myLor_eq`).** The inclusion in nbhd subset iff my lor eq holds exactly when the finite prefix, complement, or numerical condition on the right holds.
 
-**Theorem (`capMap_rel_iff`).** As set out for this part of the library.
+*Proof.* Translate both inclusions in nbhd subset iff my lor eq into the relevant finite prefix or complement condition, and use antisymmetry for the converse direction. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`nextCellStep_eq`).** The value of next cell step eq equals the value described by next cell step eq.
 
-**Theorem (`capMap_isComputable`).** As set out for this part of the library.
+*Proof.* Compare membership or numerical components in next cell step eq; the defining equations reduce both sides to the same data. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`plusStep_unpair11`).** For the objects in plus step unpair11, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`cupMap_rel_iff`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for plus step unpair11 and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`plusStep_unpair12`).** For the objects in plus step unpair12, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`cupMap_isComputable`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for plus step unpair12 and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`plusStep_unpair21`).** For the objects in plus step unpair21, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`decodeList_injective`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for plus step unpair21 and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`plusStep_unpair22`).** For the objects in plus step unpair22, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`forall_rel_iff_subset_step`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for plus step unpair22 and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`plusStep_iter_spec`).** The numerical construction plus step iter spec computes exactly the finite object described by its specification.
 
-**Theorem (`gMap_rel_iff`).** As set out for this part of the library.
+*Proof.* Induction over the bounded iteration for plus step iter spec maintains the recorded accumulator invariant and yields the claimed final components. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`primrec_nextCellStep`).** The numerical function next cell step is primitive recursive.
 
-**Theorem (`graphMap_rel_iff`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of next cell step. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`primrec_plusStep`).** The numerical function plus step is primitive recursive.
 
-**Theorem (`mem_bitsCodeList`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of plus step. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`primrec_plusIdx`).** The numerical function plus idx is primitive recursive.
 
-**Theorem (`mem_compl_nbhd`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of plus idx. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`primrec_tri`).** The numerical function tri is primitive recursive.
 
-**Theorem (`compl_nbhd_subset_Fun_iff`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of tri. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`primrec_num`).** The numerical function num is primitive recursive.
 
-**Theorem (`compl_nbhd_subset_iff`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of num. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`primrec_tagStep`).** The numerical function tag step is primitive recursive.
 
-**Theorem (`mem_sumSet`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of tag step. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`primrec_tagCode`).** The numerical function tag code is primitive recursive.
 
-**Theorem (`nbhd_subset_iff_compl_subset_compl`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of tag code. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`primrec_tagOfBits`).** The numerical function tag of bits is primitive recursive.
 
-**Theorem (`nbhd_subset_iff_myLor_eq`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of tag of bits. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`primrec_unnumPair`).** The numerical function unnum pair is primitive recursive.
 
-**Theorem (`nextCellStep_eq`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of unnum pair. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`primrec_unnum1`).** The numerical function unnum1 is primitive recursive.
 
-**Theorem (`plusStep_unpair11`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of unnum1. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`primrec_unnum2`).** The numerical function unnum2 is primitive recursive.
 
-**Theorem (`plusStep_unpair12`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of unnum2. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`primrec_untagStep`).** The numerical function untag step is primitive recursive.
 
-**Theorem (`plusStep_unpair21`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of untag step. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`primrec_untagState`).** The numerical function untag state is primitive recursive.
 
-**Theorem (`plusStep_unpair22`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of untag state. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`primrec_untagList`).** The numerical function untag list is primitive recursive.
 
-**Theorem (`plusStep_iter_spec`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of untag list. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`primrec_untagVal`).** The numerical function untag val is primitive recursive.
 
-**Theorem (`primrec_nextCellStep`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of untag val. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`tag_eq_foldr`).** The value of tag equals the value described by foldr.
 
-**Theorem (`primrec_plusStep`).** As set out for this part of the library.
+*Proof.* Compare membership or numerical components in tag eq foldr; the defining equations reduce both sides to the same data. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`tag_eq_foldl_reverse`).** The value of tag equals the value described by foldl reverse.
 
-**Theorem (`primrec_plusIdx`).** As set out for this part of the library.
+*Proof.* Compare membership or numerical components in tag eq foldl reverse; the defining equations reduce both sides to the same data. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`tagCode_spec`).** The numerical construction tag code spec computes exactly the finite object described by its specification.
 
-**Theorem (`primrec_tri`).** As set out for this part of the library.
+*Proof.* Induction over the bounded iteration for tag code spec maintains the recorded accumulator invariant and yields the claimed final components. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`tagOfBits_spec`).** The numerical construction tag of bits spec computes exactly the finite object described by its specification.
 
-**Theorem (`primrec_num`).** As set out for this part of the library.
+*Proof.* Induction over the bounded iteration for tag of bits spec maintains the recorded accumulator invariant and yields the claimed final components. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`testBit_orUpTo`).** For the objects in test bit or up to, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`primrec_tagStep`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for test bit or up to and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`testBit_orUpTo_self`).** For the objects in test bit or up to self, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`primrec_tagCode`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for test bit or up to self and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`plusIdx_testBit`).** For the objects in plus idx test bit, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`primrec_tagOfBits`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for plus idx test bit and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`compl_nbhd_plusIdx`).** For the objects in compl nbhd plus idx, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`primrec_unnumPair`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for compl nbhd plus idx and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`plusMap_rel_iff`).** The condition plus map rel holds exactly when the finite witness condition holds.
 
-**Theorem (`primrec_unnum1`).** As set out for this part of the library.
+*Proof.* Expand both conditions in plus map rel iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`plusMap_isComputable`).** The map or element plus map is computable is computable with respect to the presentations appearing in its domain and codomain.
 
-**Theorem (`primrec_unnum2`).** As set out for this part of the library.
+*Proof.* Reduce the relation for plus map is computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`unnumPair_spec`).** The numerical construction unnum pair spec computes exactly the finite object described by its specification.
 
-**Theorem (`primrec_untagStep`).** As set out for this part of the library.
+*Proof.* Induction over the bounded iteration for unnum pair spec maintains the recorded accumulator invariant and yields the claimed final components. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`unnum1_spec`).** The numerical construction unnum1 spec computes exactly the finite object described by its specification.
 
-**Theorem (`primrec_untagState`).** As set out for this part of the library.
+*Proof.* Induction over the bounded iteration for unnum1 spec maintains the recorded accumulator invariant and yields the claimed final components. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`unnum2_spec`).** The numerical construction unnum2 spec computes exactly the finite object described by its specification.
 
-**Theorem (`primrec_untagList`).** As set out for this part of the library.
+*Proof.* Induction over the bounded iteration for unnum2 spec maintains the recorded accumulator invariant and yields the claimed final components. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`untagList_bitAt_isComputable`).** The map or element untag list bit at is computable is computable with respect to the presentations appearing in its domain and codomain.
 
-**Theorem (`primrec_untagVal`).** As set out for this part of the library.
+*Proof.* Reduce the relation for untag list bit at is computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`untagRef_succ_case`).** At a successor input, untag ref succ case satisfies its recursive step equation.
 
-**Theorem (`tag_eq_foldr`).** As set out for this part of the library.
+*Proof.* The relevant clause of the recursive definition of untag ref succ case gives this equation immediately. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`untagRef_zero_case`).** For the objects in untag ref zero case, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`tag_eq_foldl_reverse`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for untag ref zero case and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`tag_untagRef`).** For the objects in tag untag ref, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`tagCode_spec`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for tag untag ref and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`untagStep_cont`).** For the objects in untag step cont, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`tagOfBits_spec`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for untag step cont and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`untagStep_done`).** At input one, untag step has the value specified by its definition.
 
-**Theorem (`testBit_orUpTo`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for untag step done and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`untagStep_halt`).** For the objects in untag step halt, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`testBit_orUpTo_self`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for untag step halt and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`untagStep_of_done_iterate`).** The hypotheses done iterate imply untag step.
 
-**Theorem (`plusIdx_testBit`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for untag step of done iterate and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`untagStep_iter_spec`).** The numerical construction untag step iter spec computes exactly the finite object described by its specification.
 
-**Theorem (`compl_nbhd_plusIdx`).** As set out for this part of the library.
+*Proof.* Induction over the bounded iteration for untag step iter spec maintains the recorded accumulator invariant and yields the claimed final components. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`untagState_spec`).** The numerical construction untag state spec computes exactly the finite object described by its specification.
 
-**Theorem (`plusMap_rel_iff`).** As set out for this part of the library.
+*Proof.* Induction over the bounded iteration for untag state spec maintains the recorded accumulator invariant and yields the claimed final components. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`decodeList_untagList`).** For the objects in list untag list, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`plusMap_isComputable`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for list untag list and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`untagVal_and_isComputable`).** The map or element untag val and is computable is computable with respect to the presentations appearing in its domain and codomain.
 
-**Theorem (`unnumPair_spec`).** As set out for this part of the library.
+*Proof.* Reduce the relation for untag val and is computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`untagVal_spec`).** The numerical construction untag val spec computes exactly the finite object described by its specification.
 
-**Theorem (`unnum1_spec`).** As set out for this part of the library.
+*Proof.* Induction over the bounded iteration for untag val spec maintains the recorded accumulator invariant and yields the claimed final components. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`tag_untagList_untagVal`).** For the objects in tag untag list untag val, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`unnum2_spec`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for tag untag list untag val and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`mem_Fun_compl_nbhd_iff`).** Membership in fun compl nbhd iff is equivalent to the explicit witness condition given by the construction.
 
-**Theorem (`untagList_bitAt_isComputable`).** As set out for this part of the library.
+*Proof.* Expanding the membership definition of fun compl nbhd iff exposes exactly the witnesses and equations occurring on the other side. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`mem_Fun_compl_nbhd_iff'`).** Membership in fun compl nbhd iff' is equivalent to the explicit witness condition given by the construction.
 
-**Theorem (`untagRef_succ_case`).** As set out for this part of the library.
+*Proof.* Expanding the membership definition of fun compl nbhd iff' exposes exactly the witnesses and equations occurring on the other side. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`mem_Fun_compl_nbhd_isComputable`).** The map or element fun compl nbhd is computable is computable with respect to the presentations appearing in its domain and codomain.
 
-**Theorem (`untagRef_zero_case`).** As set out for this part of the library.
+*Proof.* The required witness for fun compl nbhd is computable is supplied directly by the defining membership condition. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`mem_GraphIdx_iff`).** Membership in graph idx iff is equivalent to the explicit witness condition given by the construction.
 
-**Theorem (`tag_untagRef`).** As set out for this part of the library.
+*Proof.* Expanding the membership definition of graph idx iff exposes exactly the witnesses and equations occurring on the other side. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`graphIdx_isComputable`).** The map or element graph idx is computable is computable with respect to the presentations appearing in its domain and codomain.
 
-**Theorem (`untagStep_cont`).** As set out for this part of the library.
+*Proof.* Reduce the relation for graph idx is computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`graphMap_isComputable`).** The map or element graph map is computable is computable with respect to the presentations appearing in its domain and codomain.
 
-**Theorem (`untagStep_done`).** As set out for this part of the library.
+*Proof.* Reduce the relation for graph map is computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`testBit_imp_mem_Fun_isComputable`).** The map or element test bit imp mem fun is computable is computable with respect to the presentations appearing in its domain and codomain.
 
-**Theorem (`untagStep_halt`).** As set out for this part of the library.
+*Proof.* Reduce the relation for test bit imp mem fun is computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`gMap_isComputable`).** The map or element g map is computable is computable with respect to the presentations appearing in its domain and codomain.
 
-**Theorem (`untagStep_of_done_iterate`).** As set out for this part of the library.
+*Proof.* Reduce the relation for g map is computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+**Theorem (`funMap_isComputable`).** The map or element fun map is computable is computable with respect to the presentations appearing in its domain and codomain.
 
-**Theorem (`untagStep_iter_spec`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
-
-**Theorem (`untagState_spec`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
-
-**Theorem (`decodeList_untagList`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
-
-**Theorem (`untagVal_and_isComputable`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
-
-**Theorem (`untagVal_spec`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
-
-**Theorem (`tag_untagList_untagVal`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
-
-**Theorem (`mem_Fun_compl_nbhd_iff`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
-
-**Theorem (`mem_Fun_compl_nbhd_iff'`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
-
-**Theorem (`mem_Fun_compl_nbhd_isComputable`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
-
-**Theorem (`mem_GraphIdx_iff`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
-
-**Theorem (`graphIdx_isComputable`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
-
-**Theorem (`graphMap_isComputable`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
-
-**Theorem (`testBit_imp_mem_Fun_isComputable`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
-
-**Theorem (`gMap_isComputable`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
-
-**Theorem (`funMap_isComputable`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of step functions on the powerset and the decidable graph relation. ∎
+*Proof.* Reduce the relation for fun map is computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎

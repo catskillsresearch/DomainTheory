@@ -2,94 +2,82 @@ The smash product is enumerated by pairing neighbourhoods, collapsing a factor t
 
 <!-- formalization -->
 
-**Definition (`smashEnum`).** As set out for this part of the library.
+**Definition (`smashEnum`).** A paired index enumerates the product neighbourhood of its two components when both are proper; otherwise it enumerates the smash master neighbourhood.
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+**Theorem (`smashEnum_master`).** If at least one indexed component is the master neighbourhood, the smash enumeration returns the smash master.
 
-**Theorem (`smashEnum_master`).** As set out for this part of the library.
+*Proof.* The proper-pair condition fails in the defining alternative. ∎
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+**Theorem (`smashEnum_proper`).** If both indexed components are proper, the smash enumeration returns their product neighbourhood.
 
-**Theorem (`smashEnum_proper`).** As set out for this part of the library.
+*Proof.* The proper-pair condition holds in the defining alternative. ∎
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+**Theorem (`smashEnum_eq_eff`).** Given Boolean characteristic functions for proper component neighbourhoods, the smash enumeration is the product of the selected component indices, where a failed properness test selects the appropriate master index.
 
-**Theorem (`smashEnum_eq_eff`).** As set out for this part of the library.
+*Proof.* If both tests succeed, both original indices are selected; if either fails, both selections yield master neighbourhoods and hence the smash master. ∎
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+**Theorem (`smashEnum_eq_prodNbhd_mem`).** Every enumerated smash neighbourhood is a product neighbourhood of two component neighbourhoods.
 
-**Theorem (`smashEnum_eq_prodNbhd_mem`).** As set out for this part of the library.
+*Proof.* Use the indexed components in the proper case and the two masters otherwise. ∎
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+**Theorem (`smashEnum_mem`).** Every set in the smash enumeration is a smash neighbourhood.
 
-**Theorem (`smashEnum_mem`).** As set out for this part of the library.
+*Proof.* A proper pair gives a proper smash neighbourhood, while every improper pair gives the master. ∎
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+**Theorem (`smashEnum_subset_master`).** Every enumerated smash neighbourhood is included in the product of the component masters.
 
-**Theorem (`smashEnum_subset_master`).** As set out for this part of the library.
+*Proof.* Every neighbourhood is included in the smash master, which is that product. ∎
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+**Theorem (`proper₀_dec`).** Properness of a numbered neighbourhood in the first component is recursively decidable.
 
-**Theorem (`proper₀_dec`).** As set out for this part of the library.
+*Proof.* Equality with the numbered master is decidable, so its negation is decidable. ∎
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+**Theorem (`proper₁_dec`).** Properness of a numbered neighbourhood in the second component is recursively decidable.
 
-**Theorem (`proper₁_dec`).** As set out for this part of the library.
+*Proof.* Equality with the numbered master is decidable, so its negation is decidable. ∎
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+**Definition (`smashPresentation`).** The smash Scott presentation uses the smash enumeration and decides intersection equality and consistency by reducing them to the corresponding component relations and properness tests.
 
-**Definition (`smashPresentation`).** As set out for this part of the library.
+**Theorem (`smashPresentation_X`).** The neighbourhood numbered by an index in the smash presentation is its smash-enumerated neighbourhood.
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+*Proof.* This is the presentation's defining enumeration. ∎
 
-**Theorem (`smashPresentation_X`).** As set out for this part of the library.
+**Definition (`smashProj₀`).** The first smash projection relates \(W\) to \(X\) when both are neighbourhoods and the left preimage of \(W\) is included in \(X\).
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+**Theorem (`smashProj₀_rel`).** The relation of the first smash projection is exactly the stated neighbourhood and left-preimage inclusion condition.
 
-**Definition (`smashProj₀`).** As set out for this part of the library.
+*Proof.* This is its defining relation. ∎
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+**Definition (`smashProj₁`).** The second smash projection relates \(W\) to \(Y\) when both are neighbourhoods and the right preimage of \(W\) is included in \(Y\).
 
-**Theorem (`smashProj₀_rel`).** As set out for this part of the library.
+**Theorem (`smashProj₁_rel`).** The relation of the second smash projection is exactly the stated neighbourhood and right-preimage inclusion condition.
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+*Proof.* This is its defining relation. ∎
 
-**Definition (`smashProj₁`).** As set out for this part of the library.
+**Definition (`smashPaired`).** Pairing two approximable maps relates a source neighbourhood to the smash master automatically, and to a proper product neighbourhood when the two maps relate it to the respective factors.
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+**Theorem (`smashPaired_rel`).** The relation of smash pairing is precisely the disjunction between the master case and the proper componentwise case.
 
-**Theorem (`smashProj₁_rel`).** As set out for this part of the library.
+*Proof.* This is its defining relation. ∎
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+**Definition (`smashMap`).** Two approximable maps act componentwise on smash products, with every source related to the target master and proper products related through the two component maps.
 
-**Definition (`smashPaired`).** As set out for this part of the library.
+**Theorem (`smashMap_isComputable`).** The componentwise smash map of two computable maps is computable.
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+*Proof.* Proper target pairs reduce the relation to the two recursively enumerable component relations after primitive-recursive index selection; an improper target is always related. ∎
 
-**Theorem (`smashPaired_rel`).** As set out for this part of the library.
+**Theorem (`smashPaired_isComputable`).** Smash pairing of two computable maps is computable.
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+*Proof.* For a proper target pair the relation is the conjunction of the two component relations; for the target master it holds automatically. ∎
 
-**Definition (`smashMap`).** As set out for this part of the library.
+**Theorem (`smashProj₀_isComputable`).** The first smash projection is computable.
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+*Proof.* On enumerated neighbourhoods its relation is decidable inclusion of the effectively selected left component into the target neighbourhood. ∎
 
-**Theorem (`smashMap_isComputable`).** As set out for this part of the library.
+**Theorem (`smashProj₁_isComputable`).** The second smash projection is computable.
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+*Proof.* On enumerated neighbourhoods its relation is decidable inclusion of the effectively selected right component into the target neighbourhood. ∎
 
-**Theorem (`smashPaired_isComputable`).** As set out for this part of the library.
+**Theorem (`smash_isEffectivelyGivenS`).** The smash product of two effectively given systems is effectively given in the Scott sense.
 
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
-
-**Theorem (`smashProj₀_isComputable`).** As set out for this part of the library.
-
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
-
-**Theorem (`smashProj₁_isComputable`).** As set out for this part of the library.
-
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
-
-**Theorem (`smash_isEffectivelyGivenS`).** As set out for this part of the library.
-
-*Proof.* By the smash enumeration and the decidability of proper neighbourhoods. ∎
+*Proof.* Choose presentations of both factors and use their smash presentation. ∎

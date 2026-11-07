@@ -1,19 +1,19 @@
-Library development supporting Scott's neighbourhood-system formalization.
+This peer isolates projection pairs, the embedding–projection data used to represent one neighbourhood domain as a retract of another.
 
 <!-- formalization -->
 
-**Definition (`ProjPair`).** As set out for this part of the library.
+**Definition (`ProjPair`).** A projection pair from \(D\) to \(E\) consists of an injection \(i:D\to E\) and a projection \(j:E\to D\) such that \(j i\) is the identity on \(D\) and \(i j\) lies below the identity on \(E\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* These two equations are precisely the retraction and approximation laws for an embedding–projection pair. ∎
 
-**Definition (`comp`).** As set out for this part of the library.
+**Definition (`ProjPair.comp`).** Projection pairs from \(D\) to \(E\) and from \(E\) to \(F\) compose to a projection pair from \(D\) to \(F\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Compose the injections in the forward order and the projections in the reverse order; associativity, the two retraction laws, and monotonicity give the required identities and inequality. ∎
 
-**Definition (`ofIso`).** As set out for this part of the library.
+**Definition (`ProjPair.ofIso`).** Every domain isomorphism determines a projection pair whose injection is the isomorphism and whose projection is its inverse.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The inverse laws make both composites identities, and equality in particular gives the required approximation inequality. ∎
 
-**Definition (`ofSubsystem`).** As set out for this part of the library.
+**Definition (`ProjPair.ofSubsystem`).** Every subsystem inclusion determines a projection pair from the subsystem to its ambient neighbourhood system.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Use the canonical subsystem injection and projection; their retraction and approximation laws are part of the subsystem construction. ∎

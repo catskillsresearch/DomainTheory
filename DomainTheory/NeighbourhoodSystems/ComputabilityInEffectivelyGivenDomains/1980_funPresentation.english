@@ -2,502 +2,444 @@ The function space of effectively given systems is effectively given, and evalua
 
 <!-- formalization -->
 
-**Definition (`interList`).** As set out for this part of the library.
+**Definition (`interList`).** Starting from a base set, this operation intersects all sets in a finite list.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`interList_nil`).** Intersecting no listed sets leaves the base set.
 
-**Theorem (`interList_nil`).** As set out for this part of the library.
+*Proof.* The empty list contributes no intersections, so the recursive definition returns the base set. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Definition (`funPair`).** A paired index denotes the pair consisting of the corresponding source and target neighbourhoods.
 
-**Definition (`funPair`).** As set out for this part of the library.
+**Theorem (`funPair_fst`).** The first component of a paired index is the source neighbourhood named by its first numerical component.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The first projection of the interpreted pair is the source neighbourhood indexed by the first unpaired component. ∎
 
-**Theorem (`funPair_fst`).** As set out for this part of the library.
+**Theorem (`funPair_snd`).** The second component of a paired index is the target neighbourhood named by its second numerical component.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The second projection of the interpreted pair is the target neighbourhood indexed by the second unpaired component. ∎
 
-**Theorem (`funPair_snd`).** As set out for this part of the library.
+**Definition (`bitSelect`).** A natural number is read as a bit mask selecting a sublist from a given finite list.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`bitSelect_nil`).** Every mask selects the empty sublist from the empty list.
 
-**Definition (`bitSelect`).** As set out for this part of the library.
+*Proof.* There are no entries to inspect, so every mask selects the empty list. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`andFoldl_eq_one_iff`).** The characteristic value is one exactly when every finite condition encoded in its arguments holds.
 
-**Theorem (`bitSelect_nil`).** As set out for this part of the library.
+*Proof.* Induction on the list uses the binary bound on the accumulator; each update is one exactly when the old flag and the current test are both one. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`andFoldl_one`).** Starting with success, the finite conjunction fold returns one exactly when every listed value is one.
 
-**Theorem (`andFoldl_eq_one_iff`).** As set out for this part of the library.
+*Proof.* Specializing the preceding fold characterization to initial flag one removes the redundant initial conjunct. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Definition (`appendStep`).** This operation adjoins one natural number to the front of an accumulated list code.
 
-**Theorem (`andFoldl_one`).** As set out for this part of the library.
+**Definition (`appendStp`).** This packed fold step adjoins the current entry to an accumulated list code.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Definition (`appendCode`).** This operation combines two list codes by folding the entries of one into the other.
 
-**Definition (`appendStep`).** As set out for this part of the library.
+**Theorem (`appendStp_eq`).** The coding operation agrees with concatenation or adjoining an entry to a finite list.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Unpairing the packed entry and accumulator recovers both arguments of the adjoining operation. ∎
 
-**Definition (`appendStp`).** As set out for this part of the library.
+**Definition (`botMap`).** The least approximable map relates every source neighbourhood only as forced by the master target neighbourhood.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`botMap_rel`).** The least approximable map relates a source neighbourhood to a target neighbourhood exactly when both are valid and the master target neighbourhood is contained in the latter.
 
-**Definition (`appendCode`).** As set out for this part of the library.
+*Proof.* The least map generated by an empty constraint list contains exactly the mandatory master-target relation, together with validity of both neighbourhoods. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Definition (`condSet`).** This set consists of the points in a base target neighbourhood satisfying every consequent whose antecedent contains a fixed source neighbourhood.
 
-**Theorem (`appendStp_eq`).** As set out for this part of the library.
+**Theorem (`condSet_nil`).** With no constraints, the conditional set is the initial target set.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Set extensionality identifies both sides pointwise: each asks for membership in the base and in every consequent whose antecedent contains the fixed neighbourhood. ∎
 
-**Definition (`botMap`).** As set out for this part of the library.
+**Theorem (`condSet_subset`).** Every conditional intersection is contained in its initial target neighbourhood.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Membership in the conditional set includes membership in the initial target set as its first conjunct, which gives the inclusion. ∎
 
-**Theorem (`botMap_rel`).** As set out for this part of the library.
+**Definition (`consPairChar`).** This zero-one characteristic tests whether two enumerated function-space neighbourhoods have a consistent intersection.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Definition (`consUpd`).** This state update scans a selected sublist, intersects the chosen neighbourhood indices, and records whether each required intersection remains consistent.
 
-**Definition (`condSet`).** As set out for this part of the library.
+**Definition (`consStp`).** This packed fold step applies the consistency update to one coded entry.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Definition (`consCharAt`).** This characteristic tests whether the neighbourhoods selected by a bit mask have a consistent finite intersection.
 
-**Theorem (`condSet_nil`).** As set out for this part of the library.
+**Theorem (`decodeList_appendStep`).** Decoding an adjoining step gives the new entry followed by the decoded accumulator.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The successor decoding equation unpairs the predecessor into the newly adjoined head and the former accumulator code. ∎
 
-**Theorem (`condSet_subset`).** As set out for this part of the library.
+**Theorem (`decodeList_encodeList`).** Decoding the code of a finite list recovers the list.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Induction on the list or code uses the successor coding equation and the fact that unpairing a freshly paired head and tail recovers both components. ∎
 
-**Definition (`consPairChar`).** As set out for this part of the library.
+**Theorem (`decodeList_foldl_appendStp`).** Decoding an adjoining fold gives the reverse of the folded entries followed by the decoded accumulator.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Induction on the folded list uses the adjoining equation at each head; because entries are prepended, the processed prefix appears in reverse order. ∎
 
-**Definition (`consUpd`).** As set out for this part of the library.
+**Theorem (`decodeList_appendCode`).** Decoding the combined code gives the reversed second decoded list followed by the first.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The coded-fold equation and the preceding decoding formula identify the result as the reversed second list followed by the first. ∎
 
-**Definition (`consStp`).** As set out for this part of the library.
+**Definition (`funImpChar`).** This characteristic represents the implication from consistency of selected antecedents to consistency of selected consequents.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Definition (`funConsChar`).** This bounded universal characteristic tests consistency of a finite family of step constraints over all selected subfamilies.
 
-**Definition (`consCharAt`).** As set out for this part of the library.
+**Definition (`funListOf`).** A list of paired indices is interpreted as a list of source-target neighbourhood pairs.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Definition (`Xenum`).** A consistent code denotes its finite step-function neighbourhood; an inconsistent code denotes the master function-space neighbourhood.
 
-**Theorem (`decodeList_appendStep`).** As set out for this part of the library.
+**Theorem (`Xenum_neg`).** A code rejected by the consistency characteristic denotes the whole function space.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* A failed consistency test takes the second branch of the enumeration, which is the whole function space. ∎
 
-**Theorem (`decodeList_encodeList`).** As set out for this part of the library.
+**Theorem (`Xenum_pos`).** A code accepted by the consistency characteristic denotes the finite step-function neighbourhood determined by its decoded constraints.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* A successful consistency test takes the first branch, the step neighbourhood generated by the decoded constraints. ∎
 
-**Theorem (`decodeList_foldl_appendStp`).** As set out for this part of the library.
+**Theorem (`funListOf_cons`).** Interpreting a nonempty index list gives the interpreted head pair followed by the interpreted tail.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Mapping interpreted paired indices over a cons list preserves its head and maps the tail. ∎
 
-**Theorem (`decodeList_appendCode`).** As set out for this part of the library.
+**Theorem (`exists_funListOf`).** Every finite list of valid source-target neighbourhood pairs is represented by a list of paired presentation indices.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Induction on the finite pair list chooses source and target indices by surjectivity of the two presentations, pairs those indices, and applies the induction hypothesis to the tail. ∎
 
-**Definition (`funImpChar`).** As set out for this part of the library.
+**Theorem (`funListOf_valid`).** Every pair represented by a list of paired indices consists of valid source and target neighbourhoods.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Every list entry comes from a paired index, and each coordinate enumeration always names a valid neighbourhood. ∎
 
-**Definition (`funConsChar`).** As set out for this part of the library.
+**Theorem (`Xenum_mem`).** Every set produced by the function-space enumeration is a function-space neighbourhood.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* In the successful case, consistency supplies nonemptiness of a valid finite step neighbourhood; in the failed case, the whole function space is its master neighbourhood. ∎
 
-**Definition (`funListOf`).** As set out for this part of the library.
+**Theorem (`Xenum_nonempty`).** Every neighbourhood in the function-space enumeration is nonempty.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Every enumerated set is a neighbourhood, and nonemptiness is part of the neighbourhood axiom in the function-space system. ∎
 
-**Definition (`Xenum`).** As set out for this part of the library.
+**Definition (`idxchain`).** This index is obtained by successively intersecting a finite list of neighbourhood indices, beginning with the master index.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Definition (`interFrom`).** This operation successively intersects a starting set with the neighbourhoods named by a list of indices.
 
-**Theorem (`Xenum_neg`).** As set out for this part of the library.
+**Definition (`interIdx`).** This index denotes the intersection of two enumerated function-space neighbourhoods whenever both are proper, and otherwise selects the proper one.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Definition (`interYsStp`).** This fold step intersects a target accumulator with a consequent exactly when the fixed antecedent is contained in the current antecedent.
 
-**Theorem (`Xenum_pos`).** As set out for this part of the library.
+**Definition (`interYsIdx`).** This operation computes an index for the intersection of all consequents applicable to a fixed antecedent.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`mem_condSet`).** A point belongs to the conditional set exactly when it lies in the base and in every consequent whose antecedent contains the fixed source neighbourhood.
 
-**Theorem (`funListOf_cons`).** As set out for this part of the library.
+*Proof.* This is the membership condition defining the conditional set: membership in the base together with every applicable consequent. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`condSet_cons_neg`).** A constraint whose antecedent does not contain the fixed source neighbourhood contributes no condition to the conditional intersection.
 
-**Theorem (`exists_funListOf`).** As set out for this part of the library.
+*Proof.* The head implication has a false antecedent, hence imposes no condition; the remaining universal conditions are exactly those from the tail. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`condSet_cons_pos`).** A constraint whose antecedent contains the fixed source neighbourhood contributes intersection with its consequent.
 
-**Theorem (`funListOf_valid`).** As set out for this part of the library.
+*Proof.* When the fixed antecedent is contained in the head antecedent, the head condition requires membership in its consequent, producing one additional intersection before processing the tail. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`condFoldl_spec`).** Folding the computable intersection indices yields an index for the conditional intersection determined by the finite constraint list.
 
-**Theorem (`Xenum_mem`).** As set out for this part of the library.
+*Proof.* Induction on the constraint list skips a head when inclusion fails and otherwise computes the intersection with its consequent; neighbourhood consistency licenses the presentation’s intersection index. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`condSet_eq_interYs`).** Starting from the master target neighbourhood, the conditional intersection equals the intersection of all consequents applicable to the fixed antecedent.
 
-**Theorem (`Xenum_nonempty`).** As set out for this part of the library.
+*Proof.* Set extensionality identifies both sides pointwise: each asks for membership in the base and in every consequent whose antecedent contains the fixed neighbourhood. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`primrec_appendCode`).** The numerical function defining appendCode is primitive recursive.
 
-**Definition (`idxchain`).** As set out for this part of the library.
+*Proof.* The append code function is built from primitive-recursive projections, constants, pairing and composition. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`primrec_consPairChar`).** The numerical function defining consPairChar is primitive recursive.
 
-**Definition (`interFrom`).** As set out for this part of the library.
+*Proof.* The cons pair characteristic function is built from primitive-recursive projections, constants, pairing and composition. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`primrec_interIdx`).** The numerical function defining interIdx is primitive recursive.
 
-**Definition (`interIdx`).** As set out for this part of the library.
+*Proof.* The inter idx function is built from primitive-recursive projections, constants, pairing and composition. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`primrec_interYsStp`).** The numerical function defining interYsStp is primitive recursive.
 
-**Definition (`interYsStp`).** As set out for this part of the library.
+*Proof.* The inter ys step function is built from primitive-recursive projections, constants, pairing and composition. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`primrec_interYsIdx`).** The numerical function defining interYsIdx is primitive recursive.
 
-**Definition (`interYsIdx`).** As set out for this part of the library.
+*Proof.* The inter ys idx function is built from primitive-recursive projections, constants, pairing and composition. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`rel_interYs_funList`).** Every map satisfying a finite list of step constraints relates each source neighbourhood to the intersection of all applicable consequents.
 
-**Theorem (`mem_condSet`).** As set out for this part of the library.
+*Proof.* Induction on the constraint list ignores heads whose antecedent does not contain the chosen source and otherwise combines the head relation with the induction hypothesis by target intersection. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`interYs_funList_mem_of_nonempty`).** If a finite step-function neighbourhood is nonempty, then its intersection of applicable consequents is a target neighbourhood.
 
-**Theorem (`condSet_cons_neg`).** As set out for this part of the library.
+*Proof.* The inclusion characteristic selects exactly the applicable consequents, and induction over the decoded list shows that the computed presentation intersections denote their set-theoretic intersection. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`selectFn_isOne`).** Selection controlled by the characteristic of one chooses the first value exactly when the tested value is one.
 
-**Theorem (`condSet_cons_pos`).** As set out for this part of the library.
+*Proof.* Substitution of the control value into the arithmetic definition cancels one summand and leaves the selected argument. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`interYsIdx_spec`).** The computed target index denotes exactly the intersection of all consequents applicable to the chosen antecedent.
 
-**Theorem (`condFoldl_spec`).** As set out for this part of the library.
+*Proof.* The inclusion characteristic selects exactly the applicable consequents, and induction over the decoded list shows that the computed presentation intersections denote their set-theoretic intersection. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`selectFn_mul_iff`).** Selection with default zero has value one exactly when both its control and selected value are one.
 
-**Theorem (`condSet_eq_interYs`).** As set out for this part of the library.
+*Proof.* The selector with zero default is the product of its two inputs, and a product of natural numbers is one precisely when both factors are one. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`stepFun_funListOf_appendCode`).** The finite step neighbourhood represented by the combined code is the intersection of the neighbourhoods represented by the two original codes.
 
-**Theorem (`primrec_appendCode`).** As set out for this part of the library.
+*Proof.* Interpretation is list mapping by paired indices, and mapping distributes over concatenation. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`Xenum_inter_eq`).** Whenever the intersection is nonempty, the computed intersection index denotes exactly the intersection of the two enumerated function-space neighbourhoods.
 
-**Theorem (`primrec_consPairChar`).** As set out for this part of the library.
+*Proof.* Split on the two consistency bits.  If both codes are proper, concatenating their constraint lists represents intersection; if either is improper, its neighbourhood is the whole space and intersection returns the other. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`consPairChar_spec`).** The pair-consistency characteristic is one exactly when some enumerated function-space neighbourhood is contained in the intersection.
 
-**Theorem (`primrec_interIdx`).** As set out for this part of the library.
+*Proof.* Existence of such a refinement is equivalent to nonemptiness of the intersection.  When nonempty, the computed intersection index is a witness; conversely every enumerated refinement is itself nonempty. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`stepFun_funListOf_eq_univ_iff`).** A finite step-function neighbourhood is the whole function space exactly when every listed consequent is the master neighbourhood.
 
-**Theorem (`primrec_interYsStp`).** As set out for this part of the library.
+*Proof.* Testing the alleged equality on the least approximable map forces each consequent to contain the master and hence equal it; conversely, master consequents are satisfied by every map through its mandatory master relation. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`stepFun_funListOf_subset_iff`).** Inclusion of the two finite step-function neighbourhoods is equivalent to containment of every required consequent by the intersection generated from the first family.
 
-**Theorem (`primrec_interYsIdx`).** As set out for this part of the library.
+*Proof.* The least map generated by the first constraints supplies necessity; conversely, each map satisfying those constraints relates an antecedent to their applicable-consequent intersection, and monotonicity yields every constraint in the second family. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Definition (`subStp`).** This fold step preserves a success flag precisely when the computed applicable-consequent intersection is contained in the current consequent.
 
-**Theorem (`rel_interYs_funList`).** As set out for this part of the library.
+**Theorem (`primrec_subStp`).** The numerical function defining subStp is primitive recursive.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The sub step function is built from primitive-recursive projections, constants, pairing and composition. ∎
 
-**Theorem (`interYs_funList_mem_of_nonempty`).** As set out for this part of the library.
+**Definition (`subChar`).** This characteristic tests inclusion between two finite step-function neighbourhoods.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`primrec_subChar`).** The numerical function defining subChar is primitive recursive.
 
-**Theorem (`selectFn_isOne`).** As set out for this part of the library.
+*Proof.* The sub characteristic function is built from primitive-recursive projections, constants, pairing and composition. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`subChar_spec`).** The inclusion characteristic has value one exactly when the first finite step-function neighbourhood is contained in the second.
 
-**Theorem (`interYsIdx_spec`).** As set out for this part of the library.
+*Proof.* The least map generated by the first constraints supplies necessity; conversely, each map satisfying those constraints relates an antecedent to their applicable-consequent intersection, and monotonicity yields every constraint in the second family. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Definition (`trivStp`).** This fold step preserves a success flag precisely when the current consequent is the master neighbourhood.
 
-**Theorem (`selectFn_mul_iff`).** As set out for this part of the library.
+**Theorem (`primrec_trivStp`).** The numerical function defining trivStp is primitive recursive.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The triv step function is built from primitive-recursive projections, constants, pairing and composition. ∎
 
-**Theorem (`stepFun_funListOf_appendCode`).** As set out for this part of the library.
+**Definition (`trivialChar`).** This characteristic tests whether a finite step-function neighbourhood is the entire function space.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Definition (`eqEnumChar`).** This characteristic tests equality of two enumerated function-space neighbourhoods, treating inconsistent codes as the master neighbourhood.
 
-**Theorem (`Xenum_inter_eq`).** As set out for this part of the library.
+**Definition (`interEqChar`).** This characteristic tests whether one enumerated function-space neighbourhood is the intersection of two others.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`primrec_trivialChar`).** The numerical function defining trivialChar is primitive recursive.
 
-**Theorem (`consPairChar_spec`).** As set out for this part of the library.
+*Proof.* The trivial characteristic function is built from primitive-recursive projections, constants, pairing and composition. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`primrec_eqEnumChar`).** The numerical function defining eqEnumChar is primitive recursive.
 
-**Theorem (`stepFun_funListOf_eq_univ_iff`).** As set out for this part of the library.
+*Proof.* The equality enum characteristic function is built from primitive-recursive projections, constants, pairing and composition. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`primrec_interEqChar`).** The numerical function defining interEqChar is primitive recursive.
 
-**Theorem (`stepFun_funListOf_subset_iff`).** As set out for this part of the library.
+*Proof.* The interequality characteristic function is built from primitive-recursive projections, constants, pairing and composition. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`trivialChar_spec`).** The triviality characteristic has value one exactly when the finite step-function neighbourhood is the whole function space.
 
-**Definition (`subStp`).** As set out for this part of the library.
+*Proof.* The finite conjunction accepts precisely when every consequent in the decoded constraints equals the master neighbourhood, which is exactly the criterion for the step neighbourhood to be the whole function space. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`eqEnumChar_spec`).** The equality characteristic has value one exactly when the two enumerated function-space neighbourhoods are equal.
 
-**Theorem (`primrec_subStp`).** As set out for this part of the library.
+*Proof.* Separate the four consistency cases.  Two proper neighbourhoods are equal exactly by mutual inclusion; a proper and an improper code are equal exactly when the proper one is the whole space; two improper codes both denote the whole space. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`interEqChar_spec`).** The intersection-equality characteristic has value one exactly when the first two enumerated neighbourhoods intersect to the third.
 
-**Definition (`subChar`).** As set out for this part of the library.
+*Proof.* The consistency test first guarantees that the computed intersection index denotes the actual intersection, and the equality characteristic then compares that neighbourhood with the third one. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Definition (`funPresentation`).** The enumeration by consistent finite step constraints, with inconsistent codes assigned to the master neighbourhood, gives a computable presentation of the function space.
 
-**Theorem (`primrec_subChar`).** As set out for this part of the library.
+**Theorem (`interList_cons`).** Intersecting a nonempty list is intersection with its head followed by intersection of its tail.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The recursive definition intersects the head set with the intersection accumulated from the tail. ∎
 
-**Theorem (`subChar_spec`).** As set out for this part of the library.
+**Theorem (`mem_interList`).** A point belongs to a finite list intersection exactly when it lies in the base and in every listed set.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Induction on the list expands the head intersection, converting point membership into membership in the base and in every listed set. ∎
 
-**Definition (`trivStp`).** As set out for this part of the library.
+**Theorem (`rel_interList_of_selection`).** A map satisfying a finite selection of constraints relates a common stronger antecedent to the intersection of their consequents.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Induction on the selected constraints first restricts each relation to the common stronger antecedent, then combines the head consequent with the tail intersection using closure under target intersection. ∎
 
-**Theorem (`primrec_trivStp`).** As set out for this part of the library.
+**Theorem (`interList_mem_of_stepFun_nonempty`).** A compatible finite selection of consequents has a neighbourhood intersection whenever the ambient step-function neighbourhood is nonempty.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Choose a map from the nonempty step neighbourhood; it satisfies every selected constraint, and the preceding finite-intersection relation makes the intersection a target neighbourhood. ∎
 
-**Definition (`trivialChar`).** As set out for this part of the library.
+**Theorem (`stepFun_funListOf_nonempty_iff`).** The finite step-function neighbourhood is nonempty exactly when every consistent selected family of antecedents has a consistent family of consequents.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Necessity follows by choosing a map satisfying the finite constraints and intersecting the selected consequents; sufficiency constructs the least map after filtering exactly the antecedents containing each source neighbourhood. ∎
 
-**Definition (`eqEnumChar`).** As set out for this part of the library.
+**Theorem (`mem_interFrom`).** A point belongs to the indexed iterated intersection exactly when it lies in the initial set and every enumerated factor.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Induction on the index list expands each successive intersection, giving membership in the base and in every enumerated factor. ∎
 
-**Definition (`interEqChar`).** As set out for this part of the library.
+**Theorem (`interFrom_subset`).** An iterated intersection is contained in its initial set.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The membership characterization includes membership in the initial set as its first conjunct. ∎
 
-**Theorem (`primrec_trivialChar`).** As set out for this part of the library.
+**Theorem (`interFrom_mem_of_witness`).** An iterated intersection is a neighbourhood whenever it contains a neighbourhood witness and its initial set is a neighbourhood.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Induction on the index list applies neighbourhood closure under a finite intersection, using the common neighbourhood witness to certify consistency at each new factor. ∎
 
-**Theorem (`primrec_eqEnumChar`).** As set out for this part of the library.
+**Theorem (`interFrom_eq_of_foldl`).** The coded finite fold agrees with repeated application of its step function to the decoded list.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Induction on the indices computes the head intersection using the presentation’s intersection specification and continues from that neighbourhood on the tail. ∎
 
-**Theorem (`primrec_interEqChar`).** As set out for this part of the library.
+**Theorem (`idxchain_spec`).** When the iterated intersection is a neighbourhood, the successively computed index denotes exactly that intersection.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Induction on the index list uses the presentation’s computed-intersection specification at the head and continues with the resulting neighbourhood index on the tail. ∎
 
-**Theorem (`trivialChar_spec`).** As set out for this part of the library.
+**Theorem (`bitSelect_cons`).** The low mask bit decides whether the head is retained, and the halved mask selects from the tail.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The low bit decides whether to retain the head, and division by two supplies the mask for the tail. ∎
 
-**Theorem (`eqEnumChar_spec`).** As set out for this part of the library.
+**Theorem (`bitSelect_sublist`).** Selection by a bit mask always produces a sublist of the original list.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Induction on the source list either keeps or skips its head according to the low bit; both choices preserve the sublist relation for the recursively selected tail. ∎
 
-**Theorem (`interEqChar_spec`).** As set out for this part of the library.
+**Theorem (`exists_bitSelect_lt`).** Every sublist is selected by some bit mask smaller than the corresponding power of two.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Induction on the sublist derivation assigns an even mask when the ambient head is skipped and an odd mask when it is retained; the power-of-two bound doubles at each new position. ∎
 
-**Definition (`funPresentation`).** As set out for this part of the library.
+**Theorem (`forall_sublist_iff_forall_bitmask`).** A property holds for every sublist exactly when it holds for every sublist selected by a bounded bit mask.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Every mask selects a sublist, giving one direction; for the converse, encode an arbitrary sublist by its bounded even-and-odd mask and apply the assumed masked case. ∎
 
-**Theorem (`interList_cons`).** As set out for this part of the library.
+**Theorem (`consUpd_eval`).** On an explicitly packed state, the consistency update either processes the selected entry or skips it according to the low mask bit.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Unpairing the state exposes the mask, current index and flag; the low bit then chooses between processing the entry and carrying the state forward. ∎
 
-**Theorem (`mem_interList`).** As set out for this part of the library.
+**Theorem (`consUpd_foldl_flag_zero`).** The coded finite fold agrees with repeated application of its step function to the decoded list.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Induction on the remaining list shows that a zero success flag is absorbing: whether the next entry is selected or skipped, the recursive state still carries flag zero. ∎
 
-**Theorem (`rel_interList_of_selection`).** As set out for this part of the library.
+**Theorem (`consUpd_foldl_spec`).** The coded finite fold agrees with repeated application of its step function to the decoded list.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Induction on the scanned list follows the low mask bit.  Skipping preserves the state; selecting intersects the current neighbourhood and updates the flag with the consistency characteristic. ∎
 
-**Theorem (`interList_mem_of_stepFun_nonempty`).** As set out for this part of the library.
+**Theorem (`consCharAt_spec`).** The consistency characteristic has value one exactly when the bit-selected family has a neighbourhood intersection.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The coded-fold equation reduces the characteristic to the consistency-update fold, whose specification identifies acceptance with the selected finite intersection being a neighbourhood. ∎
 
-**Theorem (`stepFun_funListOf_nonempty_iff`).** As set out for this part of the library.
+**Theorem (`primrec_consStp`).** The numerical function defining consStp is primitive recursive.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The cons step function is built from primitive-recursive projections, constants, pairing and composition. ∎
 
-**Theorem (`mem_interFrom`).** As set out for this part of the library.
+**Theorem (`primrec_consCharAt`).** The numerical function defining consCharAt is primitive recursive.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The cons characteristic at function is built from primitive-recursive projections, constants, pairing and composition. ∎
 
-**Theorem (`interFrom_subset`).** As set out for this part of the library.
+**Theorem (`consFold_decidable`).** Neighbourhood status of every bit-selected finite intersection is recursively decidable.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Decide consistency for each bit-selected antecedent and consequent intersection, then apply bounded universal quantification over all masks below the power-of-two bound. ∎
 
-**Theorem (`interFrom_mem_of_witness`).** As set out for this part of the library.
+**Theorem (`interList_X_eq_interFrom`).** Intersecting a list of enumerated neighbourhoods from the master set agrees with iterated intersection by their indices.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Pointwise membership on both sides is membership in the master set and in every neighbourhood named by the index list. ∎
 
-**Theorem (`interFrom_eq_of_foldl`).** As set out for this part of the library.
+**Theorem (`antecedent_cons_iff`).** A finite family of antecedents has a common neighbourhood refinement exactly when its iterated intersection is a neighbourhood.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* A common neighbourhood witness is contained in the iterated intersection; conversely, when that intersection is a neighbourhood, its computed presentation index supplies a common refinement of every listed antecedent. ∎
 
-**Theorem (`idxchain_spec`).** As set out for this part of the library.
+**Theorem (`funConsequent_eq`).** The intersection of selected consequent neighbourhoods equals their iterated intersection from the master neighbourhood.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The general equality between list intersection and indexed iteration applies after mapping each selected pair to its target index. ∎
 
-**Theorem (`bitSelect_cons`).** As set out for this part of the library.
+**Theorem (`funCons_iff`).** A finite step-function neighbourhood is nonempty exactly when consistency of every selected antecedent family implies consistency of its consequent family.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The finite-consistency criterion is first expressed over every sublist, then bounded masks are used to enumerate exactly those sublists; antecedent and consequent intersections are converted to indexed iterations. ∎
 
-**Theorem (`bitSelect_sublist`).** As set out for this part of the library.
+**Theorem (`funCons_decidable`).** Nonemptiness of the finite step-function neighbourhood represented by a code is recursively decidable.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Decide consistency for each bit-selected antecedent and consequent intersection, then apply bounded universal quantification over all masks below the power-of-two bound. ∎
 
-**Theorem (`exists_bitSelect_lt`).** As set out for this part of the library.
+**Theorem (`selectFn_one_iff_imp`).** For a zero-one antecedent, selection with default one returns one exactly when value one of the antecedent forces value one of the consequent.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Since the control is at most one, it is either zero or one; the two selector equations turn these cases into the truth table for implication. ∎
 
-**Theorem (`forall_sublist_iff_forall_bitmask`).** As set out for this part of the library.
+**Theorem (`funConsChar_spec`).** The function-space consistency characteristic has value one exactly when the represented finite step-function neighbourhood is nonempty.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The coded fold specification turns each selected mask into a finite neighbourhood intersection, and bounded universal quantification ranges over exactly all sublists. ∎
 
-**Theorem (`consUpd_eval`).** As set out for this part of the library.
+**Theorem (`primrec_funImpChar`).** The numerical function defining funImpChar is primitive recursive.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The fun imp characteristic function is built from primitive-recursive projections, constants, pairing and composition. ∎
 
-**Theorem (`consUpd_foldl_flag_zero`).** As set out for this part of the library.
+**Theorem (`primrec_funConsChar`).** The numerical function defining funConsChar is primitive recursive.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The fun cons characteristic function is built from primitive-recursive projections, constants, pairing and composition. ∎
 
-**Theorem (`consUpd_foldl_spec`).** As set out for this part of the library.
+**Theorem (`funSpace_isEffectivelyGiven`).** The funSpace neighbourhood system is effectively given.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Choose computable presentations for source and target, build the finite-step enumeration with its primitive-recursive consistency characteristic, and use it as the required function-space presentation. ∎
 
-**Theorem (`consCharAt_spec`).** As set out for this part of the library.
+**Theorem (`Xenum_singleton`).** The code for a singleton source-target constraint denotes the corresponding one-step function-space neighbourhood.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The successor list code decodes to the single paired index; consistency of a valid one-step constraint selects its step neighbourhood rather than the master case. ∎
 
-**Theorem (`primrec_consStp`).** As set out for this part of the library.
+**Theorem (`consChain_iff`).** The computed intersection index lies below every index in the chain exactly when the corresponding iterated intersection is a neighbourhood.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* If the computed neighbourhood lies below every factor, it witnesses that their intersection is a neighbourhood; conversely, the intersection specification identifies the computed neighbourhood with that intersection. ∎
 
-**Theorem (`primrec_consCharAt`).** As set out for this part of the library.
+**Theorem (`evalMap_rel_prodNbhd_iff`).** Evaluation relates a product neighbourhood to a target neighbourhood exactly when every function in the function component sends the argument neighbourhood into that target neighbourhood.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The definition of evaluation reduces the product coordinates to the function neighbourhood and argument neighbourhood; its relation is precisely pointwise membership in the target step. ∎
 
-**Theorem (`consFold_decidable`).** As set out for this part of the library.
+**Theorem (`evalMap_isComputable`).** Evaluation from the product of a presented function space and its source is computable.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Evaluation on a product neighbourhood is equivalent to inclusion of its function component in a one-step neighbourhood; the function-space presentation makes this inclusion decidable. ∎
 
-**Theorem (`interList_X_eq_interFrom`).** As set out for this part of the library.
+**Theorem (`funListOf_append`).** Interpreting a concatenation of index lists gives the concatenation of their interpreted neighbourhood-pair lists.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Interpretation is list mapping by paired indices, and mapping distributes over concatenation. ∎
 
-**Theorem (`antecedent_cons_iff`).** As set out for this part of the library.
+**Theorem (`interList_subset_base`).** The iterated intersection is contained in its initial base set.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Induction on the list expands the head intersection, converting point membership into membership in the base and in every listed set. ∎
 
-**Theorem (`funConsequent_eq`).** As set out for this part of the library.
+**Theorem (`mem_Xenum_iff`).** A function-space element contains an enumerated neighbourhood exactly when it satisfies every decoded step constraint whenever the code is consistent.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* A successful code reduces membership to all decoded step constraints; a failed code denotes the master neighbourhood, which every function-space element contains. ∎
 
-**Theorem (`funCons_iff`).** As set out for this part of the library.
+**Theorem (`Xenum_isComputableElement_iff`).** Computability of the function-space element is equivalent to computability of its associated approximable map.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Singleton constraint codes recover the relation of the associated approximable map in one direction; in the other, finite universal closure combines that recursively enumerable relation over every decoded list. ∎
 
-**Theorem (`funCons_decidable`).** As set out for this part of the library.
+**Theorem (`isComputableElement_funPresentation_iff`).** Computability of the function-space element is equivalent to computability of its associated approximable map.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* This is the preceding equivalence after unpacking the definitions of computable element and computable map. ∎
 
-**Theorem (`selectFn_one_iff_imp`).** As set out for this part of the library.
+**Theorem (`mem_Xenum_iff_map`).** An approximable map belongs to an enumerated function neighbourhood exactly when every decoded relation holds whenever the code is consistent.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* A successful code is membership in the finite step neighbourhood, hence satisfaction of every decoded relation; a failed code is the whole space. ∎
 
-**Theorem (`funConsChar_spec`).** As set out for this part of the library.
+**Theorem (`curry_rel_Xenum_iff`).** A curried map relates an outer antecedent to an enumerated function neighbourhood exactly when the original map satisfies every decoded product constraint.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The section of the original map at the outer antecedent satisfies exactly the decoded inner step constraints; recursive enumerability follows by finite universal quantification over the decoded list. ∎
 
-**Theorem (`primrec_funImpChar`).** As set out for this part of the library.
+**Theorem (`curry_isComputable`).** Currying a computable map on the product presentation yields a computable map into the presented function space.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* Rewrite the curried relation as an implication from consistency to all decoded product constraints; recursive enumerability follows from finite universal closure and disjunction with failure of the primitive-recursive consistency test. ∎
 
-**Theorem (`primrec_funConsChar`).** As set out for this part of the library.
+**Definition (`curryStepCode`).** This code represents the singleton step constraint obtained by adjoining a fixed outer antecedent to an inner antecedent-consequent pair.
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`curryIso_apply`).** The currying isomorphism sends an element to the filter generated by the curried associated approximable map.
 
-**Theorem (`funSpace_isEffectivelyGiven`).** As set out for this part of the library.
+*Proof.* The equality is the defining action of the currying isomorphism on an element represented by its associated approximable map. ∎
 
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+**Theorem (`primrec_curryStepCode`).** The numerical function defining curryStepCode is primitive recursive.
 
-**Theorem (`Xenum_singleton`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
-
-**Theorem (`consChain_iff`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
-
-**Theorem (`evalMap_rel_prodNbhd_iff`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
-
-**Theorem (`evalMap_isComputable`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
-
-**Theorem (`funListOf_append`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
-
-**Theorem (`interList_subset_base`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
-
-**Theorem (`mem_Xenum_iff`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
-
-**Theorem (`Xenum_isComputableElement_iff`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
-
-**Theorem (`isComputableElement_funPresentation_iff`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
-
-**Theorem (`mem_Xenum_iff_map`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
-
-**Theorem (`curry_rel_Xenum_iff`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
-
-**Theorem (`curry_isComputable`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
-
-**Definition (`curryStepCode`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
-
-**Theorem (`curryIso_apply`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
-
-**Theorem (`primrec_curryStepCode`).** As set out for this part of the library.
-
-*Proof.* By the enumeration of consistent step functions and the reduction of curry and evaluation to the product. ∎
+*Proof.* The curry step code function is built from primitive-recursive projections, constants, pairing and composition. ∎

@@ -2,46 +2,34 @@ A computable presentation of a neighbourhood system: an enumeration of the neigh
 
 <!-- formalization -->
 
-**Definition (`ComputablePresentation`).** As set out for this part of the library.
+**Definition (`ComputablePresentation`).** A computable presentation enumerates all neighbourhoods, decides equality with intersections and consistency of pairs, computes intersections whenever they are consistent, and supplies an index for the master neighbourhood.
 
-*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
+**Definition (`NeighborhoodSystem.IsEffectivelyGiven`).** A neighbourhood system is effectively given when it admits a computable presentation.
 
-**Definition (`NeighborhoodSystem.IsEffectivelyGiven`).** As set out for this part of the library.
+**Definition (`ComputablePresentation.inclShuffle`).** This reindexing sends a pair of indices to the triple that compares the first neighbourhood intersected with the second against the first.
 
-*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
+**Definition (`ComputablePresentation.reindexInvolutive`).** An involutive primitive-recursive permutation of indices transports a computable presentation to an equivalent presentation.
 
-**Definition (`inclShuffle`).** As set out for this part of the library.
+**Definition (`ComputablePresentation.swapPair`).** This operation exchanges the two components of a paired natural number.
 
-*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
+**Definition (`unitPresentation`).** The one-point neighbourhood system is presented by the constant enumeration of its unique neighbourhood.
 
-**Definition (`reindexInvolutive`).** As set out for this part of the library.
+**Theorem (`ComputablePresentation.primrec_inclShuffle`).** The reindexing used to reduce inclusion to intersection equality is primitive recursive.
 
-*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
+*Proof.* The two coordinate projections are primitive recursive, and pairing them first with one another and then with the repeated first coordinate preserves primitive recursiveness. ∎
 
-**Definition (`swapPair`).** As set out for this part of the library.
+**Theorem (`ComputablePresentation.primrec_swapPair`).** Exchanging the components of a paired natural number is primitive recursive.
 
-*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
+*Proof.* The first and second projections are primitive recursive, and pairing them in reverse order gives the required permutation. ∎
 
-**Definition (`unitPresentation`).** As set out for this part of the library.
+**Theorem (`ComputablePresentation.incl_computable`).** Inclusion between two enumerated neighbourhoods is recursively decidable.
 
-*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
+*Proof.* A neighbourhood is contained in another exactly when intersecting it with the latter returns the former; the shuffled triple is therefore decided by the presentation’s intersection-equality test. ∎
 
-**Theorem (`primrec_inclShuffle`).** As set out for this part of the library.
+**Theorem (`ComputablePresentation.eq_computable`).** Equality between two enumerated neighbourhoods is recursively decidable.
 
-*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
+*Proof.* Two neighbourhoods are equal exactly when each contains the other, so conjunction of the two decidable inclusion tests decides equality. ∎
 
-**Theorem (`primrec_swapPair`).** As set out for this part of the library.
+**Theorem (`unitSys_isEffectivelyGiven`).** The one-point neighbourhood system is effectively given.
 
-*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
-
-**Theorem (`incl_computable`).** As set out for this part of the library.
-
-*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
-
-**Theorem (`eq_computable`).** As set out for this part of the library.
-
-*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
-
-**Theorem (`unitSys_isEffectivelyGiven`).** As set out for this part of the library.
-
-*Proof.* By the presentation fields and the reduction of inclusion and equality to intersection. ∎
+*Proof.* The constant enumeration by the whole one-point set is surjective; every intersection and consistency question is automatically true, and the constant index zero names both intersections and the master neighbourhood. ∎

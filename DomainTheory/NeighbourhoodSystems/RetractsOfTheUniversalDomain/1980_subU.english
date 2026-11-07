@@ -1,55 +1,49 @@
-Library development supporting Scott's neighbourhood-system formalization.
+This peer transports the projection onto finitary projections from the function-space domain to the universal domain, and identifies its fixed points with the continuous self-maps lying below the identity.
 
 <!-- formalization -->
 
-**Theorem (`jArrow_comp_iArrow_apply`).** As set out for this part of the library.
+**Theorem (`jArrow_comp_iArrow_apply`).** Decoding an encoded function-space element returns that element.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The decoding map is a left inverse of the encoding map, so their composite acts as the identity. ∎
 
-**Definition (`subU`).** As set out for this part of the library.
+**Definition (`subU`).** The universal subprojection is obtained by decoding a universal element as a function, projecting that function to the finitary projections, and encoding the result back into \(U\).
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`subU.toElementMap_eq`).** On an element \(w\), the universal subprojection is exactly the encoding of the function-space subprojection applied to the decoding of \(w\).
 
-**Theorem (`toElementMap_eq`).** As set out for this part of the library.
+*Proof.* This is the elementwise form of the defining threefold composite. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`subU.subApprox_fix_of_fix`).** If \(w\) is fixed by the universal subprojection, then its decoded function is fixed by the function-space subprojection.
 
-**Theorem (`subApprox_fix_of_fix`).** As set out for this part of the library.
+*Proof.* Decode the fixed-point equation and use that decoding after encoding is the identity. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`subU.fix_of_subApprox_fix`).** If a function-space element is fixed by the function-space subprojection, then its encoding is fixed by the universal subprojection.
 
-**Theorem (`fix_of_subApprox_fix`).** As set out for this part of the library.
+*Proof.* Expand the universal subprojection, cancel decoding after encoding, and use the given fixed-point equation. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Definition (`subU.fixIso`).** The fixed points of the universal subprojection are order-isomorphic to the fixed points of the function-space subprojection, by decoding in one direction and encoding in the other.
 
-**Definition (`fixIso`).** As set out for this part of the library.
+**Definition (`subU.fixIsoSubFixed`).** The fixed points of the universal subprojection are order-isomorphic to the approximable self-maps \(f\) satisfying \(\operatorname{sub}(f)=f\).
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`subU.isRetraction_conjArrow`).** Conjugating any retraction of the function-space domain by the encoding and decoding maps produces a retraction of \(U\).
 
-**Definition (`fixIsoSubFixed`).** As set out for this part of the library.
+*Proof.* In the square of the conjugated map, the middle decoding–encoding pair cancels and the repeated retraction collapses by idempotence. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`subU.le_idMap_conjArrow`).** If a function-space endomap lies below the identity, then its conjugate on \(U\) also lies below the identity.
 
-**Theorem (`isRetraction_conjArrow`).** As set out for this part of the library.
+*Proof.* Monotonicity of composition bounds the conjugate by encoding after decoding, which itself lies below the identity on \(U\). ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`subU.isProjection_conjArrow`).** Conjugating a function-space projection by the encoding and decoding maps produces a projection of \(U\).
 
-**Theorem (`le_idMap_conjArrow`).** As set out for this part of the library.
+*Proof.* The conjugate is a retraction by the preceding idempotence result and lies below the identity by the preceding order result. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`subU.isProjection`).** The universal subprojection is a projection.
 
-**Theorem (`isProjection_conjArrow`).** As set out for this part of the library.
+*Proof.* The function-space subprojection is a projection, and the universal subprojection is its conjugate under encoding and decoding. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`subU.isFinitary`).** The universal subprojection is finitary.
 
-**Theorem (`isProjection`).** As set out for this part of the library.
+*Proof.* Its fixed-point domain is order-isomorphic to that of the finitary function-space subprojection, hence to an effectively given domain. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`subU.isFinitaryProjection`).** The universal subprojection is a finitary projection.
 
-**Theorem (`isFinitary`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
-
-**Theorem (`isFinitaryProjection`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* It is both a projection and finitary by the two preceding results. ∎

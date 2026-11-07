@@ -1,7 +1,7 @@
-Library development supporting Scott's neighbourhood-system formalization.
+This peer completes the effective back-and-forth construction between the computable presentations of Scott's universal domains \(U\) and \(V\).
 
 <!-- formalization -->
 
-**Definition (`effectiveIso812_UV`).** As set out for this part of the library.
+**Definition (`effectiveIso812_UV`).** The computable presentations of \(U\) and \(V\) are effectively isomorphic.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The effective back-and-forth theorem applies because both presentations have computable difference and union operations, positive and difference-closed neighbourhood structures, no minimal non-master neighbourhoods, computable splitting operations, nonempty master neighbourhoods, and compatible distinguished initial elements. ∎

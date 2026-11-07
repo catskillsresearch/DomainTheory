@@ -2,298 +2,276 @@ The list domain over an effectively given neighbourhood system is effectively gi
 
 <!-- formalization -->
 
-**Definition (`consB`).** As set out for this part of the library.
+**Definition (`Proposition77.consB`).** The consistency component of a packed triple is the first coordinate of its second coordinate.
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Definition (`Proposition77.eqB`).** The equality component of a packed triple is its first coordinate.
 
-**Definition (`eqB`).** As set out for this part of the library.
+**Definition (`Proposition77.intI`).** The intersection-index component of a packed triple is the second coordinate of its second coordinate.
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.le_pair_left`).** The left coordinate of a paired natural number does not exceed the pair code.
 
-**Definition (`intI`).** As set out for this part of the library.
+*Proof.* This follows directly from the quadratic pairing formula. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Definition (`Proposition77.listGetStp`).** The list lookup step decrements a counter and, exactly when the counter is one, replaces the stored value by the current list entry.
 
-**Theorem (`le_pair_left`).** As set out for this part of the library.
+**Definition (`Proposition77.listGet`).** The coded-list lookup function folds the lookup step through a coded list and returns the stored value, using zero as the default.
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.listGetStp_pair`).** On a state with counter \(c\), value \(v\), and current entry \(x\), the lookup step returns counter \(c-1\) and selects \(x\) precisely when \(c=1\).
 
-**Definition (`listGetStp`).** As set out for this part of the library.
+*Proof.* Unpack the state and apply the definition of the step. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.listGet_foldl_zero`).** Folding the lookup step from counter zero leaves the stored value unchanged.
 
-**Definition (`listGet`).** As set out for this part of the library.
+*Proof.* Induct on the list; a zero counter never selects a list entry. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.listGet_foldl`).** Folding from counter \(c+1\) returns the list entry at position \(c\), or the supplied default if that position is absent.
 
-**Theorem (`listGetStp_pair`).** As set out for this part of the library.
+*Proof.* Induct on the list, separating the zero and successor cases of \(c\). ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.listGet_encodeList`).** Looking up index \(i\) in an encoded list returns its \(i\)-th entry, with default zero.
 
-**Theorem (`listGet_foldl_zero`).** As set out for this part of the library.
+*Proof.* Coded folding agrees with list folding, to which the preceding lookup identity applies. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.max_sq_le_pair`).** The square of the larger of two natural numbers is at most their pair code.
 
-**Theorem (`listGet_foldl`).** As set out for this part of the library.
+*Proof.* Expand the pairing formula and separate the two possible coordinate orders. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.memS_sub_embPair`).** A list neighbourhood contained in an embedded pair is itself an embedded pair of list neighbourhoods.
 
-**Theorem (`listGet_encodeList`).** As set out for this part of the library.
+*Proof.* The master and zero-embedded forms contain paths incompatible with a pair; only the paired constructor remains. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.memS_sub_embZero`).** A list neighbourhood contained in an embedded zero neighbourhood is itself the zero embedding of an original neighbourhood.
 
-**Theorem (`max_sq_le_pair`).** As set out for this part of the library.
+*Proof.* Nonemptiness rules out the master and paired forms by their incompatible path shapes. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.nat_shape`).** Every natural number is either zero, positive odd, or positive even.
 
-**Theorem (`memS_sub_embPair`).** As set out for this part of the library.
+*Proof.* A positive number is classified by its remainder modulo two. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Definition (`Proposition77.packT`).** Three natural numbers are packed as a pair whose second coordinate is itself a pair.
 
-**Theorem (`memS_sub_embZero`).** As set out for this part of the library.
+**Theorem (`Proposition77.eqB_packT`).** The equality projection of a packed triple returns its first entry.
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+*Proof.* Unpair twice. ∎
 
-**Theorem (`nat_shape`).** As set out for this part of the library.
+**Theorem (`Proposition77.consB_packT`).** The consistency projection of a packed triple returns its second entry.
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+*Proof.* Unpair twice. ∎
 
-**Definition (`packT`).** As set out for this part of the library.
+**Theorem (`Proposition77.intI_packT`).** The intersection-index projection of a packed triple returns its third entry.
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+*Proof.* Unpair twice. ∎
 
-**Theorem (`eqB_packT`).** As set out for this part of the library.
+**Definition (`Proposition77.dsharpStep`).** The list-domain decision step classifies two neighbourhood indices as master, zero-embedded, or paired, and packs equality, consistency, and intersection information using supplied base-system procedures and earlier table entries.
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.dsharpStep_i0`).** If the first index is zero, the decision step reports consistency, returns the second index as intersection, and reports equality exactly when the second index is zero.
 
-**Theorem (`consB_packT`).** As set out for this part of the library.
+*Proof.* The first master-index branch is selected. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.dsharpStep_j0`).** If the second index is zero and the first is nonzero, the decision step reports consistency, returns the first index as intersection, and reports inequality.
 
-**Theorem (`intI_packT`).** As set out for this part of the library.
+*Proof.* The second master-index branch is selected. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.dsharpStep_ll`).** For two odd indices, the decision step applies the supplied base equality, consistency, and intersection procedures to their decoded indices and repacks the intersection as odd.
 
-**Definition (`dsharpStep`).** As set out for this part of the library.
+*Proof.* Both parity tests select the zero-embedded branch. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.dsharpStep_ln`).** For an odd first index and a positive even second index, the decision step returns three zero components.
 
-**Theorem (`dsharpStep_i0`).** As set out for this part of the library.
+*Proof.* The two neighbourhoods have incompatible zero and pair shapes. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.dsharpStep_nl`).** For a positive even first index and an odd second index, the decision step returns three zero components.
 
-**Theorem (`dsharpStep_j0`).** As set out for this part of the library.
+*Proof.* The two neighbourhoods have incompatible pair and zero shapes. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.dsharpStep_nn`).** For two positive even indices, the decision step combines the two recursively tabulated component results: equality and consistency are products, and the intersection index pairs the two component intersection indices.
 
-**Theorem (`dsharpStep_ll`).** As set out for this part of the library.
+*Proof.* Both parity tests select the paired branch and the decoded child pairs address earlier table entries. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.pair_lt_succ_sq`).** A pair code is smaller than the square of one plus its largest coordinate.
 
-**Theorem (`dsharpStep_ln`).** As set out for this part of the library.
+*Proof.* Expand the pairing formula in each coordinate order. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.pair_lt_pair_of_lt`).** Strict coordinatewise inequalities imply a strict inequality between pair codes.
 
-**Theorem (`dsharpStep_nl`).** As set out for this part of the library.
+*Proof.* Bound the smaller code by the next square and the larger code below by the square of its largest coordinate. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.primrec_listGet`).** Coded-list lookup is primitive recursive.
 
-**Theorem (`dsharpStep_nn`).** As set out for this part of the library.
+*Proof.* Its step, initial state, coded fold, and final projection are all primitive recursive. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.primrec_listGet₂`).** Substituting primitive-recursive code and index functions into coded-list lookup yields a primitive-recursive function.
 
-**Theorem (`pair_lt_succ_sq`).** As set out for this part of the library.
+*Proof.* Pair the two arguments and compose with primitive-recursive lookup. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.primrec_dsharpStep`).** If the supplied base consistency, equality, and intersection functions are primitive recursive, then the list-domain decision step is primitive recursive.
 
-**Theorem (`pair_lt_pair_of_lt`).** As set out for this part of the library.
+*Proof.* Every branch condition, table address, projection, product, pairing, and packed result is primitive recursive, and finite numerical selection preserves this property. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Definition (`Proposition77.rtbl`).** The recursion table at stage zero is empty; at stage \(w+1\) it prepends the result of applying the step at \(w\) to the previous table.
 
-**Theorem (`primrec_listGet`).** As set out for this part of the library.
+**Definition (`Proposition77.gOf`).** The value generated at stage \(w\) is the step applied to \(w\) together with the table of earlier values.
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Definition (`Proposition77.gList`).** The generated list at stage \(w+1\) has the stage-\(w\) value at its head followed by the list from stage \(w\).
 
-**Theorem (`primrec_listGet₂`).** As set out for this part of the library.
+**Theorem (`Proposition77.gOf_def`).** The generated value is the step evaluated at its stage and recursion table.
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+*Proof.* This is the definition. ∎
 
-**Theorem (`primrec_dsharpStep`).** As set out for this part of the library.
+**Theorem (`Proposition77.getD_gList`).** For \(p<w\), position \(p\) in the generated list at stage \(w\) contains the value generated at stage \(w-1-p\).
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+*Proof.* Induct on \(w\), separating the head position from successor positions. ∎
 
-**Definition (`rtbl`).** As set out for this part of the library.
+**Theorem (`Proposition77.rtbl_eq_encode`).** The recursion table at stage \(w\) is the code of the generated list at that stage.
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+*Proof.* Induct on \(w\); both constructions prepend the newly generated value. ∎
 
-**Definition (`gOf`).** As set out for this part of the library.
+**Theorem (`Proposition77.listGet_rtbl`).** If \(v<w\), lookup at reverse position \(w-1-v\) in the stage-\(w\) table returns the value generated at stage \(v\).
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+*Proof.* Replace the table by its encoded generated list and use the reverse-position formula. ∎
 
-**Definition (`gList`).** As set out for this part of the library.
+**Theorem (`Proposition77.rtbl_eq_rec`).** The recursion table agrees with ordinary natural-number recursion that prepends each new step result.
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+*Proof.* Induct on the stage. ∎
 
-**Theorem (`gOf_def`).** As set out for this part of the library.
+**Theorem (`Proposition77.primrec_rtbl`).** A primitive-recursive step has a primitive-recursive recursion table.
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+*Proof.* The table is obtained by primitive recursion with primitive-recursive pairing and successor operations. ∎
 
-**Theorem (`getD_gList`).** As set out for this part of the library.
+**Theorem (`Proposition77.primrec_gOf`).** A primitive-recursive step has a primitive-recursive generated-value function.
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+*Proof.* Pair the stage with its primitive-recursive table and apply the step. ∎
 
-**Theorem (`rtbl_eq_encode`).** As set out for this part of the library.
+**Theorem (`Proposition77.unpair_fst_le`).** The first coordinate decoded from a natural number does not exceed that number.
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+*Proof.* The number is the pair of its decoded coordinates, and the left coordinate is bounded by its pair code. ∎
 
-**Theorem (`listGet_rtbl`).** As set out for this part of the library.
+**Definition (`Proposition77.Vsharp`).** The list neighbourhood at index zero is the master neighbourhood; positive odd indices encode zero embeddings of base neighbourhoods, and positive even indices encode pairs of recursively indexed list neighbourhoods.
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.Vsharp_succ`).** The successor case of the enumeration is the odd zero-embedding branch or the even paired branch according to parity.
 
-**Theorem (`rtbl_eq_rec`).** As set out for this part of the library.
+*Proof.* This is the recursive defining equation. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.Vsharp_even`).** The neighbourhood indexed by \(2n+2\) is the embedded pair of the neighbourhoods at the two coordinates decoded from \(n\).
 
-**Theorem (`primrec_rtbl`).** As set out for this part of the library.
+*Proof.* The index is positive even, and its predecessor decodes back to \(n\). ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.Vsharp_even_inter_even`).** The intersection of two even-indexed neighbourhoods is the embedded pair of the intersections of their corresponding components.
 
-**Theorem (`primrec_gOf`).** As set out for this part of the library.
+*Proof.* Expand both even indices and distribute intersection through embedded pairing. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.Vsharp_odd`).** The neighbourhood indexed by \(2n+1\) is the zero embedding of the base neighbourhood indexed by \(n\).
 
-**Theorem (`unpair_fst_le`).** As set out for this part of the library.
+*Proof.* The index is positive odd. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.Vsharp_odd_inter_even`).** An odd-indexed neighbourhood and an even-indexed neighbourhood have empty intersection.
 
-**Definition (`Vsharp`).** As set out for this part of the library.
+*Proof.* Zero embeddings and pair embeddings have disjoint path shapes. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.Vsharp_even_inter_odd`).** An even-indexed neighbourhood and an odd-indexed neighbourhood have empty intersection.
 
-**Theorem (`Vsharp_succ`).** As set out for this part of the library.
+*Proof.* Commute the intersection and use the odd-even case. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.Vsharp_odd_inter_odd`).** The intersection of two odd-indexed neighbourhoods is the zero embedding of the intersection of their base neighbourhoods.
 
-**Theorem (`Vsharp_even`).** As set out for this part of the library.
+*Proof.* Expand both odd indices and distribute intersection through zero embedding. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.Vsharp_zero`).** Index zero enumerates the master list neighbourhood.
 
-**Theorem (`Vsharp_even_inter_even`).** As set out for this part of the library.
+*Proof.* This is the base case of the enumeration. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.Vsharp_eq_Gamma_iff`).** When all base neighbourhoods are nonempty, an enumerated list neighbourhood is master exactly when its index is zero.
 
-**Theorem (`Vsharp_odd`).** As set out for this part of the library.
+*Proof.* Odd and positive even indices have zero or pair shape, each distinct from the master shape. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.Vsharp_mem`).** Every enumerated \(V^\sharp\) family is a list neighbourhood.
 
-**Theorem (`Vsharp_odd_inter_even`).** As set out for this part of the library.
+*Proof.* Strong induction follows the zero, odd zero-embedding, and even paired clauses of the enumeration. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.Vsharp_inter_zero`).** Intersecting any enumerated neighbourhood on the right with index zero leaves it unchanged.
 
-**Theorem (`Vsharp_even_inter_odd`).** As set out for this part of the library.
+*Proof.* Index zero is master and every list neighbourhood lies within the master neighbourhood. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.Vsharp_nonempty`).** If every base neighbourhood is nonempty, every enumerated list neighbourhood is nonempty.
 
-**Theorem (`Vsharp_odd_inter_odd`).** As set out for this part of the library.
+*Proof.* Every list neighbourhood built from a nonempty base system is nonempty. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.Vsharp_surj`).** Every list neighbourhood occurs in the \(V^\sharp\) enumeration.
 
-**Theorem (`Vsharp_zero`).** As set out for this part of the library.
+*Proof.* Induct over its master, zero-embedded, and paired construction, using surjectivity of the base presentation and pairing of the recursive indices. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.Vsharp_zero_inter`).** Intersecting index zero on the left with any enumerated neighbourhood leaves it unchanged.
 
-**Theorem (`Vsharp_eq_Gamma_iff`).** As set out for this part of the library.
+*Proof.* Index zero is master. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.exists_sub_embPair_iff`).** An enumerated list neighbourhood lies inside an embedded pair of \(A,B\) exactly when some enumerated neighbourhood lies inside \(A\) and some enumerated neighbourhood lies inside \(B\).
 
-**Theorem (`Vsharp_mem`).** As set out for this part of the library.
+*Proof.* Any list neighbourhood inside a pair has paired components, and surjectivity enumerates them; conversely pair two witnessing neighbourhoods. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.exists_sub_embZero_iff`).** An enumerated list neighbourhood lies inside the zero embedding of \(Y\) exactly when some enumerated base neighbourhood lies inside \(Y\).
 
-**Theorem (`Vsharp_inter_zero`).** As set out for this part of the library.
+*Proof.* Any list neighbourhood inside a zero embedding has zero shape, and base-presentation surjectivity identifies its generator; the converse uses the corresponding odd index. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.dsharp_decider_spec`).** The generated packed decision value correctly reports consistency, supplies an intersection index when consistent, and reports equality for every pair of enumerated list neighbourhoods.
 
-**Theorem (`Vsharp_nonempty`).** As set out for this part of the library.
+*Proof.* Strong induction on the pair code follows the master, odd, and even shape cases; paired inputs reduce to two strictly smaller component pairs, while mixed shapes are disjoint. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.dsharp_intI_correct`).** Whenever two enumerated list neighbourhoods are consistent, the generated intersection component indexes their intersection.
 
-**Theorem (`Vsharp_surj`).** As set out for this part of the library.
+*Proof.* The same strong induction on shape uses the supplied base intersection specification and recursively combines paired components. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.dsharp_interEq_iff`).** Equality of an intersection \(V^\sharp_n\cap V^\sharp_m\) with \(V^\sharp_k\) is equivalent to the product of the generated consistency bit and the equality bit comparing the generated intersection index with \(k\) being one.
 
-**Theorem (`Vsharp_zero_inter`).** As set out for this part of the library.
+*Proof.* Consistency supplies the correct intersection index, after which the generated equality decision tests it against \(k\). ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Definition (`Proposition77.dsharpPresentation`).** The effective presentation of the list system uses \(V^\sharp\), the generated decision procedure for equality and consistency, the generated intersection index, and zero as master index.
 
-**Theorem (`exists_sub_embPair_iff`).** As set out for this part of the library.
+*Proof.* The enumeration is surjective, all decision functions are primitive recursive, the intersection component is correct, and index zero denotes the master neighbourhood. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.dsharp_isEffectivelyGiven`).** If the base system has a computable presentation and all its neighbourhoods are nonempty, then its list system is effectively given.
 
-**Theorem (`exists_sub_embZero_iff`).** As set out for this part of the library.
+*Proof.* Use the constructed list-system computable presentation. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.dsharpPresentation_X`).** The neighbourhood enumerated at \(n\) by the list-system presentation is \(V^\sharp_n\).
 
-**Theorem (`dsharp_decider_spec`).** As set out for this part of the library.
+*Proof.* This is the presentation's enumeration. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Definition (`Proposition77.inSharpMap`).** The list insertion relation sends a base neighbourhood \(X\) to list neighbourhoods containing its zero embedding.
 
-**Theorem (`dsharp_intI_correct`).** As set out for this part of the library.
+*Proof.* The relation contains the master case, is closed under target intersections, and is monotone. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.inSharpMap_rel`).** Insertion relates \(X\) to \(W\) exactly when both are valid neighbourhoods and the zero embedding of \(X\) is contained in \(W\).
 
-**Theorem (`dsharp_interEq_iff`).** As set out for this part of the library.
+*Proof.* This is the defining relation. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Definition (`Proposition77.proj0Map`).** The first projection relation sends the master target universally and sends a paired source to targets containing its left component.
 
-**Definition (`dsharpPresentation`).** As set out for this part of the library.
+*Proof.* Component uniqueness gives intersection closure, and refinement of a paired source refines its left component. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.proj0Map_rel`).** The first projection relates \(W\) to \(Z\) exactly when both are list neighbourhoods and either \(Z\) is master or \(W\) is a pair whose left component lies inside \(Z\).
 
-**Theorem (`dsharp_isEffectivelyGiven`).** As set out for this part of the library.
+*Proof.* This is the defining relation. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.inSharpMap_toElementMap`).** On elements, the insertion approximable map is the canonical zero-branch insertion into the list domain.
 
-**Theorem (`dsharpPresentation_X`).** As set out for this part of the library.
+*Proof.* A list neighbourhood containing a zero-embedded source neighbourhood is either master or a zero embedding of a neighbourhood of the source element. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.inSharp_isComputable`).** The insertion approximable map is computable.
 
-**Definition (`inSharpMap`).** As set out for this part of the library.
+*Proof.* At presentation indices its relation is decidable inclusion from the corresponding odd-indexed zero embedding. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.proj0_rel_Vsharp_iff`).** The first projection relates indices \(m,k\) exactly when \(k=0\), or \(m\) is nonzero even and the decoded left component of \(m\) is contained in \(k\).
 
-**Theorem (`inSharpMap_rel`).** As set out for this part of the library.
+*Proof.* Separate the master, odd zero-embedded, and even paired forms of the source. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.proj0_isComputable`).** The first projection approximable map is computable.
 
-**Definition (`proj0Map`).** As set out for this part of the library.
+*Proof.* Its indexed criterion combines decidable zero, parity, and nonzero tests with decidable inclusion of the decoded left component. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.proj0_toElementMap_pairSharp`).** Applying the first projection to a paired list-domain element returns its first component.
 
-**Theorem (`proj0Map_rel`).** As set out for this part of the library.
+*Proof.* Target membership is equivalent to containing a left-component neighbourhood of the pair. ∎
 
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+**Theorem (`Proposition77.gList_length`).** The generated list at stage \(w\) has length \(w\).
 
-**Theorem (`inSharpMap_toElementMap`).** As set out for this part of the library.
-
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
-
-**Theorem (`inSharp_isComputable`).** As set out for this part of the library.
-
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
-
-**Theorem (`proj0_rel_Vsharp_iff`).** As set out for this part of the library.
-
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
-
-**Theorem (`proj0_isComputable`).** As set out for this part of the library.
-
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
-
-**Theorem (`proj0_toElementMap_pairSharp`).** As set out for this part of the library.
-
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
-
-**Theorem (`gList_length`).** As set out for this part of the library.
-
-*Proof.* By the even-odd enumeration of list neighbourhoods and the primitive-recursive decision of intersection. ∎
+*Proof.* Induct on \(w\); each successor stage prepends one value. ∎

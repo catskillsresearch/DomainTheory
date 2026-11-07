@@ -1,39 +1,35 @@
-Library development supporting Scott's neighbourhood-system formalization.
+This peer transports the dependent-product projection from the function-space domain to the universal domain and proves that the transported map is again a finitary projection.
 
 <!-- formalization -->
 
-**Definition (`piU`).** As set out for this part of the library.
+**Definition (`piU`).** For a code assignment \(d\), the universal dependent-product map decodes an element of \(U\) as a function, applies the dependent-product projection there, and encodes the result back into \(U\).
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`toElementMap.piU`).** The value of the universal dependent-product map at \(w\) is the encoding of the function-space dependent-product projection applied to the decoding of \(w\).
 
-**Theorem (`piU`).** As set out for this part of the library.
+*Proof.* This is the elementwise form of the defining composite. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`piD.fix_of_piU_fix`).** If \(w\) is fixed by the universal dependent-product map, then its decoding is fixed by the function-space dependent-product projection.
 
-**Theorem (`fix_of_piU_fix`).** As set out for this part of the library.
+*Proof.* Decode the fixed-point equation and cancel decoding after encoding. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`piU.fix_of_piD_fix`).** If a function-space element is fixed by the dependent-product projection, then its encoding is fixed by the universal dependent-product map.
 
-**Theorem (`fix_of_piD_fix`).** As set out for this part of the library.
+*Proof.* Expand the transported map, cancel decoding after encoding, and apply the assumed fixed-point equation. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Definition (`piU.FixIso`).** Decoding and encoding give an order isomorphism between the fixed points of the universal dependent-product map and those of the function-space dependent-product projection.
 
-**Definition (`FixIso`).** As set out for this part of the library.
+**Theorem (`isFinitary.piU_of_isFinitary_piD`).** If the function-space dependent-product projection is finitary, then the universal dependent-product map is finitary.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Their fixed-point domains are order-isomorphic, so an effective presentation of the former transfers to the latter. ∎
 
-**Theorem (`piU_of_isFinitary_piD`).** As set out for this part of the library.
+**Theorem (`isFinitary.piU_of_formula`).** If membership in the image of the function-space dependent-product projection has the finite self-related-neighbourhood characterization, then the universal dependent-product map is finitary.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The characterization makes the function-space map a finitary projection; finitarity then transfers across the fixed-point order isomorphism. ∎
 
-**Theorem (`piU_of_formula`).** As set out for this part of the library.
+**Theorem (`isProjection.piU`).** The universal dependent-product map is a projection.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The function-space dependent-product map is a projection, and conjugation by the universal encoding and decoding maps preserves projections. ∎
 
-**Theorem (`piU`).** As set out for this part of the library.
+**Theorem (`isFinitaryProjection.piU`).** The universal dependent-product map is a finitary projection.
 
-*Proof.* By the development recorded in the peer module. ∎
-
-**Theorem (`piU`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* It is a projection by conjugation, and it is finitary because the function-space dependent-product projection is finitary. ∎

@@ -1,11 +1,11 @@
-Library development supporting Scott's neighbourhood-system formalization.
+This peer assembles the closure properties of projections on the universal domain under the sum, product, and function-space combinators.
 
 <!-- formalization -->
 
-**Theorem (`exercise_8_18_assembly`).** As set out for this part of the library.
+**Theorem (`exercise_8_18_assembly`).** If \(a\) and \(b\) are projections on \(U\), then their sum, product, and arrow combinators are projections; if \(a\) and \(b\) are also finitary, all three resulting projections are finitary.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The projection-closure theorem supplies the three projection laws, and the finitary-closure theorem supplies the corresponding finiteness properties. ∎
 
-**Theorem (`example_818`).** As set out for this part of the library.
+**Theorem (`example_818`).** For arbitrary projections \(a\) and \(b\) on \(U\), the sum, product, and arrow constructions preserve projectionhood, and preserve finitariness whenever both inputs are finitary.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* This is the universally quantified form of the preceding assembly theorem. ∎

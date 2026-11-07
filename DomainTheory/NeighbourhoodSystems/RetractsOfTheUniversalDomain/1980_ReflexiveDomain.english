@@ -1,175 +1,141 @@
-Library development supporting Scott's neighbourhood-system formalization.
+This peer carries out the reflexive-domain construction of Exercise 8.25. It builds a finitary projection whose fixed-point domain is universal and isomorphic to its own function space.
 
 <!-- formalization -->
 
-**Theorem (`trianglelefteq_iterSys`).** As set out for this part of the library.
+**Theorem (`trianglelefteq_iterSys`).** Every neighbourhood system \(V\) is a retract-subdomain of its countable power \(V^\mathbb{N}\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Embed an element as the constant sequence and project a sequence to its first coordinate. Projection after embedding is the identity, while embedding after projection lies below the identity. ∎
 
-**Theorem (`example_825_embed`).** As set out for this part of the library.
+**Theorem (`example_825_embed`).** For every \(V\), one has \(V\mathrel{\trianglelefteq}V^\mathbb{N}\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* This is the preceding constant-sequence projection pair, uniformly quantified over \(V\). ∎
 
-**Definition (`arrowReindexOrderIso`).** As set out for this part of the library.
+**Definition (`arrowReindexOrderIso`).** A bijection between index types induces an order isomorphism between the corresponding spaces of indexed families by reindexing.
 
-*Proof.* By the development recorded in the peer module. ∎
+**Definition (`sumArrowOrderIso`).** A family indexed by a disjoint sum is order-isomorphic to a pair of families indexed by the two summands.
 
-**Definition (`sumArrowOrderIso`).** As set out for this part of the library.
+**Definition (`interleaveOrderIso`).** A pair of countable families is order-isomorphic to one countable family by interleaving their coordinates.
 
-*Proof.* By the development recorded in the peer module. ∎
+**Definition (`powProdOrderIso`).** The product \(V^\mathbb{N}\times V^\mathbb{N}\) is order-isomorphic to \(V^\mathbb{N}\), by viewing both powers as sequences and interleaving them.
 
-**Definition (`interleaveOrderIso`).** As set out for this part of the library.
+**Theorem (`pow_prod_isomorphic`).** The product of two copies of the countable power of \(V\) is isomorphic, as a domain, to that countable power.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The interleaving order isomorphism between their element orders induces the required domain isomorphism. ∎
 
-**Definition (`powProdOrderIso`).** As set out for this part of the library.
+**Theorem (`example_825_pow`).** For every \(V\), \(V^\mathbb{N}\times V^\mathbb{N}\cong V^\mathbb{N}\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Apply the preceding product-of-powers isomorphism. ∎
 
-**Theorem (`pow_prod_isomorphic`).** As set out for this part of the library.
+**Definition (`isoOfUnique`).** Any two ordered types having exactly one element are order-isomorphic by the unique maps between them.
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`uniqueApproximableMapUnitSys`).** There is exactly one approximable endomap of the one-point neighbourhood system.
 
-**Theorem (`example_825_pow`).** As set out for this part of the library.
+*Proof.* Every such map has the same action on the sole element, hence equals the identity map. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`uniqueFunSpaceUnitSys`).** The function-space domain from the one-point system to itself has exactly one element.
 
-**Definition (`isoOfUnique`).** As set out for this part of the library.
+*Proof.* Its elements correspond to approximable maps of the one-point system, of which there is exactly one. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`isomorphic_of_unique`).** Neighbourhood systems whose element domains each have exactly one element are isomorphic.
 
-**Theorem (`uniqueApproximableMapUnitSys`).** As set out for this part of the library.
+*Proof.* Their element orders are related by the unique order isomorphism between singleton ordered types. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`funSpace_unitSys_isomorphic`).** The function space from the one-point system to itself is isomorphic to the one-point system.
 
-**Theorem (`uniqueFunSpaceUnitSys`).** As set out for this part of the library.
+*Proof.* Both element domains have exactly one element. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`example_825_unit`).** The one-point domain satisfies \(1^1\cong 1\).
 
-**Theorem (`isomorphic_of_unique`).** As set out for this part of the library.
+*Proof.* This is the preceding singleton function-space isomorphism. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Definition (`RDom`).** Let \(R\) be the product \([U\to U]\times([U\to U]\times U)\), the domain of triples consisting of two universal endomaps and one universal element.
 
-**Theorem (`funSpace_unitSys_isomorphic`).** As set out for this part of the library.
+**Definition (`RMap`).** For \(c:U\to U\), define a map \(R\to U\) sending \((\psi,\varphi,x)\) to \(c(\varphi(\psi(x)))\).
 
-*Proof.* By the development recorded in the peer module. ∎
+**Definition (`curryOnceC`).** Currying the preceding map once produces a map from the first function argument to a function of the remaining function argument and universal element.
 
-**Theorem (`example_825_unit`).** As set out for this part of the library.
+**Definition (`fixedNbhd_elementIso_fix`).** For a finitary projection \(a\), the element domain of its fixed-neighbourhood system is order-isomorphic to the subtype of elements fixed by \(a\).
 
-*Proof.* By the development recorded in the peer module. ∎
+**Definition (`lamOp`).** For \(c:U\to U\), twice currying the map \((\psi,\varphi,x)\mapsto c(\varphi(\psi(x)))\) gives an operator sending \(a\) to the curried action of composition around \(a\) and \(c\).
 
-**Definition (`RDom`).** As set out for this part of the library.
+**Definition (`presentationIterU`).** Choose a computable presentation of the countable power \(U^\mathbb{N}\), which is effectively given because \(U\) is effectively given.
 
-*Proof.* By the development recorded in the peer module. ∎
+**Definition (`cInj`).** Choose the embedding of \(U^\mathbb{N}\) into \(U\) supplied by universality of \(U\).
 
-**Definition (`RMap`).** As set out for this part of the library.
+**Definition (`cProj`).** Choose the corresponding projection from \(U\) onto \(U^\mathbb{N}\).
 
-*Proof.* By the development recorded in the peer module. ∎
+**Definition (`cCombinator`).** The combinator projection on \(U\) is embedding after projection for the chosen projection pair between \(U^\mathbb{N}\) and \(U\).
 
-**Definition (`curryOnceC`).** As set out for this part of the library.
+**Definition (`TArrow`).** For an endomap \(a\) of \(U\), associate the function space from the fixed-neighbourhood domain of \(a\) to the fixed-neighbourhood domain of the combinator projection.
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`cProj_comp_cInj`).** Projecting after embedding \(U^\mathbb{N}\) is the identity.
 
-**Definition (`fixedNbhd_elementIso_fix`).** As set out for this part of the library.
+*Proof.* This is the retraction equation of the chosen universal projection pair. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Definition (`cElementIso`).** The elements of \(U^\mathbb{N}\) are order-isomorphic to the elements of \(U\) fixed by the combinator projection.
 
-**Definition (`lamOp`).** As set out for this part of the library.
+**Definition (`tOpMap`).** For \(c:U\to U\), compose the curried composition operator with the map induced contravariantly and covariantly by the universal decoding and encoding maps, obtaining an endomap of the function-space domain.
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`cInj_comp_cProj_le`).** Embedding after projecting \(U\) lies below the identity on \(U\).
 
-**Definition (`presentationIterU`).** As set out for this part of the library.
+*Proof.* This is the order inequality of the chosen universal projection pair. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`isFinitary_cCombinator`).** The combinator projection is finitary.
 
-**Definition (`cInj`).** As set out for this part of the library.
+*Proof.* It arises from a projection pair whose retract is the effectively given domain \(U^\mathbb{N}\). ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`isRetraction_cCombinator`).** The combinator projection is idempotent.
 
-**Definition (`cProj`).** As set out for this part of the library.
+*Proof.* In its square, the middle projection-after-embedding composite is the identity. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`isProjection_cCombinator`).** The combinator endomap is a projection.
 
-**Definition (`cCombinator`).** As set out for this part of the library.
+*Proof.* It is idempotent and lies below the identity. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`isFinitaryProjection_cCombinator`).** The combinator endomap is a finitary projection.
 
-**Definition (`TArrow`).** As set out for this part of the library.
+*Proof.* Combine its projection property with its finitarity. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`fixedNbhd_cCombinator_isomorphic`).** The fixed-neighbourhood domain of the combinator projection is isomorphic to \(U^\mathbb{N}\).
 
-**Theorem (`cProj_comp_cInj`).** As set out for this part of the library.
+*Proof.* Both domains are order-isomorphic to the fixed-point subtype of the same projection. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`hVV_cCombinator`).** The product of two copies of the combinator fixed-neighbourhood domain is isomorphic to that domain.
 
-**Definition (`cElementIso`).** As set out for this part of the library.
+*Proof.* Transport both factors to \(U^\mathbb{N}\), interleave the two countable powers, and transport back. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`toElementMap_RMap`).** The triple map determined by \(c\) sends \((\psi,\varphi,x)\) to \(c(\varphi(\psi(x)))\).
 
-**Definition (`tOpMap`).** As set out for this part of the library.
+*Proof.* Evaluate the projections, pairings, and two function applications in its defining composite. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`toApproxMap_lamOp`).** Applying the curried composition operator determined by \(c\) to the function represented by \(a\), then decoding the result, yields the exponential action induced by \(a\) and \(c\).
 
-**Theorem (`cInj_comp_cProj_le`).** As set out for this part of the library.
+*Proof.* Successive applications of currying reduce the statement to the explicit triple-value formula, which is exactly composition first by \(a\) and finally by \(c\). ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`tOp_tOpMap`).** The fixed-point transformer associated with the operator determined by \(c\), evaluated at \(a\), is the arrow combinator formed from \(a\) and \(c\).
 
-**Theorem (`isFinitary_cCombinator`).** As set out for this part of the library.
+*Proof.* Decode the transformed function-space element and use the preceding identification of the curried operator with the exponential action. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`hT_TArrow`).** For every finitary projection \(a\), the fixed points of its transformed arrow combinator are order-isomorphic to the elements of the function space from the fixed domain of \(a\) to the fixed domain of the combinator projection.
 
-**Theorem (`isRetraction_cCombinator`).** As set out for this part of the library.
+*Proof.* The transformer is the arrow combinator, whose fixed-point theorem identifies its fixed points with the indicated function-space domain. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`ht_tOpMap`).** If \(c\) is a finitary projection, then the transformer determined by \(c\) sends every finitary projection to a finitary projection.
 
-**Theorem (`isProjection_cCombinator`).** As set out for this part of the library.
+*Proof.* The transformer is the arrow combinator, and arrow combinators preserve finitary projections in both arguments. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`Dsol_isomorphic_funSpace_cCombinator`).** Let \(D\) be the fixed-neighbourhood domain of the least fixed projection generated by the transformer for the combinator projection. Then \(D\cong[D\to C]\), where \(C\) is the combinator fixed-neighbourhood domain.
 
-**Theorem (`isFinitaryProjection_cCombinator`).** As set out for this part of the library.
+*Proof.* The transformer preserves finitary projections, so its fixed projection is finitary. Identify the fixed-neighbourhood elements with its fixed points, then apply the fixed-domain theorem and the preceding arrow-family isomorphism. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`U_trianglelefteq_Dsol`).** The universal domain \(U\) is a retract-subdomain of the solution domain \(D\).
 
-**Theorem (`fixedNbhd_cCombinator_isomorphic`).** As set out for this part of the library.
+*Proof.* Pass successively from \(U\) into \(U^\mathbb{N}\), then into \(C\), then into the constant-function subdomain of \([D\to C]\), and finally transport along \([D\to C]\cong D\). ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`exercise_8_25_main`).** The solution domain \(D\) is isomorphic to its own function space \([D\to D]\).
 
-**Theorem (`hVV_cCombinator`).** As set out for this part of the library.
+*Proof.* The isomorphism \(D\cong[D\to C]\), together with \(C\times C\cong C\), yields the standard reflexive-domain self-function-space isomorphism. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`exercise_8_25_universal`).** The solution domain \(D\) is universal: \(U\mathrel{\trianglelefteq}D\).
 
-**Theorem (`toElementMap_RMap`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
-
-**Theorem (`toApproxMap_lamOp`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
-
-**Theorem (`tOp_tOpMap`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
-
-**Theorem (`hT_TArrow`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
-
-**Theorem (`ht_tOpMap`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
-
-**Theorem (`Dsol_isomorphic_funSpace_cCombinator`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
-
-**Theorem (`U_trianglelefteq_Dsol`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
-
-**Theorem (`exercise_8_25_main`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
-
-**Theorem (`exercise_8_25_universal`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* This is the retract chain from the universal domain into the constructed solution domain. ∎

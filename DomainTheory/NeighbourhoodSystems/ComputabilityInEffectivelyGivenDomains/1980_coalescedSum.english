@@ -2,110 +2,94 @@ The coalesced sum of effectively given neighbourhood systems is effectively give
 
 <!-- formalization -->
 
-**Definition (`osum`).** As set out for this part of the library.
+**Definition (`osum`).** For systems whose neighbourhoods are nonempty, the coalesced sum has as neighbourhoods the common master and the proper neighbourhoods injected from either summand.
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+**Theorem (`osum_master`).** The master of the coalesced sum is the common sum master.
 
-**Theorem (`osum_master`).** As set out for this part of the library.
+*Proof.* This is part of the defining structure. ∎
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+**Definition (`osumEnum`).** A tagged index enumerates a proper left neighbourhood for tag zero, a proper right neighbourhood for tag one, and the common master otherwise.
 
-**Definition (`osumEnum`).** As set out for this part of the library.
+**Theorem (`osumEnum_left`).** A zero-tagged proper left index enumerates its left injection.
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+*Proof.* The first defining alternative applies. ∎
 
-**Theorem (`osumEnum_left`).** As set out for this part of the library.
+**Theorem (`osumEnum_master`).** If neither the left nor right tagged properness condition holds, the enumeration returns the common master.
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+*Proof.* Both proper alternatives fail. ∎
 
-**Theorem (`osumEnum_master`).** As set out for this part of the library.
+**Theorem (`osumEnum_right`).** A one-tagged proper right index enumerates its right injection.
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+*Proof.* The left alternative is incompatible with tag one, and the right alternative applies. ∎
 
-**Theorem (`osumEnum_right`).** As set out for this part of the library.
+**Theorem (`osumEnum_mem`).** Every enumerated set is a coalesced-sum neighbourhood.
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+*Proof.* It is either a proper injected neighbourhood or the master. ∎
 
-**Theorem (`osumEnum_mem`).** As set out for this part of the library.
+**Theorem (`osumEnum_nonempty`).** Every enumerated coalesced-sum neighbourhood is nonempty.
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+*Proof.* Injected neighbourhoods inherit nonemptiness from their summands, and the master contains the common bottom point. ∎
 
-**Theorem (`osumEnum_nonempty`).** As set out for this part of the library.
+**Theorem (`osumEnum_subset_master`).** Every enumerated neighbourhood is included in the common sum master.
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+*Proof.* Every neighbourhood of a neighbourhood system lies below its master. ∎
 
-**Theorem (`osumEnum_subset_master`).** As set out for this part of the library.
+**Definition (`osumOutMap₀`).** The left projection relates a sum neighbourhood \(W\) to \(X\) when the left part of \(W\) is included in \(X\).
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+**Definition (`osumOutMap₁`).** The right projection relates a sum neighbourhood \(W\) to \(Y\) when the right part of \(W\) is included in \(Y\).
 
-**Definition (`osumOutMap₀`).** As set out for this part of the library.
+**Definition (`osumPresentation`).** The coalesced-sum Scott presentation uses the tagged enumeration and decides intersections and consistency from tags, properness, and the two component presentations.
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+**Theorem (`osumPresentation_X`).** The neighbourhood numbered by an index in the coalesced-sum presentation is its tagged enumerated set.
 
-**Definition (`osumOutMap₁`).** As set out for this part of the library.
+*Proof.* This is the presentation's defining enumeration. ∎
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+**Theorem (`osum_eq_master_of_inj₀master`).** A coalesced-sum neighbourhood containing the injection of the entire left master must be the common master.
 
-**Definition (`osumPresentation`).** As set out for this part of the library.
+*Proof.* A proper left injection would force its source to equal the left master, and a right injection cannot contain a point from the nonempty left master. ∎
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+**Definition (`osumInMap₀`).** The left injection map relates \(X\) to \(W\) when the injection of \(X\) is included in \(W\).
 
-**Theorem (`osumPresentation_X`).** As set out for this part of the library.
+**Theorem (`osum_eq_master_of_inj₁master`).** A coalesced-sum neighbourhood containing the injection of the entire right master must be the common master.
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+*Proof.* This is the symmetric argument using nonemptiness of the right master. ∎
 
-**Theorem (`osum_eq_master_of_inj₀master`).** As set out for this part of the library.
+**Definition (`osumInMap₁`).** The right injection map relates \(Y\) to \(W\) when the injection of \(Y\) is included in \(W\).
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+**Theorem (`osum_mem_subset_inj₀`).** A coalesced-sum neighbourhood included in a left injection is itself the injection of a proper left neighbourhood.
 
-**Definition (`osumInMap₀`).** As set out for this part of the library.
+*Proof.* The master contains the common point and a right injection contains a right point, so neither can lie in a left injection. ∎
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+**Theorem (`osum_mem_subset_inj₁`).** A coalesced-sum neighbourhood included in a right injection is itself the injection of a proper right neighbourhood.
 
-**Theorem (`osum_eq_master_of_inj₁master`).** As set out for this part of the library.
+*Proof.* The symmetric exclusions leave only the proper right case. ∎
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+**Definition (`osumMap`).** Two approximable maps act componentwise on coalesced sums: every source relates to the target master, while proper left and right targets are related through the corresponding map and matching source tag.
 
-**Definition (`osumInMap₁`).** As set out for this part of the library.
+**Theorem (`osumInMap₀_isComputable`).** The left injection map is computable.
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+*Proof.* A proper left target reduces the relation to decidable component inclusion; a proper right target is impossible, and the master case always holds. ∎
 
-**Theorem (`osum_mem_subset_inj₀`).** As set out for this part of the library.
+**Theorem (`osumInMap₁_isComputable`).** The right injection map is computable.
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+*Proof.* A proper right target reduces the relation to decidable component inclusion; the remaining cases are decided by their tags. ∎
 
-**Theorem (`osum_mem_subset_inj₁`).** As set out for this part of the library.
+**Theorem (`osumMap_isComputable`).** The componentwise map between coalesced sums of two computable maps is computable.
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+*Proof.* The target tag decides whether the relation is automatic at the master or reduces to the recursively enumerable relation of the matching component, together with decidable source and target properness. ∎
 
-**Definition (`osumMap`).** As set out for this part of the library.
+**Theorem (`osumOutMap₀_isComputable`).** The left projection from the coalesced sum is computable.
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+*Proof.* A proper left source uses decidable inclusion of its component; right and master sources contribute the left master, whose inclusion is also decidable. ∎
 
-**Theorem (`osumInMap₀_isComputable`).** As set out for this part of the library.
+**Theorem (`osumOutMap₁_isComputable`).** The right projection from the coalesced sum is computable.
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+*Proof.* This is the symmetric tag analysis for the right component. ∎
 
-**Theorem (`osumInMap₁_isComputable`).** As set out for this part of the library.
+**Theorem (`osum_isEffectivelyGivenS`).** The coalesced sum of two effectively given systems with nonempty neighbourhoods is effectively given in the Scott sense.
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+*Proof.* Choose component presentations and form the coalesced-sum presentation. ∎
 
-**Theorem (`osumMap_isComputable`).** As set out for this part of the library.
+**Theorem (`osum_mem_iff`).** A set is a coalesced-sum neighbourhood exactly when it is the common master, a proper injected left neighbourhood, or a proper injected right neighbourhood.
 
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
-
-**Theorem (`osumOutMap₀_isComputable`).** As set out for this part of the library.
-
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
-
-**Theorem (`osumOutMap₁_isComputable`).** As set out for this part of the library.
-
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
-
-**Theorem (`osum_isEffectivelyGivenS`).** As set out for this part of the library.
-
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
-
-**Theorem (`osum_mem_iff`).** As set out for this part of the library.
-
-*Proof.* By the tagged enumeration that collapses master neighbourhoods and the Scott presentation of the result. ∎
+*Proof.* This is the defining classification of neighbourhoods. ∎

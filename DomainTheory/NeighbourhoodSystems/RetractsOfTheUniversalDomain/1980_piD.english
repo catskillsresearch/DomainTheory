@@ -1,23 +1,13 @@
-Library development supporting Scott's neighbourhood-system formalization.
+This peer constructs, on the function-space domain, the projection that interprets a dependent product whose fibres are coded by elements of the universal domain.
 
 <!-- formalization -->
 
-**Definition (`piDApply`).** As set out for this part of the library.
+**Definition (`piDApply`).** Given a code assignment \(d\) and a map \(f:U\to U\), define a new map by first projecting the argument to the subdomain of type codes, applying \(d\), decoding the resulting code as a finitary projection, and applying that projection to \(f\) at the projected argument.
 
-*Proof.* By the development recorded in the peer module. ∎
+**Definition (`piDUncurried`).** The uncurried dependent-product operator sends a pair \((f,t)\) to the value obtained by decoding the projected code \(d(\operatorname{sub}(t))\) and applying its projection to \(f(\operatorname{sub}(t))\).
 
-**Definition (`piDUncurried`).** As set out for this part of the library.
+**Definition (`piD`).** The dependent-product projection on the function-space domain is the currying of the uncurried dependent-product operator.
 
-*Proof.* By the development recorded in the peer module. ∎
+**Definition (`piDTypeMap`).** For a code assignment \(d\), the associated fibre map sends a universal-domain element through \(d\), projects the result to a valid code, and decodes that code as an element of the function-space domain.
 
-**Definition (`piD`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
-
-**Definition (`piDTypeMap`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
-
-**Definition (`piDType`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
+**Definition (`piDType`).** The fibre projection at \(s\) is the approximable map represented by the decoded fibre code at \(s\).

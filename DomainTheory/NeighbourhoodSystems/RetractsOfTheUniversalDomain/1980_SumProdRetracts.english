@@ -1,79 +1,79 @@
-Library development supporting Scott's neighbourhood-system formalization.
+This peer develops elementary embeddings and projections for sums, products, and function spaces, and assembles the hypotheses under which binary sums and products retract into a universal ambient domain.
 
 <!-- formalization -->
 
-**Theorem (`exercise_8_19_assembly`).** As set out for this part of the library.
+**Theorem (`exercise_8_19_assembly`).** Let \(E\) be a neighbourhood system whose neighbourhoods are nonempty. If the truth-value domain and the self-function space \([E\to E]\) are retracts of \(E\), then both \(E+E\) and \(E\times E\) are retracts of \(E\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Apply the sum construction to the truth-value and function-space retractions, and the product construction to the same two hypotheses. ∎
 
-**Theorem (`example_819`).** As set out for this part of the library.
+**Theorem (`example_819`).** The preceding simultaneous sum-and-product assertion holds uniformly; moreover, its product and sum conclusions each hold separately under their respective stated hypotheses.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Combine the general product and sum retraction theorems, then take each component of the conjunction. ∎
 
-**Definition (`constFunMap`).** As set out for this part of the library.
+**Definition (`constFunMap`).** For neighbourhood systems \(A\) and \(B\), the constant-function map sends an element \(b\) of \(B\) to the element of \([A\to B]\) having constant value \(b\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Curry the projection \(B\times A\to B\). ∎
 
-**Definition (`embedFst`).** As set out for this part of the library.
+**Definition (`embedFst`).** The first-factor embedding \(A\to A\times B\) sends \(a\) to \((a,\bot)\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Pair the identity on \(A\) with the constant bottom map into \(B\). ∎
 
-**Definition (`embedSnd`).** As set out for this part of the library.
+**Definition (`embedSnd`).** The second-factor embedding \(B\to A\times B\) sends \(b\) to \((\bot,b)\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Pair the constant bottom map into \(A\) with the identity on \(B\). ∎
 
-**Definition (`evalBotMap`).** As set out for this part of the library.
+**Definition (`evalBotMap`).** Evaluation at bottom sends a function \(f:A\to B\) to \(f(\bot)\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Pair a function with the constant bottom argument and apply evaluation. ∎
 
-**Theorem (`toApproxMap_constFunMap`).** As set out for this part of the library.
+**Theorem (`toApproxMap_constFunMap`).** Applying the constant function determined by \(b\) to any argument \(a\) yields \(b\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Uncurry the defining projection; its first coordinate is \(b\), independently of \(a\). ∎
 
-**Theorem (`embedFst_comp_proj`).** As set out for this part of the library.
+**Theorem (`embedFst_comp_proj₀_le`).** Replacing the second coordinate of a pair by bottom lies below the original pair.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The first coordinates agree, and bottom is below the original second coordinate. ∎
 
-**Theorem (`embedFst_ne_embedSnd_of_ne_bot`).** As set out for this part of the library.
+**Theorem (`embedFst_ne_embedSnd_of_ne_bot`).** If \(x\) is not bottom in \(D\), then the two embeddings \(D\to D\times D\), \(y\mapsto(y,\bot)\) and \(y\mapsto(\bot,y)\), are distinct.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Equality of the maps would give equality of their values at \(x\); taking first coordinates would force \(x=\bot\). ∎
 
-**Theorem (`embedSnd_comp_proj`).** As set out for this part of the library.
+**Theorem (`embedSnd_comp_proj₁_le`).** Replacing the first coordinate of a pair by bottom lies below the original pair.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Bottom is below the original first coordinate, and the second coordinates agree. ∎
 
-**Theorem (`proj`).** As set out for this part of the library.
+**Theorem (`proj₀_comp_embedFst`).** First projection after first-factor embedding is the identity on \(A\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The first coordinate of \((a,\bot)\) is \(a\). ∎
 
-**Theorem (`proj`).** As set out for this part of the library.
+**Theorem (`proj₁_comp_embedSnd`).** Second projection after second-factor embedding is the identity on \(B\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The second coordinate of \((\bot,b)\) is \(b\). ∎
 
-**Theorem (`toElementMap_evalBotMap`).** As set out for this part of the library.
+**Theorem (`toElementMap_evalBotMap`).** On elements of the function-space domain, evaluation at bottom is ordinary application to the bottom element of the argument domain.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Expand evaluation on the pair consisting of the function and the constant bottom argument. ∎
 
-**Theorem (`constFunMap_comp_evalBotMap_le`).** As set out for this part of the library.
+**Theorem (`constFunMap_comp_evalBotMap_le`).** Sending a function \(f\) to the constant function with value \(f(\bot)\) lies below \(f\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Monotonicity of \(f\) gives \(f(\bot)\leq f(a)\) for every argument \(a\), which is exactly the pointwise order on functions. ∎
 
-**Theorem (`evalBotMap_comp_constFunMap`).** As set out for this part of the library.
+**Theorem (`evalBotMap_comp_constFunMap`).** Evaluating a constant function at bottom recovers its constant value.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Constant functions have the same value at every argument, hence in particular at bottom. ∎
 
-**Theorem (`trianglelefteq_funSpace_const`).** As set out for this part of the library.
+**Theorem (`trianglelefteq_funSpace_const`).** The codomain \(B\) is a retract of \([A\to B]\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Use constant functions as the embedding and evaluation at bottom as the projection. Their projection–embedding composite is the identity, and the reverse composite lies below the identity. ∎
 
-**Theorem (`D_trianglelefteq_funSpace`).** As set out for this part of the library.
+**Theorem (`D_trianglelefteq_funSpace`).** Every neighbourhood system \(D\) is a retract of its self-function space \([D\to D]\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Specialize the constant-function retraction to \(A=B=D\). ∎
 
-**Theorem (`trianglelefteq_prod_fst`).** As set out for this part of the library.
+**Theorem (`trianglelefteq_prod_fst`).** The first factor \(A\) is a retract of \(A\times B\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Embed \(a\) as \((a,\bot)\) and project to the first coordinate. Projection after embedding is the identity, while the reverse composite lies below the product identity. ∎
 
-**Theorem (`D_trianglelefteq_prod`).** As set out for this part of the library.
+**Theorem (`D_trianglelefteq_prod`).** Every neighbourhood system \(D\) is a retract of \(D\times D\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Specialize the first-factor product retraction to \(A=B=D\). ∎

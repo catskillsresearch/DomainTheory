@@ -2,342 +2,300 @@ Formal languages, coded by expressions, form a partially effectively given neigh
 
 <!-- formalization -->
 
-**Definition (`boolNat`).** As set out for this part of the library.
+**Definition (`SsysX_default`).** The default presented language is the universal language of all finite Boolean words.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Definition (`boolNat`).** A Boolean value is represented by zero for false and one for true.
 
-**Theorem (`boolNat_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`boolNat_eq_one_iff`).** The zero–one test bool nat returns one exactly when the mathematical condition encoded in its definition holds.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Separate the possible zero–one values occurring in bool nat eq one iff; the value one survives precisely in the case described by the defining predicate. ∎
 
-**Theorem (`boolNat_zero_one`).** As set out for this part of the library.
+**Theorem (`boolNat_zero_one`).** For every input, bool nat takes one of the two values zero and one.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Each Boolean-valued component of bool nat zero one is zero or one, and the defining Boolean combination preserves that range. ∎
 
-**Definition (`encodeListBool`).** As set out for this part of the library.
+**Definition (`encodeListBool`).** The coding function list bool assigns its finite list, expression, pair, or tagged value a natural-number index by pairing and list coding.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Definition (`SExpr.encode`).** The coding function encode assigns its finite list, expression, pair, or tagged value a natural-number index by pairing and list coding.
 
-**Definition (`SExpr.encode`).** As set out for this part of the library.
+**Definition (`natBool`).** A natural number decodes to false at zero, true at one, and fails at every larger number.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Definition (`decodeListBool`).** The decoding operation list bool recovers the finite list, expression, or tagged value represented by its numerical input, returning failure when the code is malformed.
 
-**Definition (`natBool`).** As set out for this part of the library.
+**Definition (`decodeFuel`).** The decoding operation fuel recovers the finite list, expression, or tagged value represented by its numerical input, returning failure when the code is malformed.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Definition (`SExpr.decode`).** The decoding operation decode recovers the finite list, expression, or tagged value represented by its numerical input, returning failure when the code is malformed.
 
-**Definition (`decodeListBool`).** As set out for this part of the library.
+**Definition (`SsysX`).** An index denotes the decoded nonempty regular language when decoding succeeds and otherwise denotes the universal language.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`SsysX_mem`).** For the objects in ssys x mem, the named equality, inclusion, or finite-witness relation holds.
 
-**Definition (`decodeFuel`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for ssys x mem and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`decodeFuel_pair_cap_isSome_iff`).** The condition decode fuel pair cap is some holds exactly when the finite witness condition holds.
 
-**Definition (`SExpr.decode`).** As set out for this part of the library.
+*Proof.* Expand both conditions in fuel pair cap is some iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`decodeFuel_pair_cat_isSome_iff`).** The condition decode fuel pair cat is some holds exactly when the finite witness condition holds.
 
-**Definition (`SsysX`).** As set out for this part of the library.
+*Proof.* Expand both conditions in fuel pair cat is some iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`decodeFuel_succ_cap`).** At a successor input, fuel succ cap satisfies its recursive step equation.
 
-**Theorem (`SsysX_mem`).** As set out for this part of the library.
+*Proof.* The relevant clause of the recursive definition of fuel succ cap gives this equation immediately. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`decodeFuel_succ_cat`).** At a successor input, fuel succ cat satisfies its recursive step equation.
 
-**Theorem (`decodeFuel_pair_cap_isSome_iff`).** As set out for this part of the library.
+*Proof.* The relevant clause of the recursive definition of fuel succ cat gives this equation immediately. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`decodeFuel_succ_junk`).** At a successor input, fuel succ junk satisfies its recursive step equation.
 
-**Theorem (`decodeFuel_pair_cat_isSome_iff`).** As set out for this part of the library.
+*Proof.* The relevant clause of the recursive definition of fuel succ junk gives this equation immediately. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`decodeFuel_succ_not_sigma`).** At a successor input, fuel succ not sigma satisfies its recursive step equation.
 
-**Theorem (`decodeFuel_succ_cap`).** As set out for this part of the library.
+*Proof.* The relevant clause of the recursive definition of fuel succ not sigma gives this equation immediately. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`decodeFuel_succ_sigma`).** At a successor input, fuel succ sigma satisfies its recursive step equation.
 
-**Theorem (`decodeFuel_succ_cat`).** As set out for this part of the library.
+*Proof.* The relevant clause of the recursive definition of fuel succ sigma gives this equation immediately. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`decodeFuel_succ_single`).** At a successor input, fuel succ single satisfies its recursive step equation.
 
-**Theorem (`decodeFuel_succ_junk`).** As set out for this part of the library.
+*Proof.* The relevant clause of the recursive definition of fuel succ single gives this equation immediately. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`decodeListBool_encodeListBool`).** For the objects in list bool encode list bool, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`decodeFuel_succ_not_sigma`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for list bool encode list bool and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`natBinDigit_of_natBool_some`).** The hypotheses nat bool some imply nat bin digit.
 
-**Theorem (`decodeFuel_succ_sigma`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for nat bin digit of nat bool some and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`natBool_isSome_iff`).** The condition nat bool is some holds exactly when the finite witness condition holds.
 
-**Theorem (`decodeFuel_succ_single`).** As set out for this part of the library.
+*Proof.* Expand both conditions in nat bool is some iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`mapM_natBool_isSome_iff`).** The condition map m nat bool is some holds exactly when the finite witness condition holds.
 
-**Theorem (`decodeListBool_encodeListBool`).** As set out for this part of the library.
+*Proof.* Expand both conditions in map m nat bool is some iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`decodeListBool_isSome_iff`).** The condition decode list bool is some holds exactly when the finite witness condition holds.
 
-**Theorem (`natBinDigit_of_natBool_some`).** As set out for this part of the library.
+*Proof.* Expand both conditions in list bool is some iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`decodeFuelOkChar_eq_one_iff`).** The zero–one test decode fuel ok char returns one exactly when the mathematical condition encoded in its definition holds.
 
-**Theorem (`natBool_isSome_iff`).** As set out for this part of the library.
+*Proof.* Separate the possible zero–one values occurring in fuel ok char eq one iff; the value one survives precisely in the case described by the defining predicate. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Definition (`safeDecodeActive`).** The decoding operation safe decode active recovers the finite list, expression, or tagged value represented by its numerical input, returning failure when the code is malformed.
 
-**Theorem (`mapM_natBool_isSome_iff`).** As set out for this part of the library.
+**Theorem (`SsysX_eq_denote_safe`).** The value of ssys x equals the value described by denote safe.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Compare membership or numerical components in ssys x eq denote safe; the defining equations reduce both sides to the same data. ∎
 
-**Theorem (`decodeListBool_isSome_iff`).** As set out for this part of the library.
+**Theorem (`safeDecodeActive_nonempty`).** The set or language safe decode active nonempty has an element under the hypotheses of the theorem.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Choose witnesses from the nonempty input sets in safe decode active nonempty and combine them using the defining construction. ∎
 
-**Theorem (`decodeFuelOkChar_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`consistentB_safe_sigma`).** For the objects in consistent b safe sigma, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Following the defining recursion for consistent b safe sigma and applying the preceding component lemmas yields the claimed result. ∎
 
-**Definition (`safeDecodeActive`).** As set out for this part of the library.
+**Theorem (`consistentB_sigma_safe`).** For the objects in consistent b sigma safe, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Following the defining recursion for consistent b sigma safe and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`SsysX_eq_denote_safe`).** As set out for this part of the library.
+**Definition (`sexprDepth`).** Expression depth is one at leaves and one plus the maximum depth of the two children at binary constructors.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`decodeFuel_encode`).** For the objects in fuel encode, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`safeDecodeActive_nonempty`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for fuel encode and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Definition (`SExpr.index`).** The coding function index assigns its finite list, expression, pair, or tagged value a natural-number index by pairing and list coding.
 
-**Theorem (`consistentB_safe_sigma`).** As set out for this part of the library.
+**Theorem (`SExpr.decode_index`).** For the objects in index, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Following the defining recursion for index and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`consistentB_sigma_safe`).** As set out for this part of the library.
+**Theorem (`SsysX_surj`).** Every object in the target of ssys x surj is represented by some input.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Choose the finite code or canonical representative supplied by the target object; decoding that choice gives the required preimage for ssys x surj. ∎
 
-**Definition (`sexprDepth`).** As set out for this part of the library.
+**Definition (`ssysActive`).** An index is active exactly when it decodes to an expression with nonempty denotation.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`safeDecodeActive_inactive`).** For the objects in safe decode active inactive, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`decodeFuel_encode`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for safe decode active inactive and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Definition (`ssysConsistentB`).** Two presentation indices are declared consistent automatically if either is inactive, and otherwise by testing consistency of their decoded expressions.
 
-**Definition (`SExpr.index`).** As set out for this part of the library.
+**Theorem (`ssysConsistentB_iff`).** The condition ssys consistent b holds exactly when the finite witness condition holds.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Expand both conditions in ssys consistent b iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-**Theorem (`SExpr.decode_index`).** As set out for this part of the library.
+**Theorem (`ssys_cons_positivity`).** For the objects in ssys cons positivity, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Following the defining recursion for ssys cons positivity and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`SsysX_surj`).** As set out for this part of the library.
+**Theorem (`ssys_inter_nonempty_iff_consistent`).** The set or language ssys inter nonempty iff consistent has an element under the hypotheses of the theorem.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Choose witnesses from the nonempty input sets in ssys inter nonempty iff consistent and combine them using the defining construction. ∎
 
-**Definition (`ssysActive`).** As set out for this part of the library.
+**Theorem (`ssys_cons_iff`).** The condition ssys cons holds exactly when the finite witness condition holds.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Expand both conditions in ssys cons iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-**Theorem (`safeDecodeActive_inactive`).** As set out for this part of the library.
+**Theorem (`ssys_cons_char_iff`).** The condition ssys cons char holds exactly when the finite witness condition holds.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Expand both conditions in ssys cons char iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-**Definition (`ssysConsistentB`).** As set out for this part of the library.
+**Theorem (`example_722_presentation_inst47`).** Scott’s example example 722 presentation inst47 has the claimed language-theoretic or computability property.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Following the defining recursion for example 722 presentation inst47 and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`ssysConsistentB_iff`).** As set out for this part of the library.
+**Definition (`PartiallyEffectivelyGiven`).** A neighbourhood system is partially effectively given when it admits a consistency presentation.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`c9b5_encodeListBool_eq`).** The value of c9b5 encode list bool eq equals the value described by c9b5 encode list bool eq.
 
-**Theorem (`ssys_cons_positivity`).** As set out for this part of the library.
+*Proof.* Compare membership or numerical components in c9b5 encode list bool eq; the defining equations reduce both sides to the same data. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`c9b5_sexprDepth_eq`).** The value of c9b5 sexpr depth eq equals the value described by c9b5 sexpr depth eq.
 
-**Theorem (`ssys_inter_nonempty_iff_consistent`).** As set out for this part of the library.
+*Proof.* Compare membership or numerical components in c9b5 sexpr depth eq; the defining equations reduce both sides to the same data. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`c9b5_sexprGodelEncode_eq`).** The value of c9b5 sexpr godel encode eq equals the value described by c9b5 sexpr godel encode eq.
 
-**Theorem (`ssys_cons_iff`).** As set out for this part of the library.
+*Proof.* Compare membership or numerical components in c9b5 sexpr godel encode eq; the defining equations reduce both sides to the same data. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`decodeFuel_depth_le`).** The element or numerical value fuel depth le lies below the bound in the theorem.
 
-**Theorem (`ssys_cons_char_iff`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for fuel depth le and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`natBool_eq_some_iff`).** The condition nat bool eq some holds exactly when the finite witness condition holds.
 
-**Definition (`decidableSsysCons`).** As set out for this part of the library.
+*Proof.* Expand both conditions in nat bool eq some iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`mapM_natBool_eq_some`).** The value of map m nat bool equals the value described by some.
 
-**Theorem (`example_722_presentation_inst47`).** As set out for this part of the library.
+*Proof.* Compare membership or numerical components in map m nat bool eq some; the defining equations reduce both sides to the same data. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`decodeListBool_eq_some`).** The value of decode list bool equals the value described by some.
 
-**Definition (`PartiallyEffectivelyGiven`).** As set out for this part of the library.
+*Proof.* Compare membership or numerical components in list bool eq some; the defining equations reduce both sides to the same data. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`decodeFuel_sound`).** Every finite witness accepted by fuel sound determines a valid semantic relation.
 
-**Theorem (`c9b5_encodeListBool_eq`).** As set out for this part of the library.
+*Proof.* Induction over the finite witness for fuel sound composes each valid step, producing the semantic relation at its endpoint. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Definition (`ssysActiveChar`).** The numerical characteristic function ssys active char encodes its Boolean or relational test by zero and one.
 
-**Theorem (`c9b5_sexprDepth_eq`).** As set out for this part of the library.
+**Theorem (`primrec_ssysActiveChar`).** The numerical function ssys active char is primitive recursive.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of ssys active char. ∎
 
-**Theorem (`c9b5_sexprGodelEncode_eq`).** As set out for this part of the library.
+**Theorem (`ssysActiveChar_eq_one_iff`).** The zero–one test ssys active char returns one exactly when the mathematical condition encoded in its definition holds.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Separate the possible zero–one values occurring in ssys active char eq one iff; the value one survives precisely in the case described by the defining predicate. ∎
 
-**Theorem (`decodeFuel_depth_le`).** As set out for this part of the library.
+**Theorem (`ssysActiveChar_le_one`).** For every input, ssys active char takes one of the two values zero and one.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Each Boolean-valued component of ssys active char le one is zero or one, and the defining Boolean combination preserves that range. ∎
 
-**Theorem (`natBool_eq_some_iff`).** As set out for this part of the library.
+**Theorem (`ssysActive_exists_decode`).** For the objects in ssys active exists decode, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Following the defining recursion for ssys active exists decode and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`mapM_natBool_eq_some`).** As set out for this part of the library.
+**Definition (`ssysCanonicalCode`).** The coding function ssys canonical code assigns its finite list, expression, pair, or tagged value a natural-number index by pairing and list coding.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Definition (`ssysConsChar`).** The numerical characteristic function ssys cons char encodes its Boolean or relational test by zero and one.
 
-**Theorem (`decodeListBool_eq_some`).** As set out for this part of the library.
+**Theorem (`ssysConsChar_eq_one_iff`).** The zero–one test ssys cons char returns one exactly when the mathematical condition encoded in its definition holds.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Separate the possible zero–one values occurring in ssys cons char eq one iff; the value one survives precisely in the case described by the defining predicate. ∎
 
-**Theorem (`decodeFuel_sound`).** As set out for this part of the library.
+**Theorem (`ssysConsChar_le_one`).** For every input, ssys cons char takes one of the two values zero and one.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Each Boolean-valued component of ssys cons char le one is zero or one, and the defining Boolean combination preserves that range. ∎
 
-**Definition (`ssysActiveChar`).** As set out for this part of the library.
+**Theorem (`ssysConsChar_zero_one`).** For every input, ssys cons char takes one of the two values zero and one.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Each Boolean-valued component of ssys cons char zero one is zero or one, and the defining Boolean combination preserves that range. ∎
 
-**Theorem (`primrec_ssysActiveChar`).** As set out for this part of the library.
+**Definition (`ssysConsistentBChar`).** The numerical characteristic function ssys consistent bchar encodes its Boolean or relational test by zero and one.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`primrec_ssysConsistentBChar`).** The numerical function ssys consistent bchar is primitive recursive.
 
-**Theorem (`ssysActiveChar_eq_one_iff`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of ssys consistent bchar. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`ssysConsistentBChar_eq_one_iff`).** The zero–one test ssys consistent bchar returns one exactly when the mathematical condition encoded in its definition holds.
 
-**Theorem (`ssysActiveChar_le_one`).** As set out for this part of the library.
+*Proof.* Separate the possible zero–one values occurring in ssys consistent bchar eq one iff; the value one survives precisely in the case described by the defining predicate. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`ssysConsistentBChar_le_one`).** For every input, ssys consistent bchar takes one of the two values zero and one.
 
-**Theorem (`ssysActive_exists_decode`).** As set out for this part of the library.
+*Proof.* Each Boolean-valued component of ssys consistent bchar le one is zero or one, and the defining Boolean combination preserves that range. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`ssysConsChar_eq_ssysConsistentBChar`).** The value of ssys cons char equals the value described by ssys consistent bchar.
 
-**Definition (`ssysCanonicalCode`).** As set out for this part of the library.
+*Proof.* Compare membership or numerical components in ssys cons char eq ssys consistent bchar; the defining equations reduce both sides to the same data. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`primrec_ssysConsChar`).** The numerical function ssys cons char is primitive recursive.
 
-**Definition (`ssysConsChar`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of ssys cons char. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Definition (`ssysInterEqChar`).** The numerical characteristic function ssys inter eq char encodes its Boolean or relational test by zero and one.
 
-**Theorem (`ssysConsChar_eq_one_iff`).** As set out for this part of the library.
+**Theorem (`ssys_cons_char_eq_one_iff`).** The zero–one test ssys cons char returns one exactly when the mathematical condition encoded in its definition holds.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* The consistency character is one exactly when the preceding positivity result supplies a common indexed refinement of the two neighbourhoods. ∎
 
-**Theorem (`ssysConsChar_le_one`).** As set out for this part of the library.
+**Theorem (`Ssys_cons_computable_of_primrec_ssysConsChar`).** The relation ssys cons computable of primrec ssys cons char is recursively decidable.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Reduce the relation for ssys cons computable of primrec ssys cons char to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-**Theorem (`ssysConsChar_zero_one`).** As set out for this part of the library.
+**Theorem (`Ssys_cons_computable`).** The relation ssys cons computable is recursively decidable.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Reduce the relation for ssys cons computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-**Definition (`ssysConsistentBChar`).** As set out for this part of the library.
+**Definition (`SsysPres`).** The ssys pres is the computable presentation whose enumeration and decision procedures are those constructed above.
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`c9b5_boolNat_eq`).** The value of c9b5 bool nat eq equals the value described by c9b5 bool nat eq.
 
-**Theorem (`primrec_ssysConsistentBChar`).** As set out for this part of the library.
+*Proof.* Compare membership or numerical components in c9b5 bool nat eq; the defining equations reduce both sides to the same data. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`ssysCanonicalCode_eq`).** The value of ssys canonical code eq equals the value described by ssys canonical code eq.
 
-**Theorem (`ssysConsistentBChar_eq_one_iff`).** As set out for this part of the library.
+*Proof.* Compare membership or numerical components in ssys canonical code eq; the defining equations reduce both sides to the same data. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`sexprDepth_safeDecodeActive_le`).** The element or numerical value sexpr depth safe decode active le lies below the bound in the theorem.
 
-**Theorem (`ssysConsistentBChar_le_one`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for sexpr depth safe decode active le and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`ssys_interEq_iff`).** The intersection in ssys inter eq iff equals the indexed neighbourhood or language exactly under the stated finite comparison condition.
 
-**Theorem (`ssysConsChar_eq_ssysConsistentBChar`).** As set out for this part of the library.
+*Proof.* Use the same witnesses in both directions for ssys inter eq iff, combining their inclusion proofs pointwise and using nonemptiness where intersection closure requires it. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`ssysInterEqChar_le_one`).** For every input, ssys inter eq char takes one of the two values zero and one.
 
-**Theorem (`primrec_ssysConsChar`).** As set out for this part of the library.
+*Proof.* Each Boolean-valued component of ssys inter eq char le one is zero or one, and the defining Boolean combination preserves that range. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`ssysInterEqChar_eq_one_iff`).** The zero–one test ssys inter eq char returns one exactly when the mathematical condition encoded in its definition holds.
 
-**Definition (`ssysInterEqChar`).** As set out for this part of the library.
+*Proof.* Separate the possible zero–one values occurring in ssys inter eq char eq one iff; the value one survives precisely in the case described by the defining predicate. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`primrec_ssysInterEqChar`).** The numerical function ssys inter eq char is primitive recursive.
 
-**Theorem (`ssys_cons_char_eq_one_iff`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of ssys inter eq char. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`Ssys_interEq_computable`).** The relation ssys inter eq computable is recursively decidable.
 
-**Theorem (`Ssys_cons_computable_of_primrec_ssysConsChar`).** As set out for this part of the library.
+*Proof.* Use the same witnesses in both directions for ssys inter eq computable, combining their inclusion proofs pointwise and using nonemptiness where intersection closure requires it. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`Ssys_partially_effectively_given`).** For the objects in ssys partially effectively given, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`Ssys_cons_computable`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for ssys partially effectively given and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+**Theorem (`example_722_presentation`).** Scott’s example example 722 presentation has the claimed language-theoretic or computability property.
 
-**Definition (`SsysPres`).** As set out for this part of the library.
-
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
-
-**Theorem (`c9b5_boolNat_eq`).** As set out for this part of the library.
-
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
-
-**Theorem (`ssysCanonicalCode_eq`).** As set out for this part of the library.
-
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
-
-**Theorem (`sexprDepth_safeDecodeActive_le`).** As set out for this part of the library.
-
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
-
-**Theorem (`ssys_interEq_iff`).** As set out for this part of the library.
-
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
-
-**Theorem (`ssysInterEqChar_le_one`).** As set out for this part of the library.
-
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
-
-**Theorem (`ssysInterEqChar_eq_one_iff`).** As set out for this part of the library.
-
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
-
-**Theorem (`primrec_ssysInterEqChar`).** As set out for this part of the library.
-
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
-
-**Theorem (`Ssys_interEq_computable`).** As set out for this part of the library.
-
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
-
-**Theorem (`Ssys_partially_effectively_given`).** As set out for this part of the library.
-
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
-
-**Theorem (`example_722_presentation`).** As set out for this part of the library.
-
-*Proof.* By the coding of expressions and the recursive decidability of intersection on the language system. ∎
+*Proof.* Following the defining recursion for example 722 presentation and applying the preceding component lemmas yields the claimed result. ∎

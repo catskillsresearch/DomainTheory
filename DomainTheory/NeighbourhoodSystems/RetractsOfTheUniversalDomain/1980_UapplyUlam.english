@@ -1,35 +1,29 @@
-Library development supporting Scott's neighbourhood-system formalization.
+This peer gives application and abstraction directly in the universal domain and formalizes the sandwich calculation underlying the interpretation of typed abstraction and application.
 
 <!-- formalization -->
 
-**Definition (`Uapply`).** As set out for this part of the library.
+**Definition (`Uapply`).** Universal application decodes its first argument as a continuous self-map of \(U\) and evaluates that map at its second argument.
 
-*Proof.* By the development recorded in the peer module. ∎
+**Definition (`Ulam`).** Universal abstraction encodes a continuous self-map of \(U\), regarded as an element of the function-space domain, back into \(U\).
 
-**Definition (`Ulam`).** As set out for this part of the library.
+**Definition (`translateAbs`).** Given endomaps \(a\) and \(b\), the translation of a body \(f\) is the composite \(b\circ f\circ a\).
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`Uapply_Ulam`).** Applying the universal abstraction of a map \(f\) to \(x\) gives \(f(x)\).
 
-**Definition (`translateAbs`).** As set out for this part of the library.
+*Proof.* Decoding immediately after encoding is the identity on the function-space domain, so function-space evaluation reduces to evaluation of \(f\) at \(x\). ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`translateAbs_idMap`).** Translating the identity body between \(a\) and \(b\) gives the composite \(b\circ a\).
 
-**Theorem (`Uapply_Ulam`).** As set out for this part of the library.
+*Proof.* Composition with the identity does not change the intervening map. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`example_826`).** For every neighbourhood system and endomaps \(a,b\), translating the identity body yields \(b\circ a\).
 
-**Theorem (`translateAbs_idMap`).** As set out for this part of the library.
+*Proof.* This is the preceding identity-body calculation, uniformly quantified over the neighbourhood system and the two maps. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`translateAbs_sandwich`).** If \(a\) and \(b\) are retractions, then every translated body \(f'=b\circ f\circ a\) satisfies the sandwich equation \(b\circ f'\circ a=f'\).
 
-**Theorem (`example_826`).** As set out for this part of the library.
+*Proof.* Associativity gathers the two copies of \(a\) and the two copies of \(b\); idempotence of the retractions removes the repetitions. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`translateApp_hasType`).** Suppose \(f\) satisfies \(b\circ f\circ a=f\). If \(x\) is fixed by \(a\), then \(f(x)\) is fixed by \(b\).
 
-**Theorem (`translateAbs_sandwich`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
-
-**Theorem (`translateApp_hasType`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Evaluate the sandwich equation at \(x\) and use the assumption \(a(x)=x\). ∎

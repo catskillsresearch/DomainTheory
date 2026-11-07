@@ -2,38 +2,36 @@ The powerset of the naturals is a neighbourhood system whose neighbourhoods are 
 
 <!-- formalization -->
 
-**Definition (`nbhd`).** As set out for this part of the library.
+**Definition (`nbhd`).** The neighbourhood coded by a natural number \(n\) consists of the bit positions at which \(n\) has value false.
 
-*Proof.* By the bitwise presentation of intersection and the master neighbourhood. ∎
+**Theorem (`mem_nbhd`).** A natural number \(k\) belongs to the neighbourhood coded by \(n\) exactly when the \(k\)-th bit of \(n\) is false.
 
-**Theorem (`mem_nbhd`).** As set out for this part of the library.
+*Proof.* This is the defining membership condition. ∎
 
-*Proof.* By the bitwise presentation of intersection and the master neighbourhood. ∎
+**Theorem (`nbhd_injective`).** Distinct natural-number codes determine distinct neighbourhoods.
 
-**Theorem (`nbhd_injective`).** As set out for this part of the library.
+*Proof.* Equality of the neighbourhoods gives equality of the truth value of every bit, and natural numbers are determined by their bits. ∎
 
-*Proof.* By the bitwise presentation of intersection and the master neighbourhood. ∎
+**Theorem (`nbhd_inter`).** The intersection of the neighbourhoods coded by \(n\) and \(m\) is the neighbourhood coded by their bitwise disjunction.
 
-**Theorem (`nbhd_inter`).** As set out for this part of the library.
+*Proof.* A bit is false in the disjunction exactly when it is false in both operands. ∎
 
-*Proof.* By the bitwise presentation of intersection and the master neighbourhood. ∎
+**Theorem (`nbhd_zero`).** The neighbourhood coded by zero is the whole set of natural numbers.
 
-**Theorem (`nbhd_zero`).** As set out for this part of the library.
+*Proof.* Every bit of zero is false. ∎
 
-*Proof.* By the bitwise presentation of intersection and the master neighbourhood. ∎
+**Definition (`PN`).** The powerset neighbourhood system on the natural numbers has precisely the coded neighbourhoods, with the whole set as master neighbourhood.
 
-**Definition (`PN`).** As set out for this part of the library.
+*Proof.* Zero codes the master neighbourhood, and bitwise disjunction codes intersections. ∎
 
-*Proof.* By the bitwise presentation of intersection and the master neighbourhood. ∎
+**Definition (`PNpres`).** The canonical computable presentation enumerates the neighbourhood coded by \(n\) at index \(n\), uses bitwise disjunction for intersection, and uses zero for the master index.
 
-**Definition (`PNpres`).** As set out for this part of the library.
+*Proof.* Injectivity of the coding decides equality, bitwise disjunction computes intersections, and every pair of neighbourhoods is consistent. ∎
 
-*Proof.* By the bitwise presentation of intersection and the master neighbourhood. ∎
+**Theorem (`PN_consistent`).** Any two coded neighbourhoods have a coded neighbourhood contained in their intersection.
 
-**Theorem (`PN_consistent`).** As set out for this part of the library.
+*Proof.* Their bitwise disjunction codes the intersection itself. ∎
 
-*Proof.* By the bitwise presentation of intersection and the master neighbourhood. ∎
+**Theorem (`PN_isEffectivelyGiven`).** The powerset neighbourhood system is effectively given.
 
-**Theorem (`PN_isEffectivelyGiven`).** As set out for this part of the library.
-
-*Proof.* By the bitwise presentation of intersection and the master neighbourhood. ∎
+*Proof.* The canonical computable presentation supplies the required effective enumeration and operations. ∎

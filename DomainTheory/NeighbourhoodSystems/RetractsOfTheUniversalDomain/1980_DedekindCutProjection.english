@@ -1,163 +1,145 @@
-Library development supporting Scott's neighbourhood-system formalization.
+This peer constructs a projection whose fixed-point order is the real unit interval, using rational initial intervals as neighbourhoods, and proves that this projection is not finitary.
 
 <!-- formalization -->
 
-**Definition (`R`).** As set out for this part of the library.
+**Definition (`R`).** The rational-interval neighbourhood system has as neighbourhoods the half-open intervals \([0,r)\) with rational \(0<r\leq1\), and master neighbourhood \([0,1)\).
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`R_mem_iff`).** A set is a neighbourhood of the rational-interval system exactly when it is \([0,r)\) for some rational \(r\) with \(0<r\leq1\).
 
-**Theorem (`R_mem_iff`).** As set out for this part of the library.
+*Proof.* This is the defining family of neighbourhoods. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`R_master`).** The master neighbourhood is \([0,1)\).
 
-**Theorem (`R_master`).** As set out for this part of the library.
+*Proof.* This is the chosen master interval. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`Ico0_inj`).** Positive rational endpoints determine their half-open initial intervals uniquely.
 
-**Theorem (`Ico0_inj`).** As set out for this part of the library.
+*Proof.* If one endpoint were smaller, that endpoint would belong to the larger interval but not the smaller one. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`Ico0_inter`).** The intersection of \([0,r)\) and \([0,s)\) is \([0,\min(r,s))\).
 
-**Theorem (`Ico0_inter`).** As set out for this part of the library.
+*Proof.* Membership requires being below both endpoints. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`Ico0_le_of_subset`).** If \(p>0\) and \([0,p)\subseteq[0,q)\), then \(p\leq q\).
 
-**Theorem (`Ico0_le_of_subset`).** As set out for this part of the library.
+*Proof.* If \(q<p\), positivity forced by the inclusion makes \(q\) a member of the first interval but not the second. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Definition (`aRel`).** Two rational initial intervals are related when their endpoints lie in \((0,1]\) and the first endpoint is strictly smaller than the second, except that the endpoint \(1\) is also related to itself.
 
-**Definition (`aRel`).** As set out for this part of the library.
+**Theorem (`aRel_combine`).** If an endpoint is related to each of two endpoints, then it is related to their minimum.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Two strict inequalities combine into an inequality to the minimum; the exceptional equality case can occur only when all relevant endpoints are \(1\). ∎
 
-**Theorem (`aRel_combine`).** As set out for this part of the library.
+**Definition (`a`).** The relation on rational initial intervals defines an approximable endomap of the rational-interval neighbourhood system.
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`aRel_iff`).** For valid positive endpoints at most \(1\), the corresponding intervals are related exactly when the first endpoint is smaller than the second or both endpoints equal \(1\).
 
-**Definition (`a`).** As set out for this part of the library.
+*Proof.* Uniqueness of positive endpoints removes the existential interval representations. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`a_rel`).** The underlying relation of the approximable map is the endpoint relation just defined.
 
-**Theorem (`aRel_iff`).** As set out for this part of the library.
+*Proof.* This is how the map was constructed. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`Element.ext_U`).** Two elements of the rational-interval system are equal if they agree on every interval \([0,r)\).
 
-**Theorem (`a_rel`).** As set out for this part of the library.
+*Proof.* Every neighbourhood belonging to either element has this form, so agreement on these intervals gives extensional equality. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Definition (`mkElement`).** An upward-closed predicate on positive rational endpoints at most \(1\), containing \(1\), determines the element whose neighbourhoods are the corresponding intervals \([0,r)\).
 
-**Theorem (`Element.ext_U`).** As set out for this part of the library.
+**Theorem (`mkElement_mem`).** A set belongs to the element built from an endpoint predicate exactly when it is \([0,r)\) for some endpoint satisfying that predicate.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* This is the defining membership condition. ∎
 
-**Definition (`mkElement`).** As set out for this part of the library.
+**Theorem (`R_mem_Ico0`).** If \([0,s)\) is a neighbourhood, then \(0<s\leq1\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Represent it by a valid endpoint and use uniqueness of positive endpoints. ∎
 
-**Theorem (`mkElement_mem`).** As set out for this part of the library.
+**Definition (`cutU`).** For a real \(t\), the cut predicate selects rational \(r\leq1\) lying strictly above \(1-t\), together with the endpoint \(r=1\).
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`cutU_le1`).** Every endpoint selected by the cut predicate is at most \(1\).
 
-**Theorem (`R_mem_Ico0`).** As set out for this part of the library.
+*Proof.* This is part of the predicate. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`cutU_one`).** The endpoint \(1\) is selected by every cut predicate.
 
-**Definition (`cutU`).** As set out for this part of the library.
+*Proof.* It is included by the exceptional endpoint clause. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`cutU_pos`).** If \(t\leq1\), every endpoint selected by its cut predicate is positive.
 
-**Theorem (`cutU_le1`).** As set out for this part of the library.
+*Proof.* Then \(1-t\geq0\); an endpoint strictly above it is positive, while the exceptional endpoint is \(1\). ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`cutU_up`).** The cut predicate is upward closed among rational endpoints at most \(1\).
 
-**Theorem (`cutU_one`).** As set out for this part of the library.
+*Proof.* Increasing an endpoint preserves strict inequality above \(1-t\); if the original endpoint is \(1\), the bounds force the new endpoint also to be \(1\). ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Definition (`cutElt`).** A real number \(t\leq1\) determines the rational-interval element selected by its cut predicate.
 
-**Theorem (`cutU_pos`).** As set out for this part of the library.
+**Theorem (`cutElt_mem`).** The interval \([0,r)\) belongs to the cut element for \(t\) exactly when \(r\) satisfies the cut predicate for \(t\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The general endpoint construction and uniqueness of positive interval endpoints give the equivalence. ∎
 
-**Theorem (`cutU_up`).** As set out for this part of the library.
+**Definition (`cutS`).** For an element, its endpoint set consists of the real images of rational \(r\) for which \([0,r)\) belongs to the element.
 
-*Proof.* By the development recorded in the peer module. ∎
+**Definition (`cutPoint`).** The real point represented by an element is one minus the infimum of its endpoint set.
 
-**Definition (`cutElt`).** As set out for this part of the library.
+**Theorem (`cutS_bddBelow`).** Every endpoint set is bounded below by zero.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Endpoints of neighbourhood intervals are positive. ∎
 
-**Theorem (`cutElt_mem`).** As set out for this part of the library.
+**Theorem (`cutPoint_nonneg`).** Every represented cut point is nonnegative.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The endpoint \(1\) belongs to every element, so the infimum of the endpoint set is at most \(1\). ∎
 
-**Definition (`cutS`).** As set out for this part of the library.
+**Theorem (`cutS_nonempty`).** Every endpoint set is nonempty.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* It contains the endpoint \(1\) arising from the master neighbourhood. ∎
 
-**Definition (`cutPoint`).** As set out for this part of the library.
+**Theorem (`cutPoint_le_one`).** Every represented cut point is at most \(1\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The nonempty endpoint set is bounded below by zero, so its infimum is nonnegative. ∎
 
-**Theorem (`cutS_bddBelow`).** As set out for this part of the library.
+**Theorem (`cutElt_cutPoint`).** Every fixed point of the approximable map is the cut element determined by its represented real point.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Fixedness expresses membership of an interval through a related smaller interval. The defining property of the infimum then identifies membership with lying strictly above the endpoint infimum, with the master endpoint handled separately. ∎
 
-**Theorem (`cutPoint_nonneg`).** As set out for this part of the library.
+**Theorem (`cutU_mono`).** If \(t\leq t'\), every endpoint selected by the cut for \(t\) is selected by the cut for \(t'\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Increasing \(t\) decreases the threshold \(1-t\). ∎
 
-**Theorem (`cutS_nonempty`).** As set out for this part of the library.
+**Theorem (`le_iff_U`).** One rational-interval element lies below another exactly when membership in every interval \([0,r)\) transfers from the first to the second.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* These intervals comprise all neighbourhoods of the system. ∎
 
-**Theorem (`cutPoint_le_one`).** As set out for this part of the library.
+**Theorem (`cutElt_le_iff`).** For \(t,t'\in[0,1]\), the cut element for \(t\) lies below that for \(t'\) exactly when \(t\leq t'\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Monotonicity of cut predicates gives one direction. If \(t>t'\), density of the rationals supplies an endpoint between the two cut thresholds that belongs only to the first cut. ∎
 
-**Theorem (`cutElt_cutPoint`).** As set out for this part of the library.
+**Theorem (`cutElt_injective`).** On the real unit interval, equal cut elements have equal real parameters.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Equality gives both element inequalities, and the order characterization gives both inequalities between the parameters. ∎
 
-**Theorem (`cutU_mono`).** As set out for this part of the library.
+**Theorem (`toElementMap_cutElt`).** Every cut element with parameter at most \(1\) is fixed by the approximable map.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* A related smaller endpoint preserves the cut inequality in the forward direction; rational density inserts a related endpoint below any nonterminal selected endpoint in the reverse direction, while endpoint \(1\) relates to itself. ∎
 
-**Theorem (`le_iff_U`).** As set out for this part of the library.
+**Definition (`fixOrderIso`).** The fixed points of the approximable map are order-isomorphic to the real interval \([0,1]\), by sending a fixed point to its represented cut point.
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`aRel_le`).** Related rational endpoints are ordered by the usual non-strict order.
 
-**Theorem (`cutElt_le_iff`).** As set out for this part of the library.
+*Proof.* Either the first is strictly smaller, or both are \(1\). ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`isRetraction_a`).** The approximable map is idempotent.
 
-**Theorem (`cutElt_injective`).** As set out for this part of the library.
+*Proof.* Composing two strict endpoint steps gives one strict step. Conversely, density of the rationals inserts an intermediate endpoint between distinct related endpoints, while the terminal endpoint \(1\) factors through itself. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`isProjection_a`).** The approximable map is a projection.
 
-**Theorem (`toElementMap_cutElt`).** As set out for this part of the library.
+*Proof.* It is a retraction, and every related pair of intervals is ordered by inclusion because their endpoints are ordered. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`not_isCompactElt_pos`).** Under any order isomorphism from the real unit interval to a neighbourhood-system domain, the image of every positive point is not compact.
 
-**Definition (`fixOrderIso`).** As set out for this part of the library.
+*Proof.* The positive point is the supremum of the directed family of smaller nonnegative points, but no member of that family lies above it; an order isomorphism preserves this least-upper-bound obstruction. ∎
 
-*Proof.* By the development recorded in the peer module. ∎
+**Theorem (`not_isFinitary_a`).** The projection is not finitary.
 
-**Theorem (`aRel_le`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
-
-**Theorem (`isRetraction_a`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
-
-**Theorem (`isProjection_a`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
-
-**Theorem (`not_isCompactElt_pos`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
-
-**Theorem (`not_isFinitary_a`).** As set out for this part of the library.
-
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* If its fixed points formed a finitary domain, every principal compact approximation of the top fixed point would correspond, under the unit-interval isomorphism, to a compact point. No positive point is compact, so all such approximations would be the bottom point; their directed supremum would then make top equal bottom, a contradiction. ∎

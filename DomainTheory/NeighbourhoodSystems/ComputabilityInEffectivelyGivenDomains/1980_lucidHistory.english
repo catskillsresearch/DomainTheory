@@ -2,806 +2,694 @@ The domain of histories is effectively given, and the lifted connectives are com
 
 <!-- formalization -->
 
-**Definition (`Gamma`).** As set out for this part of the library.
+**Definition (`Gamma`).** A history is either a finite list of natural numbers or an infinite stream of natural numbers.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`star`).** The empty finite history is the distinguished initial history.
 
-**Definition (`star`).** As set out for this part of the library.
+**Definition (`streamCons`).** Prefixing a number to a stream yields the stream whose first value is that number and whose later values are the original stream shifted by one place.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`streamCons_zero`).** At input zero, stream cons has the initial value specified by its definition.
 
-**Definition (`streamCons`).** As set out for this part of the library.
+*Proof.* The relevant clause of the recursive definition of stream cons zero gives this equation immediately. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`streamCons_succ`).** At a successor input, stream cons succ satisfies its recursive step equation.
 
-**Theorem (`streamCons_zero`).** As set out for this part of the library.
+*Proof.* The relevant clause of the recursive definition of stream cons succ gives this equation immediately. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`cons`).** Prefixing a number to a history acts by list cons on finite histories and by stream cons on infinite histories.
 
-**Theorem (`streamCons_succ`).** As set out for this part of the library.
+**Definition (`consSet`).** The prefixed image of a set of histories consists of all histories obtained by prefixing the fixed number to a member of the set.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`cons_injective`).** The construction cons injective sends equal outputs only from equal inputs.
 
-**Definition (`cons`).** As set out for this part of the library.
+*Proof.* Equality of two values of cons injective determines their outer form and then each component, so the original inputs coincide. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`mem_consSet`).** The element described by cons set belongs to the set or neighbourhood specified by its hypotheses.
 
-**Definition (`consSet`).** As set out for this part of the library.
+*Proof.* The required witness for cons set is supplied directly by the defining membership condition. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`consSet_empty`).** The set or language in cons set empty is empty exactly under the stated absence-of-witness condition.
 
-**Theorem (`cons_injective`).** As set out for this part of the library.
+*Proof.* An element of the set in cons set empty would provide exactly the forbidden witness, while any such witness produces an element; hence emptiness is equivalent to its absence. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`consSet_inter`).** The construction cons set inter preserves the specified intersection of sets or neighbourhoods.
 
-**Theorem (`mem_consSet`).** As set out for this part of the library.
+*Proof.* Use the same witnesses in both directions for cons set inter, combining their inclusion proofs pointwise and using nonemptiness where intersection closure requires it. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`consSet_inter_ne`).** The construction cons set inter ne preserves the specified intersection of sets or neighbourhoods.
 
-**Theorem (`consSet_empty`).** As set out for this part of the library.
+*Proof.* Use the same witnesses in both directions for cons set inter ne, combining their inclusion proofs pointwise and using nonemptiness where intersection closure requires it. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`consSet_nonempty`).** The set or language cons set nonempty has an element under the hypotheses of the theorem.
 
-**Theorem (`consSet_inter`).** As set out for this part of the library.
+*Proof.* Choose witnesses from the nonempty input sets in cons set nonempty and combine them using the defining construction. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`consSet_subset_of_subset`).** The hypotheses subset imply cons set subset.
 
-**Theorem (`consSet_inter_ne`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for cons set subset of subset and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`consSet_subset`).** For the objects in cons set subset, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`consSet_nonempty`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for cons set subset and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`nbhd`).** The neighbourhood determined by a finite list is the set of histories having that list as an initial segment.
 
-**Theorem (`consSet_subset_of_subset`).** As set out for this part of the library.
+**Theorem (`nbhd_nil`).** For the objects in nbhd nil, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Following the defining recursion for nbhd nil and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`consSet_subset`).** As set out for this part of the library.
+**Theorem (`nbhd_cons`).** For the objects in nbhd cons, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Following the defining recursion for nbhd cons and applying the preceding component lemmas yields the claimed result. ∎
 
-**Definition (`nbhd`).** As set out for this part of the library.
+**Definition (`Lmem`).** A set is an admissible history neighbourhood exactly when it is determined by some finite list.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`mem_nbhd`).** The element described by nbhd belongs to the set or neighbourhood specified by its hypotheses.
 
-**Theorem (`nbhd_nil`).** As set out for this part of the library.
+*Proof.* The required witness for nbhd is supplied directly by the defining membership condition. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`L_nestedOrDisjoint`).** The two objects compared in l nested or disjoint are distinct.
 
-**Theorem (`nbhd_cons`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for l nested or disjoint and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`L`).** The history neighbourhood system has all histories as master set and the finite-prefix neighbourhoods as its neighbourhoods.
 
-**Definition (`Lmem`).** As set out for this part of the library.
+**Definition (`Lenum`).** The neighbourhood with index n is the prefix neighbourhood determined by the decoded list of n.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Lenum_mem`).** For the objects in lenum mem, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`mem_nbhd`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for lenum mem and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Lenum_surj`).** Every object in the target of lenum surj is represented by some input.
 
-**Theorem (`L_nestedOrDisjoint`).** As set out for this part of the library.
+*Proof.* Choose the finite code or canonical representative supplied by the target object; decoding that choice gives the required preimage for lenum surj. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Lenum_zero`).** At input zero, lenum has the initial value specified by its definition.
 
-**Definition (`L`).** As set out for this part of the library.
+*Proof.* The relevant clause of the recursive definition of lenum zero gives this equation immediately. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`isPrefixChar`).** The numerical characteristic function is prefix char encodes its Boolean or relational test by zero and one.
 
-**Definition (`Lenum`).** As set out for this part of the library.
+**Definition (`LenumConsChar`).** The numerical characteristic function lenum cons char encodes its Boolean or relational test by zero and one.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`LenumConsCharP`).** The numerical characteristic function lenum cons char p encodes its Boolean or relational test by zero and one.
 
-**Theorem (`Lenum_mem`).** As set out for this part of the library.
+**Definition (`LenumInter`).** For two neighbourhood indices, choose the index of the longer compatible prefix; when they are incompatible, choose the second index.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`LenumInterEqChar`).** The numerical characteristic function lenum inter eq char encodes its Boolean or relational test by zero and one.
 
-**Theorem (`Lenum_surj`).** As set out for this part of the library.
+**Definition (`LenumInterEqCharP`).** The numerical characteristic function lenum inter eq char p encodes its Boolean or relational test by zero and one.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`isPrefixChar_eq_one_iff`).** The zero–one test is prefix char returns one exactly when the mathematical condition encoded in its definition holds.
 
-**Theorem (`Lenum_zero`).** As set out for this part of the library.
+*Proof.* Separate the possible zero–one values occurring in is prefix char eq one iff; the value one survives precisely in the case described by the defining predicate. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`isPrefixChar_le_one`).** For every input, is prefix char takes one of the two values zero and one.
 
-**Definition (`isPrefixChar`).** As set out for this part of the library.
+*Proof.* Each Boolean-valued component of is prefix char le one is zero or one, and the defining Boolean combination preserves that range. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`isPrefixChar_eq_zero_or_one`).** For every input, the characteristic function is prefix char is either zero or one.
 
-**Definition (`LenumConsChar`).** As set out for this part of the library.
+*Proof.* The relevant clause of the recursive definition of is prefix char eq zero or one gives this equation immediately. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`LenumConsChar_eq_one_iff`).** The zero–one test lenum cons char returns one exactly when the mathematical condition encoded in its definition holds.
 
-**Definition (`LenumConsCharP`).** As set out for this part of the library.
+*Proof.* Separate the possible zero–one values occurring in lenum cons char eq one iff; the value one survives precisely in the case described by the defining predicate. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`LenumConsChar_le_one`).** For every input, lenum cons char takes one of the two values zero and one.
 
-**Definition (`LenumInter`).** As set out for this part of the library.
+*Proof.* Each Boolean-valued component of lenum cons char le one is zero or one, and the defining Boolean combination preserves that range. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`LenumConsCharP_le_one`).** For every input, lenum cons char p takes one of the two values zero and one.
 
-**Definition (`LenumInterEqChar`).** As set out for this part of the library.
+*Proof.* Each Boolean-valued component of lenum cons char p le one is zero or one, and the defining Boolean combination preserves that range. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`mulBit_eq_zero_or_one`).** For every input, the characteristic function mul bit is either zero or one.
 
-**Definition (`LenumInterEqCharP`).** As set out for this part of the library.
+*Proof.* The relevant clause of the recursive definition of mul bit eq zero or one gives this equation immediately. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`LenumInterEqChar_eq_one_iff`).** The zero–one test lenum inter eq char returns one exactly when the mathematical condition encoded in its definition holds.
 
-**Theorem (`isPrefixChar_eq_one_iff`).** As set out for this part of the library.
+*Proof.* Separate the possible zero–one values occurring in lenum inter eq char eq one iff; the value one survives precisely in the case described by the defining predicate. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`LenumInterEqChar_le_one`).** For every input, lenum inter eq char takes one of the two values zero and one.
 
-**Theorem (`isPrefixChar_le_one`).** As set out for this part of the library.
+*Proof.* Each Boolean-valued component of lenum inter eq char le one is zero or one, and the defining Boolean combination preserves that range. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`LenumInterEqCharP_le_one`).** For every input, lenum inter eq char p takes one of the two values zero and one.
 
-**Theorem (`isPrefixChar_eq_zero_or_one`).** As set out for this part of the library.
+*Proof.* Each Boolean-valued component of lenum inter eq char p le one is zero or one, and the defining Boolean combination preserves that range. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`nbhd_nonempty`).** The set or language nbhd nonempty has an element under the hypotheses of the theorem.
 
-**Theorem (`LenumConsChar_eq_one_iff`).** As set out for this part of the library.
+*Proof.* Choose witnesses from the nonempty input sets in nbhd nonempty and combine them using the defining construction. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`primrec_isPrefixChar`).** The numerical function is prefix char is primitive recursive.
 
-**Theorem (`LenumConsChar_le_one`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of is prefix char. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`primrec_LenumInterEqChar`).** The numerical function lenum inter eq char is primitive recursive.
 
-**Theorem (`LenumConsCharP_le_one`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of lenum inter eq char. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`primrec_LenumInterEqCharP`).** The numerical function lenum inter eq char p is primitive recursive.
 
-**Theorem (`mulBit_eq_zero_or_one`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of lenum inter eq char p. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`primrec_isPrefixChar_swap`).** The numerical function is prefix char swap is primitive recursive.
 
-**Theorem (`LenumInterEqChar_eq_one_iff`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of is prefix char swap. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`primrec_LenumConsChar`).** The numerical function lenum cons char is primitive recursive.
 
-**Theorem (`LenumInterEqChar_le_one`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of lenum cons char. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`primrec_LenumConsCharP`).** The numerical function lenum cons char p is primitive recursive.
 
-**Theorem (`LenumInterEqCharP_le_one`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of lenum cons char p. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`primrec_LenumInter`).** The numerical function lenum inter is primitive recursive.
 
-**Theorem (`nbhd_nonempty`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of lenum inter. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`star_ne_cons`).** The two objects compared in star ne cons are distinct.
 
-**Theorem (`primrec_isPrefixChar`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for star ne cons and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`star_not_mem_consSet`).** The two objects compared in star not mem cons set are distinct.
 
-**Theorem (`primrec_LenumInterEqChar`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for star not mem cons set and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`nbhd_subset_iff`).** The inclusion in nbhd subset iff holds exactly when the finite prefix, complement, or numerical condition on the right holds.
 
-**Theorem (`primrec_LenumInterEqCharP`).** As set out for this part of the library.
+*Proof.* Translate both inclusions in nbhd subset iff into the relevant finite prefix or complement condition, and use antisymmetry for the converse direction. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Lenum_subset_iff`).** The inclusion in lenum subset iff holds exactly when the finite prefix, complement, or numerical condition on the right holds.
 
-**Theorem (`primrec_isPrefixChar_swap`).** As set out for this part of the library.
+*Proof.* Translate both inclusions in lenum subset iff into the relevant finite prefix or complement condition, and use antisymmetry for the converse direction. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Lenum_cons_iff`).** The condition lenum cons holds exactly when the finite witness condition holds.
 
-**Theorem (`primrec_LenumConsChar`).** As set out for this part of the library.
+*Proof.* Expand both conditions in lenum cons iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`LenumInter_spec`).** The construction lenum inter spec preserves the specified intersection of sets or neighbourhoods.
 
-**Theorem (`primrec_LenumConsCharP`).** As set out for this part of the library.
+*Proof.* Use the same witnesses in both directions for lenum inter spec, combining their inclusion proofs pointwise and using nonemptiness where intersection closure requires it. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Lenum_cons_charP_eq_one_iff`).** The zero–one test lenum cons char p returns one exactly when the mathematical condition encoded in its definition holds.
 
-**Theorem (`primrec_LenumInter`).** As set out for this part of the library.
+*Proof.* Separate the possible zero–one values occurring in lenum cons char p eq one iff; the value one survives precisely in the case described by the defining predicate. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Lenum_cons_computable`).** The relation lenum cons computable is recursively decidable.
 
-**Theorem (`star_ne_cons`).** As set out for this part of the library.
+*Proof.* Reduce the relation for lenum cons computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`nbhd_injective`).** The construction nbhd injective sends equal outputs only from equal inputs.
 
-**Theorem (`star_not_mem_consSet`).** As set out for this part of the library.
+*Proof.* Equality of two values of nbhd injective determines their outer form and then each component, so the original inputs coincide. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Lenum_interEq_iff`).** The intersection in lenum inter eq iff equals the indexed neighbourhood or language exactly under the stated finite comparison condition.
 
-**Theorem (`nbhd_subset_iff`).** As set out for this part of the library.
+*Proof.* Use the same witnesses in both directions for lenum inter eq iff, combining their inclusion proofs pointwise and using nonemptiness where intersection closure requires it. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Lenum_interEq_charP_eq_one_iff`).** The zero–one test lenum inter eq char p returns one exactly when the mathematical condition encoded in its definition holds.
 
-**Theorem (`Lenum_subset_iff`).** As set out for this part of the library.
+*Proof.* Separate the possible zero–one values occurring in lenum inter eq char p eq one iff; the value one survives precisely in the case described by the defining predicate. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Lenum_interEq_computable`).** The relation lenum inter eq computable is recursively decidable.
 
-**Theorem (`Lenum_cons_iff`).** As set out for this part of the library.
+*Proof.* Use the same witnesses in both directions for lenum inter eq computable, combining their inclusion proofs pointwise and using nonemptiness where intersection closure requires it. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`Lpres`).** The lpres is the computable presentation whose enumeration and decision procedures are those constructed above.
 
-**Theorem (`LenumInter_spec`).** As set out for this part of the library.
+**Definition (`LFunData`).** Function-space presentation data consists of numerical tests for inhabited step families, inclusion in each presentation, and equality in the codomain presentation, together with primitive-recursiveness proofs.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`cons_inl`).** For the objects in cons inl, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`Lenum_cons_charP_eq_one_iff`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for cons inl and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`cons_inr`).** For the objects in cons inr, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`Lenum_cons_computable`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for cons inr and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`L_mem`).** For the objects in l mem, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`nbhd_injective`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for l mem and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`L_master`).** The master neighbourhood in l master is the universal set and satisfies the claimed relation.
 
-**Theorem (`Lenum_interEq_iff`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for l master and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`LenumSubsetChar`).** The numerical characteristic function lenum subset char encodes its Boolean or relational test by zero and one.
 
-**Theorem (`Lenum_interEq_charP_eq_one_iff`).** As set out for this part of the library.
+**Definition (`finPrefix`).** The finite prefix of length n of a stream is the list of its values at positions below n.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`finPrefix_zero`).** The prefix of length zero of every stream is the empty list.
 
-**Theorem (`Lenum_interEq_computable`).** As set out for this part of the library.
+*Proof.* The relevant clause of the recursive definition of fin prefix zero gives this equation immediately. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`HasMin`).** A history element has a minimum when one of its neighbourhoods is contained in every neighbourhood belonging to that element.
 
-**Definition (`Lpres`).** As set out for this part of the library.
+**Definition (`bitToNat`).** A Boolean value is encoded by zero for false and one for true.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`bitToNat_false`).** For the objects in bit to nat false, the named equality, inclusion, or finite-witness relation holds.
 
-**Definition (`LFunData`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for bit to nat false and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`bitToNat_true`).** For the objects in bit to nat true, the named equality, inclusion, or finite-witness relation holds.
 
-**Definition (``).** As set out for this part of the library.
+*Proof.* Following the defining recursion for bit to nat true and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`embStr`).** A finite Boolean string is embedded as the list obtained by replacing false by zero and true by one.
 
-**Theorem (`cons_inl`).** As set out for this part of the library.
+**Theorem (`embStr_nil`).** For the objects in emb str nil, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Following the defining recursion for emb str nil and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`cons_inr`).** As set out for this part of the library.
+**Definition (`Tenum`).** The three canonical truth neighbourhoods are enumerated by the universal truth set, the false singleton, and the true singleton, with all later indices returning the universal set.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Tenum_zero`).** At input zero, tenum has the initial value specified by its definition.
 
-**Theorem (`L_mem`).** As set out for this part of the library.
+*Proof.* The relevant clause of the recursive definition of tenum zero gives this equation immediately. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Tenum_one`).** At input one, tenum has the value specified by its definition.
 
-**Theorem (`L_master`).** As set out for this part of the library.
+*Proof.* The relevant clause of the recursive definition of tenum one gives this equation immediately. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Tenum_two`).** At input two, tenum has the value specified by its definition.
 
-**Definition (`LenumSubsetChar`).** As set out for this part of the library.
+*Proof.* The relevant clause of the recursive definition of tenum two gives this equation immediately. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Tenum_eq_canon`).** The value of tenum equals the value described by canon.
 
-**Definition (`finPrefix`).** As set out for this part of the library.
+*Proof.* Compare membership or numerical components in tenum eq canon; the defining equations reduce both sides to the same data. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Tenum_mem`).** For the objects in tenum mem, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`finPrefix_zero`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for tenum mem and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Tenum_ne_empty`).** The set or language in tenum ne empty is empty exactly under the stated absence-of-witness condition.
 
-**Definition (`HasMin`).** As set out for this part of the library.
+*Proof.* An element of the set in tenum ne empty would provide exactly the forbidden witness, while any such witness produces an element; hence emptiness is equivalent to its absence. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Tenum_surj`).** Every object in the target of tenum surj is represented by some input.
 
-**Definition (`bitToNat`).** As set out for this part of the library.
+*Proof.* Choose the finite code or canonical representative supplied by the target object; decoding that choice gives the required preimage for tenum surj. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`TeqChar`).** The numerical characteristic function teq char encodes its Boolean or relational test by zero and one.
 
-**Theorem (`bitToNat_false`).** As set out for this part of the library.
+**Definition (`TinterCode`).** The coding function tinter code assigns its finite list, expression, pair, or tagged value a natural-number index by pairing and list coding.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`andCode`).** The coding function and code assigns its finite list, expression, pair, or tagged value a natural-number index by pairing and list coding.
 
-**Theorem (`bitToNat_true`).** As set out for this part of the library.
+**Definition (`andFn`).** Conjunction on truth neighbourhoods returns its second argument on the false neighbourhood and the universal neighbourhood otherwise.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`andFn_zero`).** At input zero, and fn has the initial value specified by its definition.
 
-**Definition (`embStr`).** As set out for this part of the library.
+*Proof.* The relevant clause of the recursive definition of and fn zero gives this equation immediately. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`eq_master_of_master_subset`).** The master neighbourhood in eq master of master subset is the universal set and satisfies the claimed relation.
 
-**Theorem (`embStr_nil`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for eq master of master subset and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`exists_cons_prefix_of_prefix_of_length_lt`).** A proper finite prefix can be extended by one entry while remaining a prefix of the longer list.
 
-**Definition (`Tenum`).** As set out for this part of the library.
+*Proof.* The standard length laws for ranges, maps, append, and singleton lists compute the length in cons prefix of prefix of length lt. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`exists_extend_of_not_hasMin`).** The hypotheses not has min imply exists extend.
 
-**Theorem (`Tenum_zero`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for extend of not has min and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`buildData`).** For a nonprincipal history element, recursively choose an increasing sequence of finite prefixes whose neighbourhoods belong to the element.
 
-**Theorem (`Tenum_one`).** As set out for this part of the library.
+**Theorem (`finPrefix_length`).** The prefix of length n of a stream has length n.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* The standard length laws for ranges, maps, append, and singleton lists compute the length in fin prefix length. ∎
 
-**Theorem (`Tenum_two`).** As set out for this part of the library.
+**Theorem (`finPrefix_succ`).** The prefix of length n+1 is the prefix of length n followed by the nth stream entry.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* The relevant clause of the recursive definition of fin prefix succ gives this equation immediately. ∎
 
-**Theorem (`Tenum_eq_canon`).** As set out for this part of the library.
+**Theorem (`finPrefix_prefix_succ`).** Every finite stream prefix is a prefix of the next longer finite stream prefix.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* The relevant clause of the recursive definition of fin prefix prefix succ gives this equation immediately. ∎
 
-**Theorem (`Tenum_mem`).** As set out for this part of the library.
+**Theorem (`finPrefix_prefix_of_le`).** If n is at most m, the prefix of length n is a prefix of the prefix of length m.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Following the defining recursion for fin prefix prefix of le and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`Tenum_ne_empty`).** As set out for this part of the library.
+**Theorem (`finPrefix_take`).** Taking the first n entries of the prefix of length m, when n is at most m, gives the prefix of length n.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Following the defining recursion for fin prefix take and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`Tenum_surj`).** As set out for this part of the library.
+**Theorem (`master_ne_one_T`).** The master neighbourhood in master ne one t is the universal set and satisfies the claimed relation.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Following the defining recursion for master ne one t and applying the preceding component lemmas yields the claimed result. ∎
 
-**Definition (`TeqChar`).** As set out for this part of the library.
+**Theorem (`master_ne_zero_T`).** The master neighbourhood in master ne zero t is the universal set and satisfies the claimed relation.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Following the defining recursion for master ne zero t and applying the preceding component lemmas yields the claimed result. ∎
 
-**Definition (`TinterCode`).** As set out for this part of the library.
+**Theorem (`andFn_master`).** The master neighbourhood in and fn master is the universal set and satisfies the claimed relation.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Following the defining recursion for and fn master and applying the preceding component lemmas yields the claimed result. ∎
 
-**Definition (`andCode`).** As set out for this part of the library.
+**Theorem (`nbhd_finPrefix_antitone`).** Longer finite stream prefixes determine smaller neighbourhoods.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Following the defining recursion for nbhd fin prefix antitone and applying the preceding component lemmas yields the claimed result. ∎
 
-**Definition (`andFn`).** As set out for this part of the library.
+**Definition (`notCode`).** The coding function not code assigns its finite list, expression, pair, or tagged value a natural-number index by pairing and list coding.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`notFn`).** Negation fixes the universal truth neighbourhood and exchanges the false and true singleton neighbourhoods.
 
-**Theorem (`andFn_zero`).** As set out for this part of the library.
+**Theorem (`notFn_master`).** The master neighbourhood in not fn master is the universal set and satisfies the claimed relation.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Following the defining recursion for not fn master and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`eq_master_of_master_subset`).** As set out for this part of the library.
+**Theorem (`notFn_zero`).** At input zero, not fn has the initial value specified by its definition.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* The relevant clause of the recursive definition of not fn zero gives this equation immediately. ∎
 
-**Theorem (`exists_cons_prefix_of_prefix_of_length_lt`).** As set out for this part of the library.
+**Definition (`LFunData.ofPresentation`).** The of presentation is the computable presentation whose enumeration and decision procedures are those constructed above.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`one_inter_zero_T`).** The construction one inter zero t preserves the specified intersection of sets or neighbourhoods.
 
-**Theorem (`exists_extend_of_not_hasMin`).** As set out for this part of the library.
+*Proof.* Use the same witnesses in both directions for one inter zero t, combining their inclusion proofs pointwise and using nonemptiness where intersection closure requires it. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`postcompose`).** Postcomposition sends a function element to its composite with the fixed approximable map.
 
-**Definition (`buildData`).** As set out for this part of the library.
+**Definition (`LFunData.pres`).** The pres is the computable presentation whose enumeration and decision procedures are those constructed above.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`primrec_TeqChar`).** The numerical function teq char is primitive recursive.
 
-**Theorem (`finPrefix_length`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of teq char. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`primrec_TinterCode`).** The numerical function tinter code is primitive recursive.
 
-**Theorem (`finPrefix_succ`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of tinter code. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`principal_hasMin`).** For the objects in principal has min, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`finPrefix_prefix_succ`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for principal has min and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`pwArg`).** The pointwise binary argument map rearranges a function and an input pair into the pair of arguments required for evaluation.
 
-**Theorem (`finPrefix_prefix_of_le`).** As set out for this part of the library.
+**Definition (`pwFst`).** The first pointwise projection evaluates the first function at the supplied argument.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`pwSnd`).** The second pointwise projection evaluates the second function at the supplied argument.
 
-**Theorem (`finPrefix_take`).** As set out for this part of the library.
+**Definition (`pointwiseBin`).** A binary operation on the codomain lifts pointwise to a binary operation on function elements by evaluating both functions and then applying the operation.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`streamElement`).** The element stream element is determined by the admissible neighbourhoods satisfying its defining membership condition.
 
-**Theorem (`master_ne_one_T`).** As set out for this part of the library.
+**Theorem (`finPrefix_eq_of_streamElement_eq`).** Equal stream elements have equal finite prefixes at every length.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Compare membership or numerical components in fin prefix eq of stream element eq; the defining equations reduce both sides to the same data. ∎
 
-**Theorem (`master_ne_zero_T`).** As set out for this part of the library.
+**Theorem (`streamElement_injective`).** The construction stream element injective sends equal outputs only from equal inputs.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Equality of two values of stream element injective determines their outer form and then each component, so the original inputs coincide. ∎
 
-**Theorem (`andFn_master`).** As set out for this part of the library.
+**Theorem (`streamElement_not_hasMin`).** The two objects compared in stream element not has min are distinct.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Following the defining recursion for stream element not has min and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`nbhd_finPrefix_antitone`).** As set out for this part of the library.
+**Theorem (`subset_iff_eq_or_eq_master`).** The inclusion in subset iff eq or eq master holds exactly when the finite prefix, complement, or numerical condition on the right holds.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Translate both inclusions in subset iff eq or eq master into the relevant finite prefix or complement condition, and use antisymmetry for the converse direction. ∎
 
-**Definition (`notCode`).** As set out for this part of the library.
+**Definition (`toElement`).** The element to element is determined by the admissible neighbourhoods satisfying its defining membership condition.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`toElement_injective`).** The construction to element injective sends equal outputs only from equal inputs.
 
-**Definition (`notFn`).** As set out for this part of the library.
+*Proof.* Equality of two values of to element injective determines their outer form and then each component, so the original inputs coincide. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`toStream`).** A nonprincipal history element determines the stream whose finite prefixes are selected by its recursively constructed prefix chain.
 
-**Theorem (`notFn_master`).** As set out for this part of the library.
+**Theorem (`buildData_succ`).** At a successor input, build data succ satisfies its recursive step equation.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* The relevant clause of the recursive definition of build data succ gives this equation immediately. ∎
 
-**Theorem (`notFn_zero`).** As set out for this part of the library.
+**Theorem (`buildData_eq_finPrefix`).** The list selected at stage n of the nonminimal-element construction is the length-n prefix of its selected stream.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Compare membership or numerical components in build data eq fin prefix; the defining equations reduce both sides to the same data. ∎
 
-**Definition (`LFunData.ofPresentation`).** As set out for this part of the library.
+**Theorem (`mem_nbhd_finPrefix_toStream`).** The element described by nbhd fin prefix to stream belongs to the set or neighbourhood specified by its hypotheses.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* The required witness for nbhd fin prefix to stream is supplied directly by the defining membership condition. ∎
 
-**Theorem (`one_inter_zero_T`).** As set out for this part of the library.
+**Theorem (`exists_finPrefix_subset_of_mem`).** Every neighbourhood of a nonminimal history element contains a finite-prefix neighbourhood of its selected stream.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Following the defining recursion for fin prefix subset of mem and applying the preceding component lemmas yields the claimed result. ∎
 
-**Definition (`postcompose`).** As set out for this part of the library.
+**Theorem (`toElement_surjective`).** Every object in the target of to element surjective is represented by some input.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Choose the finite code or canonical representative supplied by the target object; decoding that choice gives the required preimage for to element surjective. ∎
 
-**Definition (`LFunData.pres`).** As set out for this part of the library.
+**Theorem (`toElement_bijective`).** The construction to element bijective is both injective and surjective.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Combine the injectivity and surjectivity results already proved for to element bijective. ∎
 
-**Theorem (`primrec_TeqChar`).** As set out for this part of the library.
+**Definition (`gammaEquivElement`).** The element gamma equiv element is determined by the admissible neighbourhoods satisfying its defining membership condition.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`zero_inter_one_T`).** The construction zero inter one t preserves the specified intersection of sets or neighbourhoods.
 
-**Theorem (`primrec_TinterCode`).** As set out for this part of the library.
+*Proof.* Use the same witnesses in both directions for zero inter one t, combining their inclusion proofs pointwise and using nonemptiness where intersection closure requires it. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Tenum_inter_eq`).** The intersection in tenum inter eq equals the indexed neighbourhood or language exactly under the stated finite comparison condition.
 
-**Theorem (`principal_hasMin`).** As set out for this part of the library.
+*Proof.* Use the same witnesses in both directions for tenum inter eq, combining their inclusion proofs pointwise and using nonemptiness where intersection closure requires it. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Tenum_inter_eq_TinterCode'`).** The intersection in tenum inter eq tinter code' equals the indexed neighbourhood or language exactly under the stated finite comparison condition.
 
-**Definition (`pwArg`).** As set out for this part of the library.
+*Proof.* Use the same witnesses in both directions for tenum inter eq tinter code', combining their inclusion proofs pointwise and using nonemptiness where intersection closure requires it. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Tenum_inter_eq_TinterCode`).** The intersection in tenum inter eq tinter code equals the indexed neighbourhood or language exactly under the stated finite comparison condition.
 
-**Definition (`pwFst`).** As set out for this part of the library.
+*Proof.* Use the same witnesses in both directions for tenum inter eq tinter code, combining their inclusion proofs pointwise and using nonemptiness where intersection closure requires it. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Tpres_cons_iff`).** The condition tpres cons holds exactly when the finite witness condition holds.
 
-**Definition (`pwSnd`).** As set out for this part of the library.
+*Proof.* Expand both conditions in tpres cons iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Tpres_cons_computable`).** The relation tpres cons computable is recursively decidable.
 
-**Definition (`pointwiseBin`).** As set out for this part of the library.
+*Proof.* Reduce the relation for tpres cons computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`zero_ne_one_T`).** The two objects compared in zero ne one t are distinct.
 
-**Definition (`streamElement`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for zero ne one t and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Tenum_injOn`).** The construction tenum inj on sends equal outputs only from equal inputs.
 
-**Theorem (`finPrefix_eq_of_streamElement_eq`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for tenum inj on and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Tenum_interEq_iff`).** The intersection in tenum inter eq iff equals the indexed neighbourhood or language exactly under the stated finite comparison condition.
 
-**Theorem (`streamElement_injective`).** As set out for this part of the library.
+*Proof.* Use the same witnesses in both directions for tenum inter eq iff, combining their inclusion proofs pointwise and using nonemptiness where intersection closure requires it. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Tenum_interEq_iff'`).** The intersection in tenum inter eq iff' equals the indexed neighbourhood or language exactly under the stated finite comparison condition.
 
-**Theorem (`streamElement_not_hasMin`).** As set out for this part of the library.
+*Proof.* Use the same witnesses in both directions for tenum inter eq iff', combining their inclusion proofs pointwise and using nonemptiness where intersection closure requires it. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Tpres_interEq_computable`).** The relation tpres inter eq computable is recursively decidable.
 
-**Theorem (`subset_iff_eq_or_eq_master`).** As set out for this part of the library.
+*Proof.* Use the same witnesses in both directions for tpres inter eq computable, combining their inclusion proofs pointwise and using nonemptiness where intersection closure requires it. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`Tpres`).** The tpres is the computable presentation whose enumeration and decision procedures are those constructed above.
 
-**Definition (`toElement`).** As set out for this part of the library.
+**Definition (`LTdata`).** The function-space presentation from histories to truth values is assembled from the effective presentations of the history and truth domains.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`LTpres`).** The ltpres is the computable presentation whose enumeration and decision procedures are those constructed above.
 
-**Theorem (`toElement_injective`).** As set out for this part of the library.
+**Theorem (`andFn_one`).** At input one, and fn has the value specified by its definition.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* The relevant clause of the recursive definition of and fn one gives this equation immediately. ∎
 
-**Definition (`toStream`).** As set out for this part of the library.
+**Theorem (`andFn_mem`).** For the objects in and fn mem, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Following the defining recursion for and fn mem and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`buildData_succ`).** As set out for this part of the library.
+**Definition (`andMap2`).** The map and map2 relates basic source and target neighbourhoods by the mathematical operation expressed in its defining relation.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`andT`).** Truth conjunction is the approximable map induced by conjunction on truth neighbourhoods.
 
-**Theorem (`buildData_eq_finPrefix`).** As set out for this part of the library.
+**Theorem (`notFn_one`).** At input one, not fn has the value specified by its definition.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* The relevant clause of the recursive definition of not fn one gives this equation immediately. ∎
 
-**Theorem (`mem_nbhd_finPrefix_toStream`).** As set out for this part of the library.
+**Theorem (`notFn_mem`).** For the objects in not fn mem, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Following the defining recursion for not fn mem and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`exists_finPrefix_subset_of_mem`).** As set out for this part of the library.
+**Definition (`notT`).** Truth negation is the approximable map induced by negation on truth neighbourhoods.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`bitToNat_injective`).** The construction bit to nat injective sends equal outputs only from equal inputs.
 
-**Theorem (`toElement_surjective`).** As set out for this part of the library.
+*Proof.* Equality of two values of bit to nat injective determines their outer form and then each component, so the original inputs coincide. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`embStr_cons`).** For the objects in emb str cons, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`toElement_bijective`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for emb str cons and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`embStr_prefix_iff`).** One Boolean string is a prefix of another exactly when its numerical embedding is a prefix of the other embedding.
 
-**Definition (`gammaEquivElement`).** As set out for this part of the library.
+*Proof.* Expand both conditions in emb str prefix iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`cone_subset_cone_iff_nbhd_embStr`).** The condition cone subset cone holds exactly when nbhd emb str holds.
 
-**Theorem (`zero_inter_one_T`).** As set out for this part of the library.
+*Proof.* Expand both conditions in cone subset cone iff nbhd emb str; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`sigmaBot_le_iff_toElement_inl_embStr`).** The condition sigma bot le holds exactly when to element inl emb str holds.
 
-**Theorem (`Tenum_inter_eq`).** As set out for this part of the library.
+*Proof.* Expand both conditions in sigma bot le iff to element inl emb str; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`primrec_notCode`).** The numerical function not code is primitive recursive.
 
-**Theorem (`Tenum_inter_eq_TinterCode'`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of not code. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`notFn_Tenum`).** For the objects in not fn tenum, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`Tenum_inter_eq_TinterCode`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for not fn tenum and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`notT_isComputable`).** The map or element not t is computable is computable with respect to the presentations appearing in its domain and codomain.
 
-**Theorem (`Tpres_cons_iff`).** As set out for this part of the library.
+*Proof.* Reduce the relation for not t is computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`primrec_andCode`).** The numerical function and code is primitive recursive.
 
-**Theorem (`Tpres_cons_computable`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of and code. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`andFn_Tenum`).** For the objects in and fn tenum, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`zero_ne_one_T`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for and fn tenum and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`andT_isComputable`).** The map or element and t is computable is computable with respect to the presentations appearing in its domain and codomain.
 
-**Theorem (`Tenum_injOn`).** As set out for this part of the library.
+*Proof.* Reduce the relation for and t is computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`postcompose_isComputable`).** The map or element postcompose is computable is computable with respect to the presentations appearing in its domain and codomain.
 
-**Theorem (`Tenum_interEq_iff`).** As set out for this part of the library.
+*Proof.* Reduce the relation for postcompose is computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`pointwiseBin_isComputable`).** The map or element pointwise bin is computable is computable with respect to the presentations appearing in its domain and codomain.
 
-**Theorem (`Tenum_interEq_iff'`).** As set out for this part of the library.
+*Proof.* Reduce the relation for pointwise bin is computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`notT_lifted_isComputable`).** The map or element not t lifted is computable is computable with respect to the presentations appearing in its domain and codomain.
 
-**Theorem (`Tpres_interEq_computable`).** As set out for this part of the library.
+*Proof.* Reduce the relation for not t lifted is computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`andT_lifted_isComputable`).** The map or element and t lifted is computable is computable with respect to the presentations appearing in its domain and codomain.
 
-**Definition (`Tpres`).** As set out for this part of the library.
+*Proof.* Reduce the relation for and t lifted is computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`deMorganT_isComputable`).** The map or element de morgan t is computable is computable with respect to the presentations appearing in its domain and codomain.
 
-**Definition (`LTdata`).** As set out for this part of the library.
+*Proof.* Reduce the relation for de morgan t is computable to the previously constructed primitive-recursive characteristic functions and close recursive decidability under the required Boolean operations. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Gamma_cases`).** For the objects in gamma cases, the named equality, inclusion, or finite-witness relation holds.
 
-**Definition (`LTpres`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for gamma cases and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`L_isEffectivelyGiven`).** For the objects in l is effectively given, the named equality, inclusion, or finite-witness relation holds.
 
-**Theorem (`andFn_one`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for l is effectively given and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`LenumSubsetChar_le_one`).** For every input, lenum subset char takes one of the two values zero and one.
 
-**Theorem (`andFn_mem`).** As set out for this part of the library.
+*Proof.* Each Boolean-valued component of lenum subset char le one is zero or one, and the defining Boolean combination preserves that range. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Lenum_subset_char_eq_one_iff`).** The zero–one test lenum subset char returns one exactly when the mathematical condition encoded in its definition holds.
 
-**Definition (`andMap2`).** As set out for this part of the library.
+*Proof.* Separate the possible zero–one values occurring in lenum subset char eq one iff; the value one survives precisely in the case described by the defining predicate. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`T_isEffectivelyGiven`).** For the objects in t is effectively given, the named equality, inclusion, or finite-witness relation holds.
 
-**Definition (`andT`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for t is effectively given and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`TeqChar_eq_one_iff`).** The zero–one test teq char returns one exactly when the mathematical condition encoded in its definition holds.
 
-**Theorem (`notFn_one`).** As set out for this part of the library.
+*Proof.* Separate the possible zero–one values occurring in teq char eq one iff; the value one survives precisely in the case described by the defining predicate. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`embStr_injective`).** The construction emb str injective sends equal outputs only from equal inputs.
 
-**Theorem (`notFn_mem`).** As set out for this part of the library.
+*Proof.* Equality of two values of emb str injective determines their outer form and then each component, so the original inputs coincide. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`primrec_LenumSubsetChar`).** The numerical function lenum subset char is primitive recursive.
 
-**Definition (`notT`).** As set out for this part of the library.
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of lenum subset char. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Theorem (`Lenum_subset_recDecidable`).** The relation lenum subset rec decidable is recursively decidable.
 
-**Theorem (`bitToNat_injective`).** As set out for this part of the library.
+*Proof.* Following the defining recursion for lenum subset rec decidable and applying the preceding component lemmas yields the claimed result. ∎
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`codePair`).** The coding function code pair assigns its finite list, expression, pair, or tagged value a natural-number index by pairing and list coding.
 
-**Theorem (`embStr_cons`).** As set out for this part of the library.
+**Definition (`chainDec`).** A decoded finite list is an admissible fixed-point chain when its first member is the bottom code and each later member is included in the image of its predecessor.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`fixPStep`).** The state transformer fix pstep performs one stage of the finite numerical computation encoded in its state.
 
-**Theorem (`embStr_prefix_iff`).** As set out for this part of the library.
+**Definition (`fixStp`).** One fixed-point search step updates the accumulated chain code and current candidate according to the inclusion characteristic.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`fixChainChar`).** The numerical characteristic function fix chain char encodes its Boolean or relational test by zero and one.
 
-**Theorem (`cone_subset_cone_iff_nbhd_embStr`).** As set out for this part of the library.
+**Definition (`gLastOf`).** The last element of a nonempty coded chain is returned, with zero used for the empty chain.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+**Definition (`gStepsOK`).** The state transformer g steps ok performs one stage of the finite numerical computation encoded in its state.
 
-**Theorem (`sigmaBot_le_iff_toElement_inl_embStr`).** As set out for this part of the library.
+**Theorem (`Xenum_codePair`).** For the objects in xenum code pair, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Following the defining recursion for xenum code pair and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`primrec_notCode`).** As set out for this part of the library.
+**Theorem (`fixPStep_foldl_fst`).** For the objects in fix pstep foldl fst, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Following the defining recursion for fix pstep foldl fst and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`notFn_Tenum`).** As set out for this part of the library.
+**Theorem (`fixPStep_foldl_snd`).** For the objects in fix pstep foldl snd, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Following the defining recursion for fix pstep foldl snd and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`notT_isComputable`).** As set out for this part of the library.
+**Theorem (`fixStp_eq`).** The value of fix stp eq equals the value described by fix stp eq.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Compare membership or numerical components in fix stp eq; the defining equations reduce both sides to the same data. ∎
 
-**Theorem (`primrec_andCode`).** As set out for this part of the library.
+**Theorem (`fixChainChar_eq`).** The value of fix chain char eq equals the value described by fix chain char eq.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Compare membership or numerical components in fix chain char eq; the defining equations reduce both sides to the same data. ∎
 
-**Theorem (`andFn_Tenum`).** As set out for this part of the library.
+**Theorem (`fixChainChar_spec`).** The numerical construction fix chain char spec computes exactly the finite object described by its specification.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Induction over the bounded iteration for fix chain char spec maintains the recorded accumulator invariant and yields the claimed final components. ∎
 
-**Theorem (`andT_isComputable`).** As set out for this part of the library.
+**Theorem (`gStepsOK_complete`).** Every semantic relation in g steps ok complete has a finite witness of the prescribed form.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Induction over the semantic iteration for g steps ok complete selects an index for each intermediate neighbourhood and assembles the finite witness. ∎
 
-**Theorem (`postcompose_isComputable`).** As set out for this part of the library.
+**Theorem (`gStepsOK_sound`).** Every finite witness accepted by g steps ok sound determines a valid semantic relation.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Induction over the finite witness for g steps ok sound composes each valid step, producing the semantic relation at its endpoint. ∎
 
-**Theorem (`pointwiseBin_isComputable`).** As set out for this part of the library.
+**Theorem (`fixElement_mem_iff_chain`).** Membership in fix element mem iff chain is equivalent to the explicit witness condition given by the construction.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Expanding the membership definition of fix element mem iff chain exposes exactly the witnesses and equations occurring on the other side. ∎
 
-**Theorem (`notT_lifted_isComputable`).** As set out for this part of the library.
+**Theorem (`fixMap_rel_iff`).** The condition fix map rel holds exactly when the finite witness condition holds.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Expand both conditions in fix map rel iff; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-**Theorem (`andT_lifted_isComputable`).** As set out for this part of the library.
+**Theorem (`leastMap_Xenum_rel`).** For the objects in least map xenum rel, the named equality, inclusion, or finite-witness relation holds.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Following the defining recursion for least map xenum rel and applying the preceding component lemmas yields the claimed result. ∎
 
-**Theorem (`deMorganT_isComputable`).** As set out for this part of the library.
+**Theorem (`chainDec_iff_gStepsOK`).** The condition chain dec holds exactly when g steps ok holds.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Expand both conditions in chain dec iff g steps ok; their witnesses correspond in both directions by the defining equations and the established coding identities. ∎
 
-**Theorem (`Gamma_cases`).** As set out for this part of the library.
+**Theorem (`primrec_fixStp`).** The numerical function fix stp is primitive recursive.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of fix stp. ∎
 
-**Theorem (`L_isEffectivelyGiven`).** As set out for this part of the library.
+**Theorem (`primrec_fixChainChar`).** The numerical function fix chain char is primitive recursive.
 
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`LenumSubsetChar_le_one`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`Lenum_subset_char_eq_one_iff`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`T_isEffectivelyGiven`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`TeqChar_eq_one_iff`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`embStr_injective`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`primrec_LenumSubsetChar`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`Lenum_subset_recDecidable`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Definition (`codePair`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Definition (`chainDec`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Definition (`fixPStep`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Definition (`fixStp`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Definition (`fixChainChar`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Definition (`gLastOf`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Definition (`gStepsOK`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`Xenum_codePair`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`fixPStep_foldl_fst`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`fixPStep_foldl_snd`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`fixStp_eq`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`fixChainChar_eq`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`fixChainChar_spec`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`gStepsOK_complete`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`gStepsOK_sound`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`fixElement_mem_iff_chain`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`fixMap_rel_iff`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`leastMap_Xenum_rel`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`chainDec_iff_gStepsOK`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`primrec_fixStp`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
-
-**Theorem (`primrec_fixChainChar`).** As set out for this part of the library.
-
-*Proof.* By the presentation of histories and the primitive-recursive action of the connectives. ∎
+*Proof.* Primitive recursion and closure under composition, pairing, bounded search, and the previously established component functions give primitive recursiveness of fix chain char. ∎

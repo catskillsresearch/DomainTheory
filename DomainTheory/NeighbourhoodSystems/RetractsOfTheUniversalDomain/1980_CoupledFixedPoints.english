@@ -1,119 +1,119 @@
-Library development supporting Scott's neighbourhood-system formalization.
+This peer extends least-fixed-point recursion to two mutually dependent endomaps, proves finitarity and leastness of the coupled solution, and records two countable domains that therefore embed in the universal domain.
 
 <!-- formalization -->
 
-**Definition (`PairSpace`).** As set out for this part of the library.
+**Definition (`CoupledFixedPoints.PairSpace`).** The parameter space for coupled recursion is the product of two copies of the endomap function space \([E\to E]\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Form the product neighbourhood system of the two function spaces. ∎
 
-**Definition (`aOp`).** As set out for this part of the library.
+**Definition (`CoupledFixedPoints.aOp`).** Given two operators \(s\) and \(t\) on pairs of endomaps, \(a_n\) is the first component of the \(n\)-th approximation to the least fixed point of their paired operator.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Iterate the paired operator from bottom, take the first coordinate, and read it as an approximable endomap of \(E\). ∎
 
-**Definition (`aStar`).** As set out for this part of the library.
+**Definition (`CoupledFixedPoints.aStar`).** The first coupled fixed-point endomap \(a^\ast\) is the first component of the least fixed element of the paired operator determined by \(s\) and \(t\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Take the first coordinate of the paired least fixed element and convert it to an endomap of \(E\). ∎
 
-**Definition (`bOp`).** As set out for this part of the library.
+**Definition (`CoupledFixedPoints.bOp`).** Given \(s\) and \(t\), \(b_n\) is the second component of the \(n\)-th approximation to the least fixed point of their paired operator.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Iterate the paired operator from bottom, take the second coordinate, and read it as an approximable endomap of \(E\). ∎
 
-**Definition (`bStar`).** As set out for this part of the library.
+**Definition (`CoupledFixedPoints.bStar`).** The second coupled fixed-point endomap \(b^\ast\) is the second component of the least fixed element of the paired operator determined by \(s\) and \(t\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Take the second coordinate of the paired least fixed element and convert it to an endomap of \(E\). ∎
 
-**Definition (`binOp`).** As set out for this part of the library.
+**Definition (`CoupledFixedPoints.binOp`).** An operator \(f\) on pairs of endomaps acts on \(a,b\) by applying \(f\) to the function-space pair represented by \(a,b\), then reading the result as an endomap of \(E\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Pair the function-space elements corresponding to \(a\) and \(b\), apply \(f\), and use the element–map correspondence. ∎
 
-**Theorem (`fst_mono`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.fst_mono`).** First-coordinate projection on the pair space is monotone.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Inclusion of pair elements preserves every neighbourhood witnessed in the first coordinate. ∎
 
-**Theorem (`iterElem_pair_eq_pair`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.iterElem_pair_eq_pair`).** Every iterate of the paired operator is the pair of the function-space elements represented by \(a_n\) and \(b_n\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* An element of a product is recovered from its first and second coordinates, and the conversions between function-space elements and approximable maps are inverse. ∎
 
-**Theorem (`iterElem_succ_pair`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.iterElem_succ_pair`).** The successor iterate of the paired operator is its value at the preceding iterate.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Successor iteration is composition with the operator, and the element action of a composite is successive application. ∎
 
-**Theorem (`aOp_succ`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.aOp_succ`).** The first approximation satisfies \(a_{n+1}=s(a_n,b_n)\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Express the successor iterate as one application of the paired operator, identify its first coordinate, and use the decomposition of the preceding iterate into \(a_n,b_n\). ∎
 
-**Theorem (`bOp_succ`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.bOp_succ`).** The second approximation satisfies \(b_{n+1}=t(a_n,b_n)\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Express the successor iterate as one application of the paired operator, identify its second coordinate, and use the decomposition of the preceding iterate into \(a_n,b_n\). ∎
 
-**Theorem (`iterElem_zero_pair`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.iterElem_zero_pair`).** The zeroth iterate of the paired operator is the bottom element of the pair space.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Zeroth iteration is the identity map evaluated at bottom. ∎
 
-**Theorem (`pair_bot_bot`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.pair_bot_bot`).** Pairing the two bottom function-space elements gives the bottom element of the pair space.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* A product neighbourhood belongs to this pair exactly when both coordinates are bottom, which is precisely the defining condition for the product bottom. ∎
 
-**Theorem (`pairSpace_bot_fst`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.pairSpace_bot_fst`).** The first coordinate of the bottom pair is the bottom function-space element.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Write the bottom pair as the pair of two bottoms and take its first coordinate. ∎
 
-**Theorem (`aOp_zero`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.aOp_zero`).** The initial first approximation \(a_0\) is the constant-bottom endomap.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The zeroth paired iterate is bottom, its first coordinate is bottom, and the bottom function-space element represents the constant-bottom map. ∎
 
-**Theorem (`pairSpace_bot_snd`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.pairSpace_bot_snd`).** The second coordinate of the bottom pair is the bottom function-space element.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Write the bottom pair as the pair of two bottoms and take its second coordinate. ∎
 
-**Theorem (`bOp_zero`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.bOp_zero`).** The initial second approximation \(b_0\) is the constant-bottom endomap.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The zeroth paired iterate is bottom, its second coordinate is bottom, and the bottom function-space element represents the constant-bottom map. ∎
 
-**Theorem (`isFinitaryProjection_chain`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.isFinitaryProjection_chain`).** If \(s(a,b)\) and \(t(a,b)\) are finitary projections whenever \(a\) and \(b\) are, then every pair \(a_n,b_n\) in the approximation chain consists of finitary projections.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Induct on \(n\). At zero both maps are constant bottom; at a successor use the two recursion equations and the assumed closure property. ∎
 
-**Theorem (`snd_mono`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.snd_mono`).** Second-coordinate projection on the pair space is monotone.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Inclusion of pair elements preserves every neighbourhood witnessed in the second coordinate. ∎
 
-**Theorem (`isFinitaryProjection_aStar_bStar`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.isFinitaryProjection_aStar_bStar`).** Under the same closure hypothesis, both coupled least fixed-point maps \(a^\ast\) and \(b^\ast\) are finitary projections.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Each coordinate chain is directed and consists of finitary projections. The finitary core fixes every stage and commutes with the directed supremum; since each coordinate of the paired least fixed point is that supremum, both limit maps satisfy the characterization of finitary projections. ∎
 
-**Theorem (`fixedNbhd_aStar_bStar_subsystem`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.fixedNbhd_aStar_bStar_subsystem`).** Suppose the coupled operator preserves pairs of finitary projections. If finitary projections \(a,b\) satisfy \(s(a,b)\leq a\) and \(t(a,b)\leq b\), then the fixed neighbourhood systems of \(a^\ast,b^\ast\) are respectively subsystems of those of \(a,b\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The pair represented by \(a,b\) is a pre-fixed point of the paired operator, so leastness places the paired least fixed point below it coordinatewise. Convert these inequalities to the endomaps \(a^\ast,b^\ast\), then use the order characterization of fixed-neighbourhood subsystems for finitary projections. ∎
 
-**Theorem (`toElementMap_fixElement_fst`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.toElementMap_fixElement_fst`).** Applying \(s\) to the paired least fixed element yields its first coordinate.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The paired least fixed element is fixed by the paired operator, whose first coordinate is the value of \(s\). ∎
 
-**Theorem (`binOp_aStar_bStar_left`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.binOp_aStar_bStar_left`).** The coupled solution satisfies \(s(a^\ast,b^\ast)=a^\ast\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The pair represented by \(a^\ast,b^\ast\) is the paired least fixed element, and the preceding coordinate equation identifies the value of \(s\). ∎
 
-**Theorem (`toElementMap_fixElement_snd`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.toElementMap_fixElement_snd`).** Applying \(t\) to the paired least fixed element yields its second coordinate.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The paired least fixed element is fixed by the paired operator, whose second coordinate is the value of \(t\). ∎
 
-**Theorem (`binOp_aStar_bStar_right`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.binOp_aStar_bStar_right`).** The coupled solution satisfies \(t(a^\ast,b^\ast)=b^\ast\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The pair represented by \(a^\ast,b^\ast\) is the paired least fixed element, and the preceding coordinate equation identifies the value of \(t\). ∎
 
-**Theorem (`fixedDomain_aStar_bStar_iso`).** As set out for this part of the library.
+**Theorem (`CoupledFixedPoints.fixedDomain_aStar_bStar_iso`).** Assume the coupled operator preserves finitary projections. If the fixed domain of \(s(a,b)\) is always order-isomorphic to \(S(a,b)\), and that of \(t(a,b)\) to \(T(a,b)\), for finitary \(a,b\), then the fixed domains of \(a^\ast,b^\ast\) are respectively order-isomorphic to \(S(a^\ast,b^\ast)\) and \(T(a^\ast,b^\ast)\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The coupled solution consists of finitary projections and satisfies both fixed-point equations. Specialize the two assumed families of order isomorphisms and replace their source endomaps using those equations. ∎
 
-**Theorem (`Ssys_countable`).** As set out for this part of the library.
+**Theorem (`RegularLanguage.Ssys_countable`).** The type of regular-language systems is countable.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Every such system is denoted by a finite symbolic expression. Choose a denoting expression for each system; expressions form a countable type, so their surjective denotation makes the systems countable. The equivalent presentation by the stated membership predicate has the same cardinality. ∎
 
-**Theorem (`P4_embeds`).** As set out for this part of the library.
+**Theorem (`P4.P4_embeds`).** The neighbourhood system \(P_4\) is a retract of the universal domain.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Apply the universal embedding theorem to this countable neighbourhood system. ∎
 
-**Theorem (`Ssys_embeds`).** As set out for this part of the library.
+**Theorem (`RegularLanguage.Ssys_embeds`).** The neighbourhood system of regular-language systems is a retract of the universal domain.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Its underlying type is countable, so the universal embedding theorem applies. ∎

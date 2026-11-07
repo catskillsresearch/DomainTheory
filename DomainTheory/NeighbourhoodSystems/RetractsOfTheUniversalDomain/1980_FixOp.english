@@ -1,79 +1,79 @@
-Library development supporting Scott's neighbourhood-system formalization.
+This peer constructs the least fixed-point operation on endomaps, proves that it preserves finitary projections under a natural closure hypothesis, and identifies the resulting fixed domains.
 
 <!-- formalization -->
 
-**Theorem (`eq_bot_of_fixed_constMap_bot`).** As set out for this part of the library.
+**Theorem (`FixOp.eq_bot_of_fixed_constMap_bot`).** The only element fixed by the constant map with value bottom is bottom itself.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The image of every element under the constant map is bottom, so the fixed-point equation immediately identifies the element with bottom. ∎
 
-**Theorem (`uniqueFixedConstMapBot`).** As set out for this part of the library.
+**Theorem (`FixOp.uniqueFixedConstMapBot`).** The fixed-point type of the constant-bottom map has exactly one element.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Bottom is fixed, and every fixed element is bottom by the preceding fact. ∎
 
-**Definition (`finitaryWitnessEquivBot`).** As set out for this part of the library.
+**Definition (`FixOp.finitaryWitnessEquivBot`).** The fixed-point poset of the constant-bottom map is order-isomorphic to the one-element neighbourhood system.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Both posets have a unique element, so the unique maps in both directions are mutually inverse and preserve the order. ∎
 
-**Definition (`fixOp`).** As set out for this part of the library.
+**Definition (`FixOp.fixOp`).** For an endomap \(t\) of the function-space domain \([E\to E]\), its fixed-point operator is the approximable endomap of \(E\) represented by the least fixed element of \(t\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Convert the least fixed element of \(t\) from a function-space element to its corresponding approximable map. ∎
 
-**Definition (`tOp`).** As set out for this part of the library.
+**Definition (`FixOp.tOp`).** An operator \(t\) on endomaps acts on an endomap \(a\) by applying \(t\) to the function-space element represented by \(a\), then converting the result back to an approximable map.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* This is the transport of the element action of \(t\) across the correspondence between function-space elements and approximable maps. ∎
 
-**Definition (`Fix`).** As set out for this part of the library.
+**Definition (`FixOp.Fix`).** For an endomap \(a:E\to E\), \(\operatorname{Fix}(a)\) is the ordered type of elements \(y\) satisfying \(a(y)=y\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Take the subtype of the element poset cut out by the fixed-point equation, with its inherited order. ∎
 
-**Theorem (`constMap_bot_le_idMap`).** As set out for this part of the library.
+**Theorem (`FixOp.constMap_bot_le_idMap`).** The constant-bottom endomap lies below the identity endomap.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Every value of the constant map is bottom, and bottom lies below every element. ∎
 
-**Theorem (`isRetraction_constMap_bot`).** As set out for this part of the library.
+**Theorem (`FixOp.isRetraction_constMap_bot`).** The constant-bottom endomap is idempotent.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Applying the map once or twice always returns bottom. ∎
 
-**Theorem (`isProjection_constMap_bot`).** As set out for this part of the library.
+**Theorem (`FixOp.isProjection_constMap_bot`).** The constant-bottom endomap is a projection.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* It is idempotent and lies below the identity. ∎
 
-**Theorem (`isFinitaryProjection_constMap_bot`).** As set out for this part of the library.
+**Theorem (`FixOp.isFinitaryProjection_constMap_bot`).** The constant-bottom endomap is a finitary projection.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Its fixed-point poset is order-isomorphic to the one-element neighbourhood system, which supplies a finite witness for the projection. ∎
 
-**Theorem (`iterElem_succ'`).** As set out for this part of the library.
+**Theorem (`FixOp.iterElem_succ'`).** The \((n+1)\)-st approximation in the iteration of \(t\) is obtained by applying \(t\) to the \(n\)-th approximation.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Successor iteration is composition with \(t\), and element maps carry composition to successive application. ∎
 
-**Theorem (`iterElem_zero'`).** As set out for this part of the library.
+**Theorem (`FixOp.iterElem_zero'`).** The zeroth approximation in the iteration of \(t\) is the bottom element of the function-space domain.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Zeroth iteration is the identity, evaluated at bottom. ∎
 
-**Theorem (`rel_master_of_mem`).** As set out for this part of the library.
+**Theorem (`FixOp.rel_master_of_mem`).** If \(X\) is a neighbourhood of \(E\), then every approximable endomap relates \(X\) to the master neighbourhood.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Start with the map's master relation and use monotonicity, since \(X\) is contained in the master neighbourhood. ∎
 
-**Theorem (`tOp_fixOp`).** As set out for this part of the library.
+**Theorem (`FixOp.tOp_fixOp`).** The endomap obtained as the least fixed point of \(t\) is fixed by the induced action of \(t\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The least fixed element of \(t\) is fixed by \(t\), and the element–map correspondence preserves this equation. ∎
 
-**Theorem (`tOp_toApproxMap`).** As set out for this part of the library.
+**Theorem (`FixOp.tOp_toApproxMap`).** Acting on the approximable map represented by a function-space element \(\varphi\) yields the approximable map represented by \(t(\varphi)\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The two conversions between function-space elements and approximable maps are inverse. ∎
 
-**Theorem (`toApproxMap_bot_eq_constMap`).** As set out for this part of the library.
+**Theorem (`FixOp.toApproxMap_bot_eq_constMap`).** The approximable map represented by the bottom function-space element is the constant-bottom map.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* A relation belongs to the bottom function exactly when its input is a neighbourhood and its output is bottom; this is precisely the relation of the constant-bottom map. ∎
 
-**Theorem (`isFinitaryProjection_fixOp`).** As set out for this part of the library.
+**Theorem (`FixOp.isFinitaryProjection_fixOp`).** Suppose the action induced by \(t\) sends every finitary projection to a finitary projection. Then the least fixed-point endomap of \(t\) is itself a finitary projection.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Beginning with the constant-bottom finitary projection, induction shows that every finite iterate is finitary. The least fixed element is the directed supremum of these iterates, and the finitary core operation fixes each iterate and commutes with this directed supremum; hence it fixes the limit, which characterizes a finitary projection. ∎
 
-**Theorem (`fixedDomain_fixOp_iso_T`).** As set out for this part of the library.
+**Theorem (`FixOp.fixedDomain_fixOp_iso_T`).** Suppose the induced action of \(t\) preserves finitary projections, and the fixed domain of its value at each finitary projection \(a\) is order-isomorphic to a specified domain \(T(a)\). Then the fixed domain of the least fixed-point endomap is order-isomorphic to \(T\) evaluated at that endomap.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The least fixed-point endomap is finitary and is fixed by the induced action, so specialize the assumed family of order isomorphisms to it. ∎
 
-**Theorem (`fixedNbhd_fixOp_subsystem`).** As set out for this part of the library.
+**Theorem (`FixOp.fixedNbhd_fixOp_subsystem`).** Under the same preservation hypothesis, if \(a\) is a finitary projection and the induced action sends \(a\) below itself, then the fixed neighbourhood system of the least fixed-point endomap is a subsystem of the fixed neighbourhood system of \(a\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The pre-fixed-point inequality implies, by leastness, that the least fixed element of \(t\) lies below the element represented by \(a\). Transporting this inequality to approximable maps and using the order characterization of fixed neighbourhood subsystems for finitary projections gives the result. ∎

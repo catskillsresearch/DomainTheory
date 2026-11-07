@@ -2,114 +2,110 @@ The sum of effectively given neighbourhood systems is effectively given, and the
 
 <!-- formalization -->
 
-**Definition (`sumEnum`).** As set out for this part of the library.
+**Definition (`sumEnum`).** The sum enumeration uses tag zero for left neighbourhoods, tag one for right neighbourhoods, and every other tag for the master neighbourhood.
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Theorem (`sumEnum_zero`).** An index tagged by zero denotes the corresponding left neighbourhood.
 
-**Theorem (`sumEnum_zero`).** As set out for this part of the library.
+*Proof.* The outer tag test takes its zero branch, which returns the left injection at the second component of the index. ∎
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Theorem (`sumEnum_one`).** An index tagged by one denotes the corresponding right neighbourhood.
 
-**Theorem (`sumEnum_one`).** As set out for this part of the library.
+*Proof.* The zero branch is excluded and the next tag test takes its one branch, returning the right injection at the second component. ∎
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Theorem (`inj₀_eq_iff`).** Two left-injected neighbourhoods are equal exactly when their underlying left neighbourhoods are equal.
 
-**Theorem (`inj₀_eq_iff`).** As set out for this part of the library.
+*Proof.* Injectivity of the corresponding tagged embedding gives the forward implication, and substitution gives the converse. ∎
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Theorem (`inj₀_eq_inj₁_elim`).** A nonempty left-injected neighbourhood cannot equal a right-injected neighbourhood.
 
-**Theorem (`inj₀_eq_inj₁_elim`).** As set out for this part of the library.
+*Proof.* Choose an element of the assumed nonempty summand; its left and right tags cannot coincide, contradicting the proposed equality. ∎
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Theorem (`inj₀_ne_inj₁_of_nonempty`).** A left-injected neighbourhood cannot equal a nonempty right-injected neighbourhood.
 
-**Theorem (`inj₀_ne_inj₁_of_nonempty`).** As set out for this part of the library.
+*Proof.* Choose an element of the assumed nonempty summand; its left and right tags cannot coincide, contradicting the proposed equality. ∎
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Theorem (`inj₀_ne_sumMaster`).** No left-injected neighbourhood equals the master neighbourhood of the sum.
 
-**Theorem (`inj₀_ne_sumMaster`).** As set out for this part of the library.
+*Proof.* The sum master contains the distinguished untagged point, whereas an injected summand contains only tagged points. ∎
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Theorem (`inj₁_eq_iff`).** Two right-injected neighbourhoods are equal exactly when their underlying right neighbourhoods are equal.
 
-**Theorem (`inj₁_eq_iff`).** As set out for this part of the library.
+*Proof.* Injectivity of the corresponding tagged embedding gives the forward implication, and substitution gives the converse. ∎
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Theorem (`inj₁_ne_sumMaster`).** No right-injected neighbourhood equals the master neighbourhood of the sum.
 
-**Theorem (`inj₁_ne_sumMaster`).** As set out for this part of the library.
+*Proof.* The sum master contains the distinguished untagged point, whereas an injected summand contains only tagged points. ∎
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Theorem (`recDec_setEq₀`).** Equality of left neighbourhoods whose indices are computed primitively is recursively decidable.
 
-**Theorem (`recDec_setEq₀`).** As set out for this part of the library.
+*Proof.* Set equality is mutual inclusion, so compose the presentation’s decidable inclusion relation with the two primitive-recursive index functions in both orders and conjoin the results. ∎
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Theorem (`recDec_setEq₁`).** Equality of right neighbourhoods whose indices are computed primitively is recursively decidable.
 
-**Theorem (`recDec_setEq₁`).** As set out for this part of the library.
+*Proof.* Set equality is mutual inclusion, so compose the presentation’s decidable inclusion relation with the two primitive-recursive index functions in both orders and conjoin the results. ∎
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Theorem (`sumEnum_master`).** Every index tagged by a number other than zero or one denotes the master neighbourhood of the sum.
 
-**Theorem (`sumEnum_master`).** As set out for this part of the library.
+*Proof.* Both distinguished tag tests fail, so the remaining branch is the sum master neighbourhood. ∎
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Theorem (`sumEnum_mem`).** Every set produced by the tagged sum enumeration is a sum neighbourhood.
 
-**Theorem (`sumEnum_mem`).** As set out for this part of the library.
+*Proof.* The three tag cases are respectively a valid left neighbourhood, a valid right neighbourhood, and the master neighbourhood, all admitted by the definition of the sum system. ∎
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Theorem (`sumEnum_nonempty`).** Every neighbourhood produced by the tagged sum enumeration is nonempty.
 
-**Theorem (`sumEnum_nonempty`).** As set out for this part of the library.
+*Proof.* Inspect the tag: a left or right neighbourhood is nonempty by the corresponding factor hypothesis, while the master case contains the distinguished untagged point. ∎
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Theorem (`sumEnum_subset_sumMaster`).** Every neighbourhood in the sum enumeration is contained in the master neighbourhood.
 
-**Theorem (`sumEnum_subset_sumMaster`).** As set out for this part of the library.
+*Proof.* In each tag case the injected factor neighbourhood lies in the sum master; the remaining tag already denotes the master itself. ∎
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Theorem (`sumEnum_inter_sumMaster`).** Intersecting an enumerated sum neighbourhood with the master neighbourhood leaves it unchanged.
 
-**Theorem (`sumEnum_inter_sumMaster`).** As set out for this part of the library.
+*Proof.* Every enumerated sum neighbourhood is contained in the master neighbourhood, so the left-hand absorption law for intersection applies. ∎
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Theorem (`sumMaster_inter_sumEnum`).** Intersecting the master neighbourhood with an enumerated sum neighbourhood leaves that neighbourhood unchanged.
 
-**Theorem (`sumMaster_inter_sumEnum`).** As set out for this part of the library.
+*Proof.* Every enumerated sum neighbourhood lies inside the master neighbourhood, so the right-hand absorption law for intersection applies. ∎
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Theorem (`tag_trichotomy`).** Every natural-number tag is zero, one, or distinct from both zero and one.
 
-**Theorem (`tag_trichotomy`).** As set out for this part of the library.
+*Proof.* Decidable equality first separates zero; in the remaining case it separates one, leaving a tag unequal to both. ∎
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Theorem (`sumEnum_eq_iff`).** Two tagged sum indices denote the same neighbourhood exactly when both are master tags, or both have the same summand tag and equal underlying factor neighbourhoods.
 
-**Theorem (`sumEnum_eq_iff`).** As set out for this part of the library.
+*Proof.* The nine combinations of left, right, and master tags are disjoint: equal tags reduce by injectivity to equality in one factor, and two master tags are automatically equal. ∎
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Theorem (`eqSEdec`).** Equality between two neighbourhoods in the tagged sum enumeration is recursively decidable.
 
-**Theorem (`eqSEdec`).** As set out for this part of the library.
+*Proof.* Decide the tags of both indices.  Master tags agree with one another, matching left or right tags invoke decidable equality in that factor, and all mixed tags are unequal. ∎
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+**Definition (`sumPresentation`).** The tagged enumeration of left, right, and master neighbourhoods forms a computable presentation of the sum.
 
-**Definition (`sumPresentation`).** As set out for this part of the library.
+**Theorem (`sum_isEffectivelyGiven`).** The sum neighbourhood system is effectively given.
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+*Proof.* Choose computable presentations of the two factors; their tagged sum presentation supplies a computable presentation of the sum. ∎
 
-**Theorem (`sum_isEffectivelyGiven`).** As set out for this part of the library.
+**Theorem (`sumPresentation_X`).** The neighbourhood family of the sum presentation is exactly the tagged sum enumeration.
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+*Proof.* This is the corresponding defining equation after substituting the displayed arguments. ∎
 
-**Theorem (`sumPresentation_X`).** As set out for this part of the library.
+**Theorem (`inMap₀_isComputable`).** The left injection into an effectively presented sum is computable.
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+*Proof.* Split the target index into left, right and master tags.  The left case is exactly decidable inclusion in the first factor, the right case is impossible by nonemptiness, and the master case always holds. ∎
 
-**Theorem (`inMap₀_isComputable`).** As set out for this part of the library.
+**Theorem (`inMap₁_isComputable`).** The right injection into an effectively presented sum is computable.
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+*Proof.* Split the target index into left, right and master tags.  The right case is exactly decidable inclusion in the second factor, the left case is impossible by nonemptiness, and the master case always holds. ∎
 
-**Theorem (`inMap₁_isComputable`).** As set out for this part of the library.
+**Theorem (`outMap₀_isComputable`).** The map extracting the left component of an effectively presented sum is computable.
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+*Proof.* Choose an index for the first master neighbourhood.  A left-tagged source reduces to factor inclusion, while right-tagged and master sources both reduce to inclusion of that chosen master index. ∎
 
-**Theorem (`outMap₀_isComputable`).** As set out for this part of the library.
+**Theorem (`outMap₁_isComputable`).** The map extracting the right component of an effectively presented sum is computable.
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+*Proof.* Choose an index for the second master neighbourhood.  A right-tagged source reduces to factor inclusion, while left-tagged and master sources both reduce to inclusion of that chosen master index. ∎
 
-**Theorem (`outMap₁_isComputable`).** As set out for this part of the library.
+**Theorem (`sumMap_isComputable`).** The map induced componentwise by two computable maps between sums is computable.
 
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
-
-**Theorem (`sumMap_isComputable`).** As set out for this part of the library.
-
-*Proof.* By the tagged enumeration of the sum and the primitive-recursive decision of the tag cases. ∎
+*Proof.* The target master case is automatic.  Matching left tags use the recursively enumerable relation for the first component map, matching right tags use that for the second, and all mismatched nonmaster tags are excluded by disjointness and nonemptiness. ∎

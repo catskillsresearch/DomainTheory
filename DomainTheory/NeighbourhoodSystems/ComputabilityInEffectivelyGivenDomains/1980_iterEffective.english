@@ -2,74 +2,64 @@ The iterate of an effectively given neighbourhood system is effectively given.
 
 <!-- formalization -->
 
-**Definition (`iterIdx`).** As set out for this part of the library.
+**Definition (`iterIdx`).** The \(j\)-th index represented by a finite code \(t\) is its \(j\)-th list entry, with the master index used beyond the list.
 
-*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+**Definition (`iterEnum`).** The neighbourhood enumerated by \(t\) in the iterate consists of pairs \((j,a)\) for which \(a\) belongs to the neighbourhood indexed by the \(j\)-th entry of \(t\).
 
-**Definition (`iterEnum`).** As set out for this part of the library.
+**Theorem (`fiber_iterEnum`).** The \(j\)-th fibre of the neighbourhood enumerated by \(t\) is the neighbourhood indexed by the \(j\)-th entry of \(t\).
 
-*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+*Proof.* This is immediate from the definition of the enumeration. ∎
 
-**Theorem (`fiber_iterEnum`).** As set out for this part of the library.
+**Theorem (`exists_list_fiber`).** For every iterate neighbourhood and every length \(N\), its first \(N\) fibres can be represented by a list of \(N\) presentation indices.
 
-*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+*Proof.* Choose an index for each successive fibre using surjectivity of the presentation and append it to the list. ∎
 
-**Theorem (`exists_list_fiber`).** As set out for this part of the library.
+**Definition (`interG`).** At a fibre number, the intersection-index function returns the chosen index for the intersection of the two fibre neighbourhoods encoded by a pair of list codes.
 
-*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+**Theorem (`iterIdx_ge`).** At every position at least the length bound represented by a code, the iterated index is the master index.
 
-**Definition (`interG`).** As set out for this part of the library.
+*Proof.* The decoded list has length at most its code, so lookup beyond that bound returns the default. ∎
 
-*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+**Theorem (`iterEnum_inter_eq_iff`).** An intersection of two enumerated iterate neighbourhoods equals a third exactly when the corresponding fibre intersections agree below the sum of the three codes.
 
-**Theorem (`iterIdx_ge`).** As set out for this part of the library.
+*Proof.* Equality implies equality of every fibre. Conversely, above the stated bound all three fibres are master neighbourhoods, so the finite family of equalities determines the whole set. ∎
 
-*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+**Theorem (`iterEnum_mem`).** Every enumerated iterate set is an iterate neighbourhood.
 
-**Theorem (`iterEnum_inter_eq_iff`).** As set out for this part of the library.
+*Proof.* Each fibre is a presented neighbourhood, and all fibres beyond the code are the master neighbourhood. ∎
 
-*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+**Definition (`iterInter`).** The intersection code for two iterate indices tabulates their fibrewise intersection indices up to the sum of the two codes.
 
-**Theorem (`iterEnum_mem`).** As set out for this part of the library.
+**Theorem (`iterInter_idx_ge`).** At positions at least the sum of the two input codes, the intersection code yields the master index.
 
-*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+*Proof.* Tabulation uses the master index beyond its finite bound. ∎
 
-**Definition (`iterInter`).** As set out for this part of the library.
+**Theorem (`iterInter_idx_lt`).** Below the sum of the two input codes, the intersection code yields the chosen intersection index of the two corresponding fibres.
 
-*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+*Proof.* Finite tabulation agrees with its generating function below the bound. ∎
 
-**Theorem (`iterInter_idx_ge`).** As set out for this part of the library.
+**Theorem (`iterEnum_cons_iff`).** Two enumerated iterate neighbourhoods have a common numbered refinement exactly when each fibre below the sum of their codes has a common numbered refinement.
 
-*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+*Proof.* A global refinement gives fibrewise refinements. Conversely, the fibrewise intersection code is a global refinement, with master fibres beyond the finite bound. ∎
 
-**Theorem (`iterInter_idx_lt`).** As set out for this part of the library.
+**Theorem (`primrec_iterIdx_proj`).** If a code-valued function is primitive recursive, then looking up the position supplied by the first projection in that code is primitive recursive.
 
-*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+*Proof.* Coded-list lookup is primitive recursive and is closed under composition. ∎
 
-**Theorem (`iterEnum_cons_iff`).** As set out for this part of the library.
+**Theorem (`primrec_interG`).** The fibrewise intersection-index function is primitive recursive.
 
-*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+*Proof.* Both coded lookups are primitive recursive, as is the presentation's intersection-index operation. ∎
 
-**Theorem (`primrec_iterIdx_proj`).** As set out for this part of the library.
+**Definition (`iterPresentation`).** The iterate presentation enumerates finite sequences of basic neighbourhoods, computes intersections fibrewise, and uses the empty code for the master neighbourhood.
 
-*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+**Theorem (`iterPresentation_X`).** The neighbourhood numbered by \(t\) in the iterate presentation is the set enumerated by \(t\).
 
-**Theorem (`primrec_interG`).** As set out for this part of the library.
+*Proof.* This is the defining enumeration of the presentation. ∎
 
-*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+**Theorem (`iterSys_isEffectivelyGiven`).** The iterate of an effectively given neighbourhood system is effectively given.
 
-**Definition (`iterPresentation`).** As set out for this part of the library.
+*Proof.* Apply the iterate construction to a chosen computable presentation. ∎
 
-*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+**Theorem (`projN_isComputable`).** Projection from an iterate to its \(n\)-th coordinate is a computable approximable map.
 
-**Theorem (`iterPresentation_X`).** As set out for this part of the library.
-
-*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
-
-**Theorem (`iterSys_isEffectivelyGiven`).** As set out for this part of the library.
-
-*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
-
-**Theorem (`projN_isComputable`).** As set out for this part of the library.
-
-*Proof.* By coding finite lists of indices and deciding intersection of the enumerated fibres. ∎
+*Proof.* On numbered neighbourhoods its relation is inclusion from the \(n\)-th decoded fibre into the target neighbourhood; this is recursively decidable. ∎

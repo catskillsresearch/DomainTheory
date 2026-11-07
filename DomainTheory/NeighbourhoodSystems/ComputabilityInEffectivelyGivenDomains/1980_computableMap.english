@@ -2,10 +2,6 @@ Computable elements and computable approximable maps on effectively given domain
 
 <!-- formalization -->
 
-**Definition (`ComputableElement`).** As set out for this part of the library.
+**Definition (`ComputableElement`).** An element is computable relative to a presentation when the set of indices of its neighbourhoods is recursively enumerable.
 
-*Proof.* By the definition of recursive enumerability of the neighbourhood relation. ∎
-
-**Definition (`ComputableMap`).** As set out for this part of the library.
-
-*Proof.* By the definition of recursive enumerability of the neighbourhood relation. ∎
+**Definition (`ComputableMap`).** An approximable map is computable relative to two presentations when its relation on enumerated neighbourhoods is recursively enumerable.

@@ -1,171 +1,171 @@
-Library development supporting Scott's neighbourhood-system formalization.
+This peer gives an explicit coding that places Scott's domain \(C\) inside the binary-sequence domain \(B\), while also recording the evident embedding of \(B\) into \(C\).
 
 <!-- formalization -->
 
-**Theorem (`C_nonempty`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.C_nonempty`).** Every neighbourhood of \(C\) is nonempty.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* A cone contains its generating string, and a singleton contains its unique string. ∎
 
-**Definition (`enc`).** As set out for this part of the library.
+**Definition (`ExampleCLeB.enc`).** The encoding of a finite binary string duplicates each bit, sending \(b_1\ldots b_n\) to \(b_1b_1\ldots b_nb_n\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* This recursive prescription uniquely defines the encoding, with the empty string fixed. ∎
 
-**Definition (`encC`).** As set out for this part of the library.
+**Definition (`ExampleCLeB.encC`).** The terminated encoding of a string is its duplicated-bit encoding followed by the marker \(10\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Appending a marker not produced by a duplicated pair distinguishes terminated codes from ordinary duplicated prefixes. ∎
 
-**Theorem (`enc_nil`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.enc_nil`).** The encoding of the empty string is empty.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* This is the empty clause of the recursive definition. ∎
 
-**Theorem (`enc_cons`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.enc_cons`).** Encoding a string beginning with \(b\) begins with two copies of \(b\), followed by the encoding of the tail.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* This is the nonempty clause of the recursive definition. ∎
 
-**Theorem (`encC_cons`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.encC_cons`).** The terminated encoding of \(b\sigma\) is \(bb\) followed by the terminated encoding of \(\sigma\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Expand the duplicated encoding of a nonempty string and reassociate the terminal marker. ∎
 
-**Theorem (`encC_nil`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.encC_nil`).** The terminated encoding of the empty string is the marker \(10\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The ordinary encoding is empty, so only the marker remains. ∎
 
-**Theorem (`enc_append`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.enc_append`).** Encoding commutes with concatenation.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Induct on the first string; duplication of its leading bit is compatible with concatenation. ∎
 
-**Theorem (`enc_length`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.enc_length`).** The encoded string has twice the length of the original string.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Induction on the string adds two encoded bits for each original bit. ∎
 
-**Theorem (`encC_length`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.encC_length`).** The terminated encoding of \(\sigma\) has length \(2|\sigma|+2\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The duplicated encoding contributes \(2|\sigma|\) bits and the terminal marker contributes two more. ∎
 
-**Theorem (`encC_prefix_encC_iff`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.encC_prefix_encC_iff`).** One terminated code is a prefix of another exactly when the original strings are equal.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Compare duplicated bits from the left. A proper extension cannot pass the first terminal marker, whose unequal pair cannot be the beginning of another duplicated block. ∎
 
-**Theorem (`encC_injective`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.encC_injective`).** Terminated encoding is injective.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Equality gives a prefix relation between the two terminated codes, and the prefix characterization forces equality of the source strings. ∎
 
-**Theorem (`enc_prefix_of_prefix`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.enc_prefix_of_prefix`).** Prefixes are preserved by duplicated-bit encoding.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Write the longer string as the shorter string followed by a suffix and use compatibility with concatenation. ∎
 
-**Theorem (`enc_prefix_encC_iff`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.enc_prefix_encC_iff`).** The ordinary encoding of \(\rho\) is a prefix of the terminated encoding of \(\sigma\) exactly when \(\rho\) is a prefix of \(\sigma\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Successive duplicated pairs recover the corresponding source bits, while the terminal marker prevents any further source bit from being read. ∎
 
-**Theorem (`enc_prefix_iff`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.enc_prefix_iff`).** The ordinary encoding of \(\sigma\) is a prefix of the ordinary encoding of \(\tau\) exactly when \(\sigma\) is a prefix of \(\tau\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Preservation is immediate from concatenation; reflection follows by comparing the duplicated leading pairs recursively. ∎
 
-**Theorem (`enc_injective`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.enc_injective`).** Duplicated-bit encoding is injective.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Equality of encodings gives prefix relations in both directions, hence prefix relations between the original strings in both directions and therefore equality. ∎
 
-**Definition (`memD'`).** As set out for this part of the library.
+**Definition (`ExampleCLeB.memD'`).** A neighbourhood of the auxiliary system \(D'\) is either the cone generated by an ordinary duplicated code or the cone generated by a terminated code.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* These two families encode respectively the cone and singleton neighbourhoods of \(C\). ∎
 
-**Theorem (`D'_nestedOrDisjoint`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.D'_nestedOrDisjoint`).** Any two proposed neighbourhoods of \(D'\) are nested or disjoint.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* All proposed neighbourhoods are cones, and two cones of finite strings are nested when their generators are prefix-comparable and disjoint otherwise. ∎
 
-**Definition (`D'`).** As set out for this part of the library.
+**Definition (`ExampleCLeB.D'`).** The auxiliary neighbourhood system \(D'\) has all finite binary strings as master neighbourhood and has exactly the ordinary-code and terminated-code cones as neighbourhoods.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The master cone belongs to the family, every neighbourhood lies in the master set, and the nested-or-disjoint property supplies closure under admissible intersections. ∎
 
-**Theorem (`D'_mem`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.D'_mem`).** A set is a neighbourhood of \(D'\) exactly when it is an ordinary-code cone or a terminated-code cone.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* This is the neighbourhood predicate used in the construction of \(D'\). ∎
 
-**Theorem (`D'_master`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.D'_master`).** The master neighbourhood of \(D'\) is the set of all finite binary strings.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* This is the chosen master set in the construction of \(D'\). ∎
 
-**Theorem (`D'_subsystem_B`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.D'_subsystem_B`).** The auxiliary system \(D'\) is a subsystem of the binary-sequence domain \(B\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Its master neighbourhood agrees with that of \(B\), every coded neighbourhood is a cone of \(B\), and an inhabited intersection of two coded cones is the smaller cone by nestedness. ∎
 
-**Theorem (`cone_encC_subset_cone_enc_iff`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.cone_encC_subset_cone_enc_iff`).** The cone generated by the terminated code of \(\sigma\) is contained in the cone generated by the ordinary code of \(\tau\) exactly when \(\tau\) is a prefix of \(\sigma\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Inclusion of cones reverses the prefix order on their generators, and ordinary-code prefixes of a terminated code reflect precisely the original prefix relation. ∎
 
-**Theorem (`cone_encC_subset_iff`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.cone_encC_subset_iff`).** The terminated-code cone of \(\sigma\) is contained in that of \(\tau\) exactly when \(\sigma=\tau\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Cone inclusion reverses prefix, while terminated codes are prefix-comparable only when their source strings are equal. ∎
 
-**Theorem (`cone_enc_subset_iff`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.cone_enc_subset_iff`).** The ordinary-code cone of \(\sigma\) is contained in that of \(\tau\) exactly when \(\tau\) is a prefix of \(\sigma\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Cone inclusion reverses prefix and duplicated-bit encoding both preserves and reflects prefix. ∎
 
-**Theorem (`cone_ne_singleton`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.cone_ne_singleton`).** No cone of finite binary strings is a singleton.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* A cone contains both its generator and the proper extension obtained by appending a bit. ∎
 
-**Theorem (`not_encC_prefix_enc`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.not_encC_prefix_enc`).** A terminated code is never a prefix of an ordinary duplicated code.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Comparing duplicated pairs eventually reaches the terminal marker \(10\), which cannot match a duplicated pair. ∎
 
-**Theorem (`enc_ne_encC`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.enc_ne_encC`).** No ordinary duplicated code equals a terminated code.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Equality would make the terminated code a prefix of the ordinary code, contradicting the marker property. ∎
 
-**Theorem (`not_cone_enc_subset_cone_encC`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.not_cone_enc_subset_cone_encC`).** An ordinary-code cone is never contained in a terminated-code cone.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Such cone inclusion would require the terminated generator to prefix the ordinary generator, which is impossible. ∎
 
-**Definition (`fromD'`).** As set out for this part of the library.
+**Definition (`ExampleCLeB.fromD'`).** An element of \(D'\) determines an element of \(C\): membership of an ordinary-code cone becomes membership of the corresponding cone, and membership of a terminated-code cone becomes membership of the corresponding singleton.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The cone calculations above show downward closure, master membership, intersection closure, and upward closure for the resulting family of \(C\)-neighbourhoods. ∎
 
-**Definition (`toD'`).** As set out for this part of the library.
+**Definition (`ExampleCLeB.toD'`).** An element of \(C\) determines an element of \(D'\): each cone neighbourhood is sent to its ordinary-code cone, and each singleton neighbourhood to its terminated-code cone.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The prefix and cone calculations show that the encoded family contains the master neighbourhood and is closed under restriction, inhabited intersections, and enlargement. ∎
 
-**Theorem (`toD'_mem_enc`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.toD'_mem_enc`).** For an element \(x\) of \(C\), its image belongs to the ordinary-code cone of \(\kappa\) exactly when \(x\) belongs to the cone of \(\kappa\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Ordinary encodings are injective and cannot equal terminated encodings, so only the corresponding cone clause can witness membership. ∎
 
-**Theorem (`toD'_mem_encC`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.toD'_mem_encC`).** For an element \(x\) of \(C\), its image belongs to the terminated-code cone of \(\kappa\) exactly when \(x\) belongs to the singleton \(\{\kappa\}\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Terminated encodings are injective and disjoint from ordinary encodings, so only the corresponding singleton clause can witness membership. ∎
 
-**Theorem (`fromD'_mem_cone`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.fromD'_mem_cone`).** For an element \(y\) of \(D'\), its decoded element belongs to the cone of \(\kappa\) exactly when \(y\) belongs to the ordinary-code cone of \(\kappa\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Equality of cones identifies their generators, and no cone can equal a singleton. ∎
 
-**Theorem (`fromD'_mem_singleton`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.fromD'_mem_singleton`).** For an element \(y\) of \(D'\), its decoded element belongs to the singleton \(\{\kappa\}\) exactly when \(y\) belongs to the terminated-code cone of \(\kappa\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* A cone cannot equal a singleton, while equality of singletons identifies their unique strings. ∎
 
-**Theorem (`fromD'_toD'`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.fromD'_toD'`).** Decoding after encoding an element of \(C\) returns the original element.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The two elements have identical cone and singleton neighbourhoods by the two encoding membership characterizations, and these exhaust the neighbourhoods of \(C\). ∎
 
-**Theorem (`toD'_fromD'`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.toD'_fromD'`).** Encoding after decoding an element of \(D'\) returns the original element.
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The two elements have identical ordinary-code and terminated-code cone neighbourhoods by the two decoding membership characterizations, and these exhaust the neighbourhoods of \(D'\). ∎
 
-**Definition (`cdEquiv`).** As set out for this part of the library.
+**Definition (`ExampleCLeB.cdEquiv`).** The encoding and decoding maps form an order isomorphism between the elements of \(C\) and the elements of \(D'\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* They are inverse by the preceding two theorems, and inclusion of neighbourhood families is preserved and reflected by the two kinds of coded neighbourhood. ∎
 
-**Theorem (`B_subsystem_C`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.B_subsystem_C`).** The binary-sequence domain \(B\) is a subsystem of \(C\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Both have the same master neighbourhood, every cone neighbourhood of \(B\) is a neighbourhood of \(C\), and any inhabited intersection of two cones is the smaller cone. ∎
 
-**Theorem (`B_trianglelefteq_C`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.B_trianglelefteq_C`).** The domain \(B\) is isomorphic to a subsystem of \(C\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Every subsystem is canonically isomorphic to a subsystem of its ambient domain. ∎
 
-**Theorem (`C_isomorphic_D'`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.C_isomorphic_D'`).** The domain \(C\) is isomorphic to the auxiliary system \(D'\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* The order isomorphism between their element domains induces the required domain isomorphism. ∎
 
-**Theorem (`C_trianglelefteq_B`).** As set out for this part of the library.
+**Theorem (`ExampleCLeB.C_trianglelefteq_B`).** The domain \(C\) is isomorphic to a subsystem of \(B\).
 
-*Proof.* By the development recorded in the peer module. ∎
+*Proof.* Use \(D'\) as the subsystem of \(B\) and the preceding isomorphism between \(C\) and \(D'\). ∎

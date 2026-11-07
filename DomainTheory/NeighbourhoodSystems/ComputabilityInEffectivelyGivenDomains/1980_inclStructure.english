@@ -2,114 +2,92 @@ An inclusion structure on the integers determines a neighbourhood system, and ev
 
 <!-- formalization -->
 
-**Definition (`InclStructure`).** As set out for this part of the library.
+**Definition (`InclStructure`).** An inclusion structure is a reflexive and transitive recursive relation on natural numbers, equipped with a greatest index and a primitive-recursive operation choosing meets whenever two indices are consistent; consistency and the universal property of a proposed meet are recursively decidable.
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+**Definition (`InclStructure.CONS`).** Two indices are consistent when some index is included in both.
 
-**Definition (`CONS`).** As set out for this part of the library.
+**Definition (`InclStructure.MEET`).** An index is a meet of two others when the indices included in it are exactly those included in both.
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+**Definition (`InclStructure.toNbhd`).** The neighbourhood represented by an index is the set of all indices included in it.
 
-**Definition (`MEET`).** As set out for this part of the library.
+**Theorem (`InclStructure.mem_toNbhd`).** An index belongs to the neighbourhood represented by another exactly when it is included in that index.
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+*Proof.* This is the defining membership condition. ∎
 
-**Definition (`toNbhd`).** As set out for this part of the library.
+**Theorem (`InclStructure.toNbhd_inter_eq_iff`).** The intersection of two represented neighbourhoods equals a third represented neighbourhood exactly when the third index is their meet.
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+*Proof.* Extensional equality says that every index belongs to the third neighbourhood exactly when it belongs to both of the first two. ∎
 
-**Theorem (`mem_toNbhd`).** As set out for this part of the library.
+**Theorem (`InclStructure.toNbhd_subset_iff`).** One represented neighbourhood is included in another exactly when its representing index is included in the other index.
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+*Proof.* The forward direction applies inclusion to the reflexive member; the reverse direction uses transitivity. ∎
 
-**Theorem (`toNbhd_inter_eq_iff`).** As set out for this part of the library.
+**Theorem (`InclStructure.toNbhd_subset_inter_iff`).** A represented neighbourhood lies below an intersection exactly when its index is included in both indices.
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+*Proof.* Inclusion in an intersection is equivalent to the conjunction of the two inclusions. ∎
 
-**Theorem (`toNbhd_subset_iff`).** As set out for this part of the library.
+**Theorem (`InclStructure.toNbhd_top`).** The neighbourhood represented by the greatest index is the whole set of indices.
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+*Proof.* Every index is included in the greatest index. ∎
 
-**Theorem (`toNbhd_subset_inter_iff`).** As set out for this part of the library.
+**Definition (`InclStructure.toSystem`).** An inclusion structure determines the neighbourhood system whose neighbourhoods are precisely its represented sets and whose master is the whole set of indices.
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+**Theorem (`InclStructure.toSystem_mem`).** A set is a neighbourhood of the induced system exactly when it is represented by some index.
 
-**Theorem (`toNbhd_top`).** As set out for this part of the library.
+*Proof.* This is the defining neighbourhood predicate. ∎
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+**Theorem (`meet_iff_interEq`).** In a computable presentation, the universal lower-bound property for three numbered neighbourhoods is equivalent to equality of the intersection of the first two with the third.
 
-**Definition (`toSystem`).** As set out for this part of the library.
+*Proof.* Equality immediately gives the lower-bound property. Conversely, choose a numbered representative of the intersection and compare it with the proposed meet in both directions. ∎
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+**Definition (`ofPresentation`).** A computable presentation determines an inclusion structure by ordering indices according to inclusion of their numbered neighbourhoods, using the presentation's intersection and master indices.
 
-**Theorem (`toSystem_mem`).** As set out for this part of the library.
+**Theorem (`ofPresentation_INCL`).** Inclusion in the structure obtained from a presentation is exactly inclusion between the corresponding numbered neighbourhoods.
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+*Proof.* This is the defining relation. ∎
 
-**Theorem (`meet_iff_interEq`).** As set out for this part of the library.
+**Theorem (`mem_ofPresentation_toNbhd`).** An index belongs to the reconstructed neighbourhood of \(n\) exactly when its numbered neighbourhood is included in the neighbourhood numbered by \(n\).
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+*Proof.* Expand the two defining membership relations. ∎
 
-**Definition (`ofPresentation`).** As set out for this part of the library.
+**Theorem (`ofPresentation_toNbhd_eq_iff`).** Two reconstructed neighbourhoods are equal exactly when their original numbered neighbourhoods are equal.
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+*Proof.* Both equalities are characterized by mutual inclusion. ∎
 
-**Theorem (`ofPresentation_INCL`).** As set out for this part of the library.
+**Definition (`reconstruct`).** The reconstruction of a computable presentation is the neighbourhood system induced by its inclusion structure.
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+**Definition (`reconElem`).** An original element yields a reconstructed element containing a represented index-set exactly when the original element contains the corresponding numbered neighbourhood.
 
-**Theorem (`mem_ofPresentation_toNbhd`).** As set out for this part of the library.
+**Definition (`reconElemInv`).** A reconstructed element yields an original element containing a neighbourhood exactly when some equal numbered neighbourhood has its represented index-set in the reconstructed element.
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+**Definition (`reconIso`).** The preceding two transformations form an order isomorphism between the original elements and the reconstructed elements.
 
-**Theorem (`ofPresentation_toNbhd_eq_iff`).** As set out for this part of the library.
+**Definition (`InclStructure.toPresentation`).** The induced neighbourhood system has a computable presentation given by the represented neighbourhoods, the structure's meet operation, and its greatest index.
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+**Theorem (`InclStructure.axiom_i`).** Every index is included in itself.
 
-**Definition (`reconstruct`).** As set out for this part of the library.
+*Proof.* This is reflexivity of the inclusion structure. ∎
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+**Theorem (`InclStructure.axiom_ii`).** Inclusion of indices is transitive.
 
-**Definition (`reconElem`).** As set out for this part of the library.
+*Proof.* This is transitivity of the inclusion structure. ∎
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+**Theorem (`InclStructure.axiom_iii`).** There is an index above every index.
 
-**Definition (`reconElemInv`).** As set out for this part of the library.
+*Proof.* The greatest index has this property. ∎
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+**Theorem (`InclStructure.axiom_iv`).** Every consistent pair of indices has a meet.
 
-**Definition (`reconIso`).** As set out for this part of the library.
+*Proof.* The designated meet index satisfies the meet specification whenever consistency has a witness. ∎
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+**Theorem (`ofPresentation_toPresentation_INCL`).** Passing from an inclusion structure to its presentation and back preserves the original inclusion relation.
 
-**Definition (`toPresentation`).** As set out for this part of the library.
+*Proof.* Inclusion between represented neighbourhoods is equivalent to inclusion between their indices. ∎
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+**Theorem (`reconstruct_isomorphic`).** The reconstruction of a computable presentation is isomorphic to its original neighbourhood system.
 
-**Theorem (`axiom_i`).** As set out for this part of the library.
+*Proof.* Use the inverse order isomorphism between original and reconstructed elements. ∎
 
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+**Theorem (`InclStructure.toSystem_isEffectivelyGiven`).** The neighbourhood system induced by an inclusion structure is effectively given.
 
-**Theorem (`axiom_ii`).** As set out for this part of the library.
-
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
-
-**Theorem (`axiom_iii`).** As set out for this part of the library.
-
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
-
-**Theorem (`axiom_iv`).** As set out for this part of the library.
-
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
-
-**Theorem (`ofPresentation_toPresentation_INCL`).** As set out for this part of the library.
-
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
-
-**Theorem (`reconstruct_isomorphic`).** As set out for this part of the library.
-
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
-
-**Theorem (`toSystem_isEffectivelyGiven`).** As set out for this part of the library.
-
-*Proof.* By the presentation read off the inclusion relation and the isomorphism with the reconstructed system. ∎
+*Proof.* Its represented neighbourhoods carry the computable presentation constructed above. ∎

@@ -2,142 +2,124 @@ An effective isomorphism is a computable pair of inverse approximable maps, and 
 
 <!-- formalization -->
 
-**Definition (`EffectiveIso`).** As set out for this part of the library.
+**Definition (`EffectiveIso`).** An effective isomorphism between two presented systems consists of computable approximable maps in both directions whose two composites are the corresponding identity maps.
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Definition (`EffectivelyIsomorphic`).** Two computably presented systems are effectively isomorphic when an effective isomorphism between them exists.
 
-**Definition (`EffectivelyIsomorphic`).** As set out for this part of the library.
+**Definition (`EffectiveIso.fiber2`).** The \((i,j)\)-fibre of a doubly indexed set is the \(j\)-th fibre of its \(i\)-th fibre.
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectiveIso.mem_fiber2`).** An element belongs to the \((i,j)\)-fibre exactly when the doubly paired element belongs to the original set.
 
-**Definition (`fiber2`).** As set out for this part of the library.
+*Proof.* This is the defining membership condition for two successive fibres. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectiveIso.fiber2_inter`).** Taking a double fibre preserves intersections.
 
-**Theorem (`mem_fiber2`).** As set out for this part of the library.
+*Proof.* Fibre membership is pointwise membership, which preserves conjunction. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectiveIso.fiber2_master`).** Every double fibre of the master of a double iterate is the original master.
 
-**Theorem (`fiber2_inter`).** As set out for this part of the library.
+*Proof.* Each of the two successive master fibres is a master. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectiveIso.fiber2_mono`).** Inclusion of doubly indexed sets induces inclusion of every double fibre.
 
-**Theorem (`fiber2_master`).** As set out for this part of the library.
+*Proof.* Apply the original inclusion to the paired element. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectiveIso.mem_fiber2_of_mem`).** Every double fibre of a double-iterate neighbourhood is an original neighbourhood.
 
-**Theorem (`fiber2_mono`).** As set out for this part of the library.
+*Proof.* The outer fibre is an iterate neighbourhood and its inner fibre is therefore an original neighbourhood. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Definition (`EffectiveIso.reindexF`).** Forward reindexing replaces a single coordinate coded by a pair with two successive coordinates.
 
-**Theorem (`mem_fiber2_of_mem`).** As set out for this part of the library.
+**Theorem (`EffectiveIso.fiber2_reindexF`).** The \((i,j)\)-fibre after forward reindexing is the original fibre at the paired index \((i,j)\).
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+*Proof.* This is immediate from the membership definition. ∎
 
-**Definition (`reindexF`).** As set out for this part of the library.
+**Definition (`EffectiveIso.reindexG`).** Backward reindexing replaces two successive coordinates with the two components decoded from one coordinate.
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectiveIso.fiber_reindexG`).** The fibre at \(k\) after backward reindexing is the original double fibre at the two components of \(k\).
 
-**Theorem (`fiber2_reindexF`).** As set out for this part of the library.
+*Proof.* This is immediate from the membership definition. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectiveIso.exists_inner_bound`).** For every double-iterate neighbourhood and every finite number of outer fibres, there is one bound beyond which all their inner fibres are master.
 
-**Definition (`reindexG`).** As set out for this part of the library.
+*Proof.* Induct over the number of outer fibres and take the maximum of the previous bound and the new fibre's bound. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectiveIso.pair_lt_pair_of_lt`).** If both coordinates strictly increase, their paired code strictly increases.
 
-**Theorem (`fiber_reindexG`).** As set out for this part of the library.
+*Proof.* Bound the first pair below the square following its largest coordinate and the second pair above the square of its largest coordinate. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectiveIso.reindexF_mem`).** Forward reindexing sends iterate neighbourhoods to double-iterate neighbourhoods.
 
-**Theorem (`exists_inner_bound`).** As set out for this part of the library.
+*Proof.* All double fibres are original neighbourhoods, inner fibres become master beyond the original bound, and outer fibres do likewise. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectiveIso.reindexF_subset_iff`).** Forward reindexing of \(W\) is included in \(S\) exactly when every fibre of \(W\) at \((i,j)\) is included in the \((i,j)\)-fibre of \(S\).
 
-**Theorem (`pair_lt_pair_of_lt`).** As set out for this part of the library.
+*Proof.* Set inclusion is equivalent to inclusion of all successive fibres. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Definition (`EffectiveIso.Fmap`).** The forward approximable map relates \(W\) to \(S\) when both are neighbourhoods and every paired fibre of \(W\) is included in the corresponding double fibre of \(S\).
 
-**Theorem (`reindexF_mem`).** As set out for this part of the library.
+**Theorem (`EffectiveIso.Fmap_rel`).** The relation of the forward map is exactly its neighbourhood and fibrewise inclusion conditions.
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+*Proof.* This is its defining relation. ∎
 
-**Theorem (`reindexF_subset_iff`).** As set out for this part of the library.
+**Theorem (`EffectiveIso.reindexG_mem`).** Backward reindexing sends double-iterate neighbourhoods to iterate neighbourhoods.
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+*Proof.* Use a common inner bound for the finitely many nonmaster outer fibres; any paired index beyond the paired bounds has either a master outer fibre or a master inner fibre. ∎
 
-**Definition (`Fmap`).** As set out for this part of the library.
+**Theorem (`EffectiveIso.reindexG_subset_iff`).** Backward reindexing of \(S\) is included in \(W\) exactly when each decoded double fibre of \(S\) is included in the corresponding fibre of \(W\).
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+*Proof.* Inclusion is equivalent to inclusion of every single fibre. ∎
 
-**Theorem (`Fmap_rel`).** As set out for this part of the library.
+**Definition (`EffectiveIso.Gmap`).** The backward approximable map relates \(S\) to \(W\) when both are neighbourhoods and every decoded double fibre of \(S\) is included in the corresponding fibre of \(W\).
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectiveIso.Gmap_rel`).** The relation of the backward map is exactly its neighbourhood and fibrewise inclusion conditions.
 
-**Theorem (`reindexG_mem`).** As set out for this part of the library.
+*Proof.* This is its defining relation. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectiveIso.Fmap_comp_Gmap`).** Forward reindexing after backward reindexing is the identity approximable map on the double iterate.
 
-**Theorem (`reindexG_subset_iff`).** As set out for this part of the library.
+*Proof.* A mediating reindexed neighbourhood converts the two fibrewise inclusions into ordinary inclusion, and backward reindexing itself supplies a mediator for the converse. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectiveIso.Gmap_comp_Fmap`).** Backward reindexing after forward reindexing is the identity approximable map on the iterate.
 
-**Definition (`Gmap`).** As set out for this part of the library.
+*Proof.* Pairing and unpairing identify the intermediate fibres, reducing the composite relation to inclusion. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectiveIso.fiber2_iterEnum_iter`).** The \((i,j)\)-fibre of a doubly iterated enumerated neighbourhood is the original neighbourhood indexed first by its outer code at \(i\), then by that inner code at \(j\).
 
-**Theorem (`Gmap_rel`).** As set out for this part of the library.
+*Proof.* Apply the fibre equation for the iterate enumeration twice. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectiveIso.Gmap_rel_enum_iff`).** On enumerated neighbourhoods, the backward-map relation is equivalent to finitely many inclusions from decoded double fibres into target fibres below the target code.
 
-**Theorem (`Fmap_comp_Gmap`).** As set out for this part of the library.
+*Proof.* The general fibrewise relation gives these inclusions; beyond the target bound the target fibre is master, so no further test is needed. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectiveIso.Gmap_isComputable`).** The backward reindexing map is computable for the iterate presentations.
 
-**Theorem (`Gmap_comp_Fmap`).** As set out for this part of the library.
+*Proof.* The finite characterization uses primitive-recursive nested index lookup and decidable inclusion, followed by bounded universal quantification. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectiveIso.masterIdx_iterPresentation`).** The master index of an iterate presentation is zero.
 
-**Theorem (`fiber2_iterEnum_iter`).** As set out for this part of the library.
+*Proof.* This is the chosen master code in the construction. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectiveIso.Fmap_rel_enum_iff`).** On enumerated neighbourhoods, the forward-map relation is equivalent to the finitely bounded family of inclusions from paired source fibres into nested target fibres.
 
-**Theorem (`Gmap_rel_enum_iff`).** As set out for this part of the library.
+*Proof.* The general fibrewise relation gives the bounded conditions; outside the outer or inner code bounds the target fibre is master. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectiveIso.Fmap_isComputable`).** The forward reindexing map is computable for the iterate presentations.
 
-**Theorem (`Gmap_isComputable`).** As set out for this part of the library.
+*Proof.* Its finite characterization consists of primitive-recursive nested lookups, decidable inclusion, and two bounded universal quantifiers. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Definition (`EffectiveIso.iterIterEffectiveIso`).** The forward and backward reindexing maps, with their computability and inverse laws, form an effective isomorphism between an iterate and its double iterate.
 
-**Theorem (`masterIdx_iterPresentation`).** As set out for this part of the library.
+**Definition (`EffectiveIso.toDomainIso`).** An effective isomorphism induces an order isomorphism of element domains by applying its two approximable maps to elements.
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`EffectivelyIsomorphic.isomorphic`).** Effectively isomorphic presentations have isomorphic element domains.
 
-**Theorem (`Fmap_rel_enum_iff`).** As set out for this part of the library.
+*Proof.* Choose an effective isomorphism and pass to its induced domain isomorphism. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`iterSys_effectivelyIsomorphic_iterIter`).** Every presented iterate is effectively isomorphic to its double iterate.
 
-**Theorem (`Fmap_isComputable`).** As set out for this part of the library.
+*Proof.* Use the effective isomorphism supplied by forward and backward reindexing. ∎
 
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+**Theorem (`iterSys_isomorphic_iterIter`).** An iterate neighbourhood system is isomorphic to its double iterate.
 
-**Definition (`iterIterEffectiveIso`).** As set out for this part of the library.
-
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
-
-**Definition (`toDomainIso`).** As set out for this part of the library.
-
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
-
-**Theorem (`EffectivelyIsomorphic.isomorphic`).** As set out for this part of the library.
-
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
-
-**Theorem (`iterSys_effectivelyIsomorphic_iterIter`).** As set out for this part of the library.
-
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
-
-**Theorem (`iterSys_isomorphic_iterIter`).** As set out for this part of the library.
-
-*Proof.* By the reindexing isomorphism and the computability of both directions. ∎
+*Proof.* Forget the computability data from the effective reindexing isomorphism. ∎

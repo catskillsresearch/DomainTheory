@@ -2,6 +2,6 @@ The fixpoint combinator on an effectively given domain is a computable map.
 
 <!-- formalization -->
 
-**Theorem (`fixMap_isComputable`).** As set out for this part of the library.
+**Theorem (`fixMap_isComputable`).** The least-fixpoint approximable map on an effectively presented function space is computable.
 
-*Proof.* By the chain characterization of the fixpoint relation and the enumerability of finite chains. ∎
+*Proof.* The required relation is obtained from recursively enumerable or decidable index relations by pairing, composition, conjunction, and projection. ∎

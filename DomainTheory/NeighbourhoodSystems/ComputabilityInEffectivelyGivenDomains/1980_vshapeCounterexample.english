@@ -2,62 +2,60 @@ The V-shaped neighbourhood system does not embed into its powerdomain.
 
 <!-- formalization -->
 
-**Definition (`HasTop`).** As set out for this part of the library.
+**Definition (`Counterexample712C.HasTop`).** A neighbourhood system has a top element when some element lies above every element in its domain order.
 
-*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+**Theorem (`Counterexample712C.ft_inter`).** The singleton sets containing false and true have empty intersection.
 
-**Theorem (`ft_inter`).** As set out for this part of the library.
+*Proof.* No Boolean value is simultaneously false and true. ∎
 
-*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+**Definition (`Counterexample712C.improperTop`).** If the neighbourhoods of a system are closed under arbitrary binary intersections, the family of all neighbourhoods forms an element of that system.
 
-**Definition (`improperTop`).** As set out for this part of the library.
+*Proof.* Closure gives finite-intersection closure, while the remaining element conditions follow directly from neighbourhood membership. ∎
 
-*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+**Theorem (`Counterexample712C.tf_inter`).** The singleton sets containing true and false have empty intersection.
 
-**Theorem (`tf_inter`).** As set out for this part of the library.
+*Proof.* No Boolean value is simultaneously true and false. ∎
 
-*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+**Definition (`Counterexample712C.Vshape`).** The V-shaped system on the Booleans has exactly three neighbourhoods: the whole set and the two singleton sets.
 
-**Definition (`Vshape`).** As set out for this part of the library.
+*Proof.* The whole set is master; the only incompatible intersection is empty, which cannot contain any of the three nonempty neighbourhoods required by the intersection axiom. ∎
 
-*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+**Theorem (`Counterexample712C.Vshape_mem_false`).** The singleton containing false is a V-shaped neighbourhood.
 
-**Theorem (`Vshape_mem_false`).** As set out for this part of the library.
+*Proof.* It is one of the three defining neighbourhoods. ∎
 
-*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+**Theorem (`Counterexample712C.Vshape_mem_true`).** The singleton containing true is a V-shaped neighbourhood.
 
-**Theorem (`Vshape_mem_true`).** As set out for this part of the library.
+*Proof.* It is one of the three defining neighbourhoods. ∎
 
-*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+**Theorem (`Counterexample712C.Vshape_not_mem_empty`).** The empty set is not a V-shaped neighbourhood.
 
-**Theorem (`Vshape_not_mem_empty`).** As set out for this part of the library.
+*Proof.* It is neither the whole Boolean set nor either Boolean singleton. ∎
 
-*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+**Theorem (`Counterexample712C.Vshape_not_hasTop`).** The V-shaped domain has no top element.
 
-**Theorem (`Vshape_not_hasTop`).** As set out for this part of the library.
+*Proof.* A top element would contain both singleton neighbourhoods and hence their empty intersection, forcing the empty set to be a neighbourhood of that element, contrary to the V-shaped neighbourhood list. ∎
 
-*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+**Theorem (`Counterexample712C.hasTop_of_inter_closed`).** A neighbourhood system whose neighbourhoods are closed under binary intersection has a top element.
 
-**Theorem (`hasTop_of_inter_closed`).** As set out for this part of the library.
+*Proof.* The element consisting of all neighbourhoods lies above every other element. ∎
 
-*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+**Theorem (`Counterexample712C.hasTop_of_iso`).** Having a top element is preserved when transported backwards along an order isomorphism.
 
-**Theorem (`hasTop_of_iso`).** As set out for this part of the library.
+*Proof.* The inverse image of a top element is above every element by order reflection. ∎
 
-*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+**Theorem (`Counterexample712C.powerDomain_hasTop`).** Every powerdomain has a top element.
 
-**Theorem (`powerDomain_hasTop`).** As set out for this part of the library.
+*Proof.* Powerdomain neighbourhoods are closed under intersection, so the intersection-closed construction applies. ∎
 
-*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+**Theorem (`Counterexample712C.subsystem_inter_closed`).** A subsystem of an intersection-closed neighbourhood system is itself intersection closed.
 
-**Theorem (`subsystem_inter_closed`).** As set out for this part of the library.
+*Proof.* The ambient intersection is a neighbourhood, and the subsystem's closure property brings it back into the subsystem. ∎
 
-*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+**Theorem (`Counterexample712C.hasTop_of_trianglelefteq_powerDomain`).** Any neighbourhood system isomorphic to a subsystem of a powerdomain has a top element.
 
-**Theorem (`hasTop_of_trianglelefteq_powerDomain`).** As set out for this part of the library.
+*Proof.* The subsystem inherits intersection closure from the powerdomain and therefore has a top, which the isomorphism transports to the original system. ∎
 
-*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+**Theorem (`Counterexample712C.vshape_not_trianglelefteq_powerDomain`).** The V-shaped neighbourhood system is not isomorphic to any subsystem of its powerdomain.
 
-**Theorem (`vshape_not_trianglelefteq_powerDomain`).** As set out for this part of the library.
-
-*Proof.* By the failure of a top element in the V-shape and the preservation of tops by an embedding into a powerdomain. ∎
+*Proof.* Such an embedding would give the V-shaped domain a top element, contradicting its failure to have one. ∎
