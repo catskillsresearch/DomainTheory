@@ -1,15 +1,14 @@
 # Fixed points and recursion
 
-**Dependency diagram.** Each box is one item. The arrowhead is on the item that imports. An arrow already implied by a longer path is left out. The introduction has no Lean file, so it is not shown. Blue is a definition, amber an example, red a theorem, and indigo an exercise.
-
-@import "1980_Fixed_points_and_recursion.mermaid"
+@import "1980_Fixed_points_and_recursion.svg" {code_block=false}
 
 - [Introduction](1980_Introduction.md) [✓](../1980_REVISION.md)
 - [Least fixed-point element](1980_fixElement.md) [✓](../1980_REVISION.md)
 - [Theorem 4.1 — least fixed point](1980_Theorem_4_1.md) [✓](../1980_REVISION.md)
 - [Fix combinator](1980_fixMap.md) [✓](../1980_REVISION.md)
 - [Theorem 4.2 — fix combinator](1980_Theorem_4_2.md) [✓](../1980_REVISION.md)
-- [Example 4.3 — partial functions on integers](1980_Example_4_3.md)
+- [Number domain](1980_numberDomain.md) [✓](../1980_REVISION.md)
+- [Example 4.3 — partial functions on integers](1980_Example_4_3.md) [✓](../1980_REVISION.md)
 - [Example 4.4 — sequence domain](1980_Example_4_4.md)
 - [Definition 4.5 — Peano axioms](1980_Definition_4_5.md)
 - [Theorem 4.6 — Peano models isomorphic](1980_Theorem_4_6.md)

@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Example_4_3
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.numberDomain
 public import Mathlib.Computability.PartrecBasis
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.cond

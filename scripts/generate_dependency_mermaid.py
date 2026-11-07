@@ -42,6 +42,12 @@ NS_CONSTRUCTS_SVG = (
     / "DomainConstructs"
     / "1980_Domain_constructs.svg"
 )
+NS_FIXPOINTS_SVG = (
+    DT
+    / "NeighbourhoodSystems"
+    / "FixedPointsAndRecursion"
+    / "1980_Fixed_points_and_recursion.svg"
+)
 
 DEPRECATED_MERMAID = DT / "1972_Continuous_lattices.mermaid"
 CL1972_SECTION_MERMAIDS = frozenset(
@@ -1708,6 +1714,121 @@ NS_CON_SHORT: dict[str, tuple[str, str]] = {
     ),
 }
 
+NS_FIX_SHORT: dict[str, tuple[str, str]] = {
+    "Least fixed-point element": (
+        "lfp",
+        "Least fixed-point element",
+    ),
+    "Theorem 4.1 — least fixed point": (
+        "T41",
+        "Theorem 4.1 — least fixed point",
+    ),
+    "Fix combinator": (
+        "fix",
+        "Fix combinator",
+    ),
+    "Theorem 4.2 — fix combinator": (
+        "T42",
+        "Theorem 4.2 — fix combinator",
+    ),
+    "Number domain": (
+        "num",
+        "Number domain",
+    ),
+    "Example 4.3 — partial functions on integers": (
+        "E43",
+        "Example 4.3 — partial functions on integers",
+    ),
+    "Example 4.4 — sequence domain": (
+        "E44",
+        "Example 4.4 — sequence domain",
+    ),
+    "Definition 4.5 — Peano axioms": (
+        "D45",
+        "Definition 4.5 — Peano axioms",
+    ),
+    "Theorem 4.6 — Peano models isomorphic": (
+        "T46",
+        "Theorem 4.6 — Peano models isomorphic",
+    ),
+    "Exercise 4.7 — fixed point above a seed": (
+        "X407",
+        "Exercise 4.7 — fixed point above a seed",
+    ),
+    "Exercise 4.8 — fixed-point induction": (
+        "X408",
+        "Exercise 4.8 — fixed-point induction",
+    ),
+    "Exercise 4.9 — fix as a fixed point": (
+        "X409",
+        "Exercise 4.9 — fix as a fixed point",
+    ),
+    "Exercise 4.10 — domain above an element": (
+        "X410",
+        "Exercise 4.10 — domain above an element",
+    ),
+    "Exercise 4.11 — characterizing the fix combinator": (
+        "X411",
+        "Exercise 4.11 — characterizing the fix combinator",
+    ),
+    "Exercise 4.12 — no greatest fixed point": (
+        "X412",
+        "Exercise 4.12 — no greatest fixed point",
+    ),
+    "Exercise 4.13 — avoiding the natural numbers": (
+        "X413",
+        "Exercise 4.13 — avoiding the natural numbers",
+    ),
+    "Exercise 4.14 — greatest powerset fixed point": (
+        "X414",
+        "Exercise 4.14 — greatest powerset fixed point",
+    ),
+    "Exercise 4.15 — maximal fixed points": (
+        "X415",
+        "Exercise 4.15 — maximal fixed points",
+    ),
+    "Exercise 4.16 — optimal fixed point": (
+        "X416",
+        "Exercise 4.16 — optimal fixed point",
+    ),
+    "Exercise 4.17 — generated submonoid": (
+        "X417",
+        "Exercise 4.17 — generated submonoid",
+    ),
+    "Exercise 4.18 — checking the number domain": (
+        "X418",
+        "Exercise 4.18 — checking the number domain",
+    ),
+    "Exercise 4.19 — Peano axioms for sequences": (
+        "X419",
+        "Exercise 4.19 — Peano axioms for sequences",
+    ),
+    "Exercise 4.20 — fix of a composite": (
+        "X420",
+        "Exercise 4.20 — fix of a composite",
+    ),
+    "Exercise 4.21 — order as a fixed point": (
+        "X421",
+        "Exercise 4.21 — order as a fixed point",
+    ),
+    "Exercise 4.22 — inductive subset of a model": (
+        "X422",
+        "Exercise 4.22 — inductive subset of a model",
+    ),
+    "Exercise 4.23 — commuting with the iterates": (
+        "X423",
+        "Exercise 4.23 — commuting with the iterates",
+    ),
+    "Exercise 4.24 — Schroeder-Bernstein theorem": (
+        "X424",
+        "Exercise 4.24 — Schroeder-Bernstein theorem",
+    ),
+    "Exercise 4.25 — unary sequence domain": (
+        "X425",
+        "Exercise 4.25 — unary sequence domain",
+    ),
+}
+
 
 def _ns_dom_kind_class(nid: str) -> str:
     if nid.startswith("D"):
@@ -1976,6 +2097,25 @@ def gen_ns_constructs_lecture(diagram: Path, modules: dict[str, Path], old: str)
     )
 
 
+def gen_ns_fixpoints_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    """Item-level Lean deps for 1980_Fixed_points_and_recursion (SVG gold copy)."""
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=NS_FIX_SHORT,
+        companions={},
+        header=[
+            "%% Each box is one outline note from 1980_Fixed_points_and_recursion.md.",
+            "%% Lean modules = that note's @import .lean files.",
+            "%% Arrowhead on the importer; label = direct-import count.",
+            "%% All cross-note Lean imports, then transitive reduction (keeps reachability).",
+            "%% Display copy: Graphviz SVG (gold); no sibling .mermaid.",
+        ],
+        aggregate_lecture_exercises=False,
+    )
+
+
 def cl1972_outline_box_modules(child: Path, title: str) -> set[str]:
     if re.match(r"(?i)introduction\s*$", title.strip()):
         return set()
@@ -2192,6 +2332,11 @@ def classify(mermaid: Path, text: str) -> str:
         "1980_Domain_constructs.svg",
     ):
         return "ns_constructs_lecture"
+    if mermaid.name in (
+        "1980_Fixed_points_and_recursion.mermaid",
+        "1980_Fixed_points_and_recursion.svg",
+    ):
+        return "ns_fixpoints_lecture"
     if index_md_is_outline_barrel(mermaid):
         return "note_outline"
     if mermaid.name == "1972_ContinuousLattices.mermaid":
@@ -2303,6 +2448,8 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
         return gen_ns_mappings_lecture(mermaid, modules, old)
     if kind == "ns_constructs_lecture":
         return gen_ns_constructs_lecture(mermaid, modules, old)
+    if kind == "ns_fixpoints_lecture":
+        return gen_ns_fixpoints_lecture(mermaid, modules, old)
     if kind == "ns_items":
         return gen_neighborhood_items(mermaid, modules, old)
     if kind == "note_outline":
@@ -2649,7 +2796,7 @@ def main() -> None:
         if top.is_file():
             paths.append(top)
         # Section hubs with SVG gold copies (no .mermaid sibling).
-        for svg in (NS_DOMAINS_SVG, NS_MAPPINGS_SVG, NS_CONSTRUCTS_SVG):
+        for svg in (NS_DOMAINS_SVG, NS_MAPPINGS_SVG, NS_CONSTRUCTS_SVG, NS_FIXPOINTS_SVG):
             if svg.is_file():
                 paths.append(svg.resolve())
 
