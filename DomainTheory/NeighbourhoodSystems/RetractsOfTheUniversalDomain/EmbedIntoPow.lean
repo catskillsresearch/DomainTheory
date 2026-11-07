@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_11
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.partrecLam
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_17
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Exercise_6_29
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
@@ -9,7 +9,8 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
+open NeighborhoodSystem ApproximableMap
+
 
 variable {α : Type*} (V : NeighborhoodSystem α)
 

@@ -1,16 +1,76 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.numberDomain
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.fixMap
 public import Mathlib.Computability.PartrecBasis
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofIso
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.cond
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_11
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot_le
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Lemma_3_6
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.iterSys
 
 @[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems
+open NeighborhoodSystem ApproximableMap
+
+section
+variable {α : Type*} (V : NeighborhoodSystem α)
+
+def fold : ApproximableMap (prod V (iterSys V)) (iterSys V) := ofIso (iterProdIso V).symm
+
+theorem iterProdIso_apply (z : (iterSys V).Element) :
+    iterProdIso V z = pair (component z 0) (ofSeq (fun n => component z (n + 1))) := rfl
+
+def push : ApproximableMap (prod V (iterSys V)) (iterSys V) := fold V
+
+def unfold : ApproximableMap (iterSys V) (prod V (iterSys V)) := ofIso (iterProdIso V)
+
+def head : ApproximableMap (iterSys V) V := (proj₀ V (iterSys V)).comp (unfold V)
+
+@[simp] theorem head_apply (z : (iterSys V).Element) :
+    (head V).toElementMap z = component z 0 := by
+  rw [head, toElementMap_comp, unfold, toElementMap_ofIso, toElementMap_proj₀,
+    iterProdIso_apply, fst_pair]
+
+def tail : ApproximableMap (iterSys V) (iterSys V) := (proj₁ V (iterSys V)).comp (unfold V)
+
+@[simp] theorem tail_apply (z : (iterSys V).Element) :
+    (tail V).toElementMap z = ofSeq (fun n => component z (n + 1)) := by
+  rw [tail, toElementMap_comp, unfold, toElementMap_ofIso, toElementMap_proj₁,
+    iterProdIso_apply, snd_pair]
+
+theorem component_tail (z : (iterSys V).Element) (n : ℕ) :
+    component ((tail V).toElementMap z) n = component z (n + 1) := by
+  rw [tail_apply, component_ofSeq]
+
+theorem fold_unfold (z : (iterSys V).Element) :
+    (fold V).toElementMap ((unfold V).toElementMap z) = z := by
+  rw [unfold, fold, toElementMap_ofIso, toElementMap_ofIso, OrderIso.symm_apply_apply]
+
+theorem unfold_fold (p : (prod V (iterSys V)).Element) :
+    (unfold V).toElementMap ((fold V).toElementMap p) = p := by
+  rw [unfold, fold, toElementMap_ofIso, toElementMap_ofIso, OrderIso.apply_symm_apply]
+
+theorem push_head_tail (z : (iterSys V).Element) :
+    (push V).toElementMap (pair ((head V).toElementMap z) ((tail V).toElementMap z)) = z := by
+  rw [head, tail, toElementMap_comp, toElementMap_comp, toElementMap_proj₀, toElementMap_proj₁,
+    pair_fst_snd, push, fold_unfold]
+
+theorem head_push (x : V.Element) (s : (iterSys V).Element) :
+    (head V).toElementMap ((push V).toElementMap (pair x s)) = x := by
+  rw [head, toElementMap_comp, push, unfold_fold, toElementMap_proj₀, fst_pair]
+
+theorem tail_push (x : V.Element) (s : (iterSys V).Element) :
+    (tail V).toElementMap ((push V).toElementMap (pair x s)) = s := by
+  rw [tail, toElementMap_comp, push, unfold_fold, toElementMap_proj₁, snd_pair]
+
+end
+end DomainTheory.NeighbourhoodSystems
 
 namespace DomainTheory.NeighbourhoodSystems.PartrecLam
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
@@ -18,7 +78,6 @@ open DomainTheory.NeighbourhoodSystems.Example43 (N natElem zeroElt succMap pred
   succMap_natElem succMap_bot predMap_natElem_succ predMap_natElem_zero predMap_bot
   zeroMap_natElem_zero zeroMap_natElem_succ zeroMap_bot constLiftN)
 open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
-open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 
 section
 
@@ -246,13 +305,13 @@ end
 section
 theorem component_push_succ (x : N.Element) (s : 𝒩.Element) (j : ℕ) :
     component ((push N).toElementMap (pair x s)) (j + 1) = component s j := by
-  rw [← Exercise511.component_tail, Exercise511.tail_push]
+  rw [← component_tail, tail_push]
 end
 
 section
 theorem component_push_zero (x : N.Element) (s : 𝒩.Element) :
     component ((push N).toElementMap (pair x s)) 0 = x := by
-  rw [← Exercise511.head_apply, Exercise511.head_push]
+  rw [← head_apply, head_push]
 end
 
 section
@@ -556,11 +615,11 @@ theorem recMap_eval {n : ℕ} (f₀ : List.Vector ℕ n → ℕ) (g₀ : List.Ve
           (fun y IH => g₀ (y ::ᵥ IH ::ᵥ u)) d) := by
   induction d with
   | zero =>
-    rw [← push_natElem_vecElem, recMap_rec, Exercise511.head_push, Exercise511.tail_push,
+    rw [← push_natElem_vecElem, recMap_rec, head_push, tail_push,
       zeroMap_natElem_zero, Exercise326.cond_true]
     exact lamDef_coe_val hf u
   | succ d ih =>
-    rw [← push_natElem_vecElem, recMap_rec, Exercise511.head_push, Exercise511.tail_push,
+    rw [← push_natElem_vecElem, recMap_rec, head_push, tail_push,
       zeroMap_natElem_succ, Exercise326.cond_false, predMap_natElem_succ, push_natElem_vecElem, ih,
       push_natElem_vecElem, push_natElem_vecElem]
     exact lamDef_coe_val hg _
@@ -600,7 +659,7 @@ theorem searchMap_step_found {n : ℕ} {f : List.Vector ℕ (n + 1) → ℕ}
     (hf : LamDef φf (f : List.Vector ℕ (n + 1) →. ℕ)) (v : List.Vector ℕ n) (k : ℕ)
     (h0 : f (k ::ᵥ v) = 0) :
     (searchMap φf).toElementMap (vecElem (k ::ᵥ v)) = natElem k := by
-  rw [← push_natElem_vecElem, searchMap_rec, Exercise511.head_push, Exercise511.tail_push,
+  rw [← push_natElem_vecElem, searchMap_rec, head_push, tail_push,
     push_natElem_vecElem, lamDef_coe_val hf (k ::ᵥ v), h0, zeroMap_natElem_zero,
     Exercise326.cond_true]
 
@@ -618,7 +677,7 @@ theorem searchMap_step_next {n : ℕ} {f : List.Vector ℕ (n + 1) → ℕ}
     (searchMap φf).toElementMap (vecElem (k ::ᵥ v)) =
       (searchMap φf).toElementMap (vecElem ((k + 1) ::ᵥ v)) := by
   obtain ⟨m, hm⟩ : ∃ m, f (k ::ᵥ v) = m + 1 := ⟨f (k ::ᵥ v) - 1, by omega⟩
-  rw [← push_natElem_vecElem, searchMap_rec, Exercise511.head_push, Exercise511.tail_push,
+  rw [← push_natElem_vecElem, searchMap_rec, head_push, tail_push,
     push_natElem_vecElem, lamDef_coe_val hf (k ::ᵥ v), hm, zeroMap_natElem_succ,
     Exercise326.cond_false, succMap_natElem, push_natElem_vecElem]
 
@@ -722,7 +781,7 @@ theorem iterVal_bot {n : ℕ} {f : List.Vector ℕ (n + 1) → ℕ}
     intro k
     have hne := hdiv k
     obtain ⟨j, hj⟩ : ∃ j, f (k ::ᵥ v) = j + 1 := ⟨f (k ::ᵥ v) - 1, by omega⟩
-    rw [← push_natElem_vecElem, iterVal_succ, Exercise511.head_push, Exercise511.tail_push,
+    rw [← push_natElem_vecElem, iterVal_succ, head_push, tail_push,
       push_natElem_vecElem, lamDef_coe_val hf (k ::ᵥ v), hj, zeroMap_natElem_succ,
       Exercise326.cond_false, succMap_natElem, push_natElem_vecElem]
     exact ih (k + 1)
@@ -1004,7 +1063,6 @@ open DomainTheory.NeighbourhoodSystems.Example43 (N natElem zeroElt succMap pred
   succMap_natElem succMap_bot predMap_natElem_succ predMap_natElem_zero predMap_bot
   zeroMap_natElem_zero zeroMap_natElem_succ zeroMap_bot constLiftN)
 open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
-open DomainTheory.NeighbourhoodSystems.Exercise511 (head tail push)
 section
 
 theorem partrec_lamDef {n : ℕ} {f : List.Vector ℕ n →. ℕ} (h : Nat.Partrec' f) :

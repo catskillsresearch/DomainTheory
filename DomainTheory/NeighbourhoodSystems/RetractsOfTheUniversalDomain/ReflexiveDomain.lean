@@ -25,7 +25,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 namespace DomainTheory.NeighbourhoodSystems
 section
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
+open NeighborhoodSystem ApproximableMap
 variable {α : Type*} (V : NeighborhoodSystem α)
 
 theorem trianglelefteq_iterSys : V ⊴ iterSys V :=
@@ -33,7 +33,7 @@ theorem trianglelefteq_iterSys : V ⊴ iterSys V :=
     (head_comp_embedIntoPow V) (embedIntoPow_comp_head_le V)
 end
 
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise511
+open NeighborhoodSystem ApproximableMap
 
 theorem example_825_embed :
     ∀ {α : Type*} (V : NeighborhoodSystem α), V ⊴ iterSys V :=

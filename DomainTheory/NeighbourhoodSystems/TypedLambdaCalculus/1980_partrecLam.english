@@ -1,6 +1,63 @@
-Partial recursive λ-definability: the `LamDef` predicate relating approximable maps on iterated number domains to Mathlib partial-recursive functions, including search and primitive recursion, culminating in the one-variable representation theorem.
+Stack combinators on the infinite product, together with partial recursive λ-definability: the `LamDef` predicate relating approximable maps on iterated number domains to Mathlib partial-recursive functions, including search and primitive recursion, culminating in the one-variable representation theorem.
 <!-- formalization -->
-**Definition (`optElem`).** The construction `optElem` as used in the number-domain / partial-recursive λ-definability development.
+
+**Definition (`fold`).** Folding a pair consisting of an element and a sequence into a single sequence is the inverse of the product–sequence isomorphism.
+
+*Proof.* By definition as the inverse isomorphism. ∎
+
+**Theorem (`iterProdIso_apply`).** The product–sequence isomorphism sends a sequence to the pair of its zeroth component with the sequence of remaining components.
+
+*Proof.* By the definition of the isomorphism. ∎
+
+**Definition (`push`).** The push combinator places an element at the head of a sequence; it is the same map as fold.
+
+*Proof.* By definition. ∎
+
+**Definition (`unfold`).** Unfolding a sequence recovers the pair of its head with its tail sequence, via the product–sequence isomorphism.
+
+*Proof.* By definition as the forward isomorphism. ∎
+
+**Definition (`head`).** The head of a sequence is the first factor of its unfolding.
+
+*Proof.* Compose the first projection with unfold. ∎
+
+**Theorem (`head_apply`).** Evaluating head at a sequence yields the zeroth component.
+
+*Proof.* Unpack the composition and the isomorphism, then take the first factor of the resulting pair. ∎
+
+**Definition (`tail`).** The tail of a sequence is the second factor of its unfolding.
+
+*Proof.* Compose the second projection with unfold. ∎
+
+**Theorem (`tail_apply`).** Evaluating tail at a sequence yields the sequence of components shifted by one.
+
+*Proof.* Unpack the composition and the isomorphism, then take the second factor of the resulting pair. ∎
+
+**Theorem (`component_tail`).** The $n$-th component of a tail is the $(n{+}1)$-st component of the original sequence.
+
+*Proof.* Apply the component formula for sequences built from a function of indices. ∎
+
+**Theorem (`fold_unfold`).** Folding the unfolding of a sequence recovers the sequence.
+
+*Proof.* The two directions of the product–sequence isomorphism cancel. ∎
+
+**Theorem (`unfold_fold`).** Unfolding the folding of a pair recovers the pair.
+
+*Proof.* The two directions of the product–sequence isomorphism cancel. ∎
+
+**Theorem (`push_head_tail`).** Pushing the head and tail of a sequence recovers the sequence.
+
+*Proof.* Reduce push to fold, reassemble the pair of projections from the unfolding, and apply fold–unfold. ∎
+
+**Theorem (`head_push`).** The head of a pushed pair is the pushed element.
+
+*Proof.* Reduce to unfold–fold and the first projection of a pair. ∎
+
+**Theorem (`tail_push`).** The tail of a pushed pair is the pushed sequence.
+
+*Proof.* Reduce to unfold–fold and the second projection of a pair. ∎
+
+**Definition (`optElem`).** An optional natural number is interpreted as bottom when absent and as the corresponding number-domain atom when present.
 
 *Proof.* By definition. ∎
 
