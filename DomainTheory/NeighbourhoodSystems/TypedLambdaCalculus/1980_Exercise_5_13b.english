@@ -1,0 +1,32 @@
+**EXERCISE 5.13.** Prove the existence of a one-one function $\mathrm{num} : \mathbf{N} \times \mathbf{N} \to \mathbf{N}$ such that
+
+$$
+\mathrm{num}(0, 0) = 0;
+$$
+
+$$
+\mathrm{num}(n, m+1) = \mathrm{num}(n+1, m) + 1;
+$$
+
+$$
+\mathrm{num}(n+1, 0) = \mathrm{num}(0, n) + 1.
+$$
+
+Draw a picture (i.e. an infinite matrix) for the function and find a closed form for its values, if possible. Use the function to prove the isomorphism of the domains
+
+$$
+P\mathbf{N},\ P(\mathbf{N} \times \mathbf{N}),\ P\mathbf{N} \times P\mathbf{N}.
+$$
+
+<!-- page 90 -->
+
+The pairing is with the
+[natural-number pairing](1980_natPair.md) peer; the powerset isomorphisms
+are with the
+[powerset isomorphisms](1980_powersetIso.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`example_513b`).** There are order isomorphisms among the power set of the naturals, the power set of pairs of naturals, and the product of two power sets of naturals.
+
+*Proof.* The three order isomorphisms from the powerset-isomorphisms peer. ∎

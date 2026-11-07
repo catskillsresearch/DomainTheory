@@ -1,0 +1,27 @@
+Order isomorphisms among power sets of the naturals, of pairs of naturals, and of the product of two power sets, induced by the Cantor pairing and the sum–product equivalence.
+
+<!-- formalization -->
+
+**Definition (`numEquiv`).** The Cantor pairing and its inverse form an equivalence between pairs of naturals and naturals.
+
+*Proof.* The two-sided inverse laws for the pairing. ∎
+
+**Theorem (`numEquiv_apply`).** The equivalence on a pair is the pairing of its components.
+
+*Proof.* By definition. ∎
+
+**Definition (`setCongr`).** An equivalence of types induces an order isomorphism of power sets by direct image.
+
+*Proof.* Direct and inverse images are mutual inverses; inclusion is preserved both ways by injectivity. ∎
+
+**Definition (`PN_orderIso_PNN`).** Power sets of naturals are order-isomorphic to power sets of pairs via the inverse pairing.
+
+*Proof.* Apply the set congruence to the symmetric pairing equivalence. ∎
+
+**Definition (`PN_orderIso_prod`).** Power sets of naturals are order-isomorphic to a product of two power sets via the sum–natural equivalence.
+
+*Proof.* Compose the set congruence of the sum equivalence with the sum–product isomorphism of sets. ∎
+
+**Definition (`PNN_orderIso_prod`).** Power sets of pairs are order-isomorphic to a product of two power sets.
+
+*Proof.* Transport the previous isomorphism along the pairing isomorphism. ∎

@@ -2031,6 +2031,10 @@ NS_LAM_SHORT: dict[str, tuple[str, str]] = {
         "X513",
         "Exercise 5.13 — pairing function on numbers",
     ),
+    "Powerset isomorphisms": (
+        "powerset",
+        "Powerset isomorphisms",
+    ),
     "Exercise 5.13 — powerset isomorphisms": (
         "X513b",
         "Exercise 5.13 — powerset isomorphisms",
