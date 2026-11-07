@@ -22,7 +22,7 @@
 - [Exercise 5.7 — currying the lambda notation](1980_Exercise_5_7.md) [✓](../1980_REVISION.md)
 - [Combinatory completeness](1980_combinatoryComplete.md) [✓](../1980_REVISION.md)
 - [Exercise 5.8 — combinatory completeness](1980_Exercise_5_8.md) [✓](../1980_REVISION.md)
-- [Exercise 5.9 — common fixed points](1980_Exercise_5_9.md)
+- [Exercise 5.9 — common fixed points](1980_Exercise_5_9.md) [✓](../1980_REVISION.md)
 - [Exercise 5.10 — smash product](1980_Exercise_5_10.md)
 - [Exercise 5.11 — stack combinators](1980_Exercise_5_11.md)
 - [Exercise 5.12 — while combinator](1980_Exercise_5_12.md)

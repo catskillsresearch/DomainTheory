@@ -1,0 +1,10 @@
+**EXERCISE 5.9.** Suppose that $f, g : \mathcal{D} \to \mathcal{D}$ are approximable and $f \circ g = g \circ f$. Show that $f$ and $g$ have a *least common fixed point* $x = f(x) = g(x)$. (Hint: Refer back to Exercise 4.20.) If in addition $f(\bot) = g(\bot)$, show that $\mathrm{fix}(f) = \mathrm{fix}(g)$. In particular, will $\mathrm{fix}(f) = \mathrm{fix}(f^2)$? What if we only assume $f \circ g = g^2 \circ f$?
+
+The development uses the commuting-fixed-point lemmas packaged with
+[Exercise 4.11](../FixedPointsAndRecursion/1980_Exercise_4_11.md).
+
+<!-- formalization -->
+
+**Theorem (`example_509`).** Commuting endomaps share a least common fixed point; if they also agree at bottom then their least fixed points coincide; in particular the least fixed point of a map equals that of its square.
+
+*Proof.* Assemble the commuting least-common-fixed-point law, the equal-bottoms uniqueness law, and the iterate-twice law from the Exercise 4.11 development. ∎
