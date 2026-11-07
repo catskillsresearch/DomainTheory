@@ -13,7 +13,7 @@
 - [Proposition 5.4 — fixed point under a parameter](1980_Proposition_5_4.md) [✓](../1980_REVISION.md)
 - [Table 5.5 — table of combinators](1980_Table_5_5.md) [✓](../1980_REVISION.md)
 - [Number-domain recursion schemes](1980_numRecSchemes.md) [✓](../1980_REVISION.md)
-- [Infinite-product stack combinators](1980_iterStack.md)
+- [Infinite-product stack combinators](1980_iterStack.md) [✓](../1980_REVISION.md)
 - [Number-stack argument encoding](1980_lamArg.md)
 - [Partial-recursive scheme realizers](1980_partrecSchemes.md)
 - [Partial recursive λ-definability](1980_partrecLam.md)
