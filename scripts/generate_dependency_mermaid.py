@@ -1925,10 +1925,15 @@ NS_LAM_SHORT: dict[str, tuple[str, str]] = {
         "T51",
         "Theorem 5.1 — terms denote approximable maps",
     ),
+    "Beta conversion": (
+        "beta",
+        "Beta conversion",
+    ),
     "Theorem 5.2 — beta conversion": (
         "T52",
         "Theorem 5.2 — beta conversion",
     ),
+
     "Proposition 5.3 — simultaneous fixed points": (
         "P53",
         "Proposition 5.3 — simultaneous fixed points",

@@ -1,0 +1,15 @@
+Beta-conversion laws for approximable maps: evaluating a curried map at a constant argument, double currying, and currying a paired map.
+
+<!-- formalization -->
+
+**Theorem (`evalMap_comp_paired_curry_const`).** Evaluating the curry of a binary map paired with a constant argument equals substituting that constant into the uncurried map along the identity on the remaining argument.
+
+*Proof.* Compare elementwise images, using the evaluation, curry, constant, pairing, and identity laws. ∎
+
+**Theorem (`toElementMap_curry_curry`).** A twice-curried map evaluates by nesting pairs of arguments.
+
+*Proof.* Apply the curry evaluation law twice. ∎
+
+**Theorem (`toElementMap_curry_paired`).** The curry of a paired pair of maps evaluates to the pair of the curried evaluations.
+
+*Proof.* Apply the curry and pairing evaluation laws. ∎
