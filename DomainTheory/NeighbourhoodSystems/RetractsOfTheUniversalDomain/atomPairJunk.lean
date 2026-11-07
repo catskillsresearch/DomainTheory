@@ -5,7 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.ato
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section AtomPairCode
 
@@ -22,7 +22,7 @@ noncomputable def atomPairJunk (n k : ℕ) : ℕ :=
 end AtomPairCode
 
 namespace atomPairJunk
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
   (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)
@@ -87,7 +87,7 @@ noncomputable def atomPairIdx1 (n k : ℕ) : ℕ :=
 end AtomPairCode
 
 namespace atomPairJunk
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 variable {α β : Type*} {D₀ : NeighborhoodSystem α} {D₁ : NeighborhoodSystem β}
   (P₀ : ComputablePresentation D₀) (P₁ : ComputablePresentation D₁)

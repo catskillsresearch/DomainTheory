@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.iSupDirec
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open NeighborhoodSystem
 
 /-- Scott's Exercise 2.11: domains are closed under directed unions of ideal elements, and
@@ -24,4 +25,3 @@ theorem exercise_2_11 :
   ⟨fun {_ _} {_ _} => mem_iSupDirected,
     fun {_ _} {_ _} => ApproximableMap.toElementMap_iSupDirected⟩
 
-end DomainTheory.NeighbourhoodSystems

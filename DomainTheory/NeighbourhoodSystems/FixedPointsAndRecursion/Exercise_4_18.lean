@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.numberDo
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open NeighborhoodSystem ApproximableMap NatDom
 
 theorem example_418 :
@@ -17,4 +18,3 @@ theorem example_418 :
   ⟨element_classification, @natElem_injective, natElem_zero_ne_succ,
     @succMap_injective, zero_ne_succMap⟩
 
-end DomainTheory.NeighbourhoodSystems

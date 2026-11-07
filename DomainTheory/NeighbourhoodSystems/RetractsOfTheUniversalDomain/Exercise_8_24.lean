@@ -4,7 +4,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Cou
 
 @[expose] public section
 
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Exercise824
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.CoupledFixedPoints
 
 theorem exercise_8_24 {α : Type} {E : NeighborhoodSystem α}
     (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E))
@@ -13,4 +13,3 @@ theorem exercise_8_24 {α : Type} {E : NeighborhoodSystem α}
     FinitaryProjection (aStar s t) ∧ FinitaryProjection (bStar s t) :=
   isFinitaryProjection_aStar_bStar s t hst
 
-end

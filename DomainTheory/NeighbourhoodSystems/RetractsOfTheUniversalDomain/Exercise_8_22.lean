@@ -7,6 +7,5 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Exa
 open DomainTheory.NeighbourhoodSystems
 
 theorem exercise_8_22 : SeqDom.C ⊴ BitDom.B :=
-  Exercise822.C_trianglelefteq_B
+  ExampleCLeB.C_trianglelefteq_B
 
-end

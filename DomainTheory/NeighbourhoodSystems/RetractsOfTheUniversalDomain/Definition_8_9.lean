@@ -9,7 +9,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap Exercise326
+open NeighborhoodSystem ApproximableMap Cond
 
 noncomputable def iArrow : ApproximableMap (funSpace U U) U :=
   (theorem_8_8_b_strong funSpaceUUPresentation).choose
@@ -70,7 +70,7 @@ theorem jTimes_isComputableMap :
   (theorem_8_8_b_strong prodUUPresentation).choose_spec.choose_spec.2.2.2
 
 section
-open NeighborhoodSystem ApproximableMap Exercise326
+open NeighborhoodSystem ApproximableMap Cond
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
 theorem inMap₀_toElementMap_reaches_left {γ δ} {V₀ : NeighborhoodSystem γ} {V₁ : NeighborhoodSystem δ}

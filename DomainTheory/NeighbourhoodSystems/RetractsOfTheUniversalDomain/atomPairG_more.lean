@@ -5,10 +5,10 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.ato
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 namespace xStepG
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section AtomPairGen
 
@@ -50,7 +50,7 @@ end AtomPairGen
 end xStepG
 
 namespace atomPairG
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section AtomPairGen
 
@@ -239,7 +239,7 @@ end AtomPairGen
 end atomPairG
 
 namespace atomPairG
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section
 

@@ -10,8 +10,9 @@ import Mathlib.Data.Set.Insert
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise221
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem BitDom
+namespace DomainTheory.NeighbourhoodSystems
+open NeighborhoodSystem BitDom
+
 
 theorem cone_not_subset_singleton (σ τ : Str) : ¬ cone σ ⊆ ({τ} : Set Str) := by
   intro h
@@ -79,6 +80,8 @@ def C : NeighborhoodSystem Str :=
   ofNestedOrDisjoint memC Set.univ ⟨[], Set.mem_univ _⟩
     (Or.inl ⟨[], cone.nil.symm⟩) nestedOrDisjoint_C
     (by rintro X (⟨σ, rfl⟩ | ⟨σ, rfl⟩) <;> exact Set.subset_univ _)
+
+namespace C
 
 @[simp] theorem C_mem {X : Set Str} : C.mem X ↔ memC X := Iff.rfl
 
@@ -208,4 +211,5 @@ theorem juxtapose_singleton_mem (σ : Str) (y : C.Element) {Z : Set Str} :
     exact ⟨{σ}, Y', ⟨memC_singleton σ, subset_rfl⟩, hY'mem, y.sub hY'mem, hZ,
       Or.inr ⟨σ, rfl, hsub⟩⟩
 
-end DomainTheory.NeighbourhoodSystems.Exercise221
+end C
+end DomainTheory.NeighbourhoodSystems

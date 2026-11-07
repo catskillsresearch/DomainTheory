@@ -228,37 +228,37 @@ theorem toApproxMap_lamOp (c a : ApproximableMap U U) :
     expMap.toApproxMap_toElementMap, toElementMap_comp, toElementMap_comp]
 
 theorem tOp_tOpMap (c a : ApproximableMap U U) :
-    Exercise823.tOp (tOpMap c) a = arrowComb a c := by
+    FixOp.tOp (tOpMap c) a = arrowComb a c := by
   show toApproxMap ((tOpMap c).toElementMap (toFilter a)) = arrowComb a c
   rw [tOpMap, toElementMap_comp, expMap.toApproxMap_toElementMap, toApproxMap_lamOp,
     expMap.eq_lamComb]
   rfl
 
 theorem hT_TArrow (a : ApproximableMap U U) (ha : FinitaryProjection a) :
-    Nonempty (Exercise823.Fix (Exercise823.tOp (tOpMap cCombinator) a) ≃o
+    Nonempty (FixOp.Fix (FixOp.tOp (tOpMap cCombinator) a) ≃o
       (TArrow a).2.Element) := by
   rw [tOp_tOpMap]
   exact ⟨(arrowComb.elementIso a cCombinator ha isFinitaryProjection_cCombinator).symm⟩
 
 theorem ht_tOpMap (c : ApproximableMap U U) (hc : FinitaryProjection c) :
-    ∀ a, FinitaryProjection a → FinitaryProjection (Exercise823.tOp (tOpMap c) a) := by
+    ∀ a, FinitaryProjection a → FinitaryProjection (FixOp.tOp (tOpMap c) a) := by
   intro a ha
   rw [tOp_tOpMap]
   exact arrowComb.finitaryProjection a c ha hc
 
 theorem Dsol_isomorphic_funSpace_cCombinator :
-    fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)) ≅ᴰ
-      funSpace (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator))) (fixedNbhd cCombinator) := by
+    fixedNbhd (FixOp.fixOp (tOpMap cCombinator)) ≅ᴰ
+      funSpace (fixedNbhd (FixOp.fixOp (tOpMap cCombinator))) (fixedNbhd cCombinator) := by
   have hht := ht_tOpMap cCombinator isFinitaryProjection_cCombinator
-  have hFP := Exercise823.isFinitaryProjection_fixOp (tOpMap cCombinator) hht
-  have h1 : Nonempty ((fixedNbhd (Exercise823.fixOp (tOpMap cCombinator))).Element ≃o
-      Exercise823.Fix (Exercise823.fixOp (tOpMap cCombinator))) :=
+  have hFP := FixOp.isFinitaryProjection_fixOp (tOpMap cCombinator) hht
+  have h1 : Nonempty ((fixedNbhd (FixOp.fixOp (tOpMap cCombinator))).Element ≃o
+      FixOp.Fix (FixOp.fixOp (tOpMap cCombinator))) :=
     ⟨fixedNbhd_elementIso_fix hFP⟩
-  have h2 := Exercise823.fixedDomain_fixOp_iso_T (tOpMap cCombinator) hht TArrow hT_TArrow
+  have h2 := FixOp.fixedDomain_fixOp_iso_T (tOpMap cCombinator) hht TArrow hT_TArrow
   exact h1.elim fun e1 => h2.elim fun e2 => ⟨e1.trans e2⟩
 
-theorem U_trianglelefteq_Dsol : U ⊴ fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)) := by
-  set D := fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)) with hD
+theorem U_trianglelefteq_Dsol : U ⊴ fixedNbhd (FixOp.fixOp (tOpMap cCombinator)) := by
+  set D := fixedNbhd (FixOp.fixOp (tOpMap cCombinator)) with hD
   have h1 : U ⊴ iterSys U := trianglelefteq_iterSys U
   have h2 : iterSys U ⊴ fixedNbhd cCombinator :=
     ⟨fixedNbhd cCombinator, Subsystem.refl _, fixedNbhd_cCombinator_isomorphic.symm⟩
@@ -269,31 +269,31 @@ theorem U_trianglelefteq_Dsol : U ⊴ fixedNbhd (Exercise823.fixOp (tOpMap cComb
   exact trianglelefteq_trans (trianglelefteq_trans (trianglelefteq_trans h1 h2) h3) h4
 
 theorem exercise_8_25_main :
-    fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)) ≅ᴰ
-      funSpace (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)))
-        (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator))) :=
+    fixedNbhd (FixOp.fixOp (tOpMap cCombinator)) ≅ᴰ
+      funSpace (fixedNbhd (FixOp.fixOp (tOpMap cCombinator)))
+        (fixedNbhd (FixOp.fixOp (tOpMap cCombinator))) :=
   funSpace_self_isomorphic Dsol_isomorphic_funSpace_cCombinator hVV_cCombinator
 
 theorem example_825_fixed_point :
-    fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)) ≅ᴰ
-      funSpace (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)))
-        (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator))) :=
+    fixedNbhd (FixOp.fixOp (tOpMap cCombinator)) ≅ᴰ
+      funSpace (fixedNbhd (FixOp.fixOp (tOpMap cCombinator)))
+        (fixedNbhd (FixOp.fixOp (tOpMap cCombinator))) :=
   exercise_8_25_main
 
 theorem exercise_8_25 :
-    fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)) ≅ᴰ
-      funSpace (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)))
-        (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator))) :=
+    fixedNbhd (FixOp.fixOp (tOpMap cCombinator)) ≅ᴰ
+      funSpace (fixedNbhd (FixOp.fixOp (tOpMap cCombinator)))
+        (fixedNbhd (FixOp.fixOp (tOpMap cCombinator))) :=
   exercise_8_25_main
 
-theorem exercise_8_25_universal : U ⊴ fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)) :=
+theorem exercise_8_25_universal : U ⊴ fixedNbhd (FixOp.fixOp (tOpMap cCombinator)) :=
   U_trianglelefteq_Dsol
 
 theorem example_825 :
-    (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)) ≅ᴰ
-      funSpace (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)))
-        (fixedNbhd (Exercise823.fixOp (tOpMap cCombinator)))) ∧
-    (U ⊴ fixedNbhd (Exercise823.fixOp (tOpMap cCombinator))) :=
+    (fixedNbhd (FixOp.fixOp (tOpMap cCombinator)) ≅ᴰ
+      funSpace (fixedNbhd (FixOp.fixOp (tOpMap cCombinator)))
+        (fixedNbhd (FixOp.fixOp (tOpMap cCombinator)))) ∧
+    (U ⊴ fixedNbhd (FixOp.fixOp (tOpMap cCombinator))) :=
   ⟨exercise_8_25, exercise_8_25_universal⟩
 
 end DomainTheory.NeighbourhoodSystems

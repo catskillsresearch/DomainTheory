@@ -94,7 +94,7 @@ open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashP
 
 section Initial
 
-open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom SeqPeano SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -155,7 +155,7 @@ open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashP
 
 section Initial
 
-open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom SeqPeano SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -175,7 +175,7 @@ open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashP
 section
 section Initial
 
-open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom SeqPeano SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -189,7 +189,7 @@ end
 section
 section Initial
 
-open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom SeqPeano SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -203,7 +203,7 @@ end
 section
 section Initial
 
-open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom SeqPeano SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -219,7 +219,7 @@ end
 section
 section Initial
 
-open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom SeqPeano SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -237,7 +237,7 @@ end
 section
 section Initial
 
-open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom SeqPeano SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -253,7 +253,7 @@ end
 section
 section Initial
 
-open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom SeqPeano SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -267,7 +267,7 @@ end
 section
 section Initial
 
-open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom SeqPeano SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -279,7 +279,7 @@ end
 section
 section Initial
 
-open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom SeqPeano SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -361,7 +361,7 @@ end
 section
 section Initial
 
-open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom SeqPeano SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -406,7 +406,7 @@ end
 section
 section Initial
 
-open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom SeqPeano SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -424,7 +424,7 @@ end
 section
 section Initial
 
-open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom SeqPeano SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -459,7 +459,7 @@ end
 section
 section Initial
 
-open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom SeqPeano SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -476,7 +476,7 @@ end
 section
 section Initial
 
-open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom SeqPeano SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -493,7 +493,7 @@ end
 section
 section Initial
 
-open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom SeqPeano SeqNegMerge
 
 variable (B : TAlgebra Tc)
 
@@ -540,7 +540,7 @@ end
 section
 section Initial
 
-open SeqDom SeqEqC BitDom Exercise419 SeqNegMerge
+open SeqDom SeqEqC BitDom SeqPeano SeqNegMerge
 
 variable (B : TAlgebra Tc)
 

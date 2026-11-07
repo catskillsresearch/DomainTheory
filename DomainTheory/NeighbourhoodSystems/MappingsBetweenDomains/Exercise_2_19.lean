@@ -4,7 +4,9 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approxima
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+open ApproximableMap₂
+
 
 /-- Scott's Exercise 2.19: the elementwise action of a binary approximable map recovers the
 ternary neighbourhood relation on principals and is monotone in each argument. -/
@@ -24,4 +26,3 @@ theorem exercise_2_19 :
   ⟨@ApproximableMap₂.mem_toElementMap₂, @ApproximableMap₂.rel₂_iff_mem_principal,
     @ApproximableMap₂.toElementMap₂_mono⟩
 
-end DomainTheory.NeighbourhoodSystems

@@ -22,7 +22,7 @@ section
 open NeighborhoodSystem Domain.Recursive ApproximableMap IndefProduct SmashProduct Proposition77
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
-namespace Exercise717
+namespace DsharpRecursion
 
 inductive GRel (u : ApproximableMap D E) (v : ApproximableMap (prod E E) E) :
     Set (List Bool × α) → Set β → Prop
@@ -31,14 +31,14 @@ inductive GRel (u : ApproximableMap D E) (v : ApproximableMap (prod E E) E) :
   | node {P Q Z₁ Z₂ Z} : GRel u v P Z₁ → GRel u v Q Z₂ →
       v.rel (prodNbhd Z₁ Z₂) Z → GRel u v (embPair P Q) Z
 
-end Exercise717
+end DsharpRecursion
 end
 
 section
 open NeighborhoodSystem Domain.Recursive ApproximableMap IndefProduct SmashProduct Proposition77
 variable {α β : Type*} {D : NeighborhoodSystem α} {E : NeighborhoodSystem β}
 
-namespace Exercise717
+namespace DsharpRecursion
 
 variable {u : ApproximableMap D E} {v : ApproximableMap (prod E E) E}
 
@@ -577,7 +577,7 @@ theorem gMap_isComputable (hD : ∀ X, D.mem X → X.Nonempty)
     rw [heq] at hsound
     exact hsound
 
-end Exercise717
+end DsharpRecursion
 end
 
 end DomainTheory.NeighbourhoodSystems

@@ -4,10 +4,11 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise714
+open DomainTheory.NeighbourhoodSystems
+
 section
 open NeighborhoodSystem Domain.Recursive DomainTheory.NeighbourhoodSystems
-
+open DomainTheory.NeighbourhoodSystems.ComputableWitness
 /-- Scott's Exercise 7.14: computable elements are decreasing unions of principals. -/
 theorem example_714 :
     ∀ {β : Type*} {W : NeighborhoodSystem β} (Q : ComputablePresentation W) {y : W.Element},
@@ -16,6 +17,4 @@ theorem example_714 :
           (∀ i, Q.X (t (i + 1)) ⊆ Q.X (t i)) ∧
           (∀ Z, y.mem Z ↔ ∃ i, (W.principal (Q.mem_X (t i))).mem Z) :=
   @computableElement_eq_decreasing_iUnion_principal
-end
-end DomainTheory.NeighbourhoodSystems.Exercise714
 

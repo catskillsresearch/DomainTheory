@@ -10,11 +10,11 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.FunctorTokens
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 open DomainTheory.NeighbourhoodSystems.SmashProduct
 section
-namespace Exercise619
+namespace FunctorTokens
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
 def oplusTok (D₀ D₁ : NeighborhoodSystem Str)
@@ -70,11 +70,11 @@ def oplusTok (D₀ D₁ : NeighborhoodSystem Str)
         · exact Or.inr (Or.inr ⟨Y ∩ Y', D₁.inter_mem hY hY' hZ₁ (embBit_subset.mp hZsub),
             inter_ne_of_ne_left (D₁.sub_master hY) hYne, rfl⟩)
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -95,11 +95,11 @@ theorem oplusTok_nonempty : ∀ W, (oplusTok D₀ D₁ h₀ h₁).mem W → W.No
 def ScottSys.oplus (A₀ A₁ : ScottSys) : ScottSys :=
   ⟨oplusTok A₀.sys A₁.sys A₀.ne A₁.ne, oplusTok_nonempty⟩
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -180,11 +180,11 @@ def oplusMapTok (f₀ : ApproximableMap A₀.sys B₀.sys) (f₁ : ApproximableM
             f₁.mono hrel (embBit_subset.mp hWW) (embBit_subset.mp hZZ') hY₂ hY₃,
             hY₂ne, hY₃ne, rfl, rfl⟩)
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -234,11 +234,11 @@ theorem otimesTok_nonempty : ∀ W, (otimesTok D₀ D₁).mem W → W.Nonempty :
 def ScottSys.otimes (A₀ A₁ : ScottSys) : ScottSys :=
   ⟨otimesTok A₀.sys A₁.sys, otimesTok_nonempty⟩
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -472,11 +472,11 @@ theorem GExpr.naryOp_rootedConst {op : GExpr → GExpr → GExpr}
       exact ⟨ha, GExpr.naryOp_rootedConst hop b l (hl b (List.mem_cons_self ..))
         (fun c hc => hl c (List.mem_cons_of_mem _ hc))⟩
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -484,11 +484,11 @@ theorem inter_ne_of_ne_right {X X' Δ : Set Str} (hX' : X' ⊆ Δ) (hne : X' ≠
   intro h
   exact hne (Set.Subset.antisymm hX' (by rw [← h]; exact Set.inter_subset_right))
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -599,11 +599,11 @@ theorem oplusMapTok_mono {f₀ f₀' : ApproximableMap A₀.sys B₀.sys}
   · exact Or.inr (Or.inl ⟨X, X', h0 X X' hrel, hXne, hX'ne, rfl, rfl⟩)
   · exact Or.inr (Or.inr ⟨Y, Y', h1 Y Y' hrel, hYne, hY'ne, rfl, rfl⟩)
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -625,11 +625,11 @@ theorem oplusTok_mem_embT_inv {W : Set Str} (h : (oplusTok D₀ D₁ h₀ h₁).
 
 theorem oplusTok_mem_master : (oplusTok D₀ D₁ h₀ h₁).mem (sumTokMaster D₀ D₁) := Or.inl rfl
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -666,11 +666,11 @@ theorem oplusTok_subsystem (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁.
         h1.inter_closed hY hY' (oplusTok_mem_embT_inv (h₀ := B₀.ne) (h₁ := B₁.ne) hInt),
         inter_ne_of_ne_left (A₁.sys.sub_master hY) hYne, rfl⟩)
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -856,11 +856,11 @@ theorem GExpr.map_continuous (T : GExpr) {I : Type} [Nonempty I] {X Y : ScottSys
     rw [ApproximableMap.le_iff]; intro A' B' h; exact (hf A' B').mpr ⟨i, h⟩
   exact (T.map_mono hgif) A B hi
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -872,11 +872,11 @@ theorem otimesTok_mem_prod_inv {X Y : Set Str} (h : (otimesTok D₀ D₁).mem (p
   · obtain ⟨rfl, -⟩ := prodTokNbhd_injective heq; exact absurd rfl hX
   · obtain ⟨rfl, rfl⟩ := prodTokNbhd_injective heq; exact ⟨hX', hY'⟩
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -909,11 +909,11 @@ theorem otimesTok_subsystem (h0 : A₀.sys ◁ B₀.sys) (h1 : A₁.sys ◁ B₁
         inter_ne_of_ne_left (A₀.sys.sub_master hX) hXne,
         inter_ne_of_ne_left (A₁.sys.sub_master hY) hYne, rfl⟩
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -983,7 +983,7 @@ theorem GExpr.obj_continuous (T : GExpr) {ℱ : Set ScottSys} {U : ScottSys}
   rintro ⟨D, hD, hmem⟩
   exact (T.obj_subsystem (hsub D hD)).sub hmem
 
-end Exercise619
+end FunctorTokens
 end
 
 end DomainTheory.NeighbourhoodSystems

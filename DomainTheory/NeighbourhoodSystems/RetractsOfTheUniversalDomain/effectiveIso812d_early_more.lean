@@ -7,7 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.eff
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace yPseqAtomJunk
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section YPseqCodeUnconditional
 
@@ -159,7 +159,7 @@ end YPseqCodeUnconditional
 end yPseqAtomJunk
 
 namespace YFoldInner
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section YPseqCodeUnconditional
 
@@ -193,7 +193,7 @@ end YPseqCodeUnconditional
 end YFoldInner
 
 namespace YPseqCode
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section YPseqCodeUnconditional
 
@@ -227,12 +227,12 @@ end YPseqCodeUnconditional
 
 end YPseqCode
 
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 namespace xPseqAtomJunk
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section XPseqCodeUnconditional
 
@@ -276,7 +276,7 @@ end XPseqCodeUnconditional
 end xPseqAtomJunk
 
 namespace XFold
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section XPseqCodeUnconditional
 
@@ -304,7 +304,7 @@ end XPseqCodeUnconditional
 end XFold
 
 namespace XPseqCode
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section XPseqCodeUnconditional
 
@@ -331,9 +331,9 @@ end XPseqCodeUnconditional
 
 end XPseqCode
 
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section XYPseqCodeZero
 
@@ -364,14 +364,14 @@ theorem xPseqAtomIdx0_eq {n i : ℕ}
 
 end XYPseqCodeZero
 
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 namespace YPseqCode
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section YPseqCodeUnconditional
 
@@ -397,6 +397,6 @@ theorem mem_unconditional (n : ℕ) :
 end YPseqCodeUnconditional
 
 end YPseqCode
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 end DomainTheory.NeighbourhoodSystems

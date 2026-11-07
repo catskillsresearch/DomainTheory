@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.funSpaceIso
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open NeighborhoodSystem ApproximableMap
 
 /-- Scott's Exercise 3.24 (i): function space into a product. -/
@@ -39,4 +40,3 @@ theorem example_324_distrib :
       (copair (h₀ := h₀) (h₁ := h₁) a b).comp inMap₁ = b) :=
   ⟨@copairProj_copair, @copair_comp_inMap₀, @copair_comp_inMap₁⟩
 
-end DomainTheory.NeighbourhoodSystems

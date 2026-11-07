@@ -5,7 +5,7 @@ public import DomainTheory.BridgeTheorems.interOf_insert
 public import DomainTheory.BridgeTheorems.interOf_empty
 public import Mathlib.Data.Finset.Fold
 public import Mathlib.Order.Hom.Basic
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23
 public import DomainTheory.BridgeTheorems.NbhdBasis

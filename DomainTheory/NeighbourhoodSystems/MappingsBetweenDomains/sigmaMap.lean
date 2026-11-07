@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.sig
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise216
+namespace DomainTheory.NeighbourhoodSystems.SigmaMap
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem BitDom
 
 section
@@ -134,4 +134,4 @@ theorem toElementMap_sigmaMap (σ : Str) (x : B.Element) :
     exact ⟨X, hxX, x.sub hxX, hY, hsub⟩
 end
 
-end DomainTheory.NeighbourhoodSystems.Exercise216
+end DomainTheory.NeighbourhoodSystems.SigmaMap

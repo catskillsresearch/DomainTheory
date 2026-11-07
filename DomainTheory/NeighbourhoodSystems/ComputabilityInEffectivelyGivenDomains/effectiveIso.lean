@@ -10,7 +10,6 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-namespace Exercise718
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
 section
@@ -29,6 +28,9 @@ structure EffectiveIso {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
 def EffectivelyIsomorphic {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
     (P : ComputablePresentation V) (Q : ComputablePresentation W) : Prop :=
   Nonempty (EffectiveIso P Q)
+end
+
+namespace EffectiveIso
 
 def fiber2 (S : Set (ℕ × (ℕ × α))) (i j : ℕ) : Set α := fiber (fiber S i) j
 
@@ -49,10 +51,9 @@ theorem fiber2_mono {S S' : Set (ℕ × (ℕ × α))} (h : S ⊆ S') (i j : ℕ)
 theorem mem_fiber2_of_mem {S : Set (ℕ × (ℕ × α))} (hS : (iterSys (iterSys V)).mem S) (i j : ℕ) :
     V.mem (fiber2 S i j) := (hS.1 i).1 j
 
-end
+end EffectiveIso
 
-end Exercise718
-namespace Exercise718
+namespace EffectiveIso
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
 section
@@ -418,18 +419,13 @@ def iterIterEffectiveIso (P : ComputablePresentation V) :
 
 end
 
-end Exercise718
-end DomainTheory.NeighbourhoodSystems
+end EffectiveIso
 
-namespace DomainTheory.NeighbourhoodSystems
-namespace Exercise718
+namespace EffectiveIso
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
 section
 variable {α β : Type*}
-
-namespace EffectiveIso
-
 variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
   {P : ComputablePresentation V} {Q : ComputablePresentation W}
 
@@ -448,18 +444,11 @@ def toDomainIso (e : EffectiveIso P Q) : DomainIso V W where
     rwa [← toElementMap_comp, ← toElementMap_comp, e.left_inv, toElementMap_idMap,
       toElementMap_idMap] at hmono
 
-end EffectiveIso
 end
+end EffectiveIso
 
 section
 variable {α β : Type*}
-
-namespace EffectiveIso
-
-variable {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
-  {P : ComputablePresentation V} {Q : ComputablePresentation W}
-
-end EffectiveIso
 
 theorem EffectivelyIsomorphic.isomorphic {V : NeighborhoodSystem α} {W : NeighborhoodSystem β}
     {P : ComputablePresentation V} {Q : ComputablePresentation W}
@@ -468,18 +457,13 @@ theorem EffectivelyIsomorphic.isomorphic {V : NeighborhoodSystem α} {W : Neighb
 
 variable {V : NeighborhoodSystem α}
 
-variable (P : ComputablePresentation V)
-
-variable {P}
-
 theorem iterSys_effectivelyIsomorphic_iterIter (P : ComputablePresentation V) :
     EffectivelyIsomorphic (iterPresentation P) (iterPresentation (iterPresentation P)) :=
-  ⟨iterIterEffectiveIso P⟩
+  ⟨EffectiveIso.iterIterEffectiveIso P⟩
 
 theorem iterSys_isomorphic_iterIter (P : ComputablePresentation V) :
     iterSys V ≅ᴰ iterSys (iterSys V) :=
   (iterSys_effectivelyIsomorphic_iterIter P).isomorphic
 end
 
-end Exercise718
 end DomainTheory.NeighbourhoodSystems

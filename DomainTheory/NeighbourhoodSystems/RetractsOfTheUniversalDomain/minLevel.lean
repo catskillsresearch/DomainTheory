@@ -2,6 +2,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Vinter
 
+import Mathlib.Tactic.NormNum
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems

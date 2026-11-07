@@ -6,7 +6,7 @@ public import Mathlib.Order.Directed
 @[expose] public section
 
 section
-namespace DomainTheory.NeighbourhoodSystems.Exercise327
+namespace DomainTheory.NeighbourhoodSystems.GraphClosure
 section
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
@@ -109,11 +109,11 @@ section
 variable {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
 
 noncomputable def funSpaceReprIso (V₀ : NeighborhoodSystem α) (V₁ : NeighborhoodSystem β) :
-    (Exercise222.reprSystem (C V₀ V₁) C_inter C_nonempty).Element ≃o (funSpace V₀ V₁).Element :=
-  (Exercise222.reprIso (C V₀ V₁) C_inter C_nonempty C_dir).trans
+    (ReprSystem.reprSystem (C V₀ V₁) C_inter C_nonempty).Element ≃o (funSpace V₀ V₁).Element :=
+  (ReprSystem.reprIso (C V₀ V₁) C_inter C_nonempty C_dir).trans
     ((graphEquiv V₀ V₁).symm.trans (funSpaceEquiv V₀ V₁).symm)
 end
 end
 
-end DomainTheory.NeighbourhoodSystems.Exercise327
+end DomainTheory.NeighbourhoodSystems.GraphClosure
 end

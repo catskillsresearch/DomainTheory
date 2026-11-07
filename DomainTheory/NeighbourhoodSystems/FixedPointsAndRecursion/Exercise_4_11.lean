@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.fixUnifo
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open NeighborhoodSystem ApproximableMap
 
 universe u
@@ -22,4 +23,3 @@ theorem example_411 :
         F V f = f.fixElement :=
   fun F hfixed huniform => fix_unique_of_uniform F hfixed huniform
 
-end DomainTheory.NeighbourhoodSystems

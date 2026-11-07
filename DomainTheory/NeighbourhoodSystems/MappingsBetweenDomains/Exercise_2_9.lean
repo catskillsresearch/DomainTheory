@@ -4,8 +4,9 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Approxima
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
-namespace ApproximableMap
+open DomainTheory.NeighbourhoodSystems
+open ApproximableMap
+
 
 /-- Scott's Exercise 2.9 (forward direction): the elementwise image is the directed union of
 images of principal approximations — in membership form,
@@ -17,5 +18,3 @@ theorem exercise_2_9 :
         ∃ (X : Set α) (hx : x.mem X), (f.toElementMap (V₀.principal (x.sub hx))).mem Y :=
   toElementMap_mem_iff_principal
 
-end ApproximableMap
-end DomainTheory.NeighbourhoodSystems

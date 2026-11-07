@@ -7,7 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 structure IsComputableUnion {α : Type*} {V : NeighborhoodSystem α} (P : ComputablePresentation V)
     where
@@ -35,7 +35,7 @@ noncomputable def combineFound2 {γ : Type*} {W : NeighborhoodSystem γ}
     r1
 
 namespace combineFound2
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 theorem found_iff {γ : Type*} {W : NeighborhoodSystem γ}
     {Q : ComputablePresentation W} (hUnion : IsComputableUnion Q) {r0 r1 : ℕ}

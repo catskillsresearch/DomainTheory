@@ -9,7 +9,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.del
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section XPseqCode
 
@@ -61,7 +61,7 @@ noncomputable def XFold (n N : ℕ) : ℕ :=
 end XPseqCode
 
 namespace XFold
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section XPseqCode
 

@@ -10,7 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise617Gen
+namespace DomainTheory.NeighbourhoodSystems.CAlgebraGen
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 section
@@ -1640,4 +1640,4 @@ end Iso
 
 end
 
-end DomainTheory.NeighbourhoodSystems.Exercise617Gen
+end DomainTheory.NeighbourhoodSystems.CAlgebraGen

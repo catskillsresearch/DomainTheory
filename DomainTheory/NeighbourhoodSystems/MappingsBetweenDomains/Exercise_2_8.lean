@@ -4,8 +4,9 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofMono
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
-namespace ApproximableMap
+open DomainTheory.NeighbourhoodSystems
+open ApproximableMap
+
 
 /-- Scott's Exercise 2.8: approximable maps are determined by their action on principal
 filters, and every monotone assignment of elements to neighbourhoods arises that way. -/
@@ -24,5 +25,3 @@ theorem exercise_2_8 :
   ⟨fun {_ _} {_ _} {_ _} => eq_of_toElementMap_principal,
     fun {_ _} {_ _} => toElementMap_ofMono_principal⟩
 
-end ApproximableMap
-end DomainTheory.NeighbourhoodSystems

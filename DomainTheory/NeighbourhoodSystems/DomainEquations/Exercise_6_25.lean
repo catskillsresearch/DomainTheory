@@ -4,8 +4,12 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.projPairLaws
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Subsystem.ProjectionPair
+open DomainTheory.NeighbourhoodSystems
+open NeighborhoodSystem
+open Subsystem
+open Subsystem.ProjectionPair
 
+/-- Scott's Exercise 6.25: Galois connection and continuity laws for projection pairs. -/
 theorem example_625 :
     (∀ {α : Type*} {D E : NeighborhoodSystem α} (P : ProjectionPair D E) (x : D.Element) (y : E.Element),
         P.inj.toElementMap x ≤ y ↔ x ≤ P.proj.toElementMap y) ∧
@@ -22,5 +26,3 @@ theorem example_625 :
     (∀ {α : Type*} {D E : NeighborhoodSystem α} (P : ProjectionPair D E) (x : D.Element),
         (P.upperSet x).Nonempty) :=
   ⟨@galois, ⟨@inj_bounded, ⟨@inj_eq_sInf, ⟨@inj_sSup, ⟨@lowerSet_directed, ⟨@proj_eq_sSup, @upperSet_nonempty⟩⟩⟩⟩⟩⟩
-
-end DomainTheory.NeighbourhoodSystems.Subsystem.ProjectionPair

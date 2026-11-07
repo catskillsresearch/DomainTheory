@@ -4,7 +4,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.finiteEmbedCance
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap
 
@@ -18,4 +18,3 @@ theorem example_628 :
       D ⊴ E → E ⊴ D → D ≅ᴰ E) :=
   ⟨@isomorphic_of_finite_system, @isomorphic_of_trianglelefteq_both⟩
 
-end DomainTheory.NeighbourhoodSystems

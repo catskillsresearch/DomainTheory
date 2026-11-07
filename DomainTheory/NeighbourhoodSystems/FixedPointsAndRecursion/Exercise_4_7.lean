@@ -4,11 +4,10 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.fixAbove
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.ApproximableMap
-section
+open DomainTheory.NeighbourhoodSystems
+open NeighborhoodSystem ApproximableMap
 
-open NeighborhoodSystem
-
+/-- Scott's Exercise 4.7: fixAbove is a fixed point and the least one above a. -/
 theorem example_407 :
     (∀ {α : Type*} {V : NeighborhoodSystem α} (f : ApproximableMap V V)
       {a : V.Element} (ha : a ≤ f.toElementMap a),
@@ -17,6 +16,3 @@ theorem example_407 :
       {a : V.Element} (ha : a ≤ f.toElementMap a) {z : V.Element},
       a ≤ z → f.toElementMap z ≤ z → f.fixAbove ha ≤ z) :=
   ⟨@fixAbove_isFixed, @fixAbove_least⟩
-end
-
-end DomainTheory.NeighbourhoodSystems.ApproximableMap

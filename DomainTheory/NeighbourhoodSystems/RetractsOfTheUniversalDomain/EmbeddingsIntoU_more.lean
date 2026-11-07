@@ -11,7 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 namespace DomainTheory.NeighbourhoodSystems
 
 section
-open NeighborhoodSystem ApproximableMap Exercise326
+open NeighborhoodSystem ApproximableMap Cond
 universe u
 
 section Prod
@@ -52,7 +52,7 @@ end Prod
 end
 
 section
-open NeighborhoodSystem ApproximableMap Exercise326
+open NeighborhoodSystem ApproximableMap Cond
 
 section General
 
@@ -220,7 +220,7 @@ end SumHelpers
 end
 
 section
-open NeighborhoodSystem ApproximableMap Exercise326
+open NeighborhoodSystem ApproximableMap Cond
 universe u
 
 section Prod
@@ -277,7 +277,7 @@ theorem funToPair_comp_pairToFun : (funToPair (E := E)).comp pairToFun = idMap (
   rw [← pair_fst_snd z]
   set x := z.fst; set y := z.snd
   rw [toElementMap_comp, toElementMap_idMap, toElementMap_funToPair, toApproxMap_pairToFun,
-    toApproxMap_pairToFun, Exercise326.cond_true, Exercise326.cond_false]
+    toApproxMap_pairToFun, Cond.cond_true, Cond.cond_false]
 
 theorem pairToFun_comp_funToPair_le :
     (pairToFun (E := E)).comp funToPair ≤ idMap (funSpace TD E) := by
@@ -288,9 +288,9 @@ theorem pairToFun_comp_funToPair_le :
   rw [funSpaceEquiv_apply, funSpaceEquiv_apply, le_iff_toElementMap_le]
   intro t
   rcases TD_trichotomy t with rfl | rfl | rfl
-  · rw [toApproxMap_pairToFun, Exercise326.cond_bot]; exact E.bot_le _
-  · rw [toApproxMap_pairToFun, Exercise326.cond_true]
-  · rw [toApproxMap_pairToFun, Exercise326.cond_false]
+  · rw [toApproxMap_pairToFun, Cond.cond_bot]; exact E.bot_le _
+  · rw [toApproxMap_pairToFun, Cond.cond_true]
+  · rw [toApproxMap_pairToFun, Cond.cond_false]
 
 theorem prod_trianglelefteq_funSpace_TD : prod E E ⊴ funSpace TD E :=
   trianglelefteq_of_projectionPair pairToFun funToPair funToPair_comp_pairToFun
@@ -307,7 +307,7 @@ end Prod
 end
 
 section
-open NeighborhoodSystem ApproximableMap Exercise326
+open NeighborhoodSystem ApproximableMap Cond
 
 section SumHelpers
 
@@ -356,7 +356,7 @@ end SumHelpers
 end
 
 section
-open NeighborhoodSystem ApproximableMap Exercise326
+open NeighborhoodSystem ApproximableMap Cond
 universe u
 
 section Sum

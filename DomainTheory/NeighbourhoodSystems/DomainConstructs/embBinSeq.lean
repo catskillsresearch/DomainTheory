@@ -7,7 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 @[expose] public section
 
 section
-namespace DomainTheory.NeighbourhoodSystems.Exercise317
+namespace DomainTheory.NeighbourhoodSystems.EmbBinSeq
 section
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem BitDom ApproximableMap
@@ -182,5 +182,5 @@ theorem f_injective : Function.Injective f.toElementMap := by
   rwa [gf_eq_id, toElementMap_idMap, toElementMap_idMap] at this
 end
 
-end DomainTheory.NeighbourhoodSystems.Exercise317
+end DomainTheory.NeighbourhoodSystems.EmbBinSeq
 end

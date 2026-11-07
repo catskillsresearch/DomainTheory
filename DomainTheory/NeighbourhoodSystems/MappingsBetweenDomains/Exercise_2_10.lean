@@ -4,8 +4,9 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.interMap
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
-namespace ApproximableMap
+open DomainTheory.NeighbourhoodSystems
+open ApproximableMap
+
 
 /-- Scott's Exercise 2.10 (meet clause): the pointwise intersection of two approximable maps
 is again approximable and acts elementwise by intersection of filters. -/
@@ -16,5 +17,3 @@ theorem exercise_2_10 :
         (f.toElementMap x).mem Z ∧ (g.toElementMap x).mem Z :=
   mem_toElementMap_interMap
 
-end ApproximableMap
-end DomainTheory.NeighbourhoodSystems

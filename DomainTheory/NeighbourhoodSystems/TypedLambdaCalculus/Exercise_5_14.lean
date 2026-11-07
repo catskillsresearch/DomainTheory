@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.setGraph
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open SetGraph
 
 /-- Scott's Exercise 5.14: `Fun` and `Graph` recover approximable set-maps and
@@ -15,4 +16,3 @@ theorem example_514 :
     (∀ u : Set ℕ, u ⊆ Graph (Fun u)) :=
   ⟨Fun_isApprox, @Fun_Graph, id_le_Graph_Fun⟩
 
-end DomainTheory.NeighbourhoodSystems

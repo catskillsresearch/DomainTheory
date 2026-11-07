@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.Exercise
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open NeighborhoodSystem ApproximableMap
 
 /-- Scott's Exercise 5.9: commuting endomaps share a least common fixed point;
@@ -22,4 +23,3 @@ theorem example_509 :
       f.fixElement = (f.comp f).fixElement) :=
   ⟨@commuting_least_common_fixed, @fixElement_eq_of_commuting_bot, @fixElement_iterTwice⟩
 
-end DomainTheory.NeighbourhoodSystems

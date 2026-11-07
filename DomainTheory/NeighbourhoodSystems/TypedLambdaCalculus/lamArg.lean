@@ -18,7 +18,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 open DomainTheory.NeighbourhoodSystems.NatDom (N natElem zeroElt succMap predMap zeroMap
   succMap_natElem succMap_bot predMap_natElem_succ predMap_natElem_zero predMap_bot
   zeroMap_natElem_zero zeroMap_natElem_succ zeroMap_bot constLiftN)
-open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
+open DomainTheory.NeighbourhoodSystems.Cond (cond)
 
 def optElem : Option ℕ → N.Element
   | none => N.bot
@@ -109,7 +109,7 @@ theorem guard1_apply (j : ℕ) (φ : ApproximableMap 𝒩 N) (z : 𝒩.Element) 
 
 theorem guard1_bot (j : ℕ) (φ : ApproximableMap 𝒩 N) (z : 𝒩.Element)
     (h : component z j = N.bot) : (guard1 j φ).toElementMap z = N.bot := by
-  rw [guard1_apply, h, zeroMap_bot, T_bot_eq, Exercise326.cond_bot]
+  rw [guard1_apply, h, zeroMap_bot, T_bot_eq, Cond.cond_bot]
 
 theorem guard1_inner_bot (j : ℕ) (φ : ApproximableMap 𝒩 N) (z : 𝒩.Element)
     (hz : component z j = N.bot ∨ ∃ k, component z j = natElem k)
@@ -118,15 +118,15 @@ theorem guard1_inner_bot (j : ℕ) (φ : ApproximableMap 𝒩 N) (z : 𝒩.Eleme
   · exact guard1_bot j φ z hb
   · rw [guard1_apply, hk, h]
     cases k with
-    | zero => rw [zeroMap_natElem_zero, Exercise326.cond_true]
-    | succ m => rw [zeroMap_natElem_succ, Exercise326.cond_false]
+    | zero => rw [zeroMap_natElem_zero, Cond.cond_true]
+    | succ m => rw [zeroMap_natElem_succ, Cond.cond_false]
 
 theorem guard1_total (j : ℕ) (φ : ApproximableMap 𝒩 N) (z : 𝒩.Element) {k : ℕ}
     (h : component z j = natElem k) : (guard1 j φ).toElementMap z = φ.toElementMap z := by
   rw [guard1_apply, h]
   cases k with
-  | zero => rw [zeroMap_natElem_zero, Exercise326.cond_true]
-  | succ m => rw [zeroMap_natElem_succ, Exercise326.cond_false]
+  | zero => rw [zeroMap_natElem_zero, Cond.cond_true]
+  | succ m => rw [zeroMap_natElem_succ, Cond.cond_false]
 
 theorem lamDef_coe_val {n : ℕ} {φ : ApproximableMap 𝒩 N} {g : List.Vector ℕ n → ℕ}
     (h : LamDef φ (g : List.Vector ℕ n →. ℕ)) (v : List.Vector ℕ n) :

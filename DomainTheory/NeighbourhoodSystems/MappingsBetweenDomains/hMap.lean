@@ -7,7 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.pri
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise218
+namespace DomainTheory.NeighbourhoodSystems.HMap
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem BitDom ApproximableMap
 
 section
@@ -217,4 +217,4 @@ theorem kMap_not_injective : ¬ Function.Injective kMap.toElementMap := by
   simp at hcone
 end
 
-end DomainTheory.NeighbourhoodSystems.Exercise218
+end DomainTheory.NeighbourhoodSystems.HMap

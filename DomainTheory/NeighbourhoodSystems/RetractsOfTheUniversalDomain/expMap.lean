@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Def
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap Exercise326
+open NeighborhoodSystem ApproximableMap Cond
 
 noncomputable def expMap {γ δ γ' δ' : Type*} {V0 : NeighborhoodSystem γ} {V1 : NeighborhoodSystem δ}
     {V0' : NeighborhoodSystem γ'} {V1' : NeighborhoodSystem δ'}

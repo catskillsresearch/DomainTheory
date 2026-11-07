@@ -10,7 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.xSt
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace yPseqAtomIdx
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section YPseqCodeIFormula
 

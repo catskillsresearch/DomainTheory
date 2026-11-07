@@ -7,7 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.toD
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace toD0Code
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section ToD0CodeUpMem
 
@@ -54,7 +54,7 @@ theorem up_mem (y : D₁.Element) {S1 S2 : Set α}
 end ToD0CodeUpMem
 
 end toD0Code
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section ToD0Code
 
@@ -100,7 +100,7 @@ def toD0Code (y : D₁.Element) : D₀.Element where
 end ToD0Code
 
 namespace toD0Code
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section ToD0CodeToD1Code
 
@@ -149,7 +149,7 @@ end ToD0CodeToD1Code
 
 end toD0Code
 namespace toD1Code
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section ToD1CodeToD0Code
 

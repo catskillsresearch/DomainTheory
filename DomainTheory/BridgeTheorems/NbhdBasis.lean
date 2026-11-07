@@ -1,5 +1,5 @@
 module
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_23
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
 public import Mathlib.Data.Finset.Fold
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys

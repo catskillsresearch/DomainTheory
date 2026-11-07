@@ -9,4 +9,3 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 theorem exercise_8_27 (d : ApproximableMap U U) : FinitaryProjection (piU d) :=
   isFinitaryProjection.piU d
 
-end

@@ -9,7 +9,7 @@ import Mathlib.Data.Set.Basic
 public import Mathlib.Data.Set.Finite.Basic
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise222
+namespace DomainTheory.NeighbourhoodSystems.ReprSystem
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set
 
 section
@@ -294,4 +294,4 @@ def reprIso : (reprSystem C hInter hne).Element ≃o {X : Set τ // X ∈ C} whe
 
 end
 
-end DomainTheory.NeighbourhoodSystems.Exercise222
+end DomainTheory.NeighbourhoodSystems.ReprSystem

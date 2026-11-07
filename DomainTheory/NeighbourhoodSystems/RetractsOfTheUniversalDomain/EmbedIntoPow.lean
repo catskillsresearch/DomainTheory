@@ -24,7 +24,7 @@ theorem toElementMap_embedIntoPow (x : V.Element) :
 
 theorem component_embedIntoPow_succ (x : V.Element) (n : ℕ) :
     component ((embedIntoPow V).toElementMap x) (n + 1) = V.bot := by
-  rw [toElementMap_embedIntoPow, ← component_tail, tail_push, Exercise618.component_bot]
+  rw [toElementMap_embedIntoPow, ← component_tail, tail_push, IterProdInitial.component_bot]
 
 theorem component_embedIntoPow_zero (x : V.Element) :
     component ((embedIntoPow V).toElementMap x) 0 = x := by

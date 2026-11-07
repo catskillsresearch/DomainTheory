@@ -10,11 +10,11 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.pri
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.FunctorTokens
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 open DomainTheory.NeighbourhoodSystems.SmashProduct
 section
-namespace Exercise619
+namespace FunctorTokens
 variable {D : NeighborhoodSystem Str}
 
 def liftTokMaster (D : NeighborhoodSystem Str) : Set Str := insert [] (embBit false D.master)
@@ -55,11 +55,11 @@ def liftTok (D : NeighborhoodSystem Str) (_hD : ∀ X, D.mem X → X.Nonempty) :
         · exact absurd (hZsub nil_mem_liftTokMaster) nil_not_mem_embBit
         · exact Or.inr ⟨X ∩ X', D.inter_mem hX hX' hZ' (embBit_subset.mp hZsub), rfl⟩
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D : NeighborhoodSystem Str}
 
@@ -83,11 +83,11 @@ theorem liftTok_mem_embF_inv {W : Set Str} (h : (liftTok D hD).mem (embBit false
   · exact absurd (h0.symm ▸ nil_mem_liftTokMaster) nil_not_mem_embBit
   · rw [embBit_injective heq]; exact hX
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D : NeighborhoodSystem Str}
 
@@ -99,11 +99,11 @@ theorem liftTok_nonempty (hD : ∀ X, D.mem X → X.Nonempty) :
 
 def ScottSys.lift (A : ScottSys) : ScottSys := ⟨liftTok A.sys A.ne, liftTok_nonempty A.ne⟩
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D : NeighborhoodSystem Str}
 
@@ -135,11 +135,11 @@ def liftUp {D : NeighborhoodSystem Str} {hD : ∀ X, D.mem X → X.Nonempty} (x 
 @[simp] theorem mem_liftUp {x : D.Element} {W : Set Str} :
     (liftUp (hD := hD) x).mem W ↔ W = liftTokMaster D ∨ ∃ X, x.mem X ∧ W = embBit false X := Iff.rfl
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D : NeighborhoodSystem Str}
 
@@ -183,11 +183,11 @@ def liftMapTok (f : ApproximableMap A.sys B.sys) :
         · exact Or.inr ⟨X₂, X₃,
             f.mono hrel (embBit_subset.mp hWW) (embBit_subset.mp hZZ') hX₂ hX₃, rfl, rfl⟩
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D : NeighborhoodSystem Str}
 
@@ -603,11 +603,11 @@ def sumLiftEquiv : (D.lift.oplus E.lift).sys.Element ≃o (D.sum E).sys.Element 
       · exact Or.inr (Or.inl ⟨X, hX, rfl, h _ hzX⟩)
       · exact Or.inr (Or.inr ⟨Y, hY, rfl, h _ hzY⟩)
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D : NeighborhoodSystem Str}
 
@@ -634,11 +634,11 @@ theorem liftBot_lt_liftUp (x : D.Element) : liftBot D hD < liftUp (hD := hD) x :
     rw [heq]; exact Or.inr ⟨D.master, x.master_mem, rfl⟩
   exact embF_ne_liftTokMaster hmem
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D : NeighborhoodSystem Str}
 
@@ -687,11 +687,11 @@ theorem liftMapTok_isStrict (f : ApproximableMap A.sys B.sys) : IsStrict (liftMa
       rw [← heq]; exact nil_mem_liftTokMaster
     exact absurd hnil nil_not_mem_embBit
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D : NeighborhoodSystem Str}
 
@@ -739,11 +739,11 @@ theorem eq_liftBot_or_exists_liftUp (z : (liftTok D hD).Element) :
           (z.up_mem hW (liftTok_mem_embF D.master_mem) (embBit_subset.mpr (D.sub_master hX))) hz
     · rintro rfl; exact z.master_mem
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D : NeighborhoodSystem Str}
 
@@ -759,7 +759,7 @@ theorem lift_oplus_lift_iso_sum :
 theorem lift_otimes_lift_iso_lift_prod :
     (D.lift.otimes E.lift).sys ≅ᴰ (D.prod E).lift.sys := ⟨liftProdEquiv⟩
 
-end Exercise619
+end FunctorTokens
 end
 
 end DomainTheory.NeighbourhoodSystems

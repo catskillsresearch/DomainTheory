@@ -11,4 +11,3 @@ theorem exercise_8_21 {a : ApproximableMap U U} (ha : FinitaryProjection a) :
     FinitaryProjection (aSharp a) :=
   isFinitaryProjection_aSharp ha
 
-end

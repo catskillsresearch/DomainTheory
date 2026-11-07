@@ -7,7 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.IsC
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section YPseqCode
 
@@ -64,7 +64,7 @@ noncomputable def YFoldInner (n bx N : ℕ) : ℕ :=
 end YPseqCode
 
 namespace YFoldInner
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section YPseqCode
 

@@ -9,7 +9,7 @@ public import Mathlib.Combinatorics.Colex
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise811
+namespace DomainTheory.NeighbourhoodSystems.DedekindCutProjection
 
 open NeighborhoodSystem ApproximableMap
 
@@ -439,4 +439,4 @@ theorem not_isFinitary_a : ¬ IsFinitary a := by
     g.injective hxeq
   exact absurd (congrArg Subtype.val this) one_ne_zero
 
-end DomainTheory.NeighbourhoodSystems.Exercise811
+end DomainTheory.NeighbourhoodSystems.DedekindCutProjection

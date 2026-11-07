@@ -5,7 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.xSt
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section StepGen
 
@@ -18,7 +18,7 @@ noncomputable def yStepG (splitY : Set β → Set α → Set β → Set α × Se
 end StepGen
 
 namespace yStepG
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section StepGen
 

@@ -9,10 +9,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.continuousOnMaps
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.FunctorTokens
 section
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
-namespace Exercise619
+namespace FunctorTokens
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 section Uniqueness
 variable {N : ScottSys} (hN : ([] : Str) ∈ N.sys.master)
@@ -24,13 +24,13 @@ def ExpInitial : IsInitial (ExpAlg N hN) where
 
 end Uniqueness
 
-end Exercise619
+end FunctorTokens
 end
 
 section
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
-namespace Exercise619
+namespace FunctorTokens
 
 theorem Subsystem.proj_isStrict {α : Type*} {D E : NeighborhoodSystem α} (h : D ◁ E) :
     IsStrict h.proj := by
@@ -74,11 +74,11 @@ theorem descMap_le_algHom (g : AlgHom (ExpAlg N hN) B) : descMap hN B ≤ g.hom.
 
 end Existence
 
-end Exercise619
+end FunctorTokens
 end
 
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.Exercise619
+namespace DomainTheory.NeighbourhoodSystems.FunctorTokens
 section
 open NeighborhoodSystem ApproximableMap SeqEqB BitDom SmashProduct
 

@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.natPair
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open NatPair
 
 /-- Scott's Exercise 5.13: the Cantor pairing `num` with the three recurrence laws and
@@ -17,4 +18,3 @@ theorem example_513 :
     (∀ c : ℕ × ℕ, unnum (numP c) = c) :=
   ⟨num_zero_zero, num_succ_right, num_succ_left, numP_unnum, unnum_numP⟩
 
-end DomainTheory.NeighbourhoodSystems

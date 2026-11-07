@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.eq_runMap
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.RunMap
+open DomainTheory.NeighbourhoodSystems
+open RunMap
 
 /-- Scott's Exercise 2.17: the erase-ones map is uniquely determined by the run equations, and
 those equations hold of the erase-ones map. -/
@@ -13,5 +14,3 @@ theorem exercise_2_17 :
       SatisfiesRunEquations g → g = runMap) ∧
     SatisfiesRunEquations runMap :=
   ⟨@eq_runMap_of_satisfies, runMap_satisfies⟩
-
-end DomainTheory.NeighbourhoodSystems.RunMap

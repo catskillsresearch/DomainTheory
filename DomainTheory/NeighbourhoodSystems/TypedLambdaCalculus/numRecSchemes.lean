@@ -17,7 +17,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 open DomainTheory.NeighbourhoodSystems.NatDom (N natElem zeroElt succMap predMap zeroMap
   succMap_natElem succMap_bot predMap_natElem_succ predMap_natElem_zero predMap_bot
   zeroMap_natElem_zero zeroMap_natElem_succ zeroMap_bot constLiftN constLiftN_natElem)
-open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
+open DomainTheory.NeighbourhoodSystems.Cond (cond)
 
 def kSel : ApproximableMap (prod (funSpace (prod N N) N) (prod N N)) (funSpace (prod N N) N) :=
   proj₀ (funSpace (prod N N) N) (prod N N)
@@ -85,18 +85,18 @@ theorem muRec_rec (x y : N.Element) :
 theorem muRec_bot {n m : ℕ}
     (h : f.toElementMap (pair (natElem n) (natElem m)) = N.bot) :
     (muRec f).toElementMap (pair (natElem n) (natElem m)) = N.bot := by
-  rw [muRec_rec, h, zeroMap_bot, T_bot_eq, Exercise326.cond_bot]
+  rw [muRec_rec, h, zeroMap_bot, T_bot_eq, Cond.cond_bot]
 
 theorem muRec_found {n m : ℕ}
     (h : f.toElementMap (pair (natElem n) (natElem m)) = natElem 0) :
     (muRec f).toElementMap (pair (natElem n) (natElem m)) = natElem n := by
-  rw [muRec_rec, h, zeroMap_natElem_zero, Exercise326.cond_true]
+  rw [muRec_rec, h, zeroMap_natElem_zero, Cond.cond_true]
 
 theorem muRec_step {n m j : ℕ}
     (h : f.toElementMap (pair (natElem n) (natElem m)) = natElem (j + 1)) :
     (muRec f).toElementMap (pair (natElem n) (natElem m)) =
       (muRec f).toElementMap (pair (natElem (n + 1)) (natElem m)) := by
-  rw [muRec_rec, h, zeroMap_natElem_succ, Exercise326.cond_false, succMap_natElem]
+  rw [muRec_rec, h, zeroMap_natElem_succ, Cond.cond_false, succMap_natElem]
 
 theorem muRec_climb (m : ℕ) :
     ∀ (k n : ℕ), (∀ i < k, ∃ j, f.toElementMap (pair (natElem (n + i)) (natElem m)) = natElem (j + 1)) →
@@ -173,32 +173,32 @@ theorem primRec_rec (x y : N.Element) :
 
 theorem primRec_bot (m : ℕ) :
     (primRec f g).toElementMap (pair N.bot (natElem m)) = N.bot := by
-  rw [primRec_rec, zeroMap_bot, T_bot_eq, Exercise326.cond_bot]
+  rw [primRec_rec, zeroMap_bot, T_bot_eq, Cond.cond_bot]
 
 theorem primRec_succ (n m : ℕ) :
     (primRec f g).toElementMap (pair (natElem (n + 1)) (natElem m)) =
       g.toElementMap
         (pair (natElem n)
           (pair (natElem m) ((primRec f g).toElementMap (pair (natElem n) (natElem m))))) := by
-  rw [primRec_rec, zeroMap_natElem_succ, Exercise326.cond_false, predMap_natElem_succ]
+  rw [primRec_rec, zeroMap_natElem_succ, Cond.cond_false, predMap_natElem_succ]
 
 theorem primRec_zero (m : ℕ) :
     (primRec f g).toElementMap (pair (natElem 0) (natElem m)) = f.toElementMap (natElem m) := by
-  rw [primRec_rec, zeroMap_natElem_zero, Exercise326.cond_true]
+  rw [primRec_rec, zeroMap_natElem_zero, Cond.cond_true]
 
 end PrimRec
 
 theorem strictId_bot : strictId.toElementMap N.bot = N.bot := by
   rw [strictId, toElementMap_comp]
   simp only [toElementMap_paired, toElementMap_idMap]
-  rw [zeroMap_bot, T_bot_eq, Exercise326.cond_bot]
+  rw [zeroMap_bot, T_bot_eq, Cond.cond_bot]
 
 theorem strictId_natElem (n : ℕ) : strictId.toElementMap (natElem n) = natElem n := by
   rw [strictId, toElementMap_comp]
   simp only [toElementMap_paired, toElementMap_idMap]
   cases n with
-  | zero => rw [zeroMap_natElem_zero, Exercise326.cond_true]
-  | succ k => rw [zeroMap_natElem_succ, Exercise326.cond_false]
+  | zero => rw [zeroMap_natElem_zero, Cond.cond_true]
+  | succ k => rw [zeroMap_natElem_succ, Cond.cond_false]
 
 theorem strictProj₀_apply (x y : N.Element) :
     strictProj₀.toElementMap (pair x y) =
@@ -211,18 +211,18 @@ theorem strictProj₀_bot_left (m : ℕ) :
     strictProj₀.toElementMap (pair N.bot (natElem m)) = N.bot := by
   rw [strictProj₀_apply]
   cases m with
-  | zero => rw [zeroMap_natElem_zero, Exercise326.cond_true]
-  | succ k => rw [zeroMap_natElem_succ, Exercise326.cond_false]
+  | zero => rw [zeroMap_natElem_zero, Cond.cond_true]
+  | succ k => rw [zeroMap_natElem_succ, Cond.cond_false]
 
 theorem strictProj₀_bot_right (n : ℕ) :
     strictProj₀.toElementMap (pair (natElem n) N.bot) = N.bot := by
-  rw [strictProj₀_apply, zeroMap_bot, T_bot_eq, Exercise326.cond_bot]
+  rw [strictProj₀_apply, zeroMap_bot, T_bot_eq, Cond.cond_bot]
 
 theorem strictProj₀_natElem (n m : ℕ) :
     strictProj₀.toElementMap (pair (natElem n) (natElem m)) = natElem n := by
   rw [strictProj₀_apply]
   cases m with
-  | zero => rw [zeroMap_natElem_zero, Exercise326.cond_true]
-  | succ k => rw [zeroMap_natElem_succ, Exercise326.cond_false]
+  | zero => rw [zeroMap_natElem_zero, Cond.cond_true]
+  | succ k => rw [zeroMap_natElem_succ, Cond.cond_false]
 
 end DomainTheory.NeighbourhoodSystems.NumRecSchemes

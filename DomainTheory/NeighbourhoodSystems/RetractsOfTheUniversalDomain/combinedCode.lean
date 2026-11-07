@@ -31,7 +31,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.eff
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section CombinedCode
 
@@ -54,7 +54,7 @@ noncomputable def combinedXCode (n : ℕ) : Set α :=
 end CombinedCode
 
 namespace combinedXCode
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section CombinedCode
 
@@ -105,7 +105,7 @@ theorem subset_master (i : ℕ) :
 end CombinedCodeTransfer
 
 end combinedXCode
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section CombinedCode
 
@@ -129,7 +129,7 @@ noncomputable def combinedYCode (n : ℕ) : Set β :=
 end CombinedCode
 
 namespace combinedYCode
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section CombinedCode
 
@@ -181,6 +181,6 @@ theorem subset_master (i : ℕ) :
 end CombinedCodeTransfer
 
 end combinedYCode
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 end DomainTheory.NeighbourhoodSystems

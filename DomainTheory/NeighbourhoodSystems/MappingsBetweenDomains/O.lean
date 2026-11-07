@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofContinuous
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ApproximableMap
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_22
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NeighborhoodSystem_more
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.bot_le
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.eq_principal_of_isMin
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_le_iff
@@ -11,50 +11,40 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Nes
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise215
+namespace DomainTheory.NeighbourhoodSystems.O
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
-section
-
 def memO (X : Set (Fin 1)) : Prop := X = Set.univ ∨ X = ∅
-end
 
-section
 theorem nestedOrDisjoint_O : NestedOrDisjoint memO := by
   rintro X Y (rfl | rfl) (rfl | rfl)
   · exact Or.inl subset_rfl
   · exact Or.inr (Or.inl (Set.empty_subset _))
   · exact Or.inl (Set.empty_subset _)
   · exact Or.inl subset_rfl
-end
 
-section
 theorem subMaster_O : ∀ {X : Set (Fin 1)}, memO X → X ⊆ Set.univ := fun _ => Set.subset_univ _
-end
-
-section
 
 /-- One-token Sierpiński neighbourhood system: master and empty. -/
-def O : NeighborhoodSystem (Fin 1) :=
+def system : NeighborhoodSystem (Fin 1) :=
   NeighborhoodSystem.ofNestedOrDisjoint memO Set.univ Set.univ_nonempty
     (Or.inl rfl) nestedOrDisjoint_O subMaster_O
+
+section
+@[simp] theorem O_mem {X : Set (Fin 1)} : system.mem X ↔ memO X := Iff.rfl
 end
 
 section
-@[simp] theorem O_mem {X : Set (Fin 1)} : O.mem X ↔ memO X := Iff.rfl
+@[simp] theorem O_master : system.master = (Set.univ : Set (Fin 1)) := rfl
 end
 
 section
-@[simp] theorem O_master : O.master = (Set.univ : Set (Fin 1)) := rfl
-end
-
-section
-theorem O_mem_empty : O.mem (∅ : Set (Fin 1)) := Or.inr rfl
+theorem O_mem_empty : system.mem (∅ : Set (Fin 1)) := Or.inr rfl
 end
 
 section
 
-theorem O_inter_mem {Y Y' : Set (Fin 1)} (hY : O.mem Y) (hY' : O.mem Y') : O.mem (Y ∩ Y') := by
+theorem O_inter_mem {Y Y' : Set (Fin 1)} (hY : system.mem Y) (hY' : system.mem Y') : system.mem (Y ∩ Y') := by
   rcases hY with rfl | rfl
   · rw [Set.univ_inter]; exact hY'
   · rw [Set.empty_inter]; exact O_mem_empty
@@ -62,40 +52,40 @@ end
 
 section
 
-def botElt : O.Element := O.bot
+def botElt : system.Element := system.bot
 end
 
 section
 
 theorem mem_botElt {Y : Set (Fin 1)} : botElt.mem Y ↔ Y = (Set.univ : Set (Fin 1)) := by
-  rw [botElt, O.mem_bot, O_master]
+  rw [botElt, system.mem_bot, O_master]
 end
 
 section
 
-def topElt : O.Element := O.principal O_mem_empty
+def topElt : system.Element := system.principal O_mem_empty
 end
 
 section
 variable {γ : Type*} (V : NeighborhoodSystem γ)
 
 /-- Open set classified by an approximable map into the Sierpiński system. -/
-def mapToOpen (f : ApproximableMap V O) : Set V.Element := {x | f.toElementMap x = topElt}
+def mapToOpen (f : ApproximableMap V system) : Set V.Element := {x | f.toElementMap x = topElt}
 end
 
 section
 
-theorem mem_empty_iff_eq_top (z : O.Element) : z.mem ∅ ↔ z = topElt := by
+theorem mem_empty_iff_eq_top (z : system.Element) : z.mem ∅ ↔ z = topElt := by
   constructor
   · intro hz
-    exact O.eq_principal_of_isMin z hz (fun Y _ => Set.empty_subset Y)
+    exact system.eq_principal_of_isMin z hz (fun Y _ => Set.empty_subset Y)
   · rintro rfl
     exact ⟨O_mem_empty, subset_rfl⟩
 end
 
 section
 
-theorem element_eq_bot_or_top (z : O.Element) : z = botElt ∨ z = topElt := by
+theorem element_eq_bot_or_top (z : system.Element) : z = botElt ∨ z = topElt := by
   by_cases hz : z.mem ∅
   · exact Or.inr ((mem_empty_iff_eq_top z).mp hz)
   · refine Or.inl ?_
@@ -113,7 +103,7 @@ end
 
 section
 
-theorem O_ext {z w : O.Element} (h : z.mem ∅ ↔ w.mem ∅) : z = w := by
+theorem O_ext {z w : system.Element} (h : z.mem ∅ ↔ w.mem ∅) : z = w := by
   by_cases hz : z.mem ∅
   · rw [(mem_empty_iff_eq_top z).mp hz, (mem_empty_iff_eq_top w).mp (h.mp hz)]
   · have ez : z = botElt :=
@@ -127,13 +117,13 @@ end
 section
 variable {γ : Type*} (V : NeighborhoodSystem γ)
 
-theorem isOpen_mapToOpen (f : ApproximableMap V O) : IsOpen (mapToOpen V f) := by
-  have heq : mapToOpen V f = (fun x => f.toElementMap x) ⁻¹' O.basicOpen ∅ := by
+theorem isOpen_mapToOpen (f : ApproximableMap V system) : IsOpen (mapToOpen V f) := by
+  have heq : mapToOpen V f = (fun x => f.toElementMap x) ⁻¹' system.basicOpen ∅ := by
     ext x
     simp only [mapToOpen, Set.mem_ofPred_eq, Set.mem_preimage, mem_basicOpen]
     exact (mem_empty_iff_eq_top (f.toElementMap x)).symm
   rw [heq]
-  exact (O.isOpen_basicOpen ∅).preimage f.continuous_toElementMap
+  exact (system.isOpen_basicOpen ∅).preimage f.continuous_toElementMap
 end
 
 section
@@ -147,11 +137,11 @@ section
 variable {γ : Type*} (V : NeighborhoodSystem γ)
 
 /-- Approximable map into the Sierpiński system classifying an open set. -/
-def openToMap (U : Set V.Element) (hU : IsOpen U) : ApproximableMap V O where
-  rel X Y := V.mem X ∧ O.mem Y ∧ (Y = ∅ → ∃ hX : V.mem X, V.principal hX ∈ U)
+def openToMap (U : Set V.Element) (hU : IsOpen U) : ApproximableMap V system where
+  rel X Y := V.mem X ∧ system.mem Y ∧ (Y = ∅ → ∃ hX : V.mem X, V.principal hX ∈ U)
   rel_dom h := h.1
   rel_cod h := h.2.1
-  master_rel := ⟨V.master_mem, O.master_mem, fun heq => (univ_ne_empty (O_master ▸ heq)).elim⟩
+  master_rel := ⟨V.master_mem, system.master_mem, fun heq => (univ_ne_empty (O_master ▸ heq)).elim⟩
   inter_right := by
     rintro X Y Y' ⟨hX, hY, fY⟩ ⟨_, hY', fY'⟩
     refine ⟨hX, O_inter_mem hY hY', ?_⟩
@@ -195,7 +185,7 @@ theorem mem_mapToOpen_openToMap (U : Set V.Element) (hU : IsOpen U) (x : V.Eleme
     rw [toElementMap_openToMap_principal_mem_empty]
     exact hXU (show V.principal (x.sub hxX) ∈ V.basicOpen X from ⟨x.sub hxX, subset_rfl⟩)
 
-theorem openToMap_mapToOpen (f : ApproximableMap V O) :
+theorem openToMap_mapToOpen (f : ApproximableMap V system) :
     openToMap V (mapToOpen V f) (isOpen_mapToOpen V f) = f := by
   apply ApproximableMap.eq_of_toElementMap_principal
   intro X hX
@@ -204,4 +194,4 @@ theorem openToMap_mapToOpen (f : ApproximableMap V O) :
     ← mem_empty_iff_eq_top]
 end
 
-end DomainTheory.NeighbourhoodSystems.Exercise215
+end DomainTheory.NeighbourhoodSystems.O

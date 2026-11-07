@@ -10,7 +10,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 open DomainTheory.NeighbourhoodSystems.NatDom (N natElem zeroElt succMap predMap zeroMap
   succMap_natElem succMap_bot predMap_natElem_succ predMap_natElem_zero predMap_bot
   zeroMap_natElem_zero zeroMap_natElem_succ zeroMap_bot constLiftN)
-open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
+open DomainTheory.NeighbourhoodSystems.Cond (cond)
 
 theorem lamDef_of_inner {n : ℕ} (inner : ApproximableMap 𝒩 N) (f : List.Vector ℕ n →. ℕ)
     (hdef : ∀ (v : List.Vector ℕ n) (c : ℕ), c ∈ f v → inner.toElementMap (vecElem v) = natElem c)

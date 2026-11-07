@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodFunctor
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open NeighborhoodSystem ApproximableMap
 
 /-- Scott's Exercise 3.20: product of maps is functorial and is the categorical product. -/
@@ -24,4 +25,3 @@ theorem example_320 :
   ⟨@prodMap_comp, @prodMap_id,
    fun {_} {_} {_} {_} {_} {_} h₀ h₁ k => paired_unique h₀ h₁ k⟩
 
-end DomainTheory.NeighbourhoodSystems

@@ -6,8 +6,9 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem Domain.Recursive ApproximableMap SmashProduct
+open DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem Domain.Recursive ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 /-- Scott's Exercise 7.15: effective givenness for iterate, coalesced sum, and smash. -/
 theorem example_715 :
@@ -20,4 +21,3 @@ theorem example_715 :
       V₀.IsEffectivelyGiven → V₁.IsEffectivelyGiven → (smash V₀ V₁).IsEffectivelyGivenS) :=
   ⟨@iterSys_isEffectivelyGiven, ⟨@osum_isEffectivelyGivenS, @smash_isEffectivelyGivenS⟩⟩
 
-end DomainTheory.NeighbourhoodSystems

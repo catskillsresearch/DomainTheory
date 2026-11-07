@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.bigPsi
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open NeighborhoodSystem ApproximableMap
 
 theorem example_409 :
@@ -21,4 +22,3 @@ theorem example_409 :
       toFilter (fixMap V) = (bigPsi V).fixElement) :=
   ⟨@bigPsi_apply, @bigPsi_fix, @bigPsi_least, @fix_eq_fixElement_bigPsi⟩
 
-end DomainTheory.NeighbourhoodSystems

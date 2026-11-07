@@ -7,7 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 section
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise714
+namespace DomainTheory.NeighbourhoodSystems.ComputableWitness
 
 open NeighborhoodSystem Domain.Recursive DomainTheory.NeighbourhoodSystems
 
@@ -17,11 +17,11 @@ def tFun {W : NeighborhoodSystem β} (Q : ComputablePresentation W) (r : ℕ →
     ℕ :=
   Nat.rec (motive := fun _ => ℕ) (r 0) (fun y IH => Q.inter IH (r (y + 1))) n
 
-end DomainTheory.NeighbourhoodSystems.Exercise714
+end DomainTheory.NeighbourhoodSystems.ComputableWitness
 end
 
 section
-namespace DomainTheory.NeighbourhoodSystems.Exercise714
+namespace DomainTheory.NeighbourhoodSystems.ComputableWitness
 open NeighborhoodSystem Domain.Recursive DomainTheory.NeighbourhoodSystems
 
 section
@@ -165,7 +165,7 @@ theorem repred₂_exists_primrec_enum {p : ℕ → ℕ → Prop} (hp : REPred₂
     rw [← hs, ← hr]; exact (pair_unpair _).symm
 end
 
-end DomainTheory.NeighbourhoodSystems.Exercise714
+end DomainTheory.NeighbourhoodSystems.ComputableWitness
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem Domain.Recursive
 

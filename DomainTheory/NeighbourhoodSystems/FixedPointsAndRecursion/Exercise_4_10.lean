@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.relSyste
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.ApproximableMap
+open DomainTheory.NeighbourhoodSystems
+
 open NeighborhoodSystem ApproximableMap
 
 theorem example_410 :
@@ -18,4 +19,3 @@ theorem example_410 :
         g = restrict f.fixElement f.fixElement (le_refl _)) :=
   ⟨@fixElement_below_unique, @relMap_unique_fixed⟩
 
-end DomainTheory.NeighbourhoodSystems.ApproximableMap

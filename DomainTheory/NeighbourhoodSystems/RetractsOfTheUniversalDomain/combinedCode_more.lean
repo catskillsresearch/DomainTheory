@@ -10,7 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.ato
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace genAtom
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section CombinedCode
 
@@ -83,7 +83,7 @@ end CombinedCode
 end genAtom
 
 namespace atomPairG
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section CombinedCode
 

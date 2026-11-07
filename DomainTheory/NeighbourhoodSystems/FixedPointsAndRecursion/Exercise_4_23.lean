@@ -6,7 +6,6 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.uniqueFi
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
-namespace DomainTheory.NeighbourhoodSystems.ApproximableMap
 open ApproximableMap
 
 theorem example_423 :
@@ -19,4 +18,3 @@ theorem example_423 :
       ∃! x, f.toElementMap x = x :=
   @f_unique_fixedPoint
 
-end DomainTheory.NeighbourhoodSystems.ApproximableMap

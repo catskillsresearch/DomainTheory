@@ -4,7 +4,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Ref
 
 @[expose] public section
 
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Exercise823
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.FixOp
 
 theorem exercise_8_25 :
     (fixedNbhd (fixOp (tOpMap cCombinator)) ≅ᴰ
@@ -13,4 +13,3 @@ theorem exercise_8_25 :
       (U ⊴ fixedNbhd (fixOp (tOpMap cCombinator))) :=
   ⟨exercise_8_25_main, exercise_8_25_universal⟩
 
-end

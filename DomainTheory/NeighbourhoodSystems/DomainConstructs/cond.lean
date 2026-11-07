@@ -7,7 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Truth
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise326
+namespace DomainTheory.NeighbourhoodSystems.Cond
 section
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
@@ -551,5 +551,5 @@ theorem cond_which (x : (sum V₀ V₁ h₀ h₁).Element) :
     · exact Or.inr (Or.inr (hN Z hxZ))
 end
 
-end DomainTheory.NeighbourhoodSystems.Exercise326
+end DomainTheory.NeighbourhoodSystems.Cond
 end

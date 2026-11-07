@@ -5,11 +5,10 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Exercise718
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem EffectiveIso
 
 theorem exercise_8_12 :
     V.IsEffectivelyGiven ∧
       EffectivelyIsomorphic UComputablePresentation VComputablePresentation :=
   ⟨V.isEffectivelyGiven, ⟨effectiveIso812_UV⟩⟩
 
-end

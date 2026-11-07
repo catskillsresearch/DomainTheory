@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.multiLam
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open NeighborhoodSystem ApproximableMap MultiLam
 
 /-- Scott's Exercise 5.7: multi-argument λ and application via single-variable curry/uncurry
@@ -33,4 +34,3 @@ theorem example_507 :
         g.toElementMap (pair (pair x y) z)) :=
   ⟨@lam_two_vars, @app_two_args, @uncurry_lam_two_vars, @surjective_pairing, @curry₃_apply⟩
 
-end DomainTheory.NeighbourhoodSystems

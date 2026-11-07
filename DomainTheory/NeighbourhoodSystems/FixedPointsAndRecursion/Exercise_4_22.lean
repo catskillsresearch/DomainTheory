@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.peanoSub
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 
 theorem example_422 :
     ∀ {M : Type*} (zero : M) (succ : M → M),
@@ -12,4 +13,3 @@ theorem example_422 :
         Nonempty (PeanoModel (Nat' zero succ)) :=
   @exists_peano_submodel
 
-end DomainTheory.NeighbourhoodSystems

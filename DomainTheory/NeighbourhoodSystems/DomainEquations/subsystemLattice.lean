@@ -7,7 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.subdomain
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems.SubsystemLattice
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set DomainTheory.NeighbourhoodSystems.Exercise222
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set DomainTheory.NeighbourhoodSystems.ReprSystem
 
 variable {α : Type*}
 

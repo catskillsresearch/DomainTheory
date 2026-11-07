@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Def
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap Exercise326
+open NeighborhoodSystem ApproximableMap Cond
 
 noncomputable def prodComb (a b : ApproximableMap U U) : ApproximableMap U U :=
   iTimes.comp ((paired (a.comp (proj₀ U U)) (b.comp (proj₁ U U))).comp jTimes)

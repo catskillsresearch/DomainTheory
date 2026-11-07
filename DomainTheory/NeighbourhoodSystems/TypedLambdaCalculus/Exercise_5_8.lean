@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.combinatoryC
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open CombinatoryComplete
 
 /-- Scott's Exercise 5.8: every polynomial λ-term is realized by an I/K/S combinatory
@@ -14,4 +15,3 @@ theorem example_508 :
       (toApproxMap (bracket t).denote).toElementMap x = t.denote x :=
   @bracket_spec
 
-end DomainTheory.NeighbourhoodSystems

@@ -4,8 +4,9 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.seqPeano
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap BitDom SeqDom Exercise419
+open DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem ApproximableMap BitDom SeqDom DomainTheory.NeighbourhoodSystems.SeqPeano
 
 theorem example_419 :
     (∀ (b : Bool) (σ : Str), ([] : Str) ≠ b :: σ) ∧
@@ -17,4 +18,3 @@ theorem example_419 :
   ⟨peano_nil_ne_cons, one_def_strBot, one_def_strElem,
     peano_cons_disjoint, @peano_cons_injective, peano_induction⟩
 
-end DomainTheory.NeighbourhoodSystems

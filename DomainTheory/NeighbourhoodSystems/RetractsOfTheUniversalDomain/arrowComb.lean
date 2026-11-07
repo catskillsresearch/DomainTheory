@@ -7,7 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.exp
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap Exercise326
+open NeighborhoodSystem ApproximableMap Cond
 
 noncomputable def arrowComb (a b : ApproximableMap U U) : ApproximableMap U U :=
   iArrow.comp ((lamComb a b).comp jArrow)

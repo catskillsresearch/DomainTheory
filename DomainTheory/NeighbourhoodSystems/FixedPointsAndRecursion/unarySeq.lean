@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Nes
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
+namespace DomainTheory.NeighbourhoodSystems.UnarySeq
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
 section
@@ -114,9 +114,9 @@ section
 theorem memC1_univ : memC1 (Set.univ : Set ℕ) := Or.inl ⟨0, tail_zero.symm⟩
 end
 
-end DomainTheory.NeighbourhoodSystems.Exercise425
+end DomainTheory.NeighbourhoodSystems.UnarySeq
 section
-namespace DomainTheory.NeighbourhoodSystems.Exercise425
+namespace DomainTheory.NeighbourhoodSystems.UnarySeq
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 section
 
@@ -219,4 +219,4 @@ theorem relateNToC1_natElem (n : ℕ) :
   NatDom.constLiftN_natElem C1 oneElem n
 end
 
-end DomainTheory.NeighbourhoodSystems.Exercise425
+end DomainTheory.NeighbourhoodSystems.UnarySeq

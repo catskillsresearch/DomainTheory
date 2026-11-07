@@ -9,7 +9,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.eff
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace xPseqAtomIdx
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section XPseqCodeIFormula
 

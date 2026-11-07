@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.langStar
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open LangStar Pointwise
 
 /-- Scott's Exercise 5.15: Arden's lemma for singleton generators, and Park's least
@@ -21,4 +22,3 @@ theorem example_515 :
         parkX a b c d ⊆ x ∧ parkY a b c d ⊆ y) :=
   ⟨part1_freeMonoid, @park_solves, fun a b c d _ _ hx hy => park_least a b c d hx hy⟩
 
-end DomainTheory.NeighbourhoodSystems

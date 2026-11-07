@@ -13,7 +13,7 @@ import Mathlib.Tactic.Ring
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-namespace Exercise722
+namespace RegularLanguage
 open scoped Computability
 open Sum Set
 section
@@ -26,26 +26,26 @@ theorem consistentB_iff_Ssys (a b : SExpr) (ha : InS (denote a)) (hb : InS (deno
   exact Iff.symm (Ssys_isPositive (Ssys_mem.mpr ha) (Ssys_mem.mpr hb))
 end
 
-end Exercise722
+end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.Exercise722
+namespace DomainTheory.NeighbourhoodSystems.RegularLanguage
 section
 set_option linter.unusedVariables false
 
-theorem example_722_decide : ∀ (a b : DomainTheory.NeighbourhoodSystems.Exercise722.SExpr),
-  DomainTheory.NeighbourhoodSystems.Exercise722.InS (DomainTheory.NeighbourhoodSystems.Exercise722.denote a) →
-    DomainTheory.NeighbourhoodSystems.Exercise722.InS (DomainTheory.NeighbourhoodSystems.Exercise722.denote b) →
-      Iff (@Eq Bool (DomainTheory.NeighbourhoodSystems.Exercise722.consistentB a b) Bool.true)
-        (DomainTheory.NeighbourhoodSystems.Exercise722.InS
+theorem example_722_decide : ∀ (a b : DomainTheory.NeighbourhoodSystems.RegularLanguage.SExpr),
+  DomainTheory.NeighbourhoodSystems.RegularLanguage.InS (DomainTheory.NeighbourhoodSystems.RegularLanguage.denote a) →
+    DomainTheory.NeighbourhoodSystems.RegularLanguage.InS (DomainTheory.NeighbourhoodSystems.RegularLanguage.denote b) →
+      Iff (@Eq Bool (DomainTheory.NeighbourhoodSystems.RegularLanguage.consistentB a b) Bool.true)
+        (DomainTheory.NeighbourhoodSystems.RegularLanguage.InS
           (@Inter.inter (Set (List Bool)) (@Set.instInter (List Bool))
-            (DomainTheory.NeighbourhoodSystems.Exercise722.denote a)
-            (DomainTheory.NeighbourhoodSystems.Exercise722.denote b))) :=
-  DomainTheory.NeighbourhoodSystems.Exercise722.consistentB_iff_Ssys
+            (DomainTheory.NeighbourhoodSystems.RegularLanguage.denote a)
+            (DomainTheory.NeighbourhoodSystems.RegularLanguage.denote b))) :=
+  DomainTheory.NeighbourhoodSystems.RegularLanguage.consistentB_iff_Ssys
 end
 
-end DomainTheory.NeighbourhoodSystems.Exercise722
+end DomainTheory.NeighbourhoodSystems.RegularLanguage
 namespace DomainTheory.NeighbourhoodSystems
-namespace Exercise722
+namespace RegularLanguage
 open scoped Computability
 open Sum Set
 
@@ -447,24 +447,24 @@ theorem interEqB_iff (e1 e2 : SExpr) : interEqB e1 e2 = true ↔ denote e1 = den
   rw [Bool.and_eq_true, subsetB_iff, subsetB_iff, ← Set.Subset.antisymm_iff]
 end
 
-end Exercise722
+end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.Exercise722
+namespace DomainTheory.NeighbourhoodSystems.RegularLanguage
 section
 set_option linter.unusedVariables false
 
-theorem example_722_equiv : ∀ (e1 e2 : DomainTheory.NeighbourhoodSystems.Exercise722.SExpr),
-  Iff (@Eq Bool (DomainTheory.NeighbourhoodSystems.Exercise722.interEqB e1 e2) Bool.true)
-    (@Eq (Set (List Bool)) (DomainTheory.NeighbourhoodSystems.Exercise722.denote e1)
-      (DomainTheory.NeighbourhoodSystems.Exercise722.denote e2)) :=
-  DomainTheory.NeighbourhoodSystems.Exercise722.interEqB_iff
+theorem example_722_equiv : ∀ (e1 e2 : DomainTheory.NeighbourhoodSystems.RegularLanguage.SExpr),
+  Iff (@Eq Bool (DomainTheory.NeighbourhoodSystems.RegularLanguage.interEqB e1 e2) Bool.true)
+    (@Eq (Set (List Bool)) (DomainTheory.NeighbourhoodSystems.RegularLanguage.denote e1)
+      (DomainTheory.NeighbourhoodSystems.RegularLanguage.denote e2)) :=
+  DomainTheory.NeighbourhoodSystems.RegularLanguage.interEqB_iff
 end
 
-end DomainTheory.NeighbourhoodSystems.Exercise722
+end DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 namespace Domain.Recursive
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 
 
@@ -524,8 +524,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 def autStateCardFuelCharBody (prev : ℕ → ℕ) (c : ℕ) : ℕ :=
   let subAdd := prev c.unpair.2.unpair.1 + prev c.unpair.2.unpair.2
@@ -546,8 +546,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 def autStateCardFuelChar : ℕ → ℕ → ℕ
   | 0, _ => 0
@@ -561,8 +561,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 def c9b5_boolNat (b : Bool) : ℕ := if b then 1 else 0
 end
@@ -574,8 +574,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 def c9b5_encodeListBool (σ : List Bool) : ℕ := encodeList (σ.map c9b5_boolNat)
 end
@@ -587,8 +587,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 def c9b5_sexprDepth : SExpr → ℕ
   | .sigma => 1
@@ -604,8 +604,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 def c9b5_sexprGodelEncode : SExpr → ℕ
   | .sigma => Nat.pair 0 0
@@ -621,8 +621,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 set_option maxHeartbeats 1600000 in
 
@@ -648,8 +648,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 def autStateCardFuelCharLookup (w : ℕ) : ℕ :=
   autStateCardFuelCharBody (fun c' => nthCode w.unpair.1 c' 0) w.unpair.2
@@ -669,8 +669,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 set_option maxHeartbeats 1600000 in
 
@@ -689,8 +689,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 set_option maxHeartbeats 1600000 in
 
@@ -717,8 +717,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 def matchesBCatG (prev : ℕ → ℕ) (p : ℕ) : ℕ :=
   let i := p.unpair.1
@@ -735,8 +735,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 set_option maxHeartbeats 1600000 in
 
@@ -755,8 +755,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 def matchesBCharBody (prev : ℕ → ℕ) (c cw : ℕ) : ℕ :=
   let catExist := bExistsFn (matchesBCatG prev) (Nat.pair c cw) (listLenChar cw + 1)
@@ -778,8 +778,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 def matchesBChar : ℕ → ℕ → ℕ → ℕ
   | 0, _, _ => 0
@@ -794,8 +794,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 set_option maxHeartbeats 1600000 in
 
@@ -816,8 +816,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 set_option maxHeartbeats 1600000 in
 
@@ -836,8 +836,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 set_option maxHeartbeats 1600000 in
 
@@ -856,8 +856,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 set_option maxHeartbeats 1600000 in
 
@@ -881,8 +881,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 set_option maxHeartbeats 1600000 in
 
@@ -905,8 +905,8 @@ set_option maxHeartbeats 800000 in
 
 set_option maxHeartbeats 800000 in
 
-open DomainTheory.NeighbourhoodSystems Exercise722
-open DomainTheory.NeighbourhoodSystems.Exercise722
+open DomainTheory.NeighbourhoodSystems RegularLanguage
+open DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 set_option maxHeartbeats 1600000 in
 
@@ -1914,7 +1914,7 @@ end Domain.Recursive
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem Domain.Recursive
 
-namespace Exercise722
+namespace RegularLanguage
 open Set Domain.Recursive
 
 variable {α : Type*}
@@ -1929,5 +1929,5 @@ structure ConsistencyPresentation (V : NeighborhoodSystem α) where
 
   cons_computable : RecDecidable₂ (fun n m => ∃ k, X k ⊆ X n ∩ X m)
 
-end Exercise722
+end RegularLanguage
 end DomainTheory.NeighbourhoodSystems

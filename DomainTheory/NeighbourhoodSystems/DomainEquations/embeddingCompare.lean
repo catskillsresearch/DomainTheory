@@ -15,12 +15,12 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.FunctorTokens
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 open DomainTheory.NeighbourhoodSystems.SmashProduct
 
 section
-namespace Exercise627
+namespace EmbeddingCompare
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -53,11 +53,11 @@ def fstProj (D₀ D₁ : NeighborhoodSystem Str) : ApproximableMap (prodTok D₀
     rintro W W' X X' ⟨_, _, hsub⟩ hW'W hXX' hW' hX'
     exact ⟨hW', hX', hW'W.trans (hsub.trans (prodTokNbhd_subset_iff.mpr ⟨hXX', subset_rfl⟩))⟩
 
-end Exercise627
+end EmbeddingCompare
 end
 
 section
-namespace Exercise627
+namespace EmbeddingCompare
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -258,10 +258,10 @@ theorem inlInj_comp_inlProj_le :
   obtain ⟨X, ⟨hW, _, hsub⟩, _, hW', hsub'⟩ := hr
   exact ⟨hW, hW', hsub.trans hsub'⟩
 
-end Exercise627
+end EmbeddingCompare
 end
 section
-namespace Exercise627
+namespace EmbeddingCompare
 variable {D₀ D₁ : NeighborhoodSystem Str}
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
 
@@ -289,11 +289,11 @@ theorem ext_of_principal {γ δ : Type*} {W₀ : NeighborhoodSystem γ} {W₁ : 
 
 end Part5
 
-end Exercise627
+end EmbeddingCompare
 end
 
 section
-namespace Exercise627
+namespace EmbeddingCompare
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -322,11 +322,11 @@ theorem fst_trianglelefteq_prod (D₀ D₁ : NeighborhoodSystem Str) :
   trianglelefteq_of_projectionPair (fstInj D₀ D₁) (fstProj D₀ D₁)
     (fstProj_comp_fstInj D₀ D₁) (fstInj_comp_fstProj_le D₀ D₁)
 
-end Exercise627
+end EmbeddingCompare
 end
 
 section
-namespace Exercise627
+namespace EmbeddingCompare
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -365,11 +365,11 @@ theorem oplus_trianglelefteq_sum (h₀ : ∀ X, D₀.mem X → X.Nonempty)
     oplusTok D₀ D₁ h₀ h₁ ⊴ sumTok D₀ D₁ h₀ h₁ :=
   (oplusTok_subsystem_sumTok h₀ h₁).trianglelefteq
 
-end Exercise627
+end EmbeddingCompare
 end
 
 section
-namespace Exercise627
+namespace EmbeddingCompare
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -401,11 +401,11 @@ theorem otimes_trianglelefteq_prod (D₀ D₁ : NeighborhoodSystem Str) :
     otimesTok D₀ D₁ ⊴ prodTok D₀ D₁ :=
   (otimesTok_subsystem_prodTok D₀ D₁).trianglelefteq
 
-end Exercise627
+end EmbeddingCompare
 end
 
 section
-namespace Exercise627
+namespace EmbeddingCompare
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -550,7 +550,7 @@ theorem strictFun_trianglelefteq_funSpace (V₀ : NeighborhoodSystem α) (V₁ :
 
 end Part5
 
-end Exercise627
+end EmbeddingCompare
 end
 end DomainTheory.NeighbourhoodSystems
 end

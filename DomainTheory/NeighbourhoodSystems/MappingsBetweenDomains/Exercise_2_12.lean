@@ -4,8 +4,9 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.iSupMap
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
-namespace ApproximableMap
+open DomainTheory.NeighbourhoodSystems
+open ApproximableMap
+
 
 /-- Scott's Exercise 2.12: a directed family of approximable maps has a directed supremum
 whose elementwise action is the pointwise directed union of the actions. -/
@@ -18,5 +19,3 @@ theorem exercise_2_12 :
       ((iSupMap f hdir).toElementMap x).mem Y ↔ ∃ i, ((f i).toElementMap x).mem Y :=
   mem_toElementMap_iSupMap
 
-end ApproximableMap
-end DomainTheory.NeighbourhoodSystems

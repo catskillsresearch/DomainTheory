@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 section
 set_option linter.unusedVariables false
 open NeighborhoodSystem Domain.Recursive ApproximableMap
@@ -44,6 +45,4 @@ theorem example_719 :
         ∀ X ∈ L₁, ∃ Y ∈ L₂, f.rel X Y) :=
   ⟨@PFmapComb_toElementMap, ⟨@PFmap_comp, ⟨@PFmap_idMap,
     ⟨@PFmap_isComputable, ⟨@PFmap_isComputable_Ypd, ⟨@PFmap_rel_Ypd_iff, @PFmap_rel_fin⟩⟩⟩⟩⟩⟩
-end
-end DomainTheory.NeighbourhoodSystems
 

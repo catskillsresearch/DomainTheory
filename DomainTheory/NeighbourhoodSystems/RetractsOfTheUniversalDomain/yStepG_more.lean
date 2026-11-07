@@ -10,7 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.YPs
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace yStepG
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section CombinedCode
 

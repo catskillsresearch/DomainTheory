@@ -14,7 +14,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.pri
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems.SeqNegMerge
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap BitDom SeqDom Exercise419
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap BitDom SeqDom SeqPeano
 
 abbrev flip (σ : Str) : Str := σ.map not
 

@@ -10,4 +10,3 @@ theorem exercise_8_14 {α : Type*} {E : NeighborhoodSystem α} {a : Approximable
     (h : ClosureOperator a) : IsFinitary a :=
   isFinitary_of_isClosureOperator h
 
-end

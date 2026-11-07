@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.powersetIso
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open PowersetIso
 
 /-- Scott's Exercise 5.13 (powerset clause): order isomorphisms among
@@ -15,4 +16,3 @@ theorem example_513b :
     Nonempty (Set (ℕ × ℕ) ≃o Set ℕ × Set ℕ) :=
   ⟨⟨PN_orderIso_PNN⟩, ⟨PN_orderIso_prod⟩, ⟨PNN_orderIso_prod⟩⟩
 
-end DomainTheory.NeighbourhoodSystems

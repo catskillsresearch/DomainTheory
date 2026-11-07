@@ -240,9 +240,9 @@ theorem subsystemU_element_computable_iff (x : (SubD P).Element) :
   · intro hre
     have ha : (toSubsystemSys P x).mem (P.X P.masterIdx) := by
       rw [P.masterIdx_spec]; exact (toSubsystemSys P x).master_mem
-    exact Exercise714.repred_exists_primrec_range hre ha
+    exact ComputableWitness.repred_exists_primrec_range hre ha
   · rintro ⟨r, hr, hspec⟩
-    exact REPred.of_iff hspec (Exercise714.repred_range_primrec hr)
+    exact REPred.of_iff hspec (ComputableWitness.repred_range_primrec hr)
 
 end ComputableElements
 

@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofContinu
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 
 /-- Scott's Exercise 2.13: elementwise actions of approximable maps are continuous; continuous
 maps satisfy the principal-union membership law; and every continuous map arises as the
@@ -23,4 +24,3 @@ theorem exercise_2_13 :
     fun {_ _} {_ _} {_} => NeighborhoodSystem.mem_iff_principal_of_continuous,
     @ApproximableMap.toElementMap_ofContinuous⟩
 
-end DomainTheory.NeighbourhoodSystems

@@ -33,7 +33,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.pri
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 namespace primrec
 section _root_.DomainTheory.NeighbourhoodSystems.XPseqCode

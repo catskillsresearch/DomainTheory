@@ -55,7 +55,7 @@ noncomputable def domainIsoCode812d : DomainIso D₀ D₁ where
 end DomainIsoCode812d
 
 namespace toD0Code
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section ToD0CodeRelIff
 
@@ -96,7 +96,7 @@ end ToD0CodeRelIff
 
 end toD0Code
 namespace toD1Code
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section ToD1CodeRelIff
 
@@ -137,7 +137,7 @@ end ToD1CodeRelIff
 
 end toD1Code
 namespace domainIsoCode812d
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section DomainIsoCode812dSymmIsComputableMap
 

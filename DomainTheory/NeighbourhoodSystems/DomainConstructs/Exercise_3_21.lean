@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.stepEq
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open NeighborhoodSystem ApproximableMap
 
 /-- Scott's Exercise 3.21: criterion for identity of step neighbourhoods. -/
@@ -24,4 +25,3 @@ theorem example_321 :
       (step Y V₁.master : Set (ApproximableMap V₀ V₁)) = Set.univ) :=
   ⟨@step_eq_iff, @step_eq_of_ne_master, @step_master_right⟩
 
-end DomainTheory.NeighbourhoodSystems

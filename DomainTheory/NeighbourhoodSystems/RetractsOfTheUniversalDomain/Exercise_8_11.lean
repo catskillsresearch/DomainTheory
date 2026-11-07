@@ -7,7 +7,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Ded
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 theorem exercise_8_11 :
-    IsProjection Exercise811.a ∧ Retraction Exercise811.a ∧ ¬IsFinitary Exercise811.a :=
-  ⟨Exercise811.isProjection_a, Exercise811.isRetraction_a, Exercise811.not_isFinitary_a⟩
+    IsProjection DedekindCutProjection.a ∧ Retraction DedekindCutProjection.a ∧ ¬IsFinitary DedekindCutProjection.a :=
+  ⟨DedekindCutProjection.isProjection_a, DedekindCutProjection.isRetraction_a, DedekindCutProjection.not_isFinitary_a⟩
 
-end

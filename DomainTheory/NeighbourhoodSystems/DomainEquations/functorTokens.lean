@@ -11,12 +11,12 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 section
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap BitDom SeqEqB
-open DomainTheory.NeighbourhoodSystems.Exercise619
+open DomainTheory.NeighbourhoodSystems.FunctorTokens
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 open DomainTheory.NeighbourhoodSystems.SmashProduct
 
-namespace Exercise619
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+namespace FunctorTokens
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.FunctorTokens
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 open DomainTheory.NeighbourhoodSystems.SmashProduct
 
@@ -29,13 +29,13 @@ structure ScottSys where
   ne : ∀ X, sys.mem X → X.Nonempty
 end
 
-end Exercise619
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+end FunctorTokens
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.FunctorTokens
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 open DomainTheory.NeighbourhoodSystems.SmashProduct
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
@@ -52,20 +52,20 @@ theorem embBit_not_subset_cross {b b' : Bool} (h : b ≠ b') {X Y : Set Str} (hX
   simp only [List.cons.injEq] at he
   exact h he.1
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 def ScottSys.prod (A₀ A₁ : ScottSys) : ScottSys :=
   ⟨prodTok A₀.sys A₁.sys, prodTok_nonempty⟩
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
@@ -108,20 +108,20 @@ def singletonSys (Γ : Set Str) (h : Γ.Nonempty) : ScottSys where
       sub_master := by intro X hX; rw [show X = Γ from hX] }
   ne := by intro X hX; rw [show X = Γ from hX]; exact h
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 def ScottSys.sum (A₀ A₁ : ScottSys) : ScottSys :=
   ⟨sumTok A₀.sys A₁.sys A₀.ne A₁.ne, sumTok_nonempty⟩
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {A₀ A₁ B₀ B₁ C₀ C₁ : ScottSys}
 
@@ -616,11 +616,11 @@ theorem FExpr.obj_continuous (T : FExpr) {ℱ : Set ScottSys} {U : ScottSys}
   rintro ⟨D, hD, hmem⟩
   exact (T.obj_subsystem (hsub D hD)).sub hmem
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 variable {h₀ : ∀ X, D₀.mem X → X.Nonempty} {h₁ : ∀ Y, D₁.mem Y → Y.Nonempty}
@@ -635,11 +635,11 @@ inductive GExpr where
   | oplus : GExpr → GExpr → GExpr
   | otimes : GExpr → GExpr → GExpr
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -647,11 +647,11 @@ theorem inter_ne_of_ne_left {X X' Δ : Set Str} (hX : X ⊆ Δ) (hne : X ≠ Δ)
   intro h
   exact hne (Set.Subset.antisymm hX (by rw [← h]; exact Set.inter_subset_left))
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -669,7 +669,7 @@ def GExpr.naryProd : GExpr → List GExpr → GExpr := GExpr.naryOp GExpr.prod
 
 def GExpr.narySum : GExpr → List GExpr → GExpr := GExpr.naryOp GExpr.sum
 
-end Exercise619
+end FunctorTokens
 end
 
 end DomainTheory.NeighbourhoodSystems

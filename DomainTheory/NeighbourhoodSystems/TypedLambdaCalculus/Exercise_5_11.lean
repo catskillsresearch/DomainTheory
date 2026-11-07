@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.diagMap
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open NeighborhoodSystem ApproximableMap DiagMap
 
 /-- Scott's Exercise 5.11: diagonal stack of a constant element, and componentwise
@@ -18,4 +19,3 @@ theorem example_511 :
         (toApproxMap (component s n)).toElementMap x) :=
   ⟨@component_diag, fun V x n s => component_map V x n s⟩
 
-end DomainTheory.NeighbourhoodSystems

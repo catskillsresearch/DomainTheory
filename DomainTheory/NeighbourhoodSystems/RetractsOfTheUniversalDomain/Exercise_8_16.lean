@@ -13,4 +13,3 @@ theorem exercise_8_16 {α : Type*} {E : NeighborhoodSystem α} :
         ComputableMap P P a → (fixedNbhd a).IsEffectivelyGiven) :=
   @exercise_8_16_assembly α E
 
-end

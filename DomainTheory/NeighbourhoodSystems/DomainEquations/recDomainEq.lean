@@ -6,11 +6,11 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.functorTokens
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem DomainTheory.NeighbourhoodSystems.Exercise619
+open NeighborhoodSystem DomainTheory.NeighbourhoodSystems.FunctorTokens
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 
 section
-namespace Exercise624
+namespace RecDomainEq
 
 def Fsol (D E : ScottSys) : ScottSys := D.sum (D.prod E)
 
@@ -136,7 +136,7 @@ theorem exists_double_fixedPoint :
       fTok Γd Γe = Γd ∧ gTok Γd Γe = Γe :=
   ⟨GammaD, GammaE, nil_mem_GammaD, nil_mem_GammaE, fTok_GammaD_GammaE, gTok_GammaD_GammaE⟩
 
-end Exercise624
+end RecDomainEq
 end
 end DomainTheory.NeighbourhoodSystems
 end
@@ -144,16 +144,16 @@ end
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem DomainTheory.NeighbourhoodSystems.Exercise619
+open NeighborhoodSystem DomainTheory.NeighbourhoodSystems.FunctorTokens
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 section
-namespace Exercise624
+namespace RecDomainEq
 
 theorem exists_simultaneous_subsystems :
     ∃ D E : ScottSys, D.sys ◁ (D.sum (D.prod E)).sys ∧ E.sys ◁ (D.sum E).sys :=
   ⟨Dsol, Esol, Dsol_subsystem, Esol_subsystem⟩
 
-end Exercise624
+end RecDomainEq
 end
 
 end DomainTheory.NeighbourhoodSystems

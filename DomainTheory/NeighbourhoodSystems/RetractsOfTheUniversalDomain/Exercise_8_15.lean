@@ -11,4 +11,3 @@ theorem exercise_8_15 {α : Type*} {D : NeighborhoodSystem α} (hD : D.IsEffecti
       Nonempty (V.Element ≃o {D' : NeighborhoodSystem α // D' ◁ D}) :=
   subsystem_isEffectivelyGiven_of_isEffectivelyGiven hD
 
-end

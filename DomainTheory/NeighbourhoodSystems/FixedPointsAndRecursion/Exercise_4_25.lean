@@ -4,8 +4,9 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.unarySeq
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap NatDom Exercise425
+open DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem ApproximableMap NatDom DomainTheory.NeighbourhoodSystems.UnarySeq
 
 theorem example_425 :
     relateNToC1.toElementMap NatDom.N.bot = C1.bot ∧
@@ -15,4 +16,3 @@ theorem example_425 :
     (∀ n : ℕ, consMap.toElementMap (oneElem n) = oneElem (n + 1)) :=
   ⟨relateNToC1_bot, relateNToC1_natElem, infElt_eq, consMap_oneBot, consMap_oneElem⟩
 
-end DomainTheory.NeighbourhoodSystems

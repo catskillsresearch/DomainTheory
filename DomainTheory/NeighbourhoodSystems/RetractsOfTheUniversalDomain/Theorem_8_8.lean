@@ -105,7 +105,7 @@ theorem theorem_8_8_c {a : ApproximableMap U U} (_hfin : FinitaryProjection a)
   ⟨fixedNbhd_isEffectivelyGiven hcomp, fixedNbhd_subsystem a⟩
 
 end
-open NeighborhoodSystem ApproximableMap Exercise326
+open NeighborhoodSystem ApproximableMap Cond
 
 theorem U_mem_nonempty : ∀ X, U.mem X → X.Nonempty := fun _ hX => hX.2.1
 

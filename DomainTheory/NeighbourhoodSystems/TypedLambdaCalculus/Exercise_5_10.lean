@@ -4,8 +4,9 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.smashProduct
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap SmashProduct
+open DomainTheory.NeighbourhoodSystems
+
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 /-- Scott's Exercise 5.10: the smash product is a neighbourhood system; strict function
 spaces are isomorphic under currying against smash. -/
@@ -20,4 +21,3 @@ theorem example_510 :
   ⟨fun V₀ V₁ => smash_mem_iff (V₀ := V₀) (V₁ := V₁),
     fun V₀ V₁ V₂ => ⟨smashCurryEquiv V₀ V₁ V₂⟩⟩
 
-end DomainTheory.NeighbourhoodSystems

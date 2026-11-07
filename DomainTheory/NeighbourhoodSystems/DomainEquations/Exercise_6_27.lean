@@ -4,9 +4,10 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.embeddingCompare
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise627
-open NeighborhoodSystem Exercise619 SmashProduct BitDom
+open DomainTheory.NeighbourhoodSystems
 
+open NeighborhoodSystem DomainTheory.NeighbourhoodSystems.FunctorTokens DomainTheory.NeighbourhoodSystems.SmashProduct BitDom
+open DomainTheory.NeighbourhoodSystems.EmbeddingCompare
 theorem example_627 :
     (∀ (D₀ D₁ : NeighborhoodSystem Str), otimesTok D₀ D₁ ⊴ prodTok D₀ D₁) ∧
     (∀ {D₀ D₁ : NeighborhoodSystem Str} {h₀ : ∀ X, D₀.mem X → X.Nonempty}
@@ -22,4 +23,3 @@ theorem example_627 :
   ⟨@otimes_trianglelefteq_prod, @inl_trianglelefteq_oplus, @fst_trianglelefteq_prod,
     @not_trianglelefteq_otimes, @oplus_trianglelefteq_sum, @strictFun_trianglelefteq_funSpace⟩
 
-end DomainTheory.NeighbourhoodSystems.Exercise627

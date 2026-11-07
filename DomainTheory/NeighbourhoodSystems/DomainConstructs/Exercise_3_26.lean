@@ -4,9 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.cond
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise326
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Truth
-
+open DomainTheory.NeighbourhoodSystems.Cond
 /-- Scott's Exercise 3.26: conditional at true, false, and bottom. -/
 theorem example_326 :
     (∀ {α : Type*} (V : NeighborhoodSystem α) (x y : V.Element),
@@ -44,4 +43,3 @@ theorem example_326_sum :
                     ((outMap₁ (h₀ := h₀) (h₁ := h₁)).toElementMap x)))) = x) :=
   ⟨@condSum_bot, @condSum_false, @condSum_true, @cond_which⟩
 
-end DomainTheory.NeighbourhoodSystems.Exercise326

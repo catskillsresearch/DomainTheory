@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodIso
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open NeighborhoodSystem
 
 /-- Scott's Exercise 3.15: product is commutative, congruent, and associative up to isomorphism. -/
@@ -19,4 +20,3 @@ theorem example_315 :
       prod V₀ (prod V₁ V₂) ≅ᴰ prod (prod V₀ V₁) V₂) :=
   ⟨@prod_comm_isomorphic, @Isomorphic.prod, @prod_assoc_isomorphic⟩
 
-end DomainTheory.NeighbourhoodSystems

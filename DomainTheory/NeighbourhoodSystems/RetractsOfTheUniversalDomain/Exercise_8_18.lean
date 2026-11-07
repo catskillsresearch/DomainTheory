@@ -13,4 +13,3 @@ theorem exercise_8_18 {a b : ApproximableMap U U} (ha : IsProjection a) (hb : Is
           FinitaryProjection (arrowComb a b)) :=
   exercise_8_18_assembly ha hb
 
-end

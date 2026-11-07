@@ -9,7 +9,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.XPs
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace YPseqCode
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section XYPseqCodeZero
 
@@ -210,7 +210,7 @@ theorem inter_eq_iff_Y_inter_eq (i j k : ℕ) :
 end CombinedCodeTransfer
 
 end YPseqCode
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section CombinedCodeCrossFamily
 
@@ -350,7 +350,7 @@ theorem X_inter_eq_iff_XPseqCode_inter_eq (i j k : ℕ) :
 end CombinedCodeTransfer
 
 namespace XPseqCode
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section XYPseqCodeZero
 

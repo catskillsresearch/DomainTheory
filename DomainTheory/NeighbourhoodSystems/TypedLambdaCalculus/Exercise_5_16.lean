@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.seqNegMerge
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open NeighborhoodSystem ApproximableMap BitDom SeqDom SeqNegMerge
 
 /-- Scott's Exercise 5.16: negation is an involution, merge on the diagonal is doubling,
@@ -15,4 +16,3 @@ theorem example_516 :
     (∀ u a : Str, a ≠ [] → ¬ strBot (u ++ a ++ a ++ a) ≤ tElt) :=
   ⟨negMap_negMap, mergeMap_diag, tElt_cube_free⟩
 
-end DomainTheory.NeighbourhoodSystems

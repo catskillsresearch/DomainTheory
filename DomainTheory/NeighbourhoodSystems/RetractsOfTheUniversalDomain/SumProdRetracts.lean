@@ -14,7 +14,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 namespace DomainTheory.NeighbourhoodSystems
 section
-open NeighborhoodSystem ApproximableMap Exercise326
+open NeighborhoodSystem ApproximableMap Cond
 universe u
 
 theorem exercise_8_19_assembly {α : Type u} {E : NeighborhoodSystem α}
@@ -23,7 +23,7 @@ theorem exercise_8_19_assembly {α : Type u} {E : NeighborhoodSystem α}
   ⟨sum_trianglelefteq_of hE hT hArrow, prod_trianglelefteq_of hT hArrow⟩
 end
 
-open NeighborhoodSystem ApproximableMap Exercise326
+open NeighborhoodSystem ApproximableMap Cond
 
 theorem example_819 :
     (∀ {α : Type*} {E : NeighborhoodSystem α}

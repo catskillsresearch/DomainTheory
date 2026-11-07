@@ -13,4 +13,3 @@ theorem exercise_8_17 :
       (funSpace U U ⊴ U) :=
   ⟨V.isUniversal, prodUU_trianglelefteq_U, sumUU_trianglelefteq_U, funSpaceUU_trianglelefteq_U⟩
 
-end

@@ -17,7 +17,7 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap BitDom SeqDom SeqEqB
 
-namespace Exercise822
+namespace ExampleCLeB
 
 theorem C_nonempty : ∀ X, C.mem X → X.Nonempty := by
   rintro X (⟨σ, rfl⟩ | ⟨σ, rfl⟩)
@@ -453,6 +453,6 @@ theorem C_isomorphic_D' : C ≅ᴰ D' := ⟨cdEquiv⟩
 
 theorem C_trianglelefteq_B : C ⊴ B := ⟨D', D'_subsystem_B, C_isomorphic_D'⟩
 
-end Exercise822
+end ExampleCLeB
 
 end DomainTheory.NeighbourhoodSystems

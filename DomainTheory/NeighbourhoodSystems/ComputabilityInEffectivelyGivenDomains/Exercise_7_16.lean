@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 section
 set_option linter.unusedVariables false
 open NeighborhoodSystem Domain.Recursive ApproximableMap
@@ -41,6 +42,4 @@ theorem example_716 :
       (hgNbp : Nat.Primrec gNb) (hgNcp : Nat.Primrec gNc),
       RecDecidable₂ (fun n m => (curryC V₀ V₁ V₂).rel (PA.X n) (PB.X m))) :=
   ⟨@curryComb_isComputable, ⟨@curryComb_rel, @curryComb_rel_recDecidable⟩⟩
-end
-end DomainTheory.NeighbourhoodSystems
 

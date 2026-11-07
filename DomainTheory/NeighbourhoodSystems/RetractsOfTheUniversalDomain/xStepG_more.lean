@@ -11,7 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.XPs
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace xStepG
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section CombinedCode
 

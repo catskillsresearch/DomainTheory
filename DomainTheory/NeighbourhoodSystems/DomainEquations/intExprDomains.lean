@@ -14,11 +14,11 @@ section
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.FunctorTokens
 
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 
-namespace Exercise619
+namespace FunctorTokens
 
 def Cnat : ScottSys where
   sys :=
@@ -45,18 +45,18 @@ def Cnat : ScottSys where
     · exact ⟨[false], rfl⟩
     · exact ⟨[false], Set.mem_insert _ _⟩
 
-end Exercise619
+end FunctorTokens
 
 end DomainTheory.NeighbourhoodSystems
 end
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Exercise619
+open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.FunctorTokens
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 def Cone : ScottSys := singletonSys ({([] : Str)} : Set Str) ⟨[], rfl⟩
 
@@ -99,13 +99,13 @@ theorem M_eq_solution :
       (singletonSys Γ h).sys ◁ (MExpr.obj (singletonSys Γ h)).sys :=
   gExists_singleton_subsystem MExpr MExpr_rooted
 
-end Exercise619
+end FunctorTokens
 end
 
 section
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
-namespace Exercise619
+namespace FunctorTokens
 
 def gFix (T : GExpr) : Set Str := ⋃ n, gIter T n
 
@@ -315,13 +315,13 @@ def descRel : ℕ → ApproximableMap (Exp N hN).sys B.carrier.sys
 
 end Existence
 
-end Exercise619
+end FunctorTokens
 end
 
 section
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
-namespace Exercise619
+namespace FunctorTokens
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
@@ -336,13 +336,13 @@ theorem algHom_ext {A C : TAlgebra (TexpF N)} {g g' : AlgHom A C} (h : g.hom = g
 
 end Uniqueness
 
-end Exercise619
+end FunctorTokens
 end
 
 section
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
-namespace Exercise619
+namespace FunctorTokens
 
 section Existence
 
@@ -463,13 +463,13 @@ def descAlgHom : AlgHom (ExpAlg N hN) B where
 
 end Existence
 
-end Exercise619
+end FunctorTokens
 end
 
 section
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
-namespace Exercise619
+namespace FunctorTokens
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
@@ -482,13 +482,13 @@ theorem expSub (n : ℕ) : (gTower (Texp N) n).sys ◁ (Exp N hN).sys :=
 
 end Uniqueness
 
-end Exercise619
+end FunctorTokens
 end
 
 section
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
-namespace Exercise619
+namespace FunctorTokens
 
 theorem Subsystem.inj_isStrict {α : Type*} {D E : NeighborhoodSystem α} (h : D ◁ E) :
     IsStrict h.inj := by
@@ -497,13 +497,13 @@ theorem Subsystem.inj_isStrict {α : Type*} {D E : NeighborhoodSystem α} (h : D
   obtain ⟨_, hYE, hsub⟩ := hrel
   exact Set.Subset.antisymm (E.sub_master hYE) (by rw [← h.master_eq]; exact hsub)
 
-end Exercise619
+end FunctorTokens
 end
 
 section
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
-namespace Exercise619
+namespace FunctorTokens
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
@@ -755,13 +755,13 @@ theorem gcomp_rho_zero (g : AlgHom (ExpAlg N hN) B) :
 
 end Uniqueness
 
-end Exercise619
+end FunctorTokens
 end
 
 section
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
-namespace Exercise619
+namespace FunctorTokens
 
 theorem Subsystem.self_inj {α : Type*} {D : NeighborhoodSystem α} (h : D ◁ D) :
     h.inj = idMap D := by
@@ -775,13 +775,13 @@ theorem Subsystem.self_proj {α : Type*} {D : NeighborhoodSystem α} (h : D ◁ 
   intro X Y
   rw [Subsystem.proj_rel, idMap_rel]
 
-end Exercise619
+end FunctorTokens
 end
 
 section
 open DomainTheory.NeighbourhoodSystems.SeqEqB DomainTheory.NeighbourhoodSystems.BitDom DomainTheory.NeighbourhoodSystems.SmashProduct
 
-namespace Exercise619
+namespace FunctorTokens
 
 variable {A₀ A₁ B₀ B₁ : ScottSys}
 
@@ -971,7 +971,7 @@ theorem descMap_eq_algHom (g : AlgHom (ExpAlg N hN) B) : g.hom.1 = descMap hN B 
 
 end Uniqueness
 
-end Exercise619
+end FunctorTokens
 end
 end DomainTheory.NeighbourhoodSystems
 end

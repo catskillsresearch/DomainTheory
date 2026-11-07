@@ -1,10 +1,10 @@
 module
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_22
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NeighborhoodSystem_more
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 @[expose] public section
 
 section
-namespace DomainTheory.NeighbourhoodSystems.Exercise325
+namespace DomainTheory.NeighbourhoodSystems.OpensDomain
 section
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Set
@@ -139,5 +139,5 @@ def opensReprIso (V : NeighborhoodSystem α) :
 end
 end
 
-end DomainTheory.NeighbourhoodSystems.Exercise325
+end DomainTheory.NeighbourhoodSystems.OpensDomain
 end

@@ -10,7 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.seqEqB
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap SeqEqB BitDom
 
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -41,7 +41,7 @@ theorem sumTokMaster_inter_embT {Y : Set Str} (hY : D₁.mem Y) :
     sumTokMaster D₀ D₁ ∩ embBit true Y = embBit true Y :=
   Set.inter_eq_right.mpr (embT_subset_sumTokMaster hY)
 
-end Exercise619
+end FunctorTokens
 end DomainTheory.NeighbourhoodSystems
 
 
@@ -51,7 +51,7 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap BitDom SeqDom SeqEqB
 open NeighborhoodSystem ApproximableMap SeqEqB BitDom
 section
-namespace Exercise619
+namespace FunctorTokens
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
 def sumTok (D₀ D₁ : NeighborhoodSystem Str)
@@ -103,11 +103,11 @@ def sumTok (D₀ D₁ : NeighborhoodSystem Str)
           simp only [List.cons.injEq] at he; exact absurd he.1 (by decide)
         · exact Or.inr (Or.inr ⟨Y ∩ Y', D₁.inter_mem hY hY' hZ₁ (embBit_subset.mp hZsub), rfl⟩)
 
-end Exercise619
+end FunctorTokens
 end
 
 section
-namespace Exercise619
+namespace FunctorTokens
 
 variable {D₀ D₁ : NeighborhoodSystem Str}
 
@@ -559,7 +559,7 @@ theorem sumTok_nonempty {D₀ D₁ : NeighborhoodSystem Str}
     ∀ W, (sumTok D₀ D₁ h₀ h₁).mem W → W.Nonempty :=
   fun _ h => sumTok_mem_nonempty h
 
-end Exercise619
+end FunctorTokens
 end
 
 end DomainTheory.NeighbourhoodSystems

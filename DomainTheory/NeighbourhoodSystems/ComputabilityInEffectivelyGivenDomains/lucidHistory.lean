@@ -7,10 +7,11 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.eq_
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.sigmaBot_le_iff
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.principal_injective
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NestedOrDisjoint
+import Mathlib.Tactic.IntervalCases
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise724
+namespace DomainTheory.NeighbourhoodSystems.LucidHistory
 open NeighborhoodSystem Domain.Recursive
 
 section
@@ -166,10 +167,10 @@ theorem L_nestedOrDisjoint : NestedOrDisjoint Lmem := by
       · exact Or.inr (Or.inr (by rw [nbhd_cons, nbhd_cons]; exact consSet_inter_ne hij _ _))
 end
 
-end DomainTheory.NeighbourhoodSystems.Exercise724
+end DomainTheory.NeighbourhoodSystems.LucidHistory
 
 section
-namespace DomainTheory.NeighbourhoodSystems.Exercise724
+namespace DomainTheory.NeighbourhoodSystems.LucidHistory
 open NeighborhoodSystem Domain.Recursive
 section
 
@@ -1548,7 +1549,7 @@ theorem Lenum_subset_recDecidable : RecDecidable₂ (fun n m => Lenum n ⊆ Lenu
     Lenum_subset_char_eq_one_iff
 end
 
-end DomainTheory.NeighbourhoodSystems.Exercise724
+end DomainTheory.NeighbourhoodSystems.LucidHistory
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 

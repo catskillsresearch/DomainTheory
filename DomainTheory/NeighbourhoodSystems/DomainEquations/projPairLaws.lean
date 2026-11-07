@@ -4,7 +4,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.Lemma_6_15
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Exercise_1_27
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NeighborhoodSystem_more
 import Mathlib.Data.Fintype.Powerset
 
 @[expose] public section

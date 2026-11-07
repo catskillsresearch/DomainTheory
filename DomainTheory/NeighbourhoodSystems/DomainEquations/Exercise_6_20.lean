@@ -4,9 +4,9 @@ public import DomainTheory.NeighbourhoodSystems.DomainEquations.functorTokens
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap BitDom Exercise619
+open NeighborhoodSystem ApproximableMap BitDom DomainTheory.NeighbourhoodSystems.FunctorTokens
 
 /-- Scott's Exercise 6.20: `λΓ. tok(T({Γ}))` is continuous, hence a fixed point exists. -/
 theorem example_620 :
@@ -16,4 +16,3 @@ theorem example_620 :
         (singletonSys Γ h).sys ◁ (T.obj (singletonSys Γ h)).sys) :=
   ⟨@exists_tok_fixedPoint, @exists_singleton_subsystem⟩
 
-end DomainTheory.NeighbourhoodSystems

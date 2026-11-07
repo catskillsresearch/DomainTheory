@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.inducedMaps
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open NeighborhoodSystem ApproximableMap
 
 /-- Scott's Exercise 3.19 (iii)–(iv): projections recover the summands after sum-map. -/
@@ -41,4 +42,3 @@ theorem example_319 :
         pair (f.toElementMap w.fst) (g.toElementMap w.snd)) :=
   ⟨@toElementMap_prodMap_pair, @toElementMap_prodMap⟩
 
-end DomainTheory.NeighbourhoodSystems

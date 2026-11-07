@@ -4,9 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise723
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Domain.Recursive
-
+open DomainTheory.NeighbourhoodSystems.GraphFun
 /-- Scott's Exercise 7.23: the graph map is computable. -/
 theorem example_723 (gN incl0 incl1 eq1 : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf PNpres PNpres (decodeList c))
@@ -21,6 +20,4 @@ theorem example_723 (gN incl0 incl1 eq1 : ℕ → ℕ)
         heq1 heq1p)
       PNpres graphMap :=
   graphMap_isComputable gN incl0 incl1 eq1 hgN hgNp hincl0 hincl0p hincl1 hincl1p heq1 heq1p
-
-end DomainTheory.NeighbourhoodSystems.Exercise723
 

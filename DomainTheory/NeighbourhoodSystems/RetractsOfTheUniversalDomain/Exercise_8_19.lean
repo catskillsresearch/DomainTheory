@@ -4,7 +4,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Sum
 
 @[expose] public section
 
-open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Exercise326
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.Cond
 
 universe u
 
@@ -13,4 +13,3 @@ theorem exercise_8_19 {α : Type u} {E : NeighborhoodSystem α}
     sum E E hE hE ⊴ E ∧ prod E E ⊴ E :=
   exercise_8_19_assembly hE hT hArrow
 
-end

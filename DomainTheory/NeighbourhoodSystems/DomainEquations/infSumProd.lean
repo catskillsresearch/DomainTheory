@@ -10,7 +10,7 @@ section
 namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem
-namespace Exercise629
+namespace InfSumProd
 universe u v
 variable {ι : Type u} {α : ι → Type v}
 
@@ -724,7 +724,7 @@ theorem isum_trichotomy {hne : ∀ i, ∀ X : Set (α i), (D i).mem X → X.None
     · rfl
     · exact absurd ⟨i, X, hX, hW⟩ h
 
-end Exercise629
+end InfSumProd
 end
 
 end DomainTheory.NeighbourhoodSystems

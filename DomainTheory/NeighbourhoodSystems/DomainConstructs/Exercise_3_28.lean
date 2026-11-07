@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.leastStepMap
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open NeighborhoodSystem ApproximableMap
 
 /-- Scott's Exercise 3.28: the least map acts by a pointwise supremum of principals. -/
@@ -16,4 +17,3 @@ theorem example_328 :
         = V₁.sSup (leastMapVals L hL x) (leastMapVals_bounded hL hcons x) :=
   @toElementMap_leastMap_eq_sSup
 
-end DomainTheory.NeighbourhoodSystems

@@ -6,6 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodFunctor
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.iSupMap
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.ofIso
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.Theorem_6_16
+public import DomainTheory.NeighbourhoodSystems.DomainEquations.initialAlgebra
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.talgebra
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.endofunctor
 public import DomainTheory.NeighbourhoodSystems.DomainEquations.cAlgebra
@@ -17,7 +18,7 @@ namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
 section
-namespace Exercise618
+namespace IterProdInitial
 
 variable {α : Type*} {V : NeighborhoodSystem α}
 
@@ -85,11 +86,11 @@ theorem iterProdIso_symm_pair (a : V.Element) (b : (iterSys V).Element) :
       rw [this, ofSeq_component]
   rw [← hkey, OrderIso.symm_apply_apply]
 
-end Exercise618
+end IterProdInitial
 end
 
 section
-namespace Exercise618
+namespace IterProdInitial
 
 theorem iterSys_nonempty {α : Type*} {V : NeighborhoodSystem α}
     (h : ∀ X, V.mem X → X.Nonempty) :
@@ -98,11 +99,11 @@ theorem iterSys_nonempty {α : Type*} {V : NeighborhoodSystem α}
   obtain ⟨a, ha⟩ := h (fiber W 0) (hfib 0)
   exact ⟨(0, a), ha⟩
 
-end Exercise618
+end IterProdInitial
 end
 
 section
-namespace Exercise618
+namespace IterProdInitial
 
 variable {α : Type*} {V : NeighborhoodSystem α}
 
@@ -220,15 +221,16 @@ theorem isStrict_prodMap {α β α' β' : Type*} {V₀ : NeighborhoodSystem α} 
     toElementMap_prodMap_pair, isStrict_iff_apply_bot.mp hf₀, isStrict_iff_apply_bot.mp hf₁]
   exact pair_bot
 
-end Exercise618
+end IterProdInitial
 end
+
 
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems
 section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
-namespace Exercise618
+namespace IterProdInitial
 
 variable {α : Type*} {V : NeighborhoodSystem α}
 
@@ -292,13 +294,13 @@ theorem descMap_strict (k : ApproximableMap (prod V E) E) (hk : IsStrict k) :
 
 end Target
 
-end Exercise618
+end IterProdInitial
 end
 
 section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
-namespace Exercise618
+namespace IterProdInitial
 
 theorem prod_nonempty {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : NeighborhoodSystem β}
     (h₀ : ∀ X, V₀.mem X → X.Nonempty) (_h₁ : ∀ Y, V₁.mem Y → Y.Nonempty) :
@@ -307,13 +309,13 @@ theorem prod_nonempty {α β : Type*} {V₀ : NeighborhoodSystem α} {V₁ : Nei
   obtain ⟨a, ha⟩ := h₀ X hX
   exact ⟨Sum.inl a, prodNbhd.mem_inl.mpr ha⟩
 
-end Exercise618
+end IterProdInitial
 end
 
 section
 open NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.SmashProduct
 
-namespace Exercise618
+namespace IterProdInitial
 
 variable {α : Type*} {V : NeighborhoodSystem α}
 
@@ -506,6 +508,19 @@ def descAlgHom (Dom : StrictDomainObj.{w}) (B : TAlgebra (prodFunctor Dom)) :
        = B.str.1.comp (prodMap (idMap Dom.sys) (descMap B.str.1))
     exact descMap_comm B.str.1
 
-end Exercise618
+
+def iterIsInitial (Dom : StrictDomainObj) : IsInitial (iterAlg Dom) where
+  desc := descAlgHom Dom
+  uniq B h := by
+    obtain ⟨hom, comm⟩ := h
+    have hcomm : hom.1.comp (imap Dom.sys)
+        = B.str.1.comp (prodMap (idMap Dom.sys) hom.1) := congrArg Subtype.val comm
+    have hg : hom.1 = descMap B.str.1 :=
+      comm_unique B.str.1 hom.2 (descMap_strict B.str.1 B.str.2) hcomm (descMap_comm B.str.1)
+    have hhom : hom = ⟨descMap B.str.1, descMap_strict B.str.1 B.str.2⟩ := Subtype.ext hg
+    subst hhom
+    rfl
+
+end IterProdInitial
 end
 end DomainTheory.NeighbourhoodSystems

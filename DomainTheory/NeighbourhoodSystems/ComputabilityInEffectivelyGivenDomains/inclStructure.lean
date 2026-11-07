@@ -6,7 +6,7 @@ public import Mathlib.Order.BourbakiWitt
 @[expose] public section
 
 section
-namespace DomainTheory.NeighbourhoodSystems.Exercise713
+namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem Domain.Recursive
 
 structure InclStructure where
@@ -34,11 +34,11 @@ structure InclStructure where
   meetIdx_spec : ∀ {n m}, (∃ k, INCL k n ∧ INCL k m) →
     ∀ j, INCL j (meetIdx n m) ↔ (INCL j n ∧ INCL j m)
 
-end DomainTheory.NeighbourhoodSystems.Exercise713
+end DomainTheory.NeighbourhoodSystems
 end
 
 section
-namespace DomainTheory.NeighbourhoodSystems.Exercise713
+namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem Domain.Recursive
 
 section
@@ -321,5 +321,5 @@ end
 
 
 
-end DomainTheory.NeighbourhoodSystems.Exercise713
+end DomainTheory.NeighbourhoodSystems
 end

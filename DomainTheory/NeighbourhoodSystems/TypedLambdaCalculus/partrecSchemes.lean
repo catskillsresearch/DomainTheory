@@ -10,7 +10,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 open DomainTheory.NeighbourhoodSystems.NatDom (N natElem zeroElt succMap predMap zeroMap
   succMap_natElem succMap_bot predMap_natElem_succ predMap_natElem_zero predMap_bot
   zeroMap_natElem_zero zeroMap_natElem_succ zeroMap_bot constLiftN)
-open DomainTheory.NeighbourhoodSystems.Exercise326 (cond)
+open DomainTheory.NeighbourhoodSystems.Cond (cond)
 
 def evalAt (z : 𝒩.Element) : ApproximableMap (funSpace 𝒩 N) N :=
   (evalMap 𝒩 N).comp (paired (idMap (funSpace 𝒩 N)) (constMap (funSpace 𝒩 N) z))
@@ -110,7 +110,7 @@ theorem searchMap_step_found {n : ℕ} {f : List.Vector ℕ (n + 1) → ℕ}
     (searchMap φf).toElementMap (vecElem (k ::ᵥ v)) = natElem k := by
   rw [← push_natElem_vecElem, searchMap_rec, head_push, tail_push,
     push_natElem_vecElem, lamDef_coe_val hf (k ::ᵥ v), h0, zeroMap_natElem_zero,
-    Exercise326.cond_true]
+    Cond.cond_true]
 
 theorem searchMap_step_next {n : ℕ} {f : List.Vector ℕ (n + 1) → ℕ}
     (hf : LamDef φf (f : List.Vector ℕ (n + 1) →. ℕ)) (v : List.Vector ℕ n) (k : ℕ)
@@ -120,7 +120,7 @@ theorem searchMap_step_next {n : ℕ} {f : List.Vector ℕ (n + 1) → ℕ}
   obtain ⟨m, hm⟩ : ∃ m, f (k ::ᵥ v) = m + 1 := ⟨f (k ::ᵥ v) - 1, by omega⟩
   rw [← push_natElem_vecElem, searchMap_rec, head_push, tail_push,
     push_natElem_vecElem, lamDef_coe_val hf (k ::ᵥ v), hm, zeroMap_natElem_succ,
-    Exercise326.cond_false, succMap_natElem, push_natElem_vecElem]
+    Cond.cond_false, succMap_natElem, push_natElem_vecElem]
 
 theorem searchMap_climb {n : ℕ} {f : List.Vector ℕ (n + 1) → ℕ}
     (hf : LamDef φf (f : List.Vector ℕ (n + 1) →. ℕ)) (v : List.Vector ℕ n) (m : ℕ)
@@ -156,7 +156,7 @@ theorem iterVal_bot {n : ℕ} {f : List.Vector ℕ (n + 1) → ℕ}
     obtain ⟨j, hj⟩ : ∃ j, f (k ::ᵥ v) = j + 1 := ⟨f (k ::ᵥ v) - 1, by omega⟩
     rw [← push_natElem_vecElem, iterVal_succ, head_push, tail_push,
       push_natElem_vecElem, lamDef_coe_val hf (k ::ᵥ v), hj, zeroMap_natElem_succ,
-      Exercise326.cond_false, succMap_natElem, push_natElem_vecElem]
+      Cond.cond_false, succMap_natElem, push_natElem_vecElem]
     exact ih (k + 1)
 
 theorem searchMap_diverge {n : ℕ} {f : List.Vector ℕ (n + 1) → ℕ}
@@ -242,11 +242,11 @@ theorem recMap_eval {n : ℕ} (f₀ : List.Vector ℕ n → ℕ) (g₀ : List.Ve
   induction d with
   | zero =>
     rw [← push_natElem_vecElem, recMap_rec, head_push, tail_push,
-      zeroMap_natElem_zero, Exercise326.cond_true]
+      zeroMap_natElem_zero, Cond.cond_true]
     exact lamDef_coe_val hf u
   | succ d ih =>
     rw [← push_natElem_vecElem, recMap_rec, head_push, tail_push,
-      zeroMap_natElem_succ, Exercise326.cond_false, predMap_natElem_succ, push_natElem_vecElem, ih,
+      zeroMap_natElem_succ, Cond.cond_false, predMap_natElem_succ, push_natElem_vecElem, ih,
       push_natElem_vecElem, push_natElem_vecElem]
     exact lamDef_coe_val hg _
 

@@ -7,7 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.seqDomai
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
+namespace DomainTheory.NeighbourhoodSystems.SeqPeano
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap BitDom SeqDom
 
 section
@@ -188,28 +188,28 @@ def zeroMap : ApproximableMap C T :=
     (headValC_bot_le T T.bot 𝕗 𝕥) (headValC_bot_le T 𝕗 𝕗 𝕥) σ
 
 def oneDef (x : C.Element) : T.Element :=
-  (Exercise326.cond T).toElementMap
+  (Cond.cond T).toElementMap
     (pair (emptyMap.toElementMap x)
       (pair 𝕗
-        ((Exercise326.cond T).toElementMap (pair (zeroMap.toElementMap x) (pair 𝕗 𝕥)))))
+        ((Cond.cond T).toElementMap (pair (zeroMap.toElementMap x) (pair 𝕗 𝕥)))))
 
 theorem condT_bot (x y : T.Element) :
-    (Exercise326.cond T).toElementMap (pair T.bot (pair x y)) = T.bot := by
+    (Cond.cond T).toElementMap (pair T.bot (pair x y)) = T.bot := by
   apply Element.ext
   intro Z
-  rw [Exercise326.cond_toElementMap_mem]
+  rw [Cond.cond_toElementMap_mem]
   constructor
   · rintro (⟨h0, _⟩ | ⟨h1, _⟩ | rfl)
-    · rw [NeighborhoodSystem.mem_bot] at h0; exact absurd h0 Exercise326.zero_ne_master
-    · rw [NeighborhoodSystem.mem_bot] at h1; exact absurd h1 Exercise326.one_ne_master
+    · rw [NeighborhoodSystem.mem_bot] at h0; exact absurd h0 Cond.zero_ne_master
+    · rw [NeighborhoodSystem.mem_bot] at h1; exact absurd h1 Cond.one_ne_master
     · exact T.bot.master_mem
   · intro h
     rw [NeighborhoodSystem.mem_bot] at h
     exact Or.inr (Or.inr h)
 end
-end DomainTheory.NeighbourhoodSystems.Exercise419
+end DomainTheory.NeighbourhoodSystems.SeqPeano
 section
-namespace DomainTheory.NeighbourhoodSystems.Exercise419
+namespace DomainTheory.NeighbourhoodSystems.SeqPeano
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap BitDom SeqDom
 section
 variable {β : Type*}
@@ -221,27 +221,27 @@ theorem one_def_strBot (σ : Str) : oneMap.toElementMap (strBot σ) = oneDef (st
   | cons b σ0 =>
     cases b with
     | false =>
-      rw [oneDef, emptyMap_strBot, headValC_false, Exercise326.cond_false,
-        zeroMap_strBot, headValC_false, Exercise326.cond_true, oneMap_strBot, headValC_false]
+      rw [oneDef, emptyMap_strBot, headValC_false, Cond.cond_false,
+        zeroMap_strBot, headValC_false, Cond.cond_true, oneMap_strBot, headValC_false]
     | true =>
-      rw [oneDef, emptyMap_strBot, headValC_true, Exercise326.cond_false,
-        zeroMap_strBot, headValC_true, Exercise326.cond_false, oneMap_strBot, headValC_true]
+      rw [oneDef, emptyMap_strBot, headValC_true, Cond.cond_false,
+        zeroMap_strBot, headValC_true, Cond.cond_false, oneMap_strBot, headValC_true]
 
 theorem one_def_strElem (σ : Str) : oneMap.toElementMap (strElem σ) = oneDef (strElem σ) := by
   cases σ with
   | nil =>
 
-    rw [oneDef, emptyMap_strElem, headValC_nil, Exercise326.cond_true,
+    rw [oneDef, emptyMap_strElem, headValC_nil, Cond.cond_true,
       oneMap_strElem, headValC_nil]
   | cons b σ0 =>
     cases b with
     | false =>
 
-      rw [oneDef, emptyMap_strElem, headValC_false, Exercise326.cond_false,
-        zeroMap_strElem, headValC_false, Exercise326.cond_true, oneMap_strElem, headValC_false]
+      rw [oneDef, emptyMap_strElem, headValC_false, Cond.cond_false,
+        zeroMap_strElem, headValC_false, Cond.cond_true, oneMap_strElem, headValC_false]
     | true =>
-      rw [oneDef, emptyMap_strElem, headValC_true, Exercise326.cond_false,
-        zeroMap_strElem, headValC_true, Exercise326.cond_false, oneMap_strElem, headValC_true]
+      rw [oneDef, emptyMap_strElem, headValC_true, Cond.cond_false,
+        zeroMap_strElem, headValC_true, Cond.cond_false, oneMap_strElem, headValC_true]
 
 end
 
@@ -273,4 +273,4 @@ theorem peano_nil_ne_cons (b : Bool) (σ : Str) : ([] : Str) ≠ b :: σ := by
   simp
 end
 
-end DomainTheory.NeighbourhoodSystems.Exercise419
+end DomainTheory.NeighbourhoodSystems.SeqPeano

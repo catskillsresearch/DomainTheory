@@ -4,9 +4,9 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Proposition77
-section
+open DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem Domain.Recursive ApproximableMap IndefProduct
+open Proposition77
 
 /-- Scott's Exercise 7.17 (part 1): pairing and second projection on D♯ are computable. -/
 theorem example_717 :
@@ -18,14 +18,8 @@ theorem example_717 :
       (P : ComputablePresentation D),
       ComputableMap (dsharpPresentation P hD) (dsharpPresentation P hD) (proj1Map hD)) :=
   ⟨@pairSharp_isComputable, @proj1_isComputable⟩
-end
 
-
-end DomainTheory.NeighbourhoodSystems.Proposition77
-
-namespace DomainTheory.NeighbourhoodSystems.Exercise717
-section
-open NeighborhoodSystem Domain.Recursive ApproximableMap IndefProduct Proposition77
+open DsharpRecursion
 
 /-- Scott's Exercise 7.17 (part 2): the g-map is computable. -/
 theorem example_717_part2 :
@@ -37,7 +31,3 @@ theorem example_717_part2 :
         ComputableMap (prodPresentation Q Q) Q v →
           ComputableMap (dsharpPresentation P hD) Q (gMap u v hD) :=
   @gMap_isComputable
-end
-
-
-end DomainTheory.NeighbourhoodSystems.Exercise717

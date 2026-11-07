@@ -8,7 +8,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.pri
 namespace DomainTheory.NeighbourhoodSystems
 
 namespace hcoreCode
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section CombinedCode
 
@@ -93,7 +93,7 @@ theorem odd (δ' : ℕ → Bool) (n : ℕ) :
 end CombinedCode
 
 end hcoreCode
-open NeighborhoodSystem Domain.Recursive ApproximableMap Exercise718
+open NeighborhoodSystem Domain.Recursive ApproximableMap EffectiveIso
 
 section CombinedCode
 

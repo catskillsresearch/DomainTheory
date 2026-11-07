@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.noGreate
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open NeighborhoodSystem ApproximableMap TwoToken TwoToken.neighborhoodSystem
 
 theorem example_412 :
@@ -15,4 +16,3 @@ theorem example_412 :
         ∀ x, (idMap noGreatestFixedDomain).toElementMap x = x → x ≤ z) :=
   ⟨@idMap_fixed, @no_greatest_fixedPoint⟩
 
-end DomainTheory.NeighbourhoodSystems

@@ -11,9 +11,9 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open NeighborhoodSystem ApproximableMap Sub8_6 Exercise823
+open NeighborhoodSystem ApproximableMap Sub8_6 FixOp
 
-namespace Exercise824
+namespace CoupledFixedPoints
 
 variable {α : Type} {E : NeighborhoodSystem α}
 
@@ -94,7 +94,7 @@ theorem pairSpace_bot_fst : ((PairSpace (E := E)).bot).fst = (funSpace E E).bot 
 theorem aOp_zero (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) :
     aOp s t 0 = constMap E E.bot := by
   show toApproxMap ((paired s t).iterElem 0).fst = constMap E E.bot
-  rw [iterElem_zero_pair, pairSpace_bot_fst, Exercise823.toApproxMap_bot_eq_constMap]
+  rw [iterElem_zero_pair, pairSpace_bot_fst, FixOp.toApproxMap_bot_eq_constMap]
 
 theorem pairSpace_bot_snd : ((PairSpace (E := E)).bot).snd = (funSpace E E).bot := by
   rw [← pair_bot_bot, snd_pair]
@@ -102,7 +102,7 @@ theorem pairSpace_bot_snd : ((PairSpace (E := E)).bot).snd = (funSpace E E).bot 
 theorem bOp_zero (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E)) :
     bOp s t 0 = constMap E E.bot := by
   show toApproxMap ((paired s t).iterElem 0).snd = constMap E E.bot
-  rw [iterElem_zero_pair, pairSpace_bot_snd, Exercise823.toApproxMap_bot_eq_constMap]
+  rw [iterElem_zero_pair, pairSpace_bot_snd, FixOp.toApproxMap_bot_eq_constMap]
 
 theorem isFinitaryProjection_chain (s t : ApproximableMap (PairSpace (E := E)) (funSpace E E))
     (hst : ∀ a b, FinitaryProjection a → FinitaryProjection b →
@@ -112,8 +112,8 @@ theorem isFinitaryProjection_chain (s t : ApproximableMap (PairSpace (E := E)) (
   induction n with
   | zero =>
     rw [aOp_zero, bOp_zero]
-    exact ⟨Exercise823.isFinitaryProjection_constMap_bot E,
-      Exercise823.isFinitaryProjection_constMap_bot E⟩
+    exact ⟨FixOp.isFinitaryProjection_constMap_bot E,
+      FixOp.isFinitaryProjection_constMap_bot E⟩
   | succ k ih =>
     rw [aOp_succ, bOp_succ]
     exact hst _ _ ih.1 ih.2
@@ -293,14 +293,14 @@ theorem fixedDomain_aStar_bStar_iso (s t : ApproximableMap (PairSpace (E := E)) 
   rw [binOp_aStar_bStar_right] at h2
   exact ⟨h1, h2⟩
 
-end Exercise824
+end CoupledFixedPoints
 
 end DomainTheory.NeighbourhoodSystems
 
 namespace DomainTheory.NeighbourhoodSystems.P4
 
 end DomainTheory.NeighbourhoodSystems.P4
-namespace DomainTheory.NeighbourhoodSystems.Exercise722
+namespace DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 instance Ssys_countable : Countable {S : Set (List Bool) // Ssys.mem S} := by
   classical
@@ -318,16 +318,16 @@ instance Ssys_countable : Countable {S : Set (List Bool) // Ssys.mem S} := by
   exact Countable.of_equiv ({S : Set (List Bool) // InS S})
     (Equiv.subtypeEquivRight fun _ => Ssys_mem.symm)
 
-end DomainTheory.NeighbourhoodSystems.Exercise722
+end DomainTheory.NeighbourhoodSystems.RegularLanguage
 namespace DomainTheory.NeighbourhoodSystems.P4
 
 theorem P4_embeds : neighborhoodSystem ⊴ U :=
   theorem_8_8 neighborhoodSystem
 
 end DomainTheory.NeighbourhoodSystems.P4
-namespace DomainTheory.NeighbourhoodSystems.Exercise722
+namespace DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 theorem Ssys_embeds : Ssys ⊴ U :=
   theorem_8_8 Ssys
 
-end DomainTheory.NeighbourhoodSystems.Exercise722
+end DomainTheory.NeighbourhoodSystems.RegularLanguage

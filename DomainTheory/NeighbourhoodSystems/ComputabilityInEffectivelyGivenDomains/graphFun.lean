@@ -9,7 +9,7 @@ import Mathlib.Data.Nat.Bitwise
 
 section
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise723
+namespace DomainTheory.NeighbourhoodSystems.GraphFun
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Domain.Recursive
 
@@ -36,11 +36,11 @@ def capMap : ApproximableMap (prod PN PN) PN where
     obtain ⟨hXX', hYY'⟩ := prodNbhd.subset_iff.mp hW'W
     exact ⟨X', Y', rfl, hX', hY', hZ', hXX'.trans (hXZ.trans hZZ'), hYY'.trans (hYZ.trans hZZ')⟩
 
-end DomainTheory.NeighbourhoodSystems.Exercise723
+end DomainTheory.NeighbourhoodSystems.GraphFun
 end
 
 section
-namespace DomainTheory.NeighbourhoodSystems.Exercise723
+namespace DomainTheory.NeighbourhoodSystems.GraphFun
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Domain.Recursive
 open DomainTheory.NeighbourhoodSystems.NatPair (tri num numP unnum nextCell numP_unnum)
 open DomainTheory.NeighbourhoodSystems.SetGraph (tag tag_nil tag_cons Fun Fun_mono entries
@@ -1499,5 +1499,5 @@ theorem funMap_isComputable (gN incl0 incl1 eq1 : ℕ → ℕ)
     hincl1p heq1 heq1p gMap_isComputable
 end
 
-end DomainTheory.NeighbourhoodSystems.Exercise723
+end DomainTheory.NeighbourhoodSystems.GraphFun
 end

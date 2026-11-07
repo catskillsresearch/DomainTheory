@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 section
 set_option linter.unusedVariables false
 open NeighborhoodSystem Domain.Recursive ApproximableMap
@@ -28,6 +29,4 @@ theorem example_720 :
       (unionMap V).rel (⋃ l ∈ LS, V.PowerDomain.upSet (⋃ X ∈ l, V.upSet X))
         (⋃ Y ∈ LY, V.upSet Y) ↔ ∀ l ∈ LS, ∀ X ∈ l, ∃ Y ∈ LY, X ⊆ Y) :=
   ⟨@unionMap_isComputable, ⟨@unionMap_rel_Ypd_iff, @unionMap_rel_fin⟩⟩
-end
-end DomainTheory.NeighbourhoodSystems
 

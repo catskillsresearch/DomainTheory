@@ -10,7 +10,7 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
 
 namespace DomainTheory.NeighbourhoodSystems.WhileMap
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
-open DomainTheory.NeighbourhoodSystems.Exercise326 (cond TD)
+open DomainTheory.NeighbourhoodSystems.Cond (cond TD)
 
 variable {α : Type*} (V : NeighborhoodSystem α)
   (p : ApproximableMap V TD) (f : ApproximableMap V V)
@@ -73,14 +73,14 @@ theorem whileMap_rec (x : V.Element) :
 
 theorem whileMap_bot {x : V.Element} (hx : p.toElementMap x = Truth.botElt) :
     (whileMap V p f).toElementMap x = V.bot := by
-  rw [whileMap_rec, hx, Exercise326.cond_bot]
+  rw [whileMap_rec, hx, Cond.cond_bot]
 
 theorem whileMap_false {x : V.Element} (hx : p.toElementMap x = Truth.falseElt) :
     (whileMap V p f).toElementMap x = x := by
-  rw [whileMap_rec, hx, Exercise326.cond_false]
+  rw [whileMap_rec, hx, Cond.cond_false]
 
 theorem whileMap_true {x : V.Element} (hx : p.toElementMap x = Truth.trueElt) :
     (whileMap V p f).toElementMap x = (whileMap V p f).toElementMap (f.toElementMap x) := by
-  rw [whileMap_rec, hx, Exercise326.cond_true]
+  rw [whileMap_rec, hx, Cond.cond_true]
 
 end DomainTheory.NeighbourhoodSystems.WhileMap

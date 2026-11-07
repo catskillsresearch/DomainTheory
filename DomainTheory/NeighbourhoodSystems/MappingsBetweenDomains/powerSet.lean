@@ -10,7 +10,7 @@ public import Mathlib.Data.Set.Image
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise220
+namespace DomainTheory.NeighbourhoodSystems.PowerSet
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
 def powerSet : NeighborhoodSystem ℕ where
@@ -238,4 +238,4 @@ theorem toSet_unionMap (x y : powerSet.Element) :
     · exact ⟨Set.univ, {k}ᶜ, x.master_mem, hky, powerSet.master_mem, mem_compl_singleton k,
         mem_compl_singleton k, Set.inter_subset_right⟩
 
-end DomainTheory.NeighbourhoodSystems.Exercise220
+end DomainTheory.NeighbourhoodSystems.PowerSet

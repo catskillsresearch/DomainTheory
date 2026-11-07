@@ -13,7 +13,7 @@ namespace DomainTheory.NeighbourhoodSystems
 
 open NeighborhoodSystem ApproximableMap Sub8_6
 
-namespace Exercise823
+namespace FixOp
 
 variable {α : Type} {E : NeighborhoodSystem α}
 
@@ -182,6 +182,6 @@ theorem fixedNbhd_fixOp_subsystem (t : ApproximableMap (funSpace E E) (funSpace 
   exact (isFinitaryProjection_le_iff_fixedNbhd_subsystem
     (isFinitaryProjection_fixOp t ht) ha).mp hle
 
-end Exercise823
+end FixOp
 
 end DomainTheory.NeighbourhoodSystems

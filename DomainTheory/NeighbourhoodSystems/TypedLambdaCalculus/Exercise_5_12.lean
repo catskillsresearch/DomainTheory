@@ -4,9 +4,11 @@ public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.whileMap
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
-open NeighborhoodSystem ApproximableMap WhileMap
-open DomainTheory.NeighbourhoodSystems.Exercise326 (cond TD)
+open DomainTheory.NeighbourhoodSystems
+open NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems.WhileMap
+open DomainTheory.NeighbourhoodSystems.Cond (cond TD)
+open Truth
 
 /-- Scott's Exercise 5.12: the while combinator as a least fixed point satisfying the
 conditional recursion, with the three truth-value cases. -/
@@ -32,4 +34,3 @@ theorem example_512 :
           (whileMap V p f).toElementMap (f.toElementMap x)) :=
   ⟨@whileMap_rec, @whileMap_bot, @whileMap_false, @whileMap_true⟩
 
-end DomainTheory.NeighbourhoodSystems

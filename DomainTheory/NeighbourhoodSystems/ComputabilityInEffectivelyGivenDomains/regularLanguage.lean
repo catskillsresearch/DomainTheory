@@ -15,7 +15,7 @@ public import Mathlib.Data.Fintype.Pigeonhole
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-namespace Exercise722
+namespace RegularLanguage
 open NeighborhoodSystem ApproximableMap
 
 section
@@ -87,12 +87,12 @@ theorem Ssys_inter_mem {X Y Z : Set (List Bool)}
   InS.inter hX hY (hZ.nonempty.mono hZsub)
 end
 
-end Exercise722
+end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
 
 section
 namespace DomainTheory.NeighbourhoodSystems
-namespace Exercise722
+namespace RegularLanguage
 open NeighborhoodSystem ApproximableMap
 section
 
@@ -476,10 +476,10 @@ theorem streamArrow_mul_self (σ : List Bool) :
   le_antisymm (streamArrow_mul_self_le σ) (streamArrow_le_mul_self σ)
 end
 
-end Exercise722
+end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.NeighbourhoodSystems
-namespace Exercise722
+namespace RegularLanguage
 open NeighborhoodSystem ApproximableMap
 
 section
@@ -807,9 +807,9 @@ theorem sigma_ne_containsZero : denote .sigma ≠ denote containsZero := by
   exact absurd h1 (by decide)
 end
 
-end Exercise722
+end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.Exercise722
+namespace DomainTheory.NeighbourhoodSystems.RegularLanguage
 section
 open NeighborhoodSystem ApproximableMap
 
@@ -819,9 +819,9 @@ theorem example_722_regular : denote (.sigma) ≠ denote containsZero :=
 end
 
 
-end DomainTheory.NeighbourhoodSystems.Exercise722
+end DomainTheory.NeighbourhoodSystems.RegularLanguage
 namespace DomainTheory.NeighbourhoodSystems
-namespace Exercise722
+namespace RegularLanguage
 open scoped Computability
 open Sum Set
 
@@ -981,9 +981,9 @@ theorem catEps_accepts :
 
 end
 
-end Exercise722
+end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.Exercise722
+namespace DomainTheory.NeighbourhoodSystems.RegularLanguage
 section
 open NeighborhoodSystem ApproximableMap
 
@@ -994,9 +994,9 @@ theorem example_722_cat {σ₁ σ₂ : Type} (M₁ : NFA Bool σ₁) (M₂ : NFA
 end
 
 
-end DomainTheory.NeighbourhoodSystems.Exercise722
+end DomainTheory.NeighbourhoodSystems.RegularLanguage
 namespace DomainTheory.NeighbourhoodSystems
-namespace Exercise722
+namespace RegularLanguage
 open scoped Computability
 
 section
@@ -1073,9 +1073,9 @@ theorem interDFA_accepts {σ₁ σ₂ : Type} (M₁ : DFA Bool σ₁) (M₂ : DF
     exact hw
 end
 
-end Exercise722
+end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.Exercise722
+namespace DomainTheory.NeighbourhoodSystems.RegularLanguage
 section
 open NeighborhoodSystem ApproximableMap
 
@@ -1088,9 +1088,9 @@ theorem example_722_dfa {σ₁ σ₂ : Type} (M₁ : DFA Bool σ₁) (M₂ : DFA
 end
 
 
-end DomainTheory.NeighbourhoodSystems.Exercise722
+end DomainTheory.NeighbourhoodSystems.RegularLanguage
 namespace DomainTheory.NeighbourhoodSystems
-namespace Exercise722
+namespace RegularLanguage
 open scoped Computability
 
 section
@@ -1233,9 +1233,9 @@ theorem mem_wordsUpTo (n : ℕ) {w : List Bool} : w ∈ wordsUpTo n ↔ w.length
           | true => exact Or.inr rfl
 end
 
-end Exercise722
+end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
-namespace DomainTheory.NeighbourhoodSystems.Exercise722
+namespace DomainTheory.NeighbourhoodSystems.RegularLanguage
 section
 open NeighborhoodSystem ApproximableMap
 
@@ -1246,9 +1246,9 @@ theorem example_722_words (n : ℕ) {w : List Bool} :
 end
 
 
-end DomainTheory.NeighbourhoodSystems.Exercise722
+end DomainTheory.NeighbourhoodSystems.RegularLanguage
 namespace DomainTheory.NeighbourhoodSystems
-namespace Exercise722
+namespace RegularLanguage
 open scoped Computability
 open Sum Set
 
@@ -1659,6 +1659,6 @@ theorem autStateCard_le_card (e : SExpr) : autStateCard e ≤ Fintype.card (autS
     exact (Nat.add_le_add ih_a ih_b).trans (Fintype.card_sum (α := autState a) (β := autState b)).ge
 end
 
-end Exercise722
+end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
 end

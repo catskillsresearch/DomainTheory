@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.orderFix
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 
 theorem example_421 :
     (∀ (s : ℕ → Set ℕ), s 0 = Set.univ →
@@ -14,4 +15,3 @@ theorem example_421 :
     (∀ (n : ℕ), lfpSet (mulOp n) = {k | ∃ i, k = n * i}) :=
   ⟨upSet_unique, @leOp_unique, leRel_isFixed, mulOp_lfp_eq_multiples⟩
 
-end DomainTheory.NeighbourhoodSystems

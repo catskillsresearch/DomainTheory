@@ -11,7 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems
-namespace Exercise722
+namespace RegularLanguage
 open Set Domain.Recursive
 
 def SsysX_default : Set (List Bool) := Set.univ
@@ -43,8 +43,8 @@ def SExpr.encode : SExpr → ℕ
   | .cap a b => Nat.pair 3 (Nat.pair (encode a) (encode b))
 end
 
-end Exercise722
-namespace Exercise722
+end RegularLanguage
+namespace RegularLanguage
 open Set Domain.Recursive
 
 section
@@ -275,8 +275,8 @@ theorem decodeFuelOkChar_eq_one_iff (fuel c : ℕ) :
       simp
 end
 
-end Exercise722
-namespace Exercise722
+end RegularLanguage
+namespace RegularLanguage
 open Set Domain.Recursive
 
 section
@@ -500,10 +500,10 @@ instance decidableSsysCons (n m : ℕ) :
   decidable_of_iff (ssysConsistentB n m = true) (ssys_cons_char_iff n m)
 end
 
-end Exercise722
+end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise722
+namespace DomainTheory.NeighbourhoodSystems.RegularLanguage
 section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -514,10 +514,10 @@ theorem example_722_presentation_inst47 (n m : ℕ) :
 end
 
 
-end DomainTheory.NeighbourhoodSystems.Exercise722
+end DomainTheory.NeighbourhoodSystems.RegularLanguage
 
 namespace DomainTheory.NeighbourhoodSystems
-namespace Exercise722
+namespace RegularLanguage
 open Set Domain.Recursive
 
 section
@@ -982,10 +982,10 @@ theorem Ssys_partially_effectively_given : PartiallyEffectivelyGiven Ssys := ⟨
 
 end
 
-end Exercise722
+end RegularLanguage
 end DomainTheory.NeighbourhoodSystems
 
-namespace DomainTheory.NeighbourhoodSystems.Exercise722
+namespace DomainTheory.NeighbourhoodSystems.RegularLanguage
 section
 open NeighborhoodSystem Domain.Recursive ApproximableMap
 
@@ -996,4 +996,4 @@ theorem example_722_presentation :
 end
 
 
-end DomainTheory.NeighbourhoodSystems.Exercise722
+end DomainTheory.NeighbourhoodSystems.RegularLanguage

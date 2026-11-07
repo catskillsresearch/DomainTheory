@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.DomainConstructs.compMap
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 open NeighborhoodSystem ApproximableMap
 
 /-- Scott's Exercise 3.22: the composition combinator acts by ordinary composition. -/
@@ -20,4 +21,3 @@ theorem example_322 :
         = (toApproxMap Gφ).toElementMap ((toApproxMap Fφ).toElementMap x)) :=
   ⟨@toApproxMap_compMap, @toElementMap_compMap_apply⟩
 
-end DomainTheory.NeighbourhoodSystems

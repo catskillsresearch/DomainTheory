@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.phi
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 
 /-- Scott's Exercise 2.14: the neighbourhood correspondence of an order isomorphism preserves
 intersections of consistent neighbourhoods, and the induced approximable map is containment
@@ -19,4 +20,3 @@ theorem example_214 :
       (ApproximableMap.ofIso e).rel X Y ↔ V₁.mem Y ∧ phi e hX ⊆ Y) :=
   ⟨@phi_inter, @rel_ofIso_iff⟩
 
-end DomainTheory.NeighbourhoodSystems

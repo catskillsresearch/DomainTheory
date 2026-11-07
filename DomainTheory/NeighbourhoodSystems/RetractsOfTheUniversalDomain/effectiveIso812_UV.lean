@@ -11,7 +11,7 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 
 namespace DomainTheory.NeighbourhoodSystems
 
-open Domain.Recursive NeighborhoodSystem Exercise718
+open Domain.Recursive NeighborhoodSystem EffectiveIso
 
 noncomputable def effectiveIso812_UV : EffectiveIso UComputablePresentation VComputablePresentation :=
   effectiveIso812d UComputablePresentation VComputablePresentation U_isComputableDiff

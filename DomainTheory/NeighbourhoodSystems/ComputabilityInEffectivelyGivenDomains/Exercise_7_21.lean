@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems
+open DomainTheory.NeighbourhoodSystems
+
 section
 set_option linter.unusedVariables false
 open NeighborhoodSystem Domain.Recursive ApproximableMap
@@ -28,5 +29,3 @@ theorem example_721 :
       {X₀ : Set α} {Y₀ : Set β} (hX₀ : V.mem X₀) (hY₀ : W.mem Y₀),
       (papplyEval V W).rel ((funSpace V W).upSet (step X₀ Y₀)) (V.upSet X₀) (W.upSet Y₀)) :=
   ⟨@papplyEval_isComputable, ⟨@papplyEval_rel_Ypd_iff, @papplyEval_step_witness⟩⟩
-end
-end DomainTheory.NeighbourhoodSystems

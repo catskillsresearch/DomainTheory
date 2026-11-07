@@ -4,7 +4,8 @@ public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.fixInduc
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.ApproximableMap
+open DomainTheory.NeighbourhoodSystems
+
 section
 open NeighborhoodSystem ApproximableMap
 
@@ -21,6 +22,4 @@ theorem example_408 :
             (∀ n, P (s n)) → P (supChain s hmono)) →
             P f.fixElement) :=
   ⟨@fix_induction_eq, @fix_induction⟩
-end
 
-end DomainTheory.NeighbourhoodSystems.ApproximableMap
