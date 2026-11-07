@@ -1,1 +1,31 @@
 Directed supremum of a monotone ℕ-indexed chain of elements, and the characterisation of the least fixed-point element as the supremum of the iterate elements from bottom.
+
+<!-- formalization -->
+
+**Definition (`ApproximableMap.supChain`).** The supremum of a monotone ℕ-indexed chain of elements is their directed supremum along the maximum-index directedness.
+
+*Proof.* By definition. ∎
+
+**Theorem (`ApproximableMap.iterElem_monotone`).** The iterate elements of an endomap from bottom form a monotone sequence.
+
+*Proof.* Invoke monotonicity of iterate elements in the step index. ∎
+
+**Theorem (`ApproximableMap.iterElem_succ`).** The successor iterate element is the image of the previous under the endomap.
+
+*Proof.* Unpack the iterate-map composition at a successor and the element-map composition law. ∎
+
+**Theorem (`ApproximableMap.iterElem_zero`).** The zero-fold iterate element is bottom.
+
+*Proof.* The zero iterate map is the identity, which sends bottom to bottom. ∎
+
+**Theorem (`ApproximableMap.comp_self_iterElem`).** The $n$-fold iterate element of an endomap composed with itself equals the $2n$-fold iterate element of the original map.
+
+*Proof.* Induct on $n$, using the successor and zero laws for iterate elements together with composition of element maps. ∎
+
+**Theorem (`ApproximableMap.mem_supChain`).** A neighbourhood belongs to a chain supremum precisely when it belongs to some stage of the chain.
+
+*Proof.* Invoke the membership law for directed suprema. ∎
+
+**Theorem (`ApproximableMap.fixElement_eq_supChain`).** The least fixed-point element is the chain supremum of the iterate elements from bottom.
+
+*Proof.* Compare membership using the directed-supremum and least-fixed-point membership characterisations together with the iterate-element membership law. ∎

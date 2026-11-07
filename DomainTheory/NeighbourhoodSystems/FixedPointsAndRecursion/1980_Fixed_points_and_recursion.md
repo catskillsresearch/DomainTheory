@@ -15,7 +15,7 @@
 - [Theorem 4.6 — Peano models isomorphic](1980_Theorem_4_6.md) [✓](../1980_REVISION.md)
 - [Fixed point above a seed](1980_fixAbove.md) [✓](../1980_REVISION.md)
 - [Exercise 4.7 — fixed point above a seed](1980_Exercise_4_7.md) [✓](../1980_REVISION.md)
-- [Iterate-chain supremum](1980_supChain.md)
+- [Iterate-chain supremum](1980_supChain.md) [✓](../1980_REVISION.md)
 - [Exercise 4.8 — fixed-point induction](1980_Exercise_4_8.md)
 - [Exercise 4.9 — fix as a fixed point](1980_Exercise_4_9.md)
 - [Exercise 4.10 — domain above an element](1980_Exercise_4_10.md)
