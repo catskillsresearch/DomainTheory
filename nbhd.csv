@@ -126,7 +126,7 @@ line,keyword,number,label,file
 2657,THEOREM,5.2,beta conversion,TypedLambdaCalculus/Theorem_5_2.lean
 2745,PROPOSITION,5.3,simultaneous fixed points,TypedLambdaCalculus/Proposition_5_3.lean
 2799,PROPOSITION,5.4,fixed point under a parameter,TypedLambdaCalculus/Proposition_5_4.lean
-2836,TABLE,5.5,table of combinators,TypedLambdaCalculus/Table_5_5.lean
+2836,TABLE,5.5,table of combinators,TypedLambdaCalculus/Combinators.lean
 2877,THEOREM,5.6,partial recursive functions,TypedLambdaCalculus/Theorem_5_6.lean
 3003,EXERCISES,,Lecture V exercises,
 3005,EXERCISE,5.7,currying the lambda notation,TypedLambdaCalculus/Exercise_5_7.lean

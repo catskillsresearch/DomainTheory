@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise_7_15
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table_5_5
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Combinators
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.EmbeddingsIntoU
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Proposition_8_10

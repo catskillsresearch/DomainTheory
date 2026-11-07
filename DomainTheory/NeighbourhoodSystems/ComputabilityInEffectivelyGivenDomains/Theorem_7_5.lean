@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table_5_5
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Combinators
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition_7_12
 
 @[expose] public section

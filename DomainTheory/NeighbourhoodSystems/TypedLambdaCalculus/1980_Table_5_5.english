@@ -1,0 +1,190 @@
+**TABLE 5.5.** In the displayed table we give a summary of uses of the $\lambda$-notation to define various combinators. We have mentioned some of these equations before, and there are some combinators here we have not mentioned before — their meanings, however, should be clear.
+
+$$
+\begin{aligned}
+P_0 &= \lambda x, y . x \\
+P_1 &= \lambda x, y . y \\
+\mathrm{pair} &= \lambda x \lambda y . \langle x, y \rangle \\
+\mathrm{n\text{-}tuple} &= \lambda x_0 \lambda x_1 \ldots \lambda x_{n-1} . \langle x_0, x_1, \ldots, x_{n-1} \rangle \\
+\mathrm{diag} &= \lambda x . \langle x, x \rangle \\
+\mathrm{funpair} &= \lambda f \lambda g \lambda x . \langle f(x), g(x) \rangle \\
+\mathrm{proj}_i^n &= \lambda x_0, x_1, \ldots, x_{n-1} . x_i \\
+\mathrm{inv}_{i,j}^n &= \lambda x_0, \ldots, x_i, \ldots, x_j, \ldots, x_{n-1} . \langle x_0, \ldots, x_j, \ldots, x_i, \ldots, x_{n-1} \rangle
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\mathrm{eval} &= \lambda f, x . f(x) \\
+\mathrm{curry} &= \lambda g \lambda x \lambda y . g(x, y) \\
+\mathrm{comp} &= \lambda g, f \lambda x . g(f(x)) \\
+\mathrm{const} &= \lambda k \lambda x . k \\
+\mathrm{fix} &= \lambda f ! x . f(x)
+\end{aligned}
+$$
+
+**A TABLE OF COMBINATORS**
+
+<!-- page 84 -->
+
+It is important to note that since we have not typed the variables, these equations are ambiguous: they only become precise when the types are specified. It follows, therefore, that what we find in the table are *schemes* for combinators; there are actually infinitely many distinct combinators corresponding to any one equation depending on how the variables have types chosen for them. Clearly it is better to imagine this variety of combinators than it is to try to notate them with type superscripts.
+
+One interest of combinators is that it is often possible to write expressions without variables — if enough combinators are used. This is sometimes useful, but it can become clumsy. On the other hand, if the same combination occurs over and over, it is sometimes useful to give it a name. This is what we do with, say, *composition* where
+
+$$
+\mathrm{comp}\ (g, f) = g \circ f.
+$$
+
+On the one side we have the prefix notation, and on the other, the more common infix notation. With either notation the variable seen in $\lambda x.\ g(f(x))$ has been got rid of. The choice between equivalent notations ought to be based on a desire for readability. $\square$
+
+The reader will have noted that there are some combinators not appearing in Table 5.5. The reason is that combinators like $\mathrm{cond}$, $\mathrm{succ}$, $\mathrm{pred}$, $\mathrm{zero}$, $0$ cannot be defined in the pure $\lambda$-notation but are specific to domains like $T$ and $\mathbf{N}$; we, thus, have to regard them as primitive. But once they are in hand, a very large number of other functions can be defined from these combined with $\lambda$-expressions. The next theorem gives an indication of the possibilities.
+
+<!-- formalization -->
+
+**Definition (`P₀`).** The first-projection combinator is the product first projection.
+
+*Proof.* By definition. ∎
+
+**Theorem (`P₀_apply`).** The first-projection combinator recovers the first component of a pair.
+
+*Proof.* Unfold the definition and apply the projection and pairing laws. ∎
+
+**Definition (`P₁`).** The second-projection combinator is the product second projection.
+
+*Proof.* By definition. ∎
+
+**Theorem (`P₁_apply`).** The second-projection combinator recovers the second component of a pair.
+
+*Proof.* Unfold the definition and apply the projection and pairing laws. ∎
+
+**Definition (`diagC`).** The diagonal combinator pairs the identity with itself.
+
+*Proof.* By definition. ∎
+
+**Theorem (`diagC_apply`).** The diagonal combinator sends an element to its pair with itself.
+
+*Proof.* Unfold the definition and apply the pairing and identity laws. ∎
+
+**Definition (`pairC`).** The pairing combinator is the curry of the product identity.
+
+*Proof.* By definition. ∎
+
+**Definition (`swapC`).** The swap combinator pairs the second projection with the first.
+
+*Proof.* By definition. ∎
+
+**Theorem (`swapC_apply`).** The swap combinator exchanges the components of a pair.
+
+*Proof.* Unfold the definition and apply the pairing and projection laws. ∎
+
+**Definition (`compMapTbl`).** The uncurried composition table evaluates the outer function at the value of the inner function on the remaining argument, assembled from projections and evaluations.
+
+*Proof.* By definition. ∎
+
+**Definition (`compC`).** The composition combinator is the curry of that uncurried composition table.
+
+*Proof.* By definition. ∎
+
+**Definition (`constC`).** The constant combinator is the curry of the first projection out of a product with a dummy argument domain.
+
+*Proof.* By definition. ∎
+
+**Definition (`curryIso`).** The curry order isomorphism transports function-space filters through the curry equivalence of approximable maps.
+
+*Proof.* Compose the function-space filter equivalence with the curry equivalence and the inverse filter equivalence. ∎
+
+**Definition (`curryC`).** The curry combinator is the approximable map induced by that order isomorphism.
+
+*Proof.* By definition. ∎
+
+**Definition (`evalC`).** The evaluation combinator is the evaluation map of the function space.
+
+*Proof.* By definition. ∎
+
+**Definition (`fixC`).** The fix combinator of the table is the least-fixed-point combinator on the function space.
+
+*Proof.* By definition. ∎
+
+**Definition (`funpairMapTbl`).** The uncurried function-pairing table evaluates two function arguments at a shared input and pairs the results.
+
+*Proof.* By definition. ∎
+
+**Definition (`funpairC`).** The function-pairing combinator is the double curry of that uncurried table.
+
+*Proof.* By definition. ∎
+
+**Theorem (`compC_apply`).** Composition of function-space elements under the composition combinator evaluates as ordinary composition of the recovered maps.
+
+*Proof.* Unfold curry and the composition table; simplify with projection, pairing, and evaluation laws. ∎
+
+**Theorem (`compC_eq_comp`).** The map recovered from the composition combinator is the composite of the recovered maps.
+
+*Proof.* Compare elementwise images via the previous evaluation law. ∎
+
+**Theorem (`constC_apply`).** The constant combinator recovers the constant value at every argument.
+
+*Proof.* Unfold curry and apply the first-projection law. ∎
+
+**Theorem (`constC_eq_constMap`).** The map recovered from the constant combinator is the constant map.
+
+*Proof.* Compare elementwise images via the previous evaluation law and the constant-map law. ∎
+
+**Theorem (`curryC_toApproxMap`).** The map recovered from the curry combinator is the curry of the recovered map.
+
+*Proof.* Unfold the isomorphism-induced map and cancel the filter round trip through the function-space equivalence. ∎
+
+**Theorem (`curryC_apply`).** The curry combinator evaluates by pairing arguments into the original map.
+
+*Proof.* Rewrite via the previous recovery law and apply the curry evaluation law. ∎
+
+**Theorem (`evalC_apply`).** The evaluation combinator evaluates a function-space element at an argument.
+
+*Proof.* Unfold the definition and apply the evaluation law. ∎
+
+**Theorem (`fixC_apply`).** The fix combinator of the table recovers the least fixed-point element of the recovered map.
+
+*Proof.* Unfold the definition and apply the fix-combinator evaluation law. ∎
+
+**Theorem (`fixC_fixed`).** The value of the fix combinator is a fixed point of the recovered map.
+
+*Proof.* Unfold the definition and apply the fixed-point law for the fix combinator. ∎
+
+**Theorem (`funpairC_apply`).** The function-pairing combinator evaluates to the pair of the two recovered values at a shared argument.
+
+*Proof.* Unfold the double curry and the pairing table; simplify with projection, pairing, and evaluation laws. ∎
+
+**Theorem (`funpairC_eq_paired`).** The map recovered from the function-pairing combinator is the pairing of the recovered maps.
+
+*Proof.* Compare elementwise images via the previous evaluation law and the pairing law. ∎
+
+**Theorem (`pairC_apply`).** The pairing combinator evaluates to the pair of its two arguments.
+
+*Proof.* Unfold curry and apply the identity law. ∎
+
+**Definition (`ApproximableMap.secFixX`).** The sectional least-fixed-point map of a binary endomap in the first argument composes the fix combinator with the curry of that map after swapping arguments.
+
+*Proof.* By definition. ∎
+
+**Definition (`ApproximableMap.outerOp`).** The outer operator of a pair of binary maps composes the second with the pairing of the sectional least-fixed-point map and the identity.
+
+*Proof.* By definition. ∎
+
+**Definition (`ApproximableMap.sectionX`).** The section of a binary map at a second-argument value is the recovered map after currying the swapped composite.
+
+*Proof.* By definition. ∎
+
+**Theorem (`ApproximableMap.outerOp_apply`).** The outer operator evaluates by feeding the sectional least fixed point paired with the second argument into the second map.
+
+*Proof.* Unfold the definition and apply the composition, pairing, and identity laws. ∎
+
+**Theorem (`ApproximableMap.secFixX_apply`).** The sectional least-fixed-point map evaluates to the least fixed-point element of the corresponding section.
+
+*Proof.* Unfold the definitions and apply the composition and fix-combinator evaluation laws. ∎
+
+**Theorem (`ApproximableMap.sectionX_apply`).** A section evaluates by pairing the free argument with the fixed second argument into the original map.
+
+*Proof.* Unfold the definition and apply the curry, composition, and swap laws. ∎
+
+**Theorem (`ApproximableMap.secFixX_isFixed`).** The sectional least fixed point is fixed by the original map when paired with the section parameter.
+
+*Proof.* Rewrite via the sectional evaluation laws and apply the fixed-point law for least fixed-point elements. ∎

@@ -7,7 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.The
 
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.funSpaceIso
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition_7_3
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table_5_5
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Combinators
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 
 @[expose] public section

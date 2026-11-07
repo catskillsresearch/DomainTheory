@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Table_5_5
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Combinators
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.prodEquiv
 
 @[expose] public section
