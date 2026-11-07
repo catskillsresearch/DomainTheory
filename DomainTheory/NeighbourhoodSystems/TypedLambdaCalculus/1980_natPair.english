@@ -1,0 +1,75 @@
+Cantor pairing of natural numbers via triangular numbers, with the diagonal-step recurrence and a two-sided inverse.
+
+<!-- formalization -->
+
+**Definition (`nextCell`).** The next cell on the antidiagonal enumeration steps left-and-up, or wraps to the next antidiagonal.
+
+*Proof.* By definition. ∎
+
+**Definition (`tri`).** The $k$th triangular number is $k(k+1)/2$.
+
+*Proof.* By definition. ∎
+
+**Definition (`num`).** The pairing of $n$ and $m$ is the triangular number of their sum plus $m$.
+
+*Proof.* By definition. ∎
+
+**Definition (`numP`).** Pairing on a product is pairing of the two components.
+
+*Proof.* By definition. ∎
+
+**Theorem (`num_succ_right`).** Incrementing the second argument equals stepping left on the antidiagonal and adding one.
+
+*Proof.* Compare triangular numbers after rewriting the sum. ∎
+
+**Theorem (`num_zero_zero`).** The origin pairs to zero.
+
+*Proof.* Immediate from the definitions. ∎
+
+**Theorem (`two_dvd_mul_succ`).** Twice divides the product of a number and its successor.
+
+*Proof.* Induction on the number. ∎
+
+**Theorem (`tri_mul_two`).** Twice a triangular number recovers the product of the index with its successor.
+
+*Proof.* Cancel the division using the previous divisibility. ∎
+
+**Theorem (`tri_succ`).** The next triangular number adds the next index.
+
+*Proof.* Compare doubles of both sides. ∎
+
+**Theorem (`num_lt_tri_succ`).** A pairing lies strictly below the next triangular number after its antidiagonal.
+
+*Proof.* Expand via the triangular successor law. ∎
+
+**Theorem (`num_succ_left`).** Starting a new antidiagonal equals wrapping from the previous row and adding one.
+
+*Proof.* Expand via the triangular successor law. ∎
+
+**Theorem (`numP_nextCell`).** Stepping to the next cell increments the pairing value by one.
+
+*Proof.* Case on the first coordinate and apply the two successor laws. ∎
+
+**Theorem (`tri_le_succ`).** Triangular numbers are monotone in the successor.
+
+*Proof.* The triangular successor law. ∎
+
+**Theorem (`tri_mono`).** Triangular numbers are monotone.
+
+*Proof.* Induction along the inequality. ∎
+
+**Theorem (`num_injective`).** The pairing on products is injective.
+
+*Proof.* Equal pairings force equal antidiagonals by the triangular bounds, then equal second coordinates. ∎
+
+**Definition (`unnum`).** The inverse enumeration walks the next-cell map from the origin.
+
+*Proof.* By definition. ∎
+
+**Theorem (`numP_unnum`).** Pairing after unpairing recovers the number.
+
+*Proof.* Induction, using the next-cell increment. ∎
+
+**Theorem (`unnum_numP`).** Unpairing after pairing recovers the cell.
+
+*Proof.* Injectivity of pairing with the previous round-trip. ∎

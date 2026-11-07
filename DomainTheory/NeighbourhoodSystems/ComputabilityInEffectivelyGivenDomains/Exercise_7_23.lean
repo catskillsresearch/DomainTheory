@@ -16,7 +16,7 @@ namespace DomainTheory.NeighbourhoodSystems.Exercise723
 
 open DomainTheory.NeighbourhoodSystems Example78 NeighborhoodSystem Domain.Recursive
 
-open DomainTheory.NeighbourhoodSystems.Exercise513 (tri num numP unnum nextCell numP_unnum)
+open DomainTheory.NeighbourhoodSystems.NatPair (tri num numP unnum nextCell numP_unnum)
 
 open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun_mono entries
   num_succ_left_gt tag_injective)
@@ -45,7 +45,7 @@ end
 section
 namespace DomainTheory.NeighbourhoodSystems.Exercise723
 open DomainTheory.NeighbourhoodSystems Example78 NeighborhoodSystem Domain.Recursive
-open DomainTheory.NeighbourhoodSystems.Exercise513 (tri num numP unnum nextCell numP_unnum)
+open DomainTheory.NeighbourhoodSystems.NatPair (tri num numP unnum nextCell numP_unnum)
 open DomainTheory.NeighbourhoodSystems.Exercise514 (tag tag_nil tag_cons Fun Fun_mono entries
   num_succ_left_gt tag_injective)
 

@@ -2,13 +2,14 @@ module
 
 public import Mathlib.Logic.Equiv.Nat
 
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_13
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.natPair
 public import Mathlib.Algebra.Group.End
 
 @[expose] public section
 
 section
 namespace DomainTheory.NeighbourhoodSystems.Exercise513
+open NatPair
 section
 
 def numEquiv : ℕ × ℕ ≃ ℕ where

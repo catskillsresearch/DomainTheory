@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Exercise_5_13
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.natPair
 
 public import Mathlib.Data.Set.Defs
 
@@ -10,7 +10,7 @@ section
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise514
 
-open DomainTheory.NeighbourhoodSystems.Exercise513
+open DomainTheory.NeighbourhoodSystems.NatPair
 
 def tag : List ℕ → ℕ → ℕ
   | [], m => num 0 m
@@ -21,7 +21,7 @@ end
 
 section
 namespace DomainTheory.NeighbourhoodSystems.Exercise514
-open DomainTheory.NeighbourhoodSystems.Exercise513
+open DomainTheory.NeighbourhoodSystems.NatPair
 
 section
 @[simp] theorem tag_nil (m : ℕ) : tag [] m = num 0 m := rfl

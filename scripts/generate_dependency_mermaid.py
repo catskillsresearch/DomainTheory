@@ -2023,6 +2023,10 @@ NS_LAM_SHORT: dict[str, tuple[str, str]] = {
         "X512",
         "Exercise 5.12 — while combinator",
     ),
+    "Natural-number pairing": (
+        "natPair",
+        "Natural-number pairing",
+    ),
     "Exercise 5.13 — pairing function on numbers": (
         "X513",
         "Exercise 5.13 — pairing function on numbers",

@@ -1,27 +1,9 @@
 # Exercise 5.13
 
-**EXERCISE 5.13.** Prove the existence of a one-one function $\mathrm{num} : \mathbf{N} \times \mathbf{N} \to \mathbf{N}$ such that
-
-$$
-\mathrm{num}(0, 0) = 0;
-$$
-
-$$
-\mathrm{num}(n, m+1) = \mathrm{num}(n+1, m) + 1;
-$$
-
-$$
-\mathrm{num}(n+1, 0) = \mathrm{num}(0, n) + 1.
-$$
-
-Draw a picture (i.e. an infinite matrix) for the function and find a closed form for its values, if possible. Use the function to prove the isomorphism of the domains
-
-$$
-P\mathbf{N},\ P(\mathbf{N} \times \mathbf{N}),\ P\mathbf{N} \times P\mathbf{N}.
-$$
-
-<!-- page 90 -->
+@import "1980_Exercise_5_13.english" {code_block=false}
 
 **[Exercise_5_13.lean](Exercise_5_13.lean)**
 
 @import "Exercise_5_13.lean"
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-07) — <a href="../1980_REVISION.md">1980 revision progress</a></p>
