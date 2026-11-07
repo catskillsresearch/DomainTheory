@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.partrecLam
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.iterStack
 public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.fixMap
 public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9

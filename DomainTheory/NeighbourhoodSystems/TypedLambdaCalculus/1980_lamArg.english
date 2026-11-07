@@ -1,0 +1,162 @@
+Number-stack argument encoding: finite (partial) vectors as sequences over the number domain, together with the λ-definability predicate and the guard/tuple scaffolding used to realize base and composition schemes.
+<!-- formalization -->
+
+**Definition (`optElem`).** An optional natural number is interpreted as bottom when absent and as the corresponding number-domain atom when present.
+
+*Proof.* By definition. ∎
+
+**Definition (`𝒩`).** The number-stack is the infinite product of the number domain with itself.
+
+*Proof.* By definition as the iterated system on the number domain. ∎
+
+**Definition (`ArgLike`).** A sequence is argument-like when every component is either bottom or a number-domain atom.
+
+*Proof.* By definition. ∎
+
+**Definition (`argElem`).** A finite partial vector is encoded by placing optional atoms in the initial components and bottom thereafter.
+
+*Proof.* By definition via the sequence constructor. ∎
+
+**Definition (`vecElem`).** A total finite vector is the argument encoding of its pointwise-defined optional values.
+
+*Proof.* By definition. ∎
+
+**Definition (`LamDef`).** An approximable map λ-defines a partial function when it is strict on argument-like ideals, agrees on defined values, and returns bottom on undefined ones.
+
+*Proof.* By the structure fields. ∎
+
+**Theorem (`component_argElem`).** The stated property of `component_argElem`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`component_vecElem`).** The stated property of `component_vecElem`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Definition (`guard1`).** A one-place guard returns bottom when the chosen component is bottom, and otherwise agrees with the guarded map.
+
+*Proof.* By definition via the conditional on the zero-test of that component. ∎
+
+**Definition (`oneArg`).** A single number is pushed onto the empty stack to form a one-argument sequence.
+
+*Proof.* Compose push with the pairing of the identity and the constant empty stack. ∎
+
+**Definition (`strictGuardN`).** An $n$-place strict guard nests one-place guards on the first $n$ components.
+
+*Proof.* By recursion on $n$. ∎
+
+**Definition (`tupleMap`).** A tuple of maps into the number domain is assembled by successively pushing their values onto the stack.
+
+*Proof.* By recursion on the tuple length. ∎
+
+**Theorem (`T_bot_eq`).** The stated property of `T_bot_eq`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`argElem_argLike`).** The stated property of `argElem_argLike`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`component_argElem_none`).** The stated property of `component_argElem_none`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`component_bot`).** The stated property of `component_bot`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`component_push_succ`).** The stated property of `component_push_succ`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`component_push_zero`).** The stated property of `component_push_zero`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`component_vecElem_lt`).** The stated property of `component_vecElem_lt`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`eq_of_component_eq`).** The stated property of `eq_of_component_eq`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`guard1_apply`).** The stated property of `guard1_apply`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`guard1_bot`).** The stated property of `guard1_bot`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`guard1_inner_bot`).** The stated property of `guard1_inner_bot`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`guard1_total`).** The stated property of `guard1_total`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`lamDef_coe_val`).** The stated property of `lamDef_coe_val`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`lamDef_congr`).** The stated property of `lamDef_congr`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`mem_mOfFn`).** The stated property of `mem_mOfFn`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`oneArg_bot`).** The stated property of `oneArg_bot`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`push_natElem_vecElem`).** The stated property of `push_natElem_vecElem`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`oneArg_natElem`).** The stated property of `oneArg_natElem`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`realizer_value`).** The stated property of `realizer_value`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`strictGuardN_strict`).** The stated property of `strictGuardN_strict`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`strictGuardN_total`).** The stated property of `strictGuardN_total`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`tupleMap_succ`).** The stated property of `tupleMap_succ`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`component_tupleMap`).** The stated property of `component_tupleMap`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`tupleMap_zero`).** The stated property of `tupleMap_zero`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`component_tupleMap_ge`).** The stated property of `component_tupleMap_ge`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`tupleMap_argLike`).** The stated property of `tupleMap_argLike`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`tupleMap_vecElem_eq`).** The stated property of `tupleMap_vecElem_eq`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`vecElem_totals`).** The stated property of `vecElem_totals`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎

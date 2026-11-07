@@ -1,0 +1,102 @@
+Least-fixed-point realizers on the number-stack for unbounded search and primitive recursion, with their recursion and step lemmas.
+<!-- formalization -->
+
+**Definition (`evalAt`).** Evaluation at a fixed stack argument is evaluation of the function-space map at that constant.
+
+*Proof.* Pair the identity on the function space with the constant argument and compose with evaluation. ∎
+
+**Definition (`findBody`).** The search body returns the head when the predicate vanishes, and otherwise continues at the successor head on the tail.
+
+*Proof.* By definition via the conditional on the zero-test of the predicate at the current stack. ∎
+
+**Definition (`findOp`).** The search operator is the curry of the search body.
+
+*Proof.* By definition. ∎
+
+**Definition (`precBody`).** The primitive-recursion body branches on whether the head vanishes, applying the base map on the tail or the step map at the predecessor.
+
+*Proof.* By definition via the conditional on the zero-test of the head. ∎
+
+**Definition (`recOp`).** The primitive-recursion operator is the curry of the primitive-recursion body.
+
+*Proof.* By definition. ∎
+
+**Definition (`recMap`).** Primitive recursion is the least fixed point of the primitive-recursion operator.
+
+*Proof.* By definition. ∎
+
+**Definition (`rfindZeroPred`).** The Mathlib zero-finding predicate for a total vector function is the decision of whether the value at a candidate is zero.
+
+*Proof.* By definition. ∎
+
+**Definition (`searchMap`).** Unbounded search is the least fixed point of the search operator.
+
+*Proof.* By definition. ∎
+
+**Definition (`findMap`).** Search from zero prepends a zero head and then applies unbounded search.
+
+*Proof.* Compose search with the push of the zero constant. ∎
+
+**Theorem (`evalAt_apply`).** The stated property of `evalAt_apply`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`findBody_apply`).** The stated property of `findBody_apply`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`findOp_iterElem_zero`).** The stated property of `findOp_iterElem_zero`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`iterVal_succ`).** The stated property of `iterVal_succ`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`precBody_apply`).** The stated property of `precBody_apply`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`findMap_vecElem`).** The stated property of `findMap_vecElem`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`recMap_rec`).** The stated property of `recMap_rec`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`recMap_eval`).** The stated property of `recMap_eval`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`searchMap_rec`).** The stated property of `searchMap_rec`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`searchMap_step_found`).** The stated property of `searchMap_step_found`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`searchMap_step_next`).** The stated property of `searchMap_step_next`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`searchMap_climb`).** The stated property of `searchMap_climb`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`toApproxMap_bot`).** The stated property of `toApproxMap_bot`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`iterVal_zero`).** The stated property of `iterVal_zero`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`iterVal_bot`).** The stated property of `iterVal_bot`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`searchMap_diverge`).** The stated property of `searchMap_diverge`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎

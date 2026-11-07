@@ -1958,6 +1958,18 @@ NS_LAM_SHORT: dict[str, tuple[str, str]] = {
         "numRec",
         "Number-domain recursion schemes",
     ),
+    "Infinite-product stack combinators": (
+        "iterStack",
+        "Infinite-product stack combinators",
+    ),
+    "Number-stack argument encoding": (
+        "lamArg",
+        "Number-stack argument encoding",
+    ),
+    "Partial-recursive scheme realizers": (
+        "partrecSch",
+        "Partial-recursive scheme realizers",
+    ),
     "Partial recursive λ-definability": (
         "partrec",
         "Partial recursive λ-definability",
