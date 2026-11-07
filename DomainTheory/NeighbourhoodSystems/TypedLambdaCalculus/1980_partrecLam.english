@@ -1,0 +1,310 @@
+Partial recursive λ-definability: the `LamDef` predicate relating approximable maps on iterated number domains to Mathlib partial-recursive functions, including search and primitive recursion, culminating in the one-variable representation theorem.
+<!-- formalization -->
+**Definition (`optElem`).** The construction `optElem` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`𝒩`).** Abbreviation `𝒩`.
+
+*Proof.* By definition. ∎
+
+**Definition (`ArgLike`).** The construction `ArgLike` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`argElem`).** The construction `argElem` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`vecElem`).** The construction `vecElem` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`LamDef`).** An approximable map λ-defines a partial function when it is strict on argument-like ideals, agrees on defined values, and returns bottom on undefined ones.
+
+*Proof.* By the structure fields. ∎
+
+**Theorem (`component_argElem`).** The stated property of `component_argElem`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`component_vecElem`).** The stated property of `component_vecElem`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Definition (`evalAt`).** The construction `evalAt` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`findBody`).** The construction `findBody` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`findOp`).** The construction `findOp` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`guard1`).** The construction `guard1` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`oneArg`).** The construction `oneArg` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`precBody`).** The construction `precBody` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`recOp`).** The construction `recOp` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`recMap`).** The construction `recMap` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`rfindZeroPred`).** The construction `rfindZeroPred` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`searchMap`).** The construction `searchMap` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`findMap`).** The construction `findMap` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`strictGuardN`).** The construction `strictGuardN` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`tupleMap`).** The construction `tupleMap` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Theorem (`T_bot_eq`).** The stated property of `T_bot_eq`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`argElem_argLike`).** The stated property of `argElem_argLike`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`component_argElem_none`).** The stated property of `component_argElem_none`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`component_bot`).** The stated property of `component_bot`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`component_push_succ`).** The stated property of `component_push_succ`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`component_push_zero`).** The stated property of `component_push_zero`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`component_vecElem_lt`).** The stated property of `component_vecElem_lt`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`eq_of_component_eq`).** The stated property of `eq_of_component_eq`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`evalAt_apply`).** The stated property of `evalAt_apply`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`findBody_apply`).** The stated property of `findBody_apply`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`findOp_iterElem_zero`).** The stated property of `findOp_iterElem_zero`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`guard1_apply`).** The stated property of `guard1_apply`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`guard1_bot`).** The stated property of `guard1_bot`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`guard1_inner_bot`).** The stated property of `guard1_inner_bot`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`guard1_total`).** The stated property of `guard1_total`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`iterVal_succ`).** The stated property of `iterVal_succ`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`lamDef_coe_val`).** The stated property of `lamDef_coe_val`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`lamDef_congr`).** The stated property of `lamDef_congr`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`mem_mOfFn`).** The stated property of `mem_mOfFn`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`oneArg_bot`).** The stated property of `oneArg_bot`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`precBody_apply`).** The stated property of `precBody_apply`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`push_natElem_vecElem`).** The stated property of `push_natElem_vecElem`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`findMap_vecElem`).** The stated property of `findMap_vecElem`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`oneArg_natElem`).** The stated property of `oneArg_natElem`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`realizer_value`).** The stated property of `realizer_value`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`recMap_rec`).** The stated property of `recMap_rec`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`recMap_eval`).** The stated property of `recMap_eval`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`searchMap_rec`).** The stated property of `searchMap_rec`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`searchMap_step_found`).** The stated property of `searchMap_step_found`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`searchMap_step_next`).** The stated property of `searchMap_step_next`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`searchMap_climb`).** The stated property of `searchMap_climb`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`strictGuardN_strict`).** The stated property of `strictGuardN_strict`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`strictGuardN_total`).** The stated property of `strictGuardN_total`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`toApproxMap_bot`).** The stated property of `toApproxMap_bot`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`iterVal_zero`).** The stated property of `iterVal_zero`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`iterVal_bot`).** The stated property of `iterVal_bot`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`searchMap_diverge`).** The stated property of `searchMap_diverge`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`tupleMap_succ`).** The stated property of `tupleMap_succ`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`component_tupleMap`).** The stated property of `component_tupleMap`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`tupleMap_zero`).** The stated property of `tupleMap_zero`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`component_tupleMap_ge`).** The stated property of `component_tupleMap_ge`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`tupleMap_argLike`).** The stated property of `tupleMap_argLike`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`tupleMap_vecElem_eq`).** The stated property of `tupleMap_vecElem_eq`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`vecElem_totals`).** The stated property of `vecElem_totals`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`lamDef_of_inner`).** The stated property of `lamDef_of_inner`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`lamDef_comp`).** The stated property of `lamDef_comp`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`lamDef_prec`).** The stated property of `lamDef_prec`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`lamDef_primComp`).** The stated property of `lamDef_primComp`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`lamDef_rfind`).** The stated property of `lamDef_rfind`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`lamDef_total`).** The stated property of `lamDef_total`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`lamDef_get`).** The stated property of `lamDef_get`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`lamDef_succ`).** The stated property of `lamDef_succ`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`lamDef_zero`).** The stated property of `lamDef_zero`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`primrec_lamDef`).** Every Mathlib primitive-recursive vector function admits a `LamDef` witness.
+
+*Proof.* Induct on the primitive-recursive generation. ∎
+
+**Theorem (`partrec_lamDef`).** Every Mathlib partial-recursive vector function admits a `LamDef` witness.
+
+*Proof.* Induct on the partial-recursive generation, using the primitive, composition, and μ-find cases. ∎
+
+**Theorem (`partrec_one`).** Every unary partial recursive function is realized by a strict approximable endomap on the number domain.
+
+*Proof.* Apply the general `LamDef` existence theorem and compose with the one-argument embedding. ∎
+

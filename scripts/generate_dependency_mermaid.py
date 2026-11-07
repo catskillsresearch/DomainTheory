@@ -1954,11 +1954,19 @@ NS_LAM_SHORT: dict[str, tuple[str, str]] = {
         "Tbl55",
         "Table 5.5 — table of combinators",
     ),
-
+    "Number-domain recursion schemes": (
+        "numRec",
+        "Number-domain recursion schemes",
+    ),
+    "Partial recursive λ-definability": (
+        "partrec",
+        "Partial recursive λ-definability",
+    ),
     "Theorem 5.6 — partial recursive functions": (
         "T56",
         "Theorem 5.6 — partial recursive functions",
     ),
+
     "Exercise 5.7 — currying the lambda notation": (
         "X507",
         "Exercise 5.7 — currying the lambda notation",

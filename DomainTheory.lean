@@ -2009,5 +2009,7 @@ import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Proposition_5_4
 import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem_5_1
 import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.beta
 import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem_5_2
+import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.numRecSchemes
+import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.partrecLam
 import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Theorem_5_6
 

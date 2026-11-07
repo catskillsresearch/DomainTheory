@@ -1,0 +1,134 @@
+Number-domain recursion schemes: the μ-operator and primitive recursion on pairs of numbers, together with strict identity and projection.
+<!-- formalization -->
+**Definition (`kSel`).** The construction `kSel` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`qSel`).** The construction `qSel` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`argX`).** The construction `argX` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`argY`).** The construction `argY` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`muBody`).** The construction `muBody` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`muOp`).** The construction `muOp` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`muRec`).** Binary μ-recursion is the least fixed point of the μ-operator on the binary function space.
+
+*Proof.* By definition. ∎
+
+**Definition (`muMap`).** The unary μ-map searches from zero along the second argument of a binary number-domain map.
+
+*Proof.* Compose the binary μ-recursion with the pairing of the zero constant and the identity. ∎
+
+**Definition (`primBody`).** The construction `primBody` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`primOp`).** The construction `primOp` as used in the number-domain / partial-recursive λ-definability development.
+
+*Proof.* By definition. ∎
+
+**Definition (`primRec`).** Binary primitive recursion is the least fixed point of the corresponding primitive-recursion operator.
+
+*Proof.* By definition. ∎
+
+**Definition (`strictId`).** The strict identity on the number domain, defined via the conditional on the zero-test.
+
+*Proof.* By definition. ∎
+
+**Definition (`strictProj₀`).** The strict first projection on pairs of numbers.
+
+*Proof.* By definition. ∎
+
+**Theorem (`T_bot_eq`).** The bottom of the truth domain agrees with the two-token bottom element.
+
+*Proof.* Antisymmetry of the bottoms. ∎
+
+**Theorem (`muBody_apply`).** The stated property of `muBody_apply`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`muMap_natElem`).** The stated property of `muMap_natElem`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`muRec_rec`).** The stated property of `muRec_rec`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`muRec_bot`).** The stated property of `muRec_bot`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`muRec_found`).** The stated property of `muRec_found`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`muRec_step`).** The stated property of `muRec_step`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`muRec_climb`).** The stated property of `muRec_climb`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`muMap_eq_least`).** When the predicate first hits zero at n₀ with positive values before, the μ-map returns n₀.
+
+*Proof.* Climb the binary μ-recursion from zero and apply the found-zero clause. ∎
+
+**Theorem (`primBody_apply`).** The stated property of `primBody_apply`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`primRec_rec`).** The stated property of `primRec_rec`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`primRec_bot`).** The stated property of `primRec_bot`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`primRec_succ`).** The stated property of `primRec_succ`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`primRec_zero`).** The stated property of `primRec_zero`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`strictId_bot`).** The stated property of `strictId_bot`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`strictId_natElem`).** The stated property of `strictId_natElem`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`strictProj₀_apply`).** The stated property of `strictProj₀_apply`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`strictProj₀_bot_left`).** The stated property of `strictProj₀_bot_left`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`strictProj₀_bot_right`).** The stated property of `strictProj₀_bot_right`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+
+**Theorem (`strictProj₀_natElem`).** The stated property of `strictProj₀_natElem`.
+
+*Proof.* Follows from the surrounding construct and fixed-point laws. ∎
+

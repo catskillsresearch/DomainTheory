@@ -12,9 +12,10 @@
 - [Parametric fixed point](1980_paramFix.md) [✓](../1980_REVISION.md)
 - [Proposition 5.4 — fixed point under a parameter](1980_Proposition_5_4.md) [✓](../1980_REVISION.md)
 - [Table 5.5 — table of combinators](1980_Table_5_5.md) [✓](../1980_REVISION.md)
+- [Number-domain recursion schemes](1980_numRecSchemes.md) [✓](../1980_REVISION.md)
+- [Partial recursive λ-definability](1980_partrecLam.md) [✓](../1980_REVISION.md)
+- [Theorem 5.6 — partial recursive functions](1980_Theorem_5_6.md) [✓](../1980_REVISION.md)
 
-
-- [Theorem 5.6 — partial recursive functions](1980_Theorem_5_6.md)
 - [Exercise 5.7 — currying the lambda notation](1980_Exercise_5_7.md)
 - [Exercise 5.8 — combinatory completeness](1980_Exercise_5_8.md)
 - [Exercise 5.9 — common fixed points](1980_Exercise_5_9.md)
