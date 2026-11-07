@@ -1,12 +1,9 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.setGraph
-
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Theorem_7_5
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Proposition_7_12
-public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Example_7_8
-
-public import Mathlib.Data.Nat.Bitwise
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.powersetNbhd
+public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.funPresentation
+import Mathlib.Data.Nat.Bitwise
 
 @[expose] public section
 
