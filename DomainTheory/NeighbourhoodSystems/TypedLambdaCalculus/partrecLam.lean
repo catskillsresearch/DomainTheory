@@ -53,10 +53,8 @@ theorem lamDef_comp {m nn : ℕ} (f : List.Vector ℕ nn →. ℕ) (g : Fin nn �
       rw [component_tupleMap nn φg (vecElem v) j j.isLt, Fin.eta]
       exact (hg j).undef v hj
 
-section Prec
-variable (φf φg : ApproximableMap 𝒩 N)
-
-theorem lamDef_prec {n : ℕ} (f₀ : List.Vector ℕ n → ℕ) (g₀ : List.Vector ℕ (n + 2) → ℕ)
+theorem lamDef_prec {n : ℕ} (φf φg : ApproximableMap 𝒩 N)
+    (f₀ : List.Vector ℕ n → ℕ) (g₀ : List.Vector ℕ (n + 2) → ℕ)
     (hf : LamDef φf (f₀ : List.Vector ℕ n →. ℕ))
     (hg : LamDef φg (g₀ : List.Vector ℕ (n + 2) →. ℕ)) :
     LamDef (strictGuardN (n + 1) (recMap φf φg))
@@ -70,8 +68,6 @@ theorem lamDef_prec {n : ℕ} (f₀ : List.Vector ℕ n → ℕ) (g₀ : List.Ve
   obtain ⟨d, u, rfl⟩ := List.Vector.exists_eq_cons v
   rw [List.Vector.head_cons, List.Vector.tail_cons]
   exact recMap_eval φf φg f₀ g₀ hf hg u d
-
-end Prec
 
 theorem lamDef_primComp {m nn : ℕ} (f₀ : List.Vector ℕ nn → ℕ)
     (g₀ : Fin nn → List.Vector ℕ m → ℕ)
@@ -87,10 +83,7 @@ theorem lamDef_primComp {m nn : ℕ} (f₀ : List.Vector ℕ nn → ℕ)
       = Part.some (f₀ (List.Vector.ofFn fun i => g₀ i v))
   exact Part.bind_some _ _
 
-section Rfind
-variable (φf : ApproximableMap 𝒩 N)
-
-theorem lamDef_rfind {n : ℕ} {f : List.Vector ℕ (n + 1) → ℕ}
+theorem lamDef_rfind {n : ℕ} (φf : ApproximableMap 𝒩 N) {f : List.Vector ℕ (n + 1) → ℕ}
     (hf : LamDef φf (f : List.Vector ℕ (n + 1) →. ℕ)) :
     LamDef (strictGuardN n (findMap φf))
       (fun v : List.Vector ℕ n => Nat.rfind (rfindZeroPred f v)) := by
@@ -117,8 +110,6 @@ theorem lamDef_rfind {n : ℕ} {f : List.Vector ℕ (n + 1) → ℕ}
         exact (decide_eq_true_iff.mpr h0).symm
       exact hdom
     exact searchMap_diverge φf hf v hdiv 0
-
-end Rfind
 
 theorem lamDef_total {n : ℕ} (ψ : ApproximableMap 𝒩 N) (g : List.Vector ℕ n → ℕ)
     (hval : ∀ v, ψ.toElementMap (vecElem v) = natElem (g v)) :

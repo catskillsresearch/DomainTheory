@@ -16,7 +16,7 @@
 - [Infinite-product stack combinators](1980_iterStack.md) [✓](../1980_REVISION.md)
 - [Number-stack argument encoding](1980_lamArg.md) [✓](../1980_REVISION.md)
 - [Partial-recursive scheme realizers](1980_partrecSchemes.md) [✓](../1980_REVISION.md)
-- [Partial recursive λ-definability](1980_partrecLam.md)
+- [Partial recursive λ-definability](1980_partrecLam.md) [✓](../1980_REVISION.md)
 - [Theorem 5.6 — partial recursive functions](1980_Theorem_5_6.md) [✓](../1980_REVISION.md)
 
 - [Exercise 5.7 — currying the lambda notation](1980_Exercise_5_7.md)
