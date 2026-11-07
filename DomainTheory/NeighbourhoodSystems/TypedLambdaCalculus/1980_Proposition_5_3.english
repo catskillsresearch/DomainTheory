@@ -53,7 +53,8 @@ $$\tau(y) \sqsubseteq y \text{ implies } ! x . \tau(x) \sqsubseteq y,$$
 provided, of course, that $x$ is not free in $\tau$. These, together with the monotonicity of all the functions, were just the methods used in the above proof. Here is another example.
 
 The sectional least-fixed-point / outer-operator characterisation of the least paired fixed point is with the
-[table of combinators](1980_Table_5_5.md) peer.
+[paired fixed point](1980_pairedFix.md) peer.
+
 
 <!-- formalization -->
 

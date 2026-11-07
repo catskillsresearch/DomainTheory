@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.Combinators
+public import DomainTheory.NeighbourhoodSystems.TypedLambdaCalculus.pairedFix
 
 @[expose] public section
 

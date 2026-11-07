@@ -1933,11 +1933,15 @@ NS_LAM_SHORT: dict[str, tuple[str, str]] = {
         "T52",
         "Theorem 5.2 — beta conversion",
     ),
-
+    "Paired fixed point": (
+        "simFix",
+        "Paired fixed point",
+    ),
     "Proposition 5.3 — simultaneous fixed points": (
         "P53",
         "Proposition 5.3 — simultaneous fixed points",
     ),
+
     "Proposition 5.4 — fixed point under a parameter": (
         "P54",
         "Proposition 5.4 — fixed point under a parameter",

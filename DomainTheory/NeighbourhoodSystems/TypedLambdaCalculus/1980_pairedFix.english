@@ -1,0 +1,35 @@
+Sectional least fixed points and the least fixed point of a paired pair of binary maps.
+
+<!-- formalization -->
+
+**Definition (`ApproximableMap.secFixX`).** The sectional least-fixed-point map of a binary endomap in the first argument composes the fix combinator with the curry of that map after swapping arguments.
+
+*Proof.* By definition. ∎
+
+**Definition (`ApproximableMap.outerOp`).** The outer operator of a pair of binary maps composes the second with the pairing of the sectional least-fixed-point map and the identity.
+
+*Proof.* By definition. ∎
+
+**Definition (`ApproximableMap.sectionX`).** The section of a binary map at a second-argument value is the recovered map after currying the swapped composite.
+
+*Proof.* By definition. ∎
+
+**Theorem (`ApproximableMap.outerOp_apply`).** The outer operator evaluates by feeding the sectional least fixed point paired with the second argument into the second map.
+
+*Proof.* Unfold the definition and apply the composition, pairing, and identity laws. ∎
+
+**Theorem (`ApproximableMap.secFixX_apply`).** The sectional least-fixed-point map evaluates to the least fixed-point element of the corresponding section.
+
+*Proof.* Unfold the definitions and apply the composition and fix-combinator evaluation laws. ∎
+
+**Theorem (`ApproximableMap.sectionX_apply`).** A section evaluates by pairing the free argument with the fixed second argument into the original map.
+
+*Proof.* Unfold the definition and apply the curry, composition, and swap laws. ∎
+
+**Theorem (`ApproximableMap.secFixX_isFixed`).** The sectional least fixed point is fixed by the original map when paired with the section parameter.
+
+*Proof.* Rewrite via the sectional evaluation laws and apply the fixed-point law for least fixed-point elements. ∎
+
+**Theorem (`ApproximableMap.fixElement_paired_eq`).** The least fixed point of a paired pair of binary maps is the pair whose second coordinate is the least fixed point of the outer operator and whose first coordinate is the sectional least fixed point at that second coordinate.
+
+*Proof.* Show the sectional pair is a fixed point of the paired map, then that it lies below the least fixed point by comparing sections and the outer operator against the least paired fixed point’s components. ∎
