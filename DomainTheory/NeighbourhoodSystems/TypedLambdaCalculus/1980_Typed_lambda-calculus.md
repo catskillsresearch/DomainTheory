@@ -1,10 +1,8 @@
 # Typed $\lambda$-calculus
 
-**Dependency diagram.** Each box is one item. The arrowhead is on the item that imports. An arrow already implied by a longer path is left out. The introduction has no Lean file, so it is not shown. Blue is a definition, green a proposition, amber a table, red a theorem, and indigo an exercise.
+@import "1980_Typed_lambda-calculus.svg" {code_block=false}
 
-@import "1980_Typed_lambda-calculus.mermaid"
-
-- [Introduction](1980_Introduction.md)
+- [Introduction](1980_Introduction.md) [✓](../1980_REVISION.md)
 - [Theorem 5.1 — terms denote approximable maps](1980_Theorem_5_1.md)
 - [Theorem 5.2 — beta conversion](1980_Theorem_5_2.md)
 - [Proposition 5.3 — simultaneous fixed points](1980_Proposition_5_3.md)

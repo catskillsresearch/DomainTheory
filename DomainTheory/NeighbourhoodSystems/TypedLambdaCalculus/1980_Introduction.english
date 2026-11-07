@@ -1,7 +1,3 @@
-# LECTURE V
-
-<u>TYPED $\lambda$ - CALCULUS</u>
-
 In Examples 4.3 and 4.4, after suitable domains have been constructed, functions are characterized by recursion equations whose form of expression is — basically — a composition or substitution of known functions together with the function to be defined. This method can be made more precise and more easily usable by expanding our notation for functions — particularly by inventing a "temporary" notation for a function as a thing in itself without having to have special letters for functions. The device is called *$\lambda$-abstraction*. It is related to ordinary set abstraction (the $\{x \mid \ldots\}$ — notation already much used in these lectures), but we gear the approach to domains and their elements, and especially to function spaces.
 
 At this stage it would not be so helpful to produce a rigorously formal definition of the syntax of the typed $\lambda$-calculus; we shall try to suggest what is needed by example. There are so many examples at hand, the less formal discussion ought to be sufficient.

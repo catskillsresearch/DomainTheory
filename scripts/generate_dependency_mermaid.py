@@ -48,6 +48,12 @@ NS_FIXPOINTS_SVG = (
     / "FixedPointsAndRecursion"
     / "1980_Fixed_points_and_recursion.svg"
 )
+NS_LAMBDA_SVG = (
+    DT
+    / "NeighbourhoodSystems"
+    / "TypedLambdaCalculus"
+    / "1980_Typed_lambda-calculus.svg"
+)
 
 DEPRECATED_MERMAID = DT / "1972_Continuous_lattices.mermaid"
 CL1972_SECTION_MERMAIDS = frozenset(
@@ -1913,6 +1919,78 @@ NS_FIX_SHORT: dict[str, tuple[str, str]] = {
     ),
 }
 
+# Lecture V hub: outline notes; exercises are separate boxes.
+NS_LAM_SHORT: dict[str, tuple[str, str]] = {
+    "Theorem 5.1 — terms denote approximable maps": (
+        "T51",
+        "Theorem 5.1 — terms denote approximable maps",
+    ),
+    "Theorem 5.2 — beta conversion": (
+        "T52",
+        "Theorem 5.2 — beta conversion",
+    ),
+    "Proposition 5.3 — simultaneous fixed points": (
+        "P53",
+        "Proposition 5.3 — simultaneous fixed points",
+    ),
+    "Proposition 5.4 — fixed point under a parameter": (
+        "P54",
+        "Proposition 5.4 — fixed point under a parameter",
+    ),
+    "Table 5.5 — table of combinators": (
+        "Tbl55",
+        "Table 5.5 — table of combinators",
+    ),
+    "Theorem 5.6 — partial recursive functions": (
+        "T56",
+        "Theorem 5.6 — partial recursive functions",
+    ),
+    "Exercise 5.7 — currying the lambda notation": (
+        "X507",
+        "Exercise 5.7 — currying the lambda notation",
+    ),
+    "Exercise 5.8 — combinatory completeness": (
+        "X508",
+        "Exercise 5.8 — combinatory completeness",
+    ),
+    "Exercise 5.9 — common fixed points": (
+        "X509",
+        "Exercise 5.9 — common fixed points",
+    ),
+    "Exercise 5.10 — smash product": (
+        "X510",
+        "Exercise 5.10 — smash product",
+    ),
+    "Exercise 5.11 — stack combinators": (
+        "X511",
+        "Exercise 5.11 — stack combinators",
+    ),
+    "Exercise 5.12 — while combinator": (
+        "X512",
+        "Exercise 5.12 — while combinator",
+    ),
+    "Exercise 5.13 — pairing function on numbers": (
+        "X513",
+        "Exercise 5.13 — pairing function on numbers",
+    ),
+    "Exercise 5.13 — powerset isomorphisms": (
+        "X513b",
+        "Exercise 5.13 — powerset isomorphisms",
+    ),
+    "Exercise 5.14 — functions as graphs": (
+        "X514",
+        "Exercise 5.14 — functions as graphs",
+    ),
+    "Exercise 5.15 — star of a word": (
+        "X515",
+        "Exercise 5.15 — star of a word",
+    ),
+    "Exercise 5.16 — negation of sequences": (
+        "X516",
+        "Exercise 5.16 — negation of sequences",
+    ),
+}
+
 
 def _ns_dom_kind_class(nid: str) -> str:
     if nid.startswith("D"):
@@ -1924,6 +2002,9 @@ def _ns_dom_kind_class(nid: str) -> str:
     if nid.startswith("E") and nid != "EX":
         return "cexs"
     if nid == "ER":
+        return "cexs"
+    # Tables before theorems: "Tbl…" must not match startswith("T").
+    if nid.startswith("Tbl"):
         return "cexs"
     if nid.startswith("T"):
         return "cthm"
@@ -1951,6 +2032,8 @@ def ns_domains_compact_label(text: str, *, width: int = 15) -> str:
     s = re.sub(r"\bTheorem\b", "Thm", s)
     s = re.sub(r"\bLemmas\b", "Lems", s)
     s = re.sub(r"\bLemma\b", "Lem", s)
+    s = re.sub(r"\bTables\b", "Tabs", s)
+    s = re.sub(r"\bTable\b", "Tab", s)
     words = s.split()
     rows: list[str] = []
     cur = ""
@@ -2213,6 +2296,27 @@ def gen_ns_fixpoints_lecture(diagram: Path, modules: dict[str, Path], old: str) 
     )
 
 
+def gen_ns_lambda_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    """Item-level Lean deps for 1980_Typed_lambda-calculus (SVG gold copy)."""
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=NS_LAM_SHORT,
+        companions={},
+        header=[
+            "%% Each box is one outline note from 1980_Typed_lambda-calculus.md.",
+            "%% Lean modules = that note's @import .lean files.",
+            "%% Arrowhead on the importer; label = direct-import count.",
+            "%% All cross-note Lean imports, then transitive reduction (keeps reachability).",
+            "%% Display copy: Graphviz SVG (gold); no sibling .mermaid.",
+            "%% Layout: LR — many independent notes stack as roots on the left.",
+        ],
+        aggregate_lecture_exercises=False,
+        rankdir="LR",
+    )
+
+
 def cl1972_outline_box_modules(child: Path, title: str) -> set[str]:
     if re.match(r"(?i)introduction\s*$", title.strip()):
         return set()
@@ -2434,6 +2538,11 @@ def classify(mermaid: Path, text: str) -> str:
         "1980_Fixed_points_and_recursion.svg",
     ):
         return "ns_fixpoints_lecture"
+    if mermaid.name in (
+        "1980_Typed_lambda-calculus.mermaid",
+        "1980_Typed_lambda-calculus.svg",
+    ):
+        return "ns_lambda_lecture"
     if index_md_is_outline_barrel(mermaid):
         return "note_outline"
     if mermaid.name == "1972_ContinuousLattices.mermaid":
@@ -2547,6 +2656,8 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
         return gen_ns_constructs_lecture(mermaid, modules, old)
     if kind == "ns_fixpoints_lecture":
         return gen_ns_fixpoints_lecture(mermaid, modules, old)
+    if kind == "ns_lambda_lecture":
+        return gen_ns_lambda_lecture(mermaid, modules, old)
     if kind == "ns_items":
         return gen_neighborhood_items(mermaid, modules, old)
     if kind == "note_outline":
@@ -2893,7 +3004,13 @@ def main() -> None:
         if top.is_file():
             paths.append(top)
         # Section hubs with SVG gold copies (no .mermaid sibling).
-        for svg in (NS_DOMAINS_SVG, NS_MAPPINGS_SVG, NS_CONSTRUCTS_SVG, NS_FIXPOINTS_SVG):
+        for svg in (
+            NS_DOMAINS_SVG,
+            NS_MAPPINGS_SVG,
+            NS_CONSTRUCTS_SVG,
+            NS_FIXPOINTS_SVG,
+            NS_LAMBDA_SVG,
+        ):
             if svg.is_file():
                 paths.append(svg.resolve())
 
