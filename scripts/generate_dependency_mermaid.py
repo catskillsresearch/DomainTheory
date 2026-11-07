@@ -1987,6 +1987,10 @@ NS_LAM_SHORT: dict[str, tuple[str, str]] = {
         "X507",
         "Exercise 5.7 — currying the lambda notation",
     ),
+    "Combinatory completeness": (
+        "combComp",
+        "Combinatory completeness",
+    ),
     "Exercise 5.8 — combinatory completeness": (
         "X508",
         "Exercise 5.8 — combinatory completeness",

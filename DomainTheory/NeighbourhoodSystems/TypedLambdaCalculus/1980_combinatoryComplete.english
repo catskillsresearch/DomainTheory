@@ -1,0 +1,75 @@
+Combinatory completeness: I, K, and S realize every polynomial λ-term via bracket abstraction.
+<!-- formalization -->
+
+**Definition (`Dom`).** A domain package is a carrier type with a neighbourhood system.
+
+*Proof.* By definition. ∎
+
+**Abbreviation (`Dom.arrow`).** The function-space domain between two packaged domains.
+
+*Proof.* By definition. ∎
+
+**Definition (`CL`).** Combinatory terms are constants or applications.
+
+*Proof.* By definition. ∎
+
+**Definition (`CL.denote`).** Denotation of a combinatory term evaluates applications via approximable maps.
+
+*Proof.* By definition. ∎
+
+**Definition (`Poly`).** Polynomials over a parameter domain are variables, constants, or applications.
+
+*Proof.* By definition. ∎
+
+**Definition (`Poly.denote`).** Denotation of a polynomial is a map from the parameter element.
+
+*Proof.* By definition. ∎
+
+**Definition (`Ielem`).** The I combinator is the identity map as a filter element.
+
+*Proof.* By definition. ∎
+
+**Definition (`Kelem`).** The K combinator is the curry of the first projection.
+
+*Proof.* By definition. ∎
+
+**Definition (`Sbody`).** The S-body evaluates two curried maps at a shared argument.
+
+*Proof.* By definition. ∎
+
+**Definition (`Smap`).** The S combinator map is the double curry of the S-body.
+
+*Proof.* By definition. ∎
+
+**Definition (`Selem`).** The S combinator as a filter element on packaged domains.
+
+*Proof.* By definition. ∎
+
+**Definition (`bracket`).** Bracket abstraction translates a polynomial into an I/K/S combinatory term.
+
+*Proof.* By definition. ∎
+
+**Theorem (`Smap_apply`).** The S map evaluates by applying both branches at the shared argument.
+
+*Proof.* Follows from the surrounding construct and evaluation laws. ∎
+
+**Theorem (`toApproxMap_toFilter`).** toApproxMap inverts toFilter on approximable maps.
+
+*Proof.* Follows from the surrounding construct and evaluation laws. ∎
+
+**Theorem (`Ielem_apply`).** I acts as the identity.
+
+*Proof.* Follows from the surrounding construct and evaluation laws. ∎
+
+**Theorem (`Kelem_apply`).** K returns its first argument.
+
+*Proof.* Follows from the surrounding construct and evaluation laws. ∎
+
+**Theorem (`Selem_apply`).** S acts by the S-map evaluation law.
+
+*Proof.* Follows from the surrounding construct and evaluation laws. ∎
+
+**Theorem (`bracket_spec`).** Bracket abstraction preserves denotation on every argument.
+
+*Proof.* Induction on the polynomial, using the I, K, and S evaluation laws. ∎
+
