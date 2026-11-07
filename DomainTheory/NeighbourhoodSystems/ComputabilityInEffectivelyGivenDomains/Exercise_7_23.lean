@@ -5,7 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 @[expose] public section
 
 namespace DomainTheory.NeighbourhoodSystems.Exercise723
-open DomainTheory.NeighbourhoodSystems Example78 NeighborhoodSystem Domain.Recursive
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Domain.Recursive
 
 /-- Scott's Exercise 7.23: the graph map is computable. -/
 theorem example_723 (gN incl0 incl1 eq1 : ℕ → ℕ)

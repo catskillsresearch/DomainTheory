@@ -5,7 +5,7 @@ public import Mathlib.Data.Nat.Bitwise
 
 @[expose] public section
 
-namespace DomainTheory.NeighbourhoodSystems.Example78
+namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 
 section
@@ -54,10 +54,10 @@ def PN : NeighborhoodSystem ℕ where
   sub_master := by rintro X _; exact Set.subset_univ X
 end
 
-end DomainTheory.NeighbourhoodSystems.Example78
+end DomainTheory.NeighbourhoodSystems
 
 section
-namespace DomainTheory.NeighbourhoodSystems.Example78
+namespace DomainTheory.NeighbourhoodSystems
 open Domain.Recursive NeighborhoodSystem
 section
 
@@ -101,4 +101,4 @@ section
 theorem PN_isEffectivelyGiven : PN.IsEffectivelyGiven := ⟨PNpres⟩
 end
 
-end DomainTheory.NeighbourhoodSystems.Example78
+end DomainTheory.NeighbourhoodSystems
