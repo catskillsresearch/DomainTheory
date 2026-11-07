@@ -7,8 +7,6 @@ import Mathlib.Data.Nat.Bitwise
 
 @[expose] public section
 
-section
-
 namespace DomainTheory.NeighbourhoodSystems.GraphFun
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Domain.Recursive
@@ -37,30 +35,18 @@ def capMap : ApproximableMap (prod PN PN) PN where
     exact ⟨X', Y', rfl, hX', hY', hZ', hXX'.trans (hXZ.trans hZZ'), hYY'.trans (hYZ.trans hZZ')⟩
 
 end DomainTheory.NeighbourhoodSystems.GraphFun
-end
 
-section
 namespace DomainTheory.NeighbourhoodSystems.GraphFun
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem Domain.Recursive
 open DomainTheory.NeighbourhoodSystems.NatPair (tri num numP unnum nextCell numP_unnum)
 open DomainTheory.NeighbourhoodSystems.SetGraph (tag tag_nil tag_cons Fun Fun_mono entries
   num_succ_left_gt tag_injective)
 
-section
-
 def halfIter (n k : ℕ) : ℕ := (fun x : ℕ => x / 2)^[k] n
-end
 
-section
 @[simp] theorem halfIter_zero (n : ℕ) : halfIter n 0 = n := rfl
-end
-
-section
 
 def bitAt (n k : ℕ) : ℕ := halfIter n k % 2
-end
-
-section
 
 def cupMap : ApproximableMap (prod PN PN) PN where
   rel W Z := ∃ X Y, W = prodNbhd X Y ∧ PN.mem X ∧ PN.mem Y ∧ PN.mem Z ∧ X ∩ Y ⊆ Z
@@ -79,63 +65,35 @@ def cupMap : ApproximableMap (prod PN PN) PN where
     obtain ⟨hXX', hYY'⟩ := prodNbhd.subset_iff.mp hW'W
     exact ⟨X', Y', rfl, hX', hY', hZ',
       (Set.inter_subset_inter hXX' hYY').trans (hXYZ.trans hZZ')⟩
-end
-
-section
 
 def sumSet (X Y : Set ℕ) : Set ℕ := {k | ∃ a ∈ X, ∃ b ∈ Y, a + b = k}
-end
 
-section
 @[inherit_doc] infixl:65 " +ˢ " => sumSet
-end
-
-section
 
 theorem compl_inter_nbhd (a b : ℕ) : (nbhd a ∩ nbhd b)ᶜ = (nbhd a)ᶜ ∪ (nbhd b)ᶜ := by
   ext x
   simp only [Set.mem_compl_iff, Set.mem_inter_iff, Set.mem_union, mem_nbhd]
   cases a.testBit x <;> cases b.testBit x <;> decide
-end
-
-section
 
 theorem compl_subset_compl_of_subset {X Y : Set ℕ} (h : X ⊆ Y) : Yᶜ ⊆ Xᶜ :=
   fun _ hx hxX => hx (h hxX)
-end
-
-section
 
 def elemSet (x : PN.Element) : Set ℕ := {k | ∃ n, x.mem (nbhd n) ∧ n.testBit k = true}
-end
 
-section
 @[simp] theorem mem_elemSet {x : PN.Element} {k : ℕ} :
     k ∈ elemSet x ↔ ∃ n, x.mem (nbhd n) ∧ n.testBit k = true := Iff.rfl
-end
-
-section
 
 def bitsCode : ℕ → ℕ → ℕ
   | _, 0 => 0
   | n, N + 1 => selectFn (bitAt n N) (Nat.pair N (bitsCode n N) + 1) (bitsCode n N)
-end
-
-section
 
 def bitsList (n : ℕ) : List ℕ := (List.range n).filter (fun k => n.testBit k)
-end
-
-section
 
 def bitsStep (s : ℕ) : ℕ :=
   Nat.pair s.unpair.1
     (Nat.pair (s.unpair.2.unpair.1 + 1)
       (selectFn (bitAt s.unpair.1 s.unpair.2.unpair.1)
         (Nat.pair s.unpair.2.unpair.1 s.unpair.2.unpair.2 + 1) s.unpair.2.unpair.2))
-end
-
-section
 
 def gMap : ApproximableMap (prod PN PN) PN where
   rel W Z := ∃ X Y, W = prodNbhd X Y ∧ PN.mem X ∧ PN.mem Y ∧ PN.mem Z ∧ Zᶜ ⊆ Fun Xᶜ Yᶜ
@@ -159,33 +117,18 @@ def gMap : ApproximableMap (prod PN PN) PN where
       _ ⊆ Fun Xᶜ Yᶜ := hsub
       _ ⊆ Fun X'ᶜ Y'ᶜ :=
         Fun_mono (compl_subset_compl_of_subset hXX') (compl_subset_compl_of_subset hYY')
-end
-
-section
 
 def funMap : ApproximableMap PN (funSpace PN PN) := curry gMap
-end
-
-section
 
 def nextCellStep (w : ℕ) : ℕ :=
   selectFn (isZero w.unpair.1) (Nat.pair (w.unpair.2 + 1) 0)
     (Nat.pair (w.unpair.1 - 1) (w.unpair.2 + 1))
-end
-
-section
 
 def orUpTo (n m : ℕ) : ℕ → ℕ
   | 0 => 0
   | k + 1 => myLor (orUpTo n m k) (selectFn (bitAt n k) (m <<< k) 0)
-end
-
-section
 
 def plusIdx (n m : ℕ) : ℕ := orUpTo n m n
-end
-
-section
 
 def plusStep (s : ℕ) : ℕ :=
   Nat.pair (Nat.pair s.unpair.1.unpair.1 s.unpair.1.unpair.2)
@@ -193,15 +136,10 @@ def plusStep (s : ℕ) : ℕ :=
       (myLor s.unpair.2.unpair.2
         (selectFn (bitAt s.unpair.1.unpair.1 s.unpair.2.unpair.1)
           (s.unpair.1.unpair.2 <<< s.unpair.2.unpair.1) 0)))
-end
 
-section
 theorem sumSet_mono {X X' Y Y' : Set ℕ} (hX : X ⊆ X') (hY : Y ⊆ Y') : X +ˢ Y ⊆ X' +ˢ Y' := by
   rintro k ⟨a, ha, b, hb, rfl⟩
   exact ⟨a, hX ha, b, hY hb, rfl⟩
-end
-
-section
 
 def plusMap : ApproximableMap (prod PN PN) PN where
   rel W Z := ∃ X Y, W = prodNbhd X Y ∧ PN.mem X ∧ PN.mem Y ∧ PN.mem Z ∧ Zᶜ ⊆ Xᶜ +ˢ Yᶜ
@@ -225,38 +163,20 @@ def plusMap : ApproximableMap (prod PN PN) PN where
       _ ⊆ Xᶜ +ˢ Yᶜ := hsub
       _ ⊆ X'ᶜ +ˢ Y'ᶜ :=
         sumSet_mono (compl_subset_compl_of_subset hXX') (compl_subset_compl_of_subset hYY')
-end
-
-section
 
 def tagStep (w : ℕ) : ℕ := num (w.unpair.1 + 1) w.unpair.2.unpair.1
-end
-
-section
 
 def tagCode (code m : ℕ) : ℕ := foldCode tagStep 0 (num 0 m) (appendCode 0 code)
-end
-
-section
 
 def tagOfBits (j m : ℕ) : ℕ := tagCode (bitsCode j j) m
-end
-
-section
 
 def GraphIdx (W : Set (ApproximableMap PN PN)) : Set ℕ :=
   {c | ∃ n m₀ m, c = tagOfBits n m ∧ (∀ f ∈ W, f.rel (nbhd n) (nbhd m₀)) ∧ m₀.testBit m = true}
-end
-
-section
 
 theorem GraphIdx_mono {W W' : Set (ApproximableMap PN PN)} (h : W' ⊆ W) :
     GraphIdx W ⊆ GraphIdx W' := by
   rintro c ⟨n, m₀, m, rfl, hf, hbit⟩
   exact ⟨n, m₀, m, rfl, fun f hf' => hf f (h hf'), hbit⟩
-end
-
-section
 
 def graphMap : ApproximableMap (funSpace PN PN) PN where
   rel W Z := (funSpace PN PN).mem W ∧ PN.mem Z ∧ Zᶜ ⊆ GraphIdx W
@@ -279,24 +199,12 @@ def graphMap : ApproximableMap (funSpace PN PN) PN where
     calc (nbhd k')ᶜ ⊆ Zᶜ := compl_subset_compl_of_subset hZZ'
       _ ⊆ GraphIdx W := hsub
       _ ⊆ GraphIdx W' := GraphIdx_mono hW'W
-end
-
-section
 
 def unnumPair (v : ℕ) : ℕ := nextCellStep^[v] (Nat.pair 0 0)
-end
-
-section
 
 def unnum1 (v : ℕ) : ℕ := (unnumPair v).unpair.1
-end
-
-section
 
 def unnum2 (v : ℕ) : ℕ := (unnumPair v).unpair.2
-end
-
-section
 
 def untagRef (c : ℕ) : List ℕ × ℕ :=
   if _h : (unnum c).1 = 0 then ([], (unnum c).2)
@@ -312,9 +220,6 @@ def untagRef (c : ℕ) : List ℕ × ℕ :=
     (((unnum c).1 - 1) :: (untagRef (unnum c).2).1, (untagRef (unnum c).2).2)
 termination_by c
 decreasing_by all_goals exact hlt
-end
-
-section
 
 def untagStep (w : ℕ) : ℕ :=
   selectFn w.unpair.2.unpair.1 w
@@ -325,24 +230,12 @@ def untagStep (w : ℕ) : ℕ :=
         (Nat.pair 0
           (Nat.pair (Nat.pair (unnum1 w.unpair.1 - 1) w.unpair.2.unpair.2.unpair.1 + 1)
             w.unpair.2.unpair.2.unpair.2))))
-end
-
-section
 
 def untagState (c : ℕ) : ℕ := untagStep^[c + 1] (Nat.pair c (Nat.pair 0 (Nat.pair 0 0)))
-end
-
-section
 
 def untagList (c : ℕ) : ℕ := appendCode 0 (untagState c).unpair.2.unpair.2.unpair.1
-end
-
-section
 
 def untagVal (c : ℕ) : ℕ := (untagState c).unpair.2.unpair.2.unpair.2
-end
-
-section
 
 theorem lt_of_testBit_true {n i : ℕ} (h : n.testBit i = true) : i < n := by
   by_contra hle
@@ -537,18 +430,12 @@ theorem unnum_snd_lt_of_fst_succ {c k : ℕ} (h : (unnum c).1 = k + 1) : (unnum 
     simpa [numP, h] using h'
   have hb := num_succ_left_gt k (unnum c).2
   omega
-end
-
-section
 
 theorem bitAt_swap_isComputable : RecDecidable₂ (fun i m => bitAt m i = 1) :=
   ⟨fun t => bitAt t.unpair.2 t.unpair.1,
     (primrec_bitAt.comp (Nat.Primrec.right.pair Nat.Primrec.left)).of_eq fun t => by
       simp only [unpair_pair_fst, unpair_pair_snd],
     fun _ => Iff.rfl⟩
-end
-
-section
 
 theorem capMap_rel_iff (n m k : ℕ) :
     capMap.rel (prodNbhd (nbhd n) (nbhd m)) (nbhd k) ↔ nbhd n ⊆ nbhd k ∧ nbhd m ⊆ nbhd k := by
@@ -558,9 +445,6 @@ theorem capMap_rel_iff (n m k : ℕ) :
     exact ⟨hXZ, hYZ⟩
   · rintro ⟨hXZ, hYZ⟩
     exact ⟨nbhd n, nbhd m, rfl, ⟨n, rfl⟩, ⟨m, rfl⟩, ⟨k, rfl⟩, hXZ, hYZ⟩
-end
-
-section
 
 theorem capMap_isComputable :
     ComputableMap (prodPresentation PNpres PNpres) PNpres capMap := by
@@ -573,9 +457,6 @@ theorem capMap_isComputable :
   refine (RecDecidable.of_iff (fun t => ?_) ((hincl.comp hr0).and (hincl.comp hr1))).re
   simp only [prodPresentation_X, unpair_pair_fst, unpair_pair_snd]
   exact capMap_rel_iff t.unpair.1.unpair.1 t.unpair.1.unpair.2 t.unpair.2
-end
-
-section
 
 theorem cupMap_rel_iff (n m k : ℕ) :
     cupMap.rel (prodNbhd (nbhd n) (nbhd m)) (nbhd k) ↔ nbhd (myLor n m) ⊆ nbhd k := by
@@ -586,9 +467,6 @@ theorem cupMap_rel_iff (n m k : ℕ) :
     exact hXYZ
   · intro h
     exact ⟨nbhd n, nbhd m, rfl, ⟨n, rfl⟩, ⟨m, rfl⟩, ⟨k, rfl⟩, h⟩
-end
-
-section
 
 theorem cupMap_isComputable :
     ComputableMap (prodPresentation PNpres PNpres) PNpres cupMap := by
@@ -603,25 +481,16 @@ theorem cupMap_isComputable :
   refine (RecDecidable.of_iff (fun t => ?_) (hincl.comp hr)).re
   simp only [prodPresentation_X, unpair_pair_fst, unpair_pair_snd]
   exact cupMap_rel_iff t.unpair.1.unpair.1 t.unpair.1.unpair.2 t.unpair.2
-end
-
-section
 
 theorem decodeList_injective {a b : ℕ} (h : decodeList a = decodeList b) : a = b := by
   have := congrArg encodeList h
   rwa [encodeList_decodeList, encodeList_decodeList] at this
-end
-
-section
 
 theorem forall_rel_iff_subset_step {W : Set (ApproximableMap PN PN)} {n m₀ : ℕ} :
     (∀ f ∈ W, f.rel (nbhd n) (nbhd m₀)) ↔ W ⊆ step (nbhd n) (nbhd m₀) := by
   constructor
   · intro h f hf; exact mem_step.mpr (h f hf)
   · intro h f hf; exact mem_step.mp (h hf)
-end
-
-section
 
 theorem gMap_rel_iff (n m k : ℕ) :
     gMap.rel (prodNbhd (nbhd n) (nbhd m)) (nbhd k) ↔ (nbhd k)ᶜ ⊆ Fun (nbhd n)ᶜ (nbhd m)ᶜ := by
@@ -631,9 +500,6 @@ theorem gMap_rel_iff (n m k : ℕ) :
     exact hsub
   · intro h
     exact ⟨nbhd n, nbhd m, rfl, ⟨n, rfl⟩, ⟨m, rfl⟩, ⟨k, rfl⟩, h⟩
-end
-
-section
 
 theorem graphMap_rel_iff (gN : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf PNpres PNpres (decodeList c))
@@ -643,22 +509,13 @@ theorem graphMap_rel_iff (gN : ℕ → ℕ)
   constructor
   · rintro ⟨_, _, hsub⟩; exact hsub
   · intro h; exact ⟨Xenum_mem PNpres PNpres gN hgN c, ⟨m, rfl⟩, h⟩
-end
-
-section
 
 theorem mem_bitsCodeList {n k : ℕ} : k ∈ decodeList (bitsCode n n) ↔ n.testBit k = true := by
   rw [mem_decodeList_bitsCode]
   exact ⟨fun h => h.2, fun h => ⟨lt_of_testBit_true h, h⟩⟩
-end
-
-section
 
 theorem mem_compl_nbhd {n x : ℕ} : x ∈ (nbhd n)ᶜ ↔ n.testBit x = true := by
   rw [compl_nbhd]; rfl
-end
-
-section
 
 theorem compl_nbhd_subset_Fun_iff (n m k : ℕ) : (nbhd k)ᶜ ⊆ Fun (nbhd n)ᶜ (nbhd m)ᶜ ↔
     ∀ j, j < k → (k.testBit j = true → j ∈ Fun (nbhd n)ᶜ (nbhd m)ᶜ) := by
@@ -668,9 +525,6 @@ theorem compl_nbhd_subset_Fun_iff (n m k : ℕ) : (nbhd k)ᶜ ⊆ Fun (nbhd n)�
   · intro h j hj
     rw [mem_compl_nbhd] at hj
     exact h j (lt_of_testBit_true hj) hj
-end
-
-section
 
 theorem compl_nbhd_subset_iff (S : Set ℕ) (k : ℕ) : (nbhd k)ᶜ ⊆ S ↔
     ∀ j, j < k → (k.testBit j = true → j ∈ S) := by
@@ -680,13 +534,8 @@ theorem compl_nbhd_subset_iff (S : Set ℕ) (k : ℕ) : (nbhd k)ᶜ ⊆ S ↔
   · intro h j hj
     rw [mem_compl_nbhd] at hj
     exact h j (lt_of_testBit_true hj) hj
-end
 
-section
 theorem mem_sumSet {X Y : Set ℕ} {k : ℕ} : k ∈ X +ˢ Y ↔ ∃ a ∈ X, ∃ b ∈ Y, a + b = k := Iff.rfl
-end
-
-section
 
 theorem nbhd_subset_iff_compl_subset_compl (a b : ℕ) :
     nbhd a ⊆ nbhd b ↔ (nbhd b)ᶜ ⊆ (nbhd a)ᶜ := by
@@ -697,9 +546,6 @@ theorem nbhd_subset_iff_compl_subset_compl (a b : ℕ) :
     cases hbit : b.testBit x with
     | false => rfl
     | true => exact absurd (mem_compl_nbhd.mp (h (mem_compl_nbhd.mpr hbit))) (by rw [hxa]; decide)
-end
-
-section
 
 theorem nbhd_subset_iff_myLor_eq (n k : ℕ) : nbhd n ⊆ nbhd k ↔ myLor n k = n := by
   constructor
@@ -710,9 +556,7 @@ theorem nbhd_subset_iff_myLor_eq (n k : ℕ) : nbhd n ⊆ nbhd k ↔ myLor n k =
   · intro h
     rw [← h, ← nbhd_inter]
     exact Set.inter_subset_right
-end
 
-section
 theorem nextCellStep_eq (n m : ℕ) :
     nextCellStep (Nat.pair n m) = Nat.pair (nextCell (n, m)).1 (nextCell (n, m)).2 := by
   unfold nextCellStep
@@ -722,31 +566,21 @@ theorem nextCellStep_eq (n m : ℕ) :
     rw [hz, selectFn_one]; rfl
   · have hz : isZero (k + 1) = 0 := by unfold isZero; omega
     rw [hz, selectFn_zero]; rfl
-end
 
-section
 theorem plusStep_unpair11 (s : ℕ) : (plusStep s).unpair.1.unpair.1 = s.unpair.1.unpair.1 := by
   unfold plusStep; rw [unpair_pair_fst, unpair_pair_fst]
-end
 
-section
 theorem plusStep_unpair12 (s : ℕ) : (plusStep s).unpair.1.unpair.2 = s.unpair.1.unpair.2 := by
   unfold plusStep; rw [unpair_pair_fst, unpair_pair_snd]
-end
 
-section
 theorem plusStep_unpair21 (s : ℕ) : (plusStep s).unpair.2.unpair.1 = s.unpair.2.unpair.1 + 1 := by
   unfold plusStep; rw [unpair_pair_snd, unpair_pair_fst]
-end
 
-section
 theorem plusStep_unpair22 (s : ℕ) : (plusStep s).unpair.2.unpair.2 =
     myLor s.unpair.2.unpair.2 (selectFn (bitAt s.unpair.1.unpair.1 s.unpair.2.unpair.1)
       (s.unpair.1.unpair.2 <<< s.unpair.2.unpair.1) 0) := by
   unfold plusStep; rw [unpair_pair_snd, unpair_pair_snd]
-end
 
-section
 theorem plusStep_iter_spec (n m : ℕ) (k : ℕ) :
     (plusStep^[k] (Nat.pair (Nat.pair n m) (Nat.pair 0 0))).unpair.1.unpair.1 = n ∧
     (plusStep^[k] (Nat.pair (Nat.pair n m) (Nat.pair 0 0))).unpair.1.unpair.2 = m ∧
@@ -765,9 +599,7 @@ theorem plusStep_iter_spec (n m : ℕ) (k : ℕ) :
     · rw [plusStep_unpair12, hm]
     · rw [plusStep_unpair21, ha]
     · rw [plusStep_unpair22, hn, hm, ha, hacc]; rfl
-end
 
-section
 theorem primrec_nextCellStep : Nat.Primrec nextCellStep := by
   have hn : Nat.Primrec (fun w : ℕ => w.unpair.1) := Nat.Primrec.left
   have hm : Nat.Primrec (fun w : ℕ => w.unpair.2) := Nat.Primrec.right
@@ -777,9 +609,7 @@ theorem primrec_nextCellStep : Nat.Primrec nextCellStep := by
   have hb : Nat.Primrec (fun w : ℕ => Nat.pair (w.unpair.1 - 1) (w.unpair.2 + 1)) :=
     (primrec_sub₂ hn (Nat.Primrec.const 1)).pair (primrec_add₂ hm (Nat.Primrec.const 1))
   exact (primrec_selectFn hz ha hb).of_eq fun _ => rfl
-end
 
-section
 theorem primrec_plusStep : Nat.Primrec plusStep := by
   have hn : Nat.Primrec (fun s : ℕ => s.unpair.1.unpair.1) := Nat.Primrec.left.comp Nat.Primrec.left
   have hm : Nat.Primrec (fun s : ℕ => s.unpair.1.unpair.2) := Nat.Primrec.right.comp Nat.Primrec.left
@@ -797,9 +627,7 @@ theorem primrec_plusStep : Nat.Primrec plusStep := by
     (primrec_myLor.comp (hacc.pair hsel)).of_eq fun s => by
       simp only [unpair_pair_fst, unpair_pair_snd]
   exact ((hn.pair hm).pair ((primrec_add₂ ha (Nat.Primrec.const 1)).pair hlor)).of_eq fun _ => rfl
-end
 
-section
 theorem primrec_plusIdx : Nat.Primrec (fun t => plusIdx t.unpair.1 t.unpair.2) := by
   have hbase : Nat.Primrec
       (fun z => Nat.pair (Nat.pair z.unpair.1 z.unpair.2) (Nat.pair 0 0)) :=
@@ -813,22 +641,14 @@ theorem primrec_plusIdx : Nat.Primrec (fun t => plusIdx t.unpair.1 t.unpair.2) :
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd, id_eq]
   rw [rec_const_iterate]
   exact (plusStep_iter_spec t.unpair.1 t.unpair.2 t.unpair.1).2.2.2
-end
-
-section
 
 theorem primrec_tri : Nat.Primrec tri :=
   (primrec_div2.comp (primrec_mul₂ primrec_id Nat.Primrec.succ)).of_eq fun _ => rfl
-end
-
-section
 
 theorem primrec_num : Nat.Primrec (fun t => num t.unpair.1 t.unpair.2) :=
   (primrec_add₂ (primrec_tri.comp (primrec_add₂ Nat.Primrec.left Nat.Primrec.right))
     Nat.Primrec.right).of_eq fun _ => rfl
-end
 
-section
 theorem primrec_tagStep : Nat.Primrec tagStep := by
   have h1 : Nat.Primrec (fun w : ℕ => w.unpair.1 + 1) :=
     primrec_add₂ Nat.Primrec.left (Nat.Primrec.const 1)
@@ -837,9 +657,7 @@ theorem primrec_tagStep : Nat.Primrec tagStep := by
   exact (primrec_num.comp (h1.pair h2)).of_eq fun w => by
     simp only [unpair_pair_fst, unpair_pair_snd]
     rfl
-end
 
-section
 theorem primrec_tagCode : Nat.Primrec (fun t => tagCode t.unpair.1 t.unpair.2) := by
   have hz : Nat.Primrec (fun t : ℕ => num 0 t.unpair.2) :=
     (primrec_num.comp ((Nat.Primrec.const 0).pair Nat.Primrec.right)).of_eq fun t => by
@@ -848,9 +666,7 @@ theorem primrec_tagCode : Nat.Primrec (fun t => tagCode t.unpair.1 t.unpair.2) :
     (primrec_appendCode.comp ((Nat.Primrec.const 0).pair Nat.Primrec.left)).of_eq fun t => by
       simp only [unpair_pair_fst, unpair_pair_snd]
   exact (primrec_foldCode primrec_tagStep (Nat.Primrec.const 0) hz hc).of_eq fun _ => rfl
-end
 
-section
 theorem primrec_tagOfBits : Nat.Primrec (fun t => tagOfBits t.unpair.1 t.unpair.2) := by
   have hj : Nat.Primrec (fun t : ℕ => bitsCode t.unpair.1 t.unpair.1) :=
     (primrec_bitsCode.comp (Nat.Primrec.left.pair Nat.Primrec.left)).of_eq fun t => by
@@ -858,9 +674,7 @@ theorem primrec_tagOfBits : Nat.Primrec (fun t => tagOfBits t.unpair.1 t.unpair.
   exact (primrec_tagCode.comp (hj.pair Nat.Primrec.right)).of_eq fun t => by
     simp only [unpair_pair_fst, unpair_pair_snd]
     rfl
-end
 
-section
 theorem primrec_unnumPair : Nat.Primrec unnumPair := by
   have hbase : Nat.Primrec (fun _ : ℕ => Nat.pair (0 : ℕ) 0) := Nat.Primrec.const (Nat.pair 0 0)
   have hstep : Nat.Primrec (fun w : ℕ => nextCellStep w.unpair.2.unpair.2) :=
@@ -870,17 +684,11 @@ theorem primrec_unnumPair : Nat.Primrec unnumPair := by
   simp only [Nat.unpaired, unpair_pair_fst, unpair_pair_snd, id_eq]
   show Nat.rec (Nat.pair 0 0) (fun _ ih => nextCellStep ih) v = unnumPair v
   rw [rec_const_iterate]; rfl
-end
 
-section
 theorem primrec_unnum1 : Nat.Primrec unnum1 := Nat.Primrec.left.comp primrec_unnumPair
-end
 
-section
 theorem primrec_unnum2 : Nat.Primrec unnum2 := Nat.Primrec.right.comp primrec_unnumPair
-end
 
-section
 theorem primrec_untagStep : Nat.Primrec untagStep := by
   have hdone : Nat.Primrec (fun w : ℕ => w.unpair.2.unpair.1) :=
     Nat.Primrec.left.comp Nat.Primrec.right
@@ -902,9 +710,7 @@ theorem primrec_untagStep : Nat.Primrec untagStep := by
       ((Nat.Primrec.succ.comp ((primrec_sub₂ ha (Nat.Primrec.const 1)).pair hrevAcc)).pair hval))
   have hinner := primrec_selectFn hz hhalt hcont
   exact (primrec_selectFn hdone primrec_id hinner).of_eq fun _ => rfl
-end
 
-section
 theorem primrec_untagState : Nat.Primrec untagState := by
   have hbase : Nat.Primrec (fun c : ℕ => Nat.pair c (Nat.pair (0 : ℕ) (Nat.pair 0 0))) :=
     primrec_id.pair ((Nat.Primrec.const 0).pair ((Nat.Primrec.const 0).pair (Nat.Primrec.const 0)))
@@ -916,37 +722,26 @@ theorem primrec_untagState : Nat.Primrec untagState := by
   rw [rec_const_iterate]
   unfold untagState
   rw [Function.iterate_succ_apply']
-end
 
-section
 theorem primrec_untagList : Nat.Primrec untagList :=
   primrec_appendCode.comp
     ((Nat.Primrec.const 0).pair
       (Nat.Primrec.left.comp (Nat.Primrec.right.comp (Nat.Primrec.right.comp primrec_untagState))))
     |>.of_eq fun c => by unfold untagList; simp only [unpair_pair_fst, unpair_pair_snd]
-end
 
-section
 theorem primrec_untagVal : Nat.Primrec untagVal :=
   Nat.Primrec.right.comp (Nat.Primrec.right.comp (Nat.Primrec.right.comp primrec_untagState))
-end
-
-section
 
 theorem tag_eq_foldr (ns : List ℕ) (m : ℕ) :
     tag ns m = ns.foldr (fun x y => num (x + 1) y) (num 0 m) := by
   induction ns with
   | nil => rfl
   | cons a ns ih => rw [tag_cons, ih]; rfl
-end
 
-section
 theorem tag_eq_foldl_reverse (ns : List ℕ) (m : ℕ) :
     tag ns m = ns.reverse.foldl (fun acc a => num (a + 1) acc) (num 0 m) := by
   rw [List.foldl_reverse]; exact tag_eq_foldr ns m
-end
 
-section
 theorem tagCode_spec (code m : ℕ) : tagCode code m = tag (decodeList code) m := by
   unfold tagCode
   rw [foldCode_eq']
@@ -958,14 +753,9 @@ theorem tagCode_spec (code m : ℕ) : tagCode code m = tag (decodeList code) m :
     simp only [unpair_pair_fst, unpair_pair_snd]
   rw [hstep, decodeList_appendCode, decodeList_zero, List.append_nil]
   exact (tag_eq_foldl_reverse (decodeList code) m).symm
-end
 
-section
 theorem tagOfBits_spec (j m : ℕ) : tagOfBits j m = tag (decodeList (bitsCode j j)) m :=
   tagCode_spec (bitsCode j j) m
-end
-
-section
 
 theorem testBit_orUpTo (n m : ℕ) : ∀ N k,
     (orUpTo n m N).testBit k = true ↔ ∃ a, a < N ∧ n.testBit a = true ∧ a ≤ k ∧ m.testBit (k - a) = true
@@ -996,9 +786,6 @@ theorem testBit_orUpTo (n m : ℕ) : ∀ N k,
         rcases (show a < N ∨ a = N by omega) with haN | haN
         · exact ⟨a, haN, ha, hak, hb⟩
         · subst haN; exact absurd ha hbit
-end
-
-section
 
 theorem testBit_orUpTo_self (n m k : ℕ) :
     (orUpTo n m n).testBit k = true ↔ ∃ a, a ≤ k ∧ n.testBit a = true ∧ m.testBit (k - a) = true := by
@@ -1006,15 +793,10 @@ theorem testBit_orUpTo_self (n m k : ℕ) :
   constructor
   · rintro ⟨a, _, ha, hak, hb⟩; exact ⟨a, hak, ha, hb⟩
   · rintro ⟨a, hak, ha, hb⟩; exact ⟨a, lt_of_testBit_true ha, ha, hak, hb⟩
-end
 
-section
 theorem plusIdx_testBit (n m k : ℕ) :
     (plusIdx n m).testBit k = true ↔ ∃ a, a ≤ k ∧ n.testBit a = true ∧ m.testBit (k - a) = true :=
   testBit_orUpTo_self n m k
-end
-
-section
 
 theorem compl_nbhd_plusIdx (n m : ℕ) : (nbhd (plusIdx n m))ᶜ = (nbhd n)ᶜ +ˢ (nbhd m)ᶜ := by
   rw [compl_nbhd, compl_nbhd, compl_nbhd]
@@ -1024,9 +806,6 @@ theorem compl_nbhd_plusIdx (n m : ℕ) : (nbhd (plusIdx n m))ᶜ = (nbhd n)ᶜ +
   · rintro ⟨a, hak, ha, hb⟩; exact ⟨a, ha, k - a, hb, by omega⟩
   · rintro ⟨a, ha, b, hb, rfl⟩
     exact ⟨a, by omega, ha, by rw [Nat.add_sub_cancel_left]; exact hb⟩
-end
-
-section
 
 theorem plusMap_rel_iff (n m k : ℕ) :
     plusMap.rel (prodNbhd (nbhd n) (nbhd m)) (nbhd k) ↔ nbhd (plusIdx n m) ⊆ nbhd k := by
@@ -1037,9 +816,6 @@ theorem plusMap_rel_iff (n m k : ℕ) :
     exact hsub
   · intro h
     exact ⟨nbhd n, nbhd m, rfl, ⟨n, rfl⟩, ⟨m, rfl⟩, ⟨k, rfl⟩, h⟩
-end
-
-section
 
 theorem plusMap_isComputable :
     ComputableMap (prodPresentation PNpres PNpres) PNpres plusMap := by
@@ -1055,51 +831,35 @@ theorem plusMap_isComputable :
   refine (RecDecidable.of_iff (fun t => ?_) (hincl.comp hr)).re
   simp only [prodPresentation_X, unpair_pair_fst, unpair_pair_snd]
   exact plusMap_rel_iff t.unpair.1.unpair.1 t.unpair.1.unpair.2 t.unpair.2
-end
 
-section
 theorem unnumPair_spec (v : ℕ) : unnumPair v = Nat.pair (unnum v).1 (unnum v).2 := by
   unfold unnumPair
   induction v with
   | zero => rfl
   | succ v ih => rw [Function.iterate_succ_apply', ih, nextCellStep_eq]; rfl
-end
 
-section
 theorem unnum1_spec (v : ℕ) : unnum1 v = (unnum v).1 := by
   unfold unnum1; rw [unnumPair_spec, unpair_pair_fst]
-end
 
-section
 theorem unnum2_spec (v : ℕ) : unnum2 v = (unnum v).2 := by
   unfold unnum2; rw [unnumPair_spec, unpair_pair_snd]
-end
-
-section
 
 theorem untagList_bitAt_isComputable :
     RecDecidable (fun w : ℕ => ∀ i ∈ decodeList (untagList w.unpair.1), bitAt w.unpair.2.unpair.2 i = 1) :=
   RecDecidable.of_iff (fun w => by simp only [unpair_pair_fst, unpair_pair_snd])
     (bitAt_swap_isComputable.bForallList.comp
       ((primrec_untagList.comp Nat.Primrec.left).pair (Nat.Primrec.right.comp Nat.Primrec.right)))
-end
 
-section
 theorem untagRef_succ_case {c k : ℕ} (h : (unnum c).1 = k + 1) :
     untagRef c = (k :: (untagRef (unnum c).2).1, (untagRef (unnum c).2).2) := by
   have h0 : ¬ (unnum c).1 = 0 := by omega
   rw [untagRef, dite_eq_right h0, h]
   have hsub : k + 1 - 1 = k := by omega
   rw [hsub]
-end
 
-section
 theorem untagRef_zero_case {c : ℕ} (h : (unnum c).1 = 0) :
     untagRef c = ([], (unnum c).2) := by
   rw [untagRef]; simp [h]
-end
-
-section
 
 theorem tag_untagRef (c : ℕ) : tag (untagRef c).1 (untagRef c).2 = c := by
   induction c using Nat.strong_induction_on with
@@ -1118,9 +878,7 @@ theorem tag_untagRef (c : ℕ) : tag (untagRef c).1 (untagRef c).2 = c := by
         have hb := num_succ_left_gt k (unnum c).2
         omega
       rw [tag_cons, ih (unnum c).2 hlt, heq]
-end
 
-section
 theorem untagStep_cont {w : ℕ} (hdone : w.unpair.2.unpair.1 = 0) {k : ℕ}
     (ha : unnum1 w.unpair.1 = k + 1) :
     untagStep w = Nat.pair (unnum2 w.unpair.1)
@@ -1131,14 +889,10 @@ theorem untagStep_cont {w : ℕ} (hdone : w.unpair.2.unpair.1 = 0) {k : ℕ}
   have hz : isZero (k + 1) = 0 := by unfold isZero; omega
   have hsub : k + 1 - 1 = k := by omega
   rw [hz, selectFn_zero, hsub]
-end
 
-section
 theorem untagStep_done {w : ℕ} (h : w.unpair.2.unpair.1 = 1) : untagStep w = w := by
   unfold untagStep; rw [h, selectFn_one]
-end
 
-section
 theorem untagStep_halt {w : ℕ} (hdone : w.unpair.2.unpair.1 = 0) (ha : unnum1 w.unpair.1 = 0) :
     untagStep w = Nat.pair (unnum2 w.unpair.1)
       (Nat.pair 1 (Nat.pair w.unpair.2.unpair.2.unpair.1 (unnum2 w.unpair.1))) := by
@@ -1146,16 +900,11 @@ theorem untagStep_halt {w : ℕ} (hdone : w.unpair.2.unpair.1 = 0) (ha : unnum1 
   rw [hdone, selectFn_zero, ha]
   have : isZero 0 = 1 := by unfold isZero; omega
   rw [this, selectFn_one]
-end
 
-section
 theorem untagStep_of_done_iterate (w : ℕ) (h : w.unpair.2.unpair.1 = 1) :
     ∀ k, untagStep^[k] w = w
   | 0 => rfl
   | k + 1 => by rw [Function.iterate_succ_apply', untagStep_of_done_iterate w h k, untagStep_done h]
-end
-
-section
 
 theorem untagStep_iter_spec : ∀ c, ∀ fuel r v : ℕ, c ≤ fuel →
     untagStep^[fuel + 1] (Nat.pair c (Nat.pair 0 (Nat.pair r v))) =
@@ -1197,17 +946,12 @@ theorem untagStep_iter_spec : ∀ c, ∀ fuel r v : ℕ, c ≤ fuel →
         have href := untagRef_succ_case (c := c) (k := k) hc
         rw [← hbdef] at href
         rw [href, List.foldl_cons]
-end
 
-section
 theorem untagState_spec (c : ℕ) :
     untagState c = Nat.pair (untagRef c).2
       (Nat.pair 1 (Nat.pair ((untagRef c).1.foldl (fun acc x => Nat.pair x acc + 1) 0)
         (untagRef c).2)) :=
   untagStep_iter_spec c c 0 0 (le_refl c)
-end
-
-section
 
 theorem decodeList_untagList (c : ℕ) : decodeList (untagList c) = (untagRef c).1 := by
   unfold untagList
@@ -1227,30 +971,18 @@ theorem decodeList_untagList (c : ℕ) : decodeList (untagList c) = (untagRef c)
       rw [List.foldl_cons, ih, decodeList_succ, unpair_pair_fst, unpair_pair_snd,
         List.reverse_cons, List.append_assoc, List.singleton_append]
   rw [hfold (untagRef c).1 0, decodeList_zero, List.append_nil, List.reverse_reverse]
-end
-
-section
 
 theorem untagVal_and_isComputable :
     RecDecidable (fun w : ℕ => untagVal w.unpair.1 = w.unpair.2.unpair.1 ∧
       ∀ i ∈ decodeList (untagList w.unpair.1), bitAt w.unpair.2.unpair.2 i = 1) :=
   (RecDecidable.natEq (primrec_untagVal.comp Nat.Primrec.left)
     (Nat.Primrec.left.comp Nat.Primrec.right)).and untagList_bitAt_isComputable
-end
-
-section
 
 theorem untagVal_spec (c : ℕ) : untagVal c = (untagRef c).2 := by
   unfold untagVal; rw [untagState_spec]; simp only [unpair_pair_snd]
-end
-
-section
 
 theorem tag_untagList_untagVal (c : ℕ) : tag (decodeList (untagList c)) (untagVal c) = c := by
   rw [decodeList_untagList, untagVal_spec]; exact tag_untagRef c
-end
-
-section
 
 theorem mem_Fun_compl_nbhd_iff (n m j : ℕ) :
     j ∈ Fun (nbhd n)ᶜ (nbhd m)ᶜ ↔
@@ -1268,9 +1000,6 @@ theorem mem_Fun_compl_nbhd_iff (n m j : ℕ) :
     refine ⟨decodeList (untagList c), hall, ?_⟩
     rw [mem_compl_nbhd, ← hval, tag_untagList_untagVal]
     exact mem_bitsCodeList.mp hc
-end
-
-section
 
 theorem mem_Fun_compl_nbhd_iff' (n m j : ℕ) :
     j ∈ Fun (nbhd n)ᶜ (nbhd m)ᶜ ↔
@@ -1283,9 +1012,6 @@ theorem mem_Fun_compl_nbhd_iff' (n m j : ℕ) :
     exact ⟨c, lt_of_testBit_true hbit, hbit, hval, hall⟩
   · rintro ⟨c, -, hbit, hval, hall⟩
     exact ⟨c, hbit, hval, hall⟩
-end
-
-section
 
 theorem mem_Fun_compl_nbhd_isComputable :
     RecDecidable (fun w : ℕ =>
@@ -1303,9 +1029,6 @@ theorem mem_Fun_compl_nbhd_isComputable :
   refine RecDecidable.of_iff (fun w => ?_) (hp.bExists Nat.Primrec.left)
   rw [mem_Fun_compl_nbhd_iff']
   simp only [unpair_pair_fst, unpair_pair_snd]
-end
-
-section
 
 theorem mem_GraphIdx_iff (W : Set (ApproximableMap PN PN)) (c : ℕ) :
     c ∈ GraphIdx W ↔ ∃ n m₀, untagList c = bitsCode n n ∧
@@ -1322,9 +1045,6 @@ theorem mem_GraphIdx_iff (W : Set (ApproximableMap PN PN)) (c : ℕ) :
     refine ⟨n, m₀, untagVal c, ?_, hf, hbit⟩
     rw [tagOfBits_spec, ← heq]
     exact (tag_untagList_untagVal c).symm
-end
-
-section
 
 theorem graphIdx_isComputable (gN incl0 incl1 eq1 : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf PNpres PNpres (decodeList c))
@@ -1403,9 +1123,6 @@ theorem graphIdx_isComputable (gN incl0 incl1 eq1 : ℕ → ℕ)
     refine ⟨n, m₀, heq, ?_, hbit⟩
     apply forall_rel_iff_subset_step.mpr
     rwa [Xenum_singleton PNpres PNpres gN hgN n m₀] at hsub
-end
-
-section
 
 theorem graphMap_isComputable (gN incl0 incl1 eq1 : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf PNpres PNpres (decodeList c))
@@ -1435,11 +1152,6 @@ theorem graphMap_isComputable (gN incl0 incl1 eq1 : ℕ → ℕ)
     exact ⟨fun h j hj => h j (lt_of_testBit_true (mem_bitsCodeList.mp hj))
         (mem_bitsCodeList.mp hj),
       fun h j hjlt hjbit => h j (mem_bitsCodeList.mpr hjbit)⟩)
-end
-
-
-
-section
 
 theorem testBit_imp_mem_Fun_isComputable :
     RecDecidable (fun w : ℕ => w.unpair.2.unpair.2.testBit w.unpair.1 = true →
@@ -1464,9 +1176,6 @@ theorem testBit_imp_mem_Fun_isComputable :
   · rintro (hb | hb) hbit
     · exact absurd hbit hb
     · exact hb
-end
-
-section
 
 theorem gMap_isComputable :
     ComputableMap (prodPresentation PNpres PNpres) PNpres gMap := by
@@ -1479,9 +1188,6 @@ theorem gMap_isComputable :
   refine (RecDecidable.of_iff (fun t => ?_) hall).re
   simp only [prodPresentation_X]
   exact (gMap_rel_iff _ _ _).trans (compl_nbhd_subset_Fun_iff _ _ _)
-end
-
-section
 
 theorem funMap_isComputable (gN incl0 incl1 eq1 : ℕ → ℕ)
     (hgN : ∀ c, gN c = 1 ↔ (stepFun (funListOf PNpres PNpres (decodeList c))
@@ -1497,7 +1203,5 @@ theorem funMap_isComputable (gN incl0 incl1 eq1 : ℕ → ℕ)
       funMap :=
   curry_isComputable PNpres PNpres PNpres gN incl0 incl1 eq1 hgN hgNp hincl0 hincl0p hincl1
     hincl1p heq1 heq1p gMap_isComputable
-end
 
 end DomainTheory.NeighbourhoodSystems.GraphFun
-end
