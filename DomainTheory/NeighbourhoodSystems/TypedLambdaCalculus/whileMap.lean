@@ -1,0 +1,86 @@
+module
+
+public import DomainTheory.NeighbourhoodSystems.FixedPointsAndRecursion.fixMap
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.cond
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Proposition_3_9
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_12
+
+@[expose] public section
+
+namespace DomainTheory.NeighbourhoodSystems.WhileMap
+open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
+open DomainTheory.NeighbourhoodSystems.Exercise326 (cond TD)
+
+variable {α : Type*} (V : NeighborhoodSystem α)
+  (p : ApproximableMap V TD) (f : ApproximableMap V V)
+
+def bodyMap : ApproximableMap (prod (funSpace V V) V) V :=
+  (cond V).comp
+    (paired (p.comp (proj₁ (funSpace V V) V))
+      (paired
+        ((evalMap V V).comp
+          (paired (proj₀ (funSpace V V) V) (f.comp (proj₁ (funSpace V V) V))))
+        (proj₁ (funSpace V V) V)))
+
+def Wop : ApproximableMap (funSpace V V) (funSpace V V) := curry (bodyMap V p f)
+
+def whileFix : (funSpace V V).Element := (Wop V p f).fixElement
+
+def whileMap : ApproximableMap V V := toApproxMap (whileFix V p f)
+
+theorem bodyMap_apply (w : (funSpace V V).Element) (x : V.Element) :
+    (bodyMap V p f).toElementMap (pair w x) =
+      (cond V).toElementMap
+        (pair (p.toElementMap x)
+          (pair ((toApproxMap w).toElementMap (f.toElementMap x)) x)) := by
+  rw [bodyMap, toElementMap_comp]
+  simp only [toElementMap_paired, toElementMap_comp, toElementMap_proj₀, toElementMap_proj₁,
+    fst_pair, snd_pair, evalMap_apply]
+
+theorem Wop_apply (w : (funSpace V V).Element) (x : V.Element) :
+    (toApproxMap ((Wop V p f).toElementMap w)).toElementMap x =
+      (cond V).toElementMap
+        (pair (p.toElementMap x)
+          (pair ((toApproxMap w).toElementMap (f.toElementMap x)) x)) := by
+  rw [Wop, toElementMap_curry_apply, bodyMap_apply]
+
+theorem whileMap_least (w' : (funSpace V V).Element)
+    (hw' : ∀ x : V.Element, (toApproxMap w').toElementMap x =
+      (cond V).toElementMap
+        (pair (p.toElementMap x)
+          (pair ((toApproxMap w').toElementMap (f.toElementMap x)) x))) :
+    whileFix V p f ≤ w' := by
+  apply fixElement_le_of_toElementMap_le
+  apply le_of_eq
+  apply (funSpaceEquiv V V).injective
+  rw [funSpaceEquiv_apply, funSpaceEquiv_apply]
+  apply ext_of_toElementMap
+  intro x
+  rw [Wop_apply]
+  exact (hw' x).symm
+
+theorem whileMap_rec (x : V.Element) :
+    (whileMap V p f).toElementMap x =
+      (cond V).toElementMap
+        (pair (p.toElementMap x)
+          (pair ((whileMap V p f).toElementMap (f.toElementMap x)) x)) := by
+  have hfix : (Wop V p f).toElementMap (whileFix V p f) = whileFix V p f :=
+    toElementMap_fixElement (Wop V p f)
+  have := Wop_apply V p f (whileFix V p f) x
+  rw [hfix] at this
+  exact this
+
+theorem whileMap_bot {x : V.Element} (hx : p.toElementMap x = Example23.botElt) :
+    (whileMap V p f).toElementMap x = V.bot := by
+  rw [whileMap_rec, hx, Exercise326.cond_bot]
+
+theorem whileMap_false {x : V.Element} (hx : p.toElementMap x = Example23.falseElt) :
+    (whileMap V p f).toElementMap x = x := by
+  rw [whileMap_rec, hx, Exercise326.cond_false]
+
+theorem whileMap_true {x : V.Element} (hx : p.toElementMap x = Example23.trueElt) :
+    (whileMap V p f).toElementMap x = (whileMap V p f).toElementMap (f.toElementMap x) := by
+  rw [whileMap_rec, hx, Exercise326.cond_true]
+
+end DomainTheory.NeighbourhoodSystems.WhileMap

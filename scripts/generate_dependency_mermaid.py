@@ -2015,6 +2015,10 @@ NS_LAM_SHORT: dict[str, tuple[str, str]] = {
         "X511",
         "Exercise 5.11 — stack combinators",
     ),
+    "While combinator": (
+        "while",
+        "While combinator",
+    ),
     "Exercise 5.12 — while combinator": (
         "X512",
         "Exercise 5.12 — while combinator",

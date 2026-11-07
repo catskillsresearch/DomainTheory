@@ -1,0 +1,47 @@
+The while combinator as the least fixed point of a conditional body that either recurses after applying the step map or returns the current element.
+
+<!-- formalization -->
+
+**Definition (`bodyMap`).** The while body conditions on the predicate at the current element, pairing the recursive application after the step with the current element.
+
+*Proof.* By definition. ∎
+
+**Definition (`Wop`).** The while operator is the curry of the while body.
+
+*Proof.* By definition. ∎
+
+**Definition (`whileFix`).** The while fixed point is the least fixed point of the while operator.
+
+*Proof.* By definition. ∎
+
+**Definition (`whileMap`).** The while combinator is that fixed point viewed as an approximable map.
+
+*Proof.* By definition. ∎
+
+**Theorem (`bodyMap_apply`).** The while body at a functional and an element conditions on the predicate, pairing the functional on the step with the element.
+
+*Proof.* Expand through projections, evaluation, and pairing. ∎
+
+**Theorem (`Wop_apply`).** Applying the while operator at a functional recovers the conditional body.
+
+*Proof.* Curry evaluation with the body law. ∎
+
+**Theorem (`whileMap_least`).** Any functional satisfying the while recursion dominates the while fixed point.
+
+*Proof.* The least-fixed-point characterisation of the while operator. ∎
+
+**Theorem (`whileMap_rec`).** While satisfies the conditional recursion at every element.
+
+*Proof.* The fixed-point law for the while operator. ∎
+
+**Theorem (`whileMap_bot`).** When the predicate is bottom, while returns bottom.
+
+*Proof.* The recursion together with the bottom case of conditional. ∎
+
+**Theorem (`whileMap_false`).** When the predicate is false, while returns the current element.
+
+*Proof.* The recursion together with the false case of conditional. ∎
+
+**Theorem (`whileMap_true`).** When the predicate is true, while recurses after the step map.
+
+*Proof.* The recursion together with the true case of conditional. ∎
