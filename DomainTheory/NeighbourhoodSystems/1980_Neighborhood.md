@@ -10,4 +10,6 @@
 - [Typed $\lambda$-calculus](TypedLambdaCalculus/1980_Typed_lambda-calculus.md) [✓](1980_REVISION.md)
 - [Domain equations](DomainEquations/1980_Introduction_to_domain_equations.md) [✓](1980_REVISION.md)
 - [Computability in effectively given domains](ComputabilityInEffectivelyGivenDomains/1980_Computability_in_effectively_given_domains.md) [✓](1980_REVISION.md)
-- [Retracts of the universal domain](RetractsOfTheUniversalDomain/1980_Retracts_of_the_universal_domain.md)
+- [Retracts of the universal domain](RetractsOfTheUniversalDomain/1980_Retracts_of_the_universal_domain.md) [✓](1980_REVISION.md)
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-07) — <a href="1980_REVISION.md">1980 revision progress</a></p>

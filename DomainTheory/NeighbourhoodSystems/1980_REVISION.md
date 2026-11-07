@@ -14,6 +14,6 @@ Tracks the [revision ethos](../../README.md#revision): Mathlib-style library lem
 | 5 | Typed $\lambda$-calculus | [TypedLambdaCalculus/1980_Typed_lambda-calculus.md](TypedLambdaCalculus/1980_Typed_lambda-calculus.md) | **complete** (2026-11-07) |
 | 6 | Domain equations | [DomainEquations/1980_Introduction_to_domain_equations.md](DomainEquations/1980_Introduction_to_domain_equations.md) | **complete** (2026-11-07) |
 | 7 | Computability in effectively given domains | [ComputabilityInEffectivelyGivenDomains/1980_Computability_in_effectively_given_domains.md](ComputabilityInEffectivelyGivenDomains/1980_Computability_in_effectively_given_domains.md) | **complete** (2026-11-07) |
-| 8 | Retracts of the universal domain | [RetractsOfTheUniversalDomain/1980_Retracts_of_the_universal_domain.md](RetractsOfTheUniversalDomain/1980_Retracts_of_the_universal_domain.md) | pending |
+| 8 | Retracts of the universal domain | [RetractsOfTheUniversalDomain/1980_Retracts_of_the_universal_domain.md](RetractsOfTheUniversalDomain/1980_Retracts_of_the_universal_domain.md) | **complete** (2026-11-07) |
 
 When a section is finished, set its status here and add the green **Revised** footer on that section’s hub and its note pages.
