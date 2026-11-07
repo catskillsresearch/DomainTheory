@@ -1,0 +1,35 @@
+Library development supporting Scott's neighbourhood-system formalization.
+
+<!-- formalization -->
+
+**Definition (`Uapply`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`Ulam`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`translateAbs`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`Uapply_Ulam`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`translateAbs_idMap`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`example_826`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`translateAbs_sandwich`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`translateApp_hasType`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎

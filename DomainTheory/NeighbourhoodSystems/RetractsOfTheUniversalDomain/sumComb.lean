@@ -1,6 +1,8 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition_8_9
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.sumMap
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.elementIsoOfProjectionPair
 
 @[expose] public section
 
@@ -204,6 +206,50 @@ noncomputable def J (a b : ApproximableMap U U) :
       (fixedNbhd_mem_nonempty a) (fixedNbhd_mem_nonempty b)) :=
   (sumMap (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty)
     (fixedNbhd_subsystem a).proj (fixedNbhd_subsystem b).proj).comp jPlus
+
+theorem eq_iPlus_sumMap_jPlus (a b : ApproximableMap U U) :
+    sumComb a b = iPlus.comp
+      ((sumMap (h₀ := U_mem_nonempty) (h₁ := U_mem_nonempty) (h₀' := U_mem_nonempty)
+          (h₁' := U_mem_nonempty) a b).comp jPlus) := by
+  apply ext_of_toElementMap
+  intro x
+  rw [toElementMap_comp, toElementMap_comp]
+  rcases sum_element_trichotomy (jPlus.toElementMap x) with hL | hR | hN
+  · rw [toElementMap_of_left hL, sumMap.toElementMap_of_left hL]
+  · rw [toElementMap_of_right hR, sumMap.toElementMap_of_right hR]
+  · rw [toElementMap_of_neither hN, sumMap.reaches_neither_iff_eq_bot.mp hN, sumMap.bot,
+      toElementMap_bot_eq_bot_of_comp_le_idMap iPlus_comp_jPlus_le]
+
+theorem I_comp_J (a b : ApproximableMap U U) (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+    (I a b).comp (J a b) = sumComb a b := by
+  unfold I J
+  rw [comp_assoc, ← comp_assoc (sumMap _ _) (sumMap _ _) jPlus, ← sumMap.comp,
+    inj_comp_proj_eq_self ha, inj_comp_proj_eq_self hb, ← comp_assoc,
+    eq_iPlus_sumMap_jPlus, comp_assoc]
+
+theorem J_comp_I (a b : ApproximableMap U U) :
+    (J a b).comp (I a b) =
+      idMap (sum (fixedNbhd a) (fixedNbhd b) (fixedNbhd_mem_nonempty a)
+        (fixedNbhd_mem_nonempty b)) := by
+  unfold J I
+  rw [comp_assoc, ← comp_assoc jPlus iPlus (sumMap _ _), jPlus_comp_iPlus, idMap_comp,
+    ← sumMap.comp, (fixedNbhd_subsystem a).proj_comp_inj, (fixedNbhd_subsystem b).proj_comp_inj,
+    sumMap.id]
+
+noncomputable def elementIso (a b : ApproximableMap U U)
+    (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+    (sum (fixedNbhd a) (fixedNbhd b) (fixedNbhd_mem_nonempty a) (fixedNbhd_mem_nonempty b)).Element
+      ≃o {y : U.Element // (sumComb a b).toElementMap y = y} :=
+  elementIsoOfProjectionPair (I a b) (J a b) (J_comp_I a b) (I_comp_J a b ha hb).symm
+
+theorem finitary (a b : ApproximableMap U U) (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+    IsFinitary (sumComb a b) :=
+  isFinitary_of_projectionPair (I a b) (J a b) (J_comp_I a b) (I_comp_J a b ha hb).symm
+
+theorem finitaryProjection (a b : ApproximableMap U U)
+    (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+    FinitaryProjection (sumComb a b) :=
+  ⟨⟨isProjection ha.out.1 hb.out.1, finitary a b ha hb⟩⟩
 
 end sumComb
 

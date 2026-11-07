@@ -1,0 +1,131 @@
+Library development supporting Scott's neighbourhood-system formalization.
+
+<!-- formalization -->
+
+**Definition (`aSharpInner`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`dsharpMap`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`dsharpMap_eq`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`dsharpMap_self_eq_aSharpInner`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`grel_inSharp_pairSharp_imp_idMap_rel`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`iSharp`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`ISharpComb`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`idMap_rel_imp_grel_inSharp_pairSharp`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`gMap_inSharp_pairSharp_eq_idMap`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`dsharpMap_id`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`inSharp_principal`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`jSharp`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`JSharpComb`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`aSharp`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`eq`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`jSharp_comp_iSharp`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`pair_principal_eq_principal_prodNbhd`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`pairSharp_principal`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`gMap_eq_of_satisfies`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`dsharpMap_comp`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`ISharpComb_comp_JSharpComb`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`JSharpComb_comp_ISharpComb`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`dsharp_fixedNbhd_elementIso`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`gMap_selfComp_eq_of_isRetraction`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`GRel.mono_uv`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`aSharpInner_eq`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`aSharpInner_idem_of_isRetraction`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`gMap_mono`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`iSharp_comp_jSharp_le`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`dsharpU_trianglelefteq_U`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`iSharp_isComputableMap`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`jSharp_isComputableMap`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎

@@ -1,0 +1,7 @@
+Scott's last sentence of Theorem 8.8: the fixed-neighbourhood system of a computable finitary projection is effectively given.
+
+<!-- formalization -->
+
+**Theorem (`fixedNbhd_isEffectivelyGiven`).** If $a$ is a computable approximable endomap on an effectively presented domain, then $\\{Y \\mid Y\\ a\\ Y\\}$ is effectively given as a neighbourhood system.
+
+*Proof.* Via the diagonal fixed-point predicate, primitive-recursive folding on codes, and the $D_X$ presentation machinery. ∎

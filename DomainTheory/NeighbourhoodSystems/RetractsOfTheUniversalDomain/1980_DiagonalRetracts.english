@@ -1,0 +1,15 @@
+Library development supporting Scott's neighbourhood-system formalization.
+
+<!-- formalization -->
+
+**Theorem (`exercise_8_20_assembly`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`example_820`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`trianglelefteq_prod_snd`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎

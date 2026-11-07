@@ -6,5 +6,5 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Boo
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
-theorem exercise_8_13 : U ≅ᴰ V := exercise813a
+theorem example_813 : U ≅ᴰ V := exercise813a
 

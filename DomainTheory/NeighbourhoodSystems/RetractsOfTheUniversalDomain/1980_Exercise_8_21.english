@@ -1,0 +1,15 @@
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_21.lean](Exercise_8_21.lean)**
+
+@import "Exercise_8_21.lean"
+
+**EXERCISE 8.21.** Using the fixed-point construction, show that there is a continuous and computable operator $\lambda a.\, a^{\S}$, such that if $a$ is a finitary projection of $U$, then
+
+$$D_{a^{\S}} \cong (D_a)^{\S} \ .$$
+
+The development is with the [A-sharp on lists](1980_ASharp.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`example_821`).** The list-of-projection combinator is finitary when the projection is finitary.
+
+*Proof.* By assembling the peer lemmas named in the packaging module. ∎

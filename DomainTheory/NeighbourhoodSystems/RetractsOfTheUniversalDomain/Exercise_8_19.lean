@@ -8,7 +8,7 @@ open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Domain
 
 universe u
 
-theorem exercise_8_19 {α : Type u} {E : NeighborhoodSystem α}
+theorem example_819 {α : Type u} {E : NeighborhoodSystem α}
     (hE : ∀ X, E.mem X → X.Nonempty) (hT : TD ⊴ E) (hArrow : funSpace E E ⊴ E) :
     sum E E hE hE ⊴ E ∧ prod E E ⊴ E :=
   exercise_8_19_assembly hE hT hArrow

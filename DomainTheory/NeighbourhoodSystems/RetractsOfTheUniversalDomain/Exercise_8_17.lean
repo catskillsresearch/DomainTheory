@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Emb
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem
 
-theorem exercise_8_17 :
+theorem example_817 :
     IsUniversal.{0} V ∧
       (prod U U ⊴ U) ∧
       (sum U U U_mem_nonempty U_mem_nonempty ⊴ U) ∧

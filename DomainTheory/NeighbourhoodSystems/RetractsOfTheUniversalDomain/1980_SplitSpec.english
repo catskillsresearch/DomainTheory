@@ -1,0 +1,15 @@
+Splittings of neighbourhoods in the universal system, used to refine atoms along a $Y$-sequence.
+
+<!-- formalization -->
+
+**Definition (`SplitSpec`).** A split operation satisfies the specification when splittings are compatible with emptiness, lie in the universal system, decompose intersections and differences of atom sets, and form a disjoint cover of the ambient neighbourhood.
+
+*Proof.* By the stated universal quantification over splits. ∎
+
+**Theorem (`exists_split`).** Under the standard empty–neighbourhood correspondence for an atom set and universal ambient, every stage admits a splitting into two universal pieces with the required intersection and difference behaviour.
+
+*Proof.* By case analysis on whether the atom intersects the next stage set, using no-minimality when both parts are nonempty. ∎
+
+**Definition (`genAtom`).** The generalized atom sequence intersects the master set, at each step keeping or discarding the current stage set according to a boolean stream.
+
+*Proof.* By primitive recursion on the step index. ∎

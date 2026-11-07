@@ -1,0 +1,175 @@
+Library development supporting Scott's neighbourhood-system formalization.
+
+<!-- formalization -->
+
+**Theorem (`trianglelefteq_iterSys`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`example_825_embed`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`arrowReindexOrderIso`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`sumArrowOrderIso`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`interleaveOrderIso`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`powProdOrderIso`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`pow_prod_isomorphic`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`example_825_pow`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`isoOfUnique`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`uniqueApproximableMapUnitSys`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`uniqueFunSpaceUnitSys`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`isomorphic_of_unique`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`funSpace_unitSys_isomorphic`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`example_825_unit`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`RDom`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`RMap`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`curryOnceC`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`fixedNbhd_elementIso_fix`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`lamOp`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`presentationIterU`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`cInj`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`cProj`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`cCombinator`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`TArrow`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`cProj_comp_cInj`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`cElementIso`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`tOpMap`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`cInj_comp_cProj_le`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`isFinitary_cCombinator`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`isRetraction_cCombinator`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`isProjection_cCombinator`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`isFinitaryProjection_cCombinator`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`fixedNbhd_cCombinator_isomorphic`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`hVV_cCombinator`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`toElementMap_RMap`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`toApproxMap_lamOp`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`tOp_tOpMap`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`hT_TArrow`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`ht_tOpMap`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`Dsol_isomorphic_funSpace_cCombinator`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`U_trianglelefteq_Dsol`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`exercise_8_25_main`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`exercise_8_25_universal`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎

@@ -1,0 +1,79 @@
+Library development supporting Scott's neighbourhood-system formalization.
+
+<!-- formalization -->
+
+**Theorem (`exercise_8_19_assembly`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`example_819`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`constFunMap`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`embedFst`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`embedSnd`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Definition (`evalBotMap`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`toApproxMap_constFunMap`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`embedFst_comp_proj`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`embedFst_ne_embedSnd_of_ne_bot`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`embedSnd_comp_proj`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`proj`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`proj`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`toElementMap_evalBotMap`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`constFunMap_comp_evalBotMap_le`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`evalBotMap_comp_constFunMap`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`trianglelefteq_funSpace_const`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`D_trianglelefteq_funSpace`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`trianglelefteq_prod_fst`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎
+
+**Theorem (`D_trianglelefteq_prod`).** As set out for this part of the library.
+
+*Proof.* By the development recorded in the peer module. ∎

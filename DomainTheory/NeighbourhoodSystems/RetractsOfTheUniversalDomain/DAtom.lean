@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem_8_6
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DprimeU
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise_7_18
 
 @[expose] public section

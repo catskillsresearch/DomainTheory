@@ -1,0 +1,103 @@
+Finite lists of rational half-open intervals present unions used throughout the universal domain.
+
+<!-- formalization -->
+
+**Definition (`presentedIntervals`).** The union of the half-open intervals given by a list of rational endpoints.
+
+*Proof.* By union over the list. ∎
+
+**Definition (`clip`).** Clip an endpoint pair to lie within the unit interval by taking the maximum of lower bounds with zero and the minimum of upper bounds with one.
+
+*Proof.* By the lattice operations on rationals. ∎
+
+**Definition (`clipGe`).** Raise the lower endpoint of a pair to at least a given rational bound.
+
+*Proof.* By supremum with the bound on the first coordinate. ∎
+
+**Definition (`clipLt`).** Lower the upper endpoint of a pair to at most a given rational bound.
+
+*Proof.* By infimum with the bound on the second coordinate. ∎
+
+**Definition (`combineIntervals`).** Form every pairwise combined interval by meeting lowers and joining uppers across two lists.
+
+*Proof.* By flat map and map on endpoint pairs. ∎
+
+**Theorem (`Ico_diff_Ico`).** The set difference of two half-open rational intervals is the union of two half-open pieces described by extrema of the four endpoints.
+
+*Proof.* By case analysis on order relations among the endpoints. ∎
+
+**Definition (`diffOneList`).** Present the difference of two half-open intervals as a list of at most two interval pieces.
+
+*Proof.* By the endpoint formulas from the difference lemma. ∎
+
+**Definition (`diffSingleList`).** Subtract one interval from each member of an interval list.
+
+*Proof.* By flat-mapping the single-interval difference. ∎
+
+**Definition (`diffAllList`).** Subtract a list of intervals from one interval by folding single-list differences.
+
+*Proof.* By left fold starting from the singleton list of the first interval. ∎
+
+**Definition (`diffLists`).** Present the difference of two unions as the flat union of per-interval differences.
+
+*Proof.* By flat map over the first list. ∎
+
+**Theorem (`presentedIntervals.mem`).** Membership in a presented union is equivalent to membership in some listed half-open interval.
+
+*Proof.* By unfolding the union and interval membership. ∎
+
+**Theorem (`presentedIntervals.nil`).** The empty list presents the empty set.
+
+*Proof.* By the membership characterization. ∎
+
+**Theorem (`presentedIntervals.cons`).** Consing an interval presents the union of that interval with the tail presentation.
+
+*Proof.* By the membership characterization and disjunction. ∎
+
+**Theorem (`presentedIntervals.append`).** Appending lists presents the union of the two presentations.
+
+*Proof.* By induction on the first list and the cons lemma. ∎
+
+**Theorem (`presentedIntervals.congr`).** Pointwise list equivalence yields equal presented unions.
+
+*Proof.* By the membership characterization and bidirectional inclusion. ∎
+
+**Theorem (`presentedIntervals.inter`).** Intersection of two presented unions equals the presentation built by combining interval lists.
+
+*Proof.* By the membership characterization and the combine-interval construction. ∎
+
+**Theorem (`presentedIntervals.diffOneList`).** The list difference of two intervals presents their set difference.
+
+*Proof.* By the cons lemmas and the rational interval difference identity. ∎
+
+**Theorem (`presentedIntervals.diffSingleList`).** Subtracting one interval from a presentation presents the corresponding set difference.
+
+*Proof.* By induction on the list and the one-interval case. ∎
+
+**Theorem (`presentedIntervals.foldl_diffSingleList`).** Folding single-list subtraction through a second list presents subtracting the second union from the first.
+
+*Proof.* By induction on the subtracted list. ∎
+
+**Theorem (`presentedIntervals.diffAllList`).** The all-list difference of one interval against a union presents the set difference.
+
+*Proof.* By the fold lemma and empty union on the right. ∎
+
+**Theorem (`presentedIntervals.diffLists`).** The list difference of two presentations presents their set difference.
+
+*Proof.* By induction on the first list and the all-list case. ∎
+
+**Theorem (`presentedIntervals.map_clip`).** Clipping every interval and presenting the list gives the intersection of the original union with the unit half-open interval.
+
+*Proof.* By the membership characterization and clip inequalities. ∎
+
+**Theorem (`presentedIntervals.filter_lt`).** Filtering to strict lower bounds does not change the presented union.
+
+*Proof.* By the membership characterization; strict endpoints are already forced on members. ∎
+
+**Theorem (`presentedIntervals.map_clipLt`).** Clipping uppers to a bound and presenting gives the intersection of the union with the open ray below the bound.
+
+*Proof.* By the membership characterization. ∎
+
+**Theorem (`presentedIntervals.map_clipGe`).** Clipping lowers to a bound and presenting gives the intersection of the union with the closed ray from the bound upward.
+
+*Proof.* By the membership characterization. ∎

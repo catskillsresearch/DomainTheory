@@ -1,0 +1,55 @@
+Scott’s sub-combinator on endomaps is the retraction of the fixed-neighbourhood subdomain; its fixed points are exactly the finitary projections, in bijection with subdomains.
+
+<!-- formalization -->
+
+**Definition (`sub`).** The sub-combinator sends an endomap to the retraction of its fixed-neighbourhood subdomain.
+
+*Proof.* By the subdomain retraction construction. ∎
+
+**Theorem (`fixedNbhd_retractionOfSubsystem`).** The fixed neighbourhood system of a subdomain retraction recovers that subdomain.
+
+*Proof.* By extensionality on membership, comparing Scott’s retraction formula with subdomain membership. ∎
+
+**Theorem (`sub.rel`).** The sub-combinator relates two neighbourhoods exactly when both belong to the ambient system and some fixed neighbourhood of the map mediates between them in Scott’s sense.
+
+*Proof.* By unfolding the fixed-neighbourhood retraction relation. ∎
+
+**Theorem (`sub.mono`).** The sub-combinator is monotone in the endomap.
+
+*Proof.* By monotonicity of the underlying map on the mediating fixed neighbourhood. ∎
+
+**Theorem (`sub.retractionOfSubsystem`).** Applying sub to a subdomain retraction returns that retraction.
+
+*Proof.* By the fixed-neighbourhood recovery lemma. ∎
+
+**Definition (`finitaryProjectionSubsystemEquiv`).** Fixed points of sub on endomaps correspond order-isomorphically to subdomains of the ambient domain.
+
+*Proof.* By pairing fixed-neighbourhood systems with subdomain retractions and verifying inverse laws along the sub identification. ∎
+
+**Theorem (`fixedNbhd_sub`).** The fixed neighbourhood system of sub applied to $f$ equals that of $f$ itself.
+
+*Proof.* By membership extensionality using the sub relation at witness neighbourhoods. ∎
+
+**Theorem (`isFinitaryProjection_of_sub_eq_self`).** A self-fixed sub-combinator defines a finitary projection.
+
+*Proof.* By identifying with the subdomain retraction of its fixed neighbourhood system. ∎
+
+**Theorem (`sub_le`).** The sub-combinator lies below the original map.
+
+*Proof.* By extracting the mediating fixed neighbourhood and applying map monotonicity twice. ∎
+
+**Theorem (`sub_eq_self_of_isFinitaryProjection`).** Every finitary projection is fixed by sub.
+
+*Proof.* By Scott’s membership formula for finitary projections and the defining sub relation. ∎
+
+**Theorem (`sub_eq_self_iff_isFinitaryProjection`).** Self-fixedness under sub is equivalent to being a finitary projection.
+
+*Proof.* By the two implications above. ∎
+
+**Theorem (`sub_sub`).** Sub applied twice equals sub once.
+
+*Proof.* By congruence on fixed neighbourhoods using the fixed-neighbourhood identification for sub. ∎
+
+**Theorem (`isFinitaryProjection_sub`).** Sub always yields a finitary projection.
+
+*Proof.* By idempotence of sub. ∎

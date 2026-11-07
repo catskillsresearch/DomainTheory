@@ -1,0 +1,31 @@
+A projection is a retraction lying below the identity. It is finitary when its fixed-point set is isomorphic to the element space of some neighbourhood system; in particular every subdomain retraction is a finitary projection.
+
+<!-- formalization -->
+
+**Definition (`IsFinitary`).** An endomap is finitary when the ordered set of its fixed points is isomorphic to the elements of some neighbourhood system.
+
+*Proof.* By the defining existential. ∎
+
+**Definition (`IsProjection`).** An endomap is a projection when it is a retraction and lies below the identity.
+
+*Proof.* By the defining conjunction. ∎
+
+**Definition (`FinitaryProjection`).** A finitary projection is a projection that is finitary.
+
+*Proof.* By the defining fields of the class. ∎
+
+**Theorem (`Subsystem.isFinitary_retractionOfSubsystem`).** The retraction of a subdomain embedding is finitary.
+
+*Proof.* The element isomorphism of the subdomain supplies the witnessing domain. ∎
+
+**Theorem (`Subsystem.retractionOfSubsystem_le_idMap`).** The subdomain retraction lies below the identity.
+
+*Proof.* Related neighbourhoods of the retraction are nested, so the identity relation holds between them. ∎
+
+**Theorem (`Subsystem.isProjection_retractionOfSubsystem`).** The subdomain retraction is a projection.
+
+*Proof.* By the retraction and identity-bound facts. ∎
+
+**Theorem (`Subsystem.isFinitaryProjection_retractionOfSubsystem`).** The subdomain retraction is a finitary projection.
+
+*Proof.* By the projection and finitary facts. ∎

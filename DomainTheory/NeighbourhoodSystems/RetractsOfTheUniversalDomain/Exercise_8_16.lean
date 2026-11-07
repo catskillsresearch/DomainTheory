@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Fix
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap Domain.Recursive
 
-theorem exercise_8_16 {α : Type*} {E : NeighborhoodSystem α} :
+theorem example_816 {α : Type*} {E : NeighborhoodSystem α} :
     (∀ {a b : ApproximableMap E E}, FinitaryProjection a → FinitaryProjection b →
         (a ≤ b ↔ fixedNbhd a ◁ fixedNbhd b)) ∧
       (∀ {P : ComputablePresentation E} {a : ApproximableMap E E},

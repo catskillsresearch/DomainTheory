@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Fix
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.FixOp
 
-theorem exercise_8_23 {α : Type} {E : NeighborhoodSystem α}
+theorem example_823 {α : Type} {E : NeighborhoodSystem α}
     (t : ApproximableMap (funSpace E E) (funSpace E E))
     (ht : ∀ a, FinitaryProjection a → FinitaryProjection (tOp t a)) :
     FinitaryProjection (fixOp t) :=

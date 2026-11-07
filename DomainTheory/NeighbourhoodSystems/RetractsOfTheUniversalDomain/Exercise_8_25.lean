@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Ref
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap DomainTheory.NeighbourhoodSystems.FixOp
 
-theorem exercise_8_25 :
+theorem example_825 :
     (fixedNbhd (fixOp (tOpMap cCombinator)) ≅ᴰ
       funSpace (fixedNbhd (fixOp (tOpMap cCombinator)))
         (fixedNbhd (fixOp (tOpMap cCombinator)))) ∧

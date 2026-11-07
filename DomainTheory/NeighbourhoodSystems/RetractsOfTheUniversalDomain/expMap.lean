@@ -1,6 +1,8 @@
 module
 
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition_8_9
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UConstructs
+public import DomainTheory.NeighbourhoodSystems.DomainConstructs.Theorem_3_13
+public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Proposition_2_6
 
 @[expose] public section
 

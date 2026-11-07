@@ -6,6 +6,6 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.piU
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
-theorem exercise_8_27 (d : ApproximableMap U U) : FinitaryProjection (piU d) :=
+theorem example_827 (d : ApproximableMap U U) : FinitaryProjection (piU d) :=
   isFinitaryProjection.piU d
 

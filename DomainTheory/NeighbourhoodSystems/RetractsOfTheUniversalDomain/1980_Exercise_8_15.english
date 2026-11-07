@@ -1,0 +1,9 @@
+**EXERCISE 8.15.** Give a direct proof that the domain $\{X \mid X \triangleleft D\}$ is effectively presented if $D$ is. (Hint: The finite elements of the domain correspond exactly to the finite systems $X \triangleleft D$.) In the case of $D = \mathcal{U}$, show that the computable elements of the domain correspond exactly to the effectively presented domains (up to effective isomorphism).
+
+The development is with the [Subsystem domain](1980_SubsystemDomain.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`example_815`).** The domain of subsystems of an effectively given domain is effectively given.
+
+*Proof.* By assembling the peer lemmas named in the packaging module. ∎

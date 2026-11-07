@@ -1,6 +1,7 @@
 module
 
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Definition_8_9
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.elementIsoOfProjectionPair
 
 @[expose] public section
 
@@ -66,6 +67,27 @@ theorem J_comp_I (a b : ApproximableMap U U) :
   rw [comp_assoc, ← comp_assoc jTimes iTimes (prodMap _ _), jTimes_comp_iTimes, idMap_comp,
     ← prodMap_comp, (fixedNbhd_subsystem a).proj_comp_inj, (fixedNbhd_subsystem b).proj_comp_inj,
     prodMap_id]
+
+theorem I_comp_J (a b : ApproximableMap U U) (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+    (I a b).comp (J a b) = prodComb a b := by
+  unfold I J
+  rw [comp_assoc, ← comp_assoc (prodMap _ _) (prodMap _ _) jTimes, ← prodMap_comp,
+    inj_comp_proj_eq_self ha, inj_comp_proj_eq_self hb, ← comp_assoc, prodComb.eq, comp_assoc]
+
+noncomputable def elementIso (a b : ApproximableMap U U)
+    (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+    (prod (fixedNbhd a) (fixedNbhd b)).Element ≃o
+      {y : U.Element // (prodComb a b).toElementMap y = y} :=
+  elementIsoOfProjectionPair (I a b) (J a b) (J_comp_I a b) (I_comp_J a b ha hb).symm
+
+theorem finitary (a b : ApproximableMap U U) (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+    IsFinitary (prodComb a b) :=
+  isFinitary_of_projectionPair (I a b) (J a b) (J_comp_I a b) (I_comp_J a b ha hb).symm
+
+theorem finitaryProjection (a b : ApproximableMap U U)
+    (ha : FinitaryProjection a) (hb : FinitaryProjection b) :
+    FinitaryProjection (prodComb a b) :=
+  ⟨⟨isProjection ha.out.1 hb.out.1, finitary a b ha hb⟩⟩
 
 end prodComb
 

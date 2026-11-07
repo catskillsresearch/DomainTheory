@@ -1,0 +1,63 @@
+The neighbourhood system of Scott’s universal domain on the rationals in the unit half-open interval.
+
+<!-- formalization -->
+
+**Definition (`UMaster`).** The master neighbourhood is the half-open unit interval of rationals.
+
+*Proof.* By the standard half-open interval. ∎
+
+**Theorem (`UMaster_nonempty`).** The master neighbourhood is nonempty.
+
+*Proof.* Zero lies in the unit half-open interval. ∎
+
+**Definition (`UMem`).** A set is a candidate neighbourhood when it is a nonempty presented union of rational intervals contained in the master.
+
+*Proof.* By conjunction of presentation, nonemptiness, and subset. ∎
+
+**Theorem (`UMem.sub_master`).** Every candidate neighbourhood lies in the master.
+
+*Proof.* By the defining subset clause. ∎
+
+**Theorem (`UMem.master_mem`).** The master itself is a candidate neighbourhood.
+
+*Proof.* By the singleton unit presentation and nonemptiness. ∎
+
+**Theorem (`UMem.inter_mem`).** Given candidate neighbourhoods and a nonempty witness inside their intersection, their intersection is again a candidate.
+
+*Proof.* By combining interval lists and the intersection presentation lemma. ∎
+
+**Definition (`U`).** The neighbourhood system whose memberships are the candidate sets over the master, with the standard intersection law.
+
+*Proof.* By the neighbourhood-system constructor using the master and intersection lemmas. ∎
+
+**Theorem (`U.mem_iff_scott`).** Membership in the universal system is equivalent to being a nonempty union of rational subintervals with endpoints in the closed unit interval and strict increase along each piece.
+
+*Proof.* By clipping and filtering presentations in both directions. ∎
+
+**Theorem (`U.no_minimal`).** Every neighbourhood splits into two smaller disjoint nonempty neighbourhoods whose union is the original.
+
+*Proof.* By bisecting at the midpoint of a witnessing interval using density and clip lemmas. ∎
+
+**Theorem (`U.union_mem`).** The union of two neighbourhoods-or-empty is again empty or a neighbourhood.
+
+*Proof.* By case split and appending interval lists. ∎
+
+**Theorem (`U.iUnion_mem`).** A nonempty finite union of neighbourhoods-or-empty is a neighbourhood.
+
+*Proof.* By finset induction using the binary union lemma. ∎
+
+**Theorem (`U.diff_mem`).** The set difference of two neighbourhoods is empty or again a neighbourhood.
+
+*Proof.* By the list difference presentation of unions. ∎
+
+**Theorem (`U.diffClosed`).** The universal system is closed under difference.
+
+*Proof.* By the difference membership lemma. ∎
+
+**Theorem (`U.isPositive`).** The universal system is positive.
+
+*Proof.* By combining interval lists for nonempty intersections. ∎
+
+**Theorem (`U.noMinimal`).** The universal system has no minimal neighbourhoods.
+
+*Proof.* By the explicit binary split lemma for each member. ∎

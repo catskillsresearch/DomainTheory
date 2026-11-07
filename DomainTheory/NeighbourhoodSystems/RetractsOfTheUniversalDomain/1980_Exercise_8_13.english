@@ -1,0 +1,13 @@
+**EXERCISE 8.13.** (For logicians.) Prove that the universal domain $U$ is isomorphic to the domain of all proper filters of the free Boolean algebra on $\aleph_0$-generators (= the Lindenbaum algebra of propositional calculus). (For topologists.) Connect this
+
+<!-- page 147 -->
+
+representation of $\mathcal{U}$ with the collection of non-empty open subsets of the product space $2^{\mathbf{N}}$ (= Cantor space).
+
+The development is with the [Boolean-algebra filters](1980_BooleanAlgebraFilters.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`example_813`).** The Boolean-algebra filter presentation is effectively isomorphic to U.
+
+*Proof.* By assembling the peer lemmas named in the packaging module. ∎

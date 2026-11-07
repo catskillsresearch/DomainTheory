@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Pro
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
-theorem exercise_8_18 {a b : ApproximableMap U U} (ha : IsProjection a) (hb : IsProjection b) :
+theorem example_818 {a b : ApproximableMap U U} (ha : IsProjection a) (hb : IsProjection b) :
     (IsProjection (sumComb a b) ∧ IsProjection (prodComb a b) ∧ IsProjection (arrowComb a b)) ∧
       (FinitaryProjection a → FinitaryProjection b →
         FinitaryProjection (sumComb a b) ∧ FinitaryProjection (prodComb a b) ∧

@@ -1,0 +1,91 @@
+The fixed-neighbourhood system of an approximable endomap collects neighbourhoods on which the map relates to itself; it is a subdomain. Compact elements agree with principals; a finitary projection is characterized by Scott's membership formula, proved by sectioning its fixed-point isomorphism.
+
+<!-- formalization -->
+
+**Definition (`FixSet`).** The fixed-point set of an endomap consists of those domain elements that the map sends to themselves.
+
+*Proof.* By the subtype of fixed points. ∎
+
+**Definition (`fixedNbhd`).** The fixed neighbourhood system over the same index type admits a set precisely when it is a neighbourhood of the ambient system and the endomap relates that set to itself; the master is unchanged.
+
+*Proof.* By the intersection and sub-master clauses inherited from the ambient system together with compositional closure of self-relation. ∎
+
+**Theorem (`fixedNbhd_mem`).** Membership in the fixed neighbourhood system is equivalent to ambient membership together with self-relation of the endomap on that set.
+
+*Proof.* By definition. ∎
+
+**Definition (`IsCompactElt`).** An element is compact when whenever it lies below a directed supremum of elements, it lies below some term of that directed family.
+
+*Proof.* By the universal quantification over directed families. ∎
+
+**Theorem (`principal_le_of_mem`).** The principal determined by a sub-neighbourhood on which an element lies is below that element.
+
+*Proof.* By upward closure along inclusion of neighbourhoods. ∎
+
+**Theorem (`principalFamily_directed`).** The principals obtained from neighbourhoods on which an element lies form a directed family.
+
+*Proof.* By intersection of witnessing neighbourhoods and the principal comparison lemma. ∎
+
+**Theorem (`eq_iSupDirected_principal`).** Every element equals the directed supremum of the principals from its witnessing neighbourhoods.
+
+*Proof.* By element extension and the directed-supremum membership characterization. ∎
+
+**Theorem (`eq_principal_of_isCompactElt`).** Every compact element is a principal.
+
+*Proof.* By directedness of the principal family and compactness against that supremum. ∎
+
+**Theorem (`principal_compact`).** A principal below a directed supremum lies below some term of the family.
+
+*Proof.* By membership at the principal's neighbourhood and the directed supremum membership law. ∎
+
+**Theorem (`principal_isCompactElt`).** Principals are compact elements.
+
+*Proof.* By the principal compactness lemma. ∎
+
+**Theorem (`fixedNbhd_subsystem`).** The fixed neighbourhood system embeds as a subdomain of the ambient system.
+
+*Proof.* By master coincidence, inheritance of membership, and intersection closure for self-relation. ∎
+
+**Theorem (`mem_of_exists_rel_self`).** If an element lies in a neighbourhood contained in a larger one and the endomap self-relates on some inner neighbourhood, then the image element lies in the larger neighbourhood.
+
+*Proof.* By principal comparison, monotonicity of the element map, and upward closure. ∎
+
+**Theorem (`isFinitaryProjection_of_formula`).** An endomap satisfying Scott's membership formula on elements is a finitary projection.
+
+*Proof.* By identifying it with the subdomain retraction of its fixed neighbourhood system and applying the subdomain finitary projection theorem. ∎
+
+**Definition (`sectionMap`).** From an order-isomorphism between the fixed-point set and another domain, the section map sends a principal in the codomain to the corresponding fixed point in the ambient domain.
+
+*Proof.* By monotonic extension from principals. ∎
+
+**Theorem (`toElementMap_iSupDirected_fixed`).** On a directed family of fixed points, the element map of the endomap preserves the directed supremum.
+
+*Proof.* By the fixed-point hypothesis and the directed supremum law for element maps. ∎
+
+**Theorem (`toElementMap_sectionMap_principal`).** The section map carries a codomain principal to the underlying fixed point of its inverse image under the isomorphism.
+
+*Proof.* By the defining action on principals. ∎
+
+**Theorem (`toElementMap_sectionMap`).** The section map on an arbitrary codomain element equals the directed supremum of sections on the principals below it.
+
+*Proof.* By principal decomposition, fixed points along that family, and antisymmetry using monotonicity of the isomorphism. ∎
+
+**Theorem (`e_apply_iSupDirected_fixed`).** Under fixed-point and directedness hypotheses, applying the fixed-point isomorphism to a supremum of fixed points equals the supremum of the corresponding codomain elements.
+
+*Proof.* By monotonicity of the isomorphism and preservation of directed suprema on fixed points. ∎
+
+**Theorem (`toElementMap_idem`).** For a retraction, applying the element map twice equals applying it once.
+
+*Proof.* By idempotence of composition of approximable maps. ∎
+
+**Theorem (`exists_principal_eq_of_isRetraction_le_idMap`).** For a retraction below the identity, the section of a codomain principal is itself a principal.
+
+*Proof.* By compactness of principals, preservation of directed suprema under the isomorphism, and the retraction below the identity. ∎
+
+**Theorem (`formula_of_isFinitaryProjection`).** Every finitary projection satisfies Scott's membership formula: an element's image lies in a neighbourhood if and only if that neighbourhood is admissible and some inner neighbourhood on which the element lies and the map self-relates is contained in it.
+
+*Proof.* By the subsection construction, principal factorization on the fixed-point domain, and the membership transfer lemmas. ∎
+
+**Theorem (`finitaryProjection_iff_formula`).** An endomap is a finitary projection if and only if it satisfies Scott's membership formula for every element.
+
+*Proof.* By the two directions of the formula characterisation. ∎

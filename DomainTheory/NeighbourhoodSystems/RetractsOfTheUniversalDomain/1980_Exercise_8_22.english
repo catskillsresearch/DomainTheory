@@ -1,0 +1,19 @@
+**EXERCISE 8.22.** Which of the two relations hold:
+
+$$B \trianglelefteq C \quad \text{or} \quad C \trianglelefteq B \ ?$$
+
+Or do they both hold? In general if we use domain equations
+
+$$D = T(D) + S(D) \ , \quad \text{and}$$
+
+$$E = T(E) \ ,$$
+
+will $E \trianglelefteq D$ hold? What projections do you see in the examples in 6.2?
+
+The development is with the [Example C below B](1980_ExampleC_le_B.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`example_822`).** Scott’s sequence domain C is a subdomain of the bit domain B.
+
+*Proof.* By assembling the peer lemmas named in the packaging module. ∎

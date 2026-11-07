@@ -302,6 +302,11 @@ theorem formula_of_isFinitaryProjection {a : ApproximableMap E E} (h : FinitaryP
 
 end HardDirection
 
+theorem finitaryProjection_iff_formula (a : ApproximableMap E E) :
+    FinitaryProjection a ↔ ∀ (x : E.Element) {Y : Set α}, (a.toElementMap x).mem Y ↔
+      E.mem Y ∧ ∃ X, x.mem X ∧ X ⊆ Y ∧ a.rel X X :=
+  ⟨fun h => formula_of_isFinitaryProjection h, fun hii => isFinitaryProjection_of_formula a hii⟩
+
 end
 
 end DomainTheory.NeighbourhoodSystems

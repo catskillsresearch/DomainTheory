@@ -5,7 +5,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Dpr
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.atomCode
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.atomUCode
 public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.UX
-public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Theorem_8_6
+public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.DprimeU
 public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenDomains.Exercise_7_18
 public import Mathlib.Data.Nat.Bitwise
 

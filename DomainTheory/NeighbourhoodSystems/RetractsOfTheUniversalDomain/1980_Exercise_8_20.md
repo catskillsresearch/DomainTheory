@@ -1,23 +1,7 @@
 # Exercise 8.20
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_20.lean](Exercise_8_20.lean)**
+
+@import "1980_Exercise_8_20.english" {code_block=false}
+
+**[Exercise_8_20.lean](Exercise_8_20.lean)**
 
 @import "Exercise_8_20.lean"
-
-**EXERCISE 8.20.** For any system we know $D \trianglelefteq D + D$, but what about
-
-$$D \trianglelefteq D \times D \quad \text{and} \quad D \trianglelefteq D \to D \ ?$$
-
-Would these projections be computable if $D$ is effectively given? Are there more than one projection pair in each case?
-
-## Tip summary
-
-The tip asserts $D \trianglelefteq D\times D$ and $D \trianglelefteq D\to D$ for every domain $D$.
-
-## Development
-
-Proves the unconditional self-embeddings $D \trianglelefteq D\times D$ and $D \trianglelefteq D\to D$.
-
-The tip then assembles those tools into Scott’s statement.
-
- — `exercise_8_20`
-

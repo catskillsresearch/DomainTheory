@@ -1,0 +1,17 @@
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_20.lean](Exercise_8_20.lean)**
+
+@import "Exercise_8_20.lean"
+
+**EXERCISE 8.20.** For any system we know $D \trianglelefteq D + D$, but what about
+
+$$D \trianglelefteq D \times D \quad \text{and} \quad D \trianglelefteq D \to D \ ?$$
+
+Would these projections be computable if $D$ is effectively given? Are there more than one projection pair in each case?
+
+The development is with the [Diagonal retracts](1980_DiagonalRetracts.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`example_820`).** A domain retracts into its diagonal product and function-space copies.
+
+*Proof.* By assembling the peer lemmas named in the packaging module. ∎

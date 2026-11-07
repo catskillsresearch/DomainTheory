@@ -16,6 +16,15 @@ public import DomainTheory.NeighbourhoodSystems.MappingsBetweenDomains.Propositi
 namespace DomainTheory.NeighbourhoodSystems
 open NeighborhoodSystem ApproximableMap ApproximableMap₂
 
+theorem fin2_zero_subset_zero_one : ({0} : Set (Fin 2)) ⊆ ({0, 1} : Set (Fin 2)) := by
+  intro x hx; simp only [Set.mem_singleton_iff] at hx; subst hx; simp
+
+theorem fin2_zero_ne_zero_one : ({0} : Set (Fin 2)) ≠ ({0, 1} : Set (Fin 2)) := by
+  intro h
+  have h1 : (1 : Fin 2) ∈ ({0, 1} : Set (Fin 2)) := by simp
+  rw [← h] at h1
+  simp at h1
+
 def O : NeighborhoodSystem (Fin 2) where
   mem X := X = ({0} : Set (Fin 2)) ∨ X = ({0, 1} : Set (Fin 2))
   master := ({0, 1} : Set (Fin 2))

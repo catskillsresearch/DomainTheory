@@ -1,0 +1,47 @@
+$Y$-sequences mediate between stage-wise intersections on a substrate domain and corresponding inclusion structure among universal neighbourhoods.
+
+<!-- formalization -->
+
+**Theorem (`transfer_dir`).** Nonemptiness of generalized atoms with a given finite boolean signature transfers across paired systems when empty stages coincide stepwise.
+
+*Proof.* By forward membership in generalized atoms and the emptiness witness at the target stage. ∎
+
+**Theorem (`transfer_empty_iff`).** For boolean codes below $n$, the substrate pattern of membership is nonempty if and only if the corresponding master–$Y$-sequence pattern is nonempty.
+
+*Proof.* By applying transfer in both directions through the atom–genAtom correspondence. ∎
+
+**Theorem (`transfer_subset_iff`).** Substrate inclusion between two stages corresponds to master inclusion between the associated $Y$-sequences.
+
+*Proof.* By instantiating the empty-set transfer on a two-code witness for subset and difference. ∎
+
+**Theorem (`transfer_inter_empty_iff`).** Two substrate stage-sets meet vacuously if and only if the corresponding $Y$-sequences are disjoint on the master.
+
+*Proof.* By the same transfer pattern with two positive codes. ∎
+
+**Theorem (`transfer_double_subset_iff`).** Triple substrate inclusion among two stages and a third corresponds to the analogous triple inclusion among $Y$-sequences.
+
+*Proof.* By instantiating transfer on three boolean codes. ∎
+
+**Theorem (`Yseq_subset_master`).** Every $Y$-sequence lies in the master neighbourhood.
+
+*Proof.* By union of atoms each contained in the master. ∎
+
+**Theorem (`Yseq_zero_eq_master`).** When the zeroth stage set is the whole substrate, the initial $Y$-sequence is the master.
+
+*Proof.* By splitting the master at stage one and $Y$-sequence inclusion. ∎
+
+**Theorem (`transfer_inter_eq_iff`).** Equality of substrate intersections of three stages corresponds to equality of the three $Y$-sequence intersections, under stage subsets of the substrate.
+
+*Proof.* By subset and double-subset transfer lemmas applied to inclusion equivalences. ∎
+
+**Theorem (`Yseq_empty_or_mem`).** Each $Y$-sequence is either empty or a neighbourhood of the universal system.
+
+*Proof.* By finite union of universal atoms when nonempty. ∎
+
+**Theorem (`Yseq_nonempty_of_mem`).** Membership at stage $n$ inside the substrate yields a nonempty $Y$-sequence at $n$.
+
+*Proof.* By the decision stream for the witness and nonempty first split piece. ∎
+
+**Theorem (`splitChoice_isSplitSpec`).** The canonical choice split satisfies the split specification.
+
+*Proof.* By unfolding choice and applying the existential splitting theorem. ∎

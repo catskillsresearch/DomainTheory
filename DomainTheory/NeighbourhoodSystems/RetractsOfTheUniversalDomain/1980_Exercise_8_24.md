@@ -1,22 +1,7 @@
 # Exercise 8.24
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_24.lean](Exercise_8_24.lean)**
+
+@import "1980_Exercise_8_24.english" {code_block=false}
+
+**[Exercise_8_24.lean](Exercise_8_24.lean)**
 
 @import "Exercise_8_24.lean"
-
-**EXERCISE 8.24.** Suppose $S$ and $T$ are two (binary-argument) constructs on domains that can be made into computable operators on projections of the universal domain. Show that we can therefore find a pair of effectively presented domains such that
-$$
-D \cong S(D, E) \quad \text{and} \quad E \cong T(D, E).
-$$
-
-## Tip summary
-
-The tip asserts that the coupled solutions `aStar`, `bStar` are finitary projections.
-
-## Development
-
-Solves the coupled domain equations with finitary projections `aStar`, `bStar`.
-
-The tip then assembles those tools into Scott’s statement.
-
- — `exercise_8_24`
-

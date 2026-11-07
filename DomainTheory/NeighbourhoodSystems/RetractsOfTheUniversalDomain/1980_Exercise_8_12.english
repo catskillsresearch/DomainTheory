@@ -1,0 +1,41 @@
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_12.lean](Exercise_8_12.lean)**
+
+@import "Exercise_8_12.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/deltaPair.lean](deltaPair.lean)**
+
+@import "deltaPair.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/V.lean](V.lean)**
+
+@import "V.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/VX.lean](VX.lean)**
+
+@import "VX.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Vinter.lean](Vinter.lean)**
+
+@import "Vinter.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/minLevel.lean](minLevel.lean)**
+
+@import "minLevel.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/splitV.lean](splitV.lean)**
+
+@import "splitV.lean"
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/VComputablePresentation.lean](VComputablePresentation.lean)**
+
+@import "VComputablePresentation.lean"
+
+**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/IsComputableSplit.lean](IsComputableSplit.lean)**
+
+@import "IsComputableSplit.lean"
+**EXERCISE 8.12.** Generalize the notation $2X + 1$ for subsets $X \subseteq \mathbb{N}$ to sets of the form
+
+$$2^k X + \ell, \quad \text{where } \ell < 2^k.$$
+
+Let $V$ be the non-empty finite unions of sets $2^k \mathbb{N} + \ell$. Show that $U \cong V$ and that the isomorphism is effective, thus obtaining another presentation of $U$.
+
+The development is with the [Effective isomorphism U and V](1980_effectiveIso812_UV.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`example_812`).** The integer interval presentation is effectively given and effectively isomorphic to U.
+
+*Proof.* By assembling the peer lemmas named in the packaging module. ∎

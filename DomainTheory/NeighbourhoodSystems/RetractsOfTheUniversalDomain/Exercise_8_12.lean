@@ -7,7 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.ComputabilityInEffectivelyGivenD
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem EffectiveIso
 
-theorem exercise_8_12 :
+theorem example_812 :
     V.IsEffectivelyGiven ∧
       EffectivelyIsomorphic UComputablePresentation VComputablePresentation :=
   ⟨V.isEffectivelyGiven, ⟨effectiveIso812_UV⟩⟩

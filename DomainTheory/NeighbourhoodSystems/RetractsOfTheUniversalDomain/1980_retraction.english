@@ -1,0 +1,35 @@
+A retraction is an approximable endomap of a domain that is idempotent under composition. Every subdomain embedding yields such a retraction, whose fixed points recover the subdomain.
+
+<!-- formalization -->
+
+**Definition (`Retraction`).** An approximable map from a domain to itself is a retraction when its composite with itself equals itself.
+
+*Proof.* By the defining field of the class. ∎
+
+**Theorem (`isRetraction_idMap`).** The identity map of a domain is a retraction.
+
+*Proof.* By the left unit law for composition of approximable maps. ∎
+
+**Definition (`Subsystem.retractionOfSubsystem`).** From a subdomain embedding one forms the composite of the injection after the projection; that composite is the associated retraction of the ambient domain.
+
+*Proof.* By the projection–injection presentation of a subdomain. ∎
+
+**Theorem (`Subsystem.retractionOfSubsystem_rel`).** Two neighbourhoods are related by the subdomain retraction precisely when there is a neighbourhood of the subdomain lying between them.
+
+*Proof.* By unfolding the composite of injection and projection. ∎
+
+**Theorem (`Subsystem.retractionOfSubsystem_toElementMap_inj`).** The subdomain retraction fixes every point in the image of the injection.
+
+*Proof.* By the projection–injection identity on the subdomain. ∎
+
+**Definition (`Subsystem.elementIso`).** Elements of a subdomain are order-isomorphic to the fixed points of its associated retraction.
+
+*Proof.* The injection lands in the fixed-point set; the projection recovers the subdomain element; monotonicity of both maps gives the order isomorphism. ∎
+
+**Theorem (`Subsystem.isRetraction_retractionOfSubsystem`).** The endomap associated with a subdomain embedding is a retraction.
+
+*Proof.* By the projection–injection identity and associativity of composition. ∎
+
+**Theorem (`Subsystem.retraction_of_subsystem`).** The subdomain endomap is a retraction, and the subdomain is isomorphic to its fixed-point set.
+
+*Proof.* By the retraction property and the element isomorphism. ∎

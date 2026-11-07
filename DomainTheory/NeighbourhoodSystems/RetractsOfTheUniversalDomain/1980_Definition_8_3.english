@@ -1,0 +1,13 @@
+**DEFINITION 8.3.** A retraction $a : E \to E$ is called a *projection* provided
+
+$$a \sqsubseteq 1_E;$$
+
+it is *finitary* iff its fixed-point set is isomorphic to a domain. $\square$
+
+The development is with the [projection](1980_projection.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`definition_83`).** An endomap is a projection precisely when it is a retraction below the identity, and a finitary projection precisely when it is both a projection and finitary (fixed points isomorphic to a domain).
+
+*Proof.* By the definitions of projection and finitary projection. ∎

@@ -1,0 +1,95 @@
+Atoms of the universal neighbourhood refine along a boolean stream using a splitting function.
+
+<!-- formalization -->
+
+**Definition (`atomU`).** At stage zero the atom is the master neighbourhood; at each successor, take the first or second split of the current generalized atom against the next stage set.
+
+*Proof.* By primitive recursion using the split function. ∎
+
+**Theorem (`atomU_zero`).** Every atom stream starts at the master neighbourhood.
+
+*Proof.* By definition of the recursion base. ∎
+
+**Definition (`extendTrue`).** Extend a finite boolean prefix to an infinite stream that is constantly true afterward.
+
+*Proof.* By comparison of the index with the prefix length. ∎
+
+**Definition (`Yseq`).** The $Y$-sequence at length $n$ is the union over all boolean prefixes of the atom one stage later.
+
+*Proof.* By union over finite boolean functions. ∎
+
+**Definition (`restrictFin`).** Restrict an infinite boolean stream to its values on indices below a fixed bound.
+
+*Proof.* By evaluation on finite indices. ∎
+
+**Definition (`splitChoice`).** When splitting is legal, choose a witnessing split pair; otherwise return the empty pair.
+
+*Proof.* By classical choice on the existential split lemma. ∎
+
+**Theorem (`genAtom_subset`).** Generalized atoms always lie inside the master set at each stage.
+
+*Proof.* By induction on the stage. ∎
+
+**Theorem (`genAtom_congr`).** Agreement of boolean streams below $n$ yields equal generalized atoms at $n$.
+
+*Proof.* By induction and the update step. ∎
+
+**Theorem (`genAtom_forward`).** Membership in a generalized atom at $n$ determines exactly which earlier booleans held for the element relative to the stage sets.
+
+*Proof.* By induction unpacking the intersection steps. ∎
+
+**Theorem (`genAtom_self`).** An element of the master set lies in the generalized atom for the stream that marks exactly the stage sets containing it.
+
+*Proof.* By induction on the stage using the forward characterization. ∎
+
+**Theorem (`split_fst_subset`).** Under the split specification, the first split piece lies in the ambient neighbourhood.
+
+*Proof.* By the disjoint cover identity in the specification. ∎
+
+**Theorem (`split_snd_subset`).** Under the split specification, the second split piece lies in the ambient neighbourhood.
+
+*Proof.* By the disjoint cover identity in the specification. ∎
+
+**Theorem (`atomU_succ`).** The successor atom is given explicitly by the split of the current generalized atom.
+
+*Proof.* By definition of the recursion step. ∎
+
+**Theorem (`atomU_congr`).** Agreement of streams below $n$ yields equal atoms at $n$.
+
+*Proof.* By induction using generalized-atom congruence and the successor formula. ∎
+
+**Theorem (`atomU_invariant`).** At each stage, emptiness of atoms matches generalized atoms, nonempty atoms lie in the universal system, and disagreeing streams yield disjoint atoms.
+
+*Proof.* By induction using the split specification and disjointness of split pieces. ∎
+
+**Theorem (`atomU_succ_subset`).** Successor atoms sit inside their predecessors.
+
+*Proof.* By the split subset lemmas and the invariant. ∎
+
+**Theorem (`extendTrue_agree`).** Below the prefix length, extension agrees with the given finite booleans.
+
+*Proof.* By definition of extension. ∎
+
+**Theorem (`extendTrue_restrictFin_agree`).** Extension of a restriction recovers the original stream on indices below the bound.
+
+*Proof.* By unfolding extension and restriction. ∎
+
+**Theorem (`subset_Yseq`).** Each atom contributing to a $Y$-sequence lies inside that sequence.
+
+*Proof.* By the union defining the $Y$-sequence. ∎
+
+**Theorem (`split_fst_eq_inter_Yseq`).** The first split piece at stage $n$ equals the current atom intersected with the $Y$-sequence at $n$.
+
+*Proof.* By subset antisymmetry using splits, extension, and the invariant disjointness. ∎
+
+**Theorem (`atomU_subset_master`).** Every atom lies in the master neighbourhood.
+
+*Proof.* By induction using successor subsets. ∎
+
+**Theorem (`atomU_succ_eq`).** The successor atom is the intersection of the predecessor with either the $Y$-sequence or the complement of the $Y$-sequence in the master, according to the boolean at $n$.
+
+*Proof.* By case analysis on the boolean and the split identities. ∎
+
+**Theorem (`atomU_eq_genAtom`).** At every stage the atom equals the generalized atom built from $Y$-sequences and the master.
+
+*Proof.* By induction using the successor equation. ∎

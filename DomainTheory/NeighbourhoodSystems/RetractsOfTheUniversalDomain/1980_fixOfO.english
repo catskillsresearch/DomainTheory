@@ -1,0 +1,139 @@
+The two-element system $O$, together with $\mathrm{check}$ and $\mathrm{fade}$, realizes the first half of Examples 8.4: a retraction onto $O$ whose fixed points are order-isomorphic to $O$ when a non-bottom anchor $u$ is chosen.
+
+<!-- formalization -->
+
+**Theorem (`fin2_zero_subset_zero_one`).** The singleton $\{0\}$ on two labels is contained in $\{0,1\}$.
+
+*Proof.* By membership of $0$. ∎
+
+**Theorem (`fin2_zero_ne_zero_one`).** The singleton $\{0\}$ is not the full master $\{0,1\}$.
+
+*Proof.* By membership of $1$. ∎
+
+**Definition (`O`).** The two-element neighbourhood system admits exactly the singleton $\{0\}$ and the master $\{0,1\}$.
+
+*Proof.* By case analysis on intersections and sub-master constraints. ∎
+
+**Theorem (`O_master_eq`).** The master of $O$ is $\{0,1\}$.
+
+*Proof.* By definition. ∎
+
+**Theorem (`O_mem_iff`).** Membership in $O$ is equivalent to being either $\{0\}$ or $\{0,1\}$.
+
+*Proof.* By definition. ∎
+
+**Theorem (`O_mem_zero`).** The singleton $\{0\}$ is a neighbourhood of $O$.
+
+*Proof.* By the first disjunct. ∎
+
+**Definition (`Otop`).** The top element of $O$ is the principal over $\{0\}$.
+
+*Proof.* By the principal constructor. ∎
+
+**Theorem (`mem_Otop`).** A set lies in the top element exactly when it is an $O$-neighbourhood containing $\{0\}$.
+
+*Proof.* By the principal membership law. ∎
+
+**Definition (`check`).** The check combinator relates a $D$-neighbourhood $X$ to an $O$-neighbourhood $Y$ when $Y$ is the master or $X$ is not the master of $D$.
+
+*Proof.* By the relational axioms for approximable maps. ∎
+
+**Theorem (`check_rel`).** The check relation is equivalent to $D$-membership of $X$, $O$-membership of $Y$, and either $Y$ is the master or $X$ is proper.
+
+*Proof.* By definition. ∎
+
+**Theorem (`exists_mem_ne_master_of_ne_bot`).** Every non-bottom element of $D$ lies in some neighbourhood distinct from the master.
+
+*Proof.* By contrapositive identification of bottom. ∎
+
+**Definition (`fade₂`).** The binary fade relates the first factor in $O$, a $D$-neighbourhood, and a target neighbourhood so that either the target is the $D$-master or the $O$-factor is $\{0\}$ and the $D$-factor is contained in the target.
+
+*Proof.* By the relational axioms for binary approximable maps. ∎
+
+**Definition (`fade`).** Fade on the product $O \times D$ is the curry of the binary fade.
+
+*Proof.* By pairing of binary maps. ∎
+
+**Definition (`a`).** For a chosen anchor $u$ in $D$, the endomap $a$ is fade after pairing check with the constant map to $u$.
+
+*Proof.* By composition. ∎
+
+**Definition (`fixOfO`).** For $t \in O$, the element $\mathrm{fixOfO}(t)$ lies in a $D$-neighbourhood $Z$ when $Z$ is the master or $t$ sees $\{0\}$ and $u$ lies in $Z$.
+
+*Proof.* By the element axioms. ∎
+
+**Theorem (`mem_fixOfO`).** Membership in $\mathrm{fixOfO}(t)$ is characterized by $D$-membership and either master equality or top-like behaviour of $t$ together with membership of $u$.
+
+*Proof.* By definition. ∎
+
+**Theorem (`O_le_iff`).** In $O$, order is determined by extending membership at $\{0\}$.
+
+*Proof.* By comparison of the two possible neighbourhoods. ∎
+
+**Theorem (`fixOfO_mono`).** The map $t \mapsto \mathrm{fixOfO}(t)$ is monotone in $t$.
+
+*Proof.* By the order characterization on $O$ and the membership definition. ∎
+
+**Theorem (`fixOfO_ne_bot_iff`).** For non-bottom $u$, $\mathrm{fixOfO}(t)$ is not bottom if and only if $t$ lies in $\{0\}$.
+
+*Proof.* By element extension and the proper-neighbourhood witness for $u$. ∎
+
+**Theorem (`mem_toElementMap_check`).** The check of an element lies in $Y \subseteq O$ when $Y$ is in $O$ and either $Y$ is the master or the element is not bottom.
+
+*Proof.* By the element-map characterization and the proper-neighbourhood lemma. ∎
+
+**Theorem (`check_toElementMap_fixOfO`).** For non-bottom $u$, applying check to $\mathrm{fixOfO}(t)$ returns $t$.
+
+*Proof.* By element extension and the non-bottom criterion. ∎
+
+**Theorem (`mem_toElementMap₂_fade`).** The binary fade at $(t,y)$ lies in $Z$ when $Z$ is a $D$-neighbourhood and either $Z$ is the master or $t$ sees $\{0\}$ and $y$ lies in $Z$.
+
+*Proof.* By the binary element-map law. ∎
+
+**Theorem (`toElementMap_ofMap₂_pair`).** The element map of a curried binary combinator on a pair agrees with the binary element map at the paired arguments.
+
+*Proof.* By the pairing identities for binary maps. ∎
+
+**Theorem (`mem_toElementMap_a`).** The endomap $a$ sends $x$ into $Z$ when $Z$ is in $D$ and either $Z$ is the master or $x$ is not bottom and $u$ lies in $Z$.
+
+*Proof.* By unfolding composition, fade, check, and the pairing lemmas. ∎
+
+**Theorem (`fixOfO_check_toElementMap`).** $\mathrm{fixOfO}$ applied to the check of $x$ equals the action of $a$ on $x$.
+
+*Proof.* By element extension and the characterization of check at $\{0\}$. ∎
+
+**Theorem (`toElementMap_a_fixOfO`).** For non-bottom $u$, $a$ fixes every $\mathrm{fixOfO}(t)$.
+
+*Proof.* By element extension and the membership laws. ∎
+
+**Definition (`fixIso`).** For non-bottom $u$, fixed points of $a$ are order-isomorphic to elements of $O$ via $\mathrm{fixOfO}$ and check.
+
+*Proof.* By the inverse laws, fixed-point equation, and monotonicity on both sides. ∎
+
+**Theorem (`Otop_ne_Obot`).** The top of $O$ is not bottom.
+
+*Proof.* By membership at $\{0\}$. ∎
+
+**Theorem (`a_bot`).** The endomap $a$ sends bottom to bottom.
+
+*Proof.* By element extension and master-only outcomes. ∎
+
+**Theorem (`a_of_ne_bot`).** On non-bottom arguments, $a$ returns the anchor $u$.
+
+*Proof.* By element extension and the fade–check scheme. ∎
+
+**Theorem (`isRetraction_a`).** For non-bottom $u$, the map $a$ is a retraction.
+
+*Proof.* By case analysis on bottom versus non-bottom and the actions above. ∎
+
+**Theorem (`example84a`).** For non-bottom $u$, $a$ is a retraction and its fixed-point set is order-isomorphic to $O$.
+
+*Proof.* By the retraction theorem and the fixed-point isomorphism. ∎
+
+**Theorem (`check_toElementMap_mem_zero_iff`).** Check of an element lies in $\{0\}$ if and only if the element is not bottom.
+
+*Proof.* By the element-map characterization at $\{0\}$. ∎
+
+**Theorem (`mem_toElementMap_fade`).** On a product $O \times G$, fade at $(t,w)$ lies in $Z$ when $Z$ is in $G$ and either $Z$ is the master or $t$ sees $\{0\}$ and $w$ lies in $Z$.
+
+*Proof.* By the specialized fade membership law. ∎

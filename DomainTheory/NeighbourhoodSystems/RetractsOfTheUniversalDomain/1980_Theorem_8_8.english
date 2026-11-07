@@ -1,0 +1,29 @@
+**THEOREM 8.8.** The system $\mathcal{U}$ is universal in the sense that, for every countable neighbourhood system $\mathcal{D}$, we have
+$$\mathcal{D} \trianglelefteq \mathcal{U}.$$
+Moreover, if $\mathcal{D}$ is effectively given, then the projection pair making the embedding can be taken as computable. Indeed there is a correspondence between effectively presented domains and the computable, finitary projections of $\mathcal{U}$.
+
+*Proof:* … (Scott's construction via $Y_n$, effective choice, and finitary fixed neighbourhoods; see peer files for the formal library.) $\square$
+
+The peer development for the diagonal fixed-point predicate, $D$-side folding, and atom apparatus is imported alongside this packaging file.
+
+<!-- formalization -->
+
+**Theorem (`theorem_8_8_a`).** Every countable neighbourhood system is isomorphic to a subsystem of $\mathcal{U}$.
+
+*Proof.* By the $D'$-in-$\mathcal{U}$ construction and the isomorphism/subsystem witnesses already established in the peer library. ∎
+
+**Theorem (`theorem_8_8`).** Every countable neighbourhood system embeds as a subdomain of $\mathcal{U}$ (Scott's $\mathcal{D} \trianglelefteq \mathcal{U}$).
+
+*Proof.* From `theorem_8_8_a`. ∎
+
+**Theorem (`theorem_8_8_b`).** For an effectively given $\mathcal{D}$, there is an effectively presented subsystem of $\mathcal{U}$, isomorphic to $\mathcal{D}$, with a computable projection pair witnessing the embedding.
+
+*Proof.* By the coded $D'$-in-$\mathcal{U}$ construction and its computable injection/projection maps. ∎
+
+**Theorem (`theorem_8_8_c`).** Every computable finitary projection $a$ on $\mathcal{U}$ yields an effectively given fixed-neighbourhood subdomain of $\mathcal{U}$.
+
+*Proof.* `fixedNbhd_isEffectivelyGiven` for the map's computability, and the standard fixed-neighbourhood subsystem embedding. ∎
+
+**Theorem (`theorem_8_8_b_strong`).** Every effectively presented domain admits a computable projection pair into $\mathcal{U}$ (and back).
+
+*Proof.* Strengthens `theorem_8_8_b` with an explicit computable retraction pair into $\mathcal{U}$. ∎

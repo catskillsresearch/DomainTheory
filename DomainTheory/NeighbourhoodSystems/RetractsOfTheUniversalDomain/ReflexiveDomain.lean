@@ -274,26 +274,7 @@ theorem exercise_8_25_main :
         (fixedNbhd (FixOp.fixOp (tOpMap cCombinator))) :=
   funSpace_self_isomorphic Dsol_isomorphic_funSpace_cCombinator hVV_cCombinator
 
-theorem example_825_fixed_point :
-    fixedNbhd (FixOp.fixOp (tOpMap cCombinator)) ≅ᴰ
-      funSpace (fixedNbhd (FixOp.fixOp (tOpMap cCombinator)))
-        (fixedNbhd (FixOp.fixOp (tOpMap cCombinator))) :=
-  exercise_8_25_main
-
-theorem exercise_8_25 :
-    fixedNbhd (FixOp.fixOp (tOpMap cCombinator)) ≅ᴰ
-      funSpace (fixedNbhd (FixOp.fixOp (tOpMap cCombinator)))
-        (fixedNbhd (FixOp.fixOp (tOpMap cCombinator))) :=
-  exercise_8_25_main
-
 theorem exercise_8_25_universal : U ⊴ fixedNbhd (FixOp.fixOp (tOpMap cCombinator)) :=
   U_trianglelefteq_Dsol
-
-theorem example_825 :
-    (fixedNbhd (FixOp.fixOp (tOpMap cCombinator)) ≅ᴰ
-      funSpace (fixedNbhd (FixOp.fixOp (tOpMap cCombinator)))
-        (fixedNbhd (FixOp.fixOp (tOpMap cCombinator)))) ∧
-    (U ⊴ fixedNbhd (FixOp.fixOp (tOpMap cCombinator))) :=
-  ⟨exercise_8_25, exercise_8_25_universal⟩
 
 end DomainTheory.NeighbourhoodSystems

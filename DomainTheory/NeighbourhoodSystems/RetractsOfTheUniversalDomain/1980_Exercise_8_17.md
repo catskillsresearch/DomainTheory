@@ -1,30 +1,7 @@
 # Exercise 8.17
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/ProjPair.lean](ProjPair.lean)**
 
-@import "ProjPair.lean"
+@import "1980_Exercise_8_17.english" {code_block=false}
 
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_17.lean](Exercise_8_17.lean)**
+**[Exercise_8_17.lean](Exercise_8_17.lean)**
 
 @import "Exercise_8_17.lean"
-**EXERCISE 8.17.** Find explicitly (if possible) the projection pairs for $\mathcal{U} + \mathcal{U}$, $\mathcal{U} \times \mathcal{U}$, and $\mathcal{U} \to \mathcal{U}$ needed for 8.9. Are any of these domains isomorphic with $\mathcal{U}$? (The author does not know a really good construction for $\mathcal{U} \to \mathcal{U}$.) Find a universal domain $V \neq \mathcal{U}$.
-
-<!-- page 148 -->
-
-## Tip summary
-
-The tip asserts universality of `V` together with the product/sum/function-space embeddings into `U`.
-
-## Development
-
-Proves `V` is universal and records the standard embeddings into `U`.
-
- — `ProjPair` and composition/iso/subsystem constructors
-
-@import "ProjPair.lean"
-
- — universality and the concrete `U`/`V` embeddings
-
-The tip then assembles those tools into Scott’s statement.
-
- — `exercise_8_17`
-

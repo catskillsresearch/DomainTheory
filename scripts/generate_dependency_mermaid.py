@@ -2592,6 +2592,10 @@ NS_COMP_SHORT: dict[str, tuple[str, str]] = {
 
 # Lecture VIII hub: outline notes; exercises are separate boxes.
 NS_RET_SHORT: dict[str, tuple[str, str]] = {
+    "Retraction": (
+        "retr",
+        "Retraction",
+    ),
     "Definition 8.1 — retraction": (
         "D81",
         "Definition 8.1 — retraction",
@@ -2600,9 +2604,29 @@ NS_RET_SHORT: dict[str, tuple[str, str]] = {
         "P82",
         "Proposition 8.2 — retractions from subdomains",
     ),
+    "Projection": (
+        "proj",
+        "Projection",
+    ),
     "Definition 8.3 — projections": (
         "D83",
         "Definition 8.3 — projections",
+    ),
+    "Fixed neighbourhood": (
+        "fNbh",
+        "Fixed neighbourhood",
+    ),
+    "Fix of O": (
+        "fOfO",
+        "Fix of O",
+    ),
+    "Strict retraction": (
+        "sRet",
+        "Strict retraction",
+    ),
+    "Smash retraction": (
+        "smRet",
+        "Smash retraction",
     ),
     "Examples 8.4 — check, fade, and smash": (
         "E84",
@@ -2612,9 +2636,41 @@ NS_RET_SHORT: dict[str, tuple[str, str]] = {
         "T85",
         "Theorem 8.5 — finitary projection test",
     ),
+    "Sub": (
+        "sub",
+        "Sub",
+    ),
+    "SubApprox": (
+        "sAp",
+        "SubApprox",
+    ),
+    "DprimeU": (
+        "DprU",
+        "DprimeU",
+    ),
     "Theorem 8.6 — sub combinator": (
         "T86",
         "Theorem 8.6 — sub combinator",
+    ),
+    "Presented intervals": (
+        "pInt",
+        "Presented intervals",
+    ),
+    "Universal domain U": (
+        "Ud",
+        "Universal domain U",
+    ),
+    "Split specification": (
+        "SpSp",
+        "Split specification",
+    ),
+    "Atoms of U": (
+        "atU",
+        "Atoms of U",
+    ),
+    "Y-sequence": (
+        "Ysq",
+        "Y-sequence",
     ),
     "Definition 8.7 — interval presentation of U": (
         "D87",
@@ -2624,9 +2680,41 @@ NS_RET_SHORT: dict[str, tuple[str, str]] = {
         "T88",
         "Theorem 8.8 — universality of U",
     ),
+    "Fixed neighbourhood effective": (
+        "fNbE",
+        "Fixed neighbourhood effective",
+    ),
+    "U constructs": (
+        "UCst",
+        "U constructs",
+    ),
+    "Lam combinator": (
+        "lamC",
+        "Lam combinator",
+    ),
+    "Sum combinator": (
+        "sCmb",
+        "Sum combinator",
+    ),
+    "Product combinator": (
+        "pCmb",
+        "Product combinator",
+    ),
+    "Arrow combinator": (
+        "aCmb",
+        "Arrow combinator",
+    ),
+    "Exponential map": (
+        "expM",
+        "Exponential map",
+    ),
     "Definition 8.9 — constructs on projections": (
         "D89",
         "Definition 8.9 — constructs on projections",
+    ),
+    "Element iso of projection pair": (
+        "eIPP",
+        "Element iso of projection pair",
     ),
     "Proposition 8.10 — constructs preserve projections": (
         "P810",
@@ -2699,6 +2787,106 @@ NS_RET_SHORT: dict[str, tuple[str, str]] = {
     "Exercise 8.27 — infinite cartesian products": (
         "X827",
         "Exercise 8.27 — infinite cartesian products",
+    ),
+    "Dedekind cut projection": (
+        "DedC",
+        "Dedekind cut projection",
+    ),
+    "Effective isomorphism U and V": (
+        "e812",
+        "Effective isomorphism U and V",
+    ),
+    "Boolean-algebra filters": (
+        "BAFl",
+        "Boolean-algebra filters",
+    ),
+    "Generated-by filters": (
+        "GenB",
+        "Generated-by filters",
+    ),
+    "Closure operator domain": (
+        "ClOD",
+        "Closure operator domain",
+    ),
+    "Subsystem domain": (
+        "SubD",
+        "Subsystem domain",
+    ),
+    "Finitely generated subsystems": (
+        "finG",
+        "Finitely generated subsystems",
+    ),
+    "Fixed-neighbourhood finitary order": (
+        "fNFO",
+        "Fixed-neighbourhood finitary order",
+    ),
+    "Embeddings into U": (
+        "EmbU",
+        "Embeddings into U",
+    ),
+    "Embeddings into U (more)": (
+        "EmBM",
+        "Embeddings into U (more)",
+    ),
+    "Projection pairs": (
+        "PrPr",
+        "Projection pairs",
+    ),
+    "Projection combinators": (
+        "PrCo",
+        "Projection combinators",
+    ),
+    "Sum and product retracts": (
+        "SPRt",
+        "Sum and product retracts",
+    ),
+    "Diagonal retracts": (
+        "DgnR",
+        "Diagonal retracts",
+    ),
+    "A-sharp on lists": (
+        "AShp",
+        "A-sharp on lists",
+    ),
+    "A-sharp (more)": (
+        "ASmM",
+        "A-sharp (more)",
+    ),
+    "Example C below B": (
+        "ExCB",
+        "Example C below B",
+    ),
+    "Fix operator": (
+        "FxOp",
+        "Fix operator",
+    ),
+    "Coupled fixed points": (
+        "CpFP",
+        "Coupled fixed points",
+    ),
+    "Reflexive domain": (
+        "RfDm",
+        "Reflexive domain",
+    ),
+    "U apply and U lam": (
+        "Uapp",
+        "U apply and U lam",
+    ),
+    "Polymorphic type": (
+        "PolT",
+        "Polymorphic type",
+    ),
+    "Infinite product on D": (
+        "piDD",
+        "Infinite product on D",
+    ),
+    "Sub on U": (
+        "subU",
+        "Sub on U",
+    ),
+    "Infinite product on U": (
+        "piUU",
+        "Infinite product on U",
     ),
 }
 

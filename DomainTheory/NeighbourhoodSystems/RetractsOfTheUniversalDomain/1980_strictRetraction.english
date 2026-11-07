@@ -1,0 +1,59 @@
+Currying check and fade against evaluation yields the strict combinator of Examples 8.4: a projection on the function space whose fixed points are exactly the strict maps, order-isomorphic to the strict function domain.
+
+<!-- formalization -->
+
+**Definition (`strictEvalFade`).** The strict evaluator applies fade on the codomain after pairing the check of the function argument with the value of the function at that argument.
+
+*Proof.* By composition on the product of the function space with the domain. ∎
+
+**Definition (`strictRetraction`).** The strict combinator is the curry of the strict evaluator.
+
+*Proof.* By currying. ∎
+
+**Theorem (`toApproxMap_strictRetraction_mem`).** Applying the strict combinator to a filter function and then to $y$ lies in $Z$ when $Z$ is in the codomain and either $Z$ is the master or $y$ is not bottom and the original function value at $y$ lies in $Z$.
+
+*Proof.* By unfolding curry, evaluation, fade, and check. ∎
+
+**Theorem (`strictRetraction_apply_bot`).** The strict image of a function sends bottom to bottom in the codomain.
+
+*Proof.* By element extension and the membership characterization. ∎
+
+**Theorem (`isStrict_toApproxMap_of_fixed`).** A filter function fixed by the strict combinator is strict.
+
+*Proof.* By the bottom-action characterization of strictness. ∎
+
+**Theorem (`strictRetraction_apply_of_ne_bot`).** On non-bottom arguments, the strict image agrees with the underlying function value.
+
+*Proof.* By element extension and the membership equivalence. ∎
+
+**Theorem (`toApproxMap_toFilter`).** Converting a filter to an approximable map and back recovers the original map.
+
+*Proof.* By the function-space equivalence. ∎
+
+**Theorem (`toFilter_toApproxMap`).** Converting an approximable map to a filter and back recovers the original filter.
+
+*Proof.* By the function-space equivalence. ∎
+
+**Theorem (`strictRetraction_fixed_of_isStrict`).** The strict combinator fixes the filter of every strict approximable map.
+
+*Proof.* By elementwise agreement on bottom and non-bottom arguments. ∎
+
+**Definition (`strictRetractionFixIso`).** Fixed points of the strict combinator on filters are order-isomorphic to strict approximable maps.
+
+*Proof.* By conversion between filters and maps, strictness, and the function-space order equivalence. ∎
+
+**Theorem (`strictRetraction_le_idMap`).** The strict combinator lies below the identity on the function space.
+
+*Proof.* By comparison of element maps and the non-bottom agreement lemma. ∎
+
+**Theorem (`toApproxMap_injective`).** If two filter functions determine the same approximable map, they are equal.
+
+*Proof.* By recovery through conversion to filters. ∎
+
+**Theorem (`isRetraction_strictRetraction`).** The strict combinator is a retraction.
+
+*Proof.* By elementwise idempotence on bottom and non-bottom arguments. ∎
+
+**Theorem (`example84b_strict`).** The strict combinator is a projection whose fixed points are order-isomorphic to the strict function domain.
+
+*Proof.* By the retraction and identity bounds, and the fixed-point isomorphism composed with the strict-domain equivalence. ∎

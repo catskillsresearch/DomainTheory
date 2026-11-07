@@ -7,7 +7,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.ASh
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
-theorem exercise_8_21 {a : ApproximableMap U U} (ha : FinitaryProjection a) :
+theorem example_821 {a : ApproximableMap U U} (ha : FinitaryProjection a) :
     FinitaryProjection (aSharp a) :=
   isFinitaryProjection_aSharp ha
 

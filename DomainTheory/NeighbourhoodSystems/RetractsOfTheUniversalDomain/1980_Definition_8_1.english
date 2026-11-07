@@ -1,0 +1,9 @@
+**DEFINITION 8.1.** A retraction of a given domain $E$ is an approximable mapping $a : E \to E$ such that $a \circ a = a$. $\square$
+
+The development is with the [retraction](1980_retraction.md) peer.
+
+<!-- formalization -->
+
+**Theorem (`definition_81`).** An approximable endomap is a retraction precisely when it equals its composite with itself.
+
+*Proof.* By the definition of retraction. ∎

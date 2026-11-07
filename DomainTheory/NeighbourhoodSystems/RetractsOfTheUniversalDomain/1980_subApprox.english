@@ -1,0 +1,119 @@
+On the function space, the sub-combinator is realized as a continuous endomap whose fixed points are the finitary projections; it is a finitary projection itself and is computable on effectively given domains.
+
+<!-- formalization -->
+
+**Definition (`Sub8_6.subFilter`).** On function-space elements, apply sub to the approximable map corresponding to the argument.
+
+*Proof.* By the filter–map correspondence on the function space. ∎
+
+**Theorem (`Sub8_6.toApproxMap_monotone`).** Passing to approximable maps preserves the order on function-space elements.
+
+*Proof.* By monotonicity of the function-space equivalence. ∎
+
+**Theorem (`Sub8_6.subFilter_mono`).** The sub-filter is monotone on function-space elements.
+
+*Proof.* By monotonicity of sub on approximable maps. ∎
+
+**Theorem (`Sub8_6.subFilter_monotone`).** The sub-filter is a monotone operator.
+
+*Proof.* By the pointwise monotonicity lemma. ∎
+
+**Theorem (`Sub8_6.toApproxMap_rel_iSupDirected`).** Directed suprema of elements yield directed suprema of the corresponding approximable maps.
+
+*Proof.* By the directed-supremum law for function-space maps. ∎
+
+**Theorem (`Sub8_6.sub_toApproxMap_iSupDirected`).** The sub-combinator commutes with directed suprema at the map level.
+
+*Proof.* By the retraction laws and directedness of the underlying approximable maps. ∎
+
+**Theorem (`Sub8_6.toApproxMap_toFilter`).** Converting filter to map and back recovers the map.
+
+*Proof.* By the standard equivalence identities. ∎
+
+**Theorem (`Sub8_6.toApproxMap_subFilter`).** The sub-filter’s approximable map is sub applied to the argument’s map.
+
+*Proof.* By definition. ∎
+
+**Theorem (`Sub8_6.toFilter_toApproxMap`).** Converting map to filter and back recovers the element.
+
+*Proof.* By the inverse equivalence law. ∎
+
+**Theorem (`Sub8_6.toApproxMap_injective`).** Equality of approximable maps implies equality of function-space elements.
+
+*Proof.* By injectivity of the equivalence. ∎
+
+**Theorem (`Sub8_6.subFilter_iSupDirected`).** The sub-filter preserves directed suprema on elements.
+
+*Proof.* By continuity of the underlying map construction. ∎
+
+**Theorem (`Sub8_6.continuous_subFilter`).** The sub-filter is continuous on the function space.
+
+*Proof.* By the directed-supremum preservation lemmas. ∎
+
+**Definition (`subApprox`).** The approximable endomap on the function space induced by the continuous sub-filter.
+
+*Proof.* By the continuous-map constructor. ∎
+
+**Theorem (`subApprox.toElementMap_eq`).** Applying the approximable map to an element equals the sub-filter on that element.
+
+*Proof.* By the continuous-map element law. ∎
+
+**Definition (`subApprox.fixIso`).** Fixed points of sub on the function space correspond order-isomorphically to fixed points of sub on endomaps of the ground domain.
+
+*Proof.* By pairing filter and map directions through the sub-filter and sub involution. ∎
+
+**Theorem (`subApprox.isFinitary`).** The sub-combinator on the function space is finitary.
+
+*Proof.* By transporting finitarity along the fixed-point isomorphism and the subdomain representation of finitary projections. ∎
+
+**Theorem (`Sub8_6.subApprox_le_idMap`).** The function-space sub-combinator lies below the identity.
+
+*Proof.* By comparing element maps and using that sub lies below the identity on maps. ∎
+
+**Theorem (`Sub8_6.subFilter_subFilter`).** The sub-filter is idempotent on elements.
+
+*Proof.* By map-side idempotence of sub. ∎
+
+**Theorem (`Sub8_6.subApprox.toElementMap_eq_comp`).** Composing the function-space sub-combinator with itself has the same element action as once.
+
+*Proof.* By the sub-filter idempotence and composition laws for element maps. ∎
+
+**Theorem (`Sub8_6.isRetraction_subApprox`).** The function-space sub-combinator is a retraction.
+
+*Proof.* By antisymmetry of the element-map comparison from idempotence. ∎
+
+**Theorem (`Sub8_6.isProjection_subApprox`).** It is a projection.
+
+*Proof.* By combining retraction with being below the identity. ∎
+
+**Theorem (`Sub8_6.isFinitaryProjection_subApprox`).** It is a finitary projection.
+
+*Proof.* By packaging projection and finitarity. ∎
+
+**Theorem (`subApprox_rel_iff`).** The raw relation on sets of maps reduces to membership in the target together with sub applied to the principal of the source.
+
+*Proof.* By unpacking the continuous-map relation. ∎
+
+**Theorem (`subApprox_rel_Xenum_iff`).** On encoded function-space generators, the relation is equivalent to a universal condition over decoded indices expressing sub at presentations.
+
+*Proof.* By specialization of the relation characterization to enumerations. ∎
+
+**Theorem (`subStep_recDecidable`).** The step predicate governing sub at encoded indices is recursively decidable from primrec inclusion testers.
+
+*Proof.* By primitive-recursive pairing and conjunction of Decidable inclusion tests. ∎
+
+**Theorem (`sub_rel_iff_exists_index`).** At presentation indices, the sub relation is equivalent to existence of a self-related intermediate neighbourhood.
+
+*Proof.* By the sub relation and surjectivity of the presentation. ∎
+
+**Theorem (`sub_leastMap_rel_iff`).** For principal elements of encoded maps, sub reduces to an index formulation over least-map codes.
+
+*Proof.* By the least-map characterization at enumerations. ∎
+
+**Theorem (`subApprox_isComputable`).** Relative to a function-space presentation, the sub-combinator is a computable map.
+
+*Proof.* By RE characterization of the encoded relation using recursive decidability of sub steps. ∎
+
+**Theorem (`sub_isComputable_of_isEffectivelyGiven`).** On an effectively given domain, some presentation of the function space makes sub computable.
+
+*Proof.* By assembling a standard function presentation and invoking computability of subApprox. ∎

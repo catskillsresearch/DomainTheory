@@ -6,7 +6,7 @@ public import DomainTheory.NeighbourhoodSystems.RetractsOfTheUniversalDomain.Clo
 
 open DomainTheory.NeighbourhoodSystems NeighborhoodSystem ApproximableMap
 
-theorem exercise_8_14 {α : Type*} {E : NeighborhoodSystem α} {a : ApproximableMap E E}
+theorem example_814 {α : Type*} {E : NeighborhoodSystem α} {a : ApproximableMap E E}
     (h : ClosureOperator a) : IsFinitary a :=
   isFinitary_of_isClosureOperator h
 

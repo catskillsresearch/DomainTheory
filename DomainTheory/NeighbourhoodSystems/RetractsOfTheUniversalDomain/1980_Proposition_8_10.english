@@ -1,0 +1,13 @@
+**PROPOSITION 8.10.** If $a, b : \mathcal{U} \to \mathcal{U}$ are projections, then so are $a + b$, $a \times b$, and $a \to b$. If $a$ and $b$ are finitary, then so are the others; for the fixed-point set of each of them is isomorphic to the corresponding construct applied to the domains determined by $a$ and $b$.
+
+*Proof:* … (Scott's sketch via subdomains and $D_a$, $D_b$.) $\square$
+
+<!-- formalization -->
+
+**Theorem (`proposition_810`).** Finitary projections are preserved under $+$, $\times$, and $\to$, with the expected isomorphisms to the corresponding subdomain constructs.
+
+*Proof.* By the combinator peers' finitary-projection witnesses and fixed-point element isomorphisms. ∎
+
+**Theorem (`proposition_8_10`).** Alias of `proposition_810`.
+
+*Proof.* Reflexivity. ∎

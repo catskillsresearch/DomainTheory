@@ -1,0 +1,71 @@
+Iterating check and fade on both factors of a product yields the smash combinator of Examples 8.4: a projection onto the smash product, identified with the subdomain retraction of the smash subsystem.
+
+<!-- formalization -->
+
+**Theorem (`pair_bot_bot`).** Pairing the bottoms of two systems is the bottom of the product.
+
+*Proof.* By element extension on product neighbourhoods. ∎
+
+**Theorem (`prod_bot_fst`).** The first component of product bottom is bottom in the first factor.
+
+*Proof.* By the pairing lemma and projection identities. ∎
+
+**Theorem (`prod_bot_snd`).** The second component of product bottom is bottom in the second factor.
+
+*Proof.* By the pairing lemma and projection identities. ∎
+
+**Definition (`smashFadeInner`).** The inner smash fade applies product fade after pairing the check of the second component with the identity on the product.
+
+*Proof.* By composition on the product. ∎
+
+**Definition (`smashRetraction`).** The smash combinator applies product fade after pairing the check of the first component with the inner smash fade.
+
+*Proof.* By composition on the product. ∎
+
+**Theorem (`exists_smash_witness`).** When both components are non-bottom, each product element lying in a neighbourhood admits a smash neighbourhood contained in that neighbourhood and containing the element.
+
+*Proof.* By proper-neighbourhood witnesses in each factor and the smash product description of product neighbourhoods. ∎
+
+**Theorem (`smashFadeInner_mem`).** Membership for the inner smash image matches master collapse or non-bottom second component with membership of the original pair.
+
+*Proof.* By unfolding composition, fade, check, and projections. ∎
+
+**Theorem (`smashRetraction_mem`).** Membership for the smash image matches master collapse or non-bottom first component with inner membership.
+
+*Proof.* By the fade membership law on the product. ∎
+
+**Theorem (`smashRetraction_mem_iff`).** Membership for the smash image is equivalent to product membership and either master equality or non-bottom status in both factors with membership of the original pair.
+
+*Proof.* By combining the smash and inner membership characterizations. ∎
+
+**Theorem (`smashRetraction_le_idMap`).** The smash combinator lies below the identity on the product.
+
+*Proof.* By the membership equivalence and upward closure from the pair itself. ∎
+
+**Theorem (`smashRetraction_of_eq_bot`).** If either component is bottom, the smash image is product bottom.
+
+*Proof.* By element extension and case analysis on master versus proper behaviour. ∎
+
+**Theorem (`smashRetraction_of_ne_bot`).** When both components are non-bottom, the smash image is the original pair.
+
+*Proof.* By element extension and the membership equivalence. ∎
+
+**Theorem (`isRetraction_smashRetraction`).** The smash combinator is a retraction.
+
+*Proof.* By case analysis on bottom components and the idempotence lemmas. ∎
+
+**Theorem (`smash_subsystem_prod`).** The smash product embeds as a subdomain of the product.
+
+*Proof.* By master coincidence, membership split between master and proper product pieces, and intersection closure. ∎
+
+**Theorem (`mem_toElementMap_retractionOfSubsystem_smash`).** The subdomain retraction of the smash embedding lies in $Z$ when $Z$ is a product neighbourhood and some smash neighbourhood below the element is contained in $Z$.
+
+*Proof.* By the general retraction relation and upward closure. ∎
+
+**Theorem (`smashRetraction_eq_retractionOfSubsystem`).** The smash combinator equals the subdomain retraction of the smash embedding.
+
+*Proof.* By element extension and witness construction in each smash case. ∎
+
+**Theorem (`example84b_smash`).** The smash combinator is a projection whose fixed points are order-isomorphic to the smash product domain.
+
+*Proof.* By identification with the subdomain retraction and the subdomain projection and isomorphism theorems. ∎
