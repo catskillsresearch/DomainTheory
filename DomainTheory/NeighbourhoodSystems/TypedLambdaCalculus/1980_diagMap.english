@@ -1,0 +1,43 @@
+Diagonal and componentwise map combinators on infinite-product stacks, obtained by fixed-point recursion from the stack push.
+
+<!-- formalization -->
+
+**Definition (`Arg`).** The argument domain for the map combinator is the product of a stack of endomaps with the underlying domain.
+
+*Proof.* By definition. ∎
+
+**Definition (`diag`).** The diagonal combinator is the fixed point of push, curried in the element being stacked.
+
+*Proof.* By definition. ∎
+
+**Definition (`mapBody`).** The body of the map recursion pushes the head map applied to the element onto the recursive map of the tail.
+
+*Proof.* By definition. ∎
+
+**Definition (`mapOp`).** The map operator is the curry of the map body.
+
+*Proof.* By definition. ∎
+
+**Definition (`mapMap`).** The map combinator is the fixed point of the map operator, viewed as an approximable map.
+
+*Proof.* By definition. ∎
+
+**Theorem (`diag_rec`).** The diagonal of an element equals the push of that element onto its own diagonal.
+
+*Proof.* Unpack the fixed-point and curry evaluation laws for push. ∎
+
+**Theorem (`mapBody_apply`).** The map body at a functional and a stack–element pair pushes the head map on the element onto the functional applied to the tail stack with the same element.
+
+*Proof.* Expand the body through projections, evaluation, and pairing. ∎
+
+**Theorem (`map_rec`).** Mapping a stack of maps on an element equals pushing the head application onto the map of the tail.
+
+*Proof.* The fixed-point law for the map operator together with the map-body evaluation. ∎
+
+**Theorem (`component_diag`).** Every component of the diagonal of an element is that element.
+
+*Proof.* Induct on the index, using the diagonal recursion and the head/tail laws for push. ∎
+
+**Theorem (`component_map`).** The $n$th component of mapping a stack of maps on an element is the $n$th map applied to that element.
+
+*Proof.* Induct on the index, using the map recursion and the head/tail laws for push. ∎

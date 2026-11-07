@@ -2007,6 +2007,10 @@ NS_LAM_SHORT: dict[str, tuple[str, str]] = {
         "X510",
         "Exercise 5.10 — smash product",
     ),
+    "Diagonal and map stacks": (
+        "diag",
+        "Diagonal and map stacks",
+    ),
     "Exercise 5.11 — stack combinators": (
         "X511",
         "Exercise 5.11 — stack combinators",
