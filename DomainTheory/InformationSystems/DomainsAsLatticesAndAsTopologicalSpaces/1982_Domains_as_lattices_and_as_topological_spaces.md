@@ -12,7 +12,7 @@
 - [Family union carrier](1982_familyUnionCarrier.md) [✓](../../1982_REVISION.md)
 - [Family suprema](1982_familySup.md) [✓](../../1982_REVISION.md)
 - [Join](1982_join.md) [✓](../../1982_REVISION.md)
-- [Factoid 4.3: joins / conditional sups](1982_Factoid_4_3.md)
+- [Factoid 4.3: joins / conditional sups](1982_Factoid_4_3.md) [✓](../../1982_REVISION.md)
 - [Factoid 4.4: chains & directed sups](Factoid44/1982_Factoid_4_4.md)
 - [Factoid 4.5: finite approximants](Factoid45/1982_Factoid_4_5.md)
 - [Factoid 4.6: topology / Scott continuity](Factoid46/1982_Factoid_4_6.md)
