@@ -1,0 +1,15 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.basicOpen`).** The basic Scott-open associated to a finite set of data $u$ is the set of elements whose carriers contain $u$.
+
+**Theorem (`InfoSys.basicOpen.inter`).** The intersection of two basic Scott-opens is the basic Scott-open of the finite union of their data sets.
+
+*Proof.* Membership in both opens is membership of each finite set in the carrier, which is membership of their finite union. □
+
+**Theorem (`InfoSys.basicOpen.mem`).** An element lies in the basic Scott-open of $u$ if and only if $u$ is contained in its carrier.
+
+*Proof.* Immediate from the definition. □
+
+**Theorem (`InfoSys.basicOpen.eq_of_eq`).** Elements that lie in exactly the same basic Scott-opens are equal.
+
+*Proof.* Membership in the singleton basic opens recovers carrier membership of each datum, so the carriers coincide. □

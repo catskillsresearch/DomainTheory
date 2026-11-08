@@ -303,7 +303,8 @@ BARRELS: dict[str, tuple[str, list[str]]] = {
             "- [Finite approximants](1982_finiteApproximants.md)",
             "- [Factoid 4.5: finite approximants](1982_Factoid_4_5.md)",
             "- [Scott continuous maps](1982_ScottContinuous.md)",
-            "- [Basic opens](1982_basicOpen.md)",
+            "- [The basic Scott-opens](1982_basicOpen.md)",
+
             "- [Approximable maps as Scott continuous](1982_ApproximableMapScott.md)",
             "- [Factoid 4.6: topology / Scott continuity](1982_Factoid_4_6.md)",
         ],

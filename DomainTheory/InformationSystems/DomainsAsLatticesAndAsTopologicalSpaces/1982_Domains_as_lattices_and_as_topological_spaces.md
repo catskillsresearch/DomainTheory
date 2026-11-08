@@ -22,6 +22,6 @@
 - [Finite approximants](1982_finiteApproximants.md) [✓](../../1982_REVISION.md)
 - [Factoid 4.5: finite approximants](1982_Factoid_4_5.md) [✓](../../1982_REVISION.md)
 - [Scott continuous maps](1982_ScottContinuous.md) [✓](../../1982_REVISION.md)
-- [Basic opens](1982_basicOpen.md)
+- [The basic Scott-opens](1982_basicOpen.md) [✓](../../1982_REVISION.md)
 - [Approximable maps as Scott continuous](1982_ApproximableMapScott.md)
 - [Factoid 4.6: topology / Scott continuity](1982_Factoid_4_6.md)
