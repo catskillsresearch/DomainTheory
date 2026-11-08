@@ -1,0 +1,13 @@
+<!-- formalization -->
+
+**Theorem (`InfoSys.ApproximableMap.toElement_directedSup`).** The element map of an approximable mapping preserves directed suprema.
+
+*Proof.* Finite relational witnesses for data in the image of the directed supremum sit in some member of the family by directedness; the reverse inequality is monotonicity of the element map. □
+
+**Definition (`InfoSys.ApproximableMap.ofScottContinuous`).** From a Scott-continuous map one obtains an approximable mapping by relating consistent finite sets $u$ and $v$ when $v$ lies in the image of the closure of $u$. Consistency and monotonicity of the relation follow from those of the Scott-continuous map and of closure.
+
+**Definition (`InfoSys.ApproximableMap.toScottContinuous`).** From an approximable mapping one obtains a Scott-continuous map by taking its element map, using that the element map is monotone and preserves directed suprema.
+
+**Theorem (`InfoSys.ApproximableMap.toElement_ofScottContinuous`).** Passing from a Scott-continuous map to an approximable mapping and back recovers the original map on elements.
+
+*Proof.* One inequality is monotonicity applied to closures of relational antecedents; the other uses the finite-approximant representation of the argument together with preservation of directed suprema. □
