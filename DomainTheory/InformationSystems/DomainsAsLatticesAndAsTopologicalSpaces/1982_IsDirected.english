@@ -1,0 +1,15 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.IsDirected`).** A family of elements is (upward) directed when any two members are approximated by some further member of the family.
+
+**Theorem (`InfoSys.IsDirected.of_IsChain`).** Every chain is directed.
+
+*Proof.* Of two comparable members, the larger is a common upper bound in the family. □
+
+**Theorem (`InfoSys.IsDirected.exists_mem_of_subset_union`).** If a nonempty directed family’s union carrier contains a finite set of data, then some single member of the family contains that finite set.
+
+*Proof.* Induct on the finite set. Pair the members witnessing the inserted datum and the remainder, then take a directed upper bound of those two members. □
+
+**Theorem (`InfoSys.IsDirected.finitelyConsistent`).** The union carrier of a nonempty directed family is finitely consistent.
+
+*Proof.* Any finite subset of the union sits in some member, which is consistent. □
