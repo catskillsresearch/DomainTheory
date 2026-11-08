@@ -31,7 +31,7 @@ def inrMap : ApproximableMap B (sumSystem A B) where
   rel w u := w ∈ B.Con ∧ SumCon A B u ∧ lftFinset u = ∅ ∧ B.EntSet w (rhtFinset u)
   rel_dom h := h.1
   rel_cod h := h.2.1
-  empty_rel := ⟨B.con_empty, SumCon_empty A B, by rw [lftFinset.empty], B.entSet_empty ∅⟩
+  empty_rel := ⟨B.con_empty, SumCon_empty A B, by rw [lftFinset.empty], EntSet.empty B ∅⟩
   union_right := by
     rintro w u u' ⟨hw, hu, hl, hEnt⟩ ⟨_, hu', hl', hEnt'⟩
     refine ⟨hw, ?_, ?_, ?_⟩
@@ -73,7 +73,7 @@ theorem inrMap.toElement_sumElementRht (z : (sumSystem A B).Element)
     | bot =>
       refine ⟨∅, fun _ h => False.elim (Finset.notMem_empty _ (Finset.mem_coe.1 h)), ?_⟩
       exact ⟨B.con_empty, (sumSystem A B).con_sing _, by rw [lftFinset.singleton_bot],
-        B.entSet_empty _⟩
+        EntSet.empty B _⟩
     | right y =>
       refine ⟨{y}, ?_, ?_⟩
       · intro b hb

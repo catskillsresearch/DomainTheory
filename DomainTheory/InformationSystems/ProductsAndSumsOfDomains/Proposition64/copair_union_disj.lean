@@ -36,21 +36,21 @@ theorem copair_union_disj (f : ApproximableMap A C) (g : ApproximableMap B C)
   rcases h with h | ⟨hne, hf⟩ | ⟨hne, hg⟩ <;> rcases h' with h' | ⟨hne', hf'⟩ | ⟨hne', hg'⟩
   · exact Or.inl (proposition_2_3_vi (sys := C) h h')
   · have hf0 : f.rel (lftFinset u) s :=
-      f.mono f.empty_rel (A.entSet_empty _) h
+      f.mono f.empty_rel (EntSet.empty A _) h
         (SumCon.lft_con_of_lft_nonempty A B hu hne') hs
     exact Or.inr (Or.inl ⟨hne', f.union_right hf0 hf'⟩)
   · have hg0 : g.rel (rhtFinset u) s :=
-      g.mono g.empty_rel (B.entSet_empty _) h
+      g.mono g.empty_rel (EntSet.empty B _) h
         (SumCon.rht_con_of_rht_nonempty A B hu hne') hs
     exact Or.inr (Or.inr ⟨hne', g.union_right hg0 hg'⟩)
   · have hf0 : f.rel (lftFinset u) s' :=
-      f.mono f.empty_rel (A.entSet_empty _) h'
+      f.mono f.empty_rel (EntSet.empty A _) h'
         (SumCon.lft_con_of_lft_nonempty A B hu hne) hs'
     exact Or.inr (Or.inl ⟨hne, f.union_right hf hf0⟩)
   · exact Or.inr (Or.inl ⟨hne, f.union_right hf hf'⟩)
   · exact False.elim (hne' (SumCon.rht_empty_of_lft_nonempty A B hu hne))
   · have hg0 : g.rel (rhtFinset u) s' :=
-      g.mono g.empty_rel (B.entSet_empty _) h'
+      g.mono g.empty_rel (EntSet.empty B _) h'
         (SumCon.rht_con_of_rht_nonempty A B hu hne) hs'
     exact Or.inr (Or.inr ⟨hne, g.union_right hg hg0⟩)
   · exact False.elim (hne' (SumCon.lft_empty_of_rht_nonempty A B hu hne))

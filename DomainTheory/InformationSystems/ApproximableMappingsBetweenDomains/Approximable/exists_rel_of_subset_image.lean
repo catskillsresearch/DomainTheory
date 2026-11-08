@@ -30,7 +30,7 @@ theorem exists_rel_of_subset_image (f : ApproximableMap A B) (x : A.Element)
     refine ⟨∅, ?_, ?_⟩
     · intro a ha
       exact False.elim (Finset.notMem_empty a (Finset.mem_coe.1 ha))
-    · exact f.mono f.empty_rel (A.entSet_empty ∅) (B.entSet_empty ∅) A.con_empty B.con_empty
+    · exact f.mono f.empty_rel (EntSet.empty A ∅) (EntSet.empty B ∅) A.con_empty B.con_empty
   | insert a s _ha ih =>
     have ha' : ∃ u : Finset α, ↑u ⊆ x.carrier ∧ f.rel u {a} :=
       hY (Finset.mem_coe.2 (Finset.mem_insert_self a s))

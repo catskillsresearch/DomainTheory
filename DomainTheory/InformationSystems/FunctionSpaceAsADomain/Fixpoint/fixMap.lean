@@ -28,7 +28,7 @@ def fixMap : ApproximableMap (functionSystem A A) A where
   rel_dom h := h.1
   rel_cod h := h.2.1
   empty_rel :=
-    ⟨(functionSystem A A).con_empty, A.con_empty, ∅, fixReach_empty A _, A.entSet_empty ∅⟩
+    ⟨(functionSystem A A).con_empty, A.con_empty, ∅, fixReach_empty A _, EntSet.empty A ∅⟩
   union_right := by
     rintro w v v' ⟨hw, hv, v0, hv0, hEnt0⟩ ⟨_, hv', v0', hv0', hEnt0'⟩
     have hv0C := fixReach_con A hv0

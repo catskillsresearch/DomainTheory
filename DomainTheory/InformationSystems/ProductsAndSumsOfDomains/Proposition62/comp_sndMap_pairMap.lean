@@ -34,7 +34,7 @@ theorem comp_sndMap_pairMap (f : ApproximableMap C A) (g : ApproximableMap C B) 
     · refine ⟨?_, ?_⟩
       · have hs : s ∈ C.Con := g.rel_dom hg
         have hf0 : f.rel s (∅ : Finset α) :=
-          f.mono f.empty_rel (C.entSet_empty s) (A.entSet_empty ∅) hs A.con_empty
+          f.mono f.empty_rel (EntSet.empty C s) (EntSet.empty A ∅) hs A.con_empty
         exact rel_bot_subset_left f hs hf0 (fstFinset_liftRight A B w)
       · rw [sndFinset_liftRight]
         exact hg

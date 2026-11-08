@@ -22,7 +22,7 @@ theorem closure_empty_eq_bot :
     A.closure (∅ : Finset α) A.con_empty = A.botElement := by
   apply le_antisymm
   · intro a ha
-    exact A.ent_trans (A.con_sing A.bot) A.con_empty (A.entSet_empty _) ha
+    exact A.ent_trans (A.con_sing A.bot) A.con_empty (EntSet.empty A _) ha
   · intro a ha
     exact A.ent_trans A.con_empty (A.con_sing A.bot)
       (fun x hx => by

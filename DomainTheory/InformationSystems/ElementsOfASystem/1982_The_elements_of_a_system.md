@@ -53,14 +53,6 @@
 
 @import "../InformationSystems/Definition22/EntSet.lean"
 
-**[InformationSystems/InformationSystems/Definition22/entSet_singleton.lean](../InformationSystems/Definition22/entSet_singleton.lean)**
-
-@import "../InformationSystems/Definition22/entSet_singleton.lean"
-
-**[InformationSystems/InformationSystems/Definition22/entSet_empty.lean](../InformationSystems/Definition22/entSet_empty.lean)**
-
-@import "../InformationSystems/Definition22/entSet_empty.lean"
-
 **[InformationSystems/ElementsOfASystem/Factoid34/le_topElement.lean](Factoid34/le_topElement.lean)**
 
 @import "Factoid34/le_topElement.lean"

@@ -164,8 +164,8 @@ theorem uncurry_curryMap (h : ApproximableMap (productSystem A B) C) :
         subst hpbot
         change h.rel (liftPair A B (fstFinset A B s) (funBot B C).val.1) (funBot B C).val.2
         simp only [funBot]
-        exact h.mono h.empty_rel ((productSystem A B).entSet_empty _)
-          (C.entSet_empty ∅) (ProdCon_liftPair A B hs.1 B.con_empty) C.con_empty
+        exact h.mono h.empty_rel (EntSet.empty (productSystem A B) _)
+          (EntSet.empty C ∅) (ProdCon_liftPair A B hs.1 B.con_empty) C.con_empty
     refine ⟨m, ⟨?_, ?_⟩, ?_⟩
     ·
       exact ⟨fstFinset A B s, ⟨hs, hs.1, proposition_2_3_iii A hs.1⟩, hcurry_fst⟩

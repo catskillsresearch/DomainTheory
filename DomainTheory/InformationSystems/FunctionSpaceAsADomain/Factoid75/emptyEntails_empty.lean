@@ -21,7 +21,7 @@ namespace InfoSys
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 theorem emptyEntails_empty (A : InfoSys α) : EmptyEntails A (∅ : Finset α) :=
-  A.entSet_empty ∅
+  EntSet.empty A ∅
 
 end InfoSys
 

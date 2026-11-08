@@ -29,7 +29,7 @@ theorem BotApprox_any (r : ApproximableMap P P) : BotApprox r := by
     intro z hz
     rw [Finset.mem_singleton] at hz; subst hz
     exact Or.inl rfl
-  exact r.mono hempty (P.entSet_empty ∅) hbot trivial trivial
+  exact r.mono hempty (EntSet.empty P ∅) hbot trivial trivial
 
 end Factoid84
 

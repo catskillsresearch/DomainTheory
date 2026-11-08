@@ -29,7 +29,7 @@ theorem rel_iff_forall_singleton (f : ApproximableMap A B)
   · intro hsing
     induction v using Finset.induction_on with
     | empty =>
-      exact f.mono f.empty_rel (A.entSet_empty u) (B.entSet_empty ∅) hu B.con_empty
+      exact f.mono f.empty_rel (EntSet.empty A u) (EntSet.empty B ∅) hu B.con_empty
     | insert a s ha ih =>
       have hv' : insert a s ∈ B.Con := hv
       have hsCon : s ∈ B.Con := B.con_subset hv' (Finset.subset_insert a s)

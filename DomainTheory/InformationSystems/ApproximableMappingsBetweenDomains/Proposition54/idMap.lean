@@ -16,7 +16,7 @@ def idMap : ApproximableMap A A where
   rel u v := u ∈ A.Con ∧ v ∈ A.Con ∧ A.EntSet u v
   rel_dom h := h.1
   rel_cod h := h.2.1
-  empty_rel := ⟨A.con_empty, A.con_empty, A.entSet_empty ∅⟩
+  empty_rel := ⟨A.con_empty, A.con_empty, EntSet.empty A ∅⟩
   union_right := by
     rintro u v v' ⟨hu, _hv, huv⟩ ⟨_, _hv', huv'⟩
     have hEnt : A.EntSet u (v ∪' v') := proposition_2_3_vi (sys := A) huv huv'

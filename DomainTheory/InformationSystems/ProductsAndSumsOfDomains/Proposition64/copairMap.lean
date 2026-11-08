@@ -34,7 +34,7 @@ def copairMap (f : ApproximableMap A C) (g : ApproximableMap B C) :
           (rhtFinset u ≠ ∅ ∧ g.rel (rhtFinset u) s))
   rel_dom h := h.1
   rel_cod h := h.2.1
-  empty_rel := ⟨SumCon_empty A B, C.con_empty, Or.inl (C.entSet_empty ∅)⟩
+  empty_rel := ⟨SumCon_empty A B, C.con_empty, Or.inl (EntSet.empty C ∅)⟩
   union_right := by
     rintro u s s' ⟨hu, hs, h⟩ ⟨_, hs', h'⟩
     have hU := copair_union_disj A B f g hu hs hs' h h'

@@ -37,8 +37,8 @@ theorem rel_of_funTokens (h : ApproximableMap (productSystem A B) C)
     have hdom : liftPair A B u ∅ ∈ (productSystem A B).Con :=
       ProdCon_liftPair A B hu B.con_empty
     exact h.mono h.empty_rel
-      ((productSystem A B).entSet_empty _)
-      (C.entSet_empty ∅) hdom C.con_empty
+      (EntSet.empty (productSystem A B) _)
+      (EntSet.empty C ∅) hdom C.con_empty
   | insert p t' hpnot ih =>
     have hps' : ∀ q ∈ t', h.rel (liftPair A B u q.val.1) q.val.2 :=
       fun q hq => hps q (Finset.mem_insert_of_mem hq)

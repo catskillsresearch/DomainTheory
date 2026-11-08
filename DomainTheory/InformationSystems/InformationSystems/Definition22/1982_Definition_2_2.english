@@ -1,1 +1,13 @@
 **DEFINITION 2.2.** *For $u, v \in \mathrm{Con}$ we write $u \vdash v$ to mean that $u \vdash X$ for all $X \in v$.* ■
+
+<!-- formalization -->
+
+**Definition (`InfoSys.EntSet`).** In an information system, write $u \mathrel{\mathrm{EntSet}} v$ when $u$ entails every member of the finite set $v$. This is Scott’s multiary reading $u \vdash v$ of Definition 2.2 (stated for arbitrary finite $u, v$ on the carrier).
+
+**Theorem (`InfoSys.EntSet.empty`).** Every finite set entails the empty set of data.
+
+*Proof.* There is no member of the empty set to entail. □
+
+**Theorem (`InfoSys.EntSet.singleton`).** Entailing a singleton $\{X\}$ is equivalent to entailing $X$.
+
+*Proof.* Both directions unwind the definition of multiary entailment on a one-element set. □

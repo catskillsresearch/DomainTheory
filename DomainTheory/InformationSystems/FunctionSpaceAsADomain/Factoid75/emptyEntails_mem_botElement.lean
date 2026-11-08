@@ -21,7 +21,7 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 theorem emptyEntails_mem_botElement (A : InfoSys α) {X : α}
     (h : A.Ent (∅ : Finset α) X) : X ∈ A.botElement.carrier :=
-  A.ent_trans (A.con_sing A.bot) A.con_empty (A.entSet_empty _) h
+  A.ent_trans (A.con_sing A.bot) A.con_empty (EntSet.empty A _) h
 
 end InfoSys
 

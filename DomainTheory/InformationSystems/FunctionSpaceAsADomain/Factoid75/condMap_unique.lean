@@ -97,7 +97,7 @@ theorem condMap.unique (f : ApproximableMap boolSystem A) (hf : IsStrict boolSys
   · intro ⟨hu, hv, hE, ht, hfl⟩
     rcases boolCon_trichotomy hu with hEmp | hTru | hFls
     · have hrel0 : f.rel u ∅ :=
-        f.mono f.empty_rel (boolSystem.entSet_empty u) (A.entSet_empty ∅) hu A.con_empty
+        f.mono f.empty_rel (EntSet.empty boolSystem u) (EntSet.empty A ∅) hu A.con_empty
       exact f.mono hrel0 (proposition_2_3_iii boolSystem hu) (hE hEmp) hu hv
     · have hsub : ↑v ⊆ (f.toElement boolTrue).carrier := ht hTru
       obtain ⟨w, hw, hrelw⟩ := exists_rel_of_subset_image f boolTrue v hsub

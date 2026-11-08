@@ -53,7 +53,7 @@ theorem comp_copairMap_inlMap (f : ApproximableMap A C) (g : ApproximableMap B C
   constructor
   · rintro ⟨u, ⟨hv, hu, hr, hEnt⟩, ⟨_, hs, hcop⟩⟩
     rcases hcop with hE | ⟨_, hf⟩ | ⟨hne, _⟩
-    · exact f.mono f.empty_rel (A.entSet_empty v) hE hv hs
+    · exact f.mono f.empty_rel (EntSet.empty A v) hE hv hs
     · exact f.mono hf hEnt (proposition_2_3_iii C hs) hv hs
     · exact False.elim (hne hr)
   · intro hf

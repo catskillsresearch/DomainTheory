@@ -104,9 +104,9 @@ theorem copairMap_unique (f : ApproximableMap A C) (g : ApproximableMap B C)
     rcases hc with ⟨hu, hs, hcop⟩
     rcases hcop with hE | ⟨hne, hf⟩ | ⟨hne, hg⟩
     · have hb : h.rel ∅ s :=
-        h.mono h.empty_rel ((sumSystem A B).entSet_empty _) hE
+        h.mono h.empty_rel (EntSet.empty (sumSystem A B) _) hE
           (sumSystem A B).con_empty hs
-      exact h.mono hb ((sumSystem A B).entSet_empty _) (proposition_2_3_iii C hs) hu hs
+      exact h.mono hb (EntSet.empty (sumSystem A B) _) (proposition_2_3_iii C hs) hu hs
     · have : (comp h (inlMap A B)).rel (lftFinset u) s := by simpa [hinl] using hf
       rcases this with ⟨u', hinl', hh'⟩
       have hr : rhtFinset u = ∅ := SumCon.rht_empty_of_lft_nonempty A B hu hne
