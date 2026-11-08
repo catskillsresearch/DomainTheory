@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Definition (`lowerBoundEnt`).** For finite sets $u$ of natural numbers and a natural number $m$, write $u \mathrel{\mathrm{lowerBoundEnt}} m$ when either $m = 0$ or some $n \in u$ satisfies $m \le n$. Reading each $n$ as the proposition $n \le x$, this is the entailment relation for Scott’s first example: the empty-information datum $0$ is always entailed, and otherwise a lower bound is entailed when some listed bound already meets or exceeds it.
+
+*Proof.* Direct packaging of the disjunction that defines the relation. ∎

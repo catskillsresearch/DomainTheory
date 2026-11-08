@@ -31,7 +31,7 @@ open Order
 def lowerBoundSystem : InfoSys ℕ where
   bot := 0
   Con := Set.univ
-  Ent := Factoid24.lowerBoundEnt
+  Ent := lowerBoundEnt
   con_subset := by
     intro u v _ _
     exact Set.mem_univ v

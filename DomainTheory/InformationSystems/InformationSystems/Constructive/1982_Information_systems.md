@@ -4,6 +4,7 @@
 
 - [Introduction](1982_Introduction.md) [✓](../../../1982_REVISION.md)
 - [Definition 2.1](../InfoSys/1982_Definition_2_1.md) [✓](../../../1982_REVISION.md)
+- [Lower-bound entailment](../1982_lowerBoundEnt.md) [✓](../../../1982_REVISION.md)
 - [A first example](../1982_A_first_example.md)
 - [A second example](../1982_A_second_example.md)
 - [A third example](../Factoid26/1982_A_third_example.md)
