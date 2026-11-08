@@ -1,0 +1,15 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.finiteApproximants`).** The finite approximants of an element $x$ are the entailment closures of consistent finite sets of data contained in $x$.
+
+**Theorem (`InfoSys.finiteApproximants.nonempty`).** Every element has a nonempty set of finite approximants.
+
+*Proof.* The bottom element is the closure of the empty set, which is contained in every carrier. □
+
+**Theorem (`InfoSys.finiteApproximants.directed`).** The finite approximants of an element form a directed family.
+
+*Proof.* Closures of two consistent finite subsets of $x$ are jointly dominated by the closure of a consistent finite upper bound still inside $x$. □
+
+**Theorem (`InfoSys.finiteApproximants.eq_directedSup`).** Every element equals the directed supremum of its finite approximants.
+
+*Proof.* Each datum of $x$ lies in some finite approximant’s carrier, and every finite approximant approximates $x$ by the universal property of closure. □

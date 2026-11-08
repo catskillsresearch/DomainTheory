@@ -19,6 +19,6 @@
 - [Chain suprema](1982_chainSup.md) [✓](../../1982_REVISION.md)
 - [Factoid 4.4: chains & directed sups](1982_Factoid_4_4.md) [✓](../../1982_REVISION.md)
 - [Bottom as empty closure](1982_botElement_eq_closure_empty.md) [✓](../../1982_REVISION.md)
-- [Finite approximants](1982_finiteApproximants.md)
+- [Finite approximants](1982_finiteApproximants.md) [✓](../../1982_REVISION.md)
 - [Factoid 4.5: finite approximants](1982_Factoid_4_5.md)
 - [Factoid 4.6: topology / Scott continuity](Factoid46/1982_Factoid_4_6.md)
