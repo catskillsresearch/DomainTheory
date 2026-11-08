@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.chainSup`).** The chain supremum of a nonempty chain is the directed supremum of that family, available because every chain is directed.

@@ -16,7 +16,7 @@
 - [Chains](1982_Chain.md) [✓](../../1982_REVISION.md)
 - [Directed families](1982_IsDirected.md) [✓](../../1982_REVISION.md)
 - [Directed suprema](1982_directedSup.md) [✓](../../1982_REVISION.md)
-- [Chain suprema](1982_chainSup.md)
+- [Chain suprema](1982_chainSup.md) [✓](../../1982_REVISION.md)
 - [Factoid 4.4: chains & directed sups](1982_Factoid_4_4.md)
 - [Factoid 4.5: finite approximants](Factoid45/1982_Factoid_4_5.md)
 - [Factoid 4.6: topology / Scott continuity](Factoid46/1982_Factoid_4_6.md)
