@@ -1,0 +1,15 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.familySup`).** When the family-union carrier of a family of elements is finitely consistent, the family supremum is the deductive closure of that union.
+
+**Theorem (`InfoSys.familySup.le`).** If every member of the family approximates an upper bound $z$, then the family supremum approximates $z$.
+
+*Proof.* Data in the supremum are entailed from finite pieces of the union, each of which lies in $z$, so $z$ is deductively closed under those entailments. □
+
+**Theorem (`InfoSys.familySup.le_of_mem`).** Every member of the family approximates the family supremum.
+
+*Proof.* The member’s carrier sits in the family-union carrier, hence in the deductive closure. □
+
+**Theorem (`InfoSys.familySup.exists_isLUB_iff`).** A family of elements has a least upper bound if and only if its family-union carrier is finitely consistent.
+
+*Proof.* An upper bound forces finite consistency of the union; conversely the family supremum is the least upper bound by the two approximation lemmas above. □
