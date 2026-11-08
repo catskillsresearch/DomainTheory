@@ -1,44 +1,6 @@
----
-source_pdf: Domains_for_Denotational_Semantics.pdf
-title: "Domains for Denotational Semantics"
-author: Dana Scott
-year: 1982
-citation_key: Sco82
-alias: "Information systems presentation (ICALP 1982)"
-bibliography: "Scott, D. Domains for Denotational Semantics. ICALP 1982, LNCS 140, pp. 577–613."
-pages: 34
-extraction_method: "cursor-vision-triple-merge"
-verification_status: draft
-verified_by: null
-verified_date: null
----
+# Information Systems
 
-# Domains for Denotational Semantics
-
-**Author:** Dana Scott (1982)  
-**Source file:** `Domains_for_Denotational_Semantics.pdf`  
-**Also known as:** Information systems presentation (ICALP 1982)
-
-> **Human verification required.** This file is a machine-generated *draft* from
-> Cursor vision OCR (3 passes + merge). Compare each `<!-- page N -->` block to
-> the PDF. Correct remaining errors, restore any missed mathematical notation,
-> and when done set `verification_status: verified` in the YAML front matter.
-
-
-## Transcription
-
-<!-- page 1 -->
-
-# DOMAINS FOR DENOTATIONAL SEMANTICS
-
-by  
-Dana S. Scott  
-
-Department of Computer Science  
-Carnegie-Mellon University  
-Pittsburgh, Pennsylvania 15213
-
-**Abstract.** The purpose of the theory of domains is to give models for spaces on which to define computable functions. The kinds of spaces needed for denotational semantics involve not only spaces of higher type (e.g. function spaces) but also spaces defined recursively (e.g. reflexive domains). Also required are many special domain constructs (or functors) in order to create the desired structures. There are several choices of a suitable category of domains, but the basic one which has the simplest properties is the one sometimes called *consistently complete algebraic $\mathrm{cpo}$'s*. This category of domains is studied in this paper from a new, and it is to be hoped, simpler point of view incorporating the approaches of many authors into a unified presentation. Briefly, the domains of elements are represented set theoretically with the aid of structures called *information systems*. These systems are very familiar from mathematical logic, and their use seems to accord well with intuition. Many things that were done previously axiomatically can now be proved in a straightforward way as theorems. The present paper discusses many examples in an informal way that should serve as an introduction to the subject.
+The purpose of the theory of domains is to give models for spaces on which to define computable functions. The kinds of spaces needed for denotational semantics involve not only spaces of higher type (e.g. function spaces) but also spaces defined recursively (e.g. reflexive domains). Also required are many special domain constructs (or functors) in order to create the desired structures. There are several choices of a suitable category of domains, but the basic one which has the simplest properties is the one sometimes called *consistently complete algebraic $\mathrm{cpo}$'s*. This category of domains is studied in this paper from a new, and it is to be hoped, simpler point of view incorporating the approaches of many authors into a unified presentation. Briefly, the domains of elements are represented set theoretically with the aid of structures called *information systems*. These systems are very familiar from mathematical logic, and their use seems to accord well with intuition. Many things that were done previously axiomatically can now be proved in a straightforward way as theorems. The present paper discusses many examples in an informal way that should serve as an introduction to the subject.
 
 **1. Introduction.** I would like to begin with some personal remarks. When I think of the number of headaches I have caused people in Computer Science who have tried to figure out the mathematical details of the Theory of Domains, I have to cringe. The difficulty in the presentation of the subject is in justifying the level of abstraction used in comparison with the payoff: too often the effort needed for understanding the abstractions does not seem worth the trouble—especially if the notions are unfamiliar or excessively general.
 

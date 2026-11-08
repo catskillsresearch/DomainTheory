@@ -13,7 +13,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "sources" / "1972_ContinuousLattices.md"
 DT = ROOT / "DomainTheory"
-TBD = DT / "1972_TBD_prose"
+# Former holding folder DomainTheory/1972_TBD_prose is retired; all 1972 prose
+# lives under ContinuousLattice/ (and 1972_Introduction.english).
 
 MARKER = re.compile(
     r"^(## ABSTRACT|## CONTENTS|## 0\. Introduction|\*\*\d+\."
@@ -65,10 +66,11 @@ def segment_key(first_line: str) -> str:
     return f"frag_{slug}"
 
 
-def path_for_key(key: str) -> Path:
-    m = {
+def path_for_key(key: str) -> Path | None:
+    """Return the note sidecar for ``key``, or ``None`` to skip (e.g. TOC)."""
+    m: dict[str, Path | None] = {
         "abstract": DT / "1972_Introduction.english",
-        "contents": TBD / "contents.english",
+        "contents": None,  # hub TOC in 1972_ContinuousLattices.md
         "sec0": DT / "1972_Introduction.english",
         "sec1": DT / "ContinuousLattice/Injective/1972_T0_spaces.english",
         "1.1": DT / "ContinuousLattice/Injective/InjectiveSpace.english",
@@ -110,7 +112,7 @@ def path_for_key(key: str) -> Path:
         "3.13": DT / "ContinuousLattice/FunctionSpaces/proposition_3_13.english",
         "3.14": DT / "ContinuousLattice/FunctionSpaces/1972_Proposition_3_14.english",
         # §4 hub is a roadmap; review OCR is parceled in bridge_sec4_review.
-        "sec4": TBD / "sec4_review_before_4_1.english",
+        "sec4": None,
         "4.1": DT / "ContinuousLattice/InverseLimits/proposition_4_1.english",
         "4.2": DT / "ContinuousLattice/InverseLimits/1972_Proposition_4_2.english",
         "4.3": DT / "ContinuousLattice/InverseLimits/corollary_4_3.english",
@@ -118,14 +120,15 @@ def path_for_key(key: str) -> Path:
         "4.5": DT / "ContinuousLattice/InverseLimits/1972_Lemma_4_5.english",
         "proof_4.4": DT / "ContinuousLattice/FunctionSpaceTower/1972_Theorem_4_4.english",
         "correction": DT / "ContinuousLattice/MilnerCorrection/1972_Correction.english",
-        "sec4_projections_figure": TBD / "sec4_projection_figures.english",
+        # Curated SVG lives in 1972_Two_projections.english; skip OCR ASCII dump.
+        "sec4_projections_figure": None,
     }
-    if key in m:
-        return m[key]
-    return TBD / f"{key}.english"
+    if key not in m:
+        raise KeyError(f"unmapped 1972 prose segment {key!r} (TBD holding folder retired)")
+    return m[key]
 
 
-APPEND_KEYS = {"abstract", "sec0", "proof_2.9", "proof_2.10", "proof_2.11", "proof_4.4", "sec4_projections_figure"}
+APPEND_KEYS = {"abstract", "sec0", "proof_2.9", "proof_2.10", "proof_2.11", "proof_4.4"}
 
 
 def bridge_before_sec2(lines: list[str], i_sec2: int, i_21: int) -> None:
@@ -151,21 +154,6 @@ def bridge_sec1_post_17(lines: list[str], i_17: int, i_sec2: int) -> None:
     if chunk:
         p = DT / "ContinuousLattice/Injective/1972_Absolute_retracts.english"
         p.parent.mkdir(parents=True, exist_ok=True)
-        p.write_text(chunk + "\n", encoding="utf-8")
-
-
-def bridge_sec2_post_212(lines: list[str], i_212: int, i_sec3: int) -> None:
-    chunk = "\n".join(lines[i_212:i_sec3]).strip()
-    if chunk:
-        p = TBD / "sec2_after_theorem_2_12.english"
-        p.parent.mkdir(parents=True, exist_ok=True)
-        p.write_text(chunk + "\n", encoding="utf-8")
-
-
-def bridge_sec3_mid(lines: list[str], i_35: int, i_36: int) -> None:
-    chunk = "\n".join(lines[i_35:i_36]).strip()
-    if chunk:
-        p = TBD / "sec3_before_3_6.english"
         p.write_text(chunk + "\n", encoding="utf-8")
 
 
@@ -230,6 +218,8 @@ def main() -> None:
         end = indices[j + 1] if j + 1 < len(indices) else len(lines)
         key = segment_key(lines[start])
         path = path_for_key(key)
+        if path is None:
+            continue
         text = "\n".join(lines[start:end]).strip()
         if not text:
             continue
@@ -241,7 +231,6 @@ def main() -> None:
         else:
             buckets.setdefault(path, []).append(text)
 
-    TBD.mkdir(parents=True, exist_ok=True)
     for path, parts in buckets.items():
         path.parent.mkdir(parents=True, exist_ok=True)
         body = "\n\n".join(p.strip() for p in parts if p.strip()) + "\n"
@@ -258,46 +247,29 @@ def main() -> None:
     i_abs = next(i for i, ln in enumerate(lines) if ln.startswith("As a result of these"))
     bridge_sec1_post_17(lines, i_abs, idx("**2. CONTINUOUS LATTICES"))
     bridge_before_sec2(lines, idx("**2. CONTINUOUS LATTICES"), idx("**2.1 Proposition"))
-    bridge_sec2_post_212(lines, idx("**2.12 Theorem"), idx("**3. FUNCTION SPACES"))
-    # 3.5 ends ~743, 3.6 at 775
+    # Mid-§3 lead-in before 3.6 (skips the 3.5 statement already slotted above)
     try:
-        bridge_sec3_mid(lines, idx("**3.5 Proposition"), idx("**3.6 Definition"))
+        i_35 = idx("**3.5 Proposition")
+        i_36 = idx("**3.6 Definition")
+        chunk = "\n".join(lines[i_35:i_36]).strip()
+        marker = "What will be useful will be to return at this point"
+        if marker in chunk:
+            lead = chunk[chunk.index(marker) :].strip()
+            p = DT / "ContinuousLattice/FunctionSpaces/1972_Before_definition_3_6.english"
+            p.parent.mkdir(parents=True, exist_ok=True)
+            p.write_text(lead + "\n", encoding="utf-8")
     except ValueError:
         pass
     bridge_sec4_review(lines, idx)
 
-    # mark unmapped TBD files in index
-    tbd_index = TBD / "README.english"
-    tbd_files = sorted(TBD.glob("*.english"))
-    if tbd_files:
-        tbd_index.write_text(
-            "**TBD — prose not yet mapped to a note**\n\n"
-            + "\n".join(f"- `{p.name}`" for p in tbd_files if p.name != "README.english")
-            + "\n",
-            encoding="utf-8",
-        )
-
     # verify all source lines appear in outputs
-    slotted = "\n".join(
-        p.read_text(encoding="utf-8")
-        for p in sorted(DT.rglob("*.english"))
-        if "1972_TBD" not in str(p) or True
-    )
+    slotted = "\n".join(p.read_text(encoding="utf-8") for p in sorted(DT.rglob("*.english")))
     missing = [ln for ln in lines if ln.strip() and ln.strip() not in slotted and not ln.startswith("# CONTINUOUS")]
     # page-only lines allowed
     missing = [ln for ln in missing if not re.fullmatch(r"\d{2,3}", ln.strip())]
     print(f"wrote {len(buckets)} segment targets under {DT.relative_to(ROOT)}")
-    print(f"TBD files: {len(list(TBD.glob('*.english')))}")
     if missing:
-        orphan = TBD / "orphan_lines.english"
-        orphan.write_text(
-            "**TBD — lines not matched verbatim in slotted files**\n\n"
-            + "\n".join(missing[:200])
-            + ("\n..." if len(missing) > 200 else "")
-            + "\n",
-            encoding="utf-8",
-        )
-        print(f"warning: {len(missing)} source lines not found verbatim in outputs -> {orphan.name}")
+        print(f"warning: {len(missing)} source lines not found verbatim in outputs")
 
 
 if __name__ == "__main__":
