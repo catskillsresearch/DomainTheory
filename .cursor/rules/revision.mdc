@@ -23,7 +23,8 @@ When the user says **afn** (with a note path, or the focused note): write formal
 - **Complete coverage.** Every `def` / `theorem` / `abbrev` / `structure` / `class` / `inductive` in the note’s `@import`ed Lean file(s) gets a formalization heading — including `@[simp]` / attributed decls and “obvious” `rfl` helpers. Before finishing, list Lean declaration names (attributes allowed before the keyword) and diff against `**Definition (`…`)` / `**Theorem (`…`)` headings; fill any gaps.
 - **Prose is mathematics.** Statements and *Proof*s are pure mathematical English (Scott/Graph-lemmas style). Do not dump Lean tokens: no import paths, namespaces-as-homes, tactic names, `Set.foo`, `rw`, `simp`, angle-bracket constructors, or file names in the body.
 - **Library name only in the heading.** Each fact is **Theorem (`Name`)** / **Definition (`Name`)** with a Mathlib-style dotted name (`botElem.ne_top`, `predSet.succSet`); that parenthetical is the sole Lean-facing label.
-- **Short proofs.** One paragraph that says what is used mathematically, without redoing the argument.
+- **Definitions have no *Proof*.** Put the mathematical explanation in the **Definition (`…`)** block itself; reserve *Proof* for theorems/lemmas.
+- **Short proofs (theorems only).** One paragraph that says what is used mathematically, without redoing the argument.
 - Paper theorems that already have Scott prose: put formalization after `<!-- formalization -->` as in Theorems 4.5–4.6. Do not `mc` unless asked.
 
 # Pref fold (`Pref_suffix` → `Pref.suffix`)
