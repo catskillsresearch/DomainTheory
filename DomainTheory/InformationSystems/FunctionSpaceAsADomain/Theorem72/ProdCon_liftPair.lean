@@ -34,14 +34,14 @@ theorem ProdCon_liftPair {u : Finset α} {v : Finset β}
       have : x = A.bot := Finset.mem_singleton.mp (fstFinset_liftRight A B v hx)
       subst this
       exact A.ent_bot hu
-    exact proposition_2_3_ii A hu hEnt
+    exact proposition_2_3.ii A hu hEnt
   · unfold liftPair
     rw [sndFinset.funion, sndFinset_liftRight]
     have hEnt : B.EntSet v (sndFinset A B (liftLeft A B u)) := fun y hy => by
       have : y = B.bot := Finset.mem_singleton.mp (sndFinset_liftLeft A B u hy)
       subst this
       exact B.ent_bot hv
-    have h := proposition_2_3_ii B hv hEnt
+    have h := proposition_2_3.ii B hv hEnt
     rwa [funion_comm_β] at h
 
 end InfoSys

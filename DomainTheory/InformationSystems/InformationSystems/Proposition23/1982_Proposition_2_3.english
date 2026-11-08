@@ -31,3 +31,34 @@ $$
 and say that $\mathbf{A}$ is an information system—with its parts as indicated. For a more informal discussion, the notation without subscripts can suffice, but there can be problems when several different systems are involved. ■
 
 So much for the definition of what a system is as a mathematical structure. The next question is: What is it good for? More precisely, if information systems are the backbones of domains, then where are the elements? That is the topic of the next section.
+
+<!-- formalization -->
+
+**Theorem (`proposition_2_3.i`).** The empty set of data entails the singleton of the least-informative datum.
+
+*Proof.* Entailment of the bottom datum from the empty consistent set. □
+
+**Theorem (`proposition_2_3.ii`).** If a consistent set $u$ entails every member of a finite set $v$, then the finite union $u \cup' v$ is consistent.
+
+*Proof.* Induct on $v$, closing under insert via entailment and the consistency axiom for entailed data; the empty case is $u$ itself. □
+
+**Theorem (`proposition_2_3.iii`).** Every consistent set entails itself.
+
+*Proof.* Membership yields entailment. □
+
+**Theorem (`proposition_2_3.iv`).** Multiary entailment is transitive: if $u$ entails $v$ and $v$ entails $w$, with $u$ and $v$ consistent, then $u$ entails $w$.
+
+*Proof.* For each member of $w$, combine the multiary hypotheses with transitivity of unary entailment. □
+
+**Theorem (`proposition_2_3.v`).** Multiary entailment is monotone in the antecedents and antitone in the consequents: enlarging a consistent antecedent set and shrinking the entailed set preserves entailment.
+
+*Proof.* Reduce to unary entailment from the smaller antecedent, then transfer along the inclusion by reflexivity and transitivity. □
+
+**Theorem (`proposition_2_3.vi`).** If $u$ entails each of two finite sets, then $u$ entails their finite union.
+
+*Proof.* Membership in a finite union is membership in one of the arguments. □
+
+**Theorem (`proposition_2_3`).** For consistent finite sets, multiary entailment satisfies: the empty set entails $\{\Delta\}$; entailment of $v$ from $u$ yields consistency of $u \cup' v$; reflexivity; transitivity; monotonicity in antecedents and antitonicity in consequents; and closure under finite unions of consequents.
+
+*Proof.* Assemble the six preceding theorems. □
+

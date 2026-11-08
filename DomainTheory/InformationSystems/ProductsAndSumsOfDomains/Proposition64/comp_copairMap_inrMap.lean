@@ -55,14 +55,14 @@ theorem comp_copairMap_inrMap (f : ApproximableMap A C) (g : ApproximableMap B C
     rcases hcop with hE | ⟨hne, _⟩ | ⟨_, hg⟩
     · exact g.mono g.empty_rel (EntSet.empty B w) hE hw hs
     · exact False.elim (hne hl)
-    · exact g.mono hg hEnt (proposition_2_3_iii C hs) hw hs
+    · exact g.mono hg hEnt (proposition_2_3.iii C hs) hw hs
   · intro hg
     let wBot := insert B.bot w
     have hwBot : wBot ∈ B.Con := B.ent_con (B.ent_bot (g.rel_dom hg))
     have hEntBot : B.EntSet wBot w :=
       fun _ hy => B.ent_refl hwBot (Finset.mem_insert_of_mem hy)
     have hgBot : g.rel wBot s :=
-      g.mono hg hEntBot (proposition_2_3_iii C (g.rel_cod hg)) hwBot (g.rel_cod hg)
+      g.mono hg hEntBot (proposition_2_3.iii C (g.rel_cod hg)) hwBot (g.rel_cod hg)
     refine ⟨liftSumRight (α := α) wBot, ?_, ?_⟩
     · refine ⟨g.rel_dom hg, SumCon_liftSumRight A B hwBot,
         lftFinset_liftSumRight (α := α) wBot, ?_⟩

@@ -39,17 +39,17 @@ def inlMap : ApproximableMap A (sumSystem A B) where
     · have hl : lftFinset (u ∪' u') ∈ A.Con := by
         rw [lftFinset.funion]
         exact A.con_subset
-          (proposition_2_3_ii (sys := A) hv (proposition_2_3_vi (sys := A) hEnt hEnt'))
-          (subset_funion_right _ _)
+          (proposition_2_3.ii (sys := A) hv (proposition_2_3.vi (sys := A) hEnt hEnt'))
+          (funion.subset_right _ _)
       exact Or.inl ⟨hl, by rw [rhtFinset.funion, hr, hr']; rfl⟩
     · rw [rhtFinset.funion, hr, hr']; rfl
-    · rw [lftFinset.funion]; exact proposition_2_3_vi (sys := A) hEnt hEnt'
+    · rw [lftFinset.funion]; exact proposition_2_3.vi (sys := A) hEnt hEnt'
   mono := by
     rintro v v' u u' ⟨hv, hu, hr, hEnt⟩ hEntv hEntu hv' hu'
     refine ⟨hv', hu', rht_eq_empty_of_sumEntSet A B hr hEntu, ?_⟩
-    exact proposition_2_3_iv (sys := A) hv'
+    exact proposition_2_3.iv (sys := A) hv'
       (lft_mem_Con_of_SumCon_rht_empty A B hu hr)
-      (proposition_2_3_iv (sys := A) hv' hv hEntv hEnt)
+      (proposition_2_3.iv (sys := A) hv' hv hEntv hEnt)
       (entSet_lft_of_sumEntSet A B hEntu)
 
 theorem inlMap.toElement_sumElementLft (z : (sumSystem A B).Element)
@@ -87,7 +87,7 @@ theorem inlMap.toElement_sumElementLft (z : (sumSystem A B).Element)
             exact False.elim (nomatch Finset.mem_singleton.mp this)
           · intro hy; exact False.elim (Finset.notMem_empty y hy)
         · rw [lftFinset.singleton_left]
-          exact proposition_2_3_iii A (A.con_sing x)
+          exact proposition_2_3.iii A (A.con_sing x)
     | right y =>
       exact False.elim (not_mem_right_of_mem_left A B z hx0 hp)
 

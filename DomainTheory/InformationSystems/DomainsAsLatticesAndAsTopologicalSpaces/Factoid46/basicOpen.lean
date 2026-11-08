@@ -22,15 +22,15 @@ theorem basicOpen.inter (A : InfoSys α) (u v : Finset α) :
   ext x
   constructor
   · intro ⟨hu, hv⟩ a ha
-    rcases mem_funion.mp (Finset.mem_coe.1 ha) with h | h
+    rcases funion.mem.mp (Finset.mem_coe.1 ha) with h | h
     · exact hu (Finset.mem_coe.2 h)
     · exact hv (Finset.mem_coe.2 h)
   · intro huv
     refine ⟨?_, ?_⟩
     · intro a ha
-      exact huv (Finset.mem_coe.2 (mem_funion.mpr (Or.inl (Finset.mem_coe.1 ha))))
+      exact huv (Finset.mem_coe.2 (funion.mem.mpr (Or.inl (Finset.mem_coe.1 ha))))
     · intro a ha
-      exact huv (Finset.mem_coe.2 (mem_funion.mpr (Or.inr (Finset.mem_coe.1 ha))))
+      exact huv (Finset.mem_coe.2 (funion.mem.mpr (Or.inr (Finset.mem_coe.1 ha))))
 
 end InfoSys
 

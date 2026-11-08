@@ -25,10 +25,10 @@ theorem emptyEntails_funion {γ : Type*} [DecidableEq γ] (sys : InfoSys γ)
     EmptyEntails sys (u ∪' v) ↔ EmptyEntails sys u ∧ EmptyEntails sys v := by
   constructor
   · intro h
-    exact ⟨fun x hx => h x (subset_funion_left _ _ hx),
-      fun x hx => h x (subset_funion_right _ _ hx)⟩
+    exact ⟨fun x hx => h x (funion.subset_left _ _ hx),
+      fun x hx => h x (funion.subset_right _ _ hx)⟩
   · intro ⟨hu, hv⟩ x hx
-    rcases mem_funion.mp hx with hx | hx
+    rcases funion.mem.mp hx with hx | hx
     · exact hu x hx
     · exact hv x hx
 

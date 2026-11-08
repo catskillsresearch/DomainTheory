@@ -38,17 +38,17 @@ def inrMap : ApproximableMap B (sumSystem A B) where
     · have hrC : rhtFinset (u ∪' u') ∈ B.Con := by
         rw [rhtFinset.funion]
         exact B.con_subset
-          (proposition_2_3_ii (sys := B) hw (proposition_2_3_vi (sys := B) hEnt hEnt'))
-          (subset_funion_right _ _)
+          (proposition_2_3.ii (sys := B) hw (proposition_2_3.vi (sys := B) hEnt hEnt'))
+          (funion.subset_right _ _)
       exact Or.inr ⟨by rw [lftFinset.funion, hl, hl']; rfl, hrC⟩
     · rw [lftFinset.funion, hl, hl']; rfl
-    · rw [rhtFinset.funion]; exact proposition_2_3_vi (sys := B) hEnt hEnt'
+    · rw [rhtFinset.funion]; exact proposition_2_3.vi (sys := B) hEnt hEnt'
   mono := by
     rintro w w' u u' ⟨hw, hu, hl, hEnt⟩ hEntw hEntu hw' hu'
     refine ⟨hw', hu', lft_eq_empty_of_sumEntSet A B hl hEntu, ?_⟩
-    exact proposition_2_3_iv (sys := B) hw'
+    exact proposition_2_3.iv (sys := B) hw'
       (rht_mem_Con_of_SumCon_lft_empty A B hu hl)
-      (proposition_2_3_iv (sys := B) hw' hw hEntw hEnt)
+      (proposition_2_3.iv (sys := B) hw' hw hEntw hEnt)
       (entSet_rht_of_sumEntSet A B hEntu)
 
 theorem inrMap.toElement_sumElementRht (z : (sumSystem A B).Element)
@@ -86,7 +86,7 @@ theorem inrMap.toElement_sumElementRht (z : (sumSystem A B).Element)
             exact False.elim (nomatch Finset.mem_singleton.mp this)
           · intro hx; exact False.elim (Finset.notMem_empty x hx)
         · rw [rhtFinset.singleton_right]
-          exact proposition_2_3_iii B (B.con_sing y)
+          exact proposition_2_3.iii B (B.con_sing y)
     | left x =>
       exact False.elim (not_mem_right_of_mem_left A B z hp hy0)
 

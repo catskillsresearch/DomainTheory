@@ -31,11 +31,11 @@ def flatMap : ApproximableMap P P where
       · exact Or.inl h1
       · refine Or.inr ⟨?_, ?_⟩
         · intro n hn
-          rcases mem_funion.1 hn with h | h
+          rcases funion.mem.1 hn with h | h
           · exact hv n h
           · exact hv' n h
         · intro h1
-          rcases mem_funion.1 h1 with h | h
+          rcases funion.mem.1 h1 with h | h
           · exact hv1 h
           · exact hv1' h
   mono := by

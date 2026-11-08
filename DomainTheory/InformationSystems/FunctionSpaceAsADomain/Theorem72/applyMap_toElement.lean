@@ -58,8 +58,8 @@ theorem applyMap_toElement (g : (functionSystem B C).Element) (y : B.Element) :
       exact mem_snd_of_subset_pairElements (functionSystem B C) B hs hb
     have hin : funInputUnion B C t ∈ B.Con :=
       B.con_subset
-        (proposition_2_3_ii B hCon.2 (entSet_inputUnion_of_ent B C hIn))
-        (subset_funion_right _ _)
+        (proposition_2_3.ii B hCon.2 (entSet_inputUnion_of_ent B C hIn))
+        (funion.subset_right _ _)
     have hin_sub : ↑(funInputUnion B C t) ⊆ y.carrier := by
       intro b hb
       rcases (mem_funInputUnion B C).1 (Finset.mem_coe.1 hb) with ⟨q, hq, hb'⟩
@@ -102,7 +102,7 @@ theorem applyMap_toElement (g : (functionSystem B C).Element) (y : B.Element) :
       subst this
       rw [show s = liftLeft (functionSystem B C) B {p} ∪' liftRight (functionSystem B C) B v from rfl]
       rw [fstFinset.funion, fstFinset_liftLeft]
-      exact subset_funion_left _ _ (Finset.mem_singleton_self _)
+      exact funion.subset_left _ _ (Finset.mem_singleton_self _)
     ·
       intro q hq
       have : q = p := Finset.mem_singleton.mp hq
@@ -112,11 +112,11 @@ theorem applyMap_toElement (g : (functionSystem B C).Element) (y : B.Element) :
 
       have : b ∈ sndFinset (functionSystem B C) B s := by
         rw [sndFinset_liftPair]
-        exact subset_funion_right _ _ hb'
+        exact funion.subset_right _ _ hb'
       exact B.ent_refl hsCon.2 this
     ·
       rw [funOutputUnion.singleton]
-      exact proposition_2_3_iii C (C.con_sing Z)
+      exact proposition_2_3.iii C (C.con_sing Z)
 
 end InfoSys
 end DomainTheory.InformationSystems

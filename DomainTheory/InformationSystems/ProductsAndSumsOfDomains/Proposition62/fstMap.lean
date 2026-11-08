@@ -33,17 +33,17 @@ def fstMap : ApproximableMap (productSystem A B) A where
   union_right := by
     rintro u v v' ⟨hu, hv, huv⟩ ⟨_, hv', huv'⟩
     have hEnt : A.EntSet (fstFinset A B u) (v ∪' v') :=
-      proposition_2_3_vi (sys := A) huv huv'
+      proposition_2_3.vi (sys := A) huv huv'
     have hBig : fstFinset A B u ∪' (v ∪' v') ∈ A.Con :=
-      proposition_2_3_ii (sys := A) hu.1 hEnt
+      proposition_2_3.ii (sys := A) hu.1 hEnt
     have hCon : v ∪' v' ∈ A.Con :=
-      A.con_subset hBig (subset_funion_right _ _)
+      A.con_subset hBig (funion.subset_right _ _)
     exact ⟨hu, hCon, hEnt⟩
   mono := by
     rintro u u' v v' ⟨hu, hv, huv⟩ hEntu hEntv hu' hv'
     refine ⟨hu', hv', ?_⟩
-    exact proposition_2_3_iv A hu'.1 hv
-      (proposition_2_3_iv A hu'.1 hu.1 (entSet_fst_of_prodEntSet A B hEntu) huv) hEntv
+    exact proposition_2_3.iv A hu'.1 hv
+      (proposition_2_3.iv A hu'.1 hu.1 (entSet_fst_of_prodEntSet A B hEntu) huv) hEntv
 
 end ApproximableMap
 

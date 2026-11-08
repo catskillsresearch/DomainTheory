@@ -6,7 +6,7 @@ public import DomainTheory.BridgeTheorems.ent_of_basicOpen_subset
 public import DomainTheory.BridgeTheorems.basicOpen_empty
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.con_empty
-public import DomainTheory.InformationSystems.InformationSystems.Constructive.mem_funion
+public import DomainTheory.InformationSystems.InformationSystems.Constructive.funion
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46
@@ -44,12 +44,12 @@ def toFilter (x : A.Element) : (toNeighborhoodSystem A).Element where
     refine ⟨u ∪' v, ?_, basicOpen.inter A u v, ?_⟩
     · have hsub : ↑(u ∪' v) ⊆ x.carrier := by
         intro a ha
-        rcases mem_funion.mp (Finset.mem_coe.1 ha) with h | h
+        rcases funion.mem.mp (Finset.mem_coe.1 ha) with h | h
         · exact huX (Finset.mem_coe.2 h)
         · exact hvX (Finset.mem_coe.2 h)
       exact x.consistent (u ∪' v) hsub
     · intro a ha
-      rcases mem_funion.mp (Finset.mem_coe.1 ha) with h | h
+      rcases funion.mem.mp (Finset.mem_coe.1 ha) with h | h
       · exact huX (Finset.mem_coe.2 h)
       · exact hvX (Finset.mem_coe.2 h)
   up_mem := by

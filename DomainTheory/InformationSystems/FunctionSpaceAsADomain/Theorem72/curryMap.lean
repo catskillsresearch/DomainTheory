@@ -39,7 +39,7 @@ def curryMap (h : ApproximableMap (productSystem A B) C) :
     rintro u s s' ⟨hu, hps⟩ ⟨_, hps'⟩
     refine ⟨hu, ?_⟩
     intro p hp
-    rcases mem_funion.mp hp with hp | hp
+    rcases funion.mem.mp hp with hp | hp
     · exact hps p hp
     · exact hps' p hp
   mono := by
@@ -53,18 +53,18 @@ def curryMap (h : ApproximableMap (productSystem A B) C) :
       fun q hq => hps q (ht hq)
     have hin : funInputUnion B C t ∈ B.Con :=
       B.con_subset
-        (proposition_2_3_ii B p.property.1 (entSet_inputUnion_of_ent B C hIn))
-        (subset_funion_right _ _)
+        (proposition_2_3.ii B p.property.1 (entSet_inputUnion_of_ent B C hIn))
+        (funion.subset_right _ _)
     have hmid : h.rel (liftPair A B u (funInputUnion B C t)) (funOutputUnion B C t) :=
       rel_of_funTokens A B C h u hu t hps_t hin
     have hmid' : h.rel (liftPair A B u' p.val.1) (funOutputUnion B C t) :=
       h.mono hmid
         (entSet_liftPair A B hu' p.property.1 hEntu
           (entSet_inputUnion_of_ent B C hIn))
-        (proposition_2_3_iii C (h.rel_cod hmid))
+        (proposition_2_3.iii C (h.rel_cod hmid))
         (ProdCon_liftPair A B hu' p.property.1) (h.rel_cod hmid)
     exact h.mono hmid'
-      (proposition_2_3_iii (productSystem A B) (ProdCon_liftPair A B hu' p.property.1))
+      (proposition_2_3.iii (productSystem A B) (ProdCon_liftPair A B hu' p.property.1))
       hOut (ProdCon_liftPair A B hu' p.property.1) p.property.2
 
 end InfoSys

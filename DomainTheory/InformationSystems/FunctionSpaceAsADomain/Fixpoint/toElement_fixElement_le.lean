@@ -28,11 +28,11 @@ theorem toElement_fixElement_le (f : ApproximableMap A A) :
   have huC : u ∈ A.Con := f.rel_dom hrel
   have hrel' : f.rel v0 {a} :=
     f.mono hrel hEnt
-      (proposition_2_3_iii A (f.rel_cod hrel)) hv0C (f.rel_cod hrel)
+      (proposition_2_3.iii A (f.rel_cod hrel)) hv0C (f.rel_cod hrel)
   obtain ⟨n, hn⟩ := hv0
   obtain ⟨w', hw', hw'Con, hchain⟩ := fixChain_step_of_rel A f hw hn hrel'
   refine ⟨w', hw', ⟨hw'Con, A.con_sing a, {a}, ⟨n + 1, hchain⟩, ?_⟩⟩
-  exact proposition_2_3_iii A (A.con_sing a)
+  exact proposition_2_3.iii A (A.con_sing a)
 
 end ApproximableMap
 end InfoSys

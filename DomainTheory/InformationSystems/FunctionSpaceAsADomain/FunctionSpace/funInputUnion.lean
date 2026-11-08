@@ -7,7 +7,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpa
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.instLeftCommutativeFunInput
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.instLeftCommutativeFunOutput
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.mem_foldr_funInput
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_ii
+public import DomainTheory.InformationSystems.InformationSystems.Proposition23
 
 @[expose] public section
 
@@ -41,8 +41,8 @@ theorem entSet_inputUnion_of_ent {u' : Finset α} {s : Finset (FunToken A B)}
 theorem funInputUnion.con_of_ent {u' : Finset α} {s : Finset (FunToken A B)}
     (hu' : u' ∈ A.Con) (h : ∀ q ∈ s, A.EntSet u' q.val.1) :
     funInputUnion A B s ∈ A.Con :=
-  A.con_subset (proposition_2_3_ii A hu' (entSet_inputUnion_of_ent A B h))
-    (subset_funion_right _ _)
+  A.con_subset (proposition_2_3.ii A hu' (entSet_inputUnion_of_ent A B h))
+    (funion.subset_right _ _)
 
 theorem funInputUnion.funion (s t : Finset (FunToken A B)) :
     funInputUnion A B (s ∪' t) = funInputUnion A B s ∪' funInputUnion A B t := by
@@ -50,15 +50,15 @@ theorem funInputUnion.funion (s t : Finset (FunToken A B)) :
   constructor
   · intro hx
     rcases (mem_funInputUnion A B).1 hx with ⟨p, hp, hx'⟩
-    rcases mem_funion.mp hp with hp | hp
-    · exact mem_funion.mpr (Or.inl ((mem_funInputUnion A B).2 ⟨p, hp, hx'⟩))
-    · exact mem_funion.mpr (Or.inr ((mem_funInputUnion A B).2 ⟨p, hp, hx'⟩))
+    rcases funion.mem.mp hp with hp | hp
+    · exact funion.mem.mpr (Or.inl ((mem_funInputUnion A B).2 ⟨p, hp, hx'⟩))
+    · exact funion.mem.mpr (Or.inr ((mem_funInputUnion A B).2 ⟨p, hp, hx'⟩))
   · intro hx
-    rcases mem_funion.mp hx with hx | hx
+    rcases funion.mem.mp hx with hx | hx
     · rcases (mem_funInputUnion A B).1 hx with ⟨p, hp, hx'⟩
-      exact (mem_funInputUnion A B).2 ⟨p, mem_funion.mpr (Or.inl hp), hx'⟩
+      exact (mem_funInputUnion A B).2 ⟨p, funion.mem.mpr (Or.inl hp), hx'⟩
     · rcases (mem_funInputUnion A B).1 hx with ⟨p, hp, hx'⟩
-      exact (mem_funInputUnion A B).2 ⟨p, mem_funion.mpr (Or.inr hp), hx'⟩
+      exact (mem_funInputUnion A B).2 ⟨p, funion.mem.mpr (Or.inr hp), hx'⟩
 
 theorem funInputUnion.singleton (p : FunToken A B) :
     funInputUnion A B {p} = p.val.1 := by
@@ -79,10 +79,10 @@ theorem funInputUnion.insert (s : Finset (FunToken A B)) (p : FunToken A B) :
     constructor
     · intro hq
       rcases Finset.mem_insert.mp hq with hqp | hq
-      · exact mem_funion.mpr (Or.inl (hqp ▸ Finset.mem_singleton_self p))
-      · exact mem_funion.mpr (Or.inr hq)
+      · exact funion.mem.mpr (Or.inl (hqp ▸ Finset.mem_singleton_self p))
+      · exact funion.mem.mpr (Or.inr hq)
     · intro hq
-      rcases mem_funion.mp hq with hq | hq
+      rcases funion.mem.mp hq with hq | hq
       · exact Finset.mem_insert.mpr (Or.inl (Finset.mem_singleton.mp hq))
       · exact Finset.mem_insert_of_mem hq
   rw [h, funInputUnion.funion, funInputUnion.singleton]

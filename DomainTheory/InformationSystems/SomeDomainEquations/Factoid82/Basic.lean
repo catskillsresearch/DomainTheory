@@ -119,17 +119,17 @@ theorem funion_insert_lam (u : Finset (RawLamToken α)) (a : RawLamToken α)
   ext x
   constructor
   · intro hx
-    rcases mem_funion.mp hx with hu | hins
-    · exact Finset.mem_insert_of_mem (mem_funion.mpr (Or.inl hu))
+    rcases funion.mem.mp hx with hu | hins
+    · exact Finset.mem_insert_of_mem (funion.mem.mpr (Or.inl hu))
     · rcases Finset.mem_insert.mp hins with ha | ht
       · exact Finset.mem_insert.mpr (Or.inl ha)
-      · exact Finset.mem_insert_of_mem (mem_funion.mpr (Or.inr ht))
+      · exact Finset.mem_insert_of_mem (funion.mem.mpr (Or.inr ht))
   · intro hx
     rcases Finset.mem_insert.mp hx with ha | h
-    · exact mem_funion.mpr (Or.inr (Finset.mem_insert.mpr (Or.inl ha)))
-    · rcases mem_funion.mp h with hu | ht
-      · exact mem_funion.mpr (Or.inl hu)
-      · exact mem_funion.mpr (Or.inr (Finset.mem_insert.mpr (Or.inr ht)))
+    · exact funion.mem.mpr (Or.inr (Finset.mem_insert.mpr (Or.inl ha)))
+    · rcases funion.mem.mp h with hu | ht
+      · exact funion.mem.mpr (Or.inl hu)
+      · exact funion.mem.mpr (Or.inr (Finset.mem_insert.mpr (Or.inr ht)))
 
 end InfoSys
 end DomainTheory.InformationSystems

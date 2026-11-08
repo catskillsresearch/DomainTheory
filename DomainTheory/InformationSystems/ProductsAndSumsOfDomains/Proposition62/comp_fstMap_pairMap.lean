@@ -28,7 +28,7 @@ theorem comp_fstMap_pairMap (f : ApproximableMap C A) (g : ApproximableMap C B) 
   refine ApproximableMap.ext fun s v => ?_
   constructor
   · rintro ⟨u, ⟨hf, hg⟩, ⟨hu, hv, hEnt⟩⟩
-    exact f.mono hf (proposition_2_3_iii C (f.rel_dom hf)) hEnt (f.rel_dom hf) hv
+    exact f.mono hf (proposition_2_3.iii C (f.rel_dom hf)) hEnt (f.rel_dom hf) hv
   · intro hf
     refine ⟨liftLeft A B v, ?_, ?_⟩
     · refine ⟨?_, ?_⟩
@@ -40,7 +40,7 @@ theorem comp_fstMap_pairMap (f : ApproximableMap C A) (g : ApproximableMap C B) 
         exact rel_bot_subset g hs hg0 (sndFinset_liftLeft A B v)
     · refine ⟨ProdCon_liftLeft A B (f.rel_cod hf), f.rel_cod hf, ?_⟩
       rw [fstFinset_liftLeft]
-      exact proposition_2_3_iii A (f.rel_cod hf)
+      exact proposition_2_3.iii A (f.rel_cod hf)
 
 end ApproximableMap
 end InfoSys

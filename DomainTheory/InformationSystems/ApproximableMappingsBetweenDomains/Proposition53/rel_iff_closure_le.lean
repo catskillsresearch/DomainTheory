@@ -21,7 +21,7 @@ theorem rel_iff_closure_le (f : ApproximableMap A B)
   constructor
   · intro hrel Y hY
     refine ⟨u, A.subset_closure hu, ?_⟩
-    exact f.mono hrel (proposition_2_3_iii A hu)
+    exact f.mono hrel (proposition_2_3.iii A hu)
       (fun Z hZ => by
         rw [Finset.mem_singleton] at hZ
         subst hZ
@@ -32,7 +32,7 @@ theorem rel_iff_closure_le (f : ApproximableMap A B)
       fun y hy => hsub (B.subset_closure hv hy)
     obtain ⟨u', hu', hrel'⟩ := exists_rel_of_subset_image f (A.closure u hu) v hv_sub
     have hEnt : A.EntSet u u' := fun y hy => hu' (Finset.mem_coe.2 hy)
-    exact f.mono hrel' hEnt (proposition_2_3_iii B hv) hu hv
+    exact f.mono hrel' hEnt (proposition_2_3.iii B hv) hu hv
 
 end ApproximableMap
 end InfoSys

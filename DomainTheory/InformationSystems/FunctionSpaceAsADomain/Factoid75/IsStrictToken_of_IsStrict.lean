@@ -37,7 +37,7 @@ theorem IsStrictToken_of_IsStrict (f : ApproximableMap A B) (hf : IsStrict A B f
     intro y hy
     refine ⟨p.val.1, hsub, ?_⟩
     have hy' : y ∈ p.val.2 := Finset.mem_coe.1 hy
-    exact f.mono hrel (proposition_2_3_iii A p.property.1)
+    exact f.mono hrel (proposition_2_3.iii A p.property.1)
       (fun z hz => by
         have : z = y := Finset.mem_singleton.mp hz
         subst this

@@ -33,17 +33,17 @@ def sndMap : ApproximableMap (productSystem A B) B where
   union_right := by
     rintro u w w' ⟨hu, hw, huw⟩ ⟨_, hw', huw'⟩
     have hEnt : B.EntSet (sndFinset A B u) (w ∪' w') :=
-      proposition_2_3_vi (sys := B) huw huw'
+      proposition_2_3.vi (sys := B) huw huw'
     have hBig : sndFinset A B u ∪' (w ∪' w') ∈ B.Con :=
-      proposition_2_3_ii (sys := B) hu.2 hEnt
+      proposition_2_3.ii (sys := B) hu.2 hEnt
     have hCon : w ∪' w' ∈ B.Con :=
-      B.con_subset hBig (subset_funion_right _ _)
+      B.con_subset hBig (funion.subset_right _ _)
     exact ⟨hu, hCon, hEnt⟩
   mono := by
     rintro u u' w w' ⟨hu, hw, huw⟩ hEntu hEntw hu' hw'
     refine ⟨hu', hw', ?_⟩
-    exact proposition_2_3_iv B hu'.2 hw
-      (proposition_2_3_iv B hu'.2 hu.2 (entSet_snd_of_prodEntSet A B hEntu) huw) hEntw
+    exact proposition_2_3.iv B hu'.2 hw
+      (proposition_2_3.iv B hu'.2 hu.2 (entSet_snd_of_prodEntSet A B hEntu) huw) hEntw
 
 end ApproximableMap
 

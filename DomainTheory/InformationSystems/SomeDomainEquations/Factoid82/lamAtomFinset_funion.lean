@@ -23,13 +23,13 @@ theorem lamAtomFinset_funion (u v : Finset (RawLamToken α)) :
   constructor
   · intro hx
     have : .atom x ∈ u ∪' v := mem_lamAtomFinset.1 hx
-    rcases mem_funion.1 this with hu | hv
-    · exact mem_funion.2 (Or.inl (mem_lamAtomFinset.2 hu))
-    · exact mem_funion.2 (Or.inr (mem_lamAtomFinset.2 hv))
+    rcases funion.mem.1 this with hu | hv
+    · exact funion.mem.2 (Or.inl (mem_lamAtomFinset.2 hu))
+    · exact funion.mem.2 (Or.inr (mem_lamAtomFinset.2 hv))
   · intro hx
-    rcases mem_funion.1 hx with hu | hv
-    · exact mem_lamAtomFinset.2 (mem_funion.2 (Or.inl (mem_lamAtomFinset.1 hu)))
-    · exact mem_lamAtomFinset.2 (mem_funion.2 (Or.inr (mem_lamAtomFinset.1 hv)))
+    rcases funion.mem.1 hx with hu | hv
+    · exact mem_lamAtomFinset.2 (funion.mem.2 (Or.inl (mem_lamAtomFinset.1 hu)))
+    · exact mem_lamAtomFinset.2 (funion.mem.2 (Or.inr (mem_lamAtomFinset.1 hv)))
 
 end InfoSys
 end DomainTheory.InformationSystems

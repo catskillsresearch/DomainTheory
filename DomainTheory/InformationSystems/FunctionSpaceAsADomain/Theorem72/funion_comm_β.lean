@@ -25,13 +25,13 @@ theorem funion_comm_β (u v : Finset β) : u ∪' v = v ∪' u := by
   ext x
   constructor
   · intro hx
-    rcases mem_funion.mp hx with h | h
-    · exact mem_funion.mpr (Or.inr h)
-    · exact mem_funion.mpr (Or.inl h)
+    rcases funion.mem.mp hx with h | h
+    · exact funion.mem.mpr (Or.inr h)
+    · exact funion.mem.mpr (Or.inl h)
   · intro hx
-    rcases mem_funion.mp hx with h | h
-    · exact mem_funion.mpr (Or.inr h)
-    · exact mem_funion.mpr (Or.inl h)
+    rcases funion.mem.mp hx with h | h
+    · exact funion.mem.mpr (Or.inr h)
+    · exact funion.mem.mpr (Or.inl h)
 
 end InfoSys
 

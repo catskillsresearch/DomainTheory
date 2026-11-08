@@ -8,22 +8,6 @@
 - [Theorem 7.3](1982_Theorem_7_3.md)
 - [Proposition 7.4](Proposition74/1982_Proposition_7_4.md)
 
-**[InformationSystems/InformationSystems/Proposition23/proposition_2_3_iv.lean](../InformationSystems/Proposition23/proposition_2_3_iv.lean)**
-
-@import "../InformationSystems/Proposition23/proposition_2_3_iv.lean"
-
-**[InformationSystems/InformationSystems/Proposition23/proposition_2_3_v.lean](../InformationSystems/Proposition23/proposition_2_3_v.lean)**
-
-@import "../InformationSystems/Proposition23/proposition_2_3_v.lean"
-
-**[InformationSystems/InformationSystems/Proposition23/proposition_2_3_iii.lean](../InformationSystems/Proposition23/proposition_2_3_iii.lean)**
-
-@import "../InformationSystems/Proposition23/proposition_2_3_iii.lean"
-
-**[InformationSystems/InformationSystems/Proposition23/proposition_2_3_vi.lean](../InformationSystems/Proposition23/proposition_2_3_vi.lean)**
-
-@import "../InformationSystems/Proposition23/proposition_2_3_vi.lean"
-
 **[InformationSystems/InformationSystems/Proposition23.lean](../InformationSystems/Proposition23.lean)**
 
 @import "../InformationSystems/Proposition23.lean"

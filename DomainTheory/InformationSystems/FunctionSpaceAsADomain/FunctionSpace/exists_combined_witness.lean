@@ -11,10 +11,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpa
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funOutputUnion
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.FunCon
 
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_ii
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_iv
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_v
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_vi
+public import DomainTheory.InformationSystems.InformationSystems.Proposition23
 @[expose] public section
 
 namespace DomainTheory.InformationSystems
@@ -52,13 +49,13 @@ theorem exists_combined_witness {u' : Finset α} {s : Finset (FunToken A B)}
       hWit r (Finset.mem_insert_of_mem hr)
     obtain ⟨S', hS'sub, hS'in, hS'out⟩ := ih hEntIn' hWit'
     obtain ⟨Sq, hSqsub, hSqin, hSqout⟩ := hWit q (Finset.mem_insert_self q s')
-    refine ⟨S' ∪' Sq, funion_subset_iff.mpr ⟨hS'sub, hSqsub⟩, ?_, ?_⟩
+    refine ⟨S' ∪' Sq, funion.subset_iff.mpr ⟨hS'sub, hSqsub⟩, ?_, ?_⟩
     · intro r hr
-      rcases mem_funion.mp hr with hr | hr
+      rcases funion.mem.mp hr with hr | hr
       · exact hS'in r hr
       · have hEnt_q : A.EntSet u' q.val.1 := hEntIn q (Finset.mem_insert_self q s')
         have hEnt_r : A.EntSet q.val.1 r.val.1 := hSqin r hr
-        exact proposition_2_3_iv A hu' q.property.1 hEnt_q hEnt_r
+        exact proposition_2_3.iv A hu' q.property.1 hEnt_q hEnt_r
     · rw [funOutputUnion.funion, funOutputUnion.insert]
       have hinS' : funInputUnion A B S' ∈ A.Con :=
         funInputUnion.con_of_ent A B hu' hS'in
@@ -69,23 +66,23 @@ theorem exists_combined_witness {u' : Finset α} {s : Finset (FunToken A B)}
       have hinUnion : funInputUnion A B (S' ∪' Sq) ∈ A.Con := by
         rw [funInputUnion.funion]
         have hEnt : A.EntSet u' (funInputUnion A B S' ∪' funInputUnion A B Sq) :=
-          proposition_2_3_vi A
+          proposition_2_3.vi A
             (entSet_inputUnion_of_ent A B hS'in)
-            (proposition_2_3_iv A hu' q.property.1
+            (proposition_2_3.iv A hu' q.property.1
               (hEntIn q (Finset.mem_insert_self q s'))
               (entSet_inputUnion_of_ent A B hSqin))
-        exact A.con_subset (proposition_2_3_ii A hu' hEnt) (subset_funion_right _ _)
+        exact A.con_subset (proposition_2_3.ii A hu' hEnt) (funion.subset_right _ _)
       have houtUnion : funOutputUnion A B S' ∪' funOutputUnion A B Sq ∈ B.Con := by
-        have : funOutputUnion A B (S' ∪' Sq) ∈ B.Con := hv _ (funion_subset_iff.mpr ⟨hS'sub, hSqsub⟩) hinUnion
+        have : funOutputUnion A B (S' ∪' Sq) ∈ B.Con := hv _ (funion.subset_iff.mpr ⟨hS'sub, hSqsub⟩) hinUnion
         rwa [funOutputUnion.funion] at this
       have hEnt1 : B.EntSet (funOutputUnion A B S' ∪' funOutputUnion A B Sq)
           (funOutputUnion A B s') :=
-        proposition_2_3_v B houtS' houtUnion (subset_funion_left _ _) hS'out
+        proposition_2_3.v B houtS' houtUnion (funion.subset_left _ _) hS'out
           (Finset.Subset.refl _)
       have hEnt2 : B.EntSet (funOutputUnion A B S' ∪' funOutputUnion A B Sq) q.val.2 :=
-        proposition_2_3_v B houtSq houtUnion (subset_funion_right _ _) hSqout
+        proposition_2_3.v B houtSq houtUnion (funion.subset_right _ _) hSqout
           (Finset.Subset.refl _)
-      exact proposition_2_3_vi B hEnt2 hEnt1
+      exact proposition_2_3.vi B hEnt2 hEnt1
 
 end InfoSys
 

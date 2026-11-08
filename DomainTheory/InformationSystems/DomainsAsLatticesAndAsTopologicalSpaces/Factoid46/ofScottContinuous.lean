@@ -33,12 +33,12 @@ def ofScottContinuous (g : ScottContinuous A B) : ApproximableMap A B where
     refine ⟨hu, ?_, ?_⟩
     · have hsubUV : ↑(v ∪' v') ⊆ (g.toFun (A.closure u hu)).carrier := by
         intro b hb
-        rcases mem_funion.mp (Finset.mem_coe.1 hb) with h | h
+        rcases funion.mem.mp (Finset.mem_coe.1 hb) with h | h
         · exact hsub (Finset.mem_coe.2 h)
         · exact hsub' (Finset.mem_coe.2 h)
       exact (g.toFun (A.closure u hu)).consistent (v ∪' v') hsubUV
     · intro b hb
-      rcases mem_funion.mp (Finset.mem_coe.1 hb) with h | h
+      rcases funion.mem.mp (Finset.mem_coe.1 hb) with h | h
       · exact hsub (Finset.mem_coe.2 h)
       · exact hsub' (Finset.mem_coe.2 h)
   mono := by

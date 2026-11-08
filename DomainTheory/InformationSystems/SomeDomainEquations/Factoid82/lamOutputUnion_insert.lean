@@ -29,10 +29,10 @@ theorem lamOutputUnion_insert
   · intro ht
     rcases (mem_lamOutputUnion).1 ht with ⟨q, hq, ht'⟩
     rcases Finset.mem_insert.mp hq with rfl | hq
-    · exact mem_funion.2 (Or.inl ht')
-    · exact mem_funion.2 (Or.inr ((mem_lamOutputUnion).2 ⟨q, hq, ht'⟩))
+    · exact funion.mem.2 (Or.inl ht')
+    · exact funion.mem.2 (Or.inr ((mem_lamOutputUnion).2 ⟨q, hq, ht'⟩))
   · intro ht
-    rcases mem_funion.1 ht with ht | ht
+    rcases funion.mem.1 ht with ht | ht
     · exact (mem_lamOutputUnion).2 ⟨p, Finset.mem_insert_self p s, ht⟩
     · rcases (mem_lamOutputUnion).1 ht with ⟨q, hq, ht'⟩
       exact (mem_lamOutputUnion).2 ⟨q, Finset.mem_insert_of_mem hq, ht'⟩

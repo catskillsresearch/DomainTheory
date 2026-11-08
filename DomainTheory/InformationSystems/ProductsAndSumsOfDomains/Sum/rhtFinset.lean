@@ -51,13 +51,13 @@ theorem rhtFinset.funion (u v : Finset (SumToken α β)) :
   constructor
   · intro hy
     have : SumToken.right y ∈ u ∪' v := (mem_rhtFinset).1 hy
-    rcases mem_funion.mp this with h | h
-    · exact mem_funion.mpr (Or.inl ((mem_rhtFinset).2 h))
-    · exact mem_funion.mpr (Or.inr ((mem_rhtFinset).2 h))
+    rcases funion.mem.mp this with h | h
+    · exact funion.mem.mpr (Or.inl ((mem_rhtFinset).2 h))
+    · exact funion.mem.mpr (Or.inr ((mem_rhtFinset).2 h))
   · intro hy
-    rcases mem_funion.mp hy with h | h
-    · exact (mem_rhtFinset).2 (mem_funion.mpr (Or.inl ((mem_rhtFinset).1 h)))
-    · exact (mem_rhtFinset).2 (mem_funion.mpr (Or.inr ((mem_rhtFinset).1 h)))
+    rcases funion.mem.mp hy with h | h
+    · exact (mem_rhtFinset).2 (funion.mem.mpr (Or.inl ((mem_rhtFinset).1 h)))
+    · exact (mem_rhtFinset).2 (funion.mem.mpr (Or.inr ((mem_rhtFinset).1 h)))
 
 theorem rhtFinset.insert_bot (u : Finset (SumToken α β)) :
     rhtFinset (insert (.bot : SumToken α β) u) = rhtFinset u := by

@@ -50,15 +50,15 @@ theorem sndFinset.funion (u v : Finset (ProdToken A B)) :
   constructor
   · intro hy
     rcases (mem_sndFinset A B).1 hy with ⟨p, hp, hbot, hy'⟩
-    rcases mem_funion.mp hp with hp | hp
-    · exact mem_funion.mpr (Or.inl ((mem_sndFinset A B).2 ⟨p, hp, hbot, hy'⟩))
-    · exact mem_funion.mpr (Or.inr ((mem_sndFinset A B).2 ⟨p, hp, hbot, hy'⟩))
+    rcases funion.mem.mp hp with hp | hp
+    · exact funion.mem.mpr (Or.inl ((mem_sndFinset A B).2 ⟨p, hp, hbot, hy'⟩))
+    · exact funion.mem.mpr (Or.inr ((mem_sndFinset A B).2 ⟨p, hp, hbot, hy'⟩))
   · intro hy
-    rcases mem_funion.mp hy with hy | hy
+    rcases funion.mem.mp hy with hy | hy
     · rcases (mem_sndFinset A B).1 hy with ⟨p, hp, hbot, hy'⟩
-      exact (mem_sndFinset A B).2 ⟨p, mem_funion.mpr (Or.inl hp), hbot, hy'⟩
+      exact (mem_sndFinset A B).2 ⟨p, funion.mem.mpr (Or.inl hp), hbot, hy'⟩
     · rcases (mem_sndFinset A B).1 hy with ⟨p, hp, hbot, hy'⟩
-      exact (mem_sndFinset A B).2 ⟨p, mem_funion.mpr (Or.inr hp), hbot, hy'⟩
+      exact (mem_sndFinset A B).2 ⟨p, funion.mem.mpr (Or.inr hp), hbot, hy'⟩
 
 theorem sndFinset.insert_not_right (u : Finset (ProdToken A B)) (p : ProdToken A B)
     (hp : p.val.1 ≠ A.bot) :

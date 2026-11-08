@@ -122,18 +122,18 @@ theorem LamEntDepth_trans {u v : Finset (RawLamToken α)} {c : RawLamToken α}
             obtain ⟨S', hS'sub, hS'in, hS'out, hConS'⟩ := ihS hsR
             obtain ⟨Sq, hSqsub, hConQIn, hConQOut, hSqin, hSqout⟩ := hWit q hqS
             have hSsub : S' ∪' Sq ⊆ lamFunFinset v :=
-              funion_subset_iff.mpr ⟨hS'sub, hSqsub⟩
+              funion.subset_iff.mpr ⟨hS'sub, hSqsub⟩
             have hEntAll : ∀ t ∈ lamInputUnion (S' ∪' Sq),
                 LamEntDepth A (listToFinset xs) t := by
               intro t ht
               rcases (mem_lamInputUnion).1 ht with ⟨r, hr, ht'⟩
-              rcases mem_funion.1 hr with hr | hr
+              rcases funion.mem.1 hr with hr | hr
               · exact hS'in r hr t ht'
               · refine ih _ ?_ (listToFinset q.1) (listToFinset xs) t rfl
                   hConIn hConQIn (fun w hw => hEntIn q hqS w hw) (hSqin r hr t ht')
                 have htok : .funTok q.1 q.2 ∈ u := mem_lamFunFinset.1 (hs hqS)
                 have htokR : .funTok r.1 r.2 ∈ v :=
-                  mem_lamFunFinset.1 (hSsub (mem_funion.2 (Or.inr hr)))
+                  mem_lamFunFinset.1 (hSsub (funion.mem.2 (Or.inr hr)))
                 have hzt := rawDepth_funTok_gt_left (v := r.2) ((mem_listToFinset).1 ht')
                 have hDq := (finsetMaxDepth.of_mem_funTok htok).1
                 have hDxs := finsetMaxDepth.list_lt_funTok xs ys
@@ -143,7 +143,7 @@ theorem LamEntDepth_trans {u v : Finset (RawLamToken α)} {c : RawLamToken α}
                       (Nat.lt_of_lt_of_le hzt (le_finsetMaxDepth_of_mem htokR))
                       hleV⟩⟩
             have hinU : LamConDepth A (lamInputUnion (S' ∪' Sq)) :=
-              LamConDepth_mono A (subset_funion_right _ _)
+              LamConDepth_mono A (funion.subset_right _ _)
                 (LamConDepth_funion_of_entSet A M
                   (fun _ _ _ hE => LamConDepth_insert_of_ent A hE)
                   hConIn hEntAll (fun t ht => by
@@ -161,16 +161,16 @@ theorem LamEntDepth_trans {u v : Finset (RawLamToken α)} {c : RawLamToken α}
               rw [← lamOutputUnion_funion]; exact hConU
             refine ⟨S' ∪' Sq, hSsub, ?_, ?_, hConU⟩
             · intro r hr z hz
-              rcases mem_funion.1 hr with hr | hr
+              rcases funion.mem.1 hr with hr | hr
               · exact hS'in r hr z hz
-              · exact hEntAll _ ((mem_lamInputUnion).2 ⟨r, mem_funion.2 (Or.inr hr), hz⟩)
+              · exact hEntAll _ ((mem_lamInputUnion).2 ⟨r, funion.mem.2 (Or.inr hr), hz⟩)
             · intro z hz
               rw [lamOutputUnion_funion]
               have hz'' : z ∈ listToFinset q.2 ∪' lamOutputUnion sR := by
                 rwa [lamOutputUnion_insert] at hz
-              rcases mem_funion.1 hz'' with hzQ | hzR
+              rcases funion.mem.1 hz'' with hzQ | hzR
               · have hzx := hSqout z hzQ
-                have hsub := subset_funion_right (lamOutputUnion S') (lamOutputUnion Sq)
+                have hsub := funion.subset_right (lamOutputUnion S') (lamOutputUnion Sq)
                 cases decidableEq_finset
                     (lamFunFinset (lamOutputUnion S' ∪' lamOutputUnion Sq)) ∅ with
                 | isFalse hFn =>
@@ -189,11 +189,11 @@ theorem LamEntDepth_trans {u v : Finset (RawLamToken α)} {c : RawLamToken α}
                           have : p ∈ lamFunFinset
                               (lamOutputUnion S' ∪' lamOutputUnion Sq) := by
                             rw [lamFunFinset_funion]
-                            exact mem_funion.2 (Or.inr hp)
+                            exact funion.mem.2 (Or.inr hp)
                           exact False.elim (Finset.notMem_empty p (hFo ▸ this)))
                         (Finset.empty_subset _)))
               · have hzx := hS'out z hzR
-                have hsub := subset_funion_left (lamOutputUnion S') (lamOutputUnion Sq)
+                have hsub := funion.subset_left (lamOutputUnion S') (lamOutputUnion Sq)
                 cases decidableEq_finset
                     (lamFunFinset (lamOutputUnion S' ∪' lamOutputUnion Sq)) ∅ with
                 | isFalse hFn =>
@@ -212,14 +212,14 @@ theorem LamEntDepth_trans {u v : Finset (RawLamToken α)} {c : RawLamToken α}
                           have : p ∈ lamFunFinset
                               (lamOutputUnion S' ∪' lamOutputUnion Sq) := by
                             rw [lamFunFinset_funion]
-                            exact mem_funion.2 (Or.inl hp)
+                            exact funion.mem.2 (Or.inl hp)
                           exact False.elim (Finset.notMem_empty p (hFo ▸ this)))
                         (Finset.empty_subset _)))
         obtain ⟨S, hSsub, hSin, hSoutS, hConS⟩ :=
           hComb s (Finset.Subset.refl _)
         have hConOutS : LamConDepth A (lamOutputUnion s) :=
           ((LamConDepth_of_fun_nonempty A hWorld).1 hu').2.2 s hs
-            (LamConDepth_mono A (subset_funion_right _ _)
+            (LamConDepth_mono A (funion.subset_right _ _)
               (LamConDepth_funion_of_entSet A M
                 (fun _ _ _ hE => LamConDepth_insert_of_ent A hE)
                 hConIn

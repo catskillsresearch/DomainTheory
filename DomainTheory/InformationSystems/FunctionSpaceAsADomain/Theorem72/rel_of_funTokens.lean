@@ -45,28 +45,28 @@ theorem rel_of_funTokens (h : ApproximableMap (productSystem A B) C)
     have hin' : funInputUnion B C t' ∈ B.Con :=
       B.con_subset hin (by
         rw [funInputUnion.insert]
-        exact subset_funion_right _ _)
+        exact funion.subset_right _ _)
     have ih' := ih hps' hin'
     have hp : h.rel (liftPair A B u p.val.1) p.val.2 :=
       hps p (Finset.mem_insert_self p t')
     have hinU : p.val.1 ∪' funInputUnion B C t' ∈ B.Con := by
       rwa [funInputUnion.insert] at hin
     have hEnt_p : B.EntSet (p.val.1 ∪' funInputUnion B C t') p.val.1 :=
-      fun y hy => B.ent_refl hinU (subset_funion_left _ _ hy)
+      fun y hy => B.ent_refl hinU (funion.subset_left _ _ hy)
     have hEnt_t : B.EntSet (p.val.1 ∪' funInputUnion B C t') (funInputUnion B C t') :=
-      fun y hy => B.ent_refl hinU (subset_funion_right _ _ hy)
+      fun y hy => B.ent_refl hinU (funion.subset_right _ _ hy)
     have hdomU : liftPair A B u (p.val.1 ∪' funInputUnion B C t') ∈
         (productSystem A B).Con :=
       ProdCon_liftPair A B hu hinU
     have h1 : h.rel (liftPair A B u (p.val.1 ∪' funInputUnion B C t')) p.val.2 :=
       h.mono hp
-        (entSet_liftPair A B hu hinU (proposition_2_3_iii A hu) hEnt_p)
-        (proposition_2_3_iii C (h.rel_cod hp)) hdomU (h.rel_cod hp)
+        (entSet_liftPair A B hu hinU (proposition_2_3.iii A hu) hEnt_p)
+        (proposition_2_3.iii C (h.rel_cod hp)) hdomU (h.rel_cod hp)
     have h2 : h.rel (liftPair A B u (p.val.1 ∪' funInputUnion B C t'))
         (funOutputUnion B C t') :=
       h.mono ih'
-        (entSet_liftPair A B hu hinU (proposition_2_3_iii A hu) hEnt_t)
-        (proposition_2_3_iii C (h.rel_cod ih')) hdomU (h.rel_cod ih')
+        (entSet_liftPair A B hu hinU (proposition_2_3.iii A hu) hEnt_t)
+        (proposition_2_3.iii C (h.rel_cod ih')) hdomU (h.rel_cod ih')
     rw [funInputUnion.insert, funOutputUnion.insert]
     exact h.union_right h1 h2
 

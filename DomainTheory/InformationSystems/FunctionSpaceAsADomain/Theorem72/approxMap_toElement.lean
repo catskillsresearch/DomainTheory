@@ -35,13 +35,13 @@ theorem approxMap_toElement.closed (f : ApproximableMap A B)
     hY (Finset.mem_coe.2 (hs hq))
   have hin_s : funInputUnion A B s ∈ A.Con :=
     A.con_subset
-      (proposition_2_3_ii A p.property.1 (entSet_inputUnion_of_ent A B hEntIn))
-      (subset_funion_right _ _)
+      (proposition_2_3.ii A p.property.1 (entSet_inputUnion_of_ent A B hEntIn))
+      (funion.subset_right _ _)
   have hIO := rel_input_output_union A B f s hrel hin_s
   have hU : f.rel p.val.1 (funOutputUnion A B s) :=
     f.mono hIO (entSet_inputUnion_of_ent A B hEntIn)
-      (proposition_2_3_iii B (f.rel_cod hIO)) p.property.1 (f.rel_cod hIO)
-  exact f.mono hU (proposition_2_3_iii A p.property.1) hEntOut p.property.1 p.property.2
+      (proposition_2_3.iii B (f.rel_cod hIO)) p.property.1 (f.rel_cod hIO)
+  exact f.mono hU (proposition_2_3.iii A p.property.1) hEntOut p.property.1 p.property.2
 
 end InfoSys
 end

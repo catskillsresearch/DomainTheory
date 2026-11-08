@@ -34,7 +34,7 @@ theorem copair_union_disj (f : ApproximableMap A C) (g : ApproximableMap B C)
       (lftFinset u ≠ ∅ ∧ f.rel (lftFinset u) (s ∪' s')) ∨
         (rhtFinset u ≠ ∅ ∧ g.rel (rhtFinset u) (s ∪' s')) := by
   rcases h with h | ⟨hne, hf⟩ | ⟨hne, hg⟩ <;> rcases h' with h' | ⟨hne', hf'⟩ | ⟨hne', hg'⟩
-  · exact Or.inl (proposition_2_3_vi (sys := C) h h')
+  · exact Or.inl (proposition_2_3.vi (sys := C) h h')
   · have hf0 : f.rel (lftFinset u) s :=
       f.mono f.empty_rel (EntSet.empty A _) h
         (SumCon.lft_con_of_lft_nonempty A B hu hne') hs

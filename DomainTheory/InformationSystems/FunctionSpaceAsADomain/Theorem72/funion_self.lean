@@ -25,9 +25,9 @@ theorem funion_self (u : Finset α) : u ∪' u = u := by
   ext x
   constructor
   · intro hx
-    rcases mem_funion.mp hx with h | h <;> exact h
+    rcases funion.mem.mp hx with h | h <;> exact h
   · intro hx
-    exact mem_funion.mpr (Or.inl hx)
+    exact funion.mem.mpr (Or.inl hx)
 
 end InfoSys
 

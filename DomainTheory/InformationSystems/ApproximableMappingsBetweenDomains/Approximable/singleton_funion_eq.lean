@@ -26,13 +26,13 @@ theorem singleton_funion_eq (a : β) (s : Finset β) :
   ext x
   constructor
   · intro hx
-    rcases mem_funion.mp hx with ha | hs
+    rcases funion.mem.mp hx with ha | hs
     · exact Finset.mem_insert.mpr (Or.inl (Finset.mem_singleton.mp ha))
     · exact Finset.mem_insert_of_mem hs
   · intro hx
     rcases Finset.mem_insert.mp hx with ha | hs
-    · exact mem_funion.mpr (Or.inl (Finset.mem_singleton.mpr ha))
-    · exact mem_funion.mpr (Or.inr hs)
+    · exact funion.mem.mpr (Or.inl (Finset.mem_singleton.mpr ha))
+    · exact funion.mem.mpr (Or.inr hs)
 
 end ApproximableMap
 

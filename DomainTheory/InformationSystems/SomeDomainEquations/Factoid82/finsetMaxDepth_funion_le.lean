@@ -25,7 +25,7 @@ theorem finsetMaxDepth_funion_le (u v : Finset (RawLamToken α)) :
   refine foldr_max_le_of_forall ?_
   intro t ht
   have ht' : t ∈ u ∪' v := Finset.mem_def.2 ht
-  rcases mem_funion.1 ht' with hu | hv
+  rcases funion.mem.1 ht' with hu | hv
   · exact Nat.le_trans (le_finsetMaxDepth_of_mem hu) (Nat.le_max_left _ _)
   · exact Nat.le_trans (le_finsetMaxDepth_of_mem hv) (Nat.le_max_right _ _)
 

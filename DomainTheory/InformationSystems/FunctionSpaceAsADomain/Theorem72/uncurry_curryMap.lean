@@ -53,24 +53,24 @@ theorem uncurry_curryMap (h : ApproximableMap (productSystem A B) C) :
       fun q hq => hcurry q (ht hq)
     have hin : funInputUnion B C t ∈ B.Con :=
       B.con_subset
-        (proposition_2_3_ii B hCon.2 (entSet_inputUnion_of_ent B C hIn))
-        (subset_funion_right _ _)
+        (proposition_2_3.ii B hCon.2 (entSet_inputUnion_of_ent B C hIn))
+        (funion.subset_right _ _)
     have hmid : h.rel (liftPair A B v (funInputUnion B C t)) (funOutputUnion B C t) :=
       rel_of_funTokens A B C h v hv t hps hin
 
     have hEntIn : B.EntSet (sndFinset A B s) (funInputUnion B C t) :=
-      proposition_2_3_iv B (hsnd.1.2) hin
-        (proposition_2_3_iv B (hsnd.1.2) hCon.2 hsnd.2.2
+      proposition_2_3.iv B (hsnd.1.2) hin
+        (proposition_2_3.iv B (hsnd.1.2) hCon.2 hsnd.2.2
           (entSet_inputUnion_of_ent B C hIn))
-        (proposition_2_3_iii B hin)
+        (proposition_2_3.iii B hin)
 
     have hs : s ∈ (productSystem A B).Con := hfst.1
     have hEntv : A.EntSet (fstFinset A B s) v := hfst.2.2
     have hEntsnd : B.EntSet (sndFinset A B s) (sndFinset (functionSystem B C) B m) := hsnd.2.2
     have hEntIn' : B.EntSet (sndFinset A B s) (funInputUnion B C t) :=
-      proposition_2_3_iv B hs.2 hin
-        (proposition_2_3_iv B hs.2 hCon.2 hEntsnd (entSet_inputUnion_of_ent B C hIn))
-        (proposition_2_3_iii B hin)
+      proposition_2_3.iv B hs.2 hin
+        (proposition_2_3.iv B hs.2 hCon.2 hEntsnd (entSet_inputUnion_of_ent B C hIn))
+        (proposition_2_3.iii B hin)
     have hdom : liftPair A B (fstFinset A B s) (sndFinset A B s) ∈
         (productSystem A B).Con :=
       ProdCon_liftPair A B hs.1 hs.2
@@ -78,12 +78,12 @@ theorem uncurry_curryMap (h : ApproximableMap (productSystem A B) C) :
     have hmid' : h.rel (liftPair A B (fstFinset A B s) (sndFinset A B s))
         (funOutputUnion B C t) :=
       h.mono hmid (entSet_liftPair A B hs.1 hs.2 hEntv hEntIn')
-        (proposition_2_3_iii C (h.rel_cod hmid)) hdom (h.rel_cod hmid)
+        (proposition_2_3.iii C (h.rel_cod hmid)) hdom (h.rel_cod hmid)
 
     have hEntLift : (productSystem A B).EntSet s (liftPair A B (fstFinset A B s) (sndFinset A B s)) := by
       intro p hp
       unfold liftPair at hp
-      rcases mem_funion.mp hp with hp | hp
+      rcases funion.mem.mp hp with hp | hp
       · rcases (mem_liftLeft A B).1 hp with ⟨a, ha, rfl⟩
         refine ⟨hs, ?_, ?_⟩
         · intro _
@@ -114,7 +114,7 @@ theorem uncurry_curryMap (h : ApproximableMap (productSystem A B) C) :
           have hb' : p.val.2 ∈
               sndFinset A B (liftPair A B (fstFinset A B s) (sndFinset A B s)) := by
             rw [sndFinset_liftPair]
-            exact subset_funion_right _ _ hb
+            exact funion.subset_right _ _ hb
           exact B.ent_refl hLiftCon.2 hb'
       · refine ⟨hLiftCon, fun _ => ?_, fun _ => ?_⟩
         · have ha : p.val.1 ∈ fstFinset A B s :=
@@ -122,11 +122,11 @@ theorem uncurry_curryMap (h : ApproximableMap (productSystem A B) C) :
           have ha' : p.val.1 ∈
               fstFinset A B (liftPair A B (fstFinset A B s) (sndFinset A B s)) := by
             rw [fstFinset_liftPair]
-            exact subset_funion_left _ _ ha
+            exact funion.subset_left _ _ ha
           exact A.ent_refl hLiftCon.1 ha'
         · rw [hL]; exact B.ent_bot hLiftCon.2
     have hrel : h.rel (liftPair A B (fstFinset A B s) (sndFinset A B s)) w :=
-      h.mono hh hEntLift (proposition_2_3_iii C hw) hLiftCon hw
+      h.mono hh hEntLift (proposition_2_3.iii C hw) hLiftCon hw
     have hcurry_tok : (curryMap A B C h).rel (fstFinset A B s) {tok} := by
       refine ⟨hs.1, ?_⟩
       intro p hp
@@ -154,7 +154,7 @@ theorem uncurry_curryMap (h : ApproximableMap (productSystem A B) C) :
           (liftRight (functionSystem B C) B (sndFinset A B s)) := by
         rw [hfst_m] at hp
         exact hp
-      rcases mem_funion.mp hp' with hp' | hp'
+      rcases funion.mem.mp hp' with hp' | hp'
       · have : p = tok := Finset.mem_singleton.mp hp'
         subst this
         exact hrel
@@ -168,7 +168,7 @@ theorem uncurry_curryMap (h : ApproximableMap (productSystem A B) C) :
           (EntSet.empty C ∅) (ProdCon_liftPair A B hs.1 B.con_empty) C.con_empty
     refine ⟨m, ⟨?_, ?_⟩, ?_⟩
     ·
-      exact ⟨fstFinset A B s, ⟨hs, hs.1, proposition_2_3_iii A hs.1⟩, hcurry_fst⟩
+      exact ⟨fstFinset A B s, ⟨hs, hs.1, proposition_2_3.iii A hs.1⟩, hcurry_fst⟩
     ·
       refine ⟨hs, hmCon.2, ?_⟩
       intro b hb
@@ -176,7 +176,7 @@ theorem uncurry_curryMap (h : ApproximableMap (productSystem A B) C) :
           sndFinset (functionSystem B C) B (liftLeft (functionSystem B C) B {tok}) ∪'
             sndFinset A B s := by
         rwa [hsnd_m] at hb
-      rcases mem_funion.mp hb' with hb' | hb'
+      rcases funion.mem.mp hb' with hb' | hb'
       · have : b = B.bot := Finset.mem_singleton.mp
           (sndFinset_liftLeft (functionSystem B C) B {tok} hb')
         subst this
@@ -190,7 +190,7 @@ theorem uncurry_curryMap (h : ApproximableMap (productSystem A B) C) :
         subst this
         have : tok ∈ fstFinset (functionSystem B C) B m := by
           rw [hfst_m]
-          exact subset_funion_left _ _ (Finset.mem_singleton_self _)
+          exact funion.subset_left _ _ (Finset.mem_singleton_self _)
         exact this
       · intro q hq
         have : q = tok := Finset.mem_singleton.mp hq
@@ -198,10 +198,10 @@ theorem uncurry_curryMap (h : ApproximableMap (productSystem A B) C) :
         intro b hb
         have : b ∈ sndFinset (functionSystem B C) B m := by
           rw [hsnd_m]
-          exact subset_funion_right _ _ hb
+          exact funion.subset_right _ _ hb
         exact B.ent_refl hmCon.2 this
       · rw [funOutputUnion.singleton]
-        exact proposition_2_3_iii C hw
+        exact proposition_2_3.iii C hw
 
 end InfoSys
 end DomainTheory.InformationSystems

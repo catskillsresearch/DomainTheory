@@ -54,7 +54,7 @@ theorem comp_copairMap_inlMap (f : ApproximableMap A C) (g : ApproximableMap B C
   · rintro ⟨u, ⟨hv, hu, hr, hEnt⟩, ⟨_, hs, hcop⟩⟩
     rcases hcop with hE | ⟨_, hf⟩ | ⟨hne, _⟩
     · exact f.mono f.empty_rel (EntSet.empty A v) hE hv hs
-    · exact f.mono hf hEnt (proposition_2_3_iii C hs) hv hs
+    · exact f.mono hf hEnt (proposition_2_3.iii C hs) hv hs
     · exact False.elim (hne hr)
   · intro hf
 
@@ -63,7 +63,7 @@ theorem comp_copairMap_inlMap (f : ApproximableMap A C) (g : ApproximableMap B C
     have hEntBot : A.EntSet vBot v :=
       fun _ hx => A.ent_refl hvBot (Finset.mem_insert_of_mem hx)
     have hfBot : f.rel vBot s :=
-      f.mono hf hEntBot (proposition_2_3_iii C (f.rel_cod hf)) hvBot (f.rel_cod hf)
+      f.mono hf hEntBot (proposition_2_3.iii C (f.rel_cod hf)) hvBot (f.rel_cod hf)
     refine ⟨liftSumLeft (β := β) vBot, ?_, ?_⟩
     · refine ⟨f.rel_dom hf, SumCon_liftSumLeft A B hvBot,
         rhtFinset_liftSumLeft (β := β) vBot, ?_⟩

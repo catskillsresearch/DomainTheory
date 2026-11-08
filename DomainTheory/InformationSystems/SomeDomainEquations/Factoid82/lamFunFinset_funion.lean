@@ -26,13 +26,13 @@ theorem lamFunFinset_funion (u v : Finset (RawLamToken α)) :
   constructor
   · intro hp
     have : .funTok p.1 p.2 ∈ u ∪' v := mem_lamFunFinset.1 hp
-    rcases mem_funion.1 this with hu | hv
-    · exact mem_funion.2 (Or.inl (mem_lamFunFinset.2 hu))
-    · exact mem_funion.2 (Or.inr (mem_lamFunFinset.2 hv))
+    rcases funion.mem.1 this with hu | hv
+    · exact funion.mem.2 (Or.inl (mem_lamFunFinset.2 hu))
+    · exact funion.mem.2 (Or.inr (mem_lamFunFinset.2 hv))
   · intro hp
-    rcases mem_funion.1 hp with hu | hv
-    · exact mem_lamFunFinset.2 (mem_funion.2 (Or.inl (mem_lamFunFinset.1 hu)))
-    · exact mem_lamFunFinset.2 (mem_funion.2 (Or.inr (mem_lamFunFinset.1 hv)))
+    rcases funion.mem.1 hp with hu | hv
+    · exact mem_lamFunFinset.2 (funion.mem.2 (Or.inl (mem_lamFunFinset.1 hu)))
+    · exact mem_lamFunFinset.2 (funion.mem.2 (Or.inr (mem_lamFunFinset.1 hv)))
 
 end InfoSys
 

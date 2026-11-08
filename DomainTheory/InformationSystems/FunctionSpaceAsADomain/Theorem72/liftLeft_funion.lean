@@ -46,15 +46,15 @@ theorem liftLeft_funion (u u' : Finset α) :
   constructor
   · intro hp
     rcases (mem_liftLeft A B).1 hp with ⟨x, hx, rfl⟩
-    rcases mem_funion.mp hx with hx | hx
-    · exact mem_funion.mpr (Or.inl ((mem_liftLeft A B).2 ⟨x, hx, rfl⟩))
-    · exact mem_funion.mpr (Or.inr ((mem_liftLeft A B).2 ⟨x, hx, rfl⟩))
+    rcases funion.mem.mp hx with hx | hx
+    · exact funion.mem.mpr (Or.inl ((mem_liftLeft A B).2 ⟨x, hx, rfl⟩))
+    · exact funion.mem.mpr (Or.inr ((mem_liftLeft A B).2 ⟨x, hx, rfl⟩))
   · intro hp
-    rcases mem_funion.mp hp with hp | hp
+    rcases funion.mem.mp hp with hp | hp
     · rcases (mem_liftLeft A B).1 hp with ⟨x, hx, rfl⟩
-      exact (mem_liftLeft A B).2 ⟨x, mem_funion.mpr (Or.inl hx), rfl⟩
+      exact (mem_liftLeft A B).2 ⟨x, funion.mem.mpr (Or.inl hx), rfl⟩
     · rcases (mem_liftLeft A B).1 hp with ⟨x, hx, rfl⟩
-      exact (mem_liftLeft A B).2 ⟨x, mem_funion.mpr (Or.inr hx), rfl⟩
+      exact (mem_liftLeft A B).2 ⟨x, funion.mem.mpr (Or.inr hx), rfl⟩
 
 end InfoSys
 end DomainTheory.InformationSystems

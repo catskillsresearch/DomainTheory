@@ -29,14 +29,6 @@
 
 @import "Factoid34.lean"
 
-**[InformationSystems/InformationSystems/Proposition23/funion_insert.lean](../InformationSystems/Proposition23/funion_insert.lean)**
-
-@import "../InformationSystems/Proposition23/funion_insert.lean"
-
-**[InformationSystems/InformationSystems/Proposition23/proposition_2_3_ii.lean](../InformationSystems/Proposition23/proposition_2_3_ii.lean)**
-
-@import "../InformationSystems/Proposition23/proposition_2_3_ii.lean"
-
 **[InformationSystems/InformationSystems/InfoSys/InfoSys.lean](../InformationSystems/InfoSys/InfoSys.lean)**
 
 @import "../InformationSystems/InfoSys/InfoSys.lean"
@@ -60,10 +52,6 @@
 **[InformationSystems/ElementsOfASystem/Factoid34/topElement_isTotal.lean](Factoid34/topElement_isTotal.lean)**
 
 @import "Factoid34/topElement_isTotal.lean"
-
-**[InformationSystems/InformationSystems/Proposition23/proposition_2_3_i.lean](../InformationSystems/Proposition23/proposition_2_3_i.lean)**
-
-@import "../InformationSystems/Proposition23/proposition_2_3_i.lean"
 
 **[InformationSystems/ElementsOfASystem/Factoid34/isTotal_of_carrier_univ.lean](Factoid34/isTotal_of_carrier_univ.lean)**
 

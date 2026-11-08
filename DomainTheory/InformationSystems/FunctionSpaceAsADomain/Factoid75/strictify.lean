@@ -38,8 +38,8 @@ def strictify (f : ApproximableMap A B) : ApproximableMap A B where
       rcases hvcase with hE | ⟨hf, _⟩
       · rcases hv'case with hE' | ⟨hf', _⟩
         · exact B.con_subset
-            (proposition_2_3_ii B B.con_empty (proposition_2_3_vi B hE hE'))
-            (subset_funion_right _ _)
+            (proposition_2_3.ii B B.con_empty (proposition_2_3.vi B hE hE'))
+            (funion.subset_right _ _)
         · exact f.rel_cod (f.union_right
             (f.mono f.empty_rel (EntSet.empty A u) hE hu hv) hf')
       · rcases hv'case with hE' | ⟨hf', _⟩
@@ -49,7 +49,7 @@ def strictify (f : ApproximableMap A B) : ApproximableMap A B where
     refine ⟨hu, hvU, ?_⟩
     rcases hvcase with hE | ⟨hf, hn⟩
     · rcases hv'case with hE' | ⟨hf', hn'⟩
-      · exact Or.inl (proposition_2_3_vi B hE hE')
+      · exact Or.inl (proposition_2_3.vi B hE hE')
       · exact Or.inr ⟨f.union_right
           (f.mono f.empty_rel (EntSet.empty A u) hE hu hv) hf', hn'⟩
     · rcases hv'case with hE' | ⟨hf', hn'⟩

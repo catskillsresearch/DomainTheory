@@ -1,6 +1,5 @@
 module
-public import DomainTheory.InformationSystems.InformationSystems.Constructive.mem_funion
-public import DomainTheory.InformationSystems.InformationSystems.Constructive.Basic.notation5
+public import DomainTheory.InformationSystems.InformationSystems.Constructive.funion
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
@@ -28,13 +27,13 @@ theorem funion_singleton_eq_insert (a : α) (s : Finset α) :
   ext x
   constructor
   · intro hx
-    rcases mem_funion.mp hx with h | h
+    rcases funion.mem.mp hx with h | h
     · exact Finset.mem_insert.mpr (Or.inl (Finset.mem_singleton.mp h))
     · exact Finset.mem_insert_of_mem h
   · intro hx
     rcases Finset.mem_insert.mp hx with h | h
-    · exact mem_funion.mpr (Or.inl (h ▸ Finset.mem_singleton_self a))
-    · exact mem_funion.mpr (Or.inr h)
+    · exact funion.mem.mpr (Or.inl (h ▸ Finset.mem_singleton_self a))
+    · exact funion.mem.mpr (Or.inr h)
 
 end InfoSysToNeighborhood
 

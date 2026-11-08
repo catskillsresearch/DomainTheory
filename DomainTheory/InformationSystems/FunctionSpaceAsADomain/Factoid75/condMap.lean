@@ -52,29 +52,29 @@ def condMap (x y : A.Element) : ApproximableMap boolSystem A where
       rcases boolCon_trichotomy hu with hEmp | hTru | hFls
       · have hsub : ↑(v ∪' v') ⊆ A.botElement.carrier := by
           intro z hz
-          rcases mem_funion.mp (Finset.mem_coe.1 hz) with hz | hz
+          rcases funion.mem.mp (Finset.mem_coe.1 hz) with hz | hz
           · exact emptyEntails_mem_botElement A (hE hEmp z hz)
           · exact emptyEntails_mem_botElement A (hE' hEmp z hz)
         exact A.botElement.consistent _ hsub
       · have hsub : ↑(v ∪' v') ⊆ x.carrier := by
           intro z hz
-          rcases mem_funion.mp (Finset.mem_coe.1 hz) with hz | hz
+          rcases funion.mem.mp (Finset.mem_coe.1 hz) with hz | hz
           · exact ht hTru (Finset.mem_coe.2 hz)
           · exact ht' hTru (Finset.mem_coe.2 hz)
         exact x.consistent _ hsub
       · have hsub : ↑(v ∪' v') ⊆ y.carrier := by
           intro z hz
-          rcases mem_funion.mp (Finset.mem_coe.1 hz) with hz | hz
+          rcases funion.mem.mp (Finset.mem_coe.1 hz) with hz | hz
           · exact hf hFls (Finset.mem_coe.2 hz)
           · exact hf' hFls (Finset.mem_coe.2 hz)
         exact y.consistent _ hsub
     refine ⟨hu, hvU, fun hEmp => (emptyEntails_funion A).2 ⟨hE hEmp, hE' hEmp⟩, ?_, ?_⟩
     · intro hTru z hz
-      rcases mem_funion.mp (Finset.mem_coe.1 hz) with hz | hz
+      rcases funion.mem.mp (Finset.mem_coe.1 hz) with hz | hz
       · exact ht hTru (Finset.mem_coe.2 hz)
       · exact ht' hTru (Finset.mem_coe.2 hz)
     · intro hFls z hz
-      rcases mem_funion.mp (Finset.mem_coe.1 hz) with hz | hz
+      rcases funion.mem.mp (Finset.mem_coe.1 hz) with hz | hz
       · exact hf hFls (Finset.mem_coe.2 hz)
       · exact hf' hFls (Finset.mem_coe.2 hz)
   mono := by

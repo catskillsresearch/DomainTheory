@@ -27,15 +27,15 @@ theorem lamInputUnion_funion
   constructor
   · intro hx
     rcases (mem_lamInputUnion).1 hx with ⟨p, hp, hx'⟩
-    rcases mem_funion.1 hp with hp | hp
-    · exact mem_funion.2 (Or.inl ((mem_lamInputUnion).2 ⟨p, hp, hx'⟩))
-    · exact mem_funion.2 (Or.inr ((mem_lamInputUnion).2 ⟨p, hp, hx'⟩))
+    rcases funion.mem.1 hp with hp | hp
+    · exact funion.mem.2 (Or.inl ((mem_lamInputUnion).2 ⟨p, hp, hx'⟩))
+    · exact funion.mem.2 (Or.inr ((mem_lamInputUnion).2 ⟨p, hp, hx'⟩))
   · intro hx
-    rcases mem_funion.1 hx with hx | hx
+    rcases funion.mem.1 hx with hx | hx
     · rcases (mem_lamInputUnion).1 hx with ⟨p, hp, hx'⟩
-      exact (mem_lamInputUnion).2 ⟨p, mem_funion.2 (Or.inl hp), hx'⟩
+      exact (mem_lamInputUnion).2 ⟨p, funion.mem.2 (Or.inl hp), hx'⟩
     · rcases (mem_lamInputUnion).1 hx with ⟨p, hp, hx'⟩
-      exact (mem_lamInputUnion).2 ⟨p, mem_funion.2 (Or.inr hp), hx'⟩
+      exact (mem_lamInputUnion).2 ⟨p, funion.mem.2 (Or.inr hp), hx'⟩
 
 end InfoSys
 

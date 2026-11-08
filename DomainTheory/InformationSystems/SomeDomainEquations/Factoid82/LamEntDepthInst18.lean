@@ -25,7 +25,7 @@ instance [DecidableEq (RawLamToken α)] :
     LeftCommutative (lamOutUnionInsert (α := α)) :=
   ⟨fun p q s => by
     simp only [lamOutUnionInsert]
-    ext x; simp only [mem_funion]
+    ext x; simp only [funion.mem]
     constructor <;> · rintro (h | h | h); exacts [Or.inr (Or.inl h), Or.inl h, Or.inr (Or.inr h)]⟩
 
 end InfoSys

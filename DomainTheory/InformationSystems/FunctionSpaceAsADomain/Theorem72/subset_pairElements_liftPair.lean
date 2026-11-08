@@ -47,7 +47,7 @@ theorem subset_pairElements_liftPair {x : A.Element} {y : B.Element}
     ↑(liftPair A B u v) ⊆ (pairElements A B x y).carrier := by
   intro p hp
   have hp' : p ∈ liftLeft A B u ∪' liftRight A B v := Finset.mem_coe.1 hp
-  rcases mem_funion.mp hp' with hp | hp
+  rcases funion.mem.mp hp' with hp | hp
   · exact subset_pairElements_liftLeft A B hu (Finset.mem_coe.2 hp)
   · exact subset_pairElements_liftRight A B hv (Finset.mem_coe.2 hp)
 

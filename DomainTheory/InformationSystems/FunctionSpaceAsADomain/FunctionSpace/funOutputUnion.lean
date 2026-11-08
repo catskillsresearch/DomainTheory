@@ -36,15 +36,15 @@ theorem funOutputUnion.funion (s t : Finset (FunToken A B)) :
   constructor
   · intro hy
     rcases (mem_funOutputUnion A B).1 hy with ⟨p, hp, hy'⟩
-    rcases mem_funion.mp hp with hp | hp
-    · exact mem_funion.mpr (Or.inl ((mem_funOutputUnion A B).2 ⟨p, hp, hy'⟩))
-    · exact mem_funion.mpr (Or.inr ((mem_funOutputUnion A B).2 ⟨p, hp, hy'⟩))
+    rcases funion.mem.mp hp with hp | hp
+    · exact funion.mem.mpr (Or.inl ((mem_funOutputUnion A B).2 ⟨p, hp, hy'⟩))
+    · exact funion.mem.mpr (Or.inr ((mem_funOutputUnion A B).2 ⟨p, hp, hy'⟩))
   · intro hy
-    rcases mem_funion.mp hy with hy | hy
+    rcases funion.mem.mp hy with hy | hy
     · rcases (mem_funOutputUnion A B).1 hy with ⟨p, hp, hy'⟩
-      exact (mem_funOutputUnion A B).2 ⟨p, mem_funion.mpr (Or.inl hp), hy'⟩
+      exact (mem_funOutputUnion A B).2 ⟨p, funion.mem.mpr (Or.inl hp), hy'⟩
     · rcases (mem_funOutputUnion A B).1 hy with ⟨p, hp, hy'⟩
-      exact (mem_funOutputUnion A B).2 ⟨p, mem_funion.mpr (Or.inr hp), hy'⟩
+      exact (mem_funOutputUnion A B).2 ⟨p, funion.mem.mpr (Or.inr hp), hy'⟩
 
 theorem funOutputUnion.singleton (p : FunToken A B) :
     funOutputUnion A B {p} = p.val.2 := by
@@ -65,10 +65,10 @@ theorem funOutputUnion.insert (s : Finset (FunToken A B)) (p : FunToken A B) :
     constructor
     · intro hq
       rcases Finset.mem_insert.mp hq with hqp | hq
-      · exact mem_funion.mpr (Or.inl (hqp ▸ Finset.mem_singleton_self p))
-      · exact mem_funion.mpr (Or.inr hq)
+      · exact funion.mem.mpr (Or.inl (hqp ▸ Finset.mem_singleton_self p))
+      · exact funion.mem.mpr (Or.inr hq)
     · intro hq
-      rcases mem_funion.mp hq with hq | hq
+      rcases funion.mem.mp hq with hq | hq
       · exact Finset.mem_insert.mpr (Or.inl (Finset.mem_singleton.mp hq))
       · exact Finset.mem_insert_of_mem hq
   rw [h, funOutputUnion.funion, funOutputUnion.singleton]

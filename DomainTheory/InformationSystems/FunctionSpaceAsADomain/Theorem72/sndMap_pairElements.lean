@@ -58,7 +58,7 @@ theorem sndMap_pairElements (x : A.Element) (y : B.Element) :
       exact ⟨fun _ => factoid_3_2 A x, fun _ => hb⟩
     · refine ⟨ProdCon_liftRight A B (B.con_sing b), B.con_sing b, ?_⟩
       rw [sndFinset_liftRight]
-      exact proposition_2_3_iii B (B.con_sing b)
+      exact proposition_2_3.iii B (B.con_sing b)
 
 end InfoSys
 end DomainTheory.InformationSystems

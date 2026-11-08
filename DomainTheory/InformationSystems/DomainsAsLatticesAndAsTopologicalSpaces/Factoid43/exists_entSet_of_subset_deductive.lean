@@ -33,21 +33,21 @@ theorem exists_entSet_of_subset_deductive
     obtain ⟨us, hus, hEnts⟩ := ih hs'
     refine ⟨ua ∪' us, ?_, ?_⟩
     · intro z hz
-      rcases mem_funion.mp (Finset.mem_coe.1 hz) with h | h
+      rcases funion.mem.mp (Finset.mem_coe.1 hz) with h | h
       · exact hua (Finset.mem_coe.2 h)
       · exact hus (Finset.mem_coe.2 h)
     · intro b hb
       have hwU : (ua ∪' us : Set α) ⊆ U := by
         intro z hz
-        rcases mem_funion.mp (Finset.mem_coe.1 hz) with h | h
+        rcases funion.mem.mp (Finset.mem_coe.1 hz) with h | h
         · exact hua (Finset.mem_coe.2 h)
         · exact hus (Finset.mem_coe.2 h)
       have hw : ua ∪' us ∈ sys.Con := hU _ hwU
       rcases Finset.mem_insert.mp hb with rfl | hb'
       · exact sys.ent_trans hw (hU ua hua)
-          (fun y hy => sys.ent_refl hw (mem_funion.mpr (Or.inl hy))) hEnta
+          (fun y hy => sys.ent_refl hw (funion.mem.mpr (Or.inl hy))) hEnta
       · exact sys.ent_trans hw (hU us hus)
-          (fun y hy => sys.ent_refl hw (mem_funion.mpr (Or.inr hy))) (hEnts b hb')
+          (fun y hy => sys.ent_refl hw (funion.mem.mpr (Or.inr hy))) (hEnts b hb')
 
 end InfoSys
 

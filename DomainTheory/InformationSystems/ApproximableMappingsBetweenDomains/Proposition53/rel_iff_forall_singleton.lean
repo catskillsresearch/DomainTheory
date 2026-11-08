@@ -20,7 +20,7 @@ theorem rel_iff_forall_singleton (f : ApproximableMap A B)
     f.rel u v ↔ ∀ Y ∈ v, f.rel u ({Y} : Finset β) := by
   constructor
   · intro hrel Y hY
-    exact f.mono hrel (proposition_2_3_iii A hu)
+    exact f.mono hrel (proposition_2_3.iii A hu)
       (fun Z hZ => by
         rw [Finset.mem_singleton] at hZ
         subst hZ

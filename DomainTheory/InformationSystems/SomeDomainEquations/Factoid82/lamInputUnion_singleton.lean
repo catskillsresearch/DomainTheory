@@ -25,7 +25,7 @@ theorem lamInputUnion_singleton (p : List (RawLamToken α) × List (RawLamToken 
       listToFinset p.1 := by
   ext t
   change t ∈ listToFinset p.1 ∪' ∅ ↔ t ∈ listToFinset p.1
-  simp only [mem_funion, Finset.notMem_empty, or_false]
+  simp only [funion.mem, Finset.notMem_empty, or_false]
 
 end InfoSys
 

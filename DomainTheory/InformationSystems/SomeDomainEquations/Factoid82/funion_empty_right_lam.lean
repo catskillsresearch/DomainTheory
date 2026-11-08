@@ -22,7 +22,7 @@ variable (A : InfoSys α)
 
 theorem funion_empty_right_lam (u : Finset (RawLamToken α)) :
     u ∪' (∅ : Finset (RawLamToken α)) = u := by
-  ext x; simp only [mem_funion, Finset.notMem_empty, or_false]
+  ext x; simp only [funion.mem, Finset.notMem_empty, or_false]
 
 end InfoSys
 

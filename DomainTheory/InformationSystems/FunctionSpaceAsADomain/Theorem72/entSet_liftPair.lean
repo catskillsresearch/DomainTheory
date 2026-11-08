@@ -34,14 +34,14 @@ theorem entSet_liftPair {u u' : Finset α} {v v' : Finset β}
   intro p hp
   have hCon : ProdCon A B (liftPair A B u' v') := ProdCon_liftPair A B hu' hv'
   unfold liftPair at hp
-  rcases mem_funion.mp hp with hp | hp
+  rcases funion.mem.mp hp with hp | hp
   · rcases (mem_liftLeft A B).1 hp with ⟨x, hx, rfl⟩
     refine ⟨hCon, ?_, ?_⟩
     · intro _
       have hsub : u' ⊆ fstFinset A B (liftPair A B u' v') := by
         intro z hz
         rw [fstFinset_liftPair]
-        exact subset_funion_left _ _ hz
+        exact funion.subset_left _ _ hz
       exact A.ent_trans hCon.1 hu'
         (fun z hz => A.ent_refl hCon.1 (hsub hz)) (hEntu x hx)
     · intro _
@@ -54,7 +54,7 @@ theorem entSet_liftPair {u u' : Finset α} {v v' : Finset β}
       have hsub : v' ⊆ sndFinset A B (liftPair A B u' v') := by
         intro z hz
         rw [sndFinset_liftPair]
-        exact subset_funion_right _ _ hz
+        exact funion.subset_right _ _ hz
       exact B.ent_trans hCon.2 hv'
         (fun z hz => B.ent_refl hCon.2 (hsub hz)) (hEntv y hy)
 

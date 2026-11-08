@@ -31,7 +31,7 @@ theorem mem_foldr_funInput (t : Multiset (FunToken A B)) (x : α) :
     · rintro ⟨_, hp, _⟩
       exact False.elim (by cases hp)
   · intro p t ih
-    simp only [Multiset.foldr_cons, mem_funion, ih, Multiset.mem_cons]
+    simp only [Multiset.foldr_cons, funion.mem, ih, Multiset.mem_cons]
     constructor
     · rintro (hx | ⟨q, hq, hx⟩)
       · exact ⟨p, Or.inl rfl, hx⟩

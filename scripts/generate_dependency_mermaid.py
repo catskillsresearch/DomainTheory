@@ -3241,6 +3241,7 @@ IS_SEC2_SHORT: dict[str, tuple[str, str]] = {
     "Partial-function system": ("PFun", "Partial-function system"),
     "A third example": ("Ex3", "A third example"),
     "Definition 2.2": ("D22", "Definition 2.2"),
+    "Finite union": ("Fun", "Finite union"),
     "Proposition 2.3": ("P23", "Proposition 2.3"),
 }
 IS_SEC3_SHORT: dict[str, tuple[str, str]] = {

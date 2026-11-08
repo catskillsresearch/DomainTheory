@@ -1,0 +1,51 @@
+<!-- formalization -->
+
+**Theorem (`Constructive.insert_comm'`).** Inserting two elements into a finite set may be done in either order.
+
+*Proof.* Membership in a double insert is disjunction of three alternatives; reordering the inserts merely reorders those alternatives. □
+
+**Definition (`Constructive.instLeftCommutativeInsert`).** Insert is left-commutative on finite sets, so multiset folds over insert are well-defined independently of order.
+
+**Definition (`Constructive.funion`).** The finite union $u \cup' v$ is the result of inserting every member of $v$ into $u$, via a multiset fold. The infix $\cup'$ denotes this operation.
+
+**Definition (`Constructive.decidableEq_finset`).** Equality of finite sets is decided by mutual inclusion.
+
+**Theorem (`Constructive.decidableEq_finset.eq_of_subset`).** Mutual inclusion yields equality of finite sets.
+
+*Proof.* Antisymmetry of the subset order. □
+
+**Theorem (`Constructive.decidableEq_finset.false_of_ne`).** A set is not unequal to itself under the mutual-inclusion test.
+
+*Proof.* Reflexivity of $\subseteq$. □
+
+**Theorem (`Constructive.funion.mem_foldr_insert`).** An element lies in a fold of insert over a multiset into a finite set precisely when it lies in the seed set or in the multiset.
+
+*Proof.* Induction on the multiset, using the membership rule for insert at each cons step. □
+
+**Theorem (`Constructive.funion.mem`).** Membership in a finite union is membership in either argument.
+
+*Proof.* Finite union is a fold of insert, so the fold membership lemma applies. □
+
+**Theorem (`Constructive.funion.empty_right`).** Finite union with the empty set on the right is the left argument.
+
+*Proof.* Membership reduces by the membership lemma. □
+
+**Theorem (`Constructive.funion.subset_left`).** Each argument of a finite union is a subset of the union (left).
+
+*Proof.* Membership in the left argument yields membership in the union. □
+
+**Theorem (`Constructive.funion.subset_right`).** Each argument of a finite union is a subset of the union (right).
+
+*Proof.* Membership in the right argument yields membership in the union. □
+
+**Theorem (`Constructive.funion.subset_iff`).** A finite union is a subset of $w$ precisely when both arguments are.
+
+*Proof.* Both directions use the membership and subset lemmas for finite union. □
+
+**Theorem (`Constructive.funion.coe`).** Coercion of a finite union to a set is the set-theoretic union of the coercions.
+
+*Proof.* Membership agrees by the membership lemma. □
+
+**Theorem (`Constructive.funion.insert`).** Finite union commutes past insert on the right: $u \cup' \mathrm{insert}\, a\, t = \mathrm{insert}\, a\, (u \cup' t)$.
+
+*Proof.* Compare membership on both sides via the membership lemma and the insert rule. □

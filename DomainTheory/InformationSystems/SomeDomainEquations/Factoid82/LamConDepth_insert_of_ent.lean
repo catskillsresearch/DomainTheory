@@ -81,7 +81,7 @@ theorem LamConDepth_insert_of_ent {u : Finset (RawLamToken α)} {t : RawLamToken
             have hin' : LamConDepth A (listToFinset xs ∪' lamInputUnion t') := by
               rwa [← ht_eq, lamInputUnion_insert] at hIn
             have hsub : s ∪' t' ⊆ lamFunFinset u :=
-              funion_subset_iff.mpr ⟨hs, ht'sub⟩
+              funion.subset_iff.mpr ⟨hs, ht'sub⟩
             have hEnt_in_s : ∀ z ∈ lamInputUnion s,
                 LamEntDepth A (listToFinset xs) z := by
               intro z hz
@@ -92,7 +92,7 @@ theorem LamConDepth_insert_of_ent {u : Finset (RawLamToken α)} {t : RawLamToken
               intro z hz
               have hzx := hEnt_in_s z hz
               have hsubxs : listToFinset xs ⊆ listToFinset xs ∪' lamInputUnion t' :=
-                subset_funion_left _ _
+                funion.subset_left _ _
               cases decidableEq_finset
                   (lamFunFinset (listToFinset xs ∪' lamInputUnion t')) ∅ with
               | isFalse hFn =>
@@ -121,7 +121,7 @@ theorem LamConDepth_insert_of_ent {u : Finset (RawLamToken α)} {t : RawLamToken
                             have hp' : p ∈ lamFunFinset
                                 (listToFinset xs ∪' lamInputUnion t') := by
                               rw [lamFunFinset_funion]
-                              exact mem_funion.2 (Or.inl hp)
+                              exact funion.mem.2 (Or.inl hp)
                             rw [h] at hp'; exact False.elim (Finset.notMem_empty p hp'))
                           (Finset.empty_subset _)
                       exact hxsF this
@@ -167,7 +167,7 @@ theorem LamConDepth_insert_of_ent {u : Finset (RawLamToken α)} {t : RawLamToken
               have hbig' : LamConDepth A
                   (listToFinset xs ∪' (lamInputUnion s ∪' lamInputUnion t')) := by
                 rwa [heq] at hbig
-              exact LamConDepth_mono A (subset_funion_right _ _) hbig'
+              exact LamConDepth_mono A (funion.subset_right _ _) hbig'
             have hin_union : LamConDepth A (lamInputUnion (s ∪' t')) := by
               rwa [lamInputUnion_funion]
             have hout_union : LamConDepth A
@@ -180,7 +180,7 @@ theorem LamConDepth_insert_of_ent {u : Finset (RawLamToken α)} {t : RawLamToken
               intro z hz
               have hzx := hEntOut z hz
               have hsubO : lamOutputUnion s ⊆
-                  lamOutputUnion s ∪' lamOutputUnion t' := subset_funion_left _ _
+                  lamOutputUnion s ∪' lamOutputUnion t' := funion.subset_left _ _
               cases decidableEq_finset
                   (lamFunFinset (lamOutputUnion s ∪' lamOutputUnion t')) ∅ with
               | isFalse hFn =>
@@ -201,7 +201,7 @@ theorem LamConDepth_insert_of_ent {u : Finset (RawLamToken α)} {t : RawLamToken
                           have : p ∈ lamFunFinset
                               (lamOutputUnion s ∪' lamOutputUnion t') := by
                             rw [lamFunFinset_funion]
-                            exact mem_funion.2 (Or.inl hp)
+                            exact funion.mem.2 (Or.inl hp)
                           rw [hFo] at this
                           exact False.elim (Finset.notMem_empty p this))
                         (Finset.empty_subset _)
@@ -240,7 +240,7 @@ theorem LamConDepth_insert_of_ent {u : Finset (RawLamToken α)} {t : RawLamToken
               have hfinal' : LamConDepth A
                   (lamOutputUnion s ∪' (listToFinset ys ∪' lamOutputUnion t')) := by
                 rwa [heq] at hfinal
-              exact LamConDepth_mono A (subset_funion_right _ _) hfinal'
+              exact LamConDepth_mono A (funion.subset_right _ _) hfinal'
             show LamConDepth A (lamOutputUnion sel)
             rwa [← ht_eq, lamOutputUnion_insert]
           else

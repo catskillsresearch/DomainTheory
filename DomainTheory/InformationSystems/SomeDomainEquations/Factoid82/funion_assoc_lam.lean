@@ -25,17 +25,17 @@ theorem funion_assoc_lam (a b c : Finset (RawLamToken α)) :
   ext x
   constructor
   · intro hx
-    rcases mem_funion.mp hx with h | h
-    · rcases mem_funion.mp h with h | h
-      · exact mem_funion.mpr (Or.inl h)
-      · exact mem_funion.mpr (Or.inr (mem_funion.mpr (Or.inl h)))
-    · exact mem_funion.mpr (Or.inr (mem_funion.mpr (Or.inr h)))
+    rcases funion.mem.mp hx with h | h
+    · rcases funion.mem.mp h with h | h
+      · exact funion.mem.mpr (Or.inl h)
+      · exact funion.mem.mpr (Or.inr (funion.mem.mpr (Or.inl h)))
+    · exact funion.mem.mpr (Or.inr (funion.mem.mpr (Or.inr h)))
   · intro hx
-    rcases mem_funion.mp hx with h | h
-    · exact mem_funion.mpr (Or.inl (mem_funion.mpr (Or.inl h)))
-    · rcases mem_funion.mp h with h | h
-      · exact mem_funion.mpr (Or.inl (mem_funion.mpr (Or.inr h)))
-      · exact mem_funion.mpr (Or.inr h)
+    rcases funion.mem.mp hx with h | h
+    · exact funion.mem.mpr (Or.inl (funion.mem.mpr (Or.inl h)))
+    · rcases funion.mem.mp h with h | h
+      · exact funion.mem.mpr (Or.inl (funion.mem.mpr (Or.inr h)))
+      · exact funion.mem.mpr (Or.inr h)
 
 end InfoSys
 

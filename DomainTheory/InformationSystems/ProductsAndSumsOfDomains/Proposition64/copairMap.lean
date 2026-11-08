@@ -40,15 +40,15 @@ def copairMap (f : ApproximableMap A C) (g : ApproximableMap B C) :
     have hU := copair_union_disj A B f g hu hs hs' h h'
     refine ⟨hu, ?_, hU⟩
     rcases hU with hE | ⟨_, hf⟩ | ⟨_, hg⟩
-    · exact C.con_subset (proposition_2_3_ii (sys := C) C.con_empty hE)
-        (subset_funion_right _ _)
+    · exact C.con_subset (proposition_2_3.ii (sys := C) C.con_empty hE)
+        (funion.subset_right _ _)
     · exact f.rel_cod hf
     · exact g.rel_cod hg
   mono := by
     rintro u u' s s' ⟨hu, hs, h⟩ hEntu hEnts hu' hs'
     refine ⟨hu', hs', ?_⟩
     rcases h with h | ⟨hne, hf⟩ | ⟨hne, hg⟩
-    · exact Or.inl (proposition_2_3_iv (sys := C) C.con_empty hs h hEnts)
+    · exact Or.inl (proposition_2_3.iv (sys := C) C.con_empty hs h hEnts)
     · have hne' : lftFinset u' ≠ ∅ := by
         obtain ⟨x, hx⟩ := Finset.nonempty_of_ne_empty hne
         exact (hEntu _ ((mem_lftFinset).1 hx)).2.1

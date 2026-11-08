@@ -50,15 +50,15 @@ theorem fstFinset.funion (u v : Finset (ProdToken A B)) :
   constructor
   · intro hx
     rcases (mem_fstFinset A B).1 hx with ⟨p, hp, hbot, hx'⟩
-    rcases mem_funion.mp hp with hp | hp
-    · exact mem_funion.mpr (Or.inl ((mem_fstFinset A B).2 ⟨p, hp, hbot, hx'⟩))
-    · exact mem_funion.mpr (Or.inr ((mem_fstFinset A B).2 ⟨p, hp, hbot, hx'⟩))
+    rcases funion.mem.mp hp with hp | hp
+    · exact funion.mem.mpr (Or.inl ((mem_fstFinset A B).2 ⟨p, hp, hbot, hx'⟩))
+    · exact funion.mem.mpr (Or.inr ((mem_fstFinset A B).2 ⟨p, hp, hbot, hx'⟩))
   · intro hx
-    rcases mem_funion.mp hx with hx | hx
+    rcases funion.mem.mp hx with hx | hx
     · rcases (mem_fstFinset A B).1 hx with ⟨p, hp, hbot, hx'⟩
-      exact (mem_fstFinset A B).2 ⟨p, mem_funion.mpr (Or.inl hp), hbot, hx'⟩
+      exact (mem_fstFinset A B).2 ⟨p, funion.mem.mpr (Or.inl hp), hbot, hx'⟩
     · rcases (mem_fstFinset A B).1 hx with ⟨p, hp, hbot, hx'⟩
-      exact (mem_fstFinset A B).2 ⟨p, mem_funion.mpr (Or.inr hp), hbot, hx'⟩
+      exact (mem_fstFinset A B).2 ⟨p, funion.mem.mpr (Or.inr hp), hbot, hx'⟩
 
 theorem fstFinset.insert_left (u : Finset (ProdToken A B)) (p : ProdToken A B)
     (hp : p.val.2 = B.bot) :

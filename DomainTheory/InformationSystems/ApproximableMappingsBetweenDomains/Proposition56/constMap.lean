@@ -24,7 +24,7 @@ def constMap (b : B.Element) : ApproximableMap A B where
     rintro u v v' ⟨hu, hv⟩ ⟨_, hv'⟩
     refine ⟨hu, ?_⟩
     intro y hy
-    rcases mem_funion.mp (Finset.mem_coe.1 hy) with h | h
+    rcases funion.mem.mp (Finset.mem_coe.1 hy) with h | h
     · exact hv (Finset.mem_coe.2 h)
     · exact hv' (Finset.mem_coe.2 h)
   mono := by

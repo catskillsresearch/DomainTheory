@@ -18,10 +18,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpa
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funion_comm
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funion_comm'
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.insert_filter_ne
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_ii
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_iii
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_iv
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23.proposition_2_3_v
+public import DomainTheory.InformationSystems.InformationSystems.Proposition23
 
 @[expose] public section
 
@@ -65,14 +62,14 @@ theorem functionSystem.ent_con {w : Finset (FunToken A B)} {p : FunToken A B}
     have ht'sub : t' ⊆ w := filter_ne_subset_of_subset_insert A B ht
     have hin' : p.val.1 ∪' funInputUnion A B t' ∈ A.Con := by
       rwa [← ht_eq, funInputUnion.insert] at hin
-    have hsub : s ∪' t' ⊆ w := funion_subset_iff.mpr ⟨hs, ht'sub⟩
+    have hsub : s ∪' t' ⊆ w := funion.subset_iff.mpr ⟨hs, ht'sub⟩
     have hEnt_in_s : A.EntSet p.val.1 (funInputUnion A B s) :=
       entSet_inputUnion_of_ent A B hEntIn
     have hEnt_big : A.EntSet (p.val.1 ∪' funInputUnion A B t') (funInputUnion A B s) :=
-      proposition_2_3_v A p.property.1 hin' (subset_funion_left _ _) hEnt_in_s
+      proposition_2_3.v A p.property.1 hin' (funion.subset_left _ _) hEnt_in_s
         (Finset.Subset.refl _)
     have hbig : (p.val.1 ∪' funInputUnion A B t') ∪' funInputUnion A B s ∈ A.Con :=
-      proposition_2_3_ii A hin' hEnt_big
+      proposition_2_3.ii A hin' hEnt_big
     have hin_st' : funInputUnion A B s ∪' funInputUnion A B t' ∈ A.Con := by
       have heq :
           (p.val.1 ∪' funInputUnion A B t') ∪' funInputUnion A B s =
@@ -80,20 +77,20 @@ theorem functionSystem.ent_con {w : Finset (FunToken A B)} {p : FunToken A B}
         rw [funion_assoc, funion_comm (funInputUnion A B t')]
       have hbig' : p.val.1 ∪' (funInputUnion A B s ∪' funInputUnion A B t') ∈ A.Con := by
         rwa [heq] at hbig
-      exact A.con_subset hbig' (subset_funion_right _ _)
+      exact A.con_subset hbig' (funion.subset_right _ _)
     have hin_union : funInputUnion A B (s ∪' t') ∈ A.Con := by
       rwa [funInputUnion.funion]
     have hout_union : funOutputUnion A B s ∪' funOutputUnion A B t' ∈ B.Con := by
       have : funOutputUnion A B (s ∪' t') ∈ B.Con := hw _ hsub hin_union
       rwa [funOutputUnion.funion] at this
     have hout_s : funOutputUnion A B s ∈ B.Con :=
-      B.con_subset hout_union (subset_funion_left _ _)
+      B.con_subset hout_union (funion.subset_left _ _)
     have hEnt_out' : B.EntSet (funOutputUnion A B s ∪' funOutputUnion A B t') p.val.2 :=
-      proposition_2_3_v B hout_s hout_union (subset_funion_left _ _) hEntOut
+      proposition_2_3.v B hout_s hout_union (funion.subset_left _ _) hEntOut
         (Finset.Subset.refl _)
     have hfinal :
         (funOutputUnion A B s ∪' funOutputUnion A B t') ∪' p.val.2 ∈ B.Con :=
-      proposition_2_3_ii B hout_union hEnt_out'
+      proposition_2_3.ii B hout_union hEnt_out'
     have hout_t : p.val.2 ∪' funOutputUnion A B t' ∈ B.Con := by
       have heq :
           (funOutputUnion A B s ∪' funOutputUnion A B t') ∪' p.val.2 =
@@ -102,7 +99,7 @@ theorem functionSystem.ent_con {w : Finset (FunToken A B)} {p : FunToken A B}
       have hfinal' :
           funOutputUnion A B s ∪' (p.val.2 ∪' funOutputUnion A B t') ∈ B.Con := by
         rwa [heq] at hfinal
-      exact B.con_subset hfinal' (subset_funion_right _ _)
+      exact B.con_subset hfinal' (funion.subset_right _ _)
     have : funOutputUnion A B t ∈ B.Con := by
       rwa [← ht_eq, funOutputUnion.insert]
     exact this
@@ -123,10 +120,10 @@ theorem functionSystem.ent_refl {w : Finset (FunToken A B)} {p : FunToken A B}
       exact hp,
     fun q hq => by
       cases Finset.mem_singleton.mp hq
-      exact proposition_2_3_iii A p.property.1,
+      exact proposition_2_3.iii A p.property.1,
     by
       rw [funOutputUnion.singleton]
-      exact proposition_2_3_iii B p.property.2⟩
+      exact proposition_2_3.iii B p.property.2⟩
 
 theorem functionSystem.ent_trans {u v : Finset (FunToken A B)} {c : FunToken A B}
     (hv : FunCon A B v) (hu : FunCon A B u)
@@ -147,7 +144,7 @@ theorem functionSystem.ent_trans {u v : Finset (FunToken A B)} {c : FunToken A B
   have hin_S : funInputUnion A B S ∈ A.Con :=
     funInputUnion.con_of_ent A B c.property.1 hSin
   have hout_S : funOutputUnion A B S ∈ B.Con := hv S hSsub hin_S
-  exact proposition_2_3_iv B hout_S hout_s hSout hEntOut
+  exact proposition_2_3.iv B hout_S hout_s hSout hEntOut
 
 def functionSystem : InfoSys (FunToken A B) where
   bot := funBot A B

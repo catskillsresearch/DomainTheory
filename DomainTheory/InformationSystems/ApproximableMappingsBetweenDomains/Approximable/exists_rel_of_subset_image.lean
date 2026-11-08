@@ -43,18 +43,18 @@ theorem exists_rel_of_subset_image (f : ApproximableMap A B) (x : A.Element)
     refine ⟨ua ∪' us, ?_, ?_⟩
     · intro z hz
       have hz' : z ∈ ua ∪' us := Finset.mem_coe.1 hz
-      rcases mem_funion.mp hz' with h | h
+      rcases funion.mem.mp hz' with h | h
       · exact hua (Finset.mem_coe.2 h)
       · exact hus (Finset.mem_coe.2 h)
     · have hUcon : ua ∪' us ∈ A.Con :=
         x.consistent (ua ∪' us) fun z hz => by
-          rcases mem_funion.mp hz with h | h
+          rcases funion.mem.mp hz with h | h
           · exact hua (Finset.mem_coe.2 h)
           · exact hus (Finset.mem_coe.2 h)
       have hEnt_ua : A.EntSet (ua ∪' us) ua :=
-        fun y hy => A.ent_refl hUcon (subset_funion_left ua us hy)
+        fun y hy => A.ent_refl hUcon (funion.subset_left ua us hy)
       have hEnt_us : A.EntSet (ua ∪' us) us :=
-        fun y hy => A.ent_refl hUcon (subset_funion_right ua us hy)
+        fun y hy => A.ent_refl hUcon (funion.subset_right ua us hy)
       have h1 : f.rel (ua ∪' us) {a} :=
         f.mono hrela hEnt_ua
           (fun z hz => by
@@ -63,7 +63,7 @@ theorem exists_rel_of_subset_image (f : ApproximableMap A B) (x : A.Element)
             exact B.ent_refl (B.con_sing a) (Finset.mem_singleton_self a))
           hUcon (B.con_sing a)
       have h2 : f.rel (ua ∪' us) s :=
-        f.mono hrels hEnt_us (proposition_2_3_iii B (f.rel_cod hrels))
+        f.mono hrels hEnt_us (proposition_2_3.iii B (f.rel_cod hrels))
           hUcon (f.rel_cod hrels)
       have hU : f.rel (ua ∪' us) ({a} ∪' s) := f.union_right h1 h2
       simpa [singleton_funion_eq] using hU

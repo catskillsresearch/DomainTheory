@@ -35,7 +35,7 @@ theorem mem_lamOutputUnion {s : Finset (List (RawLamToken α) × List (RawLamTok
       · intro ht; exact False.elim (Finset.notMem_empty t ht)
       · rintro ⟨_, hp, _⟩; exact False.elim (by cases hp)
     · intro p rest ih
-      simp only [Multiset.foldr_cons, lamOutUnionInsert, mem_funion, ih, Multiset.mem_cons]
+      simp only [Multiset.foldr_cons, lamOutUnionInsert, funion.mem, ih, Multiset.mem_cons]
       constructor
       · rintro (ht | ⟨q, hq, ht⟩)
         · exact ⟨p, Or.inl rfl, ht⟩

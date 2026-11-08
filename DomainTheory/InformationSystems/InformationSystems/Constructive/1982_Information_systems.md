@@ -12,5 +12,6 @@
 - [Partial-function tokens](../1982_PartialFunToken.md) [✓](../../../1982_REVISION.md)
 - [Partial-function system](../1982_partialFunctionSystem.md) [✓](../../../1982_REVISION.md)
 - [A third example](../1982_A_third_example.md) [✓](../../../1982_REVISION.md)
-- [Definition 2.2](../Definition22/1982_Definition_2_2.md)
+- [Definition 2.2](../Definition22/1982_Definition_2_2.md) [✓](../../../1982_REVISION.md)
+- [Finite union](../1982_funion.md)
 - [Proposition 2.3](../Proposition23/1982_Proposition_2_3.md)

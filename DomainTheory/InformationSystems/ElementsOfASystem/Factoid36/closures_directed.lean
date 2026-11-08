@@ -26,13 +26,13 @@ theorem closures_directed (x : sys.Element) {u v : Finset α}
   let w := u ∪' v
   have hwX : ↑w ⊆ x.carrier := by
     intro a ha
-    rcases mem_funion.1 (Finset.mem_coe.1 ha) with h | h
+    rcases funion.mem.1 (Finset.mem_coe.1 ha) with h | h
     · exact huX (Finset.mem_coe.2 h)
     · exact hvX (Finset.mem_coe.2 h)
   have hw : w ∈ sys.Con := x.consistent w hwX
   refine ⟨w, hw, hwX, ?_, ?_⟩
-  · exact sys.closure_le_of_subset hu hw (subset_funion_left u v)
-  · exact sys.closure_le_of_subset hv hw (subset_funion_right u v)
+  · exact sys.closure_le_of_subset hu hw (funion.subset_left u v)
+  · exact sys.closure_le_of_subset hv hw (funion.subset_right u v)
 
 end InfoSys
 end DomainTheory.InformationSystems

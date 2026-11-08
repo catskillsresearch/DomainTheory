@@ -36,19 +36,19 @@ theorem rel_input_output_union (f : ApproximableMap A B)
     have hin' : funInputUnion A B s' ∈ A.Con :=
       A.con_subset hin (by
         rw [funInputUnion.insert]
-        exact subset_funion_right _ _)
+        exact funion.subset_right _ _)
     have ih' := ih hrel' hin'
     have hqrel : f.rel q.val.1 q.val.2 := hrel q (Finset.mem_insert_self q s')
     have hinU : q.val.1 ∪' funInputUnion A B s' ∈ A.Con := by
       rwa [funInputUnion.insert] at hin
     have hEnt_q : A.EntSet (q.val.1 ∪' funInputUnion A B s') q.val.1 :=
-      fun x hx => A.ent_refl hinU (subset_funion_left _ _ hx)
+      fun x hx => A.ent_refl hinU (funion.subset_left _ _ hx)
     have hEnt_s : A.EntSet (q.val.1 ∪' funInputUnion A B s') (funInputUnion A B s') :=
-      fun x hx => A.ent_refl hinU (subset_funion_right _ _ hx)
+      fun x hx => A.ent_refl hinU (funion.subset_right _ _ hx)
     have h1 : f.rel (q.val.1 ∪' funInputUnion A B s') q.val.2 :=
-      f.mono hqrel hEnt_q (proposition_2_3_iii B q.property.2) hinU q.property.2
+      f.mono hqrel hEnt_q (proposition_2_3.iii B q.property.2) hinU q.property.2
     have h2 : f.rel (q.val.1 ∪' funInputUnion A B s') (funOutputUnion A B s') :=
-      f.mono ih' hEnt_s (proposition_2_3_iii B (f.rel_cod ih')) hinU (f.rel_cod ih')
+      f.mono ih' hEnt_s (proposition_2_3.iii B (f.rel_cod ih')) hinU (f.rel_cod ih')
     rw [funInputUnion.insert, funOutputUnion.insert]
     exact f.union_right h1 h2
 

@@ -31,7 +31,7 @@ def toElement (f : ApproximableMap A B) (x : A.Element) : B.Element where
     intro Y a hY hEnt
     obtain ⟨u, hu, hrel⟩ := exists_rel_of_subset_image f x Y hY
     have harel : f.rel u {a} :=
-      f.mono hrel (proposition_2_3_iii A (f.rel_dom hrel))
+      f.mono hrel (proposition_2_3.iii A (f.rel_dom hrel))
         (fun z hz => by
           rw [Finset.mem_singleton] at hz
           rw [hz]

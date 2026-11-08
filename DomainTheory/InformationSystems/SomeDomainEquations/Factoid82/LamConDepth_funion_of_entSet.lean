@@ -74,17 +74,17 @@ theorem LamConDepth_funion_of_entSet (M : ℕ)
       ext x
       constructor
       · intro hx
-        rcases mem_funion.1 hx with h | h
+        rcases funion.mem.1 hx with h | h
         · rcases Finset.mem_insert.mp h with rfl | hu'
-          · exact mem_funion.2 (Or.inr (Finset.mem_insert_self _ _))
-          · exact mem_funion.2 (Or.inl hu')
-        · exact mem_funion.2 (Or.inr (Finset.mem_insert_of_mem h))
+          · exact funion.mem.2 (Or.inr (Finset.mem_insert_self _ _))
+          · exact funion.mem.2 (Or.inl hu')
+        · exact funion.mem.2 (Or.inr (Finset.mem_insert_of_mem h))
       · intro hx
-        rcases mem_funion.1 hx with hu' | h
-        · exact mem_funion.2 (Or.inl (Finset.mem_insert_of_mem hu'))
+        rcases funion.mem.1 hx with hu' | h
+        · exact funion.mem.2 (Or.inl (Finset.mem_insert_of_mem hu'))
         · rcases Finset.mem_insert.mp h with rfl | ht'
-          · exact mem_funion.2 (Or.inl (Finset.mem_insert_self _ _))
-          · exact mem_funion.2 (Or.inr ht')
+          · exact funion.mem.2 (Or.inl (Finset.mem_insert_self _ _))
+          · exact funion.mem.2 (Or.inr ht')
     rwa [heq] at hunion
 
 end InfoSys
