@@ -3334,6 +3334,7 @@ IS_SEC4_SHORT: dict[str, tuple[str, str]] = {
         "F41",
         "Factoid 4.1:\nlattice / binary meets",
     ),
+    "FamilyInf": ("FInf", "FamilyInf"),
     "Factoid 4.2: family infs": ("F42", "Factoid 4.2:\nfamily infs"),
     "Factoid 4.3: joins / conditional sups": (
         "F43",

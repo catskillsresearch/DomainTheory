@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid42
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.familyInf
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid43.IsFinitelyConsistent
 
 @[expose] public section

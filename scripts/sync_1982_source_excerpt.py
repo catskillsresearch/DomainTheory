@@ -94,12 +94,12 @@ SLICE_NOTES: list[SliceSpec] = [
         "**4. Domains as lattices and as topological spaces.**",
     ),
     (
-        "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/1982_Factoid_4_1.md",
+        "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/1982_Factoid_4_1.md",
         "1982_Factoid_4_1.english",
         "*Lattice-theoretic considerations.*",
     ),
     (
-        "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/1982_Factoid_4_2.md",
+        "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/1982_Factoid_4_2.md",
         "1982_Factoid_4_2.english",
         "What about infs of subsets?",
     ),
@@ -282,9 +282,10 @@ BARRELS: dict[str, tuple[str, list[str]]] = {
         "1982_Domains_as_lattices_and_as_topological_spaces.svg",
         [
             "- [Introduction](1982_Introduction.md)",
-            "- [Inf](Factoid41/1982_inf.md)",
-            "- [Factoid 4.1: lattice / binary meets](Factoid41/1982_Factoid_4_1.md)",
-            "- [Factoid 4.2: family infs](Factoid42/1982_Factoid_4_2.md)",
+            "- [Inf](1982_inf.md)",
+            "- [Factoid 4.1: lattice / binary meets](1982_Factoid_4_1.md)",
+            "- [FamilyInf](1982_familyInf.md)",
+            "- [Factoid 4.2: family infs](1982_Factoid_4_2.md)",
             "- [Factoid 4.3: joins / conditional sups](Factoid43/1982_Factoid_4_3.md)",
             "- [Factoid 4.4: chains & directed sups](Factoid44/1982_Factoid_4_4.md)",
             "- [Factoid 4.5: finite approximants](Factoid45/1982_Factoid_4_5.md)",

@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid41.inf
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.inf
 
 @[expose] public section
 

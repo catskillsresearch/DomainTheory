@@ -1,0 +1,21 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.familyInfCarrier`).** The carrier of a nonempty family’s meet is the set of data belonging to every element of the family.
+
+**Definition (`InfoSys.familyInf`).** The meet of a nonempty family of elements is the element with that intersection carrier. Consistency and deductive closure follow from those of any member of the family, since every finite set of data in the intersection lies in each member.
+
+**Theorem (`InfoSys.familyInf.le`).** The family meet approximates every member of the family.
+
+*Proof.* A datum in the intersection carrier belongs to that member. □
+
+**Theorem (`InfoSys.familyInf.le_of`).** An element that approximates every member of a nonempty family approximates the family meet.
+
+*Proof.* Membership in the lower bound yields membership in every member’s carrier, hence in the intersection. □
+
+**Theorem (`InfoSys.familyInf.le_iff`).** An element approximates a family meet if and only if it approximates every member of the family.
+
+*Proof.* Combine the projection of the meet onto members with the universal property of the meet. □
+
+**Theorem (`InfoSys.familyInf.pair`).** The family meet of a two-element set equals the binary meet of those elements.
+
+*Proof.* Each side approximates both elements (or both arguments of the binary meet), so the two meets coincide by antisymmetry. □
