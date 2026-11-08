@@ -11,7 +11,6 @@ public import DomainTheory.BridgeTheorems.toFilter
 public import DomainTheory.BridgeTheorems.ofFilter
 public import DomainTheory.BridgeTheorems.basicOpen_empty
 public import DomainTheory.BridgeTheorems.mem_basicOpen_singleton
-public import DomainTheory.BridgeTheorems.funion_singleton_eq_insert
 public import DomainTheory.BridgeTheorems.basicOpen_singleton_inter
 public import DomainTheory.BridgeTheorems.ent_of_basicOpen_subset
 public import DomainTheory.BridgeTheorems.con_of_basicOpen_subset

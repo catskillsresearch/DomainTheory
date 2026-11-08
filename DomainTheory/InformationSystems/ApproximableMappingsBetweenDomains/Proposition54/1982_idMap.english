@@ -1,0 +1,7 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.idMap`).** The identity approximable mapping on an information system relates consistent sets $u$ and $v$ precisely when $u$ entails $v$.
+
+**Theorem (`InfoSys.idMap.toElement`).** The element map of the identity approximable mapping is the identity on elements.
+
+*Proof.* Relatedness yields entailment of singletons, so tokens of the image lie in the source element by closure; conversely each token is recovered from its singleton via reflexivity of entailment. □

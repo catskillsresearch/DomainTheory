@@ -102,6 +102,19 @@ theorem insert (u : Finset α) (a : α) (t : Finset α) :
       · exact mem.mpr (Or.inl hu)
       · exact mem.mpr (Or.inr (Finset.mem_insert.mpr (Or.inr ht)))
 
+theorem singleton_eq_insert (a : α) (s : Finset α) :
+    ({a} : Finset α) ∪' s = Insert.insert a s := by
+  ext x
+  constructor
+  · intro hx
+    rcases mem.mp hx with ha | hs
+    · exact Finset.mem_insert.mpr (Or.inl (Finset.mem_singleton.mp ha))
+    · exact Finset.mem_insert_of_mem hs
+  · intro hx
+    rcases Finset.mem_insert.mp hx with ha | hs
+    · exact mem.mpr (Or.inl (Finset.mem_singleton.mpr ha))
+    · exact mem.mpr (Or.inr hs)
+
 end funion
 
 end DomainTheory.InformationSystems.Constructive

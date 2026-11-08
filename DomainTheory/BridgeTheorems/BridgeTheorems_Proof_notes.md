@@ -74,9 +74,7 @@
 **[BridgeTheorems/interOf_mem_of_lower_bound.lean](interOf_mem_of_lower_bound.lean)**
 
 @import "interOf_mem_of_lower_bound.lean"
-**[BridgeTheorems/funion_singleton_eq_insert.lean](funion_singleton_eq_insert.lean)**
 
-@import "funion_singleton_eq_insert.lean"
 **[BridgeTheorems/basicOpen_singleton_inter.lean](basicOpen_singleton_inter.lean)**
 
 @import "basicOpen_singleton_inter.lean"
@@ -98,9 +96,9 @@
 **[BridgeTheorems/ContinuousLatticeToNeighborhood/RoundFilter.lean](ContinuousLatticeToNeighborhood/RoundFilter.lean)**
 
 @import "ContinuousLatticeToNeighborhood/RoundFilter.lean"
-**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/Le.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/Le.lean)**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ApproximableMap.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ApproximableMap.lean)**
 
-@import "../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/Le.lean"
+@import "../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ApproximableMap.lean"
 **[BridgeTheorems/AlgebraicLattice.lean](AlgebraicLattice.lean)**
 
 @import "AlgebraicLattice.lean"
@@ -119,9 +117,9 @@
 **[BridgeTheorems/ContinuousLatticeToNeighborhood/wayBelowUp_anti.lean](ContinuousLatticeToNeighborhood/wayBelowUp_anti.lean)**
 
 @import "ContinuousLatticeToNeighborhood/wayBelowUp_anti.lean"
-**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/rel_iff_closure_le.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/rel_iff_closure_le.lean)**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/toElement.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/toElement.lean)**
 
-@import "../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/rel_iff_closure_le.lean"
+@import "../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/toElement.lean"
 **[BridgeTheorems/ContinuousLatticeToNeighborhood/codes.lean](ContinuousLatticeToNeighborhood/codes.lean)**
 
 @import "ContinuousLatticeToNeighborhood/codes.lean"
@@ -152,12 +150,6 @@
 **[BridgeTheorems/InfoSysToIdealCompletion/le_ofIdeal_of_mem.lean](InfoSysToIdealCompletion/le_ofIdeal_of_mem.lean)**
 
 @import "InfoSysToIdealCompletion/le_ofIdeal_of_mem.lean"
-**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/le_iff_toElement_le.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/le_iff_toElement_le.lean)**
-
-@import "../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/le_iff_toElement_le.lean"
-**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ext_iff_toElement.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ext_iff_toElement.lean)**
-
-@import "../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ext_iff_toElement.lean"
 **[InformationSystems/ApproximableMappingsBetweenDomains/proposition_5_3.lean](../InformationSystems/ApproximableMappingsBetweenDomains/proposition_5_3.lean)**
 
 @import "../InformationSystems/ApproximableMappingsBetweenDomains/proposition_5_3.lean"

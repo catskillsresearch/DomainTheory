@@ -1,13 +1,5 @@
 <!-- formalization -->
 
-**Theorem (`ApproximableMap.ext`).** Two approximable mappings are equal precisely when they relate the same consistent sets.
-
-*Proof.* The relation field determines the structure. □
-
-**Theorem (`ApproximableMap.singleton_funion_eq`).** The funion of a singleton with a finite set is the corresponding insert.
-
-*Proof.* Membership on either side is the same by the funion and insert characterizations. □
-
 **Theorem (`ApproximableMap.exists_rel_of_subset_image`).** If every token of a finite set $Y$ arises from some approximable input under an element $x$, then some single consistent input under $x$ relates to the whole of $Y$.
 
 *Proof.* Empty $Y$ uses the empty relation after weakening; the inductive step joins the witnesses for the new token and the remainder via right-union and monotonicity. □
@@ -21,3 +13,15 @@
 **Theorem (`ApproximableMap.toElement_mono`).** The element map is monotone.
 
 *Proof.* A witnessing input under a smaller element remains under a larger one. □
+
+**Theorem (`ApproximableMap.rel_iff_closure_le`).** Consistent sets $u$ and $v$ are related by an approximable mapping if and only if the closure of $v$ approximates the image of the closure of $u$.
+
+*Proof.* Relatedness yields singleton witnesses under the left closure; conversely a relational witness under the left closure is weakened back to $u$ and $v$ by monotonicity. □
+
+**Theorem (`ApproximableMap.le_iff_toElement_le`).** One approximable mapping lies below another if and only if its element map approximates the other’s at every source element.
+
+*Proof.* Pointwise comparison of images preserves relational witnesses; conversely the closure characterization transfers a related pair through the pointwise inequality. □
+
+**Theorem (`ApproximableMap.ext_iff_toElement`).** Two approximable mappings are equal if and only if they agree as element maps on every source element.
+
+*Proof.* Equality of maps yields pointwise equality of images; conversely mutual pointwise order via the order characterization forces equal relations. □

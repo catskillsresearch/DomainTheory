@@ -4,7 +4,7 @@ public import DomainTheory.BridgeTheorems.ScottMapBridgeInst9
 public import DomainTheory.BridgeTheorems.ofScottContinuous_toScottContinuous
 public import DomainTheory.BridgeTheorems.toScottContinuous_ofScottContinuous
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.instPartialOrderApproximableMap
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.le_iff_toElement_le
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 public import Mathlib.Algebra.Group.End
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap

@@ -1,8 +1,6 @@
 module
 
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.ext_iff_toElement
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.le_iff_toElement_le
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.rel_iff_closure_le
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 
 @[expose] public section
 

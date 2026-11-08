@@ -19,3 +19,9 @@ In other words an approximable mapping is completely determined by the relation 
 <!-- formalization -->
 
 **Definition (`InfoSys.ApproximableMap`).** An approximable mapping from an information system $\mathbf{A}$ to an information system $\mathbf{B}$ is a relation between finite sets of data of $\mathbf{A}$ and of $\mathbf{B}$ that relates only consistent sets on each side, relates the empty set to the empty set, is closed under funion on the right for a fixed left argument, and is monotone with respect to entailment—strengthening the left argument and weakening the right preserves relatedness, provided both sides remain consistent.
+
+**Definition (`InfoSys.ApproximableMap.Le`).** One approximable mapping lies below another when every related pair of the first is related by the second.
+
+**Theorem (`ApproximableMap.ext`).** Two approximable mappings are equal precisely when they relate the same consistent sets.
+
+*Proof.* The relation field determines the structure. □

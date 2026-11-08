@@ -1,5 +1,5 @@
 module
-public import DomainTheory.BridgeTheorems.funion_singleton_eq_insert
+public import DomainTheory.InformationSystems.InformationSystems.Constructive.funion
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.basicOpen
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
@@ -25,7 +25,7 @@ variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
 theorem basicOpen_singleton_inter (a : α) (s : Finset α) :
     A.basicOpen ({a} : Finset α) ∩ A.basicOpen s = A.basicOpen (insert a s) := by
-  rw [basicOpen.inter A, funion_singleton_eq_insert]
+  rw [basicOpen.inter A, funion.singleton_eq_insert]
 
 end InfoSysToNeighborhood
 

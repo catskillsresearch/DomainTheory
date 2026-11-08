@@ -3375,17 +3375,32 @@ IS_SEC4_SHORT: dict[str, tuple[str, str]] = {
     ),
 }
 IS_SEC5_SHORT: dict[str, tuple[str, str]] = {
-    "Definition 5.1": ("D51", "Definition 5.1"),
+    "Definition 5.1: approximable mappings": (
+        "D51",
+        "Definition 5.1:\napproximable mappings",
+    ),
     "Element map": ("Elem", "Element map"),
-    "Definition 5.2": ("D52", "Definition 5.2"),
-    "Relation order": ("Le", "Relation order"),
-    "Relation via closures": ("RelCl", "Relation via\nclosures"),
-    "Pointwise order": ("PtOrd", "Pointwise\norder"),
-    "Pointwise equality": ("PtEq", "Pointwise\nequality"),
-    "Proposition 5.3": ("P53", "Proposition 5.3"),
-    "Proposition 5.4": ("P54", "Proposition 5.4"),
-    "Proposition 5.5": ("P55", "Proposition 5.5"),
-    "Proposition 5.6": ("P56", "Proposition 5.6"),
+    "Definition 5.2: image / function value": (
+        "D52",
+        "Definition 5.2:\nimage / function value",
+    ),
+    "Proposition 5.3: element maps / pointwise comparison": (
+        "P53",
+        "Proposition 5.3:\nelement maps /\npointwise comparison",
+    ),
+    "Identity map": ("Id", "Identity map"),
+    "Proposition 5.4: identity mapping": (
+        "P54",
+        "Proposition 5.4:\nidentity mapping",
+    ),
+    "Proposition 5.5: composition": (
+        "P55",
+        "Proposition 5.5:\ncomposition",
+    ),
+    "Proposition 5.6: constant maps": (
+        "P56",
+        "Proposition 5.6:\nconstant maps",
+    ),
 }
 IS_SEC6_SHORT: dict[str, tuple[str, str]] = {
     "Definition 6.1": ("D61", "Definition 6.1"),

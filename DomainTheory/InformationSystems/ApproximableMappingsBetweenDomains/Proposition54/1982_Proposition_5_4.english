@@ -9,3 +9,9 @@
 *for all $x \in |\mathbf{A}|$.* $\blacksquare$
 
 In other words, the given entailment relation itself defines the identity function on the domain in question; and of course, the identity function is an approximable mapping.
+
+<!-- formalization -->
+
+**Theorem (`InfoSys.theorem_54`).** The identity approximable mapping acts as the identity on elements.
+
+*Proof.* The identity map’s element-map lemma. □

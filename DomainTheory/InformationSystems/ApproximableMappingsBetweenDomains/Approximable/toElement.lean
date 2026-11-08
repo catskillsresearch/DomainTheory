@@ -20,28 +20,6 @@ namespace ApproximableMap
 
 variable {A : InfoSys α} {B : InfoSys β}
 
-theorem ext {f g : ApproximableMap A B} (h : ∀ u v, f.rel u v ↔ g.rel u v) : f = g := by
-  obtain ⟨rf, _, _, _, _, _⟩ := f
-  obtain ⟨rg, _, _, _, _, _⟩ := g
-  have : rf = rg := by
-    funext u v
-    exact propext (h u v)
-  subst this
-  rfl
-
-theorem singleton_funion_eq (a : β) (s : Finset β) :
-    ({a} : Finset β) ∪' s = insert a s := by
-  ext x
-  constructor
-  · intro hx
-    rcases funion.mem.mp hx with ha | hs
-    · exact Finset.mem_insert.mpr (Or.inl (Finset.mem_singleton.mp ha))
-    · exact Finset.mem_insert_of_mem hs
-  · intro hx
-    rcases Finset.mem_insert.mp hx with ha | hs
-    · exact funion.mem.mpr (Or.inl (Finset.mem_singleton.mpr ha))
-    · exact funion.mem.mpr (Or.inr hs)
-
 theorem exists_rel_of_subset_image (f : ApproximableMap A B) (x : A.Element)
     (Y : Finset β)
     (hY : ↑Y ⊆ ({Y : β | ∃ u : Finset α, ↑u ⊆ x.carrier ∧ f.rel u {Y}} : Set β)) :
@@ -87,7 +65,7 @@ theorem exists_rel_of_subset_image (f : ApproximableMap A B) (x : A.Element)
         f.mono hrels hEnt_us (proposition_2_3.iii B (f.rel_cod hrels))
           hUcon (f.rel_cod hrels)
       have hU : f.rel (ua ∪' us) ({a} ∪' s) := f.union_right h1 h2
-      simpa [singleton_funion_eq] using hU
+      simpa [funion.singleton_eq_insert] using hU
 
 def toElement (f : ApproximableMap A B) (x : A.Element) : B.Element where
   carrier := {Y | ∃ u : Finset α, ↑u ⊆ x.carrier ∧ f.rel u {Y}}
@@ -115,6 +93,52 @@ theorem toElement_mono (f : ApproximableMap A B) {x y : A.Element} (hxy : x ≤ 
     f.toElement x ≤ f.toElement y := by
   intro Y ⟨u, hu, hrel⟩
   exact ⟨u, fun z hz => hxy (hu hz), hrel⟩
+
+theorem rel_iff_closure_le (f : ApproximableMap A B)
+    {u : Finset α} {v : Finset β} (hu : u ∈ A.Con) (hv : v ∈ B.Con) :
+    f.rel u v ↔ B.closure v hv ≤ f.toElement (A.closure u hu) := by
+  constructor
+  · intro hrel Y hY
+    refine ⟨u, closure.subset A hu, ?_⟩
+    exact f.mono hrel (proposition_2_3.iii A hu)
+      (fun Z hZ => by
+        rw [Finset.mem_singleton] at hZ
+        subst hZ
+        exact hY)
+      hu (B.con_sing Y)
+  · intro hsub
+    have hv_sub : ↑v ⊆ (f.toElement (A.closure u hu)).carrier :=
+      fun y hy => hsub (closure.subset B hv hy)
+    obtain ⟨u', hu', hrel'⟩ := exists_rel_of_subset_image f (A.closure u hu) v hv_sub
+    have hEnt : A.EntSet u u' := fun y hy => hu' (Finset.mem_coe.2 hy)
+    exact f.mono hrel' hEnt (proposition_2_3.iii B hv) hu hv
+
+theorem le_iff_toElement_le (f g : ApproximableMap A B) :
+    Le f g ↔ ∀ x : A.Element, f.toElement x ≤ g.toElement x := by
+  constructor
+  · intro hfg x Y ⟨u, hu, hrel⟩
+    exact ⟨u, hu, hfg hrel⟩
+  · intro hpoint u v hrel
+    have hu : u ∈ A.Con := f.rel_dom hrel
+    have hv : v ∈ B.Con := f.rel_cod hrel
+    have hbridge : B.closure v hv ≤ f.toElement (A.closure u hu) :=
+      (f.rel_iff_closure_le hu hv).1 hrel
+    have hsub : B.closure v hv ≤ g.toElement (A.closure u hu) :=
+      le_trans hbridge (hpoint (A.closure u hu))
+    exact (g.rel_iff_closure_le hu hv).2 hsub
+
+theorem ext_iff_toElement (f g : ApproximableMap A B) :
+    f = g ↔ ∀ x : A.Element, f.toElement x = g.toElement x := by
+  constructor
+  · intro h x
+    rw [h]
+  · intro hpoint
+    refine ApproximableMap.ext fun u v => ?_
+    constructor
+    · intro hrel
+      exact (le_iff_toElement_le f g).2 (fun x => (hpoint x) ▸ le_rfl) hrel
+    · intro hrel
+      exact (le_iff_toElement_le g f).2 (fun x => (hpoint x).symm ▸ le_rfl) hrel
 
 end ApproximableMap
 

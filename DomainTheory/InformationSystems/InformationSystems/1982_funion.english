@@ -49,3 +49,7 @@
 **Theorem (`Constructive.funion.insert`).** Finite union commutes past insert on the right: $u \cup' \mathrm{insert}\, a\, t = \mathrm{insert}\, a\, (u \cup' t)$.
 
 *Proof.* Compare membership on both sides via the membership lemma and the insert rule. □
+
+**Theorem (`Constructive.funion.singleton_eq_insert`).** Finite union of a singleton with a finite set is the corresponding insert.
+
+*Proof.* Membership on either side is the same by the membership and insert characterizations. □

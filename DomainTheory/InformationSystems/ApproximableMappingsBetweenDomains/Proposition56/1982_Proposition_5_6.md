@@ -1,4 +1,4 @@
-# Proposition 5.6
+# Proposition 5.6: constant maps
 
 @import "1982_Proposition_5_6.english" {code_block=false}
 
