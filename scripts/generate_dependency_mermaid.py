@@ -3329,12 +3329,12 @@ IS_SEC3_SHORT: dict[str, tuple[str, str]] = {
     "Remarks": ("Rem", "Remarks"),
 }
 IS_SEC4_SHORT: dict[str, tuple[str, str]] = {
-    "Inf": ("Inf", "Inf"),
+    "Binary meet": ("Inf", "Binary meet"),
     "Factoid 4.1: lattice / binary meets": (
         "F41",
         "Factoid 4.1:\nlattice / binary meets",
     ),
-    "FamilyInf": ("FInf", "FamilyInf"),
+    "Family infima": ("FInf", "Family infima"),
     "Factoid 4.2: family infs": ("F42", "Factoid 4.2:\nfamily infs"),
     "Factoid 4.3: joins / conditional sups": (
         "F43",

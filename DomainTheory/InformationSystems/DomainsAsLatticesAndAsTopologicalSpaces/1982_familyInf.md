@@ -1,4 +1,4 @@
-# FamilyInf
+# Family infima
 
 @import "1982_familyInf.english" {code_block=false}
 
