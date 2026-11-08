@@ -1,9 +1,6 @@
-
 module
 
-public import DomainTheory.InformationSystems.InformationSystems.Constructive
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.familySup
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.IsDirected
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Chain
 
 @[expose] public section
 
@@ -15,7 +12,18 @@ namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
 
-theorem exists_mem_of_subset_directedUnion (S : Set sys.Element) (hne : S.Nonempty)
+def IsDirected (S : Set sys.Element) : Prop :=
+  ∀ (x y : sys.Element), x ∈ S → y ∈ S → ∃ z ∈ S, x ≤ z ∧ y ≤ z
+
+namespace IsDirected
+
+theorem of_IsChain {S : Set sys.Element} (h : sys.Chain S) : sys.IsDirected S := by
+  intro x y hx hy
+  rcases h.out x y hx hy with hxy | hyx
+  · exact ⟨y, hy, hxy, le_rfl⟩
+  · exact ⟨x, hx, le_rfl, hyx⟩
+
+theorem exists_mem_of_subset_union (S : Set sys.Element) (hne : S.Nonempty)
     (hdir : sys.IsDirected S) (Y : Finset α)
     (hY : (Y : Set α) ⊆ sys.familyUnionCarrier S) :
     ∃ z ∈ S, (Y : Set α) ⊆ z.carrier := by
@@ -38,6 +46,14 @@ theorem exists_mem_of_subset_directedUnion (S : Set sys.Element) (hne : S.Nonemp
     · exact hxa_le haS
     · exact hxs_le (hsS (Finset.mem_coe.2 hb'))
 
-end InfoSys
+theorem finitelyConsistent (S : Set sys.Element) (hne : S.Nonempty)
+    (hdir : sys.IsDirected S) :
+    sys.IsFinitelyConsistent (sys.familyUnionCarrier S) := by
+  intro Y hY
+  obtain ⟨z, _hz, hYZ⟩ := exists_mem_of_subset_union sys S hne hdir Y hY
+  exact z.consistent Y hYZ
 
+end IsDirected
+
+end InfoSys
 end DomainTheory.InformationSystems

@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.idealCarrier
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.IsDirected
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.IsDirected
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45

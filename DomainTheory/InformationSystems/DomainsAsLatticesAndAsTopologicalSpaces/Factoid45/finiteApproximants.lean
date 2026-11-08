@@ -2,7 +2,7 @@
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_44
 
 @[expose] public section
 

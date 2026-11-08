@@ -3347,6 +3347,10 @@ IS_SEC4_SHORT: dict[str, tuple[str, str]] = {
         "F43",
         "Factoid 4.3:\njoins / conditional sups",
     ),
+    "Chains": ("Chain", "Chains"),
+    "Directed families": ("IDir", "Directed\nfamilies"),
+    "Directed suprema": ("DSup", "Directed\nsuprema"),
+    "Chain suprema": ("CSup", "Chain\nsuprema"),
     "Factoid 4.4: chains & directed sups": (
         "F44",
         "Factoid 4.4:\nchains & directed sups",

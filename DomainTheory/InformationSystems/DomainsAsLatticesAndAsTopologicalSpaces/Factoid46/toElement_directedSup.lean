@@ -2,7 +2,7 @@
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.le_directedSup
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.directedSup
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.ScottContinuous
 
@@ -31,14 +31,14 @@ theorem toElement_directedSup (f : ApproximableMap A B)
       intro a ha
       have : a ∈ (A.directedSup S hne hdir).carrier := hu ha
       rwa [directedSup.carrier_eq_union A S hne hdir] at this
-    obtain ⟨z, hz, huZ⟩ := A.exists_mem_of_subset_directedUnion S hne hdir u huU
+    obtain ⟨z, hz, huZ⟩ := IsDirected.exists_mem_of_subset_union A S hne hdir u huU
     have : Y ∈ (f.toElement z).carrier := ⟨u, huZ, hrel⟩
     rw [directedSup.carrier_eq_union B]
     exact ⟨f.toElement z, ⟨z, hz, rfl⟩, this⟩
   · apply directedSup.le B
     intro y hy
     obtain ⟨x, hx, rfl⟩ := hy
-    exact f.toElement_mono (A.le_directedSup S hne hdir hx)
+    exact f.toElement_mono (directedSup.le_of_mem A S hne hdir hx)
 
 end ApproximableMap
 

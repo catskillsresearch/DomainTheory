@@ -1,6 +1,5 @@
 module
 
-public import DomainTheory.InformationSystems.InformationSystems.Constructive
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.familySup
 
 @[expose] public section
@@ -17,5 +16,4 @@ class Chain (S : Set sys.Element) : Prop where
   out : ∀ (x y : sys.Element), x ∈ S → y ∈ S → x ≤ y ∨ y ≤ x
 
 end InfoSys
-
 end DomainTheory.InformationSystems

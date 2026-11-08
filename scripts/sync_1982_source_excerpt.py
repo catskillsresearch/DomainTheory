@@ -109,7 +109,7 @@ SLICE_NOTES: list[SliceSpec] = [
         "What about suprema (or sups or joins)?",
     ),
     (
-        "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/1982_Factoid_4_4.md",
+        "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/1982_Factoid_4_4.md",
         "1982_Factoid_4_4.english",
         "There is, however, an important case",
     ),
@@ -294,7 +294,11 @@ BARRELS: dict[str, tuple[str, list[str]]] = {
 
             "- [Join](1982_join.md)",
             "- [Factoid 4.3: joins / conditional sups](1982_Factoid_4_3.md)",
-            "- [Factoid 4.4: chains & directed sups](Factoid44/1982_Factoid_4_4.md)",
+            "- [Chains](1982_Chain.md)",
+            "- [Directed families](1982_IsDirected.md)",
+            "- [Directed suprema](1982_directedSup.md)",
+            "- [Chain suprema](1982_chainSup.md)",
+            "- [Factoid 4.4: chains & directed sups](1982_Factoid_4_4.md)",
             "- [Factoid 4.5: finite approximants](Factoid45/1982_Factoid_4_5.md)",
             "- [Factoid 4.6: topology / Scott continuity](Factoid46/1982_Factoid_4_6.md)",
         ],

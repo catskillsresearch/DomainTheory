@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.ofIdeal
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.le_directedSup
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.directedSup
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
@@ -23,7 +23,7 @@ variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
 theorem le_ofIdeal_of_mem {I : Ideal (FiniteElement A)} {y : FiniteElement A}
     (hy : y ∈ I) : (y : A.Element) ≤ ofIdeal A I :=
-  A.le_directedSup _ _ _ ⟨y, hy, rfl⟩
+  InfoSys.directedSup.le_of_mem A _ _ _ ⟨y, hy, rfl⟩
 
 end InfoSysToIdealCompletion
 

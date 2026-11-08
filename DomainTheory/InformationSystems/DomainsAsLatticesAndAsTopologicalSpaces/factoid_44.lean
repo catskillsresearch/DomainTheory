@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.directedSup
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.chainSup
 
 @[expose] public section
 

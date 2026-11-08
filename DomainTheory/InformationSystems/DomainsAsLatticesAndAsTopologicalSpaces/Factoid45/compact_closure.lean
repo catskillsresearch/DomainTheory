@@ -2,7 +2,7 @@
 module
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_44
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.finiteApproximants
 
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.closure_le_element
@@ -25,7 +25,7 @@ theorem compact_closure (S : Set sys.Element) (hne : S.Nonempty) (hdir : sys.IsD
     have : a ∈ (sys.directedSup S hne hdir).carrier :=
       hle (sys.subset_closure hu (Finset.mem_coe.2 ha))
     rwa [directedSup.carrier_eq_union sys S hne hdir] at this
-  obtain ⟨z, hz, huZ⟩ := sys.exists_mem_of_subset_directedUnion S hne hdir u huU
+  obtain ⟨z, hz, huZ⟩ := IsDirected.exists_mem_of_subset_union sys S hne hdir u huU
   exact ⟨z, hz, sys.closure_le_element z hu huZ⟩
 
 end InfoSys
