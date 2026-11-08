@@ -1,0 +1,7 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.deductiveClosure`).** The deductive closure of a finitely consistent set $U$ is the element whose carrier consists of every datum entailed by some finite subset of $U$. Consistency of finite subsets of that carrier follows by gathering their antecedents into one finite subset of $U$ and applying the consistency consequence of multiary entailment; deductive closure of the carrier uses the same gathering together with transitivity of entailment.
+
+**Theorem (`InfoSys.deductiveClosure.subset`).** A finitely consistent set is contained in the carrier of its deductive closure.
+
+*Proof.* Each datum of $U$ is entailed by its singleton, which is consistent by finite consistency. □
