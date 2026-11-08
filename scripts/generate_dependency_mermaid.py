@@ -3379,7 +3379,6 @@ IS_SEC5_SHORT: dict[str, tuple[str, str]] = {
     "Element map": ("Elem", "Element map"),
     "Definition 5.2": ("D52", "Definition 5.2"),
     "Relation order": ("Le", "Relation order"),
-    "Singleton relation": ("Sing", "Singleton\nrelation"),
     "Relation via closures": ("RelCl", "Relation via\nclosures"),
     "Pointwise order": ("PtOrd", "Pointwise\norder"),
     "Pointwise equality": ("PtEq", "Pointwise\nequality"),

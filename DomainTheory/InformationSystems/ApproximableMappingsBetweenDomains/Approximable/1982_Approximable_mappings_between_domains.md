@@ -7,7 +7,6 @@
 - [Element map](1982_toElement.md) [✓](../../../1982_REVISION.md)
 - [Definition 5.2](1982_Definition_5_2.md) [✓](../../../1982_REVISION.md)
 - [Relation order](1982_Le.md)
-- [Singleton relation](1982_rel_iff_forall_singleton.md)
 - [Relation via closures](1982_rel_iff_closure_le.md)
 - [Pointwise order](1982_le_iff_toElement_le.md)
 - [Pointwise equality](1982_ext_iff_toElement.md)

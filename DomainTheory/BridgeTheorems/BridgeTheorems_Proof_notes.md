@@ -101,9 +101,6 @@
 **[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/Le.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/Le.lean)**
 
 @import "../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/Le.lean"
-**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/rel_iff_forall_singleton.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/rel_iff_forall_singleton.lean)**
-
-@import "../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/rel_iff_forall_singleton.lean"
 **[BridgeTheorems/AlgebraicLattice.lean](AlgebraicLattice.lean)**
 
 @import "AlgebraicLattice.lean"
