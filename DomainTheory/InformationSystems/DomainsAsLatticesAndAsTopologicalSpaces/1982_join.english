@@ -1,0 +1,19 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.join`).** When the union of two elements’ carriers is finitely consistent, their join is the deductive closure of that union.
+
+**Theorem (`InfoSys.join.le`).** If both arguments approximate an upper bound $z$, then the join approximates $z$.
+
+*Proof.* Antecedents drawn from the carrier union lie in $z$, so $z$ absorbs the entailments defining the join. □
+
+**Theorem (`InfoSys.join.le_left`).** The left argument approximates the join.
+
+*Proof.* Its carrier is contained in the union, hence in the deductive closure. □
+
+**Theorem (`InfoSys.join.le_right`).** The right argument approximates the join.
+
+*Proof.* Symmetric to the left projection. □
+
+**Theorem (`InfoSys.join.exists_iff`).** Two elements have a common upper bound if and only if the union of their carriers is finitely consistent.
+
+*Proof.* A common upper bound witnesses finite consistency of the union; conversely the join supplies a common upper bound by the two projections. □
