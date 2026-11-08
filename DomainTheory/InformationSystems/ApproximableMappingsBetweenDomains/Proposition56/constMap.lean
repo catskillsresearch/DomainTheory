@@ -34,7 +34,9 @@ def constMap (b : B.Element) : ApproximableMap A B where
     have hEnt : B.Ent v y := hEntv y hy
     exact b.closed v y hv hEnt
 
-theorem constMap.toElement (b : B.Element) (x : A.Element) :
+namespace constMap
+
+theorem toElement (b : B.Element) (x : A.Element) :
     (constMap (A := A) b).toElement x = b := by
   apply le_antisymm
   · intro Y ⟨_u, _hu, ⟨_, hsub⟩⟩
@@ -50,16 +52,23 @@ theorem constMap.toElement (b : B.Element) (x : A.Element) :
       subst hZ'
       exact hY
 
-theorem constMap.comp (b : B.Element) (g : ApproximableMap D A) :
+theorem comp (b : B.Element) (g : ApproximableMap D A) :
     ApproximableMap.comp (constMap (A := A) b) g = constMap (A := D) b :=
   (ext_iff_toElement _ _).2 fun x => by
-    rw [ApproximableMap.comp.toElement, constMap.toElement, constMap.toElement]
+    rw [ApproximableMap.comp.toElement, toElement, toElement]
 
-theorem constMap.unique (b : B.Element) (f : ApproximableMap A B)
+theorem unique (b : B.Element) (f : ApproximableMap A B)
     (h : ∀ x : A.Element, f.toElement x = b) :
     f = constMap (A := A) b :=
   (ext_iff_toElement f (constMap (A := A) b)).2 fun x => by
-    rw [h x, constMap.toElement]
+    rw [h x, toElement]
+
+theorem comp_const (f : ApproximableMap B C) (b : B.Element) :
+    ApproximableMap.comp f (constMap (A := A) b) = constMap (A := A) (f.toElement b) :=
+  (ext_iff_toElement _ _).2 fun x => by
+    rw [ApproximableMap.comp.toElement, toElement, toElement]
+
+end constMap
 
 end ApproximableMap
 end InfoSys

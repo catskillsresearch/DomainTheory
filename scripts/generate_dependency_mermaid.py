@@ -3398,6 +3398,7 @@ IS_SEC5_SHORT: dict[str, tuple[str, str]] = {
         "P55",
         "Proposition 5.5:\ncomposition",
     ),
+    "Constant map": ("Const", "Constant map"),
     "Proposition 5.6: constant maps": (
         "P56",
         "Proposition 5.6:\nconstant maps",

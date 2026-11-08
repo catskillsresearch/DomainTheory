@@ -1,0 +1,19 @@
+<!-- formalization -->
+
+**Definition (`ApproximableMap.constMap`).** The constant approximable mapping toward a fixed element $b$ relates a consistent input to a consistent output precisely when the output is contained in $b$.
+
+**Theorem (`ApproximableMap.constMap.toElement`).** The element map of a constant approximable mapping is constantly the chosen element.
+
+*Proof.* Relatedness forces every output token into $b$; conversely the empty input witnesses every token of $b$. □
+
+**Theorem (`ApproximableMap.constMap.comp`).** Composing a constant map on the left with any map yields the same constant map from the new source.
+
+*Proof.* Pointwise on elements both sides are constantly $b$. □
+
+**Theorem (`ApproximableMap.constMap.unique`).** An approximable mapping whose element map is constantly $b$ equals the constant map toward $b$.
+
+*Proof.* Pointwise equality of element maps. □
+
+**Theorem (`ApproximableMap.constMap.comp_const`).** Composing on the right with a constant map toward $b$ yields the constant map toward the image of $b$.
+
+*Proof.* Pointwise on elements both sides are constantly the image of $b$. □

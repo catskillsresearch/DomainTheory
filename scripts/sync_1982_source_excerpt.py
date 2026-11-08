@@ -322,6 +322,7 @@ BARRELS: dict[str, tuple[str, list[str]]] = {
             "- [Proposition 5.4: identity mapping](../Proposition54/1982_Proposition_5_4.md)",
             "- [Composition](../Proposition55/1982_comp.md)",
             "- [Proposition 5.5: composition](../Proposition55/1982_Proposition_5_5.md)",
+            "- [Constant map](../Proposition56/1982_constMap.md)",
             "- [Proposition 5.6: constant maps](../Proposition56/1982_Proposition_5_6.md)",
         ],
     ),

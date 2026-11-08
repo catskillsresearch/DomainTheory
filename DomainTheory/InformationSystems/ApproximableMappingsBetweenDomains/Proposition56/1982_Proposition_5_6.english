@@ -13,3 +13,9 @@
 *for all approximable mappings $g : \mathbf{D} \to \mathbf{A}$.* $\blacksquare$
 
 The proof is immediate, since we need only interpret the input/output relation $u\ (\mathrm{const}\ b)\ v$ as meaning $v \subseteq b$. We note that our notation is somewhat ambiguous since, for example, in 5.6(iii) we are using $\mathrm{const}\ b$ in two senses: once as a mapping from $\mathbf{A}$, and once as a mapping from $\mathbf{D}$. In fact, we should hang two subscripts on the thing to fix both the source and the target of the mapping. This is too painful, however, and we generally rely on context to make the meaning clear. (Formal rules of type checking can be given, so on a computer-based system all the necessary subscripts could be put back in. Thus, the kind of ambiguity we are dealing with here is not very serious.)
+
+<!-- formalization -->
+
+**Theorem (`ApproximableMap.proposition_5_6`).** Constant approximable mappings act constantly on elements; composing on the right with a constant yields the constant toward the image; composing on the left with a constant leaves that constant unchanged (from the new source).
+
+*Proof.* Assemble the constant map’s element-map, right-composition, and left-composition lemmas. □

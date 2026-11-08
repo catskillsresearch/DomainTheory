@@ -78,9 +78,6 @@
 **[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap.lean)**
 
 @import "../InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap.lean"
-**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/comp_constMap.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/comp_constMap.lean)**
-
-@import "../InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/comp_constMap.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Proposition64/not_mem_right_of_mem_left.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/not_mem_right_of_mem_left.lean)**
 
 @import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/not_mem_right_of_mem_left.lean"
