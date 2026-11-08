@@ -33,3 +33,9 @@ This argument proves that $\mathrm{Tot}_{\mathbf{A}}$ is a *Hausdorff space* (or
 *A note on neighborhood structures.* Topological spaces can be defined in several ways, and in general they do not carry a preferred neighborhood structure. (For example, there is no topological significance to the usual rational intervals we use to define neighborhoods for the real line: any similarly dense set of points would do in place of the rational numbers.) Domains, the way we have defined them, however, do have preferred neighborhoods. The set of finite elements of $|\mathbf{A}|$ can be defined topologically, and as we have seen they determine a convenient set of neighborhoods. (The reason for all this is the so-called zero-dimensional character of the domains. There is a higher-dimensional theory, but this leads to continuous lattices and can only be explained using the kind of presentation in Gierz, *et al.* [1980]. It is too long-winded a story for the present paper. The higher-dimensional domains do not have a preferred set of neighborhoods, however.)
 
 Having realized this, it is a short step to giving an algebraic axiomatization of the neighborhood structure. Smyth [1975] contains a presentation in terms of the equivalent notion of
+
+<!-- formalization -->
+
+**Theorem (`InfoSys.ApproximableMap.factoid_46`).** Passing from a Scott-continuous map to an approximable mapping and back recovers the original map on elements.
+
+*Proof.* This is the recovery property of the Scott-continuous–to–approximable correspondence. □

@@ -24,4 +24,4 @@
 - [Scott continuous maps](1982_ScottContinuous.md) [✓](../../1982_REVISION.md)
 - [The basic Scott-opens](1982_basicOpen.md) [✓](../../1982_REVISION.md)
 - [Approximable maps as Scott continuous](1982_ApproximableMapScott.md) [✓](../../1982_REVISION.md)
-- [Factoid 4.6: topology / Scott continuity](1982_Factoid_4_6.md)
+- [Factoid 4.6: topology / Scott continuity](1982_Factoid_4_6.md) [✓](../../1982_REVISION.md)
