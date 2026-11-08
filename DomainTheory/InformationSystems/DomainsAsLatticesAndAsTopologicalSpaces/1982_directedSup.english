@@ -1,0 +1,15 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.directedSup`).** The directed supremum of a nonempty directed family is the family supremum of that family, available because directedness yields finite consistency of the union carrier.
+
+**Theorem (`InfoSys.directedSup.carrier_eq_union`).** The carrier of a directed supremum equals the family-union carrier.
+
+*Proof.* Deductive closure always enlarges the union; the reverse uses that finite antecedents in the union sit in a single member, which is already deductively closed. □
+
+**Theorem (`InfoSys.directedSup.le`).** If every member of the family approximates an upper bound, then the directed supremum approximates that bound.
+
+*Proof.* This is the corresponding property of the family supremum. □
+
+**Theorem (`InfoSys.directedSup.le_of_mem`).** Every member of the family approximates the directed supremum.
+
+*Proof.* This is the corresponding property of the family supremum. □
