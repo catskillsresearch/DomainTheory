@@ -7,7 +7,7 @@ public import DomainTheory.InformationSystems.InformationSystems.lowerBoundEnt
 
 namespace DomainTheory.InformationSystems
 
-def Factoid24.example_24 : InfoSys ℕ where
+def a_first_example : InfoSys ℕ where
   bot := 0
   Con := Set.univ
   Ent := lowerBoundEnt

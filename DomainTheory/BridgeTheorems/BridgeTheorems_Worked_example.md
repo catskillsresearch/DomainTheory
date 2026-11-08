@@ -9,9 +9,9 @@
 **[InformationSystems/InformationSystems/lowerBoundEnt.lean](../InformationSystems/InformationSystems/lowerBoundEnt.lean)**
 
 @import "../InformationSystems/InformationSystems/lowerBoundEnt.lean"
-**[InformationSystems/InformationSystems/Factoid24.lean](../InformationSystems/InformationSystems/Factoid24.lean)**
+**[InformationSystems/InformationSystems/a_first_example.lean](../InformationSystems/InformationSystems/a_first_example.lean)**
 
-@import "../InformationSystems/InformationSystems/Factoid24.lean"
+@import "../InformationSystems/InformationSystems/a_first_example.lean"
 **[BridgeTheorems/unfoldInsert.lean](unfoldInsert.lean)**
 
 @import "unfoldInsert.lean"

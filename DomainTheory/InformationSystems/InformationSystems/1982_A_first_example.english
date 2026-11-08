@@ -3,3 +3,7 @@
 $$\{n_0, \dots, n_{k-1}\} \vdash m \quad\text{iff either } m = 0 \text{ or } m \le n_i \text{ for some } i < k.$$
 
 (Remember to think of the same possible $x$ on both sides of the $\vdash$.) That $\vdash$ is an entailment relation in the sense of our axioms is clear. ■
+
+<!-- formalization -->
+
+**Definition (`a_first_example`).** Scott’s first example is the information system on the natural numbers with least-informative datum $0$, every finite subset consistent, and entailment given by lower-bound entailment: a finite $u$ entails $m$ when $m = 0$ or some $n \in u$ satisfies $m \le n$. The six information-system axioms hold for this choice of consistency and entailment.
