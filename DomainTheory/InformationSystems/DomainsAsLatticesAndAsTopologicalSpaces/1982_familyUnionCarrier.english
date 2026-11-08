@@ -1,0 +1,7 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.familyUnionCarrier`).** The family-union carrier of a family of elements is the set of data belonging to at least one member of the family.
+
+**Theorem (`InfoSys.familyUnionCarrier.finitelyConsistent_of_upperBound`).** If every member of a family approximates an upper bound $z$, then the family-union carrier is finitely consistent.
+
+*Proof.* Any finite subset of the union lies in $z$, so consistency of $z$ applies. □

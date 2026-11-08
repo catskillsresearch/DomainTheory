@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.deductiveClosure
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.familyUnionCarrier
 
 @[expose] public section
 
@@ -11,18 +11,6 @@ open DomainTheory.InformationSystems.Constructive
 namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
-
-def familyUnionCarrier (S : Set sys.Element) : Set α :=
-  {a | ∃ x ∈ S, a ∈ x.carrier}
-
-theorem finitelyConsistent_of_upperBound (S : Set sys.Element) {z : sys.Element}
-    (h : ∀ x ∈ S, x ≤ z) : sys.IsFinitelyConsistent (sys.familyUnionCarrier S) := by
-  intro Y hY
-  have hYZ : (Y : Set α) ⊆ z.carrier := by
-    intro a ha
-    obtain ⟨x, hx, ha'⟩ := hY ha
-    exact h x hx ha'
-  exact z.consistent Y hYZ
 
 def familySup (S : Set sys.Element)
     (hU : sys.IsFinitelyConsistent (sys.familyUnionCarrier S)) : sys.Element :=
@@ -52,7 +40,7 @@ theorem exists_isLUB_iff (S : Set sys.Element) :
       Nonempty (sys.IsFinitelyConsistent (sys.familyUnionCarrier S)) := by
   constructor
   · rintro ⟨z, hub, _⟩
-    exact ⟨sys.finitelyConsistent_of_upperBound S hub⟩
+    exact ⟨familyUnionCarrier.finitelyConsistent_of_upperBound sys S hub⟩
   · rintro ⟨hU⟩
     refine ⟨sys.familySup S hU, fun x hx => le_of_mem sys S hU hx,
       fun w hw => le sys S hU hw⟩
