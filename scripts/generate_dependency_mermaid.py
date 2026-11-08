@@ -85,6 +85,12 @@ IS_SEC2_SVG = (
 IS_SEC3_SVG = (
     DT / "InformationSystems" / "ElementsOfASystem" / "1982_The_elements_of_a_system.svg"
 )
+IS_SEC4_SVG = (
+    DT
+    / "InformationSystems"
+    / "DomainsAsLatticesAndAsTopologicalSpaces"
+    / "1982_Domains_as_lattices_and_as_topological_spaces.svg"
+)
 IS_SEC5_SVG = (
     DT
     / "InformationSystems"
@@ -112,6 +118,7 @@ IS_OUTLINE_SVGS = (
     IS_CHAPTER_SVG,
     IS_SEC2_SVG,
     IS_SEC3_SVG,
+    IS_SEC4_SVG,
     IS_SEC5_SVG,
     IS_SEC6_SVG,
     IS_SEC7_SVG,
@@ -2979,8 +2986,12 @@ def _ns_dom_kind_class(nid: str) -> str:
 
 
 def ns_domains_compact_label(text: str, *, width: int = 15) -> str:
-    """Shorten Def/Ex/Thm prefixes and soft-wrap so Graphviz nodes stay narrow."""
-    s = mermaid_display_label(text).replace("<br>", " ").replace("\n", " ")
+    """Shorten Def/Ex/Thm prefixes and soft-wrap so Graphviz nodes stay narrow.
+
+    Intentional newlines in ``text`` are kept as Graphviz line breaks (not
+    re-wrapped), so outline labels can show a title plus a prose gloss.
+    """
+    s = mermaid_display_label(text).replace("<br>", "\n")
     s = re.sub(r"\bDefinitions\b", "Defs", s)
     s = re.sub(r"\bDefinition\b", "Def", s)
     s = re.sub(r"\bPropositions\b", "Props", s)
@@ -2995,6 +3006,8 @@ def ns_domains_compact_label(text: str, *, width: int = 15) -> str:
     s = re.sub(r"\bLemma\b", "Lem", s)
     s = re.sub(r"\bTables\b", "Tabs", s)
     s = re.sub(r"\bTable\b", "Tab", s)
+    if "\n" in s:
+        return s.replace("\n", "\\n").replace('"', '\\"')
     words = s.split()
     rows: list[str] = []
     cur = ""
@@ -3010,6 +3023,28 @@ def ns_domains_compact_label(text: str, *, width: int = 15) -> str:
     return "\\n".join(rows).replace('"', '\\"')
 
 
+def _scale_svg_display(svg_path: Path, scale: float) -> None:
+    """Shrink/grow the root SVG ``width``/``height`` (viewBox unchanged)."""
+    if scale == 1.0:
+        return
+    text = svg_path.read_text(encoding="utf-8")
+
+    def repl(m: re.Match[str]) -> str:
+        val = float(m.group(2)) * scale
+        unit = m.group(3) or ""
+        return f'{m.group(1)}="{val:g}{unit}"'
+
+    text, n = re.subn(
+        r"\b(width|height)=\"([0-9.]+)(pt|px|in)?\"",
+        repl,
+        text,
+        count=2,
+    )
+    if n != 2:
+        raise ValueError(f"expected root width/height in {svg_path}, found {n}")
+    svg_path.write_text(text, encoding="utf-8")
+
+
 def write_ns_domains_graphviz_svg(
     svg_path: Path,
     node_labels: dict[str, str],
@@ -3017,6 +3052,7 @@ def write_ns_domains_graphviz_svg(
     order: list[str],
     *,
     rankdir: str = "TB",
+    display_scale: float = 1.0,
 ) -> None:
     """Compact Graphviz SVG — Mermaid/dagre leaves too much whitespace when fit-scaled."""
     import subprocess
@@ -3028,14 +3064,14 @@ def write_ns_domains_graphviz_svg(
         "cex": ("#e0e7ff", "#4338ca", "#312e81"),
         "cthm": ("#fee2e2", "#b91c1c", "#7f1d1d"),
     }
-    # TB: cap width, allow height. LR: cap height, allow width (many roots stack
-    # vertically instead of spreading across the page).
+    # Cap size without ``!`` so small graphs stay natural scale (``!`` forced
+    # 4-node TB chains up to ~18″ tall). Large graphs still compress to fit.
     if rankdir.upper() == "LR":
-        size = 'size="16,8!", ratio=compress'
-        sep = "ranksep=0.55, nodesep=0.22"
+        size = 'size="16,8", ratio=compress'
+        sep = "ranksep=0.35, nodesep=0.22"
     else:
-        size = 'size="7.5,18!", ratio=compress'
-        sep = "ranksep=0.85, nodesep=0.18"
+        size = 'size="7.5,18", ratio=compress'
+        sep = "ranksep=0.35, nodesep=0.18"
     lines = [
         "digraph G {",
         f'  graph [rankdir={rankdir}, {sep}, splines=true,',
@@ -3062,6 +3098,7 @@ def write_ns_domains_graphviz_svg(
         text=True,
         check=True,
     )
+    _scale_svg_display(svg_path, display_scale)
 
 
 def outline_import_owners(
@@ -3109,6 +3146,7 @@ def gen_ns_outline_svg_lecture(
     aggregate_lecture_exercises: bool = True,
     rankdir: str = "TB",
     recursive_barrels: bool = False,
+    display_scale: float = 1.0,
 ) -> str:
     """Item-level Lean deps for a 1980/1982 section hub (SVG gold copy).
 
@@ -3229,7 +3267,12 @@ def gen_ns_outline_svg_lecture(
     init = [ln for ln in style if INIT_LINE.match(ln.strip())]
     svg_path = diagram.with_suffix(".svg") if diagram.suffix == ".mermaid" else diagram
     write_ns_domains_graphviz_svg(
-        svg_path, node_labels, edges, order, rankdir=rankdir
+        svg_path,
+        node_labels,
+        edges,
+        order,
+        rankdir=rankdir,
+        display_scale=display_scale,
     )
 
     # SVG is the gold copy: Graphviz already wrote the file. Return that content so
@@ -3284,6 +3327,30 @@ IS_SEC3_SHORT: dict[str, tuple[str, str]] = {
     "Total elements": ("Tot", "Total elements"),
     "Top element": ("Top", "Top element"),
     "Remarks": ("Rem", "Remarks"),
+}
+IS_SEC4_SHORT: dict[str, tuple[str, str]] = {
+    "Inf": ("Inf", "Inf"),
+    "Factoid 4.1: lattice / binary meets": (
+        "F41",
+        "Factoid 4.1:\nlattice / binary meets",
+    ),
+    "Factoid 4.2: family infs": ("F42", "Factoid 4.2:\nfamily infs"),
+    "Factoid 4.3: joins / conditional sups": (
+        "F43",
+        "Factoid 4.3:\njoins / conditional sups",
+    ),
+    "Factoid 4.4: chains & directed sups": (
+        "F44",
+        "Factoid 4.4:\nchains & directed sups",
+    ),
+    "Factoid 4.5: finite approximants": (
+        "F45",
+        "Factoid 4.5:\nfinite approximants",
+    ),
+    "Factoid 4.6: topology / Scott continuity": (
+        "F46",
+        "Factoid 4.6:\ntopology / Scott continuity",
+    ),
 }
 IS_SEC5_SHORT: dict[str, tuple[str, str]] = {
     "Definition 5.1": ("D51", "Definition 5.1"),
@@ -3359,6 +3426,19 @@ def gen_is_sec3_lecture(diagram: Path, modules: dict[str, Path], old: str) -> st
         companions={},
         header=_is_outline_header("1982_The_elements_of_a_system.md"),
         aggregate_lecture_exercises=False,
+    )
+
+
+def gen_is_sec4_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=IS_SEC4_SHORT,
+        companions={},
+        header=_is_outline_header("1982_Domains_as_lattices_and_as_topological_spaces.md"),
+        aggregate_lecture_exercises=False,
+        display_scale=0.5,
     )
 
 
@@ -3832,6 +3912,11 @@ def classify(mermaid: Path, text: str) -> str:
     ):
         return "is_sec3_lecture"
     if mermaid.name in (
+        "1982_Domains_as_lattices_and_as_topological_spaces.mermaid",
+        "1982_Domains_as_lattices_and_as_topological_spaces.svg",
+    ):
+        return "is_sec4_lecture"
+    if mermaid.name in (
         "1982_Approximable_mappings_between_domains.mermaid",
         "1982_Approximable_mappings_between_domains.svg",
     ):
@@ -3978,6 +4063,8 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
         return gen_is_sec2_lecture(mermaid, modules, old)
     if kind == "is_sec3_lecture":
         return gen_is_sec3_lecture(mermaid, modules, old)
+    if kind == "is_sec4_lecture":
+        return gen_is_sec4_lecture(mermaid, modules, old)
     if kind == "is_sec5_lecture":
         return gen_is_sec5_lecture(mermaid, modules, old)
     if kind == "is_sec6_lecture":

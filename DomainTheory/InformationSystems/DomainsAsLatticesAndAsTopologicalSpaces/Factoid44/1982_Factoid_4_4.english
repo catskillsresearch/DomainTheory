@@ -1,0 +1,13 @@
+There is, however, an important case in $|\mathbf{A}|$ where the union is consistent and is, in fact, the sup in the domain. Suppose we have a sequence of elements such that
+
+$$x_0 \subseteq x_1 \subseteq x_2 \subseteq \cdots \subseteq x_n \subseteq x_{n+1} \subseteq \cdots$$
+
+As $n$ increases, we can say that the elements $x_n$ are getting “better and better”; thus, they must be approaching something even more desirable *in the limit*. Let
+
+$$y = \bigcup_{n=0}^{\infty} x_n,$$
+
+then there is no question that $y$ is a subset of $D_{\mathbf{A}}$. But is it an element? Consistency, recall, means that every *finite* subset is in $\mathrm{Con}_{\mathbf{A}}$. The trick is that a finite subset of $y$ must be a subset of one of the $x_n$, because the sequence of elements $x_n$ is increasing. But all the terms of our given sequence are elements, and so, consistent; therefore, every finite subset of $y$ is consistent.
+
+The same argument also shows that the set $y$ of data objects is closed under entailment, because $\vdash_{\mathbf{A}}$ is defined as a relation between finite (consistent) sets and data objects. It follows that since each $x_n$ is a set closed under $\vdash_{\mathbf{A}}$, then so is $y$. In other words, $y$ is indeed an element. Otherwise said, the domain $|\mathbf{A}|$ is closed under the formation of unions of increasing chains of elements, and the union is, of course, the sup in the sense of the partial ordering. Again we have proved closure rather than assuming it, and the necessary properties of the sup follow from its definition as a union.
+
+This last argument can be generalized—as is well known to mathematicians—to the case of *directed* families of elements. The word "directed," or better "upward-directed," means that every finite number of elements in the family is included in some further element of the family; chains always have this property. A good example of the use of directed sets of elements figures in the discussion of the *finite elements* of the domain.

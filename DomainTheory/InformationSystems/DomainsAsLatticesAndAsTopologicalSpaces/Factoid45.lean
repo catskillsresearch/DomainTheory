@@ -6,7 +6,7 @@ public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalS
 
 namespace DomainTheory.InformationSystems.InfoSys
 
-theorem theorem_45 :
+theorem factoid_45 :
     ∀ {α : Type*} [DecidableEq α] (sys : InfoSys α) (x : sys.Element),
       x = sys.directedSup (sys.finiteApproximants x)
         (sys.nonempty_finiteApproximants x) (sys.directed_finiteApproximants x) :=

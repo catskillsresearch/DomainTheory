@@ -6,7 +6,7 @@ public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalS
 
 namespace DomainTheory.InformationSystems.InfoSys.ApproximableMap
 
-theorem theorem_46 :
+theorem factoid_46 :
     ∀ {α β : Type*} [DecidableEq α] [DecidableEq β] {A : InfoSys α} {B : InfoSys β}
       (g : ScottContinuous A B) (x : A.Element),
       (ofScottContinuous g).toElement x = g.toFun x :=

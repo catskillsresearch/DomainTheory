@@ -89,9 +89,39 @@ SLICE_NOTES: list[SliceSpec] = [
         "*Remarks.*",
     ),
     (
-        "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/1982_Domains_as_lattices_and_as_topological_spaces.md",
-        "1982_Domains_as_lattices_and_as_topological_spaces.english",
+        "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/1982_Introduction.md",
+        "1982_Introduction.english",
         "**4. Domains as lattices and as topological spaces.**",
+    ),
+    (
+        "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid41/1982_Factoid_4_1.md",
+        "1982_Factoid_4_1.english",
+        "*Lattice-theoretic considerations.*",
+    ),
+    (
+        "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid42/1982_Factoid_4_2.md",
+        "1982_Factoid_4_2.english",
+        "What about infs of subsets?",
+    ),
+    (
+        "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/1982_Factoid_4_3.md",
+        "1982_Factoid_4_3.english",
+        "What about suprema (or sups or joins)?",
+    ),
+    (
+        "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid44/1982_Factoid_4_4.md",
+        "1982_Factoid_4_4.english",
+        "There is, however, an important case",
+    ),
+    (
+        "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid45/1982_Factoid_4_5.md",
+        "1982_Factoid_4_5.english",
+        "As we have remarked several times, any consistent set",
+    ),
+    (
+        "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/1982_Factoid_4_6.md",
+        "1982_Factoid_4_6.english",
+        "*Topological considerations.*",
     ),
     (
         "InformationSystems/ApproximableMappingsBetweenDomains/Approximable/1982_Introduction.md",
@@ -248,6 +278,19 @@ BARRELS: dict[str, tuple[str, list[str]]] = {
             "- [Remarks](1982_Remarks.md)",
         ],
     ),
+    "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/1982_Domains_as_lattices_and_as_topological_spaces.md": (
+        "1982_Domains_as_lattices_and_as_topological_spaces.svg",
+        [
+            "- [Introduction](1982_Introduction.md)",
+            "- [Inf](Factoid41/1982_inf.md)",
+            "- [Factoid 4.1: lattice / binary meets](Factoid41/1982_Factoid_4_1.md)",
+            "- [Factoid 4.2: family infs](Factoid42/1982_Factoid_4_2.md)",
+            "- [Factoid 4.3: joins / conditional sups](Factoid43/1982_Factoid_4_3.md)",
+            "- [Factoid 4.4: chains & directed sups](Factoid44/1982_Factoid_4_4.md)",
+            "- [Factoid 4.5: finite approximants](Factoid45/1982_Factoid_4_5.md)",
+            "- [Factoid 4.6: topology / Scott continuity](Factoid46/1982_Factoid_4_6.md)",
+        ],
+    ),
     "InformationSystems/ApproximableMappingsBetweenDomains/Approximable/1982_Approximable_mappings_between_domains.md": (
         "1982_Approximable_mappings_between_domains.svg",
         [
@@ -296,6 +339,7 @@ INTRO_TITLES: dict[str, str] = {
     "1982_Introduction.md": "Introduction",
     "InformationSystems/InformationSystems/Constructive/1982_Introduction.md": "Introduction",
     "InformationSystems/ElementsOfASystem/1982_Introduction.md": "Introduction",
+    "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/1982_Introduction.md": "Introduction",
     "InformationSystems/ApproximableMappingsBetweenDomains/Approximable/1982_Introduction.md": "Introduction",
     "InformationSystems/ProductsAndSumsOfDomains/Sum/1982_Introduction.md": "Introduction",
     "InformationSystems/FunctionSpaceAsADomain/1982_Introduction.md": "Introduction",
@@ -509,9 +553,6 @@ def main() -> None:
             md = DT / md_rel
             eng = resolve_english(md, eng_rel)
             write_leaf(md, eng, lean_by_rel.get(md_rel, []), md_rel)
-
-        # Domains-as-lattices is a leaf in SLICE_NOTES (not a barrel) — already written.
-        # Ensure no leftover english import on barrels (write_barrel already clean).
 
         assert_coverage(source, english_order)
 

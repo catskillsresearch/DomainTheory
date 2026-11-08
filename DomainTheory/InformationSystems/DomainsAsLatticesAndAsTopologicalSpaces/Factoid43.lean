@@ -6,7 +6,7 @@ public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalS
 
 namespace DomainTheory.InformationSystems.InfoSys
 
-theorem theorem_43 :
+theorem factoid_43 :
     ∀ {α : Type*} [DecidableEq α] (sys : InfoSys α) (x y : sys.Element),
       (∃ z : sys.Element, x ≤ z ∧ y ≤ z) ↔
         Nonempty (sys.IsFinitelyConsistent (x.carrier ∪ y.carrier)) :=

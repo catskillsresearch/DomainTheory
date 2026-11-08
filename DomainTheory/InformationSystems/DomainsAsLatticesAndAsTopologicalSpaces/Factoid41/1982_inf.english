@@ -1,0 +1,47 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.inf`).** The binary meet of two elements is the element whose carrier is the intersection of their carriers. Intersection of consistent deductively closed sets is again consistent and deductively closed, so the result is an element.
+
+**Theorem (`InfoSys.inf.le_left`).** The binary meet of $x$ and $y$ approximates $x$.
+
+*Proof.* Intersection is a subset of the left factor. □
+
+**Theorem (`InfoSys.inf.le_right`).** The binary meet of $x$ and $y$ approximates $y$.
+
+*Proof.* Intersection is a subset of the right factor. □
+
+**Theorem (`InfoSys.inf.le_inf`).** If $x$ approximates both $y$ and $z$, then $x$ approximates their binary meet.
+
+*Proof.* Membership in $x$ yields membership in both carriers, hence in their intersection. □
+
+**Theorem (`InfoSys.inf.le_iff_eq`).** An element $x$ approximates $y$ if and only if the binary meet of $x$ and $y$ equals $x$.
+
+*Proof.* One direction uses the left projection of the meet together with the universal property of intersection under the order hypothesis; the converse recovers the second factor from the carrier equality. □
+
+**Theorem (`InfoSys.inf.le_iff`).** An element approximates a binary meet if and only if it approximates both arguments.
+
+*Proof.* Combine the two projections of the meet with the universal property of the meet. □
+
+**Theorem (`InfoSys.inf.comm`).** Binary meet is commutative.
+
+*Proof.* Each side approximates both arguments of the other, so the two meets coincide by antisymmetry. □
+
+**Theorem (`InfoSys.inf.assoc`).** Binary meet is associative.
+
+*Proof.* Each association approximates the three factors of the other via the projections and the universal property of the meet. □
+
+**Theorem (`InfoSys.inf.idem`).** The binary meet of an element with itself is that element.
+
+*Proof.* Reflexivity of the order together with the absorption characterization of the meet. □
+
+**Theorem (`InfoSys.inf.mono`).** Binary meet is monotone in each argument.
+
+*Proof.* Transport the projections of the smaller meet along the given inequalities, then apply the universal property. □
+
+**Theorem (`InfoSys.inf.botElement_inf`).** The binary meet of the bottom element with any element is bottom.
+
+*Proof.* Bottom approximates every element, so absorption yields the claim. □
+
+**Theorem (`InfoSys.inf.inf_botElement`).** The binary meet of any element with bottom is bottom.
+
+*Proof.* Commute the meet and apply the previous theorem. □

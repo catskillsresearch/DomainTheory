@@ -6,7 +6,7 @@ public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalS
 
 namespace DomainTheory.InformationSystems.InfoSys
 
-theorem theorem_44 :
+theorem factoid_44 :
     ∀ {α : Type*} [DecidableEq α] (sys : InfoSys α) (S : Set sys.Element)
       (hne : S.Nonempty) (hdir : sys.IsDirected S),
       (sys.directedSup S hne hdir).carrier = sys.familyUnionCarrier S :=

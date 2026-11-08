@@ -15,3 +15,9 @@ $$\{(n, q) \mid n \leq m \leq p \leq q\},$$
 where $m \leq p$ are given, and where $q = \infty$ is allowed. The total elements here correspond to the (non-negative) integers, and the partial elements to situations where the lower and upper bounds have not come exactly together. (3) In the third example, the elements are just the graphs (i.e. sets of ordered pairs) of partial functions from $A$ into $B$ (with the object $\Delta$ adjoined to the graph). Total elements correspond to total functions (i.e. functions well defined on all of the set $A$). ■
 
 The reader should be able to obtain some more examples of information systems from his own experience and should then consider what the corresponding domain is like. Examples are really quite easy to make up. Needless to say, Mathematical Logic provides a host of information systems, but logicians do not often consider the domains determined by the the systems they know to be worthy of study *in themselves*. In particular, it does not seem to be widely recognized that the domains obtained from information systems form a rich category, as we shall show later. The word "category" is definitely being used here in the precise technical sense of Category Theory, and the application of the notion is very appropriate since the category of domains has very good closure properties.
+
+<!-- formalization -->
+
+**Theorem (`InfoSys.remark`).** A top element—an element whose carrier is the whole set of data—exists if and only if every finite set of data is consistent.
+
+*Proof.* This is the library comparison of universal carriers with all-consistency. □
