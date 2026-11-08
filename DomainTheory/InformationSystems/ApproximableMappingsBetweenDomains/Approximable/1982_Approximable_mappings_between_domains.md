@@ -10,5 +10,5 @@
 - [Identity map](../Proposition54/1982_idMap.md) [✓](../../../1982_REVISION.md)
 - [Proposition 5.4: identity mapping](../Proposition54/1982_Proposition_5_4.md) [✓](../../../1982_REVISION.md)
 - [Composition](../Proposition55/1982_comp.md) [✓](../../../1982_REVISION.md)
-- [Proposition 5.5: composition](../Proposition55/1982_Proposition_5_5.md)
+- [Proposition 5.5: composition](../Proposition55/1982_Proposition_5_5.md) [✓](../../../1982_REVISION.md)
 - [Proposition 5.6: constant maps](../Proposition56/1982_Proposition_5_6.md)
