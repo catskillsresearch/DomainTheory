@@ -1,0 +1,37 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.AllConsistent`).** An information system is all-consistent when every finite set of data is consistent.
+
+**Definition (`InfoSys.topElement`).** If the system is all-consistent, the top element is the element whose carrier is the whole set of data.
+
+**Theorem (`InfoSys.topElement.exists_top_iff_allConsistent`).** There exists an element with universal carrier if and only if the system is all-consistent.
+
+*Proof.* A universal carrier forces every finite set into consistency; conversely the top element supplies such a carrier. □
+
+**Theorem (`InfoSys.topElement.le`).** Under all-consistency, every element lies below the top element.
+
+*Proof.* Every carrier is a subset of the universe. □
+
+**Theorem (`InfoSys.topElement.isTotal`).** The top element is total.
+
+*Proof.* Anything above the top is below it by the preceding comparison. □
+
+**Theorem (`InfoSys.topElement.eq_of_carrier_univ_of_isTotal`).** A total element with universal carrier equals that universal-carrier element.
+
+*Proof.* Mutual inclusion of carriers. □
+
+**Theorem (`InfoSys.topElement.isTotal_of_carrier_univ`).** An element with universal carrier is total.
+
+*Proof.* Anything above it still has carrier contained in the universe, hence below it. □
+
+**Theorem (`InfoSys.topElement.eq_of_isTotal`).** Under all-consistency, every total element equals the top element.
+
+*Proof.* Totality and the comparison with the top force equality. □
+
+**Theorem (`InfoSys.topElement.isTotal_iff_eq`).** Under all-consistency, an element is total precisely when it equals the top element.
+
+*Proof.* Assemble the two preceding directions. □
+
+**Theorem (`InfoSys.topElement.exists_unique_total_of_allConsistent`).** Under all-consistency there is a unique total element.
+
+*Proof.* The top element is total, and every total element equals it. □

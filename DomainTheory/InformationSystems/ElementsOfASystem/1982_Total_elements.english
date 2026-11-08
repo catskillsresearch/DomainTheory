@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.IsTotal`).** An element $x$ is total when it is maximal in the inclusion order on elements: whenever $x \le y$, one has $y \le x$.

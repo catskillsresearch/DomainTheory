@@ -84,6 +84,11 @@ SLICE_NOTES: list[SliceSpec] = [
         "**DEFINITION 3.1.**",
     ),
     (
+        "InformationSystems/ElementsOfASystem/1982_Remarks.md",
+        "1982_Remarks.english",
+        "*Remarks.*",
+    ),
+    (
         "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/1982_Domains_as_lattices_and_as_topological_spaces.md",
         "1982_Domains_as_lattices_and_as_topological_spaces.english",
         "**4. Domains as lattices and as topological spaces.**",
@@ -238,6 +243,9 @@ BARRELS: dict[str, tuple[str, list[str]]] = {
         [
             "- [Introduction](1982_Introduction.md)",
             "- [Definition 3.1](1982_Definition_3_1.md)",
+            "- [Total elements](1982_Total_elements.md)",
+            "- [Top element](1982_Top_element.md)",
+            "- [Remarks](1982_Remarks.md)",
         ],
     ),
     "InformationSystems/ApproximableMappingsBetweenDomains/Approximable/1982_Approximable_mappings_between_domains.md": (
