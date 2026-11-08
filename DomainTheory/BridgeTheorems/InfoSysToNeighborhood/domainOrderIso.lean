@@ -5,7 +5,7 @@ public import DomainTheory.BridgeTheorems.ofFilter_toFilter
 public import DomainTheory.BridgeTheorems.mem_basicOpen_singleton
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35.subset_closure
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Basic
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46

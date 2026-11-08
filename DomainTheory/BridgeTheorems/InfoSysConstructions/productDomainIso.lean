@@ -6,7 +6,7 @@ public import DomainTheory.BridgeTheorems.InfoSysConstructions.pairElements_mono
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.sndMap_pairElements
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.fstMap_pairElements
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement_mono
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Basic
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot

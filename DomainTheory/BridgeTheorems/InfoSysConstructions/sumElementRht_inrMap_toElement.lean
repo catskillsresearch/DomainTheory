@@ -5,7 +5,7 @@ public import DomainTheory.BridgeTheorems.InfoSysConstructions.lftFinset_singlet
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.sumElementRht
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Basic
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot

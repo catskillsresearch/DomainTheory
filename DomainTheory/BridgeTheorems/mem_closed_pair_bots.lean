@@ -6,6 +6,7 @@ public import DomainTheory.BridgeTheorems.SexDomainEquationInst10
 public import DomainTheory.BridgeTheorems.SexDomainEquationInst15
 public import DomainTheory.BridgeTheorems.TreeEnt_pairL_bot_of_pairs
 public import DomainTheory.BridgeTheorems.TreeEnt_pairR_bot_of_pairs
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 
 @[expose] public section
 

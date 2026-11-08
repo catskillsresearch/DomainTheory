@@ -4,7 +4,7 @@ public import DomainTheory.BridgeTheorems.InfoSysConstructions.instPartialOrderA
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.approxMap_toElement_le_iff
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.approxMap_toElement_element_toApproxMap
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.element_toApproxMap
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Basic
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot

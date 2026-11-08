@@ -4,7 +4,7 @@ public import Mathlib.Order.Sum.Order
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.assembleSum
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement_mono
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Basic
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.WithBot
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72

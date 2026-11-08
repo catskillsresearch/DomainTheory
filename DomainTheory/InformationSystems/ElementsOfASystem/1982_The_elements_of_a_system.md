@@ -29,22 +29,6 @@
 
 @import "Factoid34.lean"
 
-**[InformationSystems/InformationSystems/InfoSys/InfoSys.lean](../InformationSystems/InfoSys/InfoSys.lean)**
-
-@import "../InformationSystems/InfoSys/InfoSys.lean"
-
-**[InformationSystems/InformationSystems/InfoSys/Element.lean](../InformationSystems/InfoSys/Element.lean)**
-
-@import "../InformationSystems/InfoSys/Element.lean"
-
-**[InformationSystems/InformationSystems/InfoSys/Basic.lean](../InformationSystems/InfoSys/Basic.lean)**
-
-@import "../InformationSystems/InfoSys/Basic.lean"
-
-**[InformationSystems/InformationSystems/Definition22/EntSet.lean](../InformationSystems/Definition22/EntSet.lean)**
-
-@import "../InformationSystems/Definition22/EntSet.lean"
-
 **[InformationSystems/ElementsOfASystem/Factoid34/le_topElement.lean](Factoid34/le_topElement.lean)**
 
 @import "Factoid34/le_topElement.lean"
@@ -68,15 +52,3 @@
 **[InformationSystems/ElementsOfASystem/Factoid34/exists_unique_total_of_allConsistent.lean](Factoid34/exists_unique_total_of_allConsistent.lean)**
 
 @import "Factoid34/exists_unique_total_of_allConsistent.lean"
-
-**[InformationSystems/InformationSystems/InfoSys/con_empty.lean](../InformationSystems/InfoSys/con_empty.lean)**
-
-@import "../InformationSystems/InfoSys/con_empty.lean"
-
-**[InformationSystems/InformationSystems/InfoSys.lean](../InformationSystems/InfoSys.lean)**
-
-@import "../InformationSystems/InfoSys.lean"
-
-**[InformationSystems/InformationSystems/Definition22.lean](../InformationSystems/Definition22.lean)**
-
-@import "../InformationSystems/Definition22.lean"

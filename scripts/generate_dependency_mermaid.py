@@ -3064,6 +3064,40 @@ def write_ns_domains_graphviz_svg(
     )
 
 
+def outline_import_owners(
+    imp: str,
+    mod_owner: dict[str, str],
+    modules: dict[str, Path],
+    memo: dict[str, set[str]],
+    visiting: set[str] | None = None,
+) -> set[str]:
+    """Outline node ids that own modules reached by importing ``imp``.
+
+    Folder barrels (e.g. ``…InfoSys``) often re-export leaf modules owned by a
+    note (``…InfoSys.InfoSys``). Resolve through unowned DomainTheory imports so
+    those cross-note edges still appear.
+    """
+    if imp in memo:
+        return memo[imp]
+    if imp in mod_owner:
+        memo[imp] = {mod_owner[imp]}
+        return memo[imp]
+    if not imp.startswith("DomainTheory.") or imp not in modules:
+        memo[imp] = set()
+        return memo[imp]
+    if visiting is None:
+        visiting = set()
+    if imp in visiting:
+        return set()
+    visiting.add(imp)
+    owners: set[str] = set()
+    for sub in direct_imports_mod(imp, modules):
+        owners |= outline_import_owners(sub, mod_owner, modules, memo, visiting)
+    visiting.remove(imp)
+    memo[imp] = owners
+    return owners
+
+
 def gen_ns_outline_svg_lecture(
     diagram: Path,
     modules: dict[str, Path],
@@ -3079,8 +3113,8 @@ def gen_ns_outline_svg_lecture(
     """Item-level Lean deps for a 1980/1982 section hub (SVG gold copy).
 
     Ownership is each note's ``@import`` Lean files (plus companions). Edges are
-    direct imports across owners, then transitive reduction on the full graph —
-    no outline-order edge filtering.
+    direct imports across owners (folder barrels resolve to owned leaves), then
+    transitive reduction on the full graph — no outline-order edge filtering.
     """
     _, old_labels, style = parse_preserve_tail(old if diagram.suffix == ".mermaid" else "")
     index_md = find_index_md(diagram)
@@ -3167,14 +3201,15 @@ def gen_ns_outline_svg_lecture(
             mod_owner.setdefault(mod, nid)
 
     order = [nid for nid, _, _ in boxes]
+    owner_memo: dict[str, set[str]] = {}
     raw: dict[tuple[str, str], int] = defaultdict(int)
     for nid, _lab, mods in boxes:
         for mod in mods:
             for imp in direct_imports_mod(mod, modules):
-                src = mod_owner.get(imp)
-                if src is None or src == nid:
-                    continue
-                raw[(src, nid)] += 1
+                for src in outline_import_owners(imp, mod_owner, modules, owner_memo):
+                    if src == nid:
+                        continue
+                    raw[(src, nid)] += 1
     # Reduce on the full import graph (do not filter by outline order — that dropped
     # D16→Ord and left examples unreachable from Definition 1.1).
     kept = transitive_reduce(set(raw))

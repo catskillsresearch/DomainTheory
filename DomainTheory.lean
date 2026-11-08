@@ -1176,7 +1176,6 @@ import DomainTheory.InformationSystems.InformationSystems.a_third_example
 import DomainTheory.InformationSystems.InformationSystems.PartialFunToken
 import DomainTheory.InformationSystems.InformationSystems.partialFunctionSystem
 import DomainTheory.InformationSystems.InformationSystems.InfoSys
-import DomainTheory.InformationSystems.InformationSystems.InfoSys.Basic
 import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 import DomainTheory.InformationSystems.InformationSystems.InfoSys.InfoSys
 import DomainTheory.InformationSystems.InformationSystems.InfoSys.con_empty

@@ -2,8 +2,8 @@
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23
 @[expose] public section
 
 namespace DomainTheory.InformationSystems

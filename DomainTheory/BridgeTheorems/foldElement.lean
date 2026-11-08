@@ -9,6 +9,7 @@ public import DomainTheory.BridgeTheorems.mem_unfoldFinset
 public import DomainTheory.BridgeTheorems.SexDomainEquationInst15
 public import DomainTheory.BridgeTheorems.SumCon_image_treeCon
 public import DomainTheory.BridgeTheorems.TreeEnt_sumEnt
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 
 @[expose] public section
 

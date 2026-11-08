@@ -1,7 +1,7 @@
 
 module
 
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 
 @[expose] public section
 

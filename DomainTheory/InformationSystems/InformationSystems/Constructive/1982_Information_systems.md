@@ -13,5 +13,7 @@
 - [Partial-function system](../1982_partialFunctionSystem.md) [✓](../../../1982_REVISION.md)
 - [A third example](../1982_A_third_example.md) [✓](../../../1982_REVISION.md)
 - [Definition 2.2](../Definition22/1982_Definition_2_2.md) [✓](../../../1982_REVISION.md)
-- [Finite union](../1982_funion.md)
-- [Proposition 2.3](../Proposition23/1982_Proposition_2_3.md)
+- [Finite union](../1982_funion.md) [✓](../../../1982_REVISION.md)
+- [Proposition 2.3](../Proposition23/1982_Proposition_2_3.md) [✓](../../../1982_REVISION.md)
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-08) — <a href="../../../1982_REVISION.md">1982 revision progress</a></p>

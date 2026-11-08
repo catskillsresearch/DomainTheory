@@ -2,7 +2,7 @@ module
 
 public import Mathlib.Data.Finset.Basic
 public import Mathlib.Data.Set.Basic
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Basic
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.InfoSys
 
 @[expose] public section
 
