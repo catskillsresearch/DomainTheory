@@ -5,9 +5,11 @@
 **[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap.lean](constMap.lean)**
 
 @import "constMap.lean"
+
 **[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/comp_constMap.lean](comp_constMap.lean)**
 
 @import "comp_constMap.lean"
+
 **[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56.lean](../Proposition56.lean)**
 
 @import "../Proposition56.lean"

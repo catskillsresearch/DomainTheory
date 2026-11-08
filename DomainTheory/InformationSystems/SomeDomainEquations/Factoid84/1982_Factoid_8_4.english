@@ -11,6 +11,7 @@ The answer can be expressed most succinctly using our standard notation. If we t
 To say that $r$ is transitive is to say:
 
 (2) $r \circ r = r$.
+
 To say that for $r$ the object $0$ plays at being $\Delta$ is to say:
 
 $$(3) \quad \bar{0} \subseteq r(\bot),$$

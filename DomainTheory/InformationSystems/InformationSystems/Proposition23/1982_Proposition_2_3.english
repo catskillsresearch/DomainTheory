@@ -5,6 +5,7 @@
 (ii) $u \vdash v$ implies $u \cup v \in \mathrm{Con}$;
 
 (iii) $u \vdash u$;
+
 (iv) $u \vdash v$ and $v \vdash w$ imply $u \vdash w$;
 
 (v) $u' \supseteq u$, $u \vdash v$, and $v \supseteq v'$ imply $u' \vdash v'$; and
@@ -20,3 +21,13 @@ u \vdash X \quad \text{iff} \quad u \vdash \{X\}.
 $$
 
 The previous axioms in 2.1 are then easily proved from the new ones. ■
+
+*Some notation.* As it is not always clear what structure is meant if we refer to a domain simply by naming its underlying set of data objects, it will be better if we use a letter to refer to an information system as a whole. We shall therefore write:
+
+$$
+\mathbf{A} = (D_{\mathbf{A}}, \Delta_{\mathbf{A}}, \mathrm{Con}_{\mathbf{A}}, \vdash_{\mathbf{A}}),
+$$
+
+and say that $\mathbf{A}$ is an information system—with its parts as indicated. For a more informal discussion, the notation without subscripts can suffice, but there can be problems when several different systems are involved. ■
+
+So much for the definition of what a system is as a mathematical structure. The next question is: What is it good for? More precisely, if information systems are the backbones of domains, then where are the elements? That is the topic of the next section.

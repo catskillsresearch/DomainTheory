@@ -1,8 +1,3 @@
-In other words, composition of input/output relations is effected by putting the input into the first, getting some output, and then putting that in as input to the second. The correctness of this
-recipe on elements (i.e. formula 5.5(ii)) follows from the basic formula 5.3(v). Because the class of all sets and arbitrary mappings forms a category—in the formal meaning of the word—the above three propositions show that the totality of information systems and approximable mappings also forms a category: a sub-category of the category of sets. We have given a special representation to the category by our use of data objects and consistent sets, and we have thereby put the elements into a secondary position—for a good reason. But the elements are there to use. The axioms for a category could also be verified directly using the basic definitions like 5.4(i) and 5.5(i); the details are bland. The more interesting topic is: what are the closure conditions on our domains; how do we construct new domains given old ones?
-
-Before we go on to the first basic constructs of sums and products of domains, we remark on some other easy examples of approximable mappings: constant maps.
-
 **PROPOSITION 5.6.** *Given information systems $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, and $\mathbf{D}$, and given a fixed element $b \in |\mathbf{B}|$, then there is a unique approximable mapping $\mathrm{const}\ b : \mathbf{A} \to \mathbf{B}$ such that:*
 
 (i) $\quad (\mathrm{const}\ b)(x) = b,$
@@ -16,3 +11,5 @@ Before we go on to the first basic constructs of sums and products of domains, w
 (iii) $\quad (\mathrm{const}\ b) \circ g = \mathrm{const}\ b,$
 
 *for all approximable mappings $g : \mathbf{D} \to \mathbf{A}$.* $\blacksquare$
+
+The proof is immediate, since we need only interpret the input/output relation $u\ (\mathrm{const}\ b)\ v$ as meaning $v \subseteq b$. We note that our notation is somewhat ambiguous since, for example, in 5.6(iii) we are using $\mathrm{const}\ b$ in two senses: once as a mapping from $\mathbf{A}$, and once as a mapping from $\mathbf{D}$. In fact, we should hang two subscripts on the thing to fix both the source and the target of the mapping. This is too painful, however, and we generally rely on context to make the meaning clear. (Formal rules of type checking can be given, so on a computer-based system all the necessary subscripts could be put back in. Thus, the kind of ambiguity we are dealing with here is not very serious.)

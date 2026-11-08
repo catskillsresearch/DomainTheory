@@ -5,6 +5,7 @@
 **[InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/comp.lean](comp.lean)**
 
 @import "comp.lean"
+
 **[InformationSystems/ApproximableMappingsBetweenDomains/Proposition55.lean](../Proposition55.lean)**
 
 @import "../Proposition55.lean"

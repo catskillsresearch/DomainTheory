@@ -73,6 +73,51 @@ NS_RET_SVG = (
     / "1980_Retracts_of_the_universal_domain.svg"
 )
 
+# 1982 Information Systems outline hubs (Graphviz SVG gold copies).
+IS_CHAPTER_SVG = DT / "1982_InformationSystems.svg"
+IS_SEC2_SVG = (
+    DT
+    / "InformationSystems"
+    / "InformationSystems"
+    / "Constructive"
+    / "1982_Information_systems.svg"
+)
+IS_SEC3_SVG = (
+    DT / "InformationSystems" / "ElementsOfASystem" / "1982_The_elements_of_a_system.svg"
+)
+IS_SEC5_SVG = (
+    DT
+    / "InformationSystems"
+    / "ApproximableMappingsBetweenDomains"
+    / "Approximable"
+    / "1982_Approximable_mappings_between_domains.svg"
+)
+IS_SEC6_SVG = (
+    DT
+    / "InformationSystems"
+    / "ProductsAndSumsOfDomains"
+    / "Sum"
+    / "1982_Products_and_sums_of_domains.svg"
+)
+IS_SEC7_SVG = (
+    DT
+    / "InformationSystems"
+    / "FunctionSpaceAsADomain"
+    / "1982_The_function_space_as_a_domain.svg"
+)
+IS_SEC8_SVG = (
+    DT / "InformationSystems" / "SomeDomainEquations" / "1982_Some_domain_equations.svg"
+)
+IS_OUTLINE_SVGS = (
+    IS_CHAPTER_SVG,
+    IS_SEC2_SVG,
+    IS_SEC3_SVG,
+    IS_SEC5_SVG,
+    IS_SEC6_SVG,
+    IS_SEC7_SVG,
+    IS_SEC8_SVG,
+)
+
 DEPRECATED_MERMAID = DT / "1972_Continuous_lattices.mermaid"
 CL1972_SECTION_MERMAIDS = frozenset(
     {
@@ -226,12 +271,29 @@ def modules_from_section_outline(md: Path, modules: dict[str, Path] | None = Non
     return seeds
 
 
+def note_has_outline_diagram(md: Path) -> bool:
+    text = md.read_text(encoding="utf-8", errors="ignore")
+    if not any(OUTLINE_LINK.match(ln) for ln in text.splitlines()):
+        return False
+    return bool(
+        re.search(r'@import\s+"[^"]+\.(?:mermaid|svg)"', text)
+    )
+
+
 def note_module_set(md: Path) -> set[str]:
     """Modules belonging to one outline box (note or whole topic folder)."""
     text = md.read_text(encoding="utf-8", errors="ignore")
-    if re.search(r'@import\s+"[^"]+\.mermaid"', text):
+    if note_has_outline_diagram(md) or (
+        re.search(r'@import\s+"[^"]+\.mermaid"', text)
+        and any(OUTLINE_LINK.match(ln) for ln in text.splitlines())
+    ):
         if any(OUTLINE_LINK.match(ln) for ln in text.splitlines()):
             return modules_from_section_outline(md)
+        if md.parent.resolve() == DT.resolve():
+            return modules_from_section_outline(md)
+        folder = md.parent
+        return {module_of(p) for p in folder.rglob("*.lean") if p.is_file()}
+    if re.search(r'@import\s+"[^"]+\.mermaid"', text):
         if md.parent.resolve() == DT.resolve():
             return modules_from_section_outline(md)
         folder = md.parent
@@ -3012,8 +3074,9 @@ def gen_ns_outline_svg_lecture(
     header: list[str],
     aggregate_lecture_exercises: bool = True,
     rankdir: str = "TB",
+    recursive_barrels: bool = False,
 ) -> str:
-    """Item-level Lean deps for a 1980 section hub (SVG gold copy).
+    """Item-level Lean deps for a 1980/1982 section hub (SVG gold copy).
 
     Ownership is each note's ``@import`` Lean files (plus companions). Edges are
     direct imports across owners, then transitive reduction on the full graph —
@@ -3052,15 +3115,51 @@ def gen_ns_outline_svg_lecture(
                 sub = resolve_md(child, mm.group("href"))
                 if sub is not None:
                     mods |= lean_modules_from_note(sub)
+        elif recursive_barrels and note_has_outline_diagram(child):
+            mods = set(note_module_set(child))
+            mods |= lean_modules_from_note(child)
         else:
             mods = set(lean_modules_from_note(child))
             for stem in companions.get(title, ()):
                 p = folder / f"{stem}.lean"
                 if p.is_file():
                     mods.add(module_of(p))
+            # Nested barrel child: also fold outline descendants' Lean.
+            if any(
+                OUTLINE_LINK.match(ln)
+                for ln in child.read_text(encoding="utf-8", errors="ignore").splitlines()
+            ):
+                mods |= modules_from_section_outline(child)
         if not mods:
             continue
         boxes.append((nid, old_labels.get(nid, default_lab), mods))
+
+    # Barrel hubs sometimes host Lean @imports themselves (e.g. 1982 §3). Fold
+    # unowned hub modules into the first outline box so the SVG is non-empty.
+    hub_lean = lean_modules_from_note(index_md)
+    if hub_lean:
+        owned: set[str] = set()
+        for _nid, _lab, mods in boxes:
+            owned |= mods
+        leftover = hub_lean - owned
+        if leftover:
+            if boxes:
+                nid0, lab0, mods0 = boxes[0]
+                boxes[0] = (nid0, lab0, mods0 | leftover)
+            else:
+                # No child owned Lean — still show the first SHORT outline entry.
+                for line in index_md.read_text(encoding="utf-8", errors="ignore").splitlines():
+                    m = OUTLINE_LINK.match(line)
+                    if not m:
+                        continue
+                    title = m.group("title")
+                    if re.search(r"(?i)^introduction$", title.strip()):
+                        continue
+                    if title not in short:
+                        continue
+                    nid, default_lab = short[title]
+                    boxes.append((nid, old_labels.get(nid, default_lab), leftover))
+                    break
 
     mod_owner: dict[str, str] = {}
     for nid, _lab, mods in boxes:
@@ -3112,6 +3211,162 @@ def gen_ns_outline_svg_lecture(
         labeled=True,
         flowchart=flow,
         node_order=order,
+    )
+
+
+# 1982 Information Systems outline SHORT maps (TOC title -> id, label).
+IS_CHAPTER_SHORT: dict[str, tuple[str, str]] = {
+    "Information systems": ("IS2", "Information systems"),
+    "The elements of a system": ("IS3", "The elements of a system"),
+    "Domains as lattices and as topological spaces": (
+        "IS4",
+        "Domains as lattices and as topological spaces",
+    ),
+    "Approximable mappings between domains": (
+        "IS5",
+        "Approximable mappings between domains",
+    ),
+    "Products and sums of domains": ("IS6", "Products and sums of domains"),
+    "The function space as a domain": ("IS7", "The function space as a domain"),
+    "Some domain equations": ("IS8", "Some domain equations"),
+}
+IS_SEC2_SHORT: dict[str, tuple[str, str]] = {
+    "Definition 2.1": ("D21", "Definition 2.1"),
+    "A first example": ("Ex1", "A first example"),
+    "A second example": ("Ex2", "A second example"),
+    "A third example": ("Ex3", "A third example"),
+    "Definition 2.2": ("D22", "Definition 2.2"),
+    "Proposition 2.3": ("P23", "Proposition 2.3"),
+}
+IS_SEC3_SHORT: dict[str, tuple[str, str]] = {
+    "Definition 3.1": ("D31", "Definition 3.1"),
+}
+IS_SEC5_SHORT: dict[str, tuple[str, str]] = {
+    "Definition 5.1": ("D51", "Definition 5.1"),
+    "Definition 5.2": ("D52", "Definition 5.2"),
+    "Proposition 5.3": ("P53", "Proposition 5.3"),
+    "Proposition 5.4": ("P54", "Proposition 5.4"),
+    "Proposition 5.5": ("P55", "Proposition 5.5"),
+    "Proposition 5.6": ("P56", "Proposition 5.6"),
+}
+IS_SEC6_SHORT: dict[str, tuple[str, str]] = {
+    "Definition 6.1": ("D61", "Definition 6.1"),
+    "Proposition 6.2": ("P62", "Proposition 6.2"),
+    "Definition 6.3": ("D63", "Definition 6.3"),
+    "Proposition 6.4": ("P64", "Proposition 6.4"),
+}
+IS_SEC7_SHORT: dict[str, tuple[str, str]] = {
+    "Definition 7.1": ("D71", "Definition 7.1"),
+    "Theorem 7.2": ("T72", "Theorem 7.2"),
+    "Theorem 7.3": ("T73", "Theorem 7.3"),
+    "Proposition 7.4": ("P74", "Proposition 7.4"),
+}
+IS_SEC8_SHORT: dict[str, tuple[str, str]] = {
+    "Factoid 8.1": ("F81", "Factoid 8.1"),
+    "Factoid 8.2": ("F82", "Factoid 8.2"),
+    "Factoid 8.3": ("F83", "Factoid 8.3"),
+    "Factoid 8.4": ("F84", "Factoid 8.4"),
+}
+
+
+def _is_outline_header(index_name: str) -> list[str]:
+    return [
+        f"%% Each box is one outline note from {index_name}.",
+        "%% Lean modules = that note's @import .lean files (barrel children recurse).",
+        "%% Arrowhead on the importer; label = direct-import count.",
+        "%% All cross-note Lean imports, then transitive reduction (keeps reachability).",
+        "%% Display copy: Graphviz SVG (gold); no sibling .mermaid.",
+    ]
+
+
+def gen_is_chapter_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=IS_CHAPTER_SHORT,
+        companions={},
+        header=_is_outline_header("1982_InformationSystems.md"),
+        aggregate_lecture_exercises=False,
+        recursive_barrels=True,
+        rankdir="LR",
+    )
+
+
+def gen_is_sec2_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=IS_SEC2_SHORT,
+        companions={},
+        header=_is_outline_header("1982_Information_systems.md"),
+        aggregate_lecture_exercises=False,
+        rankdir="LR",
+    )
+
+
+def gen_is_sec3_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=IS_SEC3_SHORT,
+        companions={},
+        header=_is_outline_header("1982_The_elements_of_a_system.md"),
+        aggregate_lecture_exercises=False,
+    )
+
+
+def gen_is_sec5_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=IS_SEC5_SHORT,
+        companions={},
+        header=_is_outline_header("1982_Approximable_mappings_between_domains.md"),
+        aggregate_lecture_exercises=False,
+        rankdir="LR",
+    )
+
+
+def gen_is_sec6_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=IS_SEC6_SHORT,
+        companions={},
+        header=_is_outline_header("1982_Products_and_sums_of_domains.md"),
+        aggregate_lecture_exercises=False,
+        rankdir="LR",
+    )
+
+
+def gen_is_sec7_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=IS_SEC7_SHORT,
+        companions={},
+        header=_is_outline_header("1982_The_function_space_as_a_domain.md"),
+        aggregate_lecture_exercises=False,
+        rankdir="LR",
+    )
+
+
+def gen_is_sec8_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=IS_SEC8_SHORT,
+        companions={},
+        header=_is_outline_header("1982_Some_domain_equations.md"),
+        aggregate_lecture_exercises=False,
+        rankdir="LR",
     )
 
 
@@ -3520,6 +3775,38 @@ def classify(mermaid: Path, text: str) -> str:
         "1980_Retracts_of_the_universal_domain.svg",
     ):
         return "ns_retracts_lecture"
+    if mermaid.name in ("1982_InformationSystems.mermaid", "1982_InformationSystems.svg"):
+        return "is_chapter_lecture"
+    if mermaid.name in (
+        "1982_Information_systems.mermaid",
+        "1982_Information_systems.svg",
+    ):
+        return "is_sec2_lecture"
+    if mermaid.name in (
+        "1982_The_elements_of_a_system.mermaid",
+        "1982_The_elements_of_a_system.svg",
+    ):
+        return "is_sec3_lecture"
+    if mermaid.name in (
+        "1982_Approximable_mappings_between_domains.mermaid",
+        "1982_Approximable_mappings_between_domains.svg",
+    ):
+        return "is_sec5_lecture"
+    if mermaid.name in (
+        "1982_Products_and_sums_of_domains.mermaid",
+        "1982_Products_and_sums_of_domains.svg",
+    ):
+        return "is_sec6_lecture"
+    if mermaid.name in (
+        "1982_The_function_space_as_a_domain.mermaid",
+        "1982_The_function_space_as_a_domain.svg",
+    ):
+        return "is_sec7_lecture"
+    if mermaid.name in (
+        "1982_Some_domain_equations.mermaid",
+        "1982_Some_domain_equations.svg",
+    ):
+        return "is_sec8_lecture"
     if index_md_is_outline_barrel(mermaid):
         return "note_outline"
     if mermaid.name == "1972_ContinuousLattices.mermaid":
@@ -3641,6 +3928,20 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
         return gen_ns_computability_lecture(mermaid, modules, old)
     if kind == "ns_retracts_lecture":
         return gen_ns_retracts_lecture(mermaid, modules, old)
+    if kind == "is_chapter_lecture":
+        return gen_is_chapter_lecture(mermaid, modules, old)
+    if kind == "is_sec2_lecture":
+        return gen_is_sec2_lecture(mermaid, modules, old)
+    if kind == "is_sec3_lecture":
+        return gen_is_sec3_lecture(mermaid, modules, old)
+    if kind == "is_sec5_lecture":
+        return gen_is_sec5_lecture(mermaid, modules, old)
+    if kind == "is_sec6_lecture":
+        return gen_is_sec6_lecture(mermaid, modules, old)
+    if kind == "is_sec7_lecture":
+        return gen_is_sec7_lecture(mermaid, modules, old)
+    if kind == "is_sec8_lecture":
+        return gen_is_sec8_lecture(mermaid, modules, old)
     if kind == "ns_items":
         return gen_neighborhood_items(mermaid, modules, old)
     if kind == "note_outline":
@@ -3996,9 +4297,13 @@ def main() -> None:
             NS_EQUATIONS_SVG,
             NS_COMP_SVG,
             NS_RET_SVG,
+            *IS_OUTLINE_SVGS,
         ):
-            if svg.is_file():
-                paths.append(svg.resolve())
+            # Create empty stub so first --write can generate SVG gold copies.
+            if not svg.is_file():
+                svg.parent.mkdir(parents=True, exist_ok=True)
+                svg.write_text("<!-- pending -->\n", encoding="utf-8")
+            paths.append(svg.resolve())
 
     changed = 0
     unknown: list[Path] = []

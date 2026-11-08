@@ -3,6 +3,7 @@
 The domain equation we wish to solve is:
 
 $$\mathbf{D} \cong \mathbf{A} + (\mathbf{D} \to \mathbf{D}).$$
+
 We proceed in much the same way we did for $\mathbf{T}$, except we must now put in data objects appropriate to the function space. Here is construction, where again $\Delta$ is chosen outside $D_{\mathbf{A}}$ and $\Delta_{\mathbf{D}} = (\Delta, \Delta)$:
 
 (1) $\Delta_{\mathbf{D}} \in D_{\mathbf{D}}$;

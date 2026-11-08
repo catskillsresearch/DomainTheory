@@ -1,8 +1,9 @@
 # Products and sums of domains
 
-**Dependencies.** Inside ProductsAndSumsOfDomains, each box is one subfolder, or one Lean file sitting directly in the folder. A box named as another folder in this chapter is that whole folder. A box named as another chapter is that whole chapter. The arrowhead points at the file or folder that imports, and the number is how many direct imports.
+@import "1982_Products_and_sums_of_domains.svg" {code_block=false}
 
-@import "../ProductsAndSumsOfDomains.mermaid"
-
-@import "1982_Products_and_sums_of_domains.english" {code_block=false}
-
+- [Introduction](1982_Introduction.md)
+- [Definition 6.1](1982_Definition_6_1.md)
+- [Proposition 6.2](../Proposition62/1982_Proposition_6_2.md)
+- [Definition 6.3](1982_Definition_6_3.md)
+- [Proposition 6.4](../Proposition64/1982_Proposition_6_4.md)

@@ -1,5 +1,3 @@
-The result above not only proves that every approximable mapping of the form $f : \mathbf{A} \to \mathbf{A}$ has a fixed point as an element of $\mathbf{A}$, but that the association of the least fixed point is itself an approximable operator. The formulation makes essential use of the partial ordering of the domains, but Gordon Plotkin noticed as an exercise that the characterization of the operator can be given entirely by equations.
-
 **PROPOSITION 7.4.** *The least fixed-point operator is uniquely determined by the following three conditions:*
 
 (i) $\mathrm{fix}_{\mathbf{A}} : (\mathbf{A} \to \mathbf{A}) \to \mathbf{A}$, *for all systems* $\mathbf{A}$;
@@ -19,6 +17,7 @@ The collection of strict mappings forms a domain, too. The way to see this is to
 There is also a useful operator
 
 $$\mathrm{strict} : (\mathbf{A} \to \mathbf{B}) \to (\mathbf{A} \to_{\blacksquare} \mathbf{B})$$
+
 defined by the condition that for $f : \mathbf{A} \to \mathbf{B}$ we have:
 
 $$u \,\mathit{strict}(f)\, v \text{ iff either } \emptyset \vdash_{\mathbf{B}} v \text{ or } \emptyset \not\vdash_{\mathbf{A}} u \text{ and } u f v,$$

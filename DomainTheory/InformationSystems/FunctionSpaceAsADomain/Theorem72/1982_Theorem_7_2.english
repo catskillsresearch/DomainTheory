@@ -19,6 +19,7 @@ The definition of $\text{curry } h$ uses the same trick of regarding a binary re
 $$h(x, y) = (\text{curry } h)(x)(y),$$
 
 for all $x \in |\mathbf{A}|$ and $y \in |\mathbf{B}|$. From this equation it follows that $\text{curry } h$ is uniquely determined. But, from what we know about $\text{apply}$, this is actually the same equation as that stated at the end of the theorem. $\blacksquare$
+
 *Approximations to functions.* Why have approximable functions been given this name? In general, elements of domains are the limits of their finite approximations. We have just indicated why the approximable mappings from one domain into another do form the elements of a domain themselves. We have explicitly shown how to construct the finite approximable mappings $\overline{w}$. A closer examination of the definitions would emphasize the very constructive nature of this analysis. It follows that the approximable mappings can therefore be approximated by simple functions. It does not follow that all approximable mappings are simple or constructive, since what takes place in the limiting process can be very complex. But the result does show how we can start to make distinctions once a precise sense of approximation is uncovered. $\blacksquare$
 
 *Higher-type functions and the combinators.* In the above discussion we have already combined the function-space construction with other domains by means of products. But there is nothing now stopping us from iterating the arrow domain constructor with itself as much as we like. This is how the so-called higher types are formed. In certain categories, such as the category of sets, this is a non-constructive move leading to the higher cardinal numbers. In the category of domains, however, the construct is constructive, because we have shown how to define all the parts of $\mathbf{A} \to \mathbf{B}$ in terms of very finite data objects (assuming, it need hardly be added, that $\mathbf{A}$ and $\mathbf{B}$ are constructively given).
@@ -38,6 +39,7 @@ where for functions of the proper type we have:
 $$\text{pair}(f, g) = \langle f, g \rangle$$
 
 There will be a similar operator for the construct of Proposition 6.4.
+
 Of course the most basic operator of function composition is also approximable of the appropriate type. We can write:
 
 $$\mathrm{comp} : (\mathbf{B} \to \mathbf{C}) \times (\mathbf{A} \to \mathbf{B}) \to (\mathbf{A} \to \mathbf{C}),$$
