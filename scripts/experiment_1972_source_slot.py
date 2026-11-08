@@ -844,7 +844,6 @@ def write_mermaid(barrel: Barrel) -> None:
 
 def blank_unused(tree_paths: set[Path]) -> None:
     candidates = list(CL.rglob("*.md"))
-    candidates.append(DT / "1972_TBD_prose.md")
     for md in candidates:
         if md.resolve() in tree_paths:
             continue
