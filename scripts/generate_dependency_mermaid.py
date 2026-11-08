@@ -3336,6 +3336,11 @@ IS_SEC4_SHORT: dict[str, tuple[str, str]] = {
     ),
     "Family infima": ("FInf", "Family infima"),
     "Factoid 4.2: family infs": ("F42", "Factoid 4.2:\nfamily infs"),
+    "Finite consistency": ("FCon", "Finite\nconsistency"),
+    "Deductive closure": ("DCl", "Deductive\nclosure"),
+
+    "Family suprema": ("FSup", "Family\nsuprema"),
+    "Join": ("Join", "Join"),
     "Factoid 4.3: joins / conditional sups": (
         "F43",
         "Factoid 4.3:\njoins / conditional sups",

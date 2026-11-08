@@ -1,9 +1,7 @@
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.familyInf
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid43.IsFinitelyConsistent
 
 @[expose] public section
 
@@ -14,6 +12,11 @@ open DomainTheory.InformationSystems.Constructive
 namespace InfoSys
 
 variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
+
+def IsFinitelyConsistent (U : Set α) : Prop :=
+  ∀ Y : Finset α, (Y : Set α) ⊆ U → Y ∈ sys.Con
+
+namespace IsFinitelyConsistent
 
 theorem exists_entSet_of_subset_deductive
     (U : Set α) (hU : sys.IsFinitelyConsistent U) (Y : Finset α)
@@ -49,6 +52,7 @@ theorem exists_entSet_of_subset_deductive
       · exact sys.ent_trans hw (hU us hus)
           (fun y hy => sys.ent_refl hw (funion.mem.mpr (Or.inr hy))) (hEnts b hb')
 
-end InfoSys
+end IsFinitelyConsistent
 
+end InfoSys
 end DomainTheory.InformationSystems

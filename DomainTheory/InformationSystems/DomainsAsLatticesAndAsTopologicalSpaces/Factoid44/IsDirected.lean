@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid43
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.familySup
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.Chain
 
 @[expose] public section

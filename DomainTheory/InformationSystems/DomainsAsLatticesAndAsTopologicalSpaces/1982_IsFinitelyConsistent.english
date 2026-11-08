@@ -1,0 +1,7 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.IsFinitelyConsistent`).** A set of data is finitely consistent when every finite subset is consistent in the information system.
+
+**Theorem (`InfoSys.IsFinitelyConsistent.exists_entSet_of_subset_deductive`).** If $U$ is finitely consistent and every member of a finite set $Y$ is entailed by some finite subset of $U$, then some finite subset of $U$ entails every member of $Y$.
+
+*Proof.* Induct on $Y$. The empty case is immediate. For an inserted datum, take finite antecedents for the new datum and for the remainder, form their finite union (still inside $U$, hence consistent by finite consistency), and obtain multiary entailment of the whole by transitivity of entailment from each piece. □

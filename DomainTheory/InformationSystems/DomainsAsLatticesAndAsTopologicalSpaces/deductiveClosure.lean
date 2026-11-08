@@ -1,10 +1,6 @@
 module
 
-public import DomainTheory.InformationSystems.InformationSystems.Constructive
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.familyInf
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid43.IsFinitelyConsistent
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid43.exists_entSet_of_subset_deductive
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.IsFinitelyConsistent
 
 @[expose] public section
 
@@ -20,17 +16,33 @@ def deductiveClosure (U : Set α) (hU : sys.IsFinitelyConsistent U) : sys.Elemen
   carrier := {a | ∃ u : Finset α, (u : Set α) ⊆ U ∧ sys.Ent u a}
   consistent := by
     intro Y hY
-    obtain ⟨w, hwU, hEnt⟩ := sys.exists_entSet_of_subset_deductive U hU Y hY
+    obtain ⟨w, hwU, hEnt⟩ := IsFinitelyConsistent.exists_entSet_of_subset_deductive sys U hU Y hY
     have hw : w ∈ sys.Con := hU w hwU
     exact sys.con_subset (proposition_2_3.ii sys hw hEnt) (funion.subset_right _ _)
   closed := by
     intro Y a hY hEnt
-    obtain ⟨w, hwU, hEntY⟩ := sys.exists_entSet_of_subset_deductive U hU Y hY
+    obtain ⟨w, hwU, hEntY⟩ := IsFinitelyConsistent.exists_entSet_of_subset_deductive sys U hU Y hY
     have hw : w ∈ sys.Con := hU w hwU
     have hYcon : Y ∈ sys.Con :=
       sys.con_subset (proposition_2_3.ii sys hw hEntY) (funion.subset_right _ _)
     exact ⟨w, hwU, sys.ent_trans hw hYcon hEntY hEnt⟩
 
-end InfoSys
+namespace deductiveClosure
 
+theorem subset (U : Set α) (hU : sys.IsFinitelyConsistent U) :
+    U ⊆ (sys.deductiveClosure U hU).carrier := by
+  intro a ha
+  refine ⟨{a}, ?_, sys.ent_refl (hU {a} ?_) (Finset.mem_singleton_self a)⟩
+  · intro b hb
+    have : b = a := Finset.mem_singleton.mp (Finset.mem_coe.1 hb)
+    subst this
+    exact ha
+  · intro b hb
+    have : b = a := Finset.mem_singleton.mp (Finset.mem_coe.1 hb)
+    subst this
+    exact ha
+
+end deductiveClosure
+
+end InfoSys
 end DomainTheory.InformationSystems

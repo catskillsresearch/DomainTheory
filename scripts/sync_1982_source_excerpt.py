@@ -104,7 +104,7 @@ SLICE_NOTES: list[SliceSpec] = [
         "What about infs of subsets?",
     ),
     (
-        "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid43/1982_Factoid_4_3.md",
+        "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/1982_Factoid_4_3.md",
         "1982_Factoid_4_3.english",
         "What about suprema (or sups or joins)?",
     ),
@@ -286,7 +286,12 @@ BARRELS: dict[str, tuple[str, list[str]]] = {
             "- [Factoid 4.1: lattice / binary meets](1982_Factoid_4_1.md)",
             "- [Family infima](1982_familyInf.md)",
             "- [Factoid 4.2: family infs](1982_Factoid_4_2.md)",
-            "- [Factoid 4.3: joins / conditional sups](Factoid43/1982_Factoid_4_3.md)",
+            "- [Finite consistency](1982_IsFinitelyConsistent.md)",
+            "- [Deductive closure](1982_deductiveClosure.md)",
+
+            "- [Family suprema](1982_familySup.md)",
+            "- [Join](1982_join.md)",
+            "- [Factoid 4.3: joins / conditional sups](1982_Factoid_4_3.md)",
             "- [Factoid 4.4: chains & directed sups](Factoid44/1982_Factoid_4_4.md)",
             "- [Factoid 4.5: finite approximants](Factoid45/1982_Factoid_4_5.md)",
             "- [Factoid 4.6: topology / Scott continuity](Factoid46/1982_Factoid_4_6.md)",

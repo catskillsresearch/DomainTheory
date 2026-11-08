@@ -2,7 +2,7 @@
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid43
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.familySup
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.IsDirected
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid44.exists_mem_of_subset_directedUnion
 
