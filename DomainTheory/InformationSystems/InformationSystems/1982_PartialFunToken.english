@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`PartialFunToken`).** For sets $A$ and $B$, a partial-function token is either a least-informative datum $\bot$, or a pair $(a, b)$ with $a \in A$ and $b \in B$, standing for the proposition that a yet-to-be-determined function sends $a$ to $b$. Equality of such tokens is decidable.

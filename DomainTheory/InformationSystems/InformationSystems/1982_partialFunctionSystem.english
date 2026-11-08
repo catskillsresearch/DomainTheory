@@ -1,0 +1,27 @@
+<!-- formalization -->
+
+**Definition (`PartialFunConsistent`).** A finite set $u$ of partial-function tokens is consistent when it does not assign two distinct values to the same argument: whenever $(a, b)$ and $(a, b')$ both lie in $u$, one has $b = b'$.
+
+**Definition (`PartialFunEnt`).** A consistent finite set $u$ of partial-function tokens entails a token $X$ precisely when $X$ is the bottom token or $X$ already belongs to $u$.
+
+**Theorem (`consistent_empty`).** The empty set of partial-function tokens is consistent.
+
+*Proof.* No pair belongs to the empty set, so the functional condition holds vacuously. □
+
+**Theorem (`consistent_subset`).** Consistency is downward closed under subsets.
+
+*Proof.* Any conflicting pair in a subset would already conflict in the larger set. □
+
+**Theorem (`consistent_singleton`).** Every singleton of partial-function tokens is consistent.
+
+*Proof.* The bottom token contributes no pairs; a single pair cannot conflict with a distinct value for the same argument. □
+
+**Theorem (`consistent_insert_bot`).** Inserting the bottom token into a consistent set preserves consistency.
+
+*Proof.* Bottom is not a pair, so membership of pairs is unchanged. □
+
+**Theorem (`consistent_insert_mem`).** Inserting a token already present in a consistent set preserves consistency.
+
+*Proof.* The insert does not enlarge the set. □
+
+**Definition (`partialFunctionSystem`).** For decidable $A$ and $B$, the partial-function information system on partial-function tokens has least-informative datum $\bot$, consistency given by partial-function consistency, and entailment given by partial-function entailment. The six information-system axioms hold by the consistency lemmas above together with the minimal reading of entailment.

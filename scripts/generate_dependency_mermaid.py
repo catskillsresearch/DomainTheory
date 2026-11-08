@@ -3237,6 +3237,8 @@ IS_SEC2_SHORT: dict[str, tuple[str, str]] = {
     "Interval tokens": ("Tok", "Interval tokens"),
     "Satisfaction": ("Sat", "Satisfaction"),
     "A second example": ("Ex2", "A second example"),
+    "Partial-function tokens": ("PTok", "Partial-function tokens"),
+    "Partial-function system": ("PFun", "Partial-function system"),
     "A third example": ("Ex3", "A third example"),
     "Definition 2.2": ("D22", "Definition 2.2"),
     "Proposition 2.3": ("P23", "Proposition 2.3"),

@@ -61,38 +61,6 @@
 
 @import "../InformationSystems/Definition22/entSet_empty.lean"
 
-**[InformationSystems/InformationSystems/Factoid26/Token.lean](../InformationSystems/Factoid26/Token.lean)**
-
-@import "../InformationSystems/Factoid26/Token.lean"
-
-**[InformationSystems/InformationSystems/Factoid26/Consistent.lean](../InformationSystems/Factoid26/Consistent.lean)**
-
-@import "../InformationSystems/Factoid26/Consistent.lean"
-
-**[InformationSystems/InformationSystems/Factoid26/consistent_insert_bot.lean](../InformationSystems/Factoid26/consistent_insert_bot.lean)**
-
-@import "../InformationSystems/Factoid26/consistent_insert_bot.lean"
-
-**[InformationSystems/InformationSystems/Factoid26/consistent_insert_mem.lean](../InformationSystems/Factoid26/consistent_insert_mem.lean)**
-
-@import "../InformationSystems/Factoid26/consistent_insert_mem.lean"
-
-**[InformationSystems/InformationSystems/Factoid26/Ent.lean](../InformationSystems/Factoid26/Ent.lean)**
-
-@import "../InformationSystems/Factoid26/Ent.lean"
-
-**[InformationSystems/InformationSystems/Factoid26/consistent_subset.lean](../InformationSystems/Factoid26/consistent_subset.lean)**
-
-@import "../InformationSystems/Factoid26/consistent_subset.lean"
-
-**[InformationSystems/InformationSystems/Factoid26/consistent_singleton.lean](../InformationSystems/Factoid26/consistent_singleton.lean)**
-
-@import "../InformationSystems/Factoid26/consistent_singleton.lean"
-
-**[InformationSystems/InformationSystems/Factoid26/partialFunctionSystem.lean](../InformationSystems/Factoid26/partialFunctionSystem.lean)**
-
-@import "../InformationSystems/Factoid26/partialFunctionSystem.lean"
-
 **[InformationSystems/ElementsOfASystem/Factoid34/le_topElement.lean](Factoid34/le_topElement.lean)**
 
 @import "Factoid34/le_topElement.lean"
@@ -128,10 +96,6 @@
 **[InformationSystems/InformationSystems/InfoSys.lean](../InformationSystems/InfoSys.lean)**
 
 @import "../InformationSystems/InfoSys.lean"
-
-**[InformationSystems/InformationSystems/Factoid26/Basic.lean](../InformationSystems/Factoid26/Basic.lean)**
-
-@import "../InformationSystems/Factoid26/Basic.lean"
 
 **[InformationSystems/InformationSystems/Definition22.lean](../InformationSystems/Definition22.lean)**
 
