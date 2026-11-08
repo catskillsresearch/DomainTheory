@@ -9,3 +9,9 @@ We have for all elements $x$ of the domain the basic formula:
 $$x = \bigcup \{\overline{u} \mid u \in \mathrm{Con}_{\mathbf{A}} \text{ and } u \subseteq x\}.$$
 
 This can be read intuitively as saying that every element of the domain is the *limit* of its *finite approximations*. And, having used the word "limit" so often, we ought now to say something about how to make the meaning of this word correct mathematically. Note that in the limit representation for $x$, the union is a directed one. (Why?)
+
+<!-- formalization -->
+
+**Theorem (`InfoSys.factoid_45`).** Every element equals the directed supremum of its finite approximants.
+
+*Proof.* This is the directed-supremum representation of an element by its finite approximants. □
