@@ -1,8 +1,8 @@
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition53.Le
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition53.le_iff_toElement_le
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.Le
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.le_iff_toElement_le
 
 @[expose] public section
 

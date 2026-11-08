@@ -4,7 +4,7 @@ public import DomainTheory.BridgeTheorems.ScottMapBridgeInst9
 public import DomainTheory.BridgeTheorems.ofScottContinuous_toScottContinuous
 public import DomainTheory.BridgeTheorems.toScottContinuous_ofScottContinuous
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.instPartialOrderApproximableMap
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition53.le_iff_toElement_le
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.le_iff_toElement_le
 public import Mathlib.Algebra.Group.End
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
@@ -23,7 +23,7 @@ public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_13
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_14
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_46
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition53
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
 public import DomainTheory.BridgeTheorems.InfoSysConstructions
 public import DomainTheory.BridgeTheorems.PresentationDomains
 public import DomainTheory.BridgeTheorems.ConjScottMap

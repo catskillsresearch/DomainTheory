@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition53
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62.Basic
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62.element_eq_of_fst_snd

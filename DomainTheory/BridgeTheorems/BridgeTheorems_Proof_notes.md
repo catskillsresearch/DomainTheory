@@ -98,12 +98,12 @@
 **[BridgeTheorems/ContinuousLatticeToNeighborhood/RoundFilter.lean](ContinuousLatticeToNeighborhood/RoundFilter.lean)**
 
 @import "ContinuousLatticeToNeighborhood/RoundFilter.lean"
-**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/Le.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/Le.lean)**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/Le.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/Le.lean)**
 
-@import "../InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/Le.lean"
-**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/rel_iff_forall_singleton.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/rel_iff_forall_singleton.lean)**
+@import "../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/Le.lean"
+**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/rel_iff_forall_singleton.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/rel_iff_forall_singleton.lean)**
 
-@import "../InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/rel_iff_forall_singleton.lean"
+@import "../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/rel_iff_forall_singleton.lean"
 **[BridgeTheorems/AlgebraicLattice.lean](AlgebraicLattice.lean)**
 
 @import "AlgebraicLattice.lean"
@@ -122,9 +122,9 @@
 **[BridgeTheorems/ContinuousLatticeToNeighborhood/wayBelowUp_anti.lean](ContinuousLatticeToNeighborhood/wayBelowUp_anti.lean)**
 
 @import "ContinuousLatticeToNeighborhood/wayBelowUp_anti.lean"
-**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/rel_iff_closure_le.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/rel_iff_closure_le.lean)**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/rel_iff_closure_le.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/rel_iff_closure_le.lean)**
 
-@import "../InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/rel_iff_closure_le.lean"
+@import "../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/rel_iff_closure_le.lean"
 **[BridgeTheorems/ContinuousLatticeToNeighborhood/codes.lean](ContinuousLatticeToNeighborhood/codes.lean)**
 
 @import "ContinuousLatticeToNeighborhood/codes.lean"
@@ -155,15 +155,15 @@
 **[BridgeTheorems/InfoSysToIdealCompletion/le_ofIdeal_of_mem.lean](InfoSysToIdealCompletion/le_ofIdeal_of_mem.lean)**
 
 @import "InfoSysToIdealCompletion/le_ofIdeal_of_mem.lean"
-**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/le_iff_toElement_le.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/le_iff_toElement_le.lean)**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/le_iff_toElement_le.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/le_iff_toElement_le.lean)**
 
-@import "../InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/le_iff_toElement_le.lean"
-**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/ext_iff_toElement.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/ext_iff_toElement.lean)**
+@import "../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/le_iff_toElement_le.lean"
+**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ext_iff_toElement.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ext_iff_toElement.lean)**
 
-@import "../InformationSystems/ApproximableMappingsBetweenDomains/Proposition53/ext_iff_toElement.lean"
-**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition53.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Proposition53.lean)**
+@import "../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/ext_iff_toElement.lean"
+**[InformationSystems/ApproximableMappingsBetweenDomains/proposition_5_3.lean](../InformationSystems/ApproximableMappingsBetweenDomains/proposition_5_3.lean)**
 
-@import "../InformationSystems/ApproximableMappingsBetweenDomains/Proposition53.lean"
+@import "../InformationSystems/ApproximableMappingsBetweenDomains/proposition_5_3.lean"
 **[BridgeTheorems/ConjScottMap.lean](ConjScottMap.lean)**
 
 @import "ConjScottMap.lean"

@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition53
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
 
 @[expose] public section
