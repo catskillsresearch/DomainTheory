@@ -3496,6 +3496,7 @@ def gen_is_sec5_lecture(diagram: Path, modules: dict[str, Path], old: str) -> st
         header=_is_outline_header("1982_Approximable_mappings_between_domains.md"),
         aggregate_lecture_exercises=False,
         rankdir="TD",
+        display_scale=0.5,
     )
 
 

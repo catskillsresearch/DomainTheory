@@ -13,3 +13,5 @@
 - [Proposition 5.5: composition](../Proposition55/1982_Proposition_5_5.md) [✓](../../../1982_REVISION.md)
 - [Constant map](../Proposition56/1982_constMap.md) [✓](../../../1982_REVISION.md)
 - [Proposition 5.6: constant maps](../Proposition56/1982_Proposition_5_6.md) [✓](../../../1982_REVISION.md)
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-08) — <a href="../../../1982_REVISION.md">1982 revision progress</a></p>
