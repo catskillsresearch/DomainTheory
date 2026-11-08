@@ -5,7 +5,6 @@ public import Mathlib.Tactic.Linarith
 public import Mathlib.Tactic.NormNum
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys
 public import DomainTheory.InformationSystems.InformationSystems.Token
-public import DomainTheory.InformationSystems.InformationSystems.instDecidableEq
 public import DomainTheory.InformationSystems.InformationSystems.Sat
 public import DomainTheory.InformationSystems.InformationSystems.sat_midpoint
 

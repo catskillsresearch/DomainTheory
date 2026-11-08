@@ -13,4 +13,23 @@ inductive Token : Type where
   | bot
   | interval (lo hi : ℕ) (hlt : lo < hi)
 
+namespace Token
+
+instance instDecidableEq : DecidableEq Token
+  | bot, bot => isTrue rfl
+  | bot, interval _ _ _ => isFalse Token.noConfusion
+  | interval _ _ _, bot => isFalse Token.noConfusion
+  | interval n m _, interval n' m' _ =>
+    if h : n = n' ∧ m = m' then
+      isTrue (by
+        rcases h with ⟨rfl, rfl⟩
+        rfl)
+    else
+      isFalse (by
+        intro hEq
+        injection hEq with hn hm
+        exact h ⟨hn, hm⟩)
+
+end Token
+
 end DomainTheory.InformationSystems

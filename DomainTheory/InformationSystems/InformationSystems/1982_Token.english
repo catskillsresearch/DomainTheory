@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Definition (`Token`).** The data objects for Scott’s second example are tokens of two kinds: a least-informative datum $\bot$, and open intervals $(n, m)$ of natural numbers with $n < m$, standing for the proposition $n < x < m$.
+
+**Definition (`Token.instDecidableEq`).** Equality of tokens is decidable: the bottom token equals only itself, and two intervals are equal precisely when they share the same endpoints.

@@ -8,10 +8,6 @@
 - [Theorem 7.3](1982_Theorem_7_3.md)
 - [Proposition 7.4](Proposition74/1982_Proposition_7_4.md)
 
-**[InformationSystems/InformationSystems/Token.lean](../InformationSystems/Token.lean)**
-
-@import "../InformationSystems/Token.lean"
-
 **[InformationSystems/InformationSystems/Proposition23/proposition_2_3_iv.lean](../InformationSystems/Proposition23/proposition_2_3_iv.lean)**
 
 @import "../InformationSystems/Proposition23/proposition_2_3_iv.lean"
@@ -23,30 +19,6 @@
 **[InformationSystems/InformationSystems/Proposition23/proposition_2_3_iii.lean](../InformationSystems/Proposition23/proposition_2_3_iii.lean)**
 
 @import "../InformationSystems/Proposition23/proposition_2_3_iii.lean"
-
-**[InformationSystems/InformationSystems/instDecidableEq.lean](../InformationSystems/instDecidableEq.lean)**
-
-@import "../InformationSystems/instDecidableEq.lean"
-
-**[InformationSystems/InformationSystems/Sat.lean](../InformationSystems/Sat.lean)**
-
-@import "../InformationSystems/Sat.lean"
-
-**[InformationSystems/InformationSystems/sat_midpoint.lean](../InformationSystems/sat_midpoint.lean)**
-
-@import "../InformationSystems/sat_midpoint.lean"
-
-**[InformationSystems/InformationSystems/sat_sing.lean](../InformationSystems/sat_sing.lean)**
-
-@import "../InformationSystems/sat_sing.lean"
-
-**[InformationSystems/InformationSystems/ofSatisfaction.lean](../InformationSystems/ofSatisfaction.lean)**
-
-@import "../InformationSystems/ofSatisfaction.lean"
-
-**[InformationSystems/InformationSystems/a_second_example.lean](../InformationSystems/a_second_example.lean)**
-
-@import "../InformationSystems/a_second_example.lean"
 
 **[InformationSystems/InformationSystems/Proposition23/proposition_2_3_vi.lean](../InformationSystems/Proposition23/proposition_2_3_vi.lean)**
 

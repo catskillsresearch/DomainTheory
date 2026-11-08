@@ -222,6 +222,8 @@ BARRELS: dict[str, tuple[str, list[str]]] = {
             "- [Definition 2.1](../InfoSys/1982_Definition_2_1.md)",
             "- [Lower-bound entailment](../1982_lowerBoundEnt.md)",
             "- [A first example](../1982_A_first_example.md)",
+            "- [Interval tokens](../1982_Token.md)",
+            "- [Satisfaction](../1982_Sat.md)",
             "- [A second example](../1982_A_second_example.md)",
             "- [A third example](../Factoid26/1982_A_third_example.md)",
             "- [Definition 2.2](../Definition22/1982_Definition_2_2.md)",

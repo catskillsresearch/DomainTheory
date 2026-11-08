@@ -3234,6 +3234,8 @@ IS_SEC2_SHORT: dict[str, tuple[str, str]] = {
     "Definition 2.1": ("D21", "Definition 2.1"),
     "Lower-bound entailment": ("LBE", "Lower-bound entailment"),
     "A first example": ("Ex1", "A first example"),
+    "Interval tokens": ("Tok", "Interval tokens"),
+    "Satisfaction": ("Sat", "Satisfaction"),
     "A second example": ("Ex2", "A second example"),
     "A third example": ("Ex3", "A third example"),
     "Definition 2.2": ("D22", "Definition 2.2"),
