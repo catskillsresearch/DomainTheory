@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.finiteApproximants
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35.subset_closure
+public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
@@ -16,6 +16,8 @@ open DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
+open DomainTheory.InformationSystems.InfoSys
+
 open Order
 
 namespace InfoSysToIdealCompletion
@@ -27,7 +29,7 @@ theorem mem_finiteApproximants_of_le {x : A.Element} {y : FiniteElement A}
   rcases y with ⟨yval, ⟨u, hu, rfl⟩⟩
   refine ⟨u, hu, ?_, rfl⟩
   intro a ha
-  exact hle (A.subset_closure hu ha)
+  exact hle (closure.subset A hu ha)
 
 end InfoSysToIdealCompletion
 

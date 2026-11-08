@@ -3324,6 +3324,7 @@ IS_SEC2_SHORT: dict[str, tuple[str, str]] = {
 }
 IS_SEC3_SHORT: dict[str, tuple[str, str]] = {
     "Definition 3.1": ("D31", "Definition 3.1"),
+    "Closure": ("Clos", "Closure"),
     "Total elements": ("Tot", "Total elements"),
     "Top element": ("Top", "Top element"),
     "Remarks": ("Rem", "Remarks"),
@@ -3375,6 +3376,7 @@ IS_SEC4_SHORT: dict[str, tuple[str, str]] = {
 }
 IS_SEC5_SHORT: dict[str, tuple[str, str]] = {
     "Definition 5.1": ("D51", "Definition 5.1"),
+    "Element map": ("Elem", "Element map"),
     "Definition 5.2": ("D52", "Definition 5.2"),
     "Proposition 5.3": ("P53", "Proposition 5.3"),
     "Proposition 5.4": ("P54", "Proposition 5.4"),

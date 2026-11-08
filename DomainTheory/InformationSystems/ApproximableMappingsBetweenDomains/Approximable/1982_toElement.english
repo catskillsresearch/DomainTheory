@@ -1,0 +1,23 @@
+<!-- formalization -->
+
+**Theorem (`ApproximableMap.ext`).** Two approximable mappings are equal precisely when they relate the same consistent sets.
+
+*Proof.* The relation field determines the structure. □
+
+**Theorem (`ApproximableMap.singleton_funion_eq`).** The funion of a singleton with a finite set is the corresponding insert.
+
+*Proof.* Membership on either side is the same by the funion and insert characterizations. □
+
+**Theorem (`ApproximableMap.exists_rel_of_subset_image`).** If every token of a finite set $Y$ arises from some approximable input under an element $x$, then some single consistent input under $x$ relates to the whole of $Y$.
+
+*Proof.* Empty $Y$ uses the empty relation after weakening; the inductive step joins the witnesses for the new token and the remainder via right-union and monotonicity. □
+
+**Definition (`ApproximableMap.toElement`).** The element map of an approximable mapping $f$ sends an element $x$ of the source to the element of the target whose tokens are those $Y$ for which some finite input under $x$ relates to $\{Y\}$.
+
+**Theorem (`ApproximableMap.mem_toElement`).** Membership in the carrier of the element map is exactly the witnessing relation of the definition.
+
+*Proof.* Unfolding. □
+
+**Theorem (`ApproximableMap.toElement_mono`).** The element map is monotone.
+
+*Proof.* A witnessing input under a smaller element remains under a larger one. □

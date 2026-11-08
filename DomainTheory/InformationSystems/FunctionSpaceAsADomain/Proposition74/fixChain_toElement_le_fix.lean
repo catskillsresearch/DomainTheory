@@ -4,7 +4,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition54
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
+public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.Basic
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.proposition_7_4_ii
 
@@ -61,7 +61,7 @@ theorem fixChain_toElement_le_fix (f : ApproximableMap A A) (g : ApproximableMap
               rw [Finset.mem_singleton] at hz; subst hz
               exact A.ent_refl huC hb)
             hu0C (A.con_sing b)
-        refine ⟨u0, fun z hz => A.subset_closure hu0C hz, hsing⟩
+        refine ⟨u0, fun z hz => closure.subset A hu0C hz, hsing⟩
       exact (f.toElement (A.closure u0 hu0C)).closed u a hsub ha
     have hhuf : h.toElement (A.closure u huC) ≤
         h.toElement (f.toElement (A.closure u0 hu0C)) :=

@@ -1,9 +1,9 @@
 module
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.basicOpen
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35.subset_closure
+public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
+public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_46
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23
 
@@ -25,7 +25,7 @@ variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
 theorem ent_of_basicOpen_subset {u w : Finset α} (hw : w ∈ A.Con)
     (hsub : A.basicOpen w ⊆ A.basicOpen u) {a : α} (ha : a ∈ u) : A.Ent w a := by
-  have : A.closure w hw ∈ A.basicOpen w := subset_closure A hw
+  have : A.closure w hw ∈ A.basicOpen w := closure.subset A hw
   have hU : A.closure w hw ∈ A.basicOpen u := hsub this
   exact hU (Finset.mem_coe.2 ha)
 

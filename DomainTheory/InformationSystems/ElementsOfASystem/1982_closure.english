@@ -1,0 +1,15 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.closure`).** The closure of a consistent finite set $u$ is the element whose carrier consists of the data entailed by $u$.
+
+**Theorem (`InfoSys.closure.subset`).** Every token of a consistent finite set belongs to the carrier of its closure.
+
+*Proof.* Reflexivity of entailment. □
+
+**Theorem (`InfoSys.closure.mem_iff`).** Membership in the closure carrier is entailment from $u$.
+
+*Proof.* Unfolding. □
+
+**Theorem (`InfoSys.theorem_35`).** A consistent finite set sits under its closure.
+
+*Proof.* The subset property of closure. □

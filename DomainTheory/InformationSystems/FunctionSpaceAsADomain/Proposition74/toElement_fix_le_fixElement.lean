@@ -4,7 +4,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition54
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
+public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.Basic
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.fixChain_toElement_le_fix
 
@@ -34,7 +34,7 @@ theorem toElement_fix_le_fixElement (f : ApproximableMap A A) (g : ApproximableM
   have hrel' : h.rel v0 {Z} :=
     h.mono hrel hEnt (proposition_2_3.iii B (h.rel_cod hrel)) hv0C (h.rel_cod hrel)
   have hZ : Z ∈ (h.toElement (A.closure v0 hv0C)).carrier :=
-    ⟨v0, A.subset_closure hv0C, hrel'⟩
+    ⟨v0, closure.subset A hv0C, hrel'⟩
   exact hcl hZ
 
 end ApproximableMap

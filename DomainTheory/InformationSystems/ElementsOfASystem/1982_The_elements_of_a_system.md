@@ -4,6 +4,7 @@
 
 - [Introduction](1982_Introduction.md) [✓](../../1982_REVISION.md)
 - [Definition 3.1](1982_Definition_3_1.md) [✓](../../1982_REVISION.md)
+- [Closure](1982_closure.md)
 - [Total elements](1982_Total_elements.md) [✓](../../1982_REVISION.md)
 - [Top element](1982_Top_element.md) [✓](../../1982_REVISION.md)
 - [Remarks](1982_Remarks.md) [✓](../../1982_REVISION.md)

@@ -2,8 +2,8 @@ module
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition53.rel_iff_closure_le
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.ApproximableMapScott
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36.closure_le_element
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.ext
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35.subset_closure
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
+public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_10
@@ -58,6 +58,6 @@ theorem ofScottContinuous_toScottContinuous {A : InfoSys α} {B : InfoSys β}
     intro y hy
     have hv : v ∈ B.Con := f.rel_cod hrel
     have hu : u ∈ A.Con := f.rel_dom hrel
-    exact (f.rel_iff_closure_le hu hv).1 hrel (B.subset_closure hv (Finset.mem_coe.1 hy))
+    exact (f.rel_iff_closure_le hu hv).1 hrel (closure.subset B hv (Finset.mem_coe.1 hy))
 
 end DomainTheory.BridgeTheorems

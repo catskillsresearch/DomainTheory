@@ -61,7 +61,7 @@ theorem entSet_empty_of_rel_bot_like (h : ApproximableMap (sumSystem A B) C)
     have := le_trans this (toElement_mono h hcl)
     rwa [hbot] at this
   intro Y hY
-  have hY' : Y ∈ (C.closure s hs).carrier := C.subset_closure hs hY
+  have hY' : Y ∈ (C.closure s hs).carrier := closure.subset C hs hY
   have hbotY : Y ∈ C.botElement.carrier := hle hY'
   exact C.ent_trans C.con_empty (C.con_sing C.bot)
     (fun _ hz => by

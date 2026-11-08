@@ -5,7 +5,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpa
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.InformationSystems.a_second_example
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
+public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.BoolToken
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.BoolPoint
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.EmptyEntails
@@ -76,7 +76,7 @@ theorem condMap.unique (f : ApproximableMap boolSystem A) (hf : IsStrict boolSys
       have hEntU : boolSystem.EntSet {BoolToken.tru} u :=
         entSet_singleton_tru_of_ent_tru (f.rel_dom hrel) hTru
       refine ⟨{BoolToken.tru}, ?_, ?_⟩
-      · exact boolSystem.subset_closure (boolSystem.con_sing _)
+      · exact closure.subset boolSystem (boolSystem.con_sing _)
       · exact f.mono hrel hEntU
           (fun z hz => by
             have : z = y := Finset.mem_singleton.mp hz
@@ -87,7 +87,7 @@ theorem condMap.unique (f : ApproximableMap boolSystem A) (hf : IsStrict boolSys
       have hEntU : boolSystem.EntSet {BoolToken.fls} u :=
         entSet_singleton_fls_of_ent_fls (f.rel_dom hrel) hFls
       refine ⟨{BoolToken.fls}, ?_, ?_⟩
-      · exact boolSystem.subset_closure (boolSystem.con_sing _)
+      · exact closure.subset boolSystem (boolSystem.con_sing _)
       · exact f.mono hrel hEntU
           (fun z hz => by
             have : z = y := Finset.mem_singleton.mp hz

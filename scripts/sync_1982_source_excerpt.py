@@ -273,6 +273,7 @@ BARRELS: dict[str, tuple[str, list[str]]] = {
         [
             "- [Introduction](1982_Introduction.md)",
             "- [Definition 3.1](1982_Definition_3_1.md)",
+            "- [Closure](1982_closure.md)",
             "- [Total elements](1982_Total_elements.md)",
             "- [Top element](1982_Top_element.md)",
             "- [Remarks](1982_Remarks.md)",
@@ -314,6 +315,7 @@ BARRELS: dict[str, tuple[str, list[str]]] = {
         [
             "- [Introduction](1982_Introduction.md)",
             "- [Definition 5.1](1982_Definition_5_1.md)",
+            "- [Element map](1982_toElement.md)",
             "- [Definition 5.2](1982_Definition_5_2.md)",
             "- [Proposition 5.3](../Proposition53/1982_Proposition_5_3.md)",
             "- [Proposition 5.4](../Proposition54/1982_Proposition_5_4.md)",

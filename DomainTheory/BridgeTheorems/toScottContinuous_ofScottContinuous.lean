@@ -1,8 +1,6 @@
 module
 public import DomainTheory.BridgeTheorems.scottContinuous_ext
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.ApproximableMapScott
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.ApproximableMapScott
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.ApproximableMapScott
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.ContinuousLattice.FunctionSpaces.ScottMap
 public import DomainTheory.ContinuousLattice.FunctionSpaces.proposition_3_10

@@ -1,6 +1,6 @@
 module
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition53.Le
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.ext
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot

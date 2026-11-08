@@ -4,10 +4,10 @@ public import DomainTheory.BridgeTheorems.toFilter_ofFilter
 public import DomainTheory.BridgeTheorems.ofFilter_toFilter
 public import DomainTheory.BridgeTheorems.mem_basicOpen_singleton
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35.subset_closure
+public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 public import Mathlib.Order.Hom.Basic
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
+public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_46
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23
 public import DomainTheory.BridgeTheorems.toNeighborhoodSystem
@@ -46,7 +46,7 @@ def domainOrderIso : A.Element ≃o (toNeighborhoodSystem A).Element where
           exact hc' ▸ ha⟩
       have hy : (toFilter A y).mem (A.basicOpen ({a} : Finset α)) := h _ hx
       obtain ⟨u, hu, heq, hsub⟩ := hy
-      have huA : A.closure u hu ∈ A.basicOpen u := subset_closure A hu
+      have huA : A.closure u hu ∈ A.basicOpen u := closure.subset A hu
       have hsing : A.closure u hu ∈ A.basicOpen ({a} : Finset α) := by
         rw [heq]; exact huA
       have ha' : a ∈ (A.closure u hu).carrier := (mem_basicOpen_singleton A).1 hsing

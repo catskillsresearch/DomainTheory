@@ -5,7 +5,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpa
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.InformationSystems.a_second_example
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
+public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.BoolToken
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.BoolPoint
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.EmptyEntails
@@ -193,7 +193,7 @@ theorem condMap_toElement_boolFalse (x y : A.Element) :
     · intro t ht
       have : t = .fls := Finset.mem_singleton.mp (Finset.mem_coe.1 ht)
       subst this
-      exact (boolSystem.subset_closure (boolSystem.con_sing _))
+      exact (closure.subset boolSystem (boolSystem.con_sing _))
         (Finset.mem_coe.2 (Finset.mem_singleton_self _))
     · exact fun hEmp => False.elim (not_emptyEntails_singleton_fls hEmp)
     · exact fun hTru => False.elim (not_ent_fls_tru hTru)
@@ -229,7 +229,7 @@ theorem condMap_toElement_boolTrue (x y : A.Element) :
     · intro t ht
       have : t = .tru := Finset.mem_singleton.mp (Finset.mem_coe.1 ht)
       subst this
-      exact (boolSystem.subset_closure (boolSystem.con_sing _))
+      exact (closure.subset boolSystem (boolSystem.con_sing _))
         (Finset.mem_coe.2 (Finset.mem_singleton_self _))
     · exact fun hEmp => False.elim (not_emptyEntails_singleton_tru hEmp)
     · intro _ z hz

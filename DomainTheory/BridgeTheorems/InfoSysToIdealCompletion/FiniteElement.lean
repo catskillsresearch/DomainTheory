@@ -1,5 +1,5 @@
 module
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35.closure
+public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_45

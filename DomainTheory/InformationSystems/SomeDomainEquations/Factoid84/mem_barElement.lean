@@ -2,10 +2,10 @@ module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
 public import DomainTheory.InformationSystems.ElementsOfASystem.topElement
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
+public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.IsDomainApprox
 
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35.mem_closure_iff
+public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 @[expose] public section
 
 namespace DomainTheory.InformationSystems
@@ -22,15 +22,15 @@ theorem mem_barElement (n x : ℕ) :
     x ∈ (barElement n).carrier ↔ x = 0 ∨ x = n := by
   constructor
   · intro hx
-    have : PEnt (bar n) x := (P.mem_closure_iff (by trivial : bar n ∈ P.Con)).1 hx
+    have : PEnt (bar n) x := (closure.mem_iff P (by trivial : bar n ∈ P.Con)).1 hx
     rcases this with rfl | hx'
     · exact Or.inl rfl
     · exact Or.inr (Finset.mem_singleton.mp hx')
   · intro h
     rcases h with rfl | hn
-    · exact (P.mem_closure_iff (by trivial : bar n ∈ P.Con)).2 (Or.inl rfl)
+    · exact (closure.mem_iff P (by trivial : bar n ∈ P.Con)).2 (Or.inl rfl)
     · rw [hn]
-      exact (P.mem_closure_iff (by trivial : bar n ∈ P.Con)).2
+      exact (closure.mem_iff P (by trivial : bar n ∈ P.Con)).2
         (Or.inr (Finset.mem_singleton_self n))
 
 end Factoid84

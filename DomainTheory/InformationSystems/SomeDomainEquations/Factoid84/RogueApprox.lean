@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
 public import DomainTheory.InformationSystems.ElementsOfASystem.topElement
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
+public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.P
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.barElement
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.topElement

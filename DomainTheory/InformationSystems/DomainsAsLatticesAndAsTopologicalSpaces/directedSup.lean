@@ -45,7 +45,7 @@ theorem compact_closure (S : Set sys.Element) (hne : S.Nonempty) (hdir : sys.IsD
   have huU : (u : Set α) ⊆ sys.familyUnionCarrier S := by
     intro a ha
     have : a ∈ (sys.directedSup S hne hdir).carrier :=
-      hle (sys.subset_closure hu (Finset.mem_coe.2 ha))
+      hle (closure.subset sys hu (Finset.mem_coe.2 ha))
     rwa [carrier_eq_union sys S hne hdir] at this
   obtain ⟨z, hz, huZ⟩ := IsDirected.exists_mem_of_subset_union sys S hne hdir u huU
   exact ⟨z, hz, sys.closure_le_element z hu huZ⟩
