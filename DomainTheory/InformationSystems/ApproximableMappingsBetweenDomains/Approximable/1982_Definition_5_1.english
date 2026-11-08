@@ -15,3 +15,7 @@ Before defining the notion of function value, however, it is useful to remark th
 $$u\ f\ v \text{ iff } u\ f\ \{Y\} \text{ for all } Y \in v.$$
 
 In other words an approximable mapping is completely determined by the relation set up between consistent sets on the left and single data objects on the right.
+
+<!-- formalization -->
+
+**Definition (`InfoSys.ApproximableMap`).** An approximable mapping from an information system $\mathbf{A}$ to an information system $\mathbf{B}$ is a relation between finite sets of data of $\mathbf{A}$ and of $\mathbf{B}$ that relates only consistent sets on each side, relates the empty set to the empty set, is closed under funion on the right for a fixed left argument, and is monotone with respect to entailment—strengthening the left argument and weakening the right preserves relatedness, provided both sides remain consistent.
