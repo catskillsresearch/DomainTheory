@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`ApproximableMap.rel_iff_forall_singleton`).** An approximable mapping relates $u$ to $v$ if and only if it relates $u$ to every singleton drawn from $v$.
+
+*Proof.* Forward uses monotonicity to weaken the right side; reverse rebuilds $v$ by right-union from its singletons. □

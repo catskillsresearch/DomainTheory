@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`ApproximableMap.le_iff_toElement_le`).** One approximable mapping lies below another if and only if its element map approximates the other’s at every source element.
+
+*Proof.* Pointwise comparison of images preserves relational witnesses; conversely the closure characterization transfers a related pair through the pointwise inequality. □

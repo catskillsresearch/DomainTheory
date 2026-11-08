@@ -8,7 +8,7 @@ public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains
 
 namespace DomainTheory.InformationSystems.InfoSys.ApproximableMap
 
-theorem theorem_53 :
+theorem proposition_5_3 :
     (∀ {α β : Type*} [DecidableEq α] [DecidableEq β] {A : InfoSys α} {B : InfoSys β}
       (f g : ApproximableMap A B),
       f = g ↔ ∀ x : A.Element, f.toElement x = g.toElement x) ∧

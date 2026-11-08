@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`ApproximableMap.rel_iff_closure_le`).** Consistent sets $u$ and $v$ are related by an approximable mapping if and only if the closure of $v$ approximates the image of the closure of $u$.
+
+*Proof.* Relatedness yields singleton witnesses under the left closure; conversely a relational witness under the left closure is weakened back to $u$ and $v$ by monotonicity. □

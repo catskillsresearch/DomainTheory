@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`ApproximableMap.ext_iff_toElement`).** Two approximable mappings are equal if and only if they agree as element maps on every source element.
+
+*Proof.* Equality of maps yields pointwise equality of images; conversely mutual pointwise order via the order characterization forces equal relations. □
