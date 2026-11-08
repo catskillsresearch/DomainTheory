@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`InfoSys.botElement.eq_closure_empty`).** The bottom element equals the entailment closure of the empty set of data.
+
+*Proof.* Each side approximates the other by transitivity of entailment between the empty set and the singleton of the least-informative datum. □

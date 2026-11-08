@@ -7,7 +7,7 @@ public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.le_ofIdeal_of
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.directedSup
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_45
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.FiniteElement
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.toIdeal
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.ofIdeal

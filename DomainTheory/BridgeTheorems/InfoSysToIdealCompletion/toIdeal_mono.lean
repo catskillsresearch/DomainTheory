@@ -5,7 +5,7 @@ public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.le_of_mem_fin
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.mem_finiteApproximants_of_le
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_45
 
 @[expose] public section
 

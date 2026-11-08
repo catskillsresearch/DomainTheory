@@ -6,7 +6,7 @@ public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 public import Mathlib.Order.Directed
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_45
 
 @[expose] public section
 

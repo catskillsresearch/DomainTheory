@@ -2,7 +2,7 @@
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_45
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.ScottContinuous
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.basicOpen
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.toScottContinuous
@@ -32,9 +32,9 @@ theorem toElement_ofScottContinuous (g : ScottContinuous A B) (x : A.Element) :
     exact g.mono this (hsub (Finset.mem_coe.2 (Finset.mem_singleton_self Y)))
   · intro Y hY
     let S := A.finiteApproximants x
-    have hne := A.nonempty_finiteApproximants x
-    have hdir := A.directed_finiteApproximants x
-    have hx : x = A.directedSup S hne hdir := A.eq_directedSup_finiteApproximants x
+    have hne := finiteApproximants.nonempty A x
+    have hdir := finiteApproximants.directed A x
+    have hx : x = A.directedSup S hne hdir := finiteApproximants.eq_directedSup A x
     have hdirImg := directed_image hdir g.toFun g.mono'
     have hneImg := nonempty_image hne g.toFun
     have hg : g.toFun x = B.directedSup (g.toFun '' S) hneImg hdirImg := by

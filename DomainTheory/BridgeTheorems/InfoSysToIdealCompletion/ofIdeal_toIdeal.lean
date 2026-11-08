@@ -2,10 +2,10 @@ module
 
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.toIdeal
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.ofIdeal
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.eq_directedSup_finiteApproximants
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.finiteApproximants
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_45
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.finiteApproximants
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.idealCarrier
 
@@ -38,7 +38,7 @@ theorem ofIdeal_toIdeal (x : A.Element) : ofIdeal A (toIdeal A x) = x := by
 
   change A.directedSup (idealCarrier A (toIdeal A x)) _ _ = x
   simp_rw [hset]
-  exact (A.eq_directedSup_finiteApproximants x).symm
+  exact (InfoSys.finiteApproximants.eq_directedSup A x).symm
 
 end InfoSysToIdealCompletion
 

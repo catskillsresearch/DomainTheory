@@ -13,3 +13,7 @@
 **Theorem (`InfoSys.directedSup.le_of_mem`).** Every member of the family approximates the directed supremum.
 
 *Proof.* This is the corresponding property of the family supremum. □
+
+**Theorem (`InfoSys.directedSup.compact_closure`).** If a finitely generated element approximates a directed supremum, then it approximates some member of the family.
+
+*Proof.* The generators lie in the union carrier, hence in some member by directedness; that member’s deductive closure then dominates the finite element. □

@@ -6,7 +6,7 @@ public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.botFinite
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_45
 
 @[expose] public section
 

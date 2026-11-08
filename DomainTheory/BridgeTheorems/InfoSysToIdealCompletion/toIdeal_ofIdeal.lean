@@ -2,13 +2,13 @@ module
 
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.toIdeal
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.ofIdeal
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.compact_closure
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.directedSup
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.le_ofIdeal_of_mem
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.le_of_mem_finiteApproximants
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.mem_finiteApproximants_of_le
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_45
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.FiniteElement
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.idealCarrier
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.nonempty_idealCarrier
@@ -36,7 +36,7 @@ theorem toIdeal_ofIdeal (I : Ideal (FiniteElement A)) : toIdeal A (ofIdeal A I) 
     have hle : (y : A.Element) ≤ ofIdeal A I := le_of_mem_finiteApproximants A hy
     rcases y with ⟨yval, ⟨u, hu, rfl⟩⟩
     obtain ⟨z, hz, hcle⟩ :=
-      A.compact_closure (idealCarrier A I) (nonempty_idealCarrier A I)
+      InfoSys.directedSup.compact_closure A (idealCarrier A I) (nonempty_idealCarrier A I)
         (directed_idealCarrier A I) hu hle
     obtain ⟨z', hz', rfl⟩ := hz
     exact I.lower hcle hz'

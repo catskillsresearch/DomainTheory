@@ -3,7 +3,7 @@ module
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.domainOrderIso
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_45
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.botFinite
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.finiteApproximants
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.toIdeal

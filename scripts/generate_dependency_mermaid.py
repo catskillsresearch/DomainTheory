@@ -3355,6 +3355,8 @@ IS_SEC4_SHORT: dict[str, tuple[str, str]] = {
         "F44",
         "Factoid 4.4:\nchains & directed sups",
     ),
+    "Bottom as empty closure": ("BotCl", "Bottom as\nempty closure"),
+    "Finite approximants": ("FApp", "Finite\napproximants"),
     "Factoid 4.5: finite approximants": (
         "F45",
         "Factoid 4.5:\nfinite approximants",

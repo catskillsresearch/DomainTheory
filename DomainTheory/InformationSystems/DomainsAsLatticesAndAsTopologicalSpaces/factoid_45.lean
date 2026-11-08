@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid45.eq_directedSup_finiteApproximants
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.finiteApproximants
 
 @[expose] public section
 
@@ -9,7 +9,7 @@ namespace DomainTheory.InformationSystems.InfoSys
 theorem factoid_45 :
     ∀ {α : Type*} [DecidableEq α] (sys : InfoSys α) (x : sys.Element),
       x = sys.directedSup (sys.finiteApproximants x)
-        (sys.nonempty_finiteApproximants x) (sys.directed_finiteApproximants x) :=
-  @eq_directedSup_finiteApproximants
+        (finiteApproximants.nonempty sys x) (finiteApproximants.directed sys x) :=
+  @finiteApproximants.eq_directedSup
 
 end DomainTheory.InformationSystems.InfoSys
