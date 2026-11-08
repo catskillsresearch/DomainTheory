@@ -1,0 +1,15 @@
+<!-- formalization -->
+
+**Theorem (`InfoSys.nonempty_image`).** The direct image of a nonempty set under a function is nonempty.
+
+*Proof.* Apply the function to a chosen witness. □
+
+**Theorem (`InfoSys.directed_image`).** The direct image of a directed family under a monotone map is directed.
+
+*Proof.* Lift a directed upper bound of two preimages and apply monotonicity. □
+
+**Definition (`InfoSys.ScottContinuous`).** A Scott-continuous map between domains is a monotone function of elements that preserves directed suprema (sending a directed supremum to the directed supremum of the image family).
+
+**Theorem (`InfoSys.ScottContinuous.mono`).** Every Scott-continuous map is monotone.
+
+*Proof.* This is the monotonicity field of the structure. □

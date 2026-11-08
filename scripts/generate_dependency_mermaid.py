@@ -3361,6 +3361,12 @@ IS_SEC4_SHORT: dict[str, tuple[str, str]] = {
         "F45",
         "Factoid 4.5:\nfinite approximants",
     ),
+    "Scott continuous maps": ("Scott", "Scott continuous\nmaps"),
+    "Basic opens": ("BOpen", "Basic opens"),
+    "Approximable maps as Scott continuous": (
+        "AppSc",
+        "Approximable maps\nas Scott continuous",
+    ),
     "Factoid 4.6: topology / Scott continuity": (
         "F46",
         "Factoid 4.6:\ntopology / Scott continuity",

@@ -21,4 +21,7 @@
 - [Bottom as empty closure](1982_botElement_eq_closure_empty.md) [✓](../../1982_REVISION.md)
 - [Finite approximants](1982_finiteApproximants.md) [✓](../../1982_REVISION.md)
 - [Factoid 4.5: finite approximants](1982_Factoid_4_5.md) [✓](../../1982_REVISION.md)
-- [Factoid 4.6: topology / Scott continuity](Factoid46/1982_Factoid_4_6.md)
+- [Scott continuous maps](1982_ScottContinuous.md) [✓](../../1982_REVISION.md)
+- [Basic opens](1982_basicOpen.md)
+- [Approximable maps as Scott continuous](1982_ApproximableMapScott.md)
+- [Factoid 4.6: topology / Scott continuity](1982_Factoid_4_6.md)

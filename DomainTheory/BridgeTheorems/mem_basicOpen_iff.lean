@@ -5,7 +5,7 @@ public import DomainTheory.BridgeTheorems.mem_basicOpen_of_singletons
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_46
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23
 public import DomainTheory.BridgeTheorems.toNeighborhoodSystem
 

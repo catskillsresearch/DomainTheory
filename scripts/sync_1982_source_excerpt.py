@@ -119,7 +119,7 @@ SLICE_NOTES: list[SliceSpec] = [
         "As we have remarked several times, any consistent set",
     ),
     (
-        "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/Factoid46/1982_Factoid_4_6.md",
+        "InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/1982_Factoid_4_6.md",
         "1982_Factoid_4_6.english",
         "*Topological considerations.*",
     ),
@@ -302,7 +302,10 @@ BARRELS: dict[str, tuple[str, list[str]]] = {
             "- [Bottom as empty closure](1982_botElement_eq_closure_empty.md)",
             "- [Finite approximants](1982_finiteApproximants.md)",
             "- [Factoid 4.5: finite approximants](1982_Factoid_4_5.md)",
-            "- [Factoid 4.6: topology / Scott continuity](Factoid46/1982_Factoid_4_6.md)",
+            "- [Scott continuous maps](1982_ScottContinuous.md)",
+            "- [Basic opens](1982_basicOpen.md)",
+            "- [Approximable maps as Scott continuous](1982_ApproximableMapScott.md)",
+            "- [Factoid 4.6: topology / Scott continuity](1982_Factoid_4_6.md)",
         ],
     ),
     "InformationSystems/ApproximableMappingsBetweenDomains/Approximable/1982_Approximable_mappings_between_domains.md": (

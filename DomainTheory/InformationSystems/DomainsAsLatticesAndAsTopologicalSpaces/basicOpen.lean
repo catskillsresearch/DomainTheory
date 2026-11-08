@@ -1,14 +1,7 @@
-
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_45
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.ScottContinuous
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.basicOpen
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.toScottContinuous
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.ofScottContinuous
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.mono
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.toElement_directedSup
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.ScottContinuous
 
 @[expose] public section
 
@@ -20,7 +13,30 @@ namespace InfoSys
 
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
-theorem eq_of_basicOpen_eq (A : InfoSys α) {x y : A.Element}
+def basicOpen (A : InfoSys α) (u : Finset α) : Set A.Element :=
+  {x | ↑u ⊆ x.carrier}
+
+namespace basicOpen
+
+theorem inter (A : InfoSys α) (u v : Finset α) :
+    A.basicOpen u ∩ A.basicOpen v = A.basicOpen (u ∪' v) := by
+  ext x
+  constructor
+  · intro ⟨hu, hv⟩ a ha
+    rcases funion.mem.mp (Finset.mem_coe.1 ha) with h | h
+    · exact hu (Finset.mem_coe.2 h)
+    · exact hv (Finset.mem_coe.2 h)
+  · intro huv
+    refine ⟨?_, ?_⟩
+    · intro a ha
+      exact huv (Finset.mem_coe.2 (funion.mem.mpr (Or.inl (Finset.mem_coe.1 ha))))
+    · intro a ha
+      exact huv (Finset.mem_coe.2 (funion.mem.mpr (Or.inr (Finset.mem_coe.1 ha))))
+
+theorem mem {A : InfoSys α} {u : Finset α} {x : A.Element} :
+    x ∈ A.basicOpen u ↔ ↑u ⊆ x.carrier := Iff.rfl
+
+theorem eq_of_eq (A : InfoSys α) {x y : A.Element}
     (h : ∀ u : Finset α, x ∈ A.basicOpen u ↔ y ∈ A.basicOpen u) : x = y := by
   refine le_antisymm ?_ ?_
   · intro a ha
@@ -37,6 +53,8 @@ theorem eq_of_basicOpen_eq (A : InfoSys α) {x y : A.Element}
       subst this
       exact ha
     exact ((h {a}).2 this) (Finset.mem_coe.2 (Finset.mem_singleton_self a))
+
+end basicOpen
 
 end InfoSys
 end DomainTheory.InformationSystems

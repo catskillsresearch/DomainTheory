@@ -1,4 +1,3 @@
-
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable
@@ -34,6 +33,16 @@ structure ScottContinuous (A : InfoSys α) (B : InfoSys β) where
       toFun (A.directedSup S hne hdir) =
         B.directedSup (toFun '' S) (nonempty_image hne toFun)
           (directed_image hdir toFun mono')
+
+namespace ScottContinuous
+
+variable {A : InfoSys α} {B : InfoSys β}
+
+theorem mono (f : ScottContinuous A B) {x y : A.Element} (h : x ≤ y) :
+    f.toFun x ≤ f.toFun y :=
+  f.mono' h
+
+end ScottContinuous
 
 end InfoSys
 end DomainTheory.InformationSystems

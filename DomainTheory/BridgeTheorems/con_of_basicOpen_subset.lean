@@ -1,12 +1,12 @@
 module
 public import DomainTheory.BridgeTheorems.ent_of_basicOpen_subset
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.basicOpen
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.basicOpen
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23
 public import DomainTheory.InformationSystems.InformationSystems.Constructive.funion
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_46
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23
 
 @[expose] public section

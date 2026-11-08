@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.Factoid46.toElement_ofScottContinuous
+public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.ApproximableMapScott
 
 @[expose] public section
 
