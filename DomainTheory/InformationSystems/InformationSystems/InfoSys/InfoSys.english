@@ -27,3 +27,9 @@ The best advice is to think of the members of $D$ as consisting of finite data o
 The member that provides zero information is $\Delta$. Data objects are intended to give information about possible elements of the domain to be constructed, so if we were to use $\Delta$ alone, we would be describing the least defined element usually written as $\bot$.
 
 Not just any combination of data objects will describe a possible element, however; hence, the need for the notion of consistency. If $u \in \mathrm{Con}$ is false, then the “propositions” in $u$ cannot all be applied to the same element at the same time. Finally we have to agree that, in general, the propositions to be allowed are rarely mutually independent. It follows that an entailment relation must be imposed to record the dependencies that do hold among the propositions. With these informal understandings, the axioms chosen should all be self-evident.
+
+<!-- formalization -->
+
+**Definition (`InfoSys`).** An information system on a carrier $\alpha$ consists of a distinguished least-informative datum $\Delta\in\alpha$, a collection $\mathrm{Con}$ of finite subsets of $\alpha$ (the consistent sets), and an entailment relation $\vdash$ between consistent sets and data, subject to Scott’s six axioms: $\mathrm{Con}$ is downward closed under subsets and contains every singleton; if $u\vdash X$ then $u\cup\{X\}$ is consistent; every consistent $u$ entails $\Delta$; membership in $u$ yields entailment from $u$; and entailment is transitive in the multiary sense—if $v$ entails every member of $u$ and $u\vdash X$, then $v\vdash X$.
+
+This is the packaging of Definition 2.1: $\Delta$ is the bottom datum, $\mathrm{Con}$ and $\vdash$ are the consistency and entailment fields, and the six named axioms match clauses (i)–(vi). ∎
