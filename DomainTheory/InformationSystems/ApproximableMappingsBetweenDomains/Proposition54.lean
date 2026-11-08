@@ -6,7 +6,7 @@ public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains
 
 namespace DomainTheory.InformationSystems.InfoSys
 
-theorem theorem_54 :
+theorem proposition_5_4 :
     ∀ {α : Type*} [DecidableEq α] (A : InfoSys α) (x : A.Element),
       (idMap A).toElement x = x :=
   @idMap.toElement

@@ -12,6 +12,6 @@ In other words, the given entailment relation itself defines the identity functi
 
 <!-- formalization -->
 
-**Theorem (`InfoSys.theorem_54`).** The identity approximable mapping acts as the identity on elements.
+**Theorem (`InfoSys.proposition_5_4`).** The identity approximable mapping acts as the identity on elements.
 
 *Proof.* The identity map’s element-map lemma. □
