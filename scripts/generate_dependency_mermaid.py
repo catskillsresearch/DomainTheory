@@ -3393,6 +3393,7 @@ IS_SEC5_SHORT: dict[str, tuple[str, str]] = {
         "P54",
         "Proposition 5.4:\nidentity mapping",
     ),
+    "Composition": ("Comp", "Composition"),
     "Proposition 5.5: composition": (
         "P55",
         "Proposition 5.5:\ncomposition",

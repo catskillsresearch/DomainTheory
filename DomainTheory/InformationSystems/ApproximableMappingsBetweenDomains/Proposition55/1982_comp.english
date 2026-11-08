@@ -1,0 +1,7 @@
+<!-- formalization -->
+
+**Definition (`ApproximableMap.comp`).** The composition of approximable mappings $g$ after $f$ relates $u$ to $w$ when some intermediate consistent set is related by $f$ on the left and by $g$ on the right.
+
+**Theorem (`ApproximableMap.comp.toElement`).** The element map of a composition is the composition of the element maps.
+
+*Proof.* A composite relational witness supplies an intermediate set whose tokens lie under the first image; conversely a token of the outer image under the inner image is pulled back to a single input under the source by the subset-image witness lemma. □

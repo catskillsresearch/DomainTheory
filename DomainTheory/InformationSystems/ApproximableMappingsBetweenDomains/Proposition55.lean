@@ -6,7 +6,7 @@ public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains
 
 namespace DomainTheory.InformationSystems.InfoSys.ApproximableMap
 
-theorem theorem_55 :
+theorem proposition_5_5 :
     ∀ {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
       {A : InfoSys α} {B : InfoSys β} {C : InfoSys γ}
       (g : ApproximableMap B C) (f : ApproximableMap A B) (x : A.Element),
