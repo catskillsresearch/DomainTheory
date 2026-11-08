@@ -1,0 +1,13 @@
+<!-- formalization -->
+
+**Definition (`Sat`).** A rational $x$ satisfies the bottom token, and satisfies an interval token $(n, m)$ precisely when $n < x < m$.
+
+**Theorem (`sat_midpoint`).** The midpoint of an open interval of natural numbers satisfies that interval token.
+
+*Proof.* The midpoint lies strictly between the endpoints by the ordering of the rationals. □
+
+**Theorem (`sat_sing`).** Every token is satisfied by some rational: the bottom token by $0$, and each interval by its midpoint.
+
+*Proof.* The bottom case is immediate; the interval case is the midpoint theorem. □
+
+**Definition (`ofSatisfaction`).** Given a satisfaction relation between points and tokens with a least-informative token always satisfied and every token satisfied by some point, form an information system whose consistent sets are those realized by a common point and whose entailment holds when every point realizing the antecedents realizes the conclusion. The six information-system axioms follow from these reading of consistency and entailment.

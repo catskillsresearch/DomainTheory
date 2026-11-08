@@ -52,7 +52,7 @@
 <title>Tok&#45;&gt;Sat</title>
 <path fill="none" stroke="black" d="M153.6,-231C172.72,-231 193.18,-231 211.9,-231"/>
 <polygon fill="black" stroke="black" points="212.25,-233.45 219.25,-231 212.25,-228.55 212.25,-233.45"/>
-<text text-anchor="middle" x="180.5" y="-234" font-family="Times,serif" font-size="10.00">4</text>
+<text text-anchor="middle" x="180.5" y="-234" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- Ex2 -->
 <g id="node6" class="node">
@@ -66,7 +66,7 @@
 <title>Sat&#45;&gt;Ex2</title>
 <path fill="none" stroke="black" d="M339.61,-231C357.43,-231 376.92,-231 394.46,-231"/>
 <polygon fill="black" stroke="black" points="394.85,-233.45 401.85,-231 394.85,-228.55 394.85,-233.45"/>
-<text text-anchor="middle" x="378.5" y="-234" font-family="Times,serif" font-size="10.00">4</text>
+<text text-anchor="middle" x="378.5" y="-234" font-family="Times,serif" font-size="10.00">1</text>
 </g>
 <!-- Ex3 -->
 <g id="node7" class="node">
