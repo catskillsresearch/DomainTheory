@@ -11,3 +11,9 @@ then there is no question that $y$ is a subset of $D_{\mathbf{A}}$. But is it an
 The same argument also shows that the set $y$ of data objects is closed under entailment, because $\vdash_{\mathbf{A}}$ is defined as a relation between finite (consistent) sets and data objects. It follows that since each $x_n$ is a set closed under $\vdash_{\mathbf{A}}$, then so is $y$. In other words, $y$ is indeed an element. Otherwise said, the domain $|\mathbf{A}|$ is closed under the formation of unions of increasing chains of elements, and the union is, of course, the sup in the sense of the partial ordering. Again we have proved closure rather than assuming it, and the necessary properties of the sup follow from its definition as a union.
 
 This last argument can be generalized—as is well known to mathematicians—to the case of *directed* families of elements. The word "directed," or better "upward-directed," means that every finite number of elements in the family is included in some further element of the family; chains always have this property. A good example of the use of directed sets of elements figures in the discussion of the *finite elements* of the domain.
+
+<!-- formalization -->
+
+**Theorem (`InfoSys.factoid_44`).** The carrier of the directed supremum of a nonempty directed family equals the family-union carrier.
+
+*Proof.* This is the carrier-equality property of directed suprema. □
