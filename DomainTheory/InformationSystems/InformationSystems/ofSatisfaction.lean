@@ -4,7 +4,7 @@ public import Mathlib.Algebra.Order.Field.Rat
 public import Mathlib.Tactic.Linarith
 public import Mathlib.Tactic.NormNum
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys
-public import DomainTheory.InformationSystems.InformationSystems.Factoid25.Token
+public import DomainTheory.InformationSystems.InformationSystems.Token
 public import DomainTheory.InformationSystems.InformationSystems.instDecidableEq
 public import DomainTheory.InformationSystems.InformationSystems.Sat
 public import DomainTheory.InformationSystems.InformationSystems.sat_sing
@@ -12,8 +12,6 @@ public import DomainTheory.InformationSystems.InformationSystems.sat_sing
 @[expose] public section
 
 namespace DomainTheory.InformationSystems
-
-namespace Factoid25
 
 def ofSatisfaction {τ : Type*} [DecidableEq τ] {Point : Type*}
     (Sat : Point → τ → Prop) (bot : τ)
@@ -49,7 +47,5 @@ def ofSatisfaction {τ : Type*} [DecidableEq τ] {Point : Type*}
     refine ⟨hv, fun p hp => huEnt p ?_⟩
     intro y hy
     exact (hvu y hy).2 p hp
-
-end Factoid25
 
 end DomainTheory.InformationSystems

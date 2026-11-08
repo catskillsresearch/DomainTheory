@@ -9,11 +9,8 @@ public import DomainTheory.InformationSystems.InformationSystems.InfoSys
 
 namespace DomainTheory.InformationSystems
 
-namespace Factoid25
-
 inductive Token : Type where
   | bot
   | interval (lo hi : ℕ) (hlt : lo < hi)
 
-end Factoid25
 end DomainTheory.InformationSystems

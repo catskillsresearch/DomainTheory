@@ -4,13 +4,11 @@ public import Mathlib.Algebra.Order.Field.Rat
 public import Mathlib.Tactic.Linarith
 public import Mathlib.Tactic.NormNum
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys
-public import DomainTheory.InformationSystems.InformationSystems.Factoid25.Token
+public import DomainTheory.InformationSystems.InformationSystems.Token
 
 @[expose] public section
 
 namespace DomainTheory.InformationSystems
-
-namespace Factoid25
 
 namespace Token
 
@@ -30,7 +28,5 @@ instance instDecidableEq : DecidableEq Token
         exact h ⟨hn, hm⟩)
 
 end Token
-
-end Factoid25
 
 end DomainTheory.InformationSystems

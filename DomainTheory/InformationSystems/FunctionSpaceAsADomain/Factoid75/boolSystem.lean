@@ -4,7 +4,7 @@ module
 public import Mathlib.Data.Multiset.MapFold
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
-public import DomainTheory.InformationSystems.InformationSystems.Factoid25
+public import DomainTheory.InformationSystems.InformationSystems.a_second_example
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid35
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid75.BoolToken
@@ -24,7 +24,7 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 variable (A : InfoSys α) (B : InfoSys β)
 
 def boolSystem : InfoSys BoolToken :=
-  Factoid25.ofSatisfaction boolSat .bot boolSat.bot boolSat.sing
+  ofSatisfaction boolSat .bot boolSat.bot boolSat.sing
 
 end InfoSys
 

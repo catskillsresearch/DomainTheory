@@ -2,9 +2,9 @@
 
 @import "1982_A_second_example.english" {code_block=false}
 
-**[InformationSystems/InformationSystems/Factoid25/Token.lean](Factoid25/Token.lean)**
+**[InformationSystems/InformationSystems/Token.lean](Token.lean)**
 
-@import "Factoid25/Token.lean"
+@import "Token.lean"
 
 **[InformationSystems/InformationSystems/instDecidableEq.lean](instDecidableEq.lean)**
 
@@ -26,6 +26,6 @@
 
 @import "ofSatisfaction.lean"
 
-**[InformationSystems/InformationSystems/Factoid25.lean](Factoid25.lean)**
+**[InformationSystems/InformationSystems/a_second_example.lean](a_second_example.lean)**
 
-@import "Factoid25.lean"
+@import "a_second_example.lean"

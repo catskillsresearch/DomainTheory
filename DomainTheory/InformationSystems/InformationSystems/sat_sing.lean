@@ -4,7 +4,7 @@ public import Mathlib.Algebra.Order.Field.Rat
 public import Mathlib.Tactic.Linarith
 public import Mathlib.Tactic.NormNum
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys
-public import DomainTheory.InformationSystems.InformationSystems.Factoid25.Token
+public import DomainTheory.InformationSystems.InformationSystems.Token
 public import DomainTheory.InformationSystems.InformationSystems.instDecidableEq
 public import DomainTheory.InformationSystems.InformationSystems.Sat
 public import DomainTheory.InformationSystems.InformationSystems.sat_midpoint
@@ -13,13 +13,9 @@ public import DomainTheory.InformationSystems.InformationSystems.sat_midpoint
 
 namespace DomainTheory.InformationSystems
 
-namespace Factoid25
-
 theorem sat_sing (t : Token) : ∃ x : ℚ, Sat x t := by
   cases t with
   | bot => exact ⟨0, trivial⟩
   | interval lo hi hlt => exact ⟨_, sat_midpoint hlt⟩
-
-end Factoid25
 
 end DomainTheory.InformationSystems

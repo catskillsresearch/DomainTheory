@@ -4,15 +4,13 @@ public import Mathlib.Algebra.Order.Field.Rat
 public import Mathlib.Tactic.Linarith
 public import Mathlib.Tactic.NormNum
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys
-public import DomainTheory.InformationSystems.InformationSystems.Factoid25.Token
+public import DomainTheory.InformationSystems.InformationSystems.Token
 public import DomainTheory.InformationSystems.InformationSystems.instDecidableEq
 public import DomainTheory.InformationSystems.InformationSystems.Sat
 
 @[expose] public section
 
 namespace DomainTheory.InformationSystems
-
-namespace Factoid25
 
 theorem sat_midpoint {lo hi : ℕ} (hlt : lo < hi) :
     Sat (((lo : ℚ) + (hi : ℚ)) / 2) (.interval lo hi hlt) := by
@@ -24,7 +22,5 @@ theorem sat_midpoint {lo hi : ℕ} (hlt : lo < hi) :
     linarith
   · rw [div_lt_iff₀ h2]
     linarith
-
-end Factoid25
 
 end DomainTheory.InformationSystems

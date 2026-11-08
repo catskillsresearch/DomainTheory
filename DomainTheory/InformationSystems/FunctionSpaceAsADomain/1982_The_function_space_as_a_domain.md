@@ -8,9 +8,9 @@
 - [Theorem 7.3](1982_Theorem_7_3.md)
 - [Proposition 7.4](Proposition74/1982_Proposition_7_4.md)
 
-**[InformationSystems/InformationSystems/Factoid25/Token.lean](../InformationSystems/Factoid25/Token.lean)**
+**[InformationSystems/InformationSystems/Token.lean](../InformationSystems/Token.lean)**
 
-@import "../InformationSystems/Factoid25/Token.lean"
+@import "../InformationSystems/Token.lean"
 
 **[InformationSystems/InformationSystems/Proposition23/proposition_2_3_iv.lean](../InformationSystems/Proposition23/proposition_2_3_iv.lean)**
 
@@ -44,9 +44,9 @@
 
 @import "../InformationSystems/ofSatisfaction.lean"
 
-**[InformationSystems/InformationSystems/Factoid25.lean](../InformationSystems/Factoid25.lean)**
+**[InformationSystems/InformationSystems/a_second_example.lean](../InformationSystems/a_second_example.lean)**
 
-@import "../InformationSystems/Factoid25.lean"
+@import "../InformationSystems/a_second_example.lean"
 
 **[InformationSystems/InformationSystems/Proposition23/proposition_2_3_vi.lean](../InformationSystems/Proposition23/proposition_2_3_vi.lean)**
 
