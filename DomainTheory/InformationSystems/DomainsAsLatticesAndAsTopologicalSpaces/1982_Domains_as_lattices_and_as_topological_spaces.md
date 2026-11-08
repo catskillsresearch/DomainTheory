@@ -25,3 +25,5 @@
 - [The basic Scott-opens](1982_basicOpen.md) [✓](../../1982_REVISION.md)
 - [Approximable maps as Scott continuous](1982_ApproximableMapScott.md) [✓](../../1982_REVISION.md)
 - [Factoid 4.6: topology / Scott continuity](1982_Factoid_4_6.md) [✓](../../1982_REVISION.md)
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-08) — <a href="../../1982_REVISION.md">1982 revision progress</a></p>
