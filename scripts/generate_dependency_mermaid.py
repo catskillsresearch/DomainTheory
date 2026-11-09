@@ -3590,6 +3590,10 @@ IS_SEC7_SHORT: dict[str, tuple[str, str]] = {
         "T73",
         "Theorem 7.3:\nleast fixed-point operator",
     ),
+    "Fix comparison under intertwining": (
+        "Fcui",
+        "Fix comparison under\nintertwining",
+    ),
     "Proposition 7.4: equational uniqueness of fix": (
         "P74",
         "Proposition 7.4:\nequational uniqueness of fix",

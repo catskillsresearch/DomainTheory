@@ -39,18 +39,12 @@
 **[InformationSystems/ProductsAndSumsOfDomains/Sum/instLeftCommutativeLiftSumLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/instLeftCommutativeLiftSumLeft.lean)**
 
 @import "../InformationSystems/ProductsAndSumsOfDomains/Sum/instLeftCommutativeLiftSumLeft.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Proposition74/Basic.lean](../InformationSystems/FunctionSpaceAsADomain/Proposition74/Basic.lean)**
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/fix_under_intertwining.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/fix_under_intertwining.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Proposition74/Basic.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Proposition74/proposition_7_4_ii.lean](../InformationSystems/FunctionSpaceAsADomain/Proposition74/proposition_7_4_ii.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/fix_under_intertwining.lean"
+**[InformationSystems/FunctionSpaceAsADomain/proposition_7_4.lean](../InformationSystems/FunctionSpaceAsADomain/proposition_7_4.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Proposition74/proposition_7_4_ii.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Proposition74/fixChain_toElement_le_fix.lean](../InformationSystems/FunctionSpaceAsADomain/Proposition74/fixChain_toElement_le_fix.lean)**
-
-@import "../InformationSystems/FunctionSpaceAsADomain/Proposition74/fixChain_toElement_le_fix.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Proposition74/proposition_7_4_unique.lean](../InformationSystems/FunctionSpaceAsADomain/Proposition74/proposition_7_4_unique.lean)**
-
-@import "../InformationSystems/FunctionSpaceAsADomain/Proposition74/proposition_7_4_unique.lean"
+@import "../InformationSystems/FunctionSpaceAsADomain/proposition_7_4.lean"
 **[InformationSystems/SomeDomainEquations/Factoid84/PEnt.lean](../InformationSystems/SomeDomainEquations/Factoid84/PEnt.lean)**
 
 @import "../InformationSystems/SomeDomainEquations/Factoid84/PEnt.lean"
@@ -60,18 +54,9 @@
 **[InformationSystems/SomeDomainEquations/Factoid84/topElement.lean](../InformationSystems/SomeDomainEquations/Factoid84/topElement.lean)**
 
 @import "../InformationSystems/SomeDomainEquations/Factoid84/topElement.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Proposition74/idMap_botElement.lean](../InformationSystems/FunctionSpaceAsADomain/Proposition74/idMap_botElement.lean)**
-
-@import "../InformationSystems/FunctionSpaceAsADomain/Proposition74/idMap_botElement.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Proposition74/toElement_fix_le_fixElement.lean](../InformationSystems/FunctionSpaceAsADomain/Proposition74/toElement_fix_le_fixElement.lean)**
-
-@import "../InformationSystems/FunctionSpaceAsADomain/Proposition74/toElement_fix_le_fixElement.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Product/mkLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/mkLeft.lean)**
 
 @import "../InformationSystems/ProductsAndSumsOfDomains/Product/mkLeft.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Proposition74/toElement_comp_fix_le.lean](../InformationSystems/FunctionSpaceAsADomain/Proposition74/toElement_comp_fix_le.lean)**
-
-@import "../InformationSystems/FunctionSpaceAsADomain/Proposition74/toElement_comp_fix_le.lean"
 **[InformationSystems/SomeDomainEquations/Factoid84/botElement.lean](../InformationSystems/SomeDomainEquations/Factoid84/botElement.lean)**
 
 @import "../InformationSystems/SomeDomainEquations/Factoid84/botElement.lean"
@@ -111,12 +96,6 @@
 **[InformationSystems/SomeDomainEquations/Factoid84/RogueApprox.lean](../InformationSystems/SomeDomainEquations/Factoid84/RogueApprox.lean)**
 
 @import "../InformationSystems/SomeDomainEquations/Factoid84/RogueApprox.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Proposition74/fixElement_le_toElement_fix.lean](../InformationSystems/FunctionSpaceAsADomain/Proposition74/fixElement_le_toElement_fix.lean)**
-
-@import "../InformationSystems/FunctionSpaceAsADomain/Proposition74/fixElement_le_toElement_fix.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Proposition74/proposition_7_4_iii.lean](../InformationSystems/FunctionSpaceAsADomain/Proposition74/proposition_7_4_iii.lean)**
-
-@import "../InformationSystems/FunctionSpaceAsADomain/Proposition74/proposition_7_4_iii.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Sum/instLeftCommutativeLiftSumRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/instLeftCommutativeLiftSumRight.lean)**
 
 @import "../InformationSystems/ProductsAndSumsOfDomains/Sum/instLeftCommutativeLiftSumRight.lean"
@@ -279,9 +258,9 @@
 **[BridgeTheorems/mem_foldFinset.lean](mem_foldFinset.lean)**
 
 @import "mem_foldFinset.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Proposition74.lean](../InformationSystems/FunctionSpaceAsADomain/Proposition74.lean)**
+**[InformationSystems/FunctionSpaceAsADomain/proposition_7_4.lean](../InformationSystems/FunctionSpaceAsADomain/proposition_7_4.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Proposition74.lean"
+@import "../InformationSystems/FunctionSpaceAsADomain/proposition_7_4.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Product/liftLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/liftLeft.lean)**
 
 @import "../InformationSystems/ProductsAndSumsOfDomains/Product/liftLeft.lean"

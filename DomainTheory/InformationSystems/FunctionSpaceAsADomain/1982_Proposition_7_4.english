@@ -37,42 +37,18 @@ $$\mathrm{cond}(x, y)(t) = \begin{cases} x, & \text{if } t = \text{true}, \\ y, 
 
 <!-- formalization -->
 
-**Theorem (`closure_empty_eq_bot`).** The closure of the empty set is the bottom element.
-
-*Proof.* Antisymmetry of the element order using empty entailment and the bottom axioms. □
-
-**Theorem (`idMap_botElement`).** The identity approximable map sends bottom to bottom.
-
-*Proof.* Bottom is related only to data entailed by empty, hence lies in the bottom element. □
-
-**Theorem (`proposition_7_4_ii`).** The least fixed point of $f$ is a fixed point: $f(\mathrm{fix}(f))=\mathrm{fix}(f)$.
+**Theorem (`proposition_7_4.ii`).** The least fixed point of $f$ is a fixed point: $f(\mathrm{fix}(f))=\mathrm{fix}(f)$.
 
 *Proof.* The fixed-point equality for the constructed fix element. □
 
-**Theorem (`fixChain_toElement_le_fix`).** Along a fix-chain for $f$, the image under a strict map commuting with $f$ and $g$ stays below the fix element of $g$.
-
-*Proof.* Induction on the chain, using the commuting square and strictness at bottom. □
-
-**Theorem (`proposition_7_4_unique`).** Any fixed point that is least among pre-fixed points equals the constructed fix element.
+**Theorem (`proposition_7_4.unique`).** Any fixed point that is least among pre-fixed points equals the constructed fix element.
 
 *Proof.* Leastness gives one inequality; the constructed fix element is itself a pre-fixed point. □
 
-**Theorem (`toElement_comp_fix_le`).** Under a commuting square of maps with a strict mediator, the mediator sends fix-chains for $f$ below fix of $g$.
-
-*Proof.* Reduce to the chain lemma for the mediator applied along fix-chains. □
-
-**Theorem (`fixElement_le_toElement_fix`).** A strict map commuting with $f$ and $g$ sends $\mathrm{fix}(f)$ below $\mathrm{fix}(g)$.
-
-*Proof.* Every token of $\mathrm{fix}(f)$ arises from a fix-chain; apply the chain comparison. □
-
-**Theorem (`toElement_fix_le_fixElement`).** A strict map commuting with $f$ and $g$ sends $\mathrm{fix}(f)$ above nothing beyond $\mathrm{fix}(g)$: the reverse inequality.
-
-*Proof.* Use leastness of $\mathrm{fix}(g)$ among pre-fixed points after transporting the fixed-point property. □
-
-**Theorem (`proposition_7_4_iii`).** Strict maps that intertwine endomaps preserve least fixed points.
+**Theorem (`proposition_7_4.iii`).** Strict maps that intertwine endomaps preserve least fixed points.
 
 *Proof.* Combine the two inequalities between the image of $\mathrm{fix}(f)$ and $\mathrm{fix}(g)$. □
 
-**Theorem (`theorem_74`).** The least fixed-point operator is uniquely determined by being an operator $\mathrm{fix}_{\mathbf{A}}:(\mathbf{A}\to\mathbf{A})\to\mathbf{A}$ with $f(\mathrm{fix}(f))=\mathrm{fix}(f)$ and preservation of least fixed points under strict intertwining maps.
+**Theorem (`proposition_7_4`).** The least fixed-point operator is uniquely determined by being an operator $\mathrm{fix}_{\mathbf{A}}:(\mathbf{A}\to\mathbf{A})\to\mathbf{A}$ with $f(\mathrm{fix}(f))=\mathrm{fix}(f)$ and preservation of least fixed points under strict intertwining maps.
 
 *Proof.* Assemble the fixed-point equation, the intertwining property, and uniqueness among least pre-fixed points. □
