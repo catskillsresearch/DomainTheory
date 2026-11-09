@@ -1,1 +1,7 @@
 <!-- formalization -->
+
+**Definition (`ApproximableMap.inrMap`).** The right injection $\mathrm{inr} : \mathbf{B} \to \mathbf{A}+\mathbf{B}$ relates a consistent $w$ to a sum set $u$ when $u$ is consistent with empty left projection and $w$ entails the right projection of $u$.
+
+**Theorem (`ApproximableMap.inrMap.toElement_sumElementRht`).** Applying the right injection's element map to the right element of a sum element $z$ that contains a right token recovers $z$.
+
+*Proof.* Dual to the left injection case: right closure under the related entailment, empty left projection excluding left tokens, and injection separation on the converse. □

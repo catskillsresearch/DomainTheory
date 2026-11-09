@@ -23,6 +23,6 @@
 - [Sum entailment](1982_entSet.md) [✓](../../../1982_REVISION.md)
 - [Sum elements](1982_sumElement.md) [✓](../../../1982_REVISION.md)
 - [Left injection map](1982_inlMap.md) [✓](../../../1982_REVISION.md)
-- [Right injection map](1982_inrMap.md)
+- [Right injection map](1982_inrMap.md) [✓](../../../1982_REVISION.md)
 - [Copairing map](1982_copairMap.md)
 - [Proposition 6.4: injections and copairing](1982_Proposition_6_4.md)
