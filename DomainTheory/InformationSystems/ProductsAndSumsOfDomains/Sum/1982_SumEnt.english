@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`SumEnt`).** Sum entailment of a token follows the inhabited side's factor entailment, with bottom always entailed.

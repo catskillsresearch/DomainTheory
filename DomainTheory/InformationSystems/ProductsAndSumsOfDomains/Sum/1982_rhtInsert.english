@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`rhtInsert`).** Right insertion adds a $\mathbf{B}$-datum from a right token and ignores left tokens and bottom.

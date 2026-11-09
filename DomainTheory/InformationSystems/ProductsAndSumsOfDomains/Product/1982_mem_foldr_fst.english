@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_foldr_fst`).** Membership after folding first-component insertion over a multiset of product tokens characterises the accumulated first components.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □

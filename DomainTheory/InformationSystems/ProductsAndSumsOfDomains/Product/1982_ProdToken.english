@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`ProdToken`).** The type of product tokens of $\mathbf{A}$ and $\mathbf{B}$ is the subtype of pairs satisfying the product-token predicate.

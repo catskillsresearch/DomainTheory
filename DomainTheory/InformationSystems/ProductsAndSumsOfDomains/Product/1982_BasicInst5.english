@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.instDecidableIsProdToken`).** Membership in the product-token predicate is decidable by inspecting which component is bottom.

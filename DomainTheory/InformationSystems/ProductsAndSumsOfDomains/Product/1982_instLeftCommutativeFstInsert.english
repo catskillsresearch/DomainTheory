@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`instLeftCommutativeFstInsert`).** Inserting into the first-component accumulator commutes on the left.

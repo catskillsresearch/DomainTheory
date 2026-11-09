@@ -1,0 +1,31 @@
+<!-- formalization -->
+
+**Definition (`fstFinset`).** The first projection of a finite set of product tokens collects those left components whose right component is bottom.
+
+**Theorem (`mem_fstFinset`).** Membership in the first projection matches the existence of a witnessing product token.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`fstFinset.empty`).** The first projection of the empty set is empty.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`fstFinset.funion`).** First projection preserves finite unions.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`fstFinset.insert_left`).** Inserting a left-sided token adjoins its first component.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`fstFinset.insert_not_left`).** Inserting a non-left-sided token leaves the first projection unchanged.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`fstFinset.mono`).** First projection is monotone.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`fstFinset.singleton_left`).** The first projection of a singleton left-sided token is that first component.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □

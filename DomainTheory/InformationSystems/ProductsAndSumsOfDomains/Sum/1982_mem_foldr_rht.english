@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_foldr_rht`).** Membership after folding right insertion characterises the accumulated right components.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □

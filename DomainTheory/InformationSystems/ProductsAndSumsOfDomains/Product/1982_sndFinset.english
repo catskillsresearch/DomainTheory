@@ -1,0 +1,31 @@
+<!-- formalization -->
+
+**Definition (`sndFinset`).** The second projection of a finite set of product tokens collects those right components whose left component is bottom.
+
+**Theorem (`mem_sndFinset`).** Membership in the second projection matches the existence of a witnessing product token.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`sndFinset.empty`).** The second projection of the empty set is empty.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`sndFinset.funion`).** Second projection preserves finite unions.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`sndFinset.insert_not_right`).** Inserting a non-right-sided token leaves the second projection unchanged.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`sndFinset.insert_right`).** Inserting a right-sided token adjoins its second component.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`sndFinset.mono`).** Second projection is monotone.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`sndFinset.singleton_right`).** The second projection of a singleton right-sided token is that second component.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □

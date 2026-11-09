@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`SumToken`).** Sum tokens are a left injection of an $\mathbf{A}$-datum, a right injection of a $\mathbf{B}$-datum, or the shared sum bottom.

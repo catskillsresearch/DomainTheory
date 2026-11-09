@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_foldr_snd`).** Membership after folding second-component insertion over a multiset of product tokens characterises the accumulated second components.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □

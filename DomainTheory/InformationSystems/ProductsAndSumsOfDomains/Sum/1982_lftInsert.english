@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`lftInsert`).** Left insertion adds an $\mathbf{A}$-datum from a left token and ignores right tokens and bottom.

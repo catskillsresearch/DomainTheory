@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`SumCon_empty`).** The empty set is consistent in the separated sum.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □

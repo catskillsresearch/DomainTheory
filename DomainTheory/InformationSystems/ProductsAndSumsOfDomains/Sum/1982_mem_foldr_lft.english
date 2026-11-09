@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_foldr_lft`).** Membership after folding left insertion characterises the accumulated left components.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □

@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`ProdEnt`).** Product entailment of a token requires consistency of the set together with the corresponding factor entailment on the non-bottom side.

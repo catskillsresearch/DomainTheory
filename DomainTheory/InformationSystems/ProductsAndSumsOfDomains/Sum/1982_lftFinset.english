@@ -1,0 +1,39 @@
+<!-- formalization -->
+
+**Definition (`lftFinset`).** The left projection of a finite set of sum tokens collects the $\mathbf{A}$-data of left tokens.
+
+**Theorem (`mem_lftFinset`).** Membership in the left projection matches a witnessing left token.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`lftFinset.empty`).** The left projection of the empty set is empty.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`lftFinset.funion`).** Left projection preserves finite unions.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`lftFinset.insert_bot`).** Inserting bottom leaves the left projection unchanged.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`lftFinset.insert_left`).** Inserting a left token adjoins its datum.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`lftFinset.insert_right`).** Inserting a right token leaves the left projection unchanged.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`lftFinset.mono`).** Left projection is monotone.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`lftFinset.singleton_bot`).** The left projection of singleton bottom is empty.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`lftFinset.singleton_left`).** The left projection of a singleton left token is that datum.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □

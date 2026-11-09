@@ -1,0 +1,19 @@
+<!-- formalization -->
+
+**Definition (`SumCon`).** A finite set of sum tokens is consistent when exactly one side is a consistent nonempty projection and the other is empty, or both projections are empty under the left-consistent clause.
+
+**Theorem (`SumCon.lft_con_of_lft_nonempty`).** A nonempty left projection of a consistent sum set is consistent in $\mathbf{A}$.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`SumCon.lft_empty_of_rht_nonempty`).** A nonempty right projection forces the left projection empty.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`SumCon.rht_con_of_rht_nonempty`).** A nonempty right projection of a consistent sum set is consistent in $\mathbf{B}$.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`SumCon.rht_empty_of_lft_nonempty`).** A nonempty left projection forces the right projection empty.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □

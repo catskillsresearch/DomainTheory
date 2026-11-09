@@ -1,0 +1,39 @@
+<!-- formalization -->
+
+**Definition (`rhtFinset`).** The right projection of a finite set of sum tokens collects the $\mathbf{B}$-data of right tokens.
+
+**Theorem (`mem_rhtFinset`).** Membership in the right projection matches a witnessing right token.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`rhtFinset.empty`).** The right projection of the empty set is empty.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`rhtFinset.funion`).** Right projection preserves finite unions.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`rhtFinset.insert_bot`).** Inserting bottom leaves the right projection unchanged.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`rhtFinset.insert_left`).** Inserting a left token leaves the right projection unchanged.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`rhtFinset.insert_right`).** Inserting a right token adjoins its datum.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`rhtFinset.mono`).** Right projection is monotone.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`rhtFinset.singleton_bot`).** The right projection of singleton bottom is empty.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □
+
+**Theorem (`rhtFinset.singleton_right`).** The right projection of a singleton right token is that datum.
+
+*Proof.* Direct from the definitions and the ambient information-system axioms. □

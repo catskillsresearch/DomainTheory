@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`IsProdToken`).** A pair is a product token when at least one component is the corresponding system's bottom.

@@ -3405,10 +3405,47 @@ IS_SEC5_SHORT: dict[str, tuple[str, str]] = {
     ),
 }
 IS_SEC6_SHORT: dict[str, tuple[str, str]] = {
+    "Product token predicate": ("Ptp", "Product token predicate"),
+    "Decidability of product tokens": (
+        "Dopt",
+        "Decidability of\nproduct tokens",
+    ),
+    "Product tokens": ("Pt", "Product tokens"),
+    "Equality on product tokens": (
+        "Eopt",
+        "Equality on\nproduct tokens",
+    ),
+    "Product bottom": ("Pb", "Product bottom"),
+    "First-component insert commutes": (
+        "Fcic",
+        "First-component insert\ncommutes",
+    ),
+    "Second-component insert commutes": (
+        "Scic",
+        "Second-component insert\ncommutes",
+    ),
+    "Fold membership for first components": (
+        "Fmff",
+        "Fold membership for\nfirst components",
+    ),
+    "Fold membership for second components": (
+        "Fmfs",
+        "Fold membership for\nsecond components",
+    ),
+    "First projection of product sets": (
+        "Fpop",
+        "First projection of\nproduct sets",
+    ),
+    "Second projection of product sets": (
+        "Spop",
+        "Second projection of\nproduct sets",
+    ),
+    "Product entailment": ("Pe", "Product entailment"),
     "Definition 6.1: product system": (
         "D61",
         "Definition 6.1:\nproduct system",
     ),
+    "Product library": ("PLib", "Product library"),
     "Left injection": ("mkL", "Left injection"),
     "Right injection": ("mkR", "Right injection"),
     "Left lift": ("LfL", "Left lift"),
@@ -3418,10 +3455,37 @@ IS_SEC6_SHORT: dict[str, tuple[str, str]] = {
         "P62",
         "Proposition 6.2:\nprojections and pairing",
     ),
+    "Sum tokens": ("St", "Sum tokens"),
+    "Equality on sum tokens": ("Eost", "Equality on sum tokens"),
+    "Sum bottom": ("Sb", "Sum bottom"),
+    "Left-component insert": ("Lci", "Left-component insert"),
+    "Right-component insert": ("Rci", "Right-component insert"),
+    "Left insert commutes": ("Lic", "Left insert commutes"),
+    "Right insert commutes": ("Ric", "Right insert commutes"),
+    "Fold membership for left components": (
+        "Fmfl",
+        "Fold membership for\nleft components",
+    ),
+    "Fold membership for right components": (
+        "Fmfr",
+        "Fold membership for\nright components",
+    ),
+    "Left projection of sum sets": (
+        "Lpos",
+        "Left projection of\nsum sets",
+    ),
+    "Right projection of sum sets": (
+        "Rpos",
+        "Right projection of\nsum sets",
+    ),
+    "Sum consistency": ("Sc", "Sum consistency"),
+    "Sum entailment": ("Se", "Sum entailment"),
     "Definition 6.3: separated sum": (
         "D63",
         "Definition 6.3:\nseparated sum",
     ),
+    "Empty sum consistency": ("SCempty", "Empty sum consistency"),
+    "Sum library": ("SLib", "Sum library"),
     "Proposition 6.4: injections and copairing": (
         "P64",
         "Proposition 6.4:\ninjections and copairing",
