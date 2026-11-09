@@ -5,12 +5,7 @@ public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalS
 
 namespace DomainTheory.BridgeTheorems
 
-
 open DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-open DomainTheory.InformationSystems.InfoSys
 
 namespace InfoSysToNeighborhood
 

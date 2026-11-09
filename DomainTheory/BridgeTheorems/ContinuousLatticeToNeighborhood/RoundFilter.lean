@@ -16,26 +16,12 @@ public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.ContinuousLattice
-
-open DomainTheory.NeighbourhoodSystems
-
-open scoped DomainTheory.ContinuousLattice
-
 namespace ContinuousLatticeToNeighborhood
 
 variable {D : Type*} [CompleteLattice D]
 
-section Continuous
-
-variable (hD : ContinuousLattice D)
-
-include hD
-
 abbrev RoundFilter : Type _ :=
   { f : Filter (D := D) // Round f }
-
-end Continuous
 
 end ContinuousLatticeToNeighborhood
 

@@ -6,12 +6,7 @@ public import DomainTheory.BridgeTheorems.WorkedExampleSExpr.Basic
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.InformationSystems
-open DomainTheory.InformationSystems.Constructive
 open DomainTheory.InformationSystems.InfoSys
-open treeSystem
-open DomainTheory.InformationSystems.InfoSys.ApproximableMap
-open Order
 
 theorem sexUnfold_atom (n : ℕ) :
     treeUnfold lowerBoundSystem (.atom n) = SumToken.left n :=

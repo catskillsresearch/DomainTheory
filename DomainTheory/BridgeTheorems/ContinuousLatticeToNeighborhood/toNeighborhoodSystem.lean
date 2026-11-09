@@ -5,16 +5,11 @@ public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Nei
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBelowUp_bot
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBelowUp_inter
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.ContinuousLattice
-
 open DomainTheory.NeighbourhoodSystems
-
-open scoped DomainTheory.ContinuousLattice
 
 namespace ContinuousLatticeToNeighborhood
 

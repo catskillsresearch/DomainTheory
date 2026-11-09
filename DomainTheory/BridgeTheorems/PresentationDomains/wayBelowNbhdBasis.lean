@@ -13,21 +13,9 @@ public import DomainTheory.BridgeTheorems.IdealCompletionToContinuousLattice
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.InformationSystems
-
-open DomainTheory.ContinuousLattice
-
-open DomainTheory.NeighbourhoodSystems
-
-open Order
-
-open scoped DomainTheory.ContinuousLattice
-
 open ContinuousLatticeToNeighborhood
 
-universe u
-
-variable {D : Type u} [CompleteLattice D] [DecidableEq D]
+variable {D : Type*} [CompleteLattice D] [DecidableEq D]
 
 def wayBelowNbhdBasis : NbhdBasis D D where
   system := toNeighborhoodSystem

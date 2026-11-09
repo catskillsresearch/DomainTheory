@@ -11,11 +11,7 @@ public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.mem_wa
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.ContinuousLattice
-
 open DomainTheory.NeighbourhoodSystems
-
-open scoped DomainTheory.ContinuousLattice
 
 namespace ContinuousLatticeToNeighborhood
 

@@ -7,21 +7,9 @@ public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.RoundF
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.InformationSystems
-
-open DomainTheory.ContinuousLattice
-
-open DomainTheory.NeighbourhoodSystems
-
-open Order
-
-open scoped DomainTheory.ContinuousLattice
-
 open ContinuousLatticeToNeighborhood
 
-universe u
-
-variable {D : Type u} [CompleteLattice D] [DecidableEq D]
+variable {D : Type*} [CompleteLattice D] [DecidableEq D]
 
 noncomputable def roundFilter_infoSys_iso :
     RoundFilter (D := D) ≃o RoundInfoSysElement (D := D) where

@@ -10,8 +10,6 @@ import DomainTheory.InformationSystems.InformationSystems.InfoSys.con_empty
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.NeighbourhoodSystems
-
 open DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive

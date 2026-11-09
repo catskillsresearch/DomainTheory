@@ -7,13 +7,7 @@ public import DomainTheory.BridgeTheorems.mem_basicOpen_of_singletons
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.NeighbourhoodSystems
-
 open DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-open DomainTheory.InformationSystems.InfoSys
 
 namespace InfoSysToNeighborhood
 

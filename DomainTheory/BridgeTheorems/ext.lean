@@ -6,18 +6,6 @@ public import DomainTheory.BridgeTheorems.ConjScottMap
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-open DomainTheory.InformationSystems.InfoSys
-
-open DomainTheory.InformationSystems.InfoSys.ApproximableMap
-
-open DomainTheory.ContinuousLattice
-
-open ContinuousLatticeToNeighborhood
-
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 variable {D E : Type*} [CompleteLattice D] [CompleteLattice E]

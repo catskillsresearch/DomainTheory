@@ -14,11 +14,7 @@ namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems
 
-open DomainTheory.InformationSystems.Constructive
-
 open DomainTheory.InformationSystems.InfoSys
-
-open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 
 namespace InfoSysConstructions
 

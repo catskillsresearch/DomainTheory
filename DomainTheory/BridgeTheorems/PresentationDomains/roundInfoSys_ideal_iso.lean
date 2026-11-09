@@ -7,27 +7,9 @@ public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.domainOrderIs
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.InformationSystems
-
-open DomainTheory.ContinuousLattice
-
-open DomainTheory.NeighbourhoodSystems
-
 open Order
 
-open scoped DomainTheory.ContinuousLattice
-
-open ContinuousLatticeToNeighborhood
-
-universe u
-
-variable {D : Type u} [CompleteLattice D] [DecidableEq D]
-
-section Continuous
-
-variable (hD : ContinuousLattice D)
-
-include hD
+variable {D : Type*} [CompleteLattice D] [DecidableEq D]
 
 noncomputable def roundInfoSys_ideal_iso :
     RoundInfoSysElement (D := D) ≃o
@@ -50,7 +32,5 @@ noncomputable def roundInfoSys_ideal_iso :
       intro e₁ e₂
       exact ιE.map_rel_iff
   }
-
-end Continuous
 
 end DomainTheory.BridgeTheorems

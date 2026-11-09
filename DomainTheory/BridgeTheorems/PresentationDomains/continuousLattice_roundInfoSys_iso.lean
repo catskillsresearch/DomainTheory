@@ -7,9 +7,6 @@ public import DomainTheory.BridgeTheorems.PresentationDomains.continuousLattice_
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.ContinuousLattice
-open ContinuousLatticeToNeighborhood
-
 variable {D : Type*} [CompleteLattice D] [DecidableEq D]
 
 noncomputable def continuousLattice_roundInfoSys_iso (hD : ContinuousLattice D) :

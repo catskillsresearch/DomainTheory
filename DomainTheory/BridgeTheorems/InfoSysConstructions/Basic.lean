@@ -9,15 +9,7 @@ public import DomainTheory.BridgeTheorems.InfoSysConstructions.functionSpaceDoma
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems
-open DomainTheory.InformationSystems.Constructive
 open DomainTheory.InformationSystems.InfoSys
-open DomainTheory.InformationSystems.InfoSys.ApproximableMap
-
-namespace InfoSysConstructions
-
-variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B : InfoSys β)
-
-end InfoSysConstructions
 
 noncomputable abbrev infoSys_product_domain_equiv {α β : Type*} [DecidableEq α] [DecidableEq β]
     (A : InfoSys α) (B : InfoSys β) :

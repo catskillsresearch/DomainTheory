@@ -7,8 +7,6 @@ import DomainTheory.BridgeTheorems.mem_interOf
 
 namespace DomainTheory.BridgeTheorems
 
-
-
 namespace NbhdBasis
 
 variable {ι α : Type*} [DecidableEq ι] (B : NbhdBasis ι α)

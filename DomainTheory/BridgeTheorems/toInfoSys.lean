@@ -13,7 +13,6 @@ import DomainTheory.BridgeTheorems.mem_interOf
 
 namespace DomainTheory.BridgeTheorems
 
-
 open DomainTheory.InformationSystems
 
 namespace NbhdBasis

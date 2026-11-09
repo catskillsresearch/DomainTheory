@@ -6,32 +6,10 @@ public import DomainTheory.BridgeTheorems.PresentationDomains.continuousLattice_
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.InformationSystems
+variable {D : Type*} [CompleteLattice D] [DecidableEq D]
 
-open DomainTheory.ContinuousLattice
-
-open DomainTheory.NeighbourhoodSystems
-
-open Order
-
-open scoped DomainTheory.ContinuousLattice
-
-open ContinuousLatticeToNeighborhood
-
-universe u
-
-variable {D : Type u} [CompleteLattice D] [DecidableEq D]
-
-section Continuous
-
-variable (hD : ContinuousLattice D)
-
-include hD
-
-noncomputable def presentation_domains_equiv :
+noncomputable def presentation_domains_equiv (hD : ContinuousLattice D) :
     D ≃o RoundInfoSysElement (D := D) :=
   continuousLattice_roundInfoSys_iso hD
-
-end Continuous
 
 end DomainTheory.BridgeTheorems

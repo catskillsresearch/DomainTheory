@@ -3,14 +3,9 @@ module
 public import DomainTheory.BridgeTheorems.IsCompactElement
 import Mathlib.Tactic.Continuity.Init
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
-
-open DomainTheory.ContinuousLattice
-
-open scoped DomainTheory.ContinuousLattice
 
 namespace IdealCompletionToContinuousLattice
 

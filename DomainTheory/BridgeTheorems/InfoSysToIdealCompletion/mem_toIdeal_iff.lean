@@ -7,8 +7,6 @@ public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.mem_finiteApp
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems
-open DomainTheory.InformationSystems.Constructive
-open Order
 
 namespace InfoSysToIdealCompletion
 

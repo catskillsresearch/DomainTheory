@@ -3,13 +3,11 @@ module
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.BridgeTheorems.AlgebraicLattice
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.ContinuousLattice
-open scoped DomainTheory.ContinuousLattice
 
 namespace IdealCompletionToContinuousLattice
 

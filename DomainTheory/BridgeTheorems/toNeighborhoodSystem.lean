@@ -14,8 +14,6 @@ open DomainTheory.NeighbourhoodSystems
 
 open DomainTheory.InformationSystems
 
-open DomainTheory.InformationSystems.Constructive
-
 open DomainTheory.InformationSystems.InfoSys
 
 namespace InfoSysToNeighborhood

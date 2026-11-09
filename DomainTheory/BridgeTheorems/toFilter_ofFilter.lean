@@ -13,10 +13,6 @@ open DomainTheory.NeighbourhoodSystems
 
 open DomainTheory.InformationSystems
 
-open DomainTheory.InformationSystems.Constructive
-
-open DomainTheory.InformationSystems.InfoSys
-
 namespace InfoSysToNeighborhood
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)

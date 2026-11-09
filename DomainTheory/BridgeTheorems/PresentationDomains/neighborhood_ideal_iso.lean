@@ -14,15 +14,7 @@ namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems
 
-open DomainTheory.ContinuousLattice
-
-open DomainTheory.NeighbourhoodSystems
-
 open Order
-
-open scoped DomainTheory.ContinuousLattice
-
-open ContinuousLatticeToNeighborhood
 
 section InfoSysTriangle
 

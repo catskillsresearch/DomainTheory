@@ -9,11 +9,7 @@ import DomainTheory.InformationSystems.ElementsOfASystem.closure
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.NeighbourhoodSystems
-
 open DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
 
 open DomainTheory.InformationSystems.InfoSys
 

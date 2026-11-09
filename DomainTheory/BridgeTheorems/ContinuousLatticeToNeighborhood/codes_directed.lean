@@ -8,12 +8,6 @@ public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBel
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.ContinuousLattice
-
-open DomainTheory.NeighbourhoodSystems
-
-open scoped DomainTheory.ContinuousLattice
-
 namespace ContinuousLatticeToNeighborhood
 
 variable {D : Type*} [CompleteLattice D]

@@ -10,8 +10,6 @@ namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.NeighbourhoodSystems
 
-open DomainTheory.InformationSystems
-
 namespace NbhdBasis
 
 variable {ι α : Type*} [DecidableEq ι] (B : NbhdBasis ι α)

@@ -14,21 +14,11 @@ namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.ContinuousLattice
 
-open DomainTheory.NeighbourhoodSystems
-
-open scoped DomainTheory.ContinuousLattice
-
 namespace ContinuousLatticeToNeighborhood
 
 variable {D : Type*} [CompleteLattice D]
 
-section Continuous
-
-variable (hD : ContinuousLattice D)
-
-include hD
-
-noncomputable def domainEmbedding :
+noncomputable def domainEmbedding (hD : ContinuousLattice D) :
     D ↪o Filter (D := D) where
   toFun := toFilter
   inj' := by
@@ -44,8 +34,6 @@ noncomputable def domainEmbedding :
         exact le_sSup (h (wayBelowUp a) ⟨a, ⟨rfl, ha'⟩⟩)
       simpa [ofFilter_toFilter hD] using this
     · exact fun hxy => toFilter_mono hxy
-
-end Continuous
 
 end ContinuousLatticeToNeighborhood
 

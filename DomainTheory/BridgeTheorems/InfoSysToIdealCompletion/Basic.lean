@@ -7,14 +7,7 @@ public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.domainOrderIs
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems
-open DomainTheory.InformationSystems.Constructive
 open Order
-
-namespace InfoSysToIdealCompletion
-
-variable {α : Type*} [DecidableEq α] (A : InfoSys α)
-
-end InfoSysToIdealCompletion
 
 noncomputable abbrev infoSys_to_idealCompletion {α : Type*} [DecidableEq α] (A : InfoSys α) :
     A.Element ≃o Ideal (InfoSysToIdealCompletion.FiniteElement A) :=

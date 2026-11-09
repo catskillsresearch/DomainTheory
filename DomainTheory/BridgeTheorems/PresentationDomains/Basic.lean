@@ -10,11 +10,6 @@ public import DomainTheory.BridgeTheorems.PresentationDomains.presentation_domai
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems
-open DomainTheory.ContinuousLattice
-open DomainTheory.NeighbourhoodSystems
-open Order
-open scoped DomainTheory.ContinuousLattice
-open ContinuousLatticeToNeighborhood
 
 section InfoSysTriangle
 variable {α : Type*} [DecidableEq α]
@@ -26,17 +21,9 @@ noncomputable abbrev presentation_domains_equiv_infoSys (A : InfoSys α) :=
 
 end InfoSysTriangle
 
-universe u
-variable {D : Type u} [CompleteLattice D] [DecidableEq D]
+variable {D : Type*} [CompleteLattice D] [DecidableEq D]
 
-section Continuous
-
-variable (hD : ContinuousLattice D)
-include hD
-
-theorem exists_presentation_domains_equiv :
+theorem exists_presentation_domains_equiv (hD : ContinuousLattice D) :
     Nonempty (D ≃o RoundInfoSysElement (D := D)) :=
   ⟨presentation_domains_equiv hD⟩
-
-end Continuous
 end DomainTheory.BridgeTheorems

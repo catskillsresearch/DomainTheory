@@ -14,32 +14,12 @@ public import DomainTheory.BridgeTheorems.IdealCompletionToContinuousLattice
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.InformationSystems
-
-open DomainTheory.ContinuousLattice
-
-open DomainTheory.NeighbourhoodSystems
-
-open Order
-
-open scoped DomainTheory.ContinuousLattice
-
 open ContinuousLatticeToNeighborhood
 
-universe u
+variable {D : Type*} [CompleteLattice D] [DecidableEq D]
 
-variable {D : Type u} [CompleteLattice D] [DecidableEq D]
-
-section Continuous
-
-variable (hD : ContinuousLattice D)
-
-include hD
-
-noncomputable def continuousLattice_roundFilter_iso :
+noncomputable def continuousLattice_roundFilter_iso (hD : ContinuousLattice D) :
     D ≃o RoundFilter (D := D) :=
   ContinuousLatticeToNeighborhood.domainOrderIso hD
-
-end Continuous
 
 end DomainTheory.BridgeTheorems

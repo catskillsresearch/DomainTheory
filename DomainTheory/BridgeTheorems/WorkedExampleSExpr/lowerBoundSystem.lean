@@ -11,14 +11,6 @@ namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems
 
-open DomainTheory.InformationSystems.Constructive
-
-open DomainTheory.InformationSystems.InfoSys
-
-open DomainTheory.InformationSystems.InfoSys.ApproximableMap
-
-open Order
-
 def lowerBoundSystem : InfoSys ℕ where
   bot := 0
   Con := Set.univ

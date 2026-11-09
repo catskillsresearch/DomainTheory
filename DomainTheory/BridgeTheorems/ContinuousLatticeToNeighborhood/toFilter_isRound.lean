@@ -12,28 +12,16 @@ namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.ContinuousLattice
 
-open DomainTheory.NeighbourhoodSystems
-
-open scoped DomainTheory.ContinuousLattice
-
 namespace ContinuousLatticeToNeighborhood
 
 variable {D : Type*} [CompleteLattice D]
 
-section Continuous
-
-variable (hD : ContinuousLattice D)
-
-include hD
-
-theorem toFilter_isRound (x : D) : Round (toFilter x) := by
+theorem toFilter_isRound (hD : ContinuousLattice D) (x : D) : Round (toFilter x) := by
   constructor
   intro a ha
   have ha' : a ≪ x := mem_wayBelowUp_toFilter.mp ha
   obtain ⟨b, hab, hbx⟩ := WayBelow.interpolate hD ha'
   exact ⟨b, hab, mem_wayBelowUp_toFilter.mpr hbx⟩
-
-end Continuous
 
 end ContinuousLatticeToNeighborhood
 

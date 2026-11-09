@@ -3,16 +3,9 @@ module
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.toFilter
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ElementOrder
 
-
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
-
-open DomainTheory.ContinuousLattice
-
-open DomainTheory.NeighbourhoodSystems
-
-open scoped DomainTheory.ContinuousLattice
 
 namespace ContinuousLatticeToNeighborhood
 

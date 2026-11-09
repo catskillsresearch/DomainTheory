@@ -8,10 +8,6 @@ public import Mathlib.Order.Directed
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.ContinuousLattice
-
-open scoped DomainTheory.ContinuousLattice
-
 namespace IdealCompletionToContinuousLattice
 
 variable {D : Type*} [CompleteLattice D]

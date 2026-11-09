@@ -12,8 +12,6 @@ namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems
 
-open DomainTheory.InformationSystems.Constructive
-
 open Order
 
 namespace InfoSysToIdealCompletion

@@ -15,21 +15,11 @@ namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.ContinuousLattice
 
-open DomainTheory.NeighbourhoodSystems
-
-open scoped DomainTheory.ContinuousLattice
-
 namespace ContinuousLatticeToNeighborhood
 
 variable {D : Type*} [CompleteLattice D]
 
-section Continuous
-
-variable (hD : ContinuousLattice D)
-
-include hD
-
-noncomputable def domainOrderIso : D ≃o RoundFilter (D := D) where
+noncomputable def domainOrderIso (hD : ContinuousLattice D) : D ≃o RoundFilter (D := D) where
   toFun x := ⟨toFilter x, toFilter_isRound hD x⟩
   invFun f := ofFilter (D := D) f.1
   left_inv x := ofFilter_toFilter hD x
@@ -45,8 +35,6 @@ noncomputable def domainOrderIso : D ≃o RoundFilter (D := D) where
       simpa [ofFilter_toFilter hD] using this
     · intro hxy
       exact toFilter_mono hxy
-
-end Continuous
 
 end ContinuousLatticeToNeighborhood
 

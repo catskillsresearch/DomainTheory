@@ -10,10 +10,7 @@ namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.InformationSystems
 
-open DomainTheory.InformationSystems.Constructive
-
 open DomainTheory.InformationSystems.InfoSys
-open treeSystem
 
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 

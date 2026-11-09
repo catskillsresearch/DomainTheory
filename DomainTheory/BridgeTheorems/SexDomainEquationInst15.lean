@@ -10,8 +10,6 @@ open DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
 
-open DomainTheory.InformationSystems.InfoSys
-
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 
 instance : LeftCommutative (foldInsert (A := A)) :=

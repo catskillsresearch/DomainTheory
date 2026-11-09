@@ -9,9 +9,6 @@ import DomainTheory.BridgeTheorems.interOf_insert
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.NeighbourhoodSystems
-
-
 namespace NbhdBasis
 
 variable {ι α : Type*} [DecidableEq ι] (B : NbhdBasis ι α)

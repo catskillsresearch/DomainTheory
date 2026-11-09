@@ -8,7 +8,6 @@ public import DomainTheory.InformationSystems.InformationSystems.Constructive.fu
 
 namespace DomainTheory.BridgeTheorems
 
-
 open DomainTheory.InformationSystems
 
 open DomainTheory.InformationSystems.Constructive
