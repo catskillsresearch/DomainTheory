@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_foldr_funOutput`).** An element lies in the fold of output-component union over a multiset of fun tokens precisely when it lies in the output of some token of the multiset.
+
+*Proof.* Induction on the multiset, using membership for finite union at each cons step. □

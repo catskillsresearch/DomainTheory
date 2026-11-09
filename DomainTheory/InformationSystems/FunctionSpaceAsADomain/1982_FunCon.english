@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`FunCon`).** A finite set $w$ of fun tokens is consistent when every subset whose input union is consistent in $\mathbf{A}$ has output union consistent in $\mathbf{B}$.

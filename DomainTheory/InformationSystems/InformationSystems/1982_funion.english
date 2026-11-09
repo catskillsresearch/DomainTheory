@@ -53,3 +53,15 @@
 **Theorem (`Constructive.funion.singleton_eq_insert`).** Finite union of a singleton with a finite set is the corresponding insert.
 
 *Proof.* Membership on either side is the same by the membership and insert characterizations. □
+
+**Theorem (`Constructive.funion.comm`).** Finite union is commutative: $a \cup' b = b \cup' a$.
+
+*Proof.* Compare membership on both sides via the membership lemma for finite union. □
+
+**Theorem (`Constructive.funion.assoc`).** Finite union is associative: $(a \cup' b) \cup' c = a \cup' (b \cup' c)$.
+
+*Proof.* Compare membership on both sides, splitting each disjunction according to the membership lemma. □
+
+**Theorem (`Constructive.funion.left_comm`).** Finite union is left-commutative: $a \cup' (b \cup' c) = b \cup' (a \cup' c)$.
+
+*Proof.* Compare membership on both sides via the membership lemma. □

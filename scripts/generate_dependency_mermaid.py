@@ -3510,6 +3510,38 @@ IS_SEC6_SUMS_SHORT: dict[str, tuple[str, str]] = {
     ),
 }
 IS_SEC7_SHORT: dict[str, tuple[str, str]] = {
+    "Fun tokens: input–output pairs": ("Ft", "Fun tokens:\ninput–output pairs"),
+    "Equality on fun tokens": ("Eoft", "Equality on\nfun tokens"),
+    "Function-space bottom": ("Fsb", "Function-space\nbottom"),
+    "Fun-input insert commutes": ("Fiic", "Fun-input insert\ncommutes"),
+    "Fun-output insert commutes": ("Foic", "Fun-output insert\ncommutes"),
+    "Fold membership for fun inputs": (
+        "Fmffi",
+        "Fold membership for\nfun inputs",
+    ),
+    "Fold membership for fun outputs": (
+        "Fmffo",
+        "Fold membership for\nfun outputs",
+    ),
+    "Fun input union: consistent inputs": (
+        "Fiu",
+        "Fun input union:\nconsistent inputs",
+    ),
+    "Fun output union: consistent outputs": (
+        "Fou",
+        "Fun output union:\nconsistent outputs",
+    ),
+    "Fun consistency": ("Fc", "Fun consistency"),
+    "Combined consistency witness": (
+        "Ecw",
+        "Combined consistency\nwitness",
+    ),
+    "Fun entailment": ("Fe", "Fun entailment"),
+    "Filter under insert: subset after deletion": (
+        "Fusi",
+        "Filter under insert:\nsubset after deletion",
+    ),
+    "Insert and filter": ("Ifn", "Insert and filter"),
     "Definition 7.1: function space as an information system": (
         "D71",
         "Definition 7.1:\nfunction space as an\ninformation system",
@@ -3649,7 +3681,8 @@ def gen_is_sec7_lecture(diagram: Path, modules: dict[str, Path], old: str) -> st
         companions={},
         header=_is_outline_header("1982_The_function_space_as_a_domain.md"),
         aggregate_lecture_exercises=False,
-        rankdir="LR",
+        rankdir="TD",
+        display_scale=0.5,
     )
 
 

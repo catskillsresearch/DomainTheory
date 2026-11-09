@@ -1,24 +1,10 @@
 module
 
-public import DomainTheory.InformationSystems.InformationSystems.Constructive
-public import DomainTheory.InformationSystems.InformationSystems.EntSet
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.FunToken
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.BasicInst7
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funBot
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.instLeftCommutativeFunInput
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.instLeftCommutativeFunOutput
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.FunCon
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.FunEnt
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.exists_combined_witness
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.filter_ne_subset_of_subset_insert
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funInputUnion
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funOutputUnion
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funion_assoc
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funion_assoc'
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funion_comm
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funion_comm'
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.insert_filter_ne
-public import DomainTheory.InformationSystems.InformationSystems.EntSet
+import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.insert_filter_ne
+import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.filter_ne_subset_of_subset_insert
+import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.exists_combined_witness
 
 @[expose] public section
 
@@ -74,7 +60,7 @@ theorem functionSystem.ent_con {w : Finset (FunToken A B)} {p : FunToken A B}
       have heq :
           (p.val.1 ∪' funInputUnion A B t') ∪' funInputUnion A B s =
             p.val.1 ∪' (funInputUnion A B s ∪' funInputUnion A B t') := by
-        rw [funion_assoc, funion_comm (funInputUnion A B t')]
+        rw [funion.assoc, funion.comm (funInputUnion A B t')]
       have hbig' : p.val.1 ∪' (funInputUnion A B s ∪' funInputUnion A B t') ∈ A.Con := by
         rwa [heq] at hbig
       exact A.con_subset hbig' (funion.subset_right _ _)
@@ -95,7 +81,7 @@ theorem functionSystem.ent_con {w : Finset (FunToken A B)} {p : FunToken A B}
       have heq :
           (funOutputUnion A B s ∪' funOutputUnion A B t') ∪' p.val.2 =
             funOutputUnion A B s ∪' (p.val.2 ∪' funOutputUnion A B t') := by
-        rw [funion_assoc', funion_comm' (funOutputUnion A B t')]
+        rw [funion.assoc, funion.comm (funOutputUnion A B t')]
       have hfinal' :
           funOutputUnion A B s ∪' (p.val.2 ∪' funOutputUnion A B t') ∈ B.Con := by
         rwa [heq] at hfinal

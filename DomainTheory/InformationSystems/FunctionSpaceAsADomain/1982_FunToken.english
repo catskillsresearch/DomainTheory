@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`FunToken`).** A fun token of information systems $\mathbf{A}$ and $\mathbf{B}$ is a pair of consistent finite sets $(u,v)$ with $u$ consistent in $\mathbf{A}$ and $v$ consistent in $\mathbf{B}$.

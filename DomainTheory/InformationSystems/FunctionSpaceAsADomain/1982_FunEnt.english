@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`FunEnt`).** A consistent finite set $w$ of fun tokens entails a fun token $(u',v')$ when there is a subset $s\subseteq w$ such that $u'$ entails every input of a token in $s$ and the output union of $s$ entails $v'$.

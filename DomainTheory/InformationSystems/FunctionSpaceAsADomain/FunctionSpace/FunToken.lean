@@ -1,14 +1,10 @@
-
 module
 
-public import DomainTheory.InformationSystems.InformationSystems.Constructive
-public import DomainTheory.InformationSystems.InformationSystems.EntSet
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.InfoSys
 
 @[expose] public section
 
 namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 

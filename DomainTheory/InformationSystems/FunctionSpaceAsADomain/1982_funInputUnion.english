@@ -1,0 +1,31 @@
+<!-- formalization -->
+
+**Definition (`funInputUnion`).** The input union of a finite set of fun tokens is the finite union of their input components, obtained by folding finite union over the underlying multiset.
+
+**Theorem (`funInputUnion.empty`).** The input union of the empty set is empty.
+
+*Proof.* The fold over the empty multiset returns the empty seed. □
+
+**Theorem (`mem_funInputUnion`).** Membership in the input union is membership in the input of some token of the set.
+
+*Proof.* The fold membership characterisation for inputs. □
+
+**Theorem (`entSet_inputUnion_of_ent`).** If a consistent set entails every input component of a finite set of fun tokens, then it entails their input union.
+
+*Proof.* Unpack membership in the input union and apply the given entailments. □
+
+**Theorem (`funInputUnion.con_of_ent`).** The input union of a set of fun tokens whose inputs are all entailed by a consistent set is itself consistent.
+
+*Proof.* Form the finite union of the witnessing set with the input union and use subset closure of consistency. □
+
+**Theorem (`funInputUnion.funion`).** Input union preserves finite unions of token sets.
+
+*Proof.* Compare membership on both sides via membership in the input union and in a finite union. □
+
+**Theorem (`funInputUnion.singleton`).** The input union of a singleton is the input of that token.
+
+*Proof.* Membership in the input union collapses to the unique token. □
+
+**Theorem (`funInputUnion.insert`).** Inserting a token adjoins its input to the input union.
+
+*Proof.* Rewrite insert as a finite union with a singleton and apply the union and singleton lemmas. □

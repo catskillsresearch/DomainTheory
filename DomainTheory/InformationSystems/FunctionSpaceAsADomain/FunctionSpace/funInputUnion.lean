@@ -1,13 +1,9 @@
 module
 
-public import DomainTheory.InformationSystems.InformationSystems.Constructive
 public import DomainTheory.InformationSystems.InformationSystems.EntSet
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.FunToken
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.BasicInst7
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.instLeftCommutativeFunInput
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.instLeftCommutativeFunOutput
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.mem_foldr_funInput
-public import DomainTheory.InformationSystems.InformationSystems.EntSet
+import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.mem_foldr_funInput
 
 @[expose] public section
 

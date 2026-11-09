@@ -1,11 +1,7 @@
 module
 
-public import DomainTheory.InformationSystems.InformationSystems.Constructive
-public import DomainTheory.InformationSystems.InformationSystems.EntSet
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.FunToken
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.BasicInst7
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funion_left_comm'
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.instLeftCommutativeFunInput
+public import DomainTheory.InformationSystems.InformationSystems.Constructive.funion
 
 @[expose] public section
 
@@ -23,7 +19,7 @@ variable (A : InfoSys α) (B : InfoSys β)
 
 instance instLeftCommutativeFunOutput :
     LeftCommutative fun p : FunToken A B => (funion p.val.2 : Finset β → Finset β) :=
-  ⟨fun p q s => funion_left_comm' p.val.2 q.val.2 s⟩
+  ⟨fun p q s => funion.left_comm p.val.2 q.val.2 s⟩
 
 end InfoSys
 

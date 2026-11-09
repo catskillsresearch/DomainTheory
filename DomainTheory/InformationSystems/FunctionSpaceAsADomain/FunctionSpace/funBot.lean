@@ -1,15 +1,11 @@
 module
 
-public import DomainTheory.InformationSystems.InformationSystems.Constructive
-public import DomainTheory.InformationSystems.InformationSystems.EntSet
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.FunToken
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.BasicInst7
+import DomainTheory.InformationSystems.InformationSystems.InfoSys.con_empty
 
 @[expose] public section
 
 namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 

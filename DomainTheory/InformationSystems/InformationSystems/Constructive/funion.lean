@@ -1,6 +1,6 @@
 module
 
-public import Mathlib.Data.Finset.Basic
+public import Mathlib.Data.Finset.Insert
 
 @[expose] public section
 
@@ -114,6 +114,52 @@ theorem singleton_eq_insert (a : α) (s : Finset α) :
     rcases Finset.mem_insert.mp hx with ha | hs
     · exact mem.mpr (Or.inl (Finset.mem_singleton.mpr ha))
     · exact mem.mpr (Or.inr hs)
+
+theorem comm (a b : Finset α) : a ∪' b = b ∪' a := by
+  ext x
+  constructor
+  · intro hx
+    rcases mem.mp hx with h | h
+    · exact mem.mpr (Or.inr h)
+    · exact mem.mpr (Or.inl h)
+  · intro hx
+    rcases mem.mp hx with h | h
+    · exact mem.mpr (Or.inr h)
+    · exact mem.mpr (Or.inl h)
+
+theorem assoc (a b c : Finset α) :
+    (a ∪' b) ∪' c = a ∪' (b ∪' c) := by
+  ext x
+  constructor
+  · intro hx
+    rcases mem.mp hx with h | h
+    · rcases mem.mp h with h | h
+      · exact mem.mpr (Or.inl h)
+      · exact mem.mpr (Or.inr (mem.mpr (Or.inl h)))
+    · exact mem.mpr (Or.inr (mem.mpr (Or.inr h)))
+  · intro hx
+    rcases mem.mp hx with h | h
+    · exact mem.mpr (Or.inl (mem.mpr (Or.inl h)))
+    · rcases mem.mp h with h | h
+      · exact mem.mpr (Or.inl (mem.mpr (Or.inr h)))
+      · exact mem.mpr (Or.inr h)
+
+theorem left_comm (a b c : Finset α) :
+    a ∪' (b ∪' c) = b ∪' (a ∪' c) := by
+  ext x
+  constructor
+  · intro hx
+    rcases mem.mp hx with h | h
+    · exact mem.mpr (Or.inr (mem.mpr (Or.inl h)))
+    · rcases mem.mp h with h | h
+      · exact mem.mpr (Or.inl h)
+      · exact mem.mpr (Or.inr (mem.mpr (Or.inr h)))
+  · intro hx
+    rcases mem.mp hx with h | h
+    · exact mem.mpr (Or.inr (mem.mpr (Or.inl h)))
+    · rcases mem.mp h with h | h
+      · exact mem.mpr (Or.inl h)
+      · exact mem.mpr (Or.inr (mem.mpr (Or.inr h)))
 
 end funion
 

@@ -1,0 +1,23 @@
+<!-- formalization -->
+
+**Definition (`funOutputUnion`).** The output union of a finite set of fun tokens is the finite union of their output components, obtained by folding finite union over the underlying multiset.
+
+**Theorem (`funOutputUnion.empty`).** The output union of the empty set is empty.
+
+*Proof.* The fold over the empty multiset returns the empty seed. □
+
+**Theorem (`mem_funOutputUnion`).** Membership in the output union is membership in the output of some token of the set.
+
+*Proof.* The fold membership characterisation for outputs. □
+
+**Theorem (`funOutputUnion.funion`).** Output union preserves finite unions of token sets.
+
+*Proof.* Compare membership on both sides via membership in the output union and in a finite union. □
+
+**Theorem (`funOutputUnion.singleton`).** The output union of a singleton is the output of that token.
+
+*Proof.* Membership in the output union collapses to the unique token. □
+
+**Theorem (`funOutputUnion.insert`).** Inserting a token adjoins its output to the output union.
+
+*Proof.* Rewrite insert as a finite union with a singleton and apply the union and singleton lemmas. □

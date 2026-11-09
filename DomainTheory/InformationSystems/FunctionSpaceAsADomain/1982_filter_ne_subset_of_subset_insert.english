@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`filter_ne_subset_of_subset_insert`).** If a finite set of fun tokens is contained in the insert of $p$ into $w$, then deleting $p$ from it yields a subset of $w$.
+
+*Proof.* Any surviving element lies in the insert and is unequal to $p$, hence lies in $w$. □
