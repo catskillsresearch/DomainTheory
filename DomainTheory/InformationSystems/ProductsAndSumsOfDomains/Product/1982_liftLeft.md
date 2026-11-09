@@ -1,4 +1,4 @@
-# liftLeft
+# Left lift
 
 @import "1982_liftLeft.english" {code_block=false}
 

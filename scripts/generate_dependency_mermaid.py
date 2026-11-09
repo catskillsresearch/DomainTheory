@@ -3405,15 +3405,27 @@ IS_SEC5_SHORT: dict[str, tuple[str, str]] = {
     ),
 }
 IS_SEC6_SHORT: dict[str, tuple[str, str]] = {
-    "Definition 6.1": ("D61", "Definition 6.1"),
-    "mkLeft": ("mkL", "mkLeft"),
-    "mkRight": ("mkR", "mkRight"),
-    "liftLeft": ("LfL", "liftLeft"),
-    "liftRight": ("LfR", "liftRight"),
-    "pairMap": ("pair", "pairMap"),
-    "Proposition 6.2": ("P62", "Proposition 6.2"),
-    "Definition 6.3": ("D63", "Definition 6.3"),
-    "Proposition 6.4": ("P64", "Proposition 6.4"),
+    "Definition 6.1: product system": (
+        "D61",
+        "Definition 6.1:\nproduct system",
+    ),
+    "Left injection": ("mkL", "Left injection"),
+    "Right injection": ("mkR", "Right injection"),
+    "Left lift": ("LfL", "Left lift"),
+    "Right lift": ("LfR", "Right lift"),
+    "Pairing map": ("pair", "Pairing map"),
+    "Proposition 6.2: projections and pairing": (
+        "P62",
+        "Proposition 6.2:\nprojections and pairing",
+    ),
+    "Definition 6.3: separated sum": (
+        "D63",
+        "Definition 6.3:\nseparated sum",
+    ),
+    "Proposition 6.4: injections and copairing": (
+        "P64",
+        "Proposition 6.4:\ninjections and copairing",
+    ),
 }
 IS_SEC7_SHORT: dict[str, tuple[str, str]] = {
     "Definition 7.1": ("D71", "Definition 7.1"),

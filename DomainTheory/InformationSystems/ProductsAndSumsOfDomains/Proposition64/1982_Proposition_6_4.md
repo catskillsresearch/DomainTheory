@@ -1,4 +1,4 @@
-# Proposition 6.4
+# Proposition 6.4: injections and copairing
 
 @import "1982_Proposition_6_4.english" {code_block=false}
 

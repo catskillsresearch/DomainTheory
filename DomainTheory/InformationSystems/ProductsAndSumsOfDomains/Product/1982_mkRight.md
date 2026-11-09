@@ -1,4 +1,4 @@
-# mkRight
+# Right injection
 
 @import "1982_mkRight.english" {code_block=false}
 

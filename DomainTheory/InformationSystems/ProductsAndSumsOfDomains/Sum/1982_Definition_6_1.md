@@ -1,4 +1,4 @@
-# Definition 6.1
+# Definition 6.1: product system
 
 @import "1982_Definition_6_1.english" {code_block=false}
 

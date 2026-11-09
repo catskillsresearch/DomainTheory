@@ -10,7 +10,7 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
+variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 
 variable (A : InfoSys α) (B : InfoSys β)
 

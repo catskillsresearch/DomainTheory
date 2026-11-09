@@ -1,4 +1,4 @@
-# pairMap
+# Pairing map
 
 @import "1982_pairMap.english" {code_block=false}
 

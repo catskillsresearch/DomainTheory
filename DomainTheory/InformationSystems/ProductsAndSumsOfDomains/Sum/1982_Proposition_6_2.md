@@ -1,4 +1,4 @@
-# Proposition 6.2
+# Proposition 6.2: projections and pairing
 
 @import "1982_Proposition_6_2.english" {code_block=false}
 

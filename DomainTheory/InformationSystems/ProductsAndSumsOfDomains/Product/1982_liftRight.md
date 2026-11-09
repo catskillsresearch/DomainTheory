@@ -1,4 +1,4 @@
-# liftRight
+# Right lift
 
 @import "1982_liftRight.english" {code_block=false}
 
