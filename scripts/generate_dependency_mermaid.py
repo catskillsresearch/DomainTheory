@@ -3406,6 +3406,11 @@ IS_SEC5_SHORT: dict[str, tuple[str, str]] = {
 }
 IS_SEC6_SHORT: dict[str, tuple[str, str]] = {
     "Definition 6.1": ("D61", "Definition 6.1"),
+    "mkLeft": ("mkL", "mkLeft"),
+    "mkRight": ("mkR", "mkRight"),
+    "liftLeft": ("LfL", "liftLeft"),
+    "liftRight": ("LfR", "liftRight"),
+    "pairMap": ("pair", "pairMap"),
     "Proposition 6.2": ("P62", "Proposition 6.2"),
     "Definition 6.3": ("D63", "Definition 6.3"),
     "Proposition 6.4": ("P64", "Proposition 6.4"),

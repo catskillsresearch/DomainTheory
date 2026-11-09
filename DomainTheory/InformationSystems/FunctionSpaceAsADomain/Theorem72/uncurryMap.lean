@@ -1,9 +1,10 @@
 module
 
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_2
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.applyMap
 
@@ -27,7 +28,7 @@ open ApproximableMap
 def uncurryMap (k : ApproximableMap A (functionSystem B C)) :
     ApproximableMap (productSystem A B) C :=
   comp (applyMap (B := B) (C := C))
-    (pairMap (functionSystem B C) B (comp k (fstMap A B)) (sndMap A B))
+    (pairMap (functionSystem B C) B (comp k (productSystem.fstMap A B)) (productSystem.sndMap A B))
 
 end InfoSys
 

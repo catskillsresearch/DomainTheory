@@ -1,6 +1,5 @@
 module
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62.sndMap
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62.fstMap
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
@@ -25,7 +24,7 @@ namespace InfoSysConstructions
 variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B : InfoSys β)
 
 def unpair (z : (productSystem A B).Element) : A.Element × B.Element :=
-  ((fstMap A B).toElement z, (sndMap A B).toElement z)
+  ((productSystem.fstMap A B).toElement z, (productSystem.sndMap A B).toElement z)
 
 end InfoSysConstructions
 

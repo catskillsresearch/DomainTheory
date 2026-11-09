@@ -1,9 +1,10 @@
 module
 
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_2
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.mkFunToken
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.approxMap_toElement
@@ -46,7 +47,7 @@ theorem mem_fst_of_subset_pairElements {x : A.Element} {y : B.Element}
     (hs : ↑s ⊆ (pairElements A B x y).carrier) {a : α}
     (ha : a ∈ fstFinset A B s) : a ∈ x.carrier := by
   have hCon : ProdCon A B s := (pairElements A B x y).consistent s hs
-  have : a ∈ ((fstMap A B).toElement (pairElements A B x y)).carrier := by
+  have : a ∈ ((productSystem.fstMap A B).toElement (pairElements A B x y)).carrier := by
     refine ⟨s, hs, ⟨hCon, A.con_sing a, ?_⟩⟩
     intro b hb
     have : b = a := Finset.mem_singleton.mp hb

@@ -66,9 +66,9 @@
 **[InformationSystems/FunctionSpaceAsADomain/Proposition74/toElement_fix_le_fixElement.lean](../InformationSystems/FunctionSpaceAsADomain/Proposition74/toElement_fix_le_fixElement.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Proposition74/toElement_fix_le_fixElement.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/mkLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/mkLeft.lean)**
+**[InformationSystems/ProductsAndSumsOfDomains/Product/mkLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/mkLeft.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/mkLeft.lean"
+@import "../InformationSystems/ProductsAndSumsOfDomains/Product/mkLeft.lean"
 **[InformationSystems/FunctionSpaceAsADomain/Proposition74/toElement_comp_fix_le.lean](../InformationSystems/FunctionSpaceAsADomain/Proposition74/toElement_comp_fix_le.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Proposition74/toElement_comp_fix_le.lean"
@@ -81,9 +81,9 @@
 **[InformationSystems/ProductsAndSumsOfDomains/Proposition64/not_mem_right_of_mem_left.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/not_mem_right_of_mem_left.lean)**
 
 @import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/not_mem_right_of_mem_left.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/instLeftCommutativeMkLeftInsert.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/instLeftCommutativeMkLeftInsert.lean)**
+**[InformationSystems/ProductsAndSumsOfDomains/Product/mkLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/mkLeft.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/instLeftCommutativeMkLeftInsert.lean"
+@import "../InformationSystems/ProductsAndSumsOfDomains/Product/mkLeft.lean"
 **[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Proposition56.lean)**
 
 @import "../InformationSystems/ApproximableMappingsBetweenDomains/Proposition56.lean"
@@ -189,60 +189,36 @@
 **[InformationSystems/ProductsAndSumsOfDomains/Proposition64/inrMap.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/inrMap.lean)**
 
 @import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/inrMap.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/mkRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/mkRight.lean)**
+**[InformationSystems/ProductsAndSumsOfDomains/Product/mkRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/mkRight.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/mkRight.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/instLeftCommutativeMkRightInsert.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/instLeftCommutativeMkRightInsert.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Product/mkRight.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Product/ProdCon.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/ProdCon.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/instLeftCommutativeMkRightInsert.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/ProdCon_empty.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/ProdCon_empty.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Product/ProdCon.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Product/liftLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/liftLeft.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/ProdCon_empty.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/liftLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/liftLeft.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Product/liftLeft.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Product/productSystem.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/productSystem.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/liftLeft.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/entSet_fst_of_prodEntSet.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/entSet_fst_of_prodEntSet.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Product/productSystem.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Product/liftRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/liftRight.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/entSet_fst_of_prodEntSet.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/fstMap.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/fstMap.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Product/liftRight.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Product/pairMap.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/pairMap.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/fstMap.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/liftRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/liftRight.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Product/pairMap.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Product/liftLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/liftLeft.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/liftRight.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/entSet_snd_of_prodEntSet.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/entSet_snd_of_prodEntSet.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Product/liftLeft.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Product/productSystem_more.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/productSystem_more.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/entSet_snd_of_prodEntSet.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/pairMap.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/pairMap.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Product/productSystem_more.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Product/liftRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/liftRight.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/pairMap.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/sndMap.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/sndMap.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Product/liftRight.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Product/liftLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/liftLeft.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/sndMap.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/Basic.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/Basic.lean)**
-
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/Basic.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/mem_liftLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/mem_liftLeft.lean)**
-
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/mem_liftLeft.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/element_eq_of_fst_snd.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/element_eq_of_fst_snd.lean)**
-
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/element_eq_of_fst_snd.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/mem_liftRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/mem_liftRight.lean)**
-
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/mem_liftRight.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/fstFinset_liftRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/fstFinset_liftRight.lean)**
-
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/fstFinset_liftRight.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/sndFinset_liftRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/sndFinset_liftRight.lean)**
-
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/sndFinset_liftRight.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/ProdCon_liftRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/ProdCon_liftRight.lean)**
-
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/ProdCon_liftRight.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/fstFinset_liftLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/fstFinset_liftLeft.lean)**
-
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/fstFinset_liftLeft.lean"
+@import "../InformationSystems/ProductsAndSumsOfDomains/Product/liftLeft.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Factoid65/approxMap_to_unit_eq_const.lean](../InformationSystems/ProductsAndSumsOfDomains/Factoid65/approxMap_to_unit_eq_const.lean)**
 
 @import "../InformationSystems/ProductsAndSumsOfDomains/Factoid65/approxMap_to_unit_eq_const.lean"
@@ -306,27 +282,21 @@
 **[InformationSystems/FunctionSpaceAsADomain/Proposition74.lean](../InformationSystems/FunctionSpaceAsADomain/Proposition74.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Proposition74.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/sndFinset_liftLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/sndFinset_liftLeft.lean)**
+**[InformationSystems/ProductsAndSumsOfDomains/Product/liftLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/liftLeft.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/sndFinset_liftLeft.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/ProdCon_liftLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/ProdCon_liftLeft.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Product/liftLeft.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Product/pairMap.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/pairMap.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/ProdCon_liftLeft.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/comp_fstMap_pairMap.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/comp_fstMap_pairMap.lean)**
-
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/comp_fstMap_pairMap.lean"
+@import "../InformationSystems/ProductsAndSumsOfDomains/Product/pairMap.lean"
 **[BridgeTheorems/SumEnt_treeFold.lean](SumEnt_treeFold.lean)**
 
 @import "SumEnt_treeFold.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/comp_sndMap_pairMap.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/comp_sndMap_pairMap.lean)**
+**[InformationSystems/ProductsAndSumsOfDomains/Product/pairMap.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/pairMap.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/comp_sndMap_pairMap.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62/pairMap_unique.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62/pairMap_unique.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Product/pairMap.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/proposition_6_2.lean](../InformationSystems/ProductsAndSumsOfDomains/proposition_6_2.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62/pairMap_unique.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition62.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition62.lean)**
-
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition62.lean"
+@import "../InformationSystems/ProductsAndSumsOfDomains/proposition_6_2.lean"
 **[InformationSystems/FunctionSpaceAsADomain/Theorem72/liftPair.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/liftPair.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/liftPair.lean"

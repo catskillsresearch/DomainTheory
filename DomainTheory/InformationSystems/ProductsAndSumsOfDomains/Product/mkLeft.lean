@@ -1,9 +1,6 @@
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62.mkLeft
 
 @[expose] public section
 
@@ -17,10 +14,17 @@ variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 
 variable (A : InfoSys α) (B : InfoSys β)
 
-instance instLeftCommutativeMkLeftInsert :
+def mkLeft (x : α) : ProdToken A B :=
+  ⟨(x, B.bot), ⟨Or.inr rfl⟩⟩
+
+namespace mkLeft
+
+instance instLeftCommutativeInsert :
     LeftCommutative fun x : α =>
       (insert (mkLeft A B x) : Finset (ProdToken A B) → Finset (ProdToken A B)) :=
   ⟨fun x y s => insert_comm' (mkLeft A B x) (mkLeft A B y) s⟩
+
+end mkLeft
 
 end InfoSys
 

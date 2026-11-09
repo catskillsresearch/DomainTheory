@@ -3,7 +3,7 @@ module
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_2
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.mkFunToken
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.approxMap_toElement
@@ -45,16 +45,16 @@ theorem liftLeft_funion (u u' : Finset α) :
   ext p
   constructor
   · intro hp
-    rcases (mem_liftLeft A B).1 hp with ⟨x, hx, rfl⟩
+    rcases (liftLeft.mem A B).1 hp with ⟨x, hx, rfl⟩
     rcases funion.mem.mp hx with hx | hx
-    · exact funion.mem.mpr (Or.inl ((mem_liftLeft A B).2 ⟨x, hx, rfl⟩))
-    · exact funion.mem.mpr (Or.inr ((mem_liftLeft A B).2 ⟨x, hx, rfl⟩))
+    · exact funion.mem.mpr (Or.inl ((liftLeft.mem A B).2 ⟨x, hx, rfl⟩))
+    · exact funion.mem.mpr (Or.inr ((liftLeft.mem A B).2 ⟨x, hx, rfl⟩))
   · intro hp
     rcases funion.mem.mp hp with hp | hp
-    · rcases (mem_liftLeft A B).1 hp with ⟨x, hx, rfl⟩
-      exact (mem_liftLeft A B).2 ⟨x, funion.mem.mpr (Or.inl hx), rfl⟩
-    · rcases (mem_liftLeft A B).1 hp with ⟨x, hx, rfl⟩
-      exact (mem_liftLeft A B).2 ⟨x, funion.mem.mpr (Or.inr hx), rfl⟩
+    · rcases (liftLeft.mem A B).1 hp with ⟨x, hx, rfl⟩
+      exact (liftLeft.mem A B).2 ⟨x, funion.mem.mpr (Or.inl hx), rfl⟩
+    · rcases (liftLeft.mem A B).1 hp with ⟨x, hx, rfl⟩
+      exact (liftLeft.mem A B).2 ⟨x, funion.mem.mpr (Or.inr hx), rfl⟩
 
 end InfoSys
 end DomainTheory.InformationSystems

@@ -1,9 +1,7 @@
 module
 
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62.Basic
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 
 @[expose] public section
 
@@ -20,9 +18,11 @@ namespace ApproximableMap
 
 variable {C : InfoSys γ}
 
+namespace productSystem
+
 theorem element_eq_of_fst_snd (z z' : (productSystem A B).Element)
-    (hfst : (fstMap A B).toElement z = (fstMap A B).toElement z')
-    (hsnd : (sndMap A B).toElement z = (sndMap A B).toElement z') :
+    (hfst : (productSystem.fstMap A B).toElement z = (productSystem.fstMap A B).toElement z')
+    (hsnd : (productSystem.sndMap A B).toElement z = (productSystem.sndMap A B).toElement z') :
     z = z' := by
   apply le_antisymm
   · intro p hp
@@ -34,14 +34,14 @@ theorem element_eq_of_fst_snd (z z' : (productSystem A B).Element)
     have hCon : ProdCon A B {p} := z.consistent {p} hpz
     rcases p.property.out with h1 | h2
     ·
-      have hy : p.val.2 ∈ ((sndMap A B).toElement z).carrier := by
+      have hy : p.val.2 ∈ ((productSystem.sndMap A B).toElement z).carrier := by
         refine ⟨{p}, hpz, ?_⟩
         refine ⟨hCon, B.con_sing p.val.2, ?_⟩
         intro y hy
         have : y = p.val.2 := Finset.mem_singleton.mp hy
         subst this
         exact B.ent_refl hCon.2 ((mem_sndFinset A B).2 ⟨p, Finset.mem_singleton_self p, h1, rfl⟩)
-      have hy' : p.val.2 ∈ ((sndMap A B).toElement z').carrier := by
+      have hy' : p.val.2 ∈ ((productSystem.sndMap A B).toElement z').carrier := by
         rw [← hsnd]
         exact hy
       rcases hy' with ⟨u, hu, ⟨huCon, _, hEnt⟩⟩
@@ -53,14 +53,14 @@ theorem element_eq_of_fst_snd (z z' : (productSystem A B).Element)
           exact hEnt p.val.2 (Finset.mem_singleton_self _)
       exact z'.closed u p hu hEntp
     ·
-      have hx : p.val.1 ∈ ((fstMap A B).toElement z).carrier := by
+      have hx : p.val.1 ∈ ((productSystem.fstMap A B).toElement z).carrier := by
         refine ⟨{p}, hpz, ?_⟩
         refine ⟨hCon, A.con_sing p.val.1, ?_⟩
         intro x hx
         have : x = p.val.1 := Finset.mem_singleton.mp hx
         subst this
         exact A.ent_refl hCon.1 ((mem_fstFinset A B).2 ⟨p, Finset.mem_singleton_self p, h2, rfl⟩)
-      have hx' : p.val.1 ∈ ((fstMap A B).toElement z').carrier := by
+      have hx' : p.val.1 ∈ ((productSystem.fstMap A B).toElement z').carrier := by
         rw [← hfst]
         exact hx
       rcases hx' with ⟨u, hu, ⟨huCon, _, hEnt⟩⟩
@@ -79,14 +79,14 @@ theorem element_eq_of_fst_snd (z z' : (productSystem A B).Element)
       exact hp
     have hCon : ProdCon A B {p} := z'.consistent {p} hpz
     rcases p.property.out with h1 | h2
-    · have hy : p.val.2 ∈ ((sndMap A B).toElement z').carrier := by
+    · have hy : p.val.2 ∈ ((productSystem.sndMap A B).toElement z').carrier := by
         refine ⟨{p}, hpz, ?_⟩
         refine ⟨hCon, B.con_sing p.val.2, ?_⟩
         intro y hy
         have : y = p.val.2 := Finset.mem_singleton.mp hy
         subst this
         exact B.ent_refl hCon.2 ((mem_sndFinset A B).2 ⟨p, Finset.mem_singleton_self p, h1, rfl⟩)
-      have hy' : p.val.2 ∈ ((sndMap A B).toElement z).carrier := by
+      have hy' : p.val.2 ∈ ((productSystem.sndMap A B).toElement z).carrier := by
         rw [hsnd]
         exact hy
       rcases hy' with ⟨u, hu, ⟨huCon, _, hEnt⟩⟩
@@ -97,14 +97,14 @@ theorem element_eq_of_fst_snd (z z' : (productSystem A B).Element)
         · intro _
           exact hEnt p.val.2 (Finset.mem_singleton_self _)
       exact z.closed u p hu hEntp
-    · have hx : p.val.1 ∈ ((fstMap A B).toElement z').carrier := by
+    · have hx : p.val.1 ∈ ((productSystem.fstMap A B).toElement z').carrier := by
         refine ⟨{p}, hpz, ?_⟩
         refine ⟨hCon, A.con_sing p.val.1, ?_⟩
         intro x hx
         have : x = p.val.1 := Finset.mem_singleton.mp hx
         subst this
         exact A.ent_refl hCon.1 ((mem_fstFinset A B).2 ⟨p, Finset.mem_singleton_self p, h2, rfl⟩)
-      have hx' : p.val.1 ∈ ((fstMap A B).toElement z).carrier := by
+      have hx' : p.val.1 ∈ ((productSystem.fstMap A B).toElement z).carrier := by
         rw [hfst]
         exact hx
       rcases hx' with ⟨u, hu, ⟨huCon, _, hEnt⟩⟩
@@ -116,7 +116,10 @@ theorem element_eq_of_fst_snd (z z' : (productSystem A B).Element)
           simpa [h2] using B.ent_bot huCon.2
       exact z.closed u p hu hEntp
 
+end productSystem
+
 end ApproximableMap
+
 end InfoSys
 
 end DomainTheory.InformationSystems

@@ -2,8 +2,6 @@ module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.liftSumLeft
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.liftSumRight
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inlMap
@@ -39,6 +37,7 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet_empty_of_rel_bot_like
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet_u_of_inl_witness
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet_u_of_inr_witness
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55.comp
 
 @[expose] public section
 

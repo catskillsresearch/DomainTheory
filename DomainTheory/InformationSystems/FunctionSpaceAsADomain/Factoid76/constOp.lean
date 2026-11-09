@@ -1,5 +1,6 @@
 module
 
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56.constMap
@@ -21,22 +22,22 @@ variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 
 def constOp : ApproximableMap B (functionSystem A B) :=
-  curryMap B A B (fstMap B A)
+  curryMap B A B (productSystem.fstMap B A)
 
-theorem constOp.uncurry : uncurryMap B A B (constOp A B) = fstMap B A := by
+theorem constOp.uncurry : uncurryMap B A B (constOp A B) = productSystem.fstMap B A := by
   simp only [constOp, uncurry_curryMap]
 
 theorem pairMap_comp_fst_snd_toElement
     {P : InfoSys α} {X : InfoSys β} {Y : InfoSys γ}
     (k : ApproximableMap P (functionSystem Y X))
     (p : P.Element) (y : Y.Element) :
-    (pairMap (functionSystem Y X) Y (comp k (fstMap P Y)) (sndMap P Y)).toElement
+    (pairMap (functionSystem Y X) Y (comp k (productSystem.fstMap P Y)) (productSystem.sndMap P Y)).toElement
       (pairElements P Y p y) =
       pairElements (functionSystem Y X) Y (k.toElement p) y := by
-  refine element_eq_of_fst_snd (functionSystem Y X) Y _ _ ?_ ?_
-  · rw [← comp.toElement, comp_fstMap_pairMap, comp.toElement, fstMap_pairElements,
+  refine productSystem.element_eq_of_fst_snd (functionSystem Y X) Y _ _ ?_ ?_
+  · rw [← comp.toElement, pairMap.comp_fst, comp.toElement, fstMap_pairElements,
       fstMap_pairElements]
-  · rw [← comp.toElement, comp_sndMap_pairMap, sndMap_pairElements, sndMap_pairElements]
+  · rw [← comp.toElement, pairMap.comp_snd, sndMap_pairElements, sndMap_pairElements]
 
 theorem constOp.toElement (b : B.Element) :
     (constOp A B).toElement b =
@@ -50,7 +51,7 @@ theorem constOp.toElement (b : B.Element) :
           = (uncurryMap B A B (constOp A B)).toElement (pairElements B A b x) := by
               simp only [uncurryMap, comp.toElement]
               rw [hpair, applyMap_toElement]
-          _ = (fstMap B A).toElement (pairElements B A b x) := by rw [constOp.uncurry]
+          _ = (productSystem.fstMap B A).toElement (pairElements B A b x) := by rw [constOp.uncurry]
           _ = b := fstMap_pairElements B A b x
   rw [← huniq, approxMap_toElement_element_toApproxMap]
 

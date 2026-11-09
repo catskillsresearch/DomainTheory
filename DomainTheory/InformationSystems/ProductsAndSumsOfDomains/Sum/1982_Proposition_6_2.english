@@ -28,6 +28,12 @@ then $z = z'$. The reason is that $\mathrm{fst}$ and $\mathrm{snd}$ just divide 
 
 That lemma treats one pair of elements at a time, but $\langle f, g \rangle$ is a function. But if $\langle f, g \rangle'$ were another function satisfying the conditions of the above proposition, then the two functions would be pointwise equal. We could then quote 5.3 to assure ourselves that they are the same function. $\blacksquare$
 
+<!-- formalization -->
+
+**Theorem (`ApproximableMap.proposition_6_2`).** For approximable mappings $f : \mathbf{C} \to \mathbf{A}$, $g : \mathbf{C} \to \mathbf{B}$, and $h : \mathbf{C} \to \mathbf{A} \times \mathbf{B}$, if $\mathrm{fst} \circ h = f$ and $\mathrm{snd} \circ h = g$, then $h = \langle f, g \rangle$.
+
+*Proof.* Uniqueness of the pairing. □
+
 *Ordered pairs.* By using the definition
 
 $$(x, y) = \langle \mathrm{const}(x), \mathrm{const}(y) \rangle (\bot_{\mathbf{C}}),$$

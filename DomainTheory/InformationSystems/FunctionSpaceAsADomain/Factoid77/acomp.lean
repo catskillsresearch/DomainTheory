@@ -1,5 +1,6 @@
 module
 
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Factoid65
 public import Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
@@ -29,13 +30,13 @@ def acomp {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 
 theorem acomp.swap_fst {α β : Type*} [DecidableEq α] [DecidableEq β]
     (A : InfoSys α) (B : InfoSys β) :
-    acomp (swapMap A B) (fstMap B A) = sndMap A B := by
-  simp only [acomp, swapMap, comp_fstMap_pairMap]
+    acomp (swapMap A B) (productSystem.fstMap B A) = productSystem.sndMap A B := by
+  simp only [acomp, swapMap, pairMap.comp_fst]
 
 theorem acomp.swap_snd {α β : Type*} [DecidableEq α] [DecidableEq β]
     (A : InfoSys α) (B : InfoSys β) :
-    acomp (swapMap A B) (sndMap B A) = fstMap A B := by
-  simp only [acomp, swapMap, comp_sndMap_pairMap]
+    acomp (swapMap A B) (productSystem.sndMap B A) = productSystem.fstMap A B := by
+  simp only [acomp, swapMap, pairMap.comp_snd]
 
 theorem acomp.toElement {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
     {A : InfoSys α} {B : InfoSys β} {C : InfoSys γ}

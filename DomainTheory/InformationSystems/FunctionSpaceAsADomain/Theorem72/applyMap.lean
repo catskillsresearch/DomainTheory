@@ -3,7 +3,7 @@ module
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_2
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.mkFunToken
 
@@ -79,8 +79,8 @@ def applyMap : ApproximableMap (productSystem (functionSystem B C) B) C where
   mono := by
     rintro s s' t t' ⟨hs, ht, hEnt⟩ hEnts hEntt hs' ht'
     refine ⟨hs', ht', ?_⟩
-    have hfst := entSet_fst_of_prodEntSet (functionSystem B C) B hEnts
-    have hsnd := entSet_snd_of_prodEntSet (functionSystem B C) B hEnts
+    have hfst := ProdEnt.entSet_fst (functionSystem B C) B hEnts
+    have hsnd := ProdEnt.entSet_snd (functionSystem B C) B hEnts
     have htok :
         (functionSystem B C).Ent (fstFinset (functionSystem B C) B s)
           (mkFunToken B C (sndFinset (functionSystem B C) B s) t hs.2 ht) := hEnt

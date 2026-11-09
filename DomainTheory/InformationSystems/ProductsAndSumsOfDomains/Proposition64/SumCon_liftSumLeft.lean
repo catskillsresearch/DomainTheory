@@ -2,8 +2,6 @@ module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.liftSumLeft
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.liftSumRight
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inlMap

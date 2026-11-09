@@ -2,6 +2,8 @@ module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.prodBot
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.ProdEnt
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.ApproximableMap
+public import DomainTheory.InformationSystems.InformationSystems.Proposition23
 import DomainTheory.InformationSystems.InformationSystems.InfoSys.con_empty
 
 @[expose] public section
@@ -105,6 +107,70 @@ def productSystem : InfoSys (ProdToken A B) where
         rcases (mem_sndFinset A B).1 hy with ⟨q, hq, hq1, rfl⟩
         exact (hEnts q hq).2.2 hq1
       exact B.ent_trans hv.2 hu.2 hsnd (hEntc.2.2 hbot)
+
+namespace ProdEnt
+
+theorem entSet_fst {u v : Finset (ProdToken A B)}
+    (h : (productSystem A B).EntSet u v) :
+    A.EntSet (fstFinset A B u) (fstFinset A B v) := by
+  intro x hx
+  rcases (mem_fstFinset A B).1 hx with ⟨p, hp, hbot, rfl⟩
+  exact (h p hp).2.1 hbot
+
+theorem entSet_snd {u v : Finset (ProdToken A B)}
+    (h : (productSystem A B).EntSet u v) :
+    B.EntSet (sndFinset A B u) (sndFinset A B v) := by
+  intro y hy
+  rcases (mem_sndFinset A B).1 hy with ⟨p, hp, hbot, rfl⟩
+  exact (h p hp).2.2 hbot
+
+end ProdEnt
+
+namespace productSystem
+
+def fstMap : ApproximableMap (productSystem A B) A where
+  rel u v := u ∈ (productSystem A B).Con ∧ v ∈ A.Con ∧ A.EntSet (fstFinset A B u) v
+  rel_dom h := h.1
+  rel_cod h := h.2.1
+  empty_rel := ⟨ProdCon.empty A B, A.con_empty, by
+    rw [fstFinset.empty]; exact EntSet.empty A ∅⟩
+  union_right := by
+    rintro u v v' ⟨hu, hv, huv⟩ ⟨_, hv', huv'⟩
+    have hEnt : A.EntSet (fstFinset A B u) (v ∪' v') :=
+      proposition_2_3.vi (sys := A) huv huv'
+    have hBig : fstFinset A B u ∪' (v ∪' v') ∈ A.Con :=
+      proposition_2_3.ii (sys := A) hu.1 hEnt
+    have hCon : v ∪' v' ∈ A.Con :=
+      A.con_subset hBig (funion.subset_right _ _)
+    exact ⟨hu, hCon, hEnt⟩
+  mono := by
+    rintro u u' v v' ⟨hu, hv, huv⟩ hEntu hEntv hu' hv'
+    refine ⟨hu', hv', ?_⟩
+    exact proposition_2_3.iv A hu'.1 hv
+      (proposition_2_3.iv A hu'.1 hu.1 (ProdEnt.entSet_fst A B hEntu) huv) hEntv
+
+def sndMap : ApproximableMap (productSystem A B) B where
+  rel u w := u ∈ (productSystem A B).Con ∧ w ∈ B.Con ∧ B.EntSet (sndFinset A B u) w
+  rel_dom h := h.1
+  rel_cod h := h.2.1
+  empty_rel := ⟨ProdCon.empty A B, B.con_empty, by
+    rw [sndFinset.empty]; exact EntSet.empty B ∅⟩
+  union_right := by
+    rintro u w w' ⟨hu, hw, huw⟩ ⟨_, hw', huw'⟩
+    have hEnt : B.EntSet (sndFinset A B u) (w ∪' w') :=
+      proposition_2_3.vi (sys := B) huw huw'
+    have hBig : sndFinset A B u ∪' (w ∪' w') ∈ B.Con :=
+      proposition_2_3.ii (sys := B) hu.2 hEnt
+    have hCon : w ∪' w' ∈ B.Con :=
+      B.con_subset hBig (funion.subset_right _ _)
+    exact ⟨hu, hCon, hEnt⟩
+  mono := by
+    rintro u u' w w' ⟨hu, hw, huw⟩ hEntu hEntw hu' hw'
+    refine ⟨hu', hw', ?_⟩
+    exact proposition_2_3.iv B hu'.2 hw
+      (proposition_2_3.iv B hu'.2 hu.2 (ProdEnt.entSet_snd A B hEntu) huw) hEntw
+
+end productSystem
 
 end InfoSys
 

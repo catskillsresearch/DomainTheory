@@ -3,7 +3,7 @@ module
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_2
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.funion_comm_β
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.liftPair
@@ -29,16 +29,16 @@ theorem ProdCon_liftPair {u : Finset α} {v : Finset β}
     (hu : u ∈ A.Con) (hv : v ∈ B.Con) : ProdCon A B (liftPair A B u v) := by
   constructor
   · unfold liftPair
-    rw [fstFinset.funion, fstFinset_liftLeft]
+    rw [fstFinset.funion, liftLeft.fstFinset_eq]
     have hEnt : A.EntSet u (fstFinset A B (liftRight A B v)) := fun x hx => by
-      have : x = A.bot := Finset.mem_singleton.mp (fstFinset_liftRight A B v hx)
+      have : x = A.bot := Finset.mem_singleton.mp (liftRight.fstFinset_eq A B v hx)
       subst this
       exact A.ent_bot hu
     exact proposition_2_3.ii A hu hEnt
   · unfold liftPair
-    rw [sndFinset.funion, sndFinset_liftRight]
+    rw [sndFinset.funion, liftRight.sndFinset_eq]
     have hEnt : B.EntSet v (sndFinset A B (liftLeft A B u)) := fun y hy => by
-      have : y = B.bot := Finset.mem_singleton.mp (sndFinset_liftLeft A B u hy)
+      have : y = B.bot := Finset.mem_singleton.mp (liftLeft.sndFinset_eq A B u hy)
       subst this
       exact B.ent_bot hv
     have h := proposition_2_3.ii B hv hEnt

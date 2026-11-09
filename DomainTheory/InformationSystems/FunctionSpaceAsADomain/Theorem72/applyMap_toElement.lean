@@ -3,7 +3,7 @@ module
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_2
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.mkFunToken
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.approxMap_toElement
@@ -101,7 +101,7 @@ theorem applyMap_toElement (g : (functionSystem B C).Element) (y : B.Element) :
       have : q = p := Finset.mem_singleton.mp hq
       subst this
       rw [show s = liftLeft (functionSystem B C) B {p} ∪' liftRight (functionSystem B C) B v from rfl]
-      rw [fstFinset.funion, fstFinset_liftLeft]
+      rw [fstFinset.funion, liftLeft.fstFinset_eq]
       exact funion.subset_left _ _ (Finset.mem_singleton_self _)
     ·
       intro q hq

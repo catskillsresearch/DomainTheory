@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.mkRight`).** For $y \in D_{\mathbf{B}}$, the right injection token is $(\Delta_{\mathbf{A}}, y)$ with the corresponding half-right product witness.
+
+**Definition (`InfoSys.mkRight.instLeftCommutativeInsert`).** Inserting right-injection tokens commutes on the left when building finite sets of product tokens.

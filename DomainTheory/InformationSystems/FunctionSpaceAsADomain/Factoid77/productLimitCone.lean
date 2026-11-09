@@ -1,5 +1,6 @@
 module
 
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Factoid65
 public import Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
@@ -31,19 +32,19 @@ attribute [instance] instCategoryInfoSysObj
 
 def productLimitCone (X Y : InfoSysObj.{u}) : LimitCone (pair X Y) where
   cone := BinaryFan.mk (P := InfoSysObj.prod X Y)
-    (fstMap X.sys Y.sys) (sndMap X.sys Y.sys)
+    (productSystem.fstMap X.sys Y.sys) (productSystem.sndMap X.sys Y.sys)
   isLimit := by
     refine BinaryFan.IsLimit.mk _
       (fun {T : InfoSysObj.{u}} (f : T ⟶ X) (g : T ⟶ Y) => pairMap X.sys Y.sys f g)
       ?_ ?_ ?_
     · intro T f g
-      exact @comp_fstMap_pairMap X.Token Y.Token T.Token _ _ _
+      exact @pairMap.comp_fst X.Token Y.Token T.Token _ _ _
         X.sys Y.sys T.sys f g
     · intro T f g
-      exact @comp_sndMap_pairMap X.Token Y.Token T.Token _ _ _
+      exact @pairMap.comp_snd X.Token Y.Token T.Token _ _ _
         X.sys Y.sys T.sys f g
     · intro T f g m hf hg
-      exact @pairMap_unique X.Token Y.Token T.Token _ _ _
+      exact @pairMap.unique X.Token Y.Token T.Token _ _ _
         X.sys Y.sys T.sys f g m hf hg
 
 end InfoSys

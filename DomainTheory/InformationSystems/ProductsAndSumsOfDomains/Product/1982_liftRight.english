@@ -1,0 +1,23 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.liftRight`).** The right lift of a finite set $w \subseteq D_{\mathbf{B}}$ is the finite set of right-injection tokens $(\Delta_{\mathbf{A}}, y)$ for $y \in w$.
+
+**Theorem (`InfoSys.liftRight.mem_foldr`).** Membership in a right lift built by folding insertion over a multiset equals membership of some right injection over that multiset.
+
+*Proof.* Induction on the multiset, using the characterization of insert membership. □
+
+**Theorem (`InfoSys.liftRight.mem`).** A token lies in the right lift of $w$ iff it is a right injection of some $y \in w$.
+
+*Proof.* Unfold the lift and apply the fold characterization. □
+
+**Theorem (`InfoSys.liftRight.fstFinset_eq`).** The first projection of a right lift is contained in $\{\Delta_{\mathbf{A}}\}$.
+
+*Proof.* Each token in the lift has first component $\Delta_{\mathbf{A}}$. □
+
+**Theorem (`InfoSys.liftRight.sndFinset_eq`).** The second projection of a right lift is the original set $w$.
+
+*Proof.* Use membership characterizations of second projection and of the lift. □
+
+**Theorem (`InfoSys.liftRight.con`).** The right lift of a consistent set $w$ is consistent in the product system.
+
+*Proof.* First projection lies in the singleton of bottom; second projection recovers $w$. □

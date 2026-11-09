@@ -2,9 +2,7 @@ module
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.sndMap_pairElements
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.fstMap_pairElements
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.pairElements
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62.element_eq_of_fst_snd
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62.sndMap
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62.fstMap
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem_more
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
@@ -29,8 +27,8 @@ namespace InfoSysConstructions
 variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B : InfoSys β)
 
 theorem pairElements_unpair (z : (productSystem A B).Element) :
-    pairElements A B ((fstMap A B).toElement z) ((sndMap A B).toElement z) = z :=
-  element_eq_of_fst_snd A B _ z (fstMap_pairElements A B _ _) (sndMap_pairElements A B _ _)
+    pairElements A B ((productSystem.fstMap A B).toElement z) ((productSystem.sndMap A B).toElement z) = z :=
+  productSystem.element_eq_of_fst_snd A B _ z (fstMap_pairElements A B _ _) (sndMap_pairElements A B _ _)
 
 end InfoSysConstructions
 

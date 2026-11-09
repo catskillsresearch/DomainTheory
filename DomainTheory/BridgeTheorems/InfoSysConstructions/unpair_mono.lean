@@ -1,4 +1,5 @@
 module
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.unpair
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
@@ -25,8 +26,8 @@ variable {α β : Type*} [DecidableEq α] [DecidableEq β] (A : InfoSys α) (B :
 theorem unpair_mono {z₁ z₂ : (productSystem A B).Element} (hz : z₁ ≤ z₂) :
     unpair A B z₁ ≤ unpair A B z₂ := by
   constructor
-  · exact (fstMap A B).toElement_mono hz
-  · exact (sndMap A B).toElement_mono hz
+  · exact (productSystem.fstMap A B).toElement_mono hz
+  · exact (productSystem.sndMap A B).toElement_mono hz
 
 end InfoSysConstructions
 end DomainTheory.BridgeTheorems

@@ -3,7 +3,7 @@ module
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_2
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.liftPair
 
@@ -28,7 +28,7 @@ theorem fstFinset_liftPair (u : Finset α) (v : Finset β) :
     fstFinset A B (liftPair A B u v) =
       u ∪' fstFinset A B (liftRight A B v) := by
   unfold liftPair
-  rw [fstFinset.funion, fstFinset_liftLeft]
+  rw [fstFinset.funion, liftLeft.fstFinset_eq]
 
 end InfoSys
 

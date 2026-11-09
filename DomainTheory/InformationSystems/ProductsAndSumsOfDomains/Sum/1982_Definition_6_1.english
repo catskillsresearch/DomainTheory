@@ -21,3 +21,19 @@ Note that in 6.1(i) the two sets in the union are just two copies of $D_{\mathbf
 <!-- formalization -->
 
 **Definition (`InfoSys.productSystem`).** The product of information systems $\mathbf{A}$ and $\mathbf{B}$ is the information system whose data are the product tokens of Definition 6.1(i), whose least informative object is the shared bottom $(\Delta_{\mathbf{A}}, \Delta_{\mathbf{B}})$, whose consistent sets are those whose first and second projections are consistent in $\mathbf{A}$ and $\mathbf{B}$ respectively, and whose entailment of a token is the corresponding entailment of its first or second component as in 6.1(iv')–(iv''). The information-system axioms hold by projecting to the two factors and applying their axioms.
+
+**Theorem (`ProdEnt.entSet_fst`).** Entailment of finite sets in the product projects to entailment of first components in $\mathbf{A}$.
+
+*Proof.* Each first-component token comes from a product token whose right component is bottom, and the product entailment supplies the corresponding factor entailment. □
+
+**Theorem (`ProdEnt.entSet_snd`).** Entailment of finite sets in the product projects to entailment of second components in $\mathbf{B}$.
+
+*Proof.* Dual to the first-component case. □
+
+**Definition (`productSystem.fstMap`).** The first projection approximable mapping from $\mathbf{A} \times \mathbf{B}$ to $\mathbf{A}$ relates a consistent product set $u$ to a consistent set $v$ in $\mathbf{A}$ precisely when $u$ is consistent in the product and the first components of $u$ entail $v$ in $\mathbf{A}$.
+
+**Definition (`productSystem.sndMap`).** The second projection approximable mapping from $\mathbf{A} \times \mathbf{B}$ to $\mathbf{B}$ relates a consistent product set $u$ to a consistent set $w$ in $\mathbf{B}$ precisely when $u$ is consistent in the product and the second components of $u$ entail $w$ in $\mathbf{B}$.
+
+**Theorem (`ApproximableMap.productSystem.element_eq_of_fst_snd`).** Two elements of $\mathbf{A} \times \mathbf{B}$ with equal first and second components coincide.
+
+*Proof.* Each token of one element is recovered in the other using projection and closure, according to whether its right or left component is bottom. □

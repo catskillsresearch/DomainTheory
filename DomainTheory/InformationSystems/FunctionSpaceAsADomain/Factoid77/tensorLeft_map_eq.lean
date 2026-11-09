@@ -1,6 +1,7 @@
 
 module
 
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Factoid65
 public import Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
@@ -37,14 +38,14 @@ attribute [instance] instCartesianMonoidalCategoryInfoSysObj
 theorem tensorLeft_map_eq (A : InfoSysObj.{u}) {Y Y' : InfoSysObj.{u}} (f : Y ⟶ Y') :
     (tensorLeft A).map f =
       productMapToTensorMap A Y Y'
-        (pairMap A.sys Y'.sys (fstMap A.sys Y.sys)
-          (acomp (sndMap A.sys Y.sys) f)) := by
-  refine pairMap_unique A.sys Y'.sys
-      (fstMap A.sys Y.sys) (acomp (sndMap A.sys Y.sys) f)
+        (pairMap A.sys Y'.sys (productSystem.fstMap A.sys Y.sys)
+          (acomp (productSystem.sndMap A.sys Y.sys) f)) := by
+  refine pairMap.unique A.sys Y'.sys
+      (productSystem.fstMap A.sys Y.sys) (acomp (productSystem.sndMap A.sys Y.sys) f)
       ((tensorLeft A).map f) ?_ ?_
-  · change ((tensorLeft A).map f) ≫ fstMap A.sys Y'.sys = fstMap A.sys Y.sys
+  · change ((tensorLeft A).map f) ≫ productSystem.fstMap A.sys Y'.sys = productSystem.fstMap A.sys Y.sys
     exact CartesianMonoidalCategory.whiskerLeft_fst (X := A) (Y := Y) (Z := Y') f
-  · change ((tensorLeft A).map f) ≫ sndMap A.sys Y'.sys = sndMap A.sys Y.sys ≫ f
+  · change ((tensorLeft A).map f) ≫ productSystem.sndMap A.sys Y'.sys = productSystem.sndMap A.sys Y.sys ≫ f
     exact CartesianMonoidalCategory.whiskerLeft_snd (X := A) (Y := Y) (Z := Y') f
 
 end InfoSys

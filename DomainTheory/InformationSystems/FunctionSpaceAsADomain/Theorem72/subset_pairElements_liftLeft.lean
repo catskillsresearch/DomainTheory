@@ -1,9 +1,10 @@
 module
 
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_2
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.mkFunToken
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.approxMap_toElement
@@ -45,9 +46,9 @@ theorem subset_pairElements_liftLeft {x : A.Element} {y : B.Element}
     {u : Finset α} (hu : ↑u ⊆ x.carrier) :
     ↑(liftLeft A B u) ⊆ (pairElements A B x y).carrier := by
   intro p hp
-  rcases (mem_liftLeft A B).1 (Finset.mem_coe.1 hp) with ⟨a, ha, rfl⟩
+  rcases (liftLeft.mem A B).1 (Finset.mem_coe.1 hp) with ⟨a, ha, rfl⟩
   have hax : a ∈ x.carrier := hu (Finset.mem_coe.2 ha)
-  have : a ∈ ((fstMap A B).toElement (pairElements A B x y)).carrier := by
+  have : a ∈ ((productSystem.fstMap A B).toElement (pairElements A B x y)).carrier := by
     simpa [fstMap_pairElements] using hax
   rcases this with ⟨s, hs, ⟨hCon, _, hEnt⟩⟩
   exact (pairElements A B x y).closed s (mkLeft A B a) hs ⟨hCon,

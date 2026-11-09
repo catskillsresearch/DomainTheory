@@ -1,5 +1,6 @@
 module
 
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.applyMap_toElement
@@ -25,12 +26,12 @@ def pairOpUncurry : ApproximableMap
   pairMap A B
     (comp (applyMap (B := C) (C := A))
       (pairMap (functionSystem C A) C
-        (comp (fstMap (functionSystem C A) (functionSystem C B)) (fstMap P C))
-        (sndMap P C)))
+        (comp (productSystem.fstMap (functionSystem C A) (functionSystem C B)) (productSystem.fstMap P C))
+        (productSystem.sndMap P C)))
     (comp (applyMap (B := C) (C := B))
       (pairMap (functionSystem C B) C
-        (comp (sndMap (functionSystem C A) (functionSystem C B)) (fstMap P C))
-        (sndMap P C)))
+        (comp (productSystem.sndMap (functionSystem C A) (functionSystem C B)) (productSystem.fstMap P C))
+        (productSystem.sndMap P C)))
 
 theorem pairOpUncurry.toElement (f : ApproximableMap C A) (g : ApproximableMap C B)
     (x : C.Element) :
@@ -45,78 +46,78 @@ theorem pairOpUncurry.toElement (f : ApproximableMap C A) (g : ApproximableMap C
       (approxMap_toElement C A f) (approxMap_toElement C B g)
   have hfst_arg :
       (pairMap (functionSystem C A) C
-          (comp (fstMap (functionSystem C A) (functionSystem C B)) (fstMap P C))
-          (sndMap P C)).toElement
+          (comp (productSystem.fstMap (functionSystem C A) (functionSystem C B)) (productSystem.fstMap P C))
+          (productSystem.sndMap P C)).toElement
         (pairElements P C fg x) =
       pairElements (functionSystem C A) C (approxMap_toElement C A f) x := by
-    refine element_eq_of_fst_snd (functionSystem C A) C _ _ ?_ ?_
+    refine productSystem.element_eq_of_fst_snd (functionSystem C A) C _ _ ?_ ?_
     · have hL :
-          (fstMap (functionSystem C A) C).toElement
+          (productSystem.fstMap (functionSystem C A) C).toElement
             ((pairMap (functionSystem C A) C
-                (comp (fstMap (functionSystem C A) (functionSystem C B)) (fstMap P C))
-                (sndMap P C)).toElement
+                (comp (productSystem.fstMap (functionSystem C A) (functionSystem C B)) (productSystem.fstMap P C))
+                (productSystem.sndMap P C)).toElement
               (pairElements P C fg x)) =
           approxMap_toElement C A f := by
-        rw [← comp.toElement, comp_fstMap_pairMap, comp.toElement, fstMap_pairElements,
+        rw [← comp.toElement, pairMap.comp_fst, comp.toElement, fstMap_pairElements,
           fstMap_pairElements]
       exact hL.trans (fstMap_pairElements (functionSystem C A) C _ _).symm
     · have hL :
-          (sndMap (functionSystem C A) C).toElement
+          (productSystem.sndMap (functionSystem C A) C).toElement
             ((pairMap (functionSystem C A) C
-                (comp (fstMap (functionSystem C A) (functionSystem C B)) (fstMap P C))
-                (sndMap P C)).toElement
+                (comp (productSystem.fstMap (functionSystem C A) (functionSystem C B)) (productSystem.fstMap P C))
+                (productSystem.sndMap P C)).toElement
               (pairElements P C fg x)) =
           x := by
-        rw [← comp.toElement, comp_sndMap_pairMap, sndMap_pairElements]
+        rw [← comp.toElement, pairMap.comp_snd, sndMap_pairElements]
       exact hL.trans (sndMap_pairElements (functionSystem C A) C _ _).symm
   have hsnd_arg :
       (pairMap (functionSystem C B) C
-          (comp (sndMap (functionSystem C A) (functionSystem C B)) (fstMap P C))
-          (sndMap P C)).toElement
+          (comp (productSystem.sndMap (functionSystem C A) (functionSystem C B)) (productSystem.fstMap P C))
+          (productSystem.sndMap P C)).toElement
         (pairElements P C fg x) =
       pairElements (functionSystem C B) C (approxMap_toElement C B g) x := by
-    refine element_eq_of_fst_snd (functionSystem C B) C _ _ ?_ ?_
+    refine productSystem.element_eq_of_fst_snd (functionSystem C B) C _ _ ?_ ?_
     · have hL :
-          (fstMap (functionSystem C B) C).toElement
+          (productSystem.fstMap (functionSystem C B) C).toElement
             ((pairMap (functionSystem C B) C
-                (comp (sndMap (functionSystem C A) (functionSystem C B)) (fstMap P C))
-                (sndMap P C)).toElement
+                (comp (productSystem.sndMap (functionSystem C A) (functionSystem C B)) (productSystem.fstMap P C))
+                (productSystem.sndMap P C)).toElement
               (pairElements P C fg x)) =
           approxMap_toElement C B g := by
-        rw [← comp.toElement, comp_fstMap_pairMap, comp.toElement, fstMap_pairElements,
+        rw [← comp.toElement, pairMap.comp_fst, comp.toElement, fstMap_pairElements,
           sndMap_pairElements]
       exact hL.trans (fstMap_pairElements (functionSystem C B) C _ _).symm
     · have hL :
-          (sndMap (functionSystem C B) C).toElement
+          (productSystem.sndMap (functionSystem C B) C).toElement
             ((pairMap (functionSystem C B) C
-                (comp (sndMap (functionSystem C A) (functionSystem C B)) (fstMap P C))
-                (sndMap P C)).toElement
+                (comp (productSystem.sndMap (functionSystem C A) (functionSystem C B)) (productSystem.fstMap P C))
+                (productSystem.sndMap P C)).toElement
               (pairElements P C fg x)) =
           x := by
-        rw [← comp.toElement, comp_sndMap_pairMap, sndMap_pairElements]
+        rw [← comp.toElement, pairMap.comp_snd, sndMap_pairElements]
       exact hL.trans (sndMap_pairElements (functionSystem C B) C _ _).symm
-  refine element_eq_of_fst_snd A B _ _ ?_ ?_
+  refine productSystem.element_eq_of_fst_snd A B _ _ ?_ ?_
   · have L :
-        (fstMap A B).toElement
+        (productSystem.fstMap A B).toElement
           ((pairOpUncurry A B C).toElement (pairElements P C fg x)) =
         f.toElement x := by
       simp only [pairOpUncurry]
-      rw [← comp.toElement, comp_fstMap_pairMap, comp.toElement, hfst_arg,
+      rw [← comp.toElement, pairMap.comp_fst, comp.toElement, hfst_arg,
         applyMap_toElement, element_toApproxMap.approxMap_toElement]
     have R :
-        (fstMap A B).toElement ((pairMap A B f g).toElement x) = f.toElement x := by
-      rw [← comp.toElement, comp_fstMap_pairMap]
+        (productSystem.fstMap A B).toElement ((pairMap A B f g).toElement x) = f.toElement x := by
+      rw [← comp.toElement, pairMap.comp_fst]
     exact L.trans R.symm
   · have L :
-        (sndMap A B).toElement
+        (productSystem.sndMap A B).toElement
           ((pairOpUncurry A B C).toElement (pairElements P C fg x)) =
         g.toElement x := by
       simp only [pairOpUncurry]
-      rw [← comp.toElement, comp_sndMap_pairMap, comp.toElement, hsnd_arg,
+      rw [← comp.toElement, pairMap.comp_snd, comp.toElement, hsnd_arg,
         applyMap_toElement, element_toApproxMap.approxMap_toElement]
     have R :
-        (sndMap A B).toElement ((pairMap A B f g).toElement x) = g.toElement x := by
-      rw [← comp.toElement, comp_sndMap_pairMap]
+        (productSystem.sndMap A B).toElement ((pairMap A B f g).toElement x) = g.toElement x := by
+      rw [← comp.toElement, pairMap.comp_snd]
     exact L.trans R.symm
 
 end InfoSys

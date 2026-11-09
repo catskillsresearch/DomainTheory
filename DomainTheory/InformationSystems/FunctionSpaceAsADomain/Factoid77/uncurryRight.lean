@@ -1,6 +1,7 @@
 
 module
 
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Factoid65
 public import Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
@@ -61,10 +62,10 @@ theorem uncurryRight.toElement (A Y Z : InfoSysObj.{u})
     (φ : Y ⟶ InfoSysObj.exp A Z) (q : (A ⊗ Y).sys.Element) :
     (uncurryRight A Y Z φ).toElement q =
       (element_toApproxMap A.sys Z.sys
-          (φ.toElement ((fstMap Y.sys A.sys).toElement
+          (φ.toElement ((productSystem.fstMap Y.sys A.sys).toElement
             ((swapMap A.sys Y.sys).toElement
               (tensorElementToProdElement A Y q))))).toElement
-        ((sndMap Y.sys A.sys).toElement
+        ((productSystem.sndMap Y.sys A.sys).toElement
           ((swapMap A.sys Y.sys).toElement
             (tensorElementToProdElement A Y q))) := by
   rw [show (uncurryRight A Y Z φ).toElement q =
@@ -91,7 +92,7 @@ theorem uncurryRight.comp_left (A : InfoSysObj.{u}) {Y Y' Z : InfoSysObj.{u}}
   refine (ext_iff_toElement _ _).2 fun p => ?_
   let p' := tensorElementToProdElement A Y' p
   set lift :=
-    pairMap A.sys Y.sys (fstMap A.sys Y'.sys) (acomp (sndMap A.sys Y'.sys) f)
+    pairMap A.sys Y.sys (productSystem.fstMap A.sys Y'.sys) (acomp (productSystem.sndMap A.sys Y'.sys) f)
   let q := prodElementToTensorElement A Y (lift.toElement p')
   have hgoal :
       (uncurryRight A Y' Z (f ≫ g)).toElement p =

@@ -3,7 +3,7 @@ module
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_2
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.liftPair
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.ProdCon_liftPair
@@ -35,7 +35,7 @@ theorem entSet_liftPair {u u' : Finset α} {v v' : Finset β}
   have hCon : ProdCon A B (liftPair A B u' v') := ProdCon_liftPair A B hu' hv'
   unfold liftPair at hp
   rcases funion.mem.mp hp with hp | hp
-  · rcases (mem_liftLeft A B).1 hp with ⟨x, hx, rfl⟩
+  · rcases (liftLeft.mem A B).1 hp with ⟨x, hx, rfl⟩
     refine ⟨hCon, ?_, ?_⟩
     · intro _
       have hsub : u' ⊆ fstFinset A B (liftPair A B u' v') := by
@@ -46,7 +46,7 @@ theorem entSet_liftPair {u u' : Finset α} {v v' : Finset β}
         (fun z hz => A.ent_refl hCon.1 (hsub hz)) (hEntu x hx)
     · intro _
       exact B.ent_bot hCon.2
-  · rcases (mem_liftRight A B).1 hp with ⟨y, hy, rfl⟩
+  · rcases (liftRight.mem A B).1 hp with ⟨y, hy, rfl⟩
     refine ⟨hCon, ?_, ?_⟩
     · intro _
       exact A.ent_bot hCon.1

@@ -169,7 +169,7 @@ SLICE_NOTES: list[SliceSpec] = [
         "**DEFINITION 6.1.**",
     ),
     (
-        "InformationSystems/ProductsAndSumsOfDomains/Proposition62/1982_Proposition_6_2.md",
+        "InformationSystems/ProductsAndSumsOfDomains/Sum/1982_Proposition_6_2.md",
         "1982_Proposition_6_2.english",
         "**PROPOSITION 6.2.**",
     ),
@@ -331,7 +331,12 @@ BARRELS: dict[str, tuple[str, list[str]]] = {
         [
             "- [Introduction](1982_Introduction.md)",
             "- [Definition 6.1](1982_Definition_6_1.md)",
-            "- [Proposition 6.2](../Proposition62/1982_Proposition_6_2.md)",
+            "- [mkLeft](../Product/1982_mkLeft.md)",
+            "- [mkRight](../Product/1982_mkRight.md)",
+            "- [liftLeft](../Product/1982_liftLeft.md)",
+            "- [liftRight](../Product/1982_liftRight.md)",
+            "- [pairMap](../Product/1982_pairMap.md)",
+            "- [Proposition 6.2](1982_Proposition_6_2.md)",
             "- [Definition 6.3](1982_Definition_6_3.md)",
             "- [Proposition 6.4](../Proposition64/1982_Proposition_6_4.md)",
         ],

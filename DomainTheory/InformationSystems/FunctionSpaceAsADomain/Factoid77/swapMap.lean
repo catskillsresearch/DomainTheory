@@ -1,6 +1,7 @@
 
 module
 
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Factoid65
 public import Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
@@ -26,7 +27,7 @@ namespace ApproximableMap
 def swapMap {α β : Type*} [DecidableEq α] [DecidableEq β]
     (A : InfoSys α) (B : InfoSys β) :
     ApproximableMap (productSystem A B) (productSystem B A) :=
-  pairMap B A (sndMap A B) (fstMap A B)
+  pairMap B A (productSystem.sndMap A B) (productSystem.fstMap A B)
 
 end ApproximableMap
 

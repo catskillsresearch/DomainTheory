@@ -2,8 +2,6 @@ module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.instLeftCommutativeLiftSumLeft
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.instLeftCommutativeLiftSumRight
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.rht_eq_empty_of_sumEntSet
@@ -12,6 +10,7 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inrMap
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.not_mem_right_of_mem_left
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.sumElementLft
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 
 @[expose] public section
 

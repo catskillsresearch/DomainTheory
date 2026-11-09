@@ -1,0 +1,15 @@
+<!-- formalization -->
+
+**Definition (`ApproximableMap.pairMap`).** For approximable mappings $f : \mathbf{C} \to \mathbf{A}$ and $g : \mathbf{C} \to \mathbf{B}$, the pairing $\langle f, g \rangle$ relates $s$ to a product set $u$ when $s$ is $f$-related to the first projection of $u$ and $s$ is $g$-related to the second projection of $u$.
+
+**Theorem (`ApproximableMap.pairMap.comp_fst`).** Composing the first projection after the pairing recovers $f$.
+
+*Proof.* On relatedness, use monotonicity in the source; conversely build the pairing over a left lift and extend relatedness on the second factor using entailments into bottom. □
+
+**Theorem (`ApproximableMap.pairMap.comp_snd`).** Composing the second projection after the pairing recovers $g$.
+
+*Proof.* Symmetric to the first projection case, using right lifts. □
+
+**Theorem (`ApproximableMap.pairMap.unique`).** An approximable mapping $h : \mathbf{C} \to \mathbf{A} \times \mathbf{B}$ whose compositions with the projections are $f$ and $g$ equals $\langle f, g \rangle$.
+
+*Proof.* Pointwise on elements, equality of first and second components forces equality in the product by the element lemma; Proposition 5.3 finishes. □

@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.mkLeft`).** For $x \in D_{\mathbf{A}}$, the left injection token is $(x, \Delta_{\mathbf{B}})$ with the corresponding half-left product witness.
+
+**Definition (`InfoSys.mkLeft.instLeftCommutativeInsert`).** Inserting left-injection tokens commutes on the left when building finite sets of product tokens.

@@ -28,9 +28,9 @@ theorem pairMap_toElement_pairElements
     (f : ApproximableMap Z X) (g : ApproximableMap Z Y) (z : Z.Element) :
     (pairMap X Y f g).toElement z =
       pairElements X Y (f.toElement z) (g.toElement z) := by
-  refine element_eq_of_fst_snd X Y _ _ ?_ ?_
-  · rw [← comp.toElement, comp_fstMap_pairMap, fstMap_pairElements]
-  · rw [← comp.toElement, comp_sndMap_pairMap, sndMap_pairElements]
+  refine productSystem.element_eq_of_fst_snd X Y _ _ ?_ ?_
+  · rw [← comp.toElement, pairMap.comp_fst, fstMap_pairElements]
+  · rw [← comp.toElement, pairMap.comp_snd, sndMap_pairElements]
 
 end InfoSys
 end DomainTheory.InformationSystems

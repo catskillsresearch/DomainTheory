@@ -1,5 +1,6 @@
 module
 
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.unpair_pairElements
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.pairElements_unpair
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.pairElements_mono
@@ -42,10 +43,10 @@ noncomputable def productDomainIso :
     · intro h
       change pairElements A B p.1 p.2 ≤ pairElements A B q.1 q.2 at h
       constructor
-      · have hp := (fstMap A B).toElement_mono h
+      · have hp := (productSystem.fstMap A B).toElement_mono h
         rw [fstMap_pairElements A B p.1 p.2, fstMap_pairElements A B q.1 q.2] at hp
         exact hp
-      · have hp := (sndMap A B).toElement_mono h
+      · have hp := (productSystem.sndMap A B).toElement_mono h
         rw [sndMap_pairElements A B p.1 p.2, sndMap_pairElements A B q.1 q.2] at hp
         exact hp
     · intro h

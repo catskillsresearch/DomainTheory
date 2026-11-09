@@ -1,0 +1,23 @@
+<!-- formalization -->
+
+**Definition (`InfoSys.liftLeft`).** The left lift of a finite set $v \subseteq D_{\mathbf{A}}$ is the finite set of left-injection tokens $(x, \Delta_{\mathbf{B}})$ for $x \in v$.
+
+**Theorem (`InfoSys.liftLeft.mem_foldr`).** Membership in a left lift built by folding insertion over a multiset equals membership of some left injection over that multiset.
+
+*Proof.* Induction on the multiset, using the characterization of insert membership. □
+
+**Theorem (`InfoSys.liftLeft.mem`).** A token lies in the left lift of $v$ iff it is a left injection of some $x \in v$.
+
+*Proof.* Unfold the lift and apply the fold characterization. □
+
+**Theorem (`InfoSys.liftLeft.fstFinset_eq`).** The first projection of a left lift is the original set $v$.
+
+*Proof.* Use membership characterizations of first projection and of the lift. □
+
+**Theorem (`InfoSys.liftLeft.sndFinset_eq`).** The second projection of a left lift is contained in $\{\Delta_{\mathbf{B}}\}$.
+
+*Proof.* Each token in the lift has second component $\Delta_{\mathbf{B}}$. □
+
+**Theorem (`InfoSys.liftLeft.con`).** The left lift of a consistent set $v$ is consistent in the product system.
+
+*Proof.* First projection recovers $v$; second projection lies in the singleton of bottom. □

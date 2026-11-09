@@ -1,9 +1,10 @@
 module
 
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition62
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_2
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.mkFunToken
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.approxMap_toElement
@@ -41,7 +42,7 @@ variable (A : InfoSys α) (B : InfoSys β) (C : InfoSys γ)
 open ApproximableMap
 
 theorem sndMap_pairElements (x : A.Element) (y : B.Element) :
-    (sndMap A B).toElement (pairElements A B x y) = y := by
+    (productSystem.sndMap A B).toElement (pairElements A B x y) = y := by
   apply le_antisymm
   · intro b ⟨s, hs, ⟨hCon, _, hEnt⟩⟩
     have hsub : ↑(sndFinset A B s) ⊆ y.carrier := by
@@ -52,12 +53,12 @@ theorem sndMap_pairElements (x : A.Element) (y : B.Element) :
   · intro b hb
     refine ⟨liftRight A B {b}, ?_, ?_⟩
     · intro p hp
-      rcases (mem_liftRight A B).1 (Finset.mem_coe.1 hp) with ⟨c, hc, rfl⟩
+      rcases (liftRight.mem A B).1 (Finset.mem_coe.1 hp) with ⟨c, hc, rfl⟩
       have : c = b := Finset.mem_singleton.mp hc
       subst this
       exact ⟨fun _ => factoid_3_2 A x, fun _ => hb⟩
-    · refine ⟨ProdCon_liftRight A B (B.con_sing b), B.con_sing b, ?_⟩
-      rw [sndFinset_liftRight]
+    · refine ⟨liftRight.con A B (B.con_sing b), B.con_sing b, ?_⟩
+      rw [liftRight.sndFinset_eq]
       exact proposition_2_3.iii B (B.con_sing b)
 
 end InfoSys

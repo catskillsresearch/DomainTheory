@@ -1,5 +1,6 @@
 module
 
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
 public import Mathlib.Data.Multiset.MapFold
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
@@ -32,7 +33,7 @@ open ApproximableMap
 def condElement (z : (productSystem A A).Element) :
     (strictFunctionSystem boolSystem A).Element :=
   approxMap_toStrictElement boolSystem A
-    (condMap A ((fstMap A A).toElement z) ((sndMap A A).toElement z))
+    (condMap A ((productSystem.fstMap A A).toElement z) ((productSystem.sndMap A A).toElement z))
     (IsStrict.condMap A _ _)
 
 end InfoSys

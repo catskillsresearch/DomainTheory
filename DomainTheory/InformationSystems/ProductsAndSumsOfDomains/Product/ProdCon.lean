@@ -25,6 +25,14 @@ variable (A : InfoSys α) (B : InfoSys β)
 def ProdCon (u : Finset (ProdToken A B)) : Prop :=
   fstFinset A B u ∈ A.Con ∧ sndFinset A B u ∈ B.Con
 
+namespace ProdCon
+
+theorem empty : ProdCon A B (∅ : Finset (ProdToken A B)) :=
+  ⟨by rw [fstFinset.empty]; exact A.con_empty,
+    by rw [sndFinset.empty]; exact B.con_empty⟩
+
+end ProdCon
+
 end InfoSys
 
 end DomainTheory.InformationSystems
