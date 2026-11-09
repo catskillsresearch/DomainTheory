@@ -22,6 +22,12 @@ Because we defined $\mathbf{A} + \mathbf{B}$ so that consistency and entailment 
 
 The uniqueness of $[f, g]$ comes from the fact that the elements of $\mathbf{A} + \mathbf{B}$, apart from the bottom element of the domain, are just the elements in the ranges of $\mathrm{inl}$ and $\mathrm{inr}$. Since the function $[f, g]$ takes bottom to bottom (in the indicated domains), it will be uniquely determined by what it does on the two halves of the sum. The last equations of the theorem just say that the function is completely determined on these elements. $\blacksquare$
 
+<!-- formalization -->
+
+**Theorem (`ApproximableMap.proposition_6_4`).** For approximable mappings $f : \mathbf{A} \to \mathbf{C}$, $g : \mathbf{B} \to \mathbf{C}$, and $h : \mathbf{A} + \mathbf{B} \to \mathbf{C}$, if $h \circ \mathrm{inl} = f$, $h \circ \mathrm{inr} = g$, and $h(\perp_{\mathbf{A}+\mathbf{B}}) = \perp_{\mathbf{C}}$, then $h = [f, g]$.
+
+*Proof.* Uniqueness of the copairing. □
+
 It can also be shown that Propositions 6.2 and 6.4 uniquely characterize the domains $\mathbf{A} \times \mathbf{B}$ and $\mathbf{A} + \mathbf{B}$ up to isomorphism, and they give us the existence of additional mappings that are needed to show that product and sum are functors on the category of domains. We can also show from these results that the domain
 
 $$\mathbf{BOOL} = \mathbf{1} + \mathbf{1}$$

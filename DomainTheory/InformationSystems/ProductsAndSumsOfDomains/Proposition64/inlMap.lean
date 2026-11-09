@@ -1,15 +1,8 @@
 module
 
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.sumElement
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.instLeftCommutativeLiftSumLeft
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.instLeftCommutativeLiftSumRight
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.rht_eq_empty_of_sumEntSet
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet_lft_of_sumEntSet
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.lft_mem_Con_of_SumCon_rht_empty
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inrMap
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.not_mem_right_of_mem_left
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.sumElementLft
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 
 @[expose] public section
@@ -45,11 +38,11 @@ def inlMap : ApproximableMap A (sumSystem A B) where
     · rw [lftFinset.funion]; exact proposition_2_3.vi (sys := A) hEnt hEnt'
   mono := by
     rintro v v' u u' ⟨hv, hu, hr, hEnt⟩ hEntv hEntu hv' hu'
-    refine ⟨hv', hu', rht_eq_empty_of_sumEntSet A B hr hEntu, ?_⟩
+    refine ⟨hv', hu', entSet.rht_eq_empty A B hr hEntu, ?_⟩
     exact proposition_2_3.iv (sys := A) hv'
-      (lft_mem_Con_of_SumCon_rht_empty A B hu hr)
+      (SumCon.lft_mem_of_rht_empty A B hu hr)
       (proposition_2_3.iv (sys := A) hv' hv hEntv hEnt)
-      (entSet_lft_of_sumEntSet A B hEntu)
+      (entSet.lft_of_sumEntSet A B hEntu)
 
 theorem inlMap.toElement_sumElementLft (z : (sumSystem A B).Element)
     (x0 : α) (hx0 : SumToken.left x0 ∈ z.carrier) :

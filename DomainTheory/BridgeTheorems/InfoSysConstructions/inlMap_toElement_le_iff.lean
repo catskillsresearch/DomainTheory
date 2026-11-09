@@ -1,6 +1,6 @@
 module
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.sumElementLft_inlMap_toElement
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.sumElementLft
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.sumElement
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inlMap
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element

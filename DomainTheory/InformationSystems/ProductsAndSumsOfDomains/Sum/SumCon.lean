@@ -48,6 +48,18 @@ theorem SumCon.rht_empty_of_lft_nonempty {u : Finset (SumToken α β)}
   · exact hr
   · exact False.elim (hne hl)
 
+theorem SumCon.lft_mem_of_rht_empty {u : Finset (SumToken α β)}
+    (hu : SumCon A B u) (_hr : rhtFinset u = ∅) : lftFinset u ∈ A.Con := by
+  rcases hu with ⟨hl, _⟩ | ⟨hl, _⟩
+  · exact hl
+  · rw [hl]; exact A.con_empty
+
+theorem SumCon.rht_mem_of_lft_empty {u : Finset (SumToken α β)}
+    (hu : SumCon A B u) (_hl : lftFinset u = ∅) : rhtFinset u ∈ B.Con := by
+  rcases hu with ⟨_, hr⟩ | ⟨_, hr⟩
+  · rw [hr]; exact B.con_empty
+  · exact hr
+
 end InfoSys
 
 end DomainTheory.InformationSystems

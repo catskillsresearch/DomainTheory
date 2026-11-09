@@ -1,22 +1,12 @@
 module
 
-public import DomainTheory.InformationSystems.InformationSystems.Constructive
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.SumToken
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.instDecidableEqSumToken
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.sumBot
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.instLeftCommutativeLftInsert
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.instLeftCommutativeRhtInsert
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.lftFinset
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.SumCon
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.SumEnt
+import DomainTheory.InformationSystems.InformationSystems.InfoSys.con_empty
 
 @[expose] public section
 
 namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 

@@ -3497,6 +3497,13 @@ IS_SEC6_SUMS_SHORT: dict[str, tuple[str, str]] = {
     ),
     "Empty sum consistency": ("SCempty", "Empty sum consistency"),
     "Sum library": ("SLib", "Sum library"),
+    "Left sum lift": ("LSL", "Left sum lift"),
+    "Right sum lift": ("RSL", "Right sum lift"),
+    "Sum entailment helpers": ("SEntH", "Sum entailment helpers"),
+    "Sum elements": ("SEl", "Sum elements"),
+    "Left injection map": ("inl", "Left injection map"),
+    "Right injection map": ("inr", "Right injection map"),
+    "Copairing map": ("copair", "Copairing map"),
     "Proposition 6.4: injections and copairing": (
         "P64",
         "Proposition 6.4:\ninjections and copairing",

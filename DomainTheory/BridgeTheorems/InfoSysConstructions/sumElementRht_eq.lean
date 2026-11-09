@@ -1,5 +1,5 @@
 module
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.sumElementRht
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.sumElement
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order

@@ -1,14 +1,8 @@
 module
 
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.sumElement
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.instLeftCommutativeLiftSumLeft
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.instLeftCommutativeLiftSumRight
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.lft_eq_empty_of_sumEntSet
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet_rht_of_sumEntSet
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.rht_mem_Con_of_SumCon_lft_empty
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.not_mem_right_of_mem_left
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.sumElementRht
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 
 @[expose] public section
@@ -44,11 +38,11 @@ def inrMap : ApproximableMap B (sumSystem A B) where
     · rw [rhtFinset.funion]; exact proposition_2_3.vi (sys := B) hEnt hEnt'
   mono := by
     rintro w w' u u' ⟨hw, hu, hl, hEnt⟩ hEntw hEntu hw' hu'
-    refine ⟨hw', hu', lft_eq_empty_of_sumEntSet A B hl hEntu, ?_⟩
+    refine ⟨hw', hu', entSet.lft_eq_empty A B hl hEntu, ?_⟩
     exact proposition_2_3.iv (sys := B) hw'
-      (rht_mem_Con_of_SumCon_lft_empty A B hu hl)
+      (SumCon.rht_mem_of_lft_empty A B hu hl)
       (proposition_2_3.iv (sys := B) hw' hw hEntw hEnt)
-      (entSet_rht_of_sumEntSet A B hEntu)
+      (entSet.rht_of_sumEntSet A B hEntu)
 
 theorem inrMap.toElement_sumElementRht (z : (sumSystem A B).Element)
     (y0 : β) (hy0 : SumToken.right y0 ∈ z.carrier) :

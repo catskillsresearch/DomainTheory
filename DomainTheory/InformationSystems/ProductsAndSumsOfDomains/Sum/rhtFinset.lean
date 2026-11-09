@@ -125,6 +125,20 @@ theorem rhtFinset.singleton_right (y : β) :
   simp only [mem_rhtFinset, Finset.mem_singleton]
   exact ⟨SumToken.right.inj, fun h => h ▸ rfl⟩
 
+theorem rhtFinset.eq_empty_or_mem (u : Finset (SumToken α β)) :
+    rhtFinset u = ∅ ∨ ∃ y, y ∈ rhtFinset u := by
+  induction u using Finset.induction_on with
+  | empty =>
+    exact Or.inl rhtFinset.empty
+  | insert p s _hp ih =>
+    cases p with
+    | right y =>
+      exact Or.inr ⟨y, by rw [rhtFinset.insert_right]; exact Finset.mem_insert_self _ _⟩
+    | left x =>
+      simpa [rhtFinset.insert_left] using ih
+    | bot =>
+      simpa [rhtFinset.insert_bot] using ih
+
 end InfoSys
 
 end DomainTheory.InformationSystems

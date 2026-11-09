@@ -1,7 +1,7 @@
 module
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inrMap
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inlMap
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.eq_botElement_of_no_injections
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.sumElement
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 public import Mathlib.Order.Hom.Basic
