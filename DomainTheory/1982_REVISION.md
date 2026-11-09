@@ -12,8 +12,8 @@ Tracks the [revision ethos](../README.md#revision): Mathlib-style library lemmas
 | 4 | Domains as lattices and as topological spaces | [InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/1982_Domains_as_lattices_and_as_topological_spaces.md](InformationSystems/DomainsAsLatticesAndAsTopologicalSpaces/1982_Domains_as_lattices_and_as_topological_spaces.md) | **complete** (2026-11-08) |
 | 5 | Approximable mappings between domains | [InformationSystems/ApproximableMappingsBetweenDomains/Approximable/1982_Approximable_mappings_between_domains.md](InformationSystems/ApproximableMappingsBetweenDomains/Approximable/1982_Approximable_mappings_between_domains.md) | **complete** (2026-11-08) |
 | 6 | Products of domains | [InformationSystems/ProductsAndSumsOfDomains/Product/1982_Products_of_domains.md](InformationSystems/ProductsAndSumsOfDomains/Product/1982_Products_of_domains.md) | **complete** (2026-11-08) |
-| 6 | Sums of domains | [InformationSystems/ProductsAndSumsOfDomains/Sum/1982_Sums_of_domains.md](InformationSystems/ProductsAndSumsOfDomains/Sum/1982_Sums_of_domains.md) | pending |
+| 6 | Sums of domains | [InformationSystems/ProductsAndSumsOfDomains/Sum/1982_Sums_of_domains.md](InformationSystems/ProductsAndSumsOfDomains/Sum/1982_Sums_of_domains.md) | **complete** (2026-11-08) |
 | 7 | The function space as a domain | [InformationSystems/FunctionSpaceAsADomain/1982_The_function_space_as_a_domain.md](InformationSystems/FunctionSpaceAsADomain/1982_The_function_space_as_a_domain.md) | **complete** (2026-11-09) |
-| 8 | Some domain equations | [InformationSystems/SomeDomainEquations/1982_Some_domain_equations.md](InformationSystems/SomeDomainEquations/1982_Some_domain_equations.md) | pending |
+| 8 | Some domain equations | [InformationSystems/SomeDomainEquations/1982_Some_domain_equations.md](InformationSystems/SomeDomainEquations/1982_Some_domain_equations.md) | **complete** (2026-11-09) |
 
 When a section is finished, set its status here and add the green **Revised** footer on that section’s hub and its note pages.

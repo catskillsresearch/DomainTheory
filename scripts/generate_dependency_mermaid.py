@@ -3062,8 +3062,15 @@ def write_ns_domains_graphviz_svg(
     rankdir: str = "TB",
     display_scale: float = 1.0,
     fit_compress: bool = True,
+    invis_chains: list[list[str]] | None = None,
+    rank_groups: list[list[str]] | None = None,
 ) -> None:
-    """Compact Graphviz SVG — Mermaid/dagre leaves too much whitespace when fit-scaled."""
+    """Compact Graphviz SVG — Mermaid/dagre leaves too much whitespace when fit-scaled.
+
+    ``invis_chains`` are weighty invisible paths that keep disconnected outline
+    components stacked in paper order (e.g. §8's four Example/companion pairs).
+    ``rank_groups`` force nodes onto the same Graphviz rank (pairs in a TD hub).
+    """
     import subprocess
 
     fills = {
@@ -3102,6 +3109,14 @@ def write_ns_domains_graphviz_svg(
         )
     for (a, b), n in sorted(edges.items()):
         lines.append(f'  {a} -> {b} [label="{n}"];')
+    for chain in invis_chains or ():
+        present = [nid for nid in chain if nid in node_labels]
+        for a, b in zip(present, present[1:]):
+            lines.append(f"  {a} -> {b} [style=invis, weight=10];")
+    for group in rank_groups or ():
+        present = [nid for nid in group if nid in node_labels]
+        if len(present) >= 2:
+            lines.append(f'  {{ rank=same; {"; ".join(present)}; }}')
     lines.append("}")
     subprocess.run(
         ["dot", "-Tsvg", "-o", str(svg_path)],
@@ -3159,6 +3174,8 @@ def gen_ns_outline_svg_lecture(
     recursive_barrels: bool = False,
     display_scale: float = 1.0,
     fit_compress: bool = True,
+    invis_chains: list[list[str]] | None = None,
+    rank_groups: list[list[str]] | None = None,
 ) -> str:
     """Item-level Lean deps for a 1980/1982 section hub (SVG gold copy).
 
@@ -3286,6 +3303,8 @@ def gen_ns_outline_svg_lecture(
         rankdir=rankdir,
         display_scale=display_scale,
         fit_compress=fit_compress,
+        invis_chains=invis_chains,
+        rank_groups=rank_groups,
     )
 
     # SVG is the gold copy: Graphviz already wrote the file. Return that content so
@@ -3744,6 +3763,9 @@ def gen_is_sec7_lecture(diagram: Path, modules: dict[str, Path], old: str) -> st
 
 
 def gen_is_sec8_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    # Four Example/companion pairs are mutually disconnected (8.4 only uses
+    # DomainApprox). Invisible chains keep them stacked in outline order instead
+    # of Graphviz parking Ex 8.4 in a distant component.
     return gen_ns_outline_svg_lecture(
         diagram,
         modules,
@@ -3752,7 +3774,14 @@ def gen_is_sec8_lecture(diagram: Path, modules: dict[str, Path], old: str) -> st
         companions={},
         header=_is_outline_header("1982_Some_domain_equations.md"),
         aggregate_lecture_exercises=False,
-        rankdir="LR",
+        rankdir="TD",
+        invis_chains=[["Tree", "Lam", "Univ", "DomA"]],
+        rank_groups=[
+            ["Tree", "E81"],
+            ["Lam", "E82"],
+            ["Univ", "E83"],
+            ["DomA", "E84"],
+        ],
     )
 
 

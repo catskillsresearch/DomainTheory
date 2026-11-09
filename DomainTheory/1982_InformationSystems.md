@@ -10,4 +10,6 @@
 - [Products of domains](InformationSystems/ProductsAndSumsOfDomains/Product/1982_Products_of_domains.md) [✓](1982_REVISION.md)
 - [Sums of domains](InformationSystems/ProductsAndSumsOfDomains/Sum/1982_Sums_of_domains.md) [✓](1982_REVISION.md)
 - [The function space as a domain](InformationSystems/FunctionSpaceAsADomain/1982_The_function_space_as_a_domain.md) [✓](1982_REVISION.md)
-- [Some domain equations](InformationSystems/SomeDomainEquations/1982_Some_domain_equations.md)
+- [Some domain equations](InformationSystems/SomeDomainEquations/1982_Some_domain_equations.md) [✓](1982_REVISION.md)
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-09) — <a href="1982_REVISION.md">1982 revision progress</a></p>
