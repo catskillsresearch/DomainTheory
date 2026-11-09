@@ -46,9 +46,9 @@ theorem rel_input_output_union (f : ApproximableMap A B)
     have hEnt_s : A.EntSet (q.val.1 ∪' funInputUnion A B s') (funInputUnion A B s') :=
       fun x hx => A.ent_refl hinU (funion.subset_right _ _ hx)
     have h1 : f.rel (q.val.1 ∪' funInputUnion A B s') q.val.2 :=
-      f.mono hqrel hEnt_q (proposition_2_3.iii B q.property.2) hinU q.property.2
+      f.mono hqrel hEnt_q (EntSet.refl B q.property.2) hinU q.property.2
     have h2 : f.rel (q.val.1 ∪' funInputUnion A B s') (funOutputUnion A B s') :=
-      f.mono ih' hEnt_s (proposition_2_3.iii B (f.rel_cod ih')) hinU (f.rel_cod ih')
+      f.mono ih' hEnt_s (EntSet.refl B (f.rel_cod ih')) hinU (f.rel_cod ih')
     rw [funInputUnion.insert, funOutputUnion.insert]
     exact f.union_right h1 h2
 

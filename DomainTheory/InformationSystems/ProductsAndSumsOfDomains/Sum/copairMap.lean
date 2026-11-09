@@ -1,11 +1,12 @@
 module
 
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.entSet
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.inlMap
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.inrMap
-public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.comp
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
+import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.entSet
+import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.SumCon_empty
+import DomainTheory.InformationSystems.InformationSystems.EntSet
+import DomainTheory.InformationSystems.InformationSystems.InfoSys.con_empty
 
 @[expose] public section
 
@@ -79,7 +80,7 @@ theorem copairMap.union_disj (f : ApproximableMap A C) (g : ApproximableMap B C)
       (lftFinset u ≠ ∅ ∧ f.rel (lftFinset u) (s ∪' s')) ∨
         (rhtFinset u ≠ ∅ ∧ g.rel (rhtFinset u) (s ∪' s')) := by
   rcases h with h | ⟨hne, hf⟩ | ⟨hne, hg⟩ <;> rcases h' with h' | ⟨hne', hf'⟩ | ⟨hne', hg'⟩
-  · exact Or.inl (proposition_2_3.vi (sys := C) h h')
+  · exact Or.inl (EntSet.union (sys := C) h h')
   · have hf0 : f.rel (lftFinset u) s :=
       f.mono f.empty_rel (EntSet.empty A _) h
         (SumCon.lft_con_of_lft_nonempty A B hu hne') hs
@@ -116,7 +117,7 @@ def copairMap (f : ApproximableMap A C) (g : ApproximableMap B C) :
     have hU := copairMap.union_disj A B f g hu hs hs' h h'
     refine ⟨hu, ?_, hU⟩
     rcases hU with hE | ⟨_, hf⟩ | ⟨_, hg⟩
-    · exact C.con_subset (proposition_2_3.ii (sys := C) C.con_empty hE)
+    · exact C.con_subset (EntSet.union_mem (sys := C) C.con_empty hE)
         (funion.subset_right _ _)
     · exact f.rel_cod hf
     · exact g.rel_cod hg
@@ -124,7 +125,7 @@ def copairMap (f : ApproximableMap A C) (g : ApproximableMap B C) :
     rintro u u' s s' ⟨hu, hs, h⟩ hEntu hEnts hu' hs'
     refine ⟨hu', hs', ?_⟩
     rcases h with h | ⟨hne, hf⟩ | ⟨hne, hg⟩
-    · exact Or.inl (proposition_2_3.iv (sys := C) C.con_empty hs h hEnts)
+    · exact Or.inl (EntSet.trans (sys := C) C.con_empty hs h hEnts)
     · have hne' : lftFinset u' ≠ ∅ := by
         obtain ⟨x, hx⟩ := Finset.nonempty_of_ne_empty hne
         exact (hEntu _ ((mem_lftFinset).1 hx)).2.1
@@ -193,7 +194,7 @@ theorem comp_inl (f : ApproximableMap A C) (g : ApproximableMap B C) :
   · rintro ⟨u, ⟨hv, hu, hr, hEnt⟩, ⟨_, hs, hcop⟩⟩
     rcases hcop with hE | ⟨_, hf⟩ | ⟨hne, _⟩
     · exact f.mono f.empty_rel (EntSet.empty A v) hE hv hs
-    · exact f.mono hf hEnt (proposition_2_3.iii C hs) hv hs
+    · exact f.mono hf hEnt (EntSet.refl C hs) hv hs
     · exact False.elim (hne hr)
   · intro hf
     let vBot := insert A.bot v
@@ -201,7 +202,7 @@ theorem comp_inl (f : ApproximableMap A C) (g : ApproximableMap B C) :
     have hEntBot : A.EntSet vBot v :=
       fun _ hx => A.ent_refl hvBot (Finset.mem_insert_of_mem hx)
     have hfBot : f.rel vBot s :=
-      f.mono hf hEntBot (proposition_2_3.iii C (f.rel_cod hf)) hvBot (f.rel_cod hf)
+      f.mono hf hEntBot (EntSet.refl C (f.rel_cod hf)) hvBot (f.rel_cod hf)
     refine ⟨liftSumLeft (β := β) vBot, ?_, ?_⟩
     · refine ⟨f.rel_dom hf, liftSumLeft.con A B hvBot,
         liftSumLeft.rhtFinset_eq (β := β) vBot, ?_⟩
@@ -222,14 +223,14 @@ theorem comp_inr (f : ApproximableMap A C) (g : ApproximableMap B C) :
     rcases hcop with hE | ⟨hne, _⟩ | ⟨_, hg⟩
     · exact g.mono g.empty_rel (EntSet.empty B w) hE hw hs
     · exact False.elim (hne hl)
-    · exact g.mono hg hEnt (proposition_2_3.iii C hs) hw hs
+    · exact g.mono hg hEnt (EntSet.refl C hs) hw hs
   · intro hg
     let wBot := insert B.bot w
     have hwBot : wBot ∈ B.Con := B.ent_con (B.ent_bot (g.rel_dom hg))
     have hEntBot : B.EntSet wBot w :=
       fun _ hy => B.ent_refl hwBot (Finset.mem_insert_of_mem hy)
     have hgBot : g.rel wBot s :=
-      g.mono hg hEntBot (proposition_2_3.iii C (g.rel_cod hg)) hwBot (g.rel_cod hg)
+      g.mono hg hEntBot (EntSet.refl C (g.rel_cod hg)) hwBot (g.rel_cod hg)
     refine ⟨liftSumRight (α := α) wBot, ?_, ?_⟩
     · refine ⟨g.rel_dom hg, liftSumRight.con A B hwBot,
         liftSumRight.lftFinset_eq (α := α) wBot, ?_⟩
@@ -264,10 +265,10 @@ theorem unique (f : ApproximableMap A C) (g : ApproximableMap B C)
                 liftSumRight.con A B (SumCon.rht_mem_of_lft_empty A B hu hl'),
                 liftSumRight.lftFinset_eq (α := α) _, by
                   rw [liftSumRight.rhtFinset_eq]
-                  exact proposition_2_3.iii B
+                  exact EntSet.refl B
                     (SumCon.rht_mem_of_lft_empty A B hu hl')⟩
             · exact h.mono hh (entSet.liftRht_of_right_only A B hu hl')
-                (proposition_2_3.iii C hs)
+                (EntSet.refl C hs)
                 (liftSumRight.con A B (SumCon.rht_mem_of_lft_empty A B hu hl')) hs
           simpa [hinr] using hinr'
         exact Or.inr (Or.inr ⟨Finset.ne_empty_of_mem hy0, hg⟩)
@@ -280,10 +281,10 @@ theorem unique (f : ApproximableMap A C) (g : ApproximableMap B C)
               liftSumLeft.con A B (SumCon.lft_mem_of_rht_empty A B hu hr),
               liftSumLeft.rhtFinset_eq (β := β) _, by
                 rw [liftSumLeft.lftFinset_eq]
-                exact proposition_2_3.iii A
+                exact EntSet.refl A
                   (SumCon.lft_mem_of_rht_empty A B hu hr)⟩
           · exact h.mono hh (entSet.liftLft_of_left_only A B hu hr)
-              (proposition_2_3.iii C hs)
+              (EntSet.refl C hs)
               (liftSumLeft.con A B (SumCon.lft_mem_of_rht_empty A B hu hr)) hs
         simpa [hinl] using hinl'
       exact Or.inr (Or.inl ⟨hne, hf⟩)
@@ -293,21 +294,21 @@ theorem unique (f : ApproximableMap A C) (g : ApproximableMap B C)
     · have hb : h.rel ∅ s :=
         h.mono h.empty_rel (EntSet.empty (sumSystem A B) _) hE
           (sumSystem A B).con_empty hs
-      exact h.mono hb (EntSet.empty (sumSystem A B) _) (proposition_2_3.iii C hs) hu hs
+      exact h.mono hb (EntSet.empty (sumSystem A B) _) (EntSet.refl C hs) hu hs
     · have : (comp h (inlMap A B)).rel (lftFinset u) s := by simpa [hinl] using hf
       rcases this with ⟨u', hinl', hh'⟩
       have hr : rhtFinset u = ∅ := SumCon.rht_empty_of_lft_nonempty A B hu hne
       have hEnt : (sumSystem A B).EntSet u u' :=
         entSet.u_of_inl_witness A B hne hinl'
-          (proposition_2_3.iii A (SumCon.lft_mem_of_rht_empty A B hu hr)) hu hr
-      exact h.mono hh' hEnt (proposition_2_3.iii C hs) hu hs
+          (EntSet.refl A (SumCon.lft_mem_of_rht_empty A B hu hr)) hu hr
+      exact h.mono hh' hEnt (EntSet.refl C hs) hu hs
     · have : (comp h (inrMap A B)).rel (rhtFinset u) s := by simpa [hinr] using hg
       rcases this with ⟨u', hinr', hh'⟩
       have hl : lftFinset u = ∅ := SumCon.lft_empty_of_rht_nonempty A B hu hne
       have hEnt : (sumSystem A B).EntSet u u' :=
         entSet.u_of_inr_witness A B hne hinr'
-          (proposition_2_3.iii B (SumCon.rht_mem_of_lft_empty A B hu hl)) hu hl
-      exact h.mono hh' hEnt (proposition_2_3.iii C hs) hu hs
+          (EntSet.refl B (SumCon.rht_mem_of_lft_empty A B hu hl)) hu hl
+      exact h.mono hh' hEnt (EntSet.refl C hs) hu hs
 
 end copairMap
 

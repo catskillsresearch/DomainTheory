@@ -3,7 +3,7 @@ module
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.prodBot
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.ProdEnt
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.ApproximableMap
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23
+public import DomainTheory.InformationSystems.InformationSystems.EntSet
 import DomainTheory.InformationSystems.InformationSystems.InfoSys.con_empty
 
 @[expose] public section
@@ -137,17 +137,17 @@ def fstMap : ApproximableMap (productSystem A B) A where
   union_right := by
     rintro u v v' ⟨hu, hv, huv⟩ ⟨_, hv', huv'⟩
     have hEnt : A.EntSet (fstFinset A B u) (v ∪' v') :=
-      proposition_2_3.vi (sys := A) huv huv'
+      EntSet.union (sys := A) huv huv'
     have hBig : fstFinset A B u ∪' (v ∪' v') ∈ A.Con :=
-      proposition_2_3.ii (sys := A) hu.1 hEnt
+      EntSet.union_mem (sys := A) hu.1 hEnt
     have hCon : v ∪' v' ∈ A.Con :=
       A.con_subset hBig (funion.subset_right _ _)
     exact ⟨hu, hCon, hEnt⟩
   mono := by
     rintro u u' v v' ⟨hu, hv, huv⟩ hEntu hEntv hu' hv'
     refine ⟨hu', hv', ?_⟩
-    exact proposition_2_3.iv A hu'.1 hv
-      (proposition_2_3.iv A hu'.1 hu.1 (ProdEnt.entSet_fst A B hEntu) huv) hEntv
+    exact EntSet.trans A hu'.1 hv
+      (EntSet.trans A hu'.1 hu.1 (ProdEnt.entSet_fst A B hEntu) huv) hEntv
 
 def sndMap : ApproximableMap (productSystem A B) B where
   rel u w := u ∈ (productSystem A B).Con ∧ w ∈ B.Con ∧ B.EntSet (sndFinset A B u) w
@@ -158,17 +158,17 @@ def sndMap : ApproximableMap (productSystem A B) B where
   union_right := by
     rintro u w w' ⟨hu, hw, huw⟩ ⟨_, hw', huw'⟩
     have hEnt : B.EntSet (sndFinset A B u) (w ∪' w') :=
-      proposition_2_3.vi (sys := B) huw huw'
+      EntSet.union (sys := B) huw huw'
     have hBig : sndFinset A B u ∪' (w ∪' w') ∈ B.Con :=
-      proposition_2_3.ii (sys := B) hu.2 hEnt
+      EntSet.union_mem (sys := B) hu.2 hEnt
     have hCon : w ∪' w' ∈ B.Con :=
       B.con_subset hBig (funion.subset_right _ _)
     exact ⟨hu, hCon, hEnt⟩
   mono := by
     rintro u u' w w' ⟨hu, hw, huw⟩ hEntu hEntw hu' hw'
     refine ⟨hu', hw', ?_⟩
-    exact proposition_2_3.iv B hu'.2 hw
-      (proposition_2_3.iv B hu'.2 hu.2 (ProdEnt.entSet_snd A B hEntu) huw) hEntw
+    exact EntSet.trans B hu'.2 hw
+      (EntSet.trans B hu'.2 hu.2 (ProdEnt.entSet_snd A B hEntu) huw) hEntw
 
 end productSystem
 

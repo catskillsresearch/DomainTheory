@@ -34,18 +34,18 @@ theorem fixChain_subset_pre_fixed (f : ApproximableMap A A) (x : A.Element)
       rel_of_mem_approx A f hw (hs hq)
     have hin : funInputUnion A A s ∈ A.Con :=
       A.con_subset
-        (proposition_2_3.ii A hu0C (entSet_inputUnion_of_ent A A hIn))
+        (EntSet.union_mem A hu0C (entSet_inputUnion_of_ent A A hIn))
         (funion.subset_right _ _)
     have hrel : f.rel (funInputUnion A A s) (funOutputUnion A A s) :=
       rel_input_output_union A A f s hps hin
     have hrel' : f.rel u0 (funOutputUnion A A s) :=
       f.mono hrel (entSet_inputUnion_of_ent A A hIn)
-        (proposition_2_3.iii A (f.rel_cod hrel)) hu0C (f.rel_cod hrel)
+        (EntSet.refl A (f.rel_cod hrel)) hu0C (f.rel_cod hrel)
     have hrel'' : f.rel u0 u :=
-      f.mono hrel' (proposition_2_3.iii A hu0C) hOut hu0C huC
+      f.mono hrel' (EntSet.refl A hu0C) hOut hu0C huC
     intro b hb
     have hsing : f.rel u0 {b} :=
-      f.mono hrel'' (proposition_2_3.iii A hu0C)
+      f.mono hrel'' (EntSet.refl A hu0C)
         (fun z hz => by
           rw [Finset.mem_singleton] at hz; subst hz
           exact A.ent_refl huC hb)

@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23
+public import DomainTheory.InformationSystems.InformationSystems.EntSet
 
 @[expose] public section
 

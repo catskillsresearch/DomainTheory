@@ -8,7 +8,7 @@ public import DomainTheory.InformationSystems.InformationSystems.InfoSys.con_emp
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_46
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23
+public import DomainTheory.InformationSystems.InformationSystems.EntSet
 
 @[expose] public section
 

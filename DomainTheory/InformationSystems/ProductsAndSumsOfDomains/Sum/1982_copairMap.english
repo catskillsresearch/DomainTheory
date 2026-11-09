@@ -1,1 +1,31 @@
 <!-- formalization -->
+
+**Theorem (`InfoSys.entSet.u_of_inl_witness`).** If $u$ is consistent with nonempty left projection and empty right projection, $v$ is left-injection-related to $u'$, and the left projection of $u$ entails $v$, then $u$ entails $u'$ in the separated sum.
+
+*Proof.* Transfer left-factor entailment along the injection relatedness; right tokens in $u'$ are impossible by the empty right projection of $u'$. □
+
+**Theorem (`InfoSys.entSet.u_of_inr_witness`).** Dual to the left witness: a right-only consistent $u$ whose right projection entails a right-injection witness of $u'$ entails $u'$ in the separated sum.
+
+*Proof.* Dual to the left case. □
+
+**Theorem (`ApproximableMap.copairMap.union_disj`).** The three-way disjunct that defines copair relatedness is closed under finite union of consequents: empty-entailment cases combine, same-side relatedness unions, and opposite inhabited sides are impossible.
+
+*Proof.* Case analysis on the two disjuncts, using multiary union, monotonicity of $f$ and $g$ from the empty relation, and separated-sum side exclusion. □
+
+**Definition (`ApproximableMap.copairMap`).** For approximable mappings $f : \mathbf{A} \to \mathbf{C}$ and $g : \mathbf{B} \to \mathbf{C}$, the copairing $[f,g] : \mathbf{A}+\mathbf{B} \to \mathbf{C}$ relates a consistent sum set $u$ to a consistent $s$ when either the empty set entails $s$, or the left projection of $u$ is inhabited and $f$-related to $s$, or the right projection of $u$ is inhabited and $g$-related to $s$.
+
+**Theorem (`ApproximableMap.copairMap.botElement`).** The element map of a copairing sends the sum bottom element to the codomain bottom element.
+
+*Proof.* Related witnesses under the sum bottom can only involve the sum bottom token, so both projections are empty and the empty-entailment clause forces membership under the codomain bottom; the converse uses the empty domain set. □
+
+**Theorem (`ApproximableMap.copairMap.comp_inl`).** Composing the left injection after the copairing recovers $f$.
+
+*Proof.* Forward, discard empty and right clauses by the empty right projection of an injection witness and apply monotonicity; conversely lift an $f$-related set through a left sum lift of the set with bottom adjoined. □
+
+**Theorem (`ApproximableMap.copairMap.comp_inr`).** Composing the right injection after the copairing recovers $g$.
+
+*Proof.* Dual to the left injection case, using right sum lifts. □
+
+**Theorem (`ApproximableMap.copairMap.unique`).** An approximable mapping $h$ from the separated sum that composes with the injections to $f$ and $g$ and sends bottom to bottom equals the copairing $[f,g]$.
+
+*Proof.* On relatedness, classify by which projections of $u$ are inhabited: both empty uses the bottom-like empty entailment lemma; a single inhabited side recovers $f$ or $g$ via the corresponding lift and composition hypothesis, then transfers back with the injection witnesses. □

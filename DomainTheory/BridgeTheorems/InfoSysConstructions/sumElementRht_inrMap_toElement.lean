@@ -4,7 +4,7 @@ public import DomainTheory.BridgeTheorems.InfoSysConstructions.right_bot_mem_inr
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.lftFinset_singleton_right
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.sumElement
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23
+public import DomainTheory.InformationSystems.InformationSystems.EntSet
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
@@ -49,7 +49,7 @@ theorem sumElementRht_inrMap_toElement (y : B.Element) :
         by rw [rhtFinset.singleton_right]; exact B.con_sing b⟩,
         lftFinset_singleton_right (α := α) b, ?_⟩
       rw [rhtFinset.singleton_right]
-      exact proposition_2_3.iii B (B.con_sing b)
+      exact EntSet.refl B (B.con_sing b)
 
 end InfoSysConstructions
 

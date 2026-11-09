@@ -4,7 +4,7 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.inrMa
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32.factoid_3_2
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23
+public import DomainTheory.InformationSystems.InformationSystems.EntSet
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot
@@ -38,7 +38,7 @@ theorem right_bot_mem_inrMap_toElement (y : B.Element) :
     · exact Or.inr ⟨lftFinset_singleton_right (α := α) B.bot,
         by rw [rhtFinset.singleton_right]; exact B.con_sing B.bot⟩
     · rw [rhtFinset.singleton_right]
-      exact proposition_2_3.iii B (B.con_sing B.bot)
+      exact EntSet.refl B (B.con_sing B.bot)
 
 end InfoSysConstructions
 

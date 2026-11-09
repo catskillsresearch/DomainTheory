@@ -19,17 +19,17 @@ def idMap : ApproximableMap A A where
   empty_rel := ⟨A.con_empty, A.con_empty, EntSet.empty A ∅⟩
   union_right := by
     rintro u v v' ⟨hu, _hv, huv⟩ ⟨_, _hv', huv'⟩
-    have hEnt : A.EntSet u (v ∪' v') := proposition_2_3.vi (sys := A) huv huv'
+    have hEnt : A.EntSet u (v ∪' v') := EntSet.union (sys := A) huv huv'
     have hBig : u ∪' (v ∪' v') ∈ A.Con :=
-      proposition_2_3.ii (sys := A) (u := u) (v := v ∪' v') hu hEnt
+      EntSet.union_mem (sys := A) (u := u) (v := v ∪' v') hu hEnt
     have hCon : v ∪' v' ∈ A.Con :=
       A.con_subset hBig (funion.subset_right u (v ∪' v'))
     exact ⟨hu, hCon, hEnt⟩
   mono := by
     rintro u u' v v' ⟨hu, hv, huv⟩ hEntu hEntv hu' hv'
     refine ⟨hu', hv', ?_⟩
-    exact proposition_2_3.iv A hu' hv
-      (proposition_2_3.iv A hu' hu hEntu huv) hEntv
+    exact EntSet.trans A hu' hv
+      (EntSet.trans A hu' hu hEntu huv) hEntv
 
 theorem idMap.toElement (x : A.Element) : (idMap A).toElement x = x := by
   apply le_antisymm
@@ -45,7 +45,7 @@ theorem idMap.toElement (x : A.Element) : (idMap A).toElement x = x := by
       rw [hz']
       exact hY
     · refine ⟨A.con_sing Y, A.con_sing Y, ?_⟩
-      exact proposition_2_3.iii A (A.con_sing Y)
+      exact EntSet.refl A (A.con_sing Y)
 
 end InfoSys
 

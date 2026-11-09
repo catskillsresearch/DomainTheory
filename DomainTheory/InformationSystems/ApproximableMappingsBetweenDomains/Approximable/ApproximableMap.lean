@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive
 public import DomainTheory.InformationSystems.ElementsOfASystem.closure
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23
+public import DomainTheory.InformationSystems.InformationSystems.EntSet
 
 @[expose] public section
 
@@ -53,7 +53,7 @@ theorem rel_bot_subset {D : InfoSys β} {s : Finset γ} {w : Finset β}
     have : y = D.bot := Finset.mem_singleton.mp (hw hy)
     subst this
     exact D.ent_bot D.con_empty
-  exact g.mono hg (proposition_2_3.iii C hs) hEnt hs hwCon
+  exact g.mono hg (EntSet.refl C hs) hEnt hs hwCon
 
 theorem rel_bot_subset_left {D : InfoSys α} {s : Finset γ} {v : Finset α}
     (f : ApproximableMap C D) (hs : s ∈ C.Con)
@@ -65,7 +65,7 @@ theorem rel_bot_subset_left {D : InfoSys α} {s : Finset γ} {v : Finset α}
     have : x = D.bot := Finset.mem_singleton.mp (hv hx)
     subst this
     exact D.ent_bot D.con_empty
-  exact f.mono hf (proposition_2_3.iii C hs) hEnt hs hvCon
+  exact f.mono hf (EntSet.refl C hs) hEnt hs hvCon
 
 end ApproximableMap
 

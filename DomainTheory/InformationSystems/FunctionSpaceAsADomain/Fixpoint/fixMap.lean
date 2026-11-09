@@ -36,15 +36,15 @@ def fixMap : ApproximableMap (functionSystem A A) A where
     have hUreach : FixReach A w (v0 ∪' v0') := fixReach_union A hw hv0 hv0'
     have hv0U := fixReach_con A hUreach
     have hEntU : A.EntSet (v0 ∪' v0') (v ∪' v') :=
-      proposition_2_3.vi A
-        (proposition_2_3.v A hv0C hv0U (funion.subset_left _ _) hEnt0 (Finset.Subset.refl _))
-        (proposition_2_3.v A hv0'C hv0U (funion.subset_right _ _) hEnt0' (Finset.Subset.refl _))
+      EntSet.union A
+        (EntSet.mono A hv0C hv0U (funion.subset_left _ _) hEnt0 (Finset.Subset.refl _))
+        (EntSet.mono A hv0'C hv0U (funion.subset_right _ _) hEnt0' (Finset.Subset.refl _))
     refine ⟨hw, ?_, v0 ∪' v0', hUreach, hEntU⟩
-    exact A.con_subset (proposition_2_3.ii A hv0U hEntU) (funion.subset_right _ _)
+    exact A.con_subset (EntSet.union_mem A hv0U hEntU) (funion.subset_right _ _)
   mono := by
     rintro w w' v v' ⟨hw, hv, v0, hv0, hEnt0⟩ hEntw hEntv hw' hv'
     refine ⟨hw', hv', v0, fixReach_mono_w A hw hw' hv0 hEntw, ?_⟩
-    exact proposition_2_3.iv A (fixReach_con A hv0) hv hEnt0 hEntv
+    exact EntSet.trans A (fixReach_con A hv0) hv hEnt0 hEntv
 
 end ApproximableMap
 

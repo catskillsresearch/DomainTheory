@@ -62,7 +62,7 @@ theorem exists_rel_of_subset_image (f : ApproximableMap A B) (x : A.Element)
             exact B.ent_refl (B.con_sing a) (Finset.mem_singleton_self a))
           hUcon (B.con_sing a)
       have h2 : f.rel (ua ∪' us) s :=
-        f.mono hrels hEnt_us (proposition_2_3.iii B (f.rel_cod hrels))
+        f.mono hrels hEnt_us (EntSet.refl B (f.rel_cod hrels))
           hUcon (f.rel_cod hrels)
       have hU : f.rel (ua ∪' us) ({a} ∪' s) := f.union_right h1 h2
       simpa [funion.singleton_eq_insert] using hU
@@ -77,7 +77,7 @@ def toElement (f : ApproximableMap A B) (x : A.Element) : B.Element where
     intro Y a hY hEnt
     obtain ⟨u, hu, hrel⟩ := exists_rel_of_subset_image f x Y hY
     have harel : f.rel u {a} :=
-      f.mono hrel (proposition_2_3.iii A (f.rel_dom hrel))
+      f.mono hrel (EntSet.refl A (f.rel_dom hrel))
         (fun z hz => by
           rw [Finset.mem_singleton] at hz
           rw [hz]
@@ -100,7 +100,7 @@ theorem rel_iff_closure_le (f : ApproximableMap A B)
   constructor
   · intro hrel Y hY
     refine ⟨u, closure.subset A hu, ?_⟩
-    exact f.mono hrel (proposition_2_3.iii A hu)
+    exact f.mono hrel (EntSet.refl A hu)
       (fun Z hZ => by
         rw [Finset.mem_singleton] at hZ
         subst hZ
@@ -111,7 +111,7 @@ theorem rel_iff_closure_le (f : ApproximableMap A B)
       fun y hy => hsub (closure.subset B hv hy)
     obtain ⟨u', hu', hrel'⟩ := exists_rel_of_subset_image f (A.closure u hu) v hv_sub
     have hEnt : A.EntSet u u' := fun y hy => hu' (Finset.mem_coe.2 hy)
-    exact f.mono hrel' hEnt (proposition_2_3.iii B hv) hu hv
+    exact f.mono hrel' hEnt (EntSet.refl B hv) hu hv
 
 theorem le_iff_toElement_le (f g : ApproximableMap A B) :
     Le f g ↔ ∀ x : A.Element, f.toElement x ≤ g.toElement x := by

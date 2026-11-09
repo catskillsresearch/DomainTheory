@@ -50,31 +50,31 @@ def applyMap : ApproximableMap (productSystem (functionSystem B C) B) C where
       rw [funInputUnion.funion]
       have hEntU : B.EntSet (sndFinset (functionSystem B C) B s)
           (funInputUnion B C s1 ∪' funInputUnion B C s2) :=
-        proposition_2_3.vi B
+        EntSet.union B
           (entSet_inputUnion_of_ent B C hIn1)
           (entSet_inputUnion_of_ent B C hIn2)
-      exact B.con_subset (proposition_2_3.ii B hs.2 hEntU) (funion.subset_right _ _)
+      exact B.con_subset (EntSet.union_mem B hs.2 hEntU) (funion.subset_right _ _)
     have hout : funOutputUnion B C s1 ∪' funOutputUnion B C s2 ∈ C.Con := by
       have := hw _ hsub hin
       rwa [funOutputUnion.funion] at this
     have htt' : t ∪' t' ∈ C.Con := by
       have hEntt2 : C.EntSet (funOutputUnion B C s1 ∪' funOutputUnion B C s2) (t ∪' t') :=
-        proposition_2_3.vi C
-          (proposition_2_3.v C (C.con_subset hout (funion.subset_left _ _)) hout
+        EntSet.union C
+          (EntSet.mono C (C.con_subset hout (funion.subset_left _ _)) hout
             (funion.subset_left _ _) hOut1 (Finset.Subset.refl _))
-          (proposition_2_3.v C (C.con_subset hout (funion.subset_right _ _)) hout
+          (EntSet.mono C (C.con_subset hout (funion.subset_right _ _)) hout
             (funion.subset_right _ _) hOut2 (Finset.Subset.refl _))
-      exact C.con_subset (proposition_2_3.ii C hout hEntt2) (funion.subset_right _ _)
+      exact C.con_subset (EntSet.union_mem C hout hEntt2) (funion.subset_right _ _)
     refine ⟨hs, htt', hw, s1 ∪' s2, hsub, ?_, ?_⟩
     · intro q hq
       rcases funion.mem.mp hq with hq | hq
       · exact hIn1 q hq
       · exact hIn2 q hq
     · rw [funOutputUnion.funion]
-      exact proposition_2_3.vi C
-        (proposition_2_3.v C (C.con_subset hout (funion.subset_left _ _)) hout
+      exact EntSet.union C
+        (EntSet.mono C (C.con_subset hout (funion.subset_left _ _)) hout
           (funion.subset_left _ _) hOut1 (Finset.Subset.refl _))
-        (proposition_2_3.v C (C.con_subset hout (funion.subset_right _ _)) hout
+        (EntSet.mono C (C.con_subset hout (funion.subset_right _ _)) hout
           (funion.subset_right _ _) hOut2 (Finset.Subset.refl _))
   mono := by
     rintro s s' t t' ⟨hs, ht, hEnt⟩ hEnts hEntt hs' ht'
@@ -90,14 +90,14 @@ def applyMap : ApproximableMap (productSystem (functionSystem B C) B) C where
       (functionSystem B C).ent_trans hs'.1 hs.1 (fun y hy => hfst y hy) htok
     obtain ⟨hw', s1, hs1, hIn1, hOut1⟩ := hmid
     have hIn1' : ∀ q ∈ s1, B.EntSet (sndFinset (functionSystem B C) B s') q.val.1 :=
-      fun q hq => proposition_2_3.iv B hs'.2 hs.2 hsnd (hIn1 q hq)
+      fun q hq => EntSet.trans B hs'.2 hs.2 hsnd (hIn1 q hq)
     have hin : funInputUnion B C s1 ∈ B.Con :=
       B.con_subset
-        (proposition_2_3.ii B hs'.2 (entSet_inputUnion_of_ent B C hIn1'))
+        (EntSet.union_mem B hs'.2 (entSet_inputUnion_of_ent B C hIn1'))
         (funion.subset_right _ _)
     have hout : funOutputUnion B C s1 ∈ C.Con := hw' s1 hs1 hin
     refine ⟨hw', s1, hs1, hIn1', ?_⟩
-    exact proposition_2_3.iv C hout ht hOut1 hEntt
+    exact EntSet.trans C hout ht hOut1 hEntt
 
 end InfoSys
 

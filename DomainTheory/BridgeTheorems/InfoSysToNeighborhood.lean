@@ -6,7 +6,7 @@ public import Mathlib.Order.Hom.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
 public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_46
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23
+public import DomainTheory.InformationSystems.InformationSystems.EntSet
 public import DomainTheory.BridgeTheorems.toFilter
 public import DomainTheory.BridgeTheorems.ofFilter
 public import DomainTheory.BridgeTheorems.basicOpen_empty

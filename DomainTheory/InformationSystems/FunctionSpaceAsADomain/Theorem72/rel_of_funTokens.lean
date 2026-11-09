@@ -60,13 +60,13 @@ theorem rel_of_funTokens (h : ApproximableMap (productSystem A B) C)
       ProdCon_liftPair A B hu hinU
     have h1 : h.rel (liftPair A B u (p.val.1 ∪' funInputUnion B C t')) p.val.2 :=
       h.mono hp
-        (entSet_liftPair A B hu hinU (proposition_2_3.iii A hu) hEnt_p)
-        (proposition_2_3.iii C (h.rel_cod hp)) hdomU (h.rel_cod hp)
+        (entSet_liftPair A B hu hinU (EntSet.refl A hu) hEnt_p)
+        (EntSet.refl C (h.rel_cod hp)) hdomU (h.rel_cod hp)
     have h2 : h.rel (liftPair A B u (p.val.1 ∪' funInputUnion B C t'))
         (funOutputUnion B C t') :=
       h.mono ih'
-        (entSet_liftPair A B hu hinU (proposition_2_3.iii A hu) hEnt_t)
-        (proposition_2_3.iii C (h.rel_cod ih')) hdomU (h.rel_cod ih')
+        (entSet_liftPair A B hu hinU (EntSet.refl A hu) hEnt_t)
+        (EntSet.refl C (h.rel_cod ih')) hdomU (h.rel_cod ih')
     rw [funInputUnion.insert, funOutputUnion.insert]
     exact h.union_right h1 h2
 

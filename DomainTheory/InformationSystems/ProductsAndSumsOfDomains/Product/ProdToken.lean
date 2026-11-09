@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.InformationSystems.InformationSystems.Constructive
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23
+public import DomainTheory.InformationSystems.InformationSystems.EntSet
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.IsProdToken
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.BasicInst5
 

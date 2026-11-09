@@ -59,7 +59,7 @@ theorem fstMap_pairElements (x : A.Element) (y : B.Element) :
       exact ⟨fun _ => ha, fun _ => factoid_3_2 B y⟩
     · refine ⟨liftLeft.con A B (A.con_sing a), A.con_sing a, ?_⟩
       rw [liftLeft.fstFinset_eq]
-      exact proposition_2_3.iii A (A.con_sing a)
+      exact EntSet.refl A (A.con_sing a)
 
 end InfoSys
 end DomainTheory.InformationSystems

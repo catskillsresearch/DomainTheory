@@ -132,7 +132,7 @@ flowchart LR
   subgraph pkg1982["scott1982"]
     direction TB
     IS["InfoSys"]
-    P23["Proposition23"]
+    P23["EntSet"]
     F35["Factoid35"]
     F36["Factoid36"]
     F45["Factoid45"]

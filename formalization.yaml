@@ -1904,7 +1904,7 @@ alignment:
       note: Structure; compared via the theorem-type worklist.
     - source: 'Scott 1982, Definition 2.2: set-level entailment'
       lean: EntSet
-      module: Challenge (definition), Definition22.lean
+      module: Challenge (definition), EntSet.lean
       status: proved
       note: Compared as a definition.
     - source: 'Scott 1982, Definition 5.1: approximable mapping'

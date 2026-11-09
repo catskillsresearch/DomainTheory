@@ -65,13 +65,13 @@ def approxMap_toStrictElement (f : ApproximableMap A B) (hf : IsStrict A B f) :
       exact hY (Finset.mem_coe.2 hr)
     have hin_s : funInputUnion A B s ∈ A.Con :=
       A.con_subset
-        (proposition_2_3.ii A p.val.property.1 (entSet_inputUnion_of_ent A B hEntIn))
+        (EntSet.union_mem A p.val.property.1 (entSet_inputUnion_of_ent A B hEntIn))
         (funion.subset_right _ _)
     have hIO := rel_input_output_union A B f s hrel hin_s
     have hU : f.rel p.val.val.1 (funOutputUnion A B s) :=
       f.mono hIO (entSet_inputUnion_of_ent A B hEntIn)
-        (proposition_2_3.iii B (f.rel_cod hIO)) p.val.property.1 (f.rel_cod hIO)
-    exact f.mono hU (proposition_2_3.iii A p.val.property.1) hEntOut
+        (EntSet.refl B (f.rel_cod hIO)) p.val.property.1 (f.rel_cod hIO)
+    exact f.mono hU (EntSet.refl A p.val.property.1) hEntOut
       p.val.property.1 p.val.property.2
 
 end InfoSys

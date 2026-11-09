@@ -1,13 +1,13 @@
 module
 public import DomainTheory.BridgeTheorems.ent_of_basicOpen_subset
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.basicOpen
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23
+public import DomainTheory.InformationSystems.InformationSystems.EntSet
 public import DomainTheory.InformationSystems.InformationSystems.Constructive.funion
 public import Mathlib.Order.Hom.Basic
 public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
 public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_46
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23
+public import DomainTheory.InformationSystems.InformationSystems.EntSet
 
 @[expose] public section
 
@@ -28,7 +28,7 @@ variable {α : Type*} [DecidableEq α] (A : InfoSys α)
 theorem con_of_basicOpen_subset {u w : Finset α} (hw : w ∈ A.Con)
     (hsub : A.basicOpen w ⊆ A.basicOpen u) : u ∈ A.Con := by
   have hEnt : A.EntSet w u := fun a ha => ent_of_basicOpen_subset A hw hsub ha
-  exact A.con_subset (proposition_2_3.ii A hw hEnt) (funion.subset_right _ _)
+  exact A.con_subset (EntSet.union_mem A hw hEnt) (funion.subset_right _ _)
 
 end InfoSysToNeighborhood
 

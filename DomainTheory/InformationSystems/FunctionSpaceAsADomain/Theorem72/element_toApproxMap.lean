@@ -173,17 +173,17 @@ theorem element_toApproxMap.union_right (x : (functionSystem A B).Element) :
     refine ⟨x.consistent w hwsub, w, Finset.Subset.refl _, ?_, ?_⟩
     · intro t ht
       rcases Finset.mem_insert.mp ht with rfl | ht
-      · exact proposition_2_3.iii A hu'
+      · exact EntSet.refl A hu'
       · have : t = p := Finset.mem_singleton.mp ht
         subst this
-        exact proposition_2_3.iii A hu
+        exact EntSet.refl A hu
     · have houtEq : funOutputUnion A B w = v' ∪' v := by
         change funOutputUnion A B
           (insert (mkFunToken A B u v' hu' hv') {mkFunToken A B u v hu hv}) = v' ∪' v
         rw [funOutputUnion.insert, funOutputUnion.singleton]
         simp only [mkFunToken]
       rw [houtEq, funion_comm_β]
-      exact proposition_2_3.iii B hvU
+      exact EntSet.refl B hvU
   exact x.closed w r hwsub hEnt
 
 end InfoSys

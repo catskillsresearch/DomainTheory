@@ -1,0 +1,37 @@
+**DEFINITION 2.2.** *For $u, v \in \mathrm{Con}$ we write $u \vdash v$ to mean that $u \vdash X$ for all $X \in v$.* ■
+
+<!-- formalization -->
+
+**Definition (`InfoSys.EntSet`).** In an information system, write $u \mathrel{\mathrm{EntSet}} v$ when $u$ entails every member of the finite set $v$. This is Scott’s multiary reading $u \vdash v$ of Definition 2.2 (stated for arbitrary finite $u, v$ on the carrier).
+
+**Theorem (`InfoSys.EntSet.empty`).** Every finite set entails the empty set of data.
+
+*Proof.* There is no member of the empty set to entail. □
+
+**Theorem (`InfoSys.EntSet.singleton`).** Entailing a singleton $\{X\}$ is equivalent to entailing $X$.
+
+*Proof.* Both directions unwind the definition of multiary entailment on a one-element set. □
+
+**Theorem (`InfoSys.EntSet.bot`).** The empty set of data entails the singleton of the least-informative datum.
+
+*Proof.* Entailment of the bottom datum from the empty consistent set. □
+
+**Theorem (`InfoSys.EntSet.union_mem`).** If a consistent set $u$ entails every member of a finite set $v$, then the finite union $u \cup' v$ is consistent.
+
+*Proof.* Induct on $v$, closing under insert via entailment and the consistency axiom for entailed data; the empty case is $u$ itself. □
+
+**Theorem (`InfoSys.EntSet.refl`).** Every consistent set entails itself.
+
+*Proof.* Membership yields entailment. □
+
+**Theorem (`InfoSys.EntSet.trans`).** Multiary entailment is transitive: if $u$ entails $v$ and $v$ entails $w$, with $u$ and $v$ consistent, then $u$ entails $w$.
+
+*Proof.* For each member of $w$, combine the multiary hypotheses with transitivity of unary entailment. □
+
+**Theorem (`InfoSys.EntSet.mono`).** Multiary entailment is monotone in the antecedents and antitone in the consequents: enlarging a consistent antecedent set and shrinking the entailed set preserves entailment.
+
+*Proof.* Reduce to unary entailment from the smaller antecedent, then transfer along the inclusion by reflexivity and transitivity. □
+
+**Theorem (`InfoSys.EntSet.union`).** If $u$ entails each of two finite sets, then $u$ entails their finite union.
+
+*Proof.* Membership in a finite union is membership in one of the arguments. □

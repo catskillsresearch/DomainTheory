@@ -30,38 +30,38 @@ theorem funEnt_union_step {w : Finset (FunToken A A)}
     rw [funInputUnion.funion]
     have hEntU : A.EntSet (u ∪' u')
         (funInputUnion A A s1 ∪' funInputUnion A A s2) :=
-      proposition_2_3.vi A
-        (proposition_2_3.v A hu huU (funion.subset_left _ _)
+      EntSet.union A
+        (EntSet.mono A hu huU (funion.subset_left _ _)
           (entSet_inputUnion_of_ent A A hIn1) (Finset.Subset.refl _))
-        (proposition_2_3.v A hu' huU (funion.subset_right _ _)
+        (EntSet.mono A hu' huU (funion.subset_right _ _)
           (entSet_inputUnion_of_ent A A hIn2) (Finset.Subset.refl _))
-    exact A.con_subset (proposition_2_3.ii A huU hEntU) (funion.subset_right _ _)
+    exact A.con_subset (EntSet.union_mem A huU hEntU) (funion.subset_right _ _)
   have hout : funOutputUnion A A s1 ∪' funOutputUnion A A s2 ∈ A.Con := by
     have := hw _ hsub hin
     rwa [funOutputUnion.funion] at this
   have hvU : v ∪' v' ∈ A.Con := by
     have hEntO : A.EntSet (funOutputUnion A A s1 ∪' funOutputUnion A A s2) (v ∪' v') :=
-      proposition_2_3.vi A
-        (proposition_2_3.v A
+      EntSet.union A
+        (EntSet.mono A
           (A.con_subset hout (funion.subset_left _ _)) hout
           (funion.subset_left _ _) hOut1 (Finset.Subset.refl _))
-        (proposition_2_3.v A
+        (EntSet.mono A
           (A.con_subset hout (funion.subset_right _ _)) hout
           (funion.subset_right _ _) hOut2 (Finset.Subset.refl _))
-    exact A.con_subset (proposition_2_3.ii A hout hEntO) (funion.subset_right _ _)
+    exact A.con_subset (EntSet.union_mem A hout hEntO) (funion.subset_right _ _)
   refine ⟨hvU, hw, s1 ∪' s2, hsub, ?_, ?_⟩
   · intro q hq
     rcases funion.mem.mp hq with hq | hq
-    · exact proposition_2_3.v A hu huU (funion.subset_left _ _) (hIn1 q hq)
+    · exact EntSet.mono A hu huU (funion.subset_left _ _) (hIn1 q hq)
         (Finset.Subset.refl _)
-    · exact proposition_2_3.v A hu' huU (funion.subset_right _ _) (hIn2 q hq)
+    · exact EntSet.mono A hu' huU (funion.subset_right _ _) (hIn2 q hq)
         (Finset.Subset.refl _)
   · rw [funOutputUnion.funion]
-    exact proposition_2_3.vi A
-      (proposition_2_3.v A
+    exact EntSet.union A
+      (EntSet.mono A
         (A.con_subset hout (funion.subset_left _ _)) hout
         (funion.subset_left _ _) hOut1 (Finset.Subset.refl _))
-      (proposition_2_3.v A
+      (EntSet.mono A
         (A.con_subset hout (funion.subset_right _ _)) hout
         (funion.subset_right _ _) hOut2 (Finset.Subset.refl _))
 

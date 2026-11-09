@@ -58,7 +58,7 @@ theorem applyMap_toElement (g : (functionSystem B C).Element) (y : B.Element) :
       exact mem_snd_of_subset_pairElements (functionSystem B C) B hs hb
     have hin : funInputUnion B C t ∈ B.Con :=
       B.con_subset
-        (proposition_2_3.ii B hCon.2 (entSet_inputUnion_of_ent B C hIn))
+        (EntSet.union_mem B hCon.2 (entSet_inputUnion_of_ent B C hIn))
         (funion.subset_right _ _)
     have hin_sub : ↑(funInputUnion B C t) ⊆ y.carrier := by
       intro b hb
@@ -116,7 +116,7 @@ theorem applyMap_toElement (g : (functionSystem B C).Element) (y : B.Element) :
       exact B.ent_refl hsCon.2 this
     ·
       rw [funOutputUnion.singleton]
-      exact proposition_2_3.iii C (C.con_sing Z)
+      exact EntSet.refl C (C.con_sing Z)
 
 end InfoSys
 end DomainTheory.InformationSystems

@@ -64,12 +64,12 @@ SLICE_NOTES: list[SliceSpec] = [
         "**A third example.**",
     ),
     (
-        "InformationSystems/InformationSystems/Definition22/1982_Definition_2_2.md",
+        "InformationSystems/InformationSystems/1982_Definition_2_2.md",
         "1982_Definition_2_2.english",
         "**DEFINITION 2.2.**",
     ),
     (
-        "InformationSystems/InformationSystems/Proposition23/1982_Proposition_2_3.md",
+        "InformationSystems/InformationSystems/1982_Proposition_2_3.md",
         "1982_Proposition_2_3.english",
         "**PROPOSITION 2.3.**",
     ),
@@ -264,9 +264,9 @@ BARRELS: dict[str, tuple[str, list[str]]] = {
             "- [Partial-function tokens](../1982_PartialFunToken.md)",
             "- [Partial-function system](../1982_partialFunctionSystem.md)",
             "- [A third example](../1982_A_third_example.md)",
-            "- [Definition 2.2](../Definition22/1982_Definition_2_2.md)",
+            "- [Definition 2.2](../1982_Definition_2_2.md)",
             "- [Finite union](../1982_funion.md)",
-            "- [Proposition 2.3](../Proposition23/1982_Proposition_2_3.md)",
+            "- [Proposition 2.3](../1982_Proposition_2_3.md)",
         ],
     ),
     "InformationSystems/ElementsOfASystem/1982_The_elements_of_a_system.md": (

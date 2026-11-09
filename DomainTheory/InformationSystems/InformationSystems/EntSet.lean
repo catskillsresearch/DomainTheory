@@ -1,7 +1,6 @@
 module
 
-public import DomainTheory.InformationSystems.InformationSystems.Constructive
-public import DomainTheory.InformationSystems.InformationSystems.Definition22
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys
 public import DomainTheory.InformationSystems.InformationSystems.Constructive.funion
 
 @[expose] public section
@@ -12,17 +11,35 @@ open DomainTheory.InformationSystems.Constructive
 
 namespace InfoSys
 
-variable {α : Type*} [DecidableEq α] (sys : InfoSys α)
+universe u
 
-namespace proposition_2_3
+variable {α : Type u} [DecidableEq α] (sys : InfoSys α)
 
-theorem i : sys.EntSet ∅ ({sys.bot} : Finset α) := by
+def EntSet (u v : Finset α) : Prop := ∀ X ∈ v, sys.Ent u X
+
+namespace EntSet
+
+theorem empty (u : Finset α) : sys.EntSet u (∅ : Finset α) := by
+  intro X hX
+  exact False.elim (Finset.notMem_empty X hX)
+
+theorem singleton {u : Finset α} {X : α} :
+    sys.EntSet u {X} ↔ sys.Ent u X := by
+  constructor
+  · intro h
+    exact h X (Finset.mem_singleton_self X)
+  · intro h Y hY
+    rw [Finset.mem_singleton] at hY
+    subst hY
+    exact h
+
+theorem bot : sys.EntSet ∅ ({sys.bot} : Finset α) := by
   intro X hX
   rw [Finset.mem_singleton] at hX
   subst hX
   exact sys.ent_bot sys.con_empty
 
-theorem ii {u v : Finset α} (hu : u ∈ sys.Con) (h : sys.EntSet u v) :
+theorem union_mem {u v : Finset α} (hu : u ∈ sys.Con) (h : sys.EntSet u v) :
     u ∪' v ∈ sys.Con := by
   have : ∀ s : Finset α, (∀ x ∈ s, x ∈ v) → u ∪' s ∈ sys.Con := by
     intro s
@@ -39,15 +56,15 @@ theorem ii {u v : Finset α} (hu : u ∈ sys.Con) (h : sys.EntSet u v) :
       simpa [funion.insert] using hins
   exact this v fun _ hx => hx
 
-theorem iii {u : Finset α} (hu : u ∈ sys.Con) : sys.EntSet u u :=
+theorem refl {u : Finset α} (hu : u ∈ sys.Con) : sys.EntSet u u :=
   fun _X hX => sys.ent_refl hu hX
 
-theorem iv {u v w : Finset α}
+theorem trans {u v w : Finset α}
     (hu : u ∈ sys.Con) (hv : v ∈ sys.Con)
     (huv : sys.EntSet u v) (hvw : sys.EntSet v w) : sys.EntSet u w :=
   fun X hX => sys.ent_trans hu hv huv (hvw X hX)
 
-theorem v {u u' v v' : Finset α}
+theorem mono {u u' v v' : Finset α}
     (hu : u ∈ sys.Con) (hu' : u' ∈ sys.Con)
     (hsubu : u ⊆ u') (huv : sys.EntSet u v) (hsubv : v' ⊆ v) :
     sys.EntSet u' v' := by
@@ -57,30 +74,14 @@ theorem v {u u' v v' : Finset α}
   intro y hy
   exact sys.ent_refl hu' (hsubu hy)
 
-theorem vi {u v v' : Finset α}
+theorem union {u v v' : Finset α}
     (huv : sys.EntSet u v) (huv' : sys.EntSet u v') : sys.EntSet u (v ∪' v') := by
   intro X hX
   rcases funion.mem.mp hX with h | h
   · exact huv X h
   · exact huv' X h
 
-end proposition_2_3
-
-theorem proposition_2_3 :
-    (∀ {α : Type*} [DecidableEq α] (sys : InfoSys α),
-      sys.EntSet ∅ ({sys.bot} : Finset α)) ∧
-    (∀ {α : Type*} [DecidableEq α] (sys : InfoSys α) {u v : Finset α},
-      u ∈ sys.Con → sys.EntSet u v → u ∪' v ∈ sys.Con) ∧
-    (∀ {α : Type*} [DecidableEq α] (sys : InfoSys α) {u : Finset α},
-      u ∈ sys.Con → sys.EntSet u u) ∧
-    (∀ {α : Type*} [DecidableEq α] (sys : InfoSys α) {u v w : Finset α},
-      u ∈ sys.Con → v ∈ sys.Con → sys.EntSet u v → sys.EntSet v w → sys.EntSet u w) ∧
-    (∀ {α : Type*} [DecidableEq α] (sys : InfoSys α) {u u' v v' : Finset α},
-      u ∈ sys.Con → u' ∈ sys.Con → u ⊆ u' → sys.EntSet u v → v' ⊆ v → sys.EntSet u' v') ∧
-    (∀ {α : Type*} [DecidableEq α] (sys : InfoSys α) {u v v' : Finset α},
-      sys.EntSet u v → sys.EntSet u v' → sys.EntSet u (v ∪' v')) :=
-  ⟨@proposition_2_3.i, @proposition_2_3.ii, @proposition_2_3.iii,
-    @proposition_2_3.iv, @proposition_2_3.v, @proposition_2_3.vi⟩
+end EntSet
 
 end InfoSys
 

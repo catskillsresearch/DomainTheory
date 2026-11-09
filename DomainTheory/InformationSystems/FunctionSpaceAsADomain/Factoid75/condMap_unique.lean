@@ -64,7 +64,7 @@ theorem condMap.unique (f : ApproximableMap boolSystem A) (hf : IsStrict boolSys
         emptyEntails_mem_botElement boolSystem (hEmp t (Finset.mem_coe.1 ht))
       have hout : ↑v ⊆ (f.toElement boolSystem.botElement).carrier := by
         intro y hy
-        refine ⟨u, hsub, f.mono hrel (proposition_2_3.iii boolSystem (f.rel_dom hrel))
+        refine ⟨u, hsub, f.mono hrel (EntSet.refl boolSystem (f.rel_dom hrel))
           (fun z hz => by
             have : z = y := Finset.mem_singleton.mp hz
             subst this
@@ -98,29 +98,29 @@ theorem condMap.unique (f : ApproximableMap boolSystem A) (hf : IsStrict boolSys
     rcases boolCon_trichotomy hu with hEmp | hTru | hFls
     · have hrel0 : f.rel u ∅ :=
         f.mono f.empty_rel (EntSet.empty boolSystem u) (EntSet.empty A ∅) hu A.con_empty
-      exact f.mono hrel0 (proposition_2_3.iii boolSystem hu) (hE hEmp) hu hv
+      exact f.mono hrel0 (EntSet.refl boolSystem hu) (hE hEmp) hu hv
     · have hsub : ↑v ⊆ (f.toElement boolTrue).carrier := ht hTru
       obtain ⟨w, hw, hrelw⟩ := exists_rel_of_subset_image f boolTrue v hsub
       have hEntW : boolSystem.EntSet {BoolToken.tru} w := fun t ht' =>
         hw (Finset.mem_coe.2 ht')
       have hrelTru : f.rel {BoolToken.tru} v :=
-        f.mono hrelw hEntW (proposition_2_3.iii A (f.rel_cod hrelw))
+        f.mono hrelw hEntW (EntSet.refl A (f.rel_cod hrelw))
           (boolSystem.con_sing _) (f.rel_cod hrelw)
       have hEntU : boolSystem.EntSet u {BoolToken.tru} := fun t ht' => by
         have : t = .tru := Finset.mem_singleton.mp ht'
         subst this; exact hTru
-      exact f.mono hrelTru hEntU (proposition_2_3.iii A hv) hu hv
+      exact f.mono hrelTru hEntU (EntSet.refl A hv) hu hv
     · have hsub : ↑v ⊆ (f.toElement boolFalse).carrier := hfl hFls
       obtain ⟨w, hw, hrelw⟩ := exists_rel_of_subset_image f boolFalse v hsub
       have hEntW : boolSystem.EntSet {BoolToken.fls} w := fun t ht' =>
         hw (Finset.mem_coe.2 ht')
       have hrelFls : f.rel {BoolToken.fls} v :=
-        f.mono hrelw hEntW (proposition_2_3.iii A (f.rel_cod hrelw))
+        f.mono hrelw hEntW (EntSet.refl A (f.rel_cod hrelw))
           (boolSystem.con_sing _) (f.rel_cod hrelw)
       have hEntU : boolSystem.EntSet u {BoolToken.fls} := fun t ht' => by
         have : t = .fls := Finset.mem_singleton.mp ht'
         subst this; exact hFls
-      exact f.mono hrelFls hEntU (proposition_2_3.iii A hv) hu hv
+      exact f.mono hrelFls hEntU (EntSet.refl A hv) hu hv
 
 end InfoSys
 end DomainTheory.InformationSystems

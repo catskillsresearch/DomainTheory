@@ -49,7 +49,7 @@ theorem comp_fst (f : ApproximableMap C A) (g : ApproximableMap C B) :
   refine ApproximableMap.ext fun s v => ?_
   constructor
   · rintro ⟨u, ⟨hf, hg⟩, ⟨hu, hv, hEnt⟩⟩
-    exact f.mono hf (proposition_2_3.iii C (f.rel_dom hf)) hEnt (f.rel_dom hf) hv
+    exact f.mono hf (EntSet.refl C (f.rel_dom hf)) hEnt (f.rel_dom hf) hv
   · intro hf
     refine ⟨liftLeft A B v, ?_, ?_⟩
     · refine ⟨?_, ?_⟩
@@ -61,14 +61,14 @@ theorem comp_fst (f : ApproximableMap C A) (g : ApproximableMap C B) :
         exact rel_bot_subset g hs hg0 (liftLeft.sndFinset_eq A B v)
     · refine ⟨liftLeft.con A B (f.rel_cod hf), f.rel_cod hf, ?_⟩
       rw [liftLeft.fstFinset_eq]
-      exact proposition_2_3.iii A (f.rel_cod hf)
+      exact EntSet.refl A (f.rel_cod hf)
 
 theorem comp_snd (f : ApproximableMap C A) (g : ApproximableMap C B) :
     comp (productSystem.sndMap A B) (pairMap A B f g) = g := by
   refine ApproximableMap.ext fun s w => ?_
   constructor
   · rintro ⟨u, ⟨hf, hg⟩, ⟨hu, hw, hEnt⟩⟩
-    exact g.mono hg (proposition_2_3.iii C (g.rel_dom hg)) hEnt (g.rel_dom hg) hw
+    exact g.mono hg (EntSet.refl C (g.rel_dom hg)) hEnt (g.rel_dom hg) hw
   · intro hg
     refine ⟨liftRight A B w, ?_, ?_⟩
     · refine ⟨?_, ?_⟩
@@ -80,7 +80,7 @@ theorem comp_snd (f : ApproximableMap C A) (g : ApproximableMap C B) :
         exact hg
     · refine ⟨liftRight.con A B (g.rel_cod hg), g.rel_cod hg, ?_⟩
       rw [liftRight.sndFinset_eq]
-      exact proposition_2_3.iii B (g.rel_cod hg)
+      exact EntSet.refl B (g.rel_cod hg)
 
 theorem unique (f : ApproximableMap C A) (g : ApproximableMap C B)
     (h : ApproximableMap C (productSystem A B))

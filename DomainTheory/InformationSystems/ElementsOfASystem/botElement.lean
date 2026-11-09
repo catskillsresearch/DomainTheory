@@ -18,14 +18,14 @@ def botElement : sys.Element where
     intro Y hY
     have hbot : ({sys.bot} : Finset α) ∈ sys.Con := sys.con_sing sys.bot
     have hEnt : sys.EntSet {sys.bot} Y := fun X hX => hY (Finset.mem_coe.2 hX)
-    have hunion : {sys.bot} ∪' Y ∈ sys.Con := proposition_2_3.ii sys hbot hEnt
+    have hunion : {sys.bot} ∪' Y ∈ sys.Con := EntSet.union_mem sys hbot hEnt
     exact sys.con_subset hunion (funion.subset_right _ _)
   closed := by
     intro Y a hY hEnt
     have hbot : ({sys.bot} : Finset α) ∈ sys.Con := sys.con_sing sys.bot
     have hYcon : Y ∈ sys.Con := by
       have hEntY : sys.EntSet {sys.bot} Y := fun X hX => hY (Finset.mem_coe.2 hX)
-      exact sys.con_subset (proposition_2_3.ii sys hbot hEntY) (funion.subset_right _ _)
+      exact sys.con_subset (EntSet.union_mem sys hbot hEntY) (funion.subset_right _ _)
     exact sys.ent_trans hbot hYcon (fun y hy => hY (Finset.mem_coe.2 hy)) hEnt
 
 theorem botElement.le (x : sys.Element) : sys.botElement ≤ x := by
