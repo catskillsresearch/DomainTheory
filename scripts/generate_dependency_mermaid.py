@@ -98,12 +98,19 @@ IS_SEC5_SVG = (
     / "Approximable"
     / "1982_Approximable_mappings_between_domains.svg"
 )
-IS_SEC6_SVG = (
+IS_SEC6_PRODUCTS_SVG = (
+    DT
+    / "InformationSystems"
+    / "ProductsAndSumsOfDomains"
+    / "Product"
+    / "1982_Products_of_domains.svg"
+)
+IS_SEC6_SUMS_SVG = (
     DT
     / "InformationSystems"
     / "ProductsAndSumsOfDomains"
     / "Sum"
-    / "1982_Products_and_sums_of_domains.svg"
+    / "1982_Sums_of_domains.svg"
 )
 IS_SEC7_SVG = (
     DT
@@ -120,7 +127,8 @@ IS_OUTLINE_SVGS = (
     IS_SEC3_SVG,
     IS_SEC4_SVG,
     IS_SEC5_SVG,
-    IS_SEC6_SVG,
+    IS_SEC6_PRODUCTS_SVG,
+    IS_SEC6_SUMS_SVG,
     IS_SEC7_SVG,
     IS_SEC8_SVG,
 )
@@ -3304,7 +3312,8 @@ IS_CHAPTER_SHORT: dict[str, tuple[str, str]] = {
         "IS5",
         "Approximable mappings between domains",
     ),
-    "Products and sums of domains": ("IS6", "Products and sums of domains"),
+    "Products of domains": ("IS6a", "Products of domains"),
+    "Sums of domains": ("IS6b", "Sums of domains"),
     "The function space as a domain": ("IS7", "The function space as a domain"),
     "Some domain equations": ("IS8", "Some domain equations"),
 }
@@ -3404,7 +3413,7 @@ IS_SEC5_SHORT: dict[str, tuple[str, str]] = {
         "Proposition 5.6:\nconstant maps",
     ),
 }
-IS_SEC6_SHORT: dict[str, tuple[str, str]] = {
+IS_SEC6_PRODUCTS_SHORT: dict[str, tuple[str, str]] = {
     "Product token predicate": ("Ptp", "Product token predicate"),
     "Decidability of product tokens": (
         "Dopt",
@@ -3455,6 +3464,8 @@ IS_SEC6_SHORT: dict[str, tuple[str, str]] = {
         "P62",
         "Proposition 6.2:\nprojections and pairing",
     ),
+}
+IS_SEC6_SUMS_SHORT: dict[str, tuple[str, str]] = {
     "Sum tokens": ("St", "Sum tokens"),
     "Equality on sum tokens": ("Eost", "Equality on sum tokens"),
     "Sum bottom": ("Sb", "Sum bottom"),
@@ -3525,7 +3536,8 @@ def gen_is_chapter_lecture(diagram: Path, modules: dict[str, Path], old: str) ->
         header=_is_outline_header("1982_InformationSystems.md"),
         aggregate_lecture_exercises=False,
         recursive_barrels=True,
-        rankdir="LR",
+        rankdir="TD",
+        display_scale=0.5,
     )
 
 
@@ -3581,16 +3593,30 @@ def gen_is_sec5_lecture(diagram: Path, modules: dict[str, Path], old: str) -> st
     )
 
 
-def gen_is_sec6_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+def gen_is_sec6_products_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
     return gen_ns_outline_svg_lecture(
         diagram,
         modules,
         old,
-        short=IS_SEC6_SHORT,
+        short=IS_SEC6_PRODUCTS_SHORT,
         companions={},
-        header=_is_outline_header("1982_Products_and_sums_of_domains.md"),
+        header=_is_outline_header("1982_Products_of_domains.md"),
         aggregate_lecture_exercises=False,
-        rankdir="LR",
+        rankdir="TD",
+        display_scale=0.5,
+    )
+
+
+def gen_is_sec6_sums_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=IS_SEC6_SUMS_SHORT,
+        companions={},
+        header=_is_outline_header("1982_Sums_of_domains.md"),
+        aggregate_lecture_exercises=False,
+        rankdir="TD",
     )
 
 
@@ -4048,10 +4074,15 @@ def classify(mermaid: Path, text: str) -> str:
     ):
         return "is_sec5_lecture"
     if mermaid.name in (
-        "1982_Products_and_sums_of_domains.mermaid",
-        "1982_Products_and_sums_of_domains.svg",
+        "1982_Products_of_domains.mermaid",
+        "1982_Products_of_domains.svg",
     ):
-        return "is_sec6_lecture"
+        return "is_sec6_products_lecture"
+    if mermaid.name in (
+        "1982_Sums_of_domains.mermaid",
+        "1982_Sums_of_domains.svg",
+    ):
+        return "is_sec6_sums_lecture"
     if mermaid.name in (
         "1982_The_function_space_as_a_domain.mermaid",
         "1982_The_function_space_as_a_domain.svg",
@@ -4193,8 +4224,10 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
         return gen_is_sec4_lecture(mermaid, modules, old)
     if kind == "is_sec5_lecture":
         return gen_is_sec5_lecture(mermaid, modules, old)
-    if kind == "is_sec6_lecture":
-        return gen_is_sec6_lecture(mermaid, modules, old)
+    if kind == "is_sec6_products_lecture":
+        return gen_is_sec6_products_lecture(mermaid, modules, old)
+    if kind == "is_sec6_sums_lecture":
+        return gen_is_sec6_sums_lecture(mermaid, modules, old)
     if kind == "is_sec7_lecture":
         return gen_is_sec7_lecture(mermaid, modules, old)
     if kind == "is_sec8_lecture":

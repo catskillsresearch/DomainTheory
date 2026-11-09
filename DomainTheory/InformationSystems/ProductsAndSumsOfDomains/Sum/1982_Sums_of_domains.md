@@ -1,0 +1,21 @@
+# Sums of domains
+
+@import "1982_Sums_of_domains.svg" {code_block=false}
+
+- [Sum tokens](1982_SumToken.md) [✓](../../../1982_REVISION.md)
+- [Equality on sum tokens](1982_instDecidableEqSumToken.md) [✓](../../../1982_REVISION.md)
+- [Sum bottom](1982_sumBot.md) [✓](../../../1982_REVISION.md)
+- [Left-component insert](1982_lftInsert.md) [✓](../../../1982_REVISION.md)
+- [Right-component insert](1982_rhtInsert.md) [✓](../../../1982_REVISION.md)
+- [Left insert commutes](1982_instLeftCommutativeLftInsert.md) [✓](../../../1982_REVISION.md)
+- [Right insert commutes](1982_instLeftCommutativeRhtInsert.md) [✓](../../../1982_REVISION.md)
+- [Fold membership for left components](1982_mem_foldr_lft.md) [✓](../../../1982_REVISION.md)
+- [Fold membership for right components](1982_mem_foldr_rht.md) [✓](../../../1982_REVISION.md)
+- [Left projection of sum sets](1982_lftFinset.md) [✓](../../../1982_REVISION.md)
+- [Right projection of sum sets](1982_rhtFinset.md) [✓](../../../1982_REVISION.md)
+- [Sum consistency](1982_SumCon.md) [✓](../../../1982_REVISION.md)
+- [Sum entailment](1982_SumEnt.md) [✓](../../../1982_REVISION.md)
+- [Definition 6.3: separated sum](1982_Definition_6_3.md)
+- [Empty sum consistency](1982_SumCon_empty.md) [✓](../../../1982_REVISION.md)
+- [Sum library](1982_Sum.md) [✓](../../../1982_REVISION.md)
+- [Proposition 6.4: injections and copairing](../Proposition64/1982_Proposition_6_4.md)
