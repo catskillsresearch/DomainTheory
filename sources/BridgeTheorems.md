@@ -138,7 +138,7 @@ flowchart LR
     F45["Factoid45"]
     F46["Factoid46"]
     P53["Proposition53"]
-    P64["Proposition64"]
+    P64["Sum"]
     T72["Theorem72"]
     F81["Factoid81"]
   end

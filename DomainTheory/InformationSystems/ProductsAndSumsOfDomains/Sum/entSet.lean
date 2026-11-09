@@ -1,11 +1,10 @@
 module
 
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.liftSumLeft
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.liftSumRight
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inlMap
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inrMap
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.sumElement
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.liftSumLeft
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.liftSumRight
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.sumElement
+public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 
 @[expose] public section
@@ -17,11 +16,42 @@ open DomainTheory.InformationSystems.Constructive
 namespace InfoSys
 
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
+
 variable (A : InfoSys α) (B : InfoSys β)
 
 open ApproximableMap
 
 namespace entSet
+
+theorem lft_of_sumEntSet {u u' : Finset (SumToken α β)}
+    (hEnt : (sumSystem A B).EntSet u u') :
+    A.EntSet (lftFinset u) (lftFinset u') := fun _ hx =>
+  (hEnt _ ((mem_lftFinset).1 hx)).2.2
+
+theorem rht_of_sumEntSet {u u' : Finset (SumToken α β)}
+    (hEnt : (sumSystem A B).EntSet u u') :
+    B.EntSet (rhtFinset u) (rhtFinset u') := fun _ hy =>
+  (hEnt _ ((mem_rhtFinset).1 hy)).2.2
+
+theorem lft_eq_empty {u u' : Finset (SumToken α β)}
+    (hl : lftFinset u = ∅) (hEnt : (sumSystem A B).EntSet u u') :
+    lftFinset u' = ∅ := by
+  ext x
+  constructor
+  · intro hx
+    exact False.elim ((hEnt _ ((mem_lftFinset).1 hx)).2.1 hl)
+  · intro hx
+    exact False.elim (Finset.notMem_empty x hx)
+
+theorem rht_eq_empty {u u' : Finset (SumToken α β)}
+    (hr : rhtFinset u = ∅) (hEnt : (sumSystem A B).EntSet u u') :
+    rhtFinset u' = ∅ := by
+  ext y
+  constructor
+  · intro hy
+    exact False.elim ((hEnt _ ((mem_rhtFinset).1 hy)).2.1 hr)
+  · intro hy
+    exact False.elim (Finset.notMem_empty y hy)
 
 theorem liftLft_of_left_only {u : Finset (SumToken α β)}
     (hu : SumCon A B u) (hr : rhtFinset u = ∅) :
@@ -60,46 +90,6 @@ theorem liftRht_of_right_only {u : Finset (SumToken α β)}
       have : x ∈ lftFinset u := (mem_lftFinset).2 hp
       rw [hl] at this
       exact Finset.notMem_empty _ this)
-
-theorem u_of_inl_witness {u u' : Finset (SumToken α β)} {v : Finset α}
-    (hlne : lftFinset u ≠ ∅) (hinl : (inlMap A B).rel v u')
-    (huv : A.EntSet (lftFinset u) v) (hu : SumCon A B u)
-    (hr : rhtFinset u = ∅) :
-    (sumSystem A B).EntSet u u' := by
-  intro p hp
-  have ⟨hv, hu', hr', hEnt⟩ := hinl
-  cases p with
-  | bot => exact ⟨hu, trivial⟩
-  | left x =>
-    have hx : x ∈ lftFinset u' := (mem_lftFinset).2 hp
-    have hAx : A.Ent v x := hEnt x hx
-    have hAx' : A.Ent (lftFinset u) x :=
-      A.ent_trans (SumCon.lft_mem_of_rht_empty A B hu hr) hv huv hAx
-    exact ⟨hu, ⟨hlne, hAx'⟩⟩
-  | right y =>
-    exact False.elim (by
-      have : y ∈ rhtFinset u' := (mem_rhtFinset).2 hp
-      rw [hr'] at this; exact Finset.notMem_empty _ this)
-
-theorem u_of_inr_witness {u u' : Finset (SumToken α β)} {w : Finset β}
-    (hrne : rhtFinset u ≠ ∅) (hinr : (inrMap A B).rel w u')
-    (huw : B.EntSet (rhtFinset u) w) (hu : SumCon A B u)
-    (hl : lftFinset u = ∅) :
-    (sumSystem A B).EntSet u u' := by
-  intro p hp
-  have ⟨hw, hu', hl', hEnt⟩ := hinr
-  cases p with
-  | bot => exact ⟨hu, trivial⟩
-  | right y =>
-    have hy : y ∈ rhtFinset u' := (mem_rhtFinset).2 hp
-    have hBy : B.Ent w y := hEnt y hy
-    have hBy' : B.Ent (rhtFinset u) y :=
-      B.ent_trans (SumCon.rht_mem_of_lft_empty A B hu hl) hw huw hBy
-    exact ⟨hu, ⟨hrne, hBy'⟩⟩
-  | left x =>
-    exact False.elim (by
-      have : x ∈ lftFinset u' := (mem_lftFinset).2 hp
-      rw [hl'] at this; exact Finset.notMem_empty _ this)
 
 theorem empty_of_rel_bot_like {C : InfoSys γ} (h : ApproximableMap (sumSystem A B) C)
     (hbot : h.toElement (sumSystem A B).botElement = C.botElement)

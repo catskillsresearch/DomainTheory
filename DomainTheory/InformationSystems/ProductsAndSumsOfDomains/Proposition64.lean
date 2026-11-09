@@ -1,3 +1,0 @@
-module
-
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_4

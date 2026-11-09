@@ -1,9 +1,8 @@
 module
 
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet_more
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inlMap
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inrMap
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.entSet
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.inlMap
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.inrMap
 public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.comp
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
@@ -18,6 +17,52 @@ namespace InfoSys
 
 variable {α β γ : Type*} [DecidableEq α] [DecidableEq β] [DecidableEq γ]
 variable (A : InfoSys α) (B : InfoSys β)
+
+open ApproximableMap
+
+namespace entSet
+
+theorem u_of_inl_witness {u u' : Finset (SumToken α β)} {v : Finset α}
+    (hlne : lftFinset u ≠ ∅) (hinl : (inlMap A B).rel v u')
+    (huv : A.EntSet (lftFinset u) v) (hu : SumCon A B u)
+    (hr : rhtFinset u = ∅) :
+    (sumSystem A B).EntSet u u' := by
+  intro p hp
+  have ⟨hv, hu', hr', hEnt⟩ := hinl
+  cases p with
+  | bot => exact ⟨hu, trivial⟩
+  | left x =>
+    have hx : x ∈ lftFinset u' := (mem_lftFinset).2 hp
+    have hAx : A.Ent v x := hEnt x hx
+    have hAx' : A.Ent (lftFinset u) x :=
+      A.ent_trans (SumCon.lft_mem_of_rht_empty A B hu hr) hv huv hAx
+    exact ⟨hu, ⟨hlne, hAx'⟩⟩
+  | right y =>
+    exact False.elim (by
+      have : y ∈ rhtFinset u' := (mem_rhtFinset).2 hp
+      rw [hr'] at this; exact Finset.notMem_empty _ this)
+
+theorem u_of_inr_witness {u u' : Finset (SumToken α β)} {w : Finset β}
+    (hrne : rhtFinset u ≠ ∅) (hinr : (inrMap A B).rel w u')
+    (huw : B.EntSet (rhtFinset u) w) (hu : SumCon A B u)
+    (hl : lftFinset u = ∅) :
+    (sumSystem A B).EntSet u u' := by
+  intro p hp
+  have ⟨hw, hu', hl', hEnt⟩ := hinr
+  cases p with
+  | bot => exact ⟨hu, trivial⟩
+  | right y =>
+    have hy : y ∈ rhtFinset u' := (mem_rhtFinset).2 hp
+    have hBy : B.Ent w y := hEnt y hy
+    have hBy' : B.Ent (rhtFinset u) y :=
+      B.ent_trans (SumCon.rht_mem_of_lft_empty A B hu hl) hw huw hBy
+    exact ⟨hu, ⟨hrne, hBy'⟩⟩
+  | left x =>
+    exact False.elim (by
+      have : x ∈ lftFinset u' := (mem_lftFinset).2 hp
+      rw [hl'] at this; exact Finset.notMem_empty _ this)
+
+end entSet
 
 namespace ApproximableMap
 

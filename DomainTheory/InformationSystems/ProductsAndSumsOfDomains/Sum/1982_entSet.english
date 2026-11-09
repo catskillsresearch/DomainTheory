@@ -1,0 +1,29 @@
+<!-- formalization -->
+
+**Theorem (`InfoSys.entSet.lft_of_sumEntSet`).** If $u$ entails $u'$ in the separated sum, then the left projection of $u$ entails the left projection of $u'$ in $\mathbf{A}$.
+
+*Proof.* Project the sum entailment along left tokens. □
+
+**Theorem (`InfoSys.entSet.rht_of_sumEntSet`).** If $u$ entails $u'$ in the separated sum, then the right projection of $u$ entails the right projection of $u'$ in $\mathbf{B}$.
+
+*Proof.* Project the sum entailment along right tokens. □
+
+**Theorem (`InfoSys.entSet.lft_eq_empty`).** If the left projection of $u$ is empty and $u$ entails $u'$ in the separated sum, then the left projection of $u'$ is empty.
+
+*Proof.* A left token in $u'$ would require the left side of $u$ to be inhabited. □
+
+**Theorem (`InfoSys.entSet.rht_eq_empty`).** If the right projection of $u$ is empty and $u$ entails $u'$ in the separated sum, then the right projection of $u'$ is empty.
+
+*Proof.* A right token in $u'$ would require the right side of $u$ to be inhabited. □
+
+**Theorem (`InfoSys.entSet.liftLft_of_left_only`).** If $u$ is consistent with empty right projection, then the left lift of the left projection of $u$ entails $u$ in the separated sum.
+
+*Proof.* Consistency of the lift follows from recovering the left projection; each left token of $u$ is entailed by reflexivity on that projection, and right tokens cannot occur. □
+
+**Theorem (`InfoSys.entSet.liftRht_of_right_only`).** If $u$ is consistent with empty left projection, then the right lift of the right projection of $u$ entails $u$ in the separated sum.
+
+*Proof.* Dual to the left-only case. □
+
+**Theorem (`InfoSys.entSet.empty_of_rel_bot_like`).** Let $h$ be an approximable map from the separated sum that sends the bottom element to bottom. If $u$ is consistent with both projections empty and $h$ relates $u$ to a consistent $s$, then the empty set entails $s$.
+
+*Proof.* Such a $u$ sits under the sum bottom, so the image of its closure under $h$ sits under the codomain bottom; every member of $s$ is therefore entailed from the empty set via the bottom token. □

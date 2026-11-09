@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.left_bot_mem_inlMap_toElement
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.rhtFinset_singleton_left
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.sumElement
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.sumElement
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.lftFinset
 public import DomainTheory.InformationSystems.InformationSystems.Proposition23
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
@@ -10,7 +10,7 @@ public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_4
 
 @[expose] public section
 

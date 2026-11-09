@@ -1,7 +1,7 @@
 module
 
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.liftSumLeft
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.liftSumRight
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.liftSumLeft
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.liftSumRight
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.ApproximableMap
 
 @[expose] public section

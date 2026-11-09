@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.copairMap
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.copairMap
 
 @[expose] public section
 

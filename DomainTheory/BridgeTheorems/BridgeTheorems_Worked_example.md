@@ -36,9 +36,9 @@
 **[InformationSystems/ApproximableMappingsBetweenDomains/proposition_5_5.lean](../InformationSystems/ApproximableMappingsBetweenDomains/proposition_5_5.lean)**
 
 @import "../InformationSystems/ApproximableMappingsBetweenDomains/proposition_5_5.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/instLeftCommutativeLiftSumLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/instLeftCommutativeLiftSumLeft.lean)**
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/instLeftCommutativeLiftSumLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/instLeftCommutativeLiftSumLeft.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/instLeftCommutativeLiftSumLeft.lean"
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/instLeftCommutativeLiftSumLeft.lean"
 **[InformationSystems/FunctionSpaceAsADomain/Proposition74/Basic.lean](../InformationSystems/FunctionSpaceAsADomain/Proposition74/Basic.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Proposition74/Basic.lean"
@@ -78,9 +78,9 @@
 **[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap.lean)**
 
 @import "../InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/not_mem_right_of_mem_left.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/not_mem_right_of_mem_left.lean)**
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/not_mem_right_of_mem_left.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/not_mem_right_of_mem_left.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/not_mem_right_of_mem_left.lean"
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/not_mem_right_of_mem_left.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Product/mkLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/mkLeft.lean)**
 
 @import "../InformationSystems/ProductsAndSumsOfDomains/Product/mkLeft.lean"
@@ -117,78 +117,78 @@
 **[InformationSystems/FunctionSpaceAsADomain/Proposition74/proposition_7_4_iii.lean](../InformationSystems/FunctionSpaceAsADomain/Proposition74/proposition_7_4_iii.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Proposition74/proposition_7_4_iii.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/instLeftCommutativeLiftSumRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/instLeftCommutativeLiftSumRight.lean)**
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/instLeftCommutativeLiftSumRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/instLeftCommutativeLiftSumRight.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/instLeftCommutativeLiftSumRight.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/liftSumLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/liftSumLeft.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/instLeftCommutativeLiftSumRight.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/liftSumLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/liftSumLeft.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/liftSumLeft.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/lft_mem_Con_of_SumCon_rht_empty.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/lft_mem_Con_of_SumCon_rht_empty.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/liftSumLeft.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/lft_mem_Con_of_SumCon_rht_empty.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/lft_mem_Con_of_SumCon_rht_empty.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/lft_mem_Con_of_SumCon_rht_empty.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/sumLftCarrier.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/sumLftCarrier.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/lft_mem_Con_of_SumCon_rht_empty.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/sumLftCarrier.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/sumLftCarrier.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/sumLftCarrier.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/rht_mem_Con_of_SumCon_lft_empty.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/rht_mem_Con_of_SumCon_lft_empty.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/sumLftCarrier.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/rht_mem_Con_of_SumCon_lft_empty.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/rht_mem_Con_of_SumCon_lft_empty.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/rht_mem_Con_of_SumCon_lft_empty.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/mem_foldr_liftSumRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/mem_foldr_liftSumRight.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/rht_mem_Con_of_SumCon_lft_empty.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/mem_foldr_liftSumRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/mem_foldr_liftSumRight.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/mem_foldr_liftSumRight.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_rht_of_sumEntSet.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_rht_of_sumEntSet.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/mem_foldr_liftSumRight.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_rht_of_sumEntSet.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_rht_of_sumEntSet.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_rht_of_sumEntSet.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/mem_foldr_liftSumLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/mem_foldr_liftSumLeft.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_rht_of_sumEntSet.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/mem_foldr_liftSumLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/mem_foldr_liftSumLeft.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/mem_foldr_liftSumLeft.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/rht_eq_empty_of_sumEntSet.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/rht_eq_empty_of_sumEntSet.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/mem_foldr_liftSumLeft.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/rht_eq_empty_of_sumEntSet.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/rht_eq_empty_of_sumEntSet.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/rht_eq_empty_of_sumEntSet.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/lft_eq_empty_of_sumEntSet.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/lft_eq_empty_of_sumEntSet.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/rht_eq_empty_of_sumEntSet.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/lft_eq_empty_of_sumEntSet.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/lft_eq_empty_of_sumEntSet.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/lft_eq_empty_of_sumEntSet.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/copair_union_disj.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/copair_union_disj.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/lft_eq_empty_of_sumEntSet.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/copair_union_disj.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/copair_union_disj.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/copair_union_disj.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/liftSumRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/liftSumRight.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/copair_union_disj.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/liftSumRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/liftSumRight.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/liftSumRight.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/mem_liftSumRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/mem_liftSumRight.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/liftSumRight.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/mem_liftSumRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/mem_liftSumRight.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/mem_liftSumRight.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/lftFinset_liftSumRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/lftFinset_liftSumRight.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/mem_liftSumRight.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/lftFinset_liftSumRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/lftFinset_liftSumRight.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/lftFinset_liftSumRight.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/mem_liftSumLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/mem_liftSumLeft.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/lftFinset_liftSumRight.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/mem_liftSumLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/mem_liftSumLeft.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/mem_liftSumLeft.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/rhtFinset_liftSumLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/rhtFinset_liftSumLeft.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/mem_liftSumLeft.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset_liftSumLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset_liftSumLeft.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/rhtFinset_liftSumLeft.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/sumRhtCarrier.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/sumRhtCarrier.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset_liftSumLeft.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/sumRhtCarrier.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/sumRhtCarrier.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/sumRhtCarrier.lean"
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/sumRhtCarrier.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Factoid65/unitElement_eq_bot.lean](../InformationSystems/ProductsAndSumsOfDomains/Factoid65/unitElement_eq_bot.lean)**
 
 @import "../InformationSystems/ProductsAndSumsOfDomains/Factoid65/unitElement_eq_bot.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Factoid65/approxMap_from_unit_eq_const.lean](../InformationSystems/ProductsAndSumsOfDomains/Factoid65/approxMap_from_unit_eq_const.lean)**
 
 @import "../InformationSystems/ProductsAndSumsOfDomains/Factoid65/approxMap_from_unit_eq_const.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/lftFinset_liftSumLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/lftFinset_liftSumLeft.lean)**
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/lftFinset_liftSumLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/lftFinset_liftSumLeft.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/lftFinset_liftSumLeft.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/sumElementLft.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/sumElementLft.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/lftFinset_liftSumLeft.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/sumElementLft.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/sumElementLft.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/sumElementLft.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/rhtFinset_liftSumRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/rhtFinset_liftSumRight.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/sumElementLft.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset_liftSumRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset_liftSumRight.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/rhtFinset_liftSumRight.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/sumElementRht.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/sumElementRht.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset_liftSumRight.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/sumElementRht.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/sumElementRht.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/sumElementRht.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/inrMap.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/inrMap.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/sumElementRht.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/inrMap.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/inrMap.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/inrMap.lean"
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/inrMap.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Product/mkRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/mkRight.lean)**
 
 @import "../InformationSystems/ProductsAndSumsOfDomains/Product/mkRight.lean"
@@ -345,60 +345,60 @@
 **[InformationSystems/SomeDomainEquations/Factoid84/ReflApprox.lean](../InformationSystems/SomeDomainEquations/Factoid84/ReflApprox.lean)**
 
 @import "../InformationSystems/SomeDomainEquations/Factoid84/ReflApprox.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_lft_of_sumEntSet.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_lft_of_sumEntSet.lean)**
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_lft_of_sumEntSet.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_lft_of_sumEntSet.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_lft_of_sumEntSet.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/inlMap.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/inlMap.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_lft_of_sumEntSet.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/inlMap.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/inlMap.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/inlMap.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/copairMap.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/copairMap.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/inlMap.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/copairMap.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/copairMap.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/copairMap.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/SumCon_liftSumRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/SumCon_liftSumRight.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/copairMap.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/SumCon_liftSumRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/SumCon_liftSumRight.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/SumCon_liftSumRight.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_liftRht_of_right_only.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_liftRht_of_right_only.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/SumCon_liftSumRight.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_liftRht_of_right_only.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_liftRht_of_right_only.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_liftRht_of_right_only.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/SumCon_liftSumLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/SumCon_liftSumLeft.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_liftRht_of_right_only.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/SumCon_liftSumLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/SumCon_liftSumLeft.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/SumCon_liftSumLeft.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_u_of_inr_witness.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_u_of_inr_witness.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/SumCon_liftSumLeft.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_u_of_inr_witness.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_u_of_inr_witness.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_u_of_inr_witness.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/rhtFinset_eq_empty_or_mem.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/rhtFinset_eq_empty_or_mem.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_u_of_inr_witness.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset_eq_empty_or_mem.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset_eq_empty_or_mem.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/rhtFinset_eq_empty_or_mem.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/lftFinset_eq_empty_or_mem.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/lftFinset_eq_empty_or_mem.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/rhtFinset_eq_empty_or_mem.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/lftFinset_eq_empty_or_mem.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/lftFinset_eq_empty_or_mem.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/lftFinset_eq_empty_or_mem.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/eq_botElement_of_no_injections.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/eq_botElement_of_no_injections.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/lftFinset_eq_empty_or_mem.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/eq_botElement_of_no_injections.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/eq_botElement_of_no_injections.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/eq_botElement_of_no_injections.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_liftLft_of_left_only.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_liftLft_of_left_only.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/eq_botElement_of_no_injections.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_liftLft_of_left_only.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_liftLft_of_left_only.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_liftLft_of_left_only.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/comp_copairMap_inrMap.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/comp_copairMap_inrMap.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_liftLft_of_left_only.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/comp_copairMap_inrMap.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/comp_copairMap_inrMap.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/comp_copairMap_inrMap.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/subset_botElement_of_projections_empty.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/subset_botElement_of_projections_empty.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/comp_copairMap_inrMap.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/subset_botElement_of_projections_empty.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/subset_botElement_of_projections_empty.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/subset_botElement_of_projections_empty.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_empty_of_rel_bot_like.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_empty_of_rel_bot_like.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/subset_botElement_of_projections_empty.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_empty_of_rel_bot_like.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_empty_of_rel_bot_like.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_empty_of_rel_bot_like.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_u_of_inl_witness.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_u_of_inl_witness.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_empty_of_rel_bot_like.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_u_of_inl_witness.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_u_of_inl_witness.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/entSet_u_of_inl_witness.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/copairMap_unique.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/copairMap_unique.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_u_of_inl_witness.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/copairMap_unique.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/copairMap_unique.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/copairMap_unique.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/copairMap_unique.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/proposition_6_4.lean](../InformationSystems/ProductsAndSumsOfDomains/proposition_6_4.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64.lean"
-**[InformationSystems/ProductsAndSumsOfDomains/Proposition64/comp_copairMap_inlMap.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/comp_copairMap_inlMap.lean)**
+@import "../InformationSystems/ProductsAndSumsOfDomains/proposition_6_4.lean"
+**[InformationSystems/ProductsAndSumsOfDomains/Sum/comp_copairMap_inlMap.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/comp_copairMap_inlMap.lean)**
 
-@import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/comp_copairMap_inlMap.lean"
+@import "../InformationSystems/ProductsAndSumsOfDomains/Sum/comp_copairMap_inlMap.lean"
 **[BridgeTheorems/treeUnfold_treeFold.lean](treeUnfold_treeFold.lean)**
 
 @import "treeUnfold_treeFold.lean"

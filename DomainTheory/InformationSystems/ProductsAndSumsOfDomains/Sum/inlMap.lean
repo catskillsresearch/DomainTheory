@@ -1,7 +1,7 @@
 module
 
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.sumElement
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.entSet
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.sumElement
 public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 
