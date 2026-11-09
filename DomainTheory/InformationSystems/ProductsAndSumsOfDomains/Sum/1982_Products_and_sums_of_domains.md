@@ -5,7 +5,7 @@
 - [Introduction](1982_Introduction.md) [✓](../../../1982_REVISION.md)
 - [Definition 6.1: product system](1982_Definition_6_1.md) [✓](../../../1982_REVISION.md)
 - [Left injection](../Product/1982_mkLeft.md) [✓](../../../1982_REVISION.md)
-- [Right injection](../Product/1982_mkRight.md)
+- [Right injection](../Product/1982_mkRight.md) [✓](../../../1982_REVISION.md)
 - [Left lift](../Product/1982_liftLeft.md)
 - [Right lift](../Product/1982_liftRight.md)
 - [Pairing map](../Product/1982_pairMap.md)
