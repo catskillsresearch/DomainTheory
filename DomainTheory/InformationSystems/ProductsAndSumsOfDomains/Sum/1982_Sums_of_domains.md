@@ -18,7 +18,7 @@
 - [Definition 6.3: separated sum](1982_Definition_6_3.md) [✓](../../../1982_REVISION.md)
 - [Empty sum consistency](1982_SumCon_empty.md) [✓](../../../1982_REVISION.md)
 - [Sum library](1982_Sum.md) [✓](../../../1982_REVISION.md)
-- [Left sum lift](../Proposition64/1982_liftSumLeft.md)
+- [Left sum lift](../Proposition64/1982_liftSumLeft.md) [✓](../../../1982_REVISION.md)
 - [Right sum lift](../Proposition64/1982_liftSumRight.md)
 - [Sum entailment helpers](../Proposition64/1982_entSet.md)
 - [Sum elements](../Proposition64/1982_sumElement.md)

@@ -1,6 +1,6 @@
 module
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.botElement_eq_closure_empty
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement
+public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal

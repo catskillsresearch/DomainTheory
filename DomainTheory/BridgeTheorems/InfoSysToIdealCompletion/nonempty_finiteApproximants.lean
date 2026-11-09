@@ -3,7 +3,7 @@ module
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.finiteApproximants
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.mem_finiteApproximants_of_le
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.botFinite
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement
+public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Ideal
 public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_45

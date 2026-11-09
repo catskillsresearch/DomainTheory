@@ -2,7 +2,7 @@ module
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inrMap
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.inlMap
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.sumElement
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement
+public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order

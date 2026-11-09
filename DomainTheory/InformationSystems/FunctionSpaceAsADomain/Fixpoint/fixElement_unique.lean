@@ -2,7 +2,7 @@
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
+public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.Basic
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixElement_le_of_pre_fixed
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.toElement_fixElement_le

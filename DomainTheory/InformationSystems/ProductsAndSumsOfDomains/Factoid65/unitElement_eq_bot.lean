@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
+public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Factoid65.unitSystem
 
 @[expose] public section

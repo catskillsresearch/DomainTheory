@@ -1,1 +1,25 @@
 <!-- formalization -->
+
+**Definition (`InfoSys.instLeftCommutativeLiftSumLeft`).** Inserting left sum tokens is left-commutative, so finite left lifts are well-defined independently of insertion order.
+
+**Definition (`InfoSys.liftSumLeft`).** The left sum lift of a finite set $v \subseteq D_{\mathbf{A}}$ is the finite set of left tokens $(X, \Delta)$ for $X \in v$.
+
+**Theorem (`InfoSys.liftSumLeft.mem_foldr`).** Membership in a left sum lift built by folding insertion over a multiset equals membership of some left token over that multiset.
+
+*Proof.* Induction on the multiset, using the characterization of insert membership. □
+
+**Theorem (`InfoSys.liftSumLeft.mem`).** A sum token lies in the left lift of $v$ iff it is a left token of some $X \in v$.
+
+*Proof.* Unfold the lift and apply the fold characterization. □
+
+**Theorem (`InfoSys.liftSumLeft.lftFinset_eq`).** The left projection of a left sum lift recovers the original set $v$.
+
+*Proof.* Use the membership characterizations of left projection and of the lift. □
+
+**Theorem (`InfoSys.liftSumLeft.rhtFinset_eq`).** The right projection of a left sum lift is empty.
+
+*Proof.* Every token in the lift is a left token. □
+
+**Theorem (`InfoSys.liftSumLeft.con`).** The left sum lift of a consistent set $v$ is consistent in the separated sum.
+
+*Proof.* Left projection recovers $v$; right projection is empty. □

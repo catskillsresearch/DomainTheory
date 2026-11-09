@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.sumElement
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
+public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 
 @[expose] public section

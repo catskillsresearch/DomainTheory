@@ -2,7 +2,7 @@ module
 
 public import Mathlib.Order.Sum.Order
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.assembleSum
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement
+public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 public import Mathlib.Order.Hom.Basic

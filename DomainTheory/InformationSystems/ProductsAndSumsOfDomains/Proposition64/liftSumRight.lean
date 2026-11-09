@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
+public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 
 @[expose] public section
 

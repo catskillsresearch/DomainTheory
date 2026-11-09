@@ -2,7 +2,7 @@
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
+public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 
 @[expose] public section
 

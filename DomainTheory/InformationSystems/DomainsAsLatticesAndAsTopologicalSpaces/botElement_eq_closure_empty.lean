@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement
+public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid36
 
 @[expose] public section

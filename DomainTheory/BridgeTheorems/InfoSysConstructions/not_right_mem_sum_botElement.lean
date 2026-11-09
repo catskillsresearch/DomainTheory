@@ -1,7 +1,7 @@
 module
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.sumSystem
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.rhtFinset
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement
+public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot

@@ -1,12 +1,12 @@
 module
 
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33.botElement
+public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 
 @[expose] public section
 
 namespace DomainTheory.InformationSystems.InfoSys
 
-theorem theorem_33 :
+theorem factoid_3_3 :
     ∀ {α : Type*} [DecidableEq α] (sys : InfoSys α) (x : sys.Element),
       sys.botElement ≤ x :=
   @botElement.le

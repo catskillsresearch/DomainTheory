@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
+public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.FixChain
 
 @[expose] public section
