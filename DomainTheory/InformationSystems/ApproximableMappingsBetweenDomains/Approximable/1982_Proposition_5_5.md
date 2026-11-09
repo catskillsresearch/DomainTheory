@@ -2,8 +2,8 @@
 
 @import "1982_Proposition_5_5.english" {code_block=false}
 
-**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition55.lean](../Proposition55.lean)**
+**[InformationSystems/ApproximableMappingsBetweenDomains/proposition_5_5.lean](../proposition_5_5.lean)**
 
-@import "../Proposition55.lean"
+@import "../proposition_5_5.lean"
 
 <p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-08) — <a href="../../../1982_REVISION.md">1982 revision progress</a></p>

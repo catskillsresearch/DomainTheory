@@ -30,12 +30,12 @@
 **[InformationSystems/ApproximableMappingsBetweenDomains/Proposition54.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Proposition54.lean)**
 
 @import "../InformationSystems/ApproximableMappingsBetweenDomains/Proposition54.lean"
-**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/comp.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/comp.lean)**
+**[InformationSystems/ApproximableMappingsBetweenDomains/Approximable/comp.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/comp.lean)**
 
-@import "../InformationSystems/ApproximableMappingsBetweenDomains/Proposition55/comp.lean"
-**[InformationSystems/ApproximableMappingsBetweenDomains/Proposition55.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Proposition55.lean)**
+@import "../InformationSystems/ApproximableMappingsBetweenDomains/Approximable/comp.lean"
+**[InformationSystems/ApproximableMappingsBetweenDomains/proposition_5_5.lean](../InformationSystems/ApproximableMappingsBetweenDomains/proposition_5_5.lean)**
 
-@import "../InformationSystems/ApproximableMappingsBetweenDomains/Proposition55.lean"
+@import "../InformationSystems/ApproximableMappingsBetweenDomains/proposition_5_5.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Proposition64/instLeftCommutativeLiftSumLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Proposition64/instLeftCommutativeLiftSumLeft.lean)**
 
 @import "../InformationSystems/ProductsAndSumsOfDomains/Proposition64/instLeftCommutativeLiftSumLeft.lean"

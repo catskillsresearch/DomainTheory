@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.comp
 
 @[expose] public section
 

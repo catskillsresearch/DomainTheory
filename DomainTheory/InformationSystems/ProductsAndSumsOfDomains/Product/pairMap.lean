@@ -6,7 +6,7 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.p
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.liftLeft
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.liftRight
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55.comp
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.comp
 
 @[expose] public section
 

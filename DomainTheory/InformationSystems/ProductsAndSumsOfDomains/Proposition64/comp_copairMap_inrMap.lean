@@ -29,7 +29,7 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.rht_mem_Con_of_SumCon_lft_empty
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.copair_union_disj
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.SumCon_liftSumRight
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55.comp
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.comp
 
 @[expose] public section
 

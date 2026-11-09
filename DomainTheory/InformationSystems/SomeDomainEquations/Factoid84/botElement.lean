@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.comp
 public import DomainTheory.InformationSystems.ElementsOfASystem.topElement
 public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid84.P

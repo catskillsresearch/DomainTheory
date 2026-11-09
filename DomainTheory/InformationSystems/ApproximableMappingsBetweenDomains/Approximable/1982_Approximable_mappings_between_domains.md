@@ -9,8 +9,8 @@
 - [Proposition 5.3: element maps / pointwise comparison](1982_Proposition_5_3.md) [✓](../../../1982_REVISION.md)
 - [Identity map](../Proposition54/1982_idMap.md) [✓](../../../1982_REVISION.md)
 - [Proposition 5.4: identity mapping](../Proposition54/1982_Proposition_5_4.md) [✓](../../../1982_REVISION.md)
-- [Composition](../Proposition55/1982_comp.md) [✓](../../../1982_REVISION.md)
-- [Proposition 5.5: composition](../Proposition55/1982_Proposition_5_5.md) [✓](../../../1982_REVISION.md)
+- [Composition](1982_comp.md) [✓](../../../1982_REVISION.md)
+- [Proposition 5.5: composition](1982_Proposition_5_5.md) [✓](../../../1982_REVISION.md)
 - [Constant map](../Proposition56/1982_constMap.md) [✓](../../../1982_REVISION.md)
 - [Proposition 5.6: constant maps](../Proposition56/1982_Proposition_5_6.md) [✓](../../../1982_REVISION.md)
 

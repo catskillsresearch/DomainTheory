@@ -2,7 +2,7 @@ module
 
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition54
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.comp
 public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid33
 public import DomainTheory.InformationSystems.ElementsOfASystem.closure
 

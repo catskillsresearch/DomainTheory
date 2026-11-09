@@ -37,7 +37,7 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Propositi
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet_empty_of_rel_bot_like
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet_u_of_inl_witness
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Proposition64.entSet_u_of_inr_witness
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition55.comp
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.comp
 
 @[expose] public section
 

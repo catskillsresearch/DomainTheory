@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition54
+public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
 
 @[expose] public section
 
