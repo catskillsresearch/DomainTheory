@@ -22,4 +22,9 @@ noncomputable def continuousLattice_roundFilter_iso (hD : ContinuousLattice D) :
     D ≃o RoundFilter (D := D) :=
   ContinuousLatticeToNeighborhood.domainOrderIso hD
 
+/-- 1972 continuous lattice → 1980 round way-below filters. -/
+noncomputable abbrev bridge_1972_1980 {D : Type*} [CompleteLattice D] [DecidableEq D]
+    (hD : ContinuousLattice D) :=
+  continuousLattice_roundFilter_iso hD
+
 end DomainTheory.BridgeTheorems

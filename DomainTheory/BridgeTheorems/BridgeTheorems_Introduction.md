@@ -16,12 +16,20 @@ The main subtlety is that a naïve reading of “domains = filters of neighbourh
 
 The bridges are order isomorphisms of domains, and of the named construction objects, in `DomainTheory.BridgeTheorems`. They are not a 2-categorical equivalence of the full categories of continuous lattices, neighbourhood systems, and information systems with all morphisms.
 
+The three presentation-to-presentation bridges (year labels = source → target of the packaged order isomorphism):
+
+| Label | Years | Statement | Declaration | Note |
+| --- | --- | --- | --- | --- |
+| `bridge_1972_1980` | 1972 → 1980 | A continuous lattice `D` is order-isomorphic to its round way-below filters. | `continuousLattice_roundFilter_iso` (= `ContinuousLatticeToNeighborhood.domainOrderIso`) | [Round way-below filters](BridgeTheorems_Round_way_below_filters.md) / [Packaging the round-filter isomorphism](PresentationDomains/continuousLattice_roundFilter_iso.md) |
+| `bridge_1980_1982` | 1980 → 1982 | Filters of a neighbourhood basis are order-isomorphic to elements of the induced information system. | `NbhdBasis.domainOrderIso` (system via `neighborhoodSystem_to_infoSys`) | [Neighbourhood bases](BridgeTheorems_Neighbourhood_bases.md) / [Neighbourhood filters and information-system elements](NeighborhoodToInfoSys/domainOrderIso.md) |
+| `bridge_1982_1972` | 1982 → 1972 | Elements of an information system are order-isomorphic to ideals of its finite elements (algebraic / 1972 carrier). | `infoSys_to_idealCompletion` | [Ideals of finite elements](BridgeTheorems_Ideals_of_finite_elements.md) / [The ideal completion of an information system](InfoSysToIdealCompletion/Basic.md) |
+
+Related companions (same chapter, not the three year-pair labels above):
+
 | Bridge | Statement | Declaration |
 | --- | --- | --- |
-| Continuous lattice to round filters | A continuous lattice `D` is order-isomorphic to its round way-below filters. The neighbourhood system of those opens is `continuousLattice_to_neighborhoodSystem`. | `ContinuousLatticeToNeighborhood.domainOrderIso` |
-| Neighbourhood basis to an information system | A neighbourhood basis with decidable exhaustive codes induces an information system on those codes. Its filter domain is order-isomorphic to the elements of that system. | `neighborhoodSystem_to_infoSys`, `NbhdBasis.domainOrderIso` |
-| Information system to basic opens | An information system induces the neighbourhood system of its basic opens, and its elements are order-isomorphic to the filters of that system. | `infoSys_to_neighborhoodSystem`, `InfoSysToNeighborhood.domainOrderIso` |
-| Information system to ideals | The elements of an information system are order-isomorphic to the ideals of its finite elements. | `infoSys_to_idealCompletion` |
+| 1982 → 1980 (basic opens) | An information system induces the neighbourhood system of its basic opens; elements ≃o filters of that system. | `infoSys_to_neighborhoodSystem`, `InfoSysToNeighborhood.domainOrderIso` |
+| Neighbourhood system of way-below opens | The neighbourhood system associated with a continuous lattice. | `continuousLattice_to_neighborhoodSystem` |
 | Algebraic lattices | An algebraic complete lattice is a continuous lattice. | `idealCompletion_to_continuousLattice` |
 | Round three-way identification | For a continuous lattice with decidable equality, `D ≃o RoundInfoSysElement`, through `D ≃o RoundFilter ≃o RoundInfoSysElement`. | `presentation_domains_equiv` |
 

@@ -1,3 +1,16 @@
+### Landings (read this first)
+
+On this example the compared endpoints are three order isomorphisms of carriers, plus one domain equation. Their Lean homes in this barrel:
+
+| Landing | Years | Lean | Note |
+| --- | --- | --- | --- |
+| `sexNeighborhoodIso` | 1982 ≃o 1980 | `WorkedExampleSExpr/Basic.lean` | specialises `InfoSysToNeighborhood.domainOrderIso` |
+| `sexIdealIso` | 1982 ≃o 1972 carrier | `WorkedExampleSExpr/Basic.lean` | specialises `InfoSysToIdealCompletion.domainOrderIso` |
+| `sexNeighborhoodIdealIso` | 1980 ≃o 1972 carrier | `WorkedExampleSExpr/Basic.lean` | specialises `neighborhood_ideal_iso` |
+| `sexDomainEquationIso` | `T ≃o A+(T×T)` | `WorkedExampleSExpr/sexDomainEquationIso.lean` | specialises `treeDomainIso` |
+
+Existence wrappers (`exists_sexNeighborhoodIso`, `exists_sexIdealIso`, `exists_sexDomainEquationIso`) live in the matching `exists_sex*.lean` notes. The uncompared semantic factor `sexRhsSemanticIso` is **not** a landing of the fixed-point equation.
+
 Lean packaging:
 [`WorkedExampleSExpr.lean`](https://github.com/catskillsresearch/scott_models/blob/main/ScottModels/WorkedExampleSExpr.lean),
 [`SexDomainEquation.lean`](https://github.com/catskillsresearch/scott_models/blob/main/ScottModels/SexDomainEquation.lean).

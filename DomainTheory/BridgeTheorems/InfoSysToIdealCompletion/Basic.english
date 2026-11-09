@@ -1,3 +1,5 @@
 <!-- formalization -->
 
 **Definition (`infoSys_to_idealCompletion`).** The ideal completion of an information system is the order isomorphism between its elements and the ideals of its finite elements.
+
+**Definition (`bridge_1982_1972`).** Alias for that isomorphism, named by presentation years: 1982 information-system elements to the 1972 algebraic carrier (ideals of finite elements).

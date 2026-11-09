@@ -22,6 +22,12 @@ noncomputable abbrev sexIdealIso :
 noncomputable abbrev sexNeighborhoodIdealIso :=
   neighborhood_ideal_iso SexSys
 
+/-- SExpr landing: 1982 ≃o 1980. -/
+noncomputable abbrev sex_bridge_1982_1980 := sexNeighborhoodIso
+
+/-- SExpr landing: 1982 ≃o 1972 algebraic carrier. -/
+noncomputable abbrev sex_bridge_1982_1972 := sexIdealIso
+
 noncomputable abbrev sexIdScottContinuous : ScottContinuous SexSys SexSys :=
   (approximableMap_scottContinuous_equiv SexSys SexSys) (idMap SexSys)
 end DomainTheory.BridgeTheorems

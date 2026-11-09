@@ -28,6 +28,9 @@ def domainOrderIso : B.system.Element ≃o B.toInfoSys.Element where
     · intro h i hi
       exact h (B.nbhd i) hi
 
+/-- 1980 neighbourhood filters → 1982 information-system elements. -/
+abbrev bridge_1980_1982 (B : NbhdBasis ι α) := domainOrderIso (B := B)
+
 end NbhdBasis
 
 end DomainTheory.BridgeTheorems

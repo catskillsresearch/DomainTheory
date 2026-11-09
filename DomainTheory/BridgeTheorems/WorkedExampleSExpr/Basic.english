@@ -6,4 +6,8 @@
 
 **Definition (`sexNeighborhoodIdealIso`).** Filters of the basic-open neighbourhood system are order-isomorphic to ideals of finite elements, by composing the two previous isomorphisms.
 
+**Definition (`sex_bridge_1982_1980`).** Alias for `sexNeighborhoodIso`, the SExpr landing 1982 ≃o 1980.
+
+**Definition (`sex_bridge_1982_1972`).** Alias for `sexIdealIso`, the SExpr landing 1982 ≃o the 1972 algebraic carrier.
+
 **Definition (`sexIdScottContinuous`).** The identity function on tree elements, packaged as a Scott-continuous map.

@@ -2,6 +2,20 @@
 
 @import "BridgeTheorems_Illustrative_example.svg" {code_block=false}
 
+**Landings** for the S-expression / tree domain (`SexSys` over `lowerBoundSystem`). These are the compared endpoints of the example; everything else in this section builds or unpacks them.
+
+| Landing | Claim | Where |
+| --- | --- | --- |
+| `sexNeighborhoodIso` | `SexSys.Element ≃o` filters of basic opens (**1982 ≃o 1980**) | [Neighbourhood filters, ideals, and the identity](WorkedExampleSExpr/Basic.md) |
+| `sexIdealIso` | `SexSys.Element ≃o Ideal(FiniteElement SexSys)` (**1982 ≃o algebraic / 1972 carrier**) | [same note](WorkedExampleSExpr/Basic.md) |
+| `sexNeighborhoodIdealIso` | filters ≃o ideals (**1980 ≃o 1972 carrier**), closing the triangle | [same note](WorkedExampleSExpr/Basic.md) |
+| `sexDomainEquationIso` | `SexSys.Element ≃o SexRhs.Element` (**`T ≃o A + (T × T)`**) | [The tree equation as an order isomorphism](WorkedExampleSExpr/sexDomainEquationIso.md) |
+| `exists_sexNeighborhoodIso` | nonempty wrapper for the neighbourhood landing | [Existence of the neighbourhood-filter isomorphism](WorkedExampleSExpr/exists_sexNeighborhoodIso.md) |
+| `exists_sexIdealIso` | nonempty wrapper for the ideal landing | [Existence of the ideal isomorphism](WorkedExampleSExpr/exists_sexIdealIso.md) |
+| `exists_sexDomainEquationIso` | nonempty wrapper for the domain equation | [Existence of the tree-equation isomorphism](WorkedExampleSExpr/exists_sexDomainEquationIso.md) |
+
+Secondary (not the compared fixed-point landing): `sexRhsSemanticIso` is the generic semantic factor `WithBot (|A| ⊕ (|T| × |T|)) ≃o |A + (T × T)|` in [The semantic factor of the separated sum](WorkedExampleSExpr/sexRhsSemanticIso.md).
+
 - [The tree domain in three presentations](BridgeTheorems_Worked_example.md)
 - [The lower-bound system of the natural numbers](WorkedExampleSExpr/lowerBoundSystem.md)
 - [The tree information system](WorkedExampleSExpr/SexSys.md)

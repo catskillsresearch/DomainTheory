@@ -3,3 +3,5 @@
 **Definition (`domainOrderIso`).** The maps between neighbourhood filters and information-system elements form an order isomorphism.
 
 The two composites are the identity by the round-trip theorems; order is preserved because inclusion of filters matches inclusion of carriers of indices.
+
+**Definition (`bridge_1980_1982`).** Alias for that isomorphism, named by presentation years: 1980 neighbourhood filters to 1982 information-system elements.
