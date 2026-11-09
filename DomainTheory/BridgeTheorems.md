@@ -1,32 +1,14 @@
 # Equivalence of Scott's Three Presentations of Domain Theory
 
-Dana Scott developed three presentations of the same class of domains: **continuous
-lattices** (1972), **neighbourhood systems** (PRG-19 / 1980–81), and **information
-systems** (1982). In this chapter we supply **bridge theorems**: order
-isomorphisms and constructivity audits showing that the three presentations determine
-the same domains (up to isomorphism), including products, separated sums, and function
-spaces at the information-system level, with a transport of 1972 Scott maps along the
-round presentation.
+@import "BridgeTheorems.svg" {code_block=false}
 
-The Lean development is sorry-free. The continuous-lattice identification
-`D ≃o RoundFilter` audits to `{propext, Quot.sound}`. Every InfoSys-facing
-declaration inherits `Classical.choice` from Mathlib 4.33’s `Finset` instances,
-even when the proof term extracts no witness. Genuine classical frontiers remain
-Scott’s 1972 topological definition of `≪` (algebraic ⇒ continuous; ScottMap
-conjugation) and trichotomy for separated sums.
-
-**Dependencies.** Each box is one folder. BridgeTheorems is the Lean files in that folder, not in a subfolder. The arrowhead points at the folder that imports, and the number is how many direct imports. A pair of arrows between the same boxes is a cycle.
-
-@import "BridgeTheorems.mermaid"
-
-- [Introduction](BridgeTheorems/BridgeTheorems_Introduction.md)
-- [Catalog of bridge theorems](BridgeTheorems/BridgeTheorems_Catalog_of_bridge_theorems.md)
-- [Proof notes](BridgeTheorems/BridgeTheorems_Proof_notes.md)
-- [Constructivity summary](BridgeTheorems/BridgeTheorems_Constructivity_summary.md)
-- [Worked example — S-expressions / trees](BridgeTheorems/BridgeTheorems_Worked_example.md)
-- [ContinuousLatticeToNeighborhood](BridgeTheorems/ContinuousLatticeToNeighborhood/ContinuousLatticeToNeighborhood.md)
-- [InfoSysConstructions](BridgeTheorems/InfoSysConstructions/InfoSysConstructions.md)
-- [InfoSysToIdealCompletion](BridgeTheorems/InfoSysToIdealCompletion/InfoSysToIdealCompletion.md)
-- [InfoSysToNeighborhood](BridgeTheorems/InfoSysToNeighborhood/InfoSysToNeighborhood.md)
-- [NeighborhoodToInfoSys](BridgeTheorems/NeighborhoodToInfoSys/NeighborhoodToInfoSys.md)
-- [PresentationDomains](BridgeTheorems/PresentationDomains/PresentationDomains.md)
+- [Introduction](BridgeTheorems/BridgeTheorems_Introduction.md) [✓](BridgeTheorems_REVISION.md)
+- [Basic opens](BridgeTheorems/BridgeTheorems_Basic_opens.md)
+- [Neighbourhood bases](BridgeTheorems/BridgeTheorems_Neighbourhood_bases.md)
+- [Ideals of finite elements](BridgeTheorems/BridgeTheorems_Ideals_of_finite_elements.md)
+- [Round way-below filters](BridgeTheorems/BridgeTheorems_Round_way_below_filters.md)
+- [The round information system](BridgeTheorems/BridgeTheorems_Round_information_system.md)
+- [Products, sums, and the function space](BridgeTheorems/BridgeTheorems_Products_sums_function_space.md)
+- [Scott maps](BridgeTheorems/BridgeTheorems_Scott_maps.md)
+- [The tree equation](BridgeTheorems/BridgeTheorems_Tree_equation.md)
+- [Illustrative example](BridgeTheorems/BridgeTheorems_Illustrative_example.md)

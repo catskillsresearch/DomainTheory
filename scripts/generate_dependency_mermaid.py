@@ -133,6 +133,29 @@ IS_OUTLINE_SVGS = (
     IS_SEC8_SVG,
 )
 
+# Bridge theorems chapter hub (Graphviz SVG gold copy).
+BRIDGE_CHAPTER_SVG = DT / "BridgeTheorems.svg"
+BRIDGE_ROUND_WAY_BELOW_FILTERS_SVG = DT / "BridgeTheorems" / "BridgeTheorems_Round_way_below_filters.svg"
+BRIDGE_NEIGHBOURHOOD_BASES_SVG = DT / "BridgeTheorems" / "BridgeTheorems_Neighbourhood_bases.svg"
+BRIDGE_BASIC_OPENS_SVG = DT / "BridgeTheorems" / "BridgeTheorems_Basic_opens.svg"
+BRIDGE_IDEALS_OF_FINITE_ELEMENTS_SVG = DT / "BridgeTheorems" / "BridgeTheorems_Ideals_of_finite_elements.svg"
+BRIDGE_ROUND_INFORMATION_SYSTEM_SVG = DT / "BridgeTheorems" / "BridgeTheorems_Round_information_system.svg"
+BRIDGE_PRODUCTS_SUMS_FUNCTION_SPACE_SVG = DT / "BridgeTheorems" / "BridgeTheorems_Products_sums_function_space.svg"
+BRIDGE_SCOTT_MAPS_SVG = DT / "BridgeTheorems" / "BridgeTheorems_Scott_maps.svg"
+BRIDGE_TREE_EQUATION_SVG = DT / "BridgeTheorems" / "BridgeTheorems_Tree_equation.svg"
+BRIDGE_ILLUSTRATIVE_EXAMPLE_SVG = DT / "BridgeTheorems" / "BridgeTheorems_Illustrative_example.svg"
+BRIDGE_SECTION_SVGS = (
+    BRIDGE_ROUND_WAY_BELOW_FILTERS_SVG,
+    BRIDGE_NEIGHBOURHOOD_BASES_SVG,
+    BRIDGE_BASIC_OPENS_SVG,
+    BRIDGE_IDEALS_OF_FINITE_ELEMENTS_SVG,
+    BRIDGE_ROUND_INFORMATION_SYSTEM_SVG,
+    BRIDGE_PRODUCTS_SUMS_FUNCTION_SPACE_SVG,
+    BRIDGE_SCOTT_MAPS_SVG,
+    BRIDGE_TREE_EQUATION_SVG,
+    BRIDGE_ILLUSTRATIVE_EXAMPLE_SVG,
+)
+
 DEPRECATED_MERMAID = DT / "1972_Continuous_lattices.mermaid"
 CL1972_SECTION_MERMAIDS = frozenset(
     {
@@ -3176,12 +3199,18 @@ def gen_ns_outline_svg_lecture(
     fit_compress: bool = True,
     invis_chains: list[list[str]] | None = None,
     rank_groups: list[list[str]] | None = None,
+    prefer_note_module_set: bool = False,
+    restore_orphans: bool = False,
 ) -> str:
     """Item-level Lean deps for a 1980/1982 section hub (SVG gold copy).
 
     Ownership is each note's ``@import`` Lean files (plus companions). Edges are
     direct imports across owners (folder barrels resolve to owned leaves), then
     transitive reduction on the full graph — no outline-order edge filtering.
+
+    When ``prefer_note_module_set`` is true (Bridge folder hubs), ownership also
+    uses ``note_module_set`` so a note that only embeds a folder mermaid still
+    owns that folder's Lean.
     """
     _, old_labels, style = parse_preserve_tail(old if diagram.suffix == ".mermaid" else "")
     index_md = find_index_md(diagram)
@@ -3231,6 +3260,12 @@ def gen_ns_outline_svg_lecture(
                 for ln in child.read_text(encoding="utf-8", errors="ignore").splitlines()
             ):
                 mods |= modules_from_section_outline(child)
+            # Folder hubs that only embed a mermaid (no Lean @imports) still need
+            # to own that folder's modules; do not union when the note already
+            # lists Lean @imports (Worked example would otherwise claim the
+            # whole BridgeTheorems tree via note_module_set).
+            if prefer_note_module_set and not mods:
+                mods = note_module_set(child)
         if not mods:
             continue
         boxes.append((nid, old_labels.get(nid, default_lab), mods))
@@ -3281,6 +3316,8 @@ def gen_ns_outline_svg_lecture(
     # D16→Ord and left examples unreachable from Definition 1.1).
     kept = transitive_reduce(set(raw))
     edges = {(a, b): raw[(a, b)] for a, b in kept}
+    if restore_orphans:
+        edges = restore_orphan_outline_edges(raw, edges, set(order))
     node_labels = {nid: lab for nid, lab, _ in boxes}
 
     class_defs = [ln for ln in style if ln.strip().startswith("classDef ")]
@@ -3640,6 +3677,226 @@ IS_SEC8_SHORT: dict[str, tuple[str, str]] = {
     ),
     "Approximations of domains": ("DomA", "Approximations\nof domains"),
 }
+BRIDGE_CHAPTER_SHORT: dict[str, tuple[str, str]] = {
+    "Basic opens": ("Op", "Basic opens"),
+    "Neighbourhood bases": ("Nb", "Neighbourhood\nbases"),
+    "Ideals of finite elements": ("Id", "Ideals of finite\nelements"),
+    "Round way-below filters": ("Rf", "Round way-below\nfilters"),
+    "The round information system": ("Rd", "The round\ninformation system"),
+    "Products, sums, and the function space": ("Pr", "Products, sums,\nand the function\nspace"),
+    "Scott maps": ("Sc", "Scott maps"),
+    "The tree equation": ("Tr", "The tree equation"),
+    "Illustrative example": ("Ex", "Illustrative\nexample"),
+}
+
+BRIDGE_ROUND_WAY_BELOW_FILTERS_SHORT: dict[str, tuple[str, str]] = {
+    "The way-below open of a point": ("wayBelowUp", "The way-below open\nof a point"),
+    "The way-below open of the bottom": ("wayBelowUpbo", "The way-below open\nof the bottom"),
+    "Way-below opens reverse the order": ("wayBelowUpan", "Way-below opens\nreverse the order"),
+    "Intersection of way-below opens": ("wayBelowUpin", "Intersection of\nway-below opens"),
+    "Way-below opens as a neighbourhood system": ("toNeighborho", "Way-below opens as\na neighbourhood\nsystem"),
+    "Filters of way-below opens": ("Filter", "Filters of\nway-below opens"),
+    "Round filters": ("Round", "Round filters"),
+    "The type of round filters": ("RoundFilter", "The type of round\nfilters"),
+    "The principal round filter of a point": ("toFilter", "The principal\nround filter of a\npoint"),
+    "Principal filters are monotone": ("toFiltermono", "Principal filters\nare monotone"),
+    "Points of a principal filter": ("memwayBelowU", "Points of a\nprincipal filter"),
+    "Principal filters are round": ("toFilterisRo", "Principal filters\nare round"),
+    "Codes of a round filter": ("codes", "Codes of a round\nfilter"),
+    "The point recovered from a round filter": ("ofFilter", "The point\nrecovered from a\nround filter"),
+    "Recovery after taking the principal filter": ("ofFiltertoFi", "Recovery after\ntaking the\nprincipal filter"),
+    "The bottom belongs to the codes": ("botmemcodes", "The bottom belongs\nto the codes"),
+    "Codes of a round filter are nonempty": ("codesnonempt", "Codes of a round\nfilter are\nnonempty"),
+    "Codes of a round filter are directed": ("codesdirecte", "Codes of a round\nfilter are\ndirected"),
+    "A round filter consists of way-below opens": ("memwayBelowU2", "A round filter\nconsists of\nway-below opens"),
+    "A round filter is the principal filter of its point": ("toFilterofFi", "A round filter is\nthe principal\nfilter of its\npoint"),
+    "The embedding into round filters": ("domainEmbedd", "The embedding into\nround filters"),
+    "Round filters of a continuous lattice": ("domainOrderI", "Round filters of a\ncontinuous lattice"),
+    "The neighbourhood system of a continuous lattice": ("Basic", "The neighbourhood\nsystem of a\ncontinuous lattice"),
+    "Membership in the codes of a round filter": ("memcodesiff", "Membership in the\ncodes of a round\nfilter"),
+    "Codes of a round filter are a lower set": ("codeslower", "Codes of a round\nfilter are a lower\nset"),
+    "Packaging the round-filter isomorphism": ("continuousLa", "Packaging the\nround-filter\nisomorphism"),
+}
+BRIDGE_NEIGHBOURHOOD_BASES_SHORT: dict[str, tuple[str, str]] = {
+    "A neighbourhood basis": ("NbhdBasis", "A neighbourhood\nbasis"),
+    "Intersection of basic neighbourhoods": ("interOf", "Intersection of\nbasic\nneighbourhoods"),
+    "The empty intersection is the master set": ("interOfempty", "The empty\nintersection is\nthe master set"),
+    "Neighbourhoods sit inside the master set": ("nbhdsubsetma", "Neighbourhoods sit\ninside the master\nset"),
+    "Inserting into an intersection of neighbourhoods": ("interOfinser", "Inserting into an\nintersection of\nneighbourhoods"),
+    "A singleton intersection is one neighbourhood": ("interOfsingl", "A singleton\nintersection is\none neighbourhood"),
+    "A lower bound of the intersection": ("interOfmemof", "A lower bound of\nthe intersection"),
+    "Membership in an intersection of neighbourhoods": ("meminterOf", "Membership in an\nintersection of\nneighbourhoods"),
+    "Intersections reverse inclusion of index sets": ("interOfanti", "Intersections\nreverse inclusion\nof index sets"),
+    "Intersections sit inside the master set": ("interOfsubse", "Intersections sit\ninside the master\nset"),
+    "An intersection is contained in each of its neighbourhoods": ("interOfsubse2", "An intersection is\ncontained in each\nof its\nneighbourhoods"),
+    "A filter meets the intersections of its neighbourhoods": ("filtermemint", "A filter meets the\nintersections of\nits neighbourhoods"),
+    "The information system of a neighbourhood basis": ("toInfoSys", "The information\nsystem of a\nneighbourhood\nbasis"),
+    "A neighbourhood filter as an information-system element": ("toElement", "A neighbourhood\nfilter as an\ninformation-system\nelement"),
+    "An information-system element as a neighbourhood filter": ("ofElement", "An\ninformation-system\nelement as a\nneighbourhood"),
+    "The carrier of a filter read as an element": ("toElementcar", "The carrier of a\nfilter read as an\nelement"),
+    "Membership in the filter of an element": ("ofElementmem", "Membership in the\nfilter of an\nelement"),
+    "Return from information-system elements to filters": ("toElementofE", "Return from\ninformation-system\nelements to\nfilters"),
+    "Return from filters to information-system elements": ("ofElementtoE", "Return from\nfilters to\ninformation-system\nelements"),
+    "Neighbourhood filters and information-system elements": ("domainOrderI", "Neighbourhood\nfilters and\ninformation-system\nelements"),
+    "The information system induced by a neighbourhood basis": ("Neighborhood", "The information\nsystem induced by\na neighbourhood\nbasis"),
+}
+BRIDGE_BASIC_OPENS_SHORT: dict[str, tuple[str, str]] = {
+    "The basic open of the empty token set": ("basicOpenemp", "The basic open of\nthe empty token\nset"),
+    "Intersection of a singleton basic open": ("basicOpensin", "Intersection of a\nsingleton basic\nopen"),
+    "Membership in a singleton basic open": ("membasicOpen", "Membership in a\nsingleton basic\nopen"),
+    "Entailment from an inclusion of basic opens": ("entofbasicOp", "Entailment from an\ninclusion of basic\nopens"),
+    "Consistency from an inclusion of basic opens": ("conofbasicOp", "Consistency from\nan inclusion of\nbasic opens"),
+    "The neighbourhood system of basic opens": ("toNeighborho", "The neighbourhood\nsystem of basic\nopens"),
+    "Basic opens generated by singleton tokens": ("membasicOpen2", "Basic opens\ngenerated by\nsingleton tokens"),
+    "An element as a filter of basic opens": ("toFilter", "An element as a\nfilter of basic\nopens"),
+    "A filter of basic opens as an element": ("ofFilter", "A filter of basic\nopens as an\nelement"),
+    "Membership in a basic open": ("membasicOpen3", "Membership in a\nbasic open"),
+    "Return from filters of basic opens to elements": ("toFilterofFi", "Return from\nfilters of basic\nopens to elements"),
+    "Return from elements to filters of basic opens": ("ofFiltertoFi", "Return from\nelements to\nfilters of basic\nopens"),
+    "Information-system elements and filters of basic opens": ("domainOrderI", "Information-system\nelements and\nfilters of basic\nopens"),
+    "The neighbourhood system induced by an information system": ("InfoSysToNei", "The neighbourhood\nsystem induced by\nan information\nsystem"),
+}
+BRIDGE_IDEALS_OF_FINITE_ELEMENTS_SHORT: dict[str, tuple[str, str]] = {
+    "Compact elements": ("IsCompactEle", "Compact elements"),
+    "Algebraic lattices": ("AlgebraicLat", "Algebraic lattices"),
+    "Finite elements of an information system": ("FiniteElemen", "Finite elements of\nan information\nsystem"),
+    "The bottom element is finite": ("isFinitebot", "The bottom element\nis finite"),
+    "The bottom finite element": ("botFinite", "The bottom finite\nelement"),
+    "Finite approximants of an element": ("finiteApprox", "Finite\napproximants of an\nelement"),
+    "Finite approximants are directed": ("directedfini", "Finite\napproximants are\ndirected"),
+    "Finite approximants of a smaller element": ("memfiniteApp", "Finite\napproximants of a\nsmaller element"),
+    "Finite approximants are nonempty": ("nonemptyfini", "Finite\napproximants are\nnonempty"),
+    "An element bounds its finite approximants": ("leofmemfinit", "An element bounds\nits finite\napproximants"),
+    "Finite approximants form a lower set": ("isLowerSetfi", "Finite\napproximants form\na lower set"),
+    "The carrier of an ideal of finite elements": ("idealCarrier", "The carrier of an\nideal of finite\nelements"),
+    "Carriers of ideals are nonempty": ("nonemptyidea", "Carriers of ideals\nare nonempty"),
+    "Carriers of ideals are directed": ("directedidea", "Carriers of ideals\nare directed"),
+    "The ideal of finite approximants": ("toIdeal", "The ideal of\nfinite\napproximants"),
+    "The element determined by an ideal": ("ofIdeal", "The element\ndetermined by an\nideal"),
+    "Ideals of approximants are monotone": ("toIdealmono", "Ideals of\napproximants are\nmonotone"),
+    "Members of an ideal lie below its element": ("leofIdealofm", "Members of an\nideal lie below\nits element"),
+    "Return from ideals to their elements": ("toIdealofIde", "Return from ideals\nto their elements"),
+    "Return from elements to their ideals": ("ofIdealtoIde", "Return from\nelements to their\nideals"),
+    "Information-system elements and ideals of finite elements": ("domainOrderI", "Information-system\nelements and\nideals of finite\nelements"),
+    "The ideal completion of an information system": ("Basic", "The ideal\ncompletion of an\ninformation system"),
+    "Membership in the finite approximants": ("memfiniteApp2", "Membership in the\nfinite\napproximants"),
+    "Membership in the ideal of approximants": ("memtoIdealif", "Membership in the\nideal of\napproximants"),
+    "An algebraic lattice is a continuous lattice": ("IdealComplet", "An algebraic\nlattice is a\ncontinuous lattice"),
+}
+BRIDGE_ROUND_INFORMATION_SYSTEM_SHORT: dict[str, tuple[str, str]] = {
+    "The way-below neighbourhood basis": ("wayBelowNbhd", "The way-below\nneighbourhood\nbasis"),
+    "Round elements of the induced information system": ("IsRoundInfoS", "Round elements of\nthe induced\ninformation system"),
+    "The type of round information-system elements": ("RoundInfoSys", "The type of round\ninformation-system\nelements"),
+    "Round filters and round information-system elements": ("roundFilteri", "Round filters and\nround\ninformation-system\nelements"),
+    "Passing from round filters to round information-system elements": ("continuousLa", "Passing from round\nfilters to round\ninformation-system\nelements"),
+    "Round information-system elements and their ideals": ("roundInfoSys", "Round\ninformation-system\nelements and their\nideals"),
+    "A continuous lattice and its round information system": ("presentation", "A continuous\nlattice and its\nround information\nsystem"),
+    "A continuous lattice and the ideals of its round elements": ("presentation2", "A continuous\nlattice and the\nideals of its\nround elements"),
+    "Neighbourhood-basis elements and ideals": ("nbhdBasiside", "Neighbourhood-basis\nelements and\nideals"),
+    "Neighbourhood filters and ideals": ("neighborhood", "Neighbourhood\nfilters and ideals"),
+    "Existence of the round identification": ("Basic", "Existence of the\nround\nidentification"),
+    "The way-below basis determines a neighbourhood system": ("wayBelowNbhd2", "The way-below\nbasis determines a\nneighbourhood\nsystem"),
+}
+BRIDGE_PRODUCTS_SUMS_FUNCTION_SPACE_SHORT: dict[str, tuple[str, str]] = {
+    "Unpairing a product element": ("unpair", "Unpairing a\nproduct element"),
+    "Pairing followed by unpairing": ("unpairpairEl", "Pairing followed\nby unpairing"),
+    "Unpairing followed by pairing": ("pairElements", "Unpairing followed\nby pairing"),
+    "Pairing is monotone": ("pairElements2", "Pairing is\nmonotone"),
+    "The order on approximable maps": ("instPartialO", "The order on\napproximable maps"),
+    "The order of approximable maps, read on elements": ("approxMaptoE", "The order of\napproximable maps,\nread on elements"),
+    "Assembling a separated-sum element": ("assembleSum", "Assembling a\nseparated-sum\nelement"),
+    "Assembly is monotone": ("assembleSumm", "Assembly is\nmonotone"),
+    "Trichotomy of separated-sum elements": ("sumelementtr", "Trichotomy of\nseparated-sum\nelements"),
+    "Every separated-sum element arises by assembly": ("existsassemb", "Every\nseparated-sum\nelement arises by\nassembly"),
+    "Classifying a separated-sum element": ("classifySum", "Classifying a\nseparated-sum\nelement"),
+    "Classification after assembly": ("assembleSumc", "Classification\nafter assembly"),
+    "The bottom sum element has no left token": ("notleftmemsu", "The bottom sum\nelement has no\nleft token"),
+    "The bottom sum element has no right token": ("notrightmems", "The bottom sum\nelement has no\nright token"),
+    "Left tokens of a right singleton": ("lftFinsetsin", "Left tokens of a\nright singleton"),
+    "Right tokens of a left singleton": ("rhtFinsetsin", "Right tokens of a\nleft singleton"),
+    "The left bottom token in a left injection": ("leftbotmemin", "The left bottom\ntoken in a left\ninjection"),
+    "The right bottom token in a right injection": ("rightbotmemi", "The right bottom\ntoken in a right\ninjection"),
+    "Left injection of an element": ("sumElementLf", "Left injection of\nan element"),
+    "Right injection of an element": ("sumElementRh", "Right injection of\nan element"),
+    "Left injection of elements is injective": ("inlMaptoElem", "Left injection of\nelements is\ninjective"),
+    "Right injection of elements is injective": ("inrMaptoElem", "Right injection of\nelements is\ninjective"),
+    "Assembly is injective": ("assembleSumi", "Assembly is\ninjective"),
+    "Assembly after classification": ("classifySuma", "Assembly after\nclassification"),
+    "The order of left injections": ("inlMaptoElem2", "The order of left\ninjections"),
+    "The order of right injections": ("inrMaptoElem2", "The order of right\ninjections"),
+    "The product of two information systems": ("productDomai", "The product of two\ninformation\nsystems"),
+    "The separated sum of two information systems": ("sumDomainIso", "The separated sum\nof two information\nsystems"),
+    "The function space of two information systems": ("functionSpac", "The function space\nof two information\nsystems"),
+    "Names for the product, sum, and function-space isomorphisms": ("Basic", "Names for the\nproduct, sum, and\nfunction-space\nisomorphisms"),
+    "Unpairing is monotone": ("unpairmono", "Unpairing is\nmonotone"),
+    "Left tokens of a sum element agree": ("sumElementLf2", "Left tokens of a\nsum element agree"),
+    "Right tokens of a sum element agree": ("sumElementRh2", "Right tokens of a\nsum element agree"),
+}
+BRIDGE_SCOTT_MAPS_SHORT: dict[str, tuple[str, str]] = {
+    "Conjugate Scott maps": ("ConjScottMap", "Conjugate Scott\nmaps"),
+    "Scott-continuous maps that agree on elements": ("scottContinu", "Scott-continuous\nmaps that agree on\nelements"),
+    "The order on Scott-continuous maps": ("ScottMapBrid", "The order on\nScott-continuous\nmaps"),
+    "The underlying function of a conjugate Scott map": ("conjScottMap", "The underlying\nfunction of a\nconjugate Scott\nmap"),
+    "Evaluation of a conjugate Scott map": ("ScottMapBrid2", "Evaluation of a\nconjugate Scott\nmap"),
+    "The order of conjugate Scott maps on functions": ("conjScottMap2", "The order of\nconjugate Scott\nmaps on functions"),
+    "Conjugate Scott maps with the same Scott map": ("ext", "Conjugate Scott\nmaps with the same\nScott map"),
+    "The order on conjugate Scott maps": ("ScottMapBrid3", "The order on\nconjugate Scott\nmaps"),
+    "Conjugation of Scott maps along an order isomorphism": ("orderIso", "Conjugation of\nScott maps along\nan order\nisomorphism"),
+    "From an approximable map back to a Scott-continuous map": ("toScottConti", "From an\napproximable map\nback to a\nScott-continuous"),
+    "From a Scott-continuous map back to an approximable map": ("ofScottConti", "From a\nScott-continuous\nmap back to an\napproximable map"),
+    "Approximable maps and Scott-continuous maps": ("approximable", "Approximable maps\nand\nScott-continuous\nmaps"),
+    "Scott maps along the round presentation": ("ScottMapBrid4", "Scott maps along\nthe round\npresentation"),
+}
+BRIDGE_TREE_EQUATION_SHORT: dict[str, tuple[str, str]] = {
+    "The product of a tree system with itself": ("TreeProd", "The product of a\ntree system with\nitself"),
+    "Folding a sum token into a tree token": ("treeFold", "Folding a sum\ntoken into a tree\ntoken"),
+    "Inserting the unfolding of a tree token": ("unfoldInsert", "Inserting the\nunfolding of a\ntree token"),
+    "Unfolding commutes with insertion": ("SexDomainEqu", "Unfolding commutes\nwith insertion"),
+    "Inserting the folding of a sum token": ("foldInsert", "Inserting the\nfolding of a sum\ntoken"),
+    "Folding commutes with insertion": ("SexDomainEqu2", "Folding commutes\nwith insertion"),
+    "Folding yields the token or a pair of bottoms": ("treeFoldeqor", "Folding yields the\ntoken or a pair of\nbottoms"),
+    "Unfolding after folding a token": ("treeUnfoldtr", "Unfolding after\nfolding a token"),
+    "Unfolding a set of tree tokens": ("unfoldFinset", "Unfolding a set of\ntree tokens"),
+    "Folding a set of sum tokens": ("foldFinset", "Folding a set of\nsum tokens"),
+    "Fold membership after unfolding": ("memfoldrunfo", "Fold membership\nafter unfolding"),
+    "Membership in an unfolded token set": ("memunfoldFin", "Membership in an\nunfolded token set"),
+    "Fold membership after folding": ("memfoldrfold", "Fold membership\nafter folding"),
+    "Membership in a folded token set": ("memfoldFinse", "Membership in a\nfolded token set"),
+    "Unfolding a folded token set": ("unfoldFinset2", "Unfolding a folded\ntoken set"),
+    "Left tokens of an unfolding": ("lftFinsetima", "Left tokens of an\nunfolding"),
+    "Right tokens of an unfolding": ("rhtFinsetima", "Right tokens of an\nunfolding"),
+    "Left pair-bottom entailment": ("TreeEntpairL", "Left pair-bottom\nentailment"),
+    "Right pair-bottom entailment": ("TreeEntpairR", "Right pair-bottom\nentailment"),
+    "Consistency of an unfolded token set": ("TreeConimage", "Consistency of an\nunfolded token set"),
+    "Tree entailment and sum entailment": ("TreeEntsumEn", "Tree entailment\nand sum entailment"),
+    "Consistency of a folded token set": ("SumConimaget", "Consistency of a\nfolded token set"),
+    "Sum entailment after folding": ("SumEnttreeFo", "Sum entailment\nafter folding"),
+    "A closed element contains both pair bottoms": ("memclosedpai", "A closed element\ncontains both pair\nbottoms"),
+    "Closed tree elements are saturated for unfolding": ("saturatedofc", "Closed tree\nelements are\nsaturated for\nunfolding"),
+    "Unfolding a tree element": ("unfoldElemen", "Unfolding a tree\nelement"),
+    "Folding a sum-of-product element": ("foldElement", "Folding a\nsum-of-product\nelement"),
+    "Unfolding after folding an element": ("unfoldElemen2", "Unfolding after\nfolding an element"),
+    "Folding after unfolding an element": ("foldElementu", "Folding after\nunfolding an\nelement"),
+    "A tree domain and the separated sum of its square": ("treeDomainIs", "A tree domain and\nthe separated sum\nof its square"),
+}
+BRIDGE_ILLUSTRATIVE_EXAMPLE_SHORT: dict[str, tuple[str, str]] = {
+    "The lower-bound system of the natural numbers": ("lowerBoundSy", "The lower-bound\nsystem of the\nnatural numbers"),
+    "The tree information system": ("SexSys", "The tree\ninformation system"),
+    "The sum-of-product information system": ("SexRhs", "The sum-of-product\ninformation system"),
+    "Singleton atom elements": ("sexAtom", "Singleton atom\nelements"),
+    "The tree equation as an order isomorphism": ("sexDomainEqu", "The tree equation\nas an order\nisomorphism"),
+    "The semantic factor of the separated sum": ("sexRhsSemant", "The semantic\nfactor of the\nseparated sum"),
+    "Neighbourhood filters, ideals, and the identity on the tree domain": ("Basic", "Neighbourhood\nfilters, ideals,\nand the identity\non the tree domain"),
+    "The right-hand side is a separated sum of a product": ("sexRhseqsump", "The right-hand\nside is a\nseparated sum of a\nproduct"),
+    "An atom belongs to its singleton closure": ("sexAtommemse", "An atom belongs to\nits singleton\nclosure"),
+    "Unfolding an atom into the left summand": ("sexUnfoldato", "Unfolding an atom\ninto the left\nsummand"),
+    "Unfolding along the tree equation": ("sexDomainEqu2", "Unfolding along\nthe tree equation"),
+    "Folding along the tree equation": ("sexDomainEqu3", "Folding along the\ntree equation"),
+    "Existence of the tree-equation isomorphism": ("existssexDom", "Existence of the\ntree-equation\nisomorphism"),
+    "Existence of the neighbourhood-filter isomorphism": ("existssexNei", "Existence of the\nneighbourhood-filter\nisomorphism"),
+    "Existence of the ideal isomorphism": ("existssexIde", "Existence of the\nideal isomorphism"),
+    "The identity map on tree elements": ("sexIdtoEleme", "The identity map\non tree elements"),
+}
 
 
 def _is_outline_header(index_name: str) -> list[str]:
@@ -3783,6 +4040,158 @@ def gen_is_sec8_lecture(diagram: Path, modules: dict[str, Path], old: str) -> st
             ["DomA", "E84"],
         ],
     )
+
+
+def gen_bridge_chapter_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    # Invisible spine keeps the nine section barrels stacked in outline order
+    # (import edges alone leave parallel components side-by-side under TD).
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=BRIDGE_CHAPTER_SHORT,
+        companions={},
+        header=_is_outline_header("BridgeTheorems.md"),
+        aggregate_lecture_exercises=False,
+        recursive_barrels=True,
+        rankdir="TD",
+        invis_chains=[["Op", "Nb", "Id", "Rf", "Rd", "Pr", "Sc", "Tr", "Ex"]],
+        prefer_note_module_set=True,
+        restore_orphans=True,
+        display_scale=0.75,
+        fit_compress=False,
+    )
+
+def gen_bridge_round_way_below_filters_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=BRIDGE_ROUND_WAY_BELOW_FILTERS_SHORT,
+        companions={},
+        header=_is_outline_header("BridgeTheorems_Round_way_below_filters.md"),
+        aggregate_lecture_exercises=False,
+        rankdir="TD",
+        restore_orphans=True,
+        display_scale=0.55,
+    )
+
+def gen_bridge_neighbourhood_bases_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=BRIDGE_NEIGHBOURHOOD_BASES_SHORT,
+        companions={},
+        header=_is_outline_header("BridgeTheorems_Neighbourhood_bases.md"),
+        aggregate_lecture_exercises=False,
+        rankdir="TD",
+        restore_orphans=True,
+        display_scale=0.55,
+    )
+
+def gen_bridge_basic_opens_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=BRIDGE_BASIC_OPENS_SHORT,
+        companions={},
+        header=_is_outline_header("BridgeTheorems_Basic_opens.md"),
+        aggregate_lecture_exercises=False,
+        rankdir="TD",
+        restore_orphans=True,
+        display_scale=0.55,
+    )
+
+def gen_bridge_ideals_of_finite_elements_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=BRIDGE_IDEALS_OF_FINITE_ELEMENTS_SHORT,
+        companions={},
+        header=_is_outline_header("BridgeTheorems_Ideals_of_finite_elements.md"),
+        aggregate_lecture_exercises=False,
+        rankdir="TD",
+        restore_orphans=True,
+        display_scale=0.55,
+    )
+
+def gen_bridge_round_information_system_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=BRIDGE_ROUND_INFORMATION_SYSTEM_SHORT,
+        companions={},
+        header=_is_outline_header("BridgeTheorems_Round_information_system.md"),
+        aggregate_lecture_exercises=False,
+        rankdir="TD",
+        restore_orphans=True,
+        display_scale=0.55,
+    )
+
+def gen_bridge_products_sums_function_space_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=BRIDGE_PRODUCTS_SUMS_FUNCTION_SPACE_SHORT,
+        companions={},
+        header=_is_outline_header("BridgeTheorems_Products_sums_function_space.md"),
+        aggregate_lecture_exercises=False,
+        rankdir="TD",
+        restore_orphans=True,
+        display_scale=0.55,
+    )
+
+def gen_bridge_scott_maps_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=BRIDGE_SCOTT_MAPS_SHORT,
+        companions={},
+        header=_is_outline_header("BridgeTheorems_Scott_maps.md"),
+        aggregate_lecture_exercises=False,
+        rankdir="TD",
+        restore_orphans=True,
+        display_scale=0.55,
+    )
+
+def gen_bridge_tree_equation_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=BRIDGE_TREE_EQUATION_SHORT,
+        companions={},
+        header=_is_outline_header("BridgeTheorems_Tree_equation.md"),
+        aggregate_lecture_exercises=False,
+        rankdir="TD",
+        restore_orphans=True,
+        display_scale=0.55,
+    )
+
+def gen_bridge_illustrative_example_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
+    return gen_ns_outline_svg_lecture(
+        diagram,
+        modules,
+        old,
+        short=BRIDGE_ILLUSTRATIVE_EXAMPLE_SHORT,
+        companions={},
+        header=_is_outline_header("BridgeTheorems_Illustrative_example.md"),
+        aggregate_lecture_exercises=False,
+        rankdir="TD",
+        restore_orphans=True,
+        display_scale=0.55,
+    )
+
+
+
+
+
 
 
 def gen_ns_domains_lecture(diagram: Path, modules: dict[str, Path], old: str) -> str:
@@ -4190,6 +4599,26 @@ def classify(mermaid: Path, text: str) -> str:
         "1980_Retracts_of_the_universal_domain.svg",
     ):
         return "ns_retracts_lecture"
+    if mermaid.name in ("BridgeTheorems.mermaid", "BridgeTheorems.svg"):
+        return "bridge_chapter_lecture"
+    if mermaid.name in ("BridgeTheorems_Round_way_below_filters.mermaid", "BridgeTheorems_Round_way_below_filters.svg"):
+        return "bridge_round_way_below_filters_lecture"
+    if mermaid.name in ("BridgeTheorems_Neighbourhood_bases.mermaid", "BridgeTheorems_Neighbourhood_bases.svg"):
+        return "bridge_neighbourhood_bases_lecture"
+    if mermaid.name in ("BridgeTheorems_Basic_opens.mermaid", "BridgeTheorems_Basic_opens.svg"):
+        return "bridge_basic_opens_lecture"
+    if mermaid.name in ("BridgeTheorems_Ideals_of_finite_elements.mermaid", "BridgeTheorems_Ideals_of_finite_elements.svg"):
+        return "bridge_ideals_of_finite_elements_lecture"
+    if mermaid.name in ("BridgeTheorems_Round_information_system.mermaid", "BridgeTheorems_Round_information_system.svg"):
+        return "bridge_round_information_system_lecture"
+    if mermaid.name in ("BridgeTheorems_Products_sums_function_space.mermaid", "BridgeTheorems_Products_sums_function_space.svg"):
+        return "bridge_products_sums_function_space_lecture"
+    if mermaid.name in ("BridgeTheorems_Scott_maps.mermaid", "BridgeTheorems_Scott_maps.svg"):
+        return "bridge_scott_maps_lecture"
+    if mermaid.name in ("BridgeTheorems_Tree_equation.mermaid", "BridgeTheorems_Tree_equation.svg"):
+        return "bridge_tree_equation_lecture"
+    if mermaid.name in ("BridgeTheorems_Illustrative_example.mermaid", "BridgeTheorems_Illustrative_example.svg"):
+        return "bridge_illustrative_example_lecture"
     if mermaid.name in ("1982_InformationSystems.mermaid", "1982_InformationSystems.svg"):
         return "is_chapter_lecture"
     if mermaid.name in (
@@ -4353,6 +4782,26 @@ def regenerate_one(mermaid: Path, modules: dict[str, Path]) -> str | None:
         return gen_ns_computability_lecture(mermaid, modules, old)
     if kind == "ns_retracts_lecture":
         return gen_ns_retracts_lecture(mermaid, modules, old)
+    if kind == "bridge_chapter_lecture":
+        return gen_bridge_chapter_lecture(mermaid, modules, old)
+    if kind == "bridge_round_way_below_filters_lecture":
+        return gen_bridge_round_way_below_filters_lecture(mermaid, modules, old)
+    if kind == "bridge_neighbourhood_bases_lecture":
+        return gen_bridge_neighbourhood_bases_lecture(mermaid, modules, old)
+    if kind == "bridge_basic_opens_lecture":
+        return gen_bridge_basic_opens_lecture(mermaid, modules, old)
+    if kind == "bridge_ideals_of_finite_elements_lecture":
+        return gen_bridge_ideals_of_finite_elements_lecture(mermaid, modules, old)
+    if kind == "bridge_round_information_system_lecture":
+        return gen_bridge_round_information_system_lecture(mermaid, modules, old)
+    if kind == "bridge_products_sums_function_space_lecture":
+        return gen_bridge_products_sums_function_space_lecture(mermaid, modules, old)
+    if kind == "bridge_scott_maps_lecture":
+        return gen_bridge_scott_maps_lecture(mermaid, modules, old)
+    if kind == "bridge_tree_equation_lecture":
+        return gen_bridge_tree_equation_lecture(mermaid, modules, old)
+    if kind == "bridge_illustrative_example_lecture":
+        return gen_bridge_illustrative_example_lecture(mermaid, modules, old)
     if kind == "is_chapter_lecture":
         return gen_is_chapter_lecture(mermaid, modules, old)
     if kind == "is_sec2_lecture":
@@ -4727,6 +5176,8 @@ def main() -> None:
             NS_COMP_SVG,
             NS_RET_SVG,
             *IS_OUTLINE_SVGS,
+            BRIDGE_CHAPTER_SVG,
+            *BRIDGE_SECTION_SVGS,
         ):
             # Create empty stub so first --write can generate SVG gold copies.
             if not svg.is_file():
