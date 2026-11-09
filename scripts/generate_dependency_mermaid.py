@@ -3510,10 +3510,22 @@ IS_SEC6_SUMS_SHORT: dict[str, tuple[str, str]] = {
     ),
 }
 IS_SEC7_SHORT: dict[str, tuple[str, str]] = {
-    "Definition 7.1": ("D71", "Definition 7.1"),
-    "Theorem 7.2": ("T72", "Theorem 7.2"),
-    "Theorem 7.3": ("T73", "Theorem 7.3"),
-    "Proposition 7.4": ("P74", "Proposition 7.4"),
+    "Definition 7.1: function space as an information system": (
+        "D71",
+        "Definition 7.1:\nfunction space as an\ninformation system",
+    ),
+    "Theorem 7.2: elements, apply, and curry": (
+        "T72",
+        "Theorem 7.2:\nelements, apply, and curry",
+    ),
+    "Theorem 7.3: least fixed-point operator": (
+        "T73",
+        "Theorem 7.3:\nleast fixed-point operator",
+    ),
+    "Proposition 7.4: equational uniqueness of fix": (
+        "P74",
+        "Proposition 7.4:\nequational uniqueness of fix",
+    ),
 }
 IS_SEC8_SHORT: dict[str, tuple[str, str]] = {
     "Factoid 8.1": ("F81", "Factoid 8.1"),

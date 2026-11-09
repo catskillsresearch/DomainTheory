@@ -1893,7 +1893,7 @@ alignment:
         ApproximableMap and (functionSystem A B).Element.
     - source: 'Scott 1982, Definition 7.1: the function-space information system A → B'
       lean: functionSystem
-      module: Challenge (definition), FunctionSpace.lean
+      module: Challenge (definition), functionSystem.lean
       status: proved
       note: Compared as a definition. Tokens are FunToken; consistency is FunCon; entailment is the constructive
         witness form FunEnt.

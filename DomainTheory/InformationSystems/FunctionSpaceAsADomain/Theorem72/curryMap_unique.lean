@@ -1,7 +1,7 @@
 module
 
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.functionSystem
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.comp
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_2
