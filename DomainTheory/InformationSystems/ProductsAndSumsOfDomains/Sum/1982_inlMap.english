@@ -1,1 +1,7 @@
 <!-- formalization -->
+
+**Definition (`ApproximableMap.inlMap`).** The left injection $\mathrm{inl} : \mathbf{A} \to \mathbf{A}+\mathbf{B}$ relates a consistent $v$ to a sum set $u$ when $u$ is consistent with empty right projection and $v$ entails the left projection of $u$.
+
+**Theorem (`ApproximableMap.inlMap.toElement_sumElementLft`).** Applying the left injection's element map to the left element of a sum element $z$ that contains a left token recovers $z$.
+
+*Proof.* One inclusion uses left closure under the related entailment and excludes right tokens by the empty right projection; the other rebuilds relatedness from left carriers and excludes right tokens by injection separation. □
