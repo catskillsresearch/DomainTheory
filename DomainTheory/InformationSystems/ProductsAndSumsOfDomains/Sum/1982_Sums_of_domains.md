@@ -21,7 +21,7 @@
 - [Left sum lift](1982_liftSumLeft.md) [✓](../../../1982_REVISION.md)
 - [Right sum lift](1982_liftSumRight.md) [✓](../../../1982_REVISION.md)
 - [Sum entailment](1982_entSet.md) [✓](../../../1982_REVISION.md)
-- [Sum elements](1982_sumElement.md)
+- [Sum elements](1982_sumElement.md) [✓](../../../1982_REVISION.md)
 - [Left injection map](1982_inlMap.md)
 - [Right injection map](1982_inrMap.md)
 - [Copairing map](1982_copairMap.md)

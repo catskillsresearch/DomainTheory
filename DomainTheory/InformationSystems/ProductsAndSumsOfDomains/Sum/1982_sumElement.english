@@ -1,1 +1,21 @@
 <!-- formalization -->
+
+**Definition (`ApproximableMap.sumLftCarrier`).** The left carrier of a sum element $z$ is the set of tokens $X$ of $\mathbf{A}$ such that $(X,\Delta)$ lies in $z$.
+
+**Definition (`ApproximableMap.sumRhtCarrier`).** The right carrier of a sum element $z$ is the set of tokens $Y$ of $\mathbf{B}$ such that $(\Delta,Y)$ lies in $z$.
+
+**Theorem (`ApproximableMap.not_mem_right_of_mem_left`).** A sum element cannot contain both a left token and a right token.
+
+*Proof.* The two-point set of those tokens would be consistent in $z$, contradicting separated-sum consistency. □
+
+**Theorem (`ApproximableMap.eq_botElement_of_no_injections`).** If a sum element contains neither left nor right tokens, it is the bottom element.
+
+*Proof.* Only the sum bottom token can remain, and bottom is least. □
+
+**Theorem (`ApproximableMap.subset_botElement_of_projections_empty`).** A finite sum set with empty left and right projections sits inside the bottom element.
+
+*Proof.* Every member must be the sum bottom token. □
+
+**Definition (`ApproximableMap.sumElementLft`).** Given a sum element $z$ containing a left token $(X_0,\Delta)$, the left element of $z$ is the $\mathbf{A}$-element whose carrier is the left carrier of $z$.
+
+**Definition (`ApproximableMap.sumElementRht`).** Given a sum element $z$ containing a right token $(\Delta,Y_0)$, the right element of $z$ is the $\mathbf{B}$-element whose carrier is the right carrier of $z$.
