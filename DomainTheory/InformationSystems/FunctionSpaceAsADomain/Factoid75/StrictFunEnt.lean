@@ -3,7 +3,7 @@ module
 
 public import Mathlib.Data.Multiset.MapFold
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.functionSystem
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.theorem_7_2
 public import DomainTheory.InformationSystems.InformationSystems.a_second_example
 public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 public import DomainTheory.InformationSystems.ElementsOfASystem.closure

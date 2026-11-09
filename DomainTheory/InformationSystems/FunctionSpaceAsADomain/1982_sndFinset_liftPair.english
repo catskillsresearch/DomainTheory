@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`sndFinset_liftPair`).** The second projection of a product lift is the second projection of the left lift united with the second set.
+
+*Proof.* Expand the lift as a finite union and apply second-projection lemmas. □

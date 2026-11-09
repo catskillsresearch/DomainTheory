@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`pairElements`).** The paired element of $x\in|\mathbf{A}|$ and $y\in|\mathbf{B}|$ consists of those product tokens whose non-bottom sides lie in the corresponding factors.

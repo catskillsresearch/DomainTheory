@@ -1,11 +1,11 @@
 module
 
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.theorem_7_2
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.pairOpUncurry
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.constOp
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.uncurry_curryMap
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.applyMap_toElement
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.uncurry_curryMap
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.applyMap_toElement
 
 @[expose] public section
 

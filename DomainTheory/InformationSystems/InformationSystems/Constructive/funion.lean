@@ -161,6 +161,15 @@ theorem left_comm (a b c : Finset α) :
       · exact mem.mpr (Or.inl h)
       · exact mem.mpr (Or.inr (mem.mpr (Or.inr h)))
 
+theorem self (a : Finset α) : a ∪' a = a := by
+  ext x
+  constructor
+  · intro hx
+    rcases mem.mp hx with h | h <;> exact h
+  · intro hx
+    exact mem.mpr (Or.inl hx)
+
+
 end funion
 
 end DomainTheory.InformationSystems.Constructive

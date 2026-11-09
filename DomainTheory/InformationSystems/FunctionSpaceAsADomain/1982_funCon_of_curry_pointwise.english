@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`funCon_of_curry_pointwise`).** For a fixed consistent left component, the set of fun tokens related pointwise by a product map is consistent in the function space.
+
+*Proof.* Reduce a consistent input selection to a product relation and invoke consistency of the product map’s outputs. □

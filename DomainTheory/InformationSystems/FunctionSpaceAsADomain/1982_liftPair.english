@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`liftPair`).** The product lift of consistent sets $u$ and $v$ is the finite union of the left lift of $u$ with the right lift of $v$.

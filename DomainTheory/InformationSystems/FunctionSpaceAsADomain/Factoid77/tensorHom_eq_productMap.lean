@@ -1,7 +1,7 @@
 
 module
 
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.theorem_7_2
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Factoid65
 public import Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
 public import Mathlib.CategoryTheory.Monoidal.Closed.Basic

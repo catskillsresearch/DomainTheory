@@ -7,7 +7,7 @@ public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.WithBot
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.theorem_7_2
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_4
 
 @[expose] public section

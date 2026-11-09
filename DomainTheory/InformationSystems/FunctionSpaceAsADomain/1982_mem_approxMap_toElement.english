@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_approxMap_toElement`).** A fun token lies in the element of an approximable map precisely when the map relates its input to its output.
+
+*Proof.* Unfold the carrier of the associated element. □

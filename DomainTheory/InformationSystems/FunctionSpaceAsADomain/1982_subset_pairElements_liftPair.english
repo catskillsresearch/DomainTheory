@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`subset_pairElements_liftPair`).** The product lift of finite sets from each factor lies in the paired element.
+
+*Proof.* Unite the left- and right-lift inclusions. □

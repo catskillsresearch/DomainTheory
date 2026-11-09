@@ -60,7 +60,7 @@ flowchart LR
     F46["Factoid46"]
     P53["proposition_5_3"]
     P64["Sum"]
-    T72["Theorem72"]
+    T72["theorem_7_2"]
     F81["Factoid81"]
   end
   subgraph local["ScottModels"]

@@ -297,51 +297,45 @@
 **[InformationSystems/ProductsAndSumsOfDomains/proposition_6_2.lean](../InformationSystems/ProductsAndSumsOfDomains/proposition_6_2.lean)**
 
 @import "../InformationSystems/ProductsAndSumsOfDomains/proposition_6_2.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/liftPair.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/liftPair.lean)**
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/liftPair.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/liftPair.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/liftPair.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/funion_self.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/funion_self.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/liftPair.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/ProdCon_liftPair.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/ProdCon_liftPair.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/funion_self.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/funion_comm_β.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/funion_comm_β.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/ProdCon_liftPair.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/fstFinset_liftPair.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/fstFinset_liftPair.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/funion_comm_β.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/ProdCon_liftPair.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/ProdCon_liftPair.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/fstFinset_liftPair.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/mkFunToken.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/mkFunToken.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/ProdCon_liftPair.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/fstFinset_liftPair.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/fstFinset_liftPair.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/mkFunToken.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/applyMap.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/applyMap.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/fstFinset_liftPair.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/mkFunToken.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/mkFunToken.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/applyMap.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/sndFinset_liftPair.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/sndFinset_liftPair.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/mkFunToken.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/applyMap.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/applyMap.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/sndFinset_liftPair.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/entSet_liftPair.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/entSet_liftPair.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/applyMap.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/sndFinset_liftPair.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/sndFinset_liftPair.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/entSet_liftPair.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/pairElements.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/pairElements.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/sndFinset_liftPair.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/entSet_liftPair.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/entSet_liftPair.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/pairElements.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/uncurryMap.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/uncurryMap.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/entSet_liftPair.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/pairElements.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/pairElements.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/uncurryMap.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/rel_input_output_union.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/rel_input_output_union.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/pairElements.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/uncurryMap.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/uncurryMap.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/rel_input_output_union.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funCon_of_approxMap.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funCon_of_approxMap.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/uncurryMap.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/rel_input_output_union.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/rel_input_output_union.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funCon_of_approxMap.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/approxMap_toElement.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/approxMap_toElement.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/rel_input_output_union.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/funCon_of_approxMap.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/funCon_of_approxMap.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/approxMap_toElement.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/element_toApproxMap.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/element_toApproxMap.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/funCon_of_approxMap.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/approxMap_toElement.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/approxMap_toElement.lean)**
-
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/approxMap_toElement.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/element_toApproxMap.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/element_toApproxMap.lean)**
-
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/element_toApproxMap.lean"
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/element_toApproxMap.lean"
 **[InformationSystems/SomeDomainEquations/Factoid84/ReflApprox.lean](../InformationSystems/SomeDomainEquations/Factoid84/ReflApprox.lean)**
 
 @import "../InformationSystems/SomeDomainEquations/Factoid84/ReflApprox.lean"
@@ -420,63 +414,63 @@
 **[BridgeTheorems/SexDomainEquation.lean](SexDomainEquation.lean)**
 
 @import "SexDomainEquation.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/rel_of_funTokens.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/rel_of_funTokens.lean)**
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/rel_of_funTokens.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/rel_of_funTokens.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/rel_of_funTokens.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/funCon_of_curry_pointwise.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/funCon_of_curry_pointwise.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/rel_of_funTokens.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funCon_of_curry_pointwise.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funCon_of_curry_pointwise.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/funCon_of_curry_pointwise.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/curryMap.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/curryMap.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/funCon_of_curry_pointwise.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/curryMap.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/curryMap.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/curryMap.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/approxMap_toElement_element_toApproxMap.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/approxMap_toElement_element_toApproxMap.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/curryMap.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/approxMap_toElement_element_toApproxMap.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/approxMap_toElement_element_toApproxMap.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/approxMap_toElement_element_toApproxMap.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/theorem_7_2.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/theorem_7_2.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/approxMap_toElement_element_toApproxMap.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/theorem_7_2.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/theorem_7_2.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/theorem_7_2.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/sndMap_pairElements.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/sndMap_pairElements.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/theorem_7_2.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/sndMap_pairElements.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/sndMap_pairElements.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/sndMap_pairElements.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/subset_pairElements_liftRight.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/subset_pairElements_liftRight.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/sndMap_pairElements.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/subset_pairElements_liftRight.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/subset_pairElements_liftRight.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/subset_pairElements_liftRight.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/liftLeft_funion.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/liftLeft_funion.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/subset_pairElements_liftRight.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/liftLeft_funion.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/liftLeft_funion.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/liftLeft_funion.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/mem_snd_of_subset_pairElements.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/mem_snd_of_subset_pairElements.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/liftLeft_funion.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/mem_snd_of_subset_pairElements.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/mem_snd_of_subset_pairElements.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/mem_snd_of_subset_pairElements.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/mem_approxMap_toElement.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/mem_approxMap_toElement.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/mem_snd_of_subset_pairElements.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/mem_approxMap_toElement.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/mem_approxMap_toElement.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/mem_approxMap_toElement.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/liftRight_funion.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/liftRight_funion.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/mem_approxMap_toElement.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/liftRight_funion.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/liftRight_funion.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/liftRight_funion.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/uncurry_curryMap.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/uncurry_curryMap.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/liftRight_funion.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/uncurry_curryMap.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/uncurry_curryMap.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/uncurry_curryMap.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/fstMap_pairElements.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/fstMap_pairElements.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/uncurry_curryMap.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/fstMap_pairElements.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/fstMap_pairElements.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/fstMap_pairElements.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/subset_pairElements_liftLeft.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/subset_pairElements_liftLeft.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/fstMap_pairElements.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/subset_pairElements_liftLeft.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/subset_pairElements_liftLeft.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/subset_pairElements_liftLeft.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/mem_fst_of_subset_pairElements.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/mem_fst_of_subset_pairElements.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/subset_pairElements_liftLeft.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/mem_fst_of_subset_pairElements.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/mem_fst_of_subset_pairElements.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/mem_fst_of_subset_pairElements.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/subset_pairElements_liftPair.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/subset_pairElements_liftPair.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/mem_fst_of_subset_pairElements.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/subset_pairElements_liftPair.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/subset_pairElements_liftPair.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/subset_pairElements_liftPair.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/applyMap_toElement.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/applyMap_toElement.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/subset_pairElements_liftPair.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/applyMap_toElement.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/applyMap_toElement.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/applyMap_toElement.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72/curryMap_unique.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72/curryMap_unique.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/applyMap_toElement.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/curryMap_unique.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/curryMap_unique.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72/curryMap_unique.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Theorem72.lean](../InformationSystems/FunctionSpaceAsADomain/Theorem72.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/curryMap_unique.lean"
+**[InformationSystems/FunctionSpaceAsADomain/theorem_7_2.lean](../InformationSystems/FunctionSpaceAsADomain/theorem_7_2.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Theorem72.lean"
+@import "../InformationSystems/FunctionSpaceAsADomain/theorem_7_2.lean"
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/InfoSysObj.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid77/InfoSysObj.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Factoid77/InfoSysObj.lean"
@@ -927,9 +921,6 @@
 **[InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixMap_unique.lean](../InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixMap_unique.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixMap_unique.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Fixpoint.lean](../InformationSystems/FunctionSpaceAsADomain/Fixpoint.lean)**
-
-@import "../InformationSystems/FunctionSpaceAsADomain/Fixpoint.lean"
 **[InformationSystems/FunctionSpaceAsADomain/Factoid75/subset_of_entSet_mem.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/subset_of_entSet_mem.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/subset_of_entSet_mem.lean"

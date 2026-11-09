@@ -1,7 +1,7 @@
 
 module
 
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.theorem_7_2
 public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.FixChain
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.FixReach
@@ -18,7 +18,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fi
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixChain_mono_w
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixReach_mono_w
 
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.mem_approxMap_toElement
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.mem_approxMap_toElement
 @[expose] public section
 
 namespace DomainTheory.InformationSystems

@@ -194,7 +194,7 @@ SLICE_NOTES: list[SliceSpec] = [
         "**DEFINITION 7.1.**",
     ),
     (
-        "InformationSystems/FunctionSpaceAsADomain/Theorem72/1982_Theorem_7_2.md",
+        "InformationSystems/FunctionSpaceAsADomain/1982_Theorem_7_2.md",
         "1982_Theorem_7_2.english",
         "**THEOREM 7.2.**",
     ),
@@ -401,7 +401,7 @@ BARRELS: dict[str, tuple[str, list[str]]] = {
             "- [Filter under insert: subset after deletion](1982_filter_ne_subset_of_subset_insert.md)",
             "- [Insert and filter](1982_insert_filter_ne.md)",
             "- [Definition 7.1: function space as an information system](1982_Definition_7_1.md)",
-            "- [Theorem 7.2: elements, apply, and curry](Theorem72/1982_Theorem_7_2.md)",
+            "- [Theorem 7.2: elements, apply, and curry](1982_Theorem_7_2.md)",
             "- [Theorem 7.3: least fixed-point operator](1982_Theorem_7_3.md)",
             "- [Proposition 7.4: equational uniqueness of fix](Proposition74/1982_Proposition_7_4.md)",
         ],

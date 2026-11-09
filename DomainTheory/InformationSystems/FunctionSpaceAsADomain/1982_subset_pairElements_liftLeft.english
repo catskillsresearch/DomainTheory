@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`subset_pairElements_liftLeft`).** The left lift of a finite set contained in the first factor lies in the paired element.
+
+*Proof.* Left-lifted tokens have bottom on the right and first component in the first factor. □

@@ -1,0 +1,11 @@
+<!-- formalization -->
+
+**Theorem (`approxMap_toElement.closed`).** The set of fun tokens related by an approximable map is closed under function-space entailment.
+
+*Proof.* Unpack entailment witnesses and apply monotonicity and transitivity of the underlying relation. □
+
+**Theorem (`approxMap_toElement.consistent`).** The set of fun tokens related by an approximable map is consistent in the function space.
+
+*Proof.* Apply fun-consistency of approximable maps to any finite subset. □
+
+**Definition (`approxMap_toElement`).** The element of $\mathbf{A}\to\mathbf{B}$ associated to an approximable map $f$ is the set of all fun tokens $(u,v)$ with $u\,f\,v$.

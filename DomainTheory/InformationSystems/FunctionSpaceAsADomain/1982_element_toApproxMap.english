@@ -1,0 +1,27 @@
+<!-- formalization -->
+
+**Theorem (`element_toApproxMap.empty_rel`).** Every function-space element relates the empty input to the empty output.
+
+*Proof.* The function-space bottom lies in every element. □
+
+**Theorem (`element_toApproxMap.mono`).** The relation extracted from a function-space element is monotone in both coordinates.
+
+*Proof.* Use function-space entailment to strengthen inputs and weaken outputs inside the element. □
+
+**Theorem (`element_toApproxMap.rel_cod`).** Related outputs are consistent.
+
+*Proof.* Membership of a fun token forces consistency of its output. □
+
+**Theorem (`element_toApproxMap.rel_dom`).** Related inputs are consistent.
+
+*Proof.* Membership of a fun token forces consistency of its input. □
+
+**Theorem (`element_toApproxMap.union_right`).** The extracted relation is closed under finite union on the right.
+
+*Proof.* Combine tokens via function-space consistency and entailment. □
+
+**Definition (`element_toApproxMap`).** The approximable map associated to a function-space element relates $u$ to $v$ precisely when the fun token $(u,v)$ lies in the element.
+
+**Theorem (`element_toApproxMap.approxMap_toElement`).** Passing from an approximable map to its element and back recovers the original map.
+
+*Proof.* Compare relations pointwise via membership in the associated element. □

@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`entSet_liftPair`).** Product entailment of a lift follows from factor entailments of its components.
+
+*Proof.* Lift the two entailments through the left and right embeddings and unite. □

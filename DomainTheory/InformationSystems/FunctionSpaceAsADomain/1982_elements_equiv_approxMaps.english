@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`elements_equiv_approxMaps`).** Approximable maps from $\mathbf{A}$ to $\mathbf{B}$ are in bijection with elements of $\mathbf{A}\to\mathbf{B}$: each direction of the round-trip is the identity.
+
+*Proof.* Assemble the two round-trip lemmas for maps and for elements. □

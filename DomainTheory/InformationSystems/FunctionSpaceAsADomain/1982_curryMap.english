@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`curryMap`).** The curry of a map $h:\mathbf{A}\times\mathbf{B}\to\mathbf{C}$ relates $u$ to a finite set $s$ of fun tokens when $u$ is consistent and $h$ relates the lift of $u$ with each input of a token in $s$ to that token’s output.

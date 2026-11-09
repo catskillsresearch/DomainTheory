@@ -1,14 +1,14 @@
 module
 
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.instPartialOrderApproximableMap
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.mem_approxMap_toElement
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.approxMap_toElement
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.mkFunToken
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.mem_approxMap_toElement
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.approxMap_toElement
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.mkFunToken
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order
 public import Mathlib.Order.WithBot
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.theorem_7_2
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_4
 
 @[expose] public section

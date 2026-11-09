@@ -1,6 +1,6 @@
 module
 
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.theorem_7_2
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.constOp
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.pairOpUncurry
@@ -8,8 +8,8 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.p
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.compOpUncurry
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid76.compOp
 
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.fstMap_pairElements
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.sndMap_pairElements
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.fstMap_pairElements
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.sndMap_pairElements
 @[expose] public section
 
 namespace DomainTheory.InformationSystems

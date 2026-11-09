@@ -65,3 +65,7 @@
 **Theorem (`Constructive.funion.left_comm`).** Finite union is left-commutative: $a \cup' (b \cup' c) = b \cup' (a \cup' c)$.
 
 *Proof.* Compare membership on both sides via the membership lemma. □
+
+**Theorem (`Constructive.funion.self`).** Finite union is idempotent: $a \cup' a = a$.
+
+*Proof.* Compare membership on both sides via the membership lemma. □

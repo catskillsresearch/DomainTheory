@@ -1,13 +1,13 @@
 module
 
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.theorem_7_2
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Factoid65
 public import Mathlib.CategoryTheory.Monoidal.Cartesian.Basic
 public import Mathlib.CategoryTheory.Monoidal.Closed.Basic
 public import Mathlib.CategoryTheory.Adjunction.Basic
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.InfoSysObj
 
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Theorem72.curryMap_unique
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.curryMap_unique
 @[expose] public section
 
 namespace DomainTheory.InformationSystems

@@ -3061,6 +3061,7 @@ def write_ns_domains_graphviz_svg(
     *,
     rankdir: str = "TB",
     display_scale: float = 1.0,
+    fit_compress: bool = True,
 ) -> None:
     """Compact Graphviz SVG — Mermaid/dagre leaves too much whitespace when fit-scaled."""
     import subprocess
@@ -3073,17 +3074,19 @@ def write_ns_domains_graphviz_svg(
         "cthm": ("#fee2e2", "#b91c1c", "#7f1d1d"),
     }
     # Cap size without ``!`` so small graphs stay natural scale (``!`` forced
-    # 4-node TB chains up to ~18″ tall). Large graphs still compress to fit.
+    # 4-node TB chains up to ~18″ tall). Large graphs still compress to fit —
+    # unless ``fit_compress`` is false (dense TD hubs: keep fontsize readable).
     if rankdir.upper() == "LR":
-        size = 'size="16,8", ratio=compress'
         sep = "ranksep=0.35, nodesep=0.22"
+        size = 'size="16,8", ratio=compress' if fit_compress else ""
     else:
-        size = 'size="7.5,18", ratio=compress'
         sep = "ranksep=0.35, nodesep=0.18"
+        size = 'size="7.5,18", ratio=compress' if fit_compress else ""
+    size_attr = f"{size}, " if size else ""
     lines = [
         "digraph G {",
         f'  graph [rankdir={rankdir}, {sep}, splines=true,',
-        f'         {size}, bgcolor="white", fontname="Helvetica"];',
+        f'         {size_attr}bgcolor="white", fontname="Helvetica"];',
         '  node [shape=box, style="filled,rounded", fontname="Helvetica", fontsize=18,',
         '        margin="0.1,0.06", width=0, height=0];',
         "  edge [fontsize=10, arrowsize=0.7];",
@@ -3155,6 +3158,7 @@ def gen_ns_outline_svg_lecture(
     rankdir: str = "TB",
     recursive_barrels: bool = False,
     display_scale: float = 1.0,
+    fit_compress: bool = True,
 ) -> str:
     """Item-level Lean deps for a 1980/1982 section hub (SVG gold copy).
 
@@ -3281,6 +3285,7 @@ def gen_ns_outline_svg_lecture(
         order,
         rankdir=rankdir,
         display_scale=display_scale,
+        fit_compress=fit_compress,
     )
 
     # SVG is the gold copy: Graphviz already wrote the file. Return that content so
@@ -3546,6 +3551,37 @@ IS_SEC7_SHORT: dict[str, tuple[str, str]] = {
         "D71",
         "Definition 7.1:\nfunction space as an\ninformation system",
     ),
+    "Make a fun token": ("Mft", "Make a fun token"),
+    "Fun consistency of approx maps": ("Fcoa", "Fun consistency of\napprox maps"),
+    "Approximable map as element": ("Amte", "Approximable map\nas element"),
+    "Element as approximable map": ("Etam", "Element as\napproximable map"),
+    "Membership in approx-map element": ("Mamae", "Membership in\napprox-map element"),
+    "Elements equivalent to approx maps": ("Eeam", "Elements equivalent\nto approx maps"),
+    "Element round-trip through approx maps": ("Erttam", "Element round-trip\nthrough approx maps"),
+    "Lift a pair of consistent sets": ("Lp", "Lift a pair of\nconsistent sets"),
+    "Product consistency of liftPair": ("Pclp", "Product consistency\nof liftPair"),
+    "First projection of liftPair": ("Fplp", "First projection\nof liftPair"),
+    "Second projection of liftPair": ("Splp", "Second projection\nof liftPair"),
+    "Entailment for liftPair": ("Eflp", "Entailment for\nliftPair"),
+    "Left lift preserves funion": ("Llpf", "Left lift preserves\nfunion"),
+    "Right lift preserves funion": ("Rlpf", "Right lift preserves\nfunion"),
+    "Relation closed under input–output union": ("Rciou", "Relation closed under\ninput–output union"),
+    "Relation from fun tokens": ("Rfft", "Relation from\nfun tokens"),
+    "Fun consistency of curry pointwise": ("Fccp", "Fun consistency of\ncurry pointwise"),
+    "Pair of elements": ("Poe", "Pair of elements"),
+    "First projection of paired elements": ("Fpope", "First projection of\npaired elements"),
+    "Second projection of paired elements": ("Spope", "Second projection of\npaired elements"),
+    "First membership from paired elements": ("Fmfpe", "First membership from\npaired elements"),
+    "Second membership from paired elements": ("Smfpe", "Second membership from\npaired elements"),
+    "Paired elements contain left lift": ("Pecll", "Paired elements contain\nleft lift"),
+    "Paired elements contain right lift": ("Pecrl", "Paired elements contain\nright lift"),
+    "Paired elements contain liftPair": ("Peclp", "Paired elements contain\nliftPair"),
+    "Apply map": ("Am", "Apply map"),
+    "Apply on elements": ("Aoe", "Apply on elements"),
+    "Curry map": ("Cm", "Curry map"),
+    "Uncurry map": ("Um", "Uncurry map"),
+    "Uncurry after curry": ("Uac", "Uncurry after curry"),
+    "Uniqueness of curry": ("Uoc", "Uniqueness of curry"),
     "Theorem 7.2: elements, apply, and curry": (
         "T72",
         "Theorem 7.2:\nelements, apply, and curry",
@@ -3682,7 +3718,8 @@ def gen_is_sec7_lecture(diagram: Path, modules: dict[str, Path], old: str) -> st
         header=_is_outline_header("1982_The_function_space_as_a_domain.md"),
         aggregate_lecture_exercises=False,
         rankdir="TD",
-        display_scale=0.5,
+        display_scale=1.0,
+        fit_compress=False,
     )
 
 

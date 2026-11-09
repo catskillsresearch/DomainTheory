@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_fst_of_subset_pairElements`).** Tokens of a finite set contained in a paired element have first components in the first factor whenever the second component is bottom.
+
+*Proof.* Unfold membership in the paired element. □
