@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`foldFinset`).** Folding a finite set of sum tokens is the finite fold of folding-and-inserting.

@@ -1,0 +1,7 @@
+<!-- formalization -->
+
+**Definition (`infoSys_product_domain_equiv`).** The packaged product domain isomorphism between pairs of elements and elements of the product system.
+
+**Definition (`infoSys_sum_domain_equiv`).** The packaged separated-sum domain isomorphism between the lifted disjoint union of elements and elements of the sum system.
+
+**Definition (`infoSys_function_space_domain_equiv`).** The packaged function-space domain isomorphism between approximable maps and elements of the function-space system.

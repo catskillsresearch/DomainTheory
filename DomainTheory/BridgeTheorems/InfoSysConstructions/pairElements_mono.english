@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`pairElements_mono`).** Pairing of elements is monotone in each component.
+
+*Proof.* The product order is componentwise. ∎

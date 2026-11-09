@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Definition (`toNeighborhoodSystem`).** On a continuous lattice, the way-below opens form a neighbourhood system with the whole lattice as master neighbourhood.
+
+The empty join gives the master neighbourhood, and binary intersections of way-below opens are way-below opens of joins.

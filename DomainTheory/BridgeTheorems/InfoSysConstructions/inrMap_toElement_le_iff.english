@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`inrMap_toElement_le_iff`).** Right injections are ordered exactly as their underlying right elements.
+
+*Proof.* The separated-sum order restricts to the right factor along right injection. ∎

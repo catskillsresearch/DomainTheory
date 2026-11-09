@@ -1,12 +1,6 @@
 module
 
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.finiteApproximants
-public import DomainTheory.InformationSystems.ElementsOfASystem.closure
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
-public import Mathlib.Order.Hom.Basic
-public import Mathlib.Order.Ideal
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_45
-public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.FiniteElement
 
 @[expose] public section
 

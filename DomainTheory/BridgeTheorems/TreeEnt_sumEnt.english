@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`TreeEnt_sumEnt`).** Tree entailment of a token by a finite set is equivalent to sum entailment of its unfolding by the unfolded set.
+
+*Proof.* Transport entailment along folding and unfolding of tokens and finite sets. ∎

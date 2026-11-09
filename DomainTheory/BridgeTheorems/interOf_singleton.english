@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`interOf_singleton`).** The intersection over a singleton index is that basic neighbourhood.
+
+*Proof.* Immediate from the definition of the finite intersection. ∎

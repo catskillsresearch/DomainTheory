@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`right_bot_mem_inrMap_toElement`).** The right injection of an element contains the right bottom token.
+
+*Proof.* Right injection sends the bottom of the right system to the right bottom token. ∎

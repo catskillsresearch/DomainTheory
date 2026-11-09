@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_basicOpen_iff`).** A filter of the basic-open neighbourhood system contains the basic open of a consistent finite set if and only if every token of that set lies in the carrier of the element recovered from the filter.
+
+*Proof.* One direction uses upward closure under inclusions of singleton basic opens; the other assembles singleton memberships into membership of the joint basic open. ∎

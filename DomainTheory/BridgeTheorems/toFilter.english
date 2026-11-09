@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Definition (`toFilter`).** From an element of an information system one obtains a filter of the basic-open neighbourhood system by taking those basic opens of consistent finite sets whose tokens all lie in the element's carrier.
+
+Subset neighbourhoods, the master neighbourhood, intersections, and upward closure follow from consistency and deductive closure of the element together with the corresponding facts for basic opens.

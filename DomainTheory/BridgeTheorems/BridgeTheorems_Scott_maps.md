@@ -15,3 +15,5 @@
 - [From a Scott-continuous map back to an approximable map](ofScottContinuous_toScottContinuous.md)
 - [Approximable maps and Scott-continuous maps](approximableMap_scottContinuous_equiv.md)
 - [Scott maps along the round presentation](ScottMapBridge.md)
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-09) — <a href="../BridgeTheorems_REVISION.md">Bridge revision progress</a></p>

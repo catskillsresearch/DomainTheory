@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`toIdeal_ofIdeal`).** Passing from an ideal of finite elements to its determined element and back yields the original ideal.
+
+*Proof.* A finite element belongs to the reconstituted ideal exactly when it lies below the directed supremum of the original ideal, which holds precisely for the members of a directed lower set of finite elements. ∎

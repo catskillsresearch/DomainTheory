@@ -1,17 +1,10 @@
 module
 
 public import DomainTheory.BridgeTheorems.toInfoSys
-public import DomainTheory.BridgeTheorems.interOf_subset_nbhd
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys.con_empty
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
-public import Mathlib.Data.Finset.Fold
-public import Mathlib.Order.Hom.Basic
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys
-public import DomainTheory.InformationSystems.InformationSystems.EntSet
-public import DomainTheory.BridgeTheorems.NbhdBasis
-public import DomainTheory.BridgeTheorems.interOf
-public import DomainTheory.BridgeTheorems.interOf_empty
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Element
+import DomainTheory.BridgeTheorems.interOf_subset_nbhd
+import DomainTheory.InformationSystems.InformationSystems.InfoSys.con_empty
 
 @[expose] public section
 

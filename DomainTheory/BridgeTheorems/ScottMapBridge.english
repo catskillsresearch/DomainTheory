@@ -1,0 +1,17 @@
+<!-- formalization -->
+
+**Definition (`scottMap_roundFilter_iso`).** Scott maps of continuous lattices are order-isomorphic to conjugate Scott maps along the round-filter presentation.
+
+**Definition (`scottMap_roundInfoSys_iso`).** Scott maps of continuous lattices are order-isomorphic to conjugate Scott maps along the round information-system presentation.
+
+**Definition (`infoSys_constructions_equiv.product`).** Alias for the product domain equivalence of information systems.
+
+**Definition (`infoSys_constructions_equiv.sum`).** Alias for the separated-sum domain equivalence.
+
+**Definition (`infoSys_constructions_equiv.functionSpace`).** Alias for the function-space domain equivalence.
+
+**Definition (`infoSys_constructions_equiv.approximable_scottContinuous`).** Alias for the approximable-map/Scott-continuous equivalence.
+
+**Definition (`infoSys_constructions_equiv.scottMap_roundFilter`).** Alias for conjugation of Scott maps along round filters.
+
+**Definition (`infoSys_constructions_equiv.scottMap_roundInfoSys`).** Alias for conjugation of Scott maps along round information systems.

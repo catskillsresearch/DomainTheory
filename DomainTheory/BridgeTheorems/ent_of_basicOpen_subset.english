@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`ent_of_basicOpen_subset`).** If a consistent finite set \(w\) has its basic open contained in the basic open of \(u\), then every token of \(u\) is entailed by \(w\).
+
+*Proof.* The closure of \(w\) lies in the basic open of \(w\), hence in that of \(u\), so every token of \(u\) belongs to the closure and is therefore entailed by \(w\). ∎

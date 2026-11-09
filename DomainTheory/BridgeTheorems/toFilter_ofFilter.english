@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`toFilter_ofFilter`).** Passing from a filter of basic opens to an element and back yields the original filter.
+
+*Proof.* Membership of a basic open in the reconstituted filter is equivalent, by the membership criterion, to containment of its tokens in the recovered carrier, which is exactly membership in the original filter. ∎

@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`idealCarrier`).** The carrier of an ideal of finite elements is the underlying set of information-system elements obtained by forgetting the finiteness witness.

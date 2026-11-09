@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`unpair_mono`).** Unpairing is monotone.
+
+*Proof.* The two projections of the product order are monotone. ∎

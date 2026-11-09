@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_wayBelowUp_ofFilter_of_round`).** For a round filter, membership of a way-below open is equivalent to the corresponding code lying way-below the recovered point.
+
+*Proof.* Roundness supplies interpolants that place codes below the supremum of codes, and the converse uses that the filter contains all way-below opens of its codes. ∎

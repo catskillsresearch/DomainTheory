@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`sexUnfold_atom`).** Unfolding a singleton atom along the tree equation lands in the left summand.
+
+*Proof.* Atoms unfold to left injections of atoms. ∎

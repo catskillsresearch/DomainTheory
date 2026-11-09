@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`sumElementRht_inrMap_toElement`).** Projecting the right tokens of a right injection recovers the original right element.
+
+*Proof.* Right injection embeds right tokens faithfully. ∎

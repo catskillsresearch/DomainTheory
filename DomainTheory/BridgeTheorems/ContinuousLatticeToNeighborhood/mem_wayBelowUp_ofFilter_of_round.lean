@@ -2,19 +2,10 @@ module
 
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Round
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.ofFilter
+
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.codes_directed
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.codes_nonempty
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBelowUp_anti
-public import Mathlib.Order.Hom.Basic
-public import Mathlib.Order.CompleteLattice.Basic
-public import Mathlib.Order.UpperLower.Basic
-public import Mathlib.Order.Directed
-public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
-
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
-public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBelowUp
-public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Filter
 
 @[expose] public section
 

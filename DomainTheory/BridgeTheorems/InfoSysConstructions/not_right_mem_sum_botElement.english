@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`not_right_mem_sum_botElement`).** The bottom element of a separated sum contains no right token.
+
+*Proof.* The bottom carrier is empty of proper sum tokens. ∎

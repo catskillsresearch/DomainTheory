@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Definition (`ofElement`).** From an element of the induced information system one obtains a neighbourhood filter consisting of those neighbourhoods that contain the basic neighbourhood of some token in the element’s carrier.
+
+The filter axioms follow from consistency and deductive closure of the element together with the corresponding properties of basic neighbourhoods.

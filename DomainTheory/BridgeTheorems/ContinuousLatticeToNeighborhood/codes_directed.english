@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`codes_directed`).** The codes of a filter are directed.
+
+*Proof.* Filters are closed under binary intersections of way-below opens, which correspond to joins of codes. ∎

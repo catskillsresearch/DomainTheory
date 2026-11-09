@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_closed_pair_bots`).** A deductively closed tree element that contains any paired data contains both pair bottoms.
+
+*Proof.* Pair bottoms are entailed by paired tokens. ∎

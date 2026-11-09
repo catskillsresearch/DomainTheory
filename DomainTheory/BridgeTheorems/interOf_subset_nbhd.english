@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`interOf_subset_nbhd`).** The intersection of the basic neighbourhoods of a finite index set is contained in each basic neighbourhood whose index belongs to the set.
+
+*Proof.* A finite intersection is contained in each of its factors. ∎

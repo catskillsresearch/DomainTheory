@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_foldr_fold`).** Membership after a right-fold of foldings is characterised by membership in some folding step.
+
+*Proof.* Induction on the finite list being folded. ∎

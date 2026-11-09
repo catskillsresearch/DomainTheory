@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_codes_iff`).** A point is a code of a filter if and only if its way-below open belongs to the filter.
+
+*Proof.* Unfold the definition of codes. ∎

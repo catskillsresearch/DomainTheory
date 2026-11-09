@@ -1,16 +1,11 @@
 module
 
-public import Mathlib.Order.Hom.Basic
-public import DomainTheory.InformationSystems.SomeDomainEquations.example_8_1
 public import DomainTheory.BridgeTheorems.TreeProd
 public import DomainTheory.BridgeTheorems.treeFold
-public import DomainTheory.BridgeTheorems.SexDomainEquationInst10
 public import DomainTheory.BridgeTheorems.unfoldFinset
-public import DomainTheory.BridgeTheorems.SexDomainEquationInst15
+public import DomainTheory.BridgeTheorems.SumCon_image_treeCon
 public import DomainTheory.BridgeTheorems.lftFinset_image_unfold
 public import DomainTheory.BridgeTheorems.rhtFinset_image_unfold_mem
-public import DomainTheory.BridgeTheorems.SumCon_image_treeCon
-public import DomainTheory.InformationSystems.SomeDomainEquations.treeSystem
 
 @[expose] public section
 

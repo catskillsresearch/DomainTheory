@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`pairElements_unpair`).** Pairing the components obtained by unpairing recovers the original product element.
+
+*Proof.* A product element is determined by its two projections. ∎

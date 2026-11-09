@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`assembleSum_classifySum`).** Assembling after classifying recovers the original separated-sum element.
+
+*Proof.* Classification inverts assembly on its image, which is everything. ∎

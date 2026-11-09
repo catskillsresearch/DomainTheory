@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`sexDomainEquationIso_unfold`).** The forward map of the tree-equation isomorphism is unfolding of elements.
+
+*Proof.* Unfold the definition of the specialised domain isomorphism. ∎

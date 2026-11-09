@@ -2,18 +2,12 @@ module
 
 public import Mathlib.Data.Finset.Fold
 public import DomainTheory.BridgeTheorems.NbhdBasis
-public import Mathlib.Order.Hom.Basic
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys
-public import DomainTheory.InformationSystems.InformationSystems.EntSet
 
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.NeighbourhoodSystems
 
-open DomainTheory.InformationSystems
 
 namespace NbhdBasis
 

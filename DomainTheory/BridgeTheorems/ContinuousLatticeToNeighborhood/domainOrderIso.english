@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Definition (`domainOrderIso`).** On a continuous lattice, points and round filters of way-below opens are order-isomorphic via the principal-filter and recovery maps.
+
+The round-trip theorems identify the two sides; order is preserved by monotonicity of principal filters.

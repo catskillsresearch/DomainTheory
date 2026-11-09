@@ -1,15 +1,9 @@
 module
 
 public import DomainTheory.BridgeTheorems.toInfoSys
-public import DomainTheory.BridgeTheorems.filter_mem_interOf
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
-public import Mathlib.Data.Finset.Fold
-public import Mathlib.Order.Hom.Basic
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys
-public import DomainTheory.InformationSystems.InformationSystems.EntSet
-public import DomainTheory.BridgeTheorems.NbhdBasis
-public import DomainTheory.BridgeTheorems.interOf_empty
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Element
+public import DomainTheory.BridgeTheorems.filter_mem_interOf
 
 @[expose] public section
 

@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`interOf_mem_of_lower_bound`).** If a neighbourhood is contained in the intersection of the basic neighbourhoods of a finite index set, then that intersection is itself a neighbourhood.
+
+*Proof.* Neighbourhood systems are upward closed: a set containing a neighbourhood is a neighbourhood. ∎

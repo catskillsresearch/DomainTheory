@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`ConjScottMap`).** A conjugate Scott map along order isomorphisms of the domain and codomain is a Scott map between the original lattices, viewed as a map between the isomorphic presentations.

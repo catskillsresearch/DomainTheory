@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`interOf_anti`).** Enlarging the finite index set shrinks the intersection of basic neighbourhoods.
+
+*Proof.* Intersecting more sets yields a smaller result. ∎

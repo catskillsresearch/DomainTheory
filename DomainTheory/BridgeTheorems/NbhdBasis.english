@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Definition (`NbhdBasis`).** A neighbourhood basis for a neighbourhood system indexes every neighbourhood by a token from an index type, with a distinguished bottom index whose neighbourhood is the master set.
+
+Every basic neighbourhood is a neighbourhood of the system, and every neighbourhood arises as some basic neighbourhood.

@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`left_bot_mem_inlMap_toElement`).** The left injection of an element contains the left bottom token.
+
+*Proof.* Left injection sends the bottom of the left system to the left bottom token. ∎

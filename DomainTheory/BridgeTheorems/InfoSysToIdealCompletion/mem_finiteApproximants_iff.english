@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_finiteApproximants_iff`).** A finite element is a finite approximant of an element if and only if it lies below that element.
+
+*Proof.* Unfold the definition of finite approximants. ∎

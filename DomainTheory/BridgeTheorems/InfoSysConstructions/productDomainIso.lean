@@ -1,18 +1,8 @@
 module
 
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.unpair_pairElements
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.pairElements_unpair
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.pairElements_mono
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.pairElements
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
-public import Mathlib.Order.Hom.Basic
-public import Mathlib.Order.Sum.Order
-public import Mathlib.Order.WithBot
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.theorem_7_2
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_4
-public import DomainTheory.BridgeTheorems.InfoSysConstructions.unpair
 
 @[expose] public section
 

@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`TreeCon_image_sumCon`).** The unfolding of a consistent finite set of tree tokens is a consistent finite set of sum tokens.
+
+*Proof.* Consistency and entailment transport along the folding/unfolding correspondence. ∎

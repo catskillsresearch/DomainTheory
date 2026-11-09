@@ -1,26 +1,18 @@
 module
 
 public import DomainTheory.BridgeTheorems.interOf
-public import DomainTheory.BridgeTheorems.interOf_mem_of_lower_bound
-public import DomainTheory.BridgeTheorems.interOf_anti
-public import DomainTheory.BridgeTheorems.interOf_subset_master
-public import DomainTheory.BridgeTheorems.interOf_subset_nbhd
-public import DomainTheory.BridgeTheorems.mem_interOf
-public import DomainTheory.BridgeTheorems.interOf_singleton
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.InfoSys
-public import Mathlib.Data.Finset.Fold
-public import Mathlib.Order.Hom.Basic
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys
-public import DomainTheory.InformationSystems.InformationSystems.EntSet
-public import DomainTheory.BridgeTheorems.NbhdBasis
-public import DomainTheory.BridgeTheorems.interOf_empty
+import DomainTheory.BridgeTheorems.interOf_anti
+import DomainTheory.BridgeTheorems.interOf_mem_of_lower_bound
+import DomainTheory.BridgeTheorems.interOf_singleton
+import DomainTheory.BridgeTheorems.interOf_subset_master
+import DomainTheory.BridgeTheorems.interOf_subset_nbhd
+import DomainTheory.BridgeTheorems.mem_interOf
 
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
 
-open DomainTheory.NeighbourhoodSystems
 
 open DomainTheory.InformationSystems
 

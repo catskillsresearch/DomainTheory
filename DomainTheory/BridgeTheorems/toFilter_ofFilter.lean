@@ -3,12 +3,7 @@ module
 public import DomainTheory.BridgeTheorems.toFilter
 public import DomainTheory.BridgeTheorems.ofFilter
 public import DomainTheory.BridgeTheorems.mem_basicOpen_iff
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
-public import Mathlib.Order.Hom.Basic
-public import DomainTheory.InformationSystems.ElementsOfASystem.closure
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_46
-public import DomainTheory.InformationSystems.InformationSystems.EntSet
-public import DomainTheory.BridgeTheorems.toNeighborhoodSystem
+import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ElementOrder
 
 @[expose] public section
 

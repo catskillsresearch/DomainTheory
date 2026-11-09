@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`toFilter_ofFilter`).** A round filter coincides with the principal filter of its recovered point.
+
+*Proof.* The membership criterion for round filters identifies the filter with the principal filter of the supremum of its codes. ∎

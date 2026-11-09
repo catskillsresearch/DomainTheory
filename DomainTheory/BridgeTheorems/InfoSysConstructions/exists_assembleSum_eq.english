@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`exists_assembleSum_eq`).** Every separated-sum element arises by assembling an optional left or right element.
+
+*Proof.* Trichotomy supplies the case distinction; the left and right cases recover the projected components. ∎

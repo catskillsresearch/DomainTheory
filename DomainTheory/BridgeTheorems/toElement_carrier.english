@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`toElement_carrier`).** The carrier of the information-system element associated with a neighbourhood filter is exactly the set of indices whose basic neighbourhoods belong to the filter.
+
+*Proof.* This is the defining carrier. ∎

@@ -1,0 +1,15 @@
+<!-- formalization -->
+
+**Theorem (`scottOpen_Ici_of_compact`).** The principal upset of a compact element is Scott-open.
+
+*Proof.* Compactness supplies a member of any directed set meeting the upset that already lies in the upset, and principal upsets are upper sets. ∎
+
+**Theorem (`compact_wayBelow`).** A compact element lying below \(y\) is way-below \(y\).
+
+*Proof.* The principal upset of the compact element is Scott-open, contains \(y\), and is contained in the principal upset of the compact element. ∎
+
+**Theorem (`isContinuousLattice_of_algebraic`).** Every algebraic complete lattice is a continuous lattice.
+
+*Proof.* Compact elements below \(y\) are way-below \(y\), and algebraicity expresses \(y\) as their directed supremum. ∎
+
+**Definition (`idealCompletion_to_continuousLattice`).** The continuous-lattice structure on an algebraic complete lattice is the one obtained from the preceding theorem.

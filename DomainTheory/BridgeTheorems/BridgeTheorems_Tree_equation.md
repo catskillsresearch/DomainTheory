@@ -32,3 +32,5 @@
 - [Unfolding after folding an element](unfoldElement_foldElement.md)
 - [Folding after unfolding an element](foldElement_unfoldElement.md)
 - [A tree domain and the separated sum of its square](treeDomainIso.md)
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-09) — <a href="../BridgeTheorems_REVISION.md">Bridge revision progress</a></p>

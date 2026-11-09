@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`TreeEnt_pairR_bot_of_pairs`).** A finite set of tree tokens that entails a right pair-bottom does so whenever it contains suitable paired data.
+
+*Proof.* Apply the entailment rules of the tree information system. ∎

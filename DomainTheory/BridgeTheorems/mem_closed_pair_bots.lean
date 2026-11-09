@@ -1,12 +1,9 @@
 module
 
-public import Mathlib.Order.Hom.Basic
-public import DomainTheory.InformationSystems.SomeDomainEquations.example_8_1
-public import DomainTheory.BridgeTheorems.SexDomainEquationInst10
-public import DomainTheory.BridgeTheorems.SexDomainEquationInst15
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
+public import DomainTheory.InformationSystems.SomeDomainEquations.treeSystem
 public import DomainTheory.BridgeTheorems.TreeEnt_pairL_bot_of_pairs
 public import DomainTheory.BridgeTheorems.TreeEnt_pairR_bot_of_pairs
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 
 @[expose] public section
 

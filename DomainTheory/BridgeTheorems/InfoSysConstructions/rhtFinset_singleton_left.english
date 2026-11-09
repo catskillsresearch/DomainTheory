@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`rhtFinset_singleton_left`).** Extracting right tokens from a singleton left token yields the empty set.
+
+*Proof.* A left token has no right polarity. ∎

@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`ext`).** Conjugate Scott maps with the same underlying Scott map are equal.
+
+*Proof.* A conjugate Scott map is determined by its Scott map component. ∎

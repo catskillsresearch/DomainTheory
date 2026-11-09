@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Definition (`domainOrderIso`).** The maps between information-system elements and ideals of finite elements form an order isomorphism.
+
+The two composites are the identity by the round-trip theorems; order is preserved by monotonicity of the ideal assignment and the comparison of directed suprema.

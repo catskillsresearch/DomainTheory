@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`ofFilter_toFilter`).** Passing from an element to a filter of basic opens and back yields the original element.
+
+*Proof.* A token belongs to the reconstituted carrier exactly when its singleton basic open meets the filter associated with the element, which holds precisely when the token lies in the original carrier, by membership in singleton basic opens and deductive closure. ∎

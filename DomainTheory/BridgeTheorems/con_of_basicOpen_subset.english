@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`con_of_basicOpen_subset`).** If a consistent finite set \(w\) has its basic open contained in the basic open of \(u\), then \(u\) is consistent.
+
+*Proof.* Every token of \(u\) is entailed by \(w\), so the constructive union of \(w\) with \(u\) is consistent, and consistency passes to subsets. ∎

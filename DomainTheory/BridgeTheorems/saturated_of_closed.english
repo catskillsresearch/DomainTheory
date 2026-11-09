@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`saturated_of_closed`).** A deductively closed tree element is saturated for unfolding: its unfolding is deductively closed in the sum system.
+
+*Proof.* Closedness transports along the entailment correspondence between tree and sum tokens. ∎

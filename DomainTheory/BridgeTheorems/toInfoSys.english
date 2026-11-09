@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Definition (`toInfoSys`).** The information system of a neighbourhood basis has the basis indices as tokens; a finite set of indices is consistent when the corresponding intersection of basic neighbourhoods is a neighbourhood, and entailment holds when that intersection is contained in the entailed basic neighbourhood.
+
+The bottom token is the distinguished bottom index of the basis. The information-system axioms follow from the neighbourhood-system axioms and the lattice of finite intersections.

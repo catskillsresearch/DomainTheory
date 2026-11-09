@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`SumEnt_treeFold`).** Sum entailment after folding corresponds to tree entailment of the folded token.
+
+*Proof.* Transport entailment along folding of tokens and finite sets. ∎

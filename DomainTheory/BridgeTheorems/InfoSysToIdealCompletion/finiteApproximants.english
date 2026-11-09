@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`finiteApproximants`).** The finite approximants of an element are those finite elements that lie below it in the information-system order.

@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_toIdeal_iff`).** A finite element belongs to the ideal of approximants of an element if and only if it lies below that element.
+
+*Proof.* Membership in the ideal is membership among the finite approximants. ∎

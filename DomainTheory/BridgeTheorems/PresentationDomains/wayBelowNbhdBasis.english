@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`wayBelowNbhdBasis`).** The way-below neighbourhood basis of a continuous lattice indexes each way-below open by its generating point, with bottom as the bottom index.

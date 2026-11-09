@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`instPartialOrderApproximableMap`).** Approximable maps between information systems are partially ordered by pointwise inclusion of their graphs.

@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`filter_mem_interOf`).** A neighbourhood filter that contains every basic neighbourhood of a finite index set also contains their intersection.
+
+*Proof.* By induction on the finite set, using that filters contain the master set and are closed under binary intersections. ∎

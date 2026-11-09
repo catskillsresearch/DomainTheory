@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`toFilter`).** The principal filter of a point consists of those way-below opens of points that are way-below the given point.

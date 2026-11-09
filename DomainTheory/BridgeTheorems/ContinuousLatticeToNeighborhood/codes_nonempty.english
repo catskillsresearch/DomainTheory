@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`codes_nonempty`).** The codes of a filter are nonempty.
+
+*Proof.* The bottom is always a code. ∎

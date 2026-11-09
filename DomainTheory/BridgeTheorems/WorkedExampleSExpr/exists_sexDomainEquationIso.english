@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`exists_sexDomainEquationIso`).** There exists an order isomorphism between the tree domain and the right-hand side of the tree equation.
+
+*Proof.* The packaged tree-equation isomorphism supplies one. ∎

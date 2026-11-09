@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`instLeftCommutativeFoldInsert`).** Folding-and-inserting is left-commutative, so finite folds over foldings are well-defined.

@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`isFinite_bot`).** The bottom element of an information system is finite.
+
+*Proof.* It is the closure of the empty consistent set. ∎

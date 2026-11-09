@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`toIdeal_mono`).** The assignment of an element to its ideal of finite approximants is monotone.
+
+*Proof.* Finite approximants of a smaller element remain approximants of a larger one. ∎

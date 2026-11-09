@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`sexId_toElement`).** The underlying function of the identity Scott-continuous map is the identity on tree elements.
+
+*Proof.* Unfold the packaging of the identity map. ∎

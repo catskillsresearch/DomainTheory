@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`codes_lower`).** The codes of a filter form a lower set.
+
+*Proof.* If \(a \le b\) and the way-below open of \(b\) is in the filter, then so is that of \(a\), by anti-monotonicity of way-below opens and upward closure of filters. ∎

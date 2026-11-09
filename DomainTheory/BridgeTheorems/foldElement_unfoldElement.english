@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`foldElement_unfoldElement`).** Folding after unfolding recovers the original tree element.
+
+*Proof.* Finite-set folding and unfolding are inverse on carriers of elements. ∎

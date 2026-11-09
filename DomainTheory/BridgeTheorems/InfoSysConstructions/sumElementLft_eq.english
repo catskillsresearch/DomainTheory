@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`sumElementLft_eq`).** Two presentations of the left projection of a sum element agree.
+
+*Proof.* Both extract the left tokens of the carrier. ∎

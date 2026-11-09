@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_interOf`).** A point lies in the intersection of the basic neighbourhoods of a finite index set if and only if it lies in the master set and in each of those basic neighbourhoods.
+
+*Proof.* Unfold the definition of the finite intersection. ∎

@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`exists_sexNeighborhoodIso`).** There exists an order isomorphism between tree elements and filters of basic opens.
+
+*Proof.* The packaged neighbourhood isomorphism supplies one. ∎

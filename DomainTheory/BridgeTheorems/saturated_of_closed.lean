@@ -1,12 +1,9 @@
 module
 
-public import Mathlib.Order.Hom.Basic
-public import DomainTheory.InformationSystems.SomeDomainEquations.example_8_1
 public import DomainTheory.BridgeTheorems.treeFold
-public import DomainTheory.BridgeTheorems.treeFold_eq_or_pairBots
-public import DomainTheory.BridgeTheorems.SexDomainEquationInst10
-public import DomainTheory.BridgeTheorems.SexDomainEquationInst15
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 public import DomainTheory.BridgeTheorems.mem_closed_pair_bots
+public import DomainTheory.BridgeTheorems.treeFold_eq_or_pairBots
 
 @[expose] public section
 

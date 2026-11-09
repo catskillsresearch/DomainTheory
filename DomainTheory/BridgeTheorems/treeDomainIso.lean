@@ -1,11 +1,5 @@
 module
 
-public import Mathlib.Order.Hom.Basic
-public import DomainTheory.InformationSystems.SomeDomainEquations.example_8_1
-public import DomainTheory.BridgeTheorems.SexDomainEquationInst10
-public import DomainTheory.BridgeTheorems.SexDomainEquationInst15
-public import DomainTheory.BridgeTheorems.unfoldElement
-public import DomainTheory.BridgeTheorems.foldElement
 public import DomainTheory.BridgeTheorems.unfoldElement_foldElement
 public import DomainTheory.BridgeTheorems.foldElement_unfoldElement
 

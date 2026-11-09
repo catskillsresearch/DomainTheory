@@ -1,16 +1,10 @@
 module
 
 public import DomainTheory.BridgeTheorems.toNeighborhoodSystem
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.basicOpen
-public import DomainTheory.BridgeTheorems.ent_of_basicOpen_subset
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.Element
 public import DomainTheory.BridgeTheorems.basicOpen_empty
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys.con_empty
-public import DomainTheory.InformationSystems.InformationSystems.Constructive.funion
-public import Mathlib.Order.Hom.Basic
-public import DomainTheory.InformationSystems.ElementsOfASystem.closure
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_46
-public import DomainTheory.InformationSystems.InformationSystems.EntSet
+public import DomainTheory.BridgeTheorems.ent_of_basicOpen_subset
+import DomainTheory.InformationSystems.InformationSystems.InfoSys.con_empty
 
 @[expose] public section
 

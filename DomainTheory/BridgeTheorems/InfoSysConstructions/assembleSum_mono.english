@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`assembleSum_mono`).** Assembly of separated-sum elements is monotone.
+
+*Proof.* The separated-sum order compares left injections with left injections, right with right, and places bottom below everything. ∎

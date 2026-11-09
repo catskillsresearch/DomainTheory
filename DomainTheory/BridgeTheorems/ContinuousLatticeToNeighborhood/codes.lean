@@ -1,15 +1,7 @@
 module
 
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Filter
-public import Mathlib.Order.Hom.Basic
-public import Mathlib.Order.CompleteLattice.Basic
-public import Mathlib.Order.UpperLower.Basic
-public import Mathlib.Order.Directed
-public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
-public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBelowUp
 
 @[expose] public section
 

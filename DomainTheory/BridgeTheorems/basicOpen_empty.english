@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`basicOpen_empty`).** In an information system, the basic open determined by the empty token set is the whole set of elements.
+
+*Proof.* Membership in that basic open asks that every token of the empty set lie in the carrier, which is vacuously true for every element. ∎

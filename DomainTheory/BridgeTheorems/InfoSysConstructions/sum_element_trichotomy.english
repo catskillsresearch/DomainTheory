@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`sum_element_trichotomy`).** Every element of a separated sum is either the bottom element, purely left, or purely right.
+
+*Proof.* Tokens of a sum element cannot mix left and right polarities without collapsing to bottom. ∎

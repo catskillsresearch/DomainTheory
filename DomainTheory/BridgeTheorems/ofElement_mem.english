@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`ofElement_mem`).** Membership in the neighbourhood filter associated with an information-system element is equivalent to being a neighbourhood that contains the basic neighbourhood of some token of the element.
+
+*Proof.* Unfold the definition of the associated filter. ∎

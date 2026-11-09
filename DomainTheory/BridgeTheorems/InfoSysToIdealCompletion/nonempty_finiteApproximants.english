@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`nonempty_finiteApproximants`).** Every element has at least one finite approximant.
+
+*Proof.* The bottom finite element lies below every element. ∎

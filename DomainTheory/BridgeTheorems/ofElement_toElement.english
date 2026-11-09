@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`ofElement_toElement`).** Passing from a neighbourhood filter to an information-system element and back yields the original filter.
+
+*Proof.* A neighbourhood belongs to the reconstituted filter exactly when it contains the basic neighbourhood of some index in the associated carrier, which is equivalent to membership in the original filter by exhaustiveness of the basis and the filter axioms. ∎

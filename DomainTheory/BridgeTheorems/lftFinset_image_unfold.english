@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`lftFinset_image_unfold`).** The left tokens of an unfolded finite set are the left projections of the unfoldings of its members.
+
+*Proof.* Track left polarity through the membership criterion for unfoldings. ∎

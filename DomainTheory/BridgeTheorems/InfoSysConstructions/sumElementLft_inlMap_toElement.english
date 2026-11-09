@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`sumElementLft_inlMap_toElement`).** Projecting the left tokens of a left injection recovers the original left element.
+
+*Proof.* Left injection embeds left tokens faithfully. ∎

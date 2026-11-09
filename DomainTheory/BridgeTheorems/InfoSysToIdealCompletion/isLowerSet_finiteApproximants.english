@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`isLowerSet_finiteApproximants`).** The finite approximants of an element form a lower set in the finite elements.
+
+*Proof.* If a finite element lies below a finite approximant, it lies below the ambient element. ∎

@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`wayBelowUp_bot`).** The way-below open of the bottom element is the whole lattice.
+
+*Proof.* The bottom is way-below every element. ∎

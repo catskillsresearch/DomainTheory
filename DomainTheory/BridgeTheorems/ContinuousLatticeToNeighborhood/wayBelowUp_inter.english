@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`wayBelowUp_inter`).** The intersection of the way-below opens of \(a\) and \(b\) is the way-below open of their join.
+
+*Proof.* A point is way-above both \(a\) and \(b\) if and only if it is way-above their join. ∎

@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Definition (`toElement`).** From a neighbourhood filter one obtains an element of the induced information system whose carrier consists of those indices whose basic neighbourhoods belong to the filter.
+
+Consistency and deductive closure follow from the filter’s closure under finite intersections and upward closure under inclusions of neighbourhoods.

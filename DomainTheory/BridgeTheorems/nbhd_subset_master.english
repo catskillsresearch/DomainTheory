@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`nbhd_subset_master`).** Every basic neighbourhood is contained in the master set.
+
+*Proof.* Neighbourhoods of a neighbourhood system sit under the master set. ∎

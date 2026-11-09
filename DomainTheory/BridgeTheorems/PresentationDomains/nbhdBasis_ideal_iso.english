@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`nbhdBasis_ideal_iso`).** For any neighbourhood basis, filters of the neighbourhood system are order-isomorphic to ideals of finite elements of the induced information system, by composing the two domain isomorphisms.

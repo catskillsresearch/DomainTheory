@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`toScottContinuous_ofScottContinuous`).** Converting an approximable map to a Scott-continuous map and back yields the original approximable map.
+
+*Proof.* The two constructions are inverse on the nose. ∎

@@ -27,3 +27,5 @@
 - [Membership in the finite approximants](InfoSysToIdealCompletion/mem_finiteApproximants_iff.md)
 - [Membership in the ideal of approximants](InfoSysToIdealCompletion/mem_toIdeal_iff.md)
 - [An algebraic lattice is a continuous lattice](IdealCompletionToContinuousLattice.md)
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-09) — <a href="../BridgeTheorems_REVISION.md">Bridge revision progress</a></p>

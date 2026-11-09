@@ -1,8 +1,5 @@
 module
 
-public import Mathlib.Order.Hom.Basic
-public import DomainTheory.InformationSystems.SomeDomainEquations.example_8_1
-public import DomainTheory.BridgeTheorems.unfoldInsert
 public import DomainTheory.BridgeTheorems.SexDomainEquationInst10
 
 @[expose] public section

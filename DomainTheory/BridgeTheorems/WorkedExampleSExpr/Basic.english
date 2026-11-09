@@ -1,0 +1,9 @@
+<!-- formalization -->
+
+**Definition (`sexNeighborhoodIso`).** Elements of the tree system are order-isomorphic to filters of its basic-open neighbourhood system.
+
+**Definition (`sexIdealIso`).** Elements of the tree system are order-isomorphic to ideals of its finite elements.
+
+**Definition (`sexNeighborhoodIdealIso`).** Filters of the basic-open neighbourhood system are order-isomorphic to ideals of finite elements, by composing the two previous isomorphisms.
+
+**Definition (`sexIdScottContinuous`).** The identity function on tree elements, packaged as a Scott-continuous map.

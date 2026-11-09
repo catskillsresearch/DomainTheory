@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`IsRoundInfoSysElement`).** An element of the information system induced by the way-below neighbourhood basis is round when the corresponding neighbourhood filter is round.

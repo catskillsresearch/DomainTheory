@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`instLeftCommutativeUnfoldInsert`).** Unfolding-and-inserting is left-commutative, so finite folds over unfoldings are well-defined.

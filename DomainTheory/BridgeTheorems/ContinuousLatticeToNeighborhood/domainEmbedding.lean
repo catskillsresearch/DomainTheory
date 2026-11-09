@@ -1,21 +1,12 @@
 module
 
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.ContinuousLattice.WayBelow.ContinuousLattice
 public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.toFilter
-public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.ofFilter_toFilter
-public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.mem_wayBelowUp_toFilter
-public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.toFilter_mono
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
-public import Mathlib.Order.Hom.Basic
-public import Mathlib.Order.CompleteLattice.Basic
-public import Mathlib.Order.UpperLower.Basic
-public import Mathlib.Order.Directed
-public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
 
-public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.wayBelowUp
-public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.Filter
-public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.ofFilter
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ElementOrder
+public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.mem_wayBelowUp_toFilter
+public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.ofFilter_toFilter
+public import DomainTheory.BridgeTheorems.ContinuousLatticeToNeighborhood.toFilter_mono
 
 @[expose] public section
 

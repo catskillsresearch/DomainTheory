@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`bot_mem_codes`).** The bottom element is always a code of a filter of way-below opens.
+
+*Proof.* Every filter contains the master neighbourhood, which is the way-below open of the bottom. ∎

@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`ofIdeal_toIdeal`).** Passing from an element to its ideal of finite approximants and back yields the original element.
+
+*Proof.* Every information-system element is the directed supremum of its finite approximants. ∎

@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`sexRhs_eq_sum_product`).** The right-hand side information system is definitionally the separated sum of the product of the tree system with itself.
+
+*Proof.* Specialise the general identity for tree right-hand sides. ∎

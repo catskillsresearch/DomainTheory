@@ -1,10 +1,6 @@
 module
-public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.mem_finiteApproximants_iff
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.toIdeal
-public import Mathlib.Order.Hom.Basic
-public import Mathlib.Order.Ideal
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_45
-public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.Basic
+public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.mem_finiteApproximants_iff
 
 @[expose] public section
 

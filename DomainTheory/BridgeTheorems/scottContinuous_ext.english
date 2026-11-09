@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`scottContinuous_ext`).** Two Scott-continuous maps of information-system elements that agree at every element are equal.
+
+*Proof.* Scott-continuous maps are determined by their underlying functions. ∎

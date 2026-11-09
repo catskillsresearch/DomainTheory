@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`unpair_pairElements`).** Unpairing the paired elements of a pair recovers that pair.
+
+*Proof.* The projections of a paired element are the original components. ∎

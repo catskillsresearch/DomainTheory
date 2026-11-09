@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`ConjScottMap.instCoeFun`).** Conjugate Scott maps coerce to functions between the presented domains via their underlying transported maps.

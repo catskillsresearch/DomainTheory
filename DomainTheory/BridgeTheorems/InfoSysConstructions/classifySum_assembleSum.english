@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`classifySum_assembleSum`).** Classifying after assembling recovers the original optional component.
+
+*Proof.* Classification is a left inverse of assembly. ∎

@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`SumCon_image_treeCon`).** The folding of a consistent finite set of sum tokens is a consistent finite set of tree tokens.
+
+*Proof.* Consistency transports along the folding correspondence. ∎

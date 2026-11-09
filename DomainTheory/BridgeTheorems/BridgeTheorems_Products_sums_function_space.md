@@ -35,3 +35,5 @@
 - [Unpairing is monotone](InfoSysConstructions/unpair_mono.md)
 - [Left tokens of a sum element agree](InfoSysConstructions/sumElementLft_eq.md)
 - [Right tokens of a sum element agree](InfoSysConstructions/sumElementRht_eq.md)
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-09) — <a href="../BridgeTheorems_REVISION.md">Bridge revision progress</a></p>

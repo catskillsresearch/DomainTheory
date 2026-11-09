@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_basicOpen_singleton`).** An element belongs to the basic open of a singleton token if and only if that token lies in its carrier.
+
+*Proof.* The basic-open condition for a singleton reduces to membership of that unique token. ∎

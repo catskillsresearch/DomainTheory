@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Definition (`toNeighborhoodSystem`).** The neighbourhood system associated with an information system has as neighbourhoods precisely the basic opens of consistent finite token sets, with the whole set of elements as master neighbourhood.
+
+The empty set is consistent and determines the master neighbourhood. The intersection of two basic opens is the basic open of their constructive union, which remains consistent whenever a third basic open sits below both.

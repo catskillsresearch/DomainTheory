@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_basicOpen_of_singletons`).** A filter of the basic-open neighbourhood system that contains every singleton basic open for tokens of a finite set also contains the basic open of that set.
+
+*Proof.* By induction on the finite set: the empty case is the master neighbourhood, and the inductive step uses closure of filters under intersection together with the singleton-intersection identity for basic opens. ∎

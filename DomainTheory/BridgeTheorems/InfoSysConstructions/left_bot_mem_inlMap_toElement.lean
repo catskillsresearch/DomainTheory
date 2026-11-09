@@ -1,15 +1,7 @@
 module
-public import DomainTheory.BridgeTheorems.InfoSysConstructions.rhtFinset_singleton_left
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.inlMap
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.lftFinset
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32.factoid_3_2
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
-public import DomainTheory.InformationSystems.InformationSystems.EntSet
-public import Mathlib.Order.Hom.Basic
-public import Mathlib.Order.Sum.Order
-public import Mathlib.Order.WithBot
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.theorem_7_2
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_4
+public import DomainTheory.BridgeTheorems.InfoSysConstructions.rhtFinset_singleton_left
+import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32.factoid_3_2
 
 @[expose] public section
 

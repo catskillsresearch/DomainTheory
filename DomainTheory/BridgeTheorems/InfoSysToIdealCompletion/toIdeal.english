@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`toIdeal`).** The ideal of finite approximants of an element is the directed lower set of all finite elements lying below that element.

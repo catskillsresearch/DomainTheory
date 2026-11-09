@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`directed_idealCarrier`).** The carrier of an ideal of finite elements is directed.
+
+*Proof.* Ideals are directed, and the forgetful map preserves the order. ∎

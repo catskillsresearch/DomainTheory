@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`ofFilter_toFilter`).** Recovering a point from its principal filter yields the original point.
+
+*Proof.* On a continuous lattice every element is the supremum of the points way-below it. ∎

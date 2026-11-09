@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`unfoldFinset_foldFinset`).** Unfolding after folding a finite set of sum tokens recovers that set up to the tree-fold correspondence.
+
+*Proof.* Combine the membership criteria for folding and unfolding of finite sets. ∎

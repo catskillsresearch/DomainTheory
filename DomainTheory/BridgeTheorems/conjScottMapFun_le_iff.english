@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`conjScottMapFun_le_iff`).** One conjugate Scott map lies below another if and only if the underlying Scott maps do, equivalently if and only if the transported functions are pointwise ordered.
+
+*Proof.* Order isomorphisms preserve and reflect the lattice order. ∎

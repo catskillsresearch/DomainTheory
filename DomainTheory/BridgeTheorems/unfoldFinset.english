@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`unfoldFinset`).** Unfolding a finite set of tree tokens is the finite fold of unfolding-and-inserting.

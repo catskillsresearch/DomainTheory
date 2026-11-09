@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`toElement_ofElement`).** Passing from an information-system element to a neighbourhood filter and back yields the original element.
+
+*Proof.* A token belongs to the reconstituted carrier exactly when its basic neighbourhood meets the filter associated with the element, which holds precisely for the tokens of the original carrier, by the membership criterion and deductive closure. ∎

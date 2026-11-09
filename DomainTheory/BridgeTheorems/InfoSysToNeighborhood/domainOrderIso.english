@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Definition (`domainOrderIso`).** The maps sending an information-system element to its filter of basic opens and a filter back to an element form an order isomorphism between the elements of the information system and the filters of its basic-open neighbourhood system.
+
+The two composites are the identity by the round-trip theorems; order is preserved because inclusion of carriers is equivalent to inclusion of the associated filters of basic opens.

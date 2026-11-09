@@ -23,3 +23,5 @@
 - [Return from filters to information-system elements](ofElement_toElement.md)
 - [Neighbourhood filters and information-system elements](NeighborhoodToInfoSys/domainOrderIso.md)
 - [The information system induced by a neighbourhood basis](NeighborhoodToInfoSys.md)
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-09) — <a href="../BridgeTheorems_REVISION.md">Bridge revision progress</a></p>

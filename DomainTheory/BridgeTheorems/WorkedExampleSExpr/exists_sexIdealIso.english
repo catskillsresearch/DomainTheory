@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`exists_sexIdealIso`).** There exists an order isomorphism between tree elements and ideals of finite elements.
+
+*Proof.* The packaged ideal isomorphism supplies one. ∎

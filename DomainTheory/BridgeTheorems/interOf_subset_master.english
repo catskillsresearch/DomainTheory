@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`interOf_subset_master`).** Every finite intersection of basic neighbourhoods sits inside the master set.
+
+*Proof.* The intersection is formed inside the master set by definition. ∎

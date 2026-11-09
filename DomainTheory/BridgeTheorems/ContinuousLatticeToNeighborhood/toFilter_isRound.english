@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`toFilter_isRound`).** Every principal filter is round.
+
+*Proof.* Continuity interpolates way-below: if \(a \ll x\), some \(b\) satisfies \(a \ll b \ll x\). ∎

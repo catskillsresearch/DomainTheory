@@ -1,0 +1,7 @@
+<!-- formalization -->
+
+**Definition (`presentation_domains_equiv_infoSys`).** The packaged presentation equivalence associated with an information system, obtained by transporting along the bridges to neighbourhood filters and ideals.
+
+**Theorem (`exists_presentation_domains_equiv`).** Every continuous lattice is order-isomorphic to the round elements of its way-below information system.
+
+*Proof.* The packaged presentation equivalence supplies such an isomorphism. ∎

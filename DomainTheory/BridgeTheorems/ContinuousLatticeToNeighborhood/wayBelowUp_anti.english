@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`wayBelowUp_anti`).** If \(a \le b\), then the way-below open of \(b\) is contained in that of \(a\).
+
+*Proof.* Way-below is monotone in its lower argument. ∎

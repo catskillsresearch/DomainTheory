@@ -2,9 +2,6 @@ module
 
 public import Mathlib.Order.Ideal
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.FiniteElement
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
-public import Mathlib.Order.Hom.Basic
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_45
 
 @[expose] public section
 

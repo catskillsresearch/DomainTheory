@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`sexDomainEquationIso_fold`).** The inverse map of the tree-equation isomorphism is folding of elements.
+
+*Proof.* Unfold the definition of the specialised domain isomorphism. ∎

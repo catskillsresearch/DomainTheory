@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`interOf_empty`).** The intersection over the empty index set is the master neighbourhood.
+
+*Proof.* An empty intersection inside the master set is the master set itself. ∎

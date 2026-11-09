@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`interOf_insert`).** Inserting a token into a finite index set intersects the corresponding basic neighbourhood with the previous intersection.
+
+*Proof.* This is the usual decomposition of a finite intersection. ∎

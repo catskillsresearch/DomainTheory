@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`approxMap_toElement_le_iff`).** One approximable map lies below another if and only if the corresponding function-space elements do.
+
+*Proof.* The order on approximable maps is transported along the identification with function-space elements. ∎

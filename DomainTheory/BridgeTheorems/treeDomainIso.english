@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`treeDomainIso`).** Elements of a tree information system are order-isomorphic to elements of the separated sum of the system with its square, via folding and unfolding of elements.

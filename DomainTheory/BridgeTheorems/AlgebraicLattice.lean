@@ -1,11 +1,7 @@
 module
 
-public import DomainTheory.ContinuousLattice.WayBelow.WayBelow
 public import DomainTheory.BridgeTheorems.IsCompactElement
-public import Mathlib.Order.CompleteLattice.Basic
-public import Mathlib.Order.Directed
-public import Mathlib.Order.UpperLower.Basic
-public import DomainTheory.ContinuousLattice.WayBelow.ScottOpen
+import Mathlib.Tactic.Continuity.Init
 
 
 @[expose] public section

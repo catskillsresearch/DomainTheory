@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`toFilter_mono`).** The principal-filter assignment is monotone.
+
+*Proof.* Way-below is monotone in its upper argument. ∎

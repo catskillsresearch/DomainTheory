@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_foldr_unfold`).** Membership after a right-fold of unfoldings is characterised by membership in some unfolding step.
+
+*Proof.* Induction on the finite list being folded. ∎

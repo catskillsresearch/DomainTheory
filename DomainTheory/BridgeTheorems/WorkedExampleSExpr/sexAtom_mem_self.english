@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`sexAtom_mem_self`).** A natural-number atom belongs to the carrier of its singleton closure.
+
+*Proof.* Closure contains the generating consistent set. ∎

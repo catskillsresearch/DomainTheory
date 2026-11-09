@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`sumElementRht_eq`).** Two presentations of the right projection of a sum element agree.
+
+*Proof.* Both extract the right tokens of the carrier. ∎

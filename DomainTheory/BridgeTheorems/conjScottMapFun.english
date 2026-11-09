@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`conjScottMapFun`).** The underlying function of a conjugate Scott map is obtained by transporting the Scott map along the domain and codomain order isomorphisms.

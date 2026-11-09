@@ -1,7 +1,5 @@
 module
 
-public import Mathlib.Order.Hom.Basic
-public import DomainTheory.InformationSystems.SomeDomainEquations.example_8_1
 public import DomainTheory.InformationSystems.SomeDomainEquations.treeSystem
 
 @[expose] public section

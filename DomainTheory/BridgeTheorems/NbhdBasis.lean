@@ -1,16 +1,11 @@
 module
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
-public import Mathlib.Data.Finset.Fold
-public import Mathlib.Order.Hom.Basic
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys
-public import DomainTheory.InformationSystems.InformationSystems.EntSet
+public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.NeighborhoodSystem
 
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems
 
 open DomainTheory.NeighbourhoodSystems
-open DomainTheory.InformationSystems
 
 structure NbhdBasis (ι α : Type*) [DecidableEq ι] where
   system : NeighborhoodSystem α

@@ -1,15 +1,6 @@
 module
-public import DomainTheory.BridgeTheorems.InfoSysConstructions.sumElementRht_inrMap_toElement
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.sumElement
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.inrMap
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
-public import Mathlib.Order.Hom.Basic
-public import Mathlib.Order.Sum.Order
-public import Mathlib.Order.WithBot
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.theorem_7_2
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_4
-public import DomainTheory.BridgeTheorems.InfoSysConstructions.right_bot_mem_inrMap_toElement
+public import DomainTheory.BridgeTheorems.InfoSysConstructions.sumElementRht_inrMap_toElement
 
 @[expose] public section
 

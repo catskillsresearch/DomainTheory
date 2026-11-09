@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_foldFinset`).** A tree token belongs to the folding of a finite sum-token set if and only if it arises from folding some member.
+
+*Proof.* Specialise the fold-membership criterion to folding-and-inserting. ∎

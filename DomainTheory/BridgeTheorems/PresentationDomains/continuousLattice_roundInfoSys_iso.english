@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`continuousLattice_roundInfoSys_iso`).** Composing the continuous-lattice/round-filter isomorphism with the round-filter/round-element isomorphism yields an order isomorphism between a continuous lattice and its round information-system elements.

@@ -1,18 +1,12 @@
 module
 
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.assembleSum
-public import DomainTheory.BridgeTheorems.InfoSysConstructions.inrMap_toElement_injective
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.inlMap_toElement_injective
-public import DomainTheory.BridgeTheorems.InfoSysConstructions.not_right_mem_sum_botElement
-public import DomainTheory.BridgeTheorems.InfoSysConstructions.not_left_mem_sum_botElement
-public import DomainTheory.BridgeTheorems.InfoSysConstructions.right_bot_mem_inrMap_toElement
+public import DomainTheory.BridgeTheorems.InfoSysConstructions.inrMap_toElement_injective
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.left_bot_mem_inlMap_toElement
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum.inrMap
-public import Mathlib.Order.Hom.Basic
-public import Mathlib.Order.Sum.Order
-public import Mathlib.Order.WithBot
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.theorem_7_2
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_4
+public import DomainTheory.BridgeTheorems.InfoSysConstructions.not_left_mem_sum_botElement
+public import DomainTheory.BridgeTheorems.InfoSysConstructions.not_right_mem_sum_botElement
+public import DomainTheory.BridgeTheorems.InfoSysConstructions.right_bot_mem_inrMap_toElement
 
 @[expose] public section
 

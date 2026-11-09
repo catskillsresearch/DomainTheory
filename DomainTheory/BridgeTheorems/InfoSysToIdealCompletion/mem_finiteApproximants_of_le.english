@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_finiteApproximants_of_le`).** A finite approximant of a smaller element is a finite approximant of a larger one.
+
+*Proof.* The order on elements is transitive. ∎

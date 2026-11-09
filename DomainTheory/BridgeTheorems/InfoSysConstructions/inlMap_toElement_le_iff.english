@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`inlMap_toElement_le_iff`).** Left injections are ordered exactly as their underlying left elements.
+
+*Proof.* The separated-sum order restricts to the left factor along left injection. ∎

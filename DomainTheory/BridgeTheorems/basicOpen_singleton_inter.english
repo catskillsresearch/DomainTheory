@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`basicOpen_singleton_inter`).** The intersection of the basic open of a singleton token with the basic open of a finite set equals the basic open of the insertion of that token into the set.
+
+*Proof.* Intersection of basic opens is the basic open of the constructive union, and adjoining a singleton is insertion. ∎

@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`unfoldElement_foldElement`).** Unfolding after folding recovers the original sum-of-product element.
+
+*Proof.* Finite-set folding and unfolding are inverse on carriers of elements, and saturation preserves closedness. ∎

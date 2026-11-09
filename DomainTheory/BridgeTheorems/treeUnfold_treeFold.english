@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`treeUnfold_treeFold`).** Unfolding after folding a sum token recovers the token or a harmless bottom pair.
+
+*Proof.* Compare the two sides by cases on the sum token. ∎

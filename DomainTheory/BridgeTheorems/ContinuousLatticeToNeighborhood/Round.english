@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`Round`).** A filter of way-below opens is round when every way-below open it contains has a strictly interpolating way-below open also in the filter.

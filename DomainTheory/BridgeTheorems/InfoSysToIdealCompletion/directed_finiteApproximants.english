@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`directed_finiteApproximants`).** The finite approximants of an element form a directed set.
+
+*Proof.* Finite approximants of an information-system element are directed under the element order. ∎

@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_unfoldFinset`).** A sum token belongs to the unfolding of a finite tree-token set if and only if it arises from unfolding some member.
+
+*Proof.* Specialise the fold-membership criterion to unfolding-and-inserting. ∎

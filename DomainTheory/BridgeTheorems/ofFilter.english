@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Definition (`ofFilter`).** From a filter of the basic-open neighbourhood system one recovers an element whose carrier consists of those tokens whose singleton basic opens belong to the filter.
+
+Consistency of finite subsets of the carrier follows from membership of the corresponding basic open and the criterion that inclusions of basic opens preserve consistency; deductive closure uses upward closure of the filter under inclusions of basic opens.

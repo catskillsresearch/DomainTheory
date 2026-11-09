@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`unfoldElement`).** Unfolding a tree element yields the corresponding element of the separated sum of the tree system with its square.

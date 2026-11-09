@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`rhtFinset_image_unfold_mem`).** Membership among the right tokens of an unfolded finite set is equivalent to arising as the right projection of some unfolding.
+
+*Proof.* Track right polarity through the membership criterion for unfoldings. ∎

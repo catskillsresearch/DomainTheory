@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`wayBelowNbhdBasis_system`).** The neighbourhood system of the way-below neighbourhood basis coincides with the way-below neighbourhood system of the continuous lattice.
+
+*Proof.* Both systems have precisely the way-below opens as neighbourhoods. ∎

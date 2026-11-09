@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`assembleSum`).** From an optional left or right element one assembles an element of the separated-sum information system, sending the absent case to the bottom sum element.

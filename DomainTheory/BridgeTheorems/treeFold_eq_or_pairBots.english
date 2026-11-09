@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`treeFold_eq_or_pairBots`).** Folding a sum token either yields that token as a tree token or produces a pair of bottoms.
+
+*Proof.* Case analysis on the polarity of the sum token. ∎

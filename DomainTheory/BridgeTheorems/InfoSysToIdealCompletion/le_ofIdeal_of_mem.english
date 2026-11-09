@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`le_ofIdeal_of_mem`).** Every member of an ideal of finite elements lies below the element determined by that ideal.
+
+*Proof.* The directed supremum bounds every member of the directed set. ∎

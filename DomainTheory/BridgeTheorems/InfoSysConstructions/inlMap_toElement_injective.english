@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`inlMap_toElement_injective`).** Left injection of elements is injective.
+
+*Proof.* Left projection recovers the original element. ∎

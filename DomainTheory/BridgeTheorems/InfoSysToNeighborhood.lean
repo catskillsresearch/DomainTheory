@@ -2,22 +2,6 @@ module
 
 public import DomainTheory.BridgeTheorems.toNeighborhoodSystem
 public import DomainTheory.BridgeTheorems.InfoSysToNeighborhood.domainOrderIso
-public import Mathlib.Order.Hom.Basic
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
-public import DomainTheory.InformationSystems.ElementsOfASystem.closure
-public import DomainTheory.InformationSystems.DomainsAsLatticesAndAsTopologicalSpaces.factoid_46
-public import DomainTheory.InformationSystems.InformationSystems.EntSet
-public import DomainTheory.BridgeTheorems.toFilter
-public import DomainTheory.BridgeTheorems.ofFilter
-public import DomainTheory.BridgeTheorems.basicOpen_empty
-public import DomainTheory.BridgeTheorems.mem_basicOpen_singleton
-public import DomainTheory.BridgeTheorems.basicOpen_singleton_inter
-public import DomainTheory.BridgeTheorems.ent_of_basicOpen_subset
-public import DomainTheory.BridgeTheorems.con_of_basicOpen_subset
-public import DomainTheory.BridgeTheorems.mem_basicOpen_of_singletons
-public import DomainTheory.BridgeTheorems.mem_basicOpen_iff
-public import DomainTheory.BridgeTheorems.toFilter_ofFilter
-public import DomainTheory.BridgeTheorems.ofFilter_toFilter
 
 @[expose] public section
 

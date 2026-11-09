@@ -2,13 +2,7 @@ module
 
 public import DomainTheory.BridgeTheorems.toElement
 public import DomainTheory.BridgeTheorems.ofElement
-public import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.GreedyEnum
-public import Mathlib.Data.Finset.Fold
-public import Mathlib.Order.Hom.Basic
-public import DomainTheory.InformationSystems.InformationSystems.InfoSys
-public import DomainTheory.InformationSystems.InformationSystems.EntSet
-public import DomainTheory.BridgeTheorems.NbhdBasis
-public import DomainTheory.BridgeTheorems.interOf_empty
+import DomainTheory.NeighbourhoodSystems.DomainsGivenByNeighbourhoods.ElementOrder
 
 @[expose] public section
 

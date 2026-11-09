@@ -1,0 +1,3 @@
+<!-- formalization -->
+
+**Definition (`ConjScottMap.instPartialOrder`).** Conjugate Scott maps are partially ordered by the pointwise order of their transported functions.

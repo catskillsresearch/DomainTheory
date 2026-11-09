@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`mem_wayBelowUp_toFilter`).** The way-below open of \(a\) belongs to the principal filter of \(x\) if and only if \(a\) is way-below \(x\).
+
+*Proof.* Unfold the definition of the principal filter. ∎

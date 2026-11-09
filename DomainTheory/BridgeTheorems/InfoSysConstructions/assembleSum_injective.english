@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`assembleSum_injective`).** Assembly of optional left or right elements is injective.
+
+*Proof.* Classification recovers the optional component. ∎

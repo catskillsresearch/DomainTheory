@@ -1,0 +1,5 @@
+<!-- formalization -->
+
+**Theorem (`le_of_mem_finiteApproximants`).** Every finite approximant of an element lies below that element.
+
+*Proof.* Immediate from the definition of finite approximants. ∎
