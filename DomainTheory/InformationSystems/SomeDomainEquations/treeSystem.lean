@@ -5,11 +5,15 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Sum
 
 @[expose] public section
 
-namespace DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems.InfoSys
 
 open DomainTheory.InformationSystems.Constructive
 
-namespace InfoSys
+variable {α : Type*} [DecidableEq α]
+variable (A : InfoSys α)
+
+namespace treeSystem
 
 universe u
 
@@ -46,37 +50,9 @@ instance instDecidableEqTreeToken {α : Type u} [DecidableEq α] :
   | .pairR _, .atom _ => isFalse fun h => nomatch h
   | .pairR _, .pairL _ => isFalse fun h => nomatch h
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def atomInsert : TreeToken α → Finset α → Finset α
   | .atom x => insert x
   | .bot | .pairL _ | .pairR _ => id
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-variable (A : InfoSys α)
 
 private def pairLInsert : TreeToken α → Finset (TreeToken α) → Finset (TreeToken α)
   | .pairL t => insert t
@@ -126,19 +102,6 @@ theorem mem_pairLFinset {u : Finset (TreeToken α)} {t : TreeToken α} :
   · intro ht
     exact (mem_foldr_pairL u.1 t).2 ⟨.pairL t, Finset.mem_def.1 ht, rfl⟩
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-variable (A : InfoSys α)
-
 private def pairRInsert : TreeToken α → Finset (TreeToken α) → Finset (TreeToken α)
   | .pairR t => insert t
   | .bot | .atom _ | .pairL _ => id
@@ -187,43 +150,11 @@ theorem mem_pairRFinset {u : Finset (TreeToken α)} {t : TreeToken α} :
   · intro ht
     exact (mem_foldr_pairR u.1 t).2 ⟨.pairR t, Finset.mem_def.1 ht, rfl⟩
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-variable (A : InfoSys α)
-
 instance : LeftCommutative (atomInsert : TreeToken α → Finset α → Finset α) :=
   ⟨fun p q s => by cases p <;> cases q <;> first | exact insert_comm' _ _ s | rfl⟩
 
 def atomFinset (u : Finset (TreeToken α)) : Finset α :=
   Multiset.foldr atomInsert (∅ : Finset α) u.1
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-
-
-
-
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-variable (A : InfoSys α)
 
 inductive TreeCon : Finset (TreeToken α) → Prop where
   | left (u : Finset (TreeToken α))
@@ -256,35 +187,7 @@ theorem TreeCon.pairs_empty_of_left {u : Finset (TreeToken α)}
   | left _ _ hL hR => exact ⟨hL, hR⟩
   | right _ hAt _ _ => exact False.elim (hA hAt)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem atomFinset_empty : atomFinset (∅ : Finset (TreeToken α)) = ∅ := rfl
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 omit [DecidableEq α] in
 
@@ -299,19 +202,6 @@ theorem eq_singleton_bot_of_subset {s : Finset (TreeToken α)}
     obtain ⟨z, hz⟩ := Finset.nonempty_of_ne_empty hne
     have hzbot : z = .bot := Finset.mem_singleton.1 (hsub hz)
     exact hzbot ▸ hz
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem mem_foldr_atom (s : Multiset (TreeToken α)) (x : α) :
     x ∈ Multiset.foldr atomInsert (∅ : Finset α) s ↔ ∃ p ∈ s, p = .atom x := by
@@ -340,33 +230,7 @@ theorem mem_foldr_atom (s : Multiset (TreeToken α)) (x : α) :
         · exact False.elim (nomatch hq')
         · exact ⟨q, hq, hq'⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem pairLFinset_empty : pairLFinset (∅ : Finset (TreeToken α)) = ∅ := rfl
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem pairLFinset_insert_atom (u : Finset (TreeToken α)) (x : α) :
     pairLFinset (insert (.atom x) u) = pairLFinset u := by
@@ -375,38 +239,12 @@ theorem pairLFinset_insert_atom (u : Finset (TreeToken α)) (x : α) :
   · rintro (h | h); exacts [False.elim (nomatch h), h]
   · exact Or.inr
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem pairLFinset_insert_bot (u : Finset (TreeToken α)) :
     pairLFinset (insert (.bot : TreeToken α) u) = pairLFinset u := by
   ext t; simp only [mem_pairLFinset, Finset.mem_insert]
   constructor
   · rintro (h | h); exacts [False.elim (nomatch h), h]
   · exact Or.inr
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem pairLFinset_insert_pairL (u : Finset (TreeToken α)) (t : TreeToken α) :
     pairLFinset (insert (.pairL t) u) = insert t (pairLFinset u) := by
@@ -419,19 +257,6 @@ theorem pairLFinset_insert_pairL (u : Finset (TreeToken α)) (t : TreeToken α) 
     · exact Or.inl rfl
     · exact Or.inr h
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem pairLFinset_insert_pairR (u : Finset (TreeToken α)) (t : TreeToken α) :
     pairLFinset (insert (.pairR t) u) = pairLFinset u := by
   ext s; simp only [mem_pairLFinset, Finset.mem_insert]
@@ -439,34 +264,8 @@ theorem pairLFinset_insert_pairR (u : Finset (TreeToken α)) (t : TreeToken α) 
   · rintro (h | h); exacts [False.elim (nomatch h), h]
   · exact Or.inr
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem pairLFinset_mono {u v : Finset (TreeToken α)} (h : v ⊆ u) :
     pairLFinset v ⊆ pairLFinset u := fun _ ht => mem_pairLFinset.2 (h (mem_pairLFinset.1 ht))
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem pairLFinset_singleton_atom (x : α) :
     pairLFinset ({.atom x} : Finset (TreeToken α)) = ∅ := by
@@ -477,19 +276,6 @@ theorem pairLFinset_singleton_atom (x : α) :
   · intro ht
     exact False.elim (Finset.notMem_empty t ht)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem pairLFinset_singleton_bot :
     pairLFinset ({.bot} : Finset (TreeToken α)) = ∅ := by
   ext t
@@ -499,36 +285,10 @@ theorem pairLFinset_singleton_bot :
   · intro ht
     exact False.elim (Finset.notMem_empty t ht)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem pairLFinset_singleton_pairL (t : TreeToken α) :
     pairLFinset ({.pairL t} : Finset (TreeToken α)) = {t} := by
   ext s; simp only [mem_pairLFinset, Finset.mem_singleton]
   exact ⟨fun h => TreeToken.pairL.inj h, fun h => congrArg TreeToken.pairL h⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem pairLFinset_singleton_pairR (t : TreeToken α) :
     pairLFinset ({.pairR t} : Finset (TreeToken α)) = ∅ := by
@@ -539,33 +299,7 @@ theorem pairLFinset_singleton_pairR (t : TreeToken α) :
   · intro hs
     exact False.elim (Finset.notMem_empty s hs)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem pairRFinset_empty : pairRFinset (∅ : Finset (TreeToken α)) = ∅ := rfl
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem pairRFinset_insert_atom (u : Finset (TreeToken α)) (x : α) :
     pairRFinset (insert (.atom x) u) = pairRFinset u := by
@@ -574,19 +308,6 @@ theorem pairRFinset_insert_atom (u : Finset (TreeToken α)) (x : α) :
   · rintro (h | h); exacts [False.elim (nomatch h), h]
   · exact Or.inr
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem pairRFinset_insert_bot (u : Finset (TreeToken α)) :
     pairRFinset (insert (.bot : TreeToken α) u) = pairRFinset u := by
   ext t; simp only [mem_pairRFinset, Finset.mem_insert]
@@ -594,38 +315,12 @@ theorem pairRFinset_insert_bot (u : Finset (TreeToken α)) :
   · rintro (h | h); exacts [False.elim (nomatch h), h]
   · exact Or.inr
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem pairRFinset_insert_pairL (u : Finset (TreeToken α)) (t : TreeToken α) :
     pairRFinset (insert (.pairL t) u) = pairRFinset u := by
   ext s; simp only [mem_pairRFinset, Finset.mem_insert]
   constructor
   · rintro (h | h); exacts [False.elim (nomatch h), h]
   · exact Or.inr
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem pairRFinset_insert_pairR (u : Finset (TreeToken α)) (t : TreeToken α) :
     pairRFinset (insert (.pairR t) u) = insert t (pairRFinset u) := by
@@ -638,34 +333,8 @@ theorem pairRFinset_insert_pairR (u : Finset (TreeToken α)) (t : TreeToken α) 
     · exact Or.inl rfl
     · exact Or.inr h
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem pairRFinset_mono {u v : Finset (TreeToken α)} (h : v ⊆ u) :
     pairRFinset v ⊆ pairRFinset u := fun _ ht => mem_pairRFinset.2 (h (mem_pairRFinset.1 ht))
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem pairRFinset_singleton_atom (x : α) :
     pairRFinset ({.atom x} : Finset (TreeToken α)) = ∅ := by
@@ -676,19 +345,6 @@ theorem pairRFinset_singleton_atom (x : α) :
   · intro ht
     exact False.elim (Finset.notMem_empty t ht)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem pairRFinset_singleton_bot :
     pairRFinset ({.bot} : Finset (TreeToken α)) = ∅ := by
   ext t
@@ -697,19 +353,6 @@ theorem pairRFinset_singleton_bot :
     exact False.elim (nomatch mem_pairRFinset.1 ht)
   · intro ht
     exact False.elim (Finset.notMem_empty t ht)
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem pairRFinset_singleton_pairL (t : TreeToken α) :
     pairRFinset ({.pairL t} : Finset (TreeToken α)) = ∅ := by
@@ -720,51 +363,12 @@ theorem pairRFinset_singleton_pairL (t : TreeToken α) :
   · intro hs
     exact False.elim (Finset.notMem_empty s hs)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem pairRFinset_singleton_pairR (t : TreeToken α) :
     pairRFinset ({.pairR t} : Finset (TreeToken α)) = {t} := by
   ext s; simp only [mem_pairRFinset, Finset.mem_singleton]
   exact ⟨fun h => TreeToken.pairR.inj h, fun h => congrArg TreeToken.pairR h⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 def treeBot : TreeToken α := .bot
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem mem_atomFinset {u : Finset (TreeToken α)} {x : α} :
     x ∈ atomFinset u ↔ .atom x ∈ u := by
@@ -775,37 +379,9 @@ theorem mem_atomFinset {u : Finset (TreeToken α)} {x : α} :
   · intro hx
     exact (mem_foldr_atom u.1 x).2 ⟨.atom x, Finset.mem_def.1 hx, rfl⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem TreeCon_empty : TreeCon A (∅ : Finset (TreeToken α)) :=
   TreeCon.left _ (by rw [atomFinset_empty]; exact A.con_empty)
     pairLFinset_empty pairRFinset_empty
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem atomFinset_insert_atom (u : Finset (TreeToken α)) (x : α) :
     atomFinset (insert (.atom x) u) = insert x (atomFinset u) := by
@@ -818,38 +394,12 @@ theorem atomFinset_insert_atom (u : Finset (TreeToken α)) (x : α) :
     · exact Or.inl rfl
     · exact Or.inr h
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem atomFinset_insert_bot (u : Finset (TreeToken α)) :
     atomFinset (insert (.bot : TreeToken α) u) = atomFinset u := by
   ext x; simp only [mem_atomFinset, Finset.mem_insert]
   constructor
   · rintro (h | h); exacts [False.elim (nomatch h), h]
   · exact Or.inr
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem atomFinset_insert_pairL (u : Finset (TreeToken α)) (t : TreeToken α) :
     atomFinset (insert (.pairL t) u) = atomFinset u := by
@@ -858,19 +408,6 @@ theorem atomFinset_insert_pairL (u : Finset (TreeToken α)) (t : TreeToken α) :
   · rintro (h | h); exacts [False.elim (nomatch h), h]
   · exact Or.inr
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem atomFinset_insert_pairR (u : Finset (TreeToken α)) (t : TreeToken α) :
     atomFinset (insert (.pairR t) u) = atomFinset u := by
   ext x; simp only [mem_atomFinset, Finset.mem_insert]
@@ -878,52 +415,13 @@ theorem atomFinset_insert_pairR (u : Finset (TreeToken α)) (t : TreeToken α) :
   · rintro (h | h); exacts [False.elim (nomatch h), h]
   · exact Or.inr
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem atomFinset_mono {u v : Finset (TreeToken α)} (h : v ⊆ u) :
     atomFinset v ⊆ atomFinset u := fun _ hx => mem_atomFinset.2 (h (mem_atomFinset.1 hx))
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem atomFinset_singleton_atom (x : α) :
     atomFinset ({.atom x} : Finset (TreeToken α)) = {x} := by
   ext y; simp only [mem_atomFinset, Finset.mem_singleton]
   exact ⟨fun h => TreeToken.atom.inj h, fun h => congrArg TreeToken.atom h⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem atomFinset_singleton_bot :
     atomFinset ({.bot} : Finset (TreeToken α)) = ∅ := by
@@ -934,19 +432,6 @@ theorem atomFinset_singleton_bot :
   · intro hx
     exact False.elim (Finset.notMem_empty x hx)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem atomFinset_singleton_pairL (t : TreeToken α) :
     atomFinset ({.pairL t} : Finset (TreeToken α)) = ∅ := by
   ext x
@@ -955,19 +440,6 @@ theorem atomFinset_singleton_pairL (t : TreeToken α) :
     exact False.elim (nomatch mem_atomFinset.1 hx)
   · intro hx
     exact False.elim (Finset.notMem_empty x hx)
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem atomFinset_singleton_pairR (t : TreeToken α) :
     atomFinset ({.pairR t} : Finset (TreeToken α)) = ∅ := by
@@ -978,62 +450,17 @@ theorem atomFinset_singleton_pairR (t : TreeToken α) :
   · intro hx
     exact False.elim (Finset.notMem_empty x hx)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem TreeCon.pairL_of_right {u : Finset (TreeToken α)}
     (hu : TreeCon A u) (_hA : atomFinset u = ∅) : TreeCon A (pairLFinset u) := by
   cases hu with
   | left _ _ hL _ => rw [hL]; exact TreeCon_empty A
   | right _ _ hL _ => exact hL
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem TreeCon.pairR_of_right {u : Finset (TreeToken α)}
     (hu : TreeCon A u) (_hA : atomFinset u = ∅) : TreeCon A (pairRFinset u) := by
   cases hu with
   | left _ _ _ hR => rw [hR]; exact TreeCon_empty A
   | right _ _ _ hR => exact hR
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem TreeCon_insert_bot {u : Finset (TreeToken α)} (hu : TreeCon A u) :
     TreeCon A (insert .bot u) := by
@@ -1048,21 +475,6 @@ theorem TreeCon_insert_bot {u : Finset (TreeToken α)} (hu : TreeCon A u) :
       (by rw [atomFinset_insert_bot]; exact hA)
       (by rw [pairLFinset_insert_bot]; exact hL)
       (by rw [pairRFinset_insert_bot]; exact hR)
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem TreeCon_subset {u : Finset (TreeToken α)} (hu : TreeCon A u) :
     ∀ {v}, v ⊆ u → TreeCon A v := by
@@ -1090,21 +502,6 @@ theorem TreeCon_subset {u : Finset (TreeToken α)} (hu : TreeCon A u) :
         (Finset.empty_subset _))
       (ihL (pairLFinset_mono hv)) (ihR (pairRFinset_mono hv))
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem TreeCon_singleton (p : TreeToken α) : TreeCon A {p} := by
   induction p with
   | bot =>
@@ -1125,20 +522,6 @@ theorem TreeCon_singleton (p : TreeToken α) : TreeCon A {p} := by
       (atomFinset_singleton_pairR t)
       (by rw [pairLFinset_singleton_pairR]; exact TreeCon_empty A)
       (by rw [pairRFinset_singleton_pairR]; exact ih)
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-variable (A : InfoSys α)
 
 def TreeEntPayload (u : Finset (TreeToken α)) : TreeToken α → Prop
   | .bot => True
@@ -1190,41 +573,12 @@ theorem TreeEntPayload.of_no_atoms_no_pairs {u : Finset (TreeToken α)} {t : Tre
     · exact False.elim (hne hR)
     · exact False.elim (hLne hL)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-variable (A : InfoSys α)
-
 def TreeEnt (u : Finset (TreeToken α)) (p : TreeToken α) : Prop :=
   TreeCon A u ∧ TreeEntPayload A u p
 
 theorem TreeEnt.of_mem {u : Finset (TreeToken α)} {p : TreeToken α}
     (hu : TreeCon A u) (hp : p ∈ u) : TreeEnt A u p :=
   ⟨hu, TreeEntPayload.of_mem A hu hp⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem TreeCon_insert_of_ent {u : Finset (TreeToken α)} {p : TreeToken α}
     (h : TreeEnt A u p) : TreeCon A (insert p u) := by
@@ -1257,21 +611,6 @@ theorem TreeCon_insert_of_ent {u : Finset (TreeToken α)} {p : TreeToken α}
     · exact ih ⟨hConR, hPay⟩
     · exact TreeCon_insert_bot A hConR
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem pairL_ne_or_subset_bot {u v : Finset (TreeToken α)}
     (hEnts : ∀ y ∈ pairLFinset u, TreeEnt A v (.pairL y)) :
     pairLFinset v ≠ ∅ ∨ pairLFinset u ⊆ {.bot} := by
@@ -1292,21 +631,6 @@ theorem pairL_ne_or_subset_bot {u v : Finset (TreeToken α)}
         · exact Finset.mem_singleton_self _
         · exact hsub hz
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem pairR_ne_or_subset_bot {u v : Finset (TreeToken α)}
     (hEnts : ∀ y ∈ pairRFinset u, TreeEnt A v (.pairR y)) :
     pairRFinset v ≠ ∅ ∨ pairRFinset u ⊆ {.bot} := by
@@ -1326,21 +650,6 @@ theorem pairR_ne_or_subset_bot {u v : Finset (TreeToken α)}
         rcases Finset.mem_insert.1 hz with rfl | hz
         · exact Finset.mem_singleton_self _
         · exact hsub hz
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem TreeEntPayload_trans {u v : Finset (TreeToken α)} {c : TreeToken α}
     (hv : TreeCon A v) (hu : TreeCon A u)
@@ -1429,41 +738,15 @@ theorem TreeEntPayload_trans {u v : Finset (TreeToken α)} {c : TreeToken α}
       · exact Or.inr ⟨rfl, hneL⟩
       · exact Or.inl ⟨hneR, trivial⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem TreeEnt_trans {u v : Finset (TreeToken α)} {c : TreeToken α}
     (hv : TreeCon A v) (hu : TreeCon A u)
     (hEnts : ∀ y ∈ u, TreeEnt A v y) (hEntc : TreeEnt A u c) :
     TreeEnt A v c :=
   ⟨hv, TreeEntPayload_trans A hv hu hEnts hEntc.2⟩
 
-end InfoSys
+end treeSystem
 
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
+open treeSystem
 
 def treeSystem : InfoSys (TreeToken α) where
   bot := treeBot
@@ -1476,40 +759,12 @@ def treeSystem : InfoSys (TreeToken α) where
   ent_refl := fun hu hp => TreeEnt.of_mem A hu hp
   ent_trans := fun hv hu hEnts hEntc => TreeEnt_trans A hv hu hEnts hEntc
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-variable (A : InfoSys α)
-
 def treeRhs : InfoSys (SumToken α (ProdToken (treeSystem A) (treeSystem A))) :=
   sumSystem A (productSystem (treeSystem A) (treeSystem A))
 
 theorem treeRhs.eq_sum_product :
     treeRhs A = sumSystem A (productSystem (treeSystem A) (treeSystem A)) :=
   rfl
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-variable (A : InfoSys α)
 
 def treeUnfold (t : TreeToken α) :
     SumToken α (ProdToken (treeSystem A) (treeSystem A)) :=
@@ -1532,6 +787,4 @@ theorem treeUnfold.pairR (t : TreeToken α) :
 theorem treeUnfold.pairL_bot_eq_pairR_bot :
     treeUnfold A (.pairL treeBot) = treeUnfold A (.pairR treeBot) := rfl
 
-end InfoSys
-
-end DomainTheory.InformationSystems
+end DomainTheory.InformationSystems.InfoSys

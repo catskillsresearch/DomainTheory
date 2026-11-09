@@ -1,10 +1,12 @@
 module
 
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.treeSystem
+public import DomainTheory.InformationSystems.SomeDomainEquations.treeSystem
 
 @[expose] public section
 
 namespace DomainTheory.InformationSystems.InfoSys
+
+open treeSystem
 
 theorem example_8_1 :
     ∀ {α : Type*} [DecidableEq α] (A : InfoSys α),

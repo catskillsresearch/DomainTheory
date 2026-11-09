@@ -6,13 +6,15 @@ public import Mathlib.Data.Finset.Card
 
 @[expose] public section
 
-namespace DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems.InfoSys
 
 open DomainTheory.InformationSystems.Constructive
 
-namespace InfoSys
-
 variable {α : Type*} [DecidableEq α]
+variable (A : InfoSys α)
+
+namespace lambdaSystem
 
 inductive RawLamToken (α : Type*) where
   | bot : RawLamToken α
@@ -72,38 +74,9 @@ instance : DecidableEq (RawLamToken α) := fun a b =>
   if h : rawLamBEq a b = true then isTrue ((rawLamBEq_eq a b).1 h)
   else isFalse fun hab => h ((rawLamBEq_eq a b).2 hab)
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def lamAtomInsert : RawLamToken α → Finset α → Finset α
   | .atom x => insert x
   | .bot | .funTok _ _ => id
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 def lamFunInsert :
     RawLamToken α → Finset (List (RawLamToken α) × List (RawLamToken α)) →
@@ -111,57 +84,12 @@ def lamFunInsert :
   | .funTok u v => insert (u, v)
   | .bot | .atom _ => id
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def listToFinset {β : Type*} [DecidableEq β] : List β → Finset β
   | [] => ∅
   | x :: xs => insert x (listToFinset xs)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 instance : LeftCommutative (lamAtomInsert : RawLamToken α → Finset α → Finset α) :=
   ⟨fun p q s => by cases p <;> cases q <;> first | exact insert_comm' _ _ s | rfl⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 instance : LeftCommutative
     (lamFunInsert : RawLamToken α →
@@ -169,97 +97,22 @@ instance : LeftCommutative
         Finset (List (RawLamToken α) × List (RawLamToken α))) :=
   ⟨fun p q s => by cases p <;> cases q <;> first | exact insert_comm' _ _ s | rfl⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def lamAtomFinset (u : Finset (RawLamToken α)) : Finset α :=
   Multiset.foldr lamAtomInsert ∅ u.1
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 def lamFunFinset (u : Finset (RawLamToken α)) :
     Finset (List (RawLamToken α) × List (RawLamToken α)) :=
   Multiset.foldr lamFunInsert ∅ u.1
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 def lamInUnionInsert [DecidableEq (RawLamToken α)] :
     List (RawLamToken α) × List (RawLamToken α) → Finset (RawLamToken α) →
       Finset (RawLamToken α)
   | p, acc => listToFinset p.1 ∪' acc
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def lamOutUnionInsert [DecidableEq (RawLamToken α)] :
     List (RawLamToken α) × List (RawLamToken α) → Finset (RawLamToken α) →
       Finset (RawLamToken α)
   | p, acc => listToFinset p.2 ∪' acc
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem mem_listToFinset {β : Type*} [DecidableEq β] {x : β} {xs : List β} :
     x ∈ listToFinset xs ↔ x ∈ xs := by
@@ -270,21 +123,6 @@ theorem mem_listToFinset {β : Type*} [DecidableEq β] {x : β} {xs : List β} :
     · intro h; cases h
   | cons a as ih =>
     simp only [listToFinset, Finset.mem_insert, List.mem_cons, ih]
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem mem_lamFunFinset {u : Finset (RawLamToken α)}
     {p : List (RawLamToken α) × List (RawLamToken α)} :
@@ -323,42 +161,12 @@ theorem mem_lamFunFinset {u : Finset (RawLamToken α)}
   · intro hp
     exact (aux u.1).2 ⟨.funTok p.1 p.2, Finset.mem_def.1 hp, rfl⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 instance [DecidableEq (RawLamToken α)] :
     LeftCommutative (lamInUnionInsert (α := α)) :=
   ⟨fun p q s => by
     simp only [lamInUnionInsert]
     ext x; simp only [funion.mem]
     constructor <;> · rintro (h | h | h); exacts [Or.inr (Or.inl h), Or.inl h, Or.inr (Or.inr h)]⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 instance [DecidableEq (RawLamToken α)] :
     LeftCommutative (lamOutUnionInsert (α := α)) :=
@@ -367,77 +175,17 @@ instance [DecidableEq (RawLamToken α)] :
     ext x; simp only [funion.mem]
     constructor <;> · rintro (h | h | h); exacts [Or.inr (Or.inl h), Or.inl h, Or.inr (Or.inr h)]⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def lamInputUnion (s : Finset (List (RawLamToken α) × List (RawLamToken α))) :
     Finset (RawLamToken α) :=
   Multiset.foldr (lamInUnionInsert (α := α)) ∅ s.1
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 def lamOutputUnion (s : Finset (List (RawLamToken α) × List (RawLamToken α))) :
     Finset (RawLamToken α) :=
   Multiset.foldr (lamOutUnionInsert (α := α)) ∅ s.1
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem max_le_max_nat {a b c d : ℕ} (h1 : a ≤ c) (h2 : b ≤ d) :
     max a b ≤ max c d :=
   max_le (le_trans h1 (le_max_left _ _)) (le_trans h2 (le_max_right _ _))
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 def rawDepth : RawLamToken α → ℕ
   | .bot | .atom _ => 0
@@ -445,21 +193,6 @@ def rawDepth : RawLamToken α → ℕ
       1 + Nat.max
         (List.foldl (fun d t => Nat.max d (rawDepth t)) 0 u)
         (List.foldl (fun d t => Nat.max d (rawDepth t)) 0 v)
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem mem_lamInputUnion {s : Finset (List (RawLamToken α) × List (RawLamToken α))}
     {t : RawLamToken α} :
@@ -483,21 +216,6 @@ theorem mem_lamInputUnion {s : Finset (List (RawLamToken α) × List (RawLamToke
         · exact Or.inr ⟨q, hq, ht⟩
   simpa [lamInputUnion] using aux s.1
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem mem_lamOutputUnion {s : Finset (List (RawLamToken α) × List (RawLamToken α))}
     {t : RawLamToken α} :
     t ∈ lamOutputUnion s ↔ ∃ p ∈ s, t ∈ listToFinset p.2 := by
@@ -520,21 +238,6 @@ theorem mem_lamOutputUnion {s : Finset (List (RawLamToken α) × List (RawLamTok
         · exact Or.inr ⟨q, hq, ht⟩
   simpa [lamOutputUnion] using aux s.1
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 omit [DecidableEq α] in
 
 theorem foldl_max_ge_init (u : List (RawLamToken α)) (init : ℕ) :
@@ -543,21 +246,6 @@ theorem foldl_max_ge_init (u : List (RawLamToken α)) (init : ℕ) :
   | nil => exact le_rfl
   | cons a as ih =>
     exact Nat.le_trans (Nat.le_max_left init (rawDepth a)) (ih _)
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 omit [DecidableEq α] in
 
@@ -568,38 +256,8 @@ theorem foldl_max_mono_init {u : List (RawLamToken α)} {i j : ℕ} (hij : i ≤
   | nil => exact hij
   | cons a as ih => exact ih (max_le_max_nat hij le_rfl)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def maxDepthInsert : RawLamToken α → ℕ → ℕ :=
   fun t d => Nat.max (rawDepth t) d
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 omit [DecidableEq α] in
 
@@ -615,38 +273,8 @@ theorem foldl_list_le_of_mem {t : RawLamToken α} {u : List (RawLamToken α)}
         (foldl_max_ge_init as (Nat.max 0 (rawDepth t)))
     · exact Nat.le_trans (ih ht) (foldl_max_mono_init (Nat.zero_le _))
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 instance : LeftCommutative (maxDepthInsert (α := α)) :=
   ⟨fun a b d => by simp only [maxDepthInsert]; exact Nat.max_left_comm _ _ _⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 omit [DecidableEq α] in
 
@@ -659,21 +287,6 @@ theorem rawDepth_funTok_gt_left {u v : List (RawLamToken α)} {t : RawLamToken �
   simp only [rawDepth]
   exact Nat.lt_of_le_of_lt h (Nat.lt_add_of_pos_left (Nat.succ_pos 0))
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 omit [DecidableEq α] in
 
 theorem rawDepth_funTok_gt_right {u v : List (RawLamToken α)} {t : RawLamToken α}
@@ -684,21 +297,6 @@ theorem rawDepth_funTok_gt_right {u v : List (RawLamToken α)} {t : RawLamToken 
     Nat.le_trans (foldl_list_le_of_mem ht) (Nat.le_max_right _ _)
   simp only [rawDepth]
   exact Nat.lt_of_le_of_lt h (Nat.lt_add_of_pos_left (Nat.succ_pos 0))
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 omit [DecidableEq α] in
 
@@ -713,21 +311,6 @@ theorem foldr_max_le_of_forall {s : Multiset (RawLamToken α)} {b : ℕ}
     exact Nat.max_le.2 ⟨h a (Multiset.mem_cons_self _ _),
       ih fun t ht => h t (Multiset.mem_cons_of_mem ht)⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 omit [DecidableEq α] in
 
 theorem foldr_max_lt_of_forall {s : Multiset (RawLamToken α)} {b : ℕ}
@@ -740,20 +323,6 @@ theorem foldr_max_lt_of_forall {s : Multiset (RawLamToken α)} {b : ℕ}
     simp only [Multiset.foldr_cons, maxDepthInsert]
     exact Nat.max_lt.2 ⟨h a (Multiset.mem_cons_self _ _),
       ih fun t ht => h t (Multiset.mem_cons_of_mem ht)⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-variable (A : InfoSys α)
 
 def finsetMaxDepth (u : Finset (RawLamToken α)) : ℕ :=
   Multiset.foldr (maxDepthInsert (α := α)) 0 u.1
@@ -848,21 +417,6 @@ theorem finsetMaxDepth.of_mem_funTok {u : Finset (RawLamToken α)}
   ⟨Nat.lt_of_lt_of_le (finsetMaxDepth.list_lt_funTok xs ys) (le_finsetMaxDepth_of_mem h),
     Nat.lt_of_lt_of_le (finsetMaxDepth.list_lt_funTok_out xs ys) (le_finsetMaxDepth_of_mem h)⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def LamConDepth (u : Finset (RawLamToken α)) : Prop :=
   haveI : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
     decidableEq_finset
@@ -880,20 +434,6 @@ decreasing_by
   · exact (finsetMaxDepth.of_mem_funTok (mem_lamFunFinset.1 ‹_›)).2
   · exact finsetMaxDepth.inputUnion_lt ‹_› ‹_›
   · exact finsetMaxDepth.outputUnion_lt ‹_› ‹_›
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-variable (A : InfoSys α)
 
 inductive LamEntDepth : Finset (RawLamToken α) → RawLamToken α → Prop where
   | bot {u : Finset (RawLamToken α)}
@@ -930,21 +470,6 @@ theorem LamEntDepth.con {u : Finset (RawLamToken α)} {t : RawLamToken α}
   | atom hu _ _ _ => exact hu
   | funTok hu _ _ _ _ _ _ _ _ => exact hu
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def LamConN : ℕ → Finset (RawLamToken α) → Prop
   | 0, u => lamAtomFinset u ∈ A.Con ∧ lamFunFinset u = ∅
   | n + 1, u =>
@@ -955,48 +480,9 @@ def LamConN : ℕ → Finset (RawLamToken α) → Prop
             ∀ s ⊆ lamFunFinset u,
               LamConN n (lamInputUnion s) → LamConN n (lamOutputUnion s))
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem lamAtomFinset_empty : lamAtomFinset (∅ : Finset (RawLamToken α)) = ∅ := rfl
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem lamFunFinset_empty : lamFunFinset (∅ : Finset (RawLamToken α)) = ∅ := rfl
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem lamFunFinset_insert_atom (u : Finset (RawLamToken α)) (x : α) :
     lamFunFinset (insert (.atom x) u) = lamFunFinset u := by
@@ -1005,38 +491,12 @@ theorem lamFunFinset_insert_atom (u : Finset (RawLamToken α)) (x : α) :
   · rintro (h | h); exacts [False.elim (nomatch h), h]
   · exact Or.inr
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem lamFunFinset_insert_bot (u : Finset (RawLamToken α)) :
     lamFunFinset (insert (.bot : RawLamToken α) u) = lamFunFinset u := by
   ext p; simp only [mem_lamFunFinset, Finset.mem_insert]
   constructor
   · rintro (h | h); exacts [False.elim (nomatch h), h]
   · exact Or.inr
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem lamFunFinset_insert_funTok (u : Finset (RawLamToken α))
     (xs ys : List (RawLamToken α)) :
@@ -1050,69 +510,17 @@ theorem lamFunFinset_insert_funTok (u : Finset (RawLamToken α))
     · exact Or.inl rfl
     · exact Or.inr h
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem lamFunFinset_mono {u v : Finset (RawLamToken α)} (h : v ⊆ u) :
     lamFunFinset v ⊆ lamFunFinset u :=
   fun _ hp => mem_lamFunFinset.2 (h (mem_lamFunFinset.1 hp))
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem lamInputUnion_empty :
     lamInputUnion (∅ : Finset (List (RawLamToken α) × List (RawLamToken α))) = ∅ := by
   rfl
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem lamOutputUnion_empty :
     lamOutputUnion (∅ : Finset (List (RawLamToken α) × List (RawLamToken α))) = ∅ := by
   rfl
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem mem_lamAtomFinset {u : Finset (RawLamToken α)} {x : α} :
     x ∈ lamAtomFinset u ↔ .atom x ∈ u := by
@@ -1149,36 +557,8 @@ theorem mem_lamAtomFinset {u : Finset (RawLamToken α)} {x : α} :
   · intro hx
     exact (aux u.1).2 ⟨.atom x, Finset.mem_def.1 hx, rfl⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def LamCon (u : Finset (RawLamToken α)) : Prop :=
   ∃ n, LamConN A n u
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem lamAtomFinset_insert_atom (u : Finset (RawLamToken α)) (x : α) :
     lamAtomFinset (insert (.atom x) u) = insert x (lamAtomFinset u) := by
@@ -1191,38 +571,12 @@ theorem lamAtomFinset_insert_atom (u : Finset (RawLamToken α)) (x : α) :
     · exact Or.inl rfl
     · exact Or.inr h
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem lamAtomFinset_insert_bot (u : Finset (RawLamToken α)) :
     lamAtomFinset (insert (.bot : RawLamToken α) u) = lamAtomFinset u := by
   ext x; simp only [mem_lamAtomFinset, Finset.mem_insert]
   constructor
   · rintro (h | h); exacts [False.elim (nomatch h), h]
   · exact Or.inr
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
 
 theorem lamAtomFinset_insert_funTok (u : Finset (RawLamToken α))
     (xs ys : List (RawLamToken α)) :
@@ -1232,162 +586,29 @@ theorem lamAtomFinset_insert_funTok (u : Finset (RawLamToken α))
   · rintro (h | h); exacts [False.elim (nomatch h), h]
   · exact Or.inr
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
 theorem lamAtomFinset_mono {u v : Finset (RawLamToken α)} (h : v ⊆ u) :
     lamAtomFinset v ⊆ lamAtomFinset u :=
   fun _ hx => mem_lamAtomFinset.2 (h (mem_lamAtomFinset.1 hx))
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 class IsLamToken (t : RawLamToken α) : Prop where
   out : match t with
     | .bot | .atom _ => True
     | .funTok u v => LamCon A (listToFinset u) ∧ LamCon A (listToFinset v)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def LamToken : Type _ := { t : RawLamToken α // IsLamToken A t }
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 instance : DecidableEq (LamToken A) := Subtype.instDecidableEq
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def lamBot : LamToken A := ⟨.bot, ⟨trivial⟩⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def lamForget (t : LamToken A) : RawLamToken α := t.val
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 def lamForgetInsert :
     LamToken A → Finset (RawLamToken α) → Finset (RawLamToken α) :=
   fun t => insert (lamForget A t)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 instance : LeftCommutative (lamForgetInsert (A := A)) :=
   ⟨fun p q s => insert_comm' (lamForget A p) (lamForget A q) s⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamConDepth_empty : LamConDepth A (∅ : Finset (RawLamToken α)) := by
   have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
@@ -1395,42 +616,12 @@ theorem LamConDepth_empty : LamConDepth A (∅ : Finset (RawLamToken α)) := by
   rw [LamConDepth.eq_1, dite_eq_left lamFunFinset_empty, lamAtomFinset_empty]
   exact A.con_empty
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamConDepth_of_fun_empty {u : Finset (RawLamToken α)}
     (hF : lamFunFinset u = ∅) :
     LamConDepth A u ↔ lamAtomFinset u ∈ A.Con := by
   have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
     decidableEq_finset
   rw [LamConDepth.eq_1, dite_eq_left hF]
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamConDepth_of_fun_nonempty {u : Finset (RawLamToken α)}
     (hF : lamFunFinset u ≠ ∅) :
@@ -1443,21 +634,6 @@ theorem LamConDepth_of_fun_nonempty {u : Finset (RawLamToken α)}
   have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
     decidableEq_finset
   rw [LamConDepth.eq_1, dite_eq_right hF]
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamEntDepth_weaken_fun {u v : Finset (RawLamToken α)} {t : RawLamToken α}
     (huv : u ⊆ v) (hv : LamConDepth A v) (hAv : lamAtomFinset v = ∅)
@@ -1478,21 +654,6 @@ theorem LamEntDepth_weaken_fun {u v : Finset (RawLamToken α)} {t : RawLamToken 
           (Finset.empty_subset _)))
       hInCompat hEntIn hEntOut
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def LamEntN : ℕ → Finset (RawLamToken α) → RawLamToken α → Prop
   | 0, u, .bot => LamConN A 0 u
   | 0, u, .atom x =>
@@ -1512,40 +673,10 @@ def LamEntN : ℕ → Finset (RawLamToken α) → RawLamToken α → Prop
                 (∀ p ∈ s, ∀ t ∈ listToFinset p.1, LamEntN n (listToFinset u') t) ∧
                   (∀ t ∈ listToFinset v', LamEntN n (lamOutputUnion s) t)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 class LamWF (t : RawLamToken α) : Prop where
   out : match t with
     | .bot | .atom _ => True
     | .funTok xs ys => LamConDepth A (listToFinset xs) ∧ LamConDepth A (listToFinset ys)
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem filter_ne_subset_of_subset_insert_lam
     {p : List (RawLamToken α) × List (RawLamToken α)}
@@ -1558,21 +689,6 @@ theorem filter_ne_subset_of_subset_insert_lam
   · exact False.elim (hne rfl)
   · exact hqW
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem finsetMaxDepth_funion_le (u v : Finset (RawLamToken α)) :
     finsetMaxDepth (u ∪' v) ≤ Nat.max (finsetMaxDepth u) (finsetMaxDepth v) := by
   refine foldr_max_le_of_forall ?_
@@ -1582,21 +698,6 @@ theorem finsetMaxDepth_funion_le (u v : Finset (RawLamToken α)) :
   · exact Nat.le_trans (le_finsetMaxDepth_of_mem hu) (Nat.le_max_left _ _)
   · exact Nat.le_trans (le_finsetMaxDepth_of_mem hv) (Nat.le_max_right _ _)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem finsetMaxDepth_insert_le (u : Finset (RawLamToken α)) (a : RawLamToken α) :
     finsetMaxDepth (insert a u) ≤ Nat.max (rawDepth a) (finsetMaxDepth u) := by
   refine foldr_max_le_of_forall ?_
@@ -1605,21 +706,6 @@ theorem finsetMaxDepth_insert_le (u : Finset (RawLamToken α)) (a : RawLamToken 
   rcases Finset.mem_insert.mp hx' with rfl | hu
   · exact Nat.le_max_left _ _
   · exact Nat.le_trans (le_finsetMaxDepth_of_mem hu) (Nat.le_max_right _ _)
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem funion_assoc_lam (a b c : Finset (RawLamToken α)) :
     (a ∪' b) ∪' c = a ∪' (b ∪' c) := by
@@ -1638,21 +724,6 @@ theorem funion_assoc_lam (a b c : Finset (RawLamToken α)) :
       · exact funion.mem.mpr (Or.inl (funion.mem.mpr (Or.inr h)))
       · exact funion.mem.mpr (Or.inr h)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem funion_comm_lam (a b : Finset (RawLamToken α)) : a ∪' b = b ∪' a := by
   ext x
   constructor
@@ -1665,39 +736,9 @@ theorem funion_comm_lam (a b : Finset (RawLamToken α)) : a ∪' b = b ∪' a :=
     · exact funion.mem.mpr (Or.inr h)
     · exact funion.mem.mpr (Or.inl h)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem funion_empty_right_lam (u : Finset (RawLamToken α)) :
     u ∪' (∅ : Finset (RawLamToken α)) = u := by
   ext x; simp only [funion.mem, Finset.notMem_empty, or_false]
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem insert_filter_ne_lam
     {p : List (RawLamToken α) × List (RawLamToken α)}
@@ -1715,21 +756,6 @@ theorem insert_filter_ne_lam
     else
       exact Finset.mem_insert.mpr (Or.inr (Finset.mem_filter.mpr ⟨hq, h⟩))
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem lamAtomFinset_singleton_funTok (u v : List (RawLamToken α)) :
     lamAtomFinset ({.funTok u v} : Finset (RawLamToken α)) = ∅ := by
   ext x
@@ -1737,38 +763,8 @@ theorem lamAtomFinset_singleton_funTok (u v : List (RawLamToken α)) :
   · intro hx; exact False.elim (nomatch mem_lamAtomFinset.1 hx)
   · intro hx; exact False.elim (Finset.notMem_empty x hx)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def lamForgetFinset (u : Finset (LamToken A)) : Finset (RawLamToken α) :=
   Multiset.foldr (lamForgetInsert (A := A)) ∅ u.1
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem lamFunFinset_funion (u v : Finset (RawLamToken α)) :
     lamFunFinset (u ∪' v) = lamFunFinset u ∪' lamFunFinset v := by
@@ -1784,21 +780,6 @@ theorem lamFunFinset_funion (u v : Finset (RawLamToken α)) :
     · exact mem_lamFunFinset.2 (funion.mem.2 (Or.inl (mem_lamFunFinset.1 hu)))
     · exact mem_lamFunFinset.2 (funion.mem.2 (Or.inr (mem_lamFunFinset.1 hv)))
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem lamFunFinset_singleton_funTok (u v : List (RawLamToken α)) :
     lamFunFinset ({.funTok u v} : Finset (RawLamToken α)) = {(u, v)} := by
   ext p
@@ -1809,21 +790,6 @@ theorem lamFunFinset_singleton_funTok (u v : List (RawLamToken α)) :
   · intro h
     cases h
     rfl
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem lamInputUnion_funion
     (s t : Finset (List (RawLamToken α) × List (RawLamToken α))) :
@@ -1842,21 +808,6 @@ theorem lamInputUnion_funion
     · rcases (mem_lamInputUnion).1 hx with ⟨p, hp, hx'⟩
       exact (mem_lamInputUnion).2 ⟨p, funion.mem.2 (Or.inr hp), hx'⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem lamInputUnion_insert
     (s : Finset (List (RawLamToken α) × List (RawLamToken α)))
     (p : List (RawLamToken α) × List (RawLamToken α)) :
@@ -1874,42 +825,12 @@ theorem lamInputUnion_insert
     · rcases (mem_lamInputUnion).1 ht with ⟨q, hq, ht'⟩
       exact (mem_lamInputUnion).2 ⟨q, Finset.mem_insert_of_mem hq, ht'⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem lamInputUnion_singleton (p : List (RawLamToken α) × List (RawLamToken α)) :
     lamInputUnion ({p} : Finset (List (RawLamToken α) × List (RawLamToken α))) =
       listToFinset p.1 := by
   ext t
   change t ∈ listToFinset p.1 ∪' ∅ ↔ t ∈ listToFinset p.1
   simp only [funion.mem, Finset.notMem_empty, or_false]
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem lamOutputUnion_funion
     (s t : Finset (List (RawLamToken α) × List (RawLamToken α))) :
@@ -1928,21 +849,6 @@ theorem lamOutputUnion_funion
     · rcases (mem_lamOutputUnion).1 hx with ⟨p, hp, hx'⟩
       exact (mem_lamOutputUnion).2 ⟨p, funion.mem.2 (Or.inr hp), hx'⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem lamOutputUnion_insert
     (s : Finset (List (RawLamToken α) × List (RawLamToken α)))
     (p : List (RawLamToken α) × List (RawLamToken α)) :
@@ -1960,42 +866,12 @@ theorem lamOutputUnion_insert
     · rcases (mem_lamOutputUnion).1 ht with ⟨q, hq, ht'⟩
       exact (mem_lamOutputUnion).2 ⟨q, Finset.mem_insert_of_mem hq, ht'⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem lamOutputUnion_singleton (p : List (RawLamToken α) × List (RawLamToken α)) :
     lamOutputUnion ({p} : Finset (List (RawLamToken α) × List (RawLamToken α))) =
       listToFinset p.2 := by
   ext t
   change t ∈ listToFinset p.2 ∪' ∅ ↔ t ∈ listToFinset p.2
   simp only [funion.mem, Finset.notMem_empty, or_false]
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamConDepth_insert_atom {u : Finset (RawLamToken α)} {x : α}
     (ht : LamEntDepth A u (.atom x)) :
@@ -2010,21 +886,6 @@ theorem LamConDepth_insert_atom {u : Finset (RawLamToken α)} {x : α}
       rw [lamAtomFinset_insert_atom]
       exact A.ent_con hEnt)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamConDepth_singleton_atom (x : α) :
     LamConDepth A ({.atom x} : Finset (RawLamToken α)) := by
   have : DecidableEq (Finset (List (RawLamToken α) × List (RawLamToken α))) :=
@@ -2038,21 +899,6 @@ theorem LamConDepth_singleton_atom (x : α) :
       ext y; simp only [mem_lamAtomFinset, Finset.mem_singleton]
       exact ⟨RawLamToken.atom.inj, congrArg RawLamToken.atom⟩
     rw [h]; exact A.con_sing x)
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamConDepth_singleton_bot :
     LamConDepth A ({.bot} : Finset (RawLamToken α)) := by
@@ -2069,21 +915,6 @@ theorem LamConDepth_singleton_bot :
       · intro hx; exact False.elim (Finset.notMem_empty x hx)
     rw [h]; exact A.con_empty)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamEntDepth_weaken_atom {u v : Finset (RawLamToken α)} {x : α}
     (huv : u ⊆ v) (hv : LamConDepth A v) (hFv : lamFunFinset v = ∅)
     (ht : LamEntDepth A u (.atom x)) : LamEntDepth A v (.atom x) := by
@@ -2099,21 +930,6 @@ theorem LamEntDepth_weaken_atom {u v : Finset (RawLamToken α)} {x : α}
         ((LamConDepth_of_fun_empty A hF).1 hu)
         (fun y hy => A.ent_refl ((LamConDepth_of_fun_empty A hFv).1 hv) (hsubA hy))
         hEnt)
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamConDepth_insert_bot {u : Finset (RawLamToken α)}
     (hu : LamConDepth A u) :
@@ -2137,21 +953,6 @@ theorem LamConDepth_insert_bot {u : Finset (RawLamToken α)}
       exact hWF p hp
     · intro s hs hIn
       refine hFun s (by rw [← lamFunFinset_insert_bot u]; exact hs) hIn
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamConDepth_mono {u v : Finset (RawLamToken α)}
     (huv : u ⊆ v) (hv : LamConDepth A v) : LamConDepth A u := by
@@ -2188,73 +989,13 @@ theorem LamConDepth_mono {u v : Finset (RawLamToken α)}
       · intro s hs hIn
         exact hFun s (fun p hp => hFunMono (hs hp)) hIn
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def LamEnt (u : Finset (RawLamToken α)) (t : RawLamToken α) : Prop :=
   ∃ n, LamEntN A n u t
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def LamDToken : Type _ := { t : RawLamToken α // LamWF A t }
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 def LamTokenCon (u : Finset (LamToken A)) : Prop :=
   LamCon A (lamForgetFinset A u)
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamEntDepth_of_mem {u : Finset (RawLamToken α)} {t : RawLamToken α}
     (hu : LamConDepth A u) (ht : t ∈ u) : LamEntDepth A u t := by
@@ -2323,21 +1064,6 @@ theorem LamEntDepth_of_mem {u : Finset (RawLamToken α)} {t : RawLamToken α}
             Nat.lt_of_lt_of_le hys_lt (Nat.le_max_right _ _),
             Nat.lt_of_lt_of_le ht_lt (Nat.le_max_right _ _)⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamEntDepth_weaken_insert {u : Finset (RawLamToken α)}
     {a x : RawLamToken α}
     (hu' : LamConDepth A (insert a u))
@@ -2385,55 +1111,10 @@ theorem LamEntDepth_weaken_insert {u : Finset (RawLamToken α)}
         simp only [lamFunFinset_insert_funTok] at hF
         exact False.elim (Finset.notMem_empty _ (hF ▸ Finset.mem_insert_self _ _))
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def LamTokenEnt (u : Finset (LamToken A)) (p : LamToken A) : Prop :=
   LamEnt A (lamForgetFinset A u) p.val
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 instance : DecidableEq (LamDToken A) := Subtype.instDecidableEq
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamConDepth_funion_of_entSet (M : ℕ)
     (ihIns : ∀ u t, Nat.max (finsetMaxDepth u) (rawDepth t) < M →
@@ -2499,54 +1180,9 @@ theorem LamConDepth_funion_of_entSet (M : ℕ)
           · exact funion.mem.2 (Or.inr ht')
     rwa [heq] at hunion
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def lamDBot : LamDToken A := ⟨.bot, ⟨trivial⟩⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def lamDForget (t : LamDToken A) : RawLamToken α := t.val
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamConDepth_insert_of_ent {u : Finset (RawLamToken α)} {t : RawLamToken α}
     (ht : LamEntDepth A u t) : LamConDepth A (insert t u) := by
@@ -2760,39 +1396,9 @@ theorem LamConDepth_insert_of_ent {u : Finset (RawLamToken α)} {t : RawLamToken
               · exact h
             exact ((LamConDepth_of_fun_nonempty A hWorld).1 hu).2.2 sel hsel' hIn
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def lamDForgetInsert :
     LamDToken A → Finset (RawLamToken α) → Finset (RawLamToken α) :=
   fun t => insert (lamDForget A t)
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamEntDepth_trans {u v : Finset (RawLamToken α)} {c : RawLamToken α}
     (hv : LamConDepth A v) (hu : LamConDepth A u)
@@ -3019,38 +1625,8 @@ theorem LamEntDepth_trans {u v : Finset (RawLamToken α)} {c : RawLamToken α}
           · intro hp; exact False.elim (Finset.notMem_empty _ hp)
         exact LamEntDepth.funTok hv hAv hConIn hConOut hSsub hFv hInCompat' hSin hSout
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 instance : LeftCommutative (lamDForgetInsert (A := A)) :=
   ⟨fun p q s => insert_comm' (lamDForget A p) (lamDForget A q) s⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem IsLamWF_of_mem {u : Finset (RawLamToken α)} (hu : LamConDepth A u)
     {t : RawLamToken α} (ht : t ∈ u) : LamWF A t := by
@@ -3063,21 +1639,6 @@ theorem IsLamWF_of_mem {u : Finset (RawLamToken α)} (hu : LamConDepth A u)
     by_cases hF : lamFunFinset u = ∅
     · exact False.elim (Finset.notMem_empty _ (hF ▸ hmem))
     · exact ⟨((LamConDepth_of_fun_nonempty A hF).1 hu).2.1 _ hmem⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamConDepth_singleton_funTok (xs ys : List (RawLamToken α))
     (hxs : LamConDepth A (listToFinset xs)) (hys : LamConDepth A (listToFinset ys)) :
@@ -3120,21 +1681,6 @@ theorem LamConDepth_singleton_funTok (xs ys : List (RawLamToken α))
       rw [lamOutputUnion_empty]
       exact LamConDepth_empty A
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def listToLamDFinset :
     (xs : List (RawLamToken α)) →
       (∀ t ∈ xs, LamWF A t) → Finset (LamDToken A)
@@ -3142,21 +1688,6 @@ def listToLamDFinset :
   | t :: ts, h =>
       insert ⟨t, h t List.mem_cons_self⟩
         (listToLamDFinset ts fun w hw => h w (List.mem_cons_of_mem t hw))
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem mem_foldr_lamDForget (s : Multiset (LamDToken A)) (t : RawLamToken α) :
     t ∈ Multiset.foldr (lamDForgetInsert (A := A)) ∅ s ↔ ∃ p ∈ s, p.val = t := by
@@ -3174,21 +1705,6 @@ theorem mem_foldr_lamDForget (s : Multiset (LamDToken A)) (t : RawLamToken α) :
       rcases hq with rfl | hq
       · exact Or.inl hq'.symm
       · exact Or.inr ⟨q, hq, hq'⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem mem_listToLamDFinset {xs : List (RawLamToken α)}
     {h : ∀ t ∈ xs, LamWF A t} {p : LamDToken A} :
@@ -3208,20 +1724,6 @@ theorem mem_listToLamDFinset {xs : List (RawLamToken α)}
       rcases List.mem_cons.mp hp with rfl | hp
       · exact Finset.mem_insert_self _ _
       · exact Finset.mem_insert_of_mem (ih.2 hp)
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-variable (A : InfoSys α)
 
 def lamDForgetFinset (u : Finset (LamDToken A)) : Finset (RawLamToken α) :=
   Multiset.foldr (lamDForgetInsert (A := A)) ∅ u.1
@@ -3263,21 +1765,6 @@ theorem lamDForgetFinset.singleton (p : LamDToken A) :
     exact (mem_lamDForgetFinset A).2
       ⟨p, Finset.mem_singleton_self p, (Finset.mem_singleton.mp ht).symm⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem lamDForget_listToLamDFinset (xs : List (RawLamToken α))
     (h : ∀ t ∈ xs, LamWF A t) :
     lamDForgetFinset A (listToLamDFinset A xs h) = listToFinset xs := by
@@ -3289,21 +1776,6 @@ theorem lamDForget_listToLamDFinset (xs : List (RawLamToken α))
   · intro ht
     let p : LamDToken A := ⟨t, h t ht⟩
     exact ⟨p, (mem_listToLamDFinset A).2 ht, rfl⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 def LamDCon (u : Finset (LamDToken A)) : Prop :=
   LamConDepth A (lamDForgetFinset A u)
@@ -3326,21 +1798,6 @@ theorem LamDCon.subset {u v : Finset (LamDToken A)}
     (hu : LamDCon A u) (hv : v ⊆ u) : LamDCon A v :=
   LamConDepth_mono A (lamDForgetFinset.mono A hv) hu
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def LamDEnt (u : Finset (LamDToken A)) (p : LamDToken A) : Prop :=
   LamEntDepth A (lamDForgetFinset A u) p.val
 
@@ -3362,40 +1819,14 @@ theorem LamDEnt.trans {u v : Finset (LamDToken A)} {c : LamDToken A}
       exact hEnts p hp)
     ht
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamDCon_insert_of_ent {u : Finset (LamDToken A)} {p : LamDToken A}
     (ht : LamDEnt A u p) : LamDCon A (insert p u) := by
   rw [LamDCon, lamDForgetFinset.insert]
   exact LamConDepth_insert_of_ent A ht
 
-end InfoSys
+end lambdaSystem
 
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
+open lambdaSystem
 
 def lambdaSystem : InfoSys (LamDToken A) where
   bot := lamDBot A
@@ -3408,38 +1839,8 @@ def lambdaSystem : InfoSys (LamDToken A) where
   ent_refl := fun hu hp => LamDEnt.of_mem A hu hp
   ent_trans := fun hv hu hEnts hEntc => LamDEnt.trans A hv hu hEnts hEntc
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 def lamRhs : InfoSys (SumToken α (FunToken (lambdaSystem A) (lambdaSystem A))) :=
   sumSystem A (functionSystem (lambdaSystem A) (lambdaSystem A))
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 def lamUnfold (t : LamDToken A) :
     SumToken α (FunToken (lambdaSystem A) (lambdaSystem A)) :=
@@ -3453,21 +1854,6 @@ def lamUnfold (t : LamDToken A) :
         IsLamWF_of_mem A hys ((mem_listToFinset).2 hw)
       .right ⟨(u, v), ⟨LamDCon.listToLamDFinset A xs hxs,
         LamDCon.listToLamDFinset A ys hys⟩⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem mem_foldr_lamForget (s : Multiset (LamToken A)) (t : RawLamToken α) :
     t ∈ Multiset.foldr (lamForgetInsert (A := A)) ∅ s ↔ ∃ p ∈ s, p.val = t := by
@@ -3503,20 +1889,6 @@ theorem funion_insert_lam (u : Finset (RawLamToken α)) (a : RawLamToken α)
       · exact funion.mem.mpr (Or.inl hu)
       · exact funion.mem.mpr (Or.inr (Finset.mem_insert.mpr (Or.inr ht)))
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamConN_atom_con {n : ℕ} {u : Finset (RawLamToken α)}
     (hu : LamConN A n u) (hne : lamAtomFinset u ≠ ∅) : lamAtomFinset u ∈ A.Con := by
   induction n generalizing u with
@@ -3525,20 +1897,6 @@ theorem LamConN_atom_con {n : ℕ} {u : Finset (RawLamToken α)}
     rcases hu with hu | ⟨hA, _, _⟩
     · exact ih hu hne
     · exact False.elim (hne hA)
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamConN_atom_empty {n : ℕ} {u : Finset (RawLamToken α)}
     (hu : LamConN A n u) (hne : lamFunFinset u ≠ ∅) : lamAtomFinset u = ∅ := by
@@ -3549,20 +1907,6 @@ theorem LamConN_atom_empty {n : ℕ} {u : Finset (RawLamToken α)}
     · exact ih hu hne
     · exact hA
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamConN_down_atom {n : ℕ} {u : Finset (RawLamToken α)}
     (hu : LamConN A n u) (hF : lamFunFinset u = ∅) : LamConN A 0 u := by
   induction n generalizing u with
@@ -3572,20 +1916,6 @@ theorem LamConN_down_atom {n : ℕ} {u : Finset (RawLamToken α)}
     · exact ih hu hF
     · exact ⟨by rw [hA]; exact A.con_empty, hF⟩
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamConN_empty (n : ℕ) : LamConN A n (∅ : Finset (RawLamToken α)) := by
   induction n with
   | zero =>
@@ -3593,20 +1923,6 @@ theorem LamConN_empty (n : ℕ) : LamConN A n (∅ : Finset (RawLamToken α)) :=
     rw [lamAtomFinset_empty, lamFunFinset_empty]
     exact ⟨A.con_empty, rfl⟩
   | succ n ih => exact Or.inl ih
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamConN_exists_FunCon {n : ℕ} {u : Finset (RawLamToken α)}
     (hu : LamConN A n u) (hne : lamFunFinset u ≠ ∅) :
@@ -3623,20 +1939,6 @@ theorem LamConN_exists_FunCon {n : ℕ} {u : Finset (RawLamToken α)}
       exact ⟨k, Nat.le_succ_of_le hk, H⟩
     · exact ⟨n, Nat.le_refl _, hA, hWF, hFun⟩
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamConN_fun_FunCon_right {n : ℕ} {u : Finset (RawLamToken α)}
     (_hA : lamAtomFinset u = ∅)
     (_hWF : ∀ p ∈ lamFunFinset u,
@@ -3648,20 +1950,6 @@ theorem LamConN_fun_FunCon_right {n : ℕ} {u : Finset (RawLamToken α)}
     LamConN A n (lamOutputUnion s) :=
   hFun s hs hIn
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamConN_fun_empty {n : ℕ} {u : Finset (RawLamToken α)}
     (hu : LamConN A n u) (hne : lamAtomFinset u ≠ ∅) : lamFunFinset u = ∅ := by
   induction n generalizing u with
@@ -3670,20 +1958,6 @@ theorem LamConN_fun_empty {n : ℕ} {u : Finset (RawLamToken α)}
     rcases hu with hu | ⟨hA, _, _⟩
     · exact ih hu hne
     · exact False.elim (hne hA)
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamConN_insert_bot {n : ℕ} {u : Finset (RawLamToken α)}
     (hu : LamConN A n u) : LamConN A n (insert (.bot : RawLamToken α) u) := by
@@ -3699,59 +1973,17 @@ theorem LamConN_insert_bot {n : ℕ} {u : Finset (RawLamToken α)}
         fun s hs hIn =>
           hFun s (fun p hp => by rw [← lamFunFinset_insert_bot u]; exact hs hp) hIn⟩
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamConN_mono {n m : ℕ} (hmn : n ≤ m) {u : Finset (RawLamToken α)}
     (hu : LamConN A n u) : LamConN A m u := by
   induction hmn with
   | refl => exact hu
   | step _ ih => exact Or.inl ih
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamCon_empty : LamCon A (∅ : Finset (RawLamToken α)) :=
   ⟨0, by
     change lamAtomFinset ∅ ∈ A.Con ∧ lamFunFinset ∅ = ∅
     rw [lamAtomFinset_empty, lamFunFinset_empty]
     exact ⟨A.con_empty, rfl⟩⟩
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamCon_singleton_atom (x : α) :
     LamCon A ({.atom x} : Finset (RawLamToken α)) := by
@@ -3768,20 +2000,6 @@ theorem LamCon_singleton_atom (x : α) :
     · intro hp; exact False.elim (nomatch mem_lamFunFinset.1 hp)
     · intro hp; exact False.elim (Finset.notMem_empty p hp)
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamCon_singleton_bot : LamCon A ({.bot} : Finset (RawLamToken α)) := by
   refine ⟨0, ?_⟩
   change lamAtomFinset _ ∈ A.Con ∧ lamFunFinset _ = ∅
@@ -3796,20 +2014,6 @@ theorem LamCon_singleton_bot : LamCon A ({.bot} : Finset (RawLamToken α)) := by
     constructor
     · intro hp; exact False.elim (nomatch mem_lamFunFinset.1 hp)
     · intro hp; exact False.elim (Finset.notMem_empty p hp)
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamCon_subset {u : Finset (RawLamToken α)} (hu : LamCon A u) :
     ∀ {v}, v ⊆ u → LamCon A v := by
@@ -3840,20 +2044,6 @@ theorem LamCon_subset {u : Finset (RawLamToken α)} (hu : LamCon A u) :
       · intro s hs hIn
         exact hFun s (fun p hp => lamFunFinset_mono hv (hs hp)) hIn
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamEntN_con {n : ℕ} {u : Finset (RawLamToken α)} {t : RawLamToken α}
     (ht : LamEntN A n u t) : LamConN A n u := by
   match n, t with
@@ -3868,39 +2058,11 @@ theorem LamEntN_con {n : ℕ} {u : Finset (RawLamToken α)} {t : RawLamToken α}
       | .atom _ => exact ht.1
       | .funTok _ _ => exact ht.1
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamEntN_mono {n m : ℕ} (hmn : n ≤ m) {u : Finset (RawLamToken α)}
     {t : RawLamToken α} (ht : LamEntN A n u t) : LamEntN A m u t := by
   induction hmn with
   | refl => exact ht
   | step _ ih => exact Or.inl ih
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamEnt_bot {u : Finset (RawLamToken α)} (hu : LamCon A u) :
     LamEnt A u .bot := by
@@ -3908,20 +2070,6 @@ theorem LamEnt_bot {u : Finset (RawLamToken α)} (hu : LamCon A u) :
   cases n with
   | zero => exact ⟨0, hu⟩
   | succ n => exact ⟨n + 1, Or.inr hu⟩
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem lamAtomFinset_funion (u v : Finset (RawLamToken α)) :
     lamAtomFinset (u ∪' v) = lamAtomFinset u ∪' lamAtomFinset v := by
@@ -3937,122 +2085,24 @@ theorem lamAtomFinset_funion (u v : Finset (RawLamToken α)) :
     · exact mem_lamAtomFinset.2 (funion.mem.2 (Or.inl (mem_lamAtomFinset.1 hu)))
     · exact mem_lamAtomFinset.2 (funion.mem.2 (Or.inr (mem_lamAtomFinset.1 hv)))
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem lamDForgetFinset_empty : lamDForgetFinset A (∅ : Finset (LamDToken A)) = ∅ :=
   rfl
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem lamForgetFinset_empty : lamForgetFinset A (∅ : Finset (LamToken A)) = ∅ :=
   rfl
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem lamRhs_eq_sum_function :
     lamRhs A = sumSystem A (functionSystem (lambdaSystem A) (lambdaSystem A)) :=
   rfl
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem lamUnfold_atom (x : α) :
     lamUnfold A ⟨.atom x, ⟨trivial⟩⟩ = SumToken.left x := rfl
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem lamUnfold_bot : lamUnfold A (lamDBot A) = SumToken.bot := rfl
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem mem_lamForgetFinset {u : Finset (LamToken A)} {t : RawLamToken α} :
     t ∈ lamForgetFinset A u ↔ ∃ p ∈ u, p.val = t := by
   simpa [lamForgetFinset] using mem_foldr_lamForget A u.1 t
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamConN_FunCon_mono_atom {k m : ℕ} (hkm : k ≤ m)
     {u : Finset (RawLamToken α)}
@@ -4066,20 +2116,6 @@ theorem LamConN_FunCon_mono_atom {k m : ℕ} (hkm : k ≤ m)
   have h0 := LamConN_down_atom A hIn hF
   have hk : LamConN A k (lamInputUnion s) := LamConN_mono A (Nat.zero_le k) h0
   exact LamConN_mono A hkm (hFun s hs hk)
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamConN_fun_wf {n : ℕ} {u : Finset (RawLamToken α)}
     {p : List (RawLamToken α) × List (RawLamToken α)}
@@ -4103,20 +2139,6 @@ theorem LamConN_fun_wf {n : ℕ} {u : Finset (RawLamToken α)}
   have hk' : k ≤ n := Nat.le_of_succ_le_succ hk
   exact ⟨LamConN_mono A hk' h1, LamConN_mono A hk' h2⟩
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamConN_insert_of_ent_atom {n : ℕ} {u : Finset (RawLamToken α)} {x : α}
     (ht : LamEntN A n u (.atom x)) : LamConN A n (insert (.atom x) u) := by
   induction n generalizing u with
@@ -4130,20 +2152,6 @@ theorem LamConN_insert_of_ent_atom {n : ℕ} {u : Finset (RawLamToken α)} {x : 
     · exact LamConN_mono A (Nat.zero_le (n + 1))
         ⟨by rw [lamAtomFinset_insert_atom]; exact A.ent_con hEnt,
           by rw [lamFunFinset_insert_atom]; exact hF⟩
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamCon_singleton_funTok (u v : List (RawLamToken α))
     (hu : LamCon A (listToFinset u)) (hv : LamCon A (listToFinset v)) :
@@ -4190,108 +2198,24 @@ theorem LamCon_singleton_funTok (u v : List (RawLamToken α))
       subst hempty
       exact LamConN_empty A k
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamConN_insert_of_ent_bot {n : ℕ} {u : Finset (RawLamToken α)}
     (ht : LamEntN A n u .bot) : LamConN A n (insert (.bot : RawLamToken α) u) :=
   LamConN_insert_bot A (LamEntN_con A ht)
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamEnt_con {u : Finset (RawLamToken α)} {t : RawLamToken α}
     (ht : LamEnt A u t) : LamCon A u := by
   rcases ht with ⟨n, ht⟩
   exact ⟨n, LamEntN_con A ht⟩
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamTokenEnt_bot {u : Finset (LamToken A)} (hu : LamTokenCon A u) :
     LamTokenEnt A u (lamBot A) :=
   LamEnt_bot A hu
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamDCon_empty : LamDCon A (∅ : Finset (LamDToken A)) := by
   simpa [LamDCon, lamDForgetFinset_empty] using LamConDepth_empty A
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamTokenCon_empty : LamTokenCon A (∅ : Finset (LamToken A)) := by
   simpa [LamTokenCon, lamForgetFinset_empty] using LamCon_empty A
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamTokenCon_subset {u v : Finset (LamToken A)}
     (hu : LamTokenCon A u) (hv : v ⊆ u) : LamTokenCon A v :=
@@ -4299,20 +2223,6 @@ theorem LamTokenCon_subset {u v : Finset (LamToken A)}
     intro t ht
     rcases (mem_lamForgetFinset A).1 ht with ⟨p, hp, rfl⟩
     exact (mem_lamForgetFinset A).2 ⟨p, hv hp, rfl⟩)
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem lamForgetFinset_insert (u : Finset (LamToken A)) (p : LamToken A) :
     lamForgetFinset A (insert p u) = insert p.val (lamForgetFinset A u) := by
@@ -4329,20 +2239,6 @@ theorem lamForgetFinset_insert (u : Finset (LamToken A)) (p : LamToken A) :
     · rcases (mem_lamForgetFinset A).1 ht with ⟨q, hq, rfl⟩
       exact (mem_lamForgetFinset A).2 ⟨q, Finset.mem_insert_of_mem hq, rfl⟩
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem lamForgetFinset_singleton (p : LamToken A) :
     lamForgetFinset A {p} = {p.val} := by
   ext t
@@ -4354,20 +2250,6 @@ theorem lamForgetFinset_singleton (p : LamToken A) :
   · intro ht
     exact (mem_lamForgetFinset A).2
       ⟨p, Finset.mem_singleton_self p, (Finset.mem_singleton.mp ht).symm⟩
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamConN_fun_FunCon_atom {n : ℕ} {u : Finset (RawLamToken α)}
     (hu : LamConN A (n + 1) u)
@@ -4385,20 +2267,6 @@ theorem LamConN_fun_FunCon_atom {n : ℕ} {u : Finset (RawLamToken α)}
     rcases LamConN_exists_FunCon A hu hne with ⟨k, hk, _, _, hFun⟩
     have hkn : k ≤ n := Nat.le_of_succ_le_succ hk
     exact LamConN_FunCon_mono_atom A hkn hFun hs hIn hF
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamEntN_of_mem {n : ℕ} {u : Finset (RawLamToken α)} {t : RawLamToken α}
     (hu : LamConN A n u) (ht : t ∈ u) : LamEntN A n u t := by
@@ -4439,20 +2307,6 @@ theorem LamEntN_of_mem {n : ℕ} {u : Finset (RawLamToken α)} {t : RawLamToken 
           rw [lamOutputUnion_singleton (xs, ys)]
           exact ih hWF.2 ht'
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamCon_of_forget_singleton (p : LamToken A) :
     LamCon A (lamForgetFinset A {p}) := by
   rw [lamForgetFinset_singleton]
@@ -4461,73 +2315,17 @@ theorem LamCon_of_forget_singleton (p : LamToken A) :
   | ⟨.atom x, _⟩ => exact LamCon_singleton_atom A x
   | ⟨.funTok u v, hWF⟩ => exact LamCon_singleton_funTok A u v hWF.out.1 hWF.out.2
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamEnt_of_mem {u : Finset (RawLamToken α)} {t : RawLamToken α}
     (hu : LamCon A u) (ht : t ∈ u) : LamEnt A u t := by
   rcases hu with ⟨n, hu⟩
   exact ⟨n, LamEntN_of_mem A hu ht⟩
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
-
 theorem LamTokenCon_singleton (p : LamToken A) : LamTokenCon A {p} :=
   LamCon_of_forget_singleton A p
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem LamTokenEnt_of_mem {u : Finset (LamToken A)} {p : LamToken A}
     (hu : LamTokenCon A u) (hp : p ∈ u) : LamTokenEnt A u p :=
   LamEnt_of_mem A hu ((mem_lamForgetFinset A).2 ⟨p, hp, rfl⟩)
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
-variable {α : Type*} [DecidableEq α]
-
-variable (A : InfoSys α)
 
 theorem lambdaSystem_con_axioms :
     (∀ {u v : Finset (LamToken A)}, LamTokenCon A u → v ⊆ u → LamTokenCon A v) ∧
@@ -4540,5 +2338,4 @@ theorem lambdaSystem_con_axioms :
     fun hu => LamTokenEnt_bot A hu,
     fun hu hp => LamTokenEnt_of_mem A hu hp⟩
 
-end InfoSys
-end DomainTheory.InformationSystems
+end DomainTheory.InformationSystems.InfoSys

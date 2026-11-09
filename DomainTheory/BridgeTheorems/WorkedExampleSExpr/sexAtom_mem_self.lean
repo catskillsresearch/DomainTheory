@@ -5,7 +5,7 @@ public import Mathlib.Order.Hom.WithTopBot
 public import Mathlib.Order.Sum.Order
 public import Mathlib.Order.Ideal
 public import DomainTheory.InformationSystems.InformationSystems.a_first_example
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81
+public import DomainTheory.InformationSystems.SomeDomainEquations.example_8_1
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition54
 public import DomainTheory.BridgeTheorems.InfoSysToNeighborhood
 public import DomainTheory.BridgeTheorems.InfoSysToIdealCompletion
@@ -22,6 +22,7 @@ namespace DomainTheory.BridgeTheorems
 open DomainTheory.InformationSystems
 open DomainTheory.InformationSystems.Constructive
 open DomainTheory.InformationSystems.InfoSys
+open treeSystem
 open DomainTheory.InformationSystems.InfoSys.ApproximableMap
 open Order
 

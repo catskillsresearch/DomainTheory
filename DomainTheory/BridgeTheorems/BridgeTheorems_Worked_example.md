@@ -45,9 +45,9 @@
 **[InformationSystems/FunctionSpaceAsADomain/proposition_7_4.lean](../InformationSystems/FunctionSpaceAsADomain/proposition_7_4.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/proposition_7_4.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/DomainApprox.lean](../InformationSystems/SomeDomainEquations/Factoid84/DomainApprox.lean)**
+**[InformationSystems/SomeDomainEquations/DomainApprox.lean](../InformationSystems/SomeDomainEquations/DomainApprox.lean)**
 
-@import "../InformationSystems/SomeDomainEquations/Factoid84/DomainApprox.lean"
+@import "../InformationSystems/SomeDomainEquations/DomainApprox.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Product/mkLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/mkLeft.lean)**
 
 @import "../InformationSystems/ProductsAndSumsOfDomains/Product/mkLeft.lean"
@@ -786,9 +786,9 @@
 **[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/pairMap_toElement_pairElements.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/pairMap_toElement_pairElements.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/pairMap_toElement_pairElements.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84.lean](../InformationSystems/SomeDomainEquations/Factoid84.lean)**
+**[InformationSystems/SomeDomainEquations/example_8_4.lean](../InformationSystems/SomeDomainEquations/example_8_4.lean)**
 
-@import "../InformationSystems/SomeDomainEquations/Factoid84.lean"
+@import "../InformationSystems/SomeDomainEquations/example_8_4.lean"
 **[InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixChain_con.lean](../InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixChain_con.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixChain_con.lean"

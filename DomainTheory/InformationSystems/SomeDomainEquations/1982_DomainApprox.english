@@ -23,10 +23,10 @@
 **Definition (`barElement`).** The bar Element.
 
 
-**Definition (`botElement`).** The bot Element.
+**Definition (`powersetBot`).** The bot Element.
 
 
-**Definition (`topElement`).** The top Element.
+**Definition (`powersetTop`).** The top Element.
 
 
 **Definition (`ConsistentApprox`).** The consistent Approx.

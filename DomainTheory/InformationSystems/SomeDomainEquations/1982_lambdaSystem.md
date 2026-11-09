@@ -2,6 +2,6 @@
 
 @import "1982_lambdaSystem.english" {code_block=false}
 
-**[InformationSystems/SomeDomainEquations/Factoid82/lambdaSystem.lean](lambdaSystem.lean)**
+**[InformationSystems/SomeDomainEquations/lambdaSystem.lean](lambdaSystem.lean)**
 
 @import "lambdaSystem.lean"

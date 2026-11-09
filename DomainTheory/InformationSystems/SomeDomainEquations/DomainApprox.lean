@@ -7,47 +7,18 @@ public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains
 
 @[expose] public section
 
-namespace DomainTheory.InformationSystems
 
-namespace Factoid84
+namespace DomainTheory.InformationSystems.InfoSys
 
 open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
 open ApproximableMap
+
+namespace DomainApprox
 
 def PEnt (u : Finset ℕ) (n : ℕ) : Prop :=
   n = 0 ∨ n ∈ u
 
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-namespace Factoid84
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
-
 def bar (n : ℕ) : Finset ℕ := {n}
-
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-namespace Factoid84
-
-open DomainTheory.InformationSystems.Constructive
-open InfoSys
-open ApproximableMap
 
 def P : InfoSys ℕ where
   bot := 0
@@ -66,160 +37,29 @@ def P : InfoSys ℕ where
 
 theorem P.AllConsistent : P.AllConsistent := fun _ => trivial
 
-end Factoid84
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-namespace Factoid84
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
-
 def IdemApprox (r : ApproximableMap P P) : Prop :=
   ApproximableMap.comp r r = r
-
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-namespace Factoid84
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
 
 def ReflApprox (r : ApproximableMap P P) : Prop :=
   ∀ {u v : Finset ℕ}, (idMap P).rel u v → r.rel u v
 
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-namespace Factoid84
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
-
 def barElement (n : ℕ) : P.Element :=
   P.closure (bar n) trivial
 
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-namespace Factoid84
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
-
-def botElement : P.Element :=
+def powersetBot : P.Element :=
   P.closure ∅ trivial
 
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-namespace Factoid84
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
-
-def topElement : P.Element :=
+def powersetTop : P.Element :=
   P.topElement P.AllConsistent
-
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-namespace Factoid84
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
 
 def ConsistentApprox (r : ApproximableMap P P) : Prop :=
   ¬ ((barElement 1).carrier ⊆ (r.toElement (barElement 0)).carrier)
 
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-namespace Factoid84
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
-
 def BotApprox (r : ApproximableMap P P) : Prop :=
-  (barElement 0).carrier ⊆ (r.toElement botElement).carrier
-
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-namespace Factoid84
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
+  (barElement 0).carrier ⊆ (r.toElement powersetBot).carrier
 
 def RogueApprox (r : ApproximableMap P P) : Prop :=
-  r.toElement (barElement 1) = topElement
-
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-namespace Factoid84
-
-open DomainTheory.InformationSystems.Constructive
-open InfoSys
-open ApproximableMap
+  r.toElement (barElement 1) = powersetTop
 
 structure IsDomainApprox (r : ApproximableMap P P) : Prop where
   refl : ReflApprox r
@@ -228,35 +68,12 @@ structure IsDomainApprox (r : ApproximableMap P P) : Prop where
   rogue : RogueApprox r
   consistent : ConsistentApprox r
 
-end Factoid84
-end DomainTheory.InformationSystems
+end DomainApprox
 
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
-
-namespace Factoid84
+open DomainApprox
 
 def DomainApprox : Type :=
   { r : ApproximableMap P P // IsDomainApprox r }
-
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-open InfoSys
-open ApproximableMap
-
-namespace Factoid84
 
 def flatRel (u v : Finset ℕ) : Prop :=
   (1 ∈ u) ∨ ((∀ n ∈ v, n = 0 ∨ n ∈ u) ∧ 1 ∉ v)
@@ -266,21 +83,6 @@ theorem flatRel.empty : flatRel ∅ ∅ :=
 
 theorem flatRel.of_mem_one {u v : Finset ℕ} (h : 1 ∈ u) : flatRel u v :=
   Or.inl h
-
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
-
-namespace Factoid84
 
 theorem mem_barElement (n x : ℕ) :
     x ∈ (barElement n).carrier ↔ x = 0 ∨ x = n := by
@@ -297,56 +99,11 @@ theorem mem_barElement (n x : ℕ) :
       exact (closure.mem_iff P (by trivial : bar n ∈ P.Con)).2
         (Or.inr (Finset.mem_singleton_self n))
 
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
-
-namespace Factoid84
-
-theorem mem_topElement (x : ℕ) : x ∈ topElement.carrier := trivial
-
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
-
-namespace Factoid84
+theorem mem_topElement (x : ℕ) : x ∈ powersetTop.carrier := trivial
 
 def scottCon (r : ApproximableMap P P) (u : Finset ℕ) : Prop :=
   ¬ ((barElement 1).carrier ⊆
       (r.toElement (P.closure u (by trivial))).carrier)
-
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
-
-namespace Factoid84
 
 theorem BotApprox_any (r : ApproximableMap P P) : BotApprox r := by
   intro x hx
@@ -361,18 +118,6 @@ theorem BotApprox_any (r : ApproximableMap P P) : BotApprox r := by
     exact Or.inl rfl
   exact r.mono hempty (EntSet.empty P ∅) hbot trivial trivial
 
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-open InfoSys
-open ApproximableMap
-
-namespace Factoid84
 def flatMap : ApproximableMap P P where
   rel := flatRel
   rel_dom := fun _ => trivial
@@ -463,7 +208,7 @@ theorem flatMap.refl : ReflApprox flatMap := by
       · exact h1 h
 
 theorem flatMap.toElement_of_mem_one {x : P.Element} (h1 : 1 ∈ x.carrier) :
-    flatMap.toElement x = topElement := by
+    flatMap.toElement x = powersetTop := by
   apply le_antisymm
   · intro _ _; exact mem_topElement _
   · intro n _
@@ -482,38 +227,10 @@ theorem flatMap.isDomain : IsDomainApprox flatMap where
   rogue := flatMap.rogue
   consistent := flatMap.consistent
 
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-open InfoSys
-
-open ApproximableMap
-
-namespace Factoid84
-
 def flatDomainApprox : DomainApprox :=
   ⟨flatMap, flatMap.isDomain⟩
 
-end Factoid84
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-open InfoSys
-open ApproximableMap
-
-namespace Factoid84
-
-theorem mem_botElement (x : ℕ) : x ∈ botElement.carrier ↔ x = 0 := by
+theorem mem_botElement (x : ℕ) : x ∈ powersetBot.carrier ↔ x = 0 := by
   constructor
   · intro hx
     have : PEnt ∅ x := (closure.mem_iff P (by trivial : (∅ : Finset ℕ) ∈ P.Con)).1 hx
@@ -522,18 +239,6 @@ theorem mem_botElement (x : ℕ) : x ∈ botElement.carrier ↔ x = 0 := by
     · exact False.elim (Finset.notMem_empty _ hx')
   · rintro rfl
     exact (closure.mem_iff P (by trivial : (∅ : Finset ℕ) ∈ P.Con)).2 (Or.inl rfl)
-
-end Factoid84
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-open InfoSys
-open ApproximableMap
-
-namespace Factoid84
 
 theorem not_RogueApprox_idMap : ¬ RogueApprox (idMap P) := by
   intro h
@@ -549,19 +254,7 @@ theorem not_RogueApprox_idMap : ¬ RogueApprox (idMap P) := by
     · exact absurd h0 (by decide)
     · exact absurd h1' (by decide)
 
-end Factoid84
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-open InfoSys
-open ApproximableMap
-
-namespace Factoid84
-
-theorem barElement_zero_eq_bot : barElement 0 = botElement := by
+theorem barElement_zero_eq_bot : barElement 0 = powersetBot := by
   apply le_antisymm
   · intro x hx
     rcases (mem_barElement 0 x).1 hx with rfl | rfl
@@ -572,22 +265,9 @@ theorem barElement_zero_eq_bot : barElement 0 = botElement := by
     subst this
     exact (mem_barElement 0 0).2 (Or.inl rfl)
 
-end Factoid84
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-open InfoSys
-open ApproximableMap
-
-namespace Factoid84
-
 theorem scottCon_empty_iff_consistent (r : ApproximableMap P P) :
     scottCon r ∅ ↔ ConsistentApprox r := by
   simp only [scottCon, ConsistentApprox, barElement_zero_eq_bot]
   rfl
 
-end Factoid84
-end DomainTheory.InformationSystems
+end DomainTheory.InformationSystems.InfoSys

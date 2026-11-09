@@ -2,6 +2,6 @@
 
 @import "1982_Factoid_8_1.english" {code_block=false}
 
-**[InformationSystems/SomeDomainEquations/Factoid81.lean](../Factoid81.lean)**
+**[InformationSystems/SomeDomainEquations/example_8_1.lean](example_8_1.lean)**
 
-@import "../Factoid81.lean"
+@import "example_8_1.lean"

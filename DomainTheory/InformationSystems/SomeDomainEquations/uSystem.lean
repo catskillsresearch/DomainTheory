@@ -4,11 +4,12 @@ public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product
 
 @[expose] public section
 
-namespace DomainTheory.InformationSystems
+
+namespace DomainTheory.InformationSystems.InfoSys
 
 open DomainTheory.InformationSystems.Constructive
 
-namespace InfoSys
+namespace uSystem
 
 inductive VToken where
   | bot : VToken
@@ -17,15 +18,6 @@ inductive VToken where
   | pairR : VToken → VToken
   deriving DecidableEq
 
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 private def pairLInsert : VToken → Finset VToken → Finset VToken
   | .pairL t => insert t
   | .bot | .top | .pairR _ => id
@@ -76,16 +68,6 @@ theorem vPairLFinset.insert_top (u : Finset VToken) :
   · rintro (h | h); exacts [False.elim (nomatch h), h]
   · exact Or.inr
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 private def pairRInsert : VToken → Finset VToken → Finset VToken
   | .pairR t => insert t
   | .bot | .top | .pairL _ => id
@@ -137,23 +119,6 @@ theorem vPairRFinset.insert_top (u : Finset VToken) :
   constructor
   · rintro (h | h); exacts [False.elim (nomatch h), h]
   · exact Or.inr
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-
-
-
-
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 inductive VEnt : Finset VToken → VToken → Prop where
   | bot {u : Finset VToken} : VEnt u .bot
@@ -250,71 +215,16 @@ theorem VEnt.trans {u v : Finset VToken} {c : VToken}
     · exact VEnt.pairR_top hm
     · exact VEnt.pairR_proj (ih hR)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 class IsUToken (t : VToken) : Prop where
   out : t ≠ .top
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 def VCon (_u : Finset VToken) : Prop := True
 
 theorem VCon.any (u : Finset VToken) : VCon u := trivial
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 def vBot : VToken := .bot
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 theorem vPairLFinset_empty : vPairLFinset (∅ : Finset VToken) = ∅ := rfl
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 theorem vPairLFinset_insert_bot (u : Finset VToken) :
     vPairLFinset (insert (.bot : VToken) u) = vPairLFinset u := by
@@ -322,17 +232,6 @@ theorem vPairLFinset_insert_bot (u : Finset VToken) :
   constructor
   · rintro (h | h); exacts [False.elim (nomatch h), h]
   · exact Or.inr
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 theorem vPairLFinset_insert_pairL (u : Finset VToken) (t : VToken) :
     vPairLFinset (insert (.pairL t) u) = insert t (vPairLFinset u) := by
@@ -345,17 +244,6 @@ theorem vPairLFinset_insert_pairL (u : Finset VToken) (t : VToken) :
     · exact Or.inl rfl
     · exact Or.inr h
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 theorem vPairLFinset_insert_pairR (u : Finset VToken) (t : VToken) :
     vPairLFinset (insert (.pairR t) u) = vPairLFinset u := by
   ext s; simp only [mem_vPairLFinset, Finset.mem_insert]
@@ -363,32 +251,10 @@ theorem vPairLFinset_insert_pairR (u : Finset VToken) (t : VToken) :
   · rintro (h | h); exacts [False.elim (nomatch h), h]
   · exact Or.inr
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 theorem vPairLFinset_mono {u v : Finset VToken} (h : u ⊆ v) :
     vPairLFinset u ⊆ vPairLFinset v := by
   intro t ht
   exact mem_vPairLFinset.2 (h (mem_vPairLFinset.1 ht))
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 theorem vPairRFinset_insert_bot (u : Finset VToken) :
     vPairRFinset (insert (.bot : VToken) u) = vPairRFinset u := by
@@ -397,34 +263,12 @@ theorem vPairRFinset_insert_bot (u : Finset VToken) :
   · rintro (h | h); exacts [False.elim (nomatch h), h]
   · exact Or.inr
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 theorem vPairRFinset_insert_pairL (u : Finset VToken) (t : VToken) :
     vPairRFinset (insert (.pairL t) u) = vPairRFinset u := by
   ext s; simp only [mem_vPairRFinset, Finset.mem_insert]
   constructor
   · rintro (h | h); exacts [False.elim (nomatch h), h]
   · exact Or.inr
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 theorem vPairRFinset_insert_pairR (u : Finset VToken) (t : VToken) :
     vPairRFinset (insert (.pairR t) u) = insert t (vPairRFinset u) := by
@@ -437,60 +281,16 @@ theorem vPairRFinset_insert_pairR (u : Finset VToken) (t : VToken) :
     · exact Or.inl rfl
     · exact Or.inr h
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 theorem vPairRFinset_mono {u v : Finset VToken} (h : u ⊆ v) :
     vPairRFinset u ⊆ vPairRFinset v := by
   intro t ht
   exact mem_vPairRFinset.2 (h (mem_vPairRFinset.1 ht))
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 def vTop : VToken := .top
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 instance : DecidablePred IsUToken := fun t =>
   if h : t = .top then isFalse fun ht => ht.out h
   else isTrue ⟨h⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 def vSystem : InfoSys VToken where
   bot := vBot
@@ -502,17 +302,6 @@ def vSystem : InfoSys VToken where
   ent_bot := fun _ => VEnt.bot
   ent_refl := fun _ hp => VEnt.of_mem hp
   ent_trans := fun _ _ hEnts h => VEnt.trans hEnts h
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 theorem not_VEnt_empty_top : ¬ VEnt (∅ : Finset VToken) .top := by
   have aux : ∀ {u : Finset VToken} {c : VToken},
@@ -531,17 +320,6 @@ theorem not_VEnt_empty_top : ¬ VEnt (∅ : Finset VToken) .top := by
     | pairR_proj => intro hc; exact nomatch hc
   exact fun h => aux h rfl rfl
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 theorem VEnt_mono {u v : Finset VToken} {c : VToken}
     (huv : u ⊆ v) (h : VEnt u c) : VEnt v c := by
   induction h generalizing v with
@@ -554,45 +332,12 @@ theorem VEnt_mono {u v : Finset VToken} {c : VToken}
   | pairR_top hm => exact VEnt.pairR_top (huv hm)
   | pairR_proj _ ih => exact VEnt.pairR_proj (ih (vPairRFinset_mono huv))
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 def UToken : Type := { t : VToken // IsUToken t }
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 def vRhs : InfoSys (ProdToken vSystem vSystem) :=
   productSystem vSystem vSystem
 
 theorem vRhs.eq_product : vRhs = productSystem vSystem vSystem := rfl
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 def vUnfold (t : VToken) : ProdToken vSystem vSystem :=
   match t with
@@ -609,83 +354,17 @@ theorem vUnfold.pairL (x : VToken) :
 theorem vUnfold.pairR (y : VToken) :
     vUnfold (.pairR y) = ⟨(.bot, y), ⟨Or.inl rfl⟩⟩ := rfl
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 instance : DecidableEq UToken := Subtype.instDecidableEq
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 def uBot : UToken := ⟨.bot, by decide⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 def uForget (t : UToken) : VToken := t.val
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 def uForgetInsert : UToken → Finset VToken → Finset VToken :=
   fun t => insert (uForget t)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 instance : LeftCommutative uForgetInsert :=
   ⟨fun p q s => insert_comm' (uForget p) (uForget q) s⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 theorem VEnt_insert_top_imp {u : Finset VToken} {y : VToken}
     (hy : y ≠ .top) (hEnt : VEnt u y) (hIns : VEnt (insert y u) .top) :
@@ -731,17 +410,6 @@ theorem VEnt_insert_top_imp {u : Finset VToken} {y : VToken}
         · subst hzTop; exact VEnt.top_both hL hz
         · exact VEnt.top_both hL (ih hzTop hz hR)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 theorem mem_foldr_uForget (s : Multiset UToken) (t : VToken) :
     t ∈ Multiset.foldr uForgetInsert ∅ s ↔ ∃ p ∈ s, p.val = t := by
   refine Multiset.induction_on s ?_ ?_
@@ -758,17 +426,6 @@ theorem mem_foldr_uForget (s : Multiset UToken) (t : VToken) :
       rcases hq with rfl | hq
       · exact Or.inl hq'.symm
       · exact Or.inr ⟨q, hq, hq'⟩
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 theorem not_VEnt_singleton_ne_top {t : VToken} (ht : t ≠ .top) :
     ¬ VEnt ({t} : Finset VToken) .top := by
@@ -800,32 +457,11 @@ theorem not_VEnt_singleton_ne_top {t : VToken} (ht : t ≠ .top) :
       · intro hx; exact False.elim (Finset.notMem_empty x hx)
     exact not_VEnt_empty_top (by rwa [hL'] at hL)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 theorem not_VEnt_insert_top_of_ent {u : Finset VToken} {y : VToken}
     (hy : y ≠ .top) (hEnt : VEnt u y) (hNot : ¬ VEnt u .top) :
     ¬ VEnt (insert y u) .top :=
   fun hIns => hNot (VEnt_insert_top_imp hy hEnt hIns)
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 def uForgetFinset (u : Finset UToken) : Finset VToken :=
   Multiset.foldr uForgetInsert ∅ u.1
 
@@ -868,17 +504,6 @@ theorem uForgetFinset.singleton (p : UToken) :
     exact (mem_uForgetFinset).2
       ⟨p, Finset.mem_singleton_self p, (Finset.mem_singleton.mp ht).symm⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 def UCon (u : Finset UToken) : Prop :=
   ¬ VEnt (uForgetFinset u) .top
 
@@ -889,17 +514,6 @@ theorem UCon.singleton (p : UToken) : UCon {p} := by
 theorem UCon.subset {u v : Finset UToken}
     (hu : UCon u) (hv : v ⊆ u) : UCon v :=
   fun h => hu (VEnt_mono (uForgetFinset.mono hv) h)
-
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 def UEnt (u : Finset UToken) (p : UToken) : Prop :=
   UCon u ∧ VEnt (uForgetFinset u) p.val
@@ -920,33 +534,15 @@ theorem UEnt.trans {u v : Finset UToken} {c : UToken}
       exact (hEnts p hp).2)
     h.2⟩
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 theorem UCon_insert_of_ent {u : Finset UToken} {p : UToken}
     (h : UEnt u p) : UCon (insert p u) := by
   rcases h with ⟨hCon, hEnt⟩
   rw [UCon, uForgetFinset.insert]
   exact not_VEnt_insert_top_of_ent p.property.out hEnt hCon
 
-end InfoSys
+end uSystem
 
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
+open uSystem
 
 def uSystem : InfoSys UToken where
   bot := uBot
@@ -959,34 +555,12 @@ def uSystem : InfoSys UToken where
   ent_refl := fun hu hp => UEnt.of_mem hu hp
   ent_trans := fun hv hu hEnts h => UEnt.trans hv hu hEnts h
 
-end InfoSys
-
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
-
 theorem UCon_empty : UCon (∅ : Finset UToken) := by
   simpa [UCon, uForgetFinset.empty] using not_VEnt_empty_top
-
-end InfoSys
-end DomainTheory.InformationSystems
-
-
-namespace DomainTheory.InformationSystems
-
-open DomainTheory.InformationSystems.Constructive
-
-namespace InfoSys
 
 theorem not_mem_uForget_top (u : Finset UToken) : .top ∉ uForgetFinset u := by
   intro ht
   rcases (mem_uForgetFinset).1 ht with ⟨p, _, hp⟩
   exact p.property.out hp
 
-end InfoSys
-end DomainTheory.InformationSystems
+end DomainTheory.InformationSystems.InfoSys
