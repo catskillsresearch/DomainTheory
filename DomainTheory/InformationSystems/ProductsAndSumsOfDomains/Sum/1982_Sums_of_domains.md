@@ -19,7 +19,7 @@
 - [Empty sum consistency](1982_SumCon_empty.md) [✓](../../../1982_REVISION.md)
 - [Sum library](1982_Sum.md) [✓](../../../1982_REVISION.md)
 - [Left sum lift](../Proposition64/1982_liftSumLeft.md) [✓](../../../1982_REVISION.md)
-- [Right sum lift](../Proposition64/1982_liftSumRight.md)
+- [Right sum lift](../Proposition64/1982_liftSumRight.md) [✓](../../../1982_REVISION.md)
 - [Sum entailment helpers](../Proposition64/1982_entSet.md)
 - [Sum elements](../Proposition64/1982_sumElement.md)
 - [Left injection map](../Proposition64/1982_inlMap.md)

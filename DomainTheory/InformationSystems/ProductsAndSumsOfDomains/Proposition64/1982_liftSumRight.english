@@ -1,1 +1,25 @@
 <!-- formalization -->
+
+**Definition (`InfoSys.instLeftCommutativeLiftSumRight`).** Inserting right sum tokens is left-commutative, so finite right lifts are well-defined independently of insertion order.
+
+**Definition (`InfoSys.liftSumRight`).** The right sum lift of a finite set $w \subseteq D_{\mathbf{B}}$ is the finite set of right tokens $(\Delta, Y)$ for $Y \in w$.
+
+**Theorem (`InfoSys.liftSumRight.mem_foldr`).** Membership in a right sum lift built by folding insertion over a multiset equals membership of some right token over that multiset.
+
+*Proof.* Induction on the multiset, using the characterization of insert membership. □
+
+**Theorem (`InfoSys.liftSumRight.mem`).** A sum token lies in the right lift of $w$ iff it is a right token of some $Y \in w$.
+
+*Proof.* Unfold the lift and apply the fold characterization. □
+
+**Theorem (`InfoSys.liftSumRight.rhtFinset_eq`).** The right projection of a right sum lift recovers the original set $w$.
+
+*Proof.* Use the membership characterizations of right projection and of the lift. □
+
+**Theorem (`InfoSys.liftSumRight.lftFinset_eq`).** The left projection of a right sum lift is empty.
+
+*Proof.* Every token in the lift is a right token. □
+
+**Theorem (`InfoSys.liftSumRight.con`).** The right sum lift of a consistent set $w$ is consistent in the separated sum.
+
+*Proof.* Left projection is empty; right projection recovers $w$. □
