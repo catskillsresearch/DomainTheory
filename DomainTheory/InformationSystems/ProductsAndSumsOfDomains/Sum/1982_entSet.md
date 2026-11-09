@@ -1,4 +1,4 @@
-# Sum entailment
+# Sum entailment helpers
 
 @import "1982_entSet.english" {code_block=false}
 

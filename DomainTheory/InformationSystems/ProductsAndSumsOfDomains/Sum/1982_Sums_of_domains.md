@@ -20,9 +20,11 @@
 - [Sum library](1982_Sum.md) [✓](../../../1982_REVISION.md)
 - [Left sum lift](1982_liftSumLeft.md) [✓](../../../1982_REVISION.md)
 - [Right sum lift](1982_liftSumRight.md) [✓](../../../1982_REVISION.md)
-- [Sum entailment](1982_entSet.md) [✓](../../../1982_REVISION.md)
+- [Sum entailment helpers](1982_entSet.md) [✓](../../../1982_REVISION.md)
 - [Sum elements](1982_sumElement.md) [✓](../../../1982_REVISION.md)
 - [Left injection map](1982_inlMap.md) [✓](../../../1982_REVISION.md)
 - [Right injection map](1982_inrMap.md) [✓](../../../1982_REVISION.md)
 - [Copairing map](1982_copairMap.md) [✓](../../../1982_REVISION.md)
 - [Proposition 6.4: injections and copairing](1982_Proposition_6_4.md) [✓](../../../1982_REVISION.md)
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-08) — <a href="../../../1982_REVISION.md">1982 revision progress</a></p>
