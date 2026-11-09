@@ -1,17 +1,8 @@
 module
 
-public import DomainTheory.InformationSystems.InformationSystems.Constructive
-public import DomainTheory.InformationSystems.InformationSystems.Proposition23
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.BasicInst5
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.ProdToken
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.BasicInst7
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.prodBot
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.instLeftCommutativeFstInsert
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.instLeftCommutativeSndInsert
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.fstFinset
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.sndFinset
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.ProdCon
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.ProdEnt
+import DomainTheory.InformationSystems.InformationSystems.InfoSys.con_empty
 
 @[expose] public section
 
