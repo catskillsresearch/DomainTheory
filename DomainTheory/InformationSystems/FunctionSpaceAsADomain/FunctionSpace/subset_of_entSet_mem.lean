@@ -1,0 +1,34 @@
+module
+
+public import Mathlib.Data.Multiset.MapFold
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.functionSystem
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.theorem_7_2
+public import DomainTheory.InformationSystems.InformationSystems.a_second_example
+public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
+public import DomainTheory.InformationSystems.ElementsOfASystem.closure
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.BoolToken
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.BoolPoint
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.BasicInst22
+
+@[expose] public section
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+variable {α β : Type*} [DecidableEq α] [DecidableEq β]
+
+variable (A : InfoSys α) (B : InfoSys β)
+
+open ApproximableMap
+
+theorem subset_of_entSet_mem {x : A.Element} {v v' : Finset α}
+    (hv : ↑v ⊆ x.carrier) (hEnt : A.EntSet v v') : ↑v' ⊆ x.carrier := by
+  intro y hy
+  exact x.closed v y hv (hEnt y (Finset.mem_coe.1 hy))
+
+end InfoSys
+
+end DomainTheory.InformationSystems

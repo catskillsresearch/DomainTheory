@@ -1,0 +1,60 @@
+module
+
+public import Mathlib.Data.Multiset.MapFold
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.functionSystem
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.theorem_7_2
+public import DomainTheory.InformationSystems.InformationSystems.a_second_example
+public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
+public import DomainTheory.InformationSystems.ElementsOfASystem.closure
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.BoolToken
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.BoolPoint
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.BasicInst22
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.EmptyEntails
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.boolSystem
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.condMap
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.emptyEntails_mem_botElement
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.mem_botElement_emptyEntails
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.strictify
+
+@[expose] public section
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+open ApproximableMap
+variable {α β : Type*} [DecidableEq α] [DecidableEq β]
+
+def IsStrict (A : InfoSys α) (B : InfoSys β) (f : ApproximableMap A B) : Prop :=
+  f.toElement A.botElement = B.botElement
+
+variable (A : InfoSys α) (B : InfoSys β)
+
+theorem IsStrict.condMap (x y : A.Element) : IsStrict boolSystem A (InfoSys.condMap A x y) := by
+  apply le_antisymm
+  · intro Z ⟨u, hu, ⟨_, _, hE, _, _⟩⟩
+    have hEmp : EmptyEntails boolSystem u := fun t ht =>
+      mem_botElement_emptyEntails boolSystem (hu (Finset.mem_coe.2 ht))
+    exact emptyEntails_mem_botElement A (hE hEmp Z (Finset.mem_singleton_self _))
+  · exact botElement.le A _
+
+namespace ApproximableMap
+
+theorem IsStrict.strictify (f : ApproximableMap A B) :
+    IsStrict A B (ApproximableMap.strictify A B f) := by
+  apply le_antisymm
+  · intro Z ⟨u, hu, ⟨_, _, hcase⟩⟩
+    have huE : EmptyEntails A u := fun x hx =>
+      mem_botElement_emptyEntails A (hu (Finset.mem_coe.2 hx))
+    rcases hcase with hE | ⟨_, hn⟩
+    · exact emptyEntails_mem_botElement B (hE Z (Finset.mem_singleton_self _))
+    · exact False.elim (hn huE)
+  · exact botElement.le B _
+
+end ApproximableMap
+
+end InfoSys
+
+end DomainTheory.InformationSystems

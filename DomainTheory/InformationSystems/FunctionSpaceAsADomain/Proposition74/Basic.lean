@@ -1,17 +1,9 @@
 module
 
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.Basic
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixChain_subset_pre_fixed
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixElement_le_of_pre_fixed
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixChain_step_of_rel
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.toElement_fixElement_le
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixElement_fixed
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixElement_unique
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixMap_unique
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition54
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.comp
 public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 public import DomainTheory.InformationSystems.ElementsOfASystem.closure
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.con_empty
+import DomainTheory.InformationSystems.InformationSystems.EntSet
 
 @[expose] public section
 

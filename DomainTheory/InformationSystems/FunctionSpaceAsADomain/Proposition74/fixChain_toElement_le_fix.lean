@@ -1,11 +1,13 @@
 module
 
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition54
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.comp
 public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
-public import DomainTheory.InformationSystems.ElementsOfASystem.closure
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.Basic
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.proposition_7_4_ii
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixChain_con
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixElement
+import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.mem_approxMap_toElement
+import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.rel_input_output_union
+import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.Basic
+import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.proposition_7_4_ii
 
 @[expose] public section
 

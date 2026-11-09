@@ -1,12 +1,10 @@
 module
 
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition54
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.comp
 public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
-public import DomainTheory.InformationSystems.ElementsOfASystem.closure
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.Basic
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.fixElement_le_toElement_fix
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.toElement_fix_le_fixElement
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixElement
+import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.fixElement_le_toElement_fix
+import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Proposition74.toElement_fix_le_fixElement
 
 @[expose] public section
 

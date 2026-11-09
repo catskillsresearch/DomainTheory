@@ -1,8 +1,9 @@
 module
 
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixElement_fixed
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixElement_le_of_pre_fixed
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixMap_unique
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixElement
+import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixElement_fixed
+import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixElement_le_of_pre_fixed
+import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixMap_unique
 
 @[expose] public section
 

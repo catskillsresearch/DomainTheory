@@ -1,0 +1,43 @@
+module
+
+public import Mathlib.Data.Multiset.MapFold
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.functionSystem
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.theorem_7_2
+public import DomainTheory.InformationSystems.InformationSystems.a_second_example
+public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
+public import DomainTheory.InformationSystems.ElementsOfASystem.closure
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.BoolToken
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.BoolPoint
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.StrictFunToken
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.BasicInst22
+
+@[expose] public section
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+variable {α β : Type*} [DecidableEq α] [DecidableEq β]
+
+variable (A : InfoSys α) (B : InfoSys β)
+
+theorem insert_filter_ne_strict {p : StrictFunToken A B}
+    {t : Finset (StrictFunToken A B)} (hp : p ∈ t) :
+    insert p (t.filter (· ≠ p)) = t := by
+  ext q
+  constructor
+  · intro hq
+    rcases Finset.mem_insert.mp hq with rfl | hq
+    · exact hp
+    · exact (Finset.mem_filter.mp hq).1
+  · intro hq
+    if h : q = p then
+      exact Finset.mem_insert.mpr (Or.inl h)
+    else
+      exact Finset.mem_insert.mpr (Or.inr (Finset.mem_filter.mpr ⟨hq, h⟩))
+
+end InfoSys
+
+end DomainTheory.InformationSystems

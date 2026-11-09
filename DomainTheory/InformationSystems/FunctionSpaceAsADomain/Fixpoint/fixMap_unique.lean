@@ -5,6 +5,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.theorem_7_2
 public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.Basic
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixElement_unique
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.approxMap_toElement_element_toApproxMap
 
 @[expose] public section
 

@@ -1,0 +1,79 @@
+module
+
+public import Mathlib.Data.Multiset.MapFold
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.functionSystem
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.theorem_7_2
+public import DomainTheory.InformationSystems.InformationSystems.a_second_example
+public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
+public import DomainTheory.InformationSystems.ElementsOfASystem.closure
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.BoolToken
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.BoolPoint
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.EmptyEntails
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.emptyEntails_empty
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.emptyEntails_mem_botElement
+
+@[expose] public section
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+variable {α β : Type*} [DecidableEq α] [DecidableEq β]
+variable (A : InfoSys α) (B : InfoSys β)
+
+namespace ApproximableMap
+
+def strictify (f : ApproximableMap A B) : ApproximableMap A B where
+  rel u v :=
+    u ∈ A.Con ∧ v ∈ B.Con ∧
+      (EmptyEntails B v ∨ (f.rel u v ∧ ¬ EmptyEntails A u))
+  rel_dom h := h.1
+  rel_cod h := h.2.1
+  empty_rel := ⟨A.con_empty, B.con_empty, Or.inl (emptyEntails_empty B)⟩
+  union_right := by
+    rintro u v v' ⟨hu, hv, hvcase⟩ ⟨_, hv', hv'case⟩
+    have hvU : v ∪' v' ∈ B.Con := by
+      rcases hvcase with hE | ⟨hf, _⟩
+      · rcases hv'case with hE' | ⟨hf', _⟩
+        · exact B.con_subset
+            (EntSet.union_mem B B.con_empty (EntSet.union B hE hE'))
+            (funion.subset_right _ _)
+        · exact f.rel_cod (f.union_right
+            (f.mono f.empty_rel (EntSet.empty A u) hE hu hv) hf')
+      · rcases hv'case with hE' | ⟨hf', _⟩
+        · exact f.rel_cod (f.union_right hf
+            (f.mono f.empty_rel (EntSet.empty A u) hE' hu hv'))
+        · exact f.rel_cod (f.union_right hf hf')
+    refine ⟨hu, hvU, ?_⟩
+    rcases hvcase with hE | ⟨hf, hn⟩
+    · rcases hv'case with hE' | ⟨hf', hn'⟩
+      · exact Or.inl (EntSet.union B hE hE')
+      · exact Or.inr ⟨f.union_right
+          (f.mono f.empty_rel (EntSet.empty A u) hE hu hv) hf', hn'⟩
+    · rcases hv'case with hE' | ⟨hf', hn'⟩
+      · exact Or.inr ⟨f.union_right hf
+          (f.mono f.empty_rel (EntSet.empty A u) hE' hu hv'), hn⟩
+      · exact Or.inr ⟨f.union_right hf hf', hn⟩
+  mono := by
+    rintro u u' v v' ⟨hu, hv, hcase⟩ hEntu hEntv hu' hv'
+    refine ⟨hu', hv', ?_⟩
+    rcases hcase with hE | ⟨hf, hn⟩
+    · exact Or.inl (fun y hy => B.ent_trans B.con_empty hv hE (hEntv y hy))
+    · refine Or.inr ⟨f.mono hf hEntu hEntv hu' hv', fun hE' => hn ?_⟩
+      exact fun x hx => A.ent_trans A.con_empty hu' hE' (hEntu x hx)
+
+theorem strictify.toElement_le (f : ApproximableMap A B) (x : A.Element) :
+    (strictify A B f).toElement x ≤ f.toElement x := by
+  intro Z ⟨u, hu, ⟨_, _, hcase⟩⟩
+  rcases hcase with hE | ⟨hf, _⟩
+  · exact (botElement.le B (f.toElement x))
+      (emptyEntails_mem_botElement B (hE Z (Finset.mem_singleton_self _)))
+  · exact ⟨u, hu, hf⟩
+
+end ApproximableMap
+
+end InfoSys
+
+end DomainTheory.InformationSystems

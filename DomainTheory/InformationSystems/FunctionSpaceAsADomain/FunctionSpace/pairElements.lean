@@ -1,10 +1,7 @@
 module
 
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.functionSystem
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.comp
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_2
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32
+public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
 
 @[expose] public section
 

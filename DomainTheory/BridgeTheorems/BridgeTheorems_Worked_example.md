@@ -492,9 +492,9 @@
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/acomp.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid77/acomp.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Factoid77/acomp.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid76/pairOpUncurry.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid76/pairOpUncurry.lean)**
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/pairOpUncurry.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/pairOpUncurry.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid76/pairOpUncurry.lean"
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/pairOpUncurry.lean"
 **[InformationSystems/FunctionSpaceAsADomain/Fixpoint/FixChain.lean](../InformationSystems/FunctionSpaceAsADomain/Fixpoint/FixChain.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Fixpoint/FixChain.lean"
@@ -519,12 +519,12 @@
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/terminalLimitCone.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid77/terminalLimitCone.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Factoid77/terminalLimitCone.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid76/compOpUncurry.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid76/compOpUncurry.lean)**
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/compOpUncurry.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/compOpUncurry.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid76/compOpUncurry.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/BoolToken.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/BoolToken.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/compOpUncurry.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/BoolToken.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/BoolToken.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/BoolToken.lean"
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/BoolToken.lean"
 **[BridgeTheorems/InfoSysConstructions/pairElements_mono.lean](InfoSysConstructions/pairElements_mono.lean)**
 
 @import "InfoSysConstructions/pairElements_mono.lean"
@@ -558,18 +558,18 @@
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/swap_snd_toElement.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid77/swap_snd_toElement.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Factoid77/swap_snd_toElement.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/BoolPoint.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/BoolPoint.lean)**
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/BoolPoint.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/BoolPoint.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/BoolPoint.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/boolSat.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/boolSat.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/BoolPoint.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/boolSat.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/boolSat.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/boolSat.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/boolSystem.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/boolSystem.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/boolSat.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/boolSystem.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/boolSystem.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/boolSystem.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/mem_botElement_emptyEntails.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/mem_botElement_emptyEntails.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/boolSystem.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/mem_botElement_emptyEntails.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/mem_botElement_emptyEntails.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/mem_botElement_emptyEntails.lean"
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/mem_botElement_emptyEntails.lean"
 **[InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixChain_mono_w.lean](../InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixChain_mono_w.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixChain_mono_w.lean"
@@ -591,63 +591,63 @@
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/exp.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid77/exp.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Factoid77/exp.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/EmptyEntails.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/EmptyEntails.lean)**
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/EmptyEntails.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/EmptyEntails.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/EmptyEntails.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/emptyEntails_empty.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/emptyEntails_empty.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/EmptyEntails.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/emptyEntails_empty.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/emptyEntails_empty.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/emptyEntails_empty.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/StrictToken.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/StrictToken.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/emptyEntails_empty.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/StrictToken.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/StrictToken.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/StrictToken.lean"
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/StrictToken.lean"
 **[BridgeTheorems/InfoSysConstructions/inrMap_toElement_le_iff.lean](InfoSysConstructions/inrMap_toElement_le_iff.lean)**
 
 @import "InfoSysConstructions/inrMap_toElement_le_iff.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/StrictFunToken.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/StrictFunToken.lean)**
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/StrictFunToken.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/StrictFunToken.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/StrictFunToken.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/BasicInst22.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/BasicInst22.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/StrictFunToken.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/BasicInst22.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/BasicInst22.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/BasicInst22.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/boolTrue.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/boolTrue.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/BasicInst22.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/boolTrue.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/boolTrue.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/boolTrue.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/toFunFinset.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/toFunFinset.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/boolTrue.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/toFunFinset.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/toFunFinset.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/toFunFinset.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/filter_ne_subset_of_subset_insert_strict.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/filter_ne_subset_of_subset_insert_strict.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/toFunFinset.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/filter_ne_subset_of_subset_insert_strict.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/filter_ne_subset_of_subset_insert_strict.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/filter_ne_subset_of_subset_insert_strict.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/insert_filter_ne_strict.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/insert_filter_ne_strict.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/filter_ne_subset_of_subset_insert_strict.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/insert_filter_ne_strict.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/insert_filter_ne_strict.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/insert_filter_ne_strict.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/boolFalse.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/boolFalse.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/insert_filter_ne_strict.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/boolFalse.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/boolFalse.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/boolFalse.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/StrictFunCon.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/StrictFunCon.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/boolFalse.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/StrictFunCon.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/StrictFunCon.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/StrictFunCon.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/not_ent_empty_tru.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/not_ent_empty_tru.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/StrictFunCon.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/not_ent_empty_tru.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/not_ent_empty_tru.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/not_ent_empty_tru.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/StrictFunEnt.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/StrictFunEnt.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/not_ent_empty_tru.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/StrictFunEnt.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/StrictFunEnt.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/StrictFunEnt.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/boolCon_trichotomy.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/boolCon_trichotomy.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/StrictFunEnt.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/boolCon_trichotomy.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/boolCon_trichotomy.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/boolCon_trichotomy.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/strictBot.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/strictBot.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/boolCon_trichotomy.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/strictBot.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/strictBot.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/strictBot.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/not_ent_empty_fls.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/not_ent_empty_fls.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/strictBot.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/not_ent_empty_fls.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/not_ent_empty_fls.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/not_ent_empty_fls.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/emptyEntails_funion.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/emptyEntails_funion.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/not_ent_empty_fls.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/emptyEntails_funion.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/emptyEntails_funion.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/emptyEntails_funion.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/strictFunctionSystem.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/strictFunctionSystem.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/emptyEntails_funion.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/strictFunctionSystem.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/strictFunctionSystem.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/strictFunctionSystem.lean"
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/strictFunctionSystem.lean"
 **[InformationSystems/FunctionSpaceAsADomain/Fixpoint/FixReach.lean](../InformationSystems/FunctionSpaceAsADomain/Fixpoint/FixReach.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Fixpoint/FixReach.lean"
@@ -729,12 +729,12 @@
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/tensorLeft_map_eq.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid77/tensorLeft_map_eq.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Factoid77/tensorLeft_map_eq.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/emptyEntails_mem_botElement.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/emptyEntails_mem_botElement.lean)**
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/emptyEntails_mem_botElement.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/emptyEntails_mem_botElement.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/emptyEntails_mem_botElement.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/strictify.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/strictify.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/emptyEntails_mem_botElement.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/strictify.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/strictify.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/strictify.lean"
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/strictify.lean"
 **[BridgeTheorems/InfoSysConstructions/unpair.lean](InfoSysConstructions/unpair.lean)**
 
 @import "InfoSysConstructions/unpair.lean"
@@ -819,21 +819,21 @@
 **[BridgeTheorems/WorkedExampleSExpr/exists_sexNeighborhoodIso.lean](WorkedExampleSExpr/exists_sexNeighborhoodIso.lean)**
 
 @import "WorkedExampleSExpr/exists_sexNeighborhoodIso.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid76/constOp.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid76/constOp.lean)**
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/constOp.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/constOp.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid76/constOp.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid76/pairOp.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid76/pairOp.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/constOp.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/pairOp.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/pairOp.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid76/pairOp.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid76/compOp.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid76/compOp.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/pairOp.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/compOp.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/compOp.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid76/compOp.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid76.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid76.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/compOp.lean"
+**[InformationSystems/FunctionSpaceAsADomain/theorem_76.lean](../InformationSystems/FunctionSpaceAsADomain/theorem_76.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid76.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid76/pairMap_toElement_pairElements.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid76/pairMap_toElement_pairElements.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/theorem_76.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/pairMap_toElement_pairElements.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/pairMap_toElement_pairElements.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid76/pairMap_toElement_pairElements.lean"
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/pairMap_toElement_pairElements.lean"
 **[InformationSystems/SomeDomainEquations/Factoid84/IdemApprox.lean](../InformationSystems/SomeDomainEquations/Factoid84/IdemApprox.lean)**
 
 @import "../InformationSystems/SomeDomainEquations/Factoid84/IdemApprox.lean"
@@ -921,36 +921,36 @@
 **[InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixMap_unique.lean](../InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixMap_unique.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixMap_unique.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/subset_of_entSet_mem.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/subset_of_entSet_mem.lean)**
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/subset_of_entSet_mem.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/subset_of_entSet_mem.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/subset_of_entSet_mem.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/condMap.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/condMap.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/subset_of_entSet_mem.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/condMap.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/condMap.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/condMap.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/IsStrict.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/IsStrict.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/condMap.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/IsStrict.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/IsStrict.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/IsStrict.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/IsStrictToken_of_IsStrict.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/IsStrictToken_of_IsStrict.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/IsStrict.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/IsStrictToken_of_IsStrict.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/IsStrictToken_of_IsStrict.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/IsStrictToken_of_IsStrict.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/approxMap_toStrictElement.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/approxMap_toStrictElement.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/IsStrictToken_of_IsStrict.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/approxMap_toStrictElement.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/approxMap_toStrictElement.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/approxMap_toStrictElement.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/strictifyElement.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/strictifyElement.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/approxMap_toStrictElement.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/strictifyElement.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/strictifyElement.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/strictifyElement.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/condElement.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/condElement.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/strictifyElement.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/condElement.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/condElement.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/condElement.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/condMap_unique.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/condMap_unique.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/condElement.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/condMap_unique.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/condMap_unique.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/condMap_unique.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75/conditional_iso.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75/conditional_iso.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/condMap_unique.lean"
+**[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/conditional_iso.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/conditional_iso.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75/conditional_iso.lean"
-**[InformationSystems/FunctionSpaceAsADomain/Factoid75.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid75.lean)**
+@import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/conditional_iso.lean"
+**[InformationSystems/FunctionSpaceAsADomain/theorem_75.lean](../InformationSystems/FunctionSpaceAsADomain/theorem_75.lean)**
 
-@import "../InformationSystems/FunctionSpaceAsADomain/Factoid75.lean"
+@import "../InformationSystems/FunctionSpaceAsADomain/theorem_75.lean"
 **[InformationSystems/FunctionSpaceAsADomain/Factoid77/lift_fst_toElement.lean](../InformationSystems/FunctionSpaceAsADomain/Factoid77/lift_fst_toElement.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Factoid77/lift_fst_toElement.lean"

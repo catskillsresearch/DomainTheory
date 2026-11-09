@@ -1,0 +1,119 @@
+module
+
+public import Mathlib.Data.Multiset.MapFold
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.functionSystem
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.theorem_7_2
+public import DomainTheory.InformationSystems.InformationSystems.a_second_example
+public import DomainTheory.InformationSystems.ElementsOfASystem.botElement
+public import DomainTheory.InformationSystems.ElementsOfASystem.closure
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.BoolToken
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.BoolPoint
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.EmptyEntails
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.emptyEntails_funion
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.StrictFunToken
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.BasicInst22
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.toFunFinset
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.StrictFunCon
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.StrictFunEnt
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.strictBot
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.insert_filter_ne_strict
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.filter_ne_subset_of_subset_insert_strict
+
+@[expose] public section
+
+namespace DomainTheory.InformationSystems
+
+open DomainTheory.InformationSystems.Constructive
+
+namespace InfoSys
+
+variable {α β : Type*} [DecidableEq α] [DecidableEq β]
+
+variable (A : InfoSys α) (B : InfoSys β)
+
+def strictFunctionSystem : InfoSys (StrictFunToken A B) where
+  bot := strictBot A B
+  Con := {w | StrictFunCon A B w}
+  Ent := StrictFunEnt A B
+  con_subset := by
+    intro w w' ⟨hwFun, hwE⟩ hw'
+    refine ⟨fun s hs hin =>
+      hwFun s (fun q hq => (toFunFinset.subset A B hw') (hs hq)) hin, ?_⟩
+    intro s hs hE
+    exact hwE s (fun q hq => hw' (hs hq)) hE
+  con_sing := by
+    intro p
+    refine ⟨?_, ?_⟩
+    · intro s hs _hin
+      have hs' : s ⊆ {p.val} := by
+        intro q hq
+        have : q ∈ toFunFinset A B ({p} : Finset (StrictFunToken A B)) := hs hq
+        rwa [toFunFinset.singleton] at this
+      have hsub : funOutputUnion A B s ⊆ p.val.val.2 := by
+        intro y hy
+        rcases (mem_funOutputUnion A B).1 hy with ⟨q, hq, hy'⟩
+        have : q = p.val := Finset.mem_singleton.mp (hs' hq)
+        cases this
+        exact hy'
+      exact B.con_subset p.val.property.2 hsub
+    · intro s hs hE y hy
+      rcases (mem_funOutputUnion A B).1 hy with ⟨q, hq, hy'⟩
+      rcases (mem_toFunFinset A B).1 hq with ⟨r, hr, rfl⟩
+      have hr' : r = p := Finset.mem_singleton.mp (hs hr)
+      cases hr'
+      have hEp : EmptyEntails A p.val.val.1 := by
+        intro x hx
+        exact hE x ((mem_funInputUnion A B).2
+          ⟨p.val, (mem_toFunFinset A B).2 ⟨p, hr, rfl⟩, hx⟩)
+      exact p.property.out hEp y hy'
+  ent_con := by
+    intro w p ⟨⟨hwFun, hwE⟩, hFunEnt⟩
+    have hFunInsert : FunCon A B (insert p.val (toFunFinset A B w)) :=
+      (functionSystem A B).ent_con hFunEnt
+    have hFunInsert' : FunCon A B (toFunFinset A B (insert p w)) :=
+      (toFunFinset.insert A B w p).symm ▸ hFunInsert
+    refine ⟨hFunInsert', ?_⟩
+    intro t ht hE
+    if hp : p ∈ t then
+      let t' := t.filter (· ≠ p)
+      have ht_eq : insert p t' = t := insert_filter_ne_strict A B hp
+      have ht'sub : t' ⊆ w := filter_ne_subset_of_subset_insert_strict A B ht
+      have hE' : EmptyEntails A (p.val.val.1 ∪' funInputUnion A B (toFunFinset A B t')) := by
+        rwa [← ht_eq, toFunFinset.insert, funInputUnion.insert] at hE
+      have ⟨hEp, hEt'⟩ := (emptyEntails_funion A).1 hE'
+      have hOutp : EmptyEntails B p.val.val.2 := p.property.out hEp
+      have hOutt' : EmptyEntails B (funOutputUnion A B (toFunFinset A B t')) :=
+        hwE t' ht'sub hEt'
+      have : EmptyEntails B (p.val.val.2 ∪' funOutputUnion A B (toFunFinset A B t')) :=
+        (emptyEntails_funion B).2 ⟨hOutp, hOutt'⟩
+      rwa [← ht_eq, toFunFinset.insert, funOutputUnion.insert]
+    else
+      have ht' : t ⊆ w := by
+        intro q hq
+        have : q ∈ insert p w := ht hq
+        rcases Finset.mem_insert.mp this with rfl | hqW
+        · exact False.elim (hp hq)
+        · exact hqW
+      exact hwE t ht' hE
+  ent_bot := by
+    intro w hw
+    refine ⟨hw, (functionSystem A B).ent_bot hw.1⟩
+  ent_refl := by
+    intro w p hw hp
+    have hpFun : p.val ∈ toFunFinset A B w :=
+      (mem_toFunFinset A B).2 ⟨p, hp, rfl⟩
+    exact ⟨hw, (functionSystem A B).ent_refl hw.1 hpFun⟩
+  ent_trans := by
+    intro u v c hv hu hEnts ⟨_, hFunEnt⟩
+    have hFunEnts : ∀ y ∈ toFunFinset A B u,
+        FunEnt A B (toFunFinset A B v) y := by
+      intro y hy
+      rcases (mem_toFunFinset A B).1 hy with ⟨q, hq, rfl⟩
+      exact (hEnts q hq).2
+    have hFun : FunEnt A B (toFunFinset A B v) c.val :=
+      (functionSystem A B).ent_trans hv.1 hu.1 hFunEnts hFunEnt
+    exact ⟨hv, hFun⟩
+
+end InfoSys
+
+end DomainTheory.InformationSystems

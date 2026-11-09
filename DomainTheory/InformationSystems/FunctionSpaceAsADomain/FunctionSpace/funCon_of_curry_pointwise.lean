@@ -1,12 +1,9 @@
 module
 
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.functionSystem
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.proposition_5_3
-public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.comp
-public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.proposition_6_2
-public import DomainTheory.InformationSystems.ElementsOfASystem.Factoid32
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.liftPair
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.rel_of_funTokens
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.FunCon
+public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem
+import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.rel_of_funTokens
 
 @[expose] public section
 
