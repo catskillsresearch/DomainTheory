@@ -1,5 +1,0 @@
-<!-- formalization -->
-
-**Theorem (`funCon_of_approxMap`).** Any finite set of fun tokens whose pairs all lie in an approximable relation is consistent in the function space.
-
-*Proof.* For a selection whose input union is consistent, the relation’s right-union and domain axioms yield consistency of the output union. □

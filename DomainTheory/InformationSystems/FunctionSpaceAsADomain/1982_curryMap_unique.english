@@ -1,5 +1,0 @@
-<!-- formalization -->
-
-**Theorem (`curryMap_unique`).** If uncurry of $k$ equals $h$, then $k$ equals the curry of $h$.
-
-*Proof.* From the universal property of uncurry–curry, compare $k$ to $\mathrm{curry}\,h$ via the round-trip. □

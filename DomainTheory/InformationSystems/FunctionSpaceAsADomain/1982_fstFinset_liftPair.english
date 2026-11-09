@@ -1,5 +1,0 @@
-<!-- formalization -->
-
-**Theorem (`fstFinset_liftPair`).** The first projection of a product lift is the first set united with the first projection of the right lift.
-
-*Proof.* Expand the lift as a finite union and apply first-projection lemmas. □

@@ -1,6 +1,4 @@
 module
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.sndMap_pairElements
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.fstMap_pairElements
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.pairElements
 public import DomainTheory.InformationSystems.ProductsAndSumsOfDomains.Product.productSystem_more
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Approximable.toElement

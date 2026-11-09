@@ -1,5 +1,0 @@
-<!-- formalization -->
-
-**Theorem (`insert_filter_ne`).** Reinserting an element after deleting it from a finite set that contains it recovers the original set.
-
-*Proof.* Compare membership on both sides by cases on equality with the deleted element. □

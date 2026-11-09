@@ -1,3 +1,0 @@
-<!-- formalization -->
-
-**Definition (`uncurryMap`).** The uncurry of a map into a function space is apply composed with pairing against the identity on the left factor.

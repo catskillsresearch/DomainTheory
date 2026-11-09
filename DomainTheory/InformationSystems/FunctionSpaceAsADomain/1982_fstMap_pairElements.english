@@ -1,5 +1,0 @@
-<!-- formalization -->
-
-**Theorem (`fstMap_pairElements`).** Projecting a paired element on the left recovers the first factor.
-
-*Proof.* Compare the two elements by chasing product tokens through the first projection map. □

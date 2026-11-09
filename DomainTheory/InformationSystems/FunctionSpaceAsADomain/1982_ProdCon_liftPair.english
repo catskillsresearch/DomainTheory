@@ -1,5 +1,0 @@
-<!-- formalization -->
-
-**Theorem (`ProdCon_liftPair`).** The product lift of two consistent sets is product-consistent.
-
-*Proof.* Left and right projections of the lift reduce to the given consistent sets (up to bottoms). □

@@ -1,3 +1,0 @@
-<!-- formalization -->
-
-**Definition (`instLeftCommutativeFunOutput`).** Inserting an output component into the accumulated output union is left-commutative, so multiset folds over output components are independent of order.

@@ -1,5 +1,0 @@
-<!-- formalization -->
-
-**Theorem (`uncurry_curryMap`).** Uncurry after curry recovers the original product map.
-
-*Proof.* Compare relations by unpacking curry’s pointwise condition against apply of the paired lifts. □

@@ -1,5 +1,0 @@
-<!-- formalization -->
-
-**Theorem (`liftRight_funion`).** Right lift preserves finite unions.
-
-*Proof.* Compare membership on both sides. □

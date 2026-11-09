@@ -1,3 +1,31 @@
 <!-- formalization -->
 
 **Definition (`pairElements`).** The paired element of $x\in|\mathbf{A}|$ and $y\in|\mathbf{B}|$ consists of those product tokens whose non-bottom sides lie in the corresponding factors.
+
+**Theorem (`fstMap_pairElements`).** Projecting a paired element on the left recovers the first factor.
+
+*Proof.* Compare the two elements by chasing product tokens through the first projection map. □
+
+**Theorem (`sndMap_pairElements`).** Projecting a paired element on the right recovers the second factor.
+
+*Proof.* Compare the two elements by chasing product tokens through the second projection map. □
+
+**Theorem (`mem_fst_of_subset_pairElements`).** Tokens of a finite set contained in a paired element have first components in the first factor whenever the second component is bottom.
+
+*Proof.* Unfold membership in the paired element. □
+
+**Theorem (`mem_snd_of_subset_pairElements`).** Tokens of a finite set contained in a paired element have second components in the second factor whenever the first component is bottom.
+
+*Proof.* Unfold membership in the paired element. □
+
+**Theorem (`subset_pairElements_liftLeft`).** The left lift of a finite set contained in the first factor lies in the paired element.
+
+*Proof.* Left-lifted tokens have bottom on the right and first component in the first factor. □
+
+**Theorem (`subset_pairElements_liftRight`).** The right lift of a finite set contained in the second factor lies in the paired element.
+
+*Proof.* Right-lifted tokens have bottom on the left and second component in the second factor. □
+
+**Theorem (`subset_pairElements_liftPair`).** The product lift of finite sets from each factor lies in the paired element.
+
+*Proof.* Unite the left- and right-lift inclusions. □

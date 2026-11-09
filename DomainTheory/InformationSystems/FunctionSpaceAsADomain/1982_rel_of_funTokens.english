@@ -1,5 +1,0 @@
-<!-- formalization -->
-
-**Theorem (`rel_of_funTokens`).** A map out of a product that relates a fixed left component to each token of a finite set of fun tokens relates that left component paired with the input union to the output union.
-
-*Proof.* Assemble the product lifts and apply the map’s union and monotonicity axioms. □

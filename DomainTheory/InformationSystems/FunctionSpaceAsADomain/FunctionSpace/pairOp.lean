@@ -4,8 +4,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.theorem_7_2
 public import DomainTheory.InformationSystems.ApproximableMappingsBetweenDomains.Proposition56
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.pairOpUncurry
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.constOp
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.uncurry_curryMap
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.applyMap_toElement
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.curryMap
 
 @[expose] public section
 

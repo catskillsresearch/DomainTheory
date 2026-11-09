@@ -1,3 +1,27 @@
 <!-- formalization -->
 
 **Definition (`liftPair`).** The product lift of consistent sets $u$ and $v$ is the finite union of the left lift of $u$ with the right lift of $v$.
+
+**Theorem (`ProdCon_liftPair`).** The product lift of two consistent sets is product-consistent.
+
+*Proof.* Left and right projections of the lift reduce to the given consistent sets (up to bottoms). □
+
+**Theorem (`fstFinset_liftPair`).** The first projection of a product lift is the first set united with the first projection of the right lift.
+
+*Proof.* Expand the lift as a finite union and apply first-projection lemmas. □
+
+**Theorem (`sndFinset_liftPair`).** The second projection of a product lift is the second projection of the left lift united with the second set.
+
+*Proof.* Expand the lift as a finite union and apply second-projection lemmas. □
+
+**Theorem (`entSet_liftPair`).** Product entailment of a lift follows from factor entailments of its components.
+
+*Proof.* Lift the two entailments through the left and right embeddings and unite. □
+
+**Theorem (`liftLeft_funion`).** Left lift preserves finite unions.
+
+*Proof.* Compare membership on both sides. □
+
+**Theorem (`liftRight_funion`).** Right lift preserves finite unions.
+
+*Proof.* Compare membership on both sides. □

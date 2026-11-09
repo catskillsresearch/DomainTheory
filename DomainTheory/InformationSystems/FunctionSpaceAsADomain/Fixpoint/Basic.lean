@@ -18,7 +18,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fi
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixChain_mono_w
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Fixpoint.fixReach_mono_w
 
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.mem_approxMap_toElement
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.approxMap_toElement
 @[expose] public section
 
 namespace DomainTheory.InformationSystems

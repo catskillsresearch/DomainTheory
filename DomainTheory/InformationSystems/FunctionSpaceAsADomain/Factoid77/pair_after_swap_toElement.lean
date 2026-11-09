@@ -12,8 +12,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.s
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.instCategoryInfoSysObj
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.Factoid77.instCartesianMonoidalCategoryInfoSysObj
 
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.fstMap_pairElements
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.sndMap_pairElements
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.pairElements
 @[expose] public section
 
 namespace DomainTheory.InformationSystems

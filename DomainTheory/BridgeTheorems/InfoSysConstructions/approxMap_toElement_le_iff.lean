@@ -1,9 +1,7 @@
 module
 
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.instPartialOrderApproximableMap
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.mem_approxMap_toElement
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.approxMap_toElement
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.mkFunToken
 public import DomainTheory.InformationSystems.InformationSystems.InfoSys.Element
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order

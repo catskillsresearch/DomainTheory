@@ -1,3 +1,0 @@
-<!-- formalization -->
-
-**Definition (`applyMap`).** Application is the approximable map from $(\mathbf{B}\to\mathbf{C})\times\mathbf{B}$ to $\mathbf{C}$ that relates a product-consistent set $s$ to $t$ when the function-space entailment encoded by $s$ yields $t$ from the second projection.

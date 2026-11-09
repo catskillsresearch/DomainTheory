@@ -1,3 +1,0 @@
-<!-- formalization -->
-
-**Definition (`instLeftCommutativeFunInput`).** Inserting an input component into the accumulated input union is left-commutative, so multiset folds over input components are independent of order.

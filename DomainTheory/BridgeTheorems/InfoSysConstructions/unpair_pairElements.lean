@@ -1,8 +1,6 @@
 module
 
 public import DomainTheory.BridgeTheorems.InfoSysConstructions.unpair
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.sndMap_pairElements
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.fstMap_pairElements
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.pairElements
 public import Mathlib.Order.Hom.Basic
 public import Mathlib.Order.Sum.Order

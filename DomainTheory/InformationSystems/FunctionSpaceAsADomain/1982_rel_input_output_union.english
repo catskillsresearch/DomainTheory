@@ -1,5 +1,0 @@
-<!-- formalization -->
-
-**Theorem (`rel_input_output_union`).** If an approximable map relates every token of a finite set and the input union is consistent, then it relates the input union to the output union.
-
-*Proof.* Iterate the right-union axiom of approximable maps. □

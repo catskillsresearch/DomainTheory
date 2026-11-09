@@ -1,5 +1,0 @@
-<!-- formalization -->
-
-**Theorem (`exists_combined_witness`).** Given a consistent set $v$ of fun tokens and a finite set $s$ of tokens whose inputs are all entailed by a fixed consistent $u'$, together with, for each token of $s$, a witness subset of $v$ that realises the fun-entailment input and output conditions for that token, there is a single subset $S\subseteq v$ whose tokens are all input-entailed by $u'$ and whose output union entails the output union of $s$.
-
-*Proof.* Induction on $s$: the empty case takes the empty witness; the insert step unions the inductive witness with the witness for the newly inserted token and reassembles the output entailment by finite-union and consistency of fun sets. □

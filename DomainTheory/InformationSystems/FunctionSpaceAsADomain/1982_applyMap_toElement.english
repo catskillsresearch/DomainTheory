@@ -1,5 +1,0 @@
-<!-- formalization -->
-
-**Theorem (`applyMap_toElement`).** Evaluating apply at a paired element $(g,y)$ recovers the application $g(y)$ of the approximable map associated to $g$.
-
-*Proof.* Chase membership through apply, pairing, and the element–map round-trips. □

@@ -1,3 +1,27 @@
 <!-- formalization -->
 
 **Definition (`curryMap`).** The curry of a map $h:\mathbf{A}\times\mathbf{B}\to\mathbf{C}$ relates $u$ to a finite set $s$ of fun tokens when $u$ is consistent and $h$ relates the lift of $u$ with each input of a token in $s$ to that token’s output.
+
+**Theorem (`rel_of_funTokens`).** A map out of a product that relates a fixed left component to each token of a finite set of fun tokens relates that left component paired with the input union to the output union.
+
+*Proof.* Assemble the product lifts and apply the map’s union and monotonicity axioms. □
+
+**Theorem (`funCon_of_curry_pointwise`).** For a fixed consistent left component, the set of fun tokens related pointwise by a product map is consistent in the function space.
+
+*Proof.* Reduce a consistent input selection to a product relation and invoke consistency of the product map’s outputs. □
+
+**Definition (`applyMap`).** Application is the approximable map from $(\mathbf{B}\to\mathbf{C})\times\mathbf{B}$ to $\mathbf{C}$ that relates a product-consistent set $s$ to $t$ when the function-space entailment encoded by $s$ yields $t$ from the second projection.
+
+**Theorem (`applyMap_toElement`).** Evaluating apply at a paired element $(g,y)$ recovers the application $g(y)$ of the approximable map associated to $g$.
+
+*Proof.* Chase membership through apply, pairing, and the element–map round-trips. □
+
+**Definition (`uncurryMap`).** The uncurry of a map into a function space is apply composed with pairing against the identity on the left factor.
+
+**Theorem (`uncurry_curryMap`).** Uncurry after curry recovers the original product map.
+
+*Proof.* Compare relations by unpacking curry’s pointwise condition against apply of the paired lifts. □
+
+**Theorem (`curryMap_unique`).** If uncurry of $k$ equals $h$, then $k$ equals the curry of $h$.
+
+*Proof.* From the universal property of uncurry–curry, compare $k$ to $\mathrm{curry}\,h$ via the round-trip. □

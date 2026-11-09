@@ -9,3 +9,59 @@
 *Proof.* Apply fun-consistency of approximable maps to any finite subset. □
 
 **Definition (`approxMap_toElement`).** The element of $\mathbf{A}\to\mathbf{B}$ associated to an approximable map $f$ is the set of all fun tokens $(u,v)$ with $u\,f\,v$.
+
+**Definition (`mkFunToken`).** Given consistent finite sets $u$ and $v$ in $\mathbf{A}$ and $\mathbf{B}$ respectively, their fun token is the pair $(u,v)$ as a data object of the function space.
+
+**Theorem (`mkFunToken.property`).** The two components of a fun token constructed from consistent sets are consistent.
+
+*Proof.* Immediate from the given consistency hypotheses. □
+
+**Theorem (`mkFunToken.eq`).** Rebuilding a fun token from its components recovers the original token.
+
+*Proof.* The underlying pair is unchanged. □
+
+**Theorem (`rel_input_output_union`).** If an approximable map relates every token of a finite set and the input union is consistent, then it relates the input union to the output union.
+
+*Proof.* Iterate the right-union axiom of approximable maps. □
+
+**Theorem (`funCon_of_approxMap`).** Any finite set of fun tokens whose pairs all lie in an approximable relation is consistent in the function space.
+
+*Proof.* For a selection whose input union is consistent, the relation’s right-union and domain axioms yield consistency of the output union. □
+
+**Theorem (`element_toApproxMap.empty_rel`).** Every function-space element relates the empty input to the empty output.
+
+*Proof.* The function-space bottom lies in every element. □
+
+**Theorem (`element_toApproxMap.mono`).** The relation extracted from a function-space element is monotone in both coordinates.
+
+*Proof.* Use function-space entailment to strengthen inputs and weaken outputs inside the element. □
+
+**Theorem (`element_toApproxMap.rel_cod`).** Related outputs are consistent.
+
+*Proof.* Membership of a fun token forces consistency of its output. □
+
+**Theorem (`element_toApproxMap.rel_dom`).** Related inputs are consistent.
+
+*Proof.* Membership of a fun token forces consistency of its input. □
+
+**Theorem (`element_toApproxMap.union_right`).** The extracted relation is closed under finite union on the right.
+
+*Proof.* Combine tokens via function-space consistency and entailment. □
+
+**Definition (`element_toApproxMap`).** The approximable map associated to a function-space element relates $u$ to $v$ precisely when the fun token $(u,v)$ lies in the element.
+
+**Theorem (`element_toApproxMap.approxMap_toElement`).** Passing from an approximable map to its element and back recovers the original map.
+
+*Proof.* Compare relations pointwise via membership in the associated element. □
+
+**Theorem (`mem_approxMap_toElement`).** A fun token lies in the element of an approximable map precisely when the map relates its input to its output.
+
+*Proof.* Unfold the carrier of the associated element. □
+
+**Theorem (`approxMap_toElement_element_toApproxMap`).** Passing from a function-space element to its approximable map and back recovers the original element.
+
+*Proof.* Compare carriers via the membership characterisation of the associated element. □
+
+**Theorem (`elements_equiv_approxMaps`).** Approximable maps from $\mathbf{A}$ to $\mathbf{B}$ are in bijection with elements of $\mathbf{A}\to\mathbf{B}$: each direction of the round-trip is the identity.
+
+*Proof.* Assemble the two round-trip lemmas for maps and for elements. □

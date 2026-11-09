@@ -1,5 +1,0 @@
-<!-- formalization -->
-
-**Theorem (`approxMap_toElement_element_toApproxMap`).** Passing from a function-space element to its approximable map and back recovers the original element.
-
-*Proof.* Compare carriers via the membership characterisation of the associated element. □

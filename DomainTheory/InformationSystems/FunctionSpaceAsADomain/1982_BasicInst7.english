@@ -1,3 +1,0 @@
-<!-- formalization -->
-
-**Definition (`instDecidableEqFunToken`).** Fun tokens have decidable equality, decided componentwise on the two finite sets.

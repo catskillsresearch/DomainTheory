@@ -16,8 +16,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpa
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.toFunFinset
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.strictFunctionSystem
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.IsStrictToken_of_IsStrict
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.funCon_of_approxMap
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.rel_input_output_union
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.approxMap_toElement
 
 @[expose] public section
 

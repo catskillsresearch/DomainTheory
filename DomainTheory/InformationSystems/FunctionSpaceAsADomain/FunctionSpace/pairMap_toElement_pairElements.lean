@@ -8,8 +8,7 @@ public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpa
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.compOpUncurry
 public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.compOp
 
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.fstMap_pairElements
-public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.sndMap_pairElements
+public import DomainTheory.InformationSystems.FunctionSpaceAsADomain.FunctionSpace.pairElements
 @[expose] public section
 
 namespace DomainTheory.InformationSystems

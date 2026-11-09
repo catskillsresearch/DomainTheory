@@ -1,7 +1,0 @@
-<!-- formalization -->
-
-**Theorem (`funBot.property`).** The empty finite set is consistent in every information system, on both the input and output sides.
-
-*Proof.* Empty consistency of each factor. □
-
-**Definition (`funBot`).** The least informative fun token is the pair of empty sets $(\emptyset,\emptyset)$.

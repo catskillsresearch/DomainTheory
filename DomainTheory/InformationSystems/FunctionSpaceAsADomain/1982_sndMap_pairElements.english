@@ -1,5 +1,0 @@
-<!-- formalization -->
-
-**Theorem (`sndMap_pairElements`).** Projecting a paired element on the right recovers the second factor.
-
-*Proof.* Compare the two elements by chasing product tokens through the second projection map. □
