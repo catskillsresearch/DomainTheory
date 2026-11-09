@@ -55,6 +55,6 @@ The approximability has to be checked, of course. But once a number of the more 
 
 <!-- formalization -->
 
-**Theorem (`theorem_7_2`).** The function space $\mathbf{A}\to\mathbf{B}$ has elements precisely the approximable maps; apply realises evaluation on paired elements; curry is the unique map whose uncurry recovers a given product map; and uncurry after curry is the identity.
+**Theorem (`theorem_7_2`).** For information systems $\mathbf{A}$, $\mathbf{B}$, and $\mathbf{C}$: the elements of $\mathbf{A}\to\mathbf{B}$ are precisely the approximable maps $f:\mathbf{A}\to\mathbf{B}$ (the two round-trips between elements and approximable maps are identities); there is an approximable map $\mathrm{apply}:(\mathbf{B}\to\mathbf{C})\times\mathbf{B}\to\mathbf{C}$ such that $\mathrm{apply}(g,y)=g(y)$ for $g\in|\mathbf{B}\to\mathbf{C}|$ and $y\in|\mathbf{B}|$; and for every approximable $h:\mathbf{A}\times\mathbf{B}\to\mathbf{C}$ there is a unique approximable $\mathrm{curry}\,h:\mathbf{A}\to(\mathbf{B}\to\mathbf{C})$ with $h=\mathrm{uncurry}(\mathrm{curry}\,h)$, equivalently $h=\mathrm{apply}\circ\langle(\mathrm{curry}\,h)\circ\mathrm{fst},\mathrm{snd}\rangle$.
 
-*Proof.* Assemble the bijection of elements with approximable maps, the evaluation lemma for apply, uniqueness of curry, and the uncurry–curry round-trip. □
+*Proof.* The element–map bijection is the mutual inverse of viewing an approximable map as a function-space element and extracting the relation from an element; evaluation of apply is the paired-element lemma; uniqueness of curry and the identity $\mathrm{uncurry}\circ\mathrm{curry}$ are the corresponding library facts. □
