@@ -11,3 +11,5 @@
 - [Theorem 7.2: elements, apply, and curry](1982_Theorem_7_2.md) [✓](../../1982_REVISION.md)
 - [Theorem 7.3: least fixed-point operator](1982_Theorem_7_3.md) [✓](../../1982_REVISION.md)
 - [Proposition 7.4: equational uniqueness of fix](1982_Proposition_7_4.md) [✓](../../1982_REVISION.md)
+
+<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-09) — <a href="../../1982_REVISION.md">1982 revision progress</a></p>

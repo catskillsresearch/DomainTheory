@@ -1,3 +1,0 @@
-module
-
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid83.vPairRFinset

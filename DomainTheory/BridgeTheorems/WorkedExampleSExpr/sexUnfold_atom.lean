@@ -15,7 +15,7 @@ public import DomainTheory.BridgeTheorems.ScottMapBridge
 public import DomainTheory.BridgeTheorems.SexDomainEquation
 public import DomainTheory.BridgeTheorems.WorkedExampleSExpr.Basic
 
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.treeUnfold
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.treeSystem
 @[expose] public section
 
 namespace DomainTheory.BridgeTheorems

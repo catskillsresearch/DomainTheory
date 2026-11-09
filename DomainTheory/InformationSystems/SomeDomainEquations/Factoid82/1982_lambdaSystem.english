@@ -1,0 +1,791 @@
+<!-- formalization -->
+
+**Definition (`RawLamToken` equality).** Equality of raw lambda tokens is decidable, by the boolean equality on those tokens.
+
+**Definition (`lamAtomInsert` commutative).** Insertion of lambda atoms commutes.
+
+*Proof.* By cases on the two tokens and commutativity of finite-set insertion. □
+
+**Definition (`lamFunInsert` commutative).** Insertion of function tokens commutes.
+
+*Proof.* By cases on the two tokens and commutativity of finite-set insertion. □
+
+**Definition (`maxDepthInsert` commutative).** The binary maximum on depths commutes in its first arguments.
+
+*Proof.* By commutativity of the maximum of natural numbers. □
+
+**Definition (`LamToken` equality).** Equality of lambda tokens is decidable.
+
+*Proof.* It is equality of the underlying raw tokens. □
+
+**Definition (`lamForgetInsert` commutative).** Forgetful insertion commutes.
+
+*Proof.* By cases on the two tokens and commutativity of finite-set insertion. □
+
+**Definition (`LamDToken` equality).** Equality of depth-bounded lambda tokens is decidable.
+
+*Proof.* It is equality of the underlying tokens. □
+
+**Definition (`lamDForgetInsert` commutative).** Depth-bounded forgetful insertion commutes.
+
+*Proof.* By cases on the two tokens and commutativity of finite-set insertion. □
+
+**Definition (`RawLamToken`).** A raw lambda token is bottom, an atom, or a function token pairing a list of input tokens with a list of output tokens.
+
+
+**Definition (`rawLamBEq`).** The raw lambda boolean equality.
+
+
+**Definition (`rawLamListBEq`).** The raw lambda List boolean equality.
+
+
+**Theorem (`rawLamBEq_eq`).** The equality raw lambda boolean equality eq holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`rawLamListBEq_eq`).** The equality raw lambda List boolean equality eq holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`lamAtomInsert`).** The lambda Atom Insert adds the payload of the matching constructor and leaves every other constructor unchanged.
+
+
+**Definition (`lamFunInsert`).** The lambda function Insert adds the payload of the matching constructor and leaves every other constructor unchanged.
+
+
+**Definition (`listToFinset`).** The list To finite set.
+
+
+**Definition (`lamAtomFinset`).** The lambda Atom finite set.
+
+
+**Definition (`lamFunFinset`).** The lambda function finite set.
+
+
+**Definition (`lamInUnionInsert`).** The lambda In Union Insert adds the payload of the matching constructor and leaves every other constructor unchanged.
+
+
+**Definition (`lamOutUnionInsert`).** The lambda Out Union Insert adds the payload of the matching constructor and leaves every other constructor unchanged.
+
+
+**Theorem (`mem_listToFinset`).** A token lies in the mem list To finite set exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`mem_lamFunFinset`).** A token lies in the mem lambda function finite set exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`[DecidableEq`).** There is a type-class instance for [Decidable Eq.
+
+
+**Definition (`lamInputUnion`).** The lambda Input Union.
+
+
+**Definition (`lamOutputUnion`).** The lambda Output Union.
+
+
+**Theorem (`max_le_max_nat`).** The statement max le max nat holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`rawDepth`).** The raw Depth.
+
+
+**Theorem (`mem_lamInputUnion`).** A token lies in the mem lambda Input Union exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`mem_lamOutputUnion`).** A token lies in the mem lambda Output Union exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`foldl_max_ge_init`).** The statement foldl max ge init holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`foldl_max_mono_init`).** The operation foldl max mono init preserves inclusion.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`maxDepthInsert`).** The max Depth Insert adds the payload of the matching constructor and leaves every other constructor unchanged.
+
+
+**Theorem (`foldl_list_le_of_mem`).** The statement foldl list le of mem holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`rawDepth_funTok_gt_left`).** The statement raw Depth fun Tok gt left holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`rawDepth_funTok_gt_right`).** The statement raw Depth fun Tok gt right holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`foldr_max_le_of_forall`).** The statement foldr max le of forall holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`foldr_max_lt_of_forall`).** The statement foldr max lt of forall holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`finsetMaxDepth`).** The finset Max Depth.
+
+
+**Theorem (`finsetMaxDepth.listToFinset_le`).** The statement list To finite set le holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`finsetMaxDepth.list_lt_funTok`).** The statement list lt fun Tok holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`le_finsetMaxDepth_of_mem`).** The statement le finset Max Depth of mem holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`finsetMaxDepth.inputUnion_lt`).** The operation input Union lt preserves union.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`finsetMaxDepth.outputUnion_lt`).** The operation output Union lt preserves union.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`finsetMaxDepth.list_lt_funTok_out`).** The statement list lt fun Tok out holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`finsetMaxDepth.of_mem_funTok`).** The statement of mem fun Tok holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`LamConDepth`).** The lambda Con Depth.
+
+
+**Definition (`LamEntDepth`).** The lambda Ent Depth are given by the listed constructors.
+
+
+**Theorem (`LamEntDepth_bot`).** The statement lambda Ent Depth bot holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamEntDepth.con`).** The statement con holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`LamConN`).** The lambda Con N.
+
+
+**Theorem (`lamAtomFinset_empty`).** The lambda Atom finite set empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamFunFinset_empty`).** The lambda function finite set empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamFunFinset_insert_atom`).** Inserting the indicated constructor updates lambda function finite set insert atom by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamFunFinset_insert_bot`).** Inserting the indicated constructor updates lambda function finite set insert bot by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamFunFinset_insert_funTok`).** Inserting the indicated constructor updates lambda function finite set insert fun Tok by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamFunFinset_mono`).** The operation lambda function finite set mono preserves inclusion.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamInputUnion_empty`).** The lambda Input Union empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamOutputUnion_empty`).** The lambda Output Union empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`mem_lamAtomFinset`).** A token lies in the mem lambda Atom finite set exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`LamCon`).** The lambda Con.
+
+
+**Theorem (`lamAtomFinset_insert_atom`).** Inserting the indicated constructor updates lambda Atom finite set insert atom by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamAtomFinset_insert_bot`).** Inserting the indicated constructor updates lambda Atom finite set insert bot by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamAtomFinset_insert_funTok`).** Inserting the indicated constructor updates lambda Atom finite set insert fun Tok by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamAtomFinset_mono`).** The operation lambda Atom finite set mono preserves inclusion.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`IsLamToken`).** The is lambda Token are given by the listed constructors.
+
+
+**Definition (`LamToken`).** The lambda Token.
+
+
+**Definition (`lamBot`).** The lambda Bot.
+
+
+**Definition (`lamForget`).** The lambda Forget.
+
+
+**Definition (`lamForgetInsert`).** The lambda Forget Insert adds the payload of the matching constructor and leaves every other constructor unchanged.
+
+
+**Theorem (`LamConDepth_empty`).** The lambda Con Depth empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConDepth_of_fun_empty`).** The lambda Con Depth of fun empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConDepth_of_fun_nonempty`).** The lambda Con Depth of fun nonempty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamEntDepth_weaken_fun`).** The statement lambda Ent Depth weaken fun holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`LamEntN`).** The lambda Ent N.
+
+
+**Definition (`LamWF`).** The lambda WF are given by the listed constructors.
+
+
+**Theorem (`filter_ne_subset_of_subset_insert_lam`).** The property filter ne subset of subset insert lambda passes to subsets.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`finsetMaxDepth_funion_le`).** The operation finset Max Depth union le preserves union.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`finsetMaxDepth_insert_le`).** Inserting the indicated constructor updates finset Max Depth insert le by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`funion_assoc_lam`).** The operation union assoc lambda preserves union.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`funion_comm_lam`).** The operation union comm lambda preserves union.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`funion_empty_right_lam`).** The union empty right lambda of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`insert_filter_ne_lam`).** Inserting the indicated constructor updates insert filter ne lambda by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamAtomFinset_singleton_funTok`).** On a singleton, lambda Atom finite set singleton fun Tok returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`lamForgetFinset`).** The lambda Forget finite set.
+
+
+**Theorem (`lamFunFinset_funion`).** The operation lambda function finite set union preserves union.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamFunFinset_singleton_funTok`).** On a singleton, lambda function finite set singleton fun Tok returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamInputUnion_funion`).** The operation lambda Input Union union preserves union.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamInputUnion_insert`).** Inserting the indicated constructor updates lambda Input Union insert by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamInputUnion_singleton`).** On a singleton, lambda Input Union singleton returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamOutputUnion_funion`).** The operation lambda Output Union union preserves union.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamOutputUnion_insert`).** Inserting the indicated constructor updates lambda Output Union insert by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamOutputUnion_singleton`).** On a singleton, lambda Output Union singleton returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConDepth_insert_atom`).** Inserting the indicated constructor updates lambda Con Depth insert atom by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConDepth_singleton_atom`).** On a singleton, lambda Con Depth singleton atom returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConDepth_singleton_bot`).** On a singleton, lambda Con Depth singleton bot returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamEntDepth_weaken_atom`).** The statement lambda Ent Depth weaken atom holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConDepth_insert_bot`).** Inserting the indicated constructor updates lambda Con Depth insert bot by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConDepth_mono`).** The operation lambda Con Depth mono preserves inclusion.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`LamEnt`).** The lambda Ent.
+
+
+**Definition (`LamDToken`).** The lambda DToken.
+
+
+**Definition (`LamTokenCon`).** The lambda Token Con.
+
+
+**Theorem (`LamEntDepth_of_mem`).** The statement lambda Ent Depth of mem holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamEntDepth_weaken_insert`).** Inserting the indicated constructor updates lambda Ent Depth weaken insert by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`LamTokenEnt`).** The lambda Token Ent.
+
+
+**Theorem (`LamConDepth_funion_of_entSet`).** The operation lambda Con Depth union of ent Set preserves union.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`lamDBot`).** The lambda DBot.
+
+
+**Definition (`lamDForget`).** The lambda DForget.
+
+
+**Theorem (`LamConDepth_insert_of_ent`).** Inserting the indicated constructor updates lambda Con Depth insert of ent by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`lamDForgetInsert`).** The lambda DForget Insert adds the payload of the matching constructor and leaves every other constructor unchanged.
+
+
+**Theorem (`LamEntDepth_trans`).** The relation lambda Ent Depth trans is transitive.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`IsLamWF_of_mem`).** The statement is lambda WF of mem holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConDepth_singleton_funTok`).** On a singleton, lambda Con Depth singleton fun Tok returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`listToLamDFinset`).** The list To lambda Dfinite set.
+
+
+**Theorem (`mem_foldr_lamDForget`).** A token lies in the mem foldr lambda DForget exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`mem_listToLamDFinset`).** A token lies in the mem list To lambda Dfinite set exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`lamDForgetFinset`).** The lambda DForget finite set.
+
+
+**Theorem (`mem_lamDForgetFinset`).** A token lies in the mem lambda DForget finite set exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamDForgetFinset.insert`).** Inserting the indicated constructor updates insert by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamDForgetFinset.mono`).** The operation mono preserves inclusion.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamDForgetFinset.singleton`).** On a singleton, singleton returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamDForget_listToLamDFinset`).** The statement lambda DForget list To lambda Dfinite set holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`LamDCon`).** The lambda DCon.
+
+
+**Theorem (`LamDCon.singleton`).** On a singleton, singleton returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamDCon.listToLamDFinset`).** The statement list To lambda Dfinite set holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamDCon.subset`).** The property subset passes to subsets.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`LamDEnt`).** The lambda DEnt.
+
+
+**Theorem (`LamDEnt.bot`).** The statement bot holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamDEnt.of_mem`).** The statement of mem holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamDEnt.trans`).** The relation trans is transitive.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamDCon_insert_of_ent`).** Inserting the indicated constructor updates lambda DCon insert of ent by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`lambdaSystem`).** The lambda domain over $\mathbf{A}$ is the information system of well-formed lambda tokens, with lambda consistency and lambda entailment.
+
+
+**Definition (`lamRhs`).** The right-hand side of the lambda equation is the sum of $\mathbf{A}$ with the function space of the lambda domain with itself.
+
+
+**Definition (`lamUnfold`).** Unfolding a lambda token views it as a token of $\mathbf{A}+(\mathbf{D}\to\mathbf{D})$.
+
+
+**Theorem (`mem_foldr_lamForget`).** A token lies in the mem foldr lambda Forget exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`funion_insert_lam`).** Inserting the indicated constructor updates union insert lambda by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConN_atom_con`).** The statement lambda Con N atom con holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConN_atom_empty`).** The lambda Con N atom empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConN_down_atom`).** The statement lambda Con N down atom holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConN_empty`).** The lambda Con N empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConN_exists_FunCon`).** The statement lambda Con N exists function Con holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConN_fun_FunCon_right`).** The statement lambda Con N fun function Con right holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConN_fun_empty`).** The lambda Con N fun empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConN_insert_bot`).** Inserting the indicated constructor updates lambda Con N insert bot by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConN_mono`).** The operation lambda Con N mono preserves inclusion.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamCon_empty`).** The lambda Con empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamCon_singleton_atom`).** On a singleton, lambda Con singleton atom returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamCon_singleton_bot`).** On a singleton, lambda Con singleton bot returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamCon_subset`).** The property lambda Con subset passes to subsets.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamEntN_con`).** The statement lambda Ent N con holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamEntN_mono`).** The operation lambda Ent N mono preserves inclusion.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamEnt_bot`).** The statement lambda Ent bot holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamAtomFinset_funion`).** The operation lambda Atom finite set union preserves union.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamDForgetFinset_empty`).** The lambda DForget finite set empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamForgetFinset_empty`).** The lambda Forget finite set empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamRhs_eq_sum_function`).** The equality lambda Rhs eq sum function holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamUnfold_atom`).** The statement lambda Unfold atom holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamUnfold_bot`).** The statement lambda Unfold bot holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`mem_lamForgetFinset`).** A token lies in the mem lambda Forget finite set exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConN_FunCon_mono_atom`).** The operation lambda Con N function Con mono atom preserves inclusion.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConN_fun_wf`).** The statement lambda Con N fun wf holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConN_insert_of_ent_atom`).** Inserting the indicated constructor updates lambda Con N insert of ent atom by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamCon_singleton_funTok`).** On a singleton, lambda Con singleton fun Tok returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConN_insert_of_ent_bot`).** Inserting the indicated constructor updates lambda Con N insert of ent bot by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamEnt_con`).** The statement lambda Ent con holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamTokenEnt_bot`).** The statement lambda Token Ent bot holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamDCon_empty`).** The lambda DCon empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamTokenCon_empty`).** The lambda Token Con empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamTokenCon_subset`).** The property lambda Token Con subset passes to subsets.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamForgetFinset_insert`).** Inserting the indicated constructor updates lambda Forget finite set insert by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lamForgetFinset_singleton`).** On a singleton, lambda Forget finite set singleton returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamConN_fun_FunCon_atom`).** The statement lambda Con N fun function Con atom holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamEntN_of_mem`).** The statement lambda Ent N of mem holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamCon_of_forget_singleton`).** On a singleton, lambda Con of forget singleton returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamEnt_of_mem`).** The statement lambda Ent of mem holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamTokenCon_singleton`).** On a singleton, lambda Token Con singleton returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`LamTokenEnt_of_mem`).** The statement lambda Token Ent of mem holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`lambdaSystem_con_axioms`).** The statement lambdabda System con axioms holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □

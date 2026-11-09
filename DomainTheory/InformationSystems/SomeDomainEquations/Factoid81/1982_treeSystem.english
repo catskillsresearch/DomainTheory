@@ -1,0 +1,357 @@
+<!-- formalization -->
+
+**Definition (`pairLInsert` commutative).** Insertion of left children commutes.
+
+*Proof.* By cases on the two tokens, using commutativity of finite-set insertion. □
+
+**Definition (`pairRInsert` commutative).** Insertion of right children commutes.
+
+*Proof.* By cases on the two tokens, using commutativity of finite-set insertion. □
+
+**Definition (`atomInsert` commutative).** Insertion of atoms commutes.
+
+*Proof.* By cases on the two tokens, using commutativity of finite-set insertion. □
+
+**Definition (`TreeToken`).** A tree token is bottom, an atom from the given domain, or a left or right child of a tree token.
+
+
+**Definition (`instDecidableEqTreeToken`).** There is a type-class instance for decidable equality Tree Token.
+
+
+**Definition (`atomInsert`).** The atom insertion adds the payload of the matching constructor and leaves every other constructor unchanged.
+
+
+**Definition (`pairLInsert`).** The left-child insertion adds the payload of the matching constructor and leaves every other constructor unchanged.
+
+
+**Definition (`pairLFinset`).** The set of left children.
+
+
+**Theorem (`mem_foldr_pairL`).** A token lies in the fold of left children exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`mem_pairLFinset`).** A token lies in the mem set of left children exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`pairRInsert`).** The right-child insertion adds the payload of the matching constructor and leaves every other constructor unchanged.
+
+
+**Definition (`pairRFinset`).** The set of right children.
+
+
+**Theorem (`mem_foldr_pairR`).** A token lies in the fold of right children exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`mem_pairRFinset`).** A token lies in the mem set of right children exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`atomFinset`).** The atom finite set.
+
+
+**Definition (`TreeCon`).** A finite set of tree tokens is consistent when every finite selection of atoms is consistent in $\mathbf{A}$ and the left and right children are themselves consistent.
+
+
+**Theorem (`TreeCon.atom_con_of_atoms`).** The statement atom con of atoms holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`TreeCon.atoms_empty_of_right`).** The atoms empty of right of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`TreeCon.pairs_empty_of_left`).** The pairs empty of left of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`atomFinset_empty`).** The atom finite set empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`eq_singleton_bot_of_subset`).** The property eq singleton bot of subset passes to subsets.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`mem_foldr_atom`).** A token lies in the mem foldr atom exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairLFinset_empty`).** The set of left children empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairLFinset_insert_atom`).** Inserting the indicated constructor updates set of left children insert atom by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairLFinset_insert_bot`).** Inserting the indicated constructor updates set of left children insert bot by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairLFinset_insert_pairL`).** Inserting the indicated constructor updates set of left children insert pair L by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairLFinset_insert_pairR`).** Inserting the indicated constructor updates set of left children insert pair R by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairLFinset_mono`).** The operation set of left children mono preserves inclusion.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairLFinset_singleton_atom`).** On a singleton, set of left children singleton atom returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairLFinset_singleton_bot`).** On a singleton, set of left children singleton bot returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairLFinset_singleton_pairL`).** On a singleton, set of left children singleton pair L returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairLFinset_singleton_pairR`).** On a singleton, set of left children singleton pair R returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairRFinset_empty`).** The set of right children empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairRFinset_insert_atom`).** Inserting the indicated constructor updates set of right children insert atom by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairRFinset_insert_bot`).** Inserting the indicated constructor updates set of right children insert bot by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairRFinset_insert_pairL`).** Inserting the indicated constructor updates set of right children insert pair L by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairRFinset_insert_pairR`).** Inserting the indicated constructor updates set of right children insert pair R by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairRFinset_mono`).** The operation set of right children mono preserves inclusion.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairRFinset_singleton_atom`).** On a singleton, set of right children singleton atom returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairRFinset_singleton_bot`).** On a singleton, set of right children singleton bot returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairRFinset_singleton_pairL`).** On a singleton, set of right children singleton pair L returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairRFinset_singleton_pairR`).** On a singleton, set of right children singleton pair R returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`treeBot`).** The bottom tree token is the least informative token.
+
+
+**Theorem (`mem_atomFinset`).** A token lies in the mem atom finite set exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`TreeCon_empty`).** The tree Con empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`atomFinset_insert_atom`).** Inserting the indicated constructor updates atom finite set insert atom by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`atomFinset_insert_bot`).** Inserting the indicated constructor updates atom finite set insert bot by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`atomFinset_insert_pairL`).** Inserting the indicated constructor updates atom finite set insert pair L by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`atomFinset_insert_pairR`).** Inserting the indicated constructor updates atom finite set insert pair R by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`atomFinset_mono`).** The operation atom finite set mono preserves inclusion.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`atomFinset_singleton_atom`).** On a singleton, atom finite set singleton atom returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`atomFinset_singleton_bot`).** On a singleton, atom finite set singleton bot returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`atomFinset_singleton_pairL`).** On a singleton, atom finite set singleton pair L returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`atomFinset_singleton_pairR`).** On a singleton, atom finite set singleton pair R returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`TreeCon.pairL_of_right`).** The statement pair L of right holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`TreeCon.pairR_of_right`).** The statement pair R of right holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`TreeCon_insert_bot`).** Inserting the indicated constructor updates tree Con insert bot by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`TreeCon_subset`).** The property tree Con subset passes to subsets.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`TreeCon_singleton`).** On a singleton, tree Con singleton returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`TreeEntPayload`).** The tree Ent Payload.
+
+
+**Theorem (`TreeEntPayload.of_mem`).** The statement of mem holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`TreeEntPayload.of_no_atoms_no_pairs`).** The statement of no atoms no pairs holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`TreeEnt`).** Tree entailment is the entailment of the tree domain.
+
+
+**Theorem (`TreeEnt.of_mem`).** The statement of mem holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`TreeCon_insert_of_ent`).** Inserting the indicated constructor updates tree Con insert of ent by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairL_ne_or_subset_bot`).** The property pair L ne or subset bot passes to subsets.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`pairR_ne_or_subset_bot`).** The property pair R ne or subset bot passes to subsets.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`TreeEntPayload_trans`).** The relation tree Ent Payload trans is transitive.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`TreeEnt_trans`).** The relation tree Ent trans is transitive.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`treeSystem`).** The tree domain over $\mathbf{A}$ is the information system whose tokens are tree tokens, whose consistency is tree consistency, and whose entailment is tree entailment.
+
+
+**Definition (`treeRhs`).** The right-hand side of the tree equation is the sum of $\mathbf{A}$ with the product of the tree domain with itself.
+
+
+**Theorem (`treeRhs.eq_sum_product`).** The equality eq sum product holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`treeUnfold`).** Unfolding a tree token views it as a token of $\mathbf{A}+(\mathbf{T}\times\mathbf{T})$.
+
+
+**Theorem (`treeUnfold.atom`).** The statement atom holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`treeUnfold.bot`).** The statement bot holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`treeUnfold.pairL`).** The statement pair L holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`treeUnfold.pairR`).** The statement pair R holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`treeUnfold.pairL_bot_eq_pairR_bot`).** The equality pair L bot eq pair R bot holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □

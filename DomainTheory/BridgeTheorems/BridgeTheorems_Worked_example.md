@@ -45,21 +45,12 @@
 **[InformationSystems/FunctionSpaceAsADomain/proposition_7_4.lean](../InformationSystems/FunctionSpaceAsADomain/proposition_7_4.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/proposition_7_4.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/PEnt.lean](../InformationSystems/SomeDomainEquations/Factoid84/PEnt.lean)**
+**[InformationSystems/SomeDomainEquations/Factoid84/DomainApprox.lean](../InformationSystems/SomeDomainEquations/Factoid84/DomainApprox.lean)**
 
-@import "../InformationSystems/SomeDomainEquations/Factoid84/PEnt.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/P.lean](../InformationSystems/SomeDomainEquations/Factoid84/P.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/P.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/topElement.lean](../InformationSystems/SomeDomainEquations/Factoid84/topElement.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/topElement.lean"
+@import "../InformationSystems/SomeDomainEquations/Factoid84/DomainApprox.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Product/mkLeft.lean](../InformationSystems/ProductsAndSumsOfDomains/Product/mkLeft.lean)**
 
 @import "../InformationSystems/ProductsAndSumsOfDomains/Product/mkLeft.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/botElement.lean](../InformationSystems/SomeDomainEquations/Factoid84/botElement.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/botElement.lean"
 **[InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap.lean](../InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap.lean)**
 
 @import "../InformationSystems/ApproximableMappingsBetweenDomains/Proposition56/constMap.lean"
@@ -81,21 +72,6 @@
 **[InformationSystems/ProductsAndSumsOfDomains/Factoid65.lean](../InformationSystems/ProductsAndSumsOfDomains/Factoid65.lean)**
 
 @import "../InformationSystems/ProductsAndSumsOfDomains/Factoid65.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/bar.lean](../InformationSystems/SomeDomainEquations/Factoid84/bar.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/bar.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/barElement.lean](../InformationSystems/SomeDomainEquations/Factoid84/barElement.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/barElement.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/BotApprox.lean](../InformationSystems/SomeDomainEquations/Factoid84/BotApprox.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/BotApprox.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/ConsistentApprox.lean](../InformationSystems/SomeDomainEquations/Factoid84/ConsistentApprox.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/ConsistentApprox.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/RogueApprox.lean](../InformationSystems/SomeDomainEquations/Factoid84/RogueApprox.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/RogueApprox.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Sum/instLeftCommutativeLiftSumRight.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/instLeftCommutativeLiftSumRight.lean)**
 
 @import "../InformationSystems/ProductsAndSumsOfDomains/Sum/instLeftCommutativeLiftSumRight.lean"
@@ -315,9 +291,6 @@
 **[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/approxMap_toElement.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/approxMap_toElement.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/approxMap_toElement.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/ReflApprox.lean](../InformationSystems/SomeDomainEquations/Factoid84/ReflApprox.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/ReflApprox.lean"
 **[InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_lft_of_sumEntSet.lean](../InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_lft_of_sumEntSet.lean)**
 
 @import "../InformationSystems/ProductsAndSumsOfDomains/Sum/entSet_lft_of_sumEntSet.lean"
@@ -813,51 +786,9 @@
 **[InformationSystems/FunctionSpaceAsADomain/FunctionSpace/pairMap_toElement_pairElements.lean](../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/pairMap_toElement_pairElements.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/FunctionSpace/pairMap_toElement_pairElements.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/IdemApprox.lean](../InformationSystems/SomeDomainEquations/Factoid84/IdemApprox.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/IdemApprox.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/IsDomainApprox.lean](../InformationSystems/SomeDomainEquations/Factoid84/IsDomainApprox.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/IsDomainApprox.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/scottCon.lean](../InformationSystems/SomeDomainEquations/Factoid84/scottCon.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/scottCon.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/mem_topElement.lean](../InformationSystems/SomeDomainEquations/Factoid84/mem_topElement.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/mem_topElement.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/flatRel.lean](../InformationSystems/SomeDomainEquations/Factoid84/flatRel.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/flatRel.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/mem_barElement.lean](../InformationSystems/SomeDomainEquations/Factoid84/mem_barElement.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/mem_barElement.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/BotApprox_any.lean](../InformationSystems/SomeDomainEquations/Factoid84/BotApprox_any.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/BotApprox_any.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/flatMap.lean](../InformationSystems/SomeDomainEquations/Factoid84/flatMap.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/flatMap.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/DomainApprox.lean](../InformationSystems/SomeDomainEquations/Factoid84/DomainApprox.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/DomainApprox.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/flatDomainApprox.lean](../InformationSystems/SomeDomainEquations/Factoid84/flatDomainApprox.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/flatDomainApprox.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/not_RogueApprox_idMap.lean](../InformationSystems/SomeDomainEquations/Factoid84/not_RogueApprox_idMap.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/not_RogueApprox_idMap.lean"
 **[InformationSystems/SomeDomainEquations/Factoid84.lean](../InformationSystems/SomeDomainEquations/Factoid84.lean)**
 
 @import "../InformationSystems/SomeDomainEquations/Factoid84.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/mem_botElement.lean](../InformationSystems/SomeDomainEquations/Factoid84/mem_botElement.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/mem_botElement.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/barElement_zero_eq_bot.lean](../InformationSystems/SomeDomainEquations/Factoid84/barElement_zero_eq_bot.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/barElement_zero_eq_bot.lean"
-**[InformationSystems/SomeDomainEquations/Factoid84/scottCon_empty_iff_consistent.lean](../InformationSystems/SomeDomainEquations/Factoid84/scottCon_empty_iff_consistent.lean)**
-
-@import "../InformationSystems/SomeDomainEquations/Factoid84/scottCon_empty_iff_consistent.lean"
 **[InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixChain_con.lean](../InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixChain_con.lean)**
 
 @import "../InformationSystems/FunctionSpaceAsADomain/Fixpoint/fixChain_con.lean"

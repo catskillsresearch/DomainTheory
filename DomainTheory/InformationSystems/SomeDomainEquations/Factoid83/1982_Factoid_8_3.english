@@ -53,3 +53,9 @@ $$b \circ a = I_{\mathbf{A}} \text{ and } a \circ b \subseteq I_{\mathbf{U}}.$$
 This makes $\mathbf{A}$ a special kind of retract of $\mathbf{U}$. The mappings $a$ and $b$ are far from unique, but at least there is one way to give a one-one embedding of the elements of $\mathbf{A}$ into the elements of $\mathbf{U}$.
 
 The universal property of $\mathbf{U}$ can be applied quite widely. For example, since $(\mathbf{U} \to \mathbf{U})$ is a system with only countably many data objects (by explicit construction!), this system is a retract of $\mathbf{U}$. Fixing on one such retraction pair as above, makes $\mathbf{U}$ also into a model of the $\lambda$-calculus. Whether different retractions give essentially different models I do not know. But the point of the remark is to show that domains can contain their own function spaces for a variety of interesting reasons. ■
+
+<!-- formalization -->
+
+**Theorem (`example_8_3`).** The empty set of tokens of the universal domain is consistent.
+
+*Proof.* Empty consistency is the base clause of consistency for the universal domain. □

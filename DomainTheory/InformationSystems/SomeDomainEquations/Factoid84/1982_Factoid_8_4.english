@@ -27,3 +27,9 @@ $$(5) \quad \bar{1} \not\subseteq r(\bar{0}).$$
 That's it. The collection of approximable mappings satisfying (1)–(5) gives us all the entailment relations we need. Condition (5) is a consistency condition, and for $r$ the consistent finite sets $u$ are those such that $\bar{1} \not\subseteq r(\bar{u})$. What we are asserting is that the totality of $r$ satisfying (1)–(5) forms the elements of a domain—one that has been derived from $(\mathbf{P} \to \mathbf{P})$ in a way similar to the way we derived $\mathbf{U}$ from $\mathbf{V}$ above.
 
 Having made domains into a domain, the next step is to see how constructs on domain (i.e. functors) can be made into approximable mappings. But the retelling and development of that story will have to wait for another publication along with the very interesting chapter on powerdomains. I only hope the ground covered here makes the theory of domains seem more elementary and more natural. ■
+
+<!-- formalization -->
+
+**Theorem (`example_8_4`).** The identity map on the powerset of the integers is not a rogue approximation.
+
+*Proof.* The identity is reflexive, so it fails the rogue clause. □

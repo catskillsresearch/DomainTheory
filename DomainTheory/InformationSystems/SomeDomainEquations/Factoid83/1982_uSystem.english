@@ -1,0 +1,318 @@
+<!-- formalization -->
+
+**Definition (`pairLInsert` commutative).** Insertion of left children in the topped domain commutes.
+
+*Proof.* By cases on the two tokens and commutativity of finite-set insertion. □
+
+**Definition (`pairRInsert` commutative).** Insertion of right children in the topped domain commutes.
+
+*Proof.* By cases on the two tokens and commutativity of finite-set insertion. □
+
+**Definition (`IsUToken` decidable).** Whether a topped token belongs to the universal domain is decidable.
+
+*Proof.* By cases on the token, excluding the top. □
+
+**Definition (`UToken` equality).** Equality of universal tokens is decidable.
+
+*Proof.* It is equality of the underlying topped tokens. □
+
+**Definition (`uForgetInsert` commutative).** Forgetting the top commutes with insertion.
+
+*Proof.* By commutativity of finite-set insertion. □
+
+**Definition (`VToken`).** A token of the topped domain is bottom, top, or a left or right child.
+
+
+**Definition (`pairLInsert`).** The left-child insertion adds the payload of the matching constructor and leaves every other constructor unchanged.
+
+
+**Definition (`vPairLFinset`).** The v Pair Lfinite set.
+
+
+**Theorem (`mem_foldr_pairL`).** A token lies in the fold of left children exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`mem_vPairLFinset`).** A token lies in the mem v Pair Lfinite set exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`vPairLFinset.insert_top`).** Inserting the indicated constructor updates insert top by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`pairRInsert`).** The right-child insertion adds the payload of the matching constructor and leaves every other constructor unchanged.
+
+
+**Definition (`vPairRFinset`).** The v Pair Rfinite set.
+
+
+**Theorem (`mem_foldr_pairR`).** A token lies in the fold of right children exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`mem_vPairRFinset`).** A token lies in the mem v Pair Rfinite set exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`vPairRFinset.empty`).** The empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`vPairRFinset.insert_top`).** Inserting the indicated constructor updates insert top by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`VEnt`).** The vEnt are given by the listed constructors.
+
+
+**Theorem (`VEnt.of_ent_top`).** The statement of ent top holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`VEnt.of_mem`).** The statement of mem holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`VEnt.pairL_inv`).** The statement pair L inv holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`VEnt.pairLFinset_of_EntSet`).** The statement set of left children of Ent Set holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`VEnt.pairR_inv`).** The statement pair R inv holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`VEnt.pairRFinset_of_EntSet`).** The statement set of right children of Ent Set holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`VEnt.trans`).** The relation trans is transitive.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`IsUToken`).** The is UToken are given by the listed constructors.
+
+
+**Definition (`VCon`).** The vCon.
+
+
+**Theorem (`VCon.any`).** The statement any holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`vBot`).** The v Bot.
+
+
+**Theorem (`vPairLFinset_empty`).** The v Pair Lfinite set empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`vPairLFinset_insert_bot`).** Inserting the indicated constructor updates v Pair Lfinite set insert bot by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`vPairLFinset_insert_pairL`).** Inserting the indicated constructor updates v Pair Lfinite set insert pair L by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`vPairLFinset_insert_pairR`).** Inserting the indicated constructor updates v Pair Lfinite set insert pair R by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`vPairLFinset_mono`).** The operation v Pair Lfinite set mono preserves inclusion.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`vPairRFinset_insert_bot`).** Inserting the indicated constructor updates v Pair Rfinite set insert bot by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`vPairRFinset_insert_pairL`).** Inserting the indicated constructor updates v Pair Rfinite set insert pair L by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`vPairRFinset_insert_pairR`).** Inserting the indicated constructor updates v Pair Rfinite set insert pair R by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`vPairRFinset_mono`).** The operation v Pair Rfinite set mono preserves inclusion.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`vTop`).** The v Top.
+
+
+**Definition (`vSystem`).** The topped domain is the information system with a top element whose tokens are closed under pairing.
+
+
+**Theorem (`not_VEnt_empty_top`).** The claim not VEnt empty top fails.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`VEnt_mono`).** The operation vEnt mono preserves inclusion.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`UToken`).** A universal token is a token of the topped domain other than the top.
+
+
+**Definition (`vRhs`).** The right-hand side of the recursion for the topped domain is the product of that domain with itself, plus bottom and top.
+
+
+**Theorem (`vRhs.eq_product`).** The equality eq product holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`vUnfold`).** Unfolding a topped token views it as a pair of topped tokens.
+
+
+**Theorem (`vUnfold.bot`).** The statement bot holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`vUnfold.pairL`).** The statement pair L holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`vUnfold.pairR`).** The statement pair R holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`uBot`).** The u Bot.
+
+
+**Definition (`uForget`).** The u Forget.
+
+
+**Definition (`uForgetInsert`).** The u Forget Insert adds the payload of the matching constructor and leaves every other constructor unchanged.
+
+
+**Theorem (`VEnt_insert_top_imp`).** Inserting the indicated constructor updates vEnt insert top imp by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`mem_foldr_uForget`).** A token lies in the mem foldr u Forget exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`not_VEnt_singleton_ne_top`).** The claim not VEnt singleton ne top fails.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`not_VEnt_insert_top_of_ent`).** The claim not VEnt insert top of ent fails.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`uForgetFinset`).** The u Forget finite set.
+
+
+**Theorem (`mem_uForgetFinset`).** A token lies in the mem u Forget finite set exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`uForgetFinset.empty`).** The empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`uForgetFinset.insert`).** Inserting the indicated constructor updates insert by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`uForgetFinset.mono`).** The operation mono preserves inclusion.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`uForgetFinset.singleton`).** On a singleton, singleton returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`UCon`).** The uCon.
+
+
+**Theorem (`UCon.singleton`).** On a singleton, singleton returns the payload of that one constructor.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`UCon.subset`).** The property subset passes to subsets.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`UEnt`).** The uEnt.
+
+
+**Theorem (`UEnt.bot`).** The statement bot holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`UEnt.of_mem`).** The statement of mem holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`UEnt.trans`).** The relation trans is transitive.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`UCon_insert_of_ent`).** Inserting the indicated constructor updates uCon insert of ent by adding that payload.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`uSystem`).** The universal domain is the topped domain with the top element removed.
+
+
+**Theorem (`UCon_empty`).** The uCon empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`not_mem_uForget_top`).** The claim not mem u Forget top fails.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □

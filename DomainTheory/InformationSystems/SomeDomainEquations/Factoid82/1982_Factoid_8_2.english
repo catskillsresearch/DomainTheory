@@ -35,3 +35,9 @@ To complete the definition we have to give the clauses for the inductive definit
 Obviously these definitions are much shorter if we have a domain in which all sets are consistent, but there are many reasons for retaining the consistency concept throughout. The check that $\mathbf{D}$ is an information system and satisfies the domain equation is mechanical. We cannot detail here how this construction provides a $\lambda$-calculus model.
 
 It is clear that these definitions are constructive, and that, with a suitable Gödel numbering of the data objects, the predicates for consistency and entailment are recursively enumerable. However, the recursion used builds up the predicates by going from less complicated data objects to more complicated ones; therefore, the predicates must be recursive, because, for a certain size data object, the derivation that puts it into the predicate is of a bounded length. This observation helps in the discussion of the computability of the operators defined on these domains—another topic we cannot discuss here. $\blacksquare$
+
+<!-- formalization -->
+
+**Theorem (`example_8_2`).** The right-hand side of the $\lambda$-calculus equation is the sum of the given domain with the function space of the solution with itself: $\mathbf{D}$ and $\mathbf{A}+(\mathbf{D}\to\mathbf{D})$ have the same information system of tokens.
+
+*Proof.* The right-hand side is defined to be that sum of a function space, so the two systems agree. □

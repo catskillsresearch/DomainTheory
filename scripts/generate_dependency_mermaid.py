@@ -3600,10 +3600,26 @@ IS_SEC7_SHORT: dict[str, tuple[str, str]] = {
     ),
 }
 IS_SEC8_SHORT: dict[str, tuple[str, str]] = {
-    "Factoid 8.1": ("F81", "Factoid 8.1"),
-    "Factoid 8.2": ("F82", "Factoid 8.2"),
-    "Factoid 8.3": ("F83", "Factoid 8.3"),
-    "Factoid 8.4": ("F84", "Factoid 8.4"),
+    "Example 8.1: A domain of trees or S-expressions": (
+        "E81",
+        "Example 8.1:\nA domain of trees\nor S-expressions",
+    ),
+    "Tree information system": ("Tree", "Tree information\nsystem"),
+    "Example 8.2: A domain for λ-calculus": (
+        "E82",
+        "Example 8.2:\nA domain for\nλ-calculus",
+    ),
+    "Lambda information system": ("Lam", "Lambda information\nsystem"),
+    "Example 8.3: A universal domain": (
+        "E83",
+        "Example 8.3:\nA universal domain",
+    ),
+    "Universal information system": ("Univ", "Universal information\nsystem"),
+    "Example 8.4: A domain of domains": (
+        "E84",
+        "Example 8.4:\nA domain of domains",
+    ),
+    "Approximations of domains": ("DomA", "Approximations\nof domains"),
 }
 
 

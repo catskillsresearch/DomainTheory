@@ -1,0 +1,131 @@
+<!-- formalization -->
+
+**Definition (`PEnt`).** Entailment in the powerset holds when the output integer already belongs to the input finite set.
+
+
+**Definition (`bar`).** The bar.
+
+
+**Definition (`P`).** The powerset domain has the natural numbers as tokens, every finite set consistent, and the least entailment.
+
+
+**Theorem (`P.AllConsistent`).** The statement all Consistent holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`IdemApprox`).** The idem Approx.
+
+
+**Definition (`ReflApprox`).** The refl Approx.
+
+
+**Definition (`barElement`).** The bar Element.
+
+
+**Definition (`botElement`).** The bot Element.
+
+
+**Definition (`topElement`).** The top Element.
+
+
+**Definition (`ConsistentApprox`).** The consistent Approx.
+
+
+**Definition (`BotApprox`).** A bottom approximation is the approximable map that entails only what the empty set entails.
+
+
+**Definition (`RogueApprox`).** A rogue approximation relates some token to the reserved top token.
+
+
+**Definition (`IsDomainApprox`).** The is Domain Approx are given by the listed constructors.
+
+
+**Definition (`DomainApprox`).** A domain approximation is an approximable self-map of the powerset that is reflexive, transitive, and not rogue.
+
+
+**Definition (`flatRel`).** The flat relation on the powerset is the least entailment.
+
+
+**Theorem (`flatRel.empty`).** The empty of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`flatRel.of_mem_one`).** The statement of mem one holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`mem_barElement`).** A token lies in the mem bar Element exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`mem_topElement`).** A token lies in the mem top Element exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`scottCon`).** The scott Con.
+
+
+**Theorem (`BotApprox_any`).** The statement bot Approx any holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`flatMap`).** The flat map is the approximable map of the least entailment.
+
+
+**Theorem (`flatMap.consistent`).** The statement consistent holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`flatMap.idem`).** The statement idem holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`flatMap.refl`).** The statement refl holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`flatMap.toElement_of_mem_one`).** The statement to Element of mem one holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`flatMap.rogue`).** The statement rogue holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`flatMap.isDomain`).** The statement is Domain holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Definition (`flatDomainApprox`).** The flat Domain Approx.
+
+
+**Theorem (`mem_botElement`).** A token lies in the mem bot Element exactly when a matching constructor in the set contributes it.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`not_RogueApprox_idMap`).** The claim not Rogue Approx id Map fails.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`barElement_zero_eq_bot`).** The equality bar Element zero eq bot holds.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □
+
+
+**Theorem (`scottCon_empty_iff_consistent`).** The scott Con empty iff consistent of the empty set is empty.
+
+*Proof.* By cases on the constructors, or by the matching clause of consistency or entailment. □

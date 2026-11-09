@@ -83,3 +83,9 @@ $$x = \mathrm{pair}(\mathrm{atom}(a), x),$$
 which is an infinite list of $a$’s. This is but one example; the possibilities have been discussed in many papers too numerous to mention here.
 
 As is common to remark, $S$-expressions can also be thought of as trees: the parse tree that gives the grammatical form of the expression. What we have added to the idea of a tree is the possibility of having infinite trees, and having all these trees as elements of a domain. $\blacksquare$
+
+<!-- formalization -->
+
+**Theorem (`example_8_1`).** The right-hand side of the tree equation is the sum of the given domain with the product of the tree domain with itself: $\mathbf{T}$ and $\mathbf{A}+(\mathbf{T}\times\mathbf{T})$ have the same information system of tokens.
+
+*Proof.* The right-hand side is defined to be that sum, so the two systems agree. □

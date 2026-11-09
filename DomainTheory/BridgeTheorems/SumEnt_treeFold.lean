@@ -10,8 +10,7 @@ public import DomainTheory.BridgeTheorems.SexDomainEquationInst15
 public import DomainTheory.BridgeTheorems.lftFinset_image_unfold
 public import DomainTheory.BridgeTheorems.rhtFinset_image_unfold_mem
 public import DomainTheory.BridgeTheorems.SumCon_image_treeCon
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeCon_pairL_of_right
-public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.TreeCon_pairR_of_right
+public import DomainTheory.InformationSystems.SomeDomainEquations.Factoid81.treeSystem
 
 @[expose] public section
 
