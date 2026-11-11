@@ -20,7 +20,13 @@ project:
     S-expression equation |T| ≃o |A + (T × T)|), and (ii) the selected Data Types as Lattices (1976)
     declarations formerly registered as scott1976. The golfed library preserves those validated results
     under Mathlib-style names. Distribution today is the public GitHub repository only; a CMU-CS technical
-    report (CMU-CS-TR) is planned.'
+    report (CMU-CS-TR) is planned. Author Contributions: Lars Warren Ericson — primary formalization
+    engineer (all Lean 4, AI-assisted proof architecture, repository assembly); Dana S. Scott — author
+    of the original source mathematics (1972–1982), project sponsorship, historical context, and
+    high-level advisory oversight of formalization scope; Vijay D''Silva and Brian Milnes — project
+    initiation, pre-submission review, and advisory feedback on repository formatting and technical
+    report generation. Source-paper authorship is distinct from combined-library co-authorship; Scott,
+    D''Silva, and Milnes did not write the Lean.'
   authors:
   - Lars Warren Ericson
   - Dana Scott
@@ -67,11 +73,18 @@ status:
     used only to lock these concrete definition bodies.
 
 
-    [1976 / scott1976, PALOMAR-2026-08-25-000004 v1] The library is a 1:1 onto translation of the numbered
-    items in Scott 1976, except that plusR uses the doubly strict conditional of (4.4) in place of the
-    ordinary conditional written in displayed (4.10). Comparator selects the 64 theorem declarations and
-    94 definitions named in comparator.json. That match establishes those selected statements; further
-    library companions are not all compared.
+    [1976 / scott1976, PALOMAR-2026-08-25-000004 v1] Selected numbered items of Scott 1976 (Data Types
+    as Lattices) are formalized under DomainTheory.DataTypesAsLattices with disclosed departures from
+    a symbol-for-symbol transcription: plusR uses the doubly strict conditional dcondSet of (4.4) in
+    place of the ordinary conditional written in displayed (4.10); theorem_2_2 is conditional semantic
+    congruence (renamed bodies already agree), not source-level alpha conversion from freshness;
+    theorem_6_5 specializes Scott''s parameterized characterization to the representative target
+    succSet topElem; and several Pref-folded golf companions (e.g. plusR_functor, tensorR_functor,
+    theorem_5_6_combinator, typed_squarePair_boxTensor) are library-only, not Comparator targets.
+    The combined DomainTheory Comparator (comparator.json) names 64 theorems and 94 definitions in
+    total (bridges plus selected 1976). Of those, the selected 1976 DataTypesAsLattices slice is 60
+    theorems and 70 definitions. The earlier vendor scott1976 registration compared 63 theorems and
+    70 definitions under pre-golf names; those vendor counts are not the combined configuration.
 
 
     [1980 / scott1980, PALOMAR-2026-08-24-000001 v2] Complete for the three compared embedding results.
@@ -1143,6 +1156,24 @@ automation:
       direction. DomainTheory co-authors are Lars Warren Ericson, Dana Scott, Vijay d''Silva, and Brian
       Milnes. Automation history of the vendored code as copied is recorded in each vendor/*/formalization.yaml
       and is not claimed here.'
+  - method: agent
+    models:
+    - Cursor agents (various, under Ericson''s direction; post-scaffolding)
+    framework: Cursor
+    role: '[DomainTheory, post-2026-10-20] Golfed assembly and Comparator packaging under Lars Warren
+      Ericson''s direction: rename/Pref-fold of the assembled DomainTheory/ Lean into Mathlib-style
+      dotted library names, Challenge.lean / Solution.lean / comparator.json packaging for the bridges-plus-selected-1976
+      Comparator configuration, formalization.yaml union refresh, toolchain bumps (including Lean/Mathlib
+      v4.36.0-rc2), and narrative provenance updates. Generated Lean and packaging were provisional until
+      lake build and Comparator type checks passed. Specific session model IDs are not separately inventoried
+      beyond this Cursor-agent disclosure.'
+  - method: manual
+    models: []
+    role: '[DomainTheory, post-2026-10-20] Lars Warren Ericson directed the golfed assembly and Comparator
+      packaging, reviewed the compared declarations and narrative, and remains responsible for the Lean
+      content. Dana Scott provided high-level advisory oversight of formalization scope. Vijay D''Silva
+      and Brian Milnes provided project initiation and pre-submission advisory review of repository
+      formatting and technical-report generation. They did not write the Lean.'
   notes: '[1972 / scott1972] Palomar Challenge / Solution / comparator / formalization.yaml packaging
     was added under the author''s direction, following the cardb template.
 
@@ -1166,14 +1197,31 @@ automation:
     remark.
 
 
-    [DomainTheory] Union assembled 2026-10-20; future DomainTheory automation must be appended here.'
+    [DomainTheory] Scaffolding union assembled 2026-10-20. Subsequent golfed assembly and Comparator
+    packaging (Challenge / Solution / comparator.json for bridges + selected 1976) are recorded in
+    automation.methods above. Author Contributions are stated in project.description and PROVENANCE.md.'
 review:
   status: self-assessed
   reviewers:
   - Lars Warren Ericson
-  notes: 'DomainTheory co-authors are Lars Warren Ericson, Dana Scott, Vijay d''Silva, and Brian Milnes
-    (project.authors). The five frozen vendor/ bases remain historically self-assessed without Scott as
-    co-author of those earlier Palomar registrations. DomainTheory has not yet been submitted to Palomar.
+  - Vijay d'Silva
+  - Brian Milnes
+  notes: 'Author Contributions (basis for co-authorship of this combined library): Lars Warren Ericson
+    — primary formalization engineer (all Lean 4, AI-assisted proof architecture, repository assembly);
+    Dana S. Scott — author of the original source mathematics (1972–1982), project sponsorship, historical
+    context, and high-level advisory oversight of formalization scope; Vijay D''Silva and Brian Milnes
+    — project initiation, pre-submission review, and advisory feedback on repository formatting and
+    technical report generation. Source-paper authorship is distinct from combined-library co-authorship;
+    Scott, D''Silva, and Milnes did not write the Lean.
+
+
+    Review basis for the submitted DomainTheory work: self-assessed. Lars Warren Ericson directed and
+    checked the golfed Lean and Comparator packaging; every compared declaration is checked by the Lean
+    kernel. Vijay D''Silva and Brian Milnes provided pre-submission advisory review of repository
+    formatting and technical-report packaging (not an independent mathematical peer review of every
+    proof). Dana Scott advised on formalization scope at a high level. No stronger separate review is
+    claimed. The five frozen vendor/ bases remain historically self-assessed without Scott as co-author
+    of those earlier per-paper Palomar registrations.
 
 
     [1972 / scott1972] Historical base: Lars Warren Ericson directed and reviewed that per-paper development;
@@ -1227,25 +1275,30 @@ limitations:
   enters via Scott-open sets and non-decidable predicates.'
 - '[1972 / scott1972] Challenge.lean states the claim with deliberate sorries; Solution.lean and DomainTheory.ContinuousLattice/ContinuousLattice/*
   supply the proofs.'
-- '[1976 / scott1976] Comparator selects the 63 theorem declarations and 70 locked definitions named in
-  comparator.json. A match establishes those selected statements, not every informal clause of every numbered
-  theorem. Further companions remain in the library.'
-- '[1976 / scott1976] Challenge.lean may contain deliberate sorries; Solution.lean and DomainTheory.DataTypesAsLattices/DataTypesAsLattices/*
+- '[1976 / scott1976] The combined Comparator names 64 theorems and 94 definitions. The selected 1976
+  DataTypesAsLattices slice within that configuration is 60 theorems and 70 definitions. A match
+  establishes those selected statements, not every informal clause of every numbered theorem. Further
+  companions remain in the library. The vendor scott1976 registration separately compared 63 theorems
+  and 70 definitions under pre-golf names.'
+- '[1976 / scott1976] Challenge.lean may contain deliberate sorries; Solution.lean and DomainTheory.DataTypesAsLattices/*
   must not.'
 - '[1976 / scott1976] The locked coproduct plusR implements Scott''s displayed (4.10) with the doubly
   strict conditional dcondSet of (4.4), not the ordinary McCarthy conditional condSet written in that
   equation. On a mixed tag containing both zero and a successor, plusR returns topElem rather than the
   union of the two injections. This matches bool in (4.3), which (4.8)–(4.10) generalize, and is required
   for Theorem 4.5 (a ⊕ b is a retract). Displayed (4.10) is therefore not a symbol-for-symbol 1:1 transcription.'
-- '[1976 / scott1976] Compared substitution is theorem_1_3 (unary composition), theorem_1_3_tuple (binary),
-  and theorem_1_3_nary (ternary), not arbitrary finite-arity substitution.'
+- '[1976 / scott1976] Compared substitution is theorem_1_3 (unary composition), theorem_1_3.tuple (binary),
+  and theorem_1_3.nary (ternary), not arbitrary finite-arity substitution.'
 - '[1976 / scott1976] theorem_1_5 proves continuity of extend f for every f, a strengthening of Scott''s
-  hypothesis that f is continuous; theorem_1_5_extends restores that hypothesis for agreement on the subspace.'
+  hypothesis that f is continuous; theorem_1_5.extension restores that hypothesis for agreement on the subspace.'
 - '[1976 / scott1976] theorem_2_2 is a conditional semantic congruence: it assumes the renamed bodies
   already have equal interpretations and lifts that equality through lambda. It is not source-level alpha
   conversion from a freshness hypothesis.'
-- '[1976 / scott1976] theorem_4_6_limit compares an inclusion-preserving bijection with the inverse limit
-  (an order isomorphism), not a homeomorphism.'
+- '[1976 / scott1976] theorem_4_6 (under Scott-continuity of F, F preserves retracts, strictness, and
+  monotonicity) proves the retract sentence together with Nonempty (Fixpoints (funOf (fix F)) ≃o
+  RetractInverseLimit F): an order isomorphism with the inverse limit, not a homeomorphism.
+  theorem_4_6.Limit is only the retract sentence (iterates and Y(F) are retracts) under continuity and
+  retract-preservation. The vendor name theorem_4_6_limit is retired.'
 - '[1976 / scott1976] theorem_6_5 is the specialization of Scott''s parameterized characterization to
   the representative target succSet topElem.'
 - '[1980 / scott1980] The Comparator-compared embedding results are the first sentence of Theorem 8.8
@@ -1386,16 +1439,16 @@ alignment:
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/FixedPoint.lean
         (proof)
       status: proved
-      note: Compared by Palomar; unary composition. Binary and ternary companions are theorem_1_3_tuple
-        and theorem_1_3_nary. Not arbitrary finite-arity substitution.
+      note: Compared by Palomar; unary composition. Binary and ternary companions are theorem_1_3.tuple
+        and theorem_1_3.nary. Not arbitrary finite-arity substitution.
     - source: Theorem 1.3 (The substitution theorem), binary
-      lean: theorem_1_3_tuple
+      lean: theorem_1_3.tuple
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/FixedPoint.lean
         (proof)
       status: proved
       note: Compared by Palomar; binary substitution on the diagonal.
     - source: Theorem 1.3 (The substitution theorem), ternary
-      lean: theorem_1_3_nary
+      lean: theorem_1_3.nary
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/FixedPoint.lean
         (proof)
       status: proved
@@ -1412,9 +1465,9 @@ alignment:
         (proof)
       status: proved
       note: Compared by Palomar; strengthening — continuity of extend f for every f, not only continuous
-        f. Agreement on the subspace is theorem_1_5_extends.
+        f. Agreement on the subspace is theorem_1_5.extension.
     - source: Theorem 1.5 (The extension theorem), extension property
-      lean: theorem_1_5_extends
+      lean: theorem_1_5.extension
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Embedding.lean
         (proof)
       status: proved
@@ -1450,9 +1503,9 @@ alignment:
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Lambda.lean
         (proof)
       status: proved
-      note: Compared by Palomar; the six combinatory generators. Completeness is theorem_2_4_complete.
+      note: Compared by Palomar; the six combinatory generators. Completeness is theorem_2_4.complete.
     - source: Theorem 2.4 (The combinator theorem), completeness
-      lean: theorem_2_4_complete
+      lean: theorem_2_4.complete
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Lambda.lean
         (proof)
       status: proved
@@ -1469,9 +1522,9 @@ alignment:
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Computability.lean
         (proof)
       status: proved
-      note: Compared by Palomar; unary definability trinity. The k-ary form is theorem_2_6_fin.
+      note: Compared by Palomar; unary definability trinity. The k-ary form is theorem_2_6.fin.
     - source: Theorem 2.6 (The definability theorem), finite arity
-      lean: theorem_2_6_fin
+      lean: theorem_2_6.fin
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Computability.lean
         (proof)
       status: proved
@@ -1488,9 +1541,9 @@ alignment:
         (proof)
       status: proved
       note: Compared by Palomar; valNat lands in RE with Scott's clauses (i)(ii). The range equation is
-        theorem_3_2_range.
+        theorem_3_2.range.
     - source: Theorem 3.2 (The enumeration theorem), range
-      lean: theorem_3_2_range
+      lean: theorem_3_2.range
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Enumeration.lean
         (proof)
       status: proved
@@ -1513,12 +1566,13 @@ alignment:
         (proof)
       status: proved
       note: Compared by Palomar; library proof is sorry-free.
-    - source: Theorem 3.6 (enumeration degrees)
+    - source: Theorem 3.6 (The subalgebra theorem / enumeration degrees)
       lean: theorem_3_6
-      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Enumeration.lean
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/Enumeration/theorem_3_6_more.lean
         (proof)
       status: proved
-      note: Compared by Palomar; library proof is sorry-free.
+      note: Compared by Palomar; a set of Pω is an enumeration degree Deg(a) if and only if it is a
+        finitely generated combinatory subalgebra (contains G and closed under application).
     - source: Theorem 3.7 (The semigroup theorem)
       lean: theorem_3_7
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Enumeration.lean
@@ -1530,9 +1584,9 @@ alignment:
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Retracts.lean
         (proof)
       status: proved
-      note: Compared by Palomar; complete-lattice half and directed density. The way-below basis is theorem_4_1_continuous.
+      note: Compared by Palomar; complete-lattice half and directed density. The way-below basis is theorem_4_1.continuous.
     - source: Theorem 4.1 (The lattice theorem), continuous basis
-      lean: theorem_4_1_continuous
+      lean: theorem_4_1.continuous
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Retracts.lean
         (proof)
       status: proved
@@ -1556,7 +1610,7 @@ alignment:
       status: proved
       note: Compared by Palomar; library proof is sorry-free.
     - source: Theorem 4.4 (ii), typed pairs
-      lean: theorem_4_4_typed
+      lean: theorem_4_4.typed_iff
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Functionality.lean
         (proof)
       status: proved
@@ -1566,7 +1620,8 @@ alignment:
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Functionality.lean
         (proof)
       status: proved
-      note: Compared by Palomar; ⊗ acts on typed maps.
+      note: Library companion (golf drop); not a Comparator target. ⊗ acts on typed maps in the library.
+
     - source: Theorem 4.5 (The sum theorem), core
       lean: theorem_4_5
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Retracts.lean
@@ -1574,7 +1629,7 @@ alignment:
       status: proved
       note: Compared by Palomar; library proof is sorry-free.
     - source: Theorem 4.5 (The sum theorem)
-      lean: theorem_4_5_sum
+      lean: theorem_4_5.sum
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Functionality.lean
         (proof)
       status: proved
@@ -1584,20 +1639,26 @@ alignment:
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Functionality.lean
         (proof)
       status: proved
-      note: Compared by Palomar; ⊕ acts on typed maps.
+      note: Library companion (golf drop); not a Comparator target. ⊕ acts on typed maps in the library.
+
     - source: Theorem 4.6 (The limit theorem), retracts
+      lean: theorem_4_6.Limit
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/Retracts/theorem_4_6.lean
+        (proof)
+      status: proved
+      note: Compared by Palomar; under Scott-continuity of F and the hypothesis that F preserves retracts,
+        the Kleene iterates iterateBot F n and the fixed-point construction Y(F) are retracts. This is
+        only the retract sentence of Theorem 4.6.
+    - source: Theorem 4.6 (The limit theorem), inverse limit / order isomorphism
       lean: theorem_4_6
-      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Retracts.lean
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/Retracts/theorem_4_6.lean
         (proof)
       status: proved
-      note: Compared by Palomar; Kleene iterates and Y(F) are retracts.
-    - source: Theorem 4.6 (The limit theorem), inverse limit
-      lean: theorem_4_6_limit
-      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Retracts.lean
-        (proof)
-      status: proved
-      note: Compared by Palomar; inclusion-preserving bijection with the inverse limit (order isomorphism
-        only, not a homeomorphism).
+      note: Compared by Palomar; under Scott-continuity of F, F preserves retracts, F preserves strict
+        retracts (hstrict), and F is monotone on strict retracts (hmono), theorem_4_6 asserts the retract
+        sentence together with Nonempty (Fixpoints (funOf (fix F)) ≃o RetractInverseLimit F) — an order
+        isomorphism with the retract inverse limit, not a homeomorphism. The vendor name theorem_4_6_limit
+        is retired; the order-isomorphism claim is carried by theorem_4_6, not by theorem_4_6.Limit.
     - source: Theorem 5.1 (The algebraic lattice theorem)
       lean: theorem_5_1
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
@@ -1615,9 +1676,9 @@ alignment:
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
         (proof)
       status: proved
-      note: Compared by Palomar; arrowR of closures is a retract. Closure status is theorem_5_3_closure.
+      note: Compared by Palomar; arrowR of closures is a retract. Closure status is theorem_5_3.closure.
     - source: Theorem 5.3 (function space of closures)
-      lean: theorem_5_3_closure
+      lean: theorem_5_3.closure
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
         (proof)
       status: proved
@@ -1627,27 +1688,28 @@ alignment:
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
         (proof)
       status: proved
-      note: Compared by Palomar; boxed product of closures is a closure. Typed pairs are typed_squarePair_boxTensor.
+      note: Compared by Palomar; boxed product of closures is a closure. Typed boxed pairs are a golf-dropped library companion (typed_squarePair_boxTensor), not a Comparator target.
     - source: Theorem 5.4, typed boxed pairs
       lean: typed_squarePair_boxTensor
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
         (proof)
       status: proved
-      note: Compared by Palomar; analogue of Theorem 4.4 (ii) for ⊠.
+      note: Library companion (golf drop); not a Comparator target. Analogue of Theorem 4.4 (ii) for ⊠ remains in the library.
+
     - source: Theorem 5.4 (sum of closures)
-      lean: theorem_5_4_plus
+      lean: theorem_5_4.plus
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
         (proof)
       status: proved
-      note: Compared by Palomar; boxed sum of closures is a closure. The typed range is boxPlus_typed_iff.
+      note: Compared by Palomar; boxed sum of closures is a closure. The typed range is boxPlus.typed_iff.
     - source: Theorem 5.4, typed boxed sum
-      lean: boxPlus_typed_iff
+      lean: boxPlus.typed_iff
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
         (proof)
       status: proved
       note: Compared by Palomar; analogue of Theorem 4.5 typed characterization for ⊞.
     - source: Theorem 5.5 (the universe V)
-      lean: theorem_5_5_universe
+      lean: theorem_5_5.universe
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
         (proof)
       status: proved
@@ -1663,50 +1725,58 @@ alignment:
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
         (proof)
       status: proved
-      note: 'Compared by Palomar; (λf : V∘→V. Y(f)) : (V∘→V)∘→V.'
+      note: Library companion (golf drop); not a Comparator target. Combinator form (λf : V∘→V. Y(f)) : (V∘→V)∘→V remains in the library.
+
     - source: Theorem 6.1 (The 𝔊 theorem)
       lean: theorem_6_1
-      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Classification.lean
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/Classification/theorem_6_1.lean
         (proof)
       status: proved
-      note: Compared by Palomar; library proof is sorry-free.
+      note: Compared by Palomar; the Scott-open subsets of Pω are exactly the sets of the form
+        {x | 0 ∈ f(x)} for some Scott-continuous f : Pω → Pω (class 𝔊).
     - source: Theorem 6.2 (The 𝔉 theorem)
       lean: theorem_6_2
-      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Classification.lean
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/Classification/theorem_6_2.lean
         (proof)
       status: proved
-      note: Compared by Palomar; library proof is sorry-free.
+      note: Compared by Palomar; the closed subsets of Pω are exactly the sets of the form
+        {x | f(x) = ⊥} for some Scott-continuous f (class 𝔉).
     - source: Theorem 6.3 (The 𝔊_δ theorem)
       lean: theorem_6_3
-      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Classification.lean
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/Classification/theorem_6_3.lean
         (proof)
       status: proved
-      note: Compared by Palomar; library proof is sorry-free.
+      note: Compared by Palomar; the countable intersections of open subsets of Pω (𝔊_δ) are exactly
+        the sets of the form {x | f(x) = ⊤} for some Scott-continuous f.
     - source: Theorem 6.4 (The 𝔉 ∩̇ 𝔊 theorem)
       lean: theorem_6_4
-      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Classification.lean
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/Classification/theorem_6_4.lean
         (proof)
       status: proved
-      note: Compared by Palomar; library proof is sorry-free.
+      note: Compared by Palomar; the intersections of closed sets with open sets are exactly the sets
+        of the form {x | f(x) = ofNat 0} for some Scott-continuous f.
     - source: Theorem 6.5 (The 𝔉 ∩̇ 𝔊_δ theorem)
       lean: theorem_6_5
-      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Classification.lean
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/Classification/theorem_6_5.lean
         (proof)
       status: proved
-      note: Compared by Palomar; specialization to the representative target succSet topElem, not the
-        fully parameterized form.
+      note: Compared by Palomar; the intersections of closed sets with 𝔊_δ sets are exactly the sets of
+        the form {x | f(x) = succSet topElem} for some Scott-continuous f — a specialization of Scott's
+        parameterized characterization to the representative target succSet ⊤, not the fully parameterized form.
     - source: Theorem 6.6 (The 𝔅 theorem)
       lean: theorem_6_6
-      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Classification.lean
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/Classification/theorem_6_6.lean
         (proof)
       status: proved
-      note: Compared by Palomar; library proof is sorry-free.
+      note: Compared by Palomar; Boolean combinations of open sets are exactly the sets for which some
+        Scott-continuous f lands in a finite set of finite sets (class 𝔅).
     - source: Theorem 6.7 (The 𝔅_δ theorem)
       lean: theorem_6_7
-      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Classification.lean
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/Classification/theorem_6_7.lean
         (proof)
       status: proved
-      note: Compared by Palomar; library proof is sorry-free.
+      note: Compared by Palomar; countable intersections of Boolean combinations of open sets (𝔅_δ) are
+        exactly the equalizers {x | f(x) = g(x)} of pairs of Scott-continuous maps.
     - source: Theorem 7.1 (The closure theorem)
       lean: theorem_7_1
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Functionality.lean
@@ -1727,10 +1797,12 @@ alignment:
       note: Compared by Palomar; library proof is sorry-free.
     - source: Theorem 7.4 (The iterator theorem)
       lean: theorem_7_4
-      module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Functionality.lean
+      module: Challenge (statement), DomainTheory.DataTypesAsLattices/Functionality/theorem_7_4.lean
         (proof)
       status: proved
-      note: Compared by Palomar; library proof is sorry-free.
+      note: Compared by Palomar; every iterator Zcomb n has functionality type (A→A)→(A→A) for every
+        equivalence relation A; conversely, any z ∈ Pω with that property for all A and with η-invariance
+        z(f) = z(λx. f(x)) for all f equals some Zcomb n.
   - base: scott1980
     date_order: '1980'
     namespace: DomainTheory.Neighborhood

@@ -29,7 +29,7 @@ Palomar preserves for that entry.
 | Vendored copy | Upstream | Vendored rev | Palomar registration (as specified in the repo) | Upstream compared claim |
 | --- | --- | --- | --- | --- |
 | `vendor/scott1972` | [`catskillsresearch/scott1972`](https://github.com/catskillsresearch/scott1972) | `a198b6e24aea07cfc858a59798d0ca78161c4387` | [PALOMAR-2026-08-24-000003](https://palomar-registry.org/entry?id=PALOMAR-2026-08-24-000003&version=2) (version 2) | Theorem 4.4 of *Continuous Lattices* (LNM 274, 1972): the inverse limit `D∞` is a continuous lattice homeomorphic to `[D∞ → D∞]` (`Scott1972.ContinuousLattice.theorem_4_4`; comparator: 19 theorems, 15 definitions) |
-| `vendor/scott1976` | [`catskillsresearch/scott1976`](https://github.com/catskillsresearch/scott1976) | `94ef7f7f096078cbfe4f99595c2a3fcb4c563942` | [PALOMAR-2026-08-25-000004](https://palomar-registry.org/entry?id=PALOMAR-2026-08-25-000004&version=1) (version 1) | Selected declarations of *Data Types as Lattices* (PRG-5, 1976; SIAM J. Comput. 5 (1976), 522–587) — comparator: 63 theorems, 70 definitions in `Scott1976.DataTypesAsLattices` |
+| `vendor/scott1976` | [`catskillsresearch/scott1976`](https://github.com/catskillsresearch/scott1976) | `94ef7f7f096078cbfe4f99595c2a3fcb4c563942` | [PALOMAR-2026-08-25-000004](https://palomar-registry.org/entry?id=PALOMAR-2026-08-25-000004&version=1) (version 1) | Selected declarations of *Data Types as Lattices* (PRG-5, 1976; SIAM J. Comput. 5 (1976), 522–587) — vendor comparator: 63 theorems, 70 definitions; DomainTheory combined Comparator selects 60 DataTypesAsLattices theorems and 70 definitions within its total 64 theorems / 94 definitions |
 | `vendor/scott1980` | [`catskillsresearch/scott1980`](https://github.com/catskillsresearch/scott1980) | `11b25d2e9cc32176ddfc78194058c61a0138a6da` | [PALOMAR-2026-08-24-000001](https://palomar-registry.org/entry?id=PALOMAR-2026-08-24-000001&version=2) (version 2) | First sentence of Theorem 8.8 of *Lectures on a Mathematical Theory of Computation* (PRG-19, 1980/May 1981): every countable neighbourhood system embeds in the universal domain (`D ⊴ U`), plus the `P4_embeds` and `Ssys_embeds` corollaries (comparator: 19 theorems, 13 definitions) |
 | `vendor/scott1982` | [`catskillsresearch/scott1982`](https://github.com/catskillsresearch/scott1982) | `455bd70226912fa621203319292e25deb0677082` | [PALOMAR-2026-08-24-000005](https://palomar-registry.org/entry?id=PALOMAR-2026-08-24-000005&version=1) (version 1) | First sentence of Theorem 7.2 of *Domains for Denotational Semantics* (ICALP 1982): approximable mappings `A → B` are exactly the elements of `\|A → B\|` (`Scott1982.InfoSys.theorem_7_2`; comparator: 28 theorems, 13 definitions) |
 | `vendor/scott_models` | [`catskillsresearch/scott_models`](https://github.com/catskillsresearch/scott_models) | `85ed1ae09faa29fe292c9867e91cf8e9b48ab2fa` | [PALOMAR-2026-08-25-000003](https://palomar-registry.org/entry?id=PALOMAR-2026-08-25-000003&version=1) (version 1) | Cross-presentation bridges between the 1972 continuous-lattice, 1980 neighbourhood-system, and 1982 information-system presentations, including `D ≃o RoundFilter ≃o RoundInfoSysElement` and the S-expression equation `\|T\| ≃o \|A + (T × T)\|` (comparator: 4 theorems, 28 definitions). This tree in turn vendors its own copies of `scott1972`/`scott1980`/`scott1982` under `vendor/scott_models/vendor/`, kept as-is |
@@ -49,6 +49,16 @@ them against `vendor/FROZEN.txt`.
   re-claims the five registrations above; they remain the
   registrations of the upstream repositories, whose remotes remain the
   per-paper homes.
+- After the 2026-10-20 scaffolding (vendoring and provenance only),
+  Ericson directed Cursor agent sessions that golfed and Pref-folded the
+  assembled `DomainTheory/` Lean, packaged `Challenge.lean` /
+  `Solution.lean` / `comparator.json` for the bridges-plus-1976
+  Comparator, and bumped the toolchain. Pre-submission review of
+  repository formatting and technical-report packaging was advisory
+  feedback from D'Silva and Milnes; Scott advised on formalization scope
+  at a high level. Mathematical checking of the Lean remains Ericson's
+  self-assessment plus the Lean kernel — not an independent peer review
+  of every proof.
 - The five vendored formalizations are the **derived-from sources**:
   `DomainTheory` adapts their Lean code, proof patterns, and narrative.
   Post-2026-10-20 changes inside `vendor/` (or code moved out of it)
@@ -94,6 +104,21 @@ not a republication of an unrelated third-party formalization.
 d'Silva, and Brian Milnes. The bases' own records that Scott did not join
 those earlier per-paper registrations remain accurate for the frozen
 `vendor/` trees; they do not describe authorship of this combined work.
+
+### Author Contributions
+
+* **Lars Warren Ericson:** Primary formalization engineer. Responsible for
+  all Lean 4 code, AI-assisted proof architecture, and repository assembly.
+* **Dana S. Scott:** Author of the original source mathematics (1972–1982).
+  Provided project sponsorship, historical context, and high-level advisory
+  oversight of the formalization scope.
+* **Vijay D'Silva & Brian Milnes:** Provided project initiation,
+  pre-submission review, and advisory feedback on repository formatting and
+  technical report generation.
+
+Source-paper authorship of Scott's mathematics is distinct from co-authorship
+of this combined Lean library. Scott, D'Silva, and Milnes did not write the
+Lean; Ericson remains responsible for the formalized content.
 
 ## Assembly (2026-10-20, post-provenance modification)
 
