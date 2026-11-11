@@ -1,102 +1,57 @@
 # DomainTheory
 
-New repository scaffolded 2026-10-20 from the boilerplate of
-[`scott_models`](https://github.com/catskillsresearch/scott_models)
-(local source: `~/Desktop/archive/scott_models`, formerly `../scott_models`),
-with the sibling Scott repos vendored under `vendor/` (see
-`vendor/FROZEN.txt`).
+Lean 4 / Mathlib formalization of Dana Scott’s domain-theory papers
+(continuous lattices 1972, data types as lattices 1976, neighbourhood
+systems 1980, information systems 1982), plus cross-presentation bridges.
+The working library is under `DomainTheory/`; five earlier per-paper
+repositories are frozen under `vendor/` for provenance.
 
-## Copied boilerplate (from `scott_models`; scripts repointed to DomainTheory)
+**Authors:** Lars Warren Ericson, Dana Scott, Vijay d'Silva, Brian Milnes
+(Apache-2.0). Ericson wrote the Lean; Scott is the source mathematician and
+advises on scope; D'Silva and Milnes helped initiate the project and review
+packaging. Full contribution statement: [`PROVENANCE.md`](PROVENANCE.md).
 
-| Path | What |
+## Library
+
+| Module | Source |
 | --- | --- |
-| `.gitignore` | Lean/Lake, LaTeX, and generated-arXiv ignores |
-| `.github/workflows/build.yml` | GitHub CI: install elan, `lake exe cache get`, `lake build` |
-| `.latexmkrc`, `.cursorignore` | pdfLaTeX preview config; generated-artifact cursor ignores |
-| `LICENSE` | Apache-2.0 |
-| `scripts/build_arxiv_tex.{py,sh}`, `scripts/build_arxiv_pdf.sh` | Markdown (`arxiv.md`) → LaTeX (`arxiv.tex`) → PDF pipeline |
-| `scripts/generate_arxiv_with_code.{py,sh}`, `scripts/package_arxiv_submit.sh`, `scripts/pdf_checks.sh` | Review-copy generation, arXiv zip packaging, font-embedding checks |
-| `scripts/tex_preamble_arxiv.tex`, `scripts/lean_listing_sanitize.py`, `scripts/ai_model_cards.py`, `scripts/puppeteer-config.json` | Pipeline dependencies of `build_arxiv_tex.py` |
-| `scripts/palomar_preflight.sh`, `scripts/compare_challenge_solution_types.sh` | Palomar setup: comparator/axiom/`sorry` preflight and Challenge-vs-Solution type diff |
+| `DomainTheory.ContinuousLattice` | Scott 1972 |
+| `DomainTheory.DataTypesAsLattices` | Scott 1976 |
+| `DomainTheory.NeighbourhoodSystems` | Scott 1980 |
+| `DomainTheory.InformationSystems` | Scott 1982 |
+| `DomainTheory.BridgeTheorems` | bridges among the three presentations |
 
-## Vendored copies (`vendor/`)
-
-Straight file copies (no `.git`, no `.lake`) of
-[catskillsresearch](https://github.com/catskillsresearch) `scott1972`,
-`scott1976`, `scott1980`, `scott1982`, and `scott_models` at the HEADs
-recorded in `vendor/FROZEN.txt` — the same model as
-`archive/scott_models/vendor/`. Note `vendor/scott_models/vendor/` is
-upstream's own nested vendoring, kept as-is.
-
-## Palomar provenance
-
-`DomainTheory` is a derivative work building on those five vendored
-repos, each Palomar-registered on its own as specified in its repo.
-Co-authors of this combined library are Lars Warren Ericson, Dana Scott,
-Vijay d'Silva, and Brian Milnes. Contributions: Ericson — all Lean 4,
-AI-assisted proof architecture, and repository assembly; Scott — source
-mathematics (1972–1982), sponsorship, historical context, and high-level
-scope advisory; D'Silva and Milnes — project initiation, pre-submission
-review, and advisory feedback on repository formatting and technical-report
-generation. See [`PROVENANCE.md`](PROVENANCE.md) for the full statement.
-[`PROVENANCE.md`](PROVENANCE.md) also tabulates each upstream, its frozen
-vendored revision, its Palomar registration (ID + version + registry
-link) and compared claim; [`formalization.yaml`](formalization.yaml)
-records the DomainTheory statement of record (bridges + selected 1976
-declarations) under renamed `DomainTheory` declarations/files, with
-`related_formalizations` `/tree/<rev>` URLs matching `vendor/FROZEN.txt`.
-The frozen revisions are provenance of the copies, not upstream identity;
-the five upstream registrations are not transferred.
+Root `DomainTheory.lean` imports every leaf. Palomar Comparator covers the
+bridges and a selected 1976 slice (`Challenge.lean`, `Solution.lean`,
+`comparator.json`, [`formalization.yaml`](formalization.yaml)). Upstream
+registrations and frozen revisions are tabulated in
+[`PROVENANCE.md`](PROVENANCE.md); they are not transferred to this repo.
 
 ## Revision
 
-The vendored formalizations were brute force: a paper statement and its proof lived together. This revision gives each fact a Mathlib-style name, keeps Scott's prose in his order, and records each proposition as his statement proved by calling those lemmas. Proposition 2.2 is the pattern: `bot_wayBelow`, `WayBelow.sup`, `WayBelow.trans_le`, `WayBelow.le_trans`, `WayBelow.le`, `WayBelow.self_iff_scottOpen_Ici`, and `WayBelow.sSup_iff` are the tools, and `proposition_2_2` is the statement.
+The vendored formalizations kept each paper statement with its proof under
+a paper-derived name. This revision gives mathematical facts Mathlib-style
+names, keeps Scott’s prose in order, and proves each paper proposition by
+calling those lemmas. Proposition 2.2 is the pattern: `bot_wayBelow`,
+`WayBelow.sup`, `WayBelow.trans_le`, `WayBelow.le_trans`, `WayBelow.le`,
+`WayBelow.self_iff_scottOpen_Ici`, and `WayBelow.sSup_iff` are the tools;
+`proposition_2_2` is Scott’s statement.
 
-Section-level progress for the 1972 paper lives in [`DomainTheory/ContinuousLattice/1972_REVISION.md`](DomainTheory/ContinuousLattice/1972_REVISION.md) (§0 Introduction and §1 Injective spaces complete as of 2026-10-28).
+1972 section progress:
+[`DomainTheory/ContinuousLattice/1972_REVISION.md`](DomainTheory/ContinuousLattice/1972_REVISION.md).
 
 ## Build
 
-Pinned to Lean **v4.35.0** (`lean-toolchain`; toolchain itself lives in
-`~/.elan/toolchains`, not in the repo) with Mathlib `v4.35.0`
-(`lakefile.toml` / `lake-manifest.json`, mirroring the vendored repos'
-setup files).
+Toolchain: Lean / Mathlib **v4.36.0-rc2** (`lean-toolchain`, `lakefile.toml`).
 
 ```bash
 lake exe cache get
-python3 scripts/check_domaintheory_barrel.py   # every DomainTheory/**/*.lean in DomainTheory.lean
-python3 scripts/check_md_hierarchy_lean.py   # every DomainTheory/**/*.lean linked from DomainTheory.md
-python3 scripts/sync_missing_lean_hierarchy.py  # attach unlinked Lean via import graph + note blocks
-lake build   # elaborates DomainTheory.lean (the sole barrel) and thus every submodule
+python3 scripts/check_domaintheory_barrel.py    # DomainTheory/**/*.lean in DomainTheory.lean
+python3 scripts/check_md_hierarchy_lean.py      # Lean linked from DomainTheory.md
+python3 scripts/sync_missing_lean_hierarchy.py  # attach unlinked Lean via import graph
+lake build
 ```
 
-The single `DomainTheory` library assembles the five vendored
-developments under renamed modules/namespaces — `DomainTheory.ContinuousLattice`
-(ex-`Scott1972.ContinuousLattice`), `DomainTheory.DataTypesAsLattices`
-(ex-`Scott1976.DataTypesAsLattices`), `DomainTheory.NeighbourhoodSystems`
-(ex-`Scott1980.Neighborhood`), `DomainTheory.InformationSystems`
-(ex-`Scott1982`), `DomainTheory.BridgeTheorems` (ex-`ScottModels`) —
-each leaf imported by the root `DomainTheory.lean`. Ported v4.35 compatibility patches
-are listed in `PROVENANCE.md` (“Assembly”).
-
-## Not copied — needs authoring / adaptation
-
-- No `Challenge.lean`/`Solution.lean` or `comparator.json` was copied.
-  Those are `scott_models`-specific content, not boilerplate.
-  `palomar_preflight.sh` will fail until a DomainTheory comparator and
-  Challenge/Solution pair exist.
-- Top-level `scripts/` now point at this repo
-  (`github.com/catskillsresearch/DomainTheory`, Lean root `DomainTheory`):
-  `build_arxiv_tex.py` uses that GitHub URL and the `DomainTheory/…`
-  appendix-heading regex, and carries **no** Palomar URL — DomainTheory
-  is not Palomar-registered yet, so the title page omits that line until
-  `PALOMAR_URL` is set. `palomar_preflight.sh` parses all five vendor
-  revisions from `vendor/FROZEN.txt` and scans `DomainTheory` +
-  `Solution.lean` for `sorry`. `compare_challenge_solution_types.sh`
-  reads its names from this repo's `comparator.json` (add structure
-  constructors to its `EXTRA_PRINTS` as the library grows).
-  `ai_model_cards.py` acknowledgements name DomainTheory and the five
-  vendored siblings. References to Scott papers/siblings that remain
-  are deliberate (vendored dependencies), not stale repo pointers.
-- Nested `.gitignore` files under `vendor/` were removed; only the
-  root `.gitignore` remains. It still matches some vendored generated
-  artifacts, so commit those verbatim with `git add -f vendor/`.
+Before a Palomar submission, run `scripts/palomar_preflight.sh` (or the
+external editorial wrapper). Assembly notes and v4.35→v4.36 porting detail
+live in [`PROVENANCE.md`](PROVENANCE.md).
