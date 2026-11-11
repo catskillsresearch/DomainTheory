@@ -42,7 +42,7 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-def filterC : Pomega := interp filterTerm filterEnv
+noncomputable def filterC : Pomega := interp filterTerm filterEnv
 
 namespace filterC
 

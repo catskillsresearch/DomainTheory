@@ -29,7 +29,6 @@ theorem correct (i : ℕ) (c : Comb) (ρ : ℕ → Pomega) :
     · rw [ite_eq_left hj]
       simp only [ofComb]
       convert SKK_eq_I
-      funext v
       simp [envSet, Function.update, hj]
     · rw [ite_eq_right hj]
       simp [ofComb, Kcomb.beta, envSet, Function.update, hj]

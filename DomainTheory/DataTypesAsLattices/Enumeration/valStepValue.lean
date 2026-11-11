@@ -12,7 +12,7 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-def valStepValue (v : Pomega) : ℕ → Pomega
+noncomputable def valStepValue (v : Pomega) : ℕ → Pomega
   | 0 => botElem
   | p + 1 =>
       funOf (funOf v (ofNat (unpair p).1))

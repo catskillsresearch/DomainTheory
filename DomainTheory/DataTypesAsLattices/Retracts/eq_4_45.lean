@@ -413,7 +413,7 @@ theorem isScottContinuous_e (H t : Pomega) :
 end hCond
 
 
-def hLam (H e t : Pomega) : Pomega :=
+noncomputable def hLam (H e t : Pomega) : Pomega :=
   funOf inrightC
     (graph (fun x =>
       hApply H (funOf (expPayload e) (ofNat 1))
@@ -481,7 +481,7 @@ theorem isScottContinuous_e (H t : Pomega) :
 end hLam
 
 
-def Hstep (H e t : Pomega) : Pomega :=
+noncomputable def Hstep (H e t : Pomega) : Pomega :=
   dcondSet (expTag e) (hVar e t)
     (dcondSet (predSet (expTag e)) hZero
       (dcondSet (predSet (predSet (expTag e))) (hSucc H e t)
@@ -674,7 +674,7 @@ theorem isScottContinuous_e (H t : Pomega) :
 end Hstep
 
 
-def HF (H : Pomega) : Pomega :=
+noncomputable def HF (H : Pomega) : Pomega :=
   graph (fun e => graph (fun t => Hstep H e t))
 
 namespace HF
@@ -702,7 +702,7 @@ theorem app2 (H e t : Pomega) :
 end HF
 
 
-def Hinterp : LambTerm → Pomega → Pomega
+noncomputable def Hinterp : LambTerm → Pomega → Pomega
   | .var n, t => funOf t (ofNat n)
   | .zero, _ => funOf inleftC (ofNat 0)
   | .succ τ, t =>
@@ -798,7 +798,7 @@ theorem isScottContinuous (τ : LambTerm) :
 end Hinterp
 
 
-def Hfun : Pomega := fix HF
+noncomputable def Hfun : Pomega := fix HF
 
 namespace Hfun
 
@@ -871,7 +871,7 @@ theorem decode (τ : LambTerm) :
 end Hfun
 
 
-def Htyped (τ : LambTerm) : Pomega :=
+noncomputable def Htyped (τ : LambTerm) : Pomega :=
   funOf (arrowR envR lambR) (graph (Hinterp τ))
 
 namespace Htyped
@@ -891,7 +891,7 @@ theorem typed (τ : LambTerm) :
 end Htyped
 
 
-def Hcomb : Pomega :=
+noncomputable def Hcomb : Pomega :=
   funOf (arrowR expR (arrowR envR lambR)) Hfun
 
 namespace Hcomb

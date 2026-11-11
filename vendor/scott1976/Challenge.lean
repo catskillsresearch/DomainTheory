@@ -1,3 +1,4 @@
+module
 import Mathlib.Computability.Primrec.Basic
 import Mathlib.Computability.RE
 import Mathlib.Data.Nat.Bitwise

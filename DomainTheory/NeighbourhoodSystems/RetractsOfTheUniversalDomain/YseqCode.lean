@@ -26,7 +26,7 @@ noncomputable def yFold (n N : ℕ) : ℕ :=
 
 noncomputable def YseqCode (n : ℕ) : ℕ := (yFold P n (2 ^ n)).unpair.2
 
-def Yc (m : ℕ) : Set ℚ := UX (YseqCode P m)
+noncomputable def Yc (m : ℕ) : Set ℚ := UX (YseqCode P m)
 
 theorem yFoldStep_eq (n i acc : ℕ) :
     yFoldStep P (Nat.pair n (Nat.pair i acc)) =

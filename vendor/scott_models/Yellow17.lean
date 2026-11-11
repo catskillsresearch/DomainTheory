@@ -1,3 +1,4 @@
+module
 /-
 Copyright (c) 2000-2012 Association of Mizar Users
   (Stowarzyszenie Uzytkownikow Mizara, Bialystok, Poland).

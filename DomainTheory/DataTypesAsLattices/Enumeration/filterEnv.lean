@@ -19,7 +19,7 @@ open Nat.Partrec (Code)
 
 open Nat.Partrec.Code
 
-def filterEnv : ℕ → Pomega
+noncomputable def filterEnv : ℕ → Pomega
   | 3 => filterRealizer
   | 4 => pairComb
   | 5 => dollarC

@@ -1,28 +1,30 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
-# DomainTheory formalization.yaml — UNION of the five vendored
-# formalization.yaml files, in date order: scott1972 (1972), scott1976
-# (1976), scott1980 (1980), scott1982 (1982), scott_models (bridges).
-# What would be Palomared for DomainTheory is that union, under the
-# renamed DomainTheory declarations/files (see PROVENANCE.md). Generated
-# 2026-10-20 from vendor/*/formalization.yaml; DomainTheory is not yet
-# Palomar-registered and has no comparator.json / Challenge / Solution yet.
+# DomainTheory formalization.yaml — combined Palomar registration for the
+# DomainTheory library. Builds on the five vendor/ provenance trees
+# (scott1972, scott1976, scott1980, scott1982, scott_models); Comparator
+# validates the 1972+1980+1982 bridges (ex-scott_models) and the selected
+# 1976 Data Types as Lattices declarations (ex-scott1976). The Lean was
+# golfed into a readable Domain Theory library with the same validated
+# results. Toolchain: Lean/Mathlib v4.36.0-rc2.
 version: v0.4
 project:
-  name: DomainTheory — Scott domain theory 1972–1982 with cross-presentation bridges (union of five registered
-    formalizations)
-  description: 'Union, in date order, of the five same-author Palomar-registered formalizations vendored
-    under vendor/ and assembled into the single DomainTheory Lean library (Lean/Mathlib v4.35.0, lake
-    build green, no sorry): (1) scott1972, Continuous Lattices, Theorem 4.4 (DomainTheory.ContinuousLattice);
-    (2) scott1976, Data Types as Lattices (DomainTheory.DataTypesAsLattices); (3) scott1980, Lectures
-    on a Mathematical Theory of Computation (PRG-19), Theorem 8.8 first sentence plus two corollaries
-    (DomainTheory.Neighborhood); (4) scott1982, Domains for Denotational Semantics, Theorem 7.2 first
-    sentence (DomainTheory.InformationSystems); (5) scott_models, cross-presentation bridge equivalences
-    (DomainTheory.BridgeTheorems). This file is the union of the five vendor/*/formalization.yaml files:
-    what would be Palomared for DomainTheory is that union, under the renamed DomainTheory declarations
-    and file paths. DomainTheory itself is not yet Palomar-registered and has no comparator.json / Challenge
-    / Solution pair yet; the five registrations cited in PROVENANCE.md and below remain the upstream repos''.
-    Dana Scott did not participate in or endorse any of these formalizations or this derivative union.'
+  name: DomainTheory — Scott domain theory 1972–1982 with cross-presentation bridges
+  description: 'DomainTheory is a single Lean 4 / Mathlib library (v4.36.0-rc2, lake build green, no
+    sorry) assembled from five Palomar-registered formalizations vendored under vendor/ for provenance
+    (scott1972, scott1976, scott1980, scott1982, scott_models; see PROVENANCE.md and vendor/FROZEN.txt).
+    The working Lean is the golfed DomainTheory/ tree: ContinuousLattice ← 1972, DataTypesAsLattices ←
+    1976, NeighbourhoodSystems ← 1980, InformationSystems ← 1982, BridgeTheorems ← scott_models.
+    Comparator (Challenge.lean / Solution.lean / comparator.json) validates (i) the cross-presentation
+    bridges formerly registered as scott_models (1972 continuous-lattice / 1980 neighbourhood / 1982
+    information-system isomorphisms, including D ≃o RoundFilter ≃o RoundInfoSysElement and the
+    S-expression equation |T| ≃o |A + (T × T)|), and (ii) the selected Data Types as Lattices (1976)
+    declarations formerly registered as scott1976. The golfed library preserves those validated results
+    under Mathlib-style names. Distribution today is the public GitHub repository only; a CMU-CS technical
+    report (CMU-CS-TR) is planned.'
   authors:
+  - Dana Scott
+  - Vijay d'Silva
+  - Brian Milnes
   - Lars Warren Ericson
   license: Apache-2.0
   responsible_maintainers:
@@ -975,7 +977,8 @@ fidelity:
 
 
     [DomainTheory assembly, 2026-10-20] Modules/namespaces renamed as in PROVENANCE.md (Assembly) and
-    Lean/Mathlib v4.35.0 compatibility patches ported/applied there; vendor/ trees are unmodified. Declarations
+    Lean/Mathlib v4.36.0-rc2 compatibility patches ported/applied there; vendor/ trees are unmodified provenance
+    snapshots (module headers added for Palomar compliance; two oversize extracts stubbed). Declarations
     and files below use the new DomainTheory names.'
 sources:
 - title: Continuous Lattices
@@ -1299,10 +1302,12 @@ review:
     Lean source. Every compared declaration is checked by Lean against Mathlib and the pinned sibling
     packages.'
 known_gaps:
-- '[DomainTheory] No comparator.json, Challenge.lean, or Solution.lean yet: what would be Palomared is
-  this union, but the merged Comparator configuration (the union of the five vendor/*/comparator.json
-  name lists, renamed to DomainTheory declarations) and Challenge/Solution pair have not been authored,
-  so scripts/palomar_preflight.sh cannot pass yet.'
+- '[DomainTheory] Comparator covers the bridge family (ex-scott_models) and the selected 1976 declarations
+  (ex-scott1976) under DomainTheory names. Pref-folded 1976 companions use dotted library names (e.g.
+  theorem_1_3.tuple). Companions dropped in the golf (tensorR_isStrict, tensorR_retractLe, tensorR_functor,
+  plusR_retractLe, plusR_functor, typed_squarePair_boxTensor, theorem_5_6_combinator, ScottG) and anonymous
+  PartialOrder Element instances are not Comparator targets. Distribution is GitHub only for now; a CMU-CS-TR
+  is planned. Vendor extract stubs replace two files that exceeded Palomar''s 10,000-line cap.'
 - '[1980 / scott1980] Palomar compares the first sentence of Theorem 8.8 (`theorem_8_8`) plus the new
   formal corollaries `P4_embeds` and `Ssys_embeds`. The effective second sentence (`theorem_8_8_b`) and
   finitary-projection third sentence (`theorem_8_8_c`) are in the library, not in Comparator.'

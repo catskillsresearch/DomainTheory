@@ -20,7 +20,7 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-def secondRecOperator : Pomega :=
+noncomputable def secondRecOperator : Pomega :=
   funOf (funOf Scomb (funOf Kcomb dollarC))
     (funOf (funOf Scomb
       (funOf (funOf Scomb (funOf Kcomb Scomb)) Kcomb))

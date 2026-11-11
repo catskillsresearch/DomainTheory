@@ -18,7 +18,7 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-def valC : Pomega := fix valStep
+noncomputable def valC : Pomega := fix valStep
 
 namespace valC
 

@@ -29,7 +29,7 @@ set_option maxHeartbeats 2000000
 
 namespace DomainTheory.DataTypesAsLattices
 
-def valStep (v : Pomega) : Pomega :=
+noncomputable def valStep (v : Pomega) : Pomega :=
   graph (fun k => condSet k Gcomb (minExtend (valStepValue v) k))
 
 namespace valStep

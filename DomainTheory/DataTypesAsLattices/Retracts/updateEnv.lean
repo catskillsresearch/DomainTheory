@@ -21,7 +21,7 @@ public import DomainTheory.DataTypesAsLattices.Lambda.Extend
 
 namespace DomainTheory.DataTypesAsLattices
 
-def updateEnv (t x : Pomega) (n : ℕ) : Pomega :=
+noncomputable def updateEnv (t x : Pomega) (n : ℕ) : Pomega :=
   graph (fun m => if m = ofNat n then x else funOf t m)
 
 namespace updateEnv
@@ -35,7 +35,7 @@ theorem isScottContinuous_t (x : Pomega) (n : ℕ) :
       · simpa [h] using const_isScottContinuous (c := x)
       · simpa [h] using funOf.isScottContinuous_left m)
 
-def union (t x idx : Pomega) : Pomega :=
+noncomputable def union (t x idx : Pomega) : Pomega :=
   minExtend (fun n => updateEnv t x n) idx
 
 theorem ofNat (t x : Pomega) (n : ℕ) :
