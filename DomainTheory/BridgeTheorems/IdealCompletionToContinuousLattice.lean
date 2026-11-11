@@ -15,7 +15,7 @@ variable {D : Type*} [CompleteLattice D]
 
 theorem scottOpen_Ici_of_compact {k : D} (hk : IsCompactElement k) :
     ScottOpen (Set.Ici k) := by
-  refine ⟨isUpperSet_Ici k, fun S hS hSdir hmem => ?_⟩
+  refine ⟨IsUpperSet.Ici k, fun S hS hSdir hmem => ?_⟩
   obtain ⟨s, hsS, hks⟩ := hk hS hSdir (Set.mem_Ici.1 hmem)
   exact ⟨s, hsS, Set.mem_Ici.2 hks⟩
 

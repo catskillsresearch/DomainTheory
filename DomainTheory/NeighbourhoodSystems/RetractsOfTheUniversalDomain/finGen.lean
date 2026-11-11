@@ -97,7 +97,7 @@ theorem interFrom_cons_eq (A : Set α) (j : ℕ) (sub : List ℕ) :
   tauto
 
 theorem finGen_le_iff_forall_mem {D' : NeighborhoodSystem α} (hD' : D' ◁ D) (js : List ℕ) :
-    finGen P js ⊆ setOf D'.mem ↔ ∀ i ∈ js, D'.mem (P.X i) := by
+    finGen P js ⊆ Set.ofPred D'.mem ↔ ∀ i ∈ js, D'.mem (P.X i) := by
   induction js with
   | nil =>
     refine ⟨fun _ i hi => absurd hi List.not_mem_nil, fun _ => ?_⟩
@@ -113,7 +113,7 @@ theorem finGen_le_iff_forall_mem {D' : NeighborhoodSystem α} (hD' : D' ◁ D) (
       exact ih.mp ((finGen_mono P (List.sublist_cons_self j js')).trans hsub)
     · intro hall
       have hj := hall.1
-      have hFinjs' : finGen P js' ⊆ setOf D'.mem := ih.mpr hall.2
+      have hFinjs' : finGen P js' ⊆ Set.ofPred D'.mem := ih.mpr hall.2
       rintro Y ⟨sub, hsub, hDY, hYeq⟩
       cases hsub with
       | cons _ hsub' => exact hFinjs' ⟨sub, hsub', hDY, hYeq⟩
@@ -128,8 +128,8 @@ theorem finGen_le_iff_forall_mem {D' : NeighborhoodSystem α} (hD' : D' ◁ D) (
         exact hYeq ▸ hD'.inter_closed hj hY2mem hXYmem
 
 theorem finGen_append_le_iff {D' : NeighborhoodSystem α} (hD' : D' ◁ D) (js1 js2 : List ℕ) :
-    finGen P (js1 ++ js2) ⊆ setOf D'.mem ↔
-      finGen P js1 ⊆ setOf D'.mem ∧ finGen P js2 ⊆ setOf D'.mem := by
+    finGen P (js1 ++ js2) ⊆ Set.ofPred D'.mem ↔
+      finGen P js1 ⊆ Set.ofPred D'.mem ∧ finGen P js2 ⊆ Set.ofPred D'.mem := by
   rw [finGen_le_iff_forall_mem P hD', finGen_le_iff_forall_mem P hD',
     finGen_le_iff_forall_mem P hD', List.forall_mem_append]
 

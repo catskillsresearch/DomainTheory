@@ -42,7 +42,7 @@ variable {Δ : Type*} [LinearOrder Δ] [Nonempty Δ]
 @[simp] theorem master_eq : (finalSegmentSystem Δ).master = Set.univ := rfl
 
 theorem Ici_mem (a : Δ) : (finalSegmentSystem Δ).mem (Set.Ici a) :=
-  ⟨⟨a, le_refl a⟩, isUpperSet_Ici a⟩
+  ⟨⟨a, le_refl a⟩, IsUpperSet.Ici a⟩
 
 variable [WellFoundedLT Δ]
 
