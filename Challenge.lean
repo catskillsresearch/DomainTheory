@@ -206,10 +206,9 @@ noncomputable def toNeighborhoodSystem : NeighborhoodSystem A.Element :=
 noncomputable def domainOrderIso : A.Element ≃o (toNeighborhoodSystem A).Element :=
   sorry
 end InfoSysToNeighborhood
-noncomputable def infoSys_to_neighborhoodSystem {α : Type*} [DecidableEq α]
+noncomputable abbrev infoSys_to_neighborhoodSystem {α : Type*} [DecidableEq α]
     (A : InfoSys α) : NeighborhoodSystem A.Element :=
-  let _ := A
-  sorry
+  InfoSysToNeighborhood.toNeighborhoodSystem A
 namespace ContinuousLatticeToNeighborhood
 variable {D : Type*} [CompleteLattice D]
 def wayBelowUp (a : D) : Set D := {z | a ≪ z}
@@ -239,15 +238,15 @@ abbrev RoundInfoSysElement : Type _ :=
 variable (hD : ContinuousLattice D)
 include hD
 noncomputable def presentation_domains_equiv :
-    D ≃o RoundInfoSysElement (D := D) :=
-  let _ := hD
+    D ≃o RoundInfoSysElement (D := D) := by
+  have := hD
   sorry
 theorem exists_presentation_domains_equiv :
-    Nonempty (D ≃o RoundInfoSysElement (D := D)) :=
-  let _ := hD
+    Nonempty (D ≃o RoundInfoSysElement (D := D)) := by
+  have := hD
   sorry
 end Continuous
-noncomputable def lowerBoundSystem : InfoSys ℕ :=
+noncomputable def lowerBoundSystem : InfoSys ℕ := by
   sorry
 noncomputable abbrev SexSys : InfoSys (TreeToken ℕ) :=
   treeSystem lowerBoundSystem
@@ -259,24 +258,24 @@ abbrev FiniteElement : Type _ :=
   { x : A.Element // ∃ (u : Finset α) (hu : u ∈ A.Con), x = A.closure u hu }
 end InfoSysToIdealCompletion
 noncomputable def sexNeighborhoodIso :
-    SexSys.Element ≃o (InfoSysToNeighborhood.toNeighborhoodSystem SexSys).Element :=
+    SexSys.Element ≃o (InfoSysToNeighborhood.toNeighborhoodSystem SexSys).Element := by
   sorry
 noncomputable def sexIdealIso :
-    SexSys.Element ≃o Ideal (InfoSysToIdealCompletion.FiniteElement SexSys) :=
+    SexSys.Element ≃o Ideal (InfoSysToIdealCompletion.FiniteElement SexSys) := by
   sorry
 noncomputable def sexDomainEquationIso :
-    SexSys.Element ≃o SexRhs.Element :=
+    SexSys.Element ≃o SexRhs.Element := by
   sorry
 theorem exists_sexNeighborhoodIso :
     Nonempty (SexSys.Element ≃o
-      (InfoSysToNeighborhood.toNeighborhoodSystem SexSys).Element) :=
+      (InfoSysToNeighborhood.toNeighborhoodSystem SexSys).Element) := by
   sorry
 theorem exists_sexIdealIso :
     Nonempty (SexSys.Element ≃o
-      Ideal (InfoSysToIdealCompletion.FiniteElement SexSys)) :=
+      Ideal (InfoSysToIdealCompletion.FiniteElement SexSys)) := by
   sorry
 theorem exists_sexDomainEquationIso :
-    Nonempty (SexSys.Element ≃o SexRhs.Element) :=
+    Nonempty (SexSys.Element ≃o SexRhs.Element) := by
   sorry
 end DomainTheory.BridgeTheorems
 namespace DomainTheory.DataTypesAsLattices

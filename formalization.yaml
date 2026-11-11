@@ -69,8 +69,8 @@ status:
 
     [1976 / scott1976, PALOMAR-2026-08-25-000004 v1] The library is a 1:1 onto translation of the numbered
     items in Scott 1976, except that plusR uses the doubly strict conditional of (4.4) in place of the
-    ordinary conditional written in displayed (4.10). Comparator selects the 63 theorem declarations and
-    70 definitions named in comparator.json. That match establishes those selected statements; further
+    ordinary conditional written in displayed (4.10). Comparator selects the 64 theorem declarations and
+    94 definitions named in comparator.json. That match establishes those selected statements; further
     library companions are not all compared.
 
 
@@ -108,19 +108,52 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
-  - declaration: DomainTheory.ContinuousLattice.theorem_4_4
-    file: DomainTheory/ContinuousLattice/FunctionSpaceTower.lean
+  - declaration: DomainTheory.BridgeTheorems.exists_presentation_domains_equiv
+    file: DomainTheory/BridgeTheorems
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
-    comparator_config: vendor/scott1972/comparator.json
+    comparator_config: vendor/scott_models/comparator.json
     literature_dependencies: []
-    base: scott1972
-    palomar_registration: PALOMAR-2026-08-24-000003 (version 2)
+    base: scott_models
+    palomar_registration: PALOMAR-2026-08-25-000003 (version 1)
+  - declaration: DomainTheory.BridgeTheorems.exists_sexNeighborhoodIso
+    file: DomainTheory/BridgeTheorems
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott_models/comparator.json
+    literature_dependencies: []
+    base: scott_models
+    palomar_registration: PALOMAR-2026-08-25-000003 (version 1)
+  - declaration: DomainTheory.BridgeTheorems.exists_sexIdealIso
+    file: DomainTheory/BridgeTheorems
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott_models/comparator.json
+    literature_dependencies: []
+    base: scott_models
+    palomar_registration: PALOMAR-2026-08-25-000003 (version 1)
+  - declaration: DomainTheory.BridgeTheorems.exists_sexDomainEquationIso
+    file: DomainTheory/BridgeTheorems
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: vendor/scott_models/comparator.json
+    literature_dependencies: []
+    base: scott_models
+    palomar_registration: PALOMAR-2026-08-25-000003 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_1_1
-    file: DomainTheory/DataTypesAsLattices/Continuous.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -131,7 +164,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_1_2
-    file: DomainTheory/DataTypesAsLattices/Graph.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -142,7 +175,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_1_3
-    file: DomainTheory/DataTypesAsLattices/FixedPoint.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -152,8 +185,8 @@ status:
     literature_dependencies: []
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.theorem_1_3_tuple
-    file: DomainTheory/DataTypesAsLattices/FixedPoint.lean
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_1_3.tuple
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -163,8 +196,8 @@ status:
     literature_dependencies: []
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.theorem_1_3_nary
-    file: DomainTheory/DataTypesAsLattices/FixedPoint.lean
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_1_3.nary
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -175,7 +208,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_1_4
-    file: DomainTheory/DataTypesAsLattices/FixedPoint.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -186,7 +219,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_1_5
-    file: DomainTheory/DataTypesAsLattices/Embedding.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -196,8 +229,8 @@ status:
     literature_dependencies: []
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.theorem_1_5_extends
-    file: DomainTheory/DataTypesAsLattices/Embedding.lean
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_1_5.extension
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -208,7 +241,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_1_6
-    file: DomainTheory/DataTypesAsLattices/Embedding.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -219,7 +252,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_2_1
-    file: DomainTheory/DataTypesAsLattices/Lambda.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -230,7 +263,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_2_2
-    file: DomainTheory/DataTypesAsLattices/Lambda.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -241,7 +274,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_2_3
-    file: DomainTheory/DataTypesAsLattices/Lambda.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -252,7 +285,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_2_4
-    file: DomainTheory/DataTypesAsLattices/Lambda.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -262,8 +295,8 @@ status:
     literature_dependencies: []
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.theorem_2_4_complete
-    file: DomainTheory/DataTypesAsLattices/Lambda.lean
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_2_4.complete
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -274,7 +307,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_2_5
-    file: DomainTheory/DataTypesAsLattices/Lambda.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -285,7 +318,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_2_6
-    file: DomainTheory/DataTypesAsLattices/Computability.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -295,8 +328,8 @@ status:
     literature_dependencies: []
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.theorem_2_6_fin
-    file: DomainTheory/DataTypesAsLattices/Computability.lean
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_2_6.fin
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -307,7 +340,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_3_1
-    file: DomainTheory/DataTypesAsLattices/Enumeration.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -318,7 +351,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_3_2
-    file: DomainTheory/DataTypesAsLattices/Enumeration.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -328,8 +361,8 @@ status:
     literature_dependencies: []
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.theorem_3_2_range
-    file: DomainTheory/DataTypesAsLattices/Enumeration.lean
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_3_2.range
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -340,7 +373,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_3_3
-    file: DomainTheory/ContinuousLattice/FunctionSpaces.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -351,7 +384,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_3_4
-    file: DomainTheory/DataTypesAsLattices/Enumeration.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -362,7 +395,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_3_5
-    file: DomainTheory/DataTypesAsLattices/Enumeration.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -373,7 +406,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_3_6
-    file: DomainTheory/DataTypesAsLattices/Enumeration.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -384,7 +417,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_3_7
-    file: DomainTheory/DataTypesAsLattices/Enumeration.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -395,7 +428,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_4_1
-    file: DomainTheory/DataTypesAsLattices/Retracts.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -405,8 +438,8 @@ status:
     literature_dependencies: []
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.theorem_4_1_continuous
-    file: DomainTheory/DataTypesAsLattices/Retracts.lean
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_4_1.continuous
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -417,7 +450,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_4_2
-    file: DomainTheory/DataTypesAsLattices/Retracts.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -428,7 +461,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_4_3
-    file: DomainTheory/DataTypesAsLattices/Retracts.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -439,7 +472,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_4_4
-    file: DomainTheory/ContinuousLattice/FunctionSpaceTower.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -449,8 +482,8 @@ status:
     literature_dependencies: []
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.theorem_4_4_typed
-    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_4_4.typed_iff
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -460,41 +493,8 @@ status:
     literature_dependencies: []
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.tensorR_isRetract
-    file: DomainTheory/DataTypesAsLattices/Functionality.lean
-    sorry_count: 0
-    axioms:
-    - propext
-    - Classical.choice
-    - Quot.sound
-    comparator_config: vendor/scott1976/comparator.json
-    literature_dependencies: []
-    base: scott1976
-    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.tensorR_isStrict
-    file: DomainTheory/DataTypesAsLattices/Functionality.lean
-    sorry_count: 0
-    axioms:
-    - propext
-    - Classical.choice
-    - Quot.sound
-    comparator_config: vendor/scott1976/comparator.json
-    literature_dependencies: []
-    base: scott1976
-    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.tensorR_retractLe
-    file: DomainTheory/DataTypesAsLattices/Functionality.lean
-    sorry_count: 0
-    axioms:
-    - propext
-    - Classical.choice
-    - Quot.sound
-    comparator_config: vendor/scott1976/comparator.json
-    literature_dependencies: []
-    base: scott1976
-    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.tensorR_functor
-    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+  - declaration: DomainTheory.DataTypesAsLattices.tensorR.isRetract
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -505,7 +505,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_4_5
-    file: DomainTheory/DataTypesAsLattices/Retracts.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -515,30 +515,8 @@ status:
     literature_dependencies: []
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.theorem_4_5_sum
-    file: DomainTheory/DataTypesAsLattices/Functionality.lean
-    sorry_count: 0
-    axioms:
-    - propext
-    - Classical.choice
-    - Quot.sound
-    comparator_config: vendor/scott1976/comparator.json
-    literature_dependencies: []
-    base: scott1976
-    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.plusR_retractLe
-    file: DomainTheory/DataTypesAsLattices/Functionality.lean
-    sorry_count: 0
-    axioms:
-    - propext
-    - Classical.choice
-    - Quot.sound
-    comparator_config: vendor/scott1976/comparator.json
-    literature_dependencies: []
-    base: scott1976
-    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.plusR_functor
-    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_4_5.sum
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -549,7 +527,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_4_6
-    file: DomainTheory/DataTypesAsLattices/Retracts.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -559,8 +537,8 @@ status:
     literature_dependencies: []
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.theorem_4_6_limit
-    file: DomainTheory/DataTypesAsLattices/Retracts.lean
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_4_6.Limit
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -571,7 +549,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_5_1
-    file: DomainTheory/DataTypesAsLattices/Closures.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -582,7 +560,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_5_2
-    file: DomainTheory/DataTypesAsLattices/Closures.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -593,7 +571,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_5_3
-    file: DomainTheory/DataTypesAsLattices/Closures.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -603,8 +581,8 @@ status:
     literature_dependencies: []
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.theorem_5_3_closure
-    file: DomainTheory/DataTypesAsLattices/Closures.lean
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_5_3.closure
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -615,7 +593,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_5_4
-    file: DomainTheory/DataTypesAsLattices/Closures.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -625,8 +603,8 @@ status:
     literature_dependencies: []
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.typed_squarePair_boxTensor
-    file: DomainTheory/DataTypesAsLattices/Closures.lean
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_5_4.plus
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -636,8 +614,8 @@ status:
     literature_dependencies: []
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.theorem_5_4_plus
-    file: DomainTheory/DataTypesAsLattices/Closures.lean
+  - declaration: DomainTheory.DataTypesAsLattices.boxPlus.typed_iff
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -647,19 +625,8 @@ status:
     literature_dependencies: []
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.boxPlus_typed_iff
-    file: DomainTheory/DataTypesAsLattices/Closures.lean
-    sorry_count: 0
-    axioms:
-    - propext
-    - Classical.choice
-    - Quot.sound
-    comparator_config: vendor/scott1976/comparator.json
-    literature_dependencies: []
-    base: scott1976
-    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.theorem_5_5_universe
-    file: DomainTheory/DataTypesAsLattices/Closures.lean
+  - declaration: DomainTheory.DataTypesAsLattices.theorem_5_5.universe
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -670,18 +637,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_5_6
-    file: DomainTheory/DataTypesAsLattices/Closures.lean
-    sorry_count: 0
-    axioms:
-    - propext
-    - Classical.choice
-    - Quot.sound
-    comparator_config: vendor/scott1976/comparator.json
-    literature_dependencies: []
-    base: scott1976
-    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.DataTypesAsLattices.theorem_5_6_combinator
-    file: DomainTheory/DataTypesAsLattices/Closures.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -692,7 +648,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_6_1
-    file: DomainTheory/DataTypesAsLattices/Classification.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -703,7 +659,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_6_2
-    file: DomainTheory/DataTypesAsLattices/Classification.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -714,7 +670,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_6_3
-    file: DomainTheory/DataTypesAsLattices/Classification.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -725,7 +681,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_6_4
-    file: DomainTheory/DataTypesAsLattices/Classification.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -736,7 +692,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_6_5
-    file: DomainTheory/DataTypesAsLattices/Classification.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -747,7 +703,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_6_6
-    file: DomainTheory/DataTypesAsLattices/Classification.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -758,7 +714,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_6_7
-    file: DomainTheory/DataTypesAsLattices/Classification.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -769,7 +725,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_7_1
-    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -780,7 +736,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_7_2
-    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -791,7 +747,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_7_3
-    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -802,7 +758,7 @@ status:
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
   - declaration: DomainTheory.DataTypesAsLattices.theorem_7_4
-    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
@@ -812,119 +768,50 @@ status:
     literature_dependencies: []
     base: scott1976
     palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
-  - declaration: DomainTheory.Neighborhood.theorem_8_8
-    file: DomainTheory/Neighborhood/Theorem88a.lean
+  - declaration: DomainTheory.DataTypesAsLattices.exists_pair
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
-    comparator_config: vendor/scott1980/comparator.json
+    comparator_config: vendor/scott1976/comparator.json
     literature_dependencies: []
-    base: scott1980
-    palomar_registration: PALOMAR-2026-08-24-000001 (version 2)
-  - declaration: DomainTheory.Neighborhood.Example15.P4_embeds
-    file: DomainTheory/Neighborhood/PalomarExamples.lean
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.exists_triangle_bucket
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
-    comparator_config: vendor/scott1980/comparator.json
+    comparator_config: vendor/scott1976/comparator.json
     literature_dependencies: []
-    base: scott1980
-    palomar_registration: PALOMAR-2026-08-24-000001 (version 2)
-  - declaration: DomainTheory.Neighborhood.Exercise722.Ssys_embeds
-    file: DomainTheory/Neighborhood/PalomarExamples.lean
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.pair_le_left
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
-    comparator_config: vendor/scott1980/comparator.json
+    comparator_config: vendor/scott1976/comparator.json
     literature_dependencies: []
-    base: scott1980
-    palomar_registration: PALOMAR-2026-08-24-000001 (version 2)
-  - declaration: DomainTheory.InformationSystems.InfoSys.theorem_7_2
-    file: DomainTheory/DataTypesAsLattices/Functionality.lean
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
+  - declaration: DomainTheory.DataTypesAsLattices.pair_inj
+    file: DomainTheory/DataTypesAsLattices
     sorry_count: 0
     axioms:
     - propext
+    - Classical.choice
     - Quot.sound
-    comparator_config: vendor/scott1982/comparator.json
+    comparator_config: vendor/scott1976/comparator.json
     literature_dependencies: []
-    base: scott1982
-    palomar_registration: PALOMAR-2026-08-24-000005 (version 1)
-  - declaration: DomainTheory.BridgeTheorems.neighborhoodSystem_to_infoSys
-    file: DomainTheory/BridgeTheorems/NeighborhoodToInfoSys.lean
-    sorry_count: 0
-    axioms:
-    - propext
-    - Quot.sound
-    comparator_config: vendor/scott_models/comparator.json
-    literature_dependencies: []
-    base: scott_models
-    palomar_registration: PALOMAR-2026-08-25-000003 (version 1)
-  - declaration: DomainTheory.BridgeTheorems.infoSys_to_neighborhoodSystem
-    file: DomainTheory/BridgeTheorems/InfoSysToNeighborhood.lean
-    sorry_count: 0
-    axioms:
-    - propext
-    - Quot.sound
-    comparator_config: vendor/scott_models/comparator.json
-    literature_dependencies: []
-    base: scott_models
-    palomar_registration: PALOMAR-2026-08-25-000003 (version 1)
-  - declaration: DomainTheory.BridgeTheorems.InfoSysToNeighborhood.domainOrderIso
-    file: DomainTheory/BridgeTheorems/InfoSysToNeighborhood.lean
-    sorry_count: 0
-    axioms:
-    - propext
-    - Quot.sound
-    comparator_config: vendor/scott_models/comparator.json
-    literature_dependencies: []
-    base: scott_models
-    palomar_registration: PALOMAR-2026-08-25-000003 (version 1)
-  - declaration: DomainTheory.BridgeTheorems.presentation_domains_equiv
-    file: DomainTheory/BridgeTheorems.lean
-    sorry_count: 0
-    axioms:
-    - propext
-    - Quot.sound
-    comparator_config: vendor/scott_models/comparator.json
-    literature_dependencies: []
-    base: scott_models
-    palomar_registration: PALOMAR-2026-08-25-000003 (version 1)
-  - declaration: DomainTheory.BridgeTheorems.sexNeighborhoodIso
-    file: DomainTheory/BridgeTheorems.lean
-    sorry_count: 0
-    axioms:
-    - propext
-    - Quot.sound
-    comparator_config: vendor/scott_models/comparator.json
-    literature_dependencies: []
-    base: scott_models
-    palomar_registration: PALOMAR-2026-08-25-000003 (version 1)
-  - declaration: DomainTheory.BridgeTheorems.sexIdealIso
-    file: DomainTheory/BridgeTheorems.lean
-    sorry_count: 0
-    axioms:
-    - propext
-    - Quot.sound
-    comparator_config: vendor/scott_models/comparator.json
-    literature_dependencies: []
-    base: scott_models
-    palomar_registration: PALOMAR-2026-08-25-000003 (version 1)
-  - declaration: DomainTheory.BridgeTheorems.sexDomainEquationIso
-    file: DomainTheory/BridgeTheorems.lean
-    sorry_count: 0
-    axioms:
-    - propext
-    - Quot.sound
-    comparator_config: vendor/scott_models/comparator.json
-    literature_dependencies: []
-    base: scott_models
-    palomar_registration: PALOMAR-2026-08-25-000003 (version 1)
+    base: scott1976
+    palomar_registration: PALOMAR-2026-08-25-000004 (version 1)
 fidelity:
   divergences: '[1972 / scott1972] Working source: sources/ScottContinLatt1972.md. Theorem 4.4 there is
     quoted in Challenge.lean and as theorem_4_4. Lean DInf is the inverse limit of the recursively defined
