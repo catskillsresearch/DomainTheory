@@ -22,10 +22,10 @@ project:
     under Mathlib-style names. Distribution today is the public GitHub repository only; a CMU-CS technical
     report (CMU-CS-TR) is planned.'
   authors:
+  - Lars Warren Ericson
   - Dana Scott
   - Vijay d'Silva
   - Brian Milnes
-  - Lars Warren Ericson
   license: Apache-2.0
   responsible_maintainers:
   - Lars Warren Ericson
@@ -875,10 +875,12 @@ sources:
   location: 'In: Toposes, Algebraic Geometry and Logic, edited by F. W. Lawvere, LNM 274, Springer-Verlag,
     1972, pp. 97–136. Theorem 4.4.'
   relationship: formalizes
-  author_endorsement: not-contacted
-  note: 'Primary source. Dana Scott was not contacted and did not participate in or endorse this formalization.
-    The compared claim is Theorem 4.4. Working OCR text: vendor/scott1972/sources/ScottContinLatt1972.md.
-    Narrative inventory: arxiv.md. Also cited in scott_models (relationship there: background); the DomainTheory
+  author_endorsement: participated
+  note: 'Primary source. Dana Scott is a co-author of DomainTheory (with Lars Warren Ericson, Vijay d''Silva,
+    and Brian Milnes). The frozen vendor/scott1972 registration recorded that he did not join that
+    earlier per-paper Palomar entry; that remains true of the copy, not of this combined work. Compared
+    claim: Theorem 4.4. Working OCR text: vendor/scott1972/sources/ScottContinLatt1972.md. Narrative
+    inventory: arxiv.md. Also cited in scott_models (relationship there: background); the DomainTheory
     entry above governs.'
   base: scott1972
 - title: A Lean 4 Formalization of Scott's Continuous Lattices (1972)
@@ -907,8 +909,11 @@ sources:
   location: Technical Monograph PRG-5, Oxford University Computing Laboratory, Programming Research Group,
     September 1976; reprinted SIAM Journal on Computing, Volume 5, 1976, pages 522–587.
   relationship: formalizes
-  author_endorsement: other
-  note: 'Primary source. Dana Scott did not review or endorse this formalization. Working PDF: vendor/scott1976/sources/Data_Types_as_Lattices.pdf.'
+  author_endorsement: participated
+  note: 'Primary source. Dana Scott is a co-author of DomainTheory (with Lars Warren Ericson, Vijay d''Silva,
+    and Brian Milnes). The frozen vendor/scott1976 registration recorded that he did not join that
+    earlier per-paper Palomar entry; that remains true of the copy, not of this combined work. Working
+    PDF: vendor/scott1976/sources/Data_Types_as_Lattices.pdf.'
   base: scott1976
 - title: Lectures on a Mathematical Theory of Computation
   authors:
@@ -917,14 +922,15 @@ sources:
   location: Technical Monograph PRG-19, Oxford University Computing Laboratory, Programming Research Group,
     May 1981. First sentence of Theorem 8.8.
   relationship: formalizes
-  author_endorsement: not-contacted
-  note: 'Primary source (© 1981 Dana S. Scott / University of Oxford). Dana Scott was not contacted and
-    did not participate in or endorse this formalization. The principal sourced compared claim is the
-    first sentence of Theorem 8.8 (general universality); the other two selected embeddings are identified
-    as new formal corollaries. Working transcription: vendor/scott1980/sources/PRG19.md, which is not
-    licensed under this repository''s Apache-2.0 terms. Narrative inventory: arxiv.md. Lectures 1980;
-    monograph May 1981. Also cited in scott_models (relationship there: background); the DomainTheory
-    entry above governs.'
+  author_endorsement: participated
+  note: 'Primary source (© 1981 Dana S. Scott / University of Oxford). Dana Scott is a co-author of
+    DomainTheory (with Lars Warren Ericson, Vijay d''Silva, and Brian Milnes). The frozen vendor/scott1980
+    registration recorded that he did not join that earlier per-paper Palomar entry; that remains true
+    of the copy, not of this combined work. The principal sourced compared claim is the first sentence
+    of Theorem 8.8 (general universality); the other two selected embeddings are identified as new formal
+    corollaries. Working transcription: vendor/scott1980/sources/PRG19.md, which is not licensed under
+    this repository''s Apache-2.0 terms. Narrative inventory: arxiv.md. Lectures 1980; monograph May 1981.
+    Also cited in scott_models (relationship there: background); the DomainTheory entry above governs.'
   base: scott1980
 - title: A Lean 4 Certificate of Scott's Lectures on a Mathematical Theory of Computation (1981) generated
     by LLM and registered by Palomar
@@ -941,11 +947,13 @@ sources:
   type: paper
   location: 'In: Automata, Languages and Programming (ICALP 1982), LNCS 140, Springer, 1982. Theorem 7.2.'
   relationship: formalizes
-  author_endorsement: not-contacted
-  note: 'Primary source. Dana Scott was not contacted and did not participate in or endorse this formalization.
-    The compared claim is the first sentence of Theorem 7.2. Repository copy: vendor/scott1982/sources/Domains_for_Denotational_Semantics.pdf.
-    Narrative inventory: arxiv.md. Also cited in scott_models (relationship there: background); the DomainTheory
-    entry above governs.'
+  author_endorsement: participated
+  note: 'Primary source. Dana Scott is a co-author of DomainTheory (with Lars Warren Ericson, Vijay d''Silva,
+    and Brian Milnes). The frozen vendor/scott1982 registration recorded that he did not join that
+    earlier per-paper Palomar entry; that remains true of the copy, not of this combined work. Compared
+    claim: first sentence of Theorem 7.2. Repository copy: vendor/scott1982/sources/Domains_for_Denotational_Semantics.pdf.
+    Narrative inventory: arxiv.md. Also cited in scott_models (relationship there: background); the
+    DomainTheory entry above governs.'
   base: scott1982
 - title: A Lean 4 Formalization of Scott's Domains for Denotational Semantics (1982)
   authors:
@@ -1131,9 +1139,10 @@ automation:
       under the author''s direction. No Lean was written or modified.'
   - method: manual
     models: []
-    role: '[DomainTheory, 2026-10-20] The author directed the vendoring and provenance setup and takes
-      sole responsibility for the mathematical content. Automation history of the vendored code as copied
-      is recorded in each vendor/*/formalization.yaml and is not claimed here.'
+    role: '[DomainTheory, 2026-10-20] Initial vendoring and provenance setup under Lars Warren Ericson''s
+      direction. DomainTheory co-authors are Lars Warren Ericson, Dana Scott, Vijay d''Silva, and Brian
+      Milnes. Automation history of the vendored code as copied is recorded in each vendor/*/formalization.yaml
+      and is not claimed here.'
   notes: '[1972 / scott1972] Palomar Challenge / Solution / comparator / formalization.yaml packaging
     was added under the author''s direction, following the cardb template.
 
@@ -1162,32 +1171,32 @@ review:
   status: self-assessed
   reviewers:
   - Lars Warren Ericson
-  notes: 'Union of the five self-assessed bases; no external review of any base or of DomainTheory, and
-    no review or endorsement by Dana Scott. DomainTheory itself has not been submitted to Palomar.
+  notes: 'DomainTheory co-authors are Lars Warren Ericson, Dana Scott, Vijay d''Silva, and Brian Milnes
+    (project.authors). The five frozen vendor/ bases remain historically self-assessed without Scott as
+    co-author of those earlier Palomar registrations. DomainTheory has not yet been submitted to Palomar.
 
 
-    [1972 / scott1972] The author directed and reviewed the development. No external review of the Lean
-    source, and no review or endorsement by Dana Scott. Every proof step is checked by the Lean kernel.
+    [1972 / scott1972] Historical base: Lars Warren Ericson directed and reviewed that per-paper development;
+    Dana Scott was not a co-author of that registration. Every proof step is checked by the Lean kernel.
 
 
-    [1976 / scott1976] The author directed and reviewed the development. No external review of the Lean
-    source, and no review or endorsement by Dana Scott. Every proof step is checked by the Lean kernel.
+    [1976 / scott1976] Historical base: Lars Warren Ericson directed and reviewed that per-paper development;
+    Dana Scott was not a co-author of that registration. Every proof step is checked by the Lean kernel.
 
 
-    [1980 / scott1980] The author directed and reviewed the development. No external review of the Lean
-    source, and no review or endorsement by Dana Scott. Every proof step is checked by the Lean kernel.
+    [1980 / scott1980] Historical base: Lars Warren Ericson directed and reviewed that per-paper development;
+    Dana Scott was not a co-author of that registration. Every proof step is checked by the Lean kernel.
     Palomar''s automated v1 review identified two non-blocking presentation/fidelity warnings; this version
     addresses both before a fresh v2 review.
 
 
-    [1982 / scott1982] The author directed and reviewed the development. No external review of the Lean
-    source, and no review or endorsement by Dana Scott. Every proof step is checked by the Lean kernel.
+    [1982 / scott1982] Historical base: Lars Warren Ericson directed and reviewed that per-paper development;
+    Dana Scott was not a co-author of that registration. Every proof step is checked by the Lean kernel.
 
 
-    [bridge / scott_models] The author directed and reviewed the development as it was produced. No external
-    or independent review has been performed, and no mathematician other than the author has read the
-    Lean source. Every compared declaration is checked by Lean against Mathlib and the pinned sibling
-    packages.'
+    [bridge / scott_models] Historical base: Lars Warren Ericson directed and reviewed that bridge
+    development as it was produced. Every compared declaration is checked by Lean against Mathlib and
+    the pinned sibling packages.'
 known_gaps:
 - '[DomainTheory] Comparator covers the bridge family (ex-scott_models) and the selected 1976 declarations
   (ex-scott1976) under DomainTheory names. Pref-folded 1976 companions use dotted library names (e.g.

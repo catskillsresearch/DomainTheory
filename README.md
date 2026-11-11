@@ -28,24 +28,20 @@ recorded in `vendor/FROZEN.txt` — the same model as
 `archive/scott_models/vendor/`. Note `vendor/scott_models/vendor/` is
 upstream's own nested vendoring, kept as-is.
 
-## Palomar provenance (initial, before modification)
+## Palomar provenance
 
 `DomainTheory` is a derivative work building on those five vendored
 repos, each Palomar-registered on its own as specified in its repo.
+Co-authors of this combined library are Lars Warren Ericson, Dana Scott,
+Vijay d'Silva, and Brian Milnes.
 [`PROVENANCE.md`](PROVENANCE.md) tabulates each upstream, its frozen
 vendored revision, its Palomar registration (ID + version + registry
 link) and compared claim; [`formalization.yaml`](formalization.yaml)
-(v0.4) is the **union of the five vendored `formalization.yaml` files,
-in date order (1972, 1976, 1980, 1982, bridges)** — what would be
-Palomared for `DomainTheory` is that union, under the renamed
-`DomainTheory` declarations/files: 75 `main_results`, 90 alignment
-statements grouped by base, merged sources (10, deduplicated),
-classification, automation, gaps, and limitations, plus
-`related_formalizations` with `/tree/<rev>` URLs matching
-`vendor/FROZEN.txt`. The vendored code will change and diverge — the frozen
-revisions are provenance before modification, not upstream identity,
-and the upstream registrations are not transferred: `DomainTheory`
-itself is not yet Palomar-registered and has no compared claim yet.
+records the DomainTheory statement of record (bridges + selected 1976
+declarations) under renamed `DomainTheory` declarations/files, with
+`related_formalizations` `/tree/<rev>` URLs matching `vendor/FROZEN.txt`.
+The frozen revisions are provenance of the copies, not upstream identity;
+the five upstream registrations are not transferred.
 
 ## Revision
 

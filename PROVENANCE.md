@@ -1,19 +1,20 @@
 # Provenance
 
 `DomainTheory` is a **derivative work**. It starts from straight file
-copies of five same-author (Lars Warren Ericson) Lean 4 formalizations,
-vendored under `vendor/` on 2026-10-20, and builds on them. This file —
-together with `vendor/FROZEN.txt` and `formalization.yaml` — records
-that starting point **before modification**: the vendored code is
-expected to change and diverge from the upstream repositories as
-`DomainTheory` develops, and the frozen revisions below are the
-provenance of the copies, not a claim that the trees will stay
-identical to upstream.
+copies of five Lean 4 formalizations by Lars Warren Ericson, vendored
+under `vendor/` on 2026-10-20, and builds on them. This file — together
+with `vendor/FROZEN.txt` and `formalization.yaml` — records that
+starting point **before modification**: the vendored code is expected
+to change and diverge from the upstream repositories as `DomainTheory`
+develops, and the frozen revisions below are the provenance of the
+copies, not a claim that the trees will stay identical to upstream.
 
-Dana Scott did not participate in, review, or endorse any of the
-vendored formalizations (per their own `PROVENANCE.md` files), and does
-not endorse this derivative work either. The Scott papers are cited as
-literature only.
+The five vendored bases record in their own `PROVENANCE.md` files that
+Dana Scott did not participate in those separate Palomar registrations.
+That remains true of the frozen copies. **This** repository’s golfed
+library and Palomar statement of record are co-authored by
+Lars Warren Ericson, Dana Scott, Vijay d'Silva, and Brian Milnes (see
+`formalization.yaml` `project.authors` and `Solution.lean`).
 
 ## Bases (vendored, 2026-10-20)
 
@@ -41,26 +42,21 @@ them against `vendor/FROZEN.txt`.
 
 ## Status of this repository
 
-- `DomainTheory` itself is **not yet Palomar-registered**, has no
-  Palomar statement of record, and has no `Challenge.lean`,
-  `Solution.lean`, or `comparator.json` yet. Nothing here transfers,
-  inherits, or re-claims the five registrations above; they remain the
+- `DomainTheory` has a Palomar statement of record in progress
+  (`Challenge.lean`, `Solution.lean`, `comparator.json`,
+  `formalization.yaml`) for the golfed combined library (bridges +
+  selected 1976 declarations). Nothing here transfers, inherits, or
+  re-claims the five registrations above; they remain the
   registrations of the upstream repositories, whose remotes remain the
   per-paper homes.
-- This is an initial-provenance record, set up before any `DomainTheory`
-  Lean development. When a compared claim is chosen, it will need its
-  own `comparator.json`, Challenge/Solution pair, and — if submitted —
-  its own Palomar registration, with this file and
-  `formalization.yaml` updated to describe the derivative development
-  rather than only its bases.
 - The five vendored formalizations are the **derived-from sources**:
-  `DomainTheory` may adapt their Lean code, proof patterns, and
-  narrative. Post-2026-10-20 changes inside `vendor/` (or code moved
-  out of it) are `DomainTheory` modifications, attributable to this
-  repository's git history — not to the upstream repos or their
-  Palomar entries. Consult each vendored repo's own `formalization.yaml`
-  for the automation/review history of the code as copied; that history
-  is not restated as `DomainTheory`'s own.
+  `DomainTheory` adapts their Lean code, proof patterns, and narrative.
+  Post-2026-10-20 changes inside `vendor/` (or code moved out of it)
+  are `DomainTheory` modifications, attributable to this repository's
+  git history and its co-authors — not to the upstream repos or their
+  Palomar entries. Consult each vendored repo's own
+  `formalization.yaml` for the automation/review history of the code as
+  copied; that history is not restated as `DomainTheory`'s own.
 
 ## Deviations already present at setup
 
@@ -91,11 +87,13 @@ the archived tree's history.
 
 ## Licence and authorship
 
-All five bases and this repository are Apache-2.0 (see `LICENSE`), by
-the same author, so this is a derivative of the author's own split
-development, not a republication of someone else's formalization. The
-human author retains sole responsibility for the mathematical content
-and for every change made after the frozen copies.
+All five bases are Apache-2.0 by Lars Warren Ericson; this repository is
+Apache-2.0 (see `LICENSE`) as a derivative of that split development,
+not a republication of an unrelated third-party formalization.
+`DomainTheory` co-authors are Lars Warren Ericson, Dana Scott, Vijay
+d'Silva, and Brian Milnes. The bases' own records that Scott did not join
+those earlier per-paper registrations remain accurate for the frozen
+`vendor/` trees; they do not describe authorship of this combined work.
 
 ## Assembly (2026-10-20, post-provenance modification)
 
