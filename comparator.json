@@ -61,7 +61,11 @@
     "DomainTheory.DataTypesAsLattices.theorem_7_1",
     "DomainTheory.DataTypesAsLattices.theorem_7_2",
     "DomainTheory.DataTypesAsLattices.theorem_7_3",
-    "DomainTheory.DataTypesAsLattices.theorem_7_4"
+    "DomainTheory.DataTypesAsLattices.theorem_7_4",
+    "DomainTheory.DataTypesAsLattices.exists_pair",
+    "DomainTheory.DataTypesAsLattices.exists_triangle_bucket",
+    "DomainTheory.DataTypesAsLattices.pair_le_left",
+    "DomainTheory.DataTypesAsLattices.pair_inj"
   ],
   "definition_names": [
     "DomainTheory.BridgeTheorems.neighborhoodSystem_to_infoSys",
@@ -150,7 +154,14 @@
     "DomainTheory.DataTypesAsLattices.IsScottGdelta",
     "DomainTheory.DataTypesAsLattices.IsFcapG",
     "DomainTheory.DataTypesAsLattices.IsFcapGdelta",
-    "DomainTheory.DataTypesAsLattices.IsBdelta"
+    "DomainTheory.DataTypesAsLattices.IsBdelta",
+    "DomainTheory.DataTypesAsLattices.RestrictedEquiv.mem",
+    "DomainTheory.DataTypesAsLattices.RestrictedEquiv.Ea",
+    "DomainTheory.DataTypesAsLattices.RestrictedEquiv.arrowE",
+    "DomainTheory.DataTypesAsLattices.RestrictedEquiv.prodE",
+    "DomainTheory.DataTypesAsLattices.RestrictedEquiv.sumE",
+    "DomainTheory.DataTypesAsLattices.closureCompact",
+    "DomainTheory.DataTypesAsLattices.GeneratedSubalgebra"
   ],
   "permitted_axioms": [
     "propext",

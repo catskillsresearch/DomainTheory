@@ -21,10 +21,7 @@ public import Mathlib.Order.Ideal
 public import Mathlib.Order.UpperLower.Basic
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Separation.Basic
-
--- Comparator / leanexport need these names visible outside this module.
 @[expose] public section
-
 namespace DomainTheory.NeighbourhoodSystems
 structure NeighborhoodSystem (α : Type*) where
   mem : Set α → Prop
@@ -41,13 +38,18 @@ structure Element where
   master_mem : mem V.master
   inter_mem : ∀ {X Y}, mem X → mem Y → mem (X ∩ Y)
   up_mem : ∀ {X Y}, mem X → V.mem Y → X ⊆ Y → mem Y
-theorem Element.ext {x y : V.Element} (h : ∀ X, x.mem X ↔ y.mem X) : x = y := by sorry
-instance instPartialOrderElement : PartialOrder V.Element where
-  le x y := ∀ X, x.mem X → y.mem X
-  le_refl x X h := h
-  le_trans x y z h1 h2 X h := h2 X (h1 X h)
-  le_antisymm x y h1 h2 :=
-    @Element.ext α V x y fun X => ⟨h1 X, h2 X⟩
+def element_le (x y : V.Element) : Prop := ∀ X, x.mem X → y.mem X
+theorem element_le_refl (x : V.Element) : ∀ X, x.mem X → x.mem X := fun _ h => h
+theorem element_le_trans (x y z : V.Element) (hxy : ∀ X, x.mem X → y.mem X)
+    (hyz : ∀ X, y.mem X → z.mem X) : ∀ X, x.mem X → z.mem X := fun X h => hyz X (hxy X h)
+theorem Element.ext {x y : V.Element} (h : ∀ X, x.mem X ↔ y.mem X) : x = y := by
+  rcases x with ⟨xmem, _, _, _, _⟩; rcases y with ⟨ymem, _, _, _, _⟩
+  have hmem : xmem = ymem := funext fun X => propext (h X); subst hmem; rfl
+theorem element_le_antisymm (x y : V.Element) (hxy : ∀ X, x.mem X → y.mem X)
+    (hyx : ∀ X, y.mem X → x.mem X) : x = y := @Element.ext α V x y fun X => ⟨hxy X, hyx X⟩
+instance : PartialOrder V.Element where
+  le := element_le V; le_refl := element_le_refl V; le_trans := element_le_trans V
+  le_antisymm := element_le_antisymm V
 end NeighborhoodSystem
 end DomainTheory.NeighbourhoodSystems
 namespace DomainTheory.InformationSystems
@@ -71,19 +73,20 @@ structure Element where
   consistent : ∀ Y : Finset α, (Y : Set α) ⊆ carrier → Y ∈ sys.Con
   closed : ∀ (Y : Finset α) (a : α), (Y : Set α) ⊆ carrier → sys.Ent Y a → a ∈ carrier
 namespace Element
+theorem ext {x y : sys.Element} (h : x.carrier = y.carrier) : x = y := by
+  cases x; cases y; subst h; rfl
+theorem le_refl (x : sys.Element) : x.carrier ⊆ x.carrier := Set.Subset.refl _
+theorem le_trans (x y z : sys.Element) (hxy : x.carrier ⊆ y.carrier)
+    (hyz : y.carrier ⊆ z.carrier) : x.carrier ⊆ z.carrier := Set.Subset.trans hxy hyz
+theorem le_antisymm (x y : sys.Element) (hxy : x.carrier ⊆ y.carrier)
+    (hyx : y.carrier ⊆ x.carrier) : x = y := ext sys (Set.Subset.antisymm hxy hyx)
 instance instPartialOrder : PartialOrder sys.Element where
   le x y := x.carrier ⊆ y.carrier
-  le_refl _ := Set.Subset.refl _
-  le_trans _ _ _ h1 h2 := Set.Subset.trans h1 h2
-  le_antisymm x y h1 h2 := by sorry
+  le_refl := le_refl sys; le_trans := le_trans sys; le_antisymm := le_antisymm sys
 end Element
--- Match DomainTheory.InfoSys.closure (Type* → universe parameter u_1).
 noncomputable def closure {α : Type*} [DecidableEq α] (sys : InfoSys α)
     (u : Finset α) (hu : u ∈ sys.Con) : sys.Element :=
-  let _ := u
-  let _ := hu
-  sorry
--- Match DomainTheory: TreeToken lives under InfoSys.treeSystem.
+  let _ := u; let _ := hu; sorry
 namespace treeSystem
 inductive TreeToken (α : Type u) where
   | bot : TreeToken α
@@ -96,26 +99,14 @@ instance instDecidableEqTreeToken {α : Type u} [DecidableEq α] :
   | .atom a, .atom b =>
       if h : a = b then isTrue (h ▸ rfl)
       else isFalse fun h' => h (TreeToken.atom.inj h')
-  | .pairL a, .pairL b =>
-      match instDecidableEqTreeToken a b with
-      | isTrue h => isTrue (h ▸ rfl)
-      | isFalse h => isFalse fun h' => h (TreeToken.pairL.inj h')
-  | .pairR a, .pairR b =>
-      match instDecidableEqTreeToken a b with
-      | isTrue h => isTrue (h ▸ rfl)
-      | isFalse h => isFalse fun h' => h (TreeToken.pairR.inj h')
-  | .bot, .atom _ => isFalse fun h => nomatch h
-  | .bot, .pairL _ => isFalse fun h => nomatch h
-  | .bot, .pairR _ => isFalse fun h => nomatch h
-  | .atom _, .bot => isFalse fun h => nomatch h
-  | .atom _, .pairL _ => isFalse fun h => nomatch h
-  | .atom _, .pairR _ => isFalse fun h => nomatch h
-  | .pairL _, .bot => isFalse fun h => nomatch h
-  | .pairL _, .atom _ => isFalse fun h => nomatch h
-  | .pairL _, .pairR _ => isFalse fun h => nomatch h
-  | .pairR _, .bot => isFalse fun h => nomatch h
-  | .pairR _, .atom _ => isFalse fun h => nomatch h
-  | .pairR _, .pairL _ => isFalse fun h => nomatch h
+  | .pairL a, .pairL b => match instDecidableEqTreeToken a b with
+      | isTrue h => isTrue (h ▸ rfl) | isFalse h => isFalse fun h' => h (TreeToken.pairL.inj h')
+  | .pairR a, .pairR b => match instDecidableEqTreeToken a b with
+      | isTrue h => isTrue (h ▸ rfl) | isFalse h => isFalse fun h' => h (TreeToken.pairR.inj h')
+  | .bot, .atom _ | .bot, .pairL _ | .bot, .pairR _ => isFalse fun h => nomatch h
+  | .atom _, .bot | .atom _, .pairL _ | .atom _, .pairR _ => isFalse fun h => nomatch h
+  | .pairL _, .bot | .pairL _, .atom _ | .pairL _, .pairR _ => isFalse fun h => nomatch h
+  | .pairR _, .bot | .pairR _, .atom _ | .pairR _, .pairL _ => isFalse fun h => nomatch h
 end treeSystem
 open treeSystem
 section
@@ -132,23 +123,18 @@ instance instDecidableEqSumToken : DecidableEq (SumToken α β)
       if h : a = b then isTrue (h ▸ rfl)
       else isFalse fun h' => h (SumToken.right.inj h')
   | .bot, .bot => isTrue rfl
-  | .left _, .right _ => isFalse fun h => nomatch h
-  | .left _, .bot => isFalse fun h => nomatch h
-  | .right _, .left _ => isFalse fun h => nomatch h
-  | .right _, .bot => isFalse fun h => nomatch h
-  | .bot, .left _ => isFalse fun h => nomatch h
-  | .bot, .right _ => isFalse fun h => nomatch h
-def IsProdToken (A : InfoSys α) (B : InfoSys β) (p : α × β) : Prop :=
-  p.1 = A.bot ∨ p.2 = B.bot
+  | .left _, .right _ | .left _, .bot | .right _, .left _ => isFalse fun h => nomatch h
+  | .right _, .bot | .bot, .left _ | .bot, .right _ => isFalse fun h => nomatch h
+class IsProdToken (A : InfoSys α) (B : InfoSys β) (p : α × β) : Prop where
+  out : p.1 = A.bot ∨ p.2 = B.bot
 instance (A : InfoSys α) (B : InfoSys β) (p : α × β) : Decidable (IsProdToken A B p) :=
-  if h1 : p.1 = A.bot then isTrue (Or.inl h1)
-  else if h2 : p.2 = B.bot then isTrue (Or.inr h2)
-  else isFalse fun h => h.elim h1 h2
+  if h1 : p.1 = A.bot then isTrue ⟨Or.inl h1⟩
+  else if h2 : p.2 = B.bot then isTrue ⟨Or.inr h2⟩
+  else isFalse fun h => h.out.elim h1 h2
 def ProdToken (A : InfoSys α) (B : InfoSys β) : Type _ :=
   {p : α × β // IsProdToken A B p}
 instance instDecidableEqProdToken (A : InfoSys α) (B : InfoSys β) :
-    DecidableEq (ProdToken A B) :=
-  Subtype.instDecidableEq
+    DecidableEq (ProdToken A B) := Subtype.instDecidableEq
 end
 section
 variable {α : Type*} [DecidableEq α] (A : InfoSys α)
@@ -166,9 +152,14 @@ namespace DomainTheory.ContinuousLattice
 universe u
 variable {D : Type u} [CompleteLattice D]
 def ScottOpen (U : Set D) : Prop :=
+  open CompleteLattice in
+  letI : LE D := (toCompleteSemilatticeInf (α := D)).toPartialOrder.toPreorder.toLE
+  letI : SupSet D := (toCompleteSemilatticeSup (α := D)).toSupSet
   IsUpperSet U ∧
     ∀ ⦃S : Set D⦄, S.Nonempty → DirectedOn (· ≤ ·) S → sSup S ∈ U → (S ∩ U).Nonempty
 def WayBelow (x y : D) : Prop :=
+  letI : LE D := (CompleteLattice.toCompleteSemilatticeInf (α := D)).toPartialOrder.toPreorder.toLE
+  letI : Preorder D := (CompleteLattice.toCompleteSemilatticeInf (α := D)).toPartialOrder.toPreorder
   ∃ U : Set D, ScottOpen U ∧ y ∈ U ∧ U ⊆ Set.Ici x
 @[inherit_doc] scoped infix:50 " ≪ " => WayBelow
 end DomainTheory.ContinuousLattice
@@ -176,7 +167,10 @@ namespace DomainTheory
 open scoped DomainTheory.ContinuousLattice
 universe u
 class ContinuousLattice (D : Type u) [CompleteLattice D] : Prop where
-  out : ∀ y : D, IsLUB {x | x ≪ y} y
+  out : letI : LE D :=
+    (CompleteLattice.toCompleteSemilatticeInf (α := D)).toPartialOrder.toPreorder.toLE
+    ∀ y : D, IsLUB {x | x ≪ y} y
+  sSup_wayBelow : ∀ y : D, sSup {x | x ≪ y} = y := fun y => (out y).sSup_eq
 end DomainTheory
 namespace DomainTheory.BridgeTheorems
 open DomainTheory
@@ -224,10 +218,10 @@ noncomputable def toNeighborhoodSystem : NeighborhoodSystem D :=
   sorry
 abbrev Filter : Type _ :=
   (toNeighborhoodSystem : NeighborhoodSystem D).Element
-def IsRound (f : Filter (D := D)) : Prop :=
-  ∀ {a : D}, f.mem (wayBelowUp a) → ∃ b : D, a ≪ b ∧ f.mem (wayBelowUp b)
+class Round (f : Filter (D := D)) : Prop where
+  out : ∀ {a : D}, f.mem (wayBelowUp a) → ∃ b : D, a ≪ b ∧ f.mem (wayBelowUp b)
 abbrev RoundFilter : Type _ :=
-  { f : Filter (D := D) // IsRound f }
+  { f : Filter (D := D) // Round f }
 end ContinuousLatticeToNeighborhood
 open ContinuousLatticeToNeighborhood
 open DomainTheory.InformationSystems.InfoSys
@@ -235,13 +229,11 @@ open treeSystem
 open Order
 section Continuous
 variable {D : Type*} [CompleteLattice D] [DecidableEq D]
-noncomputable def wayBelowNbhdBasis : NbhdBasis D D :=
-  let _ := (⊥ : D)
-  sorry
-noncomputable def IsRoundInfoSysElement
-    (e : (wayBelowNbhdBasis (D := D)).toInfoSys.Element) : Prop :=
-  let _ := e
-  sorry
+noncomputable def wayBelowNbhdBasis : NbhdBasis D D where
+  system := toNeighborhoodSystem; nbhd := wayBelowUp; nbhd_mem := fun _ => sorry
+  exhaustive := fun {_} _ => sorry; botIdx := ⊥; botIdx_eq := sorry
+class IsRoundInfoSysElement (e : (wayBelowNbhdBasis (D := D)).toInfoSys.Element) : Prop where
+  out : Round ((wayBelowNbhdBasis (D := D)).domainOrderIso.symm e)
 abbrev RoundInfoSysElement : Type _ :=
   { e : (wayBelowNbhdBasis (D := D)).toInfoSys.Element // IsRoundInfoSysElement (D := D) e }
 variable (hD : ContinuousLattice D)
@@ -322,8 +314,8 @@ def scottPiece (f : Pomega → Pomega) (x : Pomega) (n : ℕ) : Pomega :=
   {k | e n ⊆ x ∧ k ∈ f (e n)}
 def scottUnion (f : Pomega → Pomega) (x : Pomega) : Pomega :=
   ⋃ n, scottPiece f x n
-def IsScottContinuous (f : Pomega → Pomega) : Prop :=
-  ∀ x, f x = scottUnion f x
+class IsScottContinuous (f : Pomega → Pomega) : Prop where
+  out : ∀ x, f x = scottUnion f x
 theorem mem_scottUnion {f : Pomega → Pomega} {x : Pomega} {k : ℕ} :
     k ∈ scottUnion f x ↔ ∃ n, e n ⊆ x ∧ k ∈ f (e n) := by sorry
 def basicNhhd (n : ℕ) : Set Pomega := {x | e n ⊆ x}
@@ -338,8 +330,8 @@ def funOf (u : Pomega) (x : Pomega) : Pomega :=
   {m | ∃ n, e n ⊆ x ∧ pair n m ∈ u}
 infixl:70 " ⬝ " => funOf
 theorem funOf_isScottContinuous (u : Pomega) : IsScottContinuous (funOf u) := by sorry
-def IsGraph (u : Pomega) : Prop :=
-  ∀ ⦃k m n⦄, pair k m ∈ u → e k ⊆ e n → pair n m ∈ u
+class IsGraph (u : Pomega) : Prop where
+  out : ∀ ⦃k m n⦄, pair k m ∈ u → e k ⊆ e n → pair n m ∈ u
 def comp (u v : Pomega) : Pomega :=
   graph (fun x => funOf u (funOf v x))
 class Retract (a : Pomega) : Prop where
@@ -510,8 +502,8 @@ def erase : Term → Comb
   | .cond z x y => .app (.app (.app .cond (erase x)) (erase y)) (erase z)
   | .app u x => .app (erase u) (erase x)
   | .lam i body => abs i (erase body)
-def IsRE (u : Pomega) : Prop :=
-  REPred fun n : ℕ => n ∈ u
+class IsRE (u : Pomega) : Prop where
+  out : REPred fun n : ℕ => n ∈ u
 class ComputableFin {n : ℕ} (f : (Fin n → Pomega) → Pomega) : Prop where
   out : ScottContinuousFin f ∧ IsRE (curryFin f)
 def IsComputable (f : Pomega → Pomega) : Prop :=
@@ -574,8 +566,8 @@ def IsSubalgebra (A : Set Pomega) : Prop :=
 def GeneratedSubalgebra (xs : List Pomega) : Set Pomega :=
   {u | ∀ A : Set Pomega, IsSubalgebra A →
     (∀ x, x ∈ xs → x ∈ A) → u ∈ A}
-def IsDirectedSet {α : Type u} [Preorder α] (s : Set α) : Prop :=
-  s.Nonempty ∧
+class DirectedSet {α : Type u} [Preorder α] (s : Set α) : Prop where
+  out : s.Nonempty ∧
     ∀ ⦃x⦄, x ∈ s → ∀ ⦃y⦄, y ∈ s →
       ∃ z ∈ s, x ≤ z ∧ y ≤ z
 abbrev completeLatticeLE {α : Type u} [CompleteLattice α] : LE α :=
@@ -583,22 +575,22 @@ abbrev completeLatticeLE {α : Type u} [CompleteLattice α] : LE α :=
     (@PartialOrder.toPreorder α
       (@CompleteSemilatticeInf.toPartialOrder α
         (@CompleteLattice.toCompleteSemilatticeInf α ‹_›)))
-abbrev completeLatticeSupSet {α : Type u} [CompleteLattice α] : SupSet α :=
-  @CompleteSemilatticeSup.toSupSet α
-    (@CompleteLattice.toCompleteSemilatticeSup α ‹_›)
 abbrev completeLatticePreorder {α : Type u} [CompleteLattice α] : Preorder α :=
   @PartialOrder.toPreorder α
     (@CompleteSemilatticeInf.toPartialOrder α
       (@CompleteLattice.toCompleteSemilatticeInf α ‹_›))
+abbrev completeLatticeSupSet {α : Type u} [CompleteLattice α] : SupSet α :=
+  @CompleteSemilatticeSup.toSupSet α
+    (@CompleteLattice.toCompleteSemilatticeSup α ‹_›)
 def WayBelow {α : Type u} [CompleteLattice α] (x y : α) : Prop :=
-  ∀ s : Set α, @IsDirectedSet α completeLatticePreorder s →
+  ∀ s : Set α, @DirectedSet α completeLatticePreorder s →
     @LE.le α completeLatticeLE y (@sSup α completeLatticeSupSet s) →
     ∃ z ∈ s, @LE.le α completeLatticeLE x z
 def IsCompact {α : Type u} [CompleteLattice α] (x : α) : Prop :=
   WayBelow x x
 def IsContinuousBasis {α : Type u} [CompleteLattice α]
     (basis : α → Set α) : Prop :=
-  ∀ x, @IsDirectedSet α completeLatticePreorder (basis x) ∧
+  ∀ x, @DirectedSet α completeLatticePreorder (basis x) ∧
     (∀ y ∈ basis x, WayBelow y x) ∧
     x = @sSup α completeLatticeSupSet (basis x)
 structure CountablyAlgebraic (α : Type u) [CompleteLattice α] where
@@ -881,7 +873,6 @@ theorem theorem_4_6 {F : Pomega → Pomega}
       Retract (funOf Ycomb (graph F))) ∧
       Nonempty (Fixpoints (funOf (fix F)) ≃o RetractInverseLimit F) := by sorry
 namespace theorem_4_6
--- Match DomainTheory: first sentence of Theorem 4.6 only.
 theorem Limit {F : Pomega → Pomega}
     (hf : IsScottContinuous F)
     (hret : ∀ a, Retract a → Retract (F a)) :
