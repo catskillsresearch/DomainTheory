@@ -21,6 +21,10 @@ public import Mathlib.Order.Ideal
 public import Mathlib.Order.UpperLower.Basic
 public import Mathlib.Topology.Bases
 public import Mathlib.Topology.Separation.Basic
+
+-- Comparator / leanexport need these names visible outside this module.
+@[expose] public section
+
 namespace DomainTheory.NeighbourhoodSystems
 structure NeighborhoodSystem (α : Type*) where
   mem : Set α → Prop
@@ -61,26 +65,26 @@ structure InfoSys (α : Type u) [DecidableEq α] where
     v ∈ Con → u ∈ Con → (∀ y ∈ u, Ent v y) → Ent u c → Ent v c
 namespace InfoSys
 set_option linter.unusedSectionVars false
-section Element
 variable {α : Type u} [DecidableEq α] (sys : InfoSys α)
 structure Element where
   carrier : Set α
   consistent : ∀ Y : Finset α, (Y : Set α) ⊆ carrier → Y ∈ sys.Con
   closed : ∀ (Y : Finset α) (a : α), (Y : Set α) ⊆ carrier → sys.Ent Y a → a ∈ carrier
-instance instPartialOrderElement : PartialOrder sys.Element where
+namespace Element
+instance instPartialOrder : PartialOrder sys.Element where
   le x y := x.carrier ⊆ y.carrier
   le_refl _ := Set.Subset.refl _
   le_trans _ _ _ h1 h2 := Set.Subset.trans h1 h2
   le_antisymm x y h1 h2 := by sorry
 end Element
-section Closure
-universe u_1
-variable {α : Type u_1} [DecidableEq α] (sys : InfoSys α)
-noncomputable def closure (u : Finset α) (hu : u ∈ sys.Con) : sys.Element :=
+-- Match DomainTheory.InfoSys.closure (Type* → universe parameter u_1).
+noncomputable def closure {α : Type*} [DecidableEq α] (sys : InfoSys α)
+    (u : Finset α) (hu : u ∈ sys.Con) : sys.Element :=
   let _ := u
   let _ := hu
   sorry
-end Closure
+-- Match DomainTheory: TreeToken lives under InfoSys.treeSystem.
+namespace treeSystem
 inductive TreeToken (α : Type u) where
   | bot : TreeToken α
   | atom : α → TreeToken α
@@ -112,6 +116,8 @@ instance instDecidableEqTreeToken {α : Type u} [DecidableEq α] :
   | .pairR _, .bot => isFalse fun h => nomatch h
   | .pairR _, .atom _ => isFalse fun h => nomatch h
   | .pairR _, .pairL _ => isFalse fun h => nomatch h
+end treeSystem
+open treeSystem
 section
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 inductive SumToken (α β : Type*) where
@@ -225,9 +231,10 @@ abbrev RoundFilter : Type _ :=
 end ContinuousLatticeToNeighborhood
 open ContinuousLatticeToNeighborhood
 open DomainTheory.InformationSystems.InfoSys
+open treeSystem
 open Order
 section Continuous
-variable {D : Type u} [CompleteLattice D] [DecidableEq D]
+variable {D : Type*} [CompleteLattice D] [DecidableEq D]
 noncomputable def wayBelowNbhdBasis : NbhdBasis D D :=
   let _ := (⊥ : D)
   sorry
@@ -343,13 +350,13 @@ def typed (u a : Pomega) : Prop :=
   u = funOf a u
 def Fixpoints (f : Pomega → Pomega) : Set Pomega :=
   {x | f x = x}
-def IsDirectedSubset {f : Pomega → Pomega} (s : Set (Fixpoints f)) : Prop :=
-  s.Nonempty ∧
+class DirectedSubset {f : Pomega → Pomega} (s : Set (Fixpoints f)) : Prop where
+  out : s.Nonempty ∧
     ∀ ⦃x⦄, x ∈ s → ∀ ⦃y⦄, y ∈ s →
       ∃ z ∈ s, (x : Pomega) ⊆ z ∧ (y : Pomega) ⊆ z
 def IsCompactSubset {f : Pomega → Pomega} (x : Fixpoints f) : Prop :=
   ∀ s : Set (Fixpoints f),
-    IsDirectedSubset s →
+    DirectedSubset s →
       (x : Pomega) ⊆ ⋃₀ (Subtype.val '' s) →
       ∃ z ∈ s, (x : Pomega) ⊆ z
 def IsStrict (a : Pomega) : Prop :=
@@ -361,6 +368,14 @@ def RetractInverseLimit (F : Pomega → Pomega) :=
   {v : ℕ → Pomega //
     (∀ n, typed (v n) (iterateBot F n)) ∧
       ∀ n, v n = funOf (iterateBot F n) (v (n + 1))}
+instance (F : Pomega → Pomega) : PartialOrder (RetractInverseLimit F) where
+  le v w := ∀ n, v.1 n ⊆ w.1 n
+  le_refl _ _ := subset_rfl
+  le_trans _ _ _ hvw hwz n := subset_trans (hvw n) (hwz n)
+  le_antisymm v w hvw hwv := by
+    apply Subtype.ext
+    funext n
+    exact Set.Subset.antisymm (hvw n) (hwv n)
 def iterateFrom (f : Pomega → Pomega) (x : Pomega) : ℕ → Pomega
   | 0 => x
   | n + 1 => f (iterateFrom f x n)
@@ -439,11 +454,13 @@ def rename (i j : ℕ) : Term → Term
   | .cond z x y => .cond (rename i j z) (rename i j x) (rename i j y)
   | .app u x => .app (rename i j u) (rename i j x)
   | .lam k body => if k = i then .lam k body else .lam k (rename i j body)
-def IsScottContinuousFin : ∀ {n : ℕ}, ((Fin n → Pomega) → Pomega) → Prop
+def ScottContinuousFin.Body : ∀ {n : ℕ}, ((Fin n → Pomega) → Pomega) → Prop
   | 0, _ => True
   | n + 1, f =>
       (∀ xs : Fin n → Pomega, IsScottContinuous (fun x => f (Fin.cons x xs))) ∧
-      (∀ x : Pomega, IsScottContinuousFin (fun xs : Fin n → Pomega => f (Fin.cons x xs)))
+      (∀ x : Pomega, ScottContinuousFin.Body (fun xs : Fin n → Pomega => f (Fin.cons x xs)))
+class ScottContinuousFin {n : ℕ} (f : (Fin n → Pomega) → Pomega) : Prop where
+  out : ScottContinuousFin.Body f
 def nestApplyFin (u : Pomega) : ∀ {n : ℕ}, (Fin n → Pomega) → Pomega
   | 0, _ => u
   | _n + 1, xs => nestApplyFin (funOf u (xs 0)) (Fin.tail xs)
@@ -496,15 +513,15 @@ def erase : Term → Comb
 def IsRE (u : Pomega) : Prop :=
   REPred fun n : ℕ => n ∈ u
 class ComputableFin {n : ℕ} (f : (Fin n → Pomega) → Pomega) : Prop where
-  out : IsScottContinuousFin f ∧ IsRE (curryFin f)
+  out : ScottContinuousFin f ∧ IsRE (curryFin f)
 def IsComputable (f : Pomega → Pomega) : Prop :=
   IsScottContinuous f ∧ IsRE (graph f)
 class LambdaDefinable (u : Pomega) : Prop where
   out : ∃ t : Term, interp t (fun _ => botElem) = u
 def Realizes (u : Pomega) (p : ℕ → ℕ) : Prop :=
   ∀ n, funOf u (ofNat n) = ofNat (p n)
-def IsExtensional (val : ℕ → Pomega) (p : ℕ → ℕ) : Prop :=
-  ∀ n m, val n = val m → val (p n) = val (p m)
+class Extensional (val : ℕ → Pomega) (p : ℕ → ℕ) : Prop where
+  out : ∀ n m, val n = val m → val (p n) = val (p m)
 def Gpack : Pomega :=
   seq2 sucC (seq2 predC (seq2 condC (seq2 Kcomb Scomb)))
 def Gcomb : Pomega :=
@@ -646,7 +663,8 @@ structure RestrictedEquiv where
   rel : Pomega → Pomega → Prop
   symm : ∀ {x y}, rel x y → rel y x
   trans : ∀ {x y z}, rel x y → rel y z → rel x z
-def RestrictedEquiv.mem (A : RestrictedEquiv) (x : Pomega) : Prop :=
+namespace RestrictedEquiv
+def mem (A : RestrictedEquiv) (x : Pomega) : Prop :=
   A.rel x x
 def arrowE (A B : RestrictedEquiv) : RestrictedEquiv where
   rel := fun f g =>
@@ -682,6 +700,8 @@ def Ea (a : Pomega) : RestrictedEquiv where
   rel := fun x y => typed x a ∧ typed y a ∧ x = y
   symm := by sorry
   trans := by sorry
+end RestrictedEquiv
+open RestrictedEquiv
 def Z : ℕ → Pomega → Pomega → Pomega
   | 0, _, x => x
   | n + 1, f, x => funOf f (Z n f x)
@@ -739,7 +759,7 @@ theorem theorem_2_2 (i : ℕ) (body : Term) (ρ : ℕ → Pomega) (y : Pomega) :
         ∀ σ, (∀ v, interp body (envSet ρ i v) = interp σ (envSet ρ i v)) →
           interp (.lam i body) ρ = interp (.lam i σ) ρ := by sorry
 theorem theorem_2_3 {n : ℕ} {f : (Fin n → Pomega) → Pomega}
-    (hf : IsScottContinuousFin f) :
+    (hf : ScottContinuousFin f) :
     ∃ u, ∀ xs, nestApplyFin u xs = f xs := by sorry
 theorem theorem_2_4 : IsCombinatory zeroC ∧ IsCombinatory sucC ∧ IsCombinatory predC ∧
     IsCombinatory condC ∧ IsCombinatory Kcomb ∧ IsCombinatory Scomb := by sorry
@@ -755,7 +775,7 @@ theorem theorem_2_6 {f : Pomega → Pomega} (hf : IsScottContinuous f) :
       (LambdaDefinable (graph f) ↔ IsCombinatory (graph f)) := by sorry
 namespace theorem_2_6
 theorem fin {n : ℕ} {f : (Fin n → Pomega) → Pomega}
-    (hf : IsScottContinuousFin f) :
+    (hf : ScottContinuousFin f) :
     (ComputableFin f ↔ IsRE (curryFin f)) ∧
       (IsRE (curryFin f) ↔ IsCombinatory (curryFin f)) ∧
       (LambdaDefinable (curryFin f) ↔ IsCombinatory (curryFin f)) := by sorry
@@ -780,7 +800,7 @@ theorem theorem_3_4 :
     ¬ IsRE {n | valNat n = botElem} := by sorry
 theorem theorem_3_5 {p : ℕ → ℕ}
     (hp : ∃ u, IsCombinatory u ∧ Realizes u p)
-    (hext : IsExtensional valNat p) :
+    (hext : Extensional valNat p) :
     ∃ q, IsCombinatory q ∧ ∀ n, valNat (p n) = funOf q (valNat n) := by sorry
 theorem theorem_3_6 (A : Set Pomega) :
     (∃ a, A = Deg a) ↔
@@ -791,19 +811,19 @@ theorem theorem_4_1 {f : Pomega → Pomega} (hf : IsScottContinuous f) :
     (∀ A : Set Pomega, A ⊆ Fixpoints f →
       gfpBelow f (⋂₀ A) ∈ Fixpoints f ∧
         lfpAbove f (⋃₀ A) ∈ Fixpoints f) ∧
-      ∀ {a} (ha : Retract a),
+      ∀ {a} (_ha : Retract a),
         Fixpoints (funOf a) = {x | typed x a} ∧
           ∀ x : Fixpoints (funOf a),
-            IsDirectedSubset (retractBasis a x) ∧
+            DirectedSubset (retractBasis a x) ∧
               (x : Pomega) = ⋃₀ (Subtype.val '' retractBasis a x) := by sorry
 namespace theorem_4_1
 theorem continuous {a : Pomega} (ha : Retract a) :
     ∀ x : Fixpoints (funOf a),
-      IsDirectedSubset (retractBasis a x) ∧
+      DirectedSubset (retractBasis a x) ∧
         (x : Pomega) = ⋃₀ (Subtype.val '' retractBasis a x) ∧
         ∀ y ∈ retractBasis a x,
           ∀ s : Set (Fixpoints (funOf a)),
-            IsDirectedSubset s →
+            DirectedSubset s →
               (x : Pomega) ⊆ ⋃₀ (Subtype.val '' s) →
               ∃ z ∈ s, (y : Pomega) ⊆ z := by sorry
 end theorem_4_1
@@ -838,7 +858,7 @@ namespace tensorR
 theorem isRetract {a b : Pomega} (ha : Retract a) (hb : Retract b) :
     Retract (tensorR a b) := by sorry
 end tensorR
-theorem theorem_4_5 {a b : Pomega} :
+theorem theorem_4_5 (a b : Pomega) :
     dcondSet botElem
         (pairSeq (ofNat 0) (funOf a botElem))
         (pairSeq (ofNat 1) (funOf b botElem)) = botElem ∧
@@ -853,29 +873,26 @@ theorem sum {a b : Pomega} (ha : Retract a) (hb : Retract b) :
 end theorem_4_5
 theorem theorem_4_6 {F : Pomega → Pomega}
     (hf : IsScottContinuous F)
-    (hret : ∀ a, Retract a → Retract (F a)) :
-    (∀ n, Retract (iterateBot F n)) ∧
-      Retract (funOf Ycomb (graph F)) := by sorry
-namespace theorem_4_6
-theorem Limit {F : Pomega → Pomega}
-    (hf : IsScottContinuous F)
     (hret : ∀ a, Retract a → Retract (F a))
     (hstrict : ∀ a, Retract a → IsStrict a → IsStrict (F a))
     (hmono : ∀ {a b}, Retract a → IsStrict a →
       Retract b → IsStrict b → retractLe a b → retractLe (F a) (F b)) :
+    ((∀ n, Retract (iterateBot F n)) ∧
+      Retract (funOf Ycomb (graph F))) ∧
+      Nonempty (Fixpoints (funOf (fix F)) ≃o RetractInverseLimit F) := by sorry
+namespace theorem_4_6
+-- Match DomainTheory: first sentence of Theorem 4.6 only.
+theorem Limit {F : Pomega → Pomega}
+    (hf : IsScottContinuous F)
+    (hret : ∀ a, Retract a → Retract (F a)) :
     (∀ n, Retract (iterateBot F n)) ∧
-      Retract (funOf Ycomb (graph F)) ∧
-        ∃ φ : Fixpoints (funOf (fix F)) → RetractInverseLimit F,
-          Function.Bijective φ ∧
-            ∀ x y : Fixpoints (funOf (fix F)),
-              (x : Pomega) ⊆ (y : Pomega) ↔
-                ∀ n, (φ x).1 n ⊆ (φ y).1 n := by sorry
+      Retract (funOf Ycomb (graph F)) := by sorry
 end theorem_4_6
 theorem theorem_5_1 {a : Pomega} (ha : Closure a) :
     (∀ x : Fixpoints (funOf a),
       IsCompactSubset x ↔ ∃ n, x = closureCompact a ha n) ∧
     ∀ x : Fixpoints (funOf a),
-      IsDirectedSubset (compactFixedBelow a x) ∧
+      DirectedSubset (compactFixedBelow a x) ∧
         (x : Pomega) = ⋃₀ (Subtype.val '' compactFixedBelow a x) := by sorry
 theorem theorem_5_2 {α : Type u} [CompleteLattice α]
     (D : CountablyAlgebraic α) :
@@ -890,12 +907,14 @@ namespace theorem_5_3
 theorem closure {a b : Pomega} (ha : Closure a) (hb : Closure b) :
     Closure (arrowR a b) := by sorry
 end theorem_5_3
-theorem theorem_5_4 {a b : Pomega} (ha : Closure a) (hb : Closure b) :
-    Closure (boxTensor a b) := by sorry
 namespace theorem_5_4
+theorem times {a b : Pomega} (ha : Closure a) (hb : Closure b) :
+    Closure (boxTensor a b) := by sorry
 theorem plus {a b : Pomega} (ha : Closure a) (hb : Closure b) :
     Closure (boxPlus a b) := by sorry
 end theorem_5_4
+theorem theorem_5_4 {a b : Pomega} (ha : Closure a) (hb : Closure b) :
+    Closure (boxTensor a b) ∧ Closure (boxPlus a b) := by sorry
 namespace boxPlus
 theorem typed_iff {a b u : Pomega} (ha : Retract a) (hb : Retract b) :
     typed u (boxPlus a b) ↔

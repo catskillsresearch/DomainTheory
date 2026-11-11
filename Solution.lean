@@ -4,7 +4,7 @@ Copyright (c) 2026 DomainTheory authors. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Dana Scott, Vijay d'Silva, Brian Milnes, Lars Warren Ericson
 -/
-import DomainTheory
+public import DomainTheory
 
 /-!
 # Solutions to the Challenge
