@@ -87,7 +87,6 @@ end Element
 noncomputable def closure {α : Type*} [DecidableEq α] (sys : InfoSys α)
     (u : Finset α) (hu : u ∈ sys.Con) : sys.Element :=
   let _ := u; let _ := hu; sorry
-namespace treeSystem
 inductive TreeToken (α : Type u) where
   | bot : TreeToken α
   | atom : α → TreeToken α
@@ -107,8 +106,6 @@ instance instDecidableEqTreeToken {α : Type u} [DecidableEq α] :
   | .atom _, .bot | .atom _, .pairL _ | .atom _, .pairR _ => isFalse fun h => nomatch h
   | .pairL _, .bot | .pairL _, .atom _ | .pairL _, .pairR _ => isFalse fun h => nomatch h
   | .pairR _, .bot | .pairR _, .atom _ | .pairR _, .pairL _ => isFalse fun h => nomatch h
-end treeSystem
-open treeSystem
 section
 variable {α β : Type*} [DecidableEq α] [DecidableEq β]
 inductive SumToken (α β : Type*) where
@@ -224,7 +221,6 @@ abbrev RoundFilter : Type _ :=
 end ContinuousLatticeToNeighborhood
 open ContinuousLatticeToNeighborhood
 open DomainTheory.InformationSystems.InfoSys
-open treeSystem
 open Order
 section Continuous
 variable {D : Type*} [CompleteLattice D] [DecidableEq D]

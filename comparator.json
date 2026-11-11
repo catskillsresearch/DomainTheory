@@ -87,7 +87,7 @@
     "DomainTheory.BridgeTheorems.SexRhs",
     "DomainTheory.BridgeTheorems.InfoSysToIdealCompletion.FiniteElement",
     "DomainTheory.InformationSystems.InfoSys.closure",
-    "DomainTheory.InformationSystems.InfoSys.treeSystem.instDecidableEqTreeToken",
+    "DomainTheory.InformationSystems.InfoSys.instDecidableEqTreeToken",
     "DomainTheory.InformationSystems.InfoSys.instDecidableEqSumToken",
     "DomainTheory.InformationSystems.InfoSys.instDecidableEqProdToken",
     "DomainTheory.ContinuousLattice.WayBelow",

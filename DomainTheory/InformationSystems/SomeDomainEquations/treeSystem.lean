@@ -10,13 +10,9 @@ namespace DomainTheory.InformationSystems.InfoSys
 
 open DomainTheory.InformationSystems.Constructive
 
-variable {α : Type*} [DecidableEq α]
-variable (A : InfoSys α)
-
-namespace treeSystem
-
 universe u
 
+/-- Tokens of the tree / S-expression system (Scott 1982, Factoid 8.1). -/
 inductive TreeToken (α : Type u) where
   | bot : TreeToken α
   | atom : α → TreeToken α
@@ -49,6 +45,11 @@ instance instDecidableEqTreeToken {α : Type u} [DecidableEq α] :
   | .pairR _, .bot => isFalse fun h => nomatch h
   | .pairR _, .atom _ => isFalse fun h => nomatch h
   | .pairR _, .pairL _ => isFalse fun h => nomatch h
+
+variable {α : Type*} [DecidableEq α]
+variable (A : InfoSys α)
+
+namespace treeSystem
 
 def atomInsert : TreeToken α → Finset α → Finset α
   | .atom x => insert x
