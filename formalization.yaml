@@ -1725,15 +1725,16 @@ alignment:
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/DataTypesAsLattices/Closures.lean
         (proof)
       status: proved
-      note: Library companion (golf drop); not a Comparator target. Combinator form (λf : V∘→V. Y(f)) : (V∘→V)∘→V remains in the library.
+      note: 'Library companion (golf drop); not a Comparator target. Combinator form (λf : V∘→V. Y(f))
+        : (V∘→V)∘→V remains in the library.'
 
     - source: Theorem 6.1 (The 𝔊 theorem)
       lean: theorem_6_1
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/Classification/theorem_6_1.lean
         (proof)
       status: proved
-      note: Compared by Palomar; the Scott-open subsets of Pω are exactly the sets of the form
-        {x | 0 ∈ f(x)} for some Scott-continuous f : Pω → Pω (class 𝔊).
+      note: 'Compared by Palomar; the Scott-open subsets of Pω are exactly the sets of the form {x | 0
+        ∈ f(x)} for some Scott-continuous f : Pω → Pω (class 𝔊).'
     - source: Theorem 6.2 (The 𝔉 theorem)
       lean: theorem_6_2
       module: Challenge (statement), DomainTheory.DataTypesAsLattices/Classification/theorem_6_2.lean
