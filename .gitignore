@@ -1,6 +1,9 @@
 # cache and other artifacts produced by Lean's Lake build tool
 .lake/
 
+# Local Palomar tooling cache (comparator / editorial)
+.cache/
+
 # Python bytecode
 __pycache__/
 *.pyc
