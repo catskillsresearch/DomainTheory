@@ -8,19 +8,33 @@ This combined library is registered with
 version 1 [@palomar-2026-11-12-000010-v1].
 
 DomainTheory is a single Lean 4 / Mathlib library (v4.36.0-rc2, `lake build`
-green, no `sorry`) assembled from five Palomar-registered formalizations
-vendored under `vendor/` for provenance (`scott1972`, `scott1976`,
-`scott1980`, `scott1982`, `scott_models`; see `PROVENANCE.md` and
-`vendor/FROZEN.txt`). The working Lean is the golfed `DomainTheory/` tree:
+green, no `sorry`) assembled from five prior Palomar-registered
+formalizations, each with a public GitHub home under
+`catskillsresearch`, and vendored here under `vendor/` for provenance
+(see `PROVENANCE.md` and `vendor/FROZEN.txt`):
+
+- *Continuous Lattices* (1972) — Palomar
+  [@palomar-2026-08-24-000003-v2], GitHub [@github-scott1972], and arXiv
+  preprint [@Ericson26ContinuousLattices];
+- *Data Types as Lattices* (1976) — Palomar
+  [@palomar-2026-08-25-000004-v1] and GitHub [@github-scott1976];
+- neighbourhood systems / PRG-19 (1980) — Palomar
+  [@palomar-2026-08-24-000001-v2] and GitHub [@github-scott1980];
+- information systems (1982) — Palomar
+  [@palomar-2026-08-24-000005-v1] and GitHub [@github-scott1982];
+- cross-presentation bridges (`scott_models`) — Palomar
+  [@palomar-2026-08-25-000003-v1] and GitHub [@github-scott_models].
+
+The working Lean is the golfed `DomainTheory/` tree:
 `ContinuousLattice` ← 1972, `DataTypesAsLattices` ← 1976,
 `NeighbourhoodSystems` ← 1980, `InformationSystems` ← 1982,
 `BridgeTheorems` ← `scott_models`. Comparator (`Challenge.lean` /
 `Solution.lean` / `comparator.json`) validates (i) the cross-presentation
-bridges formerly registered as `scott_models` (1972 continuous-lattice /
+bridges of [@palomar-2026-08-25-000003-v1] (1972 continuous-lattice /
 1980 neighbourhood / 1982 information-system isomorphisms, including
 $D \simeq_o$ RoundFilter $\simeq_o$ RoundInfoSysElement and the S-expression
 equation $|T| \simeq_o |A + (T \times T)|$), and (ii) the selected *Data
-Types as Lattices* (1976) declarations formerly registered as `scott1976`.
+Types as Lattices* (1976) declarations of [@palomar-2026-08-25-000004-v1].
 That 1976 selection is not only the retract and algebraic-lattice
 development on $\mathbf{P}\omega$: it also covers Scott's computability
 apparatus for the universal domain (the language LAMBDA, enumeration and

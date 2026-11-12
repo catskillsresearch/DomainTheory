@@ -10,15 +10,23 @@ version: v0.4
 project:
   name: DomainTheory — Scott domain theory 1972–1982 with cross-presentation bridges
   description: 'DomainTheory is a single Lean 4 / Mathlib library (v4.36.0-rc2, lake build green, no
-    sorry) assembled from five Palomar-registered formalizations vendored under vendor/ for provenance
-    (scott1972, scott1976, scott1980, scott1982, scott_models; see PROVENANCE.md and vendor/FROZEN.txt).
-    The working Lean is the golfed DomainTheory/ tree: ContinuousLattice ← 1972, DataTypesAsLattices ←
-    1976, NeighbourhoodSystems ← 1980, InformationSystems ← 1982, BridgeTheorems ← scott_models.
-    Comparator (Challenge.lean / Solution.lean / comparator.json) validates (i) the cross-presentation
-    bridges formerly registered as scott_models (1972 continuous-lattice / 1980 neighbourhood / 1982
+    sorry) assembled from five prior Palomar-registered formalizations, each with a public GitHub
+    home under catskillsresearch, and vendored here under vendor/ for provenance (see PROVENANCE.md
+    and vendor/FROZEN.txt): Continuous Lattices (1972) — Palomar PALOMAR-2026-08-24-000003 v2,
+    github.com/catskillsresearch/scott1972, and arXiv:2606.30782; Data Types as Lattices (1976) —
+    Palomar PALOMAR-2026-08-25-000004 v1 and github.com/catskillsresearch/scott1976; neighbourhood
+    systems / PRG-19 (1980) — Palomar PALOMAR-2026-08-24-000001 v2 and
+    github.com/catskillsresearch/scott1980; information systems (1982) — Palomar
+    PALOMAR-2026-08-24-000005 v1 and github.com/catskillsresearch/scott1982; cross-presentation
+    bridges (scott_models) — Palomar PALOMAR-2026-08-25-000003 v1 and
+    github.com/catskillsresearch/scott_models. The working Lean is the golfed DomainTheory/ tree:
+    ContinuousLattice ← 1972, DataTypesAsLattices ← 1976, NeighbourhoodSystems ← 1980,
+    InformationSystems ← 1982, BridgeTheorems ← scott_models. Comparator (Challenge.lean /
+    Solution.lean / comparator.json) validates (i) the cross-presentation bridges of
+    PALOMAR-2026-08-25-000003 v1 (1972 continuous-lattice / 1980 neighbourhood / 1982
     information-system isomorphisms, including D ≃o RoundFilter ≃o RoundInfoSysElement and the
     S-expression equation |T| ≃o |A + (T × T)|), and (ii) the selected Data Types as Lattices (1976)
-    declarations formerly registered as scott1976. That 1976 selection is not only the retract and
+    declarations of PALOMAR-2026-08-25-000004 v1. That 1976 selection is not only the retract and
     algebraic-lattice development on Pω: it also covers Scott''s computability apparatus for the
     universal domain (the language LAMBDA, enumeration and recursion, definability, and enumeration
     degrees as combinatory subalgebras) and the descriptive-set style classification of subsets of Pω
