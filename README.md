@@ -1,3 +1,6 @@
+[![Lean 4](https://img.shields.io/github/actions/workflow/status/catskillsresearch/DomainTheory/build.yml?label=Lean%204)](https://github.com/catskillsresearch/DomainTheory/actions/workflows/build.yml)
+[![Palomar](https://img.shields.io/badge/Palomar-2026--11--12--000010-0f766e.svg)](https://palomar-registry.org/entry?id=PALOMAR-2026-11-12-000010&version=1)
+
 # DomainTheory
 
 Lean 4 / Mathlib formalization of Dana Scott’s domain-theory papers
@@ -5,6 +8,10 @@ Lean 4 / Mathlib formalization of Dana Scott’s domain-theory papers
 systems 1980, information systems 1982), plus cross-presentation bridges.
 The working library is under `DomainTheory/`; five earlier per-paper
 repositories are frozen under `vendor/` for provenance.
+
+Registered with [Palomar](https://palomar-registry.org/about) as
+[PALOMAR-2026-11-12-000010](https://palomar-registry.org/entry?id=PALOMAR-2026-11-12-000010&version=1)
+(version 1).
 
 **Authors:** Lars Warren Ericson, Dana Scott, Vijay d'Silva, Brian Milnes
 (Apache-2.0). Ericson wrote the Lean; Scott is the source mathematician and

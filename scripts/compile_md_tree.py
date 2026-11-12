@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Flatten the DomainTheory.md note tree into arxiv.md, then build arxiv.tex / arxiv.pdf.
+"""Flatten the DomainTheory.md note tree into arxiv.md, then build arxiv.tex / DomainTheory.pdf.
 
 Walks markdown links from a root note (default ``DomainTheory.md``), expands
 ``@import`` directives relative to each note, writes a single ``arxiv.md``, and
@@ -58,7 +58,16 @@ DEFAULT_ABSTRACT = """\
 This document is a machine-checked Lean 4 formalization of Dana Scott's papers
 on domain theory: continuous lattices (1972), datatypes as lattices (1976),
 neighbourhood systems (1980), and information systems (1982), together with
-bridge theorems relating the lattice, neighbourhood, and information systems presentations.
+bridge theorems relating the lattice, neighbourhood, and information systems
+presentations. Beyond the lattice and retract development, the 1976 material
+covers Scott's computability apparatus for the universal domain $\\mathbf{P}\\omega$
+(the language LAMBDA, enumeration and recursion, definability, and enumeration
+degrees as combinatory subalgebras) and a descriptive-set style classification
+of subsets of $\\mathbf{P}\\omega$ (open, closed, $\\mathfrak{G}_\\delta$, Boolean, and
+related classes characterized as fibres of continuous maps). The library is
+registered with Palomar as
+[PALOMAR-2026-11-12-000010](https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-12-000010&version=1)
+(version 1).
 """
 
 
@@ -802,24 +811,41 @@ def build_arxiv_tex() -> None:
 
 
 def build_arxiv_pdf(*, clean: bool = False) -> None:
+    """Compile ``arxiv.tex`` to ``DomainTheory.pdf`` (CMU-CS-TR; no view.pdf)."""
     tex = ROOT / "arxiv.tex"
+    pdf = ROOT / "DomainTheory.pdf"
+    job = "DomainTheory"
     if not tex.is_file():
         raise FileNotFoundError("missing arxiv.tex; build TeX first")
     if clean:
-        subprocess.run(["latexmk", "-C", "arxiv.tex"], cwd=ROOT, check=False)
+        subprocess.run(
+            ["latexmk", "-C", f"-jobname={job}", "arxiv.tex"],
+            cwd=ROOT,
+            check=False,
+        )
     proc = subprocess.run(
-        ["latexmk", "-pdf", "-interaction=nonstopmode", "-halt-on-error", "arxiv.tex"],
+        [
+            "latexmk",
+            "-pdf",
+            f"-jobname={job}",
+            "-interaction=nonstopmode",
+            "-halt-on-error",
+            "arxiv.tex",
+        ],
         cwd=ROOT,
         check=False,
     )
     if proc.returncode != 0:
-        log = ROOT / "arxiv.log"
+        log = ROOT / f"{job}.log"
         if log.is_file():
             sys.stderr.write(log.read_text(encoding="utf-8", errors="replace")[-4000:])
-        raise RuntimeError("latexmk failed compiling arxiv.tex")
-    pdf = ROOT / "arxiv.pdf"
+        raise RuntimeError("latexmk failed compiling DomainTheory.pdf")
     if not pdf.is_file():
-        raise RuntimeError("arxiv.pdf missing after latexmk")
+        raise RuntimeError("DomainTheory.pdf missing after latexmk")
+    # Drop legacy Zenodo / view.pdf alias if present.
+    view = ROOT / "view.pdf"
+    if view.is_file():
+        view.unlink()
 
 
 def refresh_note_lean_imports() -> None:
@@ -840,7 +866,7 @@ def compile_tree_to_pdf(
     tex_only: bool = False,
     clean: bool = False,
 ) -> Path:
-    """Flatten the note tree and build ``arxiv.pdf`` (unless ``md_only`` / ``tex_only``)."""
+    """Flatten the note tree and build ``DomainTheory.pdf`` (unless ``md_only`` / ``tex_only``)."""
     refresh_note_lean_imports()
     out = flatten_md_tree(
         root_md, lean_mode=lean_mode, include_ai_prose=include_ai_prose
@@ -853,7 +879,7 @@ def compile_tree_to_pdf(
     if tex_only:
         return ROOT / "arxiv.tex"
     build_arxiv_pdf(clean=clean)
-    pdf = ROOT / "arxiv.pdf"
+    pdf = ROOT / "DomainTheory.pdf"
     print(f"wrote {pdf.relative_to(ROOT)} ({pdf.stat().st_size:,} bytes)")
     return pdf
 

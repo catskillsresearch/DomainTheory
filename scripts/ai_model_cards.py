@@ -97,7 +97,7 @@ ACKNOWLEDGMENTS_MARKDOWN = r"""## Acknowledgments
 
 The human author retains sole responsibility for the mathematical content, the choice of
 formalization route, and every formal claim in this work. Following standard publisher practice
-(e.g., COPE guidance on authorship and AI tools \cite{COPE24}), **no large language model is listed
+(e.g., COPE guidance on authorship and AI tools [@COPE24]), **no large language model is listed
 as a co-author** — authorship implies an accountability that automated systems cannot bear.
 
 We gratefully acknowledge assistance from the following tools in this revision
@@ -130,12 +130,11 @@ Lake path dependencies. `arxiv.md` is the durable inventory
 and proof narrative. Axiom audits: `#print axioms` on the compared names in
 `comparator.json`.
 
-Build the arXiv PDF / submission zip (Lean Code appendix = GitHub hyperlinks):
+Build the CMU-CS technical report PDF (Lean Code appendix = GitHub hyperlinks):
 
 ```bash
-bash scripts/build_arxiv_tex.sh      # arxiv.md → arxiv.tex + figures/
-bash scripts/build_arxiv_pdf.sh      # compile PDF + package dist/arxiv_submit.zip
-# or: bash scripts/package_arxiv_submit.sh
+./aa.sh                              # DomainTheory.md → DomainTheory.pdf
+# or: bash scripts/build_arxiv_pdf.sh
 ```
 
 """
@@ -143,7 +142,7 @@ bash scripts/build_arxiv_pdf.sh      # compile PDF + package dist/arxiv_submit.z
 
 def render_tool_bullets() -> str:
     return "\n".join(
-        f"- **{card.label}** \\cite{{{card.cite_key}}} — {card.tool_note}"
+        f"- **{card.label}** [@{card.cite_key}] — {card.tool_note}"
         for card in MODEL_CARDS
     )
 

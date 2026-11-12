@@ -74,7 +74,7 @@ $$s : (A \to (B \to C)) \to ((A \to B) \to (A \to C))$$
 
 for all $A$, $B$, $C$, then $s = \mathbf{S}$. In other words, we need to know that $s$ converts its first two arguments into functions with the right number of places before we can say that its explicit functionality identifies it as being the combinator $\mathbf{S}$.
 
-In Hindley, Lercher and Seldin (1972) they show that the functionality property:
+In [@Hindley72] they show that the functionality property:
 
 $$(7.13) \quad \lambda f \lambda g.\, f \circ g : (B \to C) \to ((A \to B) \to (A \to C)),$$
 

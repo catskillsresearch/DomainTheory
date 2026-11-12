@@ -1,10 +1,18 @@
 #!/usr/bin/env bash
-# Regenerate arxiv.tex (Palomar-archive appendix, PNG figures), compile arxiv.pdf, zip dist.
+# Regenerate arxiv.tex (Palomar-archive appendix, PNG figures), compile DomainTheory.pdf.
+# CMU-CS-TR deliverable only — no view.pdf / Zenodo copy, no arXiv zip unless --zip.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
 TEX="arxiv.tex"
-PDF="arxiv.pdf"
+PDF="DomainTheory.pdf"
+JOB="DomainTheory"
+DO_ZIP=0
+
+if [[ "${1:-}" == "--zip" ]]; then
+  DO_ZIP=1
+  shift
+fi
 
 # shellcheck source=scripts/pdf_checks.sh
 source "$(dirname "$0")/pdf_checks.sh"
@@ -22,12 +30,12 @@ compile_tex() {
   local target="$1"
   local clean="${2:-0}"
   if [[ "$clean" -eq 1 ]]; then
-    latexmk -C "$target" >/dev/null 2>&1 || true
-    rm -f "${target%.tex}.aux" "${target%.tex}.out" "${target%.tex}.toc" "${target%.tex}.lof"
+    latexmk -C -jobname="$JOB" "$target" >/dev/null 2>&1 || true
+    rm -f "${JOB}.aux" "${JOB}.out" "${JOB}.toc" "${JOB}.lof" "${JOB}.bbl" "${JOB}.blg"
   fi
-  latexmk -pdf -interaction=nonstopmode -halt-on-error "$target" >/dev/null 2>&1 || {
-    echo "latexmk reported errors compiling ${target}; tail of log:" >&2
-    tail -n 40 "${target%.tex}.log" >&2 || true
+  latexmk -pdf -jobname="$JOB" -interaction=nonstopmode -halt-on-error "$target" >/dev/null 2>&1 || {
+    echo "latexmk reported errors compiling ${target} → ${PDF}; tail of log:" >&2
+    tail -n 40 "${JOB}.log" >&2 || true
     exit 1
   }
 }
@@ -39,7 +47,7 @@ else
   bash scripts/build_arxiv_tex.sh
 fi
 
-echo "==> Compiling arxiv.pdf (pdfLaTeX; see .latexmkrc)"
+echo "==> Compiling ${PDF} (pdfLaTeX; see .latexmkrc)"
 need_main=1
 if pdf_valid "$PDF" \
   && [[ ! "$TEX" -nt "$PDF" ]] \
@@ -67,10 +75,13 @@ else
   echo "wrote $PDF ($(du -h "$PDF" | cut -f1), $(pdfinfo "$PDF" | awk '/Pages:/ {print $2}') pages; compile ${main_secs}s)"
 fi
 
-cp -f "$PDF" view.pdf
+# Drop legacy Zenodo / view.pdf alias if present.
+rm -f view.pdf
 
 echo "==> Font embedding check"
-check_pdf_fonts_embedded "$PDF" "arxiv.pdf"
+check_pdf_fonts_embedded "$PDF" "$PDF"
 
-echo "==> Packaging arXiv submission zip"
-bash scripts/package_arxiv_submit.sh --skip-tex-build
+if [[ "$DO_ZIP" -eq 1 ]]; then
+  echo "==> Packaging arXiv submission zip (--zip)"
+  bash scripts/package_arxiv_submit.sh --skip-tex-build
+fi

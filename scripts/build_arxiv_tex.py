@@ -668,6 +668,63 @@ def inject_bibliography(text: str) -> str:
     )
 
 
+# Notes use pandoc citation syntax (`[@key]`, `[@a; @b]`, `[@key, pp. 1-2]`).
+# BibTeX needs raw ``\cite``; rewrite after Lean fences become placeholders so
+# Lean ``[@…]`` attributes are not touched.
+_PANDOC_CITE_RE = re.compile(
+    r"\["
+    r"("
+    r"@[A-Za-z][\w\-]*(?:\s*,\s*[^;\]]+)?"
+    r"(?:\s*;\s*@[A-Za-z][\w\-]*(?:\s*,\s*[^;\]]+)?)*"
+    r")"
+    r"\]"
+)
+
+
+def pandoc_cites_to_latex_cite(text: str) -> str:
+    """Rewrite pandoc ``[@…]`` citations to ``\\cite{…}`` for BibTeX.
+
+    Supported forms::
+
+      [@key]                → \\cite{key}
+      [@key1; @key2]        → \\cite{key1,key2}
+      [@key, pp. 146-147]   → \\cite[pp.~146--147]{key}
+      [@key, see p. 147]    → \\cite[see p.~147]{key}
+    """
+
+    def repl(m: re.Match[str]) -> str:
+        body = m.group(1).strip()
+        parts = [p.strip() for p in body.split(";") if p.strip()]
+        keys: list[str] = []
+        opt: str | None = None
+        for i, part in enumerate(parts):
+            if not part.startswith("@"):
+                return m.group(0)
+            rest = part[1:].strip()
+            if i == 0 and "," in rest:
+                key, _, locator = rest.partition(",")
+                keys.append(key.strip())
+                locator = locator.strip()
+                if locator:
+                    loc = locator
+                    loc = re.sub(r"\bpp\.\s*", "pp.~", loc)
+                    loc = re.sub(r"(?<!\w)\bp\.\s*", "p.~", loc)
+                    loc = loc.replace("§ ", "$\\S$~").replace("§", "$\\S$")
+                    loc = re.sub(r"(\d)-(\d)", r"\1--\2", loc)
+                    loc = loc.replace("~~", "~")
+                    opt = loc
+            else:
+                keys.append(rest.split(",", 1)[0].strip())
+        if not keys:
+            return m.group(0)
+        key_str = ",".join(keys)
+        if opt:
+            return f"\\cite[{opt}]{{{key_str}}}"
+        return f"\\cite{{{key_str}}}"
+
+    return _PANDOC_CITE_RE.sub(repl, text)
+
+
 def pandoc_to_latex(markdown: str, shift: bool = True) -> str:
     cmd = [
         "pandoc",
@@ -818,6 +875,17 @@ def insert_front_matter_lists(latex: str) -> str:
     return block + latex
 
 
+def expand_preamble_inputs(preamble: str) -> str:
+    """Inline ``\\input{lstlean}`` so the assembled ``arxiv.tex`` is self-contained."""
+    marker = "\\input{lstlean}"
+    if marker not in preamble:
+        return preamble
+    lstlean_path = SCRIPTS / "lstlean.tex"
+    if not lstlean_path.is_file():
+        raise FileNotFoundError(f"missing {lstlean_path} (required by tex preamble)")
+    return preamble.replace(marker, lstlean_path.read_text(encoding="utf-8"))
+
+
 def build_document(preamble: str, title_page: str, body: str) -> str:
     return preamble + "\n\n" + title_page + "\n\n" + body + "\n\n\\end{document}\n"
 
@@ -924,6 +992,10 @@ def main() -> int:
     for stale_pdf in FIGURES_DIR.glob("*.pdf"):
         stale_pdf.unlink()
 
+    # After fences → placeholders: narrative [@key] → \cite{key} for BibTeX.
+    body = pandoc_cites_to_latex_cite(body)
+    abstract_md = pandoc_cites_to_latex_cite(abstract_md) if abstract_md else abstract_md
+
     latex_body = pandoc_to_latex(body, shift=True)
     latex_body = inject_placeholders(latex_body, placeholders)
     latex_body = cleanup_pandoc_latex(latex_body)
@@ -933,7 +1005,7 @@ def main() -> int:
     abstract_latex = pandoc_to_latex(github_math_to_tex(abstract_md), shift=False) if abstract_md else ""
     abstract_latex = cleanup_abstract_latex(abstract_latex)
 
-    preamble = PREAMBLE.read_text(encoding="utf-8")
+    preamble = expand_preamble_inputs(PREAMBLE.read_text(encoding="utf-8"))
     title_page = build_title_page(abstract_latex)
     document = build_document(preamble, title_page, latex_body)
     # Only rewrite the document body: the preamble's \newunicodechar lines must

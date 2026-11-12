@@ -23,7 +23,7 @@ generic semantic factor `WithBot (|A| ⊕ (|T| × |T|)) ≃o |A + (T × T)|`.
 ### 5.1 Overview
 
 The bridges of §§2–3 are abstract. This section fixes **one** concrete domain — Scott’s
-S-expression / tree equation `T ≅ A + (T × T)` (**[Sco82]**, Factoid 8.1) over the ℕ
+S-expression / tree equation `T ≅ A + (T × T)` ([@Sco82], Factoid 8.1) over the ℕ
 lower-bound atom system (Factoid 2.4) — and asks what that domain looks like in each
 paradigm:
 

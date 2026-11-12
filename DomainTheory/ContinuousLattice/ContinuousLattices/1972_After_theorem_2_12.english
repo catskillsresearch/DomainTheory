@@ -12,7 +12,7 @@ $$y = \bigsqcup \{ x \in D : x \ll y \}.$$
 
 That makes $D$ a continuous lattice with the sets $\{ y \in D : x \ll y \}$ as a basis for the topology. Such $T_0$-spaces are injective, every injective space arises this way, and the lattice structure is uniquely determined by the topology. Furthermore, as in the proof of 2.11, injectivity can be exhibited by an explicit extension formula.
 
-The **retract approach** should also be considered. Cartesian powers $\mathbb{O}^I$ are simple: as lattices they are Boolean algebras of all subsets of $I$. The topology has as a basis the classes of sets containing given finite sets (the *weak topology*, cf. Nerode (1959)). A continuous function
+The **retract approach** should also be considered. Cartesian powers $\mathbb{O}^I$ are simple: as lattices they are Boolean algebras of all subsets of $I$. The topology has as a basis the classes of sets containing given finite sets (the *weak topology*, cf. [@Nerode59]). A continuous function
 
 $$j : \mathcal{P}I \to \mathcal{P}I$$
 

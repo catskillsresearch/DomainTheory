@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# Full local rebuild: notes → flattened md → scratch tex → PDF (+ optional --zip for default root).
-# arxiv.tex and LaTeX aux files are ephemeral (see .gitignore); default keeps arxiv.pdf at repo root.
+# Full local rebuild: notes → flattened md → scratch tex → CMU-CS-TR PDF.
+# Intermediate arxiv.tex / aux are ephemeral (see .gitignore); default deliverable
+# is DomainTheory.pdf at repo root (no view.pdf / Zenodo alias).
 set -euo pipefail
 
 INVOCATION_CWD="$(pwd)"
@@ -18,8 +19,8 @@ Usage: ./aa.sh [options] [ROOT.md]
   directory. Mermaid diagrams are left as-is (hand-tuned); regenerate them
   explicitly with scripts/generate_dependency_mermaid.py if needed.
 
-  With no ROOT.md, uses DomainTheory.md and writes arxiv.pdf + view.pdf at the
-  repo root.
+  With no ROOT.md, uses DomainTheory.md and writes DomainTheory.pdf (CMU-CS-TR)
+  at the repo root.
 
   With ROOT.md (absolute or relative to your shell cwd), flattens that tree and
   writes STEM.pdf in the directory where you invoked aa.sh (STEM = basename without .md).
@@ -89,8 +90,7 @@ fi
 STEM="$(basename "$ROOT_MD" .md)"
 if [[ "$IS_DEFAULT" -eq 1 ]]; then
   BUILD="${ROOT}/.build/aa"
-  PDF="${ROOT}/arxiv.pdf"
-  VIEW="${ROOT}/view.pdf"
+  PDF="${ROOT}/DomainTheory.pdf"
   TEX_BASENAME="arxiv.tex"
   export ARXIV_ROOT_MD="${ROOT}/DomainTheory.md"
   unset ARXIV_MD ARXIV_WITH_CODE ARXIV_TEX
@@ -149,7 +149,7 @@ export TEXINPUTS="${ROOT}//:${TEXINPUTS:-}"
 
 rm -f "$PDF"
 if [[ "$IS_DEFAULT" -eq 1 ]]; then
-  rm -f "$VIEW"
+  rm -f "${ROOT}/view.pdf"
 fi
 
 echo "==> Compiling $(basename "$PDF") (scratch tex: ${TEX_COMPILE})"
@@ -171,11 +171,6 @@ fi
 
 cp -f "$SCRATCH_PDF" "$PDF"
 echo "wrote $PDF ($(du -h "$PDF" | cut -f1), $(pdfinfo "$PDF" | awk '/Pages:/ {print $2}') pages)"
-
-if [[ "$IS_DEFAULT" -eq 1 ]]; then
-  cp -f "$PDF" "$VIEW"
-  echo "wrote view.pdf"
-fi
 
 echo "==> Font embedding check"
 check_pdf_fonts_embedded "$PDF" "$(basename "$PDF")"

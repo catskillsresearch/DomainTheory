@@ -45,12 +45,21 @@
 
 % Palomar-link appendix + short snippets compile under pdfLaTeX (arXiv AutoTeX).
 %
-% The listings are kept as real UTF-8 Lean source: every Lean operator is rendered
-% through a `literate` replacement to a proper LaTeX symbol, so the code displays with
-% its native notation (∀ ◇ □ ⟶ ⊢ φ ψ Γ …).  Every non-ASCII glyph that occurs in the
-% sources must appear in this table.
+% Keyword / tactic / sort colors come from the official Lean ``lstlean`` language
+% (scripts/lstlean.tex). Unicode operators still go through our ``literate`` table
+% so DomainTheory glyphs stay printable under pdfLaTeX.
+
+\definecolor{keywordcolor}{rgb}{0.7, 0.1, 0.1}   % red — declarations
+\definecolor{tacticcolor}{rgb}{0.0, 0.1, 0.6}    % blue — tactics
+\definecolor{commentcolor}{rgb}{0.4, 0.4, 0.4}   % grey — comments
+\definecolor{symbolcolor}{rgb}{0.0, 0.1, 0.6}    % blue — operators
+\definecolor{sortcolor}{rgb}{0.1, 0.5, 0.1}      % green — Sort/Type/Prop
+\definecolor{attributecolor}{rgb}{0.7, 0.1, 0.1} % red — attributes
+
+\input{lstlean}
 
 \lstdefinestyle{leanbox}{
+  language=lean,
   basicstyle=\footnotesize\ttfamily,
   columns=fullflexible,
   keepspaces=true,
@@ -60,6 +69,14 @@
   upquote=true,
   extendedchars=true,
   inputencoding=utf8,
+  % Extra Lean 4 / Mathlib names beyond the stock lstlean lists.
+  morekeywords=[1]{opaque, elab, elab_rules},
+  morekeywords=[3]{
+    rfl, ext, obtain, use, change, convert, congr, ring, linarith, norm_num,
+    decide, native_decide, aesop, omega, gcongr, funext, congrArg, exact_mod_cast,
+    push_neg, by_cases, by_contra, left, right, rcases, rintro,
+    simp_rw, dsimp, unfold, fold, delta, rename_i
+  },
   literate=
     {§}{{\S}}1
     {¬}{{\ensuremath{\neg}}}1
@@ -70,10 +87,10 @@
     {Η}{{\ensuremath{H}}}1
     {Θ}{{\ensuremath{\Theta}}}1
     {Κ}{{\ensuremath{K}}}1
-    {Σ}{{\ensuremath{\Sigma}}}1
+    {Σ}{{\color{symbolcolor}\ensuremath{\Sigma}}}1
     {α}{{\ensuremath{\alpha}}}1
     {β}{{\ensuremath{\beta}}}1
-    {λ}{{\ensuremath{\lambda}}}1
+    {λ}{{\color{symbolcolor}\ensuremath{\lambda}}}1
     {σ}{{\ensuremath{\sigma}}}1
     {τ}{{\ensuremath{\tau}}}1
     {φ}{{\ensuremath{\varphi}}}1
@@ -112,20 +129,20 @@
     {ℕ}{{\ensuremath{\mathbb{N}}}}1
     {←}{{\ensuremath{\leftarrow}}}1
     {↑}{{\ensuremath{\uparrow}}}1
-    {→}{{\ensuremath{\rightarrow}}}1
+    {→}{{\color{symbolcolor}\ensuremath{\rightarrow}}}1
     {↓}{{\ensuremath{\downarrow}}}1
     {↔}{{\ensuremath{\leftrightarrow}}}1
     {↥}{{\ensuremath{\Uparrow}}}1
-    {↦}{{\ensuremath{\mapsto}}}1
+    {↦}{{\color{symbolcolor}\ensuremath{\mapsto}}}1
     {↪}{{\ensuremath{\hookrightarrow}}}1
     {↟}{{\ensuremath{\Uparrow}}}1
     {⇄}{{\ensuremath{\rightleftarrows}}}1
     {⇑}{{\ensuremath{\Uparrow}}}1
-    {⇒}{{\ensuremath{\Rightarrow}}}1
+    {⇒}{{\color{symbolcolor}\ensuremath{\Rightarrow}}}1
     {⨆}{{\ensuremath{\bigcup}}}1
     {𝕆}{{\ensuremath{\mathbb{O}}}}1
-    {∀}{{\ensuremath{\forall}}}1
-    {∃}{{\ensuremath{\exists}}}1
+    {∀}{{\color{symbolcolor}\ensuremath{\forall}}}1
+    {∃}{{\color{symbolcolor}\ensuremath{\exists}}}1
     {∅}{{\ensuremath{\emptyset}}}1
     {∈}{{\ensuremath{\in}}}1
     {∉}{{\ensuremath{\notin}}}1
@@ -140,7 +157,7 @@
     {∨}{{\ensuremath{\vee}}}1
     {∪}{{\ensuremath{\cup}}}1
     {∼}{{\ensuremath{\sim}}}1
-    {≠}{{\ensuremath{\neq}}}1
+    {≠}{{\color{symbolcolor}\ensuremath{\neq}}}1
     {≤}{{\ensuremath{\leq}}}1
     {≥}{{\ensuremath{\geq}}}1
     {≪}{{\ensuremath{\ll}}}1
@@ -168,9 +185,11 @@
     {◇}{{\ensuremath{\lozenge}}}1
     {⟨}{{\ensuremath{\langle}}}1
     {⟩}{{\ensuremath{\rangle}}}1
-    {⟶}{{\ensuremath{\longrightarrow}}}2
+    {⟶}{{\color{symbolcolor}\ensuremath{\longrightarrow}}}2
     {⟷}{{\ensuremath{\longleftrightarrow}}}2
-    {⟹}{{\ensuremath{\Longrightarrow}}}2
+    {⟹}{{\color{symbolcolor}\ensuremath{\Longrightarrow}}}2
+    {:=}{{\color{symbolcolor}:=}}2
+    {=}{{\color{symbolcolor}=}}1
 }
 \lstset{style=leanbox}
 

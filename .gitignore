@@ -31,7 +31,7 @@ figures/
 dist/
 00README.json
 
-# LaTeX build artifacts (`arxiv.pdf` is committed as the readable deliverable)
+# LaTeX build artifacts (`DomainTheory.pdf` is the CMU-CS-TR deliverable)
 *.aux
 *.log
 *.out

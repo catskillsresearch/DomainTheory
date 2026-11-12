@@ -18,14 +18,21 @@ project:
     bridges formerly registered as scott_models (1972 continuous-lattice / 1980 neighbourhood / 1982
     information-system isomorphisms, including D ≃o RoundFilter ≃o RoundInfoSysElement and the
     S-expression equation |T| ≃o |A + (T × T)|), and (ii) the selected Data Types as Lattices (1976)
-    declarations formerly registered as scott1976. The golfed library preserves those validated results
-    under Mathlib-style names. Distribution today is the public GitHub repository only; a CMU-CS technical
-    report (CMU-CS-TR) is planned. Author Contributions: Lars Warren Ericson — primary formalization
-    engineer (all Lean 4, AI-assisted proof architecture, repository assembly); Dana S. Scott — author
-    of the original source mathematics (1972–1982), project sponsorship, historical context, and
-    high-level advisory oversight of formalization scope; Vijay D''Silva and Brian Milnes — project
-    initiation, pre-submission review, and advisory feedback on repository formatting and technical
-    report generation. Source-paper authorship is distinct from combined-library co-authorship; Scott,
+    declarations formerly registered as scott1976. That 1976 selection is not only the retract and
+    algebraic-lattice development on Pω: it also covers Scott''s computability apparatus for the
+    universal domain (the language LAMBDA, enumeration and recursion, definability, and enumeration
+    degrees as combinatory subalgebras) and the descriptive-set style classification of subsets of Pω
+    (open, closed, Gδ, Boolean, and related classes characterized as fibres of continuous maps). The
+    golfed library preserves those validated results under Mathlib-style names. Registered with
+    Palomar as PALOMAR-2026-11-12-000010, version 1
+    (https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-12-000010&version=1). Distribution
+    today is the public GitHub repository only; a CMU-CS technical report (CMU-CS-TR) is planned.
+    Author Contributions: Lars Warren Ericson — primary formalization engineer (all Lean 4,
+    AI-assisted proof architecture, repository assembly); Dana S. Scott — author of the original
+    source mathematics (1972–1982), project sponsorship, historical context, and high-level advisory
+    oversight of formalization scope; Vijay D''Silva and Brian Milnes — project initiation,
+    pre-submission review, and advisory feedback on repository formatting and technical report
+    generation. Source-paper authorship is distinct from combined-library co-authorship; Scott,
     D''Silva, and Milnes did not write the Lean.'
   authors:
   - Lars Warren Ericson

@@ -6,9 +6,9 @@ We do **not** re-prove Scott's internal theorems; we import the finished sibling
 
 | Presentation | Lean package | Characteristic object |
 | --- | --- | --- |
-| Continuous lattices \cite{Sco72} | `scott1972` | `ContinuousLattice D`, way-below `≪`, `ScottMap` |
-| Neighbourhood systems \cite{Sco81} | `scott1980` | `NeighborhoodSystem`, filters as domain elements |
-| Information systems \cite{Sco82} | `scott1982` | `InfoSys`, elements as consistent closed token sets |
+| Continuous lattices [@Sco72] | `scott1972` | `ContinuousLattice D`, way-below `≪`, `ScottMap` |
+| Neighbourhood systems [@Sco81] | `scott1980` | `NeighborhoodSystem`, filters as domain elements |
+| Information systems [@Sco82] | `scott1982` | `InfoSys`, elements as consistent closed token sets |
 
 The main subtlety is that a naïve reading of “domains = filters of neighbourhoods” overstates the continuous-lattice corner: for a continuous lattice `D`, the filter `{↟a | a ≤ x}` has retract `x` but properly contains the principal round filter `{↟a | a ≪ x}`. The correct identification is **`D ≃o RoundFilter`**, not raw `|𝒟|`.
 

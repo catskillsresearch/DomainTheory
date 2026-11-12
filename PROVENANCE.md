@@ -42,13 +42,13 @@ them against `vendor/FROZEN.txt`.
 
 ## Status of this repository
 
-- `DomainTheory` has a Palomar statement of record in progress
-  (`Challenge.lean`, `Solution.lean`, `comparator.json`,
-  `formalization.yaml`) for the golfed combined library (bridges +
-  selected 1976 declarations). Nothing here transfers, inherits, or
-  re-claims the five registrations above; they remain the
-  registrations of the upstream repositories, whose remotes remain the
-  per-paper homes.
+- `DomainTheory` is registered with Palomar as
+  [PALOMAR-2026-11-12-000010](https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-12-000010&version=1)
+  (version 1) for the golfed combined library (bridges + selected 1976
+  declarations; see `Challenge.lean`, `Solution.lean`, `comparator.json`,
+  `formalization.yaml`). Nothing here transfers, inherits, or re-claims
+  the five registrations above; they remain the registrations of the
+  upstream repositories, whose remotes remain the per-paper homes.
 - After the 2026-10-20 scaffolding (vendoring and provenance only),
   Ericson directed Cursor agent sessions that golfed and Pref-folded the
   assembled `DomainTheory/` Lean, packaged `Challenge.lean` /
