@@ -11,8 +11,9 @@ project:
   name: DomainTheory — Scott domain theory 1972–1982 with cross-presentation bridges
   description: 'DomainTheory is a single Lean 4 / Mathlib library (v4.36.0-rc2, lake build green, no
     sorry) assembled from five prior Palomar-registered formalizations, each with a public GitHub
-    home under catskillsresearch, and vendored here under vendor/ for provenance (see PROVENANCE.md
-    and vendor/FROZEN.txt): Continuous Lattices (1972) — Palomar PALOMAR-2026-08-24-000003 v2,
+    home under catskillsresearch, and vendored in the DomainTheory GitHub repository
+    (https://github.com/catskillsresearch/DomainTheory) under vendor/ for provenance:
+    Continuous Lattices (1972) — Palomar PALOMAR-2026-08-24-000003 v2,
     github.com/catskillsresearch/scott1972, and arXiv:2606.30782; Data Types as Lattices (1976) —
     Palomar PALOMAR-2026-08-25-000004 v1 and github.com/catskillsresearch/scott1976; neighbourhood
     systems / PRG-19 (1980) — Palomar PALOMAR-2026-08-24-000001 v2 and
@@ -31,10 +32,11 @@ project:
     universal domain (the language LAMBDA, enumeration and recursion, definability, and enumeration
     degrees as combinatory subalgebras) and the descriptive-set style classification of subsets of Pω
     (open, closed, Gδ, Boolean, and related classes characterized as fibres of continuous maps). The
-    golfed library preserves those validated results under Mathlib-style names. Registered with
-    Palomar as PALOMAR-2026-11-12-000010, version 1
-    (https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-12-000010&version=1). Distribution
-    today is the public GitHub repository only; a CMU-CS technical report (CMU-CS-TR) is planned.
+    golfed library preserves those validated results under Mathlib-style names. The Lean sources
+    and frozen vendor trees live at https://github.com/catskillsresearch/DomainTheory; this
+    document is the accompanying CMU-CS technical report. Registered with Palomar as
+    PALOMAR-2026-11-12-000010, version 1
+    (https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-12-000010&version=1).
     Author Contributions: Lars Warren Ericson — primary formalization engineer (all Lean 4,
     AI-assisted proof architecture, repository assembly); Dana S. Scott — author of the original
     source mathematics (1972–1982), project sponsorship, historical context, and high-level advisory
@@ -1265,8 +1267,9 @@ known_gaps:
   (ex-scott1976) under DomainTheory names. Pref-folded 1976 companions use dotted library names (e.g.
   theorem_1_3.tuple). Companions dropped in the golf (tensorR_isStrict, tensorR_retractLe, tensorR_functor,
   plusR_retractLe, plusR_functor, typed_squarePair_boxTensor, theorem_5_6_combinator, ScottG) and anonymous
-  PartialOrder Element instances are not Comparator targets. Distribution is GitHub only for now; a CMU-CS-TR
-  is planned. Vendor extract stubs replace two files that exceeded Palomar''s 10,000-line cap.'
+  PartialOrder Element instances are not Comparator targets. Lean sources are on GitHub
+  (https://github.com/catskillsresearch/DomainTheory); this document is the CMU-CS technical report.
+  Vendor extract stubs replace two files that exceeded Palomar''s 10,000-line cap.'
 - '[1980 / scott1980] Palomar compares the first sentence of Theorem 8.8 (`theorem_8_8`) plus the new
   formal corollaries `P4_embeds` and `Ssys_embeds`. The effective second sentence (`theorem_8_8_b`) and
   finitary-projection third sentence (`theorem_8_8_c`) are in the library, not in Comparator.'

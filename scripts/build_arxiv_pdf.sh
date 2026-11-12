@@ -48,11 +48,15 @@ else
 fi
 
 echo "==> Compiling ${PDF} (pdfLaTeX; see .latexmkrc)"
+# Stale tracked/ leftover arxiv.bbl must not shadow BibTeX for DomainTheory.jobname.
+rm -f arxiv.bbl arxiv.blg
+export BIBINPUTS="$(pwd):${BIBINPUTS:-}"
 need_main=1
 if pdf_valid "$PDF" \
   && [[ ! "$TEX" -nt "$PDF" ]] \
   && [[ ! arxiv.md -nt "$PDF" ]] \
   && [[ ! arxiv_with_code.md -nt "$PDF" ]] \
+  && [[ ! references.bib -nt "$PDF" ]] \
   && [[ ! lean-listings -nt "$PDF" ]] \
   && [[ ! figures -nt "$PDF" ]]; then
   need_main=0
@@ -70,6 +74,11 @@ else
   main_secs=$((end_main - start_main))
   if ! pdf_valid "$PDF"; then
     echo "error: ${PDF} missing or corrupt after compile" >&2
+    exit 1
+  fi
+  if [[ -f "${JOB}.log" ]] && grep -q 'Citation .* undefined' "${JOB}.log"; then
+    echo "error: undefined citations in ${PDF}" >&2
+    grep 'Citation .* undefined' "${JOB}.log" | head -n 20 >&2 || true
     exit 1
   fi
   echo "wrote $PDF ($(du -h "$PDF" | cut -f1), $(pdfinfo "$PDF" | awk '/Pages:/ {print $2}') pages; compile ${main_secs}s)"

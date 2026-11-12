@@ -48,7 +48,7 @@ LETTER_FIG_DPI = 150
 GITHUB_URL = r"https://github.com/catskillsresearch/DomainTheory"
 # CMU SCS tech-report front matter (same authors / style as archive/scott1964).
 # Update REPORT_NUMBER when the library assigns an official id.
-REPORT_NUMBER = "CMU-CS-26-140"
+REPORT_NUMBER = "CMU-CS-26-XXX"
 REPORT_DATE = "October 2026"
 PDF_AUTHORS = "Lars Warren Ericson; Dana S. Scott; Vijay D'Silva; Brian Milnes"
 KEYWORDS = (

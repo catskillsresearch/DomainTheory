@@ -39,6 +39,8 @@ dist/
 *.fdb_latexmk
 *.toc
 *.lof
+*.bbl
+*.blg
 *.synctex.gz
 texput.log
 build

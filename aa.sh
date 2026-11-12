@@ -114,7 +114,7 @@ mkdir -p "$BUILD"
 cleanup() {
   if [[ "$IS_DEFAULT" -eq 1 ]]; then
     rm -f "${ROOT}/arxiv.tex"
-    rm -f "${ROOT}"/arxiv.{aux,log,out,toc,lof,fls,fdb_latexmk,synctex.gz}
+    rm -f "${ROOT}"/arxiv.{aux,log,out,toc,lof,fls,fdb_latexmk,synctex.gz,bbl,blg}
   fi
   if [[ "$KEEP_SCRATCH" -eq 0 ]]; then
     if [[ "$IS_DEFAULT" -eq 1 ]]; then
@@ -145,7 +145,12 @@ fi
 
 ln -sf "${ROOT}/figures" "${BUILD}/figures"
 ln -sf "${ROOT}/lean-listings" "${BUILD}/lean-listings"
+# BibTeX must see references.bib in the scratch cwd; do not let a stale
+# repo-root arxiv.bbl (reachable via TEXINPUTS=ROOT//) shadow a fresh one.
+ln -sf "${ROOT}/references.bib" "${BUILD}/references.bib"
 export TEXINPUTS="${ROOT}//:${TEXINPUTS:-}"
+export BIBINPUTS="${BUILD}:${ROOT}:${BIBINPUTS:-}"
+rm -f "${ROOT}/arxiv.bbl" "${ROOT}/arxiv.blg"
 
 rm -f "$PDF"
 if [[ "$IS_DEFAULT" -eq 1 ]]; then
@@ -160,6 +165,15 @@ if ! latexmk -pdf -interaction=nonstopmode -halt-on-error -cd "$TEX_COMPILE"; th
   echo "scratch kept at ${BUILD}/ (use --keep-scratch or fix and re-run)" >&2
   KEEP_SCRATCH=1
   exit 1
+fi
+# Fail loud if BibTeX left citations unresolved (otherwise the PDF shows [?]).
+if [[ -f "$(dirname "$TEX_COMPILE")/$(basename "$TEX_COMPILE" .tex).log" ]]; then
+  if grep -q 'Citation .* undefined' "$(dirname "$TEX_COMPILE")/$(basename "$TEX_COMPILE" .tex).log"; then
+    echo "error: undefined citations in $(basename "$PDF"); see log / bibliography" >&2
+    grep 'Citation .* undefined' "$(dirname "$TEX_COMPILE")/$(basename "$TEX_COMPILE" .tex).log" | head -n 20 >&2 || true
+    KEEP_SCRATCH=1
+    exit 1
+  fi
 fi
 
 SCRATCH_PDF="$(dirname "$TEX_COMPILE")/$(basename "$TEX_COMPILE" .tex).pdf"

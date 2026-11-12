@@ -10,8 +10,8 @@ version 1 [@palomar-2026-11-12-000010-v1].
 DomainTheory is a single Lean 4 / Mathlib library (v4.36.0-rc2, `lake build`
 green, no `sorry`) assembled from five prior Palomar-registered
 formalizations, each with a public GitHub home under
-`catskillsresearch`, and vendored here under `vendor/` for provenance
-(see `PROVENANCE.md` and `vendor/FROZEN.txt`):
+`catskillsresearch`, and vendored in the DomainTheory GitHub repository
+[@github-DomainTheory] under `vendor/` for provenance:
 
 - *Continuous Lattices* (1972) — Palomar
   [@palomar-2026-08-24-000003-v2], GitHub [@github-scott1972], and arXiv
@@ -42,9 +42,9 @@ recursion, definability, and enumeration degrees as combinatory
 subalgebras) and the descriptive-set style classification of subsets of
 $\mathbf{P}\omega$ (open, closed, $\mathfrak{G}_\delta$, Boolean, and related
 classes characterized as fibres of continuous maps). The golfed library
-preserves those validated results under Mathlib-style names. Distribution
-today is the public GitHub repository only; a CMU-CS technical report
-(CMU-CS-TR) is planned.
+preserves those validated results under Mathlib-style names. The Lean
+sources and frozen vendor trees live in [@github-DomainTheory]; this
+document is the accompanying CMU-CS technical report.
 
 **Author contributions.** Lars Warren Ericson — primary formalization
 engineer (all Lean 4, AI-assisted proof architecture, repository assembly);
