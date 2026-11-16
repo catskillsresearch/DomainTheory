@@ -2,9 +2,7 @@ The space $V$ constructed in the way just indicated is very rich in subspaces. T
 
 $$(j \times k)\ ,\ (j + k)\ ,\ \text{and}\ (j \to k)$$
 
-on the projections obtaining again elements of $\mathcal{J}_V$. The projections so obtained correspond to the indicated constructions of subspaces, of course. (Indeed, if we had the time and space, we could show that $\mathcal{J}_V$ becomes a very interesting category). There will be a particular
-
-projection $t$ corresponding to $T$, and reason for doing all this is to show that the existence of subspaces of $V$ can now be established by solving equations in $\mathcal{J}_V$. For example, by the fixed-point construction we could find a $j \in \mathcal{J}_V$ such that
+on the projections obtaining again elements of $\mathcal{J}_V$. The projections so obtained correspond to the indicated constructions of subspaces, of course. (Indeed, if we had the time and space, we could show that $\mathcal{J}_V$ becomes a very interesting category). There will be a particular projection $t$ corresponding to $T$, and reason for doing all this is to show that the existence of subspaces of $V$ can now be established by solving equations in $\mathcal{J}_V$. For example, by the fixed-point construction we could find a $j \in \mathcal{J}_V$ such that
 
 $$j = t + (t \times j) + ((j \times j) \to j).$$
 
@@ -13,4 +11,3 @@ The range of $j$ would then be a subspace $W \subseteq V$ such that $W$ solves t
 $$W = T + [T \times W] + [[W \times W] \to W].$$
 
 And these are only a few examples: simultaneous equations are possible, and many other operators are waiting for discovery and application.
-

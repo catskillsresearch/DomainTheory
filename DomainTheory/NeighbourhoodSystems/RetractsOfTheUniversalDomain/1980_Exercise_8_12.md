@@ -6,4 +6,35 @@
 
 @import "Exercise_8_12.lean"
 
-<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-07) — <a href="../1980_REVISION.md">1980 revision progress</a></p>
+**[deltaPair.lean](deltaPair.lean)**
+
+@import "deltaPair.lean"
+
+**[V.lean](V.lean)**
+
+@import "V.lean"
+
+**[VX.lean](VX.lean)**
+
+@import "VX.lean"
+
+**[Vinter.lean](Vinter.lean)**
+
+@import "Vinter.lean"
+
+**[minLevel.lean](minLevel.lean)**
+
+@import "minLevel.lean"
+
+**[splitV.lean](splitV.lean)**
+
+@import "splitV.lean"
+
+**[VComputablePresentation.lean](VComputablePresentation.lean)**
+
+@import "VComputablePresentation.lean"
+
+**[IsComputableSplit.lean](IsComputableSplit.lean)**
+
+@import "IsComputableSplit.lean"
+

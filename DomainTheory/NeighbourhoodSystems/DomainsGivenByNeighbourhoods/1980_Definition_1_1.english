@@ -4,7 +4,6 @@ DEFINITION 1.1. A family $\mathcal{D}$ of subsets of a given set $\Delta$ is cal
 
 (ii) whenever $X$, $Y$, $Z \in \mathcal{D}$ and $Z \subseteq X \cap Y$, then $X \cap Y \in \mathcal{D}$. $\square$
 
-
 <!-- formalization -->
 
 **Definition (`NeighborhoodSystem`).** A neighbourhood system on a carrier $\alpha$ consists of a membership predicate on subsets of $\alpha$, together with a distinguished nonempty *master* set $\Delta\subseteq\alpha$ that belongs to the system, such that every member is contained in $\Delta$, and whenever $X$ and $Y$ are members and some member $Z$ lies in $X\cap Y$, the intersection $X\cap Y$ is again a member.

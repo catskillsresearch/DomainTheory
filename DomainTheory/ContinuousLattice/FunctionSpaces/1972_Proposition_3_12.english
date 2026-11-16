@@ -39,4 +39,3 @@ $$(j \to k)(f) = k \circ f \circ j.$$
 It is very easy to show that $(j \to k) \in J_{[D \to D]}$, that $(j \to k)$ is continuous in $j$ and $k$, and that $[D \to D](j \to k)$ is isomorphic to $[D(j) \to D(k)]$. There are many other interesting operations on projections corresponding to other constructs besides these. And, just as with $(j \to k)$, the operations are continuous. This makes it possible to prove existence theorems about subspaces by using results like the fixed-point theorem for continuous functions. It would be even nicer if $J_D$ turns out to be a continuous lattice itself, but as far as I can tell this is not likely to be the case.
 
 Before we turn to the iterated function-space construction by inverse limits, there are a couple of other connections between spaces and function spaces that are useful to know.
-

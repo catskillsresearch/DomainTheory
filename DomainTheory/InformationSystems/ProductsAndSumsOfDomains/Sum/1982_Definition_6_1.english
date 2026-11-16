@@ -8,9 +8,7 @@
 
 (iv') $u \vdash_{\mathbf{A} \times \mathbf{B}} (X', \Delta_{\mathbf{B}})$ iff $\mathrm{fst}\, u \vdash_{\mathbf{A}} X'$; and
 
-(iv'') $u \vdash_{\mathbf{A} \times \mathbf{B}} (\Delta_{\mathbf{A}}, Y')$ iff $\mathrm{snd}\, u \vdash_{\mathbf{B}} Y'$;
-
-where, in (iii), $u$ is any finite subset of $D_{\mathbf{A} \times \mathbf{B}}$, in (iv') and (iv''), $u \in \mathrm{Con}_{\mathbf{A} \times \mathbf{B}}$, and we let:
+(iv'') $u \vdash_{\mathbf{A} \times \mathbf{B}} (\Delta_{\mathbf{A}}, Y')$ iff $\mathrm{snd}\, u \vdash_{\mathbf{B}} Y'$; where, in (iii), $u$ is any finite subset of $D_{\mathbf{A} \times \mathbf{B}}$, in (iv') and (iv''), $u \in \mathrm{Con}_{\mathbf{A} \times \mathbf{B}}$, and we let:
 
 $$\mathrm{fst}\, u = \{X \in D_{\mathbf{A}} \mid (X, \Delta_{\mathbf{B}}) \in u\}, \text{ and}$$
 

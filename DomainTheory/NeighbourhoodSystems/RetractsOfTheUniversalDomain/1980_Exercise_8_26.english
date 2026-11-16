@@ -3,8 +3,6 @@ $$
 f : D_a \to D_b,
 $$
 
-<!-- page 150 -->
-
 write instead
 
 $$f = b \circ f \circ a,$$

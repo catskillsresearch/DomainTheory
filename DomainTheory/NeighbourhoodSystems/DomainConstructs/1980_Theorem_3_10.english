@@ -2,8 +2,6 @@
 
 *Proof:* Let $f : \mathcal{D}_0 \to \mathcal{D}_1$ be an approximable mapping. By the very definition of $(\mathcal{D}_0 \to \mathcal{D}_1)$ it determines a filter by the definition:
 
-<!-- page 45 -->
-
 $$\hat{f} = \{ F \in (D_0 \to D_1) \mid f \in F \}.$$
 
 Trivially $[X, Y] \in \hat{f}$ iff $f \in [X, Y]$ iff $X f Y$; so this filter uniquely determines the relation $f$. What we have to show is that every filter in $|D_0 \to D_1|$ is of this form.

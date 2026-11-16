@@ -58,4 +58,3 @@ Where Scott’s 1982 text is constructive, the bridges stay constructive. Classi
 
 Every other information-system bridge reports `Classical.choice` as well, but only because Mathlib’s `Finset` instances depend on it. A declaration whose type mentions an information system therefore prints choice even when the proof manipulates an explicit finite set and extracts no witness. That is the footprint of neighbourhood bases in both directions, of ideals of finite elements, of products and function spaces, and of approximable maps against Scott-continuous maps. The separated-sum trichotomy is a use of choice; those others are the instance frontier.
 
-<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-09) — <a href="../BridgeTheorems_REVISION.md">Bridge revision progress</a></p>

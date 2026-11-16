@@ -16,4 +16,3 @@ As translated into Lean, we have:
 
 *Proof.* The forward direction uses `IsScottContinuous.out` and membership in `scottUnion`/`scottPiece`; the converse rebuilds $f(x)$ as a union of pieces from the $\varepsilon$-$\delta$ hypothesis. ∎
 
-<!-- page 7 -->

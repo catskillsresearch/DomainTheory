@@ -18,8 +18,6 @@ $$
 
 that is, <u>approximable mappings always preserve directed unions</u>. If an elementwise function preserves directed unions, must it come from an approximable mapping? (Hint: Invoke 2.9.)
 
-<!-- page 33 -->
-
 <!-- formalization -->
 
 **Theorem (`exercise_2_11`).** Domains are closed under indexed directed unions of ideal elements (membership in the join is membership in some term), and approximable maps preserve those unions elementwise.

@@ -22,4 +22,3 @@ The powerset-of-four-tokens neighbourhood system (nonempty subsets).
 **Definition (`neighborhoodSystem`).** The neighbourhood system on the four-token carrier whose members are exactly the nonempty subsets, with this master set.
 
 *Proof.* The master is nonempty and a neighbourhood; every neighbourhood lies in the master; if two neighbourhoods meet in a set containing a third neighbourhood, their intersection is nonempty by the preceding theorem, hence again a neighbourhood. ∎
-

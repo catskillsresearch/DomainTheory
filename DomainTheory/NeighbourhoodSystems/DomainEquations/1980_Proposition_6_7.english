@@ -2,8 +2,6 @@
 
 **Proof:** Clearly since $T$ is a functor, the map $T(i)$ has the right mapping character to make $T(D)$ a $T$-algebra. Since $D$ is initial, we have a commuting diagram:
 
-<!-- page 104 -->
-
 $$
 \begin{array}{ccc}
 T(D) & \xrightarrow{i} & D \\

@@ -37,9 +37,7 @@ We build the domain natively as an information system (§5.2), then **read the s
 carrier** as a neighbourhood system (§5.3) and as a continuous lattice (§5.4). Section 5.5
 exhibits the order isomorphisms for this instance — so that, on S-expressions,
 
-`T_1982 ≃o T_1980 ≃o Ideal(K(T))`  and  `Ideal(K(T))` is a continuous lattice,
-
-hence transitively `T_1982 ≃o T_1980` and (via the algebraic ⇒ continuous frontier)
+`T_1982 ≃o T_1980 ≃o Ideal(K(T))`  and  `Ideal(K(T))` is a continuous lattice, hence transitively `T_1982 ≃o T_1980` and (via the algebraic ⇒ continuous frontier)
 the 1972 presentation of the same domain. Order isomorphism is an equivalence relation,
 so the three presentations determine one domain up to `≃o`. Section 5.6 records two
 extras that live on top of the carriers: the domain equation at the level of domains,

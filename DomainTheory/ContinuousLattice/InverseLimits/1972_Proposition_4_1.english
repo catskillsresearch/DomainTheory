@@ -5,4 +5,3 @@
 I do not know at the time of writing whether this theorem on inverse limits of continuous lattices extends to sequences where, say, the $j_n$ are only retractions. Fortunately, sufficiently many projections exist to make this construction useful. Note that by reference to the product space construction of $D_{\infty}$, its lattice ordering is given simply by the relation:
 
 $$x \sqsubseteq y \quad \text{iff} \quad x_n \sqsubseteq y_n \text{ for all } n.$$
-

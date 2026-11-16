@@ -48,8 +48,6 @@ $$
 
 where $+$ is chosen if $a$ is on the right, and $-$ if on the left. As a tree diagram $a$ might look like this for $n = 3$:
 
-<!-- page 100 -->
-
 ```
                          a  +
                         / | \
@@ -94,9 +92,6 @@ L_a = \{\sigma \in \Sigma^* \mid \mathrm{pos}(a\sigma) = \mathrm{true}\}
 $$
 
 corresponding to an eventually periodic tree is always a *regular event* of automata theory, and every such language has this form. In fact, $a$ just represents the initial state of an automaton, and $a\sigma$ represents the state after "reading" a tape $\sigma$. $\square$
-
-<!-- page 101 -->
-
 
 <!-- formalization -->
 

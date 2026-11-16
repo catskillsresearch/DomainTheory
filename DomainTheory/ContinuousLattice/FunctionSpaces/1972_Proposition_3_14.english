@@ -19,4 +19,3 @@ To establish the continuity, it is sufficient to remark that since all functions
 $$\mathrm{fix}(f) = \bigsqcup_{n=0}^{\infty} f^n(\bot),$$
 
 where $f^n(x) = f(f(\ldots f(x) \ldots))$ ($n$ times). Thus $\mathrm{fix}$ is the point-wise lub of continuous functions on $[D \to D]$ and is thus itself continuous. $\square$
-

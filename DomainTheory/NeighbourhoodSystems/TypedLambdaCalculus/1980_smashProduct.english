@@ -244,4 +244,3 @@ Smash product of neighbourhood systems, strict function spaces, and the curry is
 **Theorem (`smash_mem_iff`).** Membership in the smash product is either the joined master or a proper smash neighbourhood.
 
 *Proof.* By definition. ∎
-

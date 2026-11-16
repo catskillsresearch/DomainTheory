@@ -31,4 +31,3 @@ i_n(f(x)) = i_{n+1}(f)(i_n(x)),
 $$
 
 where $x \in D_n$ and $f \in D_{n+1}$. Thus in passing to the limit space $D_\infty$ something of functional application must also be preserved. The precise result shows that indeed $D_\infty$ becomes its own function space.
-

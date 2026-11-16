@@ -6,8 +6,6 @@ $$D = \{ X_n \mid n \in \mathbf{N} \},$$
 
 the relation $k \in X_n$ is *recursive* in $k$ and $n$. (It is worth thinking why this is so.) Of course, a lot of other things are recursive also.
 
-<!-- page 125 -->
-
 Now what kind of a system is $D^\S$? The construction of 6.1 made it a system over a certain set of strings $\Gamma$. For the sake of checking various assertions about computability, we are transposing everything back to $\mathbf{N}$. (These are all denumerable sets in any case.) The set $\Gamma$ is divided into three equally big parts, and we can do the same for $\mathbf{N}$. Let us write for any $m, k \in \mathbf{N}$ and subset $X \subseteq \mathbf{N}$:
 
 $$mX + k = \{ m \cdot n + k \mid n \in X \}.$$
@@ -35,8 +33,6 @@ The reader also has to check that 7.1(i)–(ii) hold for the $V_k$. The idea is 
 Next for the combinators, we have to translate neighbourhood relations into relations among integer indices. A selection of examples must suffice,
 
 $$X_n\ (\lambda x.\, x^\S)\ V_k \text{ iff } V_{2n+1} \subseteq V_k$$
-
-<!-- page 126 -->
 
 $$V_m \ \mathrm{proj}_0 \ V_k \text{ iff } k = 0 \text{ or } \exists n \in \mathbf{N}.\, m = 2n + 2 \text{ and } V_{p(n)} \subseteq V_k.$$
 

@@ -3,4 +3,3 @@ On a complete lattice $L$, write $e : L \to L$ for an endomap. We say $e$ is **i
 Scott’s discussion after Theorem 2.12 treats a retraction $j : \mathcal{P}I \to \mathcal{P}I$ as idempotent and identifies its range with $\{ X : j(X) = X \}$. The proof of Theorem 2.12 uses the same fixed-point subtype for the idempotent $e = s \circ r$ built from an injective-space retraction into a Sierpiński power.
 
 **Definition (`IdempotentFixedPoint`).** For $e : L \to L$ on a complete lattice $L$, **`IdempotentFixedPoint e`** is the subtype $\{ x \in L \mid e x = x \}$.
-

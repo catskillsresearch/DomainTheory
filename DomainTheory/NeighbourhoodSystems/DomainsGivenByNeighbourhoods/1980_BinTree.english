@@ -52,4 +52,3 @@ The finite binary-tree neighbourhood system on seven tokens.
 **Definition (`neighborhoodSystem`).** The neighbourhood system on this token carrier with the membership predicate and master set above.
 
 *Proof.* The master is nonempty and a neighbourhood; every neighbourhood lies in the master; if two neighbourhoods meet in a set containing a third neighbourhood, their intersection cannot be empty (the empty set is not a neighbourhood), so by the preceding classification it is again a neighbourhood. ∎
-

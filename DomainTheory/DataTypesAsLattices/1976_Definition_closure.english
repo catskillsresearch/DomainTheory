@@ -20,9 +20,6 @@ The closed sets of **boool** are $\bot$, $0$, $\mathbf{T} + 1$, and $\mathbf{T}$
 
 $$(5.4) \quad a(x) = \bigcap \{y \in \mathscr{C} \mid x \subseteq y\},$$
 
-<!-- page 31 -->
-
-
 then this will be a closure operation *provided* it is continuous. This remark makes it easy to check that certain functions are closure operations if we can spot easily the family $\mathscr{C}$ of fixed points.
 
 Alas, the “natural” definition of ordered pairs (cf. (2.21)) leads to projections rather than closures. Here we must choose another:

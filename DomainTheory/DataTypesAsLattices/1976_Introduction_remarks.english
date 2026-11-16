@@ -17,8 +17,6 @@ Along the way we have to show how to give every $\lambda$-term a denotation in $
 | $(\xi^*)$ | $\lambda x.\tau \subseteq \lambda x.\sigma \quad \text{if} \quad \forall x.\,\tau \subseteq \sigma$ |
 | $(\mu)$ | $x \subseteq y \text{ and } u \subseteq v \text{ imply } u(x) \subseteq v(y)$ |
 
-<!-- page 5 -->
-
 Section 3 has to do with enumeration and degrees. Gödel numbers for LAMBDA are defined in a very easy way which takes advantage of the notation of combinators. This leads to the second recursion theorem, and results on incompleteness and undecidability follow along standard lines. *Relative recursiveness* is also very easy to define in the system, and we make the tie-in with *enumeration degrees* which correspond to finitely generated combinatory subalgebras of $\mathbf{P}\omega$. Finally a theorem of Myhill and Shepherdson is interpreted as a most satisfactory completeness property for definability in the system.
 
 Sections 4 and 5 show how a calculus of *retracts* leads to quite simple definitions of a host of useful domains (as lattices). Section 6 investigates the classification of other subsets (*nonlattices*) of $\mathbf{P}\omega$; while § 7 contrasts partial (multiple-valued) functions with total functions, and interprets various theories of functionality. Connections with category theory are mentioned.

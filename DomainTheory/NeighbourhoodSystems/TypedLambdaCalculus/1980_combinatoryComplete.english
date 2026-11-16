@@ -72,4 +72,3 @@ Combinatory completeness: I, K, and S realize every polynomial λ-term via brack
 **Theorem (`bracket_spec`).** Bracket abstraction preserves denotation on every argument.
 
 *Proof.* Induction on the polynomial, using the I, K, and S evaluation laws. ∎
-

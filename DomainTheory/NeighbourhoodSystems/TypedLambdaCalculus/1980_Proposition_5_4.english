@@ -24,8 +24,6 @@ for any given $x$. But by definition of $f$ we find
 
 $$f(x) = ! y . \tau(x, y) \sqsubseteq g_0(x).$$
 
-<!-- page 83 -->
-
 As this holds for all $x$, then $f \sqsubseteq g_0$ follows. So the equation is true. $\square$
 
 The last proof is instructive as it uses equations and inclusions between functions. In particular we have just made use of the principle:

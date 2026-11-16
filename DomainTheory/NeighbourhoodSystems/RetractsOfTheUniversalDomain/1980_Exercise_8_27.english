@@ -14,8 +14,6 @@ $$\Pi = \lambda d\,\lambda x\,\lambda t.\,\mathrm{sub}(d(\mathrm{sub}(t)))(x(\ma
 
 Show that for $d$ a polymorphic type, $\Pi(d)$ is a type. (Hint: It is easy to check that $\Pi(d)$ is a projection; the problem is to show it is *finitary*.)
 
-<!-- page 151 -->
-
 The development is with the [Infinite product on U](1980_piU.md) peer.
 
 <!-- formalization -->

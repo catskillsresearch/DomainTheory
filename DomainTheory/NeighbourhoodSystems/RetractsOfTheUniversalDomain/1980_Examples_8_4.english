@@ -23,8 +23,6 @@ $$a(x) = \mathrm{fade}(\mathrm{check}(x), u).$$
 
 Then $a$ is a retraction (not a projection in general) and the range of $a$ is isomorphic to $O$.
 
-<!-- page 137 -->
-
 Another way of using these combinators is to find $(D \to_{\perp} E)$ as a retraction of $(D \to E)$. Specifically, define a combinator
 
 $$\mathrm{strict} : (D \to E) \to (D \to E)$$

@@ -8,8 +8,6 @@ by the formula
 
 $$X \ \mathrm{sub} \ (f) \ Z \quad \text{iff} \quad \exists Y \in E.\quad X \subseteq Y \ \ f \ Y \subseteq Z,$$
 
-<!-- page 139 -->
-
 for all $X, Z \in E$ and all $f : E \to E$. Then the range of $\mathrm{sub}$ consists exactly of the finitary projections on $E$, and moreover $\mathrm{sub}$ itself is a finitary projection on $(E \to E)$. If $E$ is effectively given, then $\mathrm{sub}$ is computable.
 
 *Proof:* It is trivial to check that $\mathrm{sub}(f)$ is always approximable. Also, it is obvious from the definition that the correspondence
@@ -36,8 +34,6 @@ Finally, to prove that $\mathrm{sub}$ is a finitary projection of $(E \to E)$, w
 
 These results have almost completely translated the theory of $\triangleleft$-subdomains into $\lambda$-calculus via the sub-combinator. One last step will complete the passage, and then we shall be able to return to solving domain equations.
 
-<!-- page 140 -->
-
 **[NeighbourhoodSystems/RetractsOfTheUniversalDomain/sub.lean](sub.lean)**
 
 @import "sub.lean"
@@ -48,4 +44,3 @@ These results have almost completely translated the theory of $\triangleleft$-su
 
 @import "Theorem_8_6.lean"
 
-<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-07) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

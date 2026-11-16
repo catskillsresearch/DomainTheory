@@ -2,19 +2,13 @@
 
 (i) $f(x) = \{ Y \in D_1 \mid \exists X \in x.\ X f Y \}$
 
-for all $x \in |D_0|$. Conversely, this function uniquely determines
-
-<!-- page 26 -->
-
-the original relation by the equivalence:
+for all $x \in |D_0|$. Conversely, this function uniquely determines the original relation by the equivalence:
 
 (ii) $X f Y$ iff $Y \in f(\uparrow X)$
 
 for all $X \in D_0$ and $Y \in D_1$. Approximable functions are always monotone in the following sense:
 
-(iii) $x \subseteq y$ always implies $f(x) \subseteq f(y)$,
-
-for $x, y \in |D_0|$; moreover two approximable functions $f : D_0 \to D_1$ and $g : D_0 \to D_1$ are identical as relations iff
+(iii) $x \subseteq y$ always implies $f(x) \subseteq f(y)$, for $x, y \in |D_0|$; moreover two approximable functions $f : D_0 \to D_1$ and $g : D_0 \to D_1$ are identical as relations iff
 
 (iv) $f(x) = g(x)$, for all $x \in |D_0|$.
 

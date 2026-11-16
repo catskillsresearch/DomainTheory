@@ -20,12 +20,6 @@ $$(L \to T) \times (L \to T) \to (L \to T).$$
 
 Conclude that programs in LUCID define computable maps.
 
-<!-- page 135 -->
-
-**[Exercise_7_24.lean](Exercise_7_24.lean)**
-
-@import "Exercise_7_24.lean"
-
 The development is with the [LUCID histories](1980_lucidHistory.md) peer.
 
 <!-- formalization -->

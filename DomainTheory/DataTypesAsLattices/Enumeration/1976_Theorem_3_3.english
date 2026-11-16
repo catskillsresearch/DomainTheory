@@ -1,8 +1,6 @@
 **THEOREM 3.3 (The second recursion theorem).** Take a LAMBDA-definable element $v$ such that:
 
-*(i)* $\mathbf{val}(v(n)) = \lambda m \in \omega.\, \mathbf{val}(n)(\mathbf{apply}(m)(\mathbf{num}(m)))$,
-
-and then define a combinator by:
+*(i)* $\mathbf{val}(v(n)) = \lambda m \in \omega.\, \mathbf{val}(n)(\mathbf{apply}(m)(\mathbf{num}(m)))$, and then define a combinator by:
 
 *(ii)* $\mathbf{rec} = \lambda n \in \omega.\, \mathbf{apply}(v(n))(\mathbf{num}(v(n)))$.
 

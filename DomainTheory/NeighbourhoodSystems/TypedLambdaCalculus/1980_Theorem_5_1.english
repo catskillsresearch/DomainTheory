@@ -12,11 +12,7 @@ Suppose $\tau$ has the form
 
 $$\langle \sigma_0, \dots, \sigma_{n-1} \rangle .$$
 
-Then the $\sigma_i$ are less complex terms, and so we can assume — as our induction hypothesis — that they define approximable functions of the free variables. Having said this, we just apply the already
-
-<!-- page 78 -->
-
-proved 3.4 to conclude (after a suitable generalization to the multivariate case) that $\tau$, which takes on tuples as values, also defines an approximable function.
+Then the $\sigma_i$ are less complex terms, and so we can assume — as our induction hypothesis — that they define approximable functions of the free variables. Having said this, we just apply the already proved 3.4 to conclude (after a suitable generalization to the multivariate case) that $\tau$, which takes on tuples as values, also defines an approximable function.
 
 Next, suppose $\tau$ has the form
 
@@ -49,8 +45,6 @@ $$\lambda x_0, \dots, x_{k-1} . \sigma,$$
 which has a string of bound variables. $\square$
 
 We can now say more precisely what it means to call $\sigma = \tau$ a "true equation". This means that, if we employ the method of the proof of 5.1, the two terms define the *same function* of the free variables. For example,
-
-<!-- page 79 -->
 
 $$\lambda x . \tau = \lambda y . \tau [y / x]$$
 

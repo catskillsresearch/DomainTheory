@@ -30,4 +30,3 @@ is a *functor*. Furthermore, we can project $\mathbb{F}(T)$ onto $T$ in an obvio
 $$V = \varprojlim \langle \mathbb{F}^n(T), j_n \rangle_{n=0}^{\infty}.$$
 
 The resulting continuous lattice satisfies the desired equation up to isomorphism.
-

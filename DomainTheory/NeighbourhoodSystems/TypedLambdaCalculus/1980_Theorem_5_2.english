@@ -32,8 +32,6 @@ $$(\lambda x . \tau_0 (\tau_1))(\sigma) = \tau_0 [\sigma / x] (\tau_1 [\sigma / 
 
 We can proceed as in the last case, noting that the left-hand side equals
 
-<!-- page 80 -->
-
 $$
 \mathrm{eval}\ ((\lambda x . \langle \tau_0 , \tau_1 \rangle)\ (\sigma))\ .
 $$
@@ -83,8 +81,6 @@ $$
 This completes the proof. $\square$
 
 We note that if $\tau'$ is the term $\lambda x, y . \tau$, then $\tau'(x, y)$ means the same as $\tau$. This gives a convenient way of indicating free variables: we just write $\sigma(x, y)$ — where $x, y$ are not free in $\sigma$ — and this will have the same values as any term $\tau$ which does involve the extra free variables $x$ and $y$. We use this notational device in the next theorem.
-
-<!-- page 81 -->
 
 The beta-conversion laws for currying against a constant, double currying, and currying a paired map are with the
 [beta conversion](1980_beta.md) peer.

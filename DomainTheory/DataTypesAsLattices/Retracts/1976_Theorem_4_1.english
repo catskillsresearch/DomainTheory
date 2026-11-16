@@ -4,8 +4,6 @@
 
 *Proof of Theorem 4.1.* Consider a continuous function $a$, and let $A = \{x \mid x = a(x)\}$. By the fixed-point theorem (Theorem 1.4) we know that $A$ is nonempty and that it has a least element under $\subseteq$. Certainly $A$ is partially ordered by $\subseteq$; further, $A$ is closed under *directed* unions but not under arbitrary unions.
 
-<!-- page 55 -->
-
 That is, $A$ is not a complete sublattice of $\mathbf{P}\omega$ with regard to the lattice operations of $\mathbf{P}\omega$, but it could be a complete lattice on its own—if we can show sups exist. Thus, let $S \subseteq A$ be an arbitrary subset of $A$. By the fixed-point theorem, find the least solution to the equation:
 
 $$y = \bigcup \{x \mid x \in S\} \cup a(y).$$
@@ -35,8 +33,6 @@ $$a(x) = \{m \mid \exists n \in x.\, m \ll n\}.$$
 We see at once that $a$ is continuous; and, because $\ll$ is transitive and dense, $a$ is a retract. Since $\ll$ is irreflexive, it is the case for finite nonempty sets $x$ that $\max_\ll(x) \notin a(x)$; hence, $a$ is nonextensive. As $a(\top) = \top$, we find $a \neq \bot$. The proof is complete.
 
 Note that there are many transitive, dense, irreflexive relations on $\omega$, so there are many nonextensive retracts. These retracts, like $a$ above, are *distributive*.
-
-<!-- page 56 -->
 
 A nondistributive example is:
 

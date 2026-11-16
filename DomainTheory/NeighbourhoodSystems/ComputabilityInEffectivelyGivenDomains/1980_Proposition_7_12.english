@@ -36,8 +36,6 @@ Finally, we note that
 
 $$D \cong D^\dagger \trianglelefteq \mathbb{P} D$$
 
-<!-- page 130 -->
-
 and that the isomorphism involved is just $\lambda x.\,\{x\}$ by what we saw on the finite elements. $\square$
 
 Further combinators on the power domain are given in the exercises.

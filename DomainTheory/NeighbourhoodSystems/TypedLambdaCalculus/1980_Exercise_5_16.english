@@ -24,8 +24,6 @@ $$
 
 Prove that the $n^{\mathrm{th}}$ digit of $t$ is the sum mod 2 of the digits of the number $n$ written in the binary scale (a suggestion of J. Lambek). Show also that $t \neq u\,a\,a\,a\,v$ where $a$ is any finite sequence $\neq \Lambda$, and where $u$ is finite.
 
-<!-- page 92 -->
-
 The development is with the
 [sequence negation and merge](1980_seqNegMerge.md) peer.
 

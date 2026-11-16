@@ -12,9 +12,7 @@ The subsets $[X] \subseteq |\mathcal{D}|$ for $X \in \mathcal{D}$ form a neighbo
 
 Next note that
 
-(2) $X, Y$ are consistent in $\mathcal{D}$ iff $[X] \cap [Y] \neq \emptyset$;
-
-and that for $X, Y \in \mathcal{D}$
+(2) $X, Y$ are consistent in $\mathcal{D}$ iff $[X] \cap [Y] \neq \emptyset$; and that for $X, Y \in \mathcal{D}$
 
 (3) $[X] \cap [Y] = [X \cap Y]$ if $X \cap Y \in \mathcal{D}.$
 

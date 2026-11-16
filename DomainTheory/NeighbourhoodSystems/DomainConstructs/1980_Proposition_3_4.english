@@ -4,17 +4,13 @@
 
 Moreover, for $z \in |\mathcal{D}_0 \times \mathcal{D}_1|$, we have:
 
-(ii) $p_0(z) = z_0$ and $p_1(z) = z_1$,
-
-in the notation of the proof of 3.2. Further if $h : \mathcal{D}_2 \to \mathcal{D}_0 \times \mathcal{D}_1$ is any approximable mapping, then
+(ii) $p_0(z) = z_0$ and $p_1(z) = z_1$, in the notation of the proof of 3.2. Further if $h : \mathcal{D}_2 \to \mathcal{D}_0 \times \mathcal{D}_1$ is any approximable mapping, then
 
 (iii) $h = \langle p_0 \circ h, p_1 \circ h \rangle$.
 
 Moreover, for all $w \in |\mathcal{D}_2|$, we have:
 
-(iv) $\langle f, g \rangle(w) = \langle f(w), g(w) \rangle$,
-
-where again on the right-hand side the notation of the proof of 3.2 is used. $\square$
+(iv) $\langle f, g \rangle(w) = \langle f(w), g(w) \rangle$, where again on the right-hand side the notation of the proof of 3.2 is used. $\square$
 
 The proof of this result is left as an exercise. Note the consequence that there is a one-one correspondence between pairs of approximable mappings $f : \mathcal{D}_2 \to \mathcal{D}_0$ and $g : \mathcal{D}_2 \to \mathcal{D}_1$ and mappings $h : \mathcal{D}_2 \to \mathcal{D}_0 \times \mathcal{D}_1$. It is clear that we generalize all this to products
 

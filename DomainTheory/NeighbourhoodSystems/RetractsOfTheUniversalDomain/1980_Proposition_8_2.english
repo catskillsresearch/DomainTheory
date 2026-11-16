@@ -20,8 +20,6 @@ and so $a$ is a retraction.
 
 We can also employ $i$ and $j$ to give the isomorphism on $|D|$. If $x \in |D|$, then $i(x) \in |E|$ and we calculate:
 
-<!-- page 136 -->
-
 $$a(i(x)) = i \circ j \circ i(x) = i(x).$$
 
 Thus, $i(x)$ belongs to the fixed-point set of $a$. In the other direction, if $a(y) = y$, then $i(j(y)) = y$. But $j(y) \in |D|$, so $i$ maps $|D|$ one-one and onto the fixed-point set of $a$. As $i$ and $j$ are monotone, the map is an isomorphism with respect to $\sqsubseteq$. $\square$

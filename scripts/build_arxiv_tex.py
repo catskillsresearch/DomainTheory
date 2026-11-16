@@ -48,7 +48,7 @@ LETTER_FIG_DPI = 150
 GITHUB_URL = r"https://github.com/catskillsresearch/DomainTheory"
 # CMU SCS tech-report front matter (same authors / style as archive/scott1964).
 # Update REPORT_NUMBER when the library assigns an official id.
-REPORT_NUMBER = "CMU-CS-26-XXX"
+REPORT_NUMBER = "CMU-CS-26-138"
 REPORT_DATE = "October 2026"
 PDF_AUTHORS = "Lars Warren Ericson; Dana S. Scott; Vijay D'Silva; Brian Milnes"
 KEYWORDS = (
@@ -86,8 +86,21 @@ def fit_png_for_letter(png_path: Path) -> None:
         fitted.save(png_path, optimize=True)
 
 
-SVG_BLOCK_RE = re.compile(r"<svg\b.*?</svg>", re.DOTALL | re.IGNORECASE)
+# Graphviz SVG files ship an XML + DOCTYPE prologue before ``<svg>``. Match the
+# whole document so those lines are not left for pandoc to typeset as prose.
+SVG_BLOCK_RE = re.compile(
+    r"(?:<\?xml\b[^>]*\?>\s*)?"
+    r"(?:<!DOCTYPE\b.*?>\s*)?"
+    r"(?:<!--.*?-->\s*)*"
+    r"<svg\b.*?</svg>",
+    re.DOTALL | re.IGNORECASE,
+)
 SVG_LABEL_RE = re.compile(r'\baria-label="([^"]*)"')
+# Safety net if a prologue fragment somehow survives outside an SVG block.
+SVG_PROLOGUE_NOISE_RE = re.compile(
+    r"(?:<\?xml\b[^>]*\?>\s*)|(?:<!DOCTYPE\s+svg\b.*?>\s*)",
+    re.DOTALL | re.IGNORECASE,
+)
 
 
 def render_svg(svg: str, idx: int) -> str:
@@ -95,7 +108,9 @@ def render_svg(svg: str, idx: int) -> str:
     FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     svg_path = FIGURES_DIR / f"svg-figure-{idx:03d}.svg"
     png_path = FIGURES_DIR / f"svg-figure-{idx:03d}.png"
-    ink = svg.replace("currentColor", "#111")
+    # ImageMagick wants a well-formed SVG root; strip comments/prologue noise.
+    root = re.search(r"<svg\b.*?</svg>", svg, flags=re.DOTALL | re.IGNORECASE)
+    ink = (root.group(0) if root else svg).replace("currentColor", "#111")
     svg_path.write_text(ink, encoding="utf-8")
     proc = subprocess.run(
         ["convert", "-background", "white", "-density", "144", str(svg_path), str(png_path)],
@@ -110,6 +125,29 @@ def render_svg(svg: str, idx: int) -> str:
     return png_path.relative_to(ROOT).as_posix()
 
 
+def _caption_from_preceding_heading(prefix: str, *, fallback: str) -> str:
+    """Use the nearest markdown heading above a diagram as its figure caption."""
+    for line in reversed(prefix.splitlines()):
+        stripped = line.strip()
+        if not stripped:
+            continue
+        hm = re.match(r"^#{1,6}\s+(.+)$", stripped)
+        if not hm:
+            # Skip placeholders / prose; keep scanning for a real heading.
+            if stripped.startswith("<") or stripped.startswith("```"):
+                continue
+            # Stop at the previous figure placeholder so we don't steal an older title.
+            if re.fullmatch(r"(?:SVGINCLUDE|MERMAIDINCLUDE|LISTINGINCLUDE)\d{3}", stripped):
+                break
+            continue
+        candidate = _strip_progress_mark(hm.group(1).strip())
+        if candidate.lower() == "abstract":
+            continue
+        if candidate:
+            return candidate.rstrip(".") + "."
+    return fallback
+
+
 def replace_svgs(text: str, placeholders: dict[str, str]) -> str:
     idx = 0
 
@@ -119,12 +157,22 @@ def replace_svgs(text: str, placeholders: dict[str, str]) -> str:
         key = f"SVGINCLUDE{idx:03d}"
         rel_path = render_svg(svg, idx)
         label_m = SVG_LABEL_RE.search(svg)
-        caption = label_m.group(1) if label_m else f"Diagram {idx + 1}"
+        aria = _strip_progress_mark(label_m.group(1).strip()) if label_m else ""
+        # Prefer a real prose label; graphviz defaults like "G" are useless as captions.
+        if aria and aria.lower() not in {"g", "graph", "diagram"}:
+            caption = aria.rstrip(".") + "."
+        else:
+            caption = _caption_from_preceding_heading(
+                text[: match.start()],
+                fallback=f"Diagram {idx + 1}.",
+            )
         placeholders[key] = figure_latex(rel_path, caption, f"fig:svg-{idx:03d}")
         idx += 1
         return f"\n\n{key}\n\n"
 
-    return SVG_BLOCK_RE.sub(repl, text)
+    out = SVG_BLOCK_RE.sub(repl, text)
+    # Drop any residual XML/DOCTYPE lines that were not glued to an ``<svg>``.
+    return SVG_PROLOGUE_NOISE_RE.sub("", out)
 
 
 def render_mermaid(code: str, idx: int) -> str:
@@ -335,7 +383,92 @@ def github_math_to_tex(text: str) -> str:
     return text
 
 
+_PAGE_MARKER = re.compile(r"<!--\s*page\s+\d+\s*-->", re.IGNORECASE)
+_SENT_END = frozenset(".!?…∎□")
+
+
+def heal_page_marker_breaks(text: str) -> str:
+    """Join prose split by blank-wrapped ``<!-- page N -->`` markers.
+
+    Pandoc treats surrounding blank lines as paragraph breaks even after the
+    HTML comment is stripped, so mid-sentence markers must collapse to a space
+    (with soft-hyphen / ellipsis healing). True paragraph boundaries keep a
+    blank line.
+    """
+    parts: list[str] = []
+    pos = 0
+    for m in _PAGE_MARKER.finditer(text):
+        left = text[pos : m.start()]
+        right = text[m.end() :]
+
+        i = len(left)
+        while i > 0 and left[i - 1] in " \t":
+            i -= 1
+        nl_left = 0
+        while i > 0 and left[i - 1] == "\n":
+            nl_left += 1
+            i -= 1
+        core_left = left[:i]
+
+        j = 0
+        while j < len(right) and right[j] in " \t":
+            j += 1
+        nl_right = 0
+        while j < len(right) and right[j] == "\n":
+            nl_right += 1
+            j += 1
+        core_right = right[j:]
+
+        # Scanned soft break: "func-*" + "...tions" → "functions"
+        if core_left.endswith("-*") and core_right.startswith("..."):
+            parts.append(core_left[:-2])
+            pos = m.end() + j + 3
+            continue
+
+        # End-of-line hyphenation: "function-" + "space" → "function-space"
+        if core_left.endswith("-") and core_right[:1].islower():
+            parts.append(core_left)
+            pos = m.end() + j
+            continue
+
+        b = core_left[-1] if core_left else "\n"
+        a = core_right[:1] if core_right else "\n"
+        starts_block = core_right.startswith(
+            ("**", "#", "$$", "```", "<!--", "|", "- ", "* ")
+        )
+        mid = bool(
+            core_left
+            and core_right
+            and not starts_block
+            and b not in _SENT_END
+            and not core_left.rstrip().endswith("$$")
+            and (a.islower() or a in "$\\(" or core_right.startswith("..."))
+        )
+
+        parts.append(core_left)
+        if mid:
+            if core_right.startswith("..."):
+                pos = m.end() + j + 3
+            else:
+                if b not in "([{/" and a not in ".,;:)]}":
+                    parts.append(" ")
+                pos = m.end() + j
+        else:
+            if nl_left >= 2 or nl_right >= 2 or (nl_left >= 1 and nl_right >= 1):
+                parts.append("\n\n")
+            elif nl_left or nl_right:
+                parts.append("\n")
+            else:
+                parts.append(" ")
+            pos = m.end() + j
+    parts.append(text[pos:])
+    return "".join(parts)
+
+
 def strip_html_comments(text: str) -> str:
+    # Page markers first: blank lines around them survive a naive strip and
+    # become mid-sentence paragraph breaks in the PDF.
+    text = heal_page_marker_breaks(text)
     return HTML_COMMENT.sub("", text)
 
 
@@ -409,6 +542,13 @@ CAPTION_COMMENT_RE = re.compile(
 )
 
 
+def _strip_progress_mark(title: str) -> str:
+    """Drop trailing outline progress marks (✓ / Revised) from titles used as captions."""
+    t = title.strip()
+    t = re.sub(r"[\s\u00a0]*[✓✔✅☑]\s*$", "", t)
+    return t.strip()
+
+
 def extract_mermaid_captions(text: str) -> list[str]:
     """Caption each ```mermaid block from an explicit comment or nearest heading."""
     captions: list[str] = []
@@ -422,11 +562,11 @@ def extract_mermaid_captions(text: str) -> list[str]:
                 continue
             cm = CAPTION_COMMENT_RE.match(stripped)
             if cm:
-                explicit = cm.group(1).strip()
+                explicit = _strip_progress_mark(cm.group(1).strip())
                 break
             hm = re.match(r"^#{1,6}\s+(.+)$", stripped)
             if hm:
-                candidate = hm.group(1).strip()
+                candidate = _strip_progress_mark(hm.group(1).strip())
                 if candidate.lower() == "abstract":
                     continue
                 heading = candidate
@@ -447,12 +587,13 @@ def extract_mermaid_captions(text: str) -> list[str]:
 def figure_latex(rel_path: str, caption: str, label: str) -> str:
     """Numbered figure at the markdown source position (no float drift)."""
     cap = caption.replace("&", "\\&")
+    # ``\\normalsize``: default caption size reads light under dense diagrams.
     return (
         "\\begin{figure}[H]\n"
         "\\centering\n"
         f"\\includegraphics[width=\\linewidth,height=0.78\\textheight,keepaspectratio]"
         f"{{{rel_path}}}\n"
-        f"\\caption{{{cap}}}\n"
+        f"\\caption{{\\normalsize {cap}}}\n"
         f"\\label{{{label}}}\n"
         "\\end{figure}\n"
     )
@@ -467,7 +608,7 @@ def listing_figure_latex(listing: str, caption: str, label: str) -> str:
         "\\begin{minipage}{\\linewidth}\n"
         f"\\lstinputlisting[style=leanbox]{{{listing}}}\n"
         "\\end{minipage}\n"
-        f"\\caption{{{cap} (diagram source; PNG rasterization failed.)}}\n"
+        f"\\caption{{\\normalsize {cap} (diagram source; PNG rasterization failed.)}}\n"
         f"\\label{{{label}}}\n"
         "\\end{figure}\n"
     )

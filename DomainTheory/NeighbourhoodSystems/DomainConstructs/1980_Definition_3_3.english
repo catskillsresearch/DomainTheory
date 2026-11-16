@@ -24,8 +24,6 @@ $$
 
 holds for all $X \in \mathcal{D}_0$, $Y \in \mathcal{D}_1$, and $Z \in \mathcal{D}_2$. $\square$
 
-<!-- page 39 -->
-
 <!-- formalization -->
 
 **Definition (`paired`).** The pairing of two approximable maps into the factors of a product is the approximable map into the product that relates a neighbourhood to a product neighbourhood precisely when each component map relates it to the corresponding untagged factor.

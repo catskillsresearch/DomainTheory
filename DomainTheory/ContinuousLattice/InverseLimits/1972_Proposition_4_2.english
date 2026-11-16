@@ -40,4 +40,3 @@ x = \bigsqcup_{n=0}^{\infty} i_{n\infty}(x_n),
 $$
 
 where $x \in D_\infty$. It is easy to check that this is a monotone lub, and so we can say each $x \in D_\infty$ is the limit of its projections $x_n$. In fact, from what we know about projections, $x_n$ is the best possible approximation to $x$ in the space $D_n$.
-

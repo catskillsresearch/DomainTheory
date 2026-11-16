@@ -10,8 +10,6 @@ $$
 \varphi(X \cap X') = \varphi(X) \cap \varphi(X').
 $$
 
-<!-- page 34 -->
-
 Remark that the isomorphisms between domains correspond exactly to the isomorphisms between neighbourhood systems (in the sense of one-one inclusion preserving correspondences).
 
 <!-- formalization -->

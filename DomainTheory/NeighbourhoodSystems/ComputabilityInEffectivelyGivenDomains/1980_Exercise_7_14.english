@@ -2,11 +2,7 @@
 
 $$y = \bigcup \{ \uparrow Y_{t(i)} \mid i \in \mathbf{N} \},$$
 
-where $t : \mathbf{N} \to \mathbf{N}$ is primitive recursive and where we may assume
-
-<!-- page 131 -->
-
-$Y_{t(i+1)} \subseteq Y_{t(i)}$
+where $t : \mathbf{N} \to \mathbf{N}$ is primitive recursive and where we may assume $Y_{t(i+1)} \subseteq Y_{t(i)}$
 
 for all $i \in \mathbf{N}$.
 

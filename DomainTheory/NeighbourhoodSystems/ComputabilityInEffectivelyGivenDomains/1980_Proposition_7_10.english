@@ -10,8 +10,6 @@ then the elements of $\mathbb{P}\mathcal{D}$ can be written as:
 
 $$\bigcup_{i < q} (\downarrow X_{n_i}),$$
 
-<!-- page 128 -->
-
 and hence are indexed by the finite sequences $\langle n_0, \dots, n_{q-1} \rangle$ of integers. Now one of the standard devices of recursion theory is to put the finite sequences of integers into a recursive one-one correspondence with the integers themselves. This is the start of the recursive presentation of $\mathbb{P}\mathcal{D}$, since it means we can list effectively all the required neighbourhoods.
 
 Next consider an intersection
@@ -35,8 +33,6 @@ $$\exists i < q \ldotp X_k \subseteq X_{n_i} \, .$$
 By our assumptions on $\mathcal{D}$, this is decidable. (It is this part of the argument that required the passage to $\mathcal{D}^\dagger$. It does not seem to be generally true that the closure under finite unions of an effectively given system is again effectively given.) $\square$
 
 One of the main reasons that $\mathbb{P}\mathcal{D}$ is like a power domain is the possibility of forming "finite sets".
-
-<!-- page 129 -->
 
 The development is with the [effective powerdomain](1980_powerDomainEffective.md) peer.
 

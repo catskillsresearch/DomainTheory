@@ -32,8 +32,6 @@ We must show that:
 
 $$\mathbf{S}(f)(g)(x) \, C \, \mathbf{S}(f')(g')(x').$$
 
-<!-- page 44 -->
-
 Now by definition of the combinator $\mathbf{S}$ we have:
 
 $$\mathbf{S}(f)(g)(x) = f(x)(g(x)),$$
@@ -83,9 +81,6 @@ follows from Theorem 7.1(ii) and Theorem 7.3(ii) and (iii) in view of the identi
 $$(7.14) \quad \lambda f \lambda g.\, f \circ g = \mathbf{S}(\mathbf{K}(\mathbf{S}))(\mathbf{K})$$
 
 (see the proof of Theorem 2.4).
-
-<!-- page 45 -->
-
 
 A more interesting result concerns the *iterators* defined as follows:
 

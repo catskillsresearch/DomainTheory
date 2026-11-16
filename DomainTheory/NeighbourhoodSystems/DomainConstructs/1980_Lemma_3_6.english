@@ -10,8 +10,6 @@ Conversely, assume that both these functions come from approximable mappings no 
 $$Z \in f(\uparrow X, \uparrow Y) = f(\uparrow(X \cup Y)).$$
 To prove that this determines $f$ we calculate by the formula of Exercise 2.9:
 
-<!-- page 41 -->
-
 $$
 \begin{aligned}
 f(x, y) &= \bigcup \{ f(\uparrow X, y) \mid X \in x \} \\

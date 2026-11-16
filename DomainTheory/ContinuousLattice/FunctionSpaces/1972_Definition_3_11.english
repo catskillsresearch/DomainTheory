@@ -11,4 +11,3 @@ The formalization is [`ProjectionSpace.lean`](ProjectionSpace.lean). **`Projecti
 **Lemma (`sup_mem`).** / **`finsetSup_mem`**. / **`directedSup_mem`**. / **`sSup_mem`**. — **`mem`** is closed under finite and arbitrary sups in **`[D → D]`**.
 
 **Instance (`instSupSet`).** / **`isLUB_sSup`**. / **`instCompleteLattice`**. — **`ProjectionSpace D`** is a complete lattice (Proposition 3.12).
-

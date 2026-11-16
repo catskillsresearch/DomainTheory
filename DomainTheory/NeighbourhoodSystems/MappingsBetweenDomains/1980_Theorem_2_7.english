@@ -8,8 +8,6 @@ $$
 f(x) = \{ Y \in D_1 \mid \exists X \in x.\ Y \in f(\uparrow X) \}.
 $$
 
-<!-- page 31 -->
-
 Consider the right-hand side of this equation: it is a filter. (This either can be proved directly or Exercise 2.11 can be used.) Because $f$ is an onto-function, we can call the right-hand side $f(x')$ for some $x' \in |D_0|$. But since $X \in x$ implies $\uparrow X \subseteq x$ and $f(\uparrow X) \subseteq f(x)$, the right-hand side is included in the left-hand side. In other words $f(x') \subseteq f(x)$. But, since $f$ is an isomorphism, $x' \subseteq x$ follows.
 
 In the other direction, if $X \in x$, then $f(\uparrow X) \subseteq f(x')$ holds by definition, so $\uparrow X \subseteq x'$. This implies $X \in x'$; and, as $X$ is arbitrary, $x \subseteq x'$. So $x = x'$, and $f(x) = f(x')$ as desired.

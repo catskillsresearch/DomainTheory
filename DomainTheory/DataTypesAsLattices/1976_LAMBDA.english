@@ -1,5 +1,3 @@
-
-
 **For Section 2.** Equation (2.1) defines a continuous function because it is a special case of Theorem 1.5, where we have been able to simplify the definition into cases because $\omega$ is a very elementary subset of $\mathbf{P}\omega$. Equation (2.2) gives a continuous function since the definition makes $\hat{p}$ distributive, as remarked in the text for finite unions, but it is just as easy to show that $\hat{p}$ distributes over arbitrary unions. The difference between a continuous $f$ and a distributive $\hat{p}$ is this: to find $m \in f(x)$ we need a finite subset $e_n \subseteq x$ with $m \in f(e_n)$; however, to find $m \in \hat{p}(x)$ we need only *one* element $n \in x$ with $m \in \hat{p}(\{n\}) = \hat{p}(n) = p(n)$. Continuous functions are generalizations of distributive functions. The generality is necessary. For example, in (2.3) we see another function $x; y$ distributive in each of its variables; but take care: the function $x; x$ is not distributive in $x$—there is no closure under substitution. This is just one reason why continuous functions are better. Another good example comes from (2.4) if you compare the functions $x$, $x + x$, $x + x + x$, etc.
 
 Equations (2.5)–(2.7) are very elementary. Note that $z \supset x, y$ is distributive in each of its variables. We could write: $z \supset x, y = \hat{p}(z)$, where $p(0) = x$ and $p(n + 1) = y$, to show that it is distributive in $z$.
@@ -26,11 +24,7 @@ $$\lambda x.\, \top = \{(n, m) \mid m \in \top\} = \top;$$
 
 because in the last every integer is a (number of a) pair. Suppose now that $a = \lambda x.\, a$ and $a \neq \top$. Let $k$ be the least integer where $k \notin a$. Now $k = (n, m)$ for some $n$ and $m$. If $m \in a$, then $(n, m) \in a = \lambda x.\, a$; hence $m \notin a$. But $m \leq k$ and $k$ is minimal; therefore, $m = k$. But this is only possible if $k = m = n = 0$. Suppose further $a \neq \bot$ and that $l$ is the least integer where $l \in a$. Now $l = (i, j)$ with $j \in a$ and $j \leq l$. So $j = l$ and $l = j = i = 0$. This contradiction proves that $a = \bot$ or $a = \top$.
 
-Equations (2.19)–(2.22) are definitions, and (2.23) is proved easily by induction on $i$. Equation (2.24) is also a definition. To prove (2.25) we note that
-
-<!-- page 52 -->
-
-$\{ u_i \mid i \in x \}$ is continuous (even: distributive) in $u$ and $x$. Thus, there is a continuous function $\mathbf{seq}(u)(x)$ giving this value. What is required is to prove that it is LAMBDA-definable. We see:
+Equations (2.19)–(2.22) are definitions, and (2.23) is proved easily by induction on $i$. Equation (2.24) is also a definition. To prove (2.25) we note that $\{ u_i \mid i \in x \}$ is continuous (even: distributive) in $u$ and $x$. Thus, there is a continuous function $\mathbf{seq}(u)(x)$ giving this value. What is required is to prove that it is LAMBDA-definable. We see:
 
 $$\mathbf{seq}(u)(x) = \{n \in u_0 \mid 0 \in x\} \cup \{m \in \bigcup \{u_{i+1} \mid i+1 \in x\} \mid \exists k.\, k+1 \in x\}$$
 

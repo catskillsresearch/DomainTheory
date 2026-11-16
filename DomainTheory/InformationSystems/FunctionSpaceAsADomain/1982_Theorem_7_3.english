@@ -1,8 +1,6 @@
 **THEOREM 7.3.** Let $\mathbf{A}$ be an information system. Then there is a unique operator, the **least fixed-point operator**, such that
 
-(i) $\mathrm{fix} : (\mathbf{A} \to \mathbf{A}) \to \mathbf{A}$; and,
-
-for all approximable mappings $f : \mathbf{A} \to \mathbf{A}$, we have:
+(i) $\mathrm{fix} : (\mathbf{A} \to \mathbf{A}) \to \mathbf{A}$; and, for all approximable mappings $f : \mathbf{A} \to \mathbf{A}$, we have:
 
 (ii) $f(\mathrm{fix}(f)) \subseteq \mathrm{fix}(f)$; and
 
@@ -25,7 +23,6 @@ Because $f$ is approximable, it is clear that $\mathrm{fix}\, f$ is closed under
 But why is $\mathrm{fix}$ approximable? The method of proof is to replace $f$ by $\bar{w}$ in (2) above, and to use the condition that there exists a sequence satisfying (1)–(3) as defining a relation between sets $w \in \mathrm{Con}_{\mathbf{A} \to \mathbf{A}}$ and sets $v \in \mathrm{Con}_{\mathbf{A}}$. It is not difficult to prove that this is an approximable mapping in the sense of the official definition. Clearly this relation determines $\mathrm{fix}$ as an operator. $\blacksquare$
 
 The result above not only proves that every approximable mapping of the form $f : \mathbf{A} \to \mathbf{A}$ has a fixed point as an element of $\mathbf{A}$, but that the association of the least fixed point is itself an approximable operator. The formulation makes essential use of the partial ordering of the domains, but Gordon Plotkin noticed as an exercise that the characterization of the operator can be given entirely by equations.
-
 
 <!-- formalization -->
 

@@ -34,7 +34,6 @@ The mapping from right to left is called the *conditional operator*, cond, and w
 
 $$\mathrm{cond}(x, y)(t) = \begin{cases} x, & \text{if } t = \text{true}, \\ y, & \text{if } t = \text{false}. \end{cases} \blacksquare$$
 
-
 <!-- formalization -->
 
 **Theorem (`proposition_7_4.ii`).** The least fixed point of $f$ is a fixed point: $f(\mathrm{fix}(f))=\mathrm{fix}(f)$.

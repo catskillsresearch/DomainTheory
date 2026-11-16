@@ -40,9 +40,7 @@ TOC_BULLET_RE = re.compile(
     r"(?:[ \t]+\[[^\]]*\]\([^)]*\)|[ \t]+✓)*[ \t]*$",
     re.MULTILINE,
 )
-BARE_TOC_CHECK_RE = re.compile(r"[ \t]+✓\s*$")
-# Outline progress marks: keep a bare check on the section title, never the revision URL.
-REVISION_MARK_RE = re.compile(r"\[\s*✓\s*\]\([^)]*1972_REVISION\.md\)")
+# Green “Revised” HTML footers are repo progress marks; strip before the PDF flatten.
 REVISED_FOOTER_RE = re.compile(
     r"<p[^>]*>\s*✓\s*<strong>Revised</strong>.*?</p>\s*",
     re.IGNORECASE | re.DOTALL,
@@ -495,6 +493,7 @@ def expand_import(
     *,
     lean_mode: str,
     include_ai_prose: bool,
+    included_lean: set[Path],
     cited_above: bool = False,
 ) -> str:
     target = (md_path.parent / rel).resolve()
@@ -527,10 +526,18 @@ def expand_import(
     if suffix in AI_PROSE_SUFFIXES and not include_ai_prose:
         return "\n\n"
 
-    # Prose sidecars (.english, optionally AI English, …)
+    # Prose sidecars (.english, optionally AI English, …). Recursively expand any
+    # nested ``@import`` so directives never leak into the PDF as literal text.
     text = target.read_text(encoding="utf-8").rstrip() + "\n"
     if not code_block or suffix == ".english" or suffix in AI_PROSE_SUFFIXES:
-        return f"\n\n{text}\n"
+        nested = expand_imports(
+            target,
+            text,
+            lean_mode=lean_mode,
+            include_ai_prose=include_ai_prose,
+            included_lean=included_lean,
+        )
+        return f"\n\n{nested}\n"
     lang = suffix.lstrip(".") or "text"
     return f"\n\n```{lang}\n{text}```\n\n"
 
@@ -562,6 +569,7 @@ def expand_imports(
             m.group(2) or "",
             lean_mode=lean_mode,
             include_ai_prose=include_ai_prose,
+            included_lean=included_lean,
             cited_above=cited_above,
         )
         if target.suffix.lower() == ".lean" and lean_mode != "omit" and target.is_file():
@@ -582,13 +590,8 @@ def child_md_targets(md_path: Path, text: str) -> list[tuple[int, str, Path]]:
     for m in matches:
         rel = (indent_columns(m.group("indent")) - base_indent) // 2
         href = m.group("href")
-        title = m.group("title").strip()
-        line = m.group(0)
-        if (
-            (REVISION_MARK_RE.search(line) or BARE_TOC_CHECK_RE.search(line))
-            and not title.endswith("✓")
-        ):
-            title = f"{title} ✓"
+        # Never carry outline progress marks (✓ / [✓](…REVISION…)) into PDF section titles.
+        title = m.group("title").strip().rstrip(" ✓").rstrip("✓").strip()
         tgt = (md_path.parent / href).resolve()
         if tgt in seen or not tgt.is_file():
             continue

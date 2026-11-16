@@ -14,4 +14,3 @@
 - [Specialization equals the given complete-lattice order on injective T₀ spaces](1972_Specialization_eq_lattice_on_injective.md)
 - [After Theorem 2.12](1972_After_theorem_2_12.md)
 
-<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-10-29) — <a href="../1972_REVISION.md">1972 revision progress</a></p>

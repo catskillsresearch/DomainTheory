@@ -6,8 +6,6 @@ $$\mathcal{D} = \{ X_n \mid n \in \mathbb{N} \}$$
 
 as effectively given, fix as a relation comes down to
 
-<!-- page 124 -->
-
 $$\bigcap_{i < q} [X_{n_i}, X_{m_i}] \text{ fix } X_\ell \text{ iff for some finite sequence}$$
 
 $$\Delta = X_{k_0}, \ldots, X_{k_p} = X_\ell,$$

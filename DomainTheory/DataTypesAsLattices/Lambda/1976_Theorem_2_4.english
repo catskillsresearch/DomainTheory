@@ -1,8 +1,4 @@
-**THEOREM 2.4** (The combinator theorem). *The LAMBDA-definable func-*
-
-<!-- page 12 -->
-
-...tions can be generated (*from variables*) by iterated application with the aid of these six constants:
+**THEOREM 2.4** (The combinator theorem). *The LAMBDA-definable functions can be generated (*from variables*) by iterated application with the aid of these six constants:
 
 $$\mathbf{0} = 0$$
 

@@ -18,8 +18,6 @@ $$
 r = \{(0, \square)\} \cup \{(n^+, m^\#) \mid (n, m) \in r\}.
 $$
 
-<!-- page 66 -->
-
 This $r \subseteq \mathbf{N} \times \mathbf{M}$ as a binary relation will turn out to be a one-one correspondence giving the required isomorphism.
 
 First of all we see by construction that

@@ -22,4 +22,3 @@ The three-token nested neighbourhood system.
 **Definition (`neighborhoodSystem`).** The neighbourhood system on the three-token carrier with this membership predicate and master set.
 
 *Proof.* The master is nonempty and a neighbourhood; every neighbourhood lies in the master; the intersection of any two neighbourhoods is again a neighbourhood by the preceding classification. ∎
-

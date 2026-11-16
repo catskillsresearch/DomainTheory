@@ -15,4 +15,3 @@
 (vii) if $S \subseteq D$ is directed, then $x \ll \bigsqcup S$ iff $x \ll y$ for some $y \in S$. $\square$
 
 The proofs of these statements can be safely left to the reader.
-

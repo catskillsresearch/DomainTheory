@@ -16,11 +16,7 @@ Therefore, 7.2 incorporates the notion of a *computable element* of a domain. An
 
 $$\{ m \in \mathbf{N} \mid Y_m \in y \}$$
 
-is a recursively enumerable set of integers. The point is that the elements of $|E|$ are finite or infinite. If $y$ were finite, the set of indices above would indeed be recursive in view of
-
-<!-- page 119 -->
-
-our assumptions on $E$. But an infinite element can in general only be approximated "a little at a time". We cannot expect to know the whole story of its approximations in a flash. What it means to be recursively enumerable is that there is a primitive recursive function (hence, a total function), $r : \mathbf{N} \to \mathbf{N}$, such that
+is a recursively enumerable set of integers. The point is that the elements of $|E|$ are finite or infinite. If $y$ were finite, the set of indices above would indeed be recursive in view of our assumptions on $E$. But an infinite element can in general only be approximated "a little at a time". We cannot expect to know the whole story of its approximations in a flash. What it means to be recursively enumerable is that there is a primitive recursive function (hence, a total function), $r : \mathbf{N} \to \mathbf{N}$, such that
 
 $$y = \{ Y_{r(i)} \mid i \in \mathbf{N} \}.$$
 

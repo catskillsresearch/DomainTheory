@@ -4,9 +4,7 @@ It may seem as though we have, in the definition of composition, written things 
 
 (i) $I_{D_0}(x) = x$, and
 
-(ii) $(g \circ f)(x) = g(f(x))$,
-
-for all $x \in |D_0|$. $\square$
+(ii) $(g \circ f)(x) = g(f(x))$, for all $x \in |D_0|$. $\square$
 
 The proof is not troublesome and is left as an exercise. In technical language the result shows that the category defined in Theorem 2.5 is equivalent to a "concrete category" of sets and functions, namely the domains and elementwise transformations of 2.2.
 

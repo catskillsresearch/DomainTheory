@@ -44,20 +44,14 @@ $(1)$ $(x, y) = \{(X, \Delta_{\mathbf{B}}) \mid X \in x\} \cup \{(\Delta_{\mathb
 
 $(2)$ $\mathrm{fst}(x, y) = x$;
 
-$(3)$ $\mathrm{snd}(x, y) = y$;
-
-and, for all $z \in |\mathbf{A} \times \mathbf{B}|$,
+$(3)$ $\mathrm{snd}(x, y) = y$; and, for all $z \in |\mathbf{A} \times \mathbf{B}|$,
 
 $(4)$ $z = (\mathrm{fst}\, z, \mathrm{snd}\, z)$.
 
 Also, using the notation of 6.2, we can say that
 
-$(5)$ $\langle f, g \rangle(t) = (f(t), g(t))$,
+$(5)$ $\langle f, g \rangle(t) = (f(t), g(t))$, for all $t \in |\mathbf{C}|$.
 
-for all $t \in |\mathbf{C}|$.
-
-There are also remarks that could be made about the pointwise nature of the partial ordering of $|\mathbf{A} \times \mathbf{B}|$, but we will not formulate them here. We do remark, however, that there is also a trivial product of no terms, $\mathbf{1}$, called the *unit type* or *domain*. It is such that $D_{\mathbf{1}} = \{\Delta_{\mathbf{1}}\}$, and
-
-that equation determines it up to isomorphism. The domain $\mathbf{1}$ has but one element, namely $\perp_{\mathbf{1}}$. Note also that all approximable mappings $f : \mathbf{1} \to \mathbf{A}$ are constant, which shows how Definition 5.1 is a generalization of Definition 3.1. Note finally that there is but one approximable mapping $f : \mathbf{A} \to \mathbf{1}$, namely $f = 0 = \mathrm{const}(\perp_{\mathbf{1}})$. $\blacksquare$
+There are also remarks that could be made about the pointwise nature of the partial ordering of $|\mathbf{A} \times \mathbf{B}|$, but we will not formulate them here. We do remark, however, that there is also a trivial product of no terms, $\mathbf{1}$, called the *unit type* or *domain*. It is such that $D_{\mathbf{1}} = \{\Delta_{\mathbf{1}}\}$, and that equation determines it up to isomorphism. The domain $\mathbf{1}$ has but one element, namely $\perp_{\mathbf{1}}$. Note also that all approximable mappings $f : \mathbf{1} \to \mathbf{A}$ are constant, which shows how Definition 5.1 is a generalization of Definition 3.1. Note finally that there is but one approximable mapping $f : \mathbf{A} \to \mathbf{1}$, namely $f = 0 = \mathrm{const}(\perp_{\mathbf{1}})$. $\blacksquare$
 
 We turn now to the definition and properties of sums of domains.

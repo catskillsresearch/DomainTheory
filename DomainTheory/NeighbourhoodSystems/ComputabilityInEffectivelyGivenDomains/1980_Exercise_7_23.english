@@ -8,12 +8,6 @@ $$x + y = \{n + m \mid n \in x \text{ and } m \in y\}.$$
 
 What are the computable elements of $P\mathbf{N}$ ?
 
-<!-- page 134 -->
-
-**[Exercise_7_23.lean](Exercise_7_23.lean)**
-
-@import "Exercise_7_23.lean"
-
 The development is with the [graph map](1980_graphFun.md) peer.
 
 <!-- formalization -->

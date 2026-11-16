@@ -10,8 +10,6 @@ $$
 \tau(n) = m
 $$
 
-<!-- page 85 -->
-
 is true; and if $h(n)$ is undefined, then
 
 $$
@@ -56,8 +54,6 @@ $$
 
 to represent $\bar{g}$, because the function so defined is not strict. But any function in $\mathbf{N}^k \to \mathbf{N}$ can be cut down to a strict function by a simple device. Consider
 
-<!-- page 86 -->
-
 $$
 \lambda x.\ \mathrm{cond}(\mathrm{zero}(x), x, x)
 $$
@@ -100,11 +96,7 @@ $$
 
 Here we have had to use the fixed-point operator on a variable $k$ of type $(\mathbf{N}^2 \to \mathbf{N})$. The variables $x, y$ are of type $\mathbf{N}$ and the $\mathrm{cond}$-construction puts the two traditional equations into two clauses of one expression. It is easy to see that the fixed-point function *is* strict and is nothing more than $\bar{h}$.
 
-That completes the representation of *primitive recursive* functions. To obtain the *partial recursive* functions, the idea is to use the so-called $\mu$-scheme (least number operator) and, further, to close up under substitution. We need only treat the $\mu$-scheme. Suppose, by way of example, $f(n, m)$ is given as a
-
-<!-- page 87 -->
-
-primitive recursive function. We then define $h$ (generally, a partial function) by
+That completes the representation of *primitive recursive* functions. To obtain the *partial recursive* functions, the idea is to use the so-called $\mu$-scheme (least number operator) and, further, to close up under substitution. We need only treat the $\mu$-scheme. Suppose, by way of example, $f(n, m)$ is given as a primitive recursive function. We then define $h$ (generally, a partial function) by
 
 $$h(m) = \text{the least } n \text{ where } f(n,m) = 0.$$
 
@@ -123,7 +115,6 @@ What is *not* said in 5.6 is that every $\lambda$-term defines a partial recursi
 It should be remarked that the types of variables needed for the proof of 5.6 never get very high. In fact, types like $N$, $N^k$, and $(N^k \to N)$ were the only ones needed (with perhaps $T$ thrown in also).
 
 Recursion on $N$ was the topic of 5.6; further examples of recursion on other domains are included in the exercises.
-
 
 The binary μ- and primitive-recursion schemes on the number domain are with the
 [number-domain recursion schemes](1980_numRecSchemes.md) peer. The `LamDef` completeness

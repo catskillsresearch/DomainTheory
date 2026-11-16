@@ -22,4 +22,3 @@ The two-token neighbourhood system on $\Delta=\{0,1\}$.
 **Definition (`neighborhoodSystem`).** The neighbourhood system on the two-token carrier with this membership predicate and master set.
 
 *Proof.* The master is nonempty and a neighbourhood; every neighbourhood lies in the master; if two neighbourhoods meet in a set containing a third neighbourhood, their intersection cannot be empty, so by the preceding classification it is again a neighbourhood. ∎
-

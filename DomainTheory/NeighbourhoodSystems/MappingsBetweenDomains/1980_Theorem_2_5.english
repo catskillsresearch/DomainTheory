@@ -8,8 +8,6 @@ If $f : D_0 \to D_1$ and $g : D_1 \to D_2$ are given, then the *composition* $g 
 
 *Proof:* (We may use [@Lane72] as the standard reference on category theory, but we require hardly more than the basic definitions at this stage.) To check that we have a category, we need to know that the identity and composition maps really are maps in the category and that certain identity and associative laws hold. Now it is obvious that $I_D$ satisfies 2.1 (i)-(iii). Moreover if $f : D_0 \to D_1$, all we have to prove is:
 
-<!-- page 29 -->
-
 $$
 f \circ I_{D_0} = I_{D_1} \circ f = f
 $$

@@ -10,8 +10,6 @@ where for all $f : D_1 \to D_2$ and all $x \in |D_1|$ we have
 
 $$F, X \text{ eval } Y \quad \text{iff} \quad X f Y \text{ for all } f \in F.$$
 
-<!-- page 46 -->
-
 Remember that neighbourhoods in the function space are sets of approximable mappings. It is easily checked that this definition makes eval approximable. We now calculate the function values by the formula of 2.2 (i):
 
 $$

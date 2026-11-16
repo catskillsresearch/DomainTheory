@@ -17,4 +17,3 @@
 - [Information-system elements and filters of basic opens](InfoSysToNeighborhood/domainOrderIso.md)
 - [The neighbourhood system induced by an information system](InfoSysToNeighborhood.md)
 
-<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-09) — <a href="../BridgeTheorems_REVISION.md">Bridge revision progress</a></p>

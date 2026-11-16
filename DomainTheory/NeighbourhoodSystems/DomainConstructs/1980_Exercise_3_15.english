@@ -8,8 +8,6 @@ How does the product of no factors fit in? Prove also:
 
 (iii) $\mathcal{D}_0 \cong \mathcal{D}'_0$ and $\mathcal{D}_1 \cong \mathcal{D}'_1$ imply $\mathcal{D}_0 \times \mathcal{D}_1 \cong \mathcal{D}'_0 \times \mathcal{D}'_1$.
 
-<!-- page 50 -->
-
 The product-isomorphism library is with the
 [product isomorphisms](1980_prodIso.md) peer. The product of no factors is the unit system there.
 

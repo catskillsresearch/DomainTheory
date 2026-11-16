@@ -1,7 +1,3 @@
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_20.lean](Exercise_8_20.lean)**
-
-@import "Exercise_8_20.lean"
-
 **EXERCISE 8.20.** For any system we know $D \trianglelefteq D + D$, but what about
 
 $$D \trianglelefteq D \times D \quad \text{and} \quad D \trianglelefteq D \to D \ ?$$

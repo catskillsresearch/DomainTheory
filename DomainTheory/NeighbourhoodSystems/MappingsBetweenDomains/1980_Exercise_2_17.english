@@ -7,8 +7,6 @@ $$g(1) = \bot$$
 
 or are some missing?
 
-<!-- page 35 -->
-
 <!-- formalization -->
 
 **Theorem (`exercise_2_17`).** The erase-ones map is the unique approximable endomap of the binary-tree system satisfying the run equations, and those equations hold of the erase-ones map.

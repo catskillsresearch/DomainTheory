@@ -9,6 +9,3 @@ $$\vec{i}(f) = i_1 \circ f \circ j_0 \text{ , and}$$
 $$\vec{j}(f') = j_1 \circ f' \circ i_0 \text{ ,}$$
 
 where $f \in [D_0 \rightarrow D_1]$ and $f' \in [D'_0 \rightarrow D'_1]$. $\square$
-
-
-

@@ -34,4 +34,3 @@ Secondary (not the compared fixed-point landing): `sexRhsSemanticIso` is the gen
 - [Existence of the ideal isomorphism](WorkedExampleSExpr/exists_sexIdealIso.md)
 - [The identity map on tree elements](WorkedExampleSExpr/sexId_toElement.md)
 
-<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-09) — <a href="../BridgeTheorems_REVISION.md">Bridge revision progress</a></p>

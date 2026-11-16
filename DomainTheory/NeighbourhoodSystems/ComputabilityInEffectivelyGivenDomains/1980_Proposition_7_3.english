@@ -2,8 +2,6 @@
 
 The proofs for 7.3 are so trivial they are hardly worth an exercise. Note the immediate and useful consequence: if $f : D \to E$ is computable and $x \in |D|$ is computable, then $f(x) \in |E|$ is also computable. The next result is, however, worth working out even though it is quite easy.
 
-<!-- page 120 -->
-
 The development is with the [computable maps form a category](1980_computableCategory.md) peer.
 
 <!-- formalization -->

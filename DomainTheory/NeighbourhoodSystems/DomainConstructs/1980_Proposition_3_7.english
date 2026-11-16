@@ -26,8 +26,6 @@ $$
 
 Now no matter on what domains $f$ is defined, the following composition makes sense:
 
-<!-- page 42 -->
-
 $$
 f \circ \langle g \circ \langle p_0, p_1 \rangle, h \circ \langle p_1, p_2 \rangle, k \circ \langle p_3, p_0, p_2 \rangle \rangle ;
 $$

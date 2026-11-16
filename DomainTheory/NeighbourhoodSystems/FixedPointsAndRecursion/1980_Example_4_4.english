@@ -120,8 +120,6 @@ $$
 
 We can write:
 
-<!-- page 64 -->
-
 $$
 \begin{aligned}
 d(x) &= \mathrm{cond}(\mathrm{empty}(x),\, \Lambda, \\
@@ -145,8 +143,6 @@ It should be checked that this equation exactly characterizes the intended mappi
 The examples we have given with $N$ and $C$ are examples of definitions of functions by *recursion*. The literal meaning of “recursion” is “running backwards”, and a look at the equations for our examples will show that the functions are characterized by giving their values either *outright* (e.g. at $0$ or at $\Lambda$) or at *earlier* arguments (e.g. at $\mathrm{pred}(x)$ or at $\mathrm{tail}(x)$). The reader should keep in mind that a recursive “definition” is not really a definition in the sense of *explicit definition* but rather is a characterization; a theorem has to be proved to show that such functions exist. Now we have a general definition of domain and a general theorem on fixed points and a general construction of function-space domain; THEREFORE, we know that there are solutions to our equations PROVIDED THAT the variables range over elements of a domain and that the other, given functions that appear in the equations are already known to be approximable (continuous). This proviso is very important, and we shall remark on it time after time.
 
 But, as is well known, recursion also can be done over sets like $\mathbf{N}$, and we should examine now the connection between the familiar kind of recursion and what we are doing over domains. Of course, one simple connection is already provided by the way we regard $\mathbf{N}$ as a subset of $N$. But there are other useful connections that can be employed in a way that may seem more direct.
-
-<!-- page 65 -->
 
 The sequence system with cons maps and the alternating fixed point are with the
 [sequence domain](1980_seqDomain.md) peer.

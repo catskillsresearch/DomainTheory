@@ -28,11 +28,7 @@ $$
 U\ f\ V \quad \text{and} \quad U'\ f\ V'
 $$
 
-hold and $U, U'$ are consistent in $D$, then $V$ and $V'$ are consistent and
-
-<!-- page 56 -->
-
-$(U \cap U')\ f\ (V \cap V')$
+hold and $U, U'$ are consistent in $D$, then $V$ and $V'$ are consistent and $(U \cap U')\ f\ (V \cap V')$
 
 must hold. Generalizing this to sequences, if
 

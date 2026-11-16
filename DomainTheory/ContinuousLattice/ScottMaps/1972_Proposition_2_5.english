@@ -17,4 +17,3 @@ f(x \sqcup y) = f(y) = f(x) \sqcup f(y),
 $$
 
 so $f(x) \sqsubseteq f(y)$. Thus $f$ is monotonic and so $U$ satisfies condition (i). That $U$ satisfies condition (ii) follows at once from the above equation. $\square$
-

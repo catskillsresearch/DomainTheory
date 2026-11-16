@@ -17,6 +17,3 @@ $$
 
 by using a double fixed-point method. First decide what the underlying set of tokens should be, and then define $D$ and $E$ by simultaneous fixed points. (Syntactical domains as in 6.23 may very well require several simultaneous equations.)
 
-<!-- page 114 -->
-
-<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-07) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

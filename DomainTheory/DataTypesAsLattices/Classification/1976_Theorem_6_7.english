@@ -12,8 +12,6 @@ $$= \bigcap_{n=0}^{\infty} (\{x \mid n \in f(x), n \in g(x)\} \cup \{x \mid n \n
 
 That puts the set in the class $(\mathfrak{F} \cup \mathfrak{G})_\delta = \mathfrak{B}_\delta$.
 
-<!-- page 38 -->
-
 On the other hand, we can see that $(\mathfrak{F} \cup \mathfrak{G})_\sigma$ is exactly $\mathfrak{B}_\delta$. Because, in view of Theorem 6.6, $\mathfrak{B}_\sigma$, the class of *countable* unions of $\mathfrak{B}$-sets, is exactly $(\mathfrak{F} \dot{\cap} \mathfrak{G})_\sigma$. The remark we want to make then follows by taking complements.
 
 Now let $S$ be an arbitrary $\mathfrak{B}_\delta$-set. We can write:
@@ -61,9 +59,6 @@ with continuous $f, g, h$. For the three classes we then have as “typical” s
 
 It should be remarked that $\mathfrak{B}_\delta$ contains all the closed sets in the *Cantor space* topology on $\mathbf{P}\omega$ (that is, the topology obtained when it is regarded as the infinite product of *discrete* two-point spaces). Therefore the $\Sigma_1^1$ sets for the two topologies on $\mathbf{P}\omega$ are the *same*. Hence, since we know for Cantor space that $\Delta_1^1 = \Sigma_1^1 \cap \Pi_1^1$ is the class of *Borel sets*, we can conclude that the two topologies on $\mathbf{P}\omega$ have the *same* Borel sets. (That is, in both cases $\Delta_1^1$ is the Boolean $\sigma$-algebra generated from the open sets.)
 
-<!-- page 39 -->
-
-
 **TABLE 3** *Classes and typical sets*
 
 | Classes | Typical sets |
@@ -92,8 +87,6 @@ We can show that $\mathbf{top} : \mathbf{P}\omega \to \{\bot, \top\}$. For a tre
 An aspect of the problem of classification treated in this section which has not been given close enough attention is the explicitly constructive way of verifying the closure properties of the classes. Consider the class $\mathfrak{B}_\delta$, for example. Let $B$ be the typical set as shown in Table 3. Then whatever $f \in \mathbf{P}\omega$ we choose, the set
 
 $$\{x \mid f(x) \in B\}$$
-
-<!-- page 40 -->
 
 is a $\mathfrak{B}_\delta$-set and every such set has this form. Thus the $f$'s *index* the elements of the class. Suppose $f, g \in \mathbf{P}\omega$. What we should look for are two LAMBDA-definable combinators such that $\mathbf{union}(f)(g)$ and $\mathbf{inter}(f)(g)$ give the functions that index the union and intersection of the sets determined by $f$ and $g$. That is, we want:
 

@@ -23,4 +23,3 @@ e(U) &= e(x) : x \in U
 $$
 
 which shows that the image $e(U)$ is open in the subspace $e(X) \subseteq D$. Therefore $e: X \to D$ is an embedding of $X$ as a subspace in $D$. $\square$
-

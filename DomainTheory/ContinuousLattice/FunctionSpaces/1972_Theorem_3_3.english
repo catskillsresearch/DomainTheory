@@ -45,4 +45,3 @@ Pointwise $\sqcup$, $\top$, and $\bot$ yield a complete lattice on **`ScottMap D
 **Proof.** [`theorem_3_3.lean`](theorem_3_3.lean) combines **`stepMap.isContinuousLattice`** and **`scottMapInducedPiTopology.scottTopology_eq_pointwise`**. $\square$
 
 The above theorem might possibly be generalized to $[X \to D]$ where $X$ is merely a $T_0$-space, but I was unable to see the argument. In any case we are mostly interested in the continuous lattices. Note as a consequence of our proof:
-

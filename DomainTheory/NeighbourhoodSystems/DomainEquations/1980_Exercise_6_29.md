@@ -6,12 +6,9 @@ $$\sum_{n=0}^{\infty} D_n \quad \text{and} \quad \prod_{n=0}^{\infty} D_n.$$
 
 Would a similar generalization be possible for $\oplus$ and $\otimes$?
 
-<!-- page 116 -->
-
 **[Exercise_6_29.lean](Exercise_6_29.lean)**
 
 @import "infSumProd.lean" {code_block=false}
 
 @import "Exercise_6_29.lean"
 
-<p style="color:#15803d;margin-top:1em;">✓ <strong>Revised</strong> (2026-11-07) — <a href="../1980_REVISION.md">1980 revision progress</a></p>

@@ -39,9 +39,7 @@ j(\bigsqcup S') &= \bigsqcup \{ j(x) : x \in S \}
 \end{aligned}
 $$
 
-in $D$. In this way we now know that $D$ is a complete lattice. We must
-
-still show that $D$ is continuous.
+in $D$. In this way we now know that $D$ is a complete lattice. We must still show that $D$ is continuous.
 
 Suppose $y \in D$. In $D'$ we can write:
 

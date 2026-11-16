@@ -18,8 +18,6 @@ Note that $\mathrm{fix}(f) \sqsubseteq a$. (Hint: Remark that by 1.17 the formul
 
 (4) Employ (3) for the proof of 4.1 by identifying $\langle \mathbf{N}, 0, {}^+ \rangle$.
 
-<!-- page 69 -->
-
 The monotone intersection fixed point, primitive recursion, and chain-union bound are with the
 [Monotone fixed-point operator](1980_monoFix.md) peer.
 

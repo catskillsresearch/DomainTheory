@@ -2,9 +2,7 @@
 
 $$(D, \Delta, \mathrm{Con}, \vdash),$$
 
-where $D$ is a set (the set of data objects or propositions), where $\Delta$ is a distinguished member of $D$ (the least informative member), where $\mathrm{Con}$ is a set of finite subsets of $D$ (the consistent sets of objects), and where $\vdash$ is a binary relation between members of $\mathrm{Con}$ and members of $D$ (the
-
-entailment relation for objects). Concerning $\mathrm{Con}$, the following axioms must be satisfied for all finite subsets $u, v \subseteq D$:
+where $D$ is a set (the set of data objects or propositions), where $\Delta$ is a distinguished member of $D$ (the least informative member), where $\mathrm{Con}$ is a set of finite subsets of $D$ (the consistent sets of objects), and where $\vdash$ is a binary relation between members of $\mathrm{Con}$ and members of $D$ (the entailment relation for objects). Concerning $\mathrm{Con}$, the following axioms must be satisfied for all finite subsets $u, v \subseteq D$:
 
 (i) $u \in \mathrm{Con}$, whenever $u \subseteq v \in \mathrm{Con}$;
 

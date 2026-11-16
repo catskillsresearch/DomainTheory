@@ -43,4 +43,3 @@ for all $x'' \in X \cap U$ where $U$ is a suitable open subset of $Y$ with $x' \
 $$d \sqsubseteq \sqcap \{ f(x'') : x'' \in X \cap U \} ,$$
 
 and so $d \sqsubseteq \bar{f}(x')$. Since $d \ll f(x')$ always implies $d \sqsubseteq \bar{f}(x')$, we see that $f(x') \sqsubseteq \bar{f}(x')$ follows by the continuity of $D$, and the proof is complete. $\square$
-

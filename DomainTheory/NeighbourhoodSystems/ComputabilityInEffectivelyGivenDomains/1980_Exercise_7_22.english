@@ -18,10 +18,6 @@ $$\vec{\sigma}\,\vec{\sigma} = \vec{\sigma}, \quad \vec{\sigma}\,\vec{\sigma}\,\
 
 and $\vec{01}\,\vec{01}\,\vec{01}\,\vec{01} = \vec{01}\,\vec{01}$ ?
 
-**[Exercise_7_22.lean](Exercise_7_22.lean)**
-
-@import "Exercise_7_22.lean"
-
 The development is with the [regular languages](1980_regularLanguage.md), [regular-language codes](1980_regularCode.md), and [language presentation](1980_languagePresentation.md) peers.
 
 <!-- formalization -->

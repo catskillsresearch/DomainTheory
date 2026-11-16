@@ -34,8 +34,6 @@ $$
 
 by our definitions are *NOT* isomorphic; though the two domains are closely related. We can define a mapping
 
-<!-- page 59 -->
-
 $$
 \mathrm{val} : F \times N \to N
 $$
@@ -97,8 +95,6 @@ If $\pi$ were a total function, then $f(\pi)$ would be total. But if $\pi$ is pa
 $$
 f(\pi) = \bigcup \{ f(\phi) \mid \phi \subseteq \pi \},
 $$
-
-<!-- page 60 -->
 
 where $\phi$ ranges over $\Phi$.
 
@@ -171,8 +167,6 @@ The *structured domain*
 $$
 \langle N, 0, \mathrm{succ}, \mathrm{pred}, \mathrm{zero} \rangle
 $$
-
-<!-- page 61 -->
 
 can be called "THE domain of integers" for our present theory. We shall meet many other structured domains in the sequel.
 

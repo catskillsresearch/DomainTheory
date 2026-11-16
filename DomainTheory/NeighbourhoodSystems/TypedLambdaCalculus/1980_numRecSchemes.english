@@ -131,4 +131,3 @@ Number-domain recursion schemes: the μ-operator and primitive recursion on pair
 **Theorem (`strictProj₀_natElem`).** The stated property of `strictProj₀_natElem`.
 
 *Proof.* Follows from the surrounding construct and fixed-point laws. ∎
-

@@ -1,7 +1,3 @@
-**[NeighbourhoodSystems/RetractsOfTheUniversalDomain/Exercise_8_16.lean](Exercise_8_16.lean)**
-
-@import "Exercise_8_16.lean"
-
 **EXERCISE 8.16.** For finitary projections $a : E \to E$, write
 
 $$D_a = \{X \in E \mid X \sqsubseteq a X\}$$
